@@ -47,11 +47,13 @@ jobs:
           fetch_with_retry() {
             local url="$1"
             local output="$2"
-            local label="$3"
+            local headers="$3"
+            local label="$4"
             for attempt in 1 2 3 4 5 6; do
               if curl --fail --location --silent --show-error \
                 --connect-timeout 10 --max-time 30 \
                 -H 'Cache-Control: no-cache' \
+                -D "$headers" \
                 "${url}?cutover=${GITHUB_SHA}-${attempt}" -o "$output"; then
                 echo "${label}: reachable on attempt ${attempt}"
                 return 0
@@ -63,23 +65,32 @@ jobs:
             return 1
           }
 
-          fetch_with_retry 'https://www.francinemariebautista.com/news/' /tmp/news-home.html 'News home'
+          fetch_with_retry 'https://www.francinemariebautista.com/news/' /tmp/news-home.html /tmp/news-home.headers 'News home'
+          cat /tmp/news-home.headers
           grep -qi 'FMB News' /tmp/news-home.html
+          if ! tr -d '\r' < /tmp/news-home.headers | grep -Eqi '^x-fmb-news-worker: fmb-news$'; then
+            echo '::error::Public /news traffic is not reaching the FMBNews Cloudflare Worker. Ensure the www DNS record is Proxied (orange cloud) in Cloudflare.'
+            exit 1
+          fi
+          echo 'News home is confirmed on the FMBNews Worker.'
 
-          fetch_with_retry 'https://www.francinemariebautista.com/news/world/' /tmp/news-world.html 'FMB Worldwide'
+          fetch_with_retry 'https://www.francinemariebautista.com/news/world/' /tmp/news-world.html /tmp/news-world.headers 'FMB Worldwide'
           grep -qi 'FMB Worldwide' /tmp/news-world.html
+          tr -d '\r' < /tmp/news-world.headers | grep -Eqi '^x-fmb-news-worker: fmb-news$'
 
-          fetch_with_retry 'https://www.francinemariebautista.com/news/fmb-brief/' /tmp/news-brief.html 'FMB Brief'
+          fetch_with_retry 'https://www.francinemariebautista.com/news/fmb-brief/' /tmp/news-brief.html /tmp/news-brief.headers 'FMB Brief'
           grep -qi 'FMB Brief' /tmp/news-brief.html
+          tr -d '\r' < /tmp/news-brief.headers | grep -Eqi '^x-fmb-news-worker: fmb-news$'
 
-          fetch_with_retry 'https://www.francinemariebautista.com/news/world/live/' /tmp/news-world-live.html 'Worldwide live desk'
+          fetch_with_retry 'https://www.francinemariebautista.com/news/world/live/' /tmp/news-world-live.html /tmp/news-world-live.headers 'Worldwide live desk'
           grep -qi 'FMB Worldwide' /tmp/news-world-live.html
 
-          fetch_with_retry 'https://www.francinemariebautista.com/news/fmb-brief/live/' /tmp/news-brief-live.html 'Brief live edition'
+          fetch_with_retry 'https://www.francinemariebautista.com/news/fmb-brief/live/' /tmp/news-brief-live.html /tmp/news-brief-live.headers 'Brief live edition'
           grep -qi 'FMB Brief' /tmp/news-brief-live.html
 
-          fetch_with_retry 'https://www.francinemariebautista.com/news/assets/css/fmb-news-final.css' /tmp/news.css 'News scoped CSS'
+          fetch_with_retry 'https://www.francinemariebautista.com/news/assets/css/fmb-news-final.css' /tmp/news.css /tmp/news-css.headers 'News scoped CSS'
           test -s /tmp/news.css
+          tr -d '\r' < /tmp/news-css.headers | grep -Eqi '^x-fmb-news-worker: fmb-news$'
 
           status="$(curl --silent --show-error --output /dev/null --write-out '%{http_code}' --connect-timeout 10 --max-time 30 'https://www.francinemariebautista.com/')"
           test "$status" = '200'
