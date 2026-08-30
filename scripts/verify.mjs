@@ -1,4 +1,4 @@
-import { access, readFile, readdir } from 'node:fs/promises';
+import { access, readFile, readdir, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -45,7 +45,6 @@ const worldEntries = await readdir(resolve('site/world'), { withFileTypes: true 
 const worldEditions = worldEntries
   .filter((entry) => entry.isDirectory() && /^[a-z]+-\d{1,2}-\d{4}$/i.test(entry.name))
   .map((entry) => entry.name);
-
 if (worldEditions.length === 0) throw new Error('No dated FMB Worldwide edition found');
 for (const edition of worldEditions) await access(resolve('site/world', edition, 'index.html'));
 
@@ -53,7 +52,6 @@ const siteEntries = await readdir(resolve('site'), { withFileTypes: true });
 const briefEditions = siteEntries
   .filter((entry) => entry.isDirectory() && /^fmb-brief-.+/i.test(entry.name))
   .map((entry) => entry.name);
-
 if (briefEditions.length === 0) throw new Error('No dated FMB Brief edition found');
 for (const edition of briefEditions) await access(resolve('site', edition, 'index.html'));
 
@@ -62,12 +60,27 @@ const articleDays = (await readdir(resolve('content/news/articles'), { withFileT
   .map((entry) => entry.name);
 if (articleDays.length === 0) throw new Error('Structured FMB News article archive is empty');
 
-for (const html of [home, brief, world, reader, liveWorld, liveBrief]) {
-  if (html.includes('apps/withlovefmb/')) {
-    throw new Error('Standalone newsroom still references the old ecosystem source path');
+const forbidden = ['FMB-Ecosystem', 'apps/withlovefmb/'];
+const scanRoots = ['README.md', '.github', 'docs', 'scripts', 'public', 'site', 'vercel.json', 'package.json'];
+
+async function scan(target) {
+  let info;
+  try { info = await stat(target); } catch { return; }
+  if (info.isDirectory()) {
+    for (const entry of await readdir(target)) await scan(path.join(target, entry));
+    return;
+  }
+  if (!/\.(?:md|mjs|js|json|html|css|yml|yaml|txt)$/i.test(target)) return;
+  const text = await readFile(target, 'utf8');
+  for (const needle of forbidden) {
+    if (text.includes(needle)) {
+      throw new Error(`Standalone dependency violation: ${needle} found in ${path.relative(root, target)}`);
+    }
   }
 }
 
+for (const rel of scanRoots) await scan(resolve(rel));
+
 console.log(
-  `FMBNews verification passed: ${articleDays.length} article date folders, ${briefEditions.length} archived FMB Brief editions, ${worldEditions.length} archived FMB Worldwide editions, plus live CMS surfaces.`
+  `FMBNews standalone verification passed: ${articleDays.length} article date folders, ${briefEditions.length} archived FMB Brief editions, ${worldEditions.length} archived FMB Worldwide editions, live CMS surfaces, and no retired-repo dependency.`
 );
