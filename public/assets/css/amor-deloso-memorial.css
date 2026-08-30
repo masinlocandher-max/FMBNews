@@ -1,0 +1,47 @@
+/* Amor Deloso memorial image: preserve its full editorial framing across screens. */
+.nc-story-media--portrait {
+  background: #09060f;
+}
+
+.nc-story-media--portrait .wrap {
+  width: min(1200px, calc(100% - 40px));
+  padding: clamp(20px, 3vw, 38px) 0;
+}
+
+.nc-story-media--portrait .news-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  background: #0f0b13;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
+}
+
+.nc-story-media--portrait .news-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(78vh, 760px);
+  aspect-ratio: 1200 / 630;
+  object-fit: contain;
+  object-position: center;
+  background: #0b0910;
+}
+
+.nc-story-media--portrait .news-visual figcaption {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 800px) {
+  .nc-story-media--portrait .wrap {
+    width: calc(100% - 24px);
+    padding: 14px 0;
+  }
+
+  .nc-story-media--portrait .news-visual img {
+    width: 100%;
+    max-height: none;
+    aspect-ratio: 1200 / 630;
+  }
+}
