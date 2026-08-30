@@ -1,0 +1,53 @@
+FMB NEWS MIGRATION RECONCILIATION
+Generated (UTC): 2026-08-30T20:05:54Z
+Source: masinlocandher-max/FMB-Ecosystem@add8c70ee1d1faad130b5a4a47e8297a797937c8
+Target: masinlocandher-max/FMBNews@fdfbb7108c4bb43cca80110e13a24c33e9010f9f
+
+== Rendered newsroom tree ==
+PASS: byte-for-byte identical
+
+== Structured editorial content ==
+PASS: byte-for-byte identical
+
+== News image library ==
+PASS: byte-for-byte identical
+
+== Inventory counts ==
+Rendered HTML files: source=40 target=40
+Rendered index pages: source=40 target=40
+Structured article files: source=216 target=216
+News image files: source=65 target=65
+
+PASS: inventory counts match
+
+== Local asset reference scan ==
+Unique /assets/ references scanned: 48
+FAIL: 13 referenced local assets are missing
+MISSING /assets/css/amor-deloso-memorial.css
+MISSING /assets/css/fmb-content.css
+MISSING /assets/css/fmb-footer-v2.css
+MISSING /assets/css/fmb-polish.css
+MISSING /assets/css/news-channel.css
+MISSING /assets/css/site.css
+MISSING /assets/images/fmb-approved/fmb-master-purple-square.webp
+MISSING /assets/images/fmb-approved/fmb-news-official-transparent.webp
+MISSING /assets/images/icon-transparent.png
+MISSING /assets/images/projects/cognita-logo-clean.png
+MISSING /assets/images/projects/senz-logo-clean.png
+MISSING /assets/images/signature-transparent.png
+MISSING /assets/js/news-channel.js
+
+
+> fmb-news@1.0.0 build
+> node scripts/build.mjs
+
+Built standalone FMB News snapshot into dist/.
+
+> fmb-news@1.0.0 verify
+> node scripts/verify.mjs
+
+FMBNews verification passed: 23 article date folders, 11 FMB Brief editions, 2 FMB Worldwide editions.
+
+PASS: standalone build and verifier
+
+FINAL: FAIL — reconciliation found differences or missing dependencies. Do not disconnect the legacy source.
