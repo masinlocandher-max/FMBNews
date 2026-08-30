@@ -2,7 +2,7 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "fmb-news",
   "main": "src/worker.js",
-  "compatibility_date": "2026-08-31",
+  "compatibility_date": "2026-08-30",
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
