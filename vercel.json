@@ -11,6 +11,12 @@
       "permanent": false
     }
   ],
+  "rewrites": [
+    {
+      "source": "/news/read/:slug",
+      "destination": "/news/read/index.html?slug=:slug"
+    }
+  ],
   "headers": [
     {
       "source": "/:path*",
