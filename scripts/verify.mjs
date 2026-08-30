@@ -60,7 +60,7 @@ const articleDays = (await readdir(resolve('content/news/articles'), { withFileT
   .map((entry) => entry.name);
 if (articleDays.length === 0) throw new Error('Structured FMB News article archive is empty');
 
-const forbidden = ['FMB-Ecosystem', 'apps/withlovefmb/'];
+const forbidden = ['FMB' + '-Ecosystem', 'apps/' + 'withlovefmb/'];
 const scanRoots = ['README.md', '.github', 'docs', 'scripts', 'public', 'site', 'vercel.json', 'package.json'];
 
 async function scan(target) {
