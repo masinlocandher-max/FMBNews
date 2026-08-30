@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-25-1300",
+  "emailSubject": "FMB News | Marcos Expands Local EV Perks; Senate Orders Medical Check on Fund Witness | August 25, 2026 | 1:00 PM PHT",
+  "slug": "marcos-local-ev-manufacturing-push",
+  "headline": "Marcos Pushes Local Electric-Vehicle Manufacturing, Starting with E-Trikes",
+  "seoTitle": "Marcos Pushes Local EV Manufacturing | FMB News",
+  "seoDescription": "President Marcos renewed the government's push for locally manufactured electric vehicles on August 25, starting with Filipino-made electric tricycles.",
+  "keywords": ["Marcos local EV manufacturing", "Philippines electric tricycle", "EVIS Program Philippines"],
+  "category": "Business",
+  "kicker": "Industry · Electric Vehicles",
+  "deck": "The President inspected a Caloocan manufacturer as the government works to expand domestic EV production under its existing incentive program.",
+  "publishedAt": "2026-08-25T13:00:00+08:00",
+  "updatedAt": "2026-08-25T19:01:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading": "What happened", "paragraphs": ["President Ferdinand Marcos Jr. renewed the government's push for locally manufactured electric vehicles on Tuesday during a visit to MD Juan Enterprises in Caloocan City.", "Current government reporting says the immediate goal is an all-Filipino electric tricycle, with electric jeepneys envisioned as a later step as domestic manufacturing capability expands."]},
+    {"heading": "Context", "paragraphs": ["The policy push builds on Executive Order No. 121, which established the Electric Vehicle Incentive Strategy Program with up to ₱60 billion in time-bound, performance-based support for qualified domestic EV and component manufacturing.", "The approved newsroom email contained additional claims about a new 10% Philippine-assembled government-fleet mandate and expanded zero-tariff rules. Those details were not independently reproduced in the same-day primary reporting and are not stated here as settled new policy."]},
+    {"heading": "Why this matters", "paragraphs": ["Local EV manufacturing could move more of the value chain into the Philippines, from vehicle assembly to batteries and components, while reducing dependence on imported completely built units."]},
+    {"heading": "What to watch next", "paragraphs": ["Watch DTI, BOI and Malacañang for implementing rules, investment commitments, production targets and any formal changes to procurement or tariff policy."]}
+  ],
+  "sources": [
+    {"publisher": "Philippine News Agency", "title": "Marcos backs homegrown EV production, starting with e-trikes", "publishedAt": "2026-08-25T10:36:00+08:00", "url": "https://www.pna.gov.ph/articles/1282566"},
+    {"publisher": "Philippine Information Agency", "title": "Marcos Jr. signs EO 121 for P60-B electric vehicle incentives", "publishedAt": "2026-08-04T00:00:00+08:00", "url": "https://pia.gov.ph/news/marcos-jr-signs-eo-121-for-p60-b-electric-vehicle-incentives/"}
+  ],
+  "image": {"kind": "editorial-fallback", "url": "/assets/images/news/fmb-news-editorial-fallback.svg", "sourceUrl": null, "creator": "FMB News", "license": "FMB-owned editorial visual", "licenseUrl": "https://www.francinemariebautista.com/news/", "usageStatus": "FMB-owned editorial visual used because the referenced government photo was not supplied as a stable reusable original asset in the email.", "credit": "FMB News editorial visual", "caption": "FMB News editorial visual accompanying the local EV manufacturing report.", "alt": "FMB News editorial visual for Philippine electric vehicle manufacturing", "width": 1200, "height": 675, "focusX": 50, "focusY": 50},
+  "audit": {"sourceCheckedAt": "2026-08-25T19:01:00+08:00", "photoReferenceUrl": "https://www.pna.gov.ph/articles/1282566", "notes": ["Same-day PNA and PIA reporting independently supports the local EV manufacturing push.", "Unsupported new 10% local-fleet and expanded tariff claims from the brief were not presented as settled policy."]}
+}

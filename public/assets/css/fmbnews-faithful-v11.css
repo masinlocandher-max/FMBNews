@@ -1,0 +1,774 @@
+/* FMB News Faithful V11
+ * Approved implementation reference: Cormorant Garamond + Manrope,
+ * complete signal wordmark, real controls, exact Francine portrait,
+ * image-led lead story, subtle broadcast motifs, and complete archive.
+ */
+
+html body.news-faithful-v11.news-signal-v10 {
+  --fn11-ink: #160426;
+  --fn11-deep: #1a042d;
+  --fn11-purple: #461583;
+  --fn11-violet: #6f3aa8;
+  --fn11-lilac: #eee6f5;
+  --fn11-lilac-soft: #f8f4fa;
+  --fn11-paper: #fffefb;
+  --fn11-white: #ffffff;
+  --fn11-gold: #c99a3f;
+  --fn11-gold-pale: #ead8ae;
+  --fn11-line: rgba(46, 12, 74, .13);
+  --fn11-shadow: 0 22px 60px rgba(38, 8, 62, .10);
+  --fn11-shadow-soft: 0 12px 36px rgba(38, 8, 62, .065);
+  background:
+    radial-gradient(circle at 103% 13%, rgba(111,58,168,.09) 0 8.5rem, transparent 8.6rem),
+    radial-gradient(circle at -4% 51%, rgba(201,154,63,.08) 0 7rem, transparent 7.1rem),
+    linear-gradient(180deg, #fffefb 0%, #fbf8fc 52%, #fffdf7 100%) !important;
+  color: var(--fn11-ink) !important;
+  font-family: "Manrope", Arial, sans-serif !important;
+}
+
+html body.news-faithful-v11 .fn9-publication-bar,
+html body.news-faithful-v11 .fn9-category-nav,
+html body.news-faithful-v11 .fn9-menu-button,
+html body.news-faithful-v11 .fn9-home-button,
+html body.news-faithful-v11 .fn9-action-divider,
+html body.news-faithful-v11 .fn9-brand-promise,
+html body.news-faithful-v11 .fn9-brand-divider,
+html body.news-faithful-v11 .fn9-brand-lockup::after {
+  display: none !important;
+}
+
+html body.news-faithful-v11 .fn9-shell,
+html body.news-faithful-v11 .wrap {
+  width: min(calc(100% - 64px), 1380px) !important;
+}
+
+/* Complete masthead logo and controls */
+html body.news-faithful-v11 .nc-site-header.fn9-site-header {
+  position: relative !important;
+  z-index: 1300 !important;
+  min-height: 118px !important;
+  overflow: visible !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--fn11-line) !important;
+  background:
+    radial-gradient(circle at 87% 52%, rgba(111,58,168,.08) 0 56px, transparent 57px),
+    radial-gradient(circle at 87% 52%, transparent 0 70px, rgba(201,154,63,.20) 71px 72px, transparent 73px),
+    linear-gradient(110deg, rgba(255,255,255,.995), rgba(250,246,252,.97)) !important;
+  box-shadow: 0 12px 34px rgba(33, 7, 53, .045) !important;
+}
+
+html body.news-faithful-v11 .fn9-header-grid {
+  min-height: 118px !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: center !important;
+  gap: 28px !important;
+}
+
+html body.news-faithful-v11 .fn11-brand-lockup {
+  width: fit-content !important;
+  min-width: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 18px !important;
+  color: var(--fn11-ink) !important;
+  text-decoration: none !important;
+}
+
+html body.news-faithful-v11 .fn11-wordmark {
+  display: grid !important;
+  justify-items: start !important;
+  line-height: .75 !important;
+  text-transform: uppercase !important;
+}
+
+html body.news-faithful-v11 .fn11-wordmark strong {
+  color: var(--fn11-ink) !important;
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  font-size: clamp(3.75rem, 5vw, 5.5rem) !important;
+  font-weight: 500 !important;
+  letter-spacing: .035em !important;
+}
+
+html body.news-faithful-v11 .fn11-wordmark span {
+  margin-top: 12px !important;
+  color: var(--fn11-purple) !important;
+  font-family: "Manrope", Arial, sans-serif !important;
+  font-size: clamp(1.05rem, 1.7vw, 1.55rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: .44em !important;
+  transform: translateX(.22em) !important;
+}
+
+html body.news-faithful-v11 .fn11-logo-rule {
+  width: 1px !important;
+  height: 78px !important;
+  display: block !important;
+  background: linear-gradient(180deg, transparent, var(--fn11-gold), transparent) !important;
+}
+
+html body.news-faithful-v11 .fn11-signal-mark {
+  position: relative !important;
+  width: 62px !important;
+  height: 62px !important;
+  flex: 0 0 62px !important;
+  display: block !important;
+}
+
+html body.news-faithful-v11 .fn11-signal-mark i {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  border: 1.5px solid var(--fn11-purple) !important;
+  border-left-color: transparent !important;
+  border-bottom-color: transparent !important;
+  border-radius: 50% !important;
+  transform: translate(-50%, -50%) rotate(45deg) !important;
+}
+
+html body.news-faithful-v11 .fn11-signal-mark i:nth-child(1) { width: 60px !important; height: 60px !important; opacity: .42 !important; }
+html body.news-faithful-v11 .fn11-signal-mark i:nth-child(2) { width: 42px !important; height: 42px !important; opacity: .68 !important; }
+html body.news-faithful-v11 .fn11-signal-mark i:nth-child(3) { width: 24px !important; height: 24px !important; }
+html body.news-faithful-v11 .fn11-signal-mark b {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  background: var(--fn11-gold) !important;
+  box-shadow: 0 0 0 6px rgba(201,154,63,.12) !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+html body.news-faithful-v11 .fn11-header-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+html body.news-faithful-v11 .fn11-header-divider {
+  width: 1px !important;
+  height: 34px !important;
+  margin-inline: 4px !important;
+  background: var(--fn11-line) !important;
+}
+
+html body.news-faithful-v11 .fn11-icon-button {
+  position: relative !important;
+  width: 48px !important;
+  height: 48px !important;
+  padding: 0 !important;
+  display: grid !important;
+  place-items: center !important;
+  border: 0 !important;
+  border-radius: 8px !important;
+  background: transparent !important;
+  color: var(--fn11-ink) !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease !important;
+}
+
+html body.news-faithful-v11 .fn11-icon-button:hover,
+html body.news-faithful-v11 .fn11-icon-button:focus-visible,
+html body.news-faithful-v11 .fn11-icon-button[aria-expanded="true"] {
+  background: var(--fn11-lilac) !important;
+  color: var(--fn11-purple) !important;
+  transform: translateY(-1px) !important;
+}
+
+html body.news-faithful-v11 .fn11-icon-button svg {
+  width: 25px !important;
+  height: 25px !important;
+  display: block !important;
+  fill: none !important;
+  stroke: currentColor !important;
+  stroke-width: 1.8 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+}
+
+html body.news-faithful-v11 .fn11-menu-button .fn11-close-lines { display: none !important; }
+html body.news-faithful-v11 .fn11-menu-button[aria-expanded="true"] .fn11-menu-lines { display: none !important; }
+html body.news-faithful-v11 .fn11-menu-button[aria-expanded="true"] .fn11-close-lines { display: block !important; }
+
+/* Collapsed newsroom navigation: never a redundant visible category strip. */
+html body.news-faithful-v11 .fn11-menu-panel {
+  position: absolute !important;
+  z-index: 1290 !important;
+  top: 100% !important;
+  right: 0 !important;
+  left: 0 !important;
+  padding: 30px 0 34px !important;
+  border-bottom: 1px solid var(--fn11-line) !important;
+  background: rgba(255,254,251,.985) !important;
+  box-shadow: 0 28px 62px rgba(31, 7, 52, .12) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+  backdrop-filter: blur(18px) !important;
+}
+
+html body.news-faithful-v11 .fn11-menu-panel[hidden] { display: none !important; }
+
+html body.news-faithful-v11 .fn11-menu-grid {
+  display: grid !important;
+  grid-template-columns: minmax(250px, .7fr) minmax(0, 1.3fr) !important;
+  gap: clamp(34px, 6vw, 86px) !important;
+}
+
+html body.news-faithful-v11 .fn11-menu-primary,
+html body.news-faithful-v11 .fn11-menu-categories {
+  display: grid !important;
+  align-content: start !important;
+}
+
+html body.news-faithful-v11 .fn11-menu-primary { gap: 8px !important; }
+html body.news-faithful-v11 .fn11-menu-categories { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 10px 22px !important; }
+
+html body.news-faithful-v11 .fn11-menu-label {
+  margin: 0 0 13px !important;
+  color: var(--fn11-gold) !important;
+  font-size: 9px !important;
+  font-weight: 800 !important;
+  letter-spacing: .16em !important;
+  text-transform: uppercase !important;
+}
+
+html body.news-faithful-v11 .fn11-menu-panel a {
+  min-height: 42px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  color: var(--fn11-ink) !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+
+html body.news-faithful-v11 .fn11-menu-panel a:hover,
+html body.news-faithful-v11 .fn11-menu-panel a:focus-visible { color: var(--fn11-purple) !important; }
+
+/* Moving headlines */
+html body.news-faithful-v11 .fmb-news-ticker {
+  min-height: 48px !important;
+  grid-template-columns: auto minmax(0, 1fr) auto !important;
+  background:
+    radial-gradient(circle at 80% 145%, rgba(201,154,63,.20) 0 34px, transparent 35px),
+    linear-gradient(90deg, #25043e, #170327) !important;
+}
+
+html body.news-faithful-v11 .fmb-news-ticker::after {
+  right: 13rem !important;
+  bottom: -42px !important;
+  width: 92px !important;
+  height: 92px !important;
+}
+
+html body.news-faithful-v11 .fmb-news-ticker-label { background: transparent !important; color: var(--fn11-gold-pale) !important; }
+html body.news-faithful-v11 .fmb-news-time { min-width: 178px !important; }
+
+/* First story follows the approved image-first composition. */
+html body.news-faithful-v11 .fn9-main {
+  position: relative !important;
+  overflow: hidden !important;
+  background:
+    radial-gradient(circle at 102% 23%, rgba(111,58,168,.07) 0 10rem, transparent 10.1rem),
+    linear-gradient(180deg, rgba(255,254,251,.96), rgba(249,245,251,.88) 52%, rgba(255,253,248,.96)) !important;
+}
+
+html body.news-faithful-v11 .fn9-main::before {
+  position: absolute !important;
+  z-index: 0 !important;
+  left: -110px !important;
+  top: 440px !important;
+  width: 260px !important;
+  height: 260px !important;
+  border: 1px solid rgba(70,21,131,.12) !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 0 30px rgba(111,58,168,.035), 0 0 0 60px rgba(111,58,168,.018) !important;
+  content: "" !important;
+  pointer-events: none !important;
+}
+
+html body.news-faithful-v11 .fn9-main > section { position: relative !important; z-index: 1 !important; }
+
+html body.news-faithful-v11 .fn9-hero {
+  padding: clamp(38px, 5vw, 72px) 0 clamp(42px, 5vw, 72px) !important;
+  background: transparent !important;
+}
+
+html body.news-faithful-v11 .fn9-hero::before { display: none !important; }
+
+html body.news-faithful-v11 .fn9-hero .nc-lead-broadcast {
+  min-height: 0 !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(70,21,131,.14) !important;
+  border-radius: 22px !important;
+  background: var(--fn11-white) !important;
+  box-shadow: var(--fn11-shadow) !important;
+}
+
+html body.news-faithful-v11 .fn9-hero .nc-lead-broadcast > a {
+  position: relative !important;
+  inset: auto !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  color: var(--fn11-ink) !important;
+  text-decoration: none !important;
+}
+
+html body.news-faithful-v11 .fn9-hero .nc-lead-broadcast figure,
+html body.news-faithful-v11 .fn9-hero .nc-lead-broadcast .news-visual {
+  position: relative !important;
+  inset: auto !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  aspect-ratio: 16 / 7.4 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  background: linear-gradient(135deg, #ddd3e6, #f0dfbe) !important;
+}
+
+html body.news-faithful-v11 .fn9-hero .nc-lead-broadcast img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+html body.news-faithful-v11 .fn9-hero .nc-lead-broadcast figcaption {
+  position: absolute !important;
+  z-index: 3 !important;
+  right: 14px !important;
+  bottom: 12px !important;
+  left: auto !important;
+  top: auto !important;
+  width: auto !important;
+  max-width: min(520px, 58%) !important;
+  padding: 7px 10px !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  border-radius: 6px !important;
+  background: rgba(22,4,38,.78) !important;
+  color: rgba(255,255,255,.88) !important;
+  font-size: 8px !important;
+  line-height: 1.4 !important;
+  text-align: left !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+html body.news-faithful-v11 .fn9-hero .nc-lead-overlay {
+  position: relative !important;
+  inset: auto !important;
+  width: 100% !important;
+  padding: clamp(34px, 5vw, 66px) clamp(28px, 6vw, 78px) !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: end !important;
+  gap: 18px clamp(28px, 6vw, 80px) !important;
+  background:
+    radial-gradient(circle at 96% 18%, rgba(111,58,168,.06) 0 5rem, transparent 5.1rem),
+    var(--fn11-white) !important;
+  color: var(--fn11-ink) !important;
+}
+
+html body.news-faithful-v11 .fn9-hero .nc-signal-tag,
+html body.news-faithful-v11 .fn9-hero .nc-lead-overlay h2,
+html body.news-faithful-v11 .fn9-hero .nc-lead-deck { grid-column: 1 !important; }
+html body.news-faithful-v11 .fn9-hero .nc-lead-meta { grid-column: 1 !important; grid-row: 4 !important; }
+html body.news-faithful-v11 .fn9-hero .nc-broadcast-action { grid-column: 2 !important; grid-row: 1 / span 4 !important; align-self: end !important; }
+
+html body.news-faithful-v11 .fn9-hero .nc-signal-tag {
+  margin: 0 !important;
+  color: var(--fn11-purple) !important;
+  font: 800 10px/1.3 "Manrope", Arial, sans-serif !important;
+  letter-spacing: .11em !important;
+}
+
+html body.news-faithful-v11 .fn9-hero .nc-lead-overlay h2 {
+  max-width: 18ch !important;
+  margin: 0 !important;
+  color: var(--fn11-ink) !important;
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  font-size: clamp(3.2rem, 5.5vw, 5.7rem) !important;
+  font-weight: 500 !important;
+  letter-spacing: -.045em !important;
+  line-height: .9 !important;
+  text-wrap: balance !important;
+}
+
+html body.news-faithful-v11 .fn9-hero .nc-lead-overlay h2::after {
+  width: 44px !important;
+  height: 2px !important;
+  margin-top: 22px !important;
+  background: var(--fn11-gold) !important;
+}
+
+html body.news-faithful-v11 .fn9-hero .nc-lead-deck {
+  max-width: 62ch !important;
+  margin: 0 !important;
+  color: #5c5263 !important;
+  font-size: clamp(.98rem, 1.4vw, 1.12rem) !important;
+  line-height: 1.65 !important;
+}
+
+html body.news-faithful-v11 .fn9-hero .nc-lead-meta {
+  margin: 0 !important;
+  color: var(--fn11-gold) !important;
+  font: 800 10px/1.4 "Manrope", Arial, sans-serif !important;
+  letter-spacing: .11em !important;
+}
+
+html body.news-faithful-v11 .fn9-hero .nc-broadcast-action {
+  min-width: 172px !important;
+  min-height: 48px !important;
+  margin: 0 !important;
+  padding: 0 24px !important;
+  border: 1px solid var(--fn11-purple) !important;
+  border-radius: 999px !important;
+  background: transparent !important;
+  color: var(--fn11-purple) !important;
+  font: 800 10px/1 "Manrope", Arial, sans-serif !important;
+  letter-spacing: .04em !important;
+  text-transform: none !important;
+}
+
+/* Category icons are the only visible category navigation. */
+html body.news-faithful-v11 .fn9-category-cards {
+  padding: 0 0 clamp(66px, 7vw, 98px) !important;
+  background: transparent !important;
+}
+
+html body.news-faithful-v11 .fn9-category-cards::before {
+  position: absolute !important;
+  right: -72px !important;
+  top: 30px !important;
+  width: 190px !important;
+  height: 95px !important;
+  border: 1px solid rgba(201,154,63,.28) !important;
+  border-bottom: 0 !important;
+  border-radius: 190px 190px 0 0 !important;
+  content: "" !important;
+  pointer-events: none !important;
+}
+
+html body.news-faithful-v11 .fn9-category-grid { gap: 14px !important; }
+html body.news-faithful-v11 .fn9-category-card {
+  border-color: rgba(70,21,131,.12) !important;
+  border-radius: 14px !important;
+  background: rgba(255,255,255,.78) !important;
+  box-shadow: var(--fn11-shadow-soft) !important;
+}
+html body.news-faithful-v11 .fn9-category-icon {
+  border: 1px solid rgba(70,21,131,.10) !important;
+  background: linear-gradient(145deg, #fff, var(--fn11-lilac-soft)) !important;
+  color: var(--fn11-purple) !important;
+}
+
+/* Reports remain complete, with more visual character than a plain white sheet. */
+html body.news-faithful-v11 .fn9-reports {
+  padding: clamp(44px, 6vw, 84px) 0 clamp(54px, 7vw, 96px) !important;
+  background:
+    radial-gradient(circle at -2% 16%, rgba(201,154,63,.08) 0 6.5rem, transparent 6.6rem),
+    linear-gradient(90deg, rgba(70,21,131,.03) 1px, transparent 1px),
+    linear-gradient(rgba(70,21,131,.03) 1px, transparent 1px),
+    rgba(255,254,251,.92) !important;
+  background-size: auto, 48px 48px, 48px 48px, auto !important;
+}
+
+html body.news-faithful-v11 .fn9-reports::after {
+  position: absolute !important;
+  right: -110px !important;
+  bottom: 100px !important;
+  width: 260px !important;
+  height: 260px !important;
+  border: 1px solid rgba(70,21,131,.11) !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 0 30px rgba(111,58,168,.03), 0 0 0 60px rgba(111,58,168,.015) !important;
+  content: "" !important;
+  pointer-events: none !important;
+}
+
+html body.news-faithful-v11 .fn9-report-card,
+html body.news-faithful-v11 .fn9-update-item {
+  border-color: rgba(70,21,131,.105) !important;
+  background: rgba(255,255,255,.94) !important;
+  box-shadow: 0 14px 38px rgba(38,8,62,.06) !important;
+}
+
+html body.news-faithful-v11 .fn9-report-card { border-radius: 13px !important; }
+html body.news-faithful-v11 .fn9-report-card figure { aspect-ratio: 16 / 10 !important; background: var(--fn11-lilac-soft) !important; }
+html body.news-faithful-v11 .fn9-report-card h3 { color: var(--fn11-ink) !important; font-weight: 600 !important; }
+html body.news-faithful-v11 .fn9-section-heading h2::after { background: var(--fn11-gold) !important; }
+html body.news-faithful-v11 .fn9-view-all { color: var(--fn11-purple) !important; }
+
+/* Exact portrait replaces the decorative ampersand. */
+html body.news-faithful-v11 .fn9-about-band {
+  padding: clamp(50px, 7vw, 92px) 0 !important;
+  background:
+    radial-gradient(circle at 96% 12%, rgba(201,154,63,.12) 0 6rem, transparent 6.1rem),
+    linear-gradient(180deg, rgba(250,246,252,.88), rgba(255,254,251,.96)) !important;
+}
+
+html body.news-faithful-v11 .fn9-about-card {
+  position: relative !important;
+  min-height: 520px !important;
+  padding: clamp(30px, 5vw, 62px) !important;
+  display: grid !important;
+  grid-template-columns: minmax(270px, .78fr) minmax(0, 1.22fr) !important;
+  align-items: center !important;
+  gap: clamp(38px, 7vw, 92px) !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(70,21,131,.12) !important;
+  border-radius: 22px !important;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(201,154,63,.11) 0 8rem, transparent 8.1rem),
+    radial-gradient(circle at 98% 100%, rgba(111,58,168,.08) 0 10rem, transparent 10.1rem),
+    linear-gradient(110deg, #fbf7fd 0%, #fffdf8 100%) !important;
+  box-shadow: var(--fn11-shadow-soft) !important;
+}
+
+html body.news-faithful-v11 .fn9-about-card::before,
+html body.news-faithful-v11 .fn9-about-card::after {
+  position: absolute !important;
+  border: 1px solid rgba(70,21,131,.12) !important;
+  border-radius: 50% !important;
+  content: "" !important;
+  pointer-events: none !important;
+}
+html body.news-faithful-v11 .fn9-about-card::before { right: -72px !important; top: -82px !important; width: 210px !important; height: 210px !important; box-shadow: 0 0 0 20px rgba(111,58,168,.025) !important; }
+html body.news-faithful-v11 .fn9-about-card::after { right: 22px !important; bottom: -68px !important; width: 136px !important; height: 136px !important; border-color: rgba(201,154,63,.28) !important; }
+
+html body.news-faithful-v11 .fn11-about-portrait {
+  position: relative !important;
+  z-index: 1 !important;
+  width: min(100%, 390px) !important;
+  aspect-ratio: 4 / 5 !important;
+  margin: 0 auto !important;
+  padding: 9px !important;
+  overflow: hidden !important;
+  border: 1px solid var(--fn11-gold-pale) !important;
+  border-radius: 190px 190px 20px 20px !important;
+  background: #fff !important;
+  box-shadow: 0 20px 48px rgba(38,8,62,.12) !important;
+}
+
+html body.news-faithful-v11 .fn11-about-portrait::after {
+  position: absolute !important;
+  inset: 18px !important;
+  border: 1px solid rgba(255,255,255,.55) !important;
+  border-radius: inherit !important;
+  content: "" !important;
+  pointer-events: none !important;
+}
+
+html body.news-faithful-v11 .fn11-about-portrait img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  border-radius: 180px 180px 13px 13px !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+html body.news-faithful-v11 .fn9-about-copy { position: relative !important; z-index: 1 !important; }
+html body.news-faithful-v11 .fn9-about-copy,
+html body.news-faithful-v11 .fn9-about-copy h2,
+html body.news-faithful-v11 .fn9-about-copy p { color: var(--fn11-ink) !important; }
+html body.news-faithful-v11 .fn9-about-copy small { color: var(--fn11-purple) !important; letter-spacing: .12em !important; }
+html body.news-faithful-v11 .fn9-about-copy h2 {
+  max-width: 14ch !important;
+  margin: 12px 0 20px !important;
+  font-size: clamp(3rem, 5.4vw, 5.5rem) !important;
+  font-weight: 500 !important;
+  line-height: .9 !important;
+}
+html body.news-faithful-v11 .fn9-about-copy p { max-width: 52ch !important; font-size: 15px !important; line-height: 1.75 !important; }
+html body.news-faithful-v11 .fn9-about-link {
+  min-height: 48px !important;
+  margin-top: 26px !important;
+  padding: 0 24px !important;
+  border: 1px solid var(--fn11-purple) !important;
+  border-radius: 8px !important;
+  background: var(--fn11-purple) !important;
+  color: #fff !important;
+  box-shadow: 0 12px 28px rgba(70,21,131,.18) !important;
+}
+
+/* Consistent signal-led footer and real social icons. */
+html body.news-faithful-v11 .fn11-footer {
+  position: relative !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background:
+    radial-gradient(circle at 8% 8%, rgba(111,58,168,.24) 0 8rem, transparent 8.1rem),
+    linear-gradient(135deg, #140321 0%, #220638 52%, #351054 100%) !important;
+  color: #fff !important;
+}
+
+html body.news-faithful-v11 .fn11-footer::after {
+  position: absolute !important;
+  right: -110px !important;
+  bottom: -190px !important;
+  width: 430px !important;
+  height: 430px !important;
+  border: 1px solid rgba(201,154,63,.34) !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 0 38px rgba(201,154,63,.07), 0 0 0 76px rgba(111,58,168,.08) !important;
+  content: "" !important;
+  pointer-events: none !important;
+}
+
+html body.news-faithful-v11 .fn11-footer-grid {
+  position: relative !important;
+  z-index: 1 !important;
+  padding: clamp(64px, 8vw, 104px) 0 54px !important;
+  display: grid !important;
+  grid-template-columns: minmax(280px, .9fr) minmax(340px, 1.3fr) auto !important;
+  gap: clamp(42px, 7vw, 88px) !important;
+}
+
+html body.news-faithful-v11 .fn11-footer-brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 22px !important;
+}
+
+html body.news-faithful-v11 .fn11-footer .fn11-signal-mark i { border-color: rgba(255,255,255,.78) !important; border-left-color: transparent !important; border-bottom-color: transparent !important; }
+html body.news-faithful-v11 .fn11-footer .fn11-wordmark strong { color: #fff !important; font-size: clamp(2.6rem, 4vw, 4rem) !important; }
+html body.news-faithful-v11 .fn11-footer .fn11-wordmark span { color: rgba(255,255,255,.82) !important; font-size: .9rem !important; }
+html body.news-faithful-v11 .fn11-footer-brand p { max-width: 28ch !important; margin: 16px 0 0 !important; color: rgba(255,255,255,.66) !important; font-size: 11px !important; line-height: 1.65 !important; }
+html body.news-faithful-v11 .fn11-footer-mission h2 { max-width: 17ch !important; margin: 0 !important; color: #fff !important; font-family: "Cormorant Garamond", Georgia, serif !important; font-size: clamp(2.3rem, 4vw, 4rem) !important; font-weight: 500 !important; line-height: .95 !important; }
+html body.news-faithful-v11 .fn11-footer-mission p { max-width: 52ch !important; margin: 20px 0 0 !important; color: rgba(255,255,255,.67) !important; font-size: 12px !important; line-height: 1.75 !important; }
+html body.news-faithful-v11 .fn11-footer-links { display: grid !important; gap: 14px !important; }
+html body.news-faithful-v11 .fn11-footer-links a { color: rgba(255,255,255,.84) !important; font-size: 11px !important; font-weight: 750 !important; text-decoration: none !important; }
+html body.news-faithful-v11 .fn11-footer-bottom {
+  position: relative !important;
+  z-index: 1 !important;
+  min-height: 72px !important;
+  padding-block: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 24px !important;
+  border-top: 1px solid rgba(255,255,255,.12) !important;
+  color: rgba(255,255,255,.54) !important;
+  font-size: 9px !important;
+}
+
+html body.news-faithful-v11 .fn11-footer-socials { display: flex !important; align-items: center !important; gap: 10px !important; }
+html body.news-faithful-v11 .fn11-footer-socials a {
+  width: 40px !important;
+  height: 40px !important;
+  display: grid !important;
+  place-items: center !important;
+  border: 1px solid rgba(255,255,255,.22) !important;
+  border-radius: 50% !important;
+  color: rgba(255,255,255,.84) !important;
+  text-decoration: none !important;
+}
+html body.news-faithful-v11 .fn11-footer-socials svg { width: 17px !important; height: 17px !important; fill: none !important; stroke: currentColor !important; stroke-width: 1.8 !important; stroke-linecap: round !important; stroke-linejoin: round !important; }
+
+/* Article pages retain copy and media while sharing the visual system. */
+html body.news-story-route.news-faithful-v11 .nc-article-hero {
+  position: relative !important;
+  overflow: hidden !important;
+  background:
+    radial-gradient(circle at 98% 10%, rgba(111,58,168,.08) 0 9rem, transparent 9.1rem),
+    linear-gradient(135deg, #fffefb, #f8f3fa) !important;
+}
+html body.news-story-route.news-faithful-v11 .nc-article-hero::after {
+  position: absolute !important;
+  right: -82px !important;
+  bottom: -110px !important;
+  width: 230px !important;
+  height: 230px !important;
+  border: 1px solid rgba(201,154,63,.25) !important;
+  border-radius: 50% !important;
+  content: "" !important;
+}
+html body.news-story-route.news-faithful-v11 .nc-article-hero h1 { color: var(--fn11-ink) !important; }
+html body.news-story-route.news-faithful-v11 .nc-story-media { background: linear-gradient(180deg, rgba(238,230,245,.72), rgba(255,253,248,.84)) !important; }
+html body.news-story-route.news-faithful-v11 .nc-story-media figure { border-radius: 18px !important; box-shadow: var(--fn11-shadow-soft) !important; }
+html body.news-story-route.news-faithful-v11 .nc-story-body h2 { color: var(--fn11-ink) !important; }
+
+@media (max-width: 980px) {
+  html body.news-faithful-v11 .fn11-menu-grid { grid-template-columns: minmax(0, 1fr) !important; gap: 30px !important; }
+  html body.news-faithful-v11 .fn11-footer-grid { grid-template-columns: 1fr 1fr !important; }
+  html body.news-faithful-v11 .fn11-footer-links { grid-column: 1 / -1 !important; grid-template-columns: repeat(3, max-content) !important; }
+  html body.news-faithful-v11 .fn9-hero .nc-lead-overlay { grid-template-columns: minmax(0, 1fr) !important; }
+  html body.news-faithful-v11 .fn9-hero .nc-broadcast-action { grid-column: 1 !important; grid-row: auto !important; justify-self: start !important; }
+}
+
+@media (max-width: 700px) {
+  html body.news-faithful-v11 .fn9-shell,
+  html body.news-faithful-v11 .wrap { width: min(calc(100% - 30px), 1380px) !important; }
+
+  html body.news-faithful-v11 .fmb-news-ticker { min-height: 44px !important; grid-template-columns: minmax(0, 1fr) auto !important; }
+  html body.news-faithful-v11 .fmb-news-ticker-label { display: none !important; }
+  html body.news-faithful-v11 .fmb-news-time { min-width: 108px !important; padding-inline: 10px !important; }
+  html body.news-faithful-v11 .fmb-news-time strong,
+  html body.news-faithful-v11 .fmb-news-time time { font-size: 8px !important; }
+
+  html body.news-faithful-v11 .nc-site-header.fn9-site-header,
+  html body.news-faithful-v11 .fn9-header-grid { min-height: 94px !important; }
+  html body.news-faithful-v11 .fn9-header-grid { gap: 8px !important; }
+  html body.news-faithful-v11 .fn11-brand-lockup { gap: 9px !important; }
+  html body.news-faithful-v11 .fn11-wordmark strong { font-size: 3.15rem !important; }
+  html body.news-faithful-v11 .fn11-wordmark span { margin-top: 9px !important; font-size: .83rem !important; letter-spacing: .36em !important; }
+  html body.news-faithful-v11 .fn11-logo-rule { height: 58px !important; }
+  html body.news-faithful-v11 .fn11-signal-mark { width: 38px !important; height: 38px !important; flex-basis: 38px !important; }
+  html body.news-faithful-v11 .fn11-signal-mark i:nth-child(1) { width: 36px !important; height: 36px !important; }
+  html body.news-faithful-v11 .fn11-signal-mark i:nth-child(2) { width: 25px !important; height: 25px !important; }
+  html body.news-faithful-v11 .fn11-signal-mark i:nth-child(3) { width: 14px !important; height: 14px !important; }
+  html body.news-faithful-v11 .fn11-signal-mark b { width: 6px !important; height: 6px !important; box-shadow: 0 0 0 4px rgba(201,154,63,.12) !important; }
+  html body.news-faithful-v11 .fn11-header-actions { gap: 2px !important; }
+  html body.news-faithful-v11 .fn11-header-divider { display: none !important; }
+  html body.news-faithful-v11 .fn11-icon-button { width: 42px !important; height: 42px !important; }
+  html body.news-faithful-v11 .fn11-icon-button svg { width: 22px !important; height: 22px !important; }
+
+  html body.news-faithful-v11 .fn11-menu-panel { padding-block: 24px 30px !important; }
+  html body.news-faithful-v11 .fn11-menu-categories { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+
+  html body.news-faithful-v11 .fn9-hero { padding: 28px 0 44px !important; }
+  html body.news-faithful-v11 .fn9-hero .nc-lead-broadcast { border-radius: 18px !important; }
+  html body.news-faithful-v11 .fn9-hero .nc-lead-broadcast figure,
+  html body.news-faithful-v11 .fn9-hero .nc-lead-broadcast .news-visual { aspect-ratio: 16 / 10 !important; }
+  html body.news-faithful-v11 .fn9-hero .nc-lead-broadcast figcaption { right: 9px !important; bottom: 9px !important; left: 9px !important; max-width: none !important; font-size: 7px !important; }
+  html body.news-faithful-v11 .fn9-hero .nc-lead-overlay { padding: 26px 20px 28px !important; display: grid !important; }
+  html body.news-faithful-v11 .fn9-hero .nc-lead-overlay h2 { max-width: none !important; font-size: clamp(2.55rem, 12.4vw, 3.65rem) !important; }
+  html body.news-faithful-v11 .fn9-hero .nc-lead-deck { font-size: 13px !important; }
+  html body.news-faithful-v11 .fn9-hero .nc-broadcast-action { min-width: 158px !important; }
+
+  html body.news-faithful-v11 .fn9-about-card { min-height: 0 !important; padding: 26px 22px 34px !important; grid-template-columns: minmax(0, 1fr) !important; gap: 32px !important; }
+  html body.news-faithful-v11 .fn11-about-portrait { width: min(100%, 330px) !important; }
+  html body.news-faithful-v11 .fn9-about-copy h2 { max-width: none !important; font-size: clamp(2.8rem, 12vw, 4rem) !important; }
+
+  html body.news-faithful-v11 .fn11-footer-grid { grid-template-columns: minmax(0, 1fr) !important; gap: 38px !important; }
+  html body.news-faithful-v11 .fn11-footer-links { grid-column: auto !important; grid-template-columns: minmax(0, 1fr) !important; }
+  html body.news-faithful-v11 .fn11-footer-bottom { align-items: flex-start !important; flex-direction: column !important; }
+}
+
+@media (max-width: 430px) {
+  html body.news-faithful-v11 .fn11-logo-rule { display: none !important; }
+  html body.news-faithful-v11 .fn11-signal-mark { display: none !important; }
+  html body.news-faithful-v11 .fn11-wordmark strong { font-size: 2.9rem !important; }
+  html body.news-faithful-v11 .fn11-wordmark span { font-size: .76rem !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html body.news-faithful-v11 *,
+  html body.news-faithful-v11 *::before,
+  html body.news-faithful-v11 *::after { transition: none !important; animation: none !important; }
+}

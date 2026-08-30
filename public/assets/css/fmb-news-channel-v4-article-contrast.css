@@ -1,0 +1,20 @@
+/* Final article-hero contrast contract for the FMB News Center. */
+html body.news-route.news-story-route.fmb-unified-news-article.news-channel-v4 .nc-article-hero {
+  color: #101218 !important;
+}
+
+html body.news-route.news-story-route.fmb-unified-news-article.news-channel-v4 .nc-article-deck {
+  color: #454c57 !important;
+  opacity: 1 !important;
+}
+
+html body.news-route.news-story-route.fmb-unified-news-article.news-channel-v4 .nc-article-meta,
+html body.news-route.news-story-route.fmb-unified-news-article.news-channel-v4 .nc-article-meta span,
+html body.news-route.news-story-route.fmb-unified-news-article.news-channel-v4 .nc-article-meta time {
+  color: #69707d !important;
+  opacity: 1 !important;
+}
+
+html body.news-route.news-story-route.fmb-unified-news-article.news-channel-v4 .nc-article-meta {
+  border-top-color: #d8dbe1 !important;
+}

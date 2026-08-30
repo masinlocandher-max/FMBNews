@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-26-0100",
+  "emailSubject": "FMB News | Impeachment Day 18 Adjourns; St. Luke's & PhilHealth Ink ₱1.4-B Pact | August 26, 2026 | 1:00 AM PHT",
+  "slug": "philhealth-st-lukes-no-copayment-pact",
+  "headline": "PhilHealth and St. Luke's Global City Sign Pact to Expand No Co-Payment Care",
+  "seoTitle": "PhilHealth, St. Luke's Sign No Co-Payment Agreement | FMB News",
+  "seoDescription": "PhilHealth and St. Luke's Medical Center-Global City signed an agreement on August 25 to strengthen no co-payment care for eligible ward patients.",
+  "keywords": ["PhilHealth St Luke's agreement", "no co-payment policy", "St Luke's Global City PhilHealth"],
+  "category": "Health",
+  "kicker": "Health · Universal Health Care",
+  "deck": "The agreement extends PhilHealth's No Co-Payment Policy to eligible patients admitted to basic or ward accommodations at St. Luke's Medical Center-Global City.",
+  "publishedAt": "2026-08-26T01:00:00+08:00",
+  "updatedAt": "2026-08-26T06:57:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["PhilHealth and St. Luke's Medical Center-Global City signed a memorandum of agreement on August 25 to strengthen implementation of the No Co-Payment Policy for qualified PhilHealth members admitted to basic or ward accommodations.","President Ferdinand Marcos Jr. witnessed the signing in Taguig. Government statements describe the partnership as part of efforts to expand access to affordable private-hospital care under the Universal Health Care agenda."]},
+    {"heading":"What patients should know","paragraphs":["The policy is aimed at eligible PhilHealth members receiving care under covered basic or ward arrangements. Current official releases do not support treating the agreement as a blanket cashless guarantee for every service, accommodation type or St. Luke's facility.","PhilHealth has said it hopes more hospitals will adopt the No Co-Payment Policy. St. Luke's Global City committed beds for eligible patients under the arrangement."]},
+    {"heading":"Context","paragraphs":["The approved FMB News brief described the agreement as involving ₱1.4 billion in pending claims and a 30-day reconciliation mechanism. Those specific figures were not reproduced in the current PCO, PIA, PNA and DSWD releases reviewed by FMB News, so they are not stated here as independently verified terms of the agreement."]},
+    {"heading":"Why this matters","paragraphs":["The agreement could reduce out-of-pocket costs for qualified patients who need specialized care available at St. Luke's Global City. Its benefit depends on clear eligibility rules, covered services and consistent implementation at the hospital level."]},
+    {"heading":"What to watch next","paragraphs":["The practical impact will depend on implementation, patient eligibility and the scope of covered services. PhilHealth's push for similar agreements with additional private hospitals will determine how widely the model expands."]}
+  ],
+  "sources": [
+    {"publisher":"Philippine Information Agency / PCO","title":"President Marcos witnesses PhilHealth-St. Luke’s MOA signing to expand no co-payment policy for ward patients","publishedAt":"2026-08-25T12:00:00+08:00","url":"https://pia.gov.ph/news/president-marcos-witnesses-philhealth-st-lukes-moa-signing-to-expand-no-co-payment-policy-for-ward-patients-advance-universal-health-care-agenda/"},
+    {"publisher":"Philippine News Agency","title":"PBBM: PhilHealth-St. Luke's pact to ease patients' financial burden","publishedAt":"2026-08-25T12:49:00+08:00","url":"https://www.pna.gov.ph/articles/1282578"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":null,"creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because publication rights for the recommended signing photograph could not be independently verified from a stable original asset page.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying coverage of the PhilHealth-St. Luke's Global City agreement; it does not depict the signing ceremony.","alt":"FMB News editorial visual for the PhilHealth and St. Luke's no co-payment agreement","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-08-26T07:20:00+08:00","photoReferenceUrl":"https://www.pna.gov.ph/articles/1282578","notes":["Agreement independently confirmed by PCO/PIA, PNA, GMA News and INQUIRER.net.","Removed unsupported ₱1.4-billion claims-backlog, 30-day settlement, automated-API and blanket cashless-coverage assertions from the approved brief.","Corrected scope to St. Luke's Medical Center-Global City and qualified PhilHealth members admitted to basic or ward accommodations."]}
+}

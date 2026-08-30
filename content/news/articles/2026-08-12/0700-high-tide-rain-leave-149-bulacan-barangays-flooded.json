@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-12-0700",
+  "emailSubject": "FMB News | COA Auditor Testifies VP Duterte Accountable for Disallowed Funds | August 12, 2026 | 7:00 AM PHT",
+  "slug": "high-tide-rain-leave-149-bulacan-barangays-flooded",
+  "headline": "High Tide and Rain Leave 149 Bulacan Barangays Flooded",
+  "seoTitle": "High Tide and Rain Leave 149 Bulacan Barangays Flooded",
+  "seoDescription": "Bulacan authorities said 149 barangays across 11 localities remained flooded as of noon August 11 after high tide and intermittent heavy rain, with some floodwater reaching six feet.",
+  "keywords": ["Bulacan flooding", "149 barangays flooded", "high tide Manila Bay", "Bulacan evacuation centers"],
+  "category": "Community",
+  "kicker": "Bulacan · Flooding · Community safety",
+  "deck": "Bulacan authorities said 149 barangays across 11 localities remained flooded as of noon August 11 after high tide and intermittent heavy rain, with some areas reporting water up to six feet deep.",
+  "publishedAt": "2026-08-12T07:00:00+08:00",
+  "updatedAt": "2026-08-12T07:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Up to 149 barangays in Bulacan remained flooded as of noon on Tuesday, August 11, after high tide in Manila Bay and intermittent heavy rain, according to the provincial disaster report cited by The Philippine Star.",
+        "The affected barangays were in 11 localities: Malolos with 32, Calumpit with 28, Hagonoy with 25, San Miguel with 16, Paombong with 14, Angat with nine, Bocaue and Guiguinto with seven each, Pulilan and Balagtas with four each, and Marilao with three."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "Floodwater was reported at depths of one to six feet in parts of Meysulao in Calumpit and San Vicente in San Miguel. Displaced residents were staying in 162 evacuation centers.",
+        "The checked source supports the 149-barangay count, the 11-locality breakdown, reported flood depths and the number of evacuation centers. It does not support the bulletin's separate claim that 35,000 residents were affected, so that figure is not included here."
+      ]
+    },
+    {
+      "heading": "Why this matters to Filipinos",
+      "paragraphs": [
+        "Persistent flooding disrupts transport, work, schooling and access to food, medicine and other services. Communities near waterways and low-lying coastal areas can remain at risk even between rain periods when high tide slows drainage."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Residents should monitor Bulacan provincial and municipal disaster advisories for water-level changes, road conditions and evacuation guidance. Updated counts may change as floodwater recedes and local authorities complete field validation."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "The Philippine Star",
+      "title": "High tide, rain inundate 149 Bulacan villages",
+      "publishedAt": "2026-08-12T00:00:00+08:00",
+      "url": "https://www.philstar.com/nation/2026/08/12/2548689/high-tide-rain-inundate-149-bulacan-villages"
+    }
+  ],
+  "image": {
+    "kind": "open-license-photo",
+    "url": "/assets/images/news/2026-08-07/flood-response.webp",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flood_Rescue_Operation_(52461501731).jpg",
+    "creator": "Bro. Jeffrey Pioquinto, SJ",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "usageStatus": "Wikimedia Commons file verified as CC BY 2.0; locally hosted crop published with creator, source and license credit.",
+    "credit": "Photo: Bro. Jeffrey Pioquinto, SJ / Wikimedia Commons · CC BY 2.0",
+    "caption": "Archive photograph of a flood rescue operation in the Philippines. It does not depict the August 2026 Bulacan flooding.",
+    "alt": "Responders and residents during a flood rescue operation in a Philippine neighborhood",
+    "width": 1600,
+    "height": 900,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-12T13:20:00+08:00",
+    "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:Flood_Rescue_Operation_(52461501731).jpg",
+    "notes": [
+      "Corrected the bulletin's timing to noon August 11 and its geographic count to 11 localities.",
+      "Omitted the unsupported 35,000-resident figure and unsupported response-equipment claims.",
+      "The archive image is rights-cleared, locally hosted and clearly labeled as not depicting this event."
+    ]
+  }
+}

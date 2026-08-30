@@ -1,0 +1,64 @@
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import path from 'node:path';
+
+const root = path.resolve(new URL('..', import.meta.url).pathname);
+const newsRoot = path.join(root, 'dist', 'news');
+const landingPath = path.join(newsRoot, 'index.html');
+const sitemapPath = path.join(root, 'dist', 'sitemap.xml');
+const assetDir = path.join(root, 'dist', 'assets', 'images', 'news');
+const slug = 'world-bank-philippines-growth-forecast-2026';
+const href = `/news/${slug}/`;
+const canonical = `https://www.francinemariebautista.com${href}`;
+const published = '2026-08-05T15:00:00+08:00';
+const title = 'World Bank Holds Philippine Growth Forecast at 3.7% as Recovery Risks Persist';
+const deck = 'The outlook points to weak investment, constrained consumption and costly energy, while a slower 2027 rebound raises questions about jobs, prices and public investment.';
+const description = 'The World Bank maintained its 2026 Philippine growth forecast at 3.7%, cut its 2027 projection to 5.2%, and warned that weak investment, inflation and delayed public spending continue to weigh on recovery.';
+const imagePath = '/assets/images/news/fmb-news-world-bank-growth-2026.svg';
+const esc = value => String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
+
+const illustration = `<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07152f"/><stop offset=".58" stop-color="#34225f"/><stop offset="1" stop-color="#5e2d73"/></linearGradient><pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="2" fill="#fff" opacity=".08"/></pattern></defs><rect width="1080" height="1350" fill="url(#bg)"/><rect width="1080" height="1350" fill="url(#dots)"/><circle cx="940" cy="230" r="260" fill="#fff" opacity=".05"/><path d="M0 1120C180 900 360 870 520 1010C680 1150 830 1190 1080 980V1350H0Z" fill="#d6ad48" opacity=".16"/><g transform="translate(70 70)"><path d="M0 66A66 66 0 0 1 66 0" fill="none" stroke="#fff" stroke-width="14"/><path d="M22 66A44 44 0 0 1 66 22" fill="none" stroke="#d6ad48" stroke-width="14"/><text x="92" y="45" fill="#fff" font-family="Georgia,serif" font-size="60" font-weight="700">FMB</text><text x="94" y="80" fill="#d7c1ff" font-family="Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="9">NEWS</text></g><text x="70" y="260" fill="#d6ad48" font-family="Arial,sans-serif" font-size="26" font-weight="800" letter-spacing="5">PHILIPPINE ECONOMY</text><text x="70" y="390" fill="#fff" font-family="Georgia,serif" font-size="92" font-weight="700">GROWTH</text><text x="70" y="495" fill="#fff" font-family="Georgia,serif" font-size="92" font-weight="700">FORECAST</text><text x="70" y="640" fill="#d6ad48" font-family="Arial,sans-serif" font-size="150" font-weight="900">3.7%</text><text x="70" y="730" fill="#fff" font-family="Arial,sans-serif" font-size="34" font-weight="700">WORLD BANK HOLDS 2026 OUTLOOK</text><g transform="translate(70 835)"><path d="M0 170L160 118L315 140L470 72L625 94L780 26" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><circle cx="780" cy="26" r="17" fill="#d6ad48"/><path d="M0 220H850" stroke="#fff" opacity=".2" stroke-width="3"/></g><rect y="1240" width="1080" height="110" fill="#061023"/><text x="70" y="1307" fill="#fff" font-family="Arial,sans-serif" font-size="22">francinemariebautista.com/fmbnews</text><text x="1010" y="1307" text-anchor="end" fill="#fff" opacity=".78" font-family="Arial,sans-serif" font-size="17">EDITORIAL ILLUSTRATION: FMB NEWS</text></svg>`;
+
+const sections = [
+  ['What happened', 'The World Bank maintained its forecast that the Philippine economy will grow by 3.7 percent in 2026. It expects growth to recover to 5.2 percent in 2027 and 5.5 percent in 2028. The 2027 estimate is lower than the 5.6 percent forecast issued in June, signalling that the institution now expects the recovery to take longer.'],
+  ['Why growth has slowed', 'World Bank officials pointed to weak investment, constrained household consumption and high energy costs. The economy expanded by only 2.8 percent in the first quarter, while delayed budget approval and the wider Middle East conflict added pressure. The government’s own 2026 target range is 3.5 percent to 4.5 percent.'],
+  ['Inflation and the peso remain central risks', 'The World Bank expects inflation to average 5.8 percent in 2026 before easing to 5.2 percent in 2027. Peso depreciation has made imported fuel, food inputs and other goods more expensive. Government economic managers earlier projected the peso at 60 to 62 against the United States dollar over 2026 to 2030. Forecasts are estimates, not guarantees, and can change as energy prices, exchange rates and public spending move.'],
+  ['What the headline number does not show', 'Gross domestic product measures the size and movement of the economy, but it does not automatically tell families whether wages are keeping up with prices or whether growth is reaching poorer provinces. A 3.7 percent expansion can coexist with weak purchasing power, uneven job quality and delayed infrastructure. The public-interest test is whether recovery produces stable work, affordable essentials and functioning public services.'],
+  ['Why It Matters to Us, Filipinos', 'A slower recovery affects hiring, business expansion, government revenue and the cost of borrowing. Small businesses may delay investments when electricity, transport and financing remain expensive. Families may continue cutting non-essential spending when food and utility bills rise faster than incomes. The forecast also increases pressure on government to restore confidence in public investment and ensure that infrastructure money is spent efficiently and transparently.'],
+  ['Key lesson', 'The 3.7 percent forecast is not a verdict that decline is inevitable. It is a warning that growth will not accelerate through announcements alone. Reliable energy, credible public spending, stronger investment conditions and inflation control must work together.'],
+  ['What happens next', 'Readers should watch second-quarter growth data, inflation, central-bank decisions, the pace of government infrastructure spending and changes in the peso. A stronger rebound would require evidence that investment and consumption are recovering without creating another surge in prices.']
+];
+
+const sources = [
+  ['Reuters, World Bank maintains 2026 Philippine growth forecast at 3.7%, 3 August 2026','https://www.reuters.com/world/asia-pacific/world-bank-maintains-2026-philippine-growth-forecast-37-2026-08-03/'],
+  ['World Bank, Philippines Economic Update: Powering Progress','https://www.worldbank.org/en/country/philippines/publication/philippine-economic-updates'],
+  ['Reuters, Philippines cuts 2026 growth forecast, 22 June 2026','https://www.reuters.com/world/asia-pacific/philippines-cuts-2026-growth-forecast-citing-graft-scandal-energy-crisis-2026-06-22/']
+];
+
+const schema = JSON.stringify({'@context':'https://schema.org','@type':'NewsArticle',headline:title,description,dateCreated:'2026-08-03T14:59:00+08:00',datePublished:published,dateModified:published,inLanguage:'en-PH',isAccessibleForFree:true,author:{'@type':'Person',name:'Francine Marie Bautista'},publisher:{'@type':'Organization',name:'FMB News'},mainEntityOfPage:{'@type':'WebPage','@id':canonical},articleSection:'Economy',keywords:['Philippine economy','World Bank','GDP growth','inflation','peso'],image:[`https://www.francinemariebautista.com${imagePath}`]});
+const article = `<!doctype html><html lang="en-PH"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)} | FMB News</title><meta name="description" content="${esc(description)}"><meta name="keywords" content="Philippine economy, World Bank, GDP growth, inflation, peso"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="${canonical}"><meta property="og:type" content="article"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(deck)}"><meta property="og:url" content="${canonical}"><meta property="og:image" content="https://www.francinemariebautista.com${imagePath}"><meta property="og:image:width" content="1080"><meta property="og:image:height" content="1350"><meta property="article:published_time" content="${published}"><script type="application/ld+json">${schema}</script><link rel="stylesheet" href="/assets/css/site.css?v=20260716g"><link rel="stylesheet" href="/assets/css/news-channel.css?v=20260720a"><link rel="stylesheet" href="/assets/css/fmb-news-luxury.css?v=20260722-luxury-v3"></head><body class="news-route news-story-route"><main id="story"><div class="nc-story-masthead"><div class="wrap"><a class="nc-back-link" href="/news/">Back to headlines</a><span>5 August 2026, 3:00 p.m. PHT</span></div></div><header class="nc-article-hero"><div class="wrap"><p class="nc-kicker">Economy · FMB News Hourly</p><h1>${esc(title)}</h1><p class="nc-article-deck">${esc(deck)}</p><div class="nc-article-meta"><span>By Francine Marie Bautista</span><span>Filed 3 August 2026 · Published 5 August 2026, 3:00 p.m. PHT</span><span>7 min read</span></div></div></header><section class="nc-story-media"><div class="wrap"><figure class="news-visual"><img src="${imagePath}" width="1080" height="1350" alt="FMB News editorial illustration showing the World Bank Philippine growth forecast of 3.7 percent"><figcaption>Editorial illustration: FMB News.</figcaption></figure></div></section><article class="nc-article"><div class="wrap nc-article-layout"><div class="nc-story-body"><div class="nc-factbox"><p><strong>Impeachment Desk:</strong> No verified material change this hour.</p></div>${sections.map(([h,p])=>`<h2>${esc(h)}</h2><p>${esc(p)}</p>`).join('')}<div class="nc-factbox"><p><strong>SEO title:</strong> World Bank Holds Philippine 2026 Growth Forecast at 3.7% | FMB News</p><p><strong>Meta description:</strong> The World Bank kept its Philippine growth forecast at 3.7% for 2026 and cut its 2027 outlook as inflation, weak investment and costly energy weigh on recovery.</p><p><strong>Keywords:</strong> Philippine economy, World Bank, GDP growth, inflation, peso</p><p><strong>Facebook caption:</strong> The World Bank kept its Philippine growth forecast at 3.7 percent for 2026, but lowered its expectation for next year. The deeper question is whether recovery will reach Filipino households through better jobs, stable prices and credible public investment.</p><p><strong>Pubmat text:</strong> PHILIPPINE GROWTH FORECAST HELD AT 3.7%</p><p><strong>Photo credit:</strong> Editorial illustration: FMB News.</p></div><section class="nc-sources"><h2>Sources and public record</h2>${sources.map(([l,u])=>`<a href="${u}" target="_blank" rel="noopener noreferrer">${esc(l)}</a>`).join('')}</section></div></div></article></main></body></html>`;
+
+await mkdir(path.join(newsRoot, slug), {recursive:true});
+await mkdir(assetDir, {recursive:true});
+await writeFile(path.join(assetDir, 'fmb-news-world-bank-growth-2026.svg'), illustration, 'utf8');
+await writeFile(path.join(newsRoot, slug, 'index.html'), article, 'utf8');
+
+let landing = await readFile(landingPath, 'utf8');
+if (!landing.includes(href)) {
+  const card = `<article class="nc-rundown-story"><a href="${href}"><span class="nc-rundown-number">NEW</span><figure class="news-visual"><img src="${imagePath}" width="1080" height="1350" loading="lazy" decoding="async" alt="World Bank Philippine growth forecast illustration"><figcaption>Editorial illustration: FMB News.</figcaption></figure><div><p>Economy · 5 August 2026</p><h3>${esc(title)}</h3><span>7 min read</span></div></a></article>`;
+  const marker = '<div class="nc-rundown-head">';
+  if (landing.includes(marker)) {
+    const headEnd = landing.indexOf('</div>', landing.indexOf(marker));
+    const insertAt = landing.indexOf('</div>', headEnd + 6) + 6;
+    landing = `${landing.slice(0, insertAt)}${card}${landing.slice(insertAt)}`;
+  }
+  landing = landing.replace(/<time(?: data-news-updated)?>(?:Updated )?[^<]*<\/time>/, '<time data-news-updated>Updated 5 August 2026, 3:00 p.m. PHT</time>');
+  await writeFile(landingPath, landing, 'utf8');
+}
+
+try {
+  let sitemap = await readFile(sitemapPath, 'utf8');
+  if (!sitemap.includes(canonical)) sitemap = sitemap.replace('</urlset>', `<url><loc>${canonical}</loc><lastmod>2026-08-05</lastmod></url></urlset>`);
+  await writeFile(sitemapPath, sitemap, 'utf8');
+} catch {}
+
+console.log('Published the 3pm FMB News World Bank Philippine growth outlook report with an original 4:5 visual, metadata, archive card and sitemap entry.');

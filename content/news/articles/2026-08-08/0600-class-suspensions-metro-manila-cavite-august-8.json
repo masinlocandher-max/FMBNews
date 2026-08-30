@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-08-0600",
+  "emailSubject": "FMB News | Malacañang Assures Q2 GDP Slowdown Is Temporary | August 8, 2026 | 6:00 AM PHT",
+  "slug": "class-suspensions-metro-manila-cavite-august-8",
+  "headline": "Classes Suspended in Parts of Metro Manila and Cavite on August 8",
+  "category": "Environment",
+  "kicker": "Weather and public safety · Metro Manila and Cavite",
+  "deck": "Local authorities suspended classes in several Metro Manila cities and Cavite for Saturday, August 8, amid inclement weather linked to the southwest monsoon and tropical cyclones.",
+  "publishedAt": "2026-08-08T06:00:00+08:00",
+  "updatedAt": "2026-08-08T07:11:52+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Classes were suspended in several parts of Metro Manila and in Cavite on Saturday, August 8, 2026, because of inclement weather associated with the southwest monsoon and tropical cyclones Maymay and Dolphin."
+      ]
+    },
+    {
+      "heading": "Areas covered",
+      "paragraphs": [
+        "Caloocan, Malabon, and Manila suspended face-to-face classes at all levels in public and private schools.",
+        "Cavite, Las Piñas, Marikina, and Parañaque announced class suspensions covering all levels in public and private schools."
+      ]
+    },
+    {
+      "heading": "Background",
+      "paragraphs": [
+        "The advisories cited inclement weather associated with the southwest monsoon and tropical cyclones Maymay and Dolphin. Class-suspension coverage differed by locality and learning arrangement because each local authority issued its own order."
+      ]
+    },
+    {
+      "heading": "Court operations",
+      "paragraphs": [
+        "No broad weather-related suspension of court operations across Metro Manila and Southern Luzon was confirmed in the cited Supreme Court advisory. The advisory listed limited suspensions in Angeles City because of termite control and in Balayan, Tuy, and Calatagan, Batangas, because of a scheduled power interruption."
+      ]
+    },
+    {
+      "heading": "Why this matters to Filipinos",
+      "paragraphs": [
+        "Suspension details differ by locality and by learning arrangement. Families, students, and school personnel should check the exact wording issued by their local government and school instead of assuming that one advisory applies across the entire region."
+      ]
+    },
+    {
+      "heading": "What remains unclear",
+      "paragraphs": [
+        "The suspension list may change as local governments issue additional advisories. Schools may also announce their own arrangements for activities not covered by a local order."
+      ]
+    },
+    {
+      "heading": "What happens next",
+      "paragraphs": [
+        "Residents should monitor official local government, school, and PAGASA channels for updates on rainfall, flooding, transport conditions, and any changes to class arrangements."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "GMA News Online",
+      "title": "WALANG PASOK: Class suspensions for Saturday, August 8, 2026",
+      "publishedAt": "2026-08-07T22:39:00+08:00",
+      "url": "https://www.gmanetwork.com/news/serbisyopubliko/walangpasok/997751/walang-pasok-class-suspensions-for-saturday-august-8-2026/story/"
+    },
+    {
+      "publisher": "Supreme Court of the Philippines",
+      "title": "Work suspension: Court operations in some areas in the Philippines are suspended on Saturday, August 8, 2026",
+      "publishedAt": "2026-08-07T21:00:00+08:00",
+      "url": "https://www.facebook.com/SupremeCourtPhilippines/posts/work-suspension-court-operations-in-some-areas-in-the-philippines-are-suspended-/1108084758549684/"
+    }
+  ],
+  "image": {
+    "kind": "open-license-photo",
+    "url": "/assets/images/news/2026-08-07/storm-rescue-operation.webp",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rescue_Operation_-_Tropical_Storm_Nalgae_(52461503146).jpg",
+    "creator": "Bro. Jeffrey Pioquinto, SJ",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "usageStatus": "Wikimedia Commons file verified as CC BY 2.0; the locally hosted crop is reused with creator, source, and license credit.",
+    "credit": "Photo: Bro. Jeffrey Pioquinto, SJ / Wikimedia Commons · CC BY 2.0",
+    "caption": "Archive photo from a Philippine storm rescue operation. It does not depict the August 8, 2026 class suspensions or current weather conditions.",
+    "alt": "A woman carrying a baby during a storm rescue operation in the Philippines"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-08T07:11:52+08:00",
+    "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:Rescue_Operation_-_Tropical_Storm_Nalgae_(52461503146).jpg",
+    "notes": [
+      "The published story preserves the verified class-suspension development and removes the unsupported claim of broad weather-related court closures.",
+      "Face-to-face-only suspensions are distinguished from locality-wide all-level suspensions.",
+      "The recommended Supreme Court building image was not used because the linked advisory did not provide that image with independently verifiable reusable publication rights.",
+      "A relevant Philippine storm-rescue archive photograph by Bro. Jeffrey Pioquinto, SJ was independently verified on Wikimedia Commons as CC BY 2.0 and is locally hosted with visible creator, source, and license credit."
+    ]
+  }
+}

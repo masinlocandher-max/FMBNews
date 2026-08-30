@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-12-1300",
+  "emailSubject": "FMB News | DND Hails Senate Concurrence in Canada, New Zealand Defense Agreements | August 12, 2026 | 1:00 PM PHT",
+  "slug": "visayas-red-alert-mindanao-yellow-alert-august-12",
+  "headline": "Visayas Grid Under Red Alert; Mindanao on Yellow Alert",
+  "seoTitle": "Visayas Grid Under Red Alert; Mindanao on Yellow Alert",
+  "seoDescription": "NGCP extended the Visayas red alert through 9 p.m. and placed Mindanao under a yellow alert through 8 p.m. on August 12 as outages and deratings tightened supply.",
+  "keywords": ["Visayas red alert August 12 2026", "Mindanao yellow alert", "NGCP grid advisory", "power reserves Philippines"],
+  "category": "Business",
+  "kicker": "Energy · Grid reliability · Service advisory",
+  "deck": "NGCP extended the Visayas red alert through 9 p.m. and placed Mindanao under a yellow alert through 8 p.m. as plant outages and deratings tightened electricity supply.",
+  "publishedAt": "2026-08-12T13:00:00+08:00",
+  "updatedAt": "2026-08-12T19:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The National Grid Corporation of the Philippines placed the Visayas grid under a red alert and the Mindanao grid under a yellow alert on Wednesday, August 12, as unavailable generating capacity and high demand reduced power margins.",
+        "An afternoon update extended the Visayas red alert from 3 p.m. to 9 p.m., with yellow alerts from 1 p.m. to 3 p.m. and 9 p.m. to 10 p.m. Mindanao was under a yellow alert from 1 p.m. to 8 p.m."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The Visayas grid had 2,153 megawatts of available capacity against projected peak demand of 2,394 MW. NGCP listed forced outages and derated plants totaling 931.5 MW of unavailable capacity.",
+        "Mindanao had 2,779 MW of available capacity against projected peak demand of 2,689 MW, with 621.6 MW unavailable. A red alert means supply is insufficient to meet demand and regulating requirements; a yellow alert means supply can meet demand but lacks the required contingency margin."
+      ]
+    },
+    {
+      "heading": "Why this matters to Filipinos",
+      "paragraphs": [
+        "Consumers in the Visayas faced a heightened risk of rotational interruptions during the red-alert period, while Mindanao's reduced reserve margin left the grid more vulnerable to another plant failure or demand increase. An alert signals system conditions; actual interruption schedules remain the responsibility of distribution utilities."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Monitor NGCP and local distribution-utility advisories for changes to alert hours and any interruption schedules. Restoration of unavailable units and lower-than-forecast demand could improve margins, while additional outages could extend the alerts."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "GMA News Online",
+      "title": "Visayas grid under red, yellow alerts; Mindanao on yellow alert on Aug. 12, 2026",
+      "publishedAt": "2026-08-12T12:13:00+08:00",
+      "dateLabel": "Updated August 12, 2026 at 3:40 PM",
+      "url": "https://www.gmanetwork.com/news/money/economy/998258/visayas-grid-under-red-yellow-alerts-mindanao-on-yellow-alert-on-aug-12-2026/story/"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "sourceUrl": null,
+    "creator": "FMB News",
+    "license": "FMB-owned editorial visual",
+    "licenseUrl": "https://www.francinemariebautista.com/news/",
+    "usageStatus": "FMB-owned editorial visual used because the rights-cleared archive photograph could not be delivered as a fully local raster asset.",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying the grid-alert report. It does not depict the August 12 Visayas or Mindanao grid conditions.",
+    "alt": "FMB News editorial visual for the Visayas and Mindanao grid alerts",
+    "width": 1200,
+    "height": 675,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-12T19:18:00+08:00",
+    "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:0111Provincial_Bypass_Roads_Fields_San_Rafael,_Bulacan_01.jpg",
+    "notes": [
+      "Corrected the bulletin's unsupported 340 MW figure to NGCP's reported 931.5 MW unavailable in the Visayas and 621.6 MW unavailable in Mindanao.",
+      "Updated alert periods and capacity figures using the source's 3:40 p.m. update.",
+      "Did not claim that specific rotational interruptions had already occurred because the checked report described them as expected or possible.",
+      "The displayed FMB-owned editorial visual and visible credit match exactly."
+    ]
+  }
+}

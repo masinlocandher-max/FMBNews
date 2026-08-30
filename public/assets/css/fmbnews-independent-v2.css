@@ -1,0 +1,27 @@
+/* FMB News Independent Publication V2 safeguards */
+html body.fn-news-independent .nc-site-header:not(.fn-site-header),
+html body.fn-news-independent .nc-topic-rail:not(.fn-category-rail),
+html body.fn-news-independent .nc-footer:not(.fn-site-footer),
+html body.fn-news-independent .nc-publication-brand:not(.fn-brand),
+html body.fn-news-independent img[src*="fmb-news-official"],
+html body.fn-news-independent source[srcset*="fmb-news-official"] {
+  display: none !important;
+}
+
+html body.fn-news-independent .fn-site-header,
+html body.fn-news-independent .fn-category-rail,
+html body.fn-news-independent .fn-site-footer {
+  display: block !important;
+}
+
+html body.fn-news-independent .fn-site-header .fn-header-inner {
+  display: grid !important;
+}
+
+html body.fn-news-independent .fn-category-rail .wrap {
+  display: flex !important;
+}
+
+html body.fn-news-independent .fn-site-footer .fn-footer-inner {
+  display: flex !important;
+}

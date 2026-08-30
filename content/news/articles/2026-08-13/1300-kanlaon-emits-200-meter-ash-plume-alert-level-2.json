@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-13-1300",
+  "emailSubject": "FMB News | AFP Moves Drone Development Program into Testing Stage | August 13, 2026 | 1:00 PM PHT",
+  "slug": "kanlaon-emits-200-meter-ash-plume-alert-level-2",
+  "headline": "Kanlaon Emits 200-Meter Ash Plume; Alert Level 2 Remains",
+  "seoTitle": "Kanlaon Emits 200-Meter Ash Plume Under Alert Level 2",
+  "seoDescription": "PHIVOLCS recorded a grayish ash emission from Kanlaon Volcano at 8:16 a.m. on August 13, with the plume rising 200 meters above the crater.",
+  "keywords": ["Kanlaon Volcano", "PHIVOLCS Alert Level 2", "Kanlaon ash emission", "Negros Island"],
+  "category": "Environment",
+  "kicker": "Volcanology · Public safety",
+  "deck": "PHIVOLCS recorded a grayish ash emission from Kanlaon Volcano at 8:16 a.m., with the plume rising 200 meters above the summit crater.",
+  "publishedAt": "2026-08-13T13:00:00+08:00",
+  "updatedAt": "2026-08-13T19:15:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Kanlaon Volcano on Negros Island produced a grayish ash emission at 8:16 a.m. Thursday, August 13, the Philippine Institute of Volcanology and Seismology reported.",
+        "Time-lapse footage released by PHIVOLCS showed the plume rising about 200 meters above the summit crater before drifting east-northeast."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "Kanlaon remained under Alert Level 2, which signifies moderate volcanic unrest. PHIVOLCS has repeatedly warned against entry into the four-kilometer Permanent Danger Zone because sudden steam-driven or phreatic eruptions can occur.",
+        "The ash emission was a monitored volcanic event. The public record reviewed for this report did not indicate a change in the alert level."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "Even a short ash emission can affect nearby communities and aviation. Residents should follow PHIVOLCS and local disaster-office advisories, while pilots should avoid flying near the summit where volcanic ash can endanger aircraft."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Monitor succeeding PHIVOLCS bulletins for changes in seismic activity, gas emissions, ground deformation, ash emissions or the official alert level."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Philippine Daily Inquirer",
+      "title": "Kanlaon Volcano in Negros emits ash on Thursday morning (Aug. 13)",
+      "publishedAt": "2026-08-13T11:16:00+08:00",
+      "url": "https://newsinfo.inquirer.net/2283769/kanlaon-volcano-in-negros-emits-ash-on-thursday-morning-aug-13"
+    },
+    {
+      "publisher": "DOST-PHIVOLCS",
+      "title": "Time-lapse footage of Kanlaon Volcano ash emission at 8:16 a.m.",
+      "publishedAt": "2026-08-13T08:16:00+08:00",
+      "url": "https://www.facebook.com/PHIVOLCS/posts/1375960868061207/"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "sourceUrl": null,
+    "creator": "FMB News",
+    "license": "FMB-owned editorial visual",
+    "licenseUrl": "https://www.francinemariebautista.com/news/",
+    "usageStatus": "FMB-owned editorial visual used because the recommended time-lapse frame had no independently verified, publication-ready asset URL.",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying the Kanlaon ash-emission report. It does not depict the August 13 emission.",
+    "alt": "FMB News editorial visual for the Kanlaon Volcano ash-emission report",
+    "width": 1200,
+    "height": 675,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-13T19:15:00+08:00",
+    "photoReferenceUrl": "https://www.facebook.com/PHIVOLCS/posts/1375960868061207/",
+    "notes": [
+      "Verified the 8:16 a.m. event time, 200-meter plume height, east-northeast drift and continuing Alert Level 2 status.",
+      "Omitted unverified descriptions of ashfall in specific sitios and presented safety guidance without implying an alert-level increase.",
+      "Used the FMB-owned fallback because the recommended time-lapse frame lacked a stable asset URL with independently verified reuse terms."
+    ]
+  }
+}

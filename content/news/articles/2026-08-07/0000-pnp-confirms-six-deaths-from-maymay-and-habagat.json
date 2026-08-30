@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "fmb-news-2026-08-07-0000-pht",
+  "emailSubject": "FMB News | US Formally Requests Extradition of Apollo Quiboloy; DFA Transmits Demand to DOJ | August 7, 2026 | 12:00 AM PHT",
+  "slug": "pnp-confirms-six-deaths-from-maymay-and-habagat",
+  "headline": "PNP Confirms Six Deaths From Maymay and Habagat",
+  "category": "Environment",
+  "kicker": "Weather and public safety · Luzon",
+  "deck": "Police confirmed six deaths from landslides and drowning linked to Maymay and the enhanced southwest monsoon as agencies continued assessing the damage.",
+  "publishedAt": "2026-08-07T00:00:00+08:00",
+  "updatedAt": "2026-08-07T09:18:09.942+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Philippine National Police confirmed six deaths from landslides, a rockfall, and drowning linked to Maymay and the enhanced southwest monsoon. The casualty report was released on August 6 as the tropical cyclone weakened over the Philippine Sea east of Northern Luzon."
+      ]
+    },
+    {
+      "heading": "What we know",
+      "paragraphs": [
+        "PNP spokesperson Col. Allen Rae Co said two people died in a landslide and rockfall in Rodriguez, Rizal. Two others died when a landslide buried a roadside eatery in La Trinidad, Benguet. One person drowned in Luna, La Union, and another drowned in Alaminos, Pangasinan.",
+        "Police were monitoring 3,012 displaced people across 55 evacuation centers. The PNP deployed 877 disaster-response personnel and placed 10,111 additional officers on standby.",
+        "PAGASA reported on the evening of August 6 that Maymay had weakened into a tropical depression over the Philippine Sea, allowing wind signals to be lowered across affected provinces."
+      ]
+    },
+    {
+      "heading": "Background",
+      "paragraphs": [
+        "Maymay made landfall in Northern Luzon on August 6. Its rain combined with the southwest monsoon, prompting class and government-work suspensions across Metro Manila and several provinces and increasing landslide and flood risks in parts of Luzon."
+      ]
+    },
+    {
+      "heading": "What remains unclear",
+      "paragraphs": [
+        "Consolidated estimates of agricultural, infrastructure, and household damage were still being prepared. Casualty figures may also change as local and national agencies reconcile field reports."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "The deaths show that weakening wind intensity does not immediately end the danger from saturated slopes, floodwater, rough seas, and disrupted transport. Communities still need to follow local rainfall, evacuation, road, and coastal advisories."
+      ]
+    },
+    {
+      "heading": "What happens next",
+      "paragraphs": [
+        "By 5:00 a.m. on August 7, PAGASA said Maymay had weakened into a low-pressure area and lifted all tropical cyclone wind signals. Disaster agencies will continue casualty verification, damage assessment, road clearing, and assistance for displaced families."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Philippine News Agency",
+      "title": "6 dead due to combined effects of Maymay, habagat – PNP",
+      "publishedAt": "2026-08-06T18:09:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1281266"
+    },
+    {
+      "publisher": "ABS-CBN News",
+      "title": "'Maymay' now over Philippine Sea",
+      "publishedAt": "2026-08-06T19:34:00+08:00",
+      "url": "https://www.abs-cbn.com/news/weather-traffic/2026/8/6/-maymay-now-over-philippine-sea-1934"
+    },
+    {
+      "publisher": "DOST-PAGASA",
+      "title": "Tropical Cyclone Bulletin No. 17-Final: LPA Maymay",
+      "publishedAt": "2026-08-07T05:00:00+08:00",
+      "url": "https://www.pagasa.dost.gov.ph/tropical-cyclone/severe-weather-bulletin"
+    }
+  ],
+  "image": {
+    "kind": "open-license-photo",
+    "url": "/assets/images/news/2026-08-07/storm-rescue-operation.webp",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rescue_Operation_-_Tropical_Storm_Nalgae_(52461503146).jpg",
+    "creator": "Bro. Jeffrey Pioquinto, SJ",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "credit": "Photo: Bro. Jeffrey Pioquinto, SJ / Wikimedia Commons · CC BY 2.0",
+    "usageStatus": "Wikimedia Commons file verified as CC BY 2.0; locally hosted crop published with creator, source, and license credit.",
+    "caption": "Archive photo from a rescue operation during Tropical Storm Nalgae. It does not depict the reported victims or the August 2026 police briefing.",
+    "alt": "A woman carrying a baby during a storm rescue operation in the Philippines"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-07T01:18:09.941Z",
+    "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:Rescue_Operation_-_Tropical_Storm_Nalgae_(52461503146).jpg",
+    "notes": [
+      "Google redirect links were replaced with direct publisher URLs.",
+      "The post-midnight PAGASA status was added so the archived report does not present Maymay as an active tropical cyclone.",
+      "A relevant CC BY 2.0 rescue archive photo from Wikimedia Commons is locally hosted with visible creator, source, and license credit."
+    ]
+  }
+}

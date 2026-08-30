@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "fmb-news-2026-08-08-1200-pht",
+  "emailSubject": "FMB News | DFA Confirms 8 Filipino Teachers Safe After Thailand School Shooting | August 8, 2026 | 12:00 PM PHT",
+  "slug": "offshore-lpa-high-chance-tropical-depression-august-8",
+  "headline": "PAGASA: Offshore LPA Has High Chance of Becoming Tropical Depression",
+  "category": "Environment",
+  "kicker": "Weather update · Philippine Sea · Southwest monsoon",
+  "deck": "PAGASA said a low pressure area far east of Northern Luzon had a high chance of becoming a tropical depression, while assessing a low chance that it would enter PAR or directly affect the country.",
+  "publishedAt": "2026-08-08T12:00:00+08:00",
+  "updatedAt": "2026-08-08T13:08:08+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "PAGASA said on Saturday morning, August 8, that a low pressure area outside the Philippine Area of Responsibility had a high chance of developing into a tropical depression within 24 hours."
+      ]
+    },
+    {
+      "heading": "What we know",
+      "paragraphs": [
+        "The weather disturbance was estimated at 2,610 kilometers east of Northern Luzon at 3:00 a.m. PAGASA weather specialist Veronica Torres said it had a low chance of directly affecting the country and a low chance of entering PAR.",
+        "PAGASA was also monitoring Typhoon Dolphin outside PAR. At 3:00 a.m., Dolphin was 810 kilometers northeast of Extreme Northern Luzon, with maximum sustained winds of 155 kilometers per hour and gusts of up to 190 kilometers per hour, moving southwest at 15 kilometers per hour.",
+        "Dolphin continued to enhance the southwest monsoon over Luzon and the Visayas. PAGASA forecast monsoon rains over Occidental Mindoro, Zambales, and Bataan and occasional rains over Metro Manila and several other parts of Luzon and Antique."
+      ]
+    },
+    {
+      "heading": "Background",
+      "paragraphs": [
+        "Tropical cyclones and low pressure areas outside PAR can strengthen the southwest monsoon even when they are unlikely to cross the country's monitoring boundary or make landfall. Their indirect effect can still bring prolonged rain, rough seas, flash floods, and landslides."
+      ]
+    },
+    {
+      "heading": "What remains unclear",
+      "paragraphs": [
+        "The low pressure area's development and track may change. PAGASA's morning assessment indicated a low chance of entry into PAR or a direct effect on the Philippines, but the bureau will continue monitoring it."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "Even a distant weather system can influence rainfall and sea conditions through the southwest monsoon. Communities in rain-affected areas should follow official flood, landslide, coastal, and local-government advisories rather than treating distance from PAR as an absence of risk."
+      ]
+    },
+    {
+      "heading": "What happens next",
+      "paragraphs": [
+        "PAGASA will continue updating the public on the low pressure area, Typhoon Dolphin, the southwest monsoon, and any changes in rainfall or coastal hazards."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "GMA News Online",
+      "title": "LPA outside PAR has 'high' chance of developing into tropical depression in 24 hours",
+      "publishedAt": "2026-08-08T09:49:00+08:00",
+      "url": "https://www.gmanetwork.com/news/weather/content/997792/lpa-outside-par-has-high-chance-of-developing-into-tropical-depression-in-24-hours/story/"
+    },
+    {
+      "publisher": "DOST-PAGASA",
+      "title": "Forecast Weather Conditions",
+      "publishedAt": "2026-08-08T04:00:00+08:00",
+      "url": "https://pagasa.dost.gov.ph/weather"
+    }
+  ],
+  "image": {
+    "kind": "open-license-photo",
+    "url": "/assets/images/news/2026-08-07/storm-rescue-operation.webp",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rescue_Operation_-_Tropical_Storm_Nalgae_(52461503146).jpg",
+    "creator": "Bro. Jeffrey Pioquinto, SJ",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "usageStatus": "Wikimedia Commons file verified as CC BY 2.0; the locally hosted crop is reused with creator, source, and license credit.",
+    "credit": "Photo: Bro. Jeffrey Pioquinto, SJ / Wikimedia Commons · CC BY 2.0",
+    "caption": "Archive photograph from a Philippine storm rescue operation. It does not depict the August 8, 2026 offshore low pressure area or current conditions.",
+    "alt": "A woman carrying a baby during a storm rescue operation in the Philippines",
+    "width": 1440,
+    "height": 900,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-08T13:08:08+08:00",
+    "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:Rescue_Operation_-_Tropical_Storm_Nalgae_(52461503146).jpg",
+    "notes": [
+      "Google redirect links were replaced with direct publisher URLs.",
+      "The article corrects the bulletin's 11:00 a.m. advisory reference to PAGASA's 3:00 a.m. observation and 4:00 a.m. forecast.",
+      "The article adds PAGASA's low assessed chance of PAR entry or direct effect so the uncertainty is clear.",
+      "The recommended PAGASA map was not used because its reuse terms could not be independently verified.",
+      "A rights-cleared Philippine storm-rescue archive photograph is reused with exact visible creator, source, and license credit."
+    ]
+  }
+}

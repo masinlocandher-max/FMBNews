@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="864" viewBox="0 0 1536 864" role="img" aria-labelledby="title desc">
+  <title id="title">PBBM 2026 State of the Nation Address analysis</title>
+  <desc id="desc">An original FMB News Center editorial illustration of a presidential podium, the Philippine flag, Congress-inspired architecture, and the words Accountability and Delivery.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#080c18"/>
+      <stop offset="0.55" stop-color="#151b2d"/>
+      <stop offset="1" stop-color="#090b12"/>
+    </linearGradient>
+    <linearGradient id="red" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9f0017"/>
+      <stop offset="0.5" stop-color="#d0001b"/>
+      <stop offset="1" stop-color="#ff2943"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#123b88"/>
+      <stop offset="1" stop-color="#071f50"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="60%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="20" stdDeviation="24" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <rect width="1536" height="864" fill="url(#bg)"/>
+  <circle cx="1115" cy="300" r="430" fill="url(#glow)"/>
+
+  <path d="M0 0H555L0 486Z" fill="url(#blue)" opacity="0.92"/>
+  <path d="M0 0V486L244 243Z" fill="#ffffff" opacity="0.96"/>
+  <circle cx="100" cy="244" r="25" fill="#f5c544"/>
+  <g fill="#f5c544" transform="translate(100 244)">
+    <path d="M0-72 8-35-8-35Z"/><path d="M0 72 8 35-8 35Z"/>
+    <path d="M-72 0-35-8-35 8Z"/><path d="M72 0 35-8 35 8Z"/>
+    <path d="M-51-51-24-30-30-24Z"/><path d="M51-51 30-24 24-30Z"/>
+    <path d="M-51 51-30 24-24 30Z"/><path d="M51 51 24 30 30 24Z"/>
+  </g>
+  <circle cx="65" cy="162" r="8" fill="#f5c544"/><circle cx="65" cy="326" r="8" fill="#f5c544"/><circle cx="181" cy="244" r="8" fill="#f5c544"/>
+  <path d="M0 486 555 0H745L0 652Z" fill="url(#red)" opacity="0.96"/>
+
+  <g opacity="0.18" fill="#ffffff">
+    <rect x="740" y="176" width="650" height="22" rx="11"/>
+    <rect x="790" y="212" width="550" height="16" rx="8"/>
+    <path d="M765 648V357h600v291H765Zm68-222v222h66V426h-66Zm131 0v222h66V426h-66Zm131 0v222h66V426h-66Zm131 0v222h66V426h-66Z"/>
+    <path d="M720 357 1065 242l345 115Z"/>
+  </g>
+
+  <g transform="translate(136 126)" font-family="Arial, Helvetica, sans-serif">
+    <text x="0" y="0" fill="#ffffff" font-size="22" font-weight="800" letter-spacing="8">FMB NEWS CENTER · PUBLIC AFFAIRS</text>
+    <text x="0" y="104" fill="#ffffff" font-size="132" font-weight="900" letter-spacing="-5">SONA</text>
+    <text x="345" y="104" fill="#f5c544" font-size="58" font-weight="900">2026</text>
+    <rect x="0" y="139" width="458" height="8" fill="#ffffff" opacity="0.86"/>
+    <text x="0" y="205" fill="#ffffff" font-size="31" font-weight="700" letter-spacing="4">PRESIDENT FERDINAND MARCOS JR.</text>
+  </g>
+
+  <g transform="translate(827 310)" filter="url(#shadow)">
+    <path d="M125 245h250l42 240H83Z" fill="#101420" stroke="#ffffff" stroke-opacity="0.28" stroke-width="3"/>
+    <rect x="114" y="210" width="272" height="55" rx="9" fill="#d0001b"/>
+    <circle cx="250" cy="236" r="34" fill="#ffffff"/>
+    <circle cx="250" cy="236" r="25" fill="#123b88"/>
+    <path d="M235 239c12-18 22-18 30 0-11-5-20-5-30 0Z" fill="#f5c544"/>
+    <path d="M165 210 203 73M335 210 297 73" stroke="#d7dae2" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="203" cy="69" r="13" fill="#20283a" stroke="#ffffff" stroke-opacity="0.7" stroke-width="3"/>
+    <circle cx="297" cy="69" r="13" fill="#20283a" stroke="#ffffff" stroke-opacity="0.7" stroke-width="3"/>
+  </g>
+
+  <g transform="translate(108 675)" font-family="Arial, Helvetica, sans-serif">
+    <text x="0" y="0" fill="#ffffff" font-size="25" font-weight="800" letter-spacing="7">THE TEST AFTER THE SPEECH</text>
+    <text x="0" y="72" fill="#ffffff" font-size="63" font-weight="900">ACCOUNTABILITY</text>
+    <text x="652" y="72" fill="#d0001b" font-size="63" font-weight="900">DELIVERY</text>
+    <rect x="0" y="102" width="1260" height="2" fill="#ffffff" opacity="0.26"/>
+    <text x="0" y="142" fill="#c8ccd8" font-size="20" letter-spacing="2">CORRUPTION · COST OF LIVING · ENERGY · WEST PHILIPPINE SEA</text>
+  </g>
+</svg>

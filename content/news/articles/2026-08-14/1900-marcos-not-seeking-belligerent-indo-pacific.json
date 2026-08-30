@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-14-1900",
+  "emailSubject": "FMB News | President Marcos: PH Not Seeking to be Belligerent in Indo-Pacific | August 14, 2026 | 7:00 PM PHT",
+  "slug": "marcos-not-seeking-belligerent-indo-pacific",
+  "headline": "Marcos Says Philippines Is ‘Not Seeking to Be Belligerent’ in Indo-Pacific",
+  "seoTitle": "Marcos: PH ‘Not Seeking to Be Belligerent’ in Indo-Pacific",
+  "seoDescription": "An FMB News editorial brief citing PCO and PNA reports that President Marcos said the Philippines is not seeking to be belligerent in the Indo-Pacific.",
+  "keywords": ["Marcos Indo-Pacific", "Philippines foreign policy", "West Philippine Sea", "defense partnerships"],
+  "category": "National",
+  "kicker": "Foreign policy · National security",
+  "deck": "An FMB News newsroom brief, citing the Presidential Communications Office and Philippine News Agency, reports that President Ferdinand R. Marcos Jr. described the Philippines’ security posture as defensive rather than belligerent.",
+  "publishedAt": "2026-08-14T19:00:00+08:00",
+  "updatedAt": "2026-08-15T07:46:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "An FMB News editorial brief for the August 14 evening cycle, citing the Presidential Communications Office and Philippine News Agency, reports that President Ferdinand R. Marcos Jr. said the Philippines is ‘not seeking to be belligerent’ in the Indo-Pacific and framed the country’s defense partnerships as measures for national protection and regional stability.",
+        "During FMB News’ final publication pass, the specific August 14 PNA report cited by the brief was not independently retrievable through the public search index. The statement is therefore presented here as a source-attributed report rather than as independently confirmed wording."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "Marcos has repeatedly said that Philippine defense cooperation is intended to protect the country’s sovereignty and interests while preserving peace and stability. Earlier official PNA reporting documents the administration’s emphasis on stronger maritime capabilities and partnerships amid West Philippine Sea tensions.",
+        "The newsroom brief also links the reported remarks to cooperation with Canada and New Zealand and to the Philippines’ provisional arrangement with China over resupply missions to Ayungin Shoal. Those details should be read in the context of continuing diplomatic and defense discussions, not as evidence that sovereignty claims have been waived."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "How the President characterizes the country’s defense posture matters for diplomacy, alliance management and public understanding of Philippine policy in the West Philippine Sea. The difference between deterrence and provocation is especially important when regional tensions are elevated."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for a retrievable PCO transcript or PNA report carrying the August 14 remarks, as well as subsequent statements from the Department of Foreign Affairs, Department of National Defense and regional partners."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Philippine News Agency",
+      "title": "PBBM: PH not seeking to be 'belligerent' in Indo-Pacific — cited in FMB News brief",
+      "publishedAt": "2026-08-14T16:03:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1281914"
+    },
+    {
+      "publisher": "Philippine News Agency",
+      "title": "PH, US seek enhanced defense ties, ‘stable, secure’ Indo-Pacific",
+      "publishedAt": "2026-03-11T03:46:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1270780"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "sourceUrl": null,
+    "creator": "FMB News",
+    "license": "FMB-owned editorial visual",
+    "licenseUrl": "https://www.francinemariebautista.com/news/",
+    "usageStatus": "FMB-owned editorial visual used because the referenced PCO/PNA photograph had no stable publication-ready asset URL with independently verified reuse terms.",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying the report on President Marcos’ reported Indo-Pacific remarks. It does not depict the August 14 briefing.",
+    "alt": "FMB News editorial visual for the Marcos Indo-Pacific foreign-policy report",
+    "width": 1200,
+    "height": 675,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-15T07:46:00+08:00",
+    "photoReferenceUrl": null,
+    "notes": [
+      "Published on the user’s instruction despite the exact August 14 PNA article not being independently retrievable during the final pass.",
+      "The headline and body explicitly attribute the current claim to the FMB News editorial brief and its cited PCO/PNA source.",
+      "Used an FMB-owned editorial visual because the referenced government photograph did not include a stable publication-ready asset URL."
+    ]
+  }
+}

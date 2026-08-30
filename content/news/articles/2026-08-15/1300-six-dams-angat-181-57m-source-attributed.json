@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-15-1300",
+  "emailSubject": "FMB News | Taal Volcano Quakes Surge to 74 in 24 Hours; Alert Level 1 Kept | August 15, 2026 | 1:00 PM PHT",
+  "slug": "six-dams-angat-181-57m-source-attributed",
+  "headline": "Brief Reports Water Levels Rise in Six Dams; Angat at 181.57 Meters",
+  "seoTitle": "Brief: Six Dams Rise; Angat Reported at 181.57m",
+  "seoDescription": "An FMB News midday brief reports water levels rising in six major dams, with Angat at 181.57 meters and La Mesa beginning a gradual decline.",
+  "keywords": ["Angat Dam August 15 2026", "PAGASA dam levels", "Angat 181.57 meters", "La Mesa Dam level"],
+  "category": "Environment",
+  "kicker": "Water resources · Dam monitoring",
+  "deck": "The newsroom brief cites a Saturday dam-status update showing gains in six reservoirs, while FMB News keeps the exact August 15 elevations source-attributed pending a directly retrievable PAGASA table.",
+  "publishedAt": "2026-08-15T13:00:00+08:00",
+  "updatedAt": "2026-08-15T19:38:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The FMB News August 15 midday brief reports that water levels rose in six of nine monitored major dams, identifying Angat, Ipo, Ambuklao, San Roque, Pantabangan and Magat among the reservoirs with gains.",
+        "The brief places Angat Dam at 181.57 meters above sea level, up 1.47 meters in 24 hours, and says the reservoir had recovered more than 30 meters from a late-July low. It also reports San Roque at 267.40 meters and says La Mesa Dam had begun to decrease gradually."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The email cites two August 15 Inquirer reports based on PAGASA dam monitoring. FMB News could not independently retrieve the corresponding August 15 PAGASA dam-status table during the final publication pass, so the precise elevations and day-on-day changes remain source-attributed rather than independently reproduced.",
+        "Dam levels matter both for water supply and for flood-management decisions. A rising reservoir can improve stored-water availability while also requiring close monitoring during sustained rainfall."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "Angat is a critical source of water for Metro Manila and irrigation in Central Luzon. Clear, date-specific reservoir data helps households, farmers, water managers and local governments distinguish water-supply recovery from flood-control risk."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for the next PAGASA dam-status bulletin, spillway or gate-operation advisories, rainfall warnings over dam watersheds and any updated La Mesa or Tullahan River flood guidance."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Inquirer.net",
+      "title": "Pagasa: Water levels of 6 dams rise over past 24 hours — cited in FMB News brief",
+      "publishedAt": "2026-08-15T11:10:00+08:00",
+      "url": "https://newsinfo.inquirer.net/2284987/water-levels-of-6-dams-rise-over-past-24-hours-pagasa"
+    },
+    {
+      "publisher": "Inquirer.net",
+      "title": "Pagasa: La Mesa Dam water level expected to decrease gradually — cited in FMB News brief",
+      "publishedAt": "2026-08-15T08:33:00+08:00",
+      "url": "https://newsinfo.inquirer.net/2284926/la-mesa-dams-water-level-expected-to-decrease-gradually"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "sourceUrl": null,
+    "creator": "FMB News",
+    "license": "FMB-owned editorial visual",
+    "licenseUrl": "https://www.francinemariebautista.com/news/",
+    "usageStatus": "FMB-owned editorial visual used because the recommended Inquirer photograph is publisher-owned and the email does not provide a separately licensed original asset.",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying the source-attributed Luzon dam-level update. It does not depict the August 15 Angat reading.",
+    "alt": "FMB News editorial visual for the Luzon dam-level report",
+    "width": 1200,
+    "height": 675,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-15T19:38:00+08:00",
+    "photoReferenceUrl": "https://newsinfo.inquirer.net/2284987/water-levels-of-6-dams-rise-over-past-24-hours-pagasa",
+    "notes": [
+      "The email provides specific Inquirer URLs for the August 15 dam reports, but the corresponding current PAGASA dam table was not independently retrievable in the final pass.",
+      "Angat 181.57 masl, the 1.47-meter 24-hour rise, San Roque 267.40 masl and the six-dam count are therefore explicitly source-attributed.",
+      "The proposed hero image is identified as an Inquirer photograph, so FMB News uses its own editorial visual instead of reusing a publisher-owned image without permission."
+    ]
+  }
+}

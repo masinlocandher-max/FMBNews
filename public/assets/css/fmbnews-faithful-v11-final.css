@@ -1,0 +1,112 @@
+/* FMB News Faithful V11 final component states.
+ * These rules neutralize retired display states without reviving legacy visuals.
+ */
+
+html body.news-faithful-v11 .nc-footer.fn9-footer.fn10-footer.fn11-footer {
+  position: relative !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+  visibility: visible !important;
+  overflow: hidden !important;
+  opacity: 1 !important;
+}
+
+html body.news-faithful-v11 .fn11-footer-grid {
+  display: grid !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+html body.news-faithful-v11 .fn11-footer-bottom {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+html body.news-faithful-v11 .fn9-hero .nc-signal-tag {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: var(--fn11-purple) !important;
+}
+
+html body.news-faithful-v11 .fn9-hero .nc-signal-tag::before,
+html body.news-faithful-v11 .fn9-hero .nc-signal-tag::after,
+html body.news-faithful-v11 .fn9-hero .nc-signal-tag i {
+  display: none !important;
+  content: none !important;
+}
+
+html body.news-faithful-v11 .fn9-hero .nc-lead-meta {
+  width: auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html body.news-faithful-v11 .news-visual.media-unavailable {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+  background:
+    radial-gradient(circle at 84% 22%, rgba(201,154,63,.22) 0 4rem, transparent 4.1rem),
+    radial-gradient(circle at 15% 82%, rgba(111,58,168,.24) 0 6rem, transparent 6.1rem),
+    linear-gradient(135deg, #210637, #4a1783) !important;
+}
+
+html body.news-faithful-v11 .news-visual.media-unavailable img {
+  visibility: hidden !important;
+}
+
+html body.news-faithful-v11 .news-visual.media-unavailable::before {
+  position: absolute !important;
+  z-index: 2 !important;
+  inset: 0 !important;
+  display: grid !important;
+  place-items: center !important;
+  color: #fff !important;
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  font-size: clamp(1.7rem, 4vw, 3.4rem) !important;
+  font-weight: 500 !important;
+  letter-spacing: .08em !important;
+  text-transform: uppercase !important;
+  content: "FMB News" !important;
+}
+
+html body.news-faithful-v11 .news-visual.media-unavailable::after {
+  position: absolute !important;
+  z-index: 1 !important;
+  right: -32px !important;
+  bottom: -44px !important;
+  width: 140px !important;
+  height: 140px !important;
+  border: 1px solid rgba(255,255,255,.55) !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 0 20px rgba(201,154,63,.10), 0 0 0 40px rgba(255,255,255,.05) !important;
+  content: "" !important;
+}
+
+@media (max-width: 700px) {
+  html body.news-faithful-v11 .fn11-footer-grid {
+    display: grid !important;
+  }
+
+  html body.news-faithful-v11 .fn11-footer-bottom {
+    display: flex !important;
+  }
+}

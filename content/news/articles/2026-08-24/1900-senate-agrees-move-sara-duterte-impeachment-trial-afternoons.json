@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-24-1900",
+  "emailSubject": "FMB News | Typhoon Saudel Enters PAR as 'Obet'; Impeachment Court Begins 3 PM Sessions | August 24, 2026 | 7:00 PM PHT",
+  "slug": "senate-agrees-move-sara-duterte-impeachment-trial-afternoons",
+  "headline": "House Prosecutors Eye Michael Poa as Hostile Witness in Duterte Impeachment Trial",
+  "seoTitle": "Prosecutors Eye Michael Poa as Hostile Witness | FMB News",
+  "seoDescription": "House prosecutors are considering asking the Senate Impeachment Court to treat defense lawyer and former DepEd undersecretary Michael Poa as a hostile witness.",
+  "keywords": ["Michael Poa hostile witness", "Sara Duterte impeachment trial", "DepEd confidential funds AOM"],
+  "category": "National",
+  "kicker": "Impeachment · Court Procedure",
+  "deck": "The prosecution is considering a hostile-witness request because of Poa's current defense role and his earlier work responding to audit memoranda on DepEd confidential funds.",
+  "publishedAt": "2026-08-24T19:00:00+08:00",
+  "updatedAt": "2026-08-28T07:04:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["The House prosecution panel is considering asking the Senate Impeachment Court to treat Michael Poa, a member of Vice President Sara Duterte's defense team and a former Department of Education undersecretary, as a hostile witness.","The Manila Times reported that prosecutors are eyeing Poa because he responded to Commission on Audit memoranda concerning DepEd confidential funds. The court, not the prosecution, would make the final determination on his witness status."]},
+    {"heading":"What the request would mean","paragraphs":["A hostile-witness request is a procedural application, not a finding that Poa or the Vice President committed wrongdoing. If prosecutors formally make the request, the Senate Impeachment Court would decide whether the circumstances justify different questioning rules.","The prosecution's stated interest concerns Poa's former role at DepEd and his current position in the defense team. The evidence and any testimony remain subject to examination and challenge during the trial."]},
+    {"heading":"Context","paragraphs":["The impeachment trial is examining House allegations concerning confidential funds used by the Office of the Vice President and DepEd. Duterte and her defense team have contested allegations of misuse.","Separately, financial institutions were previously given until September 2 to submit remaining records covered by Senate Impeachment Court subpoenas. Those submissions and the subpoenas themselves do not establish liability."]},
+    {"heading":"Why this matters","paragraphs":["Poa's prior government role and current defense position could make his testimony important to the prosecution's effort to examine DepEd audit responses. The court's ruling would define how that examination proceeds without deciding the merits of the underlying allegations."]},
+    {"heading":"What to watch next","paragraphs":["The next question is whether prosecutors formally file the request and how the defense and the Senate Impeachment Court respond. Until the court rules, Poa has not been declared a hostile witness."]}
+  ],
+  "sources": [
+    {"publisher":"The Manila Times","title":"Prosecution may call Poa as hostile witness","publishedAt":"2026-08-28T00:15:00+08:00","url":"https://www.manilatimes.net/2026/08/28/news/national/prosecution-may-call-poa-as-hostile-witness/2413606"},
+    {"publisher":"Philippine News Agency","title":"Banks given 7 days to submit VP records to impeachment court","publishedAt":"2026-08-26T17:01:00+08:00","url":"https://www.pna.gov.ph/articles/1282721"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":null,"creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because publication rights for the recommended Senate photograph could not be independently verified from a stable original asset page.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the Michael Poa hostile-witness report; it does not depict the actual proceedings.","alt":"FMB News editorial visual for the Michael Poa impeachment-trial update","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-08-28T07:04:00+08:00","photoReferenceUrl":"https://www.pna.gov.ph/categories/national","notes":["Merged the bulletin's explicit impeachment update into the established canonical court-procedure route and removed the duplicate August 28 route.","Verified that prosecutors were considering hostile-witness treatment for Poa because of his defense role and his earlier responses to COA memoranda on DepEd confidential funds.","Removed unsupported quotations, a claimed Friday 3 p.m. hearing schedule, assertions about Poa being a signatory, and claims that the court had already granted the request."]}
+}

@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "fmb-news-2026-08-07-0600-pht",
+  "emailSubject": "FMB News | PAGASA Lifts Wind Signals as Maymay Weakens into Low Pressure Area | August 7, 2026 | 6:00 AM PHT",
+  "slug": "pagasa-lifts-wind-signals-as-maymay-weakens-to-low-pressure-area",
+  "headline": "PAGASA Lifts Wind Signals as Maymay Weakens Into a Low Pressure Area",
+  "category": "Environment",
+  "kicker": "Weather update",
+  "deck": "Maymay weakened into a low pressure area over the Philippine Sea, but the southwest monsoon continues to bring rain and hazardous seas to parts of the country.",
+  "publishedAt": "2026-08-07T06:00:00+08:00",
+  "updatedAt": "2026-08-07T07:48:44+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "PAGASA said in its final Maymay bulletin at 5:00 a.m. on August 7 that the system had weakened into a low pressure area over the Philippine Sea. No tropical cyclone wind signal remained in effect."
+      ]
+    },
+    {
+      "heading": "What we know",
+      "paragraphs": [
+        "The low pressure area was estimated at 620 kilometers east of Echague, Isabela at 4:00 a.m. PAGASA said the remnant circulation was moving eastward and was expected to be absorbed into the circulation of Tropical Cyclone Dolphin within hours.",
+        "The southwest monsoon remained the main weather hazard. PAGASA warned of strong to gale-force gusts over much of the country through August 9, while a gale warning covered the seaboard of Extreme Northern Luzon."
+      ]
+    },
+    {
+      "heading": "Background",
+      "paragraphs": [
+        "Maymay made landfall over Magsingal, Ilocos Sur early on August 6 and crossed Northern Luzon before emerging over the sea east of Central Luzon. PAGASA had already lifted all wind signals by late Thursday as the cyclone weakened."
+      ]
+    },
+    {
+      "heading": "What remains unclear",
+      "paragraphs": [
+        "Local rainfall conditions can still change quickly even after a cyclone loses its wind classification. PAGASA advised the public to follow regional rainfall warnings, local government instructions, and updates on the southwest monsoon."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "The removal of wind signals does not end the risk from flooding, landslides, rough seas, and travel disruption. Communities with saturated soil or exposure to coastal waters should continue to use local hazard advisories as the basis for decisions."
+      ]
+    },
+    {
+      "heading": "What happens next",
+      "paragraphs": [
+        "PAGASA will continue issuing rainfall, gale, and public weather advisories as the remnant low is absorbed and the southwest monsoon evolves."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "DOST-PAGASA",
+      "title": "Tropical Cyclone Bulletin No. 17-Final: LPA Maymay",
+      "publishedAt": "2026-08-07T05:00:00+08:00",
+      "url": "https://www.pagasa.dost.gov.ph/tropical-cyclone/severe-weather-bulletin"
+    },
+    {
+      "publisher": "GMA News Online",
+      "title": "Wind signals lifted as Maymay moves east of Central Luzon",
+      "publishedAt": "2026-08-06T23:33:00+08:00",
+      "url": "https://www.gmanetwork.com/news/weather/content/997646/wind-signals-lifted-as-maymay-moves-east-of-central-luzon/story/"
+    },
+    {
+      "publisher": "GMA News Online",
+      "title": "Maymay crosses Northern Luzon; 4 areas remain under Signal No. 2",
+      "publishedAt": "2026-08-06T05:25:00+08:00",
+      "url": "https://www.gmanetwork.com/news/weather/content/997530/maymay-northern-luzon-signal-no-2/story/"
+    }
+  ],
+  "image": {
+    "kind": "open-license-photo",
+    "url": "/assets/images/news/2026-08-07/pagasa-guiuan-weather-station.webp",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_DOST-PAGASA_Guiuan_Weather_Station_in_2022.jpg",
+    "creator": "Nairb.Idi9",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "usageStatus": "Wikimedia Commons file verified as CC BY-SA 4.0; locally hosted crop published with creator, source, and license credit.",
+    "credit": "Photo: Nairb.Idi9 / Wikimedia Commons · CC BY-SA 4.0",
+    "caption": "Archive photo of the DOST-PAGASA Guiuan Weather Station in 2022. It does not depict Tropical Depression Maymay.",
+    "alt": "Blue-and-white PAGASA weather station tower in Guiuan, Eastern Samar"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-06T23:48:44Z",
+    "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:The_DOST-PAGASA_Guiuan_Weather_Station_in_2022.jpg",
+    "notes": [
+      "Removed the unverified orange rainfall warning and class-suspension list from the supplied copy.",
+      "Used PAGASA's final bulletin and corroborating GMA reports for status, landfall, and timing.",
+      "A relevant CC BY-SA 4.0 PAGASA archive photo from Wikimedia Commons is locally hosted with visible creator, source, and license credit."
+    ]
+  }
+}

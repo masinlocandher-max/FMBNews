@@ -1,0 +1,124 @@
+{
+  "date": "2026-08-15",
+  "publishedAt": "2026-08-15T07:00:00+08:00",
+  "editionLabel": "Morning Special",
+  "title": "Energy Capital, AI Returns and Heritage as Contemporary Business",
+  "deck": "The August 15 Morning Special follows First Gen, AI investment discipline, Cebu’s IT-BPM transformation, MaArte Fair, BARMM tourism, regional film infrastructure and Masinloc’s major farm-to-market road.",
+  "hero": {
+    "src": "/assets/images/news/2026-08-07/angat-dam.webp",
+    "alt": "Archive photograph of Angat Dam in the Philippines",
+    "caption": "Archive photograph of Philippine energy and water infrastructure used to illustrate the growing strategic value of physical infrastructure. It does not depict First Gen or the proposed KKR transaction.",
+    "credit": "Photo: Nikbert16 / Wikimedia Commons · CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:AngatDam.jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+  },
+  "stories": [
+    {
+      "id": "FMB-MS-20260815-001",
+      "kicker": "Business · Energy · Investment",
+      "headline": "KKR’s First Gen Proposal Shows Why Energy Is Becoming More Strategically Valuable",
+      "deck": "The proposed transaction could have valued First Gen at about ₱165.44 billion and supported a voluntary delisting.",
+      "body": [
+        "KKR proposed buying an 8.43 percent stake in First Gen from parent First Philippine Holdings, a transaction that Reuters calculated could value the Philippine power producer at roughly ₱165.44 billion or $2.7 billion.",
+        "The proposed stake purchase would likely have triggered a mandatory tender offer for First Gen’s public float and could have supported a petition for voluntary delisting from the Philippine Stock Exchange.",
+        "The strategic significance goes beyond one transaction. Reliable electricity is becoming more valuable as data centers, artificial intelligence and advanced manufacturing increase the amount of physical infrastructure required by the digital economy.",
+        "Foreign capital can signal confidence, but large infrastructure deals also create reputation questions around valuation, governance, minority shareholders and long-term public benefit. Those questions deserve clear communication rather than financial headlines alone."
+      ],
+      "sources": [
+        {"label": "Reuters — Philippines' First Gen eyes take-private deal from KKR at $2.7 billion valuation", "url": "https://www.reuters.com/world/asia-pacific/philippines-first-gen-eyes-take-private-deal-kkr-27-billion-valuation-2026-08-13/"}
+      ]
+    },
+    {
+      "id": "FMB-MS-20260815-002",
+      "kicker": "AI · Capital · ROI",
+      "headline": "AI Spending Is Entering Its Return-on-Investment Phase",
+      "deck": "Investors are increasingly asking whether enormous compute and data-center spending produces durable economic value.",
+      "body": [
+        "The scale of global AI infrastructure investment is continuing to rise, with technology companies and financial institutions committing extraordinary sums to compute, chips, data centers and power-intensive systems.",
+        "That scale is changing the conversation. The question is no longer simply which company is adopting AI, but whether the spending produces revenue, productivity, cost savings or defensible strategic advantage.",
+        "For brands and startups, the phrase AI-powered is therefore becoming less useful on its own. A stronger proposition explains what changed for the customer and how the technology makes a product faster, cheaper, safer or more valuable.",
+        "This favors narrow, practical applications over vague technological positioning. Philippine opportunities can be especially strong in customer service, education, tourism, BPO workflows, communications and public-service delivery where the outcome is easy to understand."
+      ],
+      "sources": [
+        {"label": "Financial Times — Nvidia becomes the bank of AI", "url": "https://www.ft.com/content/4c93c894-04b8-49dc-be41-98ae79f540f8"},
+        {"label": "Reuters — Asian equity outflows as AI worries bite", "url": "https://www.reuters.com/world/china/taiwan-south-korea-drive-asian-equity-outflows-july-ai-worries-bite-2026-08-11/"}
+      ]
+    },
+    {
+      "id": "FMB-MS-20260815-003",
+      "kicker": "Cebu · IT-BPM · AI",
+      "headline": "Cebu’s Transformation Summit Pushes IT-BPM From Digital to AI Transformation",
+      "deck": "The August 14 summit brought more than 500 delegates and over 200 companies into a conversation about skills, operating models and competitiveness.",
+      "body": [
+        "Cebu IT-BPM Organization held its 2026 Transformation Summit on August 14 at Summit Galleria Cebu, with the official event site describing more than 500 delegates and representatives from over 200 companies.",
+        "The program focused on the shift from digital transformation to AI transformation, including workforce skills, industry-academe partnerships, AI-driven operating models and the Philippine AI roadmap.",
+        "The public-perception challenge is workforce anxiety. Companies cannot credibly describe automation as transformation if employees see no evidence of reskilling, career mobility or investment in higher-value roles.",
+        "The opportunity is significant for training, process redesign, AI governance, knowledge management and internal communications. Cebu’s position in IT-BPM makes it an important regional test of whether AI can upgrade Filipino work rather than merely reduce routine tasks."
+      ],
+      "sources": [
+        {"label": "Cebu IT-BPM Organization — 2026 Transformation Summit", "url": "https://summit.cib.org.ph/home"}
+      ]
+    },
+    {
+      "id": "FMB-MS-20260815-004",
+      "kicker": "Culture · Design · Entrepreneurship",
+      "headline": "MaArte Fair Shows How Heritage Can Become Contemporary Business",
+      "deck": "The 17th edition brought more than 200 Filipino artisan-entrepreneurs into a premium retail environment built around cultural craft and design.",
+      "body": [
+        "MaArte Fair returned to The Peninsula Manila for its 17th edition from August 13 to 16 under the theme Karnabal: A Celebration of Filipino Heritage. Organizers and coverage described more than 200 participating artisan-entrepreneurs.",
+        "The fair matters because it places heritage inside a contemporary market rather than treating tradition as something that must remain visually frozen. Fashion, craft, fragrance, textiles and design can evolve while remaining connected to cultural meaning.",
+        "The reputation risk is shallow nostalgia. Traditional materials and motifs lose depth when brands use them without provenance, credit or understanding of the communities that developed them.",
+        "For cultural enterprises, the stronger model is documentation first and reinvention second. That principle can support new products while preserving the meaning that makes them distinct in the first place."
+      ],
+      "sources": [
+        {"label": "Museum Foundation of the Philippines — MaArte at The Pen 2026", "url": "https://museumfoundationph.org/maarte-at-the-pen-2026-call-for-exhibitors/"},
+        {"label": "Philstar — MaArte Fair welcomes over 200 exhibitors for 2026 edition", "url": "https://www.philstar.com/lifestyle/arts-and-culture/2026/07/24/2542554/maarte-fair-welcomes-over-200-exhibitors-2026-edition"}
+      ]
+    },
+    {
+      "id": "FMB-MS-20260815-005",
+      "kicker": "Tourism · Commerce · BARMM",
+      "headline": "BARMM Travel Fair Moves Tourism From Promotion Into Direct Selling",
+      "deck": "The Regional Travel Fair combines business meetings with consumer sales of tour packages, accommodation, airfare and local products.",
+      "body": [
+        "The Tourism Promotions Board’s 18th Regional Travel Fair ran in BARMM from August 13 to 16. The official program included a business-to-business session and two days of business-to-consumer selling.",
+        "The products being sold included domestic tour packages, airline tickets, accommodation and other tourism services, while the program also highlighted local artisans and Philippine weaves.",
+        "This is a useful destination-branding model because it connects identity with conversion. A place is more commercially competitive when travelers can move quickly from inspiration to a clear itinerary, supplier and purchase path.",
+        "For Zambales, the opportunity is to package beaches, food, heritage, conservation and community experiences into buyable circuits. The risk is generating awareness before logistics and service quality are ready to carry the promise."
+      ],
+      "sources": [
+        {"label": "Tourism Promotions Board — 18th Regional Travel Fair", "url": "https://tpb.gov.ph/events/18th-regional-travel-fair/"}
+      ]
+    },
+    {
+      "id": "FMB-MS-20260815-006",
+      "kicker": "Media · Film · ASEAN",
+      "headline": "ASEAN Film and TV Summit Ends With Distribution and Preservation in Focus",
+      "deck": "The Manila summit brought regional institutions together around the systems that allow Asian screen stories to travel and endure.",
+      "body": [
+        "The Philippines hosted the ASEAN Film and TV Summit 2026 from August 12 to 14 at Seda Manila Bay through the Film Development Council of the Philippines and the Asian Film Alliance Network.",
+        "The program brought together industry leaders, producers, archivists, educators, policymakers and cultural institutions, with sessions on film archiving, education, co-production and the evolving regional screen market.",
+        "The strategic lesson is that cultural influence requires infrastructure. Talent becomes more powerful when financing, archives, professional networks and distribution systems allow work to move across borders and remain accessible over time.",
+        "For Philippine filmmakers and cultural organizations, regional collaboration creates opportunity without requiring stories to become generic. The strongest exportable identity is often the one that remains specific and professionally distributed."
+      ],
+      "sources": [
+        {"label": "Film Development Council of the Philippines — ASEAN Film and TV Summit 2026", "url": "https://fdcp.ph/index.php/news/asean2026"}
+      ]
+    },
+    {
+      "id": "FMB-MS-20260815-007",
+      "kicker": "Zambales · Masinloc · Infrastructure",
+      "headline": "Masinloc’s ₱727-Million Farm-to-Market Road Remains a Major Local Development Story",
+      "deck": "The 26-kilometer project includes 11 bridges and is expected to benefit more than 1,500 farmers and thousands of households.",
+      "body": [
+        "A ₱727-million farm-to-market road project in Masinloc covers the rehabilitation and improvement of the Baloganon–Sitio Coto, Taltal route and includes the construction of 11 bridges.",
+        "The Department of Agriculture’s Philippine Rural Development Project has said more than 1,500 farmers and about 4,500 households, including indigenous peoples, are expected to benefit from improved connectivity.",
+        "Infrastructure stories matter beyond the construction budget. Better transport can influence agricultural market access, travel time, local business activity and the future viability of tourism and community enterprises along the route.",
+        "The reputation requirement for a project this large is transparency. Progress, procurement, environmental effects and actual community benefits should remain visible so the public can judge delivery against the promise."
+      ],
+      "sources": [
+        {"label": "Philippine Information Agency — 1,500 Masinloc farmers to benefit from P727-M mega farm-to-market road project", "url": "https://pia.gov.ph/news/1500-masinloc-farmers-to-benefit-from-p727-m-mega-farm-to-market-road-project/"}
+      ]
+    }
+  ]
+}

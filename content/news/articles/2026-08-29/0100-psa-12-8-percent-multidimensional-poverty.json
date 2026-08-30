@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-29-0100",
+  "emailSubject": "FMB News | Habagat Triggers Red Rainfall Warning in Pampanga; Visayas Grid in Red Alert | August 29, 2026 | 1:00 AM PHT",
+  "slug": "psa-12-8-percent-multidimensional-poverty-2024",
+  "headline": "PSA: 12.8% of Filipinos Were Multidimensionally Poor in 2024",
+  "seoTitle": "PSA: 12.8% of Filipinos Multidimensionally Poor in 2024 | FMB News",
+  "seoDescription": "The PSA's 2024 Multidimensional Poverty Index found 12.8% of Filipinos belonged to households facing overlapping deprivations across four dimensions of well-being.",
+  "keywords": ["PSA multidimensional poverty 2024", "12.8 percent Filipinos", "Philippines MPI"],
+  "category": "National",
+  "kicker": "Economy · Poverty",
+  "deck": "PSA's national MPI shows overlapping deprivations remain significant even as income-poverty measures have improved.",
+  "publishedAt": "2026-08-29T01:00:00+08:00",
+  "updatedAt": "2026-08-29T06:58:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["About 12.8% of Filipinos belonged to households classified as multidimensionally poor in 2024, according to the Philippine Statistics Authority's national Multidimensional Poverty Index based on the 2024 Community-Based Monitoring System.","At the household level, 12.4% of Filipino households were classified as multidimensionally poor. The individual-level MPI was 0.045, while the average intensity of deprivation among multidimensionally poor individuals was 34.7%."]},
+    {"heading":"How multidimensional poverty is measured","paragraphs":["The Philippine MPI measures deprivations using 17 indicators grouped into four dimensions: education; health and nutrition; housing, water and sanitation; and employment.","A household is considered multidimensionally poor when its weighted deprivation score exceeds the poverty cutoff of 0.25."]},
+    {"heading":"Where deprivation is concentrated","paragraphs":["Education accounted for the largest share of the individual-level MPI at 40.7%, followed by housing, water and sanitation at 31.3%, health and nutrition at 18.5%, and employment at 9.5%.","Among specific indicators, housing materials showed the highest deprivation rate at 38.7% of the population, followed by internet access at 26.4%, sanitation or toilet facilities at 24.1%, ownership of assets at 21.8%, and educational attainment at 20.2%."]},
+    {"heading":"Context","paragraphs":["Multidimensional poverty is different from income poverty. PSA's 2025 official poverty statistics reported that 9.7% of Filipinos were income-poor, while poverty incidence among families was 6.4%. The measures answer different questions and should not be treated as interchangeable."]},
+    {"heading":"Why this matters","paragraphs":["The MPI highlights gaps that income alone can miss, including schooling, sanitation, housing quality, access to basic assets and employment conditions. That makes it useful for targeting social and infrastructure programs beyond cash assistance."]},
+    {"heading":"What to watch next","paragraphs":["Policy makers and local governments are expected to use the CBMS-based results to identify where deprivation is concentrated and to target education, health, housing, water, sanitation and employment interventions more precisely."]}
+  ],
+  "sources": [
+    {"publisher":"Philippine Statistics Authority","title":"12.8% of Filipinos are Multidimensionally Poor in 2024","publishedAt":"2026-08-27T12:00:00+08:00","url":"https://psa.gov.ph/content/128-filipinos-are-multidimensionally-poor-2024"},
+    {"publisher":"Philippine Statistics Authority","title":"Proportion of Poor Families Reduced to 6.4 Percent in 2025","publishedAt":"2026-08-21T12:00:00+08:00","url":"https://psa.gov.ph/statistics/poverty"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":null,"creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because the briefing referenced DepEd/PNA classroom imagery but did not supply a stable original file with independently verified reuse rights for repository ingestion.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the PSA multidimensional-poverty report.","alt":"FMB News editorial visual for the Philippine Statistics Authority multidimensional poverty report","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-08-29T06:58:00+08:00","photoReferenceUrl":"https://psa.gov.ph/content/128-filipinos-are-multidimensionally-poor-2024","notes":["Corrected the briefing's methodology detail: PSA's national MPI uses 17 indicators, not 13, grouped into four dimensions.","Corrected release timing: PSA released the MPI results on August 27, 2026, not August 28.","Distinguished the 12.8% individual multidimensional-poverty rate from the 12.4% household MPI headcount and from the separate 2025 income-poverty figures.","Used PSA's primary release as the principal source and did not rely on unverified quotations from the newsroom package."]}
+}

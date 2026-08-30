@@ -1,0 +1,85 @@
+{
+  "date": "2026-08-13",
+  "publishedAt": "2026-08-13T07:00:00+08:00",
+  "editionLabel": "Morning Special",
+  "title": "A Smaller Infrastructure Plan, Monsoon Risk and a Clark Interdiction",
+  "deck": "The August 13 Morning Special follows three pressure points shaping the day: a leaner 2027 infrastructure envelope, flood risk across western Luzon and a major drug interdiction at Clark.",
+  "hero": {
+    "src": "/assets/images/news/2026-08-07/pampanga-flood-control.webp",
+    "alt": "Archive view of a flood-control landscape and bridge in Pampanga",
+    "caption": "Archive photograph of flood-control infrastructure in Pampanga. It does not depict the August 13 budget action.",
+    "credit": "Photo: Judgefloro / Wikimedia Commons · CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jf6393Santa_Barbara,_Bacolor_Flood,_Pampanga_Bridgefvf_05.JPG",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "stories": [
+    {
+      "id": "FMB-20260813-004",
+      "kicker": "Public finance · Infrastructure",
+      "headline": "Government Lowers the 2027 Infrastructure Program to ₱1.34 Trillion",
+      "deck": "Economic managers reduced the proposed public-works envelope as the government balances capital spending with its deficit-reduction path.",
+      "body": [
+        "The government lowered its national infrastructure spending program for fiscal year 2027 to ₱1.34 trillion, according to the August 13 budget reports reviewed by FMB News.",
+        "The revised envelope is equivalent to about 4.2 percent of gross domestic product, below the five-percent benchmark that had framed recent annual infrastructure programs. The adjustment forms part of the administration’s effort to narrow the deficit under its medium-term fiscal program.",
+        "The smaller top line does not mean every capital project is being stopped. Budget officials said priority would remain with projects ready for implementation, including flood-management works, transport links and digital connectivity. The practical issue is sequencing: projects with clearer designs, permits and implementation schedules are more likely to move first.",
+        "The change matters because public construction supports employment and can improve movement, drainage and access to services. It also raises a delivery question for agencies: with less room in the overall envelope, incomplete or weakly prepared projects face greater pressure to justify their place in the program.",
+        "The proposed infrastructure allocation will move through congressional scrutiny as part of the 2027 National Expenditure Program. Lawmakers can still alter individual agency and project allocations during budget deliberations."
+      ],
+      "sources": [
+        {"label": "The Philippine STAR — Government slashes infrastructure spending to ₱1.34 trillion", "url": "https://www.philstar.com/business/2026/08/13/2548853/government-slashes-infrastructure-spending-p134-trillion"},
+        {"label": "Manila Bulletin — Government cuts 2027 infrastructure budget", "url": "https://mb.com.ph/2026/08/12/govt-cuts-2027-infra-budget-even-as-flood-control-spending-returns"}
+      ]
+    },
+    {
+      "id": "FMB-20260813-005",
+      "kicker": "Weather · Public safety",
+      "headline": "PAGASA Raises a Yellow Rainfall Warning for Zambales and Bataan",
+      "deck": "Tropical Storm Nangka remained outside the Philippine Area of Responsibility while continuing to enhance the southwest monsoon over western Luzon.",
+      "image": {
+        "src": "/assets/images/news/2026-08-09/la-mesa-dam-critical-level.webp",
+        "alt": "Archive view across La Mesa Dam and reservoir",
+        "caption": "Archive photograph of La Mesa Dam in 2008. It does not depict conditions in Zambales or Bataan on August 13, 2026.",
+        "credit": "Photo: dnumde / Wikimedia Commons · CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:La_Mesa_Dam_-_panoramio.jpg",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "body": [
+        "PAGASA placed Zambales and Bataan under a Yellow Heavy Rainfall Warning on Thursday morning as the enhanced southwest monsoon continued to bring rain over western Luzon.",
+        "A Yellow warning signals that flooding is possible in flood-prone areas. Residents near rivers, drainage channels, saturated slopes and low-lying roads were advised to follow local disaster-office instructions and monitor later PAGASA bulletins because rainfall warnings can change quickly.",
+        "Tropical Storm Nangka remained east of Luzon and outside the Philippine Area of Responsibility early Thursday. Even from outside the boundary, its circulation continued to pull monsoon moisture across the western side of the country.",
+        "Rain bands were also expected over parts of Metro Manila, Central Luzon, Calabarzon and nearby provinces. The local impact depended on where stronger cells persisted, making municipal and barangay-level alerts more useful than a broad regional forecast alone.",
+        "For households in vulnerable areas, the immediate priorities were simple: keep evacuation routes clear, charge phones and lights, protect medicines and documents, and avoid crossing moving floodwater."
+      ],
+      "sources": [
+        {"label": "DOST-PAGASA NCR-PRSD — Regional rainfall warnings", "url": "https://www.pagasa.dost.gov.ph/regional-forecast/ncrprsd"},
+        {"label": "DOST-PAGASA — Tropical Storm Nangka update, August 13", "url": "https://www.facebook.com/PAGASA.DOST.GOV.PH/posts/as-of-200-am-today-13-august-2026-tropical-storm-nangka-formerly-lpa-08d-is-bein/1524975103007471/"}
+      ]
+    },
+    {
+      "id": "FMB-20260813-006",
+      "kicker": "Customs · Public safety",
+      "headline": "Clark Interdiction Uncovers ₱8.3 Million in Ketamine; Bicol Receives 20 Emergency Motorcycles",
+      "deck": "Two separate operations put the focus on frontline capacity: detecting concealed narcotics at the border and reaching emergency calls on difficult roads.",
+      "image": {
+        "src": "/assets/images/news/2026-08-13/boc-clark-ketamine-rabbit-figurine.jpg",
+        "alt": "A customs examiner opens a rabbit figurine used to conceal suspected ketamine at Clark",
+        "caption": "A Bureau of Customs examiner inspects the rabbit figurine in which suspected ketamine was concealed at the Port of Clark in August 2026.",
+        "credit": "Photo: Bureau of Customs–Port of Clark",
+        "sourceUrl": "https://portcalls.com/boc-clark-seizes-p8-4m-ketamine-hidden-in-rabbit-figurine/",
+        "licenseUrl": "https://lawphil.net/statutes/repacts/ra1997/ra_8293_1997.html"
+      },
+      "body": [
+        "The Bureau of Customs and the Philippine Drug Enforcement Agency intercepted suspected ketamine valued at roughly ₱8.3 million at the Port of Clark, according to official and government-news reports.",
+        "The shipment was concealed in a decorative rabbit figurine. X-ray screening and a physical examination led officers to the hidden substance, which was then subjected to drug testing and turned over for investigation and case preparation.",
+        "The operation shows why border enforcement depends on several layers working together: shipment profiling, scanning, inspection, laboratory confirmation and a documented chain of custody. A seizure is only the first step; prosecutors still need evidence that can survive court scrutiny.",
+        "In a separate public-safety development, the Police Regional Office in Bicol received 20 motorcycle emergency-response units for the Unified 911 system. The vehicles were assigned to help responders reach communities where congestion, narrow roads or flood conditions can slow larger vehicles.",
+        "The motorcycles carry communications and first-response equipment. Their value will ultimately be measured by dispatch discipline, maintenance and whether trained personnel can consistently reach callers faster—not by the turnover ceremony alone."
+      ],
+      "sources": [
+        {"label": "Bureau of Customs — Clark inter-agency ketamine interdiction", "url": "https://www.facebook.com/BureauOfCustomsPH/posts/boc-pdea-clark-inter-agency-foil-8375m-ketamine-shipment-concealed-in-rabbit-fig/1368628045443541/"},
+        {"label": "Philippine News Agency — Ketamine seized at Clark", "url": "https://www.pna.gov.ph/articles/1281622"},
+        {"label": "Philippine News Agency — 20 motorcycles for Bicol emergency response", "url": "https://www.pna.gov.ph/articles/1281499"}
+      ]
+    }
+  ]
+}

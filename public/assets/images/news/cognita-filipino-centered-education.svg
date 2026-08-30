@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="864" viewBox="0 0 1536 864" role="img" aria-labelledby="title desc">
+  <title id="title">Cognita Institute of AI Filipino-centered education</title>
+  <desc id="desc">Francine Marie Bautista beside the Cognita Institute of AI identity and its education, innovation, and community pillars.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f9fbff"/>
+      <stop offset="0.56" stop-color="#edf5ff"/>
+      <stop offset="1" stop-color="#cfe5ff"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="portraitFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="0.18" stop-color="#000" stop-opacity="0.75"/>
+      <stop offset="0.35" stop-color="#000" stop-opacity="1"/>
+      <stop offset="1" stop-color="#000" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0.8" stop-color="#000" stop-opacity="1"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="portraitMask">
+      <rect width="1536" height="864" fill="url(#portraitFade)"/>
+      <rect width="1536" height="864" fill="url(#bottomFade)"/>
+    </mask>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="24" stdDeviation="26" flood-color="#16345d" flood-opacity="0.18"/>
+    </filter>
+    <filter id="smallShadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#18477a" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <rect width="1536" height="864" fill="url(#background)"/>
+  <circle cx="465" cy="162" r="390" fill="url(#glow)" opacity="0.92"/>
+  <circle cx="1320" cy="188" r="360" fill="url(#glow)" opacity="0.46"/>
+
+  <g fill="none" stroke="#78b7ff" stroke-opacity="0.22">
+    <path d="M-80 735C190 545 420 590 645 726S1115 965 1612 515"/>
+    <path d="M-90 765C210 565 430 615 655 748S1125 985 1620 540"/>
+    <path d="M1040 -120C1275 92 1315 277 1240 455S1165 773 1515 930"/>
+    <path d="M1090 -105C1305 100 1340 285 1265 465S1205 775 1545 920"/>
+  </g>
+
+  <g opacity="0.52" fill="#ffffff">
+    <circle cx="151" cy="87" r="5"/><circle cx="357" cy="56" r="3"/><circle cx="1432" cy="125" r="5"/>
+    <circle cx="1366" cy="274" r="3"/><circle cx="91" cy="612" r="4"/><circle cx="725" cy="94" r="4"/>
+  </g>
+
+  <g transform="translate(108 194)">
+    <text x="0" y="92" fill="#0d3f86" font-family="Georgia, 'Times New Roman', serif" font-size="104" letter-spacing="13">COGNITA</text>
+    <circle cx="475" cy="8" r="12" fill="#148bff"/>
+    <text x="42" y="157" fill="#123f7d" font-family="Arial, Helvetica, sans-serif" font-size="39" letter-spacing="16">INSTITUTE OF AI</text>
+    <text x="45" y="207" fill="#1688e8" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="8">LEARN. INNOVATE. TRANSFORM.</text>
+    <line x1="45" y1="245" x2="562" y2="245" stroke="#32a8ff" stroke-width="2" opacity="0.7"/>
+
+    <text x="45" y="303" fill="#173e72" font-family="Arial, Helvetica, sans-serif" font-size="24">
+      <tspan x="45" dy="0">Empowering minds. Building the future.</tspan>
+      <tspan x="45" dy="37">Practical AI education for the next</tspan>
+      <tspan x="45" dy="37">generation of thinkers, creators,</tspan>
+      <tspan x="45" dy="37">and problem solvers.</tspan>
+    </text>
+  </g>
+
+  <g transform="translate(132 645)" font-family="Arial, Helvetica, sans-serif" filter="url(#smallShadow)">
+    <g transform="translate(0 0)">
+      <circle cx="49" cy="36" r="34" fill="#ffffff" fill-opacity="0.76" stroke="#39a5ff"/>
+      <path d="M35 27c-7 1-10 8-7 14 2 5 7 7 12 5 2 8 13 10 18 4 8 1 13-7 10-14 3-8-6-15-13-11-4-7-16-6-20 2Z" fill="none" stroke="#168be8" stroke-width="3"/>
+      <path d="M48 18v36M37 32h22M38 42c4-3 8-3 11 0M49 42c4-3 8-3 11 0" fill="none" stroke="#168be8" stroke-width="2"/>
+      <text x="0" y="95" fill="#0f6fbe" font-size="16" font-weight="800">AI EDUCATION</text>
+      <text x="0" y="119" fill="#3c5d82" font-size="13">Future-ready skills</text>
+      <text x="0" y="139" fill="#3c5d82" font-size="13">for real-world impact.</text>
+    </g>
+
+    <line x1="211" y1="8" x2="211" y2="142" stroke="#4d8fc6" stroke-opacity="0.34"/>
+    <g transform="translate(245 0)">
+      <circle cx="49" cy="36" r="34" fill="#ffffff" fill-opacity="0.76" stroke="#39a5ff"/>
+      <path d="M49 16c-11 0-19 8-19 19 0 7 3 12 9 16v7h20v-7c6-4 9-9 9-16 0-11-8-19-19-19Z" fill="none" stroke="#168be8" stroke-width="3"/>
+      <path d="M42 64h14M42 70h14M49 8V0M25 16l-6-6M73 16l6-6M22 39h-9M85 39h-9" fill="none" stroke="#168be8" stroke-width="2.5"/>
+      <text x="0" y="95" fill="#0f6fbe" font-size="16" font-weight="800">INNOVATION</text>
+      <text x="0" y="119" fill="#3c5d82" font-size="13">Ideas into solutions.</text>
+      <text x="0" y="139" fill="#3c5d82" font-size="13">Learning into action.</text>
+    </g>
+
+    <line x1="455" y1="8" x2="455" y2="142" stroke="#4d8fc6" stroke-opacity="0.34"/>
+    <g transform="translate(490 0)">
+      <circle cx="49" cy="36" r="34" fill="#ffffff" fill-opacity="0.76" stroke="#39a5ff"/>
+      <circle cx="49" cy="25" r="8" fill="none" stroke="#168be8" stroke-width="3"/>
+      <circle cx="29" cy="31" r="6" fill="none" stroke="#168be8" stroke-width="2.5"/>
+      <circle cx="69" cy="31" r="6" fill="none" stroke="#168be8" stroke-width="2.5"/>
+      <path d="M34 57c1-12 8-18 15-18s14 6 15 18M17 56c1-9 5-14 12-14M81 56c-1-9-5-14-12-14" fill="none" stroke="#168be8" stroke-width="3"/>
+      <text x="0" y="95" fill="#0f6fbe" font-size="16" font-weight="800">COMMUNITY</text>
+      <text x="0" y="119" fill="#3c5d82" font-size="13">Collaborate, grow,</text>
+      <text x="0" y="139" fill="#3c5d82" font-size="13">and lead together.</text>
+    </g>
+  </g>
+
+  <g mask="url(#portraitMask)" filter="url(#softShadow)">
+    <ellipse cx="1128" cy="718" rx="355" ry="95" fill="#ffffff" fill-opacity="0.58"/>
+    <image href="/assets/images/fmb-approved/francine-portrait-front.webp" x="765" y="18" width="710" height="825" preserveAspectRatio="xMidYMid meet"/>
+  </g>
+
+  <g transform="translate(1216 714)" font-family="Arial, Helvetica, sans-serif">
+    <text x="0" y="0" fill="#107acb" font-size="20">Francine Marie Bautista</text>
+    <text x="0" y="28" fill="#244b73" font-size="14">Founder</text>
+    <path d="M11 65c44-27 77-28 101-3 17 17 41 12 69-11M45 45c-9 22-11 43-4 62M103 46c-4 17-3 35 4 55M162 52c-7 12-8 27-4 43" fill="none" stroke="#168be8" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>

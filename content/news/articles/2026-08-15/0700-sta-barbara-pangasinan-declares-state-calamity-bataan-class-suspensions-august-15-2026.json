@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-15-0700",
+  "emailSubject": "FMB News | President Marcos Vows Press Freedom, Outlines 2028 Successor Criteria | August 15, 2026 | 7:00 AM PHT",
+  "slug": "sta-barbara-pangasinan-declares-state-calamity-bataan-class-suspensions-august-15-2026",
+  "headline": "Newsroom Brief Reports Sta. Barbara Calamity Declaration and Bataan Saturday Class Suspension",
+  "seoTitle": "Brief: Sta. Barbara Calamity, Bataan Class Suspension",
+  "seoDescription": "An FMB News morning brief reports a Sta. Barbara calamity declaration affecting 5,061 families and an all-level Bataan Saturday class suspension.",
+  "keywords": ["Sta Barbara Pangasinan flood", "Bataan class suspension", "Habagat August 2026"],
+  "category": "National",
+  "kicker": "Disaster response · Local government",
+  "deck": "The August 15 newsroom brief links continuing Habagat flooding to local emergency actions in Pangasinan and Bataan.",
+  "publishedAt": "2026-08-15T07:00:00+08:00",
+  "updatedAt": "2026-08-17T01:10:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [{"heading":"What happened","paragraphs":["The FMB News brief reports that Sta. Barbara, Pangasinan declared a state of calamity after flooding affected 5,061 families in 15 barangays, and that Bataan suspended Saturday classes at all levels.","Searchable public records also show Sta. Barbara had declared a state of calamity during an earlier 2025 flooding episode. Because the exact August 2026 municipal resolution was not independently retrieved, the new declaration and family count remain source-attributed."]},{"heading":"Context","paragraphs":["The article distinguishes the current newsroom claim from older, independently searchable Sta. Barbara calamity records."]},{"heading":"Why this matters","paragraphs":["Calamity declarations unlock emergency resources, while class suspensions affect family safety and travel decisions during flooding."]},{"heading":"What to watch next","paragraphs":["Watch for the Sta. Barbara municipal resolution, Pangasinan PDRRMO figures, and Bataan provincial advisories."]}],
+  "sources": [{"publisher":"Inquirer.net","title":"Luzon, Visayas reel from rains as Mindanao swelters — cited in FMB News brief","publishedAt":"2026-08-15T05:10:00+08:00","url":"https://newsinfo.inquirer.net/2284782/luzon-visayas-reel-from-rains-as-mindanao-swelters"},{"publisher":"GMA News Online","title":"Class suspensions for Saturday, August 15, 2026 — cited in FMB News brief","publishedAt":"2026-08-14T22:56:00+08:00","url":"https://www.gmanetwork.com/news/serbisyopubliko/walangpasok/998604/walang-pasok-class-suspensions-for-saturday-august-15-2026/story/"}],
+  "image": {"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":null,"creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because no stable rights-verified current-event image was available.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying this source-attributed report.","alt":"FMB News editorial visual","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit": {"sourceCheckedAt":"2026-08-17T01:10:00+08:00","photoReferenceUrl":"https://newsinfo.inquirer.net/2284782/luzon-visayas-reel-from-rains-as-mindanao-swelters","notes":["The exact August 2026 Sta. Barbara resolution was not independently retrieved."]}
+}

@@ -1,0 +1,134 @@
+/* FMB News hard visual lock. Loaded last after every newsroom renderer/polish layer. */
+.fmb-ref{--fmb-ink:#171217;--fmb-purple:#32103e;--fmb-violet:#6f1f76;--fmb-paper:#fff;--fmb-soft:#f8f5f8;--fmb-rule:#c7c0c8}
+.fmb-ref .shell{width:min(1320px,calc(100% - 40px))}
+.fmb-ref .utility{background:#fff;border-bottom:1px solid #211921;color:#211921;font-size:11px}
+.fmb-ref .utility .shell{min-height:32px}
+.fmb-ref .mast{padding:28px 0 18px;background:#fff;border-bottom:1px solid #211921}
+.fmb-ref .mast img{width:min(690px,72vw)}
+.fmb-ref .mast .tagline{margin-top:1px;font-size:13px;letter-spacing:.31em}
+.fmb-ref .nav{background:#fff;border-bottom:1px solid #211921}
+.fmb-ref .nav .shell{min-height:56px;justify-content:flex-start;gap:clamp(30px,4.5vw,76px)}
+.fmb-ref .nav a{padding:20px 0 16px;font-size:12px}
+.fmb-ref .nav .search{margin-left:auto}
+
+/* Homepage: match approved newspaper-like first viewport. */
+.fmb-ref .home-hero{grid-template-columns:minmax(0,.9fr) minmax(480px,1.1fr);gap:54px;padding:36px 0 34px;align-items:center}
+.fmb-ref .hero-rule{width:78px;height:5px;margin-bottom:31px}
+.fmb-ref .home-hero h1{max-width:600px;margin-bottom:19px;font-size:clamp(54px,5.9vw,82px);line-height:.96;letter-spacing:-.047em}
+.fmb-ref .home-hero p{max-width:570px;font-size:21px;line-height:1.45}
+.fmb-ref .hero-image{aspect-ratio:1.72/1;background:#ddd center/cover no-repeat url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Philippines.jpg")}
+.fmb-ref .hero-image img{opacity:0}
+.fmb-ref .section{padding:26px 0}
+.fmb-ref .section-title{margin-bottom:20px;padding-bottom:13px}
+.fmb-ref .section-title h2{font-size:20px;letter-spacing:-.015em}
+.fmb-ref .lead-grid{grid-template-columns:minmax(0,1.18fr) minmax(390px,.82fr);gap:38px}
+.fmb-ref .lead-story .media{aspect-ratio:1.62/1}
+.fmb-ref .lead-story h2{font-size:clamp(36px,3.45vw,54px);line-height:.99}
+.fmb-ref .lead-story p{max-width:760px;font-size:16px;line-height:1.5}
+.fmb-ref .support-item{grid-template-columns:205px 1fr;gap:22px;padding-bottom:18px;margin-bottom:18px}
+.fmb-ref .support-item img{width:205px;height:132px}
+.fmb-ref .support-item h3{font-size:24px;line-height:1.03}
+.fmb-ref .support-item p{font-size:13px;line-height:1.42}
+.fmb-ref .brief-promo{grid-template-columns:300px 1fr;gap:58px;margin:26px 0 10px;padding:28px 34px;background:linear-gradient(100deg,#f4eff7,#fbf9fb);border-color:#eee8f0}
+.fmb-ref .brief-cover{max-width:300px}
+.fmb-ref .brief-promo h2{max-width:600px;font-size:46px;line-height:1.01}
+.fmb-ref .more-item{grid-template-columns:245px 1fr;gap:25px;padding:14px 0}
+.fmb-ref .more-item img{width:245px;height:106px}
+.fmb-ref .more-item h3{font-size:21px}
+
+/* Article: approved spacious editorial composition. */
+.fmb-ref .article-shell{padding:34px 0 54px}
+.fmb-ref .article-shell>.back{margin-bottom:34px;font-size:12px}
+.fmb-ref .article-grid{grid-template-columns:minmax(0,1fr) 395px;gap:82px}
+.fmb-ref .article-date{font-size:11px;letter-spacing:.015em}
+.fmb-ref .article-kicker{margin-top:36px;font-size:11px;letter-spacing:.095em}
+.fmb-ref .article h1{max-width:860px;margin:14px 0 18px;font-size:clamp(54px,5.7vw,80px);line-height:.94;letter-spacing:-.052em}
+.fmb-ref .article-deck{max-width:860px;margin-bottom:25px;font-size:21px;line-height:1.36}
+.fmb-ref .byline{padding:14px 0;border-bottom:0}
+.fmb-ref .byline-badge{width:50px;height:50px}
+.fmb-ref .article-figure{margin-bottom:25px}
+.fmb-ref .article-figure img{max-height:none;aspect-ratio:1.6/1;object-fit:cover}
+.fmb-ref .article-figure figcaption{font-size:10.5px;line-height:1.46}
+.fmb-ref .article-body p{font-size:18px;line-height:1.68}
+.fmb-ref .article-body h2{font-size:26px}
+.fmb-ref .lens{grid-template-columns:48px 1fr;gap:16px;padding:20px 0}
+.fmb-ref .lens-icon{width:40px;height:40px;border:0;border-radius:0;background:transparent;color:var(--fmb-purple);font:800 26px/1 var(--fmb-serif)}
+.fmb-ref .lens h2{font-size:15px}
+.fmb-ref .lens p{font-size:14px;line-height:1.55}
+.fmb-ref .sources{margin-top:2px;padding-top:20px}
+.fmb-ref .related{top:24px}
+.fmb-ref .related h2{font-size:27px;padding-bottom:13px}
+.fmb-ref .related-item{grid-template-columns:1fr 125px;gap:20px;padding:20px 0}
+.fmb-ref .related-item img{width:125px;height:102px}
+.fmb-ref .related-item h3{font-size:20px;line-height:1.06}
+
+/* Footer locks. Homepage stays four-column; article becomes the approved two-column newsroom footer. */
+.fmb-ref .footer{margin-top:28px;background:linear-gradient(112deg,#241027,#35103c 62%,#241027)}
+.fmb-ref .footer-grid{padding:40px 0 28px}
+.fmb-ref .footer-logo{width:220px}
+.fmb-ref:has(.article-shell) .footer-grid{grid-template-columns:minmax(260px,.8fr) minmax(420px,1.3fr);gap:90px;align-items:start}
+.fmb-ref:has(.article-shell) .footer-grid>div:nth-child(2),.fmb-ref:has(.article-shell) .footer-grid>div:nth-child(3){display:none}
+.fmb-ref:has(.article-shell) .footer-grid>div:first-child p{max-width:300px}
+.fmb-ref:has(.article-shell) .newsletter h3{font:700 24px/1.05 var(--fmb-serif);letter-spacing:0;text-transform:none}
+.fmb-ref:has(.article-shell) .newsletter p{margin:0 0 14px;font-size:13px}
+.fmb-ref:has(.article-shell) .newsletter form{grid-template-columns:1fr 135px;gap:8px}
+.fmb-ref:has(.article-shell) .newsletter button{margin:0}
+.fmb-ref:has(.article-shell) .footer-bottom{text-align:left}
+
+/* Prevent visual regression from inherited legacy rules. */
+.fmb-ref .home-hero,.fmb-ref .lead-grid,.fmb-ref .support-item,.fmb-ref .more-item,.fmb-ref .article-grid,.fmb-ref .related-item{min-width:0}
+.fmb-ref .home-hero img,.fmb-ref .lead-story img,.fmb-ref .support-item img,.fmb-ref .more-item img,.fmb-ref .article-figure img,.fmb-ref .related-item img{display:block}
+
+@media(max-width:1080px){
+  .fmb-ref .home-hero{grid-template-columns:minmax(0,.95fr) minmax(410px,1.05fr);gap:38px}
+  .fmb-ref .lead-grid{grid-template-columns:minmax(0,1.1fr) minmax(330px,.9fr);gap:30px}
+  .fmb-ref .support-item{grid-template-columns:165px 1fr;gap:17px}
+  .fmb-ref .support-item img{width:165px;height:112px}
+  .fmb-ref .article-grid{grid-template-columns:minmax(0,1fr) 330px;gap:56px}
+  .fmb-ref:has(.article-shell) .footer-grid{gap:52px}
+}
+@media(max-width:920px){
+  .fmb-ref .nav .shell{overflow-x:auto;gap:28px}
+  .fmb-ref .home-hero,.fmb-ref .lead-grid,.fmb-ref .article-grid{grid-template-columns:1fr}
+  .fmb-ref .hero-image{order:0}
+  .fmb-ref .home-hero{gap:28px}
+  .fmb-ref .lead-story .media{aspect-ratio:1.7/1}
+  .fmb-ref .support-list{grid-template-columns:1fr 1fr;gap:22px}
+  .fmb-ref .support-item{grid-template-columns:145px 1fr}
+  .fmb-ref .support-item img{width:145px;height:100px}
+  .fmb-ref .related{position:static}
+  .fmb-ref:has(.article-shell) .footer-grid{grid-template-columns:1fr;gap:30px}
+}
+@media(max-width:680px){
+  .fmb-ref .shell{width:calc(100% - 28px)}
+  .fmb-ref .utility .shell{min-height:29px;font-size:9px;gap:10px}
+  .fmb-ref .mast{padding:18px 0 12px}
+  .fmb-ref .mast img{width:min(430px,90vw)}
+  .fmb-ref .nav .shell{min-height:48px}
+  .fmb-ref .nav a{font-size:11px;padding:17px 0 13px}
+  .fmb-ref .home-hero{padding:24px 0 27px}
+  .fmb-ref .hero-rule{width:58px;height:4px;margin-bottom:22px}
+  .fmb-ref .home-hero h1{font-size:48px;line-height:.96}
+  .fmb-ref .home-hero p{font-size:17px}
+  .fmb-ref .hero-image{aspect-ratio:1.55/1}
+  .fmb-ref .support-list{grid-template-columns:1fr}
+  .fmb-ref .support-item{grid-template-columns:120px 1fr;gap:14px}
+  .fmb-ref .support-item img{width:120px;height:88px}
+  .fmb-ref .support-item h3{font-size:19px}
+  .fmb-ref .brief-promo{grid-template-columns:1fr;gap:24px;padding:22px}
+  .fmb-ref .brief-cover{max-width:210px}
+  .fmb-ref .brief-promo h2{font-size:35px}
+  .fmb-ref .more-item{grid-template-columns:112px 1fr;gap:15px}
+  .fmb-ref .more-item img{width:112px;height:78px}
+  .fmb-ref .article-shell{padding-top:24px}
+  .fmb-ref .article-shell>.back{margin-bottom:24px}
+  .fmb-ref .article-kicker{margin-top:28px}
+  .fmb-ref .article h1{font-size:47px;line-height:.95}
+  .fmb-ref .article-deck{font-size:18px}
+  .fmb-ref .article-figure img{aspect-ratio:1.45/1}
+  .fmb-ref .article-body p{font-size:17px;line-height:1.64}
+  .fmb-ref .related-item{grid-template-columns:1fr 94px}
+  .fmb-ref .related-item img{width:94px;height:78px}
+  .fmb-ref:has(.article-shell) .newsletter form{grid-template-columns:1fr}
+  .fmb-ref:has(.article-shell) .newsletter button{margin-top:0}
+}

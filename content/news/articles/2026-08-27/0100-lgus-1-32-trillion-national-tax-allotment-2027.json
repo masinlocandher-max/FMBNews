@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-27-0100",
+  "emailSubject": "FMB News | Moody's Slashes 2026 PH Growth to 3%; LGUs to Get ₱1.32-T Tax Allotment | August 27, 2026 | 1:00 AM PHT",
+  "slug": "lgus-1-32-trillion-national-tax-allotment-2027",
+  "headline": "LGUs Set to Receive ₱1.32 Trillion in National Tax Allotments in 2027",
+  "seoTitle": "LGUs to Receive ₱1.32 Trillion NTA in 2027 | FMB News",
+  "seoDescription": "Philippine local governments are set to receive ₱1.32 trillion in National Tax Allotments in 2027, up from ₱1.19 trillion in 2026.",
+  "keywords": ["LGU national tax allotment 2027", "1.32 trillion NTA Philippines", "Mandanas Garcia devolution"],
+  "category": "National",
+  "kicker": "Public Finance · Local Government",
+  "deck": "The 2027 National Tax Allotment rises by about 11% from this year's level, expanding formula-based fiscal transfers to provinces, cities, municipalities and barangays.",
+  "publishedAt": "2026-08-27T01:00:00+08:00",
+  "updatedAt": "2026-08-27T01:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["Local government units are set to receive ₱1.32 trillion in National Tax Allotments in 2027, according to the Department of Budget and Management's indicative allocation.","The amount is about ₱129.32 billion, or roughly 11%, higher than the ₱1.19-trillion NTA for 2026. The 2027 shares are based on national tax collections from 2024 under the statutory formula."]},
+    {"heading":"Context","paragraphs":["DBM Local Budget Memorandum No. 94 provides the indicative FY 2027 NTA shares and budget-preparation guidelines for LGUs. The expanded tax base follows the Mandanas-Garcia ruling, which broadened the taxes included in computing local governments' just share.","The allotment supports devolved functions and local priorities including health, disaster preparedness, education support and infrastructure. Separate support mechanisms remain important for lower-income LGUs with more limited own-source revenues."]},
+    {"heading":"Why this matters","paragraphs":["The larger formula-based transfer gives local governments more fiscal capacity but also increases the importance of transparent budgeting, timely implementation and measurable service outcomes."]},
+    {"heading":"What to watch next","paragraphs":["LGUs will incorporate their indicative shares into 2027 annual budgets. Final implementation will depend on statutory allocation rules and the national budget process, while DBM and oversight agencies continue monitoring devolved programs and local fiscal performance."]}
+  ],
+  "sources": [
+    {"publisher":"Department of Budget and Management","title":"Local Budget Memorandum No. 94","publishedAt":"2026-06-10T00:00:00+08:00","url":"https://www.dbm.gov.ph/index.php/local-budget-memorandum?catid=453&id=4049%3Alocal-budget-memorandum-no-94&view=article"},
+    {"publisher":"Philippine News Agency","title":"PBBM to highlight higher LGU allocations in SONA","publishedAt":"2026-06-24T00:00:00+08:00","url":"https://www.pna.gov.ph/articles/1277926"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":null,"creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because the approved email did not supply a stable reusable original image file.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the 2027 National Tax Allotment report.","alt":"FMB News editorial visual for local government tax allotments","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-08-27T06:58:00+08:00","photoReferenceUrl":null,"notes":["Verified the ₱1.32-trillion 2027 NTA against DBM Local Budget Memorandum No. 94 and government reporting.","Avoided presenting the allocation as newly created on August 27: DBM had already issued the indicative 2027 shares in June.","Kept monitoring and devolution context general where the email's specific same-day oversight claims were not necessary to establish the core allocation."]}
+}

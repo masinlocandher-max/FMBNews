@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-25-0700",
+  "emailSubject": "FMB News | Typhoon Obet Exits PAR; DBM Releases ₱1-B for AI Flood Forecasting | August 25, 2026 | 7:00 AM PHT",
+  "slug": "dbm-ai-flood-forecasting-river-basins",
+  "headline": "DBM Releases ₱1 Billion for AI-Powered Flood Forecasting Across Major River Basins",
+  "seoTitle": "DBM Releases ₱1B for AI Flood Forecasting | FMB News",
+  "seoDescription": "An approved FMB News brief reports a ₱1-billion DBM release for AI-assisted flood forecasting and telemetry across 18 major Philippine river basins.",
+  "keywords": ["DBM AI flood forecasting", "Philippines river basin warning system", "PAGASA flood technology"],
+  "category": "National",
+  "kicker": "Climate Technology · Disaster Risk Reduction",
+  "deck": "The approved newsroom brief says the funding will support AI hydrological modeling and real-time telemetry across 18 major river basins.",
+  "publishedAt": "2026-08-25T07:00:00+08:00",
+  "updatedAt": "2026-08-25T19:01:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading": "What happened", "paragraphs": ["The approved FMB News morning brief reports that the Department of Budget and Management released ₱1 billion for an AI-assisted flood forecasting and telemetry modernization program involving DOST and PAGASA.", "The brief says the project is intended to cover 18 major river basins and combine hydrological modeling with real-time water-level, rainfall and terrain data."]},
+    {"heading": "Context", "paragraphs": ["The program is presented as a digital complement to structural flood-control measures, designed to give downstream communities earlier and more localized warning of possible inundation."]},
+    {"heading": "Why this matters", "paragraphs": ["Earlier, location-specific flood forecasts can give local governments more time to warn residents, move vulnerable people and assets, and prepare evacuation and traffic measures before rivers overtop."]},
+    {"heading": "What to watch next", "paragraphs": ["Watch DBM, DOST and PAGASA for the formal release documents, implementation timetable, procurement details and basin-by-basin deployment schedule."]}
+  ],
+  "sources": [{"publisher": "DBM / DOST-PAGASA / FMB News approved brief", "title": "₱1-billion AI flood forecasting allocation", "publishedAt": "2026-08-25T07:00:00+08:00", "url": "https://www.dbm.gov.ph/"}],
+  "image": {"kind": "editorial-fallback", "url": "/assets/images/news/fmb-news-editorial-fallback.svg", "sourceUrl": null, "creator": "FMB News", "license": "FMB-owned editorial visual", "licenseUrl": "https://www.francinemariebautista.com/news/", "usageStatus": "FMB-owned editorial visual used because the approved email referenced agency imagery but did not provide a stable reusable original asset URL.", "credit": "FMB News editorial visual", "caption": "FMB News editorial visual accompanying the flood forecasting technology report.", "alt": "FMB News editorial visual for AI-assisted flood forecasting", "width": 1200, "height": 675, "focusX": 50, "focusY": 50},
+  "audit": {"sourceCheckedAt": "2026-08-25T19:01:00+08:00", "photoReferenceUrl": "https://www.dbm.gov.ph/", "notes": ["The ₱1-billion, 18-river-basin and six-hour warning claims are attributed to the approved newsroom brief rather than silently upgraded beyond the available primary-source record."]}
+}

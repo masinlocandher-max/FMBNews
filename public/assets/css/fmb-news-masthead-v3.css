@@ -1,0 +1,70 @@
+/* Text-led Newsroom masthead shared by the landing page and individual reports. */
+body.news-channel-route .nc-text-masthead {
+  position: relative;
+  display: block;
+  width: auto !important;
+  height: auto !important;
+  min-width: 0;
+  color: #181416 !important;
+  text-decoration: none;
+}
+
+body.news-channel-route .nc-text-masthead::before {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+
+body.news-channel-route .nc-text-masthead > span,
+body.news-channel-route .nc-text-masthead > strong {
+  display: block !important;
+}
+
+body.news-channel-route .nc-text-masthead .nc-masthead-kicker {
+  color: #7d243b !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Arial, sans-serif !important;
+  font-size: 8px !important;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+body.news-channel-route .nc-text-masthead .nc-masthead-title {
+  margin: 4px 0 2px;
+  color: #181416 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Arial, sans-serif !important;
+  font-size: 28px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.045em;
+  line-height: 0.95 !important;
+  text-transform: uppercase;
+}
+
+body.news-channel-route .nc-text-masthead .nc-masthead-edition {
+  color: #716a65 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Arial, sans-serif !important;
+  font-size: 7px !important;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+body.news-story-route .nc-site-header .nc-nav-shell {
+  background: rgba(255, 255, 255, 0.97) !important;
+}
+
+@media (max-width: 640px) {
+  body.news-channel-route .nc-text-masthead .nc-masthead-kicker {
+    display: none !important;
+  }
+
+  body.news-channel-route .nc-text-masthead .nc-masthead-title {
+    font-size: 22px !important;
+  }
+
+  body.news-channel-route .nc-text-masthead .nc-masthead-edition {
+    font-size: 6px !important;
+  }
+}

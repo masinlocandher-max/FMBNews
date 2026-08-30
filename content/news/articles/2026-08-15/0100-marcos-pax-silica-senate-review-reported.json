@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-15-0100",
+  "emailSubject": "FMB News | Government to Restore ₱107 Billion PDIC Funds Over Two Years | August 15, 2026 | 1:00 AM PHT",
+  "slug": "marcos-pax-silica-senate-review-reported",
+  "headline": "Brief Reports Marcos Backs Pax Silica as Senate Review Examines Energy and Environmental Issues",
+  "seoTitle": "Marcos Backs Pax Silica as Senate Review Examines Safeguards",
+  "seoDescription": "An FMB News brief cites new reports that President Marcos defended Pax Silica while a Senate review examined the project’s energy and environmental implications.",
+  "keywords": ["Pax Silica Philippines", "Marcos Pax Silica", "Senate energy Pax Silica", "semiconductor Philippines"],
+  "category": "Technology",
+  "kicker": "Pax Silica · Technology policy",
+  "deck": "An FMB News overnight brief cites new reports that President Ferdinand R. Marcos Jr. defended Pax Silica as an economic opportunity while senators reviewed its power, water and environmental requirements.",
+  "publishedAt": "2026-08-15T01:00:00+08:00",
+  "updatedAt": "2026-08-15T07:46:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The FMB News August 15 overnight brief reports that President Ferdinand R. Marcos Jr. defended the proposed Pax Silica initiative and described it as a beneficial opportunity for Philippine high-technology investment.",
+        "The same brief says a Senate review examined the initiative’s energy-grid, water, land-use and environmental implications. FMB News could not independently reproduce the specific August 14 hearing record or the new presidential remarks during the final publication pass, so those developments remain explicitly source-attributed."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "Pax Silica is already a live policy debate. In July, Malacañang publicly assured that the proposed project would be required to protect national interests, the environment and host communities. Government agencies have also discussed power solutions for the planned technology hub.",
+        "The current article does not treat the email’s more detailed claims about facility design, dedicated power arrangements or job totals as established facts unless they appear in the cited public record."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "A major semiconductor and digital-infrastructure hub could affect jobs, investment, electricity demand, water use, land development and nearby communities. Those trade-offs deserve scrutiny alongside the project’s potential economic benefits."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for an official Senate committee record, environmental-impact documentation, power-supply plans, land and water requirements, and a retrievable PCO statement setting out the administration’s latest position."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Philippine News Agency",
+      "title": "Gov’t assures safeguards in proposed Pax Silica project",
+      "publishedAt": "2026-07-20T15:46:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1279807"
+    },
+    {
+      "publisher": "The Philippine STAR",
+      "title": "President Marcos defends Pax Silica amid concerns — cited in FMB News brief",
+      "publishedAt": "2026-08-15T00:00:00+08:00",
+      "url": "https://www.philstar.com/headlines/2026/08/15/2549371/president-marcos-defends-pax-silica-amid-concerns"
+    },
+    {
+      "publisher": "GMA News / Senate hearing video",
+      "title": "Senate inquiry on Pax Silica — cited in FMB News brief",
+      "publishedAt": "2026-08-14T15:30:00+08:00",
+      "url": "https://www.youtube.com/watch?v=0S10CCAaLAI"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "sourceUrl": null,
+    "creator": "FMB News",
+    "license": "FMB-owned editorial visual",
+    "licenseUrl": "https://www.francinemariebautista.com/news/",
+    "usageStatus": "FMB-owned editorial visual used because the email’s recommended imagery did not provide a stable, independently rights-verified asset URL.",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying the Pax Silica policy and Senate-review report. It does not depict a specific hearing or project site.",
+    "alt": "FMB News editorial visual for the Pax Silica policy report",
+    "width": 1200,
+    "height": 675,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-15T07:46:00+08:00",
+    "photoReferenceUrl": null,
+    "notes": [
+      "Current authoritative material verifies that Pax Silica is under active policy discussion and that Malacañang has publicly promised environmental and community safeguards.",
+      "The specific August 14 Senate hearing and new Marcos remarks described in the email were not independently reproduced during the final pass, so the article attributes them to the newsroom brief.",
+      "Used an FMB-owned editorial visual because the email’s recommended imagery did not provide a stable, independently rights-verified asset URL."
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "date": "2026-08-12",
+  "publishedAt": "2026-08-12T07:00:00+08:00",
+  "editionLabel": "Morning Special",
+  "title": "A Bigger Budget, an AI Benchmark and the Future of Philippine Work",
+  "deck": "The August 12 Morning Special tracks the proposed 2027 budget, Singapore’s AI-linked growth, regional digital transformation, BPO workforce pressure, media trust and Manila’s place in Asian touring.",
+  "hero": {
+    "src": "/assets/images/news/2026-08-07/metro-manila-skyline.webp",
+    "alt": "Archive view of the Bonifacio Global City skyline in Metro Manila",
+    "caption": "Archive photograph of Metro Manila used to illustrate the Philippine economy and business environment. It does not depict a specific August 12 event.",
+    "credit": "Photo: PhiliptheNumber1 / Wikimedia Commons · CC0 1.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bonifacio_Global_City_skyline.jpg",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  "stories": [
+    {
+      "id": "FMB-MS-20260812-001",
+      "kicker": "Budget · Economy · Governance",
+      "headline": "The ₱7.2-Trillion 2027 Budget Is Becoming a Test of Delivery",
+      "deck": "The proposed spending plan arrives after weak second-quarter growth and renewed scrutiny of infrastructure implementation.",
+      "body": [
+        "President Ferdinand Marcos Jr. asked Congress to approve a ₱7.2-trillion national budget for 2027, about 6 percent higher than the current year. The proposal came as the government sought to regain economic momentum after a sharp slowdown.",
+        "Philippine GDP grew only 2.3 percent year on year in the second quarter of 2026, bringing first-half growth to 2.6 percent. Reuters reported that weaker construction and domestic demand were among the factors weighing on the economy.",
+        "The communications challenge is that a large budget number does not automatically restore confidence. Public perception will depend on whether spending produces visible projects, services and jobs while procurement and implementation remain transparent.",
+        "For business, the budget can create opportunities in infrastructure, digitalization and public services, but the stronger strategic signal is accountability. Spending becomes credible when the public can see what was delivered and at what cost."
+      ],
+      "sources": [
+        {"label": "Reuters — Philippines' Marcos proposes $118 billion budget for 2027", "url": "https://www.reuters.com/world/asia-pacific/philippines-marcos-proposes-118-billion-budget-2027-2026-08-11/"},
+        {"label": "DBM — 193rd DBCC Statement and proposed FY 2027 national budget", "url": "https://www.dbm.gov.ph/index.php/management-2/4081-193rd-dbcc-statement-on-the-review-of-the-medium-term-macroeconomic-assumptions-and-fiscal-program-for-fiscal-year-fy-2026-to-2030"}
+      ]
+    },
+    {
+      "id": "FMB-MS-20260812-002",
+      "kicker": "AI · ASEAN · Competitiveness",
+      "headline": "Singapore Shows What AI Competition Looks Like When It Reaches the Economy",
+      "deck": "Singapore raised its 2026 growth forecast after a stronger second quarter and greater-than-expected global AI investment.",
+      "body": [
+        "Singapore raised its 2026 growth forecast to 4.5 to 5.5 percent after second-quarter GDP expanded 5.9 percent from a year earlier. The government cited stronger-than-expected global artificial-intelligence investment as one factor supporting the outlook.",
+        "The signal matters to the Philippines because AI competitiveness is increasingly measured through capital, infrastructure, exports, skills and the ability of firms to absorb technology into real operations.",
+        "A country can host many conferences and still fail to capture economic value. The stronger reputation comes when investment can be connected to jobs, productive capacity and companies that become more competitive because of the technology.",
+        "The Philippines does not need to imitate Singapore directly. Its more defensible opportunities may lie in AI-enabled services, BPO, education, tourism, language technology and specialized workflows where Filipino expertise is already strong."
+      ],
+      "sources": [
+        {"label": "Reuters — Singapore raises 2026 growth forecast on AI boom after robust Q2 GDP", "url": "https://www.reuters.com/world/asia-pacific/singapore-gdp-grows-59-yy-q2-government-raises-2026-forecast-ai-boom-2026-08-11/"}
+      ]
+    },
+    {
+      "id": "FMB-MS-20260812-003",
+      "kicker": "Technology · Regional development",
+      "headline": "National ICT Summit Opens in Tagum With AI, Talent and Governance on the Agenda",
+      "deck": "The three-day event moves the national digital-transformation conversation toward regional implementation.",
+      "body": [
+        "The 18th NICP National ICT Summit opened in Tagum City on August 12 and was scheduled to run through August 14. Its theme centered on AI-driven digital transformation in governance, talent and innovation.",
+        "The summit brought together government, industry, academe, startups and development partners. Its regional location matters because digital capability increasingly affects local investment, public services and workforce competitiveness outside Metro Manila.",
+        "The reputation test is whether institutions can explain what digital transformation changes for ordinary users. Faster transactions, stronger cybersecurity, clearer information and more reliable public systems are more persuasive than technology language by itself.",
+        "The opportunity for service providers is implementation: citizen-experience design, AI literacy, websites, workflow redesign, data systems and public communications that make new technology useful rather than ornamental."
+      ],
+      "sources": [
+        {"label": "National ICT Confederation of the Philippines — NICP ICT Summit 2026", "url": "https://nicp.org.ph/nicp-ict-summit-2026/"}
+      ]
+    },
+    {
+      "id": "FMB-MS-20260812-004",
+      "kicker": "BPO · AI · Future of work",
+      "headline": "AI Is Forcing Philippine BPO to Defend Value Beyond Routine Labor",
+      "deck": "Shared-services leaders are confronting workforce transformation as automation changes the economics of routine work.",
+      "body": [
+        "The 16th Philippines Shared Services & BPO Week was running in Manila from August 11 to 14, bringing industry leaders together around shared services, global business services, AI and workforce transformation.",
+        "The strategic issue is not whether AI will enter the sector; it already is. The question is how quickly Filipino workers can move toward judgment-heavy, specialist, relationship-driven and higher-value roles as routine processes become easier to automate.",
+        "Public messaging around transformation can fail when employees hear only a softer version of job-loss anxiety. Credibility requires visible reskilling, clearer career pathways and evidence that technology is being used to upgrade work rather than merely remove headcount.",
+        "That creates opportunities in training, process redesign, knowledge management, AI implementation and internal communications. The risk is allowing the country’s historical cost advantage to become a ceiling instead of a bridge to more valuable work."
+      ],
+      "sources": [
+        {"label": "Shared Services Leaders Asia — 16th Philippines Shared Services & BPO Week 2026", "url": "https://www.linkedin.com/posts/shared-services-leaders-asia_ssowph-sharedservices-gbs-activity-7460951619967324160-79ZZ"}
+      ]
+    },
+    {
+      "id": "FMB-MS-20260812-005",
+      "kicker": "Media · Strategic communications",
+      "headline": "Low News Trust Raises the Value of Visible Evidence",
+      "deck": "The Philippines’ 28 percent overall news-trust score makes transparent sourcing and corrections more strategically valuable.",
+      "body": [
+        "The Reuters Institute’s 2026 Digital News Report placed overall news trust in the Philippines at 28 percent, a 10-point decline from the prior year and one of the sharpest drops in the report.",
+        "Low trust affects more than newsrooms. Brands, government agencies and public figures operate inside the same fragmented information environment, where messages are often encountered through social platforms rather than direct institutional channels.",
+        "The practical response is not louder claims of credibility. It is evidence: show sources, identify uncertainty, separate reporting from analysis and make corrections visible when something changes or proves wrong.",
+        "For smaller media organizations, that creates an opening. A newsroom can build authority through documented trust and explanation even without matching the scale or speed of larger publishers."
+      ],
+      "sources": [
+        {"label": "Reuters Institute — Digital News Report 2026: Philippines", "url": "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/philippines"}
+      ]
+    },
+    {
+      "id": "FMB-MS-20260812-006",
+      "kicker": "Entertainment · Concert economy",
+      "headline": "Lee Hi’s Manila Stop Shows the Wider Business Around Regional Touring",
+      "deck": "The August 11 concert at New Frontier Theater illustrates how touring creates economic value beyond ticket sales.",
+      "body": [
+        "South Korean singer Lee Hi brought the LEEHI & 808 HI RECORDINGS World Tour 2026 to New Frontier Theater in Quezon City on August 11, according to Live Nation Philippines.",
+        "A concert is not only a venue transaction. It can generate demand for transport, restaurants, hotels, merchandise, creator content and fan travel, particularly when Manila is part of a wider Southeast Asian tour route.",
+        "For city reputation, reliable venues, transport, safety and audience experience matter to promoters and international fan communities. Those operational details help determine whether a city continues to be treated as a dependable tour stop.",
+        "The commercial opportunity extends to hospitality, lifestyle brands and tourism operators that can build around event traffic. Entertainment becomes more economically useful when the wider city experience is treated as part of the product."
+      ],
+      "sources": [
+        {"label": "Live Nation Philippines — LEEHI & 808 HI RECORDINGS WORLD TOUR 2026", "url": "https://www.livenation.ph/event/leehi-and-808-hi-recordings-world-tour-2026-quezon-city-tickets-edp1678269"}
+      ]
+    }
+  ]
+}

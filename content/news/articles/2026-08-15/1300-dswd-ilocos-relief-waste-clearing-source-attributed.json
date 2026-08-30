@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-15-1300",
+  "emailSubject": "FMB News | Taal Volcano Quakes Surge to 74 in 24 Hours; Alert Level 1 Kept | August 15, 2026 | 1:00 PM PHT",
+  "slug": "dswd-ilocos-relief-waste-clearing-source-attributed",
+  "headline": "Brief Reports ₱37.3M Ilocos Relief and 750 Tons of Floodway Waste Cleared",
+  "seoTitle": "Brief: ₱37.3M Ilocos Relief, 750T Floodway Waste Cleared",
+  "seoDescription": "An FMB News midday brief reports ₱37.3 million in DSWD relief for Ilocos LGUs and 750 tons of waste cleared from flood-control channels; exact current releases remain source-attributed.",
+  "keywords": ["DSWD Ilocos relief August 2026", "37.3 million relief Ilocos", "DPWH 750 tons waste", "floodway cleanup Philippines"],
+  "category": "National",
+  "kicker": "Disaster relief · Recovery operations",
+  "deck": "The newsroom brief reports new relief support for flood-affected Ilocos communities and a large-scale drainage cleanup, while FMB News keeps the exact peso and tonnage figures explicitly source-attributed.",
+  "publishedAt": "2026-08-15T13:00:00+08:00",
+  "updatedAt": "2026-08-15T19:38:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The FMB News August 15 midday brief reports that DSWD Field Office I released ₱37.3 million worth of emergency relief goods and assistance for calamity-affected local governments in the Ilocos Region.",
+        "The same brief reports that DPWH and MMDA cleanup teams had removed more than 750 tons of solid waste and debris from flood-control channels and pumping-station intake areas. FMB News could not independently retrieve the exact August 15 DSWD and DPWH releases containing those figures during the final publication pass."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "DSWD and public-works agencies routinely mobilize food packs, non-food items, cash assistance and drainage-clearing operations after severe flooding. The email attributes the Ilocos allocation to DSWD Field Office I and the 750-ton cleanup figure to DPWH reporting carried by The Philippine STAR.",
+        "A separate current search result about Davao City also uses a 750-ton figure for daily garbage generation, but that is unrelated to the floodway-cleanup claim in this article. FMB News is therefore keeping the floodway tonnage explicitly attributed to the newsroom brief rather than treating the matching number as independent corroboration."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "Relief delivery affects displaced families directly, while clearing waste from drainage and pumping infrastructure can reduce the risk that subsequent monsoon rains worsen urban flooding. Accurate source labeling matters because assistance totals and cleanup volumes can change as operations continue."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for a retrievable DSWD Field Office I release detailing the ₱37.3-million package, DPWH or MMDA documentation of the 750-ton cleanup figure, and updated relief, road-reopening and flood-control reports from affected areas."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Department of Social Welfare and Development Field Office I",
+      "title": "Official DSWD Field Office I public information portal — used for institutional context",
+      "publishedAt": "2026-08-15T13:00:00+08:00",
+      "url": "https://fo1.dswd.gov.ph/"
+    },
+    {
+      "publisher": "Inquirer.net",
+      "title": "DSWD releases P37.3M in relief items to calamity-hit Ilocos LGUs — cited in FMB News brief",
+      "publishedAt": "2026-08-15T08:00:00+08:00",
+      "url": "https://newsinfo.inquirer.net/"
+    },
+    {
+      "publisher": "The Philippine STAR",
+      "title": "750 tons of garbage hauled from waterway — cited in FMB News brief",
+      "publishedAt": "2026-08-15T00:00:00+08:00",
+      "url": "https://www.philstar.com/"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "sourceUrl": null,
+    "creator": "FMB News",
+    "license": "FMB-owned editorial visual",
+    "licenseUrl": "https://www.francinemariebautista.com/news/",
+    "usageStatus": "FMB-owned editorial visual used because the email's recommended DSWD/PNA image is not supplied as a stable independently retrievable original asset with confirmed event-specific provenance.",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying the source-attributed Ilocos relief and floodway-cleanup report.",
+    "alt": "FMB News editorial visual for disaster relief and floodway cleanup",
+    "width": 1200,
+    "height": 675,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-15T19:38:00+08:00",
+    "photoReferenceUrl": "https://newsinfo.inquirer.net/",
+    "notes": [
+      "The exact August 15 DSWD Field Office I release confirming ₱37.3 million was not independently retrievable in the final pass.",
+      "The exact DPWH or MMDA report confirming 750 tons removed from flood-control infrastructure was not independently retrievable; the same number also appears in unrelated Davao waste reporting, so no inference was made from that coincidence.",
+      "The email does not provide a stable event-specific government image asset, so FMB News uses its own credited editorial visual."
+    ]
+  }
+}

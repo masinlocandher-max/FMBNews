@@ -1,0 +1,122 @@
+/* Professional Newsroom type system.
+ * Uses dependable system fonts: modern sans-serif for identity and navigation,
+ * classic editorial serif for reporting and long-form reading.
+ */
+body.news-channel-route {
+  --news-ui-font: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  --news-editorial-font: Georgia, "Times New Roman", Times, serif;
+  font-family: var(--news-ui-font) !important;
+}
+
+body.news-channel-route :is(
+  .nc-network-label,
+  .nc-network-clock,
+  .nc-site-links,
+  .nc-topic-rail,
+  .nc-wire,
+  .nc-kicker,
+  .nc-signal-tag,
+  .nc-lead-meta,
+  .nc-broadcast-action,
+  .nc-rundown-number,
+  .nc-rundown-story p,
+  .nc-rundown-story span,
+  .nc-story-edition,
+  .nc-article-deck,
+  .nc-article-meta,
+  .nc-story-aside,
+  .nc-share-button,
+  figcaption
+) {
+  font-family: var(--news-ui-font) !important;
+}
+
+/* News organization identity: firm, modern and restrained. */
+body.news-channel-route :is(
+  .nc-text-masthead .nc-masthead-title,
+  .nc-newsroom-title h1,
+  .nc-channel-promise > p,
+  .nc-footer-masthead strong
+) {
+  font-family: var(--news-ui-font) !important;
+  font-weight: 800 !important;
+}
+
+body.news-channel-route .nc-channel-promise > p {
+  letter-spacing: -0.04em !important;
+}
+
+/* Reporting headlines: familiar newspaper authority without fashion styling. */
+body.news-channel-route :is(
+  .nc-lead-overlay h2,
+  .nc-rundown-head h2,
+  .nc-rundown-story h3,
+  .nc-context-copy h2,
+  .nc-section-heading h2,
+  .nc-index-list strong,
+  .nc-standard h2,
+  .nc-standard h3,
+  .nc-editor-card h2,
+  .nc-article-hero h1,
+  .nc-story-body h2,
+  .nc-story-body h3,
+  .nc-pullquote
+) {
+  font-family: var(--news-editorial-font) !important;
+  font-weight: 700 !important;
+  font-style: normal !important;
+  letter-spacing: -0.025em !important;
+}
+
+body.news-channel-route .nc-lead-overlay h2 {
+  line-height: 1 !important;
+}
+
+body.news-channel-route .nc-rundown-story h3 {
+  line-height: 1.16 !important;
+}
+
+body.news-story-route .nc-article-hero h1 {
+  max-width: 16ch;
+  font-size: clamp(50px, 6vw, 82px) !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.035em !important;
+}
+
+body.news-story-route .nc-story-body {
+  max-width: 760px;
+}
+
+body.news-story-route .nc-story-body :is(p, li) {
+  font-family: var(--news-editorial-font) !important;
+  font-size: clamp(17px, 1.2vw, 19px) !important;
+  line-height: 1.78 !important;
+  letter-spacing: 0 !important;
+}
+
+body.news-story-route .nc-story-body h2 {
+  font-size: clamp(34px, 3.5vw, 50px) !important;
+  line-height: 1.08 !important;
+}
+
+body.news-story-route .nc-story-body h3 {
+  font-size: clamp(24px, 2.3vw, 32px) !important;
+  line-height: 1.15 !important;
+}
+
+body.news-story-route .nc-pullquote {
+  font-size: clamp(28px, 3vw, 42px) !important;
+  line-height: 1.15 !important;
+}
+
+@media (max-width: 640px) {
+  body.news-story-route .nc-article-hero h1 {
+    font-size: clamp(40px, 11.5vw, 56px) !important;
+    line-height: 1 !important;
+  }
+
+  body.news-story-route .nc-story-body :is(p, li) {
+    font-size: 17px !important;
+    line-height: 1.72 !important;
+  }
+}

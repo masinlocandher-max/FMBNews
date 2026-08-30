@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "fmb-news-2026-08-08-1800-pht",
+  "emailSubject": "FMB News | Government Generates ₱33.5 Million From Auction of Abandoned Goods | August 8, 2026 | 6:00 PM PHT",
+  "slug": "comelec-prepares-for-august-29-cavite-fourth-district-special-election",
+  "headline": "Comelec Prepares for August 29 Cavite Fourth District Special Election",
+  "category": "National",
+  "kicker": "Elections · Cavite · House of Representatives",
+  "deck": "Comelec has scheduled a special election in Cavite's fourth legislative district on August 29, 2026, to fill the House seat vacated after Francisco Barzaga Jr.'s expulsion.",
+  "publishedAt": "2026-08-08T18:00:00+08:00",
+  "updatedAt": "2026-08-08T19:30:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["The Commission on Elections is preparing for the August 29, 2026 special election in Cavite's fourth legislative district, which covers Dasmariñas City."]},
+    {"heading":"What we know","paragraphs":["Comelec's official special-election page and Resolution No. 11230 identify the contest as the fourth legislative district of Cavite, not the seventh district stated in the emailed bulletin.","Five aspirants filed certificates of candidacy for the election, according to the Philippine News Agency. The winner will fill the House seat left vacant following the expulsion of Francisco Barzaga Jr."]},
+    {"heading":"Background","paragraphs":["A special election is held to fill a vacant elective position when ordinary succession does not apply. Comelec set the election period and calendar through a formal resolution."]},
+    {"heading":"What remains unclear","paragraphs":["The bulletin's claim that all official automated ballots had been printed could not be independently established from its accessible links and is not presented here as fact."]},
+    {"heading":"Why this matters","paragraphs":["The election will restore representation for voters in Dasmariñas City and determine who will occupy the district's seat in the House of Representatives."]},
+    {"heading":"What happens next","paragraphs":["The campaign and election preparations will proceed under Comelec's official calendar before voting on August 29."]}
+  ],
+  "sources": [
+    {"publisher":"Commission on Elections","title":"Special Election in the 4th Legislative District of the Province of Cavite, Dasmariñas City","publishedAt":"2026-06-19T00:00:00+08:00","url":"https://www.comelec.gov.ph/?r=References%2FComelecResolutions%2FSpecialElections"},
+    {"publisher":"Philippine News Agency","title":"5 aspirants file COCs for Aug. 29 Cavite special polls","publishedAt":"2026-07-17T19:44:00+08:00","url":"https://www.pna.gov.ph/index.php/articles/1279728"}
+  ],
+  "image": {"kind":"open-license-photo","url":"/assets/images/news/2026-08-07/manila-jeepney.webp","sourceUrl":"https://commons.wikimedia.org/wiki/File:Manila,_Jeepney,_Philippines.jpg","creator":"Vyacheslav Argenberg","license":"CC BY 4.0","licenseUrl":"https://creativecommons.org/licenses/by/4.0/","usageStatus":"Wikimedia Commons file verified as CC BY 4.0; locally hosted crop used with creator, source and license credit.","credit":"Photo: Vyacheslav Argenberg / Wikimedia Commons · CC BY 4.0","caption":"Archive photograph of public life in the Philippines, used as a civic-context image for the Cavite special election. It does not depict voting, ballot printing or a Comelec activity.","alt":"A passenger jeepney on a Philippine street","width":1600,"height":900,"focusX":50,"focusY":50},
+  "audit": {"sourceCheckedAt":"2026-08-08T19:30:00+08:00","photoReferenceUrl":"https://commons.wikimedia.org/wiki/File:Manila,_Jeepney,_Philippines.jpg","notes":["Corrected the bulletin's district from Cavite's seventh district to its fourth district using Comelec's official record.","Excluded the unverified claim that ballot printing was complete.","The recommended photograph was not reused because its publication rights were not independently verifiable; a locally hosted CC BY 4.0 civic-context photograph is used with exact credit."]}
+}

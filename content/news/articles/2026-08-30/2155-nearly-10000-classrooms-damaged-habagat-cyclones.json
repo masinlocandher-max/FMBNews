@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-30-2155",
+  "emailSubject": "FMB News | Nearly 10,000 Classrooms Damaged by Habagat and Recent Cyclones | August 30, 2026 | 9:55 PM PHT",
+  "slug": "nearly-10000-classrooms-damaged-habagat-cyclones-august-30-2026",
+  "headline": "Nearly 10,000 Classrooms Damaged by Habagat and Recent Cyclones, DepEd Says",
+  "seoTitle": "9,869 Classrooms Damaged by Habagat, Cyclones | FMB News",
+  "seoDescription": "DepEd reports 9,869 damaged classrooms, including 2,083 totally damaged, with repair and reconstruction needs estimated at about ₱6.48 billion.",
+  "keywords": [
+    "9869 classrooms damaged Philippines August 2026",
+    "DepEd classroom damage Habagat 2026",
+    "2083 totally damaged classrooms",
+    "school damage Central Luzon August 2026"
+  ],
+  "category": "National",
+  "kicker": "Education · Public safety · School recovery",
+  "deck": "DepEd counted 9,869 damaged classrooms as of Sunday morning, including 2,083 that were totally damaged, while estimated repair and reconstruction needs total about ₱6.48 billion.",
+  "publishedAt": "2026-08-30T21:55:00+08:00",
+  "updatedAt": "2026-08-30T21:55:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Department of Education reported 9,869 damaged classrooms following the prolonged Southwest Monsoon and recent tropical cyclones Luis, Maymay, Neneng and Obet, according to its latest situation report cited on Sunday.",
+        "As of 8 a.m. on August 30, DepEd's assessment counted 5,731 classrooms with minor damage, 2,055 with major damage and 2,083 that were totally damaged."
+      ]
+    },
+    {
+      "heading": "The cost of recovery",
+      "paragraphs": [
+        "DepEd estimated about ₱280 million is needed for minor repairs, ₱1 billion for major repairs and ₱5.2 billion for reconstruction. Together, those estimates amount to roughly ₱6.48 billion.",
+        "The department also reported that 59 schools experienced flooding, including 47 in Central Luzon. Central Luzon recorded the highest number of affected schools in the situation report."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "Schools are serving two roles during the continuing weather emergency. DepEd said 348 schools, involving 1,309 classrooms, were being used as evacuation centers for 11,320 families.",
+        "The Disaster Risk Reduction and Management Service is coordinating with field offices on impact monitoring, clearing and repair while the education system also deals with repeated class suspensions and decisions on when face-to-face classes can safely resume."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "Nearly 10,000 damaged classrooms represent more than a construction bill. Major and total damage can reduce usable classroom capacity for months, disrupt class schedules and increase pressure on schools that are simultaneously housing evacuees.",
+        "The impact is particularly important in regions already facing repeated weather disruptions. Recovery decisions will have to balance structural safety, continuity of learning and the continued use of some campuses for emergency shelter."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for updated DepEd validation as field inspections continue, the release and allocation of repair funds, timelines for rebuilding totally damaged classrooms and guidance on class resumption in heavily affected areas.",
+        "The final damage count may still change as schools submit additional assessments after floodwaters recede and buildings become accessible for inspection."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "INQUIRER.net",
+      "title": "DepEd: Over 9,800 classrooms damaged by ‘habagat,’ enhanced by cyclones",
+      "publishedAt": "2026-08-30T12:50:00+08:00",
+      "url": "https://newsinfo.inquirer.net/2295061/over-9800-classrooms-damaged-by-habagat-enhanced-by-cyclones"
+    }
+  ],
+  "image": {
+    "kind": "open-license-photo",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/DepEd_Basey_Division_Office.JPG",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:DepEd_Basey_Division_Office.JPG",
+    "creator": "Lawrence Ruiz",
+    "license": "Creative Commons Attribution-ShareAlike 4.0 International",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "usageStatus": "CC BY-SA 4.0 license verified on Wikimedia Commons. Used as an illustrative file photograph of Philippine public-school infrastructure; it does not depict the classrooms damaged in the current weather emergency.",
+    "credit": "Lawrence Ruiz / Wikimedia Commons, CC BY-SA 4.0",
+    "caption": "Illustrative file photo: the former Basey I Elementary School building serving as a DepEd division office in Basey, Samar. This image does not depict the classrooms damaged in the August 2026 weather emergency.",
+    "alt": "Illustrative file photograph of a Philippine public-school building in Basey, Samar",
+    "width": 4608,
+    "height": 3456,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-30T21:56:00+08:00",
+    "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:DepEd_Basey_Division_Office.JPG",
+    "notes": [
+      "Verified the August 30 DepEd figures reported by INQUIRER.net: 5,731 classrooms with minor damage, 2,055 with major damage and 2,083 totally damaged, for a total of 9,869.",
+      "The estimated ₱6.48B recovery requirement is the arithmetic total of DepEd's reported ₱280M minor-repair estimate, ₱1B major-repair estimate and ₱5.2B reconstruction estimate.",
+      "Verified 59 flooded schools, including 47 in Central Luzon, and 348 schools using 1,309 classrooms as evacuation centers for 11,320 families.",
+      "Image is clearly labeled illustrative and its CC BY-SA 4.0 reuse terms were independently verified on Wikimedia Commons."
+    ]
+  }
+}

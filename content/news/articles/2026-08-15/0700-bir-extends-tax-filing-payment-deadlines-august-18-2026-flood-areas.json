@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-15-0700",
+  "emailSubject": "FMB News | President Marcos Vows Press Freedom, Outlines 2028 Successor Criteria | August 15, 2026 | 7:00 AM PHT",
+  "slug": "bir-extends-tax-filing-payment-deadlines-august-18-2026-flood-areas",
+  "headline": "Newsroom Brief Reports BIR Deadline Extension to August 18 for Flood-Affected Taxpayers",
+  "seoTitle": "Brief: BIR Deadline Extension to August 18",
+  "seoDescription": "An FMB News brief reports that selected filing and payment deadlines were moved to August 18 for taxpayers in flood-affected areas.",
+  "keywords": ["BIR August 18 deadline", "tax relief flood Philippines"],
+  "category": "Business",
+  "kicker": "Taxes · Public service",
+  "deck": "The newsroom package reports tax-filing relief for taxpayers affected by monsoon flooding.",
+  "publishedAt": "2026-08-15T07:00:00+08:00",
+  "updatedAt": "2026-08-17T01:10:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [{"heading":"What happened","paragraphs":["The August 15 FMB News brief reports that BIR deadlines falling from August 13 to 15 were moved to August 18 for covered flood-affected taxpayers, with relief from penalties for qualifying filings.","The email's linked GMA page did not document the tax circular, and the brief named an outdated BIR commissioner. FMB News therefore omits the claimed signer and publishes the deadline extension only as a source-attributed newsroom report pending the actual revenue memorandum circular."]},{"heading":"Context","paragraphs":["The inaccurate commissioner attribution was removed rather than repeated."]},{"heading":"Why this matters","paragraphs":["Tax deadline changes affect businesses, self-employed workers and accountants who may otherwise incur penalties during disaster disruptions."]},{"heading":"What to watch next","paragraphs":["Watch for the exact BIR revenue memorandum circular, covered RDO list and official eFPS/eBIRForms guidance."]}],
+  "sources": [{"publisher":"Bureau of Internal Revenue","title":"Official BIR issuances and advisories","publishedAt":"2026-08-15T07:00:00+08:00","url":"https://www.bir.gov.ph/"},{"publisher":"Philippine News Agency","title":"National news portal cited in FMB News brief","publishedAt":"2026-08-15T07:00:00+08:00","url":"https://www.pna.gov.ph/categories/national"}],
+  "image": {"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":null,"creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because no stable rights-verified current-event image was available.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying this source-attributed report.","alt":"FMB News editorial visual","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit": {"sourceCheckedAt":"2026-08-17T01:10:00+08:00","photoReferenceUrl":"https://www.bir.gov.ph/","notes":["The email's GMA link pointed to a class-suspension page, not a BIR circular."]}
+}

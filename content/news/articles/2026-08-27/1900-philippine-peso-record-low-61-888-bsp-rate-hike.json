@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-27-1900",
+  "emailSubject": "FMB News | Peso Hits Record Low of ₱61.888; PAGASA Tracks Brewing Storm 'Pilandok' | August 27, 2026 | 7:00 PM PHT",
+  "slug": "philippine-peso-record-low-61-888-bsp-rate-hike",
+  "headline": "Philippine Peso Closes at Record Low of ₱61.888 as BSP Raises Policy Rate to 5%",
+  "seoTitle": "Peso Hits Record ₱61.888 as BSP Raises Rate to 5% | FMB News",
+  "seoDescription": "The Philippine peso closed at a record low of ₱61.888 per US dollar on August 27 as the BSP raised its benchmark policy rate by 25 basis points to 5%.",
+  "keywords": ["Philippine peso record low August 27 2026", "peso 61.888 dollar", "BSP policy rate 5 percent"],
+  "category": "Business",
+  "kicker": "Economy · Currency Markets",
+  "deck": "The peso weakened to a new record closing low while the Bangko Sentral ng Pilipinas delivered its third consecutive 25-basis-point policy-rate increase.",
+  "publishedAt": "2026-08-27T19:00:00+08:00",
+  "updatedAt": "2026-08-27T19:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["The Philippine peso closed at a new record low of ₱61.888 against the US dollar on Thursday, August 27, according to Bankers Association of the Philippines market data reported by financial news outlets.","On the same day, the Bangko Sentral ng Pilipinas raised its target reverse repurchase rate by 25 basis points to 5.00%. The overnight deposit and lending facility rates were also raised to 4.50% and 5.50%, respectively."]},
+    {"heading":"What is driving the pressure","paragraphs":["The BSP said inflation risks remain elevated even as headline inflation eased in July. Volatile oil prices, possible severe El Niño conditions and potential wage adjustments remain among the upside risks being monitored by monetary authorities.","A weaker peso can raise the local-currency cost of imported fuel, food inputs and other dollar-priced goods. It can also increase the peso value of dollar remittances, although that benefit can be offset when domestic prices rise."]},
+    {"heading":"Context","paragraphs":["The August increase was the BSP's third consecutive policy-rate hike in the current tightening cycle. The central bank said the measured increases are intended to anchor inflation expectations and reduce the risk of broader second-round price effects."]},
+    {"heading":"Why this matters","paragraphs":["Exchange-rate weakness and higher interest rates affect households and businesses through different channels. Importers face higher peso costs for dollar-denominated goods, while higher policy rates can increase borrowing costs for consumers and companies."]},
+    {"heading":"What to watch next","paragraphs":["Markets will watch whether the peso stabilizes after the rate increase and how inflation, oil prices, El Niño risks and domestic demand evolve ahead of the BSP's next policy review."]}
+  ],
+  "sources": [
+    {"publisher":"Philippine News Agency","title":"BSP hikes policy rates by another 25 basis points","publishedAt":"2026-08-27T17:55:00+08:00","url":"https://www.pna.gov.ph/articles/1282815"},
+    {"publisher":"BusinessMirror","title":"Peso hits new record low on drought fears, Iran war","publishedAt":"2026-08-27T19:00:00+08:00","url":"https://businessmirror.com.ph/2026/08/27/peso-hits-new-record-low-on-drought-fears-iran-war/"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://www.pna.gov.ph/articles/1282815","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because the approved email referenced government currency imagery but did not supply a stable original image file for repository ingestion.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the August 27 peso and monetary-policy report.","alt":"FMB News editorial visual for the Philippine peso record-low report","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-08-28T00:59:00+08:00","photoReferenceUrl":"https://www.pna.gov.ph/articles/1282815","notes":["Verified the ₱61.888 record close through same-day market reporting.","Verified the BSP 25-basis-point increase to a 5.00% target RRP rate through PNA and same-day BSP-backed reporting.","Removed the approved email's unsupported direct BSP quotation and avoided asserting a specific intervention volume or causal claim that the rate hike was an immediate response to the peso close."]}
+}

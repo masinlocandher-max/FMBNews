@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-12-0700",
+  "emailSubject": "FMB News | COA Auditor Testifies VP Duterte Accountable for Disallowed Funds | August 12, 2026 | 7:00 AM PHT",
+  "slug": "pnp-reports-26-storm-monsoon-deaths-as-cyclone-stays-offshore",
+  "headline": "PNP Reports 26 Storm and Monsoon Deaths as Cyclone Stays Offshore",
+  "seoTitle": "PNP Reports 26 Storm and Monsoon Deaths as Cyclone Stays Offshore",
+  "seoDescription": "The PNP reported 26 deaths linked to recent storms and monsoon rains, subject to NDRRMC validation, while PAGASA tracked a tropical depression far east of Northern Luzon and outside the PAR.",
+  "keywords": ["PNP storm deaths", "Habagat casualties", "PAGASA tropical depression", "August 12 2026 weather"],
+  "category": "Environment",
+  "kicker": "Disasters · Weather · Public safety",
+  "deck": "Police reported 26 deaths linked to recent storms and monsoon rains, with the tally still subject to validation, while PAGASA tracked a tropical depression far east of Northern Luzon and outside the Philippine Area of Responsibility.",
+  "publishedAt": "2026-08-12T07:00:00+08:00",
+  "updatedAt": "2026-08-12T07:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Philippine National Police reported at least 26 deaths linked to recent storms and southwest monsoon rains. PNP spokesperson Allen Rae Co said the police figures remained subject to validation by the National Disaster Risk Reduction and Management Council and other agencies.",
+        "The police breakdown cited 16 deaths from landslides in the Cordillera Administrative Region, seven in Rizal, two in La Union and Pangasinan, and one police officer in Cadiz City. The count is therefore a preliminary PNP report rather than a final national disaster tally."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "In its 4 a.m. August 12 weather report, PAGASA said the southwest monsoon was affecting Luzon. The agency forecast cloudy skies with scattered rains and thunderstorms over several western Luzon areas, with possible flash floods or landslides from moderate to at times heavy rain.",
+        "PAGASA also tracked a tropical depression outside the Philippine Area of Responsibility, about 1,990 kilometers east of extreme Northern Luzon at 3 a.m. The system had maximum sustained winds of 55 kilometers per hour and gusts up to 70 kilometers per hour and was moving east-northeastward at 30 kilometers per hour. The available PAGASA report did not say the distant cyclone was strengthening the monsoon."
+      ]
+    },
+    {
+      "heading": "Why this matters to Filipinos",
+      "paragraphs": [
+        "Preliminary casualty figures can change as local and national agencies reconcile reports, but the toll underscores the continuing risks from saturated slopes, flooding and dangerous travel conditions. Clear attribution prevents an early police count from being mistaken for a finalized government total."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for a validated NDRRMC casualty report, updated local warnings and PAGASA's next advisory on both the southwest monsoon and the offshore tropical depression. Residents in flood- and landslide-prone areas should follow current local evacuation and weather instructions."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "The Philippine Star",
+      "title": "PNP: Deaths from monsoons, storms hit 26",
+      "publishedAt": "2026-08-12T00:00:00+08:00",
+      "url": "https://www.philstar.com/headlines/2026/08/12/2548741/pnp-deaths-monsoons-storms-hit-26"
+    },
+    {
+      "publisher": "PAGASA",
+      "title": "Daily Weather Forecast",
+      "publishedAt": "2026-08-12T04:00:00+08:00",
+      "dateLabel": "Issued August 12, 2026 at 4:00 AM",
+      "url": "https://pagasa.dost.gov.ph/weather"
+    }
+  ],
+  "image": {
+    "kind": "open-license-photo",
+    "url": "/assets/images/news/2026-08-07/storm-rescue-operation.webp",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rescue_Operation_-_Tropical_Storm_Nalgae_(52461503146).jpg",
+    "creator": "Bro. Jeffrey Pioquinto, SJ",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "usageStatus": "Wikimedia Commons file verified as CC BY 2.0; locally hosted crop published with creator, source and license credit.",
+    "credit": "Photo: Bro. Jeffrey Pioquinto, SJ / Wikimedia Commons · CC BY 2.0",
+    "caption": "Archive photograph from a rescue operation during Tropical Storm Nalgae. It does not depict the reported August 2026 victims or police briefing.",
+    "alt": "A woman carrying a baby during a storm rescue operation in the Philippines",
+    "width": 1600,
+    "height": 900,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-12T13:20:00+08:00",
+    "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:Rescue_Operation_-_Tropical_Storm_Nalgae_(52461503146).jpg",
+    "notes": [
+      "Corrected the bulletin's PNP spokesperson attribution to Allen Rae Co.",
+      "Marked the 26 deaths as a preliminary police count subject to NDRRMC and interagency validation.",
+      "Did not claim that the offshore cyclone was strengthening the monsoon because the checked PAGASA report did not support that causal link."
+    ]
+  }
+}

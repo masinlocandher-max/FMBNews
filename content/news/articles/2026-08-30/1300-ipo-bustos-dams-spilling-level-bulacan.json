@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-30-1300",
+  "emailSubject": "FMB News | Tropical Depression Pilandok Forms; 2 Bulacan Dams Breach Spilling Level | August 30, 2026 | 1:00 PM PHT",
+  "slug": "ipo-bustos-dams-spilling-level-bulacan-august-30-2026",
+  "headline": "Ipo and Bustos Dams Release Water After Breaching Spilling Levels in Bulacan",
+  "seoTitle": "Ipo, Bustos Dams Release Water in Bulacan | FMB News",
+  "seoDescription": "Ipo and Bustos dams released excess water after prolonged Habagat rains pushed reservoir levels beyond spilling marks, prompting downstream flood warnings in Bulacan.",
+  "keywords": ["Ipo Dam spilling level August 30 2026", "Bustos Dam water release Bulacan", "Bulacan flood Habagat"],
+  "category": "National",
+  "kicker": "Disaster · Central Luzon",
+  "deck": "Authorities warned downstream communities to remain alert as water releases added to already swollen river systems after days of monsoon rain.",
+  "publishedAt": "2026-08-30T13:00:00+08:00",
+  "updatedAt": "2026-08-30T19:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["Continuous rains from the Southwest Monsoon pushed Ipo and Bustos dams in Bulacan beyond their spilling levels, prompting operators to release excess water into downstream river systems.","The Philippine Star reported that Ipo Dam stood at 101.63 meters as of 1 p.m. Saturday, 63 centimeters above its spilling level, and was releasing 323 cubic meters per second toward Bustos Dam. Bustos operators were also continuing downstream releases as of Saturday afternoon."]},
+    {"heading":"Downstream risk","paragraphs":["Water released from the two dams flows through river systems serving communities including Bustos, San Rafael, Baliwag, Pulilan, Plaridel, Calumpit and Hagonoy before draining toward Manila Bay. Residents in low-lying areas were advised to stay alert for possible river overflow and flooding."]},
+    {"heading":"Context","paragraphs":["The releases come after prolonged Habagat rains saturated Central Luzon. Dam releases can compound river and drainage pressures already elevated by runoff and local rainfall, although downstream impacts depend on discharge rates, tides, tributary flows and continuing rainfall."]},
+    {"heading":"Why this matters","paragraphs":["Communities downstream of controlled releases need timely information because river levels can change quickly. Official dam, PAGASA and local disaster advisories should take precedence over social-media estimates or old discharge figures."]},
+    {"heading":"What to watch next","paragraphs":["Watch for updated Ipo and Bustos reservoir elevations, gate operations, downstream river levels and evacuation advisories from PAGASA, dam operators and Bulacan disaster authorities."]}
+  ],
+  "sources": [
+    {"publisher":"The Philippine Star","title":"2 Bulacan dams breach spilling level","publishedAt":"2026-08-30T00:00:00+08:00","url":"https://www.philstar.com/nation/2026/08/30/2552681/2-bulacan-dams-breach-spilling-level"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":null,"creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"The qualifying email references Bulacan PDRRMO/PAGASA imagery, while the independently verified publisher page uses a screen grab. No stable repository-ready original with clear reusable rights was supplied, so FMB News editorial fallback is used.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the Bulacan dam-release update; it does not depict current conditions.","alt":"FMB News editorial visual for Ipo and Bustos dam water releases in Bulacan","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-08-30T19:00:00+08:00","photoReferenceUrl":"https://www.philstar.com/nation/2026/08/30/2552681/2-bulacan-dams-breach-spilling-level","notes":["Verified that Ipo and Bustos breached spilling marks and were releasing water.","Did not repeat the email's Sunday-morning 101.15m/17.85m and gate-count details because the independently retrievable report carried different timestamped measurements.","Did not reuse publisher screen-grab imagery without a stable original and clear repository-ready reuse basis."]}
+}

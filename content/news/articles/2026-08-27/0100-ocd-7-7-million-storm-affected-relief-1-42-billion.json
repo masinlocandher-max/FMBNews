@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-27-0100",
+  "emailSubject": "FMB News | Moody's Slashes 2026 PH Growth to 3%; LGUs to Get ₱1.32-T Tax Allotment | August 27, 2026 | 1:00 AM PHT",
+  "slug": "ocd-7-7-million-storm-affected-relief-1-42-billion",
+  "headline": "OCD Reports 7.7 Million People Affected by Recent Storms and Habagat",
+  "seoTitle": "OCD: 7.7 Million Affected by Storms and Habagat | FMB News",
+  "seoDescription": "The Office of Civil Defense says about 7.7 million people have been affected by recent tropical cyclones and Habagat, with assistance reaching about ₱1.42 billion.",
+  "keywords": ["OCD 7.7 million storm affected Philippines", "Habagat disaster August 2026", "Philippines disaster assistance 1.42 billion"],
+  "category": "Environment",
+  "kicker": "Disaster Response · National",
+  "deck": "Around 2.2 million families have been affected, while 28,910 people remain in evacuation centers and authorities continue validating 31 reported deaths.",
+  "publishedAt": "2026-08-27T01:00:00+08:00",
+  "updatedAt": "2026-08-27T01:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["The Office of Civil Defense reported on August 26 that about 7.7 million people, representing roughly 2.2 million families, have been affected by recent tropical cyclones and the southwest monsoon.","OCD said 346 evacuation centers were sheltering 8,446 families or 28,910 individuals. Authorities were validating reports of 31 deaths, while 19 people were reported injured and three remained missing."]},
+    {"heading":"Context","paragraphs":["The affected population spans multiple regions, including Ilocos, Cagayan Valley, Central Luzon, Calabarzon, Mimaropa, Bicol, Western Visayas, Zamboanga Peninsula, the Cordillera Administrative Region and Metro Manila.","OCD placed the total cost of assistance at about ₱1.42 billion. It also estimated infrastructure damage at about ₱5.5 billion and agricultural damage at approximately ₱1.9 billion."]},
+    {"heading":"Why this matters","paragraphs":["The figures show that the emergency remains a large-scale recovery operation even as weather conditions improve in some areas. Evacuation, damaged housing, disrupted livelihoods and infrastructure losses continue to require sustained national and local support."]},
+    {"heading":"What to watch next","paragraphs":["OCD and disaster agencies are continuing to validate casualty figures and damage assessments. Residents in affected areas should follow local government and PAGASA advisories as saturated ground and damaged infrastructure can remain hazardous after heavy rain subsides."]}
+  ],
+  "sources": [
+    {"publisher":"Philippine News Agency","title":"OCD reports 7.7-M storm-affected persons, verifying 31 deaths","publishedAt":"2026-08-26T16:37:00+08:00","url":"https://www.pna.gov.ph/articles/1282676"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://www.pna.gov.ph/articles/1282676","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because the source article's photograph is credited as a social-media grab and a stable reusable original image file was not supplied in the approved email.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the national storm-impact and relief update.","alt":"FMB News editorial visual for Philippine disaster response update","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-08-27T06:58:00+08:00","photoReferenceUrl":"https://www.pna.gov.ph/articles/1282676","notes":["Verified 7.7 million affected people, 2.2 million families, 31 deaths under validation, evacuation-center counts and damage estimates against PNA's OCD report.","Corrected the approved email's ₱1.36-billion relief figure to the newer OCD figure of about ₱1.42 billion reported August 26.","Did not reuse the PNA page image because its caption identifies it as grabbed from DSWD Cordillera's Facebook page rather than a supplied stable original asset."]}
+}

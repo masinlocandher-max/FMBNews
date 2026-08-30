@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "fmb-news-2026-08-09-0000-pht",
+  "emailSubject": "FMB News | First Alarm Raised Over Marikina River as Water Level Hits 15 Meters | August 9, 2026 | 12:00 AM PHT",
+  "slug": "marikina-river-first-alarm-15-meters",
+  "headline": "First Alarm Raised as Marikina River Reaches 15 Meters",
+  "category": "Environment",
+  "kicker": "Marikina River · Flood readiness · Habagat",
+  "deck": "Marikina City raised the first alarm after the river reached 15 meters at 8:46 p.m. on August 8, placing riverside communities on standby for possible evacuation.",
+  "publishedAt": "2026-08-09T00:00:00+08:00",
+  "updatedAt": "2026-08-09T01:20:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["The Marikina City government raised the first alarm over the Marikina River after its water level reached 15 meters at 8:46 p.m. on Saturday, August 8, according to the Marikina Public Information Office as reported by The Manila Times."]},
+    {"heading":"What we know","paragraphs":["The rise was attributed to the southwest monsoon, which was being enhanced by Typhoon Dolphin outside the Philippine Area of Responsibility.","The city advised residents near the river and in flood-prone communities to remain alert, prepare emergency go-bags and monitor official advisories in case the water continued to rise."]},
+    {"heading":"Background","paragraphs":["Marikina's river warning system sets the first alarm at 15 meters, indicating readiness for possible evacuation. The second alarm is triggered at 16 meters and the third alarm at 18 meters."]},
+    {"heading":"What remains unclear","paragraphs":["The river's overnight peak and the duration of the first-alarm status depend on continuing rainfall and runoff. Residents should rely on real-time Marikina City and Rescue 161 advisories."]},
+    {"heading":"Why this matters","paragraphs":["A rapidly rising river can leave communities little time to move people, medicines, documents and essential belongings. Early preparation reduces evacuation delays and safety risks."]},
+    {"heading":"What happens next","paragraphs":["Marikina authorities will continue monitoring the river gauge and issue further warnings if the water approaches the next alert threshold."]}
+  ],
+  "sources": [
+    {"publisher":"The Manila Times","title":"First alarm up over Marikina River; residents told to prepare for evacuation","publishedAt":"2026-08-08T21:19:00+08:00","url":"https://www.manilatimes.net/2026/08/08/news/first-alarm-up-over-marikina-river-residents-told-to-prepare-for-evacuation/2401426"}
+  ],
+  "image": {
+    "kind":"open-license-photo",
+    "url":"/assets/images/news/2026-08-09/marikina-river-alert.webp",
+    "sourceUrl":"https://commons.wikimedia.org/wiki/File:2013-08-20-Marikina-River-18m-Water-Level.JPG",
+    "creator":"Chitetskoy",
+    "license":"CC BY-SA 3.0",
+    "licenseUrl":"https://creativecommons.org/licenses/by-sa/3.0/",
+    "usageStatus":"Wikimedia Commons archive photograph verified as CC BY-SA 3.0; locally hosted crop published under the same license with exact credit.",
+    "credit":"Photo: Chitetskoy / Wikimedia Commons · CC BY-SA 3.0",
+    "caption":"Archive photograph of a high Marikina River water level in August 2013. It does not depict conditions on August 8, 2026.",
+    "alt":"High water level along the Marikina River during a past flood event",
+    "width":1600,
+    "height":900,
+    "focusX":50,
+    "focusY":50
+  },
+  "audit": {"sourceCheckedAt":"2026-08-09T01:20:00+08:00","photoReferenceUrl":"https://commons.wikimedia.org/wiki/File:2013-08-20-Marikina-River-18m-Water-Level.JPG","notes":["The 15-meter reading and 8:46 p.m. time were confirmed in The Manila Times article body.","Unsupported secondary claims about flooding and Zambales evacuations were excluded.","The recommended Marikina PIO photo was not reused because publication permission could not be independently established; a relevant CC BY-SA 3.0 archive photograph is used with exact credit."]}
+}

@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "fmb-news-2026-08-07-0000-pht",
+  "emailSubject": "FMB News | US Formally Requests Extradition of Apollo Quiboloy; DFA Transmits Demand to DOJ | August 7, 2026 | 12:00 AM PHT",
+  "slug": "us-formally-requests-extradition-of-apollo-quiboloy",
+  "headline": "DOJ Begins Review of US Extradition Request for Apollo Quiboloy",
+  "category": "National",
+  "kicker": "Justice · Extradition · Philippines and United States",
+  "deck": "The Department of Justice has begun evaluating the United States’ formal request to extradite Apollo Quiboloy, while his Philippine criminal cases remain pending.",
+  "publishedAt": "2026-08-07T00:00:00+08:00",
+  "updatedAt": "2026-08-09T07:18:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Department of Justice has begun evaluating the United States’ formal request to extradite detained Kingdom of Jesus Christ founder Apollo Quiboloy after the Department of Foreign Affairs transmitted the request to the department."
+      ]
+    },
+    {
+      "heading": "What we know",
+      "paragraphs": [
+        "Justice Secretary Fredderick Vida said the review will consider the Philippines-US extradition treaty, relevant Philippine laws and rules, Supreme Court decisions and Quiboloy’s pending local cases.",
+        "A 2021 federal indictment in California charges Quiboloy and several associates with alleged offenses that include sex trafficking of children, labor trafficking, visa fraud, bulk cash smuggling and money laundering.",
+        "Quiboloy was arrested by Philippine authorities in September 2024 and remains in Philippine custody while facing separate domestic cases, including qualified human trafficking and child-abuse charges.",
+        "The accusations remain allegations unless proven in court. Quiboloy has denied wrongdoing. His lawyer has argued that extradition would face legal obstacles, while the DOJ said it would conduct its own evaluation."
+      ]
+    },
+    {
+      "heading": "Background",
+      "paragraphs": [
+        "The Philippines and the United States are parties to a bilateral extradition treaty signed in 1994. The treaty and Philippine extradition law require the DOJ to assess the request before prosecutors may ask a Philippine court to approve extradition.",
+        "The treaty also contains a temporary-surrender mechanism that may apply when a requested person is already facing proceedings in the requested country. Whether that mechanism can or should be used in this case will be determined through the Philippine legal process."
+      ]
+    },
+    {
+      "heading": "What remains unclear",
+      "paragraphs": [
+        "It remains unclear when the DOJ will complete its assessment, whether it will file an extradition petition, and how Quiboloy’s pending Philippine cases will affect the timing or form of any court action."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "The case tests how Philippine courts balance domestic criminal proceedings, treaty obligations, national jurisdiction, and the interests of alleged victims in two countries. Extradition is a judicial process, not an automatic transfer ordered by either government."
+      ]
+    },
+    {
+      "heading": "What happens next",
+      "paragraphs": [
+        "The DOJ will finish its legal and factual evaluation before deciding whether to pursue an extradition petition in a Philippine court. Extradition is not automatic, and Quiboloy may contest any petition through the judicial process."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Inquirer.net",
+      "title": "DOJ to study US request for Quiboloy extradition",
+      "publishedAt": "2026-08-09T05:32:00+08:00",
+      "url": "https://newsinfo.inquirer.net/2280386/doj-to-study-us-request-for-quiboloy-extradition"
+    },
+    {
+      "publisher": "ABS-CBN News",
+      "title": "What's next for Quiboloy? DOJ lays out extradition process after US request",
+      "publishedAt": "2026-08-08T10:39:00+08:00",
+      "url": "https://news.abs-cbn.com/news/nation/2026/8/8/what-s-next-for-quiboloy-doj-lays-out-extradition-process-after-us-request-1039"
+    },
+    {
+      "publisher": "Philippine News Agency",
+      "title": "Envoy: US wants Quiboloy 'asap,' formally requests extradition from PH",
+      "publishedAt": "2026-08-06T19:00:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1281285"
+    },
+    {
+      "publisher": "Inquirer.net",
+      "title": "DFA confirms receipt of US extradition request for Quiboloy",
+      "publishedAt": "2026-08-06T19:44:00+08:00",
+      "url": "https://globalnation.inquirer.net/333954/dfa-confirms-receipt-of-us-extradition-request-for-quiboloy"
+    },
+    {
+      "publisher": "ABS-CBN News",
+      "title": "US asks Philippines to extradite Quiboloy",
+      "publishedAt": "2026-08-06T16:38:00+08:00",
+      "url": "https://www.abs-cbn.com/news/nation/2026/8/6/us-seeks-quiboloy-extradition-1647"
+    },
+    {
+      "publisher": "Reuters",
+      "title": "US seeks extradition of Philippines preacher accused of sexual abuse",
+      "publishedAt": "2026-08-06T21:11:00+08:00",
+      "url": "https://www.reuters.com/world/asia-pacific/us-seeks-extradition-philippines-son-god-preacher-accused-sexual-abuse-2026-08-06/"
+    }
+  ],
+  "image": {
+    "kind": "public-domain-photo",
+    "url": "/assets/images/news/2026-08-07/apollo-quiboloy-mugshot.webp",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Apollo_Quiboloy_mugshot.jpg",
+    "creator": "Philippine National Police",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "credit": "Photo: Philippine National Police / Wikimedia Commons · Public domain",
+    "usageStatus": "Philippine National Police image verified as public domain; locally hosted derivative published with source and status credit.",
+    "caption": "Archive Philippine National Police mugshot of Apollo Quiboloy. It does not depict the 2026 extradition request or a court proceeding.",
+    "alt": "Philippine National Police mugshot sheet of Apollo Quiboloy"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-09T07:18:00+08:00",
+    "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:Apollo_Quiboloy_mugshot.jpg",
+    "notes": [
+      "Google redirect links were replaced with direct publisher URLs.",
+      "Charges are presented as allegations, and Quiboloy’s denial was added for fairness.",
+      "A Philippine National Police public-domain mugshot is locally hosted with visible source and status credit."
+      ,"Updated from the August 9, 2026 bulletin after the DOJ confirmed it had begun evaluating the request; the existing canonical route and original publication time were preserved to prevent duplication."
+    ]
+  }
+}

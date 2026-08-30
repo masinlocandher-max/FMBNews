@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "fmb-news-2026-08-07-0600-pht",
+  "emailSubject": "FMB News | PAGASA Lifts Wind Signals as Maymay Weakens into Low Pressure Area | August 7, 2026 | 6:00 AM PHT",
+  "slug": "dotr-reaffirms-suspension-of-puv-fare-hikes",
+  "headline": "DOTr Reaffirms Suspension of PUV Fare Hikes",
+  "category": "Business",
+  "kicker": "Transport and household costs",
+  "deck": "The government is keeping public utility vehicle fare increases on hold while fare petitions proceed and interim support measures are extended to drivers and operators.",
+  "publishedAt": "2026-08-07T06:00:00+08:00",
+  "updatedAt": "2026-08-07T07:48:44+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Transportation Secretary Giovanni Lopez said fare increases for public utility vehicles will remain suspended amid unstable oil prices and elevated inflation. The Land Transportation Franchising and Regulatory Board will continue hearing pending petitions without immediately implementing an increase."
+      ]
+    },
+    {
+      "heading": "What we know",
+      "paragraphs": [
+        "Lopez said the administration does not want commuters to carry the added burden. He also warned that higher transport costs could feed into the prices of goods and services while inflation stands at 6.2 percent.",
+        "The LTFRB said hearings on fare petitions will resume on Monday and will include experts and commuters. The review may take several weeks."
+      ]
+    },
+    {
+      "heading": "Background and context",
+      "paragraphs": [
+        "Public utility vehicle fares are reviewed through LTFRB petitions and hearings rather than changed by announcement alone. The current review must weigh commuter affordability against the fuel and operating costs faced by drivers and operators while inflation remains elevated."
+      ]
+    },
+    {
+      "heading": "Interim support",
+      "paragraphs": [
+        "The fuel subsidy was raised from ₱10 to ₱12 per liter. The terminal-fee waiver for PUVs at the Parañaque Integrated Terminal Exchange was extended through the end of the year, toll discounts or exemptions for provincial buses were set to begin on August 10, and monthly terminal fees at 86 SM transport terminals were waived beginning August 15."
+      ]
+    },
+    {
+      "heading": "What remains unclear",
+      "paragraphs": [
+        "The final outcome and timetable of the fare petitions remain unsettled. Detailed eligibility and implementation rules for each support measure should be confirmed through official transport-agency announcements."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "A continued fare freeze protects daily household budgets in the short term, especially for workers and students who rely on multiple rides. Drivers and operators, however, continue to face fuel and operating-cost pressure while the petitions are reviewed."
+      ]
+    },
+    {
+      "heading": "What happens next",
+      "paragraphs": [
+        "The LTFRB will resume public hearings and consult commuters, experts, and transport groups before completing its review. Existing fare increases remain suspended unless the government announces a change."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "The Philippine Star",
+      "title": "DOTr: Fare hike still suspended amid oil price hikes",
+      "publishedAt": "2026-08-07T00:00:00+08:00",
+      "url": "https://www.philstar.com/headlines/2026/08/07/2547552/dotr-fare-hike-still-suspended-amid-oil-price-hikes"
+    },
+    {
+      "publisher": "BusinessWorld Online",
+      "title": "Jeepney fare hike still suspended",
+      "publishedAt": "2026-08-06T21:04:00+08:00",
+      "url": "https://bworldonline.com/the-nation/2026/08/06/768720/jeepney-fare-hike-still-suspended/"
+    }
+  ],
+  "image": {
+    "kind": "open-license-photo",
+    "url": "/assets/images/news/2026-08-07/manila-jeepney.webp",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Manila,_Jeepney,_Philippines.jpg",
+    "creator": "Vyacheslav Argenberg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "usageStatus": "Wikimedia Commons file verified as CC BY 4.0; locally hosted crop published with creator, source, and license credit.",
+    "credit": "Photo: Vyacheslav Argenberg / Wikimedia Commons · CC BY 4.0",
+    "caption": "File photo of a Manila jeepney, used to illustrate public-transport fares. It does not depict the August 2026 policy announcement.",
+    "alt": "A silver passenger jeepney on a Manila street"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-06T23:48:44Z",
+    "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:Manila,_Jeepney,_Philippines.jpg",
+    "notes": [
+      "Replaced the supplied unsupported ₱1.5 billion allocation claim with verified per-liter subsidy and fee-relief measures.",
+      "A relevant CC BY 4.0 Manila jeepney file photo from Wikimedia Commons is locally hosted with visible creator, source, and license credit."
+    ]
+  }
+}

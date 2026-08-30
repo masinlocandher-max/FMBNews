@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-16-0100",
+  "emailSubject": "FMB News | Gov't Eyes Accelerated Public Spending Following Q2 GDP Deceleration | August 16, 2026 | 1:00 AM PHT",
+  "slug": "government-spending-q2-gdp-2-3-percent",
+  "headline": "Government Moves to Accelerate Spending After Q2 GDP Growth Slows to 2.3%",
+  "seoTitle": "PH Government Speeds Up Spending After Q2 GDP Slows to 2.3%",
+  "seoDescription": "The Philippine economy grew 2.3% in Q2 2026. Government officials say infrastructure spending is expected to pick up as reviewed projects resume.",
+  "keywords": ["Philippines Q2 GDP 2026", "government spending Philippines", "infrastructure spending 2026", "2.3 percent GDP"],
+  "category": "Business",
+  "kicker": "Economy · Public spending",
+  "deck": "The Philippine economy expanded 2.3% year on year in the second quarter, while government officials pointed to faster infrastructure implementation as part of the second-half recovery effort.",
+  "publishedAt": "2026-08-16T01:00:00+08:00",
+  "updatedAt": "2026-08-16T07:01:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Philippine economy grew 2.3% year on year in the second quarter of 2026, its weakest pace since 2021 and slower than the 2.8% expansion recorded in the first quarter.",
+        "Economic Planning Secretary Arsenio Balisacan said infrastructure spending is expected to improve in the current quarter as recently approved projects move into implementation."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "Government and independent reporting have linked the slowdown partly to weaker construction and investment following reviews of flood-control and other public-works projects. A June 25 Palace statement said the administration was accelerating legitimate infrastructure projects after those reviews caused temporary disruptions.",
+        "A new FMB News overnight brief describes a fresh catch-up spending push by the Marcos administration. FMB News could not independently retrieve the specific late-August-15 presidential briefing cited by the email, so this article relies on the current PSA-linked Reuters reporting and existing Palace record for the verified policy direction."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "Public construction and government capital outlays affect jobs, supplier demand, local business activity and overall growth. Faster execution can support recovery, but the quality and integrity of projects remain as important as the pace of spending."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for monthly disbursement data, construction and investment indicators, updated infrastructure execution figures and any revision to the government's 2026 growth outlook."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Reuters",
+      "title": "Philippine economy posts slowest growth in five years in second quarter",
+      "publishedAt": "2026-08-07T10:17:00+08:00",
+      "url": "https://www.reuters.com/world/asia-pacific/philippines-q2-gdp-grows-23-yryr-slower-than-expected-2026-08-07/"
+    },
+    {
+      "publisher": "Presidential Communications Office",
+      "title": "Palace confident infrastructure resumption to boost Q2 2026 economic growth",
+      "publishedAt": "2026-06-25T12:00:00+08:00",
+      "url": "https://pco.gov.ph/news_releases/palace-confident-infrastructure-resumption-to-boost-q2-2026-economic-growth/"
+    },
+    {
+      "publisher": "Reuters",
+      "title": "Philippines' Marcos proposes $118 billion budget for 2027",
+      "publishedAt": "2026-08-11T14:18:00+08:00",
+      "url": "https://www.reuters.com/world/asia-pacific/philippines-marcos-proposes-118-billion-budget-2027-2026-08-11/"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "sourceUrl": null,
+    "creator": "FMB News",
+    "license": "FMB-owned editorial visual",
+    "licenseUrl": "https://www.francinemariebautista.com/news/",
+    "usageStatus": "The email referenced a PCO photograph through a publisher page but did not provide a stable original image asset URL that could be independently verified for this publication pass.",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying the report on second-quarter growth and public-spending acceleration.",
+    "alt": "FMB News editorial visual for the Philippine economy and government spending report",
+    "width": 1200,
+    "height": 675,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-16T07:01:00+08:00",
+    "notes": [
+      "Q2 GDP growth of 2.3% and the expected pickup in infrastructure spending are independently supported by Reuters and Palace records.",
+      "The specific late-August-15 presidential catch-up briefing cited by the email was not independently retrieved, so unsupported direct quotes and the email's unverified LGSF 2027 figure were not used as facts.",
+      "A credited FMB-owned editorial visual is used because the referenced current photo did not resolve to a stable original asset URL."
+    ]
+  }
+}

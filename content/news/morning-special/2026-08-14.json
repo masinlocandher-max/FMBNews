@@ -1,0 +1,84 @@
+{
+  "date": "2026-08-14",
+  "publishedAt": "2026-08-14T07:00:00+08:00",
+  "editionLabel": "Today’s Morning Special",
+  "title": "Damaged Schools, Orange Rain Warnings and Taal’s Uneasy Quiet",
+  "deck": "The August 14 edition connects the day’s public-safety picture: classrooms damaged after weeks of severe weather, renewed flood threats in Central Luzon and low-level unrest beneath Taal.",
+  "hero": {
+    "src": "/assets/images/news/2026-08-07/deped-office.webp",
+    "alt": "Archive exterior of a Department of Education schools division office",
+    "caption": "Archive photograph of a Department of Education office. It does not depict a school damaged in the August 2026 storms.",
+    "credit": "Photo: PaulGorduiz106 / Wikimedia Commons · CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:DepEd_SDO_Mandaue_City_(2023-12-07).jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "stories": [
+    {
+      "id": "FMB-20260814-004",
+      "kicker": "Education · Disaster recovery",
+      "headline": "DepEd Counts Storm Damage Across 1,195 Schools and 6,861 Classrooms",
+      "deck": "The department estimates that about ₱235.6 million is needed for cleanup and minor repairs after consecutive cyclones and monsoon rains.",
+      "body": [
+        "The Department of Education estimated that about ₱235.6 million would be needed for emergency cleanup and minor repair work after weeks of monsoon rain and consecutive tropical cyclones damaged public-school facilities.",
+        "The department’s consolidated monitoring covered 1,195 schools and 6,861 affected classrooms. The count included 4,114 classrooms with minor damage, 1,393 with major damage and 1,354 reported as destroyed.",
+        "Those categories do not carry the same repair path. Minor damage may involve roofing, wiring, windows or other components that can be restored relatively quickly. Major damage and destroyed rooms require engineering assessments, procurement and, in some cases, replacement rather than patchwork repair.",
+        "DepEd said it was coordinating on quick-response funding and community cleanup support. In heavily affected divisions, temporary learning arrangements may remain necessary until buildings are cleared and certified safe.",
+        "For families, the important next detail is local: whether their school can reopen rooms safely, where displaced classes will meet and how long repairs are expected to take. National totals describe the scale, but school-level notices determine the immediate learning plan."
+      ],
+      "sources": [
+        {"label": "Philippine Daily Inquirer — DepEd says ₱235.5 million needed for storm-damaged schools", "url": "https://newsinfo.inquirer.net/2284263/deped-p235-5m-needed-to-repair-schools-damaged-by-monsoon-cyclones"},
+        {"label": "Department of Education — Official advisories", "url": "https://www.deped.gov.ph/"}
+      ]
+    },
+    {
+      "id": "FMB-20260814-005",
+      "kicker": "Weather · Central Luzon",
+      "headline": "PAGASA Keeps Zambales and Bataan Under an Orange Rainfall Warning",
+      "deck": "Flooding remained threatening Friday morning as the southwest monsoon continued to feed heavy rain into western and central Luzon.",
+      "image": {
+        "src": "/assets/images/news/2026-08-14/pagasa-orange-warning-zambales-bataan-20260814.png",
+        "alt": "PAGASA rainfall warning panel and weather map showing heavy rain over Luzon",
+        "caption": "PAGASA’s 8:00 a.m. warning kept Zambales and Bataan at Orange level while the live map showed heavy rain bands over western and central Luzon on August 14, 2026.",
+        "credit": "Screenshot: DOST-PAGASA NCR-PRSD / FMB News",
+        "sourceUrl": "https://www.pagasa.dost.gov.ph/regional-forecast/ncrprsd",
+        "licenseUrl": "https://lawphil.net/statutes/repacts/ra1997/ra_8293_1997.html"
+      },
+      "body": [
+        "PAGASA kept Zambales and Bataan under an Orange Heavy Rainfall Warning at 8:00 a.m. Friday, saying flooding remained threatening in the two provinces.",
+        "The bureau had already placed both provinces at Orange level in its earlier warning. Pampanga, Bulacan, Metro Manila and parts of Tarlac, Cavite, Batangas, Rizal and Quezon were among the areas placed under Yellow warning for possible flooding in flood-prone communities.",
+        "The southwest monsoon remained the main weather system driving the rain. Offshore tropical systems had moved farther away, but the prevailing wind continued to carry moisture toward the western side of Luzon.",
+        "An Orange warning calls for preparedness and close local monitoring. Road closures, river behavior and slope conditions can differ sharply within the same province, so residents should follow municipal disaster offices as well as the national bulletin.",
+        "PAGASA scheduled further warning updates as rain bands moved. Warning colors are time-sensitive; readers should use the linked agency page for the latest status rather than treating this morning edition as a live alert."
+      ],
+      "sources": [
+        {"label": "DOST-PAGASA NCR-PRSD — Heavy Rainfall Warning No. 3", "url": "https://www.pagasa.dost.gov.ph/regional-forecast/ncrprsd"},
+        {"label": "Philippine News Agency — Rains to prevail across Luzon Friday", "url": "https://www.pna.gov.ph/articles/1281860"}
+      ]
+    },
+    {
+      "id": "FMB-20260814-006",
+      "kicker": "Volcano monitoring · Batangas",
+      "headline": "Taal Records 15 Volcanic Earthquakes After a Week of Relative Calm",
+      "deck": "PHIVOLCS maintained Alert Level 1 and repeated that Taal Volcano Island remains a Permanent Danger Zone.",
+      "image": {
+        "src": "/assets/images/news/2026-08-14/taal-volcano-aerial-archive.jpg",
+        "alt": "Aerial archive photograph of Taal Volcano Island and its crater lake",
+        "caption": "Archive aerial photograph of Taal Volcano Island from 2006. It does not depict conditions on August 14, 2026.",
+        "credit": "Photo: TheCoffee / Wikimedia Commons · CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Taal_volcano_aerial.jpg",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "body": [
+        "The Taal Volcano Network recorded 15 volcanic earthquakes during the 24-hour observation period reported on Friday, an increase after several quieter days.",
+        "PHIVOLCS kept Taal at Alert Level 1, which means the volcano remains in a state of low-level unrest. The designation does not signal that a magmatic eruption is imminent, but it also does not mean the volcano is normal or safe to enter.",
+        "Taal Volcano Island remains a Permanent Danger Zone. Sudden steam-driven or phreatic explosions, volcanic gas and localized ash emission can occur with little warning, especially around the Main Crater and known fissures.",
+        "The earthquake count is one part of a broader monitoring picture that includes gas output, ground deformation, temperature, visual observations and other instruments. A single day’s increase is therefore read alongside longer trends rather than treated as a stand-alone eruption forecast.",
+        "Communities around Taal Lake should continue following PHIVOLCS and local-government instructions. Pilots are also advised to avoid flying close to the volcano because a sudden ash or gas plume can pose an aviation hazard."
+      ],
+      "sources": [
+        {"label": "DOST-PHIVOLCS — Taal Volcano 24-hour bulletin, August 14", "url": "https://wovodat.phivolcs.dost.gov.ph/bulletin/list-of-bulletin"},
+        {"label": "Philippine Daily Inquirer — Taal logs 15 earthquakes after weeklong lull", "url": "https://newsinfo.inquirer.net/2284381/taal-volcano-logs-15-earthquakes-after-weeklong-lull"}
+      ]
+    }
+  ]
+}

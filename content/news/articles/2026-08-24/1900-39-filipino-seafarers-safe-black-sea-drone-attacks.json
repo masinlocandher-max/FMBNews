@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-24-1900",
+  "emailSubject": "FMB News | Typhoon Saudel Enters PAR as 'Obet'; Impeachment Court Begins 3 PM Sessions | August 24, 2026 | 7:00 PM PHT",
+  "slug": "39-filipino-seafarers-safe-black-sea-drone-attacks",
+  "headline": "DMW Confirms 39 Filipino Seafarers Safe After Black Sea Drone Attacks",
+  "seoTitle": "39 Filipino Seafarers Safe After Black Sea Drone Attacks | FMB News",
+  "seoDescription": "The Department of Migrant Workers confirmed 39 Filipino seafarers aboard two vessels are safe after drone attacks near Novorossiysk in the Black Sea.",
+  "keywords": ["39 Filipino seafarers Black Sea", "DMW Novorossiysk drone attacks", "M/V Anna S Filipino crew", "M/V Elina B Filipino crew"],
+  "category": "World",
+  "kicker": "Migrant Workers · Maritime Security",
+  "deck": "Seventeen Filipino crew members of M/V Anna S and 22 aboard M/V Elina B were reported safe as the DMW continued monitoring assistance and repatriation arrangements.",
+  "publishedAt": "2026-08-24T19:00:00+08:00",
+  "updatedAt": "2026-08-25T01:25:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading": "What happened", "paragraphs": ["The Department of Migrant Workers confirmed that 39 Filipino seafarers aboard two commercial vessels affected by drone attacks near Novorossiysk, Russia, are safe and accounted for.", "The total includes 17 Filipino crew members of M/V Anna S and 22 aboard M/V Elina B. The Elina B had assisted the Anna S crew after an earlier incident, and its own crew was later reported safe and unharmed."]},
+    {"heading": "Context", "paragraphs": ["One Filipino crew member from M/V Anna S is receiving hospital care in Turkey for a kidney condition unrelated to the drone attack and was reported in stable condition.", "The DMW has been coordinating with licensed manning agencies, shipowners and Philippine diplomatic posts as it continues welfare monitoring and repatriation support for Filipino seafarers affected by attacks in the northern Black Sea."]},
+    {"heading": "Why this matters", "paragraphs": ["The northern Black Sea remains a high-risk operating environment for commercial shipping. The DMW has maintained restrictions and protective measures for Filipino seafarers assigned to routes exposed to armed conflict."]},
+    {"heading": "What to watch next", "paragraphs": ["Watch for DMW updates on repatriation arrangements, medical assistance and any further safety directives for licensed manning agencies and Filipino crews operating near conflict-affected waters."]}
+  ],
+  "sources": [
+    {"publisher": "INQUIRER.net", "title": "39 Filipino seafarers safe after Black Sea drone attacks", "publishedAt": "2026-08-24T16:00:00+08:00", "url": "https://globalnation.inquirer.net/335756/39-filipino-seafarers-safe-after-black-sea-drone-attacks"},
+    {"publisher": "Journal News Online", "title": "DMW mino-monitor kalagayan ng OFWs sa barko sa Black Sea", "publishedAt": "2026-08-23T12:00:00+08:00", "url": "https://journalnews.com.ph/dmw-mino-monitor-kalagayan-ng-ofws-sa-barko-sa-black-sea/"},
+    {"publisher": "Philippine News Agency", "title": "Black Sea ban for Filipino seafarers stays amid continuing risks", "publishedAt": "2026-08-14T18:07:00+08:00", "url": "https://www.pna.gov.ph/articles/1281946"}
+  ],
+  "image": {"kind": "editorial-fallback", "url": "/assets/images/news/fmb-news-editorial-fallback.svg", "sourceUrl": null, "creator": "FMB News", "license": "FMB-owned editorial visual", "licenseUrl": "https://www.francinemariebautista.com/news/", "usageStatus": "FMB-owned editorial visual used because the approved email referenced DMW/government imagery but did not provide a stable reusable original image file with a direct asset URL.", "credit": "FMB News editorial visual", "caption": "FMB News editorial visual accompanying the Black Sea seafarer safety report.", "alt": "FMB News editorial visual for the report on 39 Filipino seafarers in the Black Sea", "width": 1200, "height": 675, "focusX": 50, "focusY": 50},
+  "audit": {"sourceCheckedAt": "2026-08-25T01:25:00+08:00", "photoReferenceUrl": "https://www.pna.gov.ph/categories/national", "notes": ["Verified the 17 plus 22 crew breakdown and that the 39 seafarers were reported safe.", "Clarified that one seafarer was hospitalized for an unrelated kidney condition rather than an injury from the attack.", "Did not reproduce the email's broader compensation claims beyond independently supported high-risk-zone protections."]}
+}

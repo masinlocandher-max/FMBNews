@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-13-1300",
+  "emailSubject": "FMB News | AFP Moves Drone Development Program into Testing Stage | August 13, 2026 | 1:00 PM PHT",
+  "slug": "afp-drone-systems-enter-testing-integration-eyed",
+  "headline": "AFP Drone Systems Enter Testing as Military Eyes Integration",
+  "seoTitle": "AFP Drone Systems Enter Testing, Integration Eyed",
+  "seoDescription": "AFP chief Gen. Antonio Nafarrete said drone systems are being tested as the military works toward integrating unmanned capabilities across its services.",
+  "keywords": ["AFP drone systems", "Antonio Nafarrete", "Philippine military drones", "unmanned systems"],
+  "category": "National",
+  "kicker": "Defense · Military modernization",
+  "deck": "AFP chief Gen. Antonio Nafarrete said drone systems are under testing as the military works toward integrating unmanned capabilities across its services.",
+  "publishedAt": "2026-08-13T13:00:00+08:00",
+  "updatedAt": "2026-08-13T19:15:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Armed Forces of the Philippines is testing drone systems and studying how to integrate unmanned capabilities being developed across the military services, AFP chief Gen. Antonio Nafarrete said Thursday.",
+        "Nafarrete disclosed the progress during his confirmation hearing, according to the Philippine News Agency. The report described the work as an effort to bring together systems being developed by different services rather than as a completed operational deployment."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The AFP has been adapting doctrine and modernization priorities as drones become more prominent in surveillance and combat operations. Nafarrete has also emphasized integrated capability development, in which platforms are paired with trained personnel, doctrine, organization, logistics and long-term sustainment.",
+        "The accessible public record supports the testing and integration effort. It does not disclose classified ranges, payloads, production quantities or deployment locations."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "A coordinated approach could help the AFP avoid fragmented systems and improve interoperability among service branches. For the Philippines, unmanned capabilities may support territorial awareness and force protection, but their effectiveness will depend on testing, doctrine, training and sustainment."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for AFP disclosures on which systems complete evaluation, how common standards will be applied across the services, and whether tested platforms move into procurement or operational use."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Philippine News Agency",
+      "title": "AFP drone systems under testing; integration eyed",
+      "publishedAt": "2026-08-13T12:23:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1281763"
+    },
+    {
+      "publisher": "Philippine News Agency",
+      "title": "CA confirms Nafarrete, 37 other senior AFP officers",
+      "publishedAt": "2026-08-13T15:21:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1281786"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "sourceUrl": null,
+    "creator": "FMB News",
+    "license": "FMB-owned editorial visual",
+    "licenseUrl": "https://www.francinemariebautista.com/news/",
+    "usageStatus": "FMB-owned editorial visual used because the bulletin did not provide a stable, independently rights-verifiable image asset URL.",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying the report on AFP drone-system testing. It does not depict a specific drone, test or military operation.",
+    "alt": "FMB News editorial visual for the AFP drone-system testing report",
+    "width": 1200,
+    "height": 675,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-13T19:15:00+08:00",
+    "photoReferenceUrl": "https://www.pna.gov.ph/categories/national",
+    "notes": [
+      "Corrected the bulletin's erroneous PNA article number 1281654 to the verified story at article 1281763.",
+      "Removed unsupported claims about specific platform types, sensors, encrypted links, tropical-weather trials, batch manufacturing and frontline deployment.",
+      "Used the FMB-owned fallback because the recommended photograph had no stable asset URL with independently verified reuse terms."
+    ]
+  }
+}

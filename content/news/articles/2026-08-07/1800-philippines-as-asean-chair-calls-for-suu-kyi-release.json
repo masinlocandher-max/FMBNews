@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "fmb-news-2026-08-07-1800-pht",
+  "emailSubject": "FMB News | Philippine Q2 2026 GDP Growth Slows to 2.3% Amid Construction Contraction | August 7, 2026 | 6:00 PM PHT",
+  "slug": "philippines-as-asean-chair-calls-for-suu-kyi-release",
+  "headline": "Philippines, as ASEAN Chair, Calls for Suu Kyi's Unconditional Release",
+  "category": "World",
+  "kicker": "ASEAN · Myanmar · Diplomacy",
+  "deck": "The Philippines, serving as ASEAN chair in 2026, called for Aung San Suu Kyi's complete and unconditional release and wider access to people detained in Myanmar.",
+  "publishedAt": "2026-08-07T18:00:00+08:00",
+  "updatedAt": "2026-08-07T21:47:05.983+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Philippines, in its capacity as ASEAN chair for 2026, called for the complete and unconditional release of detained former Myanmar leader Aung San Suu Kyi and urged wider access to people held in detention since Myanmar's February 2021 military coup.",
+        "The ASEAN chair issued the statement after Aung San Suu Kyi met a representative of the International Committee of the Red Cross on August 3. The United States issued a separate statement making a similar call."
+      ]
+    },
+    {
+      "heading": "What we know",
+      "paragraphs": [
+        "The ASEAN chair welcomed the Red Cross visit and expressed hope that it would lead to regular humanitarian access, including medical care.",
+        "The statement reaffirmed the role of ASEAN's special envoy in engaging all parties under the bloc's Five-Point Consensus. It also said ASEAN looked forward to the envoy receiving access to Myanmar and meeting all concerned parties, including Aung San Suu Kyi.",
+        "The statement was issued by the ASEAN chair. It should not be described as a joint DFA statement or as proof that Myanmar's military authorities have accepted the request."
+      ]
+    },
+    {
+      "heading": "Background",
+      "paragraphs": [
+        "Myanmar's military removed an elected civilian government in February 2021. The ensuing conflict and detention of political figures have remained major tests of ASEAN's Five-Point Consensus, which calls for an end to violence, dialogue among all parties, humanitarian assistance and engagement by a special envoy."
+      ]
+    },
+    {
+      "heading": "What remains unclear",
+      "paragraphs": [
+        "Myanmar's military authorities have not publicly committed to Aung San Suu Kyi's release or to granting ASEAN's special envoy regular access to all detained political figures."
+      ]
+    },
+    {
+      "heading": "Why this matters to Filipinos",
+      "paragraphs": [
+        "As ASEAN chair, the Philippines is responsible for guiding regional diplomacy on a conflict that affects Southeast Asian stability, humanitarian conditions and ASEAN's credibility when its members face serious political crises."
+      ]
+    },
+    {
+      "heading": "What happens next",
+      "paragraphs": [
+        "ASEAN's special envoy may continue seeking access to Myanmar and its detained political figures. Further diplomatic statements and any response from Myanmar's authorities will show whether the appeal leads to practical access or dialogue."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Philippine News Agency",
+      "title": "PH-led ASEAN calls for Suu Kyi's release; urges access to detainees",
+      "publishedAt": "2026-08-07T17:16:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1281344"
+    },
+    {
+      "publisher": "ASEAN 2026 Philippines",
+      "title": "ASEAN Chair's Statement on the Meeting of Daw Aung San Suu Kyi with a Delegate from the International Committee of the Red Cross",
+      "publishedAt": "2026-08-07T17:00:00+08:00",
+      "url": "https://asean2026.gov.ph/post/view/?title=asean-chair-s-statement-on-the-meeting-of-daw-aung-san-suu-kyi-with-a-delegate-from-the-international-committee-of-the-red-cross-icrc"
+    },
+    {
+      "publisher": "Reuters",
+      "title": "U.S. and ASEAN chair call for unconditional release of Myanmar's Aung San Suu Kyi",
+      "publishedAt": "2026-08-07T13:23:00+08:00",
+      "url": "https://www.reuters.com/world/asia-pacific/us-asean-chair-call-unconditional-release-myanmars-aung-san-suu-kyi-2026-08-07/"
+    }
+  ],
+  "image": {
+    "kind": "public-domain-photo",
+    "url": "/assets/images/news/2026-08-07/aung-san-suu-kyi.webp",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:President_Obama_and_Aung_San_Suu_Kyi_Address_the_Media_(15601562138).jpg",
+    "creator": "U.S. Department of State",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "usageStatus": "U.S. Department of State photograph verified as public domain; locally hosted crop published with source and status credit.",
+    "credit": "Photo: U.S. Department of State / Wikimedia Commons · Public domain",
+    "caption": "Archive photo of Aung San Suu Kyi speaking beside U.S. President Barack Obama in 2014. It does not depict the 2026 ASEAN statement.",
+    "alt": "Aung San Suu Kyi and Barack Obama speaking at separate lecterns in 2014"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-07T21:47:05.983+08:00",
+    "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:President_Obama_and_Aung_San_Suu_Kyi_Address_the_Media_(15601562138).jpg",
+    "notes": [
+      "Google redirect URLs were replaced with direct publisher URLs.",
+      "The email's description of a joint DFA statement was corrected to identify it accurately as a statement by the Philippines in its role as ASEAN chair.",
+      "Unsupported claims about a scheduled Manila ministerial meeting and guaranteed humanitarian delivery were removed.",
+      "A relevant U.S. Department of State public-domain archive photo is locally hosted with visible source and status credit."
+    ]
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "fmb-news-2026-08-07-1800-pht",
+  "emailSubject": "FMB News | Philippine Q2 2026 GDP Growth Slows to 2.3% Amid Construction Contraction | August 7, 2026 | 6:00 PM PHT",
+  "slug": "philippine-q2-2026-gdp-growth-slows-to-2-3-percent",
+  "headline": "Philippine Q2 2026 GDP Growth Slows to 2.3% as Industry Contracts",
+  "category": "Business",
+  "kicker": "Philippines · Economy · Gross domestic product",
+  "deck": "The Philippine economy expanded by 2.3% year on year in the second quarter of 2026 as industry contracted and public construction weakened.",
+  "publishedAt": "2026-08-07T18:00:00+08:00",
+  "updatedAt": "2026-08-08T07:27:32+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Philippine economy grew by 2.3% year on year in the second quarter of 2026, according to the Philippine Statistics Authority. The result was weaker than the 5.5% expansion recorded in the same quarter of 2025 and the 2.8% growth posted in the first quarter of 2026.",
+        "Economic managers said the government would pursue reforms and accelerate high-impact infrastructure projects to support growth in the second half of the year."
+      ]
+    },
+    {
+      "heading": "What we know",
+      "paragraphs": [
+        "Agriculture, forestry and fishing expanded by 2.7%, while services grew by 4.5%. Industry contracted by 2.4%, and construction fell 14.8% from a year earlier.",
+        "DEPDev Secretary Arsenio Balisacan said infrastructure-related agencies had remained cautious. Domestic demand was subdued, total investment declined 9.2% for a fourth consecutive quarterly contraction, and household consumption growth moderated to 2.8% from 5.2% a year earlier.",
+        "Balisacan said implementing agencies would carry out catch-up plans with milestones and accountability measures. He also said the Department of Budget and Management had begun releasing mobilization funds for 2026 infrastructure projects."
+      ]
+    },
+    {
+      "heading": "Background",
+      "paragraphs": [
+        "The government's current full-year growth target is 3.5% to 4.5%, not the earlier 6% to 7% range. Balisacan said the economy would need to grow by at least 4.4% in the second half to reach the lower end of that target.",
+        "Headline inflation eased to 6.2% in July from 6.4% in June, bringing the January-to-July average to 5.0%, according to the PSA. Elevated prices, tighter financial conditions and weaker investment remain important risks to household demand and business activity."
+      ]
+    },
+    {
+      "heading": "What remains unclear",
+      "paragraphs": [
+        "It remains uncertain whether faster infrastructure execution, improving business sentiment and seasonal household spending will be enough to lift full-year growth into the government's target range."
+      ]
+    },
+    {
+      "heading": "Why this matters to Filipinos",
+      "paragraphs": [
+        "Economic growth affects job creation, household income, business investment, tax revenue and the government's capacity to deliver public services and infrastructure. A prolonged slowdown could make those gains harder to achieve."
+      ]
+    },
+    {
+      "heading": "What happens next",
+      "paragraphs": [
+        "Economic agencies will monitor second-half activity while infrastructure departments implement catch-up plans. The next quarters will show whether construction, investment and household demand recover enough to improve the full-year result."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Philippine News Agency",
+      "title": "Gov't to ramp up reforms to accelerate economic growth",
+      "publishedAt": "2026-08-07T13:28:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1281313"
+    },
+    {
+      "publisher": "ABS-CBN News",
+      "title": "GDP growth further skids to 2.3 percent in second quarter",
+      "publishedAt": "2026-08-07T11:33:00+08:00",
+      "url": "https://www.abs-cbn.com/news/business/2026/8/7/gdp-growth-further-skids-to-2-3-percent-in-second-quarter-1006"
+    },
+    {
+      "publisher": "Philippine Statistics Authority",
+      "title": "Consumer Price Index and Inflation Rate",
+      "publishedAt": "2026-08-05T09:00:00+08:00",
+      "url": "https://psa.gov.ph/price-indices/cpi-ir"
+    },
+    {
+      "publisher": "Reuters",
+      "title": "Philippine economy posts slowest growth in five years in second quarter",
+      "publishedAt": "2026-08-07T10:17:00+08:00",
+      "url": "https://www.reuters.com/world/asia-pacific/philippines-q2-gdp-grows-23-yryr-slower-than-expected-2026-08-07/"
+    },
+    {
+      "publisher": "Philippine Statistics Authority",
+      "title": "GDP Grows by 2.8 Percent in the First Quarter of 2026",
+      "publishedAt": "2026-05-07T00:00:00+08:00",
+      "url": "https://psa.gov.ph/content/gdp-grows-28-percent-first-quarter-2026"
+    },
+    {
+      "publisher": "Philippine Statistics Authority",
+      "title": "GDP Expands by 5.5 Percent in the Second Quarter of 2025",
+      "publishedAt": "2025-08-07T00:00:00+08:00",
+      "url": "https://psa.gov.ph/content/gdp-expands-55-percent-second-quarter-2025"
+    }
+  ],
+  "image": {
+    "kind": "public-domain-photo",
+    "url": "/assets/images/news/2026-08-07/metro-manila-skyline.webp",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bonifacio_Global_City_skyline.jpg",
+    "creator": "PhiliptheNumber1",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "usageStatus": "Wikimedia Commons file verified as CC0 1.0; locally hosted crop published with creator, source, and license credit.",
+    "credit": "Photo: PhiliptheNumber1 / Wikimedia Commons · CC0",
+    "caption": "File photo of the Bonifacio Global City skyline, used to illustrate the Philippine economy. It does not depict the August 7 briefing.",
+    "alt": "Bonifacio Global City skyline viewed across elevated roadways in Metro Manila"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-08T07:27:32+08:00",
+    "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:Bonifacio_Global_City_skyline.jpg",
+    "notes": [
+      "Google redirect URLs were replaced with direct publisher URLs.",
+      "The outdated 6% to 7% growth target in the email was corrected to the current 3.5% to 4.5% target supported by the cited reporting.",
+      "A relevant CC0 skyline file photo from Wikimedia Commons is locally hosted with visible creator, source, and license credit.",
+      "The August 8, 6:00 AM bulletin repeated this already published GDP development, so no second canonical article was retained.",
+      "The second-quarter 2025 comparison was corrected from 5.4% to the PSA's published 5.5%, and Reuters and PSA records were added.",
+      "Construction and investment figures were updated to the verified 14.8% and 9.2% contractions."
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-24-0700",
+  "emailSubject": "FMB News | Telcos to Block Violence Sites; DepEd Urged to Fill SPED Posts | August 24, 2026 | 7:00 AM PHT",
+  "slug": "five-fishermen-rescued-oriental-mindoro",
+  "headline": "Five Missing Fishermen Found Safe in Occidental Mindoro",
+  "seoTitle": "Five Missing Fishermen Found Safe in Mindoro | FMB News",
+  "seoDescription": "Five fishermen reported missing after leaving Santa Cruz, Occidental Mindoro, were found safe in Sablayan after sheltering from rough weather.",
+  "keywords": ["five fishermen found safe Mindoro", "Santa Cruz Occidental Mindoro fishermen", "Sablayan Coast Guard", "FBCA Balong 3"],
+  "category": "Community",
+  "kicker": "Occidental Mindoro · Maritime safety",
+  "deck": "The crew of FBCA Balong 3 sheltered near shore during rough weather and was later located safely in Sablayan.",
+  "publishedAt": "2026-08-24T07:00:00+08:00",
+  "updatedAt": "2026-08-24T13:05:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading": "What happened", "paragraphs": ["Five fishermen reported missing after going to sea from Santa Cruz, Occidental Mindoro, were found safe in Sablayan, the Philippine Coast Guard said on August 22.", "Romnick Temenia, Ronelio Temenia, Arjhay Ortea, Aldrin Bonilia and Agustin Ramirez had been aboard FBCA Balong 3 and were reported missing on August 16."]},
+    {"heading": "Context", "paragraphs": ["The fishermen encountered strong winds and rough seas, prompting the boat captain to move closer to shore and anchor near Barangay Poblacion I in Santa Cruz. When conditions improved, they proceeded to Sitio Tabok in Barangay Buenavista, Sablayan, to seek safer shelter.", "The Coast Guard and the Sablayan disaster office verified their location. All five were in good condition, no injuries were reported and their boat was found without damage or other problems."]},
+    {"heading": "Why this matters", "paragraphs": ["The safe outcome underscores the value of coastal coordination during rough weather and the importance of crews seeking shelter instead of continuing through unsafe sea conditions."]},
+    {"heading": "What to watch next", "paragraphs": ["Fishing communities should continue monitoring official marine forecasts and local Coast Guard instructions before departure as rough-weather conditions change."]}
+  ],
+  "sources": [
+    {"publisher": "INQUIRER.net", "title": "5 missing fishermen found safe in Oriental Mindoro town", "publishedAt": "2026-08-23T09:38:00+08:00", "url": "https://newsinfo.inquirer.net/2290167/5-missing-fishermen-found-safe-in-oriental-mindoro-town"}
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "sourceUrl": null,
+    "creator": "FMB News",
+    "license": "FMB-owned editorial visual",
+    "licenseUrl": "https://www.francinemariebautista.com/news/",
+    "usageStatus": "FMB-owned editorial visual used because the source photograph's reuse permission was not independently verified.",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying the report that five missing fishermen were found safe in Occidental Mindoro.",
+    "alt": "FMB News editorial visual for a maritime safety report from Occidental Mindoro",
+    "width": 1200,
+    "height": 675,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-24T13:05:00+08:00",
+    "photoReferenceUrl": "https://newsinfo.inquirer.net/2290167/5-missing-fishermen-found-safe-in-oriental-mindoro-town",
+    "notes": ["This existing route was preserved to prevent a duplicate after a concurrent publisher created it from the same bulletin.", "The bulletin's Naujan rescue account was contradicted by the direct report and was replaced with the verified Santa Cruz and Sablayan sequence.", "The verified report says the boat was undamaged and the fishermen sheltered near shore; it does not support claims of engine failure, broken outriggers, towing or three-meter swells.", "The source photograph's reuse rights were not independently verified, so the FMB-owned fallback is used."]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-11-1300",
+  "emailSubject": "FMB News | President Marcos Inspects Las Piñas Evacuees, Pushes Waste-to-Energy | August 11, 2026 | 1:00 PM PHT",
+  "slug": "marcos-las-pinas-flood-response-waste-to-energy",
+  "headline": "Marcos Inspects Las Piñas Flood Response, Renews Waste-to-Energy Push",
+  "category": "National",
+  "kicker": "Las Piñas · Flood response · Waste management",
+  "deck": "President Ferdinand Marcos Jr. inspected flood-response efforts and checked on displaced residents in Las Piñas while renewing his call for waste-to-energy measures to address garbage clogging waterways.",
+  "publishedAt": "2026-08-11T13:00:00+08:00",
+  "updatedAt": "2026-08-11T13:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "President Ferdinand R. Marcos Jr. inspected flood-response efforts in Las Piñas City on Tuesday, August 11, and checked on residents displaced by days of southwest monsoon rains, according to separate reports by the Philippine News Agency.",
+        "During the visit, Marcos said ongoing dredging appeared to have reduced flooding in some areas. He also renewed the government's push for waste-to-energy measures as accumulated garbage continued to obstruct waterways and drainage systems."
+      ]
+    },
+    {
+      "heading": "Context and what is confirmed",
+      "paragraphs": [
+        "The two PNA reports support the Las Piñas inspection, assistance to displaced residents and the President's waste-to-energy policy push. The accessible reports do not identify confirmed pilot sites for new facilities, so FMB News is not presenting any location as selected.",
+        "Waste-to-energy projects involve processing municipal waste to recover usable energy. Their design, environmental safeguards, financing and local implementation would still require formal government action."
+      ]
+    },
+    {
+      "heading": "Why this matters to Filipinos",
+      "paragraphs": [
+        "The visit links immediate disaster response with a longer-term waste-management problem. Garbage that reaches waterways can worsen drainage blockages during intense rainfall, while displaced families need sustained, practical support until conditions are safe."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "The next test is whether the administration converts the policy statement into specific, publicly documented programs with clear environmental rules, responsible agencies, project sites and implementation timelines."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Philippine News Agency",
+      "title": "PBBM checks on Las Piñas residents displaced by flooding",
+      "publishedAt": "2026-08-11T12:14:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1281555"
+    },
+    {
+      "publisher": "Philippine News Agency",
+      "title": "PBBM pushes for waste-to-energy program as garbage chokes waterways",
+      "publishedAt": "2026-08-11T11:50:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1281548"
+    }
+  ],
+  "image": {
+    "kind": "public-domain-photo",
+    "url": "/assets/images/news/2026-08-11/marcos-flood-mitigation-archive.svg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2026-05-20_%E2%80%93_PBBM_inspects_ongoing_drainage_improvement_project_along_flood-prone_Araneta_Ave,_QC_(03).jpg",
+    "creator": "Presidential Communications Office",
+    "license": "Public domain · Philippine government work",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-PhilippinesGov",
+    "usageStatus": "Wikimedia Commons identifies the photograph as a Philippine government work in the public domain. Used as an archive image and not as a depiction of the August 11 Las Piñas visit.",
+    "credit": "Photo: Presidential Communications Office · Public domain",
+    "caption": "Archive photograph from May 20, 2026 showing President Ferdinand Marcos Jr. inspecting a flood-mitigation project in Quezon City. It does not depict the August 11 Las Piñas visit.",
+    "alt": "Archive photograph of President Ferdinand Marcos Jr. inspecting a flood-mitigation project",
+    "width": 1074,
+    "height": 768,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-11T13:20:00+08:00",
+    "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:2026-05-20_%E2%80%93_PBBM_inspects_ongoing_drainage_improvement_project_along_flood-prone_Araneta_Ave,_QC_(03).jpg",
+    "notes": [
+      "The recommended source-page photograph was not reused without confirmed rights. A separate Presidential Communications Office archive photograph with independently verified public-domain status on Wikimedia Commons is used instead and clearly labeled as archival.",
+      "Unsupported claims about selected pilot sites, detailed relief inventory and guaranteed electricity or flooding outcomes were omitted."
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "fmb-news-2026-08-09-1200-pht",
+  "emailSubject": "FMB News | La Mesa Dam Breaches Critical Water Level Amid Habagat Rains | August 9, 2026 | 12:00 PM PHT",
+  "slug": "chezka-centeno-runner-up-womens-world-10-ball",
+  "headline": "Chezka Centeno Finishes Runner-Up at Women's World 10-Ball Championship",
+  "category": "Culture",
+  "kicker": "Billiards · Women's World 10-Ball · Rome",
+  "deck": "Belarusian Margarita Fefilova Styer defeated defending champion Chezka Centeno in a five-set final in Rome to claim the women's world 10-ball title.",
+  "publishedAt": "2026-08-09T12:00:00+08:00",
+  "updatedAt": "2026-08-09T13:24:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Filipina cueist Chezka Centeno finished runner-up at the 2026 WPA Women's 10-Ball World Championship in Rome after Margarita Fefilova Styer won their five-set final, 3-2."
+      ]
+    },
+    {
+      "heading": "What we know",
+      "paragraphs": [
+        "Fefilova Styer took the first three sets, 4-1, 4-0 and 4-0. Centeno answered by winning the next two, 4-1 and 4-0, before Fefilova Styer secured the deciding set, 4-0.",
+        "The Women's 10-Ball World Championship ran from July 31 to August 6 at Piazza di Spagna in Rome and carried a total prize fund of $200,000, according to the World Pool Association."
+      ]
+    },
+    {
+      "heading": "Background",
+      "paragraphs": [
+        "Centeno entered the final as the defending champion after winning the women's world 10-ball title in 2025. Her Rome result followed her women's world 8-ball championship victory in July 2026."
+      ]
+    },
+    {
+      "heading": "What remains unclear",
+      "paragraphs": [
+        "The bulletin's links did not lead to complete articles, and its claims about post-tournament commendations and incentives were not independently documented in the sources available at publication time. Those details are not included here."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "Centeno's second-place finish keeps a Filipina athlete among the leading competitors in women's international pool and extends a run that includes world titles in both 8-ball and 10-ball."
+      ]
+    },
+    {
+      "heading": "What happens next",
+      "paragraphs": [
+        "Official federation and player channels are expected to carry details of Centeno's next international event."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "World Pool Association",
+      "title": "2026 Banca del Fucino WPA Women's 10-Ball World Championship",
+      "publishedAt": "2026-07-31T12:00:00+08:00",
+      "dateLabel": "July 31-August 6, 2026",
+      "url": "https://wpapool.com/2026-banca-del-fucino-wpa-womens-10-ball-world-championship/"
+    },
+    {
+      "publisher": "Absolute Pool",
+      "title": "Fefilova becomes Women's World 10-Ball champion after denying Centeno history",
+      "publishedAt": "2026-08-07T12:00:00+08:00",
+      "url": "https://absolute-pool.com/2026/08/07/fefilova-becomes-womens-world-10-ball-champion-after-denying-centeno-history/"
+    },
+    {
+      "publisher": "77 Billiards",
+      "title": "Chezka Centeno finishes runner-up at Women's World 10-Ball",
+      "publishedAt": "2026-08-07T12:00:00+08:00",
+      "url": "https://77billiards.com/2026/08/07/chezka-centeno-finishes-runner-up-at-womens-world-10-ball/"
+    }
+  ],
+  "image": {
+    "kind": "open-license-photo",
+    "url": "/assets/images/news/2026-08-09/chezka-centeno-billiards-illustration.webp",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Billiards_and_snookers.jpg",
+    "creator": "Derbeth",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "usageStatus": "Reuse permitted under CC BY 2.0; locally hosted crop retains exact creator attribution and license.",
+    "credit": "Photo: Derbeth · CC BY 2.0",
+    "caption": "Illustrative archive photograph of a billiards player. The image does not show Chezka Centeno or the 2026 Rome tournament.",
+    "alt": "Billiards player lining up a shot on a pool table",
+    "width": 1600,
+    "height": 900,
+    "focusX": 50,
+    "focusY": 48
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-09T13:24:00+08:00",
+    "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:Billiards_and_snookers.jpg",
+    "notes": [
+      "The bulletin's generic Philippine News Agency links did not resolve to a supporting article, so the result was independently verified against the WPA event record and specialist pool coverage.",
+      "Unsupported claims about an undefeated run, post-event commendations and incentives were omitted.",
+      "No reusable photograph of Centeno from the event was found; a clearly labeled Creative Commons billiards illustration is used instead."
+    ]
+  }
+}

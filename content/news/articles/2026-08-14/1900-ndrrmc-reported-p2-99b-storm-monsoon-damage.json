@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-14-1900",
+  "emailSubject": "FMB News | President Marcos: PH Not Seeking to be Belligerent in Indo-Pacific | August 14, 2026 | 7:00 PM PHT",
+  "slug": "ndrrmc-reported-p2-99b-storm-monsoon-damage",
+  "headline": "Newsroom Brief Reports ₱2.99 Billion in Storm and Monsoon Damage, 3.7 Million Affected",
+  "seoTitle": "NDRRMC-Cited Brief Reports ₱2.99B Storm, Monsoon Damage",
+  "seoDescription": "An FMB News editorial brief attributes to NDRRMC ₱2.99 billion in combined storm and monsoon damage and more than 3.7 million people affected.",
+  "keywords": ["NDRRMC storm damage", "Habagat Philippines", "disaster damage August 2026", "3.7 million affected"],
+  "category": "Environment",
+  "kicker": "Disaster response · Habagat",
+  "deck": "An FMB News newsroom brief attributes to the NDRRMC ₱2.994 billion in infrastructure and agricultural damage and more than 3.7 million people affected across eight regions.",
+  "publishedAt": "2026-08-14T19:00:00+08:00",
+  "updatedAt": "2026-08-15T07:46:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The FMB News August 14 evening brief reports that combined damage from recent tropical cyclones and the enhanced Southwest Monsoon reached ₱2.994 billion, with 3,714,200 people affected across eight regions. The brief attributes the figures to the National Disaster Risk Reduction and Management Council.",
+        "It further reports ₱2.647 billion in infrastructure damage, ₱347.372 million in agricultural losses, about 53,500 people remaining in 482 evacuation centers, 1,439 damaged houses and ₱458.024 million in government assistance."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The email package’s supporting ABS-CBN link does not lead to the disaster report described in the brief; it points to a class-suspension page. FMB News therefore could not independently reproduce the exact August 14 NDRRMC table during the publication pass.",
+        "The figures are being published as newsroom-brief numbers attributed to NDRRMC, not as independently verified totals. Disaster counts can also change as local reports are validated and consolidated."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "Damage estimates shape emergency funding, reconstruction priorities and assistance to affected households, farmers and local governments. Clear sourcing is essential because preliminary disaster figures can rise or fall as assessments continue."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for the corresponding NDRRMC situation report, updated DSWD assistance totals, Department of Agriculture loss assessments and local infrastructure repair estimates."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "National Disaster Risk Reduction and Management Council",
+      "title": "Official NDRRMC website and situation-report repository",
+      "publishedAt": "2026-08-14T19:00:00+08:00",
+      "url": "https://ndrrmc.gov.ph/"
+    },
+    {
+      "publisher": "Department of Budget and Management",
+      "title": "Status of National Disaster Risk Reduction and Management Fund",
+      "publishedAt": "2026-06-30T00:00:00+08:00",
+      "url": "https://www.dbm.gov.ph/index.php/status-of-national-disaster-risk-reduction-and-management-fund"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "sourceUrl": null,
+    "creator": "FMB News",
+    "license": "FMB-owned editorial visual",
+    "licenseUrl": "https://www.francinemariebautista.com/news/",
+    "usageStatus": "FMB-owned editorial visual used because no stable, rights-verified event photograph was supplied.",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying the NDRRMC-cited storm and monsoon damage report. It does not depict a specific affected community.",
+    "alt": "FMB News editorial visual for the storm and monsoon damage report",
+    "width": 1200,
+    "height": 675,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-15T07:46:00+08:00",
+    "photoReferenceUrl": null,
+    "notes": [
+      "The August 14 newsroom email supplied exact disaster totals but its ABS-CBN supporting URL was mismatched to a class-suspension story.",
+      "Published only with explicit attribution to the FMB News brief and NDRRMC; the article states that the exact current situation report was not independently retrieved.",
+      "Used an FMB-owned editorial visual because no stable, rights-verified event photograph was supplied."
+    ]
+  }
+}

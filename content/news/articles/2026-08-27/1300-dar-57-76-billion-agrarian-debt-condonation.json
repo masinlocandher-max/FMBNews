@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-27-1300",
+  "emailSubject": "FMB News | DAR Condones ₱57.76-B Farmers' Debt; GSIS Opens ₱4.4-B Calamity Loan | August 27, 2026 | 1:00 PM PHT",
+  "slug": "dar-57-76-billion-agrarian-debt-condonation",
+  "headline": "DAR Says ₱57.76 Billion in Agrarian Reform Debt Condoned Under RA 11953",
+  "seoTitle": "DAR: ₱57.76B Agrarian Reform Debt Condoned | FMB News",
+  "seoDescription": "DAR says ₱57.76 billion in agrarian reform debt has been condoned under RA 11953, covering more than 610,000 agrarian reform beneficiaries nationwide.",
+  "keywords": ["DAR debt condonation RA 11953", "57.76 billion agrarian reform debt", "New Agrarian Emancipation Act"],
+  "category": "National",
+  "kicker": "Agrarian Reform · Agriculture",
+  "deck": "The New Agrarian Emancipation Act erases covered principal, amortizations, interest and penalties, while DAR accelerates individual e-title issuance and farmer support programs.",
+  "publishedAt": "2026-08-27T13:00:00+08:00",
+  "updatedAt": "2026-08-27T13:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["The Department of Agrarian Reform said ₱57.76 billion in agrarian reform beneficiaries' land debt has been condoned under Republic Act No. 11953, the New Agrarian Emancipation Act.","DAR said the law covers unpaid principal loans, amortizations, interest and penalties for more than 610,000 agrarian reform beneficiaries nationwide. The department also reported that beneficiaries collectively earned ₱10.6 billion as of July 2026."]},
+    {"heading":"Context","paragraphs":["RA 11953 was designed to remove qualifying agrarian debt and strengthen beneficiaries' ownership of awarded land. DAR officials said beneficiaries outside the condonation coverage may be covered by a payment moratorium under applicable rules.","DAR is also accelerating individual electronic land titles. From January through June, it reported issuing 19,967 e-titles covering 19,006 hectares and benefiting 10,522 agrarian reform beneficiaries."]},
+    {"heading":"Why this matters","paragraphs":["Removing legacy land debt can free household and farm capital for production, while individual titles can improve tenure security. The longer-term effect will depend on access to credit, markets, infrastructure and farm productivity support in addition to debt relief."]},
+    {"heading":"What to watch next","paragraphs":["DAR says it is pursuing partnerships with financial and agricultural agencies, expanding farmer organizations' market access and digitizing land and case-management processes. Progress on e-title issuance and the reach of support programs will determine how much of the debt relief translates into durable income gains."]}
+  ],
+  "sources": [{"publisher":"Philippine News Agency","title":"DAR: P57.76-B farmers’ debt wiped out under agrarian reform law","publishedAt":"2026-08-26T20:53:00+08:00","url":"https://www.pna.gov.ph/articles/1282744"}],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://www.pna.gov.ph/articles/1282744","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because the referenced PNA photograph was not supplied as a stable repository-ready original image file.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the report on agrarian debt condonation.","alt":"FMB News editorial visual for agrarian reform debt relief","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-08-27T18:58:00+08:00","photoReferenceUrl":"https://www.pna.gov.ph/articles/1282744","notes":["Verified the ₱57.76-billion condonation figure, RA 11953 basis, 610,000-plus beneficiary coverage and ₱10.6-billion reported earnings against PNA's DAR report.","Removed the bulletin's unsupported claim that the law exempts beneficiaries from real-property transfer fees; the retrieved source specifically confirms estate-tax exemption.","Did not reproduce an attributed quotation from the email that was not present in the retrieved source."]}
+}

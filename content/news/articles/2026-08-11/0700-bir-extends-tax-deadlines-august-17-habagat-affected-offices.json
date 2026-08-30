@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-11-0700",
+  "emailSubject": "FMB NEWS EDITORIAL PACKAGE | August 11, 2026 | 7:00 AM PHT | 3 ARTICLES",
+  "slug": "bir-extends-tax-deadlines-august-17-habagat-affected-offices",
+  "headline": "BIR Extends Selected Tax Deadlines to August 17 in Habagat-Affected Areas",
+  "seoTitle": "BIR Extends Selected Tax Deadlines to August 17 After Habagat",
+  "seoDescription": "BIR RMC No. 89-2026 extended specified August 10–16 tax deadlines to August 17 for taxpayers under 53 affected RDOs and five large-taxpayer divisions.",
+  "keywords": [
+    "BIR tax deadline August 2026",
+    "RMC 89-2026",
+    "Habagat tax extension",
+    "53 revenue district offices"
+  ],
+  "category": "Business",
+  "kicker": "Taxes · Public service · Habagat",
+  "deck": "Revenue Memorandum Circular No. 89-2026 moved specified tax deadlines falling from August 10 to 16 to August 17 for taxpayers covered by 53 affected revenue district offices and five large-taxpayer divisions.",
+  "publishedAt": "2026-08-11T07:00:00+08:00",
+  "updatedAt": "2026-08-14T09:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Bureau of Internal Revenue extended specified statutory tax deadlines falling from August 10 to 16, 2026, to Monday, August 17, for taxpayers under offices affected by continued heavy rainfall from the southwest monsoon.",
+        "The relief was issued through Revenue Memorandum Circular No. 89-2026 and covered 53 regular Revenue District Offices and five Large Taxpayer Audit and Excise Divisions."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The extension applied to specified filings, payments, remittances, registrations and required submissions made through electronic or manual channels, as enumerated in the circular.",
+        "The BIR also issued Bank Bulletin No. 2026-09 directing authorized agent banks to accept applicable returns and payments from covered taxpayers through August 17 without the corresponding penalties."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "The measure gave affected taxpayers additional time to prioritize safety and recover access to offices, banks and digital services disrupted by heavy rain.",
+        "Taxpayers still needed to confirm that their office and particular obligation were included in the circular rather than assuming that every deadline had been moved."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Covered taxpayers should consult the complete annexes of RMC No. 89-2026 or their Revenue District Office for the exact filings and payments included in the extension."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Philippine Information Agency / Bureau of Internal Revenue",
+      "title": "BIR extends tax filing and payment deadlines in habagat-affected areas; 53 revenue district offices, 5 large taxpayer divisions covered",
+      "publishedAt": "2026-08-11T00:00:00+08:00",
+      "dateLabel": "August 11, 2026",
+      "url": "https://pia.gov.ph/press-release/bir-extends-tax-filing-and-payment-deadlines-in-habagat-affected-areas-53-revenue-district-offices-5-large-taxpayer-divisions-covered/"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "sourceUrl": null,
+    "creator": "FMB News",
+    "license": "FMB-owned editorial visual",
+    "licenseUrl": "https://www.francinemariebautista.com/news/",
+    "usageStatus": "FMB-owned editorial visual used because no independently verified, locally hosted documentary photograph was available.",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying the report. It does not depict a specific BIR office or taxpayer.",
+    "alt": "FMB News editorial visual for the August 2026 BIR deadline extension",
+    "width": 1200,
+    "height": 675,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-14T09:00:00+08:00",
+    "photoReferenceUrl": null,
+    "notes": [
+      "Corrected the email draft before publication. The official record identifies RMC No. 89-2026 and an August 17 deadline, not RMC No. 88-2026 and August 28."
+    ]
+  }
+}

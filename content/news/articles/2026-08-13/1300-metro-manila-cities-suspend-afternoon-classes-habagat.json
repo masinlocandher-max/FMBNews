@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-13-1300",
+  "emailSubject": "FMB News | AFP Moves Drone Development Program into Testing Stage | August 13, 2026 | 1:00 PM PHT",
+  "slug": "metro-manila-cities-suspend-afternoon-classes-habagat",
+  "headline": "Metro Manila Cities Suspend Afternoon Classes as Habagat Rains Persist",
+  "seoTitle": "Metro Manila Afternoon Classes Suspended on August 13",
+  "seoDescription": "Several Metro Manila local governments suspended afternoon face-to-face classes on August 13 as southwest monsoon rains persisted.",
+  "keywords": ["Walang Pasok August 13 2026", "Metro Manila class suspension", "Habagat rains", "afternoon classes"],
+  "category": "Community",
+  "kicker": "Education · Weather advisory",
+  "deck": "Several Metro Manila local governments suspended afternoon face-to-face classes on August 13 as southwest monsoon rains continued.",
+  "publishedAt": "2026-08-13T13:00:00+08:00",
+  "updatedAt": "2026-08-13T19:15:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Several Metro Manila local governments suspended afternoon face-to-face classes on Thursday, August 13, as heavy rain associated with the southwest monsoon continued.",
+        "Quezon City suspended afternoon face-to-face classes in public Child Development Centers and public schools from kindergarten through Grade 12. Caloocan covered all levels in public and private schools; Mandaluyong covered preschool through Grade 12, including ALS; and Pasig covered kindergarten through Grade 12 in public and private schools. Makati, Parañaque, Pasay, San Juan, Manila and Las Piñas also announced afternoon suspensions with varying coverage."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "Valenzuela, Malabon and Marikina were listed under broader no-face-to-face-class declarations rather than the narrower afternoon-only updates. Many affected schools shifted to alternative delivery modes, depending on the local advisory.",
+        "Suspension coverage differed by city, grade level and school type. Parents and students should check the original local-government or school announcement because conditions and instructions can change."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "Precisely stating the covered hours, grade levels and school types helps families avoid unnecessary travel during heavy rain and prevents a citywide advisory from being misread as applying to schools or levels it does not cover."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Monitor official local-government, school and PAGASA channels for later changes, including any extension of suspensions, shifts to alternative learning, road flooding or updated rainfall warnings."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "GMA News Online",
+      "title": "WALANG PASOK: Class suspensions for Thursday, August 13, 2026",
+      "publishedAt": "2026-08-12T20:29:00+08:00",
+      "dateLabel": "Updated August 13, 2026, 2:33 PM PHT",
+      "url": "https://www.gmanetwork.com/news/serbisyopubliko/walangpasok/998335/walang-pasok-class-suspensions-for-thursday-august-13-2026/story/"
+    },
+    {
+      "publisher": "ABS-CBN News",
+      "title": "Class suspensions for August 13, 2026 due to habagat rains",
+      "publishedAt": "2026-08-13T11:07:00+08:00",
+      "url": "https://www.abs-cbn.com/news/weather-traffic/2026/8/12/-walangpasok-class-suspensions-for-august-13-2026-due-to-habagat-rains-1844"
+    },
+    {
+      "publisher": "Philippine News Agency",
+      "title": "Quezon City suspends afternoon face-to-face public school classes",
+      "publishedAt": "2026-08-13T11:30:00+08:00",
+      "url": "https://www.facebook.com/pnagovph/posts/1470092058500577/"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "sourceUrl": null,
+    "creator": "FMB News",
+    "license": "FMB-owned editorial visual",
+    "licenseUrl": "https://www.francinemariebautista.com/news/",
+    "usageStatus": "FMB-owned editorial visual used because the recommended student photograph lacked a stable asset URL and independently verified reuse permission.",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying the August 13 class-suspension update. It does not depict a specific school, student or city advisory.",
+    "alt": "FMB News editorial visual for the Metro Manila class-suspension update",
+    "width": 1200,
+    "height": 675,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-13T19:15:00+08:00",
+    "photoReferenceUrl": "https://www.abs-cbn.com/news/weather-traffic/2026/8/12/-walangpasok-class-suspensions-for-august-13-2026-due-to-habagat-rains-1844",
+    "notes": [
+      "Corrected the bulletin's broad claim that all named cities had the same afternoon-only, public-school scope; the verified advisories varied by city, level and school type.",
+      "Distinguished Valenzuela's broader no-face-to-face-class declaration from the afternoon-only suspension list.",
+      "Omitted unverified municipality lists, remote-study-packet details and causal wording about a specific storm outside PAR.",
+      "Used the FMB-owned fallback because publication rights for the recommended student photograph could not be independently verified."
+    ]
+  }
+}

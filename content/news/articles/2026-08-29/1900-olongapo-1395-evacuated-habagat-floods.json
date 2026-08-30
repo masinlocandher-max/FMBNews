@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-29-1900",
+  "emailSubject": "FMB News | Over 1,000 Evacuated in Olongapo; Aquino Bridge Collapses in Tarlac | August 29, 2026 | 7:00 PM PHT",
+  "slug": "olongapo-1395-evacuated-habagat-floods-august-29-2026",
+  "headline": "1,395 Olongapo Residents Evacuated as Habagat Flooding Worsens",
+  "seoTitle": "1,395 Evacuated in Olongapo Amid Habagat Floods | FMB News",
+  "seoDescription": "Olongapo City reported 1,395 evacuees from 452 families as persistent Habagat rains flooded communities and forced residents to move to safer areas.",
+  "keywords": ["Olongapo flooding August 29 2026", "Habagat Olongapo evacuation", "Zambales flood evacuation"],
+  "category": "Community",
+  "kicker": "Disaster · Olongapo",
+  "deck": "Persistent monsoon rains forced hundreds of families into evacuation centers as rivers and drainage systems overflowed across Olongapo City.",
+  "publishedAt": "2026-08-29T19:00:00+08:00",
+  "updatedAt": "2026-08-30T01:02:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["Olongapo City reported 1,395 people from 452 families staying in evacuation centers as of 9:30 a.m. Saturday after persistent Southwest Monsoon rains caused widespread flooding.","The latest independently reported city tally is higher than the earlier newsroom brief, which cited just over 1,000 evacuees. FMB News is using the newer 1,395 figure."]},
+    {"heading":"Areas affected","paragraphs":["Rising rivers and overflow contributed to flooding in communities including West Bajac-Bajac, East Bajac-Bajac, Kalaklan and Santa Rita. Some displaced residents were reported to be staying outside formal evacuation centers because of local conditions."]},
+    {"heading":"Flooding and erosion","paragraphs":["Minor soil erosion was reported in Kalaklan on Friday afternoon, leaving rocks on a road. Another erosion incident was reported along Napalan Street in Mabayuan, with no injuries reported.","Some roads in the neighboring Subic Bay Freeport were also reported impassable as the monsoon rain continued."]},
+    {"heading":"Context","paragraphs":["The city began a preemptive evacuation in Santa Rita on Friday afternoon before a river overflowed later that evening. PAGASA said the southwest monsoon was affecting Luzon, including Olongapo.","The independently reviewed reports do not support the bulletin's detailed claims about boats, military trucks, pumps, community kitchens, hygiene kits and preventive antibiotic distribution, so those details are not included here."]},
+    {"heading":"Why this matters","paragraphs":["Large-scale evacuation is not only a rainfall story. It tests shelter capacity, relief distribution, transport access and the ability of local government to communicate changing risks quickly as water levels and slope conditions evolve."]},
+    {"heading":"What to watch next","paragraphs":["Watch for updated Olongapo evacuation counts, river and drainage conditions, landslide advisories and additional rainfall warnings from local authorities and PAGASA."]}
+  ],
+  "sources": [
+    {"publisher":"Inquirer Northern Luzon","title":"Over 1,000 Olongapo City folk forced to evacuate due flooding","publishedAt":"2026-08-29T15:03:00+08:00","url":"https://newsinfo.inquirer.net/2294707/over-1000-olongapo-city-folk-forced-to-evacuate-due-flooding"},
+    {"publisher":"Inquirer Northern Luzon","title":"Olongapo continues to battle flooding, erosion amid heavy rains","publishedAt":"2026-08-29T10:07:00+08:00","url":"https://newsinfo.inquirer.net/2294637/olongapo-continues-to-battle-flooding-erosion-amid-heavy-rains"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://newsinfo.inquirer.net/2294707/over-1000-olongapo-city-folk-forced-to-evacuate-due-flooding","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"The approved brief referenced a flood photograph credited to the Olongapo City Information Center through Inquirer, but no stable repository-ready original file with verified reuse terms was supplied. FMB News editorial fallback used instead.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the Olongapo evacuation report.","alt":"FMB News editorial visual for Olongapo flooding and evacuation","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-08-30T01:02:00+08:00","photoReferenceUrl":"https://newsinfo.inquirer.net/2294707/over-1000-olongapo-city-folk-forced-to-evacuate-due-flooding","notes":["Updated the evacuation count to 1,395 individuals from 452 families based on the newer Olongapo City Information Center tally reported by Inquirer.","Used soil erosion rather than landslide or mudslide because that is how the reviewed reports described the incidents.","Omitted unsupported rescue, relief, medical and quotation details from the emailed bulletin.","Did not reuse the referenced publisher-hosted photograph because a stable original file with clear repository reuse rights was not supplied."]}
+}

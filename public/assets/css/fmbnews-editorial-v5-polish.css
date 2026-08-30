@@ -1,0 +1,64 @@
+/* FMB News Editorial V5 final polish
+ * Removes inherited sitewide layers that compete with the publication shell.
+ */
+
+html body.news-futuristic-ph.news-channel-v4.news-editorial-v5 .fmb-shell-rail,
+html body.news-futuristic-ph.news-channel-v4.news-editorial-v5 .fmb-shell-header,
+html body.news-futuristic-ph.news-channel-v4.news-editorial-v5 .fmb-news-livebar,
+html body.news-futuristic-ph.news-channel-v4.news-editorial-v5 .fmb-v2-news-command,
+html body.news-futuristic-ph.news-channel-v4.news-editorial-v5 .fmb-news-channel-command,
+html body.news-futuristic-ph.news-channel-v4.news-editorial-v5 .fmb-shell-footer,
+html body.news-futuristic-ph.news-channel-v4.news-editorial-v5 .nc-broadcast-identity,
+html body.news-futuristic-ph.news-channel-v4.news-editorial-v5 .nc-wire,
+html body.news-futuristic-ph.news-channel-v4.news-editorial-v5 .nc-brandline {
+  display: none !important;
+}
+
+html body.news-futuristic-ph.news-channel-v4.news-editorial-v5 {
+  padding-top: 0 !important;
+}
+
+html body.news-futuristic-ph.news-channel-v4.news-editorial-v5 .nc-site-header {
+  top: 0 !important;
+  z-index: 1000 !important;
+}
+
+html body.news-futuristic-ph.news-channel-v4.news-editorial-v5 .nc-topic-rail {
+  position: relative !important;
+  top: auto !important;
+  z-index: 1 !important;
+}
+
+html body.news-futuristic-ph.news-channel-v4.news-editorial-v5 .nc-broadcast-lead {
+  padding-top: clamp(28px, 4vw, 52px) !important;
+}
+
+html body.news-futuristic-ph.news-channel-v4.news-editorial-v5 .nc-footer {
+  margin-top: 0 !important;
+}
+
+html body.news-futuristic-ph.news-channel-v4.news-editorial-v5 .nc-rundown-story figcaption {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+html body.news-futuristic-ph.news-channel-v4.news-editorial-v5 .nc-lead-broadcast figcaption {
+  max-width: min(76%, 620px) !important;
+}
+
+@media (max-width: 860px) {
+  html body.news-futuristic-ph.news-channel-v4.news-editorial-v5 .nc-site-header {
+    position: sticky !important;
+  }
+
+  html body.news-futuristic-ph.news-channel-v4.news-editorial-v5 .nc-broadcast-lead {
+    padding-top: 24px !important;
+  }
+}

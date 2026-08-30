@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-15-1300",
+  "emailSubject": "FMB News | Taal Volcano Quakes Surge to 74 in 24 Hours; Alert Level 1 Kept | August 15, 2026 | 1:00 PM PHT",
+  "slug": "taal-74-earthquakes-source-attributed",
+  "headline": "Brief Reports 74 Volcanic Earthquakes at Taal; Alert Level 1 Remains",
+  "seoTitle": "Brief Reports 74 Taal Quakes; Alert Level 1 Remains",
+  "seoDescription": "An FMB News midday brief reports 74 volcanic earthquakes at Taal in 24 hours while Alert Level 1 remains in effect; the exact August 15 bulletin is still source-attributed.",
+  "keywords": ["Taal Volcano August 15 2026", "Taal 74 earthquakes", "PHIVOLCS Alert Level 1", "Taal volcanic unrest"],
+  "category": "Environment",
+  "kicker": "Volcanology · Public safety",
+  "deck": "An FMB News midday brief reports a sharp increase in Taal seismic activity, while independently retrievable PHIVOLCS records continue to support Alert Level 1 restrictions and the permanent danger-zone warning.",
+  "publishedAt": "2026-08-15T13:00:00+08:00",
+  "updatedAt": "2026-08-15T19:38:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The FMB News August 15 midday brief reports that Taal Volcano recorded 74 volcanic earthquakes during a 24-hour monitoring period, including 68 low-frequency events, and cites sulfur dioxide emissions of 4,288 tonnes per day.",
+        "FMB News could not independently retrieve the exact August 15, 2026 PHIVOLCS bulletin carrying those figures during the final publication pass. The 74-earthquake count, 68-event breakdown and 4,288-tonne sulfur-dioxide figure are therefore published as source-attributed newsroom-brief numbers, not as independently reproduced measurements."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "Independently retrievable PHIVOLCS records from July 2026 show Taal under Alert Level 1, or low-level unrest, with entry into Taal Volcano Island prohibited and aircraft advised to avoid flying close to the volcano.",
+        "Those standing restrictions support the safety context of the report but do not independently establish the August 15 seismic and gas values."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "Taal can produce sudden steam-driven or gas-driven explosions even during low-level unrest. Residents, visitors, boat operators and pilots need current PHIVOLCS guidance rather than recycled or date-mismatched volcano statistics."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for the corresponding August 15 PHIVOLCS volcano bulletin, updated sulfur-dioxide measurements, seismicity trends and any change to Alert Level 1 or access restrictions."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "DOST-PHIVOLCS",
+      "title": "Taal Volcano 24-hour activity bulletin — official PHIVOLCS public record used for current Alert Level 1 context",
+      "publishedAt": "2026-07-17T00:00:00+08:00",
+      "url": "https://wovodat.phivolcs.dost.gov.ph/bulletin/activity-tvo?bid=14639&lang=en"
+    },
+    {
+      "publisher": "Inquirer.net",
+      "title": "Taal Volcano seismic activity surges with 74 earthquakes in 24 hours — cited in FMB News brief",
+      "publishedAt": "2026-08-15T09:15:00+08:00",
+      "url": "https://newsinfo.inquirer.net/"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "sourceUrl": null,
+    "creator": "FMB News",
+    "license": "FMB-owned editorial visual",
+    "licenseUrl": "https://www.francinemariebautista.com/news/",
+    "usageStatus": "FMB-owned editorial visual used because the email references a PHIVOLCS/Inquirer image but does not provide a stable independently retrievable original image asset for the August 15 event.",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying the source-attributed Taal Volcano update. It does not depict the August 15 monitoring period.",
+    "alt": "FMB News editorial visual for the Taal Volcano seismic update",
+    "width": 1200,
+    "height": 675,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-15T19:38:00+08:00",
+    "photoReferenceUrl": "https://newsinfo.inquirer.net/",
+    "notes": [
+      "The exact August 15 PHIVOLCS bulletin containing 74 earthquakes, 68 low-frequency events and 4,288 tonnes/day SO2 was not independently retrievable during publication.",
+      "PHIVOLCS public records independently support Alert Level 1 and Taal Volcano Island access restrictions in 2026.",
+      "The email's image reference is not a stable original asset URL, so an FMB-owned editorial visual is used instead of assigning an unverifiable current-event photograph."
+    ]
+  }
+}

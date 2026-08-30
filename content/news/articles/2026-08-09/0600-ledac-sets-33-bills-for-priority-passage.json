@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "fmb-news-2026-08-09-0600-pht",
+  "emailSubject": "FMB News | LEDAC Approves 33 Priority Measures to Lower Cost of Living | August 9, 2026 | 6:00 AM PHT",
+  "slug": "ledac-sets-33-bills-for-priority-passage",
+  "headline": "LEDAC Sets 33 Bills for Priority Passage in the 20th Congress",
+  "category": "National",
+  "kicker": "Congress · Common Legislative Agenda · Public policy",
+  "deck": "The Legislative-Executive Development Advisory Council listed 33 bills for priority passage under the Common Legislative Agenda for the 20th Congress as of August 6.",
+  "publishedAt": "2026-08-09T06:00:00+08:00",
+  "updatedAt": "2026-08-09T07:18:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Legislative-Executive Development Advisory Council listed 33 bills for priority passage under the Common Legislative Agenda for the 20th Congress as of August 6, according to the official LEDAC record and the Philippine News Agency."
+      ]
+    },
+    {
+      "heading": "What we know",
+      "paragraphs": [
+        "The priority list includes an anti-political dynasty law, party-list system reform, freedom of information, amendments to the Bank Deposits Secrecy Law, a general tax amnesty, travel-tax abolition and amendments to the rice tariffication and downstream oil industry deregulation laws.",
+        "It also covers proposed changes to the Electric Power Industry Reform Act, education and nutrition measures, child online protection, assistance for people in crisis, infrastructure planning and agriculture and fisheries reforms.",
+        "The official Common Legislative Agenda separately identifies 25 other bills and two measures already enacted. A place on the priority list does not mean that a proposal has already passed Congress or become law."
+      ]
+    },
+    {
+      "heading": "Background",
+      "paragraphs": [
+        "LEDAC is a consultative and advisory body that coordinates executive and legislative priorities on programs and policies requiring congressional action. The current agenda is for the 20th Congress, not the 19th Congress."
+      ]
+    },
+    {
+      "heading": "What remains unclear",
+      "paragraphs": [
+        "Committee calendars and target floor dates for each of the 33 priority bills have not been published in one consolidated timetable. Each proposal must still complete the applicable legislative stages unless it has already done so."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "The agenda covers household concerns including food and fuel prices, electricity charges, taxes, education, social protection and government transparency. The eventual effect depends on the final text approved by both chambers and signed into law."
+      ]
+    },
+    {
+      "heading": "What happens next",
+      "paragraphs": [
+        "The House of Representatives and the Senate may prioritize committee work and plenary deliberations on the listed measures. Differences between chamber versions would still need to be reconciled before a bill can be sent to the President."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Legislative-Executive Development Advisory Council",
+      "title": "LEDAC Common Legislative Agenda for the 20th Congress — as of August 6, 2026",
+      "publishedAt": "2026-08-06T18:00:00+08:00",
+      "dateLabel": "As of August 6, 2026",
+      "url": "https://ledac.depdev.gov.ph/resources-2/20th-congress/"
+    },
+    {
+      "publisher": "Philippine News Agency",
+      "title": "LEDAC pushes for passage of 33 key priority measures",
+      "publishedAt": "2026-08-07T17:32:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1281363"
+    },
+    {
+      "publisher": "The Manila Times",
+      "title": "Ledac eyes passage of 33 key measures",
+      "publishedAt": "2026-08-09T05:00:00+08:00",
+      "url": "https://www.manilatimes.net/2026/08/09/business/top-business/ledac-eyes-passage-of-33-key-measures/2401397"
+    }
+  ],
+  "image": {
+    "kind": "public-domain-photo",
+    "url": "/assets/images/news/2026-08-09/ledac-priority-measures.webp",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:President_Marcos%27_press_conference_on_Duterte%27s_arrest.jpg",
+    "creator": "Radio Television Malacañang / Presidential Communications Office",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "usageStatus": "Philippine government photograph verified as public domain on Wikimedia Commons; locally hosted crop retains exact agency credit.",
+    "credit": "Photo: Radio Television Malacañang / Presidential Communications Office · Public domain",
+    "caption": "Archive photograph of President Ferdinand Marcos Jr. speaking at Malacañang in March 2025. It does not depict the August 2026 LEDAC meeting.",
+    "alt": "President Ferdinand Marcos Jr. speaking at a Malacañang press conference",
+    "width": 1600,
+    "height": 900,
+    "focusX": 50,
+    "focusY": 48
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-09T07:18:00+08:00",
+    "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:President_Marcos%27_press_conference_on_Duterte%27s_arrest.jpg",
+    "notes": [
+      "The email's reference to the 19th Congress was corrected to the 20th Congress using the official LEDAC agenda.",
+      "The copy distinguishes the 33 bills prioritized for passage from other Common Legislative Agenda measures and does not describe priority status as enactment.",
+      "The recommended meeting photograph was not reused because the supplied page did not independently establish publication permission; a public-domain archive photograph is used with an explicit historical caption."
+    ]
+  }
+}

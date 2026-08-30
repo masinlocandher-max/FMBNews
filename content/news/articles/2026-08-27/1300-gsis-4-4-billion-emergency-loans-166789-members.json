@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-27-1300",
+  "emailSubject": "FMB News | DAR Condones ₱57.76-B Farmers' Debt; GSIS Opens ₱4.4-B Calamity Loan | August 27, 2026 | 1:00 PM PHT",
+  "slug": "gsis-4-4-billion-emergency-loans-166789-members",
+  "headline": "GSIS Earmarks Nearly ₱4.4 Billion in Emergency Loans for 166,789 Members and Pensioners",
+  "seoTitle": "GSIS Opens Nearly ₱4.4B in Emergency Loans | FMB News",
+  "seoDescription": "GSIS has earmarked nearly ₱4.4 billion in emergency loans for 166,789 eligible members and pensioners in nine Luzon areas affected by cyclones and the southwest monsoon.",
+  "keywords": ["GSIS emergency loan August 2026", "4.4 billion calamity loans", "GSIS Touch emergency loan"],
+  "category": "National",
+  "kicker": "Public Service · Calamity Assistance",
+  "deck": "Eligible borrowers in nine Luzon calamity areas may apply through GSIS Touch, with loan amounts of up to ₱20,000 or ₱40,000 depending on existing emergency-loan balances.",
+  "publishedAt": "2026-08-27T13:00:00+08:00",
+  "updatedAt": "2026-08-27T19:01:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["The Government Service Insurance System has earmarked nearly ₱4.4 billion in emergency loans for 166,789 active members and old-age and disability pensioners in nine Luzon areas affected by recent tropical cyclones and the southwest monsoon.","Qualified borrowers without an existing emergency loan may borrow up to ₱20,000. Those with an outstanding emergency-loan balance may avail of up to ₱40,000, subject to GSIS policies."]},
+    {"heading":"Loan terms and access","paragraphs":["The emergency loan is payable in 36 equal monthly installments at 6% annual interest and is covered by loan redemption insurance. Applications may be submitted through the GSIS Touch mobile application, with approved proceeds credited to the borrower's GSIS eCard or UMID card.","Application deadlines vary by locality. GSIS said deadlines extend into September for several affected areas and into November for Cavite and Rodriguez, Rizal."]},
+    {"heading":"Context","paragraphs":["GSIS emergency loans are limited to members and pensioners who meet the pension fund's eligibility rules and are linked to covered calamity areas. The facility is a repayable loan rather than a grant, and the applicable deadline depends on the borrower's locality."]},
+    {"heading":"Why this matters","paragraphs":["Emergency credit can give public employees and pensioners short-term liquidity after floods and other disasters, but borrowers should still account for the three-year repayment obligation when deciding whether to take the loan."]},
+    {"heading":"What to watch next","paragraphs":["Eligibility depends on the member's or pensioner's location and GSIS rules. Residents and workers in newly declared calamity areas should check official GSIS advisories for any expansion of the loan window."]}
+  ],
+  "sources": [{"publisher":"Philippine News Agency","title":"GSIS opens P4.4-B emergency loan facility for cyclone-hit members","publishedAt":"2026-08-26T20:53:00+08:00","url":"https://www.pna.gov.ph/articles/1282741"}],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://www.pna.gov.ph/articles/1282741","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because the approved email did not supply a stable reusable original image file.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the report on GSIS emergency loans.","alt":"FMB News editorial visual for GSIS calamity emergency loans","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-08-27T18:58:00+08:00","photoReferenceUrl":"https://www.pna.gov.ph/articles/1282741","notes":["Verified the nearly ₱4.4-billion facility, 166,789 eligible members and pensioners, ₱20,000/₱40,000 tiers, 36-month term and 6% annual interest against the current PNA report.","Removed the email's claimed automatic three-month payment moratorium because it is not stated in the retrieved current GSIS/PNA report.","Corrected the coverage description to nine Luzon areas rather than repeating an inaccurate province list from the email."]}
+}

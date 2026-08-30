@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-12-0700",
+  "emailSubject": "FMB News | COA Auditor Testifies VP Duterte Accountable for Disallowed Funds | August 12, 2026 | 7:00 AM PHT",
+  "slug": "coa-auditor-says-vp-sara-liable-p73-million-disallowed-funds",
+  "headline": "COA Auditor Says VP Sara Liable for ₱73.287 Million in Disallowed OVP Funds",
+  "seoTitle": "COA Auditor Says VP Sara Liable for ₱73.287 Million in Disallowed OVP Funds",
+  "seoDescription": "A COA auditor testified that Vice President Sara Duterte and two other officials were liable for ₱73.287 million in disallowed 2022 OVP confidential-fund spending; the defense disputes the position and an appeal remains pending.",
+  "keywords": ["Sara Duterte COA", "OVP confidential funds", "₱73.287 million disallowance", "Senate impeachment trial"],
+  "category": "National",
+  "kicker": "Public funds · COA · Impeachment",
+  "deck": "A Commission on Audit witness told the Senate impeachment court that Vice President Sara Duterte and two other officials were liable for ₱73.287 million in disallowed OVP confidential-fund spending, a position disputed by the defense while a motion for reconsideration remains pending.",
+  "publishedAt": "2026-08-12T07:00:00+08:00",
+  "updatedAt": "2026-08-12T07:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Commission on Audit auditor Xylene Mae del Campo testified before the Senate impeachment court that Vice President Sara Duterte and two other Office of the Vice President officials were liable for ₱73.287 million in disallowed confidential-fund spending from December 2022.",
+        "The amount was part of the OVP's ₱125 million confidential-fund allocation for December 21 to 31, 2022. Del Campo said ₱69.787 million in claimed rewards lacked sufficient documentation, while another ₱3.5 million for tables, chairs, computers and printers lacked proof that the purchases were intended for confidential operations. The testimony described COA's audit findings; it did not establish criminal guilt."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "COA's Commission Proper affirmed the ₱73.287 million disallowance on April 10, 2026. The OVP has a pending motion for reconsideration, so the audit ruling is not yet final.",
+        "COA separately disallowed ₱375 million in OVP confidential-fund spending for 2023, bringing the two disallowances cited in the hearing to ₱448.287 million. Duterte's defense challenged the auditor's conclusions and argued that accountability should be examined in light of the roles of the special disbursing officers and other officials."
+      ]
+    },
+    {
+      "heading": "Why this matters to Filipinos",
+      "paragraphs": [
+        "The dispute concerns how confidential public funds are documented and who bears responsibility when spending does not satisfy audit requirements. It also forms part of the evidence being tested in the impeachment proceeding, where allegations must still be proved and the Vice President is entitled to contest them."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for COA's action on the OVP motion for reconsideration and for additional testimony or documentary evidence in the Senate trial. Until those processes conclude, the disallowance and the defense objections should be reported as contested audit and legal positions, not as a final finding of criminal liability."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "The Philippine Star",
+      "title": "COA auditor: VP Sara liable for ₱73 million in disallowed funds",
+      "publishedAt": "2026-08-12T00:00:00+08:00",
+      "url": "https://www.philstar.com/headlines/2026/08/12/2548747/coa-auditor-vp-sara-liable-p73-million-disallowed-funds"
+    }
+  ],
+  "image": {
+    "kind": "public-domain-photo",
+    "url": "/assets/images/news/2026-08-11/senate-session-hall-avito-dalan.svg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Philippine_Senate_Session_Hall.jpg",
+    "creator": "Avito Dalan for the Philippine News Agency",
+    "license": "Public domain · Philippine government work",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-PhilippinesGov",
+    "usageStatus": "Wikimedia Commons identifies the Philippine News Agency photograph as a Philippine government work in the public domain. The locally hosted SVG displays that rights-cleared archive photograph from Wikimedia Commons.",
+    "credit": "Photo: Avito Dalan / Philippine News Agency · Public domain",
+    "caption": "Archive photograph of the Philippine Senate session hall on May 29, 2025. It does not depict the August 12, 2026 testimony.",
+    "alt": "Archive view of the Philippine Senate session hall in Pasay City",
+    "width": 1200,
+    "height": 675,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-12T13:20:00+08:00",
+    "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:Philippine_Senate_Session_Hall.jpg",
+    "notes": [
+      "Corrected the bulletin's claim that the entire ₱125 million was disallowed; the supported disallowed amount is ₱73.287 million.",
+      "Removed unsupported expense examples and attributed liability to the COA witness and audit ruling.",
+      "The defense dispute and pending OVP motion for reconsideration are included for accuracy and fairness."
+    ]
+  }
+}

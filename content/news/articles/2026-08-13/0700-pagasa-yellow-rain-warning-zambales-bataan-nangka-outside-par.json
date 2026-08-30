@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-13-0700",
+  "emailSubject": "FMB News | Government Slashes 2027 Infrastructure Program to ₱1.34 Trillion | August 13, 2026 | 7:00 AM PHT",
+  "slug": "pagasa-yellow-rain-warning-zambales-bataan-nangka-outside-par",
+  "headline": "PAGASA Keeps Zambales and Bataan Under Yellow Rain Warning as Habagat Persists",
+  "seoTitle": "PAGASA Yellow Rain Warning Covers Zambales and Bataan",
+  "seoDescription": "PAGASA kept Zambales and Bataan under a yellow heavy-rain warning as the southwest monsoon brought rain across parts of Luzon.",
+  "keywords": ["PAGASA yellow rainfall warning", "Zambales rain", "Bataan rain", "Tropical Storm Nangka"],
+  "category": "Environment",
+  "kicker": "Weather · Public safety",
+  "deck": "PAGASA kept Zambales and Bataan under a yellow heavy-rain warning as the southwest monsoon continued affecting Luzon.",
+  "publishedAt": "2026-08-13T07:00:00+08:00",
+  "updatedAt": "2026-08-13T13:05:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "PAGASA kept Zambales and Bataan under a yellow heavy-rain warning on Thursday morning as the southwest monsoon, or habagat, continued to bring rain across parts of Luzon.",
+        "The warning means flooding is possible in flood-prone areas. PAGASA's national forecast listed occasional rains over Zambales and Bataan, with possible flash floods or landslides due to moderate to heavy rainfall."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "PAGASA's 5 a.m. regional forecast called for cloudy skies with scattered rains and thunderstorms. The bureau's later warning updates continued to list Zambales and Bataan and expanded the yellow warning to additional localities as conditions changed.",
+        "Tropical Storm Nangka remained outside the Philippine Area of Responsibility. PAGASA data reported by GMA News placed it 2,560 kilometers east-northeast of Extreme Northern Luzon at 3 a.m., moving northeast at 20 kilometers per hour with maximum sustained winds of 65 kilometers per hour."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "Repeated rainfall can increase flood and landslide risk even when a tropical cyclone stays outside the Philippine Area of Responsibility. Residents should rely on the latest PAGASA and local disaster-office advisories because warning coverage can change within hours."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Monitor PAGASA's succeeding rainfall warnings for changes in covered areas and hazard level, along with local advisories on roads, rivers, evacuations and class or work suspensions."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "DOST-PAGASA NCR-PRSD",
+      "title": "National Capital Region regional forecast and rainfall warnings",
+      "publishedAt": "2026-08-13T05:00:00+08:00",
+      "url": "https://www.pagasa.dost.gov.ph/regional-forecast/ncrprsd"
+    },
+    {
+      "publisher": "DOST-PAGASA",
+      "title": "Forecast Weather Conditions",
+      "publishedAt": "2026-08-13T05:00:00+08:00",
+      "url": "https://www.pagasa.dost.gov.ph/weather"
+    },
+    {
+      "publisher": "GMA News Online",
+      "title": "PAGASA: Luzon to see more rains as Southwest Monsoon persists",
+      "publishedAt": "2026-08-13T04:56:00+08:00",
+      "url": "https://www.gmanetwork.com/news/weather/content/998375/pagasa-luzon-to-see-more-rains-as-southwest-monsoon-persists/story/"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "sourceUrl": null,
+    "creator": "FMB News",
+    "license": "FMB-owned editorial visual",
+    "licenseUrl": "https://www.francinemariebautista.com/news/",
+    "usageStatus": "FMB-owned editorial visual used because a stable, publication-ready local asset for the recommended weather image was not supplied or independently resolved.",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying the rainfall-warning report. It does not depict current radar or satellite conditions.",
+    "alt": "FMB News editorial visual for the yellow rainfall warning in Zambales and Bataan",
+    "width": 1200,
+    "height": 675,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-13T13:05:00+08:00",
+    "photoReferenceUrl": "https://www.facebook.com/dis.pia.gov.ph/posts/-tropical-storm-nangka-update-as-of-200-am-august-13-2026tropical-storm-nangka-f/1507234328117444/",
+    "notes": [
+      "Updated the story to distinguish the 5 a.m. forecast from later rainfall warnings and to avoid presenting a dynamic warning as permanently fixed.",
+      "Omitted an unsupported forecast that conditions would improve by Friday and an unsupported statement about specific local disaster offices maintaining river-basin monitoring.",
+      "Used the FMB-owned fallback because the recommended social-media image did not provide a stable usable asset URL with independently verified publication terms."
+    ]
+  }
+}

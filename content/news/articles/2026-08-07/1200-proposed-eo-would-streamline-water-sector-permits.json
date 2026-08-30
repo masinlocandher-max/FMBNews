@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "fmb-news-2026-08-07-1200-pht",
+  "emailSubject": "FMB News | Magnitude 5.8 Quake Hits Off Occidental Mindoro | August 7, 2026 | 12:00 PM PHT",
+  "slug": "proposed-eo-would-streamline-water-sector-permits",
+  "headline": "Marcos Administration Backs Proposed EO to Streamline Water-Sector Permits",
+  "category": "National",
+  "kicker": "Philippines · Water governance · Regulatory reform",
+  "deck": "The Marcos administration is pursuing a proposed executive order intended to improve coordination and streamline permitting in the water sector.",
+  "publishedAt": "2026-08-07T12:00:00+08:00",
+  "updatedAt": "2026-08-07T21:47:05.983+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Marcos administration is pushing a proposed executive order intended to strengthen water governance by streamlining permitting and public-service delivery, according to the Philippine Information Agency.",
+        "Anti-Red Tape Authority Secretary Ernesto Perez said the proposal was targeted for presidential approval before the end of October. The executive order had not yet been signed when the statement was made."
+      ]
+    },
+    {
+      "heading": "What we know",
+      "paragraphs": [
+        "Perez said the proposed order would establish an Anti-Red Tape Advisory Council to improve regulatory coordination and ease of doing business in the water sector.",
+        "Under the proposal described at the Water Forum 2026 in Quezon City, the council would be chaired by the secretary of trade and industry and co-chaired by the ARTA director general. Representatives from finance, local government, information and communications technology, and the private sector would participate."
+      ]
+    },
+    {
+      "heading": "Background",
+      "paragraphs": [
+        "Water projects often require coordination among several national and local authorities. The proposed reform is intended to reduce bureaucratic delays while improving coordination and access to government services."
+      ]
+    },
+    {
+      "heading": "What remains unclear",
+      "paragraphs": [
+        "The final text, exact processing deadlines, agency responsibilities and implementing rules will remain uncertain until the executive order is approved and published."
+      ]
+    },
+    {
+      "heading": "Why this matters to Filipinos",
+      "paragraphs": [
+        "Water-sector permitting affects the pace of projects related to supply, sanitation and other essential services. Faster processing could help projects move forward, but clear safeguards and transparent rules remain necessary."
+      ]
+    },
+    {
+      "heading": "What happens next",
+      "paragraphs": [
+        "The proposal may be refined before it is submitted for presidential approval. If signed, the government would still need to publish the order and explain how the new coordination mechanism will operate."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Philippine Information Agency",
+      "title": "Pres. Marcos backs EO to streamline water sector permits",
+      "publishedAt": "2026-08-07T11:44:00+08:00",
+      "url": "https://pia.gov.ph/news/pres-marcos-backs-eo-to-streamline-water-sector-permits/"
+    }
+  ],
+  "image": {
+    "kind": "open-license-photo",
+    "url": "/assets/images/news/2026-08-07/angat-dam.webp",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:AngatDam.jpg",
+    "creator": "Nikbert16",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "usageStatus": "Wikimedia Commons file verified as CC BY 3.0; locally hosted crop published with creator, source, and license credit.",
+    "credit": "Photo: Nikbert16 / Wikimedia Commons · CC BY 3.0",
+    "caption": "File photo of Angat Dam, used to illustrate Philippine water infrastructure. It does not depict the proposed executive-order meeting.",
+    "alt": "Angat Dam reservoir surrounded by forested hills in Bulacan"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-07T21:47:05.983+08:00",
+    "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:AngatDam.jpg",
+    "notes": [
+      "The email's claim that the President had approved the executive order was corrected. The cited government source says the order remains proposed and was targeted for approval before the end of October.",
+      "Unsupported claims about finalized timelines and implementing rules were removed.",
+      "A relevant CC BY 3.0 Angat Dam file photo from Wikimedia Commons is locally hosted with visible creator, source, and license credit."
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-12-1300",
+  "emailSubject": "FMB News | DND Hails Senate Concurrence in Canada, New Zealand Defense Agreements | August 12, 2026 | 1:00 PM PHT",
+  "slug": "marcos-calls-for-waste-facilities-before-higher-littering-fines",
+  "headline": "Marcos Calls for Waste Facilities Before Higher Littering Fines",
+  "seoTitle": "Marcos Calls for Waste Facilities Before Higher Littering Fines",
+  "seoDescription": "President Marcos said communities need accessible garbage facilities before authorities impose stiffer penalties, after 72 truckloads of waste were removed from a Parañaque channel.",
+  "keywords": ["Parañaque garbage cleanup", "Redemptorist Water Channel", "Marcos waste facilities", "Metro Manila flooding"],
+  "category": "Environment",
+  "kicker": "Waste management · Flood prevention · Metro Manila",
+  "deck": "President Ferdinand Marcos Jr. said communities need accessible waste-disposal facilities before authorities impose stiffer penalties, after crews removed 72 truckloads of garbage from a Parañaque waterway.",
+  "publishedAt": "2026-08-12T13:00:00+08:00",
+  "updatedAt": "2026-08-12T13:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "President Ferdinand Marcos Jr. said local communities must be provided with accessible waste-disposal facilities before authorities impose stiffer penalties for improper garbage disposal.",
+        "The statement followed clearing operations at the Redemptorist Water Channel in Parañaque City, where officials reported that 72 truckloads, or about 396.6 metric tons, of waste had been hauled over three days as of August 12."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The garbage buildup restricted water flow after days of southwest monsoon rain. Officials also pointed to a damaged trash trap, unusually heavy rainfall and high tide as contributors to the accumulation.",
+        "Marcos said the situation appeared critical but stopped short of adopting the label 'garbage crisis.' He argued that enforcement would be ineffective if residents had no practical place to dispose of waste."
+      ]
+    },
+    {
+      "heading": "Why this matters to Filipinos",
+      "paragraphs": [
+        "Trash-clogged waterways can worsen urban flooding, damage pumping systems and expose nearby communities to health and safety risks. The President's infrastructure-first position places responsibility on both residents and local governments."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for specific local-government plans, funding and deadlines for collection points, material-recovery facilities and other waste infrastructure. Clearing work at the Parañaque channel was continuing when the reports were published."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Philippine News Agency",
+      "title": "Marcos: Provide garbage facilities before imposing stiffer penalties",
+      "publishedAt": "2026-08-12T13:08:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1281665"
+    },
+    {
+      "publisher": "Gulf News",
+      "title": "Truly shocking sea of trash in Manila: Before-and-after cleanup",
+      "publishedAt": "2026-08-12T12:21:00+08:00",
+      "url": "https://gulfnews.com/world/asia/philippines/sea-of-trash-in-manila-before-and-after-cleanup-1.500638344"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "sourceUrl": null,
+    "creator": "FMB News",
+    "license": "FMB-owned editorial visual",
+    "licenseUrl": "https://www.francinemariebautista.com/news/",
+    "usageStatus": "FMB-owned editorial visual used because the supplied publisher photograph lacked verified reuse permission and the archive alternative could not be delivered as a fully local raster asset.",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying the report. It does not depict the August 12 Parañaque cleanup.",
+    "alt": "FMB News editorial visual for the Parañaque waste-management report",
+    "width": 1074,
+    "height": 768,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-12T19:18:00+08:00",
+    "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:2026-05-20_%E2%80%93_PBBM_inspects_ongoing_drainage_improvement_project_along_flood-prone_Araneta_Ave,_QC_(03).jpg",
+    "notes": [
+      "The supplied Philippine Star photograph was not used because attribution alone does not establish reuse permission; the displayed FMB visual and credit match exactly.",
+      "Unsupported claims about a DILG compliance audit, barangay-level mandates and private recycling partnerships were omitted.",
+      "The headline avoids calling the situation a garbage crisis because Marcos explicitly stopped short of that label."
+    ]
+  }
+}

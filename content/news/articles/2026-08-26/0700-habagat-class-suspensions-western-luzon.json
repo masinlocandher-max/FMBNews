@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-26-0700",
+  "emailSubject": "FMB News | COA Seeks ₱2.2-B to Revive Pre-Audit; Neighborhood Safety Poll Drops to 72% | August 26, 2026 | 7:00 AM PHT",
+  "slug": "habagat-class-suspensions-western-luzon",
+  "headline": "Bad Weather and Flooding Prompt Localized Class Suspensions in Parts of Luzon",
+  "seoTitle": "Localized Class Suspensions Declared in Parts of Luzon | FMB News",
+  "seoDescription": "LGUs in Benguet, Bulacan, Pampanga and Pangasinan suspended or shifted classes on August 26 because of bad weather and flooding.",
+  "keywords": ["Walang Pasok August 26 2026", "Luzon class suspensions", "Benguet Bulacan Pampanga Pangasinan"],
+  "category": "Community",
+  "kicker": "Weather · Education",
+  "deck": "The verified list covers specific localities in Benguet, Bulacan, Pampanga and Pangasinan—not a region-wide shutdown.",
+  "publishedAt": "2026-08-26T07:00:00+08:00",
+  "updatedAt": "2026-08-26T13:18:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["Local governments in parts of Benguet, Bulacan, Pampanga and Pangasinan suspended classes or shifted affected schools to alternative learning modes on Wednesday, August 26, because of bad weather and flooding.","GMA News' verified list included Bakun, Atok and Kibungan in Benguet; Calumpit, Hagonoy and Infanta in Bulacan; selected schools in Apalit and all levels in Macabebe in Pampanga; and Binmaley in Pangasinan. Coverage varied by locality and school level."]},
+    {"heading":"Weather outlook","paragraphs":["PAGASA said the Southwest Monsoon continued to bring rain to much of Luzon. Conditions and local advisories can change quickly, so a municipality not named in the verified list should not be assumed suspended.","The class actions were localized: some covered all levels, while others applied only to younger learners, selected schools or face-to-face instruction."]},
+    {"heading":"Context","paragraphs":["The bulletin incorrectly named Zambales and Bataan localities that do not appear in the cited GMA News consolidation. Those claims, along with unsupported road-clearing and rainfall-total details, were removed."]},
+    {"heading":"Why this matters","paragraphs":["Localized class advisories can change quickly as rainfall, river levels and road access shift. Parents, students and school staff should rely on their own LGU or school division for the final status of classes in their municipality."]},
+    {"heading":"What to watch next","paragraphs":["Parents, students and school staff should monitor their LGU and school division channels for later additions, resumptions or changes to learning mode."]}
+  ],
+  "sources": [
+    {"publisher":"GMA News","title":"WALANG PASOK: Class suspensions for Wednesday, August 26, 2026","publishedAt":"2026-08-25T19:38:00+08:00","url":"https://www.gmanetwork.com/news/serbisyopubliko/walangpasok/999811/walang-pasok-class-suspensions-for-wednesday-august-26-2026/story/"},
+    {"publisher":"The Manila Times","title":"Most of Luzon to experience rains due to 'Habagat' - Pagasa","publishedAt":"2026-08-26T05:00:00+08:00","url":"https://www.manilatimes.net/2026/08/26/news/most-of-luzon-to-experience-rains-due-to-habagat-pagasa/2412073"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":null,"creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because the email referenced a DPWH/PNA road image but did not provide a stable reusable original image file.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the August 26 class-suspension update.","alt":"FMB News editorial visual for localized class suspensions in Luzon","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-08-26T13:18:00+08:00","photoReferenceUrl":"https://www.pna.gov.ph/categories/national","notes":["Reconciled the locality list against GMA News' same-day class-suspension consolidation.","Removed the bulletin's unsupported Zambales and Bataan locality claims, fixed rainfall totals and road-clearing claims.","Headline and deck emphasize that the suspensions were localized and varied by school level."]}
+}

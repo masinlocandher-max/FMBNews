@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-11-1300",
+  "emailSubject": "FMB News | President Marcos Inspects Las Piñas Evacuees, Pushes Waste-to-Energy | August 11, 2026 | 1:00 PM PHT",
+  "slug": "pdea-seizes-p98-million-drugs-arrests-139-suspects",
+  "headline": "PDEA Reports ₱98 Million Drug Seizure and 139 Arrests in Weeklong Operations",
+  "category": "National",
+  "kicker": "Public safety · Law enforcement · Philippines",
+  "deck": "PDEA said 91 anti-drug operations conducted from July 30 to August 6 resulted in the seizure of illegal drugs valued at ₱98 million and the arrest of 139 suspects.",
+  "publishedAt": "2026-08-11T13:00:00+08:00",
+  "updatedAt": "2026-08-11T13:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Philippine Drug Enforcement Agency reported that authorities confiscated illegal drugs valued at approximately ₱98 million and arrested 139 suspects during nationwide operations conducted from July 30 to August 6, 2026.",
+        "PDEA said the results came from 91 operations carried out during the week. The figures were reported by the Philippine News Agency on August 11."
+      ]
+    },
+    {
+      "heading": "Context and what the figures mean",
+      "paragraphs": [
+        "The seizure value is an official law-enforcement estimate. It should not be read as a court finding about the criminal liability of any person arrested.",
+        "Those arrested are suspects. They remain presumed innocent unless and until guilt is established through the judicial process."
+      ]
+    },
+    {
+      "heading": "Why this matters to Filipinos",
+      "paragraphs": [
+        "Large multi-region operations affect public safety, criminal case handling and confidence in law enforcement. Transparent evidence inventories, lawful arrests and complete court proceedings are essential to establishing what happened in each case."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "The cases will proceed through evidence testing, inquest or preliminary investigation and, where charges are filed, court review. Final counts and case outcomes may differ from initial operational reports."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Philippine News Agency",
+      "title": "PDEA: P98-M drugs seized, 139 suspects nabbed in weeklong ops",
+      "publishedAt": "2026-08-11T11:54:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1281554"
+    }
+  ],
+  "image": {
+    "kind": "public-domain-photo",
+    "url": "/assets/images/news/2026-08-11/pdea-pressbriefing-archive.svg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:PDEA_pressbriefing_Eduardo_Ano_Apr_30_2018_(cropped).jpg",
+    "creator": "Joey Razon for the Philippine News Agency",
+    "license": "Public domain · Philippine government work",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-PhilippinesGov",
+    "usageStatus": "Wikimedia Commons identifies this Philippine News Agency photograph as a Philippine government work in the public domain. Used as an archive PDEA photograph and not as a depiction of the July 30 to August 6 operations.",
+    "credit": "Photo: Joey Razon / Philippine News Agency · Public domain",
+    "caption": "Archive photograph from a PDEA press briefing in Quezon City on April 30, 2018. It does not depict the July 30 to August 6, 2026 operations.",
+    "alt": "Archive photograph from a Philippine Drug Enforcement Agency press briefing",
+    "width": 1465,
+    "height": 1771,
+    "focusX": 50,
+    "focusY": 45
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-11T13:20:00+08:00",
+    "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:PDEA_pressbriefing_Eduardo_Ano_Apr_30_2018_(cropped).jpg",
+    "notes": [
+      "The article uses a separate archive PDEA photograph whose public-domain status is independently documented by Wikimedia Commons, with exact photographer and agency credit.",
+      "The article attributes all seizure and arrest figures to PDEA and expressly preserves the presumption of innocence.",
+      "Unsupported details about suspect classifications, concealment methods, locations and automatic non-bailable charges were omitted."
+    ]
+  }
+}

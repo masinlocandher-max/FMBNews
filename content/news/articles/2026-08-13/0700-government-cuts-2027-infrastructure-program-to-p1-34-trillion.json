@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-13-0700",
+  "emailSubject": "FMB News | Government Slashes 2027 Infrastructure Program to ₱1.34 Trillion | August 13, 2026 | 7:00 AM PHT",
+  "slug": "government-cuts-2027-infrastructure-program-to-p1-34-trillion",
+  "headline": "Government Cuts 2027 Infrastructure Program to ₱1.34 Trillion",
+  "seoTitle": "Government Cuts 2027 Infrastructure Program to ₱1.34 Trillion",
+  "seoDescription": "The government's 2027 infrastructure program was reduced to ₱1.34 trillion, equivalent to 4% of GDP and 20.7% below the previous plan.",
+  "keywords": ["2027 infrastructure spending", "Philippines national budget", "DBM infrastructure program", "National Expenditure Program"],
+  "category": "Business",
+  "kicker": "Public finance · Infrastructure",
+  "deck": "The government's 2027 infrastructure program was reduced to ₱1.34 trillion, equivalent to 4 percent of gross domestic product.",
+  "publishedAt": "2026-08-13T07:00:00+08:00",
+  "updatedAt": "2026-08-13T07:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Philippine government's infrastructure spending program for 2027 was reduced to ₱1.34 trillion, according to a Department of Budget and Management document reported by The Philippine STAR on Thursday.",
+        "The revised amount is equivalent to 4 percent of gross domestic product and is 20.7 percent below the previous program of ₱1.69 trillion, or 5.1 percent of GDP."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The same fiscal program projects 2026 state infrastructure spending at ₱1.27 trillion, or 4.2 percent of GDP, down from an earlier ₱1.56-trillion target. The 4.2-percent figure applies to 2026, not the 2027 program.",
+        "The STAR reported that the reductions came as the government tightened scrutiny of public works following the flood-control controversy. It also reported proposed 2027 allocations of ₱644 billion for the Department of Public Works and Highways and ₱107.4 billion for flood control, including ₱19.6 billion for ongoing foreign-assisted projects."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "Infrastructure spending affects construction activity, transport and flood-control projects, public services and economic growth. A lower program makes project selection, transparent procurement and effective implementation more consequential."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch Congress's scrutiny of the proposed 2027 National Expenditure Program, the final appropriations for major agencies and whether project-level allocations match the revised fiscal program."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "The Philippine STAR",
+      "title": "Government slashes infrastructure spending to P1.34 trillion",
+      "publishedAt": "2026-08-13T00:00:00+08:00",
+      "url": "https://www.philstar.com/business/2026/08/13/2548853/government-slashes-infrastructure-spending-p134-trillion"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "sourceUrl": null,
+    "creator": "FMB News",
+    "license": "FMB-owned editorial visual",
+    "licenseUrl": "https://www.francinemariebautista.com/news/",
+    "usageStatus": "FMB-owned editorial visual used because reuse rights for the recommended publisher-owned photograph were not independently verified.",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying the report on the 2027 infrastructure spending program. It does not depict a specific project.",
+    "alt": "FMB News editorial visual for the report on the 2027 infrastructure program",
+    "width": 1200,
+    "height": 675,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-13T13:05:00+08:00",
+    "photoReferenceUrl": "https://www.philstar.com/business/2026/08/13/2548853/government-slashes-infrastructure-spending-p134-trillion",
+    "notes": [
+      "Corrected the bulletin's 2027 GDP ratio from 4.2 percent to 4 percent; the source assigns 4.2 percent to the 2026 projection.",
+      "Omitted unsupported claims about a DBCC announcement, an MTFF quotation, named priority projects and a future submission date.",
+      "The Michael Varcas / The Philippine STAR photograph was not used because the bulletin explicitly said permission or a license was required."
+    ]
+  }
+}

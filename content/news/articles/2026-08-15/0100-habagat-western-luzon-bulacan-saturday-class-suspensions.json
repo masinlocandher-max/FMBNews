@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-15-0100",
+  "emailSubject": "FMB News | Government to Restore ₱107 Billion PDIC Funds Over Two Years | August 15, 2026 | 1:00 AM PHT",
+  "slug": "habagat-western-luzon-bulacan-saturday-class-suspensions",
+  "headline": "Habagat Rains Expected Over Western Luzon; Brief Reports Saturday College Suspensions in Bulacan",
+  "seoTitle": "Habagat Over Western Luzon; Bulacan Saturday Class Suspensions Reported",
+  "seoDescription": "An FMB News brief cites a PAGASA forecast for continued Habagat rains over Western Luzon and reports Saturday college suspensions in Calumpit and Plaridel, Bulacan.",
+  "keywords": ["Habagat August 15 2026", "Bulacan class suspension", "Calumpit Plaridel classes", "Western Luzon rain"],
+  "category": "Community",
+  "kicker": "Weather · Class suspensions",
+  "deck": "A current GMA weather report cited by the newsroom brief forecasts continued Southwest Monsoon rains over parts of Luzon; the email also reports localized Saturday college suspensions in Calumpit and Plaridel, Bulacan.",
+  "publishedAt": "2026-08-15T01:00:00+08:00",
+  "updatedAt": "2026-08-15T07:46:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The FMB News August 15 overnight brief cites a PAGASA forecast, carried by GMA News, that the Southwest Monsoon will continue bringing rain to Luzon and the western section of the Visayas on Saturday.",
+        "The email further reports that Calumpit and Plaridel in Bulacan suspended Saturday tertiary or college classes because of lingering flood conditions. FMB News could not independently retrieve the cited August 15 ABS-CBN service advisory during the final pass, so the municipality-specific suspension details remain source-attributed."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The newsroom brief identifies Zambales and Bataan as areas facing continuing monsoon-rain risk, with scattered rain and thunderstorms also possible across other parts of Luzon. Conditions can change quickly, and local rainfall or flooding may differ substantially from the broad regional forecast.",
+        "Class-suspension coverage can vary by school level, institution and locality. Students should rely on the latest announcement from their LGU or school before traveling."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "Weekend classes, commuting and flood exposure can be affected even when there is no nationwide suspension. Precise local advisories help families avoid unnecessary travel through flooded roads."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Monitor PAGASA rainfall warnings, Bulacan LGU and school announcements, and local disaster-office updates for any change in flood conditions or class coverage."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "GMA News Online",
+      "title": "Habagat rains expected over Luzon, western section of Visayas on Aug. 15",
+      "publishedAt": "2026-08-14T16:59:00+08:00",
+      "url": "https://www.gmanetwork.com/news/weather/content/998563/habagat-rains-expected-over-luzon-western-section-of-visayas-pagasa/story/"
+    },
+    {
+      "publisher": "ABS-CBN News",
+      "title": "Class suspensions for August 15, 2026 due to habagat rains — cited in FMB News brief",
+      "publishedAt": "2026-08-14T20:25:00+08:00",
+      "url": "https://www.abs-cbn.com/news/weather-traffic/2026/8/14/-walangpasok-class-suspensions-for-august-15-2026-due-to-habagat-rains-2025"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "sourceUrl": null,
+    "creator": "FMB News",
+    "license": "FMB-owned editorial visual",
+    "licenseUrl": "https://www.francinemariebautista.com/news/",
+    "usageStatus": "FMB-owned editorial visual used because no stable, rights-verified weather or school photograph was supplied.",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying the Western Luzon Habagat and Bulacan class-suspension report.",
+    "alt": "FMB News editorial visual for the Habagat and Bulacan class-suspension report",
+    "width": 1200,
+    "height": 675,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-15T07:46:00+08:00",
+    "photoReferenceUrl": null,
+    "notes": [
+      "The broader Habagat forecast is tied to a current GMA/PAGASA report cited in the email.",
+      "The Calumpit and Plaridel Saturday tertiary-class suspension details were not independently reproduced in the final search pass and are therefore explicitly attributed to the newsroom brief.",
+      "Removed the email’s projected August 18 fuel-price increase from the article because it is unrelated to the core weather/class-suspension report and was itself described as provisional.",
+      "Used an FMB-owned editorial visual because no stable, rights-verified weather or school photograph was supplied."
+    ]
+  }
+}

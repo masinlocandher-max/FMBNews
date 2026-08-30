@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "fmb-news-2026-08-07-0000-pht",
+  "emailSubject": "FMB News | US Formally Requests Extradition of Apollo Quiboloy; DFA Transmits Demand to DOJ | August 7, 2026 | 12:00 AM PHT",
+  "slug": "ra-12322-gives-deped-flexibility-to-choose-teaching-methods",
+  "headline": "Republic Act 12322 Gives DepEd Flexibility to Choose Teaching Methods",
+  "category": "National",
+  "kicker": "Education policy · Basic education",
+  "deck": "Republic Act 12322 allows the Department of Education to choose the pedagogical approaches it considers most effective and requires a curriculum review every five years.",
+  "publishedAt": "2026-08-07T00:00:00+08:00",
+  "updatedAt": "2026-08-07T09:18:09.942+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Republic Act No. 12322 lapsed into law on August 2, giving the Department of Education greater flexibility to determine the teaching methods used in the basic education curriculum."
+      ]
+    },
+    {
+      "heading": "What we know",
+      "paragraphs": [
+        "RA 12322 amends Republic Act No. 10533, the Enhanced Basic Education Act of 2013. It replaces a statutory prescription of particular pedagogical approaches with a rule allowing DepEd to use the approach it considers most effective for ensuring mastery of knowledge and skills at each level.",
+        "The law also requires a comprehensive review of the basic education curriculum every five years to assess its relevance and effectiveness.",
+        "It takes effect 15 days after publication in the Official Gazette or a newspaper of general circulation."
+      ]
+    },
+    {
+      "heading": "Background",
+      "paragraphs": [
+        "RA 10533 established the framework for the K to 12 basic education program and included curriculum-development standards such as spiral progression. RA 12322 shifts the choice of instructional approach to DepEd rather than fixing one method in the statute."
+      ]
+    },
+    {
+      "heading": "What remains unclear",
+      "paragraphs": [
+        "DepEd had not yet released the detailed implementation timetable, possible curriculum changes, or guidance for public and private schools."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "The change affects how schools teach foundational knowledge and skills to millions of learners. Greater flexibility may let DepEd respond to evidence and classroom conditions, but its impact will depend on curriculum design, teacher preparation, learning materials, assessment, and consistent implementation."
+      ]
+    },
+    {
+      "heading": "What happens next",
+      "paragraphs": [
+        "DepEd is expected to issue implementation guidance and explain how the new authority will affect teaching approaches and future curriculum reviews. Schools should follow official DepEd issuances rather than assume an immediate classroom change."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Philippine Information Agency",
+      "title": "DepEd has more flexibility in determining effective teaching methods",
+      "publishedAt": "2026-08-06T00:00:00+08:00",
+      "url": "https://pia.gov.ph/deped-has-more-flexibility-in-determining-effective-teaching-methods/"
+    },
+    {
+      "publisher": "Philippine News Agency",
+      "title": "New law gives DepEd freer hand to shape teaching methods",
+      "publishedAt": "2026-08-06T19:00:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1281202"
+    },
+    {
+      "publisher": "BusinessWorld Online",
+      "title": "DepEd gets teaching leeway now",
+      "publishedAt": "2026-08-06T21:02:00+08:00",
+      "url": "https://bworldonline.com/the-nation/2026/08/06/768716/deped-gets-teaching-leeway-now/"
+    }
+  ],
+  "image": {
+    "kind": "open-license-photo",
+    "url": "/assets/images/news/2026-08-07/deped-office.webp",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:DepEd_SDO_Mandaue_City_(2023-12-07).jpg",
+    "creator": "PaulGorduiz106",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "credit": "Photo: PaulGorduiz106 / Wikimedia Commons · CC BY-SA 4.0",
+    "usageStatus": "Wikimedia Commons file verified as CC BY-SA 4.0; locally hosted crop published with creator, source, and license credit.",
+    "caption": "Archive photo of the DepEd Schools Division Office in Mandaue City. It does not depict the passage or implementation of RA 12322.",
+    "alt": "Facade of the Department of Education Schools Division Office in Mandaue City"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-07T01:18:09.941Z",
+    "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:DepEd_SDO_Mandaue_City_(2023-12-07).jpg",
+    "notes": [
+      "Google redirect links were replaced with direct publisher URLs.",
+      "The lead was corrected to state that RA 12322 lapsed into law on August 2.",
+      "A relevant CC BY-SA 4.0 DepEd office archive photo from Wikimedia Commons is locally hosted with visible creator, source, and license credit."
+    ]
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-11-0700",
+  "emailSubject": "FMB News | La Mesa Dam Overflows at 80.27m as Monsoon Death Toll Reaches 16 | August 11, 2026 | 7:00 AM PHT",
+  "slug": "palace-orders-wfh-alternative-learning-three-provinces",
+  "headline": "Palace Orders WFH and Alternative Learning in Three Provinces for August 11",
+  "seoTitle": "Palace Orders WFH, Alternative Learning in 3 Provinces for August 11",
+  "seoDescription": "Malacañang ordered work-from-home arrangements for government offices and alternative learning modes in Zambales, Bataan and Occidental Mindoro on August 11.",
+  "keywords": ["August 11 work from home", "Zambales class suspension", "Bataan alternative learning", "Occidental Mindoro habagat"],
+  "category": "National",
+  "kicker": "Public safety · Government · Education",
+  "deck": "Malacañang ordered work-from-home arrangements for government offices and alternative learning modes in Zambales, Bataan and Occidental Mindoro on August 11 because of continued monsoon rain.",
+  "publishedAt": "2026-08-11T07:00:00+08:00",
+  "updatedAt": "2026-08-11T07:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Malacañang ordered government offices in Zambales, Bataan and Occidental Mindoro to use work-from-home arrangements on Tuesday, August 11, because of continued heavy rain from the southwest monsoon.",
+        "Memorandum Circular No. 124 also directed schools in the three provinces to adopt alternative learning modes. The directive was signed by Acting Executive Secretary Ralph Recto."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The verified national directive covered the three provinces. The City of Manila and other local governments issued their own class and work advisories, which were separate from the nationwide Palace order.",
+        "Government agencies responsible for health services, disaster response and other essential functions were expected to maintain the personnel needed for continuous operations."
+      ]
+    },
+    {
+      "heading": "Why this matters to Filipinos",
+      "paragraphs": [
+        "The arrangement was intended to reduce travel during hazardous weather while allowing government services and school activities to continue through remote or alternative modes."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Residents should follow later advisories from their provincial and local governments because local conditions can lead to separate suspensions, evacuation orders or changes in work and school arrangements."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Philippine Information Agency",
+      "title": "Memorandum Circular No. 124",
+      "publishedAt": "2026-08-11T00:00:00+08:00",
+      "dateLabel": "August 11, 2026",
+      "url": "https://pia.gov.ph/press-release/memorandum-circular-no-124/"
+    },
+    {
+      "publisher": "ABS-CBN News",
+      "title": "#WalangPasok: Classes, gov’t work to shift online in Zambales, Bataan and Occ. Mindoro Aug. 11 due to habagat",
+      "publishedAt": "2026-08-10T18:20:00+08:00",
+      "dateLabel": "Updated August 10, 2026, 11:34 PM PHT",
+      "url": "https://www.abs-cbn.com/news/weather-traffic/2026/8/10/-walangpasok-class-suspensions-for-august-11-2026-due-to-bad-weather-1820"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "sourceUrl": null,
+    "creator": "FMB News",
+    "license": "FMB-owned editorial visual",
+    "licenseUrl": "https://www.francinemariebautista.com/news/",
+    "usageStatus": "FMB-owned editorial visual used because the bulletin's recommended image did not provide a directly resolvable local asset with independently verified reuse rights.",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying the report. It does not depict a specific government office, school or weather event.",
+    "alt": "FMB News editorial visual for the August 11 work and school arrangements",
+    "width": 1200,
+    "height": 675,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-13T07:18:00+08:00",
+    "photoReferenceUrl": "https://pia.gov.ph/press-release/bir-extends-tax-filing-and-payment-deadlines-in-habagat-affected-areas-53-revenue-district-offices-5-large-taxpayer-divisions-covered/",
+    "notes": [
+      "The bulletin incorrectly folded Manila into the national scope of Memorandum Circular No. 124. The article was corrected to the three verified provinces and distinguishes separate LGU advisories.",
+      "The recommended photo metadata pointed to an unrelated BIR source page, so the FMB-owned editorial visual was used."
+    ]
+  }
+}

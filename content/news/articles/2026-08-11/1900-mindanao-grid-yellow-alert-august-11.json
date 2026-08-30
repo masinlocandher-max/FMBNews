@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-11-1900",
+  "emailSubject": "FMB News | Senate Resumes VP Sara Impeachment Trial as Defense Contests Parallel Charges | August 11, 2026 | 7:00 PM PHT",
+  "slug": "mindanao-grid-yellow-alert-august-11",
+  "headline": "Mindanao Grid Placed on Yellow Alert as Power Reserves Tighten",
+  "seoTitle": "Mindanao Grid Yellow Alert on August 11, 2026",
+  "seoDescription": "NGCP placed the Mindanao grid under yellow alert as unavailable generating capacity tightened operating reserves. A yellow alert does not automatically mean rotational outages.",
+  "keywords": ["Mindanao grid yellow alert", "NGCP", "power supply Mindanao", "August 11 2026"],
+  "category": "Business",
+  "kicker": "Energy · Infrastructure · Mindanao",
+  "deck": "NGCP placed the Mindanao grid under yellow alert Tuesday as unavailable generating capacity narrowed the system’s reserve margin.",
+  "publishedAt": "2026-08-11T19:00:00+08:00",
+  "updatedAt": "2026-08-11T19:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading": "What happened", "paragraphs": ["The National Grid Corporation of the Philippines placed the Mindanao grid under yellow alert on Tuesday, August 11, with the alert scheduled from 2 p.m. to 9 p.m., according to the GMA News report cited in the FMB News bulletin.", "NGCP reported 2,672 megawatts of available capacity against projected peak demand of 2,527 MW, while 709.1 MW of generating capacity was unavailable. Those figures describe a tight reserve situation and should not be read as a declaration that blackouts are automatic."]},
+    {"heading": "Context", "paragraphs": ["NGCP uses a yellow alert when the operating margin is insufficient to meet the transmission grid’s contingency requirement. It signals reduced room to absorb another major plant or system problem.", "A yellow alert is different from a red alert and does not by itself mean rotational power interruptions will occur. Conditions can change as demand moves and generating units return to or leave service."]},
+    {"heading": "Why this matters to Filipinos", "paragraphs": ["Thin power reserves can increase the grid’s vulnerability to another unexpected outage, affecting households, businesses and essential services across Mindanao if conditions deteriorate."]},
+    {"heading": "What to watch next", "paragraphs": ["Watch NGCP’s succeeding grid advisories for changes to the alert window, available capacity, demand and unavailable generation. Distribution utilities may also issue local notices if the system condition changes."]}
+  ],
+  "sources": [{"publisher": "GMA News Online", "title": "Mindanao grid under yellow alert on August 11, 2026", "publishedAt": "2026-08-11T14:15:00+08:00", "url": "https://www.gmanetwork.com/news/topstories/regions/998099/mindanao-grid-under-yellow-alert-on-august-11-2026/story/"}],
+  "image": {"kind": "public-domain-photo", "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/0111Provincial_Bypass_Roads_Fields_San_Rafael%2C_Bulacan_01.jpg/1280px-0111Provincial_Bypass_Roads_Fields_San_Rafael%2C_Bulacan_01.jpg", "sourceUrl": "https://commons.wikimedia.org/wiki/File:0111Provincial_Bypass_Roads_Fields_San_Rafael,_Bulacan_01.jpg", "creator": "Judgefloro", "license": "CC0 1.0 Universal", "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/", "usageStatus": "Wikimedia Commons records the photograph as the creator’s own work released under CC0 1.0. The direct rights-cleared JPEG is used so the photo does not depend on an SVG wrapper loading a second remote resource.", "credit": "Photo: Judgefloro · CC0 1.0", "caption": "Archive photograph showing high-voltage power lines in San Rafael, Bulacan in 2017. It is a generic Philippine transmission image and does not depict the August 11, 2026 Mindanao grid event.", "alt": "Archive view of high-voltage transmission lines in the Philippines", "width": 1280, "height": 960, "focusX": 50, "focusY": 50},
+  "audit": {"sourceCheckedAt": "2026-08-11T22:47:00+08:00", "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:0111Provincial_Bypass_Roads_Fields_San_Rafael,_Bulacan_01.jpg", "notes": ["Published figures use the corrected NGCP values: 2,672 MW available capacity, 2,527 MW peak demand and 709.1 MW unavailable generation.", "The story explains that a yellow alert indicates insufficient contingency reserve and does not automatically mean rotational outages.", "The archive transmission photograph is clearly labeled and its CC0 status was independently verified.", "Image delivery was changed from an externally dependent SVG wrapper to the direct rights-cleared JPEG to prevent blank cards."]}
+}

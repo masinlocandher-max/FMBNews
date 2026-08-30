@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="864" viewBox="0 0 1536 864" role="img" aria-labelledby="title desc">
+  <title id="title">The Golden Sash and the Bigger Dream</title>
+  <desc id="desc">Editorial title card for Cleopatra Barrera’s journey from Masinloc to Reina Filipinas 2026 Zambales.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#140c12"/>
+      <stop offset="0.54" stop-color="#2b111d"/>
+      <stop offset="1" stop-color="#5a2033"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8f6828"/>
+      <stop offset="0.32" stop-color="#f1d28a"/>
+      <stop offset="0.68" stop-color="#c79c48"/>
+      <stop offset="1" stop-color="#fff0bb"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#f3d58c" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#f3d58c" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="22" stdDeviation="26" flood-color="#000" flood-opacity="0.34"/>
+    </filter>
+  </defs>
+
+  <rect width="1536" height="864" fill="url(#bg)"/>
+  <circle cx="1280" cy="102" r="440" fill="url(#glow)"/>
+  <circle cx="190" cy="785" r="380" fill="url(#glow)" opacity="0.42"/>
+
+  <g opacity="0.16" fill="none" stroke="#f5dfaa">
+    <path d="M-120 690C245 490 505 535 790 707S1294 922 1660 612"/>
+    <path d="M-120 735C245 535 505 580 790 752S1294 967 1660 657"/>
+    <path d="M1110-120c160 240 158 425-7 555s-166 286 35 518"/>
+  </g>
+
+  <path d="M1005-80 1575 160 510 955-65 712Z" fill="url(#gold)" opacity="0.94" filter="url(#shadow)"/>
+  <path d="M1045-90 1580 135 500 945-34 720Z" fill="none" stroke="#fff1c1" stroke-opacity="0.55" stroke-width="3"/>
+
+  <g transform="translate(118 122)">
+    <text x="0" y="0" fill="#f1d28a" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800" letter-spacing="7">CULTURE · ZAMBALES</text>
+    <line x1="0" y1="38" x2="522" y2="38" stroke="#f1d28a" stroke-opacity="0.58"/>
+
+    <text x="0" y="180" fill="#fffdf8" font-family="Georgia, 'Times New Roman', serif" font-size="112" font-weight="700" letter-spacing="-5">
+      <tspan x="0" dy="0">THE GOLDEN</tspan>
+      <tspan x="0" dy="112">SASH</tspan>
+    </text>
+    <text x="4" y="455" fill="#f2e7df" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-style="italic">
+      <tspan x="4" dy="0">and the bigger dream</tspan>
+    </text>
+
+    <text x="4" y="570" fill="#f1d28a" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" letter-spacing="2">CLEOPATRA BARRERA</text>
+    <text x="4" y="614" fill="#d9c7cd" font-family="Arial, Helvetica, sans-serif" font-size="18" letter-spacing="3">MASINLOC · REINA FILIPINAS 2026 ZAMBALES</text>
+  </g>
+
+  <g transform="translate(1160 620)" fill="none" stroke="#4b2030" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M28 104c42-58 72-94 116-104 44 10 74 46 116 104"/>
+    <path d="m55 87 28 83 61-42 61 42 28-83"/>
+    <path d="M72 176h144"/>
+    <circle cx="144" cy="18" r="9" fill="#4b2030" stroke="none"/>
+  </g>
+
+  <text x="118" y="810" fill="#d8cbd0" font-family="Arial, Helvetica, sans-serif" font-size="15" letter-spacing="4">THE NEWSROOM · FRANCINE MARIE BAUTISTA</text>
+</svg>

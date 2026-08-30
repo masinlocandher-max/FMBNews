@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "fmb-news-2026-08-07-0600-pht",
+  "emailSubject": "FMB News | PAGASA Lifts Wind Signals as Maymay Weakens into Low Pressure Area | August 7, 2026 | 6:00 AM PHT",
+  "slug": "la-union-pampanga-flood-projects-face-scrutiny",
+  "headline": "Over ₱1.1 Billion in La Union and Pampanga Flood Projects Face Scrutiny",
+  "category": "National",
+  "kicker": "Public works accountability",
+  "deck": "Groups are seeking scrutiny of projects in La Union, while a Pampanga complaint alleges defects and misuse of public funds. The allegations have not been adjudicated.",
+  "publishedAt": "2026-08-07T06:00:00+08:00",
+  "updatedAt": "2026-08-07T07:48:44+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "At least 19 flood-control, drainage, slope-protection, seawall, and creek-rehabilitation projects worth ₱773.77 million in La Union are being questioned after Typhoon Luis flooded parts of San Fernando. In Mexico, Pampanga, two projects worth a combined ₱359.37 million are facing a separate complaint before the Office of the Ombudsman."
+      ]
+    },
+    {
+      "heading": "What we know",
+      "paragraphs": [
+        "Groups have urged the Department of Public Works and Highways, the Commission on Audit, and other oversight agencies to investigate the La Union projects implemented between 2018 and 2025.",
+        "In Pampanga, a barangay official filed criminal and administrative charges against former and current officials and public works personnel. The complaint concerns a ₱94.55 million project in Barangay Suclaban and a ₱264.82 million project in Barangay Culubasa."
+      ]
+    },
+    {
+      "heading": "The allegations",
+      "paragraphs": [
+        "The Pampanga complaint accuses respondents of plunder, graft and corruption, malversation, grave misconduct, and other offenses. The complainant submitted video and geotagged photographs and alleged that erosion, damaged concrete, and other defects could indicate poor workmanship or substandard materials.",
+        "These are allegations in a pending complaint, not findings of liability. The respondents' full answers to the new complaint were not included in the source report."
+      ]
+    },
+    {
+      "heading": "Background and context",
+      "paragraphs": [
+        "The same complainant filed a case in 2023 involving three flood-control projects worth more than ₱611 million. Former congressman Aurelio Gonzales Jr. has said the Ombudsman dismissed that earlier complaint for lack of merit."
+      ]
+    },
+    {
+      "heading": "What remains unclear",
+      "paragraphs": [
+        "It remains unclear whether oversight agencies will open formal investigations or special audits, what technical inspections will find, and how each named respondent will answer the new allegations."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "Flood-control infrastructure affects public safety, property, agriculture, and confidence in public spending. Independent engineering and financial reviews are necessary to distinguish storm damage from design, construction, maintenance, or procurement failures."
+      ]
+    },
+    {
+      "heading": "What happens next",
+      "paragraphs": [
+        "The Office of the Ombudsman and other agencies may assess the complaints, supporting media, project records, and responses before deciding whether formal proceedings or audits are warranted."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "The Philippine Star",
+      "title": "P1.1 billion La Union, Pampanga flood projects flagged",
+      "publishedAt": "2026-08-07T00:00:00+08:00",
+      "url": "https://www.philstar.com/headlines/2026/08/07/2547558/p11-billion-la-union-pampanga-flood-projects-flagged"
+    }
+  ],
+  "image": {
+    "kind": "open-license-photo",
+    "url": "/assets/images/news/2026-08-07/pampanga-flood-control.webp",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jf6393Santa_Barbara,_Bacolor_Flood,_Pampanga_Bridgefvf_05.JPG",
+    "creator": "Judgefloro",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "usageStatus": "Wikimedia Commons file verified as CC BY-SA 4.0; locally hosted crop published with creator, source, and license credit.",
+    "credit": "Photo: Judgefloro / Wikimedia Commons · CC BY-SA 4.0",
+    "caption": "File photo of a flood-control landscape in Bacolor, Pampanga. It does not identify any specific project named in the complaint.",
+    "alt": "Flood-control landscape and waterways in Bacolor, Pampanga"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-06T23:48:44Z",
+    "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:Jf6393Santa_Barbara,_Bacolor_Flood,_Pampanga_Bridgefvf_05.JPG",
+    "notes": [
+      "Reframed allegations as allegations and added the dismissal of the complainant's earlier case for balance.",
+      "A relevant CC BY-SA 4.0 Pampanga file photo from Wikimedia Commons is locally hosted with visible creator, source, and license credit."
+    ]
+  }
+}

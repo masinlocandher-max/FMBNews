@@ -1,0 +1,109 @@
+{
+  "date": "2026-08-11",
+  "publishedAt": "2026-08-11T07:00:00+08:00",
+  "editionLabel": "Morning Special",
+  "title": "Growth Pressure, Regional Digital Trade and a Trust Test for Media",
+  "deck": "The August 11 Morning Special follows the Philippine growth slowdown, ASEAN e-commerce, regional digital transformation, Filipino cultural platforms and a pageant governance dispute.",
+  "hero": {
+    "src": "/assets/images/news/2026-08-07/metro-manila-skyline.webp",
+    "alt": "Archive view of the Bonifacio Global City skyline in Metro Manila",
+    "caption": "Archive photograph of the Metro Manila business district used to illustrate the Philippine economic and business environment. It does not depict the August 11 events themselves.",
+    "credit": "Photo: PhiliptheNumber1 / Wikimedia Commons · CC0 1.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bonifacio_Global_City_skyline.jpg",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  "stories": [
+    {
+      "id": "FMB-MS-20260811-001",
+      "kicker": "Economy · Business",
+      "headline": "Philippine Growth Slows to 2.3%, Raising the Stakes for Business Confidence",
+      "deck": "Second-quarter growth was the weakest since 2021 as construction, investment and household spending weakened.",
+      "body": [
+        "The Philippine economy expanded 2.3 percent from a year earlier in the second quarter of 2026, below the 2.8 percent median forecast in a Reuters poll and weaker than the first quarter. First-half growth was 2.6 percent, well below the government’s full-year target range.",
+        "Construction contracted 14.8 percent year on year while investment fell 9.2 percent. Household consumption, which accounts for most economic activity, also slowed as elevated inflation reduced purchasing power.",
+        "For businesses and brands, the signal is practical. Customers become more selective when household budgets are under pressure, while companies demand clearer evidence that marketing, technology and expansion spending will produce measurable value.",
+        "The reputation risk is sounding disconnected from lived economic conditions. Aspirational messaging can still work, but in a cautious market it needs to be supported by usefulness, affordability, reliability or a convincing reason to spend."
+      ],
+      "sources": [
+        {"label": "Reuters — Philippine economy posts slowest growth in five years in second quarter", "url": "https://www.reuters.com/world/asia-pacific/philippines-q2-gdp-grows-23-yryr-slower-than-expected-2026-08-07/"}
+      ]
+    },
+    {
+      "id": "FMB-MS-20260811-002",
+      "kicker": "ASEAN · Digital commerce",
+      "headline": "ASEAN Online Sale Day Tests Whether Small Businesses Are Ready to Sell Across Borders",
+      "deck": "The August 8–10 regional campaign brought businesses and consumers from all 11 ASEAN member states into one coordinated e-commerce event.",
+      "body": [
+        "ASEAN Online Sale Day 2026 ran from August 8 to 10 as a coordinated regional e-commerce campaign involving all 11 ASEAN member states. The official platform connected shoppers with participating merchants, marketplaces and digital platforms across the region.",
+        "The event also pointed consumers toward a cross-border complaint mechanism through the ASEAN Committee on Consumer Protection. That matters because regional commerce depends not only on discovery and discounts but also on trust when a transaction goes wrong.",
+        "For Philippine businesses, the larger opportunity is to think beyond the domestic market. Product information, payment systems, fulfillment, customer support and return policies need to work across borders before regional advertising is scaled up.",
+        "The reputation risk is expanding reach faster than operations can support it. Cross-border commerce amplifies both good reviews and poor customer experiences, making logistics and service part of the brand itself."
+      ],
+      "sources": [
+        {"label": "ASEAN Online Sale Day 2026 — official platform", "url": "https://aosd.asean2026.gov.ph/"}
+      ]
+    },
+    {
+      "id": "FMB-MS-20260811-003",
+      "kicker": "Technology · Regional development",
+      "headline": "Tagum’s National ICT Summit Puts Regional AI Implementation on the Agenda",
+      "deck": "The August 12–14 summit brings government, industry, academe and startups together around AI-driven digital transformation.",
+      "body": [
+        "The 18th NICP National ICT Summit was scheduled for August 12 to 14 in Tagum City, Davao del Norte, under the theme of AI-driven digital transformation in governance, talent and innovation.",
+        "The official program positioned regional digital capability as an economic-development issue, bringing together policymakers, innovators, academic institutions, startups and development partners rather than treating technology as a Metro Manila-only conversation.",
+        "The public-perception test is implementation. Institutions increasingly use the phrase digital transformation, but residents judge it through shorter transactions, clearer information, stronger cybersecurity and fewer bureaucratic dead ends.",
+        "The opportunity is therefore less about selling AI as a label and more about redesigning workflows, public services, training and local digital systems around outcomes people can actually experience."
+      ],
+      "sources": [
+        {"label": "National ICT Confederation of the Philippines — 18th NICP National ICT Summit 2026", "url": "https://nicp.org.ph/nicp-ict-summit-2026/"}
+      ]
+    },
+    {
+      "id": "FMB-MS-20260811-004",
+      "kicker": "Culture · Film · Diaspora",
+      "headline": "Cinemalaya and Pistahan Show Two Ways Filipino Culture Builds Visibility",
+      "deck": "Independent cinema at home and a major Filipino festival in San Francisco both demonstrate how cultural identity travels through institutions and community.",
+      "body": [
+        "Cinemalaya 22 was running from August 6 to 18 under the theme Reel Reflections, continuing its role as a national platform for independent Filipino films and stories. In San Francisco, the 33rd annual Pistahan Parade and Festival took place on August 8 and 9 at Yerba Buena Gardens.",
+        "The two platforms operate differently but share a strategic function. Cinemalaya helps decide which stories receive critical attention and cultural memory, while Pistahan gives Filipino and Filipino-American food, music, dance, art and community history a visible international stage.",
+        "For cultural branding, visibility is stronger when audiences understand meaning rather than encountering heritage as decoration. A festival, film or performance becomes more memorable when the story behind it is legible.",
+        "The opportunity for Philippine cultural projects is to combine contemporary presentation with provenance, context and distribution. Culture becomes more durable when it is both preserved and given routes to new audiences."
+      ],
+      "sources": [
+        {"label": "Cultural Center of the Philippines — Cinemalaya 22 schedule", "url": "https://culturalcenter.gov.ph/events/2026-08-11/"},
+        {"label": "Pistahan Parade and Festival — official site", "url": "https://www.pistahan.net/"}
+      ]
+    },
+    {
+      "id": "FMB-MS-20260811-005",
+      "kicker": "Media · Trust",
+      "headline": "Philippine News Trust at 28% Makes Visible Sourcing a Competitive Advantage",
+      "deck": "The 2026 Digital News Report recorded a 10-point fall in overall news trust in the Philippines.",
+      "body": [
+        "The Reuters Institute’s 2026 Digital News Report placed overall trust in news in the Philippines at 28 percent, down 10 percentage points from the previous year and below the 37 percent global average recorded in the report.",
+        "The Philippine profile also noted that fewer people now access news directly through television, radio or news websites while social-media use remains important, meaning more journalism is encountered through platform feeds shaped by political messaging and fragmentation.",
+        "For media organizations, trust cannot be repaired by branding language alone. Visible sourcing, clear distinctions between verified facts and analysis, transparent corrections and disciplined handling of uncertainty are practical reputation systems.",
+        "The opportunity for a smaller newsroom is to compete on clarity rather than volume. In a low-trust environment, documented credibility can become a stronger differentiator than publishing the highest number of stories."
+      ],
+      "sources": [
+        {"label": "Reuters Institute — Digital News Report 2026: Philippines", "url": "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/philippines"}
+      ]
+    },
+    {
+      "id": "FMB-MS-20260811-006",
+      "kicker": "Pageantry · Governance · Reputation",
+      "headline": "Miss North Carolina USA Dispute Shows Why Pageants Need Clear Conduct Rules",
+      "deck": "Brittany Boltinhouse’s title removal became a broader reputation dispute as organizers and the former titleholder offered competing explanations.",
+      "body": [
+        "Brittany Boltinhouse was removed as Miss North Carolina USA 2026 on August 5 after the organization said conduct over an extended period had violated its standards. Myla Hadley subsequently assumed the state title.",
+        "The organization did not initially detail every incident behind the decision. Boltinhouse later argued that her conservative political and religious views may have influenced the outcome, while state organizers denied that claim and said the action followed a broader review of conduct and public content.",
+        "The distinction between verified fact and competing claims is important. It is established that the title was removed and that the parties dispute why; the full internal decision record has not been made public.",
+        "For pageant organizations, the strategic lesson is governance. Written conduct standards, documented escalation procedures and crisis-communication protocols reduce the space in which an internal disciplinary decision can become a larger argument about censorship, discrimination or arbitrary power."
+      ],
+      "sources": [
+        {"label": "People — Miss North Carolina USA 2026 dethroned after organization cites conduct standards", "url": "https://people.com/miss-north-carolina-usa-2026-dethroned-after-miss-usa-organization-condemns-racism-homophobia-transphobia-12035451"},
+        {"label": "The Guardian — Boltinhouse threatens legal action after title removal", "url": "https://www.theguardian.com/us-news/2026/aug/11/miss-north-carolina-title-brittany-boltinhouse"}
+      ]
+    }
+  ]
+}

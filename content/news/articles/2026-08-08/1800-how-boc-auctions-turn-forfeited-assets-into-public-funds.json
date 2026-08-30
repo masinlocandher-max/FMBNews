@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "fmb-news-2026-08-08-1800-pht",
+  "emailSubject": "FMB News | Government Generates ₱33.5 Million From Auction of Abandoned Goods | August 8, 2026 | 6:00 PM PHT",
+  "slug": "how-boc-auctions-turn-forfeited-assets-into-public-funds",
+  "headline": "How BOC Auctions Turn Forfeited Assets Into Public Funds",
+  "category": "Business",
+  "kicker": "Public funds · Customs · Accountability",
+  "deck": "The Bureau of Customs uses public auctions and negotiated sales to recover value from seized, abandoned and forfeited goods, with proceeds remitted to the national government.",
+  "publishedAt": "2026-08-08T18:00:00+08:00",
+  "updatedAt": "2026-08-08T19:30:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["The Bureau of Customs continues to dispose of seized, abandoned and forfeited goods through public auctions and negotiated sales, converting idle assets into government revenue."]},
+    {"heading":"What we know","paragraphs":["The BOC reported that auctions and negotiated sales generated ₱329.934 million from January to May 2026. The bureau said proceeds are recorded, accounted for and remitted to the national government.","The Department of Finance separately reported the July 29 turnover of more than ₱205 million from the negotiated sale of two forfeited Bugatti vehicles after earlier auctions failed to attract qualified bidders."]},
+    {"heading":"Background","paragraphs":["The Customs Modernization and Tariff Act and Customs Administrative Order No. 03-2020 provide procedures for disposing of seized, abandoned and forfeited goods through public auction, negotiated sale, donation and other lawful modes."]},
+    {"heading":"What remains unclear","paragraphs":["The bulletin claimed a separate ₱33.48 million disposition on August 8, but its links did not resolve to an article or official report establishing that figure. FMB News has therefore excluded that unverified amount from this report."]},
+    {"heading":"Why this matters","paragraphs":["Transparent disposal prevents forfeited assets from losing value and returns proceeds to public funds. Open notices, bidding records and remittance documentation are essential for public accountability."]},
+    {"heading":"What happens next","paragraphs":["The BOC is expected to continue publishing notices for eligible forfeited goods and reporting the results of completed auctions and negotiated sales."]}
+  ],
+  "sources": [
+    {"publisher":"Bureau of Customs","title":"BOC Converts Forfeited Assets into Public Funds Through Auction and Negotiated Sale","publishedAt":"2026-06-11T00:00:00+08:00","url":"https://customs.gov.ph/boc-converts-forfeited-assets-into-public-funds-through-auction-and-negotiated-sale/"},
+    {"publisher":"Department of Finance","title":"DOF leads turnover of PhP205 million in revenues from successful sale of forfeited luxury vehicles","publishedAt":"2026-07-29T00:00:00+08:00","url":"https://www.dof.gov.ph/dof-leads-turnover-of-php205-million-in-revenues-from-successful-sale-of-forfeited-luxury-vehicles/"}
+  ],
+  "image": {"kind":"open-license-photo","url":"/assets/images/news/2026-08-07/metro-manila-skyline.webp","sourceUrl":"https://commons.wikimedia.org/wiki/File:Bonifacio_Global_City_skyline.jpg","creator":"PhiliptheNumber1","license":"CC0 1.0","licenseUrl":"https://creativecommons.org/publicdomain/zero/1.0/","usageStatus":"Wikimedia Commons file verified as CC0 1.0; locally hosted crop used with creator, source and license credit.","credit":"Photo: PhiliptheNumber1 / Wikimedia Commons · CC0 1.0","caption":"Archive photograph of the Metro Manila skyline, used to illustrate government revenue and the national economy. It does not depict a customs auction or cargo lot.","alt":"Metro Manila business district skyline","width":1600,"height":900,"focusX":50,"focusY":50},
+  "audit": {"sourceCheckedAt":"2026-08-08T19:30:00+08:00","photoReferenceUrl":"https://commons.wikimedia.org/wiki/File:Bonifacio_Global_City_skyline.jpg","notes":["The bulletin's ₱33.48 million claim was excluded because its supplied links did not establish the figure.","The article was repaired using directly accessible official BOC and DOF records.","The recommended image was not reused because publication rights were not independently verifiable; a locally hosted CC0 archive photograph is used with exact credit."]}
+}

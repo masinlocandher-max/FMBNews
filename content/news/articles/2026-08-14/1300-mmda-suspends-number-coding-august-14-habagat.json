@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-14-1300",
+  "emailSubject": "FMB News | MMDA Suspends Number Coding Scheme as Monsoon Floods Persist | August 14, 2026 | 1:00 PM PHT",
+  "slug": "mmda-suspends-number-coding-august-14-habagat",
+  "headline": "MMDA Suspends Number Coding From 10:30 AM as Habagat Rains Persist",
+  "seoTitle": "MMDA Suspends Number Coding on August 14 Amid Habagat Rains",
+  "seoDescription": "The MMDA suspended Metro Manila's expanded number coding scheme from 10:30 a.m. on August 14 as continuous Habagat rain affected the capital region.",
+  "keywords": ["MMDA number coding suspension", "August 14 2026", "Habagat", "Metro Manila traffic"],
+  "category": "National",
+  "kicker": "Metro Manila · Transport · Public service",
+  "deck": "The expanded number coding scheme was suspended from 10:30 a.m. Friday as continuous monsoon rain affected Metro Manila.",
+  "publishedAt": "2026-08-14T13:00:00+08:00",
+  "updatedAt": "2026-08-14T18:30:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Metropolitan Manila Development Authority suspended the expanded number coding scheme effective 10:30 a.m. on Friday, August 14, because of continuous rainfall associated with the southwest monsoon.",
+        "The suspension removed the remaining number-coding restriction for the day. Motorists still had to account for flooding and changing road conditions across parts of Metro Manila."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The suspension came as PAGASA rainfall warnings covered Metro Manila and nearby provinces. GMA News reported that the MMDA was monitoring several flooded road sections in Quezon City, Valenzuela and Manila on Friday morning.",
+        "This report does not repeat the bulletin's broader claims about emergency deployments or local government directives because those details were not established by the cited MMDA suspension report."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "The change directly affected motorists who would otherwise have faced the Friday evening coding window. It did not mean all roads were clear or safe: commuters still needed current flood and traffic information before traveling."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Motorists should follow MMDA traffic and flood-monitoring advisories and local government instructions. Number-coding enforcement returns according to the agency's subsequent official announcements."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Philippine Daily Inquirer",
+      "title": "MMDA suspends number coding scheme on Friday",
+      "publishedAt": "2026-08-14T00:00:00+08:00",
+      "dateLabel": "Published August 14, 2026",
+      "url": "https://newsinfo.inquirer.net/2284434/mmda-suspends-number-coding-scheme-on-friday"
+    },
+    {
+      "publisher": "GMA News Online",
+      "title": "LIVE UPDATES: Habagat rains affect parts of PH on Friday (Aug. 14, 2026)",
+      "publishedAt": "2026-08-14T10:26:00+08:00",
+      "dateLabel": "Updated August 14, 2026 at 5:38 PM PHT",
+      "url": "https://www.gmanetwork.com/news/weather/content/998524/live-updates-habagat-rains-affect-parts-of-ph-on-friday-aug-14-2026/story/"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "sourceUrl": null,
+    "creator": "FMB News",
+    "license": "FMB-owned editorial visual",
+    "licenseUrl": "https://www.francinemariebautista.com/news/",
+    "usageStatus": "FMB-owned editorial visual used because publication rights for the recommended news photograph could not be independently verified.",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying the August 14 number-coding suspension report. It does not depict a particular road or weather event.",
+    "alt": "FMB News editorial visual for the August 14 MMDA number-coding suspension",
+    "width": 1200,
+    "height": 675,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-14T18:30:00+08:00",
+    "photoReferenceUrl": "https://newsinfo.inquirer.net/2284434/mmda-suspends-number-coding-scheme-on-friday",
+    "notes": [
+      "Kept the verified 10:30 AM suspension time and removed unsupported operational claims from the email draft.",
+      "Used the FMB-owned fallback because the recommended publisher photograph did not include independently verifiable reuse permission."
+    ]
+  }
+}

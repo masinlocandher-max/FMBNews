@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-25-0100",
+  "emailSubject": "FMB News | Moody's Affirms PH 'Baa2' Rating; Day 17 of Impeachment Concludes | August 25, 2026 | 1:00 AM PHT",
+  "slug": "moodys-affirms-philippines-baa2-stable-outlook",
+  "headline": "Moody's Affirms Philippines' Baa2 Rating with Stable Outlook",
+  "seoTitle": "Moody's Affirms Philippines' Baa2 Rating | FMB News",
+  "seoDescription": "Moody's Ratings affirmed the Philippines' Baa2 investment-grade sovereign rating with a stable outlook, while flagging slower near-term growth and fiscal risks.",
+  "keywords": ["Moody's Philippines Baa2", "Philippines credit rating 2026", "sovereign rating stable outlook"],
+  "category": "Business",
+  "kicker": "Economy · Sovereign Credit",
+  "deck": "The rating remains investment grade, with Moody's balancing the country's funding access and reserves against slower growth, debt-affordability pressure and climate exposure.",
+  "publishedAt": "2026-08-25T01:00:00+08:00",
+  "updatedAt": "2026-08-25T06:59:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading": "What happened", "paragraphs": ["Moody's Ratings affirmed the Philippines' sovereign credit rating at Baa2 with a stable outlook, keeping the country within investment grade.", "The affirmation means Moody's sees the Philippines' credit strengths and risks as broadly consistent with the current rating level rather than warranting an upgrade or downgrade at this time."]},
+    {"heading": "Context", "paragraphs": ["Current reporting on Moody's assessment says the agency expects fiscal metrics to stabilize over the next two years as growth recovers and the government continues deficit reduction. It also cited strong access to domestic and international funding markets and adequate foreign-exchange reserves as credit strengths.", "The assessment is more cautious than the approved newsroom brief's initial framing. Moody's expects Philippine GDP growth of about 3.6% in 2026 and about 5.3% in 2027, while highlighting weaker debt affordability, institutional constraints, lower income levels and exposure to physical climate risks."]},
+    {"heading": "Why this matters", "paragraphs": ["Sovereign credit ratings influence how investors assess Philippine government debt and can affect borrowing conditions. Retaining investment grade helps preserve market access, but the stable outlook does not remove risks from slower growth, fiscal pressure or external shocks."]},
+    {"heading": "What to watch next", "paragraphs": ["Watch the government's deficit and debt trajectory, the pace of public-investment recovery, inflation and energy-import costs, and future rating reviews from Moody's and other major agencies."]}
+  ],
+  "sources": [
+    {"publisher": "Moody's Ratings", "title": "Moody's Ratings affirms the Philippines' Baa2 ratings, maintains stable outlook", "publishedAt": "2026-08-24T00:00:00+08:00", "url": "https://ratings.moodys.com/ratings-news"},
+    {"publisher": "The Philippine Star", "title": "Moody’s affirms Philippines Baa2 rating with stable outlook", "publishedAt": "2026-08-25T00:00:00+08:00", "url": "https://www.philstar.com/headlines/2026/08/25/2551604/moodys-affirms-philippines-baa2-rating-stable-outlook"}
+  ],
+  "image": {"kind": "editorial-fallback", "url": "/assets/images/news/fmb-news-editorial-fallback.svg", "sourceUrl": null, "creator": "FMB News", "license": "FMB-owned editorial visual", "licenseUrl": "https://www.francinemariebautista.com/news/", "usageStatus": "FMB-owned editorial visual used because the approved email referenced government imagery but did not provide a stable reusable original asset URL.", "credit": "FMB News editorial visual", "caption": "FMB News editorial visual accompanying the Philippines sovereign credit-rating report.", "alt": "FMB News editorial visual for the Moody's Philippines credit-rating report", "width": 1200, "height": 675, "focusX": 50, "focusY": 50},
+  "audit": {"sourceCheckedAt": "2026-08-25T07:10:00+08:00", "photoReferenceUrl": "https://www.pna.gov.ph/categories/national", "notes": ["Corrected the approved brief's unsupported 6%+ medium-term growth and 55% debt-ratio claims against current reporting on Moody's assessment.", "Retained Baa2 and stable outlook, which are corroborated by Moody's rating-action listing and independent reporting.", "The email's supplied BusinessWorld URL led to an unrelated stock-performance article and was replaced with direct supporting sources."]}
+}

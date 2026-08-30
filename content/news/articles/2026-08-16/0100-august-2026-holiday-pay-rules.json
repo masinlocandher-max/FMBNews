@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-16-0100",
+  "emailSubject": "FMB News | Gov't Eyes Accelerated Public Spending Following Q2 GDP Deceleration | August 16, 2026 | 1:00 AM PHT",
+  "slug": "august-2026-holiday-pay-rules",
+  "headline": "What Workers Should Know About August 21 and August 31 Holiday Pay in 2026",
+  "seoTitle": "August 2026 Holiday Pay: Ninoy Aquino Day, National Heroes Day",
+  "seoDescription": "DOLE's standing 2026 wage rules apply on August 21, a special non-working day, and August 31, National Heroes Day, a regular holiday.",
+  "keywords": ["August 2026 holiday pay Philippines", "Ninoy Aquino Day pay 2026", "National Heroes Day pay 2026", "DOLE Labor Advisory 12-25"],
+  "category": "National",
+  "kicker": "Labor · Holiday pay",
+  "deck": "August 21 is a special non-working day and August 31 is a regular holiday. DOLE's Labor Advisory No. 12, Series of 2025 already sets the wage rules that apply throughout 2026.",
+  "publishedAt": "2026-08-16T01:00:00+08:00",
+  "updatedAt": "2026-08-16T07:06:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Under Proclamation No. 1006, August 21, 2026 is Ninoy Aquino Day and a special non-working day. August 31, 2026, the last Monday of August, is National Heroes Day and a regular holiday.",
+        "For August 21, the general rule is 'no work, no pay' unless a favorable company policy, practice or collective bargaining agreement provides otherwise. Employees who work the first eight hours are entitled to 130% of their basic wage. For the regular holiday on August 31, employees who qualify for holiday pay and do not work are entitled to 100% of their wage for the day, subject to the labor advisory's conditions, while employees who work the first eight hours are entitled to 200% of their basic wage. Overtime and rest-day combinations carry additional premiums."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The FMB News email described the rules as a newly issued Labor Advisory No. 12 on August 15, 2026. The official DOLE record instead shows that Labor Advisory No. 12, Series of 2025 was issued in 2025 to govern regular holidays, special non-working days and special working days for the entire year 2026.",
+        "FMB News is therefore publishing the verified wage rules and correct advisory reference rather than repeating the email's incorrect issuance date."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "The distinction between a special non-working day and a regular holiday changes both unworked-day treatment and the premium due when an employee reports for work. Employers and workers should use the correct holiday classification when computing August payroll."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Workers should check their employer's payroll policy or collective bargaining agreement where applicable, especially for special-day pay beyond the statutory minimum, and watch DOLE channels for any later clarification affecting the August holidays."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Supreme Court E-Library",
+      "title": "Proclamation No. 1006: Regular Holidays and Special Non-Working Days for 2026",
+      "publishedAt": "2025-09-01T00:00:00+08:00",
+      "url": "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/7/99678"
+    },
+    {
+      "publisher": "Department of Labor and Employment, Bureau of Working Conditions",
+      "title": "Labor Advisories: Labor Advisory No. 12-25 for 2026 wage rules",
+      "publishedAt": "2025-09-11T00:00:00+08:00",
+      "url": "https://bwc.dole.gov.ph/issuances/labor-advisories/"
+    },
+    {
+      "publisher": "Department of Labor and Employment, Bureau of Working Conditions",
+      "title": "DOLE reminds employers to ensure workers' compensation compliance during the celebration of 124th Labor Day",
+      "publishedAt": "2026-04-29T00:00:00+08:00",
+      "url": "https://bwc.dole.gov.ph/dole-reminds-employers-to-ensure-workers-compensation-compliance-during-the-celebration-of-124th-labor-day/"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "sourceUrl": null,
+    "creator": "FMB News",
+    "license": "FMB-owned editorial visual",
+    "licenseUrl": "https://www.francinemariebautista.com/news/",
+    "usageStatus": "The email referenced a publisher page rather than a stable original image asset; FMB News uses its own editorial visual instead of inventing a photo credit.",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying the August 2026 holiday-pay guide.",
+    "alt": "FMB News editorial visual for August 2026 holiday pay rules",
+    "width": 1200,
+    "height": 675,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-16T07:06:00+08:00",
+    "notes": [
+      "Proclamation No. 1006 confirms August 21 as a special non-working day and August 31 as National Heroes Day, a regular holiday.",
+      "Official DOLE records show Labor Advisory No. 12-25 governs wage computation for 2026; the email's claim of a newly issued August 15, 2026 Labor Advisory No. 12 was corrected.",
+      "The pay percentages published here are grounded in DOLE's official 2026 wage-rule framework."
+    ]
+  }
+}

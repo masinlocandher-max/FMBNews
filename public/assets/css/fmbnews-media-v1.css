@@ -1,0 +1,117 @@
+/* FMB News Adaptive Media V1
+ * Keeps portrait and landscape source images visible without destructive cropping.
+ */
+
+html body.news-route.news-editorial-v5 main figure[data-news-orientation] {
+  background: #eeeaf0 !important;
+}
+
+html body.news-route.news-editorial-v5 main figure[data-news-orientation] img {
+  display: block !important;
+  filter: none !important;
+}
+
+/* Lead story: preserve every image inside a controlled editorial frame. */
+html body.news-route.news-editorial-v5 .nc-lead-broadcast figure[data-news-orientation="landscape"],
+html body.news-route.news-editorial-v5 .nc-lead-broadcast figure[data-news-orientation="square"] {
+  height: auto !important;
+  aspect-ratio: auto !important;
+}
+
+html body.news-route.news-editorial-v5 .nc-lead-broadcast figure[data-news-orientation="landscape"] img,
+html body.news-route.news-editorial-v5 .nc-lead-broadcast figure[data-news-orientation="square"] img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: min(68vh, 680px) !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+html body.news-route.news-editorial-v5 .nc-lead-broadcast figure[data-news-orientation="portrait"] {
+  height: min(68vh, 650px) !important;
+  min-height: 360px !important;
+  aspect-ratio: auto !important;
+  display: grid !important;
+  place-items: center !important;
+}
+
+html body.news-route.news-editorial-v5 .nc-lead-broadcast figure[data-news-orientation="portrait"] img {
+  width: auto !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+/* Article hero media: use the source orientation, with a viewport-height guard. */
+html body.news-route.news-editorial-v5 .nc-story-media figure[data-news-orientation] {
+  display: grid !important;
+  place-items: center !important;
+  overflow: hidden !important;
+}
+
+html body.news-route.news-editorial-v5 .nc-story-media figure[data-news-orientation="landscape"] img,
+html body.news-route.news-editorial-v5 .nc-story-media figure[data-news-orientation="square"] img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+}
+
+html body.news-route.news-editorial-v5 .nc-story-media figure[data-news-orientation="portrait"] img {
+  width: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: min(78vh, 920px) !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+/* Lists and cards stay aligned, but the entire source image remains visible. */
+html body.news-route.news-editorial-v5 .nc-rundown-story figure,
+html body.news-route.news-editorial-v5 .nc-context-feature figure,
+html body.news-route.news-editorial-v5 .nc-cover figure,
+html body.news-route.news-editorial-v5 .nc-desk-story figure {
+  display: grid !important;
+  place-items: center !important;
+  overflow: hidden !important;
+  background: #eeeaf0 !important;
+}
+
+html body.news-route.news-editorial-v5 .nc-rundown-story figure img,
+html body.news-route.news-editorial-v5 .nc-context-feature figure img,
+html body.news-route.news-editorial-v5 .nc-cover figure img,
+html body.news-route.news-editorial-v5 .nc-desk-story figure img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+html body.news-route.news-editorial-v5 figure[data-news-image-state="unavailable"] {
+  min-height: 180px !important;
+  background: linear-gradient(145deg, #eee9f1, #f8f6f9) !important;
+}
+
+html body.news-route.news-editorial-v5 figure[data-news-image-state="unavailable"] img {
+  visibility: hidden !important;
+}
+
+@media (max-width: 620px) {
+  html body.news-route.news-editorial-v5 .nc-lead-broadcast figure[data-news-orientation="portrait"] {
+    height: min(58vh, 520px) !important;
+    min-height: 300px !important;
+  }
+
+  html body.news-route.news-editorial-v5 .nc-lead-broadcast figure[data-news-orientation="landscape"] img,
+  html body.news-route.news-editorial-v5 .nc-lead-broadcast figure[data-news-orientation="square"] img {
+    max-height: 58vh !important;
+  }
+
+  html body.news-route.news-editorial-v5 .nc-story-media figure[data-news-orientation="portrait"] img {
+    max-height: 72vh !important;
+  }
+}

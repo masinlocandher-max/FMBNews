@@ -1,0 +1,110 @@
+{
+  "date": "2026-08-17",
+  "publishedAt": "2026-08-17T20:06:00+08:00",
+  "editionLabel": "Morning Special",
+  "title": "AI Infrastructure, Capital Discipline and the New Economics of Distribution",
+  "deck": "The August 17 Morning Special follows half-a-trillion-dollar AI financing, more selective Asian capital, Philippine budget pressure, tourism conversion, regional film infrastructure and Cinemalaya’s final stretch.",
+  "hero": {
+    "src": "/assets/images/news/new-clark-city-pax-silica-pia.jpg",
+    "alt": "Official briefing image connected to the proposed technology and industrial development in New Clark City",
+    "caption": "Official image from government briefings on technology-led industrial development in New Clark City, used as Philippine context for this edition’s lead theme on the physical infrastructure behind AI. It does not depict Nvidia or its financing partners.",
+    "credit": "Photo: PCO / RTVM via Philippine Information Agency",
+    "sourceUrl": "https://pia.gov.ph/news/bcda-says-pax-silica-project-could-generate-over-130000-high-quality-jobs/"
+  },
+  "stories": [
+    {
+      "id": "FMB-MS-20260817-001",
+      "kicker": "AI · Infrastructure · Finance",
+      "headline": "AI Is Becoming an Infrastructure-Finance Business, Not Just a Software Business",
+      "deck": "Nvidia and major financial firms are working on platforms intended to mobilize more than $500 billion for AI infrastructure.",
+      "body": [
+        "Nvidia announced memorandums of understanding with Apollo, BlackRock, Blackstone, Brookfield, Goldman Sachs and KKR around independent financing platforms that could mobilize more than $500 billion in third-party capital for AI infrastructure.",
+        "The scale of the initiative shows how quickly the AI economy is moving beyond software. Chips, data centers, electricity, cooling, connectivity and long-term financing are becoming part of the same commercial system.",
+        "The strategic lesson for Philippine businesses is that competing in AI does not require building a frontier model. Valuable positions can exist in the applications, services and physical infrastructure that make AI useful and economically sustainable.",
+        "The risk is capital discipline. Easier financing can accelerate useful infrastructure, but it can also support projects whose economics depend too heavily on continued AI enthusiasm. Investors will increasingly ask where the durable cash flow comes from."
+      ],
+      "sources": [
+        {"label": "Business Insider — Jensen Huang's latest pitch to investors: Nvidia's AI compute is its own asset class", "url": "https://www.businessinsider.com/nvidia-ceo-jensen-huang-financing-500-billion-ai-compute-nvda-2026-8"},
+        {"label": "Financial Times — Nvidia becomes the bank of AI", "url": "https://www.ft.com/content/4c93c894-04b8-49dc-be41-98ae79f540f8"}
+      ]
+    },
+    {
+      "id": "FMB-MS-20260817-002",
+      "kicker": "Markets · AI · Asia",
+      "headline": "Asian Equity Outflows Show Investors Are Becoming More Selective About AI",
+      "deck": "Foreign investors sold a net $25.48 billion across seven Asian markets in July while the Philippines recorded a modest $69 million inflow.",
+      "body": [
+        "Reuters reported that foreign investors sold a net $25.48 billion of equities across seven Asian markets in July, with Taiwan and South Korea seeing particularly heavy outflows as investors questioned AI spending, chip demand and cash burn.",
+        "The Philippines recorded a comparatively small $69 million foreign equity inflow during the period. That does not make the Philippine market immune to the wider shift in sentiment, but it shows that capital flows were not uniform across the region.",
+        "The larger AI signal is that narrative alone is losing power. Investors are beginning to distinguish between companies that can connect AI spending to earnings and productivity and those whose exposure is mainly thematic.",
+        "For brands and startups, the same discipline applies. AI-first and AI-powered positioning will become less persuasive unless the customer can see a meaningful improvement in cost, speed, quality or revenue."
+      ],
+      "sources": [
+        {"label": "Reuters — Taiwan, South Korea drive Asian equity outflows in July as AI worries bite", "url": "https://www.reuters.com/world/china/taiwan-south-korea-drive-asian-equity-outflows-july-ai-worries-bite-2026-08-11/"}
+      ]
+    },
+    {
+      "id": "FMB-MS-20260817-003",
+      "kicker": "Philippines · Budget · Confidence",
+      "headline": "The ₱7.2-Trillion Budget Proposal Keeps Economic Confidence in Focus",
+      "deck": "Government spending is being asked to support an economy that grew only 2.3 percent in the second quarter.",
+      "body": [
+        "The proposed 2027 national budget stands at ₱7.2 trillion, about 6 percent above the current year, as the administration seeks to restore momentum after a weak first half of 2026.",
+        "Second-quarter GDP growth slowed to 2.3 percent year on year and first-half growth was 2.6 percent. Construction and domestic demand were among the areas identified as weak in the period.",
+        "The reputation challenge for government is to connect spending with visible outcomes. A larger budget is not by itself a persuasive story when public confidence is also shaped by implementation, procurement and whether projects are completed on time.",
+        "For companies, slower growth reinforces the importance of value communication. Customers and clients become more demanding when budgets are tight, which rewards businesses that can show usefulness and measurable outcomes instead of relying only on aspiration."
+      ],
+      "sources": [
+        {"label": "Reuters — Philippines' Marcos proposes $118 billion budget for 2027", "url": "https://www.reuters.com/world/asia-pacific/philippines-marcos-proposes-118-billion-budget-2027-2026-08-11/"}
+      ]
+    },
+    {
+      "id": "FMB-MS-20260817-004",
+      "kicker": "Tourism · Digital products",
+      "headline": "Discover More to Love Moves Philippine Tourism Closer to a Digital Marketplace",
+      "deck": "The government-backed platform brings thousands of travel offers into a discovery and booking environment rather than stopping at destination promotion.",
+      "body": [
+        "The Department of Tourism’s Discover More to Love campaign brought together more than 3,000 travel deals from tourism partners, including accommodation, tour and transport offers, as part of a domestic travel push running through November.",
+        "The strategic shift is from awareness toward conversion. A destination campaign becomes more commercially useful when a traveler can move directly from discovering a place to understanding an itinerary, finding a trusted supplier and making a booking.",
+        "Trust is central to the product. A government-backed portal can reduce uncertainty only if participating suppliers are properly vetted and travelers can rely on the information and fulfillment behind the offer.",
+        "For emerging destinations such as those in Zambales, the opportunity is to build the same logic locally: attractions, stories, businesses, accommodation, maps and bookable experiences connected through one usable digital journey."
+      ],
+      "sources": [
+        {"label": "Philippine Information Agency — DOT rolls out Discover More to Love with more than 3,000 travel deals", "url": "https://pia.gov.ph/press-release/dot-rolls-out-discover-more-to-love-campaign-with-more-than-3000-travel-deals-from-tourism-partners/"},
+        {"label": "Philippine News Agency — PH launches portal for curated, discounted travel deals", "url": "https://www.pna.gov.ph/articles/1278184"}
+      ]
+    },
+    {
+      "id": "FMB-MS-20260817-005",
+      "kicker": "Film · ASEAN · Creative industries",
+      "headline": "Regional Film Infrastructure Is Becoming as Important as the Stories Themselves",
+      "deck": "The ASEAN Film and TV Summit and the current Film Philippines incentives show how distribution, preservation and financing shape cultural reach.",
+      "body": [
+        "The Philippines concluded the ASEAN Film and TV Summit on August 14 after three days of discussions involving producers, archivists, educators, policymakers and cultural institutions from across the region.",
+        "Separately, the Film Development Council of the Philippines opened the second 2026 cycle of Film Philippines incentives for eligible local production companies, animation studios and entities working with foreign partners.",
+        "Together, the programs highlight a basic creative-industry truth: strong stories still need systems. Financing, archiving, co-production relationships and distribution determine whether cultural work can travel and remain accessible after its initial release.",
+        "The opportunity for Filipino creators is to think about distribution at the beginning of a project, not after the work is finished. International reach does not require flattening local identity when the production and business infrastructure is strong enough to carry specificity."
+      ],
+      "sources": [
+        {"label": "Film Development Council of the Philippines — ASEAN Film and TV Summit 2026", "url": "https://fdcp.ph/index.php/news/asean2026"},
+        {"label": "Film Development Council of the Philippines — Film Philippines Incentives 2026 Cycle 2", "url": "https://fdcp.ph/node"}
+      ]
+    },
+    {
+      "id": "FMB-MS-20260817-006",
+      "kicker": "Cinemalaya · Culture · Media",
+      "headline": "Cinemalaya’s Final Stretch Is a Reminder That Distribution Is Part of Cultural Power",
+      "deck": "The festival closes August 18 after giving independent Filipino stories a national platform for discovery and discussion.",
+      "body": [
+        "Cinemalaya 22 was entering its final two days on August 17, with the festival scheduled to run through August 18 under the Reel Reflections theme.",
+        "A festival does more than gather films in one calendar. It creates a distribution moment in which independent work can receive reviews, audience attention, professional connections and a place in the wider cultural conversation.",
+        "That makes entertainment reporting more valuable when it explains the people, places and social questions behind the work. Coverage becomes cultural journalism when it helps audiences understand why a film matters beyond its screening schedule.",
+        "The wider strategic principle applies beyond cinema. Creation without distribution is fragile: a product needs a route to market, a cultural story needs a platform and a destination needs a path from inspiration to booking."
+      ],
+      "sources": [
+        {"label": "Cultural Center of the Philippines — Cinemalaya 22 schedule", "url": "https://culturalcenter.gov.ph/events/2026-08-17/"},
+        {"label": "Cinemalaya — official festival site", "url": "https://www.cinemalaya.org/"}
+      ]
+    }
+  ]
+}

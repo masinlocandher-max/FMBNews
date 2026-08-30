@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-26-1900",
+  "emailSubject": "FMB News | Impeachment Court Orders Bank Subpoenas; PAGASA Forecasts 7 More Cyclones | August 26, 2026 | 7:00 PM PHT",
+  "slug": "palace-vigilance-foreign-influence-west-philippine-sea",
+  "headline": "Palace Urges Vigilance Over Alleged Foreign Influence in West Philippine Sea Debate",
+  "seoTitle": "Palace Warns of Alleged Foreign Influence in WPS Debate | FMB News",
+  "seoDescription": "Malacañang urged politicians to put Philippine interests first after officials raised suspicions of foreign support influencing West Philippine Sea narratives.",
+  "keywords": ["foreign influence West Philippine Sea", "Malacañang Claire Castro", "Gilberto Teodoro China support allegations"],
+  "category": "National",
+  "kicker": "National Security · West Philippine Sea",
+  "deck": "The Palace warning followed Defense Secretary Gilberto Teodoro Jr.'s statement that authorities had grounds to suspect some politicians may be receiving support from China; no officials were named or charged.",
+  "publishedAt": "2026-08-26T19:00:00+08:00",
+  "updatedAt": "2026-08-26T19:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["Malacañang urged politicians to put Philippine interests first and avoid allowing another country to use them to shape public debate over the West Philippine Sea.","Palace Press Officer Claire Castro made the statement after Defense Secretary Gilberto Teodoro Jr. said authorities had grounds to suspect that some elected officials may be receiving support from China. The reporting did not identify any politician as a recipient and did not establish a criminal case."]},
+    {"heading":"Context","paragraphs":["The statements concern alleged foreign influence over domestic political messaging and public opinion about Philippine maritime rights. Officials referred to the need for evidence before any allegation could support legal action.","The Philippines bases its maritime position on the United Nations Convention on the Law of the Sea and the 2016 arbitral award. China rejects the award and continues to assert claims that overlap with waters claimed by the Philippines and other coastal states."]},
+    {"heading":"Why this matters","paragraphs":["Claims that foreign governments are influencing elected officials are serious because they affect public trust, national-security policy and democratic debate. Publishing the distinction between suspicion, evidence and a formal charge is essential when no person has been publicly identified or prosecuted in connection with the allegation."]},
+    {"heading":"What to watch next","paragraphs":["Watch for any named investigation, financial evidence, official complaint or response from a person directly accused. Until such evidence is released, the government's statements should be understood as warnings and allegations rather than established findings against specific politicians."]}
+  ],
+  "sources": [
+    {"publisher":"Philippine News Agency","title":"Palace urges vigilance vs foreign influence in WPS discourse","publishedAt":"2026-08-26T14:09:00+08:00","url":"https://www.pna.gov.ph/articles/1282687"},
+    {"publisher":"INQUIRER.net","title":"Palace warns 'China-backed politicians': Don't sell out PH","publishedAt":"2026-08-26T17:06:00+08:00","url":"https://globalnation.inquirer.net/335957/china-backed-politicians-warned-dont-sell-out-ph-to-stay-in-power"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":null,"creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because publication rights for the recommended Palace photograph could not be independently verified from a stable original asset page.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying coverage of the Palace warning about alleged foreign influence; it does not depict an accused person.","alt":"FMB News editorial visual for a report on alleged foreign influence in West Philippine Sea debate","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-08-27T01:00:00+08:00","photoReferenceUrl":"https://www.pna.gov.ph/articles/1282687","notes":["Verified the Palace warning and Teodoro's statement about grounds for suspicion through same-day PNA and INQUIRER.net reports.","Reframed the headline to avoid presenting unproven foreign backing as fact and stated that no politician was named or charged in the accessible reporting.","Removed invented quotations attributed to Castro, unsupported claims that intelligence agencies confirmed covert operations, and unverified descriptions of specific digital networks and AMLC findings."]}
+}

@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-12-1300",
+  "emailSubject": "FMB News | DND Hails Senate Concurrence in Canada, New Zealand Defense Agreements | August 12, 2026 | 1:00 PM PHT",
+  "slug": "dnd-welcomes-senate-concurrence-canada-new-zealand-sovfas",
+  "headline": "DND Welcomes Senate Concurrence in Canada and New Zealand SOVFAs",
+  "seoTitle": "DND Welcomes Senate Concurrence in Canada and New Zealand SOVFAs",
+  "seoDescription": "The Defense Department welcomed the Senate's concurrence in separate status-of-visiting-forces agreements with Canada and New Zealand.",
+  "keywords": ["Canada Philippines SOVFA", "New Zealand Philippines SOVFA", "Senate Resolution 548", "Senate Resolution 549"],
+  "category": "National",
+  "kicker": "Defense · Foreign relations · Senate",
+  "deck": "The Department of National Defense welcomed the Senate's concurrence in separate agreements governing visiting forces from Canada and New Zealand.",
+  "publishedAt": "2026-08-12T13:00:00+08:00",
+  "updatedAt": "2026-08-12T13:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Department of National Defense welcomed the Philippine Senate's concurrence in the ratification of separate Status of Visiting Forces Agreements with Canada and New Zealand.",
+        "Senate Resolutions 548 and 549 each received 19 affirmative votes on Tuesday, August 11, with no negative votes or abstentions, according to the Philippine News Agency's report on the DND statement."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "A status-of-visiting-forces agreement establishes the legal framework and conditions for military personnel temporarily present in another country. It is not, by itself, a mutual-defense treaty.",
+        "The DND said the agreements are intended to deepen defense cooperation with Canada and New Zealand. FMB News is not reporting a date for inaugural exercises because the checked record did not confirm a final schedule."
+      ]
+    },
+    {
+      "heading": "Why this matters to Filipinos",
+      "paragraphs": [
+        "The agreements can shape how joint training, humanitarian assistance and other defense cooperation are conducted while defining rules for visiting personnel. Their implementation also raises continuing questions about sovereignty, accountability and parliamentary oversight."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for the formal publication and implementation of the Senate resolutions and for official announcements from the Philippine, Canadian and New Zealand governments on activities conducted under the agreements."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Philippine News Agency",
+      "title": "DND lauds Senate concurrence of Canada, New Zealand SOVFA",
+      "publishedAt": "2026-08-12T12:57:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1281663"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "sourceUrl": null,
+    "creator": "FMB News",
+    "license": "FMB-owned editorial visual",
+    "licenseUrl": "https://www.francinemariebautista.com/news/",
+    "usageStatus": "FMB-owned editorial visual used because the rights-cleared archive photograph could not be delivered as a fully local raster asset.",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying the report. It does not depict the August 11 concurrence vote.",
+    "alt": "FMB News editorial visual for the Canada and New Zealand visiting-forces agreements",
+    "width": 1200,
+    "height": 675,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-12T19:18:00+08:00",
+    "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:Philippine_Senate_Session_Hall.jpg",
+    "notes": [
+      "The agreements are described as status-of-visiting-forces agreements, not mutual-defense treaties.",
+      "Unconfirmed claims about inaugural exercise dates and technical working-group schedules were omitted."
+    ]
+  }
+}

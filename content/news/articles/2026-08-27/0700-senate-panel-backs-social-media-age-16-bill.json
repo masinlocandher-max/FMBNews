@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-27-0700",
+  "emailSubject": "FMB News | PAF Completes 32 Black Hawk Fleet; Senate Panel Backs Age 16 Social Media Cap | August 27, 2026 | 7:00 AM PHT",
+  "slug": "senate-panel-backs-social-media-age-16-bill",
+  "headline": "Senate Panel Backs Bill Setting 16 as Minimum Age for Social Media",
+  "seoTitle": "Senate Panel Backs Social Media Minimum Age of 16 | FMB News",
+  "seoDescription": "A Philippine Senate panel endorsed a bill that would set 16 as the minimum age for social media accounts and require privacy-compliant age assurance.",
+  "keywords": [
+    "Philippines social media minimum age 16",
+    "Senate Bill 2424 child online safety",
+    "social media age assurance Philippines"
+  ],
+  "category": "Technology",
+  "kicker": "Digital Policy · Child Safety",
+  "deck": "The proposed Child Online Safety and Protection Act would require platforms to prevent children below 16 from creating or maintaining accounts through privacy-compliant age-assurance systems.",
+  "publishedAt": "2026-08-27T07:00:00+08:00",
+  "updatedAt": "2026-08-27T07:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Senate committee on public information and mass media endorsed Senate Bill No. 2424, or the proposed Child Online Safety and Protection Act, to the Senate floor on August 26.",
+        "The measure would set 16 as the minimum age for social media use and require platforms to use reasonable and effective age-assurance systems to prevent children below that age from creating or maintaining accounts."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The proposal distinguishes age assurance, which may assess user behavior and other technical signals, from age-verification systems that typically require identification documents. Any age-assurance system would have to comply with the Data Privacy Act.",
+        "The bill would also restrict the commercial use of children's personal information. Committee chair Sen. Robinhood Padilla said the proposal seeks to reduce online risks while acknowledging that experts differ on the appropriate minimum age."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "If enacted, the measure would place new child-safety and privacy obligations on social media platforms. It would not create an immediate nationwide social media ban, and the proposed restrictions are not yet law."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "The bill remains subject to Senate deliberation and possible amendment. It would still need approval by both chambers of Congress and the President before taking effect."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "INQUIRER.net",
+      "title": "Senate panel endorses bill setting 16 as minimum age for social media",
+      "publishedAt": "2026-08-26T20:52:00+08:00",
+      "url": "https://newsinfo.inquirer.net/2293186/senate-panel-endorses-bill-setting-16-as-minimum-age-for-social-media"
+    },
+    {
+      "publisher": "Philippine News Agency",
+      "title": "Senate bill seeks social media ban for users under 16",
+      "publishedAt": "2026-04-24T00:00:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1273651"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "sourceUrl": null,
+    "creator": "FMB News",
+    "license": "FMB-owned editorial visual",
+    "licenseUrl": "https://www.francinemariebautista.com/news/",
+    "usageStatus": "FMB-owned editorial visual used because the recommended photograph had no stable original asset with independently verified publication rights.",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying the report on the proposed social media minimum age.",
+    "alt": "FMB News editorial visual for the proposed social media minimum age of 16",
+    "width": 1200,
+    "height": 675,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-27T13:05:00+08:00",
+    "photoReferenceUrl": "https://newsinfo.inquirer.net/2293186/senate-panel-endorses-bill-setting-16-as-minimum-age-for-social-media",
+    "notes": [
+      "Verified the August 26 committee endorsement, Senate Bill No. 2424, the proposed age threshold, age-assurance requirement and Data Privacy Act condition against current reporting.",
+      "Clarified that the proposal is not yet law and does not impose an immediate nationwide social media ban.",
+      "Removed an unsupported direct quotation, Committee Report No. 412, a claimed next-week timetable and platform-specific claims not needed to establish the measure."
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-24-1300",
+  "emailSubject": "FMB News | DepEd Postpones Active Shooter Drills; Typhoon Saudel Reaches 175 km/h | August 24, 2026 | 1:00 PM PHT",
+  "slug": "dilg-deped-school-security-modernization-plan",
+  "headline": "Remulla Estimates First-Year Public School Security Upgrades at ₱5 Billion",
+  "seoTitle": "Remulla Estimates School Security Upgrades at ₱5 Billion | FMB News",
+  "seoDescription": "DILG Secretary Jonvic Remulla estimated that stronger security systems for public schools could cost about ₱5 billion in the first year.",
+  "keywords": ["Jonvic Remulla 5 billion school security", "public school CCTV metal detectors Philippines", "DILG DepEd school security"],
+  "category": "National",
+  "kicker": "Education · Public Safety",
+  "deck": "The DILG chief gave the first-year estimate as education and interior officials pursued tighter access controls, surveillance and local security coordination for schools.",
+  "publishedAt": "2026-08-24T13:00:00+08:00",
+  "updatedAt": "2026-08-24T19:05:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading": "What happened", "paragraphs": ["Interior Secretary Jonvic Remulla estimated that improving security systems across public schools could cost about ₱5 billion in the first year.", "The estimate comes as the Department of Education prepares to provide schools with metal detectors and closed-circuit television systems, tighten security protocols and strengthen coordination with barangay tanods and other local safety personnel."]},
+    {"heading": "Context", "paragraphs": ["DILG and DepEd have been preparing an inter-agency agreement to strengthen security inside and around school premises following recent campus violence. Current government reporting supports the policy direction toward closer local coordination, stronger surveillance and controlled access.", "The delivery envelope also described panic alarms, a separate ₱1.2-billion mental-health allocation, a 2027 congressional submission and a fourth-quarter pilot. Those details were not independently established by the accessible cited material and are not presented here as facts."]},
+    {"heading": "Why this matters", "paragraphs": ["The estimate signals the potential scale of a nationwide school-security program, but its final cost and scope will depend on formal agency plans and budget approval. Physical safeguards also need trained personnel, clear reporting procedures and student-support measures to avoid creating a climate of fear."]},
+    {"heading": "What to watch next", "paragraphs": ["Watch DILG, DepEd and budget authorities for the signed inter-agency agreement, an itemized funding proposal, procurement standards and implementation rules for cameras, metal detectors and local security coordination."]}
+  ],
+  "sources": [
+    {"publisher": "ANC", "title": "Remulla: Enhancing security system of public schools will cost P5-B on first year", "publishedAt": "2026-08-24T18:10:00+08:00", "url": "https://www.youtube.com/watch?v=7saLa6Y3TwE"},
+    {"publisher": "ABS-CBN News", "title": "DepEd postpones nationwide 'live-shooter' drills: 'Nakikinig kami sa mga eksperto'", "publishedAt": "2026-08-24T09:17:00+08:00", "url": "https://news.abs-cbn.com/news/nation/2026/8/24/deped-postpones-nationwide-live-shooter-drills-0917"},
+    {"publisher": "Department of the Interior and Local Government CALABARZON", "title": "DILG, DepEd to ink agreement boosting security inside schools", "publishedAt": "2026-08-20T12:00:00+08:00", "url": "https://calabarzon.dilg.gov.ph/dilg-deped-to-ink-agreement-boosting-security-inside-schools/"}
+  ],
+  "image": {"kind": "editorial-fallback", "url": "/assets/images/news/fmb-news-editorial-fallback.svg", "sourceUrl": null, "creator": "FMB News", "license": "FMB-owned editorial visual", "licenseUrl": "https://www.francinemariebautista.com/news/", "usageStatus": "FMB-owned editorial visual used because publication rights for the recommended press-conference photograph could not be independently verified.", "credit": "FMB News editorial visual", "caption": "FMB News editorial visual accompanying the report on proposed public-school security upgrades; it does not depict the actual briefing.", "alt": "FMB News editorial visual for proposed public-school security improvements", "width": 1200, "height": 675, "focusX": 50, "focusY": 50},
+  "audit": {"sourceCheckedAt": "2026-08-24T19:05:00+08:00", "photoReferenceUrl": "https://www.pna.gov.ph/categories/national", "notes": ["ANC's same-day report directly supports Remulla's ₱5-billion first-year estimate.", "Accessible agency and news sources support metal detectors, CCTV and stronger local security coordination.", "Unsupported itemized allocations, panic-button links and pilot schedules from the delivery envelope were omitted."]}
+}

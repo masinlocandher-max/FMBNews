@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-30-2156",
+  "emailSubject": "FMB News | Zambales Flood-Control Damage Reaches ₱569.27 Million | August 30, 2026 | 9:56 PM PHT",
+  "slug": "zambales-flood-control-damage-569-million-august-30-2026",
+  "headline": "Zambales Flood-Control Damage Hits ₱569.27 Million After Heavy Rains",
+  "seoTitle": "Zambales Flood-Control Damage Hits ₱569.27M | FMB News",
+  "seoDescription": "DPWH assessments put damage to Zambales dikes, revetments and slope-protection works at ₱569.27 million, with about ₱1.28 billion needed for recovery and reconstruction.",
+  "keywords": [
+    "Zambales flood control damage August 2026",
+    "DPWH Zambales ₱569.27 million",
+    "Tapuac River Masinloc flood control",
+    "Zambales flooding August 30 2026"
+  ],
+  "category": "Environment",
+  "kicker": "Zambales · Infrastructure · Public safety",
+  "deck": "DPWH assessments put damage to dikes, revetments and slope-protection works at ₱569.27 million, while recovery, rehabilitation and reconstruction are estimated at about ₱1.28 billion.",
+  "publishedAt": "2026-08-30T21:56:00+08:00",
+  "updatedAt": "2026-08-30T22:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Flood-control structures across Zambales sustained an estimated ₱569.27 million in damage after prolonged heavy rains and flooding, based on the latest combined assessment of the Department of Public Works and Highways' 1st and 2nd district engineering offices reported on Sunday.",
+        "The same assessment estimates about ₱1.28 billion will be needed for recovery, rehabilitation and reconstruction of damaged dikes, revetments and slope-protection facilities."
+      ]
+    },
+    {
+      "heading": "Where the damage was recorded",
+      "paragraphs": [
+        "The DPWH 1st District accounted for ₱472.42 million of the reported damage and estimated about ₱1.17 billion for recovery and reconstruction. Several sections of the Bucao River Dike in Botolan were listed as totally damaged, together with slope-protection works along rivers in Masinloc, Cabangan and Botolan.",
+        "Among the structures reported totally damaged was slope protection along the Tapuac River in Masinloc. The DPWH 2nd District recorded another ₱96.85 million in damage, with about ₱114 million estimated for recovery and reconstruction. A dike and concrete revetment along the Sto. Tomas River in San Marcelino were also reported totally damaged."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The infrastructure assessment comes as Zambales continues to recover from widespread flooding. The latest provincial figures cited in the report said 294 houses had been damaged or destroyed as of August 29, while more than 14,000 residents had left flooded homes for evacuation centers or other safer locations.",
+        "Zambales has been placed under a state of calamity following the recent weather disturbances, allowing authorities to mobilize additional relief, recovery and rehabilitation measures."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "Dikes, revetments and slope-protection structures are intended to reduce erosion and flood risk around rivers and exposed communities. Damage on this scale creates an immediate engineering and financing problem while heavy-rain threats remain active.",
+        "The damage figures should not be treated as proof that failed flood-control structures caused all of the flooding. Establishing causation requires site-specific engineering findings, rainfall and river-flow data, and an assessment of how each structure performed before and during the event."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for final DPWH validation of damaged sites, emergency stabilization work, the funding source and timetable for the estimated ₱1.28 billion recovery requirement, and any engineering findings on why individual structures failed.",
+        "With additional monsoon rain still possible, local advisories and evacuation instructions remain more important than waiting for permanent repairs to begin."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "INQUIRER.net",
+      "title": "P569-M flood-control structures in Zambales damaged amid heavy rains",
+      "publishedAt": "2026-08-30T14:06:00+08:00",
+      "url": "https://newsinfo.inquirer.net/2295078/p569-m-flood-control-structures-in-zambales-damaged-amid-heavy-rains"
+    }
+  ],
+  "image": {
+    "kind": "open-license-photo",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/BarangaysTaliptip-Perez_BulaKan_July_7_2026_Bulacan_03.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:BarangaysTaliptip-Perez_BulaKan_July_7_2026_Bulacan_03.jpg",
+    "creator": "P1898",
+    "license": "Creative Commons Attribution 4.0 International",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "usageStatus": "CC BY 4.0 license verified on Wikimedia Commons. Used strictly as an illustrative file photograph of Philippine flood-control infrastructure; it does not depict the damaged structures in Zambales reported in this story.",
+    "credit": "P1898 / Wikimedia Commons, CC BY 4.0",
+    "caption": "Illustrative file photo: flood-control structures in Bulakan, Bulacan, photographed in July 2026. This image does not show the damaged Zambales sites covered in this report.",
+    "alt": "Illustrative file photograph of flood-control structures beside waterways in Bulakan, Bulacan",
+    "width": 3977,
+    "height": 2524,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-30T22:00:00+08:00",
+    "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:BarangaysTaliptip-Perez_BulaKan_July_7_2026_Bulacan_03.jpg",
+    "notes": [
+      "Verified ₱569.27M in reported flood-control damage and about ₱1.28B in estimated recovery, rehabilitation and reconstruction requirements from the August 30 report citing the combined DPWH district assessment.",
+      "Verified the report specifically lists totally damaged slope protection along the Tapuac River in Masinloc.",
+      "The story deliberately separates documented infrastructure damage from any claim that the damage caused the wider flooding; no such general causal finding was established by the source.",
+      "The source report's Botolan LGU photograph was not reused because redistribution rights were not independently verified. A separately licensed CC BY 4.0 flood-control file photo is used and clearly labeled illustrative."
+    ]
+  }
+}

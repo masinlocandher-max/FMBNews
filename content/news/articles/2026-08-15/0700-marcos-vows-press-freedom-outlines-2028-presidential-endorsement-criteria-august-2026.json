@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-15-0700",
+  "emailSubject": "FMB News | President Marcos Vows Press Freedom, Outlines 2028 Successor Criteria | August 15, 2026 | 7:00 AM PHT",
+  "slug": "marcos-vows-press-freedom-outlines-2028-presidential-endorsement-criteria-august-2026",
+  "headline": "Marcos Confirms 2028 Endorsement Plan; Brief Also Cites Press-Freedom Pledge at FOCAP",
+  "seoTitle": "Marcos Confirms 2028 Endorsement Plan at FOCAP",
+  "seoDescription": "President Marcos confirmed he intends to endorse a 2028 successor; an FMB News brief also attributes a press-freedom pledge and governance criteria to the same FOCAP appearance.",
+  "keywords": ["Marcos 2028 endorsement", "FOCAP", "press freedom Philippines"],
+  "category": "National",
+  "kicker": "Politics · Media freedom",
+  "deck": "At a foreign-correspondents event, President Marcos confirmed he plans to endorse a 2028 presidential candidate, while additional remarks in the newsroom brief remain source-attributed.",
+  "publishedAt": "2026-08-15T07:00:00+08:00",
+  "updatedAt": "2026-08-17T01:10:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [{"heading":"What happened","paragraphs":["Reuters independently reported that President Ferdinand Marcos Jr. confirmed on August 14 that he intends to endorse a candidate in the 2028 presidential election but had not yet chosen whom to support.","The FMB News August 15 morning brief additionally attributes a press-freedom pledge and criteria involving governance continuity and flood-control accountability to the FOCAP appearance. Those additional details are published as newsroom-brief claims because the exact PCO/PIA transcript was not independently reproduced in the final pass."]},{"heading":"Context","paragraphs":["The 2028 endorsement plan is independently supported. The additional press-freedom and detailed successor-criteria claims remain source-attributed."]},{"heading":"Why this matters","paragraphs":["Succession signals from a sitting president can shape coalition politics, while press-freedom commitments matter directly to journalists and public accountability."]},{"heading":"What to watch next","paragraphs":["Watch for the official FOCAP or PCO transcript and later administration statements clarifying endorsement criteria."]}],
+  "sources": [{"publisher":"Reuters","title":"Philippine president says he has yet to decide who to back as successor","publishedAt":"2026-08-14T14:29:00+08:00","url":"https://www.reuters.com/world/asia-pacific/philippine-president-says-he-has-yet-decide-who-back-successor-2026-08-14/"},{"publisher":"Philippine Information Agency","title":"Press releases portal cited by FMB News brief","publishedAt":"2026-08-15T05:00:00+08:00","url":"https://pia.gov.ph/press-releases/"}],
+  "image": {"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":null,"creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because no stable rights-verified current-event image was available.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying this source-attributed report.","alt":"FMB News editorial visual","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit": {"sourceCheckedAt":"2026-08-17T01:10:00+08:00","photoReferenceUrl":"https://www.reuters.com/world/asia-pacific/philippine-president-says-he-has-yet-decide-who-back-successor-2026-08-14/","notes":["No current-event image was used because the package did not expose a stable reusable original asset."]}
+}

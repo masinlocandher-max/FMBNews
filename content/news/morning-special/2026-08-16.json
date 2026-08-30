@@ -1,0 +1,95 @@
+{
+  "date": "2026-08-16",
+  "publishedAt": "2026-08-16T07:00:00+08:00",
+  "editionLabel": "Morning Special",
+  "title": "Pax Silica, Energy Infrastructure and Culture as a Living Experience",
+  "deck": "The August 16 Morning Special follows the geopolitical turn in AI policy, the strategic value of power infrastructure, Kadayawan’s heritage walk, community tourism in BARMM and Cinemalaya’s cultural reporting opportunity.",
+  "hero": {
+    "src": "/assets/images/news/new-clark-city-pax-silica-pia.jpg",
+    "alt": "Official briefing image connected to the proposed Pax Silica development in New Clark City",
+    "caption": "Official image connected to government briefings on the proposed Pax Silica development in New Clark City, used for this edition’s lead story on AI geopolitics and industrial policy.",
+    "credit": "Photo: PCO / RTVM via Philippine Information Agency",
+    "sourceUrl": "https://pia.gov.ph/news/bcda-says-pax-silica-project-could-generate-over-130000-high-quality-jobs/"
+  },
+  "stories": [
+    {
+      "id": "FMB-MS-20260816-001",
+      "kicker": "AI · Geopolitics · Philippines",
+      "headline": "Pax Silica Is Becoming a Geopolitical Choice, Not Just a Technology Program",
+      "deck": "A Reuters-reviewed draft U.S. message suggested partners could face pressure to choose between Washington’s AI framework and China’s competing initiative.",
+      "body": [
+        "Reuters reported on August 14 that the United States was preparing to tell countries involved in AI cooperation that participation in the U.S.-led Pax Silica framework may be incompatible with joining a competing Chinese initiative. The report was based on a U.S. official and an internal draft reviewed by Reuters.",
+        "The draft had not been publicly issued and Reuters said it could still be amended, making that distinction important. The Philippines joined Pax Silica in April and is linked to plans for an AI-focused industrial zone in the Luzon Economic Corridor.",
+        "The development changes the public-policy frame. What first appeared primarily as an investment and industrial-development initiative now sits more visibly inside U.S.-China strategic competition over AI models, semiconductors, critical minerals and supply chains.",
+        "For Philippine communications, the requirement is clarity about benefits, commitments and policy independence. The reputation risk is allowing the public conversation to remain at the level of jobs and investment while the strategic consequences become much larger."
+      ],
+      "sources": [
+        {"label": "Reuters — US to tell partners they must pick sides in AI race with China", "url": "https://www.reuters.com/world/china/us-tell-partners-they-must-pick-sides-ai-race-with-china-2026-08-14/"},
+        {"label": "Philippine News Agency — PH joins US-led Pax Silica", "url": "https://www.pna.gov.ph/articles/1273139"},
+        {"label": "Philippine Embassy in Washington — Philippines joins Pax Silica Initiative", "url": "https://philippineembassy-dc.org/philippines-joins-pax-silica-initiative/"}
+      ]
+    },
+    {
+      "id": "FMB-MS-20260816-002",
+      "kicker": "Energy · Digital economy",
+      "headline": "First Gen Deal Keeps Power Infrastructure Inside the Technology Story",
+      "deck": "The KKR proposal reinforced a larger point: AI and data centers make reliable electricity strategically valuable.",
+      "body": [
+        "KKR’s proposal involving an 8.43 percent stake in First Gen remained one of the week’s major Philippine business stories, with the potential transaction linked to a mandatory tender offer and possible voluntary delisting.",
+        "The significance extends beyond the power sector. Artificial intelligence, data centers and advanced manufacturing all depend on reliable electricity, which means energy companies increasingly sit inside the technology value chain.",
+        "That changes how investors and strategists should think about the AI economy. Some of its most important businesses may provide power, cooling, connectivity, land and financing rather than consumer-facing AI applications.",
+        "The reputation risk in large infrastructure transactions remains governance. Foreign investment can signal confidence, but public trust also depends on fair valuation, transparent process and clear treatment of minority shareholders."
+      ],
+      "sources": [
+        {"label": "Reuters — Philippines' First Gen eyes take-private deal from KKR at $2.7 billion valuation", "url": "https://www.reuters.com/world/asia-pacific/philippines-first-gen-eyes-take-private-deal-kkr-27-billion-valuation-2026-08-13/"}
+      ]
+    },
+    {
+      "id": "FMB-MS-20260816-003",
+      "kicker": "Kadayawan · Heritage · Tourism",
+      "headline": "Kadayawan’s Dayaw Art Walk Offers a Stronger Model for Heritage Tourism",
+      "deck": "A route linking galleries, food, historical areas and cultural venues turns heritage into a physical journey through Davao City.",
+      "body": [
+        "The Kadayawan Festival’s Dayaw Art Walk took place on August 15, with a route beginning at Poblacion Market and moving through historical and cultural sites before ending at the Cinematheque Center Davao.",
+        "The Philippine Information Agency reported that history lectures were incorporated along the route and that the activity connected galleries, food, cultural spaces and historic areas rather than presenting heritage as a single-stage attraction.",
+        "That format matters for place branding because it gives visitors a structured way to experience a city’s identity. A heritage walk can connect architecture, oral history, language, food, crafts and contemporary art without requiring a large new attraction.",
+        "The risk is turning living culture into scenery. Strong heritage tourism keeps communities, provenance and historical meaning visible so that the experience does not become a decorative version of local identity."
+      ],
+      "sources": [
+        {"label": "Philippine Information Agency — Kadayawan Festival to feature Art Walk event", "url": "https://pia.gov.ph/news/kadayawan-festival-to-feature-art-walk-event/"}
+      ]
+    },
+    {
+      "id": "FMB-MS-20260816-004",
+      "kicker": "Tourism · Community business · BARMM",
+      "headline": "BARMM Tourism Training Connects Local Identity With Market Readiness",
+      "deck": "Community-based tourism work is combining destination development with digital marketing, content creation, branding and sustainable packaging.",
+      "body": [
+        "The Tourism Promotions Board scheduled its Community-Based Tourism Marketing Enhancement program in BARMM from August 13 to 16 alongside the Regional Travel Fair.",
+        "The official program identified digital marketing, social-media management, content creation, product branding and sustainable packaging design among the capacity-building areas for community-based tourism members.",
+        "The sequence is strategically important. A community first needs a real experience or product, then clearer presentation and marketing, and finally stronger access to buyers and travelers. Branding works best when it amplifies something operationally real.",
+        "That framework can travel to other provinces. Zambales communities can use the same logic to turn cultural, marine and local-business assets into stronger tourism experiences while keeping community participation and benefit at the center."
+      ],
+      "sources": [
+        {"label": "Tourism Promotions Board — Community Based-Tourism Marketing Enhancement – BARMM", "url": "https://tpb.gov.ph/events/barmm/"},
+        {"label": "Tourism Promotions Board — 18th Regional Travel Fair", "url": "https://tpb.gov.ph/events/18th-regional-travel-fair/"}
+      ]
+    },
+    {
+      "id": "FMB-MS-20260816-005",
+      "kicker": "Cinemalaya · Film · Cultural journalism",
+      "headline": "Cinemalaya Shows Why Entertainment Reporting Can Become Cultural Journalism",
+      "deck": "Independent films create opportunities to explain the histories and communities behind the stories, not only review performances and awards.",
+      "body": [
+        "Cinemalaya 22 continued through August 18 with independent Filipino films exploring social, political and personal subjects under the festival theme Reel Reflections.",
+        "Among the films receiving international attention in 2026 was Carl Joseph Papa’s animated documentary 58th, which approaches the 2009 Maguindanao massacre through the family of a photojournalist whose death was never officially acknowledged because his body was not found.",
+        "The value for media is larger than entertainment coverage. Films like these create entry points into history, justice, identity, family and memory, allowing journalism to explain the real-world questions behind the screen.",
+        "A publication builds cultural authority when it connects a work of art with the context that gives it meaning. The risk is reducing significant films to red-carpet images, rankings or awards-night summaries."
+      ],
+      "sources": [
+        {"label": "Cultural Center of the Philippines — Cinemalaya 22", "url": "https://culturalcenter.gov.ph/events/2026-08-16/"},
+        {"label": "International Film Festival Rotterdam — 58th", "url": "https://iffr.com/en/iffr/2026/films/58th"}
+      ]
+    }
+  ]
+}

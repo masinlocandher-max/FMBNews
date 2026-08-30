@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-25-1900",
+  "emailSubject": "FMB News | 261 Filipino Seafarers Repatriated from Black Sea; Ortonio Declared Hostile Witness | August 25, 2026 | 7:00 PM PHT",
+  "slug": "impeachment-ortonio-hostile-witness",
+  "headline": "Impeachment Day 18: Ortonio Says VP Sara Knew, Authorized and Supervised Confidential Funds",
+  "seoTitle": "Impeachment Day 18: Ortonio Testifies on VP Sara's Role | FMB News",
+  "seoDescription": "OVP Assistant Secretary Lemuel Ortonio testified on August 25 that Vice President Sara Duterte knew, authorized and supervised the handling of OVP confidential funds.",
+  "keywords": ["Sara Duterte impeachment Day 18", "Lemuel Ortonio testimony", "OVP confidential funds"],
+  "category": "National",
+  "kicker": "Impeachment · Governance",
+  "deck": "The hostile witness testified that the Vice President knew about, authorized and supervised confidential-fund handling from request through liquidation; the defense retains the right to challenge the evidence.",
+  "publishedAt": "2026-08-25T19:00:00+08:00",
+  "updatedAt": "2026-08-26T07:20:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading": "What happened", "paragraphs": ["Day 18 of Vice President Sara Duterte's impeachment trial put Office of the Vice President confidential-fund procedures under sustained scrutiny as Assistant Secretary and Assistant Chief of Staff Lemuel Ortonio testified as a hostile witness.", "According to Philippine News Agency reporting, Ortonio told the impeachment court that Duterte knew about, authorized and supervised the handling of OVP confidential funds from their request through release, spending and liquidation."]},
+    {"heading": "What the testimony established", "paragraphs": ["Ortonio also confirmed that the OVP's request for confidential funds was submitted without supporting documents detailing the planned confidential activities at the time of the request. He testified about the movement and liquidation of the funds and the office's responses to audit findings.", "House prosecutors described the testimony as material to their allegation of irregularities. Those assertions remain part of the prosecution case and are not a final finding of liability against the Vice President."]},
+    {"heading": "Context", "paragraphs": ["The testimony followed the court's decision earlier on August 25 to declare Ortonio a hostile witness, allowing prosecutors to use leading questions. The proceeding concerns allegations over the handling of confidential funds at the OVP and Department of Education."]},
+    {"heading": "Why this matters", "paragraphs": ["The testimony goes directly to the prosecution's effort to establish who knew about and controlled the use of confidential public funds. The impeachment court must still weigh the testimony, documentary record and defense response before reaching any finding."]},
+    {"heading": "What to watch next", "paragraphs": ["The impeachment court is expected to continue examining testimony and documentary evidence. The defense retains the opportunity to challenge the prosecution's interpretation of the records and present its own evidence under the court's rules."]}
+  ],
+  "sources": [
+    {"publisher": "Philippine News Agency", "title": "Ortonio: VP Sara knew, approved, supervised handling of secret funds", "publishedAt": "2026-08-25T18:42:00+08:00", "url": "https://www.pna.gov.ph/articles/1282623"},
+    {"publisher": "GMA News", "title": "Live updates: Sara Duterte impeachment trial, August 25, 2026", "publishedAt": "2026-08-25T07:21:00+08:00", "url": "https://www.gmanetwork.com/news/topstories/nation/999701/live-updates-sara-duterte-impeachment-trial-august-25-2026/story/"},
+    {"publisher": "House of Representatives", "title": "Luistro: Ortonio testimony ‘very material,’ bolsters confidential fund irregularities", "publishedAt": "2026-08-25T16:45:28+08:00", "url": "https://www.congress.gov.ph/media/press-releases/10079"}
+  ],
+  "image": {"kind": "editorial-fallback", "url": "/assets/images/news/fmb-news-editorial-fallback.svg", "sourceUrl": null, "creator": "FMB News", "license": "FMB-owned editorial visual", "licenseUrl": "https://www.francinemariebautista.com/news/", "usageStatus": "FMB-owned editorial visual used because publication rights for the recommended legislative photograph could not be independently verified from a stable original asset page.", "credit": "FMB News editorial visual", "caption": "FMB News editorial visual accompanying Day 18 impeachment-trial coverage; it does not depict the actual proceedings.", "alt": "FMB News editorial visual for Day 18 of the Senate impeachment trial", "width": 1200, "height": 675, "focusX": 50, "focusY": 50},
+  "audit": {"sourceCheckedAt": "2026-08-26T07:20:00+08:00", "photoReferenceUrl": "https://www.pna.gov.ph/articles/1282623", "notes": ["Updated the existing August 25 canonical route because the August 26 bulletin explicitly marked this story as an update.", "Core testimony independently confirmed by same-day PNA, GMA and House records.", "Omitted the bulletin's unsupported verbatim quotation, exact adjournment narrative and claimed next-witness schedule.", "Article distinguishes testimony and prosecution allegations from adjudicated findings."]}
+}

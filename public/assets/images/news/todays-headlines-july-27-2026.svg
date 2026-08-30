@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="864" viewBox="0 0 1536 864" role="img" aria-labelledby="title desc">
+  <title id="title">Today's Headlines, 27 July 2026</title>
+  <desc id="desc">Original FMB News Center red, white and black editorial graphic representing seven major Philippine and global headlines.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#f3f4f6"/>
+    </linearGradient>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="2" fill="#d0001b" opacity="0.18"/>
+    </pattern>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#101114" flood-opacity="0.13"/>
+    </filter>
+  </defs>
+  <rect width="1536" height="864" fill="url(#paper)"/>
+  <path d="M0 0h256l-84 864H0z" fill="#d0001b"/>
+  <path d="M1536 0h-150l-160 864h310z" fill="#101114"/>
+  <rect x="1010" y="0" width="526" height="864" fill="url(#dots)"/>
+  <g transform="translate(106 88)">
+    <rect width="114" height="80" fill="#101114"/>
+    <text x="57" y="51" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">FMB</text>
+    <text x="0" y="121" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="800" letter-spacing="2">NEWS CENTER</text>
+  </g>
+  <g transform="translate(330 112)">
+    <text x="0" y="0" fill="#d0001b" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="900" letter-spacing="4">DAILY BRIEFING · 27 JULY 2026</text>
+    <text x="0" y="112" fill="#101114" font-family="Arial, Helvetica, sans-serif" font-size="104" font-weight="900" letter-spacing="-6">TODAY'S</text>
+    <text x="0" y="214" fill="#d0001b" font-family="Georgia, 'Times New Roman', serif" font-size="118" font-weight="700" letter-spacing="-5">Headlines</text>
+    <rect x="0" y="254" width="164" height="10" fill="#d0001b"/>
+    <text x="0" y="310" fill="#4f5661" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="600">Seven verified stories. Philippine impact. Global context.</text>
+  </g>
+  <g transform="translate(330 500)" filter="url(#shadow)">
+    <rect width="844" height="244" rx="2" fill="#ffffff" stroke="#d9dde3"/>
+    <rect width="12" height="244" fill="#d0001b"/>
+    <g font-family="Arial, Helvetica, sans-serif">
+      <g transform="translate(46 42)"><circle cx="22" cy="22" r="22" fill="#d0001b"/><text x="22" y="30" text-anchor="middle" fill="#fff" font-size="21" font-weight="900">1</text><text x="62" y="29" fill="#101114" font-size="22" font-weight="800">Security alerts near DOJ and Senate</text></g>
+      <g transform="translate(46 103)"><circle cx="22" cy="22" r="22" fill="#101114"/><text x="22" y="30" text-anchor="middle" fill="#fff" font-size="21" font-weight="900">2</text><text x="62" y="29" fill="#101114" font-size="22" font-weight="800">33 Filipino seafarers return home</text></g>
+      <g transform="translate(46 164)"><circle cx="22" cy="22" r="22" fill="#d0001b"/><text x="22" y="30" text-anchor="middle" fill="#fff" font-size="21" font-weight="900">3</text><text x="62" y="29" fill="#101114" font-size="22" font-weight="800">Senate sets cost-of-living agenda</text></g>
+      <g transform="translate(466 42)"><circle cx="22" cy="22" r="22" fill="#101114"/><text x="22" y="30" text-anchor="middle" fill="#fff" font-size="21" font-weight="900">4</text><text x="62" y="29" fill="#101114" font-size="22" font-weight="800">Arrests disputed after SONA rallies</text></g>
+      <g transform="translate(466 103)"><circle cx="22" cy="22" r="22" fill="#d0001b"/><text x="22" y="30" text-anchor="middle" fill="#fff" font-size="21" font-weight="900">5</text><text x="62" y="29" fill="#101114" font-size="22" font-weight="800">Waste-law overhaul proposed</text></g>
+      <g transform="translate(466 164)"><circle cx="22" cy="22" r="22" fill="#101114"/><text x="22" y="30" text-anchor="middle" fill="#fff" font-size="21" font-weight="900">6</text><text x="62" y="29" fill="#101114" font-size="22" font-weight="800">Iran pause and European wildfires</text></g>
+    </g>
+  </g>
+  <g transform="translate(1260 598)">
+    <circle cx="86" cy="86" r="86" fill="#d0001b"/>
+    <circle cx="86" cy="86" r="62" fill="none" stroke="#fff" stroke-width="3" opacity="0.7"/>
+    <text x="86" y="76" text-anchor="middle" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="900">07</text>
+    <text x="86" y="111" text-anchor="middle" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" letter-spacing="3">STORIES</text>
+  </g>
+  <text x="330" y="813" fill="#6b7280" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" letter-spacing="2">FILIPINO ANG MISMONG BALITA. · CONTEXT BEFORE NOISE.</text>
+</svg>

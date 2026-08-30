@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-14-1300",
+  "emailSubject": "FMB News | MMDA Suspends Number Coding Scheme as Monsoon Floods Persist | August 14, 2026 | 1:00 PM PHT",
+  "slug": "iloilo-records-10-leptospirosis-deaths-84-cases",
+  "headline": "Iloilo Records 10 Leptospirosis Deaths and 84 Cases Through August 8",
+  "seoTitle": "Iloilo Records 10 Leptospirosis Deaths, 84 Cases in 2026",
+  "seoDescription": "Iloilo province recorded 84 leptospirosis cases and 10 deaths from January through August 8, according to the provincial health office.",
+  "keywords": ["Iloilo leptospirosis", "leptospirosis deaths 2026", "flood health warning", "Iloilo Provincial Health Office"],
+  "category": "Health",
+  "kicker": "Iloilo · Public health · Flood safety",
+  "deck": "The provincial health office said Iloilo logged 84 cases from January through August 8, including 10 deaths, and warned residents to avoid contaminated floodwater.",
+  "publishedAt": "2026-08-14T13:00:00+08:00",
+  "updatedAt": "2026-08-14T18:30:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Iloilo province recorded 84 leptospirosis cases from January through August 8, including 10 deaths, the Provincial Health Office said in a Philippine News Agency report published Friday.",
+        "Cases were 16 percent lower than the 100 logged in the comparable period last year, but deaths increased from five to 10. The health office said 32 of this year's cases were agriculture-related, pointing to exposure risks beyond urban flooding."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "Leptospirosis is a bacterial infection that can be acquired through water or soil contaminated with the urine of infected animals, especially when the bacteria enter through cuts, abrasions or mucous membranes.",
+        "The figures are for Iloilo province, not a combined national or multi-region total. This report corrects the delivery email's unsupported description of 78 hospitalizations across Western Visayas, Central Luzon and Metro Manila."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "The rise in deaths despite fewer reported cases underscores the importance of early medical assessment after risky exposure or the onset of symptoms. Farmers, cleanup workers and residents who must cross floodwater can face repeated exposure."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Residents should avoid wading in floodwater where possible, use protective boots and gloves when exposure cannot be avoided, wash exposed skin promptly, and seek medical advice after possible exposure or if symptoms develop.",
+        "The Department of Health warns that doxycycline requires a prescription and should not be taken without medical guidance."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Philippine News Agency",
+      "title": "Ilonggos warned vs leptospirosis as 10 deaths recorded in 2026",
+      "publishedAt": "2026-08-14T12:00:00+08:00",
+      "dateLabel": "Published August 14, 2026",
+      "url": "https://www.pna.gov.ph/articles/1281870"
+    },
+    {
+      "publisher": "Department of Health – Cordillera Center for Health Development",
+      "title": "Iwasan ang Leptospirosis",
+      "publishedAt": "2026-08-14T00:00:00+08:00",
+      "dateLabel": "Official guidance accessed August 14, 2026",
+      "url": "https://caro.doh.gov.ph/iwasan-ang-leptospirosis-2/"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "sourceUrl": null,
+    "creator": "FMB News",
+    "license": "FMB-owned editorial visual",
+    "licenseUrl": "https://www.francinemariebautista.com/news/",
+    "usageStatus": "FMB-owned editorial visual used because publication rights for the recommended news photograph could not be independently verified.",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying the Iloilo leptospirosis report. It does not depict a particular patient or location.",
+    "alt": "FMB News editorial visual for the Iloilo leptospirosis report",
+    "width": 1200,
+    "height": 675,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-14T18:30:00+08:00",
+    "photoReferenceUrl": "https://www.pna.gov.ph/articles/1281870",
+    "notes": [
+      "Corrected the email's 78-hospitalization multi-region claim to the PNA-reported Iloilo total of 84 cases and 10 deaths through August 8.",
+      "Used the FMB-owned fallback because the recommended publisher photograph did not include independently verifiable reuse permission."
+    ]
+  }
+}

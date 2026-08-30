@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "fmb-news-2026-08-07-1800-pht",
+  "emailSubject": "FMB News | Philippine Q2 2026 GDP Growth Slows to 2.3% Amid Construction Contraction | August 7, 2026 | 6:00 PM PHT",
+  "slug": "ocd-reports-39879-families-affected-as-dolphin-reenters-monitoring-domain",
+  "headline": "OCD Reports 39,879 Families Affected as Dolphin Reenters PAGASA Monitoring Domain",
+  "category": "Environment",
+  "kicker": "Philippines · Severe weather · Public safety",
+  "deck": "The OCD reported 132,956 people affected by Luis, Maymay and the habagat as Typhoon Dolphin reentered PAGASA's monitoring domain.",
+  "publishedAt": "2026-08-07T18:00:00+08:00",
+  "updatedAt": "2026-08-07T21:47:05.983+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The combined effects of Tropical Cyclones Luis and Maymay and the southwest monsoon affected 39,879 families, or 132,956 people, according to the Office of Civil Defense's August 7 situation report.",
+        "At 2:00 PM, Typhoon Dolphin reentered PAGASA's Tropical Cyclone Information Domain, the wider monitoring area used for systems outside the Philippine Area of Responsibility."
+      ]
+    },
+    {
+      "heading": "What we know",
+      "paragraphs": [
+        "The affected population was reported across six regions: Ilocos Region, Cagayan Valley, Central Luzon, Bicol Region, Zamboanga Peninsula and the Cordillera Administrative Region.",
+        "Four deaths and one injury were reported. At the time of the report, 6,215 people from 2,021 families were staying in 61 evacuation centers.",
+        "Dolphin remained outside the Philippine Area of Responsibility when the OCD figures were reported. Its movement was being monitored because large offshore systems can influence regional weather and the southwest monsoon even without making Philippine landfall."
+      ]
+    },
+    {
+      "heading": "Background",
+      "paragraphs": [
+        "Successive weather disturbances and the southwest monsoon brought flooding, landslides and transport disruption to several parts of the country. Maymay later weakened and dissipated as a low-pressure area, while authorities continued monitoring rainfall and affected communities."
+      ]
+    },
+    {
+      "heading": "What remains unclear",
+      "paragraphs": [
+        "Damage assessments, including agricultural and infrastructure losses, were still being consolidated. The reported casualty and affected-population totals may change as local reports are validated."
+      ]
+    },
+    {
+      "heading": "Why this matters to Filipinos",
+      "paragraphs": [
+        "Flooding and landslides can isolate communities, interrupt classes and work, damage crops and roads, and force families into evacuation centers. Accurate figures help direct relief supplies and public-safety warnings."
+      ]
+    },
+    {
+      "heading": "What happens next",
+      "paragraphs": [
+        "The OCD, NDRRMC and local governments will continue validating damage and casualty reports and supporting affected communities. PAGASA will continue monitoring Dolphin and the southwest monsoon for changes that could affect Philippine weather."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Philippine News Agency",
+      "title": "39.8K families affected by adverse weather systems - OCD",
+      "publishedAt": "2026-08-07T16:59:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1281311"
+    },
+    {
+      "publisher": "BusinessWorld Online",
+      "title": "Four deaths, nearly 133,000 people affected by recent bad weather — OCD",
+      "publishedAt": "2026-08-07T17:28:00+08:00",
+      "url": "https://bworldonline.com/the-nation/2026/08/07/768823/four-deaths-nearly-133000-people-affected-by-recent-bad-weather-ocd/"
+    },
+    {
+      "publisher": "GMA News Online",
+      "title": "4 reported dead due to Luis, Maymay, Habagat — OCD",
+      "publishedAt": "2026-08-07T08:34:00+08:00",
+      "url": "https://www.gmanetwork.com/news/topstories/nation/997663/ocd-4-reported-dead-due-to-luis-maymay-habagat/story/"
+    },
+    {
+      "publisher": "Office of Civil Defense",
+      "title": "Typhoon Dolphin reenters PAGASA monitoring domain",
+      "publishedAt": "2026-08-07T14:00:00+08:00",
+      "url": "https://www.facebook.com/civildefensePH/posts/as-of-200-pm-today-07-august-2026-the-typhoon-with-an-international-name-dolphin/1568302125339553/"
+    }
+  ],
+  "image": {
+    "kind": "open-license-photo",
+    "url": "/assets/images/news/2026-08-07/flood-response.webp",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flood_Rescue_Operation_(52461501731).jpg",
+    "creator": "Bro. Jeffrey Pioquinto, SJ",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "usageStatus": "Wikimedia Commons file verified as CC BY 2.0; locally hosted crop published with creator, source, and license credit.",
+    "credit": "Photo: Bro. Jeffrey Pioquinto, SJ / Wikimedia Commons · CC BY 2.0",
+    "caption": "File photo of a flood rescue operation in the Philippines. It does not depict the August 7, 2026 affected communities.",
+    "alt": "Responders and residents during a flood rescue operation in a Philippine neighborhood"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-07T21:47:05.983+08:00",
+    "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:Flood_Rescue_Operation_(52461501731).jpg",
+    "notes": [
+      "Google redirect URLs were replaced with direct publisher URLs.",
+      "The email's 39,812-family figure was corrected to 39,879 families and 132,956 people.",
+      "Evacuation data was corrected to 6,215 people from 2,021 families in 61 evacuation centers, and the affected regions were corrected to the six regions listed by OCD.",
+      "A relevant CC BY 2.0 file photo from Wikimedia Commons is locally hosted with visible creator, source, and license credit."
+    ]
+  }
+}

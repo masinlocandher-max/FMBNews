@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-11-1900",
+  "emailSubject": "FMB News | Senate Resumes VP Sara Impeachment Trial as Defense Contests Parallel Charges | August 11, 2026 | 7:00 PM PHT",
+  "slug": "habagat-expected-to-weaken-western-luzon-rain-advisories",
+  "headline": "Habagat Expected to Weaken, but Rain and Flood Risks Persist",
+  "seoTitle": "Habagat Expected to Weaken as Rain and Flood Risks Persist",
+  "seoDescription": "PAGASA said the southwest monsoon is expected to weaken, but rain-related flood and landslide risks remain in areas affected by persistent wet conditions.",
+  "keywords": ["Habagat August 11 2026", "PAGASA weather update", "Western Luzon rain", "flood risk Philippines"],
+  "category": "Environment",
+  "kicker": "Weather · Habagat · Flood preparedness",
+  "deck": "PAGASA said the southwest monsoon is expected to weaken, while communities in rain-affected areas should continue monitoring flood and landslide advisories.",
+  "publishedAt": "2026-08-11T19:00:00+08:00",
+  "updatedAt": "2026-08-11T19:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading": "What happened", "paragraphs": ["PAGASA said the southwest monsoon, or Habagat, was expected to weaken, according to the August 11 weather report cited in the FMB News bulletin.", "The expected weakening does not mean rain hazards have ended. Areas that have already received repeated rainfall can remain vulnerable to flooding, rising waterways and rain-induced landslides even as the broader monsoon pattern changes."]},
+    {"heading": "Context", "paragraphs": ["Habagat commonly brings moist southwesterly winds and periods of rain to western sections of the Philippines. Local impacts vary with the position and strength of the monsoon flow, terrain, previous rainfall and drainage conditions.", "FMB News is using the cautious formulation “expected to weaken” rather than describing the weakening as already complete."]},
+    {"heading": "Why this matters to Filipinos", "paragraphs": ["Flood and landslide risk can persist after heavy rain because rivers, reservoirs and soil conditions respond over time. Residents in repeatedly affected communities still need current location-specific advisories even when the wider weather system is forecast to ease."]},
+    {"heading": "What to watch next", "paragraphs": ["Continue checking PAGASA rainfall and weather bulletins and local disaster-office advisories. The important next signals are changes in rainfall warnings, river or dam levels, and any evacuation instructions for flood- or landslide-prone communities."]}
+  ],
+  "sources": [
+    {"publisher": "Philippine Daily Inquirer", "title": "PAGASA: Habagat to continue bringing rains but expected to weaken", "publishedAt": "2026-08-11T17:00:00+08:00", "url": "https://newsinfo.inquirer.net/2281937/pagasa-habagat-to-continue-bringing-rains-but-expected-to-weaken"},
+    {"publisher": "PAGASA", "title": "Official weather forecasts and advisories", "publishedAt": "2026-08-11T17:00:00+08:00", "dateLabel": "Accessed August 11, 2026", "url": "https://www.pagasa.dost.gov.ph/"}
+  ],
+  "image": {"kind": "open-license-photo", "url": "/assets/images/news/2026-08-09/la-mesa-dam-critical-level.webp", "sourceUrl": "https://commons.wikimedia.org/wiki/File:La_Mesa_Dam_-_panoramio.jpg", "creator": "dnumde", "license": "CC BY-SA 3.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/", "usageStatus": "Reuse permitted under CC BY-SA 3.0; the locally hosted archive photograph retains the exact creator attribution and license.", "credit": "Photo: dnumde · CC BY-SA 3.0", "caption": "Archive photograph of La Mesa Dam in 2008. It does not depict weather or water conditions on August 11, 2026.", "alt": "Archive view across La Mesa Dam and reservoir", "width": 1600, "height": 900, "focusX": 50, "focusY": 50},
+  "audit": {"sourceCheckedAt": "2026-08-11T22:47:00+08:00", "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:La_Mesa_Dam_-_panoramio.jpg", "notes": ["The article says Habagat is expected to weaken, not that weakening is already complete.", "The archive dam photograph is relevant to continuing rainfall and flood preparedness and is explicitly labeled as archival."]}
+}

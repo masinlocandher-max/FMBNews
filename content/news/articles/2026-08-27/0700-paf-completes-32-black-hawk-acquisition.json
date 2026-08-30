@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-27-0700",
+  "emailSubject": "FMB News | PAF Completes 32 Black Hawk Fleet; Senate Panel Backs Age 16 Social Media Cap | August 27, 2026 | 7:00 AM PHT",
+  "slug": "paf-completes-32-black-hawk-acquisition",
+  "headline": "PAF Completes 32-Helicopter Black Hawk Acquisition with Final Seven Aircraft",
+  "seoTitle": "PAF Completes 32-Helicopter Black Hawk Acquisition | FMB News",
+  "seoDescription": "The Philippine Air Force formally accepted the final seven aircraft in its 32-helicopter S-70i Black Hawk acquisition at Villamor Air Base on August 26.",
+  "keywords": ["Philippine Air Force Black Hawk acquisition", "32 S-70i Black Hawk helicopters", "PAF modernization August 2026"],
+  "category": "National",
+  "kicker": "Defense · Air Mobility",
+  "deck": "The final seven S-70i helicopters complete the 32-aircraft acquisition and bring the PAF's reported Black Hawk inventory to 47 aircraft.",
+  "publishedAt": "2026-08-27T07:00:00+08:00",
+  "updatedAt": "2026-08-28T00:59:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["The Philippine Air Force formally accepted the final seven S-70i Black Hawk helicopters under its 32-unit acquisition program during an acceptance, turnover and blessing ceremony at Colonel Jesus Villamor Air Base in Pasay City on August 26.","The aircraft were acquired from Polish manufacturer PZL Mielec, a Lockheed Martin company. Completion of the latest order brings the PAF's reported S-70i Black Hawk inventory to 47 aircraft."]},
+    {"heading":"Context","paragraphs":["The acquisition expands the PAF's rotary-wing air-mobility capacity for troop and cargo transport, medical evacuation, search and rescue, humanitarian assistance and disaster response.","The Philippines is now reported as the world's largest operator of the S-70i variant. The 32-aircraft order supplements an earlier Black Hawk acquisition rather than representing the entire fleet."]},
+    {"heading":"Why this matters","paragraphs":["Additional operational aircraft can allow the PAF to sustain more simultaneous airlift and relief missions across an archipelago frequently affected by typhoons, earthquakes and other emergencies. Fleet size alone does not guarantee readiness, which also depends on trained crews, maintenance and available spare parts."]},
+    {"heading":"What to watch next","paragraphs":["The practical impact of the completed acquisition will depend on aircraft availability, crew training and long-term maintenance support as the PAF integrates the final seven helicopters into regular operations."]}
+  ],
+  "sources": [
+    {"publisher":"Inquirer.net","title":"PAF receives last 7 Black Hawks, completes 32-helicopter acquisition","publishedAt":"2026-08-26T21:33:00+08:00","url":"https://newsinfo.inquirer.net/2293220/paf-receives-last-7-black-hawks-completes-32-helicopter-acquisition"},
+    {"publisher":"Philippine Canadian Inquirer","title":"PAF completes 32-helicopter Black Hawk acquisition with final 7 units","publishedAt":"2026-08-27T07:00:00+08:00","url":"https://canadianinquirer.net/2026/08/27/paf-completes-32-helicopter-black-hawk-acquisition-with-final-7-units/"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://newsinfo.inquirer.net/2293220/paf-receives-last-7-black-hawks-completes-32-helicopter-acquisition","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because the bulletin supplied only source references and no stable original photograph for repository ingestion.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the report on the Philippine Air Force Black Hawk acquisition.","alt":"FMB News editorial visual for the Philippine Air Force Black Hawk acquisition","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-08-28T00:59:00+08:00","photoReferenceUrl":"https://newsinfo.inquirer.net/2293220/paf-receives-last-7-black-hawks-completes-32-helicopter-acquisition","notes":["Corrected the ceremony location from Clark Air Base to Colonel Jesus Villamor Air Base in Pasay City.","Updated the reported total S-70i inventory to 47 aircraft; the approved 7 PM email's claim of 48 total aircraft conflicts with current same-day reporting.","Kept this as an update to the existing canonical August 27 Black Hawk article rather than creating a duplicate 7 PM story."]}
+}

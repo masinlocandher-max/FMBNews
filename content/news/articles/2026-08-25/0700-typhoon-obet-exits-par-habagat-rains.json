@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-25-0700",
+  "emailSubject": "FMB News | Typhoon Obet Exits PAR; DBM Releases ₱1-B for AI Flood Forecasting | August 25, 2026 | 7:00 AM PHT",
+  "slug": "typhoon-obet-exits-par-habagat-rains",
+  "headline": "PAGASA Ends NCR Rainfall Warning as Habagat Risk Persists in Western Luzon",
+  "seoTitle": "NCR Rain Warning Ends; Western Luzon Habagat Risk Persists | FMB News",
+  "seoDescription": "PAGASA ended its NCR heavy-rainfall warning late August 25 while continuing to flag Habagat rain risk over western and northern Luzon.",
+  "keywords": ["NCR rainfall warning terminated August 25 2026", "Habagat Western Luzon", "Zambales Bataan rainfall"],
+  "category": "Environment",
+  "kicker": "Weather · Public Safety",
+  "deck": "The final NCR warning reported light to moderate rain before termination, while PAGASA continued to flag monsoon hazards in parts of western and northern Luzon.",
+  "publishedAt": "2026-08-25T07:00:00+08:00",
+  "updatedAt": "2026-08-26T07:20:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading": "What happened", "paragraphs": ["PAGASA's National Capital Region regional office terminated its heavy-rainfall warning late Tuesday, August 25, after light to moderate rain was observed over parts of its forecast area.", "The termination ended that warning cycle; it did not guarantee rain-free conditions or remove the possibility of localized thunderstorms."]},
+    {"heading": "Where rain risk remained", "paragraphs": ["Earlier Tuesday, PAGASA placed Zambales and parts of Bataan under a Yellow rainfall warning because flooding was possible in vulnerable areas.", "PAGASA's August 25 weather advisory also continued to flag heavy-rainfall risk from the Southwest Monsoon over western and northern Luzon into August 26. The agency's forecasts warned of possible flooding and rain-induced landslides in susceptible communities."]},
+    {"heading": "Context", "paragraphs": ["Typhoon Obet had already moved outside the Philippine Area of Responsibility, but the southwest monsoon remained the main rain-producing system over Luzon. A cyclone leaving PAR does not automatically end monsoon, marine or localized flood hazards."]},
+    {"heading": "Why this matters", "paragraphs": ["Ending one regional warning cycle can signal improving conditions, but communities west of Metro Manila may still face flooding or landslide risk from the same monsoon system. Current local warnings remain more useful than a previous bulletin's status."]},
+    {"heading": "What to watch next", "paragraphs": ["Rainfall warnings can change within hours. Residents should rely on the latest PAGASA regional advisories and local disaster-office instructions, especially in communities with saturated ground, waterways or landslide exposure."]}
+  ],
+  "sources": [
+    {"publisher": "DOST-PAGASA NCR-PRSD", "title": "National Capital Region rainfall warning status", "publishedAt": "2026-08-25T23:00:00+08:00", "url": "https://www.pagasa.dost.gov.ph/regional-forecast/ncrprsd"},
+    {"publisher": "DOST-PAGASA", "title": "Weather Advisory No. 12 for the Southwest Monsoon", "publishedAt": "2026-08-25T17:00:00+08:00", "url": "https://pubfiles.pagasa.dost.gov.ph/tamss/weather/advisory.pdf"},
+    {"publisher": "GMA News", "title": "PAGASA: 2 cyclones monitored outside PAR", "publishedAt": "2026-08-25T12:00:00+08:00", "url": "https://www.gmanetwork.com/news/weather/content/999732/pagasa-2-cyclones-monitored-outside-par/story/"}
+  ],
+  "image": {"kind": "editorial-fallback", "url": "/assets/images/news/fmb-news-editorial-fallback.svg", "sourceUrl": null, "creator": "FMB News", "license": "FMB-owned editorial visual", "licenseUrl": "https://www.francinemariebautista.com/news/", "usageStatus": "FMB-owned editorial visual used because publication rights for the recommended traffic photograph could not be independently verified from a stable original asset page.", "credit": "FMB News editorial visual", "caption": "FMB News editorial visual accompanying the August 26 Habagat update; it does not depict actual road or weather conditions.", "alt": "FMB News editorial visual for the August 26 Habagat weather update", "width": 1200, "height": 675, "focusX": 50, "focusY": 50},
+  "audit": {"sourceCheckedAt": "2026-08-26T07:20:00+08:00", "photoReferenceUrl": "https://www.pna.gov.ph/categories/national", "notes": ["Updated the existing Obet-Habagat canonical route because the August 26 bulletin explicitly marked this story as an update.", "Confirmed the NCR warning termination and continuing western Luzon rain risk through current PAGASA records.", "Omitted unsupported claims about 1,200 returning families, river thresholds, evacuation-center demobilization and a fixed three-day 50-to-100-millimeter total."]}
+}

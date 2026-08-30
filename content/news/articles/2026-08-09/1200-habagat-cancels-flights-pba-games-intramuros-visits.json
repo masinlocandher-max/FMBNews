@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "fmb-news-2026-08-09-1200-pht",
+  "emailSubject": "FMB News | La Mesa Dam Breaches Critical Water Level Amid Habagat Rains | August 9, 2026 | 12:00 PM PHT",
+  "slug": "habagat-cancels-flights-pba-games-intramuros-visits",
+  "headline": "Habagat Cancels Clark-Masbate Flights, PBA Games and Intramuros Visits",
+  "category": "Community",
+  "kicker": "Weather disruption · Travel · Public events",
+  "deck": "Two Cebgo flights, a PBA doubleheader and visits to major Intramuros attractions were canceled or postponed on Sunday amid persistent monsoon rain.",
+  "publishedAt": "2026-08-09T12:00:00+08:00",
+  "updatedAt": "2026-08-09T13:24:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Persistent southwest monsoon rain disrupted flights, professional basketball games and visits to historic sites on August 9. Cebgo canceled flights DG6171 from Clark to Masbate and DG6172 from Masbate to Clark, according to a list updated by GMA News at 11 a.m."
+      ]
+    },
+    {
+      "heading": "What we know",
+      "paragraphs": [
+        "The canceled outbound Clark-Masbate flight affected 42 passengers, while 71 passengers were affected on the return leg.",
+        "The Philippine Basketball Association postponed its Phoenix-versus-Rain or Shine and Barangay Ginebra-versus-Blackwater games. The league said a revised schedule would be announced.",
+        "The Intramuros Administration temporarily closed Fort Santiago, Baluarte de San Diego, Casa Manila Museum and Museo de Intramuros and canceled scheduled events because of the weather."
+      ]
+    },
+    {
+      "heading": "Background",
+      "paragraphs": [
+        "The southwest monsoon, locally called the habagat, had brought persistent rain and flooding risks across parts of Luzon, prompting agencies and event organizers to revise operations for public safety."
+      ]
+    },
+    {
+      "heading": "What remains unclear",
+      "paragraphs": [
+        "The PBA had not announced replacement dates, and Intramuros reopening details were not yet final at publication time. Airline disruption lists can change, so the two flights in this report should not be treated as a complete list for the rest of the day."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "The disruptions affect passengers, ticket holders and visitors across transport, sports and tourism. Current advisories help people avoid unnecessary travel during severe weather."
+      ]
+    },
+    {
+      "heading": "What happens next",
+      "paragraphs": [
+        "Passengers should confirm flight status directly with their airline before traveling. PBA ticket holders and Intramuros visitors should monitor the organizations' official channels for replacement schedules and reopening notices."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "GMA News Online",
+      "title": "LIST: Canceled flights on Sunday, August 9, 2026",
+      "publishedAt": "2026-08-09T11:00:00+08:00",
+      "url": "https://www.gmanetwork.com/news/serbisyopubliko/transportation/997880/list-canceled-flights-on-sunday-august-9-2026/story/"
+    },
+    {
+      "publisher": "GMA News Online",
+      "title": "PBA postpones August 9, 2026 games due to inclement weather",
+      "publishedAt": "2026-08-09T10:00:00+08:00",
+      "url": "https://www.gmanetwork.com/news/sports/basketball/997874/pba-postpones-august-9-2026-games-due-to-inclement-weather/story/"
+    },
+    {
+      "publisher": "GMA News Online",
+      "title": "Intramuros sites closed, events canceled due to bad weather on August 9, 2026",
+      "publishedAt": "2026-08-09T11:00:00+08:00",
+      "url": "https://www.gmanetwork.com/news/topstories/metro/997883/intramuros-sites-closed-events-canceled-due-to-bad-weather-on-august-9-2026/story/"
+    }
+  ],
+  "image": {
+    "kind": "public-domain-photo",
+    "url": "/assets/images/news/2026-08-09/clark-airport-weather-disruptions.webp",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clark_International_Airport,_Clark_Freeport_Zone,_Pampanga,_Philippines.jpg",
+    "creator": "Pancit Canton Media",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "usageStatus": "Reuse permitted under CC0 1.0; locally hosted crop retains creator credit as an editorial courtesy.",
+    "credit": "Photo: Pancit Canton Media · CC0 1.0",
+    "caption": "Archive photograph of Clark International Airport in 2012. It does not depict conditions on August 9, 2026.",
+    "alt": "Aircraft on the apron at Clark International Airport",
+    "width": 1600,
+    "height": 900,
+    "focusX": 50,
+    "focusY": 52
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-09T13:24:00+08:00",
+    "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:Clark_International_Airport,_Clark_Freeport_Zone,_Pampanga,_Philippines.jpg",
+    "notes": [
+      "The bulletin identified Clark-Caticlan flights, but the verified cancellation list showed Clark-Masbate flights DG6171 and DG6172; the route was corrected.",
+      "The article distinguishes confirmed 11 a.m. cancellations from possible later schedule changes.",
+      "The supplied weather images were not reused because publication permission was not independently established; a CC0 airport archive photo is used with a historical caption."
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-26-0700",
+  "emailSubject": "FMB News | COA Seeks ₱2.2-B to Revive Pre-Audit; Neighborhood Safety Poll Drops to 72% | August 26, 2026 | 7:00 AM PHT",
+  "slug": "octa-neighborhood-safety-72-percent",
+  "headline": "OCTA Poll: Neighborhood Safety Perception Falls to 72% Nationwide",
+  "seoTitle": "OCTA: Neighborhood Safety Perception Falls to 72% | FMB News",
+  "seoDescription": "An OCTA survey found 72% of Filipinos feel safe in their neighborhoods, down from 87% in March 2023, with Metro Manila falling to 58%.",
+  "keywords": ["OCTA neighborhood safety", "Metro Manila safety perception", "Philippines peace and order survey"],
+  "category": "National",
+  "kicker": "Public Safety · Survey",
+  "deck": "Metro Manila recorded the sharpest decline, with neighborhood safety confidence falling from 91% to 58% in the latest OCTA survey.",
+  "publishedAt": "2026-08-26T07:00:00+08:00",
+  "updatedAt": "2026-08-26T13:18:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["Seventy-two percent of adult Filipinos said they feel safe in their neighborhoods in the latest OCTA Research Tugon ng Masa survey, down from 87% in March 2023.","The decline was steepest in Metro Manila, where the share saying they feel safe fell from 91% to 58%. Agreement that it is safe to walk alone at night in the capital fell from 88% to 48%."]},
+    {"heading":"Context","paragraphs":["The survey was conducted from July 4 to 11 among 1,200 adults and carries a national margin of error of plus or minus three percentage points.","OCTA cautioned that perceptions of safety can be influenced not only by crime levels but also by news and social-media exposure. The findings therefore measure public sentiment, not a direct count of crimes."]},
+    {"heading":"PNP trust","paragraphs":["A separate OCTA result reported by The Philippine Star found 65% of respondents trusted the Philippine National Police and 63% were satisfied with its performance. That corrects the approved email brief's lower 60% trust figure."]},
+    {"heading":"Why this matters","paragraphs":["A fall in perceived safety can affect commuting behavior, neighborhood activity, school and business confidence, and public expectations of police visibility even when changes in actual crime incidence differ from changes in sentiment."]},
+    {"heading":"What to watch next","paragraphs":["Future OCTA rounds and official crime statistics will show whether the decline in confidence persists and whether public perceptions move in the same direction as reported crime trends."]}
+  ],
+  "sources": [
+    {"publisher":"The Philippine Star","title":"Neighborhood safety perceptions down to 72% – OCTA poll","publishedAt":"2026-08-26T00:00:00+08:00","url":"https://www.philstar.com/headlines/2026/08/26/2551856/neighborhood-safety-perceptions-down-72-octa-poll"},
+    {"publisher":"The Philippine Star","title":"6 in 10 Pinoys trust PNP – OCTA poll","publishedAt":"2026-08-26T00:00:00+08:00","url":"https://www.philstar.com/nation/2026/08/26/2551770/6-10-pinoys-trust-pnp-octa-poll"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":null,"creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because the email referenced a PNP/PNA patrol image but did not provide a stable reusable original image file.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying coverage of OCTA's neighborhood safety survey.","alt":"FMB News editorial visual for the OCTA neighborhood safety survey","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-08-26T13:18:00+08:00","photoReferenceUrl":"https://www.pna.gov.ph/categories/national","notes":["Verified the 72% national safety figure, 58% Metro Manila figure, 33-point NCR decline and 48% night-walking figure through The Philippine Star's same-day report.","Corrected PNP trust from the email brief's 60% to the independently reported 65%.","Removed causal language tying the decline specifically to recent campus violence because OCTA described multiple possible informational and social factors rather than one proven cause."]}
+}

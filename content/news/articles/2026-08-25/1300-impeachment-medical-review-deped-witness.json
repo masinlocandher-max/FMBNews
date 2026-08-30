@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-25-1300",
+  "emailSubject": "FMB News | Marcos Expands Local EV Perks; Senate Orders Medical Check on Fund Witness | August 25, 2026 | 1:00 PM PHT",
+  "slug": "impeachment-medical-review-deped-witness",
+  "headline": "Senate Impeachment Court Orders Medical Review of Ailing DepEd Fund Witness",
+  "seoTitle": "Impeachment Court Orders Medical Review of DepEd Witness | FMB News",
+  "seoDescription": "The approved FMB News brief reports that the Senate Impeachment Court ordered an independent medical assessment of former DepEd disbursing officer Edward Fajarda.",
+  "keywords": ["Edward Fajarda impeachment medical review", "Senate impeachment court August 25 2026", "DepEd confidential funds witness"],
+  "category": "National",
+  "kicker": "Politics · Impeachment",
+  "deck": "The court ordered an independent assessment after the former DepEd disbursing officer sought to be excused on medical grounds.",
+  "publishedAt": "2026-08-25T13:00:00+08:00",
+  "updatedAt": "2026-08-25T19:01:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading": "What happened", "paragraphs": ["The approved FMB News midday brief reports that the Senate Impeachment Court ordered an independent government medical evaluation of former DepEd Special Disbursing Officer Edward Fajarda after his counsel sought to excuse him from testimony on health grounds.", "The brief says the assessment is intended to help the court determine whether testimony can proceed later or through an alternative format if medically appropriate."]},
+    {"heading": "Context", "paragraphs": ["Fajarda is being sought as a witness in proceedings examining confidential-fund disbursements during Vice President Sara Duterte's tenure as education secretary. Allegations aired in an impeachment proceeding remain allegations unless established through the court process."]},
+    {"heading": "Why this matters", "paragraphs": ["The medical determination affects both witness welfare and the court's ability to develop a complete evidentiary record without treating an asserted health condition as either automatically disqualifying or automatically irrelevant."]},
+    {"heading": "What to watch next", "paragraphs": ["Watch the Senate Impeachment Court for the medical report, any ruling on testimony format and the next witness schedule."]}
+  ],
+  "sources": [{"publisher": "Senate Impeachment Court / FMB News approved brief", "title": "Medical review ordered for former DepEd disbursing officer", "publishedAt": "2026-08-25T13:00:00+08:00", "url": "https://legacy.senate.gov.ph/"}],
+  "image": {"kind": "editorial-fallback", "url": "/assets/images/news/fmb-news-editorial-fallback.svg", "sourceUrl": null, "creator": "FMB News", "license": "FMB-owned editorial visual", "licenseUrl": "https://www.francinemariebautista.com/news/", "usageStatus": "FMB-owned editorial visual used because the approved email did not provide a stable reusable original image asset.", "credit": "FMB News editorial visual", "caption": "FMB News editorial visual accompanying the impeachment-court procedural update.", "alt": "FMB News editorial visual for the Senate impeachment medical review", "width": 1200, "height": 675, "focusX": 50, "focusY": 50},
+  "audit": {"sourceCheckedAt": "2026-08-25T19:01:00+08:00", "photoReferenceUrl": "https://legacy.senate.gov.ph/", "notes": ["Published as an attributed procedural update from the approved newsroom brief.", "No medical diagnosis beyond the brief's reported basis for the motion is asserted as independently established."]}
+}

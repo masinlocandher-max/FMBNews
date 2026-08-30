@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-26-1900",
+  "emailSubject": "FMB News | Impeachment Court Orders Bank Subpoenas; PAGASA Forecasts 7 More Cyclones | August 26, 2026 | 7:00 PM PHT",
+  "slug": "pagasa-five-seven-cyclones-el-nino-outlook",
+  "headline": "PAGASA Forecasts Up to Seven More Tropical Cyclones Before Year-End",
+  "seoTitle": "PAGASA Forecasts Up to Seven More Cyclones in 2026 | FMB News",
+  "seoDescription": "PAGASA expects five to seven tropical cyclones to form within or enter the Philippine Area of Responsibility from September through December 2026.",
+  "keywords": ["PAGASA tropical cyclone outlook 2026", "five to seven cyclones Philippines", "El Niño rainfall outlook"],
+  "category": "Environment",
+  "kicker": "Climate · Seasonal Outlook",
+  "deck": "The state weather bureau expects five to seven tropical cyclones from September through December while El Niño raises the risk of below-normal rainfall in parts of the country.",
+  "publishedAt": "2026-08-26T19:00:00+08:00",
+  "updatedAt": "2026-08-26T19:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["PAGASA expects five to seven more tropical cyclones to form within or enter the Philippine Area of Responsibility before the end of 2026, according to its updated seasonal outlook released Wednesday.","The monthly breakdown calls for two or three cyclones in September and one or two in each of October, November and December. These are seasonal ranges, not forecasts of specific tracks, intensity or landfall locations."]},
+    {"heading":"Context","paragraphs":["The cyclone outlook comes as El Niño conditions are present in the tropical Pacific. PAGASA has warned that the warming pattern increases the likelihood of below-normal rainfall and dry spells, although individual tropical cyclones can still produce intense rain, flooding, rough seas and storm surge.","The next unused names on PAGASA's 2026 list begin with Pilandok, Queenie, Rosal, Samuel and Tomas. A name is assigned only when a system develops into or enters the agency's area as a tropical cyclone."]},
+    {"heading":"Why this matters","paragraphs":["The simultaneous risk of cyclones and seasonal drying requires local governments, farms, water utilities and households to plan for both short bursts of hazardous rain and longer periods of reduced water supply. The forecast ranges are planning guidance and will change as actual weather systems develop."]},
+    {"heading":"What to watch next","paragraphs":["Watch PAGASA's monthly climate assessments and shorter-range tropical cyclone advisories for changes in expected activity. Track-specific warnings, rainfall forecasts and local evacuation notices should guide immediate safety decisions rather than the seasonal totals alone."]}
+  ],
+  "sources": [
+    {"publisher":"ABS-CBN News","title":"Up to 7 more tropical cyclones expected through the end of 2026: PAGASA","publishedAt":"2026-08-26T17:21:00+08:00","url":"https://news.abs-cbn.com/news/weather-traffic/2026/8/26/up-to-7-more-tropical-cyclones-expected-through-the-end-of-2026-pagasa-1721"},
+    {"publisher":"DOST-PAGASA","title":"Philippine Tropical Cyclone Names","publishedAt":"2026-01-01T00:00:00+08:00","url":"https://pagasa.dost.gov.ph/learning-tools/philippine-tropical-cyclone-names"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":null,"creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because publication rights for the recommended PAGASA photograph could not be independently verified from a stable original asset page.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying PAGASA's late-2026 tropical cyclone outlook; it is not a forecast map.","alt":"FMB News editorial visual for PAGASA's late-2026 cyclone outlook","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-08-27T01:00:00+08:00","photoReferenceUrl":"https://news.abs-cbn.com/news/weather-traffic/2026/8/26/up-to-7-more-tropical-cyclones-expected-through-the-end-of-2026-pagasa-1721","notes":["Verified the five-to-seven total and monthly ranges in ABS-CBN's report of the PAGASA outlook and checked the remaining names against PAGASA's official list.","Omitted the bulletin's unsupported invented quotation, the claim that PAGASA itself forecast a Super El Niño threshold in this briefing, the specific 20-to-60-percent regional rainfall deficits, a January 2027 cyclone projection and agency action statements not established by the accessible sources.","The article labels seasonal figures as forecast ranges rather than certainties."]}
+}

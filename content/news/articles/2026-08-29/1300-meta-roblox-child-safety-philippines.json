@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-29-1300",
+  "emailSubject": "FMB News | PAGASA Hoists Red Rainfall Warning; Phivolcs Issues Pinatubo Lahar Alert | August 29, 2026 | 1:00 PM PHT",
+  "slug": "meta-roblox-child-safety-safeguards-philippines-august-2026",
+  "headline": "Meta and Roblox Agree to Strengthen Child-Safety Measures in the Philippines",
+  "seoTitle": "Meta, Roblox Strengthen Child Safety in Philippines | FMB News",
+  "seoDescription": "Meta and Roblox announced stronger online-safety commitments in the Philippines, including PhilSys-linked Roblox verification and cooperation with lawful investigations.",
+  "keywords": ["Meta Roblox child safety Philippines", "DICT online safety August 2026", "Roblox age verification Philippines"],
+  "category": "National",
+  "kicker": "Technology · Child Safety",
+  "deck": "Roblox committed to PhilSys-linked verification and age-group safeguards, while Meta pledged action on harmful AI deepfakes and cooperation with lawful investigations.",
+  "publishedAt": "2026-08-29T13:00:00+08:00",
+  "updatedAt": "2026-08-29T18:59:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["Meta and Roblox agreed to strengthen online-safety protections following meetings between company representatives and Philippine cybersecurity officials in Singapore.","Meta committed to more proactive action against harmful AI-generated deepfakes and to respond to lawful requests in investigations involving online abuse and other cybercrime threats. Roblox agreed to integrate identity checks with the Philippine Identification System and establish a local office by October."]},
+    {"heading":"Platform commitments","paragraphs":["Roblox also committed to default public controls, chat monitoring aimed at detecting violent tendencies, coordination with gaming communities and safeguards intended to limit children's communication to users in their age group.","Philippine officials and Meta representatives are expected to meet in September to discuss information-sharing protocols. The protocol has not yet been finalized in a memorandum of understanding or agreement."]},
+    {"heading":"Context","paragraphs":["The commitments followed official concern about online grooming, child exploitation, abusive content and the use of deepfakes. The emailed brief's claim of a universal 15-minute takedown standard was not supported by the independently reviewed reporting and is not included here."]},
+    {"heading":"Why this matters","paragraphs":["Age assurance, parental controls and rapid moderation can reduce exposure to harmful material, but implementation details, privacy protections and enforcement standards will determine whether the commitments produce meaningful safety improvements."]},
+    {"heading":"What to watch next","paragraphs":["The September talks should clarify how Meta's information-sharing process will work in lawful investigations, while Roblox still has to implement its PhilSys integration, local office and age-group safeguards."]}
+  ],
+  "sources": [
+    {"publisher":"Philstar.com","title":"Roblox, Meta to beef up protection vs online threats","publishedAt":"2026-08-29T00:00:00+08:00","url":"https://www.philstar.com/headlines/2026/08/29/2552510/roblox-meta-beef-protection-vs-online-threats"},
+    {"publisher":"DICT","title":"Joint statement by DICT-CICC and Roblox","publishedAt":"2026-08-28T00:00:00+08:00","url":"https://dict.gov.ph/news-and-updates/26558"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":null,"creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because the approved brief referenced publisher/agency imagery but did not supply a stable original image file with verified repository reuse rights.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the Meta and Roblox child-safety report.","alt":"FMB News editorial visual for online child safety and digital platforms","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-08-29T18:59:00+08:00","photoReferenceUrl":null,"notes":["Verified the specific Meta and Roblox commitments through Philstar.com's report and the DICT-CICC joint-statement page.","Did not publish the briefing's specific 15-minute takedown claim because it was not supported by the independently reviewed reporting.","Clarified that Meta's information-sharing protocol remains scheduled for discussion in September and has not been finalized."]}
+}

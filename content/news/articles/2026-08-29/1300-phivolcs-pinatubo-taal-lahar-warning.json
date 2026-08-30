@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-29-1300",
+  "emailSubject": "FMB News | PAGASA Hoists Red Rainfall Warning; Phivolcs Issues Pinatubo Lahar Alert | August 29, 2026 | 1:00 PM PHT",
+  "slug": "phivolcs-pinatubo-taal-lahar-warning-august-29-2026",
+  "headline": "PHIVOLCS Warns of Possible Lahars from Pinatubo and Taal Amid Heavy Habagat Rains",
+  "seoTitle": "PHIVOLCS Warns of Pinatubo, Taal Lahars | FMB News",
+  "seoDescription": "PHIVOLCS warned that prolonged Habagat rains could trigger lahars, muddy streamflows and volcanic debris flows around Pinatubo and Taal on August 29.",
+  "keywords": ["Pinatubo lahar warning August 29 2026", "Taal lahar Habagat", "PHIVOLCS volcanic debris flow"],
+  "category": "National",
+  "kicker": "Geologic Hazards · Public Safety",
+  "deck": "Saturated volcanic deposits may be remobilized into river channels and downstream communities as heavy monsoon rain continues.",
+  "publishedAt": "2026-08-29T13:00:00+08:00",
+  "updatedAt": "2026-08-29T18:59:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["PHIVOLCS warned Saturday that prolonged and intense southwest-monsoon rainfall could generate lahars, muddy streamflows and volcanic debris flows around Mount Pinatubo and Taal Volcano.","The warning concerns rain-driven remobilization of old volcanic deposits and does not indicate a new eruption."]},
+    {"heading":"Pinatubo channels at risk","paragraphs":["PHIVOLCS said non-eruption lahars may occur along the upper to middle reaches of the Sto. Tomas-Marella and Bucao river systems and could transition into muddy streamflows and floods downstream, potentially affecting San Marcelino, San Narciso, San Felipe and Botolan in Zambales.","Muddy streamflows may also develop along the O'Donnell and Pasig-Potrero river systems, affecting downstream communities in Tarlac and Pampanga."]},
+    {"heading":"Taal risk areas","paragraphs":["Around Taal Volcano, saturated loose deposits may be remobilized on slopes west and north of Taal Lake. PHIVOLCS identified Agoncillo, Laurel and Talisay in Batangas among communities where muddy or debris flows could recur."]},
+    {"heading":"Context","paragraphs":["Lahars can occur without an eruption when intense rain mobilizes loose ash, pyroclastic material and other volcanic sediment. Pinatubo watersheds still contain deposits from the 1991 eruption."]},
+    {"heading":"Why this matters","paragraphs":["Rain-driven volcanic sediment flows can move through river and drainage systems into downstream communities, so the advisory is a separate hazard from ordinary surface flooding even though both are triggered by heavy rain."]},
+    {"heading":"What to watch next","paragraphs":["PHIVOLCS urged local governments and communities in identified areas to monitor weather conditions and take preemptive safety measures as heavy rainfall continues."]}
+  ],
+  "sources": [
+    {"publisher":"Philippine News Agency","title":"Phivolcs warns of lahar flows from Pinatubo, Taal volcanoes","publishedAt":"2026-08-29T13:31:00+08:00","url":"https://www.pna.gov.ph/articles/1282935"},
+    {"publisher":"PHIVOLCS","title":"Lahar Advisory for Pinatubo and Taal","publishedAt":"2026-08-29T12:00:00+08:00","url":"https://wovodat.phivolcs.dost.gov.ph/bulletin/activity-pvo?bid=16694&lang=en"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://www.pna.gov.ph/index.php/articles/1282935","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because the approved brief referenced agency/news imagery but did not supply a stable original image file for repository ingestion.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the PHIVOLCS lahar advisory.","alt":"FMB News editorial visual for Pinatubo and Taal lahar hazards","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-08-29T18:59:00+08:00","photoReferenceUrl":"https://www.pna.gov.ph/articles/1282935","notes":["Verified the warning and named river systems against the same-day PNA report and PHIVOLCS advisory.","Changed the briefing's stronger 'destructive lahar flows' framing to 'possible lahars' because PHIVOLCS issued a hazard warning, not a report that destructive lahars had already occurred.","Did not repeat an unverified blanket quarrying-suspension claim as a PHIVOLCS directive."]}
+}

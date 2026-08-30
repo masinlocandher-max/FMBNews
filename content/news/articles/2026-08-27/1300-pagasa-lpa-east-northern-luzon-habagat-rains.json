@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-27-1300",
+  "emailSubject": "FMB News | DAR Condones ₱57.76-B Farmers' Debt; GSIS Opens ₱4.4-B Calamity Loan | August 27, 2026 | 1:00 PM PHT",
+  "slug": "pagasa-lpa-east-northern-luzon-habagat-rains",
+  "headline": "Tropical Depression Pilandok Remains Far East of Northern Luzon as Habagat Persists",
+  "seoTitle": "Tropical Depression Pilandok and Habagat Update | FMB News",
+  "seoDescription": "PAGASA placed Tropical Depression Pilandok far east of Extreme Northern Luzon at 5 p.m. August 30, with no wind signal in effect as Habagat hazards persisted.",
+  "keywords": ["Tropical Depression Pilandok August 30 2026", "PAGASA Pilandok update", "Habagat Philippines August 30"],
+  "category": "Environment",
+  "kicker": "Weather · Public Safety",
+  "deck": "PAGASA's 5 p.m. bulletin placed Pilandok far east of Extreme Northern Luzon with 45 km/h sustained winds and no tropical cyclone wind signal in effect.",
+  "publishedAt": "2026-08-27T13:00:00+08:00",
+  "updatedAt": "2026-08-30T19:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["Tropical Depression Pilandok remained over the Philippine Sea far east of Extreme Northern Luzon on Sunday afternoon while the Southwest Monsoon continued to affect parts of the country, according to PAGASA's 5 p.m. bulletin.","At 4 p.m., PAGASA estimated the center about 1,180 kilometers east of Extreme Northern Luzon. Pilandok had maximum sustained winds of 45 kilometers per hour, gusts of up to 55 km/h and was moving northwestward slowly."]},
+    {"heading":"What changed","paragraphs":["The bulletin email carried earlier formation-stage estimates of 55 km/h sustained winds, a position 460 kilometers east-northeast of Aparri and Signal No. 1 over Batanes and the Babuyan Islands. Those details were not carried into this update because PAGASA's later official bulletin placed the cyclone much farther east and showed no tropical cyclone wind signal in effect.","PAGASA said Pilandok was less likely to make landfall and was expected to remain a tropical depression before weakening into a remnant low over the Philippine Sea south of Japan on Tuesday."]},
+    {"heading":"Context","paragraphs":["PAGASA directed readers to its separate Southwest Monsoon advisory for the heavy-rainfall outlook. The cyclone bulletin warned of strong to gale-force monsoon gusts over many areas and rough seas reaching four meters along the western seaboard of the Babuyan Islands.","This update continues the developing weather event on FMB News' established canonical route and removes a separate route created from the same sequence."]},
+    {"heading":"Why this matters","paragraphs":["Cyclone position, intensity and warning signals can change substantially within hours. Residents and mariners should use the newest PAGASA products rather than relying on earlier estimates reproduced in social posts or bulletins."]},
+    {"heading":"What to watch next","paragraphs":["Watch PAGASA's succeeding tropical cyclone bulletins, rainfall advisories and local disaster instructions for changes in Pilandok's track and the continuing effects of the Southwest Monsoon."]}
+  ],
+  "sources": [
+    {"publisher":"DOST-PAGASA","title":"Tropical Cyclone Bulletin No. 2: Tropical Depression Pilandok","publishedAt":"2026-08-30T17:00:00+08:00","url":"https://pubfiles.pagasa.dost.gov.ph/tamss/weather/bulletin_pilandok.pdf"},
+    {"publisher":"DOST-PAGASA","title":"Daily Weather Forecast","publishedAt":"2026-08-30T04:00:00+08:00","url":"https://www.pagasa.dost.gov.ph/weather"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":null,"creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because no stable reusable source image with independently verified publication permission was supplied.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the August 28 two-LPA and Habagat update; it does not depict current conditions.","alt":"FMB News editorial visual for PAGASA monitoring two low-pressure areas and Habagat rain risks","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-08-30T19:00:00+08:00","photoReferenceUrl":"https://www.pagasa.dost.gov.ph/tropical-cyclone/severe-weather-bulletin","notes":["Updated the established weather canonical route using PAGASA Tropical Cyclone Bulletin No. 2 issued at 5 p.m.","Removed the separate August 30 Pilandok route created for the same developing weather event.","Omitted the email's superseded position, wind-signal claim, invented specialist quotation and unsupported rainfall totals.","Used the FMB-owned fallback because no stable reusable source image with independently verified publication permission was supplied."]}
+}

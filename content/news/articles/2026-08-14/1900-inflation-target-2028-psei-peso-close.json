@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-14-1900",
+  "emailSubject": "FMB News | President Marcos: PH Not Seeking to be Belligerent in Indo-Pacific | August 14, 2026 | 7:00 PM PHT",
+  "slug": "inflation-target-2028-psei-peso-close",
+  "headline": "Government’s 2%–4% Inflation Target Returns in 2028; Brief Cites PSEi at 6,297.30",
+  "seoTitle": "PH 2%–4% Inflation Target From 2028; PSEi Brief at 6,297.30",
+  "seoDescription": "Government projections show inflation returning to the 2%–4% target band from 2028, while an FMB News brief cites a 6,297.30 PSEi close and ₱61.45 peso.",
+  "keywords": ["Philippines inflation target 2028", "PSEi 6297.30", "peso 61.45", "DBCC inflation"],
+  "category": "Business",
+  "kicker": "Economy · Financial markets",
+  "deck": "Current DBCC projections show inflation returning to the government’s 2%–4% target band from 2028; the FMB News evening brief also cites a Friday PSEi close of 6,297.30 and a peso level of ₱61.45 per dollar.",
+  "publishedAt": "2026-08-14T19:00:00+08:00",
+  "updatedAt": "2026-08-15T07:46:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The government’s latest medium-term macroeconomic assumptions project inflation at 6%–7% in 2026 and 4%–5% in 2027 before returning to the 2%–4% target band from 2028 to 2030, according to a July DBCC statement reported by the Philippine News Agency.",
+        "The FMB News August 14 evening brief separately cites a Friday Philippine Stock Exchange index close of 6,297.30 and a peso level of ₱61.45 to the U.S. dollar. Those market-close figures were attributed in the email to Bilyonaryo News Channel and were not independently reproduced from an official exchange or central-bank close during this publication pass."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The 2%–4% band is not a new August 14 policy announcement; it is the medium-term inflation target the government expects to return to beginning in 2028 after higher projected inflation in 2026 and 2027.",
+        "Market levels can change day to day and should be distinguished from the government’s multi-year inflation assumptions."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "Inflation directly affects household purchasing power, interest-rate decisions and business costs. The path back to target will depend on food supply, energy prices, the peso, global conditions and monetary and fiscal policy."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch the next BSP policy decision, monthly inflation releases, DBCC updates and official PSE and foreign-exchange closing data for confirmation of market direction."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Philippine News Agency",
+      "title": "DBCC revises medium-term economic, fiscal targets amid external risks",
+      "publishedAt": "2026-07-08T00:00:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1279006"
+    },
+    {
+      "publisher": "Bilyonaryo News Channel",
+      "title": "PSEi wraps up trading at 6,297.30; peso settles at 61.45 — cited in FMB News brief",
+      "publishedAt": "2026-08-14T16:30:00+08:00",
+      "url": "https://www.facebook.com/bncphl/photos/the-philippine-stock-exchange-index-psei-wrapped-up-trading-at-629730-on-friday-/122340418298354398/"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "sourceUrl": null,
+    "creator": "FMB News",
+    "license": "FMB-owned editorial visual",
+    "licenseUrl": "https://www.francinemariebautista.com/news/",
+    "usageStatus": "FMB-owned editorial visual used because no stable, rights-verified market photograph was supplied.",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying the inflation-target and financial-markets report.",
+    "alt": "FMB News editorial visual for the Philippine inflation and financial-markets report",
+    "width": 1200,
+    "height": 675,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-15T07:46:00+08:00",
+    "photoReferenceUrl": null,
+    "notes": [
+      "Corrected the email’s framing: the return to the 2%–4% inflation target band from 2028 was already contained in the July 2026 DBCC assumptions, rather than treated as a newly created August 14 target.",
+      "Market-close figures remain explicitly attributed to the newsroom brief’s cited Bilyonaryo post because they were not independently reproduced from an official closing table in this pass.",
+      "Used an FMB-owned editorial visual because no stable, rights-verified market photograph was supplied."
+    ]
+  }
+}

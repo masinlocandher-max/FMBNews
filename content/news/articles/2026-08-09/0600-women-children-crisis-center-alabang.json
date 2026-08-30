@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "fmb-news-2026-08-09-0600-pht",
+  "emailSubject": "FMB News | LEDAC Approves 33 Priority Measures to Lower Cost of Living | August 9, 2026 | 6:00 AM PHT",
+  "slug": "women-children-crisis-center-alabang",
+  "headline": "Women and Children’s Crisis Center Breaks Ground in Alabang",
+  "category": "Community",
+  "kicker": "Alabang · Social protection · Trauma-informed care",
+  "deck": "DSWD and partner institutions broke ground on August 3 for a community-based, trauma-informed residential crisis center at the agency’s Haven for Women in Alabang.",
+  "publishedAt": "2026-08-09T06:00:00+08:00",
+  "updatedAt": "2026-08-09T07:18:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Department of Social Welfare and Development and partner institutions held a groundbreaking ceremony on August 3 for a Women and Children’s Crisis Center at the DSWD Haven for Women in Alabang, Muntinlupa City."
+      ]
+    },
+    {
+      "heading": "What we know",
+      "paragraphs": [
+        "DSWD said the project brings together the Association of Women Legislators Foundation Inc., the health and public works departments, the Senate, the House of Representatives, the Congressional Spouses Foundation Inc., Archion and the Muntinlupa City government.",
+        "The department described the planned facility as the country’s first community-based, trauma-informed residential crisis center dedicated to women and children experiencing psychological distress and mental-health concerns.",
+        "DSWD Operations Group Undersecretary Pinky Romualdez said the project is intended to support a faster, more efficient and holistic recovery process for abused and neglected women and children."
+      ]
+    },
+    {
+      "heading": "Background",
+      "paragraphs": [
+        "The project will be located within the existing DSWD Haven for Women in Alabang. The official announcement describes a multi-agency partnership rather than a project undertaken by DSWD and the city government alone."
+      ]
+    },
+    {
+      "heading": "What remains unclear",
+      "paragraphs": [
+        "The official release did not specify the construction cost, completion date, opening timetable, capacity or a final service-by-service operating plan. Those details remain subject to later project announcements."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "A dedicated residential center could strengthen coordinated support for women and children experiencing abuse, neglect, psychological distress or mental-health concerns. Its practical reach will depend on capacity, staffing, referral rules and sustained funding."
+      ]
+    },
+    {
+      "heading": "What happens next",
+      "paragraphs": [
+        "The partner institutions are expected to proceed with project development and release further construction and operating details. DSWD has not announced a public opening date."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Department of Social Welfare and Development",
+      "title": "DSWD, AWLFI hold groundbreaking ceremony for Women and Children’s Crisis Center",
+      "publishedAt": "2026-08-03T17:00:00+08:00",
+      "url": "https://www.dswd.gov.ph/dswd-awlfi-hold-groundbreaking-ceremony-for-women-and-childrens-crisis-center/"
+    },
+    {
+      "publisher": "Inquirer.net",
+      "title": "Women and children’s haven to rise in Alabang",
+      "publishedAt": "2026-08-09T05:26:00+08:00",
+      "url": "https://newsinfo.inquirer.net/2280376/women-and-childrens-haven-to-rise-in-alabang"
+    }
+  ],
+  "image": {
+    "kind": "open-license-photo",
+    "url": "/assets/images/news/2026-08-09/women-children-crisis-center.webp",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Social_Work_and_Therapy.jpg",
+    "creator": "Courtneymfoster",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "usageStatus": "Wikimedia Commons photograph verified as CC BY-SA 4.0; locally hosted crop is published under the same license with exact creator credit.",
+    "credit": "Photo: Courtneymfoster / Wikimedia Commons · CC BY-SA 4.0",
+    "caption": "Illustrative archive photograph of play materials used in a counseling setting. It does not show the planned Alabang facility or its services.",
+    "alt": "Shelves of toys and play materials in a counseling room",
+    "width": 1600,
+    "height": 900,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-09T07:18:00+08:00",
+    "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:Social_Work_and_Therapy.jpg",
+    "notes": [
+      "The event date was corrected to August 3, 2026 using DSWD's official release.",
+      "Unverified claims about 24-hour medical care, legal aid, livelihood training, emergency quarters, project funding and construction supervision were excluded.",
+      "The recommended architectural rendering was not reused because publication permission was not independently established; a clearly labeled CC BY-SA 4.0 counseling-context photograph is used instead."
+    ]
+  }
+}

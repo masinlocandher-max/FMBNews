@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "fmb-news-2026-08-07-1200-pht",
+  "emailSubject": "FMB News | Magnitude 5.8 Quake Hits Off Occidental Mindoro | August 7, 2026 | 12:00 PM PHT",
+  "slug": "magnitude-54-quake-hits-off-occidental-mindoro",
+  "headline": "Magnitude 5.4 Quake Hits Off Occidental Mindoro",
+  "category": "National",
+  "kicker": "Earthquake update · Occidental Mindoro",
+  "deck": "PHIVOLCS revised the initial magnitude estimate for an offshore Occidental Mindoro earthquake from 5.8 to 5.4 as authorities monitored for aftershocks and checked for impacts.",
+  "publishedAt": "2026-08-07T12:00:00+08:00",
+  "updatedAt": "2026-08-07T15:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "An offshore earthquake struck near Occidental Mindoro at about 10:38 a.m. on August 7. The first automatic report placed its magnitude at 5.8; PHIVOLCS later revised the measurement to magnitude 5.4 after reviewing the seismic data.",
+        "The tremor was reported felt in parts of Mindoro, Southern Luzon, and Metro Manila. Authorities had not confirmed major damage at the time of this update."
+      ]
+    },
+    {
+      "heading": "What we know",
+      "paragraphs": [
+        "The earthquake originated offshore, southwest of Mamburao, Occidental Mindoro. PHIVOLCS advised that aftershocks could follow.",
+        "The event did not generate a destructive tsunami threat. Residents should still rely on official PHIVOLCS and local disaster-office advisories as field reports are checked."
+      ]
+    },
+    {
+      "heading": "The context",
+      "paragraphs": [
+        "Automatic earthquake estimates are preliminary. Seismologists routinely revise magnitude, depth, and location after additional station data are processed, which is why the first 5.8 figure and the reviewed 5.4 figure differ."
+      ]
+    },
+    {
+      "heading": "What remains unclear",
+      "paragraphs": [
+        "A complete assessment of possible minor structural damage and localized effects was not yet available when this report was updated. Felt intensity can also vary by location, ground conditions, and building type."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "Even when an offshore earthquake does not trigger a destructive tsunami warning, shaking can affect buildings, transport, and utilities across a broad area. The revised magnitude also shows why readers should treat the first automatic bulletin as provisional and follow official updates."
+      ]
+    },
+    {
+      "heading": "What happens next",
+      "paragraphs": [
+        "PHIVOLCS will continue monitoring aftershocks and updating its earthquake catalog. People who felt strong shaking should check their surroundings for hazards, avoid damaged structures, and follow instructions from local disaster officials."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "ABS-CBN News",
+      "title": "Magnitude 5.8 quake hits off Occidental Mindoro",
+      "publishedAt": "2026-08-07T10:51:00+08:00",
+      "url": "https://news.abs-cbn.com/news/nation/2026/8/7/magnitude-5-8-quake-hits-off-occidental-mindoro-1051"
+    },
+    {
+      "publisher": "DOST-PHIVOLCS",
+      "title": "Latest Earthquake Information",
+      "publishedAt": "2026-08-07T10:38:00+08:00",
+      "url": "https://earthquake.phivolcs.dost.gov.ph/EQLatest.html"
+    }
+  ],
+  "image": {
+    "kind": "public-domain-photo",
+    "url": "/assets/images/news/2026-08-07/phivolcs-earthquake-exhibit.webp",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:04404jfPhilippine_Institute_of_Volcanology_and_Seismology_Quezon_Cityfvf_01.jpg",
+    "creator": "Judgefloro",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "usageStatus": "Wikimedia Commons file verified as public domain; locally hosted crop published with creator, source, and status credit.",
+    "credit": "Photo: Judgefloro / Wikimedia Commons · Public domain",
+    "caption": "File photo of a PHIVOLCS earthquake and volcano exhibition in Quezon City. It does not depict the Occidental Mindoro quake or its effects.",
+    "alt": "Earthquake and volcano monitoring exhibition inside a PHIVOLCS facility"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-07T15:00:00+08:00",
+    "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:04404jfPhilippine_Institute_of_Volcanology_and_Seismology_Quezon_Cityfvf_01.jpg",
+    "notes": [
+      "The headline and report use PHIVOLCS' reviewed magnitude 5.4 rather than the initial automatic magnitude 5.8 retained in the bulletin email and source headline.",
+      "No unverified casualty or damage claim was added.",
+      "A relevant public-domain PHIVOLCS file photo from Wikimedia Commons is locally hosted with visible creator, source, and status credit."
+    ]
+  }
+}

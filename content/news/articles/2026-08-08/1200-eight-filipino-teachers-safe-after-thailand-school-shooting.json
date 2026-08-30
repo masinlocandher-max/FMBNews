@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "fmb-news-2026-08-08-1200-pht",
+  "emailSubject": "FMB News | DFA Confirms 8 Filipino Teachers Safe After Thailand School Shooting | August 8, 2026 | 12:00 PM PHT",
+  "slug": "eight-filipino-teachers-safe-after-thailand-school-shooting",
+  "headline": "Eight Filipino Teachers Safe After Thailand School Shooting",
+  "category": "World",
+  "kicker": "Filipinos overseas · Thailand · Public safety",
+  "deck": "The Philippine Embassy in Bangkok said all eight registered Filipino teachers at Debsirin School Nonthaburi were safe, accounted for, and uninjured after the August 7 shooting.",
+  "publishedAt": "2026-08-08T12:00:00+08:00",
+  "updatedAt": "2026-08-08T13:08:08+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Philippine Embassy in Bangkok confirmed that all eight registered Filipino teachers working at Debsirin School Nonthaburi were safe, accounted for, and uninjured after a deadly shooting at the school on August 7, 2026."
+      ]
+    },
+    {
+      "heading": "What we know",
+      "paragraphs": [
+        "The embassy said no Filipino teacher or citizen was harmed in the incident. It remained on standby to provide assistance through official channels and continued monitoring the situation.",
+        "The school is in Nonthaburi province on the outskirts of Bangkok. Reuters reported that a teenage student opened fire at the school after fatally shooting his grandparents. Police said teachers and staff were among those killed and that other people were wounded.",
+        "The final toll and other details remained subject to updates from Thai authorities."
+      ]
+    },
+    {
+      "heading": "Background",
+      "paragraphs": [
+        "The Philippine Embassy in Thailand issued its safety confirmation after contacting the Filipino community connected to the school. Philippine diplomatic posts provide consular assistance to nationals affected by emergencies abroad."
+      ]
+    },
+    {
+      "heading": "What remains unclear",
+      "paragraphs": [
+        "Thai authorities were continuing to establish the full sequence of events, the final casualty count, and the circumstances that led to the attack."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "The embassy's confirmation gives the teachers' families and the wider Filipino community an official account of their safety while Thai authorities investigate a rapidly developing security incident."
+      ]
+    },
+    {
+      "heading": "What happens next",
+      "paragraphs": [
+        "The Philippine Embassy will continue monitoring official Thai updates and remains available to provide necessary assistance through its official channels."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Philippine News Agency",
+      "title": "No Filipino hurt in deadly Thailand school shooting - embassy",
+      "publishedAt": "2026-08-07T21:32:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1281391"
+    },
+    {
+      "publisher": "Inquirer.net",
+      "title": "8 Filipino teachers safe after Thailand school shooting - PH embassy",
+      "publishedAt": "2026-08-08T08:00:00+08:00",
+      "url": "https://globalnation.inquirer.net/334085/8-filipino-teachers-safe-after-thailand-school-shooting-ph-embassy"
+    },
+    {
+      "publisher": "Philippine Embassy in Thailand",
+      "title": "Statement on the incident in Nonthaburi, Thailand",
+      "publishedAt": "2026-08-07T21:00:00+08:00",
+      "dateLabel": "August 7, 2026",
+      "url": "https://www.facebook.com/PHinThailand/posts/statement-on-the-incident-in-nonthaburi-thailandthe-philippine-embassy-extends-i/1452155753603659/"
+    },
+    {
+      "publisher": "Reuters",
+      "title": "Thai teen kills 7 in rampage at home and school before shooting himself",
+      "publishedAt": "2026-08-07T11:29:00+08:00",
+      "url": "https://www.reuters.com/world/asia-pacific/shooting-takes-place-school-thailand-officials-say-2026-08-07/"
+    }
+  ],
+  "image": {
+    "kind": "open-license-photo",
+    "url": "/assets/images/news/2026-08-08/philippines-embassy-bangkok.svg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Philippines_Embassy_Bangkok.jpg",
+    "creator": "Mike Powell",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "usageStatus": "Wikimedia Commons file verified as CC BY-SA 2.0; a locally hosted crop is published under the same license with creator, source, and license credit.",
+    "credit": "Photo: Mike Powell / Wikimedia Commons · CC BY-SA 2.0",
+    "caption": "Archive photograph of the Philippine Embassy gates in Bangkok, taken in 2008. It does not depict the August 7, 2026 school shooting or the teachers involved.",
+    "alt": "Ornate gates at the Philippine Embassy in Bangkok, Thailand",
+    "width": 962,
+    "height": 642,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-08T13:08:08+08:00",
+    "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:Philippines_Embassy_Bangkok.jpg",
+    "notes": [
+      "Google redirect links were replaced with direct publisher URLs.",
+      "The article uses the embassy's exact safety status: safe, accounted for, and uninjured.",
+      "Claims about safe quarters and psychosocial support were removed because the supplied sources did not establish them.",
+      "The recommended DFA image was not used because its reuse terms could not be independently verified.",
+      "A relevant Bangkok embassy photograph by Mike Powell was independently verified on Wikimedia Commons as CC BY-SA 2.0 and is locally hosted with exact visible credit."
+    ]
+  }
+}

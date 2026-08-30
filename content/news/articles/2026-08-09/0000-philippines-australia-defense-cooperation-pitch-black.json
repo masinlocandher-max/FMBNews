@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "fmb-news-2026-08-09-0000-pht",
+  "emailSubject": "FMB News | First Alarm Raised Over Marikina River as Water Level Hits 15 Meters | August 9, 2026 | 12:00 AM PHT",
+  "slug": "philippines-australia-defense-cooperation-pitch-black",
+  "headline": "Philippines and Australia Deepen Defense Cooperation at Pitch Black",
+  "category": "National",
+  "kicker": "Defense · Australia · Regional security",
+  "deck": "Philippine and Australian officials highlighted closer defense ties as Philippine Air Force personnel joined the multinational Exercise Pitch Black in Darwin.",
+  "publishedAt": "2026-08-09T00:00:00+08:00",
+  "updatedAt": "2026-08-09T01:20:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["Philippine and Australian defense officials highlighted their expanding strategic partnership during Exercise Pitch Black 2026 in Darwin, Australia."]},
+    {"heading":"What we know","paragraphs":["Australia's Department of Defence said four Philippine Air Force FA-50PH Golden Eagles were the first fighter jets to arrive for the exercise. Pitch Black ran from July 20 to August 7 and brought together around 2,500 personnel and aircraft from 20 nations.","Australian officials described the exercise as a way to improve interoperability and deepen defense cooperation among regional partners. Philippine Air Force representatives said participation supports learning, collaboration and safe multinational operations."]},
+    {"heading":"Background","paragraphs":["The Philippines and Australia maintain longstanding defense ties, including a Status of Visiting Forces Agreement. Their cooperation covers training, maritime security, disaster response and other regional-security activities."]},
+    {"heading":"What remains unclear","paragraphs":["The detailed schedule and operational scope of future bilateral or multilateral activities have not all been publicly released."]},
+    {"heading":"Why this matters","paragraphs":["Joint training can improve the Philippine military's ability to operate with partners during security, humanitarian and disaster-response missions while strengthening the country's regional relationships."]},
+    {"heading":"What happens next","paragraphs":["Both governments are expected to continue bilateral defense discussions and planning for future training and regional cooperation."]}
+  ],
+  "sources": [
+    {"publisher":"Australian Department of Defence","title":"A warm welcome for the first arrivals","publishedAt":"2026-07-16T00:00:00+10:00","url":"https://www.defence.gov.au/news-events/news/2026-07-16/warm-welcome-first-arrivals"},
+    {"publisher":"Australian Defence Ministers","title":"Joint Press Conference, Darwin","publishedAt":"2026-08-07T00:00:00+09:30","url":"https://www.minister.defence.gov.au/transcripts/2026-08-07/joint-press-conference-darwin"}
+  ],
+  "image": {
+    "kind":"public-domain-photo",
+    "url":"/assets/images/news/2026-08-09/paf-pitch-black-exercise.webp",
+    "sourceUrl":"https://commons.wikimedia.org/wiki/File:2024-07-21_Pitch_Black_Flypast_003.jpg",
+    "creator":"Philippine Air Force",
+    "license":"Public domain, Philippine government work",
+    "licenseUrl":"https://commons.wikimedia.org/wiki/Template:PD-PhilippinesGov",
+    "usageStatus":"Wikimedia Commons identifies the Philippine Air Force photograph as a public-domain Philippine government work; locally hosted crop retains exact agency credit.",
+    "credit":"Photo: Philippine Air Force / Wikimedia Commons · Public domain",
+    "caption":"Archive photograph of a Philippine Air Force FA-50 during Exercise Pitch Black 2024 in Darwin. It does not depict the 2026 bilateral briefing.",
+    "alt":"Philippine Air Force FA-50 flying during an Exercise Pitch Black event in Darwin",
+    "width":1600,
+    "height":900,
+    "focusX":50,
+    "focusY":50
+  },
+  "audit": {"sourceCheckedAt":"2026-08-09T01:20:00+08:00","photoReferenceUrl":"https://commons.wikimedia.org/wiki/File:2024-07-21_Pitch_Black_Flypast_003.jpg","notes":["The Philippines' participation, aircraft, exercise dates and cooperation language were verified through Australia's Department of Defence.","Claims about future patrol schedules were presented as undisclosed rather than assumed.","The recommended 2026 image was not reused because its exact publication terms and downloadable asset could not be independently resolved; a relevant public-domain PAF archive photograph is used with exact credit."]}
+}

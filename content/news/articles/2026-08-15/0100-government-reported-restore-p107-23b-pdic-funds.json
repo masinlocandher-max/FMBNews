@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-15-0100",
+  "emailSubject": "FMB News | Government to Restore ₱107 Billion PDIC Funds Over Two Years | August 15, 2026 | 1:00 AM PHT",
+  "slug": "government-reported-restore-p107-23b-pdic-funds",
+  "headline": "Newsroom Brief Reports Government Plan to Restore ₱107.23 Billion in PDIC Funds",
+  "seoTitle": "Brief: Government Plans ₱107.23B PDIC Fund Restoration",
+  "seoDescription": "An FMB News editorial brief citing a new Philstar report says the government plans to restore ₱107.23 billion to PDIC over the 2027 and 2028 budgets.",
+  "keywords": ["PDIC funds 107 billion", "Ralph Recto PDIC", "2027 budget PDIC", "Deposit Insurance Fund"],
+  "category": "Business",
+  "kicker": "Public finance · Deposit insurance",
+  "deck": "An FMB News overnight brief cites a new report that the government plans to return ₱107.23 billion previously transferred from PDIC, beginning with ₱57 billion in the proposed 2027 budget.",
+  "publishedAt": "2026-08-15T01:00:00+08:00",
+  "updatedAt": "2026-08-15T07:46:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The FMB News August 15 overnight brief, citing The Philippine STAR and Executive Secretary Ralph Recto, reports that the national government plans to restore the full ₱107.23 billion previously remitted by the Philippine Deposit Insurance Corporation.",
+        "According to the brief, ₱57 billion would be programmed in the proposed 2027 National Expenditure Program and the remaining ₱50.23 billion in the 2028 NEP."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "Earlier in January 2026, the Department of Finance said the Supreme Court order then being implemented covered PhilHealth funds and did not itself require the return of the PDIC transfer. The new email therefore describes a later policy development rather than a continuation of that January position.",
+        "The specific August 15 Philstar report cited by the newsroom email was not independently retrievable through the public search index during the final publication pass. The repayment plan is therefore presented as a source-attributed current report."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "PDIC’s Deposit Insurance Fund underpins confidence in the banking system by funding insured-deposit claims when banks are closed. A full restoration of the transferred amount would be a significant fiscal and institutional development."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for the proposed 2027 National Expenditure Program, a formal statement from the Department of Finance or PDIC, and congressional budget documents confirming the ₱57-billion first tranche and the planned 2028 balance."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "The Philippine STAR",
+      "title": "Government to restore P107 billion PDIC funds over 2 years — cited in FMB News brief",
+      "publishedAt": "2026-08-15T00:00:00+08:00",
+      "url": "https://www.philstar.com/business/2026/08/15/2549283/government-restore-p107-billion-pdic-funds-over-2-years"
+    },
+    {
+      "publisher": "The Philippine STAR",
+      "title": "DOF: Fund return only covers PhilHealth, not PDIC",
+      "publishedAt": "2026-01-06T00:00:00+08:00",
+      "url": "https://www.philstar.com/headlines/2026/01/06/2499065/dof-fund-return-only-covers-philhealth-not-pdic"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "sourceUrl": null,
+    "creator": "FMB News",
+    "license": "FMB-owned editorial visual",
+    "licenseUrl": "https://www.francinemariebautista.com/news/",
+    "usageStatus": "FMB-owned editorial visual used because the email identifies the proposed Philstar hero as publisher-owned and requiring permission.",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying the source-attributed report on the proposed restoration of PDIC funds.",
+    "alt": "FMB News editorial visual for the PDIC fund-restoration report",
+    "width": 1200,
+    "height": 675,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-15T07:46:00+08:00",
+    "photoReferenceUrl": "https://www.philstar.com/business/2026/08/15/2549283/government-restore-p107-billion-pdic-funds-over-2-years",
+    "notes": [
+      "The August 15 Philstar URL cited by the email was not independently retrievable in the final search pass, so the repayment plan is presented as a source-attributed newsroom report.",
+      "Included the January 2026 DOF position as context to make clear that the reported repayment plan would represent a later policy development.",
+      "The email identifies the proposed Philstar hero photograph as publisher-owned and requiring permission, so FMB News uses its own editorial visual instead."
+    ]
+  }
+}

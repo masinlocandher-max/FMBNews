@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-25-0700",
+  "emailSubject": "FMB News | Typhoon Obet Exits PAR; DBM Releases ₱1-B for AI Flood Forecasting | August 25, 2026 | 7:00 AM PHT",
+  "slug": "deped-9500-classrooms-disaster-recovery",
+  "headline": "DepEd Flags ₱2.15-Billion Recovery Need for More Than 9,500 Damaged Classrooms",
+  "seoTitle": "DepEd Flags ₱2.15B Recovery Need for Damaged Classrooms | FMB News",
+  "seoDescription": "An approved FMB News brief reports that 9,540 classrooms were damaged by recent monsoon flooding, with DepEd estimating ₱2.15 billion in recovery needs.",
+  "keywords": ["DepEd damaged classrooms 2026", "school disaster recovery Philippines", "₱2.15 billion classroom repairs"],
+  "category": "National",
+  "kicker": "Education · Disaster Recovery",
+  "deck": "DepEd's consolidated assessment in the approved newsroom brief puts the damaged-classroom count above 9,500 and the recovery requirement at ₱2.15 billion.",
+  "publishedAt": "2026-08-25T07:00:00+08:00",
+  "updatedAt": "2026-08-25T19:01:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading": "What happened", "paragraphs": ["The approved FMB News morning brief reports that the Department of Education identified 9,540 public-school classrooms damaged by recent monsoon flooding and severe weather, with an estimated ₱2.15 billion needed for emergency rehabilitation.", "The brief says temporary learning spaces and Quick Response Fund resources are part of the immediate continuity plan while damaged facilities are assessed and repaired."]},
+    {"heading": "Context", "paragraphs": ["Flood and storm damage can affect classrooms well beyond the period of class suspension through electrical, structural, sanitation and furnishing damage. Temporary learning arrangements are used when buildings cannot safely reopen immediately."]},
+    {"heading": "Why this matters", "paragraphs": ["The scale of the reported damage affects both education continuity and local reconstruction capacity, particularly in communities repeatedly exposed to flooding."]},
+    {"heading": "What to watch next", "paragraphs": ["Watch DepEd and its Disaster Risk Reduction and Management Service for the final validated damage inventory, regional breakdown, repair schedule and funding releases."]}
+  ],
+  "sources": [{"publisher": "Department of Education / FMB News approved brief", "title": "Post-disaster classroom damage assessment", "publishedAt": "2026-08-25T07:00:00+08:00", "url": "https://www.deped.gov.ph/"}],
+  "image": {"kind": "editorial-fallback", "url": "/assets/images/news/fmb-news-editorial-fallback.svg", "sourceUrl": null, "creator": "FMB News", "license": "FMB-owned editorial visual", "licenseUrl": "https://www.francinemariebautista.com/news/", "usageStatus": "FMB-owned editorial visual used because the approved email referenced agency imagery but did not provide a stable reusable original asset URL.", "credit": "FMB News editorial visual", "caption": "FMB News editorial visual accompanying the school disaster-recovery report.", "alt": "FMB News editorial visual for damaged classroom recovery", "width": 1200, "height": 675, "focusX": 50, "focusY": 50},
+  "audit": {"sourceCheckedAt": "2026-08-25T19:01:00+08:00", "photoReferenceUrl": "https://www.deped.gov.ph/", "notes": ["Published from the approved August 25 7:00 AM brief with the 9,540-classroom and ₱2.15-billion figures explicitly attributed to that assessment."]}
+}

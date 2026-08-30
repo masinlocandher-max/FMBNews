@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title description">
+  <title id="title">FMB News editorial visual</title>
+  <desc id="description">Dark purple FMB News editorial graphic with gold signal arcs</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#120523"/>
+      <stop offset="0.52" stop-color="#2a0a55"/>
+      <stop offset="1" stop-color="#08020f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.72" cy="0.3" r="0.65">
+      <stop offset="0" stop-color="#7a42c9" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#7a42c9" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#background)"/>
+  <rect width="1200" height="675" fill="url(#glow)"/>
+  <g fill="none" transform="translate(955 330) rotate(-45)">
+    <circle r="265" stroke="#ffffff" stroke-opacity="0.07" stroke-width="62" stroke-dasharray="830 835"/>
+    <circle r="165" stroke="#d5a83a" stroke-opacity="0.34" stroke-width="34" stroke-dasharray="518 520"/>
+    <circle r="82" stroke="#b89be5" stroke-opacity="0.38" stroke-width="20" stroke-dasharray="258 260"/>
+  </g>
+  <path d="M82 552h1036" stroke="#d5a83a" stroke-opacity="0.48"/>
+  <text x="84" y="264" fill="#ffffff" font-family="Georgia, serif" font-size="116" font-weight="700" letter-spacing="-4">FMB</text>
+  <text x="88" y="334" fill="#ffffff" font-family="Arial, sans-serif" font-size="46" font-weight="700" letter-spacing="18">NEWS</text>
+  <text x="88" y="418" fill="#d8c9ed" font-family="Arial, sans-serif" font-size="21" font-weight="700" letter-spacing="7">EDITORIAL VISUAL</text>
+  <text x="88" y="598" fill="#ffffff" fill-opacity="0.66" font-family="Arial, sans-serif" font-size="18" letter-spacing="3">SOURCES VISIBLE · CONTEXT INCLUDED</text>
+</svg>

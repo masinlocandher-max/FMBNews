@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-13-0700",
+  "emailSubject": "FMB News | Government Slashes 2027 Infrastructure Program to ₱1.34 Trillion | August 13, 2026 | 7:00 AM PHT",
+  "slug": "dilg-turns-over-20-emergency-motorcycles-to-bicol-pnp",
+  "headline": "DILG Turns Over 20 Emergency Motorcycles to Bicol Police",
+  "seoTitle": "DILG Turns Over 20 Emergency Motorcycles to Bicol Police",
+  "seoDescription": "Interior Secretary Jonvic Remulla led the turnover of 20 Unified 911 emergency-response motorcycles to police units in Albay and Camarines Sur.",
+  "keywords": ["Bicol Unified 911", "emergency response motorcycles", "DILG Bicol", "PNP Region 5"],
+  "category": "Community",
+  "kicker": "Bicol · Emergency response",
+  "deck": "Interior Secretary Jonvic Remulla led the turnover of 20 Unified 911 emergency-response motorcycles to police units in Albay and Camarines Sur.",
+  "publishedAt": "2026-08-13T07:00:00+08:00",
+  "updatedAt": "2026-08-13T07:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Interior Secretary Jonvic Remulla led the turnover of 20 Unified 911 emergency-response motorcycles to the Philippine National Police in the Bicol Region, the Department of the Interior and Local Government said.",
+        "The motorcycles were assigned to the Albay Police Provincial Office and the Camarines Sur Police Provincial Office as part of the government's rollout of Unified 911 response capabilities."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The turnover was held at Camp BGen Simeon A. Ola in Legazpi City and involved officials from DILG, the PNP, Police Regional Office 5 and the provincial governments of Albay and Camarines Sur.",
+        "DILG said the additional mobility is intended to help police and other responders reach communities faster during emergencies, including places where larger vehicles may be less practical."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "Faster access can be critical during medical emergencies, floods and other disasters, especially in remote or congested communities. The equipment's impact will depend on dispatch systems, training, maintenance and coordination with local responders."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for deployment details, responder training and publicly reported response-time results from the Unified 911 rollout in Albay and Camarines Sur."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Philippine Information Agency",
+      "title": "Remulla boosts Bicol emergency response with 20 Unified 911 vehicles",
+      "publishedAt": "2026-08-11T00:00:00+08:00",
+      "url": "https://pia.gov.ph/press-release/remulla-boosts-bicol-emergency-response-with-20-unified-911-vehicles/"
+    },
+    {
+      "publisher": "Philippine News Agency",
+      "title": "20 motorcycles provided to boost 911 emergency response in Bicol",
+      "publishedAt": "2026-08-10T19:38:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1281499"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "sourceUrl": null,
+    "creator": "FMB News",
+    "license": "FMB-owned editorial visual",
+    "licenseUrl": "https://www.francinemariebautista.com/news/",
+    "usageStatus": "FMB-owned editorial visual used because a stable, publication-ready local asset for the recommended government photograph was not supplied or independently resolved.",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying the Bicol emergency-response report. It does not depict the turnover ceremony or motorcycles.",
+    "alt": "FMB News editorial visual for the Bicol Unified 911 motorcycle turnover",
+    "width": 1200,
+    "height": 675,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-13T13:05:00+08:00",
+    "photoReferenceUrl": "https://pia.gov.ph/press-release/remulla-boosts-bicol-emergency-response-with-20-unified-911-vehicles/",
+    "notes": [
+      "Separated this emergency-response development from the unrelated customs interception included in the same email block.",
+      "Omitted unsupported equipment details from the bulletin, including flood-wading gear and first-aid-kit specifications.",
+      "Used the FMB-owned fallback because no stable, publication-ready image asset with confirmed reuse terms was supplied."
+    ]
+  }
+}

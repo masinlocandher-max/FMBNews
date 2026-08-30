@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-25-1900",
+  "emailSubject": "FMB News | 261 Filipino Seafarers Repatriated from Black Sea; Ortonio Declared Hostile Witness | August 25, 2026 | 7:00 PM PHT",
+  "slug": "boc-bir-cigarette-smuggling-funding-gaps",
+  "headline": "BOC, BIR Flag Funding Gaps in Fight Against Cigarette Smuggling",
+  "seoTitle": "BOC, BIR Flag Anti-Smuggling Funding Gaps | FMB News",
+  "seoDescription": "Customs and tax authorities told lawmakers that funding and equipment gaps are limiting enforcement against illicit cigarette smuggling in the Philippines.",
+  "keywords": ["BOC cigarette smuggling funding", "BIR illicit tobacco enforcement", "Philippines anti-smuggling budget 2026"],
+  "category": "Business",
+  "kicker": "Revenue · Enforcement",
+  "deck": "Finance officials told a House hearing that Customs needs more resources for maritime assets, compulsory acquisition and legal support as illicit tobacco enforcement intensifies.",
+  "publishedAt": "2026-08-25T19:00:00+08:00",
+  "updatedAt": "2026-08-26T01:01:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading": "What happened", "paragraphs": ["The Bureau of Customs and Bureau of Internal Revenue have flagged resource shortages affecting the government's campaign against cigarette smuggling, according to the Department of Finance during a House Ways and Means Committee hearing on August 25.", "DOF Fiscal Policy and Monitoring Undersecretary Karlo Fermin Adriano said the agencies submitted reports detailing enforcement needs after lawmakers asked what additional support would strengthen the campaign."]},
+    {"heading": "Where the gaps are", "paragraphs": ["Among the Customs concerns cited at the hearing were insufficient funding to use compulsory-acquisition provisions against undervalued shipments, inadequate resources to acquire land, air and water assets for anti-smuggling operations, and a lack of legal support for personnel testifying in smuggling cases.", "The funding discussion comes amid a broader government drive against illicit tobacco, including recent large-scale seizures and tighter controls over confiscated cigarette inventories."]},
+    {"heading": "Context", "paragraphs": ["In June, a joint BOC, NBI, BIR and Philippine Coast Guard operation intercepted 23 containers of illicit cigarettes valued at about P1.7 billion. Customs has also ordered stronger security and accountability measures for confiscated cigarettes held at ports nationwide."]},
+    {"heading": "Why this matters", "paragraphs": ["Illicit cigarette trade can reduce tax collections, undercut lawful businesses and expose enforcement personnel to well-funded smuggling networks. Budget support matters only if it produces accountable equipment, stronger case preparation and measurable enforcement results."]},
+    {"heading": "What to watch next", "paragraphs": ["Lawmakers are expected to weigh the agencies' operational requirements during budget deliberations. The key question is whether additional 2027 appropriations translate into more maritime enforcement capacity, testing capability and legal support for frontline personnel."]}
+  ],
+  "sources": [
+    {"publisher": "INQUIRER.net", "title": "BOC, BIR flag lack of funds in fight vs cigarette smuggling, says DOF", "publishedAt": "2026-08-25T16:47:00+08:00", "url": "https://newsinfo.inquirer.net/2291975/boc-bir-flag-lack-of-funds-in-fight-vs-cigarette-smuggling-says-dof"},
+    {"publisher": "Bureau of Customs", "title": "BOC, NBI, BIR, PCG Intercept P1.7 Billion Worth of Smuggled Cigarettes Linked to Private Wharf Shipments", "publishedAt": "2026-06-23T00:00:00+08:00", "url": "https://customs.gov.ph/boc-nbi-bir-pcg-intercept-p1-7-billion-worth-of-smuggled-cigarettes-linked-to-private-wharf-shipments/"}
+  ],
+  "image": {"kind": "editorial-fallback", "url": "/assets/images/news/fmb-news-editorial-fallback.svg", "sourceUrl": null, "creator": "FMB News", "license": "FMB-owned editorial visual", "licenseUrl": "https://www.francinemariebautista.com/news/", "usageStatus": "FMB-owned editorial visual used because no stable original image file with independently verified reuse rights was supplied.", "credit": "FMB News editorial visual", "caption": "FMB News editorial visual accompanying the anti-smuggling funding report; it does not depict an actual enforcement operation.", "alt": "FMB News editorial visual for anti-smuggling enforcement", "width": 1200, "height": 675, "focusX": 50, "focusY": 50},
+  "audit": {"sourceCheckedAt": "2026-08-26T01:01:00+08:00", "photoReferenceUrl": "https://customs.gov.ph/boc-nbi-bir-pcg-intercept-p1-7-billion-worth-of-smuggled-cigarettes-linked-to-private-wharf-shipments/", "notes": ["Same-day Inquirer reporting confirms BOC and BIR funding concerns raised through DOF at the House hearing.", "Background seizure figure independently confirmed through the Bureau of Customs."]}
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-11-1900",
+  "emailSubject": "FMB News | Senate Resumes VP Sara Impeachment Trial as Defense Contests Parallel Charges | August 11, 2026 | 7:00 PM PHT",
+  "slug": "sara-duterte-impeachment-trial-defense-parallel-charges",
+  "headline": "Sara Duterte Impeachment Trial Resumes as Defense Challenges Parallel Criminal Charges",
+  "seoTitle": "Sara Duterte Impeachment Trial Resumes as Defense Challenges Parallel Criminal Charges",
+  "seoDescription": "The Senate impeachment trial of Vice President Sara Duterte resumed as her lawyers argued against concurrent criminal prosecution, a position presented as a defense claim rather than settled law.",
+  "keywords": ["Sara Duterte impeachment trial", "Senate impeachment court", "parallel criminal charges", "Philippines"],
+  "category": "National",
+  "kicker": "Impeachment · Senate · Constitutional accountability",
+  "deck": "Vice President Sara Duterte’s lawyers argued that criminal proceedings involving allegations also raised in the impeachment case should not run concurrently. The claim remains a defense position for the impeachment court to resolve.",
+  "publishedAt": "2026-08-11T19:00:00+08:00",
+  "updatedAt": "2026-08-11T19:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading": "What happened", "paragraphs": ["The Senate impeachment trial of Vice President Sara Duterte resumed on Tuesday, August 11, according to the live coverage cited in the FMB News bulletin.", "During the proceedings, Duterte’s defense argued that criminal prosecution involving allegations also covered by the impeachment case should not proceed concurrently while the Vice President remains an impeachable officer. FMB News is presenting that proposition as the defense team’s legal argument, not as an established constitutional rule or a ruling of the impeachment court."]},
+    {"heading": "Context", "paragraphs": ["Impeachment is a constitutional process focused on whether an impeachable official should remain in office. It is distinct from an ordinary criminal trial, and disputes over how impeachment interacts with separate criminal proceedings can require legal interpretation.", "The allegations in the impeachment case remain allegations. Duterte and her lawyers have contested the case, while House prosecutors have maintained their responsibility to prove the articles before the Senate."]},
+    {"heading": "Why this matters to Filipinos", "paragraphs": ["The Senate’s treatment of the defense argument could shape how impeachment proceedings and separate criminal processes are understood when they concern overlapping alleged conduct. The issue also affects public expectations about accountability, due process and the limits of each institution’s authority."]},
+    {"heading": "What to watch next", "paragraphs": ["Watch for a formal ruling or order from the impeachment court on the defense position, as well as the next presentation of evidence and any written submissions from the parties. Until the court acts, the defense argument should not be described as controlling law."]}
+  ],
+  "sources": [{"publisher": "GMA News Online", "title": "Live updates: Sara Duterte impeachment trial — August 11, 2026", "publishedAt": "2026-08-11T16:30:00+08:00", "url": "https://www.gmanetwork.com/news/topstories/nation/998071/live-updates-sara-duterte-impeachment-trial-august-11-2026/story/"}],
+  "image": {"kind": "public-domain-photo", "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Philippine_Senate_Session_Hall.jpg/1280px-Philippine_Senate_Session_Hall.jpg", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Philippine_Senate_Session_Hall.jpg", "creator": "Avito Dalan for the Philippine News Agency", "license": "Public domain · Philippine government work", "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-PhilippinesGov", "usageStatus": "Wikimedia Commons identifies the Philippine News Agency photograph as a Philippine government work in the public domain. The direct JPEG is used so the photo does not depend on an SVG wrapper loading a second remote resource.", "credit": "Photo: Avito Dalan / Philippine News Agency · Public domain", "caption": "Archive photograph of the Philippine Senate session hall on May 29, 2025. It does not depict the August 11, 2026 impeachment proceeding.", "alt": "Archive view of the Philippine Senate session hall in Pasay City", "width": 1280, "height": 853, "focusX": 50, "focusY": 50},
+  "audit": {"sourceCheckedAt": "2026-08-11T22:47:00+08:00", "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:Philippine_Senate_Session_Hall.jpg", "notes": ["All immunity and concurrent-prosecution propositions are attributed to the defense and are not stated as settled law.", "The archive image is clearly labeled and its public-domain status and photographer credit were independently verified on Wikimedia Commons.", "Image delivery was changed from an externally dependent SVG wrapper to the direct public-domain JPEG to prevent blank cards."]}
+}

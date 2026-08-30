@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "fmb-news-2026-08-07-1200-pht",
+  "emailSubject": "FMB News | Magnitude 5.8 Quake Hits Off Occidental Mindoro | August 7, 2026 | 12:00 PM PHT",
+  "slug": "enrique-razon-tops-forbes-philippines-50-richest-list",
+  "headline": "Enrique Razon Tops Forbes Philippines 50 Richest List",
+  "category": "Business",
+  "kicker": "Business · Wealth ranking",
+  "deck": "Ports and gaming tycoon Enrique Razon Jr. moved to No. 1 on Forbes' 2026 Philippines 50 Richest list with an estimated net worth of $21.8 billion.",
+  "publishedAt": "2026-08-07T12:00:00+08:00",
+  "updatedAt": "2026-08-07T15:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Enrique Razon Jr. ranked first on Forbes' 2026 list of the Philippines' 50 richest, with an estimated net worth of $21.8 billion. It is the first time he has led this annual Philippines ranking.",
+        "The Sy siblings placed second with a combined fortune of $9.2 billion, while San Miguel chairman Ramon Ang ranked third at $3.5 billion."
+      ]
+    },
+    {
+      "heading": "What the ranking shows",
+      "paragraphs": [
+        "Razon's estimated fortune rose from $11.5 billion and second place in the 2025 Philippines list. He chairs International Container Terminal Services Inc. and also has major interests in Manila Water and Bloomberry Resorts.",
+        "Lucio and Susan Co were fourth at $3.3 billion, while Isidro Consunji and his siblings placed fifth at $3 billion, according to the published ranking."
+      ]
+    },
+    {
+      "heading": "The context",
+      "paragraphs": [
+        "Forbes said the combined wealth of the 50 listees fell to $79 billion from $86 billion a year earlier amid inflation, a weaker peso, and market pressure tied to an energy shock. The estimates were based on stock prices and exchange rates as of July 17, 2026.",
+        "Rankings of this kind are snapshots rather than cash balances. Public share prices, exchange rates, private-company estimates, debt, and family ownership can materially change a person's reported net worth."
+      ]
+    },
+    {
+      "heading": "What remains unclear",
+      "paragraphs": [
+        "The list does not measure how wealth is distributed across the wider economy or how much of each fortune can be readily converted to cash. Market movements after Forbes' valuation date are also not reflected in the ranking."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "The list tracks the scale and concentration of ownership behind companies that influence Philippine ports, utilities, property, retail, food, gaming, and other major sectors. Changes in those fortunes can also reflect shifts in listed-company values and investor expectations."
+      ]
+    },
+    {
+      "heading": "What happens next",
+      "paragraphs": [
+        "Future rankings will move with company performance, share prices, currency values, major transactions, and updated disclosures. Readers should compare the annual list with company filings and market data rather than treat it as a fixed measure."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "The Philippine Star",
+      "title": "Razon tops Forbes richest in Philippines list",
+      "publishedAt": "2026-08-07T00:00:00+08:00",
+      "url": "https://www.philstar.com/headlines/2026/08/07/2547571/razon-tops-forbes-richest-philippines-list"
+    },
+    {
+      "publisher": "ABS-CBN News",
+      "title": "Ports tycoon Razon tops Forbes list of 50 richest Filipinos, is PH's first trillionaire",
+      "publishedAt": "2026-08-06T14:44:00+08:00",
+      "url": "https://www.abs-cbn.com/news/business/2026/8/6/ports-tycoon-razon-tops-forbes-list-of-50-richest-filipinos-is-ph-first-trillionaire-1444"
+    }
+  ],
+  "image": {
+    "kind": "public-domain-photo",
+    "url": "/assets/images/news/2026-08-07/enrique-razon.webp",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ricky_Razon_2023_(cropped).jpg",
+    "creator": "U.S. Embassy in the Philippines",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "usageStatus": "U.S. Embassy photograph verified as public domain; locally hosted derivative published with source and status credit.",
+    "credit": "Photo: U.S. Embassy Manila / Wikimedia Commons · Public domain",
+    "caption": "Archive portrait of Enrique Razon Jr. from 2023. It is used to identify the subject and is not a Forbes ranking graphic.",
+    "alt": "Archive portrait of Philippine businessman Enrique Razon Jr."
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-07T15:00:00+08:00",
+    "photoReferenceUrl": "https://commons.wikimedia.org/wiki/File:Ricky_Razon_2023_(cropped).jpg",
+    "notes": [
+      "The Philippines 50 Richest list was kept distinct from Forbes' March 2026 World Billionaires list, which used a different valuation date and estimate.",
+      "The report states Forbes' valuation date and explains that net-worth rankings are estimates.",
+      "A U.S. Embassy public-domain archive portrait is locally hosted with visible source and status credit."
+    ]
+  }
+}

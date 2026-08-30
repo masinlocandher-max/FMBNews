@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-29-1900",
+  "emailSubject": "FMB News | Over 1,000 Evacuated in Olongapo; Aquino Bridge Collapses in Tarlac | August 29, 2026 | 7:00 PM PHT",
+  "slug": "leptospirosis-hospital-surge-philippines-august-29-2026",
+  "headline": "Leptospirosis Admissions Rise as Hospitals Expand Surge Capacity After Flooding",
+  "seoTitle": "Leptospirosis Admissions Rise After Flooding | FMB News",
+  "seoDescription": "DOH reported 5,486 leptospirosis cases nationwide through August 26 and 521 patients in Metro Manila as hospitals expand fast lanes and surge capacity after flooding.",
+  "keywords": ["leptospirosis Philippines August 2026", "DOH leptospirosis surge", "Olongapo hospital full capacity"],
+  "category": "Health",
+  "kicker": "Health · Flood Response",
+  "deck": "DOH hospitals are using fast lanes, referrals and added bed capacity as post-flood leptospirosis admissions increase in Metro Manila and Central Luzon.",
+  "publishedAt": "2026-08-29T19:00:00+08:00",
+  "updatedAt": "2026-08-30T01:02:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["The Department of Health reported 5,486 leptospirosis cases nationwide from January 4 through August 26, 2026, a 23% decline from 7,163 cases during the same period in 2025.","James L. Gordon Memorial Hospital in Olongapo City separately announced that it had reached full bed capacity amid rising patient demand, including suspected and confirmed leptospirosis cases. Its emergency room remains open and triage continues, although inpatient admissions may be delayed."]},
+    {"heading":"Hospital response","paragraphs":["Thirty-three DOH hospitals in Metro Manila, the Ilocos Region, Cagayan Valley, Central Luzon and the Cordillera Administrative Region have activated leptospirosis fast lanes. DOH is also using referral and surge-capacity protocols to prevent individual hospitals from becoming overwhelmed."]},
+    {"heading":"Medicine and prevention","paragraphs":["The DOH said on August 19 that about 3.1 million doxycycline capsules were on standby at its central office and 17 Centers for Health Development. People exposed to floodwater are advised to seek medical consultation so a clinician can determine whether preventive medicine or treatment is appropriate."]},
+    {"heading":"Context","paragraphs":["The national case total is lower than the same period in 2025, but officials expect cases to rise after recent floods because leptospirosis symptoms can develop days or weeks after exposure. As of August 23, 521 leptospirosis patients were being treated in DOH hospitals in Metro Manila, including 158 at San Lazaro Hospital.","The bulletin's national total of 5,542 was corrected to the DOH-reported 5,486. Its claim of more than 520 acute admissions in two weeks is not supported by the cited report; 521 was the number of patients in DOH hospitals in Metro Manila as of August 23."]},
+    {"heading":"Why this matters","paragraphs":["Leptospirosis is a delayed public-health consequence of flooding: hospital pressure can intensify after floodwaters recede, making early consultation, referral capacity and clear risk communication essential to preventing severe illness and avoidable deaths."]},
+    {"heading":"What to watch next","paragraphs":["DOH expects the post-flood surge to continue in the coming days. Residents who develop fever, muscle pain, headache, jaundice or reduced urination after flood exposure should seek prompt medical assessment."]}
+  ],
+  "sources": [
+    {"publisher":"Philippine News Agency","title":"PH records 5.5K leptospirosis cases in first 8 months of 2026","publishedAt":"2026-08-28T00:00:00+08:00","url":"https://www.pna.gov.ph/articles/1282917"},
+    {"publisher":"Philippine News Agency","title":"DOH says leptospirosis cases down 35%, 3.1M doxycycline capsules ready","publishedAt":"2026-08-19T00:00:00+08:00","url":"https://www.pna.gov.ph/articles/1282216"},
+    {"publisher":"Presidential Communications Office","title":"Palace: 33 DOH hospitals activate fast lanes for leptospirosis patients","publishedAt":"2026-08-26T00:00:00+08:00","url":"https://pco.gov.ph/news_releases/palace-33-doh-hospitals-activate-fast-lanes-for-leptospirosis-patients/"},
+    {"publisher":"Inquirer Northern Luzon","title":"Olongapo hospital hits full capacity amid rise in leptospirosis cases","publishedAt":"2026-08-29T11:01:00+08:00","url":"https://newsinfo.inquirer.net/2294617/olongapo-hospital-reaches-full-capacity-amid-rise-in-leptospirosis-cases"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://www.pna.gov.ph/articles/1282917","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"The approved brief referenced hospital and DOH imagery but did not supply a stable repository-ready original file with verified reuse terms. FMB News editorial fallback used instead.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the leptospirosis hospital-capacity report.","alt":"FMB News editorial visual for leptospirosis health response after flooding","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-08-30T01:02:00+08:00","photoReferenceUrl":"https://www.pna.gov.ph/articles/1282917","notes":["Corrected the national total from the email's 5,542 to the DOH/PNA figure of 5,486 cases through August 26.","Described 521 as patients in DOH hospitals in Metro Manila as of August 23 rather than acute admissions in the previous two weeks.","Distinguished JLGMH's full bed capacity from continued emergency-room and triage operations.","Kept the verified 33 fast-lane hospitals and separately sourced 3.1 million doxycycline stock context, while avoiding a universal prophylaxis timetable.","Did not reuse referenced imagery without a stable original file and clear repository reuse terms."]}
+}

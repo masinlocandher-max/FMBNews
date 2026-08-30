@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-24-1300",
+  "emailSubject": "FMB News | DepEd Postpones Active Shooter Drills; Typhoon Saudel Reaches 175 km/h | August 24, 2026 | 1:00 PM PHT",
+  "slug": "deped-postpones-active-threat-school-drills-september",
+  "headline": "DepEd Postpones Nationwide Active-Threat School Drills to September",
+  "seoTitle": "DepEd Postpones Active-Threat School Drills to September | FMB News",
+  "seoDescription": "DepEd postponed the August 25 nationwide active-threat school safety drill to September while it aligns the exercise with child-protection and psychosocial guidance.",
+  "keywords": ["DepEd active threat drill September 2026", "school safety drill Philippines", "trauma informed school preparedness"],
+  "category": "National",
+  "kicker": "Education · School Safety",
+  "deck": "The education department moved the August 25 exercise to the first week of September and said the revised drill must be age-appropriate and trauma-informed.",
+  "publishedAt": "2026-08-24T13:00:00+08:00",
+  "updatedAt": "2026-08-24T19:05:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading": "What happened", "paragraphs": ["The Department of Education postponed the Nationwide Simultaneous School Safety Drill for Active Attack Incidents that had been scheduled for Tuesday, August 25, 2026.", "DepEd said the activity would instead be held during the first week of September. The agency had not announced a specific nationwide date as of Monday afternoon."]},
+    {"heading": "Context", "paragraphs": ["DepEd said the additional time would allow the exercise to reflect recommendations from weather, disaster-preparedness, child-protection and psychosocial-support experts while safeguarding learners' physical and psychological well-being.", "The Philippine Psychiatric Association and the Philippine Society for Child and Adolescent Psychiatry had urged the government to avoid hyper-realistic simulations. DepEd said the rescheduled drill would be age-appropriate and trauma-informed, focused on basic safety, communication and recovery, without graphic or theatrical scenarios that could cause unnecessary fear."]},
+    {"heading": "Why this matters", "paragraphs": ["School emergency preparedness must teach clear protective procedures without creating avoidable psychological harm. The postponement gives education and safety officials time to reconcile operational readiness with child-welfare guidance."]},
+    {"heading": "What to watch next", "paragraphs": ["Watch DepEd for the final nationwide date, detailed mechanics and guidance showing how schools should conduct active-threat exercises without graphic or hyper-realistic simulations."]}
+  ],
+  "sources": [
+    {"publisher": "Philstar.com", "title": "Nationwide active-attack school drills postponed to September", "publishedAt": "2026-08-24T11:28:00+08:00", "url": "https://www.philstar.com/headlines/2026/08/24/2551475/nationwide-active-attack-school-drills-postponed-september"},
+    {"publisher": "ABS-CBN News", "title": "DepEd postpones nationwide 'live-shooter' drills: 'Nakikinig kami sa mga eksperto'", "publishedAt": "2026-08-24T09:17:00+08:00", "url": "https://news.abs-cbn.com/news/nation/2026/8/24/deped-postpones-nationwide-live-shooter-drills-0917"}
+  ],
+  "image": {"kind": "editorial-fallback", "url": "/assets/images/news/fmb-news-editorial-fallback.svg", "sourceUrl": null, "creator": "FMB News", "license": "FMB-owned editorial visual", "licenseUrl": "https://www.francinemariebautista.com/news/", "usageStatus": "FMB-owned editorial visual used because publication rights for the recommended photograph could not be independently verified.", "credit": "FMB News editorial visual", "caption": "FMB News editorial visual accompanying the report on the rescheduled nationwide school safety drill; it does not depict the actual event.", "alt": "FMB News editorial visual for the DepEd active-threat school drill postponement", "width": 1200, "height": 675, "focusX": 50, "focusY": 50},
+  "audit": {"sourceCheckedAt": "2026-08-24T19:05:00+08:00", "photoReferenceUrl": "https://www.pna.gov.ph/categories/national", "notes": ["The August 25 postponement and first-week-of-September rescheduling were independently confirmed.", "The unsupported quotation and invented drill mechanics in the delivery envelope were omitted.", "The recommended photograph resolved only to a generic category page, so the FMB-owned fallback was used."]}
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-26-0700",
+  "emailSubject": "FMB News | COA Seeks ₱2.2-B to Revive Pre-Audit; Neighborhood Safety Poll Drops to 72% | August 26, 2026 | 7:00 AM PHT",
+  "slug": "coa-seeks-2-2-billion-pre-audit-infrastructure",
+  "headline": "COA Seeks ₱2.2 Billion to Revive Pre-Audits for Government Infrastructure",
+  "seoTitle": "COA Seeks ₱2.2B to Revive Infrastructure Pre-Audits | FMB News",
+  "seoDescription": "The Commission on Audit is seeking about ₱2.2 billion to strengthen pre-auditing and digital verification of government infrastructure projects.",
+  "keywords": ["COA pre-audit", "government infrastructure audit", "₱2.2 billion COA"],
+  "category": "National",
+  "kicker": "Governance · Public Accountability",
+  "deck": "The proposal would strengthen checks before public funds are released and expand digital verification of infrastructure projects.",
+  "publishedAt": "2026-08-26T07:00:00+08:00",
+  "updatedAt": "2026-08-26T13:18:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["The Commission on Audit said during House deliberations on its proposed 2027 budget that it would need an estimated ₱2.2 billion and 146 additional teams to revive pre-auditing of government projects.","Baguio City Rep. Mauricio Domogan argued that combining pre-audits with geotagging could help detect non-existent projects before full payment. COA said it is already coordinating with the Department of Public Works and Highways on stronger geotagging requirements."]},
+    {"heading":"What pre-audit means","paragraphs":["A pre-audit checks selected transactions before funds are fully disbursed, while a post-audit reviews transactions after payment. Supporters argue that pre-audit can reduce the risk of paying for incomplete, irregular or non-existent projects, but the system also requires enough trained auditors and engineers to avoid slowing legitimate procurement."]},
+    {"heading":"Context","paragraphs":["COA Chairperson Gamaliel Cordoba said personnel shortages had pushed the agency toward fraud audits after projects were implemented. Commissioner Douglas Michael Mallillin said the commission is exploring continuous auditing without necessarily restoring the former system exactly as it operated before.","The proposal was submitted in the previous budget cycle and is expected to be resubmitted. Any restoration still depends on funding and the final design approved through the budget process."]},
+    {"heading":"Why this matters","paragraphs":["Infrastructure spending involves large public outlays and long project timelines. Earlier verification can improve accountability if it is designed to catch irregularities without creating new bottlenecks for legitimate projects."]},
+    {"heading":"What to watch next","paragraphs":["The next step is the House budget process, including whether lawmakers approve dedicated funding for expanded pre-audit staffing, engineering review and digital verification tools in the 2027 budget."]}
+  ],
+  "sources": [
+    {"publisher":"GMA News","title":"COA seeks P2.2B to revive pre-audit of government projects","publishedAt":"2026-08-26T03:42:00+08:00","url":"https://www.gmanetwork.com/news/topstories/nation/999848/coa-seeks-p2-2b-to-revive-pre-audit-of-government-projects/story/"},
+    {"publisher":"House of Representatives","title":"House Resolution No. 291 - Mandatory pre-audit requirement for government-funded programs, activities and projects","publishedAt":"2025-09-23T12:00:00+08:00","url":"https://www.congress.gov.ph/house-members/view/L082"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":null,"creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because the email referenced a House/PNA image but did not provide a stable reusable original image file for publication.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying coverage of the COA pre-audit proposal.","alt":"FMB News editorial visual for the Commission on Audit pre-audit proposal","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-08-26T13:18:00+08:00","photoReferenceUrl":"https://www.pna.gov.ph/categories/national","notes":["Verified the ₱2.2-billion estimate, 146-team requirement, budget-hearing context and geotagging discussion through GMA News' same-day report.","House records independently confirm Rep. Mauricio Domogan previously filed a resolution urging mandatory pre-audit requirements.","Omitted the bulletin's unsupported ₱1.44-trillion project total and invented paraphrased quotation."]}
+}

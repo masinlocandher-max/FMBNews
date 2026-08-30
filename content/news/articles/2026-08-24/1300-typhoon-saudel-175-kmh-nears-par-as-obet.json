@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-24-1300",
+  "emailSubject": "FMB News | DepEd Postpones Active Shooter Drills; Typhoon Saudel Reaches 175 km/h | August 24, 2026 | 1:00 PM PHT",
+  "slug": "typhoon-saudel-175-kmh-nears-par-as-obet",
+  "headline": "Typhoon Obet Exits PAR as Habagat Keeps Seas Rough",
+  "seoTitle": "Typhoon Obet Exits PAR; Habagat Hazards Persist | FMB News",
+  "seoDescription": "Typhoon Obet exited PAR at 9:30 p.m. on August 24 with 155 km/h winds, while PAGASA warned of persistent monsoon gusts and rough seas.",
+  "keywords": ["Typhoon Obet exits PAR August 24 2026", "Saudel outside PAR", "PAGASA Obet final bulletin", "Habagat rough seas"],
+  "category": "National",
+  "kicker": "Weather · Public Safety",
+  "deck": "PAGASA's final bulletin placed Saudel outside the Philippine monitoring boundary while monsoon winds and hazardous coastal waters remained a concern.",
+  "publishedAt": "2026-08-24T13:00:00+08:00",
+  "updatedAt": "2026-08-25T07:10:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading": "What happened", "paragraphs": ["Typhoon Obet, internationally known as Saudel, exited the Philippine Area of Responsibility at 9:30 p.m. on Monday, August 24, PAGASA said in its final bulletin for the cyclone.", "At 10 p.m., its eye was estimated 1,250 kilometers east-northeast of Extreme Northern Luzon. It had maximum sustained winds of 155 kilometers per hour, gusts of up to 190 km/h and was moving west-northwestward at 25 km/h."]},
+    {"heading": "Context", "paragraphs": ["Obet stayed far from the Philippine landmass and no tropical cyclone wind signal was raised. PAGASA forecast the typhoon to pass close to or make landfall over Japan's southern islands before moving toward southeastern China.", "The southwest monsoon was still expected to bring strong to gale-force gusts across much of Luzon and the Visayas, with rough seas reaching up to 3.5 meters along Batanes and the northern seaboard of the Babuyan Islands."]},
+    {"heading": "Why this matters", "paragraphs": ["A powerful offshore cyclone can strengthen monsoon flow even without a direct landfall. Communities and small-vessel operators should rely on the latest PAGASA bulletins because the storm's position, intensity and marine effects can change quickly."]},
+    {"heading": "What to watch next", "paragraphs": ["Continue monitoring PAGASA's monsoon rainfall and coastal-water advisories. Small vessels should follow local maritime instructions and avoid rough seas where advised."]}
+  ],
+  "sources": [
+    {"publisher": "DOST-PAGASA", "title": "Tropical Cyclone Bulletin No. 2F: Typhoon Obet", "publishedAt": "2026-08-24T23:00:00+08:00", "url": "https://pubfiles.pagasa.dost.gov.ph/tamss/weather/bulletin_obet.pdf"},
+    {"publisher": "INQUIRER.net", "title": "Typhoon Obet exits PAR, says Pagasa", "publishedAt": "2026-08-24T22:19:00+08:00", "url": "https://newsinfo.inquirer.net/2291366/typhoon-obet-exits-par-says-pagasa"},
+    {"publisher": "GMA News", "title": "Typhoon Obet exited PAR on Monday evening; 2 tropical cyclones under monitoring", "publishedAt": "2026-08-24T22:21:00+08:00", "url": "https://www.gmanetwork.com/news/weather/content/999680/typhoon-obet-exited-par-on-monday-evening-2-tropical-cyclones-under-monitoring/story/"}
+  ],
+  "image": {"kind": "editorial-fallback", "url": "/assets/images/news/fmb-news-editorial-fallback.svg", "sourceUrl": null, "creator": "FMB News", "license": "FMB-owned editorial visual", "licenseUrl": "https://www.francinemariebautista.com/news/", "usageStatus": "FMB-owned editorial visual used because publication rights for the recommended satellite image could not be independently verified.", "credit": "FMB News editorial visual", "caption": "FMB News editorial visual accompanying the Typhoon Obet update; it is not a satellite image of the actual cyclone.", "alt": "FMB News editorial visual for Typhoon Obet entering the Philippine Area of Responsibility", "width": 1200, "height": 675, "focusX": 50, "focusY": 50},
+  "audit": {"sourceCheckedAt": "2026-08-25T07:10:00+08:00", "photoReferenceUrl": "https://www.pna.gov.ph/categories/national", "notes": ["Preserved the original August 24 1:00 p.m. publication time because the bulletin explicitly marked this story as an update.", "PAGASA's final bulletin confirms exit at 9:30 p.m., 155 km/h sustained winds, 190 km/h gusts, a 1,250-km position and 25-km/h movement.", "Corrected the bulletin's outdated claim that Obet was still inside PAR at 11 p.m. and omitted unsupported quotations and rainfall totals."]}
+}

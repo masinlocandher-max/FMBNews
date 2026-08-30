@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-27-0100",
+  "emailSubject": "FMB News | Moody's Slashes 2026 PH Growth to 3%; LGUs to Get ₱1.32-T Tax Allotment | August 27, 2026 | 1:00 AM PHT",
+  "slug": "moodys-analytics-cuts-philippine-growth-forecast-3-percent",
+  "headline": "Moody's Analytics Cuts Philippine 2026 Growth Forecast to 3%",
+  "seoTitle": "Moody's Analytics Cuts Philippine 2026 Growth Forecast to 3% | FMB News",
+  "seoDescription": "Moody's Analytics cut its Philippine GDP growth forecast for 2026 to 3%, citing weak domestic demand and elevated inflation.",
+  "keywords": ["Moody's Analytics Philippines growth forecast 2026", "Philippines GDP 3 percent", "Philippine economy August 2026"],
+  "category": "Business",
+  "kicker": "Economy · Growth Outlook",
+  "deck": "The research firm lowered its 2026 Philippine growth projection to 3% as weak domestic demand and elevated inflation weigh on households and investment.",
+  "publishedAt": "2026-08-27T01:00:00+08:00",
+  "updatedAt": "2026-08-27T01:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["Moody's Analytics has cut its 2026 Philippine gross domestic product growth forecast to 3% from 4% in June, according to a report published August 27.","The research firm said the downgrade primarily reflects weaker-than-expected domestic demand after second-quarter GDP growth slowed to 2.3%. Average growth in the first half stood at 2.6%."]},
+    {"heading":"Context","paragraphs":["Moody's Analytics economist Sarah Tan said weakness in consumption and private investment is likely to constrain growth through the second half of 2026. Elevated inflation is also eroding household purchasing power.","The firm raised its 2026 inflation forecast to 5.2% and expects economic growth to recover to 4.6% in 2027 and 5.1% in 2028. The Bangko Sentral ng Pilipinas policy rate stands at 4.75% ahead of its August 27 policy decision."]},
+    {"heading":"Why this matters","paragraphs":["A 3% expansion would place growth below the government's current 3.5% to 4.5% target range and reinforce concerns about household demand, investment and the effects of high food and energy prices."]},
+    {"heading":"What to watch next","paragraphs":["The next major signals are the BSP policy decision, inflation data and third-quarter economic indicators. Moody's Analytics said persistent inflation or continued weakness in private investment could further weigh on the outlook."]}
+  ],
+  "sources": [
+    {"publisher":"The Philippine Star","title":"Moody’s unit trims Philippines growth forecast to 3%","publishedAt":"2026-08-27T00:00:00+08:00","url":"https://www.philstar.com/business/2026/08/27/2552014/moodys-unit-trims-philippines-growth-forecast-3"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":null,"creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because the email referenced a PSE/PNA image but did not supply a stable reusable original image asset.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the Philippine economic growth outlook.","alt":"FMB News editorial visual for Philippine economic growth outlook","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-08-27T06:58:00+08:00","photoReferenceUrl":null,"notes":["Verified the 3% forecast, the cut from 4%, weak domestic demand, 2.3% second-quarter growth, 5.2% inflation forecast and 4.75% BSP rate against current reporting.","Corrected the approved email's outdated statement that the government growth target was 6% to 7%; current reporting gives a 3.5% to 4.5% target.","Removed unsupported claims tying the downgrade primarily to the peso close, stock-market movement and a purported direct Moody's quotation not reproduced in the verified source."]}
+}

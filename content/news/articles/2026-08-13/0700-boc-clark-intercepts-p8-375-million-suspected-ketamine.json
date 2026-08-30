@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-13-0700",
+  "emailSubject": "FMB News | Government Slashes 2027 Infrastructure Program to ₱1.34 Trillion | August 13, 2026 | 7:00 AM PHT",
+  "slug": "boc-clark-intercepts-p8-375-million-suspected-ketamine",
+  "headline": "BOC Clark Intercepts ₱8.375 Million in Suspected Ketamine",
+  "seoTitle": "BOC Clark Intercepts ₱8.375 Million in Suspected Ketamine",
+  "seoDescription": "Customs and anti-drug officers intercepted about 1,675 grams of suspected ketamine concealed in a resin rabbit figurine at the Port of Clark.",
+  "keywords": ["Port of Clark ketamine", "Bureau of Customs seizure", "PDEA Clark", "suspected ketamine shipment"],
+  "category": "National",
+  "kicker": "Border security · Law enforcement",
+  "deck": "Customs and anti-drug officers intercepted about 1,675 grams of suspected ketamine concealed in a resin rabbit figurine at the Port of Clark.",
+  "publishedAt": "2026-08-13T07:00:00+08:00",
+  "updatedAt": "2026-08-13T07:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Bureau of Customs-Port of Clark, the Philippine Drug Enforcement Agency and the Clark Inter-Agency Task Force Against Illegal Drugs intercepted a parcel containing about 1,675 grams of suspected ketamine valued at ₱8.375 million.",
+        "The Bureau of Customs said the substance was concealed inside a resin rabbit figurine in a parcel from France that had been declared as an indoor decorative molded polyresin ornament."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "According to the bureau, the operation began with information from PDEA. A K-9 sniff test produced a positive indication, prompting a complete physical examination, while initial screening with a Rigaku spectrometer indicated the presence of suspected ketamine.",
+        "Customs issued a warrant of seizure and detention for alleged violations of the Customs Modernization and Tariff Act in relation to the Comprehensive Dangerous Drugs Act. The substance remains described as suspected ketamine pending the applicable confirmatory and legal processes."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "The interception shows how narcotics can be concealed in ordinary-looking parcels and why coordination among customs, police and drug-enforcement agencies matters at ports of entry."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for confirmatory laboratory results, any identified respondents and formal charges. No consignee is named in this report."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Bureau of Customs",
+      "title": "BOC, PDEA, Clark Inter-Agency Foil ₱8.375M Ketamine Shipment Concealed in Rabbit Figurine",
+      "publishedAt": "2026-08-12T00:00:00+08:00",
+      "url": "https://customs.gov.ph/boc-pdea-clark-inter-agency-foil-%E2%82%B18-375m-ketamine-shipment-concealed-in-rabbit-figurine/"
+    },
+    {
+      "publisher": "Inquirer.net",
+      "title": "BOC: P8.3M alleged ketamine shipment intercepted at Clark port",
+      "publishedAt": "2026-08-13T02:11:00+08:00",
+      "url": "https://newsinfo.inquirer.net/2283577/boc-p8-3m-alleged-ketamine-shipment-intercepted-at-clark-port"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "sourceUrl": null,
+    "creator": "FMB News",
+    "license": "FMB-owned editorial visual",
+    "licenseUrl": "https://www.francinemariebautista.com/news/",
+    "usageStatus": "FMB-owned editorial visual used because the recommended photograph did not have a resolved, stable image asset suitable for publication.",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying the Port of Clark interception report. It does not depict the seized parcel or substance.",
+    "alt": "FMB News editorial visual for the Port of Clark suspected-ketamine interception",
+    "width": 1200,
+    "height": 675,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-13T13:05:00+08:00",
+    "photoReferenceUrl": "https://customs.gov.ph/boc-pdea-clark-inter-agency-foil-%E2%82%B18-375m-ketamine-shipment-concealed-in-rabbit-figurine/",
+    "notes": [
+      "Corrected the bulletin's description of liquid ketamine in supplement bottles: the official BOC release describes a white crystalline substance concealed in a resin rabbit figurine.",
+      "Used 'suspected ketamine' because the official release reports initial screening rather than a final confirmatory laboratory result.",
+      "Separated this customs interception from the unrelated Bicol emergency-motorcycle story included in the same email block."
+    ]
+  }
+}

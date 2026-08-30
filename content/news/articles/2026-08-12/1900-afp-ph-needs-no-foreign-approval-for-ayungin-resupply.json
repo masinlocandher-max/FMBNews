@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "2026-08-12-1900",
+  "emailSubject": "FMB News | AFP Reaffirms PH Sovereign Rights Over Ayungin Resupply Missions | August 12, 2026 | 7:00 PM PHT",
+  "slug": "afp-ph-needs-no-foreign-approval-for-ayungin-resupply",
+  "headline": "AFP Says Philippines Needs No Foreign Approval for Ayungin Resupply Missions",
+  "seoTitle": "AFP: Philippines Needs No Foreign Approval for Ayungin Resupply",
+  "seoDescription": "The AFP said the Philippines does not need approval from any foreign power to conduct resupply missions to BRP Sierra Madre at Ayungin Shoal.",
+  "keywords": ["Ayungin Shoal resupply", "BRP Sierra Madre", "West Philippine Sea", "Armed Forces of the Philippines"],
+  "category": "National",
+  "kicker": "West Philippine Sea · National defense",
+  "deck": "The Armed Forces of the Philippines said the country does not need approval from any foreign power to conduct resupply missions to BRP Sierra Madre at Ayungin Shoal.",
+  "publishedAt": "2026-08-12T19:00:00+08:00",
+  "updatedAt": "2026-08-12T19:00:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Armed Forces of the Philippines said the country does not need the approval of any foreign power to conduct rotation and resupply missions to BRP Sierra Madre at Ayungin Shoal.",
+        "The position was reported by ABS-CBN News on Wednesday, August 12, as Philippine officials addressed questions surrounding missions to the military outpost in the West Philippine Sea."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "BRP Sierra Madre hosts a Philippine military contingent at Ayungin Shoal. Resupply missions bring personnel and provisions to the outpost and have repeatedly drawn encounters with Chinese vessels.",
+        "FMB News is not reporting a date for the next mission because the checked public record did not confirm an operational schedule."
+      ]
+    },
+    {
+      "heading": "Why this matters to Filipinos",
+      "paragraphs": [
+        "The statement concerns the Philippines' ability to support its personnel and exercise its maritime rights without accepting another state's claimed veto over routine operations. The issue directly affects national security and the protection of Philippine interests in the West Philippine Sea."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for official announcements from the AFP, the Philippine Coast Guard and the Department of Foreign Affairs on future resupply missions, as well as any response from Beijing."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "ABS-CBN News",
+      "title": "PH does not need to seek approval for Ayungin resupply missions—AFP",
+      "publishedAt": "2026-08-12T16:39:00+08:00",
+      "url": "https://news.abs-cbn.com/news/nation/2026/8/12/ph-does-not-need-to-seek-approval-for-ayungin-resupply-missions-afp-1639"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "sourceUrl": null,
+    "creator": "FMB News",
+    "license": "FMB-owned editorial visual",
+    "licenseUrl": "https://www.francinemariebautista.com/news/",
+    "usageStatus": "FMB-owned editorial visual used because reuse rights and a deliverable local asset for the recommended photograph could not be independently verified.",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying the report. It does not depict the August 12 statement or a specific resupply mission.",
+    "alt": "FMB News editorial visual for the report on Ayungin Shoal resupply missions",
+    "width": 1200,
+    "height": 675,
+    "focusX": 50,
+    "focusY": 50
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-08-13T01:05:00+08:00",
+    "photoReferenceUrl": "https://news.abs-cbn.com/news/nation/2026/8/12/ph-does-not-need-to-seek-approval-for-ayungin-resupply-missions-afp-1639",
+    "notes": [
+      "The recommended AFP photograph was not used because the bulletin supplied only a news-page URL and independent reuse terms plus a local image asset could not be verified.",
+      "Operational timing and additional diplomatic details not confirmed in the accessible source record were omitted."
+    ]
+  }
+}

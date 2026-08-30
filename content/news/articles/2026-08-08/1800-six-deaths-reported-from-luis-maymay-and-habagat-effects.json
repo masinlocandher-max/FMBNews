@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "bulletinKey": "fmb-news-2026-08-08-1800-pht",
+  "emailSubject": "FMB News | Government Generates ₱33.5 Million From Auction of Abandoned Goods | August 8, 2026 | 6:00 PM PHT",
+  "slug": "six-deaths-reported-from-luis-maymay-and-habagat-effects",
+  "headline": "Six Deaths Reported From Combined Effects of Luis, Maymay and Habagat",
+  "category": "Environment",
+  "kicker": "Severe weather · Disaster response · Public safety",
+  "deck": "The NDRRMC reported six deaths linked to the combined effects of Tropical Cyclones Luis and Maymay and the southwest monsoon, as authorities continued validating damage and displacement reports.",
+  "publishedAt": "2026-08-08T18:00:00+08:00",
+  "updatedAt": "2026-08-08T19:30:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["The National Disaster Risk Reduction and Management Council reported six deaths from the combined effects of Tropical Cyclones Luis and Maymay and the enhanced southwest monsoon, according to an August 8 report by ABS-CBN News."]},
+    {"heading":"What we know","paragraphs":["Weather-related flooding and landslide risks affected parts of the country while national and local disaster agencies continued response and monitoring operations.","The emailed bulletin also cited evacuations in Zambales and road disruptions, but its aggregate figures were not traceable to an accessible NDRRMC situation report at publication time."]},
+    {"heading":"Background","paragraphs":["Tropical cyclones can intensify the southwest monsoon even after moving away from land, prolonging rainfall and increasing the risk of flash floods, landslides and rough seas."]},
+    {"heading":"What remains unclear","paragraphs":["The bulletin's totals of 74,755 affected families, 120 damaged houses and 15 closed road sections could not be independently confirmed from the supplied links. Those numbers are excluded pending an accessible official situation report."]},
+    {"heading":"Why this matters","paragraphs":["Families in flood- and landslide-prone areas need accurate, current information for evacuation, travel and relief decisions. Preliminary disaster figures can change as field reports are validated."]},
+    {"heading":"What happens next","paragraphs":["NDRRMC, PAGASA and local governments are expected to issue further updates on casualties, affected communities, road conditions and relief operations."]}
+  ],
+  "sources": [
+    {"publisher":"ABS-CBN News","title":"6 dead due to combined effects of Luis, Maymay, and habagat -- NDRRMC","publishedAt":"2026-08-08T15:30:00+08:00","url":"https://www.abs-cbn.com/news/weather-traffic/2026/8/8/6-dead-due-to-combined-effects-of-luis-maymay-and-habagat-ndrrmc-0847"},
+    {"publisher":"DOST-PAGASA","title":"Forecast Weather Conditions","publishedAt":"2026-08-08T00:00:00+08:00","dateLabel":"August 8, 2026","url":"https://pagasa.dost.gov.ph/weather"}
+  ],
+  "image": {"kind":"open-license-photo","url":"/assets/images/news/2026-08-07/storm-rescue-operation.webp","sourceUrl":"https://commons.wikimedia.org/wiki/File:Rescue_Operation_-_Tropical_Storm_Nalgae_(52461503146).jpg","creator":"Bro. Jeffrey Pioquinto, SJ","license":"CC BY 2.0","licenseUrl":"https://creativecommons.org/licenses/by/2.0/","usageStatus":"Wikimedia Commons file verified as CC BY 2.0; locally hosted crop used with creator, source and license credit.","credit":"Photo: Bro. Jeffrey Pioquinto, SJ / Wikimedia Commons · CC BY 2.0","caption":"Archive photograph from a Philippine storm rescue operation. It does not depict the August 8, 2026 incidents or current conditions.","alt":"A woman carrying a baby during a storm rescue operation in the Philippines","width":1440,"height":900,"focusX":50,"focusY":50},
+  "audit": {"sourceCheckedAt":"2026-08-08T19:30:00+08:00","photoReferenceUrl":"https://commons.wikimedia.org/wiki/File:Rescue_Operation_-_Tropical_Storm_Nalgae_(52461503146).jpg","notes":["The six reported deaths are attributed to NDRRMC through ABS-CBN News.","Unsupported aggregate figures in the bulletin were excluded rather than repeated as fact.","The recommended image was not reused because publication rights were not independently verifiable; a locally hosted CC BY 2.0 archive photograph is used with exact credit."]}
+}
