@@ -4,25 +4,15 @@
 
 Publishing or updating editorial content must not require rebuilding the full FMB website.
 
-The standalone newsroom uses Supabase project `withlovefmb` as the publishing data source and keeps the migrated static archive as a permanent fallback/history layer.
+The standalone newsroom uses Supabase project `withlovefmb` as the publishing data source and keeps the versioned static archive as a permanent history/fallback layer.
 
 ## Data model
 
 ### `public.news_articles`
 
-Existing newsroom article table. It remains the source for individual FMB News reports.
+Existing newsroom article table. It is the source for individual FMB News reports.
 
-The standalone CMS adds fields for the richer structured article format already used in `content/news/articles/`:
-
-- `kicker`
-- `deck`
-- `keywords[]`
-- `content_json`
-- `sources_json`
-- `image_metadata`
-- `audit_metadata`
-- `canonical_path`
-- `content_version`
+The standalone CMS preserves the richer structured article format used in `content/news/articles/` through fields for kicker, deck, keywords, structured content, source metadata, image metadata, audit metadata, canonical path, and content version.
 
 Existing editorial controls remain in force, including status, verification, Filipino-impact fields, human review constraints, and admin/staff RLS.
 
@@ -37,17 +27,7 @@ FMB Worldwide editions can store a rolling `window_start` and `window_end`.
 
 ### `public.news_edition_entries`
 
-Ordered entries belonging to an edition. Entries can store:
-
-- country / section
-- category
-- headline
-- verified fact
-- why it matters
-- reputation / communications implication
-- opportunity / risk
-- source links
-- image metadata
+Ordered entries belonging to an edition. Entries can store country or section, category, headline, verified fact, why it matters, reputation/communications implication, opportunity/risk, source links, and image metadata.
 
 ## Public access model
 
@@ -60,7 +40,7 @@ All newsroom tables use Row Level Security.
 
 ## Frontend behavior
 
-`public/assets/js/fmb-news-cms.js` progressively enhances the migrated newsroom:
+`public/assets/js/fmb-news-cms.js` progressively enhances the newsroom:
 
 - Homepage story grid can load newly published `news_articles`.
 - Homepage FMB Brief feature can point to the latest published database edition.
@@ -69,12 +49,12 @@ All newsroom tables use Row Level Security.
 - `/news/world/live/` renders the latest Worldwide database edition.
 - `/news/fmb-brief/live/` renders the latest FMB Brief database edition.
 
-If Supabase has no published CMS content or a request fails, the existing static newsroom/archive remains intact.
+If Supabase has no published CMS content or a request fails, the repository's static newsroom/archive remains intact.
 
-## Migration integrity
+## Repository boundary
 
-The pre-cutover reconciliation is stored in `migration/reconciliation-report.txt` and must remain in the repository. It verified all migrated rendered pages, structured article files, News images, and local asset references before the temporary migration bridge was removed.
+`FMBNews` is self-contained and owns `/news/`. It must not import, sync, hydrate, or fetch application code or editorial content from another application repository. CI enforces that boundary.
 
-## Production cutover
+## Deployment model
 
-The legacy News files in `FMB-Ecosystem` remain a rollback copy until the independent FMBNews deployment is live and the public `/news/` route has been verified against it. After that cutover, content publishing should occur through Supabase; Vercel deployment is reserved for application/design changes.
+Content publishing occurs through Supabase. A hosting deployment is reserved for application changes such as design, routing, components, or publishing logic. The canonical public application route is `/news/`.
