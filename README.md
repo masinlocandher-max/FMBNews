@@ -4,27 +4,40 @@ Standalone repository for **FMB News / Filipino Media Bulletin**, including **FM
 
 ## Status
 
-**Standalone source migration verified.**
+**FMBNews is the canonical newsroom repository.**
 
-The canonical FMB News newsroom source, structured editorial content, News imagery, FMB Brief, FMB Worldwide, News-specific CSS/JS, approved brand data, and reference copies of the former legacy newsroom scripts were migrated from `masinlocandher-max/FMB-Ecosystem` into this repository.
+The FMB News newsroom source, structured editorial content, imagery, FMB Brief, FMB Worldwide, News-specific CSS/JS, approved brand data, and all shared assets still referenced by migrated articles have been moved from `masinlocandher-max/FMB-Ecosystem` into this repository.
 
-The standalone GitHub Actions build and route verification pass successfully.
+A final source-to-target reconciliation was completed before disconnecting the migration bridge. The permanent report is stored at `migration/reconciliation-report.txt`.
 
-From this point forward, new FMB News product development should happen in **`masinlocandher-max/FMBNews`** rather than adding more newsroom build logic to the mother ecosystem repository.
+### Reconciliation result
 
-## Safety / cutover
+- Rendered newsroom HTML: **40 / 40**
+- Rendered index pages: **40 / 40**
+- Structured article files: **216 / 216**
+- News image files: **65 / 65**
+- Local `/assets/` references checked: **48**
+- Missing referenced local assets: **0**
+- Rendered newsroom tree: **byte-for-byte identical**
+- Structured editorial content: **byte-for-byte identical**
+- News image library: **byte-for-byte identical**
+- Standalone build and verifier: **PASS**
 
-The old News source remains in `FMB-Ecosystem` temporarily as a rollback copy. Do **not** delete it until the independent News deployment is live and `https://www.francinemariebautista.com/news/` has been safely cut over and verified.
+The temporary migration, hydration, reconciliation workflows and trigger files have been removed. Normal development in this repository no longer depends on `FMB-Ecosystem`.
 
-A manual-only legacy sync workflow is retained under `.github/workflows/migrate-fmb-news.yml` for emergency reconciliation before cutover. It no longer runs automatically.
+## Public cutover safety
+
+The old News source remains physically present in `FMB-Ecosystem` only as a rollback copy while the current public production route still belongs to the existing mother-site deployment. Do **not** delete that rollback copy until the independent FMB News deployment is live and `https://www.francinemariebautista.com/news/` has been cut over and verified in production.
+
+New FMB News development and publishing architecture work must happen in **`masinlocandher-max/FMBNews`**.
 
 ## Repository structure
 
 - `site/` — FMB News pages, including FMB Brief and FMB Worldwide
 - `content/news/` — structured editorial source content and newsroom metadata
-- `public/assets/` — News-only images, styles, scripts, and approved brand assets
+- `public/assets/` — all local assets required by the standalone newsroom
 - `scripts/` — minimal standalone build and verification
-- `migration/` — source snapshot metadata and preserved legacy build scripts for reference only
+- `migration/` — provenance, audit report, and preserved legacy build scripts for reference only
 
 ## Target publishing architecture
 
