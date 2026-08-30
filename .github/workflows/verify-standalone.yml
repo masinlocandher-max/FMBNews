@@ -1,0 +1,36 @@
+name: Verify standalone FMB News
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build standalone newsroom
+        run: npm run build
+      - name: Verify canonical newsroom surfaces
+        run: npm run verify
+      - name: Verify built FMB Worldwide routes
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f dist/news/index.html
+          test -f dist/news/world/index.html
+          test -f dist/news/world/august-29-2026/index.html
+          test -f dist/news/world/august-30-2026/index.html
+          grep -q "FMB Brief" dist/news/index.html
+          grep -q "FMB Worldwide" dist/news/index.html
+          grep -q "FMB Worldwide" dist/news/world/index.html
+          test -f dist/assets/css/fmb-news-final.css
+          test -f dist/assets/js/fmb-news-approved.js
