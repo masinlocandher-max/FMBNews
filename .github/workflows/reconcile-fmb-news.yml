@@ -35,6 +35,7 @@ jobs:
           DST="$GITHUB_WORKSPACE/target"
           REPORT="$DST/migration/reconciliation-report.txt"
           DIFFROOT="$RUNNER_TEMP/fmb-news-reconcile"
+          MISSING_COUNT_FILE="$RUNNER_TEMP/missing-assets-count"
           mkdir -p "$DST/migration" "$DIFFROOT"
 
           SOURCE_SHA=$(git -C "$GITHUB_WORKSPACE/source" rev-parse HEAD)
@@ -65,13 +66,8 @@ jobs:
             echo >> "$REPORT"
           }
 
-          # Every rendered newsroom page, including individual reports, Brief and Worldwide.
           compare_tree "Rendered newsroom tree" "$SRC/news" "$DST/site"
-
-          # Every structured editorial source record and newsroom metadata file.
           compare_tree "Structured editorial content" "$SRC/content/news" "$DST/content/news"
-
-          # Every News-specific image copied during migration.
           compare_tree "News image library" "$SRC/assets/images/news" "$DST/public/assets/images/news"
 
           SOURCE_HTML=$(find "$SRC/news" -type f -name '*.html' | wc -l | tr -d ' ')
@@ -100,12 +96,12 @@ jobs:
           fi
           echo >> "$REPORT"
 
-          # Check every local /assets/... reference in migrated HTML and CSS against the standalone public tree.
-          python3 - "$DST" "$REPORT" <<'PY'
+          python3 - "$DST" "$REPORT" "$MISSING_COUNT_FILE" <<'PY'
           import pathlib, re, sys
 
           root = pathlib.Path(sys.argv[1])
           report = pathlib.Path(sys.argv[2])
+          count_file = pathlib.Path(sys.argv[3])
           refs = set()
           scan_files = list((root / 'site').rglob('*.html')) + list((root / 'public' / 'assets' / 'css').glob('*.css')) + list((root / 'public' / 'assets' / 'js').glob('*.js'))
           rx = re.compile(r'''(?:src|href)=["'](/assets/[^"'#?]+)|url\(["']?(/assets/[^)"'?]+)''', re.I)
@@ -133,13 +129,12 @@ jobs:
               else:
                   f.write('PASS: every local /assets/ reference resolves inside FMBNews\n')
               f.write('\n')
-          if missing:
-              sys.exit(3)
+          count_file.write_text(str(len(missing)), encoding='utf-8')
           PY
-          ASSET_STATUS=$?
-          if [ "$ASSET_STATUS" -ne 0 ]; then STATUS=1; fi
 
-          # Standalone build and repository verifier.
+          MISSING_COUNT=$(cat "$MISSING_COUNT_FILE")
+          if [ "$MISSING_COUNT" -ne 0 ]; then STATUS=1; fi
+
           cd "$DST"
           if npm run build >> "$REPORT" 2>&1 && npm run verify >> "$REPORT" 2>&1; then
             echo >> "$REPORT"
@@ -157,7 +152,6 @@ jobs:
             echo "FINAL: FAIL — reconciliation found differences or missing dependencies. Do not disconnect the legacy source." >> "$REPORT"
           fi
 
-          # Store status for the final step without losing the report.
           echo "$STATUS" > "$RUNNER_TEMP/reconcile-status"
 
       - name: Commit reconciliation report
