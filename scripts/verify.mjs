@@ -1,20 +1,58 @@
-import { access, readFile } from 'node:fs/promises';
+import { access, readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const resolve = (...parts) => path.join(root, ...parts);
+
 const required = [
   'site/index.html',
+  'site/fmb-brief/index.html',
   'site/world/index.html',
-  'site/world/august-29-2026/index.html',
-  'site/world/august-30-2026/index.html',
   'public/assets/css/fmb-news-final.css',
   'public/assets/js/fmb-news-approved.js',
   'content/news/articles'
 ];
-for (const rel of required) await access(path.join(root, rel));
-const home = await readFile(path.join(root, 'site/index.html'), 'utf8');
-const world = await readFile(path.join(root, 'site/world/index.html'), 'utf8');
-if (!home.includes('FMB Brief') || !home.includes('FMB Worldwide')) throw new Error('Homepage products missing');
-if (!world.includes('FMB Worldwide') || !world.includes('august-29-2026') || !world.includes('august-30-2026')) throw new Error('Worldwide/archive coverage missing');
-console.log('FMBNews standalone source verification passed.');
+
+for (const rel of required) await access(resolve(rel));
+
+const home = await readFile(resolve('site/index.html'), 'utf8');
+const brief = await readFile(resolve('site/fmb-brief/index.html'), 'utf8');
+const world = await readFile(resolve('site/world/index.html'), 'utf8');
+
+if (!home.includes('FMB Brief') || !home.includes('FMB Worldwide')) {
+  throw new Error('Homepage is missing the FMB Brief or FMB Worldwide product surface');
+}
+if (!brief.includes('FMB Brief')) throw new Error('FMB Brief index is invalid');
+if (!world.includes('FMB Worldwide')) throw new Error('FMB Worldwide index is invalid');
+
+const worldEntries = await readdir(resolve('site/world'), { withFileTypes: true });
+const worldEditions = worldEntries
+  .filter((entry) => entry.isDirectory() && /^[a-z]+-\d{1,2}-\d{4}$/i.test(entry.name))
+  .map((entry) => entry.name);
+
+if (worldEditions.length === 0) throw new Error('No dated FMB Worldwide edition found');
+for (const edition of worldEditions) await access(resolve('site/world', edition, 'index.html'));
+
+const siteEntries = await readdir(resolve('site'), { withFileTypes: true });
+const briefEditions = siteEntries
+  .filter((entry) => entry.isDirectory() && /^fmb-brief-.+/i.test(entry.name))
+  .map((entry) => entry.name);
+
+if (briefEditions.length === 0) throw new Error('No dated FMB Brief edition found');
+for (const edition of briefEditions) await access(resolve('site', edition, 'index.html'));
+
+const articleDays = (await readdir(resolve('content/news/articles'), { withFileTypes: true }))
+  .filter((entry) => entry.isDirectory())
+  .map((entry) => entry.name);
+if (articleDays.length === 0) throw new Error('Structured FMB News article archive is empty');
+
+for (const html of [home, brief, world]) {
+  if (html.includes('apps/withlovefmb/')) {
+    throw new Error('Standalone newsroom still references the old ecosystem source path');
+  }
+}
+
+console.log(
+  `FMBNews verification passed: ${articleDays.length} article date folders, ${briefEditions.length} FMB Brief editions, ${worldEditions.length} FMB Worldwide editions.`
+);
