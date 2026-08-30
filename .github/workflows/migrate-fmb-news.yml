@@ -1,0 +1,189 @@
+name: Migrate FMB News from FMB-Ecosystem
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .migration-trigger
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out FMBNews
+        uses: actions/checkout@v4
+        with:
+          path: target
+          fetch-depth: 0
+
+      - name: Check out source FMB-Ecosystem
+        uses: actions/checkout@v4
+        with:
+          repository: masinlocandher-max/FMB-Ecosystem
+          ref: main
+          path: source
+          fetch-depth: 1
+
+      - name: Copy canonical newsroom source of truth
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          SRC="$GITHUB_WORKSPACE/source/apps/withlovefmb"
+          DST="$GITHUB_WORKSPACE/target"
+
+          rm -rf "$DST/site" "$DST/content/news" "$DST/public/assets/images/news" "$DST/public/assets/data/fmb-news-approved" "$DST/migration/legacy-news-scripts"
+          mkdir -p "$DST/site" "$DST/content/news" "$DST/public/assets/css" "$DST/public/assets/js" "$DST/public/assets/images/news" "$DST/public/assets/data/fmb-news-approved" "$DST/migration/legacy-news-scripts"
+
+          # Canonical authored/generated newsroom pages, including FMB Brief and FMB Worldwide.
+          rsync -a "$SRC/news/" "$DST/site/"
+
+          # Structured editorial source data and Morning Special/rights-cleared metadata.
+          rsync -a "$SRC/content/news/" "$DST/content/news/"
+
+          # News-only image and approved brand/data assets.
+          rsync -a "$SRC/assets/images/news/" "$DST/public/assets/images/news/"
+          if [ -d "$SRC/assets/data/fmb-news-approved" ]; then
+            rsync -a "$SRC/assets/data/fmb-news-approved/" "$DST/public/assets/data/fmb-news-approved/"
+          fi
+
+          # Copy all News/Brief/Worldwide stylesheet and interaction assets used by newsroom routes.
+          find "$SRC/assets/css" -maxdepth 1 -type f \( -name 'fmb-news*.css' -o -name 'fmbnews*.css' -o -name 'fmb-brief*.css' -o -name 'fmb-worldwide*.css' \) -print0 | while IFS= read -r -d '' file; do cp "$file" "$DST/public/assets/css/"; done
+          find "$SRC/assets/js" -maxdepth 1 -type f \( -name 'fmb-news*.js' -o -name 'fmbnews*.js' -o -name 'fmb-brief*.js' -o -name 'fmb-worldwide*.js' \) -print0 | while IFS= read -r -d '' file; do cp "$file" "$DST/public/assets/js/"; done
+
+          # Preserve only shared shell assets still referenced by the current newsroom snapshot.
+          for file in fmb-unified-system.css fmb-sitewide-visual-fixes.css; do
+            [ -f "$SRC/assets/css/$file" ] && cp "$SRC/assets/css/$file" "$DST/public/assets/css/$file"
+          done
+          for file in fmb-unified-system.js; do
+            [ -f "$SRC/assets/js/$file" ] && cp "$SRC/assets/js/$file" "$DST/public/assets/js/$file"
+          done
+          if [ -d "$SRC/assets/images/fmbandco" ]; then
+            mkdir -p "$DST/public/assets/images/fmbandco"
+            rsync -a "$SRC/assets/images/fmbandco/" "$DST/public/assets/images/fmbandco/"
+          fi
+
+          # Preserve legacy newsroom build scripts for audit/reference only. They are deliberately
+          # not wired into the new standalone build.
+          find "$GITHUB_WORKSPACE/source/scripts" -maxdepth 1 -type f \( -iname '*fmb*news*.mjs' -o -iname '*fmbnews*.mjs' -o -iname '*fmb*brief*.mjs' -o -iname '*newsroom*.mjs' \) -print0 | while IFS= read -r -d '' file; do cp "$file" "$DST/migration/legacy-news-scripts/"; done
+
+          SOURCE_SHA=$(git -C "$GITHUB_WORKSPACE/source" rev-parse HEAD)
+          printf '%s\n' "$SOURCE_SHA" > "$DST/migration/source-ecosystem-commit.txt"
+
+          cat > "$DST/migration/MIGRATION.md" <<EOF
+          # FMB News migration snapshot
+
+          Source repository: \`masinlocandher-max/FMB-Ecosystem\`
+          Source commit: \`$SOURCE_SHA\`
+          Target repository: \`masinlocandher-max/FMBNews\`
+
+          ## Copied
+          - Full \`apps/withlovefmb/news/\` newsroom tree
+          - Full \`apps/withlovefmb/content/news/\` structured editorial data
+          - Full News image tree
+          - FMB News / FMB Brief / FMB Worldwide CSS and JS
+          - Approved FMB News brand data
+          - Shared shell assets still referenced by the snapshot
+          - Legacy News build scripts, preserved under \`migration/legacy-news-scripts/\` only
+
+          ## Safety rule
+          The source copy in FMB-Ecosystem must not be deleted until the standalone deployment is verified and the public \`/news/\` route has been cut over.
+          EOF
+
+      - name: Install standalone static build files
+        shell: bash
+        run: |
+          set -euo pipefail
+          DST="$GITHUB_WORKSPACE/target"
+          mkdir -p "$DST/scripts"
+
+          cat > "$DST/package.json" <<'EOF'
+          {
+            "name": "fmb-news",
+            "version": "1.0.0",
+            "private": true,
+            "type": "module",
+            "scripts": {
+              "build": "node scripts/build.mjs",
+              "verify": "node scripts/verify.mjs"
+            }
+          }
+          EOF
+
+          cat > "$DST/scripts/build.mjs" <<'EOF'
+          import { cp, mkdir, rm } from 'node:fs/promises';
+          import path from 'node:path';
+          import { fileURLToPath } from 'node:url';
+
+          const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+          const dist = path.join(root, 'dist');
+          await rm(dist, { recursive: true, force: true });
+          await mkdir(path.join(dist, 'news'), { recursive: true });
+          await cp(path.join(root, 'site'), path.join(dist, 'news'), { recursive: true });
+          await cp(path.join(root, 'public', 'assets'), path.join(dist, 'assets'), { recursive: true });
+          console.log('Built standalone FMB News snapshot into dist/.');
+          EOF
+
+          cat > "$DST/scripts/verify.mjs" <<'EOF'
+          import { access, readFile } from 'node:fs/promises';
+          import path from 'node:path';
+          import { fileURLToPath } from 'node:url';
+
+          const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+          const required = [
+            'site/index.html',
+            'site/world/index.html',
+            'site/world/august-29-2026/index.html',
+            'site/world/august-30-2026/index.html',
+            'public/assets/css/fmb-news-final.css',
+            'public/assets/js/fmb-news-approved.js',
+            'content/news/articles'
+          ];
+          for (const rel of required) await access(path.join(root, rel));
+          const home = await readFile(path.join(root, 'site/index.html'), 'utf8');
+          const world = await readFile(path.join(root, 'site/world/index.html'), 'utf8');
+          if (!home.includes('FMB Brief') || !home.includes('FMB Worldwide')) throw new Error('Homepage products missing');
+          if (!world.includes('FMB Worldwide') || !world.includes('august-29-2026') || !world.includes('august-30-2026')) throw new Error('Worldwide/archive coverage missing');
+          console.log('FMBNews standalone source verification passed.');
+          EOF
+
+          cat > "$DST/vercel.json" <<'EOF'
+          {
+            "$schema": "https://openapi.vercel.sh/vercel.json",
+            "buildCommand": "npm run build && npm run verify",
+            "outputDirectory": "dist",
+            "cleanUrls": false,
+            "trailingSlash": false
+          }
+          EOF
+
+          cat > "$DST/.gitignore" <<'EOF'
+          dist/
+          node_modules/
+          .env
+          .env.*
+          !.env.example
+          EOF
+
+          cat > "$DST/.env.example" <<'EOF'
+          SUPABASE_URL=
+          SUPABASE_PUBLISHABLE_KEY=
+          EOF
+
+      - name: Commit migrated newsroom snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$GITHUB_WORKSPACE/target"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site content public migration scripts package.json vercel.json .gitignore .env.example
+          if git diff --cached --quiet; then
+            echo "Migration snapshot already current."
+            exit 0
+          fi
+          git commit -m "Import FMB News from FMB-Ecosystem"
+          git push origin HEAD:main
