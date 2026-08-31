@@ -41,7 +41,8 @@ async function scan(target) {
 
   const tickerStart = html.indexOf('<div class="headline-ticker"');
   const utilityStart = html.indexOf('<div class="utility">', tickerStart);
-  const mastStart = html.indexOf('<header class="mast">', utilityStart);
+  // Mast may carry additional route-specific classes such as publication-mast.
+  const mastStart = html.indexOf('<header class="mast', utilityStart);
   if (tickerStart < 0 || utilityStart < 0 || mastStart < 0) {
     throw new Error(`Normalized ticker structure missing from ${path.relative(root, target)}`);
   }
