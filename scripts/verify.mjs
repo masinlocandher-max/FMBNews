@@ -8,11 +8,13 @@ const resolve=(...parts)=>path.join(root,...parts);
 const required=[
   'site/index.html','site/fmb-brief/index.html','site/fmb-brief/live/index.html','site/world/index.html','site/world/live/index.html','site/read/index.html',
   'public/assets/css/fmb-news-reference.css','public/assets/css/fmb-news-reference-final.css','public/assets/css/fmb-news-network-hardfix.css','public/assets/css/fmb-news-ticker-hardfix.css','public/assets/css/fmb-news-product-identity.css','public/assets/css/fmb-news-landing-hardfix.css',
+  'public/assets/images/brand/fmb-bulletin-emblem.svg',
   'public/assets/js/fmb-news-cms.js','content/news/articles',
   'scripts/render-metallic-reference.mjs','scripts/hardfix-metallic-network.mjs','scripts/hardfix-ticker.mjs','scripts/hardfix-product-identity.mjs','scripts/hardfix-publication-landing.mjs',
   'src/worker.js','wrangler.jsonc',
   'dist/news/index.html','dist/news/archive/index.html','dist/news/world/index.html','dist/news/world/live/index.html','dist/news/fmb-brief/index.html','dist/news/fmb-brief/live/index.html','dist/news/about/index.html','dist/news/read/index.html',
-  'dist/news/assets/css/fmb-news-reference-final.css','dist/news/assets/css/fmb-news-network-hardfix.css','dist/news/assets/css/fmb-news-ticker-hardfix.css','dist/news/assets/css/fmb-news-product-identity.css','dist/news/assets/css/fmb-news-landing-hardfix.css'
+  'dist/news/assets/css/fmb-news-reference-final.css','dist/news/assets/css/fmb-news-network-hardfix.css','dist/news/assets/css/fmb-news-ticker-hardfix.css','dist/news/assets/css/fmb-news-product-identity.css','dist/news/assets/css/fmb-news-landing-hardfix.css',
+  'dist/news/assets/images/brand/fmb-bulletin-emblem.svg'
 ];
 for(const rel of required) await access(resolve(rel));
 
@@ -33,34 +35,38 @@ const builtHome=await readFile(resolve('dist/news/index.html'),'utf8');
 const homeSignals=[
   '<title>Filipino Media Bulletin | FMB News, FMB Worldwide &amp; FMB Daily Brief</title>',
   'fmb-network-landing',
+  'class="publication-emblem"',
+  '/news/assets/images/brand/fmb-bulletin-emblem.svg',
   'class="publication-wordmark"',
   'aria-label="Filipino Media Bulletin"',
-  'class="network-intro"',
-  'Clear reporting without the noise.',
   'class="network-products"',
   'Philippines · Explainers · Overviews',
-  'World · Context · Relevance',
+  'World · Explainers · Overviews',
+  'Philippine news, explained.',
+  'The world, made relevant.',
   '<h2>FMB News</h2>',
   '<h2>FMB Worldwide</h2>',
   'class="daily-brief-signup"',
   '<h2 id="daily-brief-title">FMB Daily Brief</h2>',
-  'Daily Newsletter',
+  'One concise email with the stories that matter most. Delivered daily.',
   '/news/assets/css/fmb-news-landing-hardfix.css',
   '<div class="footer-publication-title">Filipino Media Bulletin</div>'
 ];
 for(const signal of homeSignals)if(!builtHome.includes(signal))throw new Error(`Filipino Media Bulletin landing regression: missing ${signal}`);
-for(const obsolete of ['class="shell home-hero"','class="lead-grid"','class="brief-promo"'])if(builtHome.includes(obsolete))throw new Error(`Old FMB News homepage block returned: ${obsolete}`);
+for(const obsolete of ['class="shell home-hero"','class="lead-grid"','class="brief-promo"','class="network-intro"','One publication. Three focused products.','Clear reporting without the noise.','Verified first','Context included','Useful by design'])if(builtHome.includes(obsolete))throw new Error(`Retired landing block or copy returned: ${obsolete}`);
 const landingForms=(builtHome.match(/data-fmb-newsletter-form/g)||[]).length;
 if(landingForms!==1)throw new Error(`Landing page must contain exactly one Daily Brief subscription form; found ${landingForms}`);
 const footerStart=builtHome.indexOf('<footer class="footer">');
 if(footerStart<0)throw new Error('Landing footer missing');
 if(builtHome.slice(footerStart).includes('data-fmb-newsletter-form'))throw new Error('Landing footer duplicates the Daily Brief subscription form');
+if(builtHome.includes('/news/news/assets/'))throw new Error('Landing contains double-scoped asset path');
 
 function assertCommon(label,html,expected=[]){
   const common=['fmb-ref','class="headline-ticker"','class="nav"','<div class="footer-publication-title">Filipino Media Bulletin</div>','/news/assets/css/fmb-news-reference-final.css','/news/assets/css/fmb-news-network-hardfix.css','/news/assets/css/fmb-news-ticker-hardfix.css','/news/assets/css/fmb-news-product-identity.css'];
   for(const signal of [...common,...expected])if(!html.includes(signal))throw new Error(`${label} regression: missing ${signal}`);
   if(html.includes('>FMB Brief</a>'))throw new Error(`${label} still exposes obsolete FMB Brief label`);
   if(html.slice(html.indexOf('<footer class="footer">')).includes('data-fmb-newsletter-form'))throw new Error(`${label} footer contains redundant newsletter subscription form`);
+  if(html.includes('/news/news/assets/'))throw new Error(`${label} contains double-scoped asset path`);
 }
 
 const builtArchive=await readFile(resolve('dist/news/archive/index.html'),'utf8');
@@ -103,8 +109,8 @@ const scanRoots=['README.md','.github','docs','scripts','public','site','src','w
 async function scanSource(target){let info;try{info=await stat(target)}catch{return}if(info.isDirectory()){for(const e of await readdir(target))await scanSource(path.join(target,e));return}if(!/\.(?:md|mjs|js|jsonc?|html|css|yml|yaml|txt)$/i.test(target))return;const text=await readFile(target,'utf8');for(const needle of forbidden)if(text.includes(needle))throw new Error(`Standalone dependency violation: ${needle} in ${path.relative(root,target)}`)}
 
 let htmlPagesChecked=0;
-async function scanBuilt(target){const info=await stat(target);if(info.isDirectory()){for(const e of await readdir(target))await scanBuilt(path.join(target,e));return}if(!/\.(?:html|css|js|mjs|json|xml|txt|svg)$/i.test(target))return;const text=await readFile(target,'utf8');if(/(?<!\/news)\/assets\//.test(text))throw new Error(`Unscoped root asset in ${path.relative(root,target)}`);if(target.endsWith('.html')){htmlPagesChecked++;for(const signal of ['fmb-ref','/news/assets/css/fmb-news-network-hardfix.css','/news/assets/css/fmb-news-ticker-hardfix.css','<div class="footer-publication-title">Filipino Media Bulletin</div>'])if(!text.includes(signal))throw new Error(`Global network identity missing ${signal} in ${path.relative(root,target)}`);}}
+async function scanBuilt(target){const info=await stat(target);if(info.isDirectory()){for(const e of await readdir(target))await scanBuilt(path.join(target,e));return}if(!/\.(?:html|css|js|mjs|json|xml|txt|svg)$/i.test(target))return;const text=await readFile(target,'utf8');if(/(?<!\/news)\/assets\//.test(text))throw new Error(`Unscoped root asset in ${path.relative(root,target)}`);if(text.includes('/news/news/assets/'))throw new Error(`Double-scoped asset in ${path.relative(root,target)}`);if(target.endsWith('.html')){htmlPagesChecked++;for(const signal of ['fmb-ref','/news/assets/css/fmb-news-network-hardfix.css','/news/assets/css/fmb-news-ticker-hardfix.css','<div class="footer-publication-title">Filipino Media Bulletin</div>'])if(!text.includes(signal))throw new Error(`Global network identity missing ${signal} in ${path.relative(root,target)}`);}}
 for(const rel of scanRoots)await scanSource(resolve(rel));
 await scanBuilt(resolve('dist/news'));
 
-console.log(`FMBNews verification passed: Filipino Media Bulletin landing is distinct and non-redundant; ${htmlPagesChecked} pages retain shared metallic network chrome; ${articleDays.length} article date folders, ${briefEditions.length} Daily Brief editions, ${worldEditions.length} Worldwide editions.`);
+console.log(`FMBNews verification passed: emblem-first Filipino Media Bulletin landing is concise and non-redundant; ${htmlPagesChecked} pages retain shared metallic network chrome; ${articleDays.length} article date folders, ${briefEditions.length} Daily Brief editions, ${worldEditions.length} Worldwide editions.`);
