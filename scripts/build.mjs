@@ -31,9 +31,10 @@ async function rewriteAssetPaths(target) {
   }
   if (!textExtensions.has(path.extname(target).toLowerCase())) return;
   const source = await readFile(target, 'utf8');
-  const scoped = source.replaceAll('/assets/', '/news/assets/');
+  // Scope root assets once. Existing /news/assets/ references must remain untouched.
+  const scoped = source.replace(/(?<!\/news)\/assets\//g, '/news/assets/');
   if (scoped !== source) await writeFile(target, scoped, 'utf8');
 }
 
 await rewriteAssetPaths(newsRoot);
-console.log('Built Filipino Media Bulletin with distinct FMB News, FMB Worldwide and FMB Daily Brief products, one premium ticker, and no duplicate landing subscription CTA.');
+console.log('Built Filipino Media Bulletin with idempotent /news asset scoping, emblem-backed landing, upgraded typography, distinct FMB News and FMB Worldwide products, and one FMB Daily Brief subscription CTA.');
