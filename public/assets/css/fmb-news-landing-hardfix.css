@@ -1,107 +1,173 @@
-/* Filipino Media Bulletin landing
-   Official emblem + simplified publication hierarchy. */
+/* Filipino Media Bulletin landing — approved Build Web Apps concept */
 
-.fmb-ref.fmb-network-landing{background:#fff}
-.fmb-ref.fmb-network-landing .publication-mast{padding:24px 0 20px;background:linear-gradient(180deg,#fff 0%,#fdfafd 100%)}
-.fmb-ref.fmb-network-landing .publication-lockup{display:flex;align-items:center;justify-content:center;gap:24px}
-.fmb-ref.fmb-network-landing .publication-emblem{display:block;width:92px;height:92px;object-fit:contain;flex:none}
-.fmb-ref.fmb-network-landing .publication-name{text-align:left}
-.fmb-ref.fmb-network-landing .publication-wordmark{
-  display:block;
-  color:#24102b;
-  text-decoration:none;
-  font-family:var(--fmb-display)!important;
-  font-size:clamp(52px,6.4vw,92px);
-  font-weight:600;
-  line-height:.82;
-  letter-spacing:-.04em;
-  white-space:nowrap;
+.fmb-ref.fmb-network-landing{
+  --landing-burgundy:#31070f;
+  --landing-burgundy-deep:#120609;
+  --landing-gold:#c69a3b;
+  --landing-gold-bright:#e0bc69;
+  --landing-cream:#f7f1e6;
+  --landing-ink:#281015;
+  background:#080708;
+  color:#fff;
 }
-.fmb-ref.fmb-network-landing .publication-tagline{
-  margin-top:12px;
-  color:#6c4d1b;
-  font:800 9px/1 var(--fmb-ui)!important;
-  letter-spacing:.28em;
-  text-transform:uppercase;
-}
-.fmb-ref.fmb-network-landing .nav .shell{gap:clamp(22px,4vw,62px)}
-.fmb-ref.fmb-network-landing .nav a{font-weight:700;letter-spacing:.01em}
-.fmb-ref.fmb-network-landing .nav .submit,
-.fmb-ref.fmb-network-landing .nav .search{display:none!important}
 
-.fmb-ref .network-home{width:min(1240px,calc(100% - 40px));margin:0 auto;padding:30px 0 6px}
-.fmb-ref .network-products{display:grid;grid-template-columns:1fr 1fr;gap:22px;padding:0 0 22px}
-.fmb-ref .network-product{
-  position:relative;
-  min-height:390px;
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
-  padding:38px 38px 34px;
-  border:1px solid #e3d9e5;
-  background:linear-gradient(145deg,#fff 0%,#fbf8fc 100%);
-  box-shadow:0 16px 38px rgba(43,10,50,.065);
-  text-decoration:none;
-  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+/* Approved top headline rail: one label, one moving rail, one clock. */
+.fmb-ref.fmb-network-landing .headline-ticker{
+  min-height:47px!important;
+  display:flex!important;
+  background:linear-gradient(90deg,#36030d 0%,#11070a 18%,#070707 100%)!important;
+  border-bottom:1px solid rgba(210,164,65,.8)!important;
+  box-shadow:none!important;
 }
-.fmb-ref .network-product:hover{transform:translateY(-3px);border-color:#c8b1cc;box-shadow:0 22px 48px rgba(43,10,50,.1)}
-.fmb-ref .network-product::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,#a9771f,#e1bd58 48%,#7d5312)}
-.fmb-ref .network-product.world{background:linear-gradient(145deg,#220729 0%,#4b1057 55%,#25082d 100%);color:#fff;border-color:#3c1046}
-.fmb-ref .network-product.world::before{background:linear-gradient(90deg,#a9771f,#f2d06d 52%,#b17a19)}
-.fmb-ref .network-product .product-index{display:block;color:#7c6f80;font:800 9px/1 var(--fmb-ui)!important;letter-spacing:.19em;text-transform:uppercase}
-.fmb-ref .network-product.world .product-index{color:#e5d8e8}
-.fmb-ref .network-product .product-copy{margin:auto 0 72px}
-.fmb-ref .network-product h2{margin:0 0 18px;font:600 clamp(48px,5.2vw,72px)/.86 var(--fmb-display)!important;letter-spacing:-.04em}
-.fmb-ref .network-product p{max-width:500px;margin:0;color:#5d565f;font:500 16px/1.65 var(--fmb-ui)!important}
-.fmb-ref .network-product.world p{color:#e7dfe9}
-.fmb-ref .network-product .product-link{position:absolute;left:38px;bottom:34px;color:#4b1057;font:800 10px/1 var(--fmb-ui)!important;letter-spacing:.08em;text-transform:uppercase}
-.fmb-ref .network-product.world .product-link{color:#f5e4b3}
+.fmb-ref.fmb-network-landing .ticker-label{order:1;min-width:142px;justify-content:center;padding:0 20px;background:#3c0711!important;border-right:1px solid rgba(211,165,69,.3)!important;color:#e9c66f!important;font-family:var(--fmb-display)!important;font-size:15px!important;font-weight:600!important;letter-spacing:.02em!important;text-transform:uppercase!important}
+.fmb-ref.fmb-network-landing .ticker-pulse{width:7px;height:7px;background:#d5a64b!important;box-shadow:0 0 12px rgba(213,166,75,.5)!important}
+.fmb-ref.fmb-network-landing .ticker-window{order:2}
+.fmb-ref.fmb-network-landing .ticker-clock{order:3;min-width:146px;border-right:0!important;border-left:1px solid rgba(211,165,69,.3);background:#080708!important;color:#e8c66f!important;font-size:11px!important}
+.fmb-ref.fmb-network-landing .ticker-clock small{color:#e8c66f!important}
+.fmb-ref.fmb-network-landing .ticker-run a{padding:13px 24px!important}
+.fmb-ref.fmb-network-landing .ticker-headline{font-family:var(--fmb-ui)!important;font-size:13px!important;font-weight:500!important;letter-spacing:.005em!important;color:#f5eadc!important}
+.fmb-ref.fmb-network-landing .ticker-dot{color:#d2a64e!important;opacity:1!important}
+.fmb-ref.fmb-network-landing .utility{display:none!important}
 
-.fmb-ref .daily-brief-signup{
-  position:relative;
-  overflow:hidden;
-  display:grid;
-  grid-template-columns:minmax(0,.85fr) minmax(400px,1.15fr);
-  gap:54px;
-  align-items:center;
-  margin:0 0 34px;
-  padding:42px 46px;
-  background:linear-gradient(110deg,#f7eff9,#fff 64%);
-  border:1px solid #dccbdf;
-  box-shadow:0 16px 40px rgba(43,10,50,.07);
-}
-.fmb-ref .daily-brief-signup::after{content:"";position:absolute;right:-38px;bottom:-64px;width:210px;height:210px;background:url('/assets/images/brand/fmb-bulletin-emblem.svg') center/contain no-repeat;opacity:.055;pointer-events:none}
-.fmb-ref .daily-brief-signup .brief-copy{position:relative;z-index:1}
-.fmb-ref .daily-brief-signup .brief-label{color:#8f6418;font:800 9px/1 var(--fmb-ui)!important;letter-spacing:.22em;text-transform:uppercase}
-.fmb-ref .daily-brief-signup h2{margin:9px 0 10px;font:600 clamp(44px,4.8vw,66px)/.9 var(--fmb-display)!important;letter-spacing:-.035em}
-.fmb-ref .daily-brief-signup p{margin:0;color:#625b64;font:500 15px/1.55 var(--fmb-ui)!important}
-.fmb-ref .daily-brief-signup form{position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;gap:0}
-.fmb-ref .daily-brief-signup input[type=email]{min-width:0;height:54px;padding:0 16px;border:1px solid #cbb9cf;border-right:0;background:#fff;font:500 14px/1 var(--fmb-ui)!important}
-.fmb-ref .daily-brief-signup button{height:54px;padding:0 28px;border:0;background:linear-gradient(105deg,#4b1057,#7c3a87,#4b1057);color:#fff;font:800 10px/1 var(--fmb-ui)!important;letter-spacing:.08em;text-transform:uppercase}
-.fmb-ref .daily-brief-signup .consent{grid-column:1/-1;display:flex;gap:8px;align-items:flex-start;margin-top:11px;color:#716873;font:500 10px/1.45 var(--fmb-ui)!important}
-.fmb-ref .daily-brief-signup .consent a{display:inline;text-decoration:underline}
-.fmb-ref .daily-brief-signup .status{grid-column:1/-1;min-height:16px;margin:7px 0 0;color:#5b1768;font:600 11px/1.3 var(--fmb-ui)!important}
+/* Emblem-led masthead with navigation on one plane. */
+.fmb-ref.fmb-network-landing .publication-mast{padding:22px 0 21px!important;background:linear-gradient(180deg,#fffdf7 0%,#f7f2e9 100%)!important;border-bottom:1px solid #c89c40!important;box-shadow:none!important}
+.fmb-ref.fmb-network-landing .publication-header-inner{display:flex;align-items:center;justify-content:space-between;gap:40px;min-height:98px}
+.fmb-ref.fmb-network-landing .publication-lockup{display:flex;align-items:center;gap:20px;min-width:0;text-decoration:none}
+.fmb-ref.fmb-network-landing .publication-emblem{display:block;width:88px;height:88px;object-fit:contain;flex:none}
+.fmb-ref.fmb-network-landing .publication-name{display:block;min-width:0}
+.fmb-ref.fmb-network-landing .publication-wordmark{display:block;color:#341018;font-family:var(--fmb-display)!important;font-size:clamp(42px,4.25vw,68px);font-weight:600;line-height:.88;letter-spacing:-.025em;white-space:nowrap}
+.fmb-ref.fmb-network-landing .publication-tagline{display:flex;align-items:center;gap:14px;margin-top:12px;color:#a77824;font-family:var(--fmb-ui)!important;font-size:10px;font-weight:700;letter-spacing:.34em;text-transform:uppercase;white-space:nowrap}
+.fmb-ref.fmb-network-landing .publication-tagline span{width:64px;height:1px;background:#ba8a2e}
+.fmb-ref.fmb-network-landing .publication-nav{display:flex!important;align-items:center;justify-content:flex-end;gap:clamp(22px,2.3vw,42px);margin:0!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important;white-space:nowrap}
+.fmb-ref.fmb-network-landing .publication-nav a{padding:8px 0!important;color:#291017!important;font-family:var(--fmb-display)!important;font-size:15px!important;font-weight:600!important;letter-spacing:.015em!important;text-decoration:none!important;text-transform:uppercase!important;border:0!important;background:transparent!important}
+.fmb-ref.fmb-network-landing .publication-nav a:hover{color:#9c6d1f!important}
+.fmb-ref.fmb-network-landing .publication-search{display:flex!important;align-items:center;justify-content:center;width:30px;height:30px}
+.fmb-ref.fmb-network-landing .publication-search svg{width:27px;height:27px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
 
-@media(max-width:900px){
-  .fmb-ref.fmb-network-landing .publication-emblem{width:78px;height:78px}
-  .fmb-ref .network-products{grid-template-columns:1fr}
-  .fmb-ref .network-product{min-height:340px}
-  .fmb-ref .daily-brief-signup{grid-template-columns:1fr}
+.fmb-ref.fmb-network-landing .network-home{width:100%;margin:0;padding:0;background:#080708}
+.fmb-ref.fmb-network-landing .network-hero{position:relative;overflow:hidden;min-height:760px;padding:45px 0 20px;background:linear-gradient(90deg,#090606 0%,#18080d 49%,rgba(29,8,11,.9) 100%)}
+.fmb-ref.fmb-network-landing .network-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,6,6,.98) 0%,rgba(17,7,9,.9) 40%,rgba(28,8,10,.38) 72%,rgba(15,5,7,.15) 100%);z-index:1;pointer-events:none}
+.fmb-ref.fmb-network-landing .network-hero-art{position:absolute;inset:0 0 auto 43%;height:535px;background-image:linear-gradient(0deg,rgba(27,4,8,.25),rgba(27,4,8,.08)),url("https://commons.wikimedia.org/wiki/Special:Redirect/file/An_orbital_sunrise_crowns_Earth%27s_horizon_(iss072e340644).jpg");background-position:center 56%;background-size:cover;filter:sepia(.62) saturate(1.65) contrast(1.08) brightness(.72);opacity:.86;z-index:0;pointer-events:none}
+.fmb-ref.fmb-network-landing .network-hero-art::after{content:"";position:absolute;inset:26px 20px 55px 5%;background:#c27c1a;-webkit-mask:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/BlankMap_World_simple.svg") center/contain no-repeat;mask:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/BlankMap_World_simple.svg") center/contain no-repeat;opacity:.18;mix-blend-mode:screen}
+.fmb-ref.fmb-network-landing .network-hero-inner{position:relative;z-index:2;width:min(1380px,calc(100% - 72px));margin:0 auto}
+.fmb-ref.fmb-network-landing .network-hero-copy{max-width:720px;padding:0 0 28px}
+.fmb-ref.fmb-network-landing .network-hero h1{margin:0;font-family:var(--fmb-display)!important;font-size:clamp(49px,4.8vw,78px);font-weight:600;line-height:.92;letter-spacing:-.025em;text-transform:uppercase}
+.fmb-ref.fmb-network-landing .network-hero h1 span{display:block;color:#fff}
+.fmb-ref.fmb-network-landing .network-hero h1 span+span{color:#d0a84c}
+.fmb-ref.fmb-network-landing .network-hero-rule{display:flex;align-items:center;width:min(100%,640px);height:20px;margin:11px 0 6px}
+.fmb-ref.fmb-network-landing .network-hero-rule::before,.fmb-ref.fmb-network-landing .network-hero-rule::after{content:"";height:1px;background:#a87b28;flex:1}
+.fmb-ref.fmb-network-landing .network-hero-rule span{width:11px;height:11px;margin:0 8px;background:#d0a343;transform:rotate(45deg)}
+.fmb-ref.fmb-network-landing .network-hero-copy p{max-width:690px;margin:7px 0 0;color:#f5eee7;font-family:var(--fmb-ui)!important;font-size:18px;font-weight:400;line-height:1.55}
+
+/* Approved three-product presentation. */
+.fmb-ref.fmb-network-landing .network-products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;padding:0!important}
+.fmb-ref.fmb-network-landing .network-product{position:relative;min-height:318px;padding:18px 28px 22px;display:flex;flex-direction:column;align-items:center;text-align:center;overflow:hidden;background:linear-gradient(145deg,#fffdf8 0%,#f4eee4 100%)!important;border:1px solid #c99b3b!important;border-radius:12px;box-shadow:0 14px 34px rgba(0,0,0,.28);color:#2c1218!important;text-decoration:none!important;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.fmb-ref.fmb-network-landing .network-product::before{content:none!important}
+.fmb-ref.fmb-network-landing .network-product:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.38);border-color:#e2bc68!important}
+.fmb-ref.fmb-network-landing .network-product-icon{display:flex;align-items:center;justify-content:center;width:72px;height:72px;margin:-2px auto 8px;border-radius:50%;background:radial-gradient(circle at 35% 25%,#4b101b 0%,#2d0810 62%,#170408 100%);color:#d8aa4b;box-shadow:inset 0 0 0 1px rgba(218,171,77,.3)}
+.fmb-ref.fmb-network-landing .network-product-icon svg{width:42px;height:42px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.fmb-ref.fmb-network-landing .network-product h2{margin:0;color:#37131a;font-family:var(--fmb-display)!important;font-size:clamp(30px,2.6vw,42px);font-weight:600;line-height:1;letter-spacing:-.018em}
+.fmb-ref.fmb-network-landing .network-card-rule{display:flex;align-items:center;width:66%;height:20px;margin:3px auto 7px}
+.fmb-ref.fmb-network-landing .network-card-rule::before,.fmb-ref.fmb-network-landing .network-card-rule::after{content:"";height:1px;background:#bf9135;flex:1}
+.fmb-ref.fmb-network-landing .network-card-rule i{width:9px;height:9px;margin:0 7px;background:#c49536;transform:rotate(45deg)}
+.fmb-ref.fmb-network-landing .network-product p{margin:0;color:#211c1d!important;font-family:var(--fmb-ui)!important;font-size:14px!important;font-weight:500!important;line-height:1.55!important}
+.fmb-ref.fmb-network-landing .network-product .product-link{position:static!important;width:min(100%,300px);min-height:42px;margin:auto auto 0;padding:0 20px;display:flex;align-items:center;justify-content:center;gap:12px;border-radius:9px;background:linear-gradient(90deg,#4b0712 0%,#6e0d1b 50%,#480610 100%);color:#fff5df!important;font-family:var(--fmb-display)!important;font-size:16px!important;font-weight:600!important;letter-spacing:.015em!important;text-transform:uppercase;box-shadow:inset 0 1px rgba(255,255,255,.08)}
+.fmb-ref.fmb-network-landing .network-product .product-link b{font-family:var(--fmb-ui);font-size:29px;font-weight:400;line-height:1;transform:translateY(-1px)}
+
+/* Single newsletter conversion rail. */
+.fmb-ref.fmb-network-landing .daily-brief-signup{position:relative;display:grid;grid-template-columns:116px minmax(250px,.88fr) minmax(230px,.8fr) minmax(390px,1.35fr);gap:25px;align-items:center;margin:18px 0 0;padding:20px 28px;background:linear-gradient(90deg,rgba(83,13,26,.94) 0%,rgba(62,8,17,.97) 45%,rgba(45,7,14,.96) 100%)!important;border:1px solid #bd8d31!important;border-radius:12px;box-shadow:none!important;color:#fff;overflow:hidden}
+.fmb-ref.fmb-network-landing .daily-brief-signup::after{content:none!important}
+.fmb-ref.fmb-network-landing .daily-brief-mark{display:flex;align-items:center;justify-content:center;height:92px;border-right:1px solid rgba(203,153,55,.3)}
+.fmb-ref.fmb-network-landing .daily-brief-mark img{width:78px;height:78px;opacity:.2;filter:sepia(1) saturate(1.4)}
+.fmb-ref.fmb-network-landing .brief-label{color:#e0b754!important;font-family:var(--fmb-display)!important;font-size:15px!important;font-weight:600!important;letter-spacing:.015em!important;text-transform:uppercase!important}
+.fmb-ref.fmb-network-landing .daily-brief-signup h2{margin:2px 0 3px;color:#fff;font-family:var(--fmb-display)!important;font-size:37px!important;font-weight:500!important;line-height:1!important;letter-spacing:.02em!important;text-transform:uppercase}
+.fmb-ref.fmb-network-landing .brief-rule{display:flex;align-items:center;width:100%;height:15px}
+.fmb-ref.fmb-network-landing .brief-rule::before,.fmb-ref.fmb-network-landing .brief-rule::after{content:"";height:1px;background:#b9872d;flex:1}
+.fmb-ref.fmb-network-landing .brief-rule i{width:8px;height:8px;margin:0 7px;background:#c99a37;transform:rotate(45deg)}
+.fmb-ref.fmb-network-landing .brief-promise{margin:0!important;padding-left:4px;color:#f3e6dc!important;font-family:var(--fmb-ui)!important;font-size:14px!important;font-weight:500!important;line-height:1.55!important}
+.fmb-ref.fmb-network-landing .daily-brief-signup form{display:block!important;position:relative;z-index:2}
+.fmb-ref.fmb-network-landing .brief-form-row{display:grid;grid-template-columns:minmax(0,1fr) 150px}
+.fmb-ref.fmb-network-landing .daily-brief-signup input[type=email]{height:48px!important;min-width:0;padding:0 16px!important;border:1px solid rgba(255,255,255,.24)!important;border-right:0!important;border-radius:7px 0 0 7px!important;background:#fff!important;color:#25161a!important;font-family:var(--fmb-ui)!important;font-size:13px!important}
+.fmb-ref.fmb-network-landing .daily-brief-signup button{height:48px!important;margin:0!important;padding:0 20px!important;border:0!important;border-radius:0 7px 7px 0!important;background:linear-gradient(180deg,#d8b15c 0%,#b98427 100%)!important;color:#2a120b!important;font-family:var(--fmb-display)!important;font-size:16px!important;font-weight:700!important;letter-spacing:.03em!important;text-transform:uppercase}
+.fmb-ref.fmb-network-landing .daily-brief-signup .consent{display:flex!important;gap:7px;align-items:flex-start;margin-top:7px!important;color:#dbc9b6!important;font-family:var(--fmb-ui)!important;font-size:10px!important;font-weight:500!important;line-height:1.4!important}
+.fmb-ref.fmb-network-landing .daily-brief-signup .consent input{margin-top:1px;accent-color:#c69334}
+.fmb-ref.fmb-network-landing .daily-brief-signup .consent a{color:#e5c36a!important;text-decoration:none!important}
+.fmb-ref.fmb-network-landing .daily-brief-signup .status{min-height:12px;margin:4px 0 0!important;color:#e8c46d!important;font-size:10px!important}
+
+/* Landing-only footer from the approved concept. */
+.fmb-ref.fmb-network-landing .publication-footer{margin:0!important;padding:17px 0 20px!important;background:#070708!important;border-top:1px solid #9b741f!important;box-shadow:none!important}
+.fmb-ref.fmb-network-landing .publication-footer-inner{display:flex;align-items:center;justify-content:center;gap:13px;text-align:left}
+.fmb-ref.fmb-network-landing .publication-footer-emblem{width:44px;height:44px;object-fit:contain}
+.fmb-ref.fmb-network-landing .publication-footer .footer-publication-title{margin:0!important;color:#d6ab49!important;font-family:var(--fmb-display)!important;font-size:21px!important;font-weight:600!important;line-height:1!important;letter-spacing:.16em!important;text-transform:uppercase}
+.fmb-ref.fmb-network-landing .publication-footer .footer-publication-kicker{margin:5px 0 0!important;color:#b99a59!important;font-family:var(--fmb-ui)!important;font-size:9px!important;font-weight:600!important;letter-spacing:.05em!important;text-transform:none!important}
+
+@media(max-width:1120px){
+  .fmb-ref.fmb-network-landing .publication-header-inner{align-items:flex-start;flex-direction:column;gap:18px}
+  .fmb-ref.fmb-network-landing .publication-nav{width:100%;justify-content:center}
+  .fmb-ref.fmb-network-landing .network-products{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  .fmb-ref.fmb-network-landing .network-product{padding-left:18px;padding-right:18px}
+  .fmb-ref.fmb-network-landing .daily-brief-signup{grid-template-columns:88px 1fr 1fr;gap:18px}
+  .fmb-ref.fmb-network-landing .daily-brief-signup form{grid-column:2/-1}
 }
-@media(max-width:680px){
-  .fmb-ref.fmb-network-landing .publication-mast{padding:19px 0 16px}
-  .fmb-ref.fmb-network-landing .publication-lockup{gap:13px}
-  .fmb-ref.fmb-network-landing .publication-emblem{width:58px;height:58px}
-  .fmb-ref.fmb-network-landing .publication-wordmark{font-size:clamp(36px,11.5vw,52px);white-space:normal;line-height:.84}
-  .fmb-ref.fmb-network-landing .publication-tagline{margin-top:8px;font-size:7px;letter-spacing:.2em}
-  .fmb-ref .network-home{width:calc(100% - 28px);padding-top:18px}
-  .fmb-ref .network-product{padding:28px 24px;min-height:310px}
-  .fmb-ref .network-product h2{font-size:48px}
-  .fmb-ref .network-product .product-copy{margin:auto 0 62px}
-  .fmb-ref .network-product .product-link{left:24px;bottom:27px}
-  .fmb-ref .daily-brief-signup{padding:30px 22px;gap:28px}
-  .fmb-ref .daily-brief-signup h2{font-size:48px}
-  .fmb-ref .daily-brief-signup form{grid-template-columns:1fr}
-  .fmb-ref .daily-brief-signup input[type=email]{border-right:1px solid #cbb9cf}
-  .fmb-ref .daily-brief-signup button{margin-top:8px}
+
+@media(max-width:860px){
+  .fmb-ref.fmb-network-landing .ticker-label{min-width:108px;font-size:12px!important}
+  .fmb-ref.fmb-network-landing .ticker-clock{min-width:112px}
+  .fmb-ref.fmb-network-landing .publication-header-inner{align-items:center}
+  .fmb-ref.fmb-network-landing .publication-lockup{justify-content:center}
+  .fmb-ref.fmb-network-landing .publication-name{text-align:center}
+  .fmb-ref.fmb-network-landing .publication-tagline{justify-content:center}
+  .fmb-ref.fmb-network-landing .publication-nav{gap:22px;overflow-x:auto;justify-content:flex-start;padding-bottom:2px!important}
+  .fmb-ref.fmb-network-landing .publication-nav a{font-size:13px!important}
+  .fmb-ref.fmb-network-landing .network-hero{padding-top:35px}
+  .fmb-ref.fmb-network-landing .network-hero-art{inset:0 0 auto 28%;height:470px;opacity:.66}
+  .fmb-ref.fmb-network-landing .network-hero-inner{width:min(100% - 32px,720px)}
+  .fmb-ref.fmb-network-landing .network-hero-copy{max-width:620px}
+  .fmb-ref.fmb-network-landing .network-products{grid-template-columns:1fr}
+  .fmb-ref.fmb-network-landing .network-product{min-height:300px}
+  .fmb-ref.fmb-network-landing .daily-brief-signup{grid-template-columns:84px 1fr;gap:18px}
+  .fmb-ref.fmb-network-landing .brief-promise{grid-column:2}
+  .fmb-ref.fmb-network-landing .daily-brief-signup form{grid-column:1/-1}
+}
+
+@media(max-width:620px){
+  .fmb-ref.fmb-network-landing .headline-ticker{min-height:42px!important}
+  .fmb-ref.fmb-network-landing .ticker-label{min-width:92px;padding:0 10px;font-size:10px!important}
+  .fmb-ref.fmb-network-landing .ticker-clock{min-width:94px;padding:0 8px!important;font-size:8px!important}
+  .fmb-ref.fmb-network-landing .ticker-headline{font-size:11px!important}
+  .fmb-ref.fmb-network-landing .publication-mast{padding:16px 0!important}
+  .fmb-ref.fmb-network-landing .publication-header-inner{gap:14px;min-height:0}
+  .fmb-ref.fmb-network-landing .publication-lockup{gap:12px}
+  .fmb-ref.fmb-network-landing .publication-emblem{width:56px;height:56px}
+  .fmb-ref.fmb-network-landing .publication-wordmark{font-size:clamp(31px,9.5vw,44px);white-space:normal;line-height:.9}
+  .fmb-ref.fmb-network-landing .publication-tagline{gap:7px;margin-top:7px;font-size:7px;letter-spacing:.19em}
+  .fmb-ref.fmb-network-landing .publication-tagline span{width:22px}
+  .fmb-ref.fmb-network-landing .publication-nav{gap:18px;width:calc(100vw - 28px)}
+  .fmb-ref.fmb-network-landing .publication-nav a{font-size:11px!important}
+  .fmb-ref.fmb-network-landing .publication-search{display:none!important}
+  .fmb-ref.fmb-network-landing .network-hero{padding:28px 0 16px}
+  .fmb-ref.fmb-network-landing .network-hero-art{inset:0 0 auto 0;height:430px;background-position:63% center;opacity:.45}
+  .fmb-ref.fmb-network-landing .network-hero::before{background:linear-gradient(180deg,rgba(9,5,6,.88) 0%,rgba(12,6,7,.74) 34%,rgba(10,5,6,.96) 68%,#080708 100%)}
+  .fmb-ref.fmb-network-landing .network-hero-inner{width:calc(100% - 28px)}
+  .fmb-ref.fmb-network-landing .network-hero-copy{padding-bottom:24px}
+  .fmb-ref.fmb-network-landing .network-hero h1{font-size:clamp(42px,12vw,60px)}
+  .fmb-ref.fmb-network-landing .network-hero-copy p{font-size:15px;line-height:1.55}
+  .fmb-ref.fmb-network-landing .network-product{min-height:292px;padding:16px 20px 20px}
+  .fmb-ref.fmb-network-landing .network-product-icon{width:64px;height:64px}
+  .fmb-ref.fmb-network-landing .network-product h2{font-size:37px}
+  .fmb-ref.fmb-network-landing .network-product p{font-size:13px!important}
+  .fmb-ref.fmb-network-landing .daily-brief-signup{grid-template-columns:60px 1fr;margin-top:14px;padding:18px 16px;gap:14px}
+  .fmb-ref.fmb-network-landing .daily-brief-mark{height:72px}
+  .fmb-ref.fmb-network-landing .daily-brief-mark img{width:55px;height:55px}
+  .fmb-ref.fmb-network-landing .brief-label{font-size:11px!important}
+  .fmb-ref.fmb-network-landing .daily-brief-signup h2{font-size:29px!important}
+  .fmb-ref.fmb-network-landing .brief-promise{grid-column:1/-1!important;padding-left:0!important;font-size:12px!important}
+  .fmb-ref.fmb-network-landing .daily-brief-signup form{grid-column:1/-1!important}
+  .fmb-ref.fmb-network-landing .brief-form-row{grid-template-columns:1fr 112px}
+  .fmb-ref.fmb-network-landing .daily-brief-signup button{font-size:13px!important}
+  .fmb-ref.fmb-network-landing .publication-footer .footer-publication-title{font-size:16px!important;letter-spacing:.11em!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .fmb-ref.fmb-network-landing .network-product{transition:none}
 }
