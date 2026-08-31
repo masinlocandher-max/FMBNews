@@ -67,7 +67,7 @@ if (!wrangler.includes('www.francinemariebautista.com/news*') || !wrangler.inclu
 const metallicHomeSignals = [
   '<body class="fmb-ref">',
   'class="brand-wordmark',
-  'class="home-hero"',
+  'class="shell home-hero"',
   'The news that matters. Made clear for Filipinos.',
   '/news/assets/css/fmb-news-reference.css',
   '/news/assets/css/fmb-news-reference-final.css',
