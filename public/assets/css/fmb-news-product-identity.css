@@ -1,32 +1,66 @@
-/* FMB News product identity lock
-   Exact public titles:
-   FMB News
-   FMB Worldwide
-   FMB Daily Brief — Daily Newsletter
-   Footer publication: Filipino Media Bulletin */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+/* FMB publication type system
+   Editorial display: Cormorant Garamond
+   Interface / navigation: Manrope */
+:root{
+  --fmb-display:"Cormorant Garamond","Bodoni 72","Didot","Times New Roman",serif;
+  --fmb-ui:"Manrope","Helvetica Neue",Arial,sans-serif;
+  --fmb-gold:#c9952f;
+}
+
+body.fmb-ref{font-family:var(--fmb-ui)}
+.fmb-ref .nav a,
+.fmb-ref .utility,
+.fmb-ref .ticker-clock,
+.fmb-ref .ticker-label,
+.fmb-ref .meta,
+.fmb-ref .section-title h2,
+.fmb-ref .button,
+.fmb-ref .product-descriptor,
+.fmb-ref .footer h3,
+.fmb-ref .footer a,
+.fmb-ref .newsletter,
+.fmb-ref input,
+.fmb-ref button{font-family:var(--fmb-ui)!important}
+
+.fmb-ref .ticker-headline,
+.fmb-ref .lead-story h2,
+.fmb-ref .support-item h3,
+.fmb-ref .more-item h3,
+.fmb-ref .article h1,
+.fmb-ref .article-body h2,
+.fmb-ref .related h2,
+.fmb-ref .related-item h3,
+.fmb-ref .archive-row h2,
+.fmb-ref .world-hero h1,
+.fmb-ref .brief-archive-hero h1{
+  font-family:var(--fmb-display)!important;
+}
+.fmb-ref .ticker-headline{font-size:13px!important;font-weight:600!important;letter-spacing:.01em!important}
 
 .fmb-ref .mast .product-wordmark{
   display:inline-flex!important;
   align-items:baseline;
   justify-content:center;
-  gap:.14em;
+  gap:.12em;
   margin:0!important;
   color:#24102b!important;
   text-decoration:none!important;
-  font-family:"Bodoni 72","Didot","Bodoni MT","Times New Roman",serif!important;
-  line-height:.84!important;
-  letter-spacing:-.05em!important;
+  font-family:var(--fmb-display)!important;
+  line-height:.82!important;
+  letter-spacing:-.045em!important;
   white-space:nowrap;
 }
-.fmb-ref .mast .product-wordmark .product-fmb{font-size:clamp(62px,7.5vw,108px);font-weight:800}
-.fmb-ref .mast .product-wordmark .product-name{font-size:clamp(56px,6.7vw,96px);font-weight:400}
-.fmb-ref.fmb-daily-brief-route .mast .product-wordmark .product-name{font-size:clamp(46px,5.8vw,82px)}
-.fmb-ref.fmb-worldwide-route .mast .product-wordmark .product-name{font-size:clamp(50px,6.1vw,88px)}
+.fmb-ref .mast .product-wordmark .product-fmb{font-size:clamp(64px,7.7vw,112px);font-weight:700}
+.fmb-ref .mast .product-wordmark .product-name{font-size:clamp(60px,7vw,102px);font-weight:500}
+.fmb-ref.fmb-daily-brief-route .mast .product-wordmark .product-name{font-size:clamp(48px,5.9vw,84px)}
+.fmb-ref.fmb-worldwide-route .mast .product-wordmark .product-name{font-size:clamp(52px,6.2vw,90px)}
 .fmb-ref .product-descriptor{
   margin-top:14px;
   color:#4b1057;
-  font:800 10px/1 Arial,Helvetica,sans-serif;
-  letter-spacing:.28em;
+  font:800 10px/1 var(--fmb-ui)!important;
+  letter-spacing:.26em;
   text-transform:uppercase;
 }
 
@@ -34,16 +68,16 @@
 .fmb-ref .footer-publication-title{
   margin:0 0 10px;
   color:#fff;
-  font-family:"Bodoni 72","Didot","Bodoni MT","Times New Roman",serif;
-  font-size:clamp(32px,3.5vw,48px);
+  font-family:var(--fmb-display);
+  font-size:clamp(34px,3.7vw,52px);
   font-weight:600;
-  line-height:.95;
-  letter-spacing:-.035em;
+  line-height:.9;
+  letter-spacing:-.03em;
 }
 .fmb-ref .footer-publication-kicker{
   margin:0 0 18px;
   color:#e7d8e9;
-  font:800 9px/1 Arial,Helvetica,sans-serif;
+  font:800 9px/1 var(--fmb-ui)!important;
   letter-spacing:.2em;
   text-transform:uppercase;
 }
@@ -53,12 +87,13 @@
   .fmb-ref .footer-grid>div:first-child{grid-column:1/-1}
 }
 @media(max-width:680px){
-  .fmb-ref .mast .product-wordmark{gap:.1em;letter-spacing:-.055em!important}
-  .fmb-ref .mast .product-wordmark .product-fmb{font-size:clamp(48px,15vw,68px)}
-  .fmb-ref .mast .product-wordmark .product-name{font-size:clamp(42px,13vw,60px)}
-  .fmb-ref.fmb-daily-brief-route .mast .product-wordmark{white-space:normal;flex-wrap:wrap;line-height:.9!important}
-  .fmb-ref.fmb-daily-brief-route .mast .product-wordmark .product-name{font-size:clamp(34px,10.5vw,50px)}
-  .fmb-ref.fmb-worldwide-route .mast .product-wordmark .product-name{font-size:clamp(38px,11.5vw,54px)}
+  .fmb-ref .ticker-headline{font-size:12px!important}
+  .fmb-ref .mast .product-wordmark{gap:.08em;letter-spacing:-.04em!important}
+  .fmb-ref .mast .product-wordmark .product-fmb{font-size:clamp(50px,15vw,70px)}
+  .fmb-ref .mast .product-wordmark .product-name{font-size:clamp(46px,13.5vw,64px)}
+  .fmb-ref.fmb-daily-brief-route .mast .product-wordmark{white-space:normal;flex-wrap:wrap;line-height:.88!important}
+  .fmb-ref.fmb-daily-brief-route .mast .product-wordmark .product-name{font-size:clamp(35px,10.8vw,52px)}
+  .fmb-ref.fmb-worldwide-route .mast .product-wordmark .product-name{font-size:clamp(40px,11.8vw,56px)}
   .fmb-ref .product-descriptor{margin-top:10px;font-size:8px;letter-spacing:.22em}
   .fmb-ref .footer-grid{grid-template-columns:1fr!important}
   .fmb-ref .footer-grid>div:first-child{grid-column:auto}
