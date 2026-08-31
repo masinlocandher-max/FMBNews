@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "verify": "node scripts/verify.mjs && node scripts/verify-images.mjs && node scripts/verify-ticker.mjs",
+    "verify": "node scripts/verify.mjs && node scripts/verify-images.mjs && node scripts/verify-ticker.mjs && node scripts/verify-product-identity.mjs",
     "deploy:cloudflare": "npm run build && npm run verify && npx wrangler deploy"
   }
 }
