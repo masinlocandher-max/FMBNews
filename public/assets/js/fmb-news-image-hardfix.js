@@ -1,7 +1,7 @@
 (() => {
   'use strict';
 
-  const FALLBACK = '/news/assets/images/news/fmb-news-editorial-fallback.svg';
+  const FALLBACK = '/assets/images/news/fmb-news-editorial-fallback.svg';
   const STYLE_ID = 'fmb-news-image-hardfix-style';
   const AUTO_CLASS = 'fmb-auto-visual';
   const AUTO_FIGURE_CLASS = 'fmb-auto-figure';
