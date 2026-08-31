@@ -1,8 +1,8 @@
 /* FMB News product identity lock
    Exact public titles:
    FMB News
-   FMB Daily Brief
    FMB Worldwide
+   FMB Daily Brief — Daily Newsletter
    Footer publication: Filipino Media Bulletin */
 
 .fmb-ref .mast .product-wordmark{
@@ -22,6 +22,13 @@
 .fmb-ref .mast .product-wordmark .product-name{font-size:clamp(56px,6.7vw,96px);font-weight:400}
 .fmb-ref.fmb-daily-brief-route .mast .product-wordmark .product-name{font-size:clamp(46px,5.8vw,82px)}
 .fmb-ref.fmb-worldwide-route .mast .product-wordmark .product-name{font-size:clamp(50px,6.1vw,88px)}
+.fmb-ref .product-descriptor{
+  margin-top:14px;
+  color:#4b1057;
+  font:800 10px/1 Arial,Helvetica,sans-serif;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+}
 
 .fmb-ref .footer-publication-title{
   margin:0 0 10px;
@@ -47,4 +54,5 @@
   .fmb-ref.fmb-daily-brief-route .mast .product-wordmark{white-space:normal;flex-wrap:wrap;line-height:.9!important}
   .fmb-ref.fmb-daily-brief-route .mast .product-wordmark .product-name{font-size:clamp(34px,10.5vw,50px)}
   .fmb-ref.fmb-worldwide-route .mast .product-wordmark .product-name{font-size:clamp(38px,11.5vw,54px)}
+  .fmb-ref .product-descriptor{margin-top:10px;font-size:8px;letter-spacing:.22em}
 }
