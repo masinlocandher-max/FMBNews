@@ -15,12 +15,14 @@ const required = [
 ];
 for (const rel of required) await access(resolve(rel));
 
-const guard = await readFile(resolve('public/assets/js/fmb-news-image-hardfix.js'), 'utf8');
-const newsletter = await readFile(resolve('public/assets/js/fmb-news-newsletter.js'), 'utf8');
+const sourceGuard = await readFile(resolve('public/assets/js/fmb-news-image-hardfix.js'), 'utf8');
+const sourceNewsletter = await readFile(resolve('public/assets/js/fmb-news-newsletter.js'), 'utf8');
+const builtGuard = await readFile(resolve('dist/news/assets/js/fmb-news-image-hardfix.js'), 'utf8');
+const builtNewsletter = await readFile(resolve('dist/news/assets/js/fmb-news-newsletter.js'), 'utf8');
 const fallback = await readFile(resolve('public/assets/images/news/fmb-news-editorial-fallback.svg'), 'utf8');
 
 for (const signal of [
-  '/news/assets/images/news/fmb-news-editorial-fallback.svg',
+  '/assets/images/news/fmb-news-editorial-fallback.svg',
   'MutationObserver',
   "addEventListener('error'",
   '.cms-article',
@@ -33,10 +35,19 @@ for (const signal of [
   '.more-item',
   '.related-item'
 ]) {
-  if (!guard.includes(signal)) throw new Error(`Image hard-fix regression: guard is missing ${signal}`);
+  if (!sourceGuard.includes(signal)) throw new Error(`Image hard-fix regression: source guard is missing ${signal}`);
 }
-if (!newsletter.includes('/news/assets/js/fmb-news-image-hardfix.js')) {
-  throw new Error('Image hard-fix regression: network loader is not wired through the shared newsletter script');
+if (!sourceNewsletter.includes('/assets/js/fmb-news-image-hardfix.js')) {
+  throw new Error('Image hard-fix regression: source loader is not wired through the shared newsletter script');
+}
+if (!builtGuard.includes('/news/assets/images/news/fmb-news-editorial-fallback.svg')) {
+  throw new Error('Image hard-fix regression: built guard does not point to the scoped fallback asset');
+}
+if (!builtNewsletter.includes('/news/assets/js/fmb-news-image-hardfix.js')) {
+  throw new Error('Image hard-fix regression: built loader does not point to the scoped image guard');
+}
+if (builtGuard.includes('/news/news/assets/') || builtNewsletter.includes('/news/news/assets/')) {
+  throw new Error('Image hard-fix regression: double-scoped /news/news/assets/ path detected');
 }
 if (!fallback.includes('<svg') || !fallback.includes('FMB News editorial visual')) {
   throw new Error('Image hard-fix regression: fallback visual is invalid');
@@ -58,6 +69,9 @@ async function scan(target) {
   if (!html.includes('/news/assets/js/fmb-news-newsletter.js')) {
     throw new Error(`Image hard-fix loader missing from ${path.relative(root, target)}`);
   }
+  if (html.includes('/news/news/assets/')) {
+    throw new Error(`Double-scoped image asset path found in ${path.relative(root, target)}`);
+  }
 
   if (html.includes('class="article-grid"') && html.includes('class="article-figure"')) {
     generatedArticles += 1;
@@ -70,4 +84,4 @@ async function scan(target) {
 await scan(resolve('dist/news'));
 if (generatedArticles === 0) throw new Error('Image hard-fix regression: no generated article pages were inspected');
 
-console.log(`FMB News image verification passed: ${generatedArticles} generated articles have figure images; ${htmlPages} built HTML pages load broken/missing-image recovery and the branded editorial fallback.`);
+console.log(`FMB News image verification passed: ${generatedArticles} generated articles have figure images; ${htmlPages} built HTML pages load broken/missing-image recovery; scoped fallback paths are valid and no double-scoped assets remain.`);
