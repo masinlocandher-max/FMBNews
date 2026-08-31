@@ -61,13 +61,22 @@ async function scan(target) {
   if (utility.includes('data-pht-clock')) {
     throw new Error(`Utility row still duplicates the live clock in ${path.relative(root, target)}`);
   }
+
   const liveClockElements = (html.match(/<span data-pht-clock/g) || []).length;
   if (liveClockElements !== 1) {
     throw new Error(`Expected exactly one visible live clock in ${path.relative(root, target)}, found ${liveClockElements}`);
+  }
+  const clockProcesses = (html.match(/<script data-fmb-network-clock>/g) || []).length;
+  if (clockProcesses !== 1) {
+    throw new Error(`Expected exactly one PHT clock process in ${path.relative(root, target)}, found ${clockProcesses}`);
+  }
+  const dateClockSelectors = (html.match(/document\.querySelector\('\[data-pht-date\]'\)/g) || []).length;
+  if (dateClockSelectors !== 1) {
+    throw new Error(`Duplicate legacy clock process remains in ${path.relative(root, target)}`);
   }
 }
 
 await scan(resolve('dist/news'));
 if (pagesChecked === 0) throw new Error('Ticker verification did not inspect any built HTML pages');
 
-console.log(`FMB ticker verification passed across ${pagesChecked} built HTML pages: one PHT clock, no moving-story timestamps, premium editorial ticker typography.`);
+console.log(`FMB ticker verification passed across ${pagesChecked} built HTML pages: one PHT clock, one clock process, no moving-story timestamps, premium editorial ticker typography.`);
