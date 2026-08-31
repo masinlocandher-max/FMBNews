@@ -43,7 +43,7 @@ const main=`<main class="network-home">
       <div class="network-hero-copy">
         <h1 id="network-hero-title"><span>Trusted News.</span><span>Meaningful Perspectives.</span></h1>
         <div class="network-hero-rule"><span></span></div>
-        <p>We deliver verified news and clear context from the Philippines and around the world, so you can understand what truly matters.</p>
+        <p>We deliver verified news and clear context from the Philippines and around the world—so you can understand what truly matters.</p>
       </div>
 
       <div class="network-products" aria-label="Filipino Media Bulletin publications">
