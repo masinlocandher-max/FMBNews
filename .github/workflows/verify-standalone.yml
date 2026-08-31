@@ -31,9 +31,13 @@ jobs:
           test -f dist/news/assets/css/fmb-news-final.css
           test -f dist/news/assets/js/fmb-news-approved.js
           test -f dist/news/assets/js/fmb-news-cms.js
-          grep -q "FMB Brief" dist/news/index.html
+          grep -q "FMB News" dist/news/index.html
           grep -q "FMB Worldwide" dist/news/index.html
+          grep -q "FMB Daily Brief" dist/news/index.html
           grep -q "FMB Worldwide" dist/news/world/index.html
+          grep -q "FMB Daily Brief" dist/news/fmb-brief/index.html
+          grep -q "Daily Newsletter" dist/news/fmb-brief/index.html
+          grep -q "Filipino Media Bulletin" dist/news/index.html
           ! grep -R -E '(["'"'"'(=])\/assets\/' dist/news --include='*.html' --include='*.css' --include='*.js' --include='*.mjs'
           test "$(find dist/news/world -mindepth 2 -maxdepth 2 -name index.html | wc -l)" -ge 1
           test "$(find dist/news -mindepth 2 -maxdepth 2 -type f -path '*/fmb-brief-*/index.html' | wc -l)" -ge 1
