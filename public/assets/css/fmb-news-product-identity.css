@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&family=Manrope:wght@400;500;600;700;800&display=swap');
 
 /* FMB publication type system
-   Editorial display: Cormorant Garamond
+   Editorial display: Bodoni Moda
    Interface / navigation: Manrope */
 :root{
-  --fmb-display:"Cormorant Garamond","Bodoni 72","Didot","Times New Roman",serif;
+  --fmb-display:"Bodoni Moda","Bodoni 72","Didot","Times New Roman",serif;
   --fmb-ui:"Manrope","Helvetica Neue",Arial,sans-serif;
   --fmb-gold:#c9952f;
 }
@@ -37,19 +37,19 @@ body.fmb-ref{font-family:var(--fmb-ui)}
 .fmb-ref .brief-archive-hero h1{
   font-family:var(--fmb-display)!important;
 }
-.fmb-ref .ticker-headline{font-size:13px!important;font-weight:600!important;letter-spacing:.01em!important}
+.fmb-ref .ticker-headline{font-size:13px!important;font-weight:600!important;letter-spacing:.005em!important}
 
 .fmb-ref .mast .product-wordmark{
   display:inline-flex!important;
   align-items:baseline;
   justify-content:center;
-  gap:.12em;
+  gap:.1em;
   margin:0!important;
   color:#24102b!important;
   text-decoration:none!important;
   font-family:var(--fmb-display)!important;
-  line-height:.82!important;
-  letter-spacing:-.045em!important;
+  line-height:.84!important;
+  letter-spacing:-.035em!important;
   white-space:nowrap;
 }
 .fmb-ref .mast .product-wordmark .product-fmb{font-size:clamp(64px,7.7vw,112px);font-weight:700}
@@ -71,8 +71,8 @@ body.fmb-ref{font-family:var(--fmb-ui)}
   font-family:var(--fmb-display);
   font-size:clamp(34px,3.7vw,52px);
   font-weight:600;
-  line-height:.9;
-  letter-spacing:-.03em;
+  line-height:.92;
+  letter-spacing:-.025em;
 }
 .fmb-ref .footer-publication-kicker{
   margin:0 0 18px;
@@ -88,10 +88,10 @@ body.fmb-ref{font-family:var(--fmb-ui)}
 }
 @media(max-width:680px){
   .fmb-ref .ticker-headline{font-size:12px!important}
-  .fmb-ref .mast .product-wordmark{gap:.08em;letter-spacing:-.04em!important}
+  .fmb-ref .mast .product-wordmark{gap:.08em;letter-spacing:-.03em!important}
   .fmb-ref .mast .product-wordmark .product-fmb{font-size:clamp(50px,15vw,70px)}
   .fmb-ref .mast .product-wordmark .product-name{font-size:clamp(46px,13.5vw,64px)}
-  .fmb-ref.fmb-daily-brief-route .mast .product-wordmark{white-space:normal;flex-wrap:wrap;line-height:.88!important}
+  .fmb-ref.fmb-daily-brief-route .mast .product-wordmark{white-space:normal;flex-wrap:wrap;line-height:.9!important}
   .fmb-ref.fmb-daily-brief-route .mast .product-wordmark .product-name{font-size:clamp(35px,10.8vw,52px)}
   .fmb-ref.fmb-worldwide-route .mast .product-wordmark .product-name{font-size:clamp(40px,11.8vw,56px)}
   .fmb-ref .product-descriptor{margin-top:10px;font-size:8px;letter-spacing:.22em}
