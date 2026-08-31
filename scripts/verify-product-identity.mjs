@@ -18,11 +18,11 @@ for(const rel of [
 const productCss=await readFile(resolve('dist/news/assets/css/fmb-news-product-identity.css'),'utf8');
 const landingCss=await readFile(resolve('dist/news/assets/css/fmb-news-landing-hardfix.css'),'utf8');
 const emblem=await readFile(resolve('dist/news/assets/images/brand/fmb-bulletin-emblem.svg'),'utf8');
-if(!productCss.includes('Cormorant Garamond')||!productCss.includes('Manrope'))throw new Error('FMB typography regression: editorial display or UI font missing');
+if(!productCss.includes('Bodoni Moda')||!productCss.includes('Manrope'))throw new Error('FMB typography regression: approved editorial display or UI font missing');
 if(!productCss.includes('--fmb-display')||!productCss.includes('--fmb-ui'))throw new Error('FMB typography regression: shared font variables missing');
 if(!emblem.includes('<svg')||!emblem.includes('Filipino Media Bulletin emblem')||!emblem.includes('fill-rule="evenodd"'))throw new Error('Bulletin emblem asset is invalid');
-if(!landingCss.includes("/news/assets/images/brand/fmb-bulletin-emblem.svg"))throw new Error('Landing emblem watermark is not correctly scoped after build');
-if(landingCss.includes('/news/news/assets/'))throw new Error('Landing emblem asset is double-scoped');
+for(const signal of ['--landing-burgundy','#c69a3b','.network-hero','.network-product-icon','.daily-brief-signup','.publication-footer'])if(!landingCss.includes(signal))throw new Error(`Landing visual-system regression: missing ${signal}`);
+if(landingCss.includes('/news/news/assets/'))throw new Error('Landing asset is double-scoped');
 
 async function walk(dir){const out=[];for(const e of await readdir(dir,{withFileTypes:true})){const p=path.join(dir,e.name);if(e.isDirectory())out.push(...await walk(p));else if(e.isFile()&&e.name.endsWith('.html'))out.push(p)}return out}
 
@@ -45,13 +45,13 @@ for(const file of pages){
     if(!html.includes('class="publication-emblem"'))throw new Error(`${rel}: publication emblem missing`);
     if(!html.includes('/news/assets/images/brand/fmb-bulletin-emblem.svg'))throw new Error(`${rel}: publication emblem path missing`);
     if(!html.includes('class="publication-wordmark"'))throw new Error(`${rel}: publication wordmark missing`);
-    if(!html.includes('>Filipino Media Bulletin</a>'))throw new Error(`${rel}: publication title is not exact`);
+    if(!html.includes('Filipino Media Bulletin</strong>'))throw new Error(`${rel}: publication title is not exact`);
     if((html.match(/data-fmb-newsletter-form/g)||[]).length!==1)throw new Error(`${rel}: landing must contain exactly one Daily Brief subscription form`);
-    for(const signal of ['Philippines · Explainers · Overviews','World · Explainers · Overviews','Philippine news, explained.','The world, made relevant.','One concise email with the stories that matter most. Delivered daily.']){
-      if(!html.includes(signal))throw new Error(`${rel}: simplified landing copy missing ${signal}`);
+    for(const signal of ['Trusted News.','Meaningful Perspectives.','Philippine news, explained.','The world, made relevant.','One concise email with the stories','Explore FMB News','Explore FMB Worldwide','Subscribe Now']){
+      if(!html.includes(signal))throw new Error(`${rel}: approved landing content missing ${signal}`);
     }
-    for(const retired of ['One publication. Three focused products.','Clear reporting without the noise.','Verified first','Context included','Useful by design']){
-      if(html.includes(retired))throw new Error(`${rel}: retired redundant landing copy remains: ${retired}`);
+    for(const retired of ['One publication. Three focused products.','Clear reporting without the noise.','Verified first','Context included','Useful by design','Philippines · Explainers · Overviews','World · Explainers · Overviews']){
+      if(html.includes(retired))throw new Error(`${rel}: retired landing copy remains: ${retired}`);
     }
   }
   if(exp.kind==='brief'){
@@ -63,7 +63,7 @@ for(const file of pages){
 
   if(!html.includes('<div class="footer-publication-title">Filipino Media Bulletin</div>'))throw new Error(`${rel}: footer publication is not Filipino Media Bulletin`);
   if(html.includes('>FMB Brief</a>'))throw new Error(`${rel}: obsolete visible FMB Brief label remains`);
-  const footer=html.slice(html.indexOf('<footer class="footer">'));
+  const footer=html.slice(html.indexOf('<footer class="footer'));
   if(footer.includes('data-fmb-newsletter-form'))throw new Error(`${rel}: footer contains redundant newsletter form`);
 }
-console.log(`Product identity verification passed across ${checked} pages: emblem-backed Filipino Media Bulletin landing, upgraded editorial typography, FMB News, FMB Worldwide, FMB Daily Brief, and simplified footer.`);
+console.log(`Product identity verification passed across ${checked} pages: approved emblem-led Filipino Media Bulletin landing, Bodoni Moda/Manrope typography, FMB News, FMB Worldwide, FMB Daily Brief, and non-redundant footer.`);
