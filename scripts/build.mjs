@@ -14,11 +14,12 @@ await cp(path.join(root, 'public', 'assets'), path.join(newsRoot, 'assets'), { r
 await import('./render-metallic-reference.mjs');
 await import('./hardfix-metallic-network.mjs');
 await import('./hardfix-ticker.mjs');
-
-// Final brand lock. Runs last so every route presents exactly one of the
-// three approved product titles and every footer names the publication as
-// Filipino Media Bulletin.
 await import('./hardfix-product-identity.mjs');
+
+// The root /news/ page is the Filipino Media Bulletin publication landing,
+// not a duplicate FMB News feed. This final pass keeps the three products
+// distinct and gives FMB Daily Brief exactly one landing-page subscription CTA.
+await import('./hardfix-publication-landing.mjs');
 
 const textExtensions = new Set(['.html', '.css', '.js', '.mjs', '.json', '.xml', '.txt', '.svg']);
 
@@ -35,4 +36,4 @@ async function rewriteAssetPaths(target) {
 }
 
 await rewriteAssetPaths(newsRoot);
-console.log('Built FMB News with locked metallic network, normalized premium ticker, exact product titles, and Filipino Media Bulletin footer.');
+console.log('Built Filipino Media Bulletin with distinct FMB News, FMB Worldwide and FMB Daily Brief products, one premium ticker, and no duplicate landing subscription CTA.');
