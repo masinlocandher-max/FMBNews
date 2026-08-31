@@ -6,14 +6,14 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const file=path.join(root,'dist','news','index.html');
 let html=await readFile(file,'utf8');
 
-html=html.replace(/<title>[\s\S]*?<\/title>/i,'<title>Filipino Media Bulletin | FMB News, FMB Worldwide & FMB Daily Brief</title>');
+html=html.replace(/<title>[\s\S]*?<\/title>/i,'<title>Filipino Media Bulletin | FMB News, FMB Worldwide &amp; FMB Daily Brief</title>');
 html=html.replace(/<meta name="description" content="[^"]*">/i,'<meta name="description" content="Filipino Media Bulletin brings together FMB News, FMB Worldwide, and the FMB Daily Brief newsletter.">');
 html=html.replace(/<meta property="og:site_name" content="[^"]*">/i,'<meta property="og:site_name" content="Filipino Media Bulletin">');
 html=html.replace(/<meta property="og:title" content="[^"]*">/i,'<meta property="og:title" content="Filipino Media Bulletin">');
 html=html.replace(/<meta property="og:description" content="[^"]*">/i,'<meta property="og:description" content="FMB News, FMB Worldwide, and the FMB Daily Brief newsletter in one clear publication network.">');
 
-if(!html.includes('/news/assets/css/fmb-news-landing-hardfix.css')){
-  html=html.replace('</head>','<link rel="stylesheet" href="/news/assets/css/fmb-news-landing-hardfix.css?v=20260831-landing-hardfix"></head>');
+if(!html.includes('/assets/css/fmb-news-landing-hardfix.css')){
+  html=html.replace('</head>','<link rel="stylesheet" href="/assets/css/fmb-news-landing-hardfix.css?v=20260831-landing-hardfix"></head>');
 }
 
 html=html.replace(/<body\s+class="([^"]*)"/i,(_m,c)=>{
