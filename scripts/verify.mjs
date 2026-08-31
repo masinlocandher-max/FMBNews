@@ -14,13 +14,21 @@ const required = [
   'site/read/index.html',
   'public/assets/css/fmb-news-final.css',
   'public/assets/css/fmb-news-cms.css',
+  'public/assets/css/fmb-news-reference.css',
+  'public/assets/css/fmb-news-reference-polish.css',
+  'public/assets/css/fmb-news-reference-hardfix.css',
+  'public/assets/css/fmb-news-reference-final.css',
   'public/assets/js/fmb-news-approved.js',
   'public/assets/js/fmb-news-cms.js',
   'content/news/articles',
+  'scripts/render-metallic-reference.mjs',
   'src/worker.js',
   'wrangler.jsonc',
   'dist/news/index.html',
-  'dist/news/assets/js/fmb-news-cms.js'
+  'dist/news/archive/index.html',
+  'dist/news/assets/js/fmb-news-cms.js',
+  'dist/news/assets/css/fmb-news-reference.css',
+  'dist/news/assets/css/fmb-news-reference-final.css'
 ];
 
 for (const rel of required) await access(resolve(rel));
@@ -41,9 +49,11 @@ const liveBrief = await readFile(resolve('site/fmb-brief/live/index.html'), 'utf
 const cms = await readFile(resolve('public/assets/js/fmb-news-cms.js'), 'utf8');
 const worker = await readFile(resolve('src/worker.js'), 'utf8');
 const wrangler = await readFile(resolve('wrangler.jsonc'), 'utf8');
+const builtHome = await readFile(resolve('dist/news/index.html'), 'utf8');
+const metallicCss = await readFile(resolve('dist/news/assets/css/fmb-news-reference-final.css'), 'utf8');
 
 if (!home.includes('FMB Brief') || !home.includes('FMB Worldwide')) {
-  throw new Error('Homepage is missing the FMB Brief or FMB Worldwide product surface');
+  throw new Error('Homepage source is missing the FMB Brief or FMB Worldwide product surface');
 }
 if (!brief.includes('FMB Brief')) throw new Error('FMB Brief index is invalid');
 if (!world.includes('FMB Worldwide')) throw new Error('FMB Worldwide index is invalid');
@@ -59,6 +69,35 @@ if (!worker.includes("url.pathname === '/news'") || !worker.includes("url.pathna
 if (!wrangler.includes('www.francinemariebautista.com/news*') || !wrangler.includes('francinemariebautista.com/news*')) {
   throw new Error('Cloudflare route configuration is missing the canonical /news routes');
 }
+
+// Design lock: the approved white editorial/newspaper layout with metallic plum accents
+// is part of publication integrity. A future build must fail instead of silently reverting
+// to a generic or experimental newsroom shell.
+const metallicHomeSignals = [
+  '<body class="fmb-ref">',
+  'class="brand-wordmark',
+  'class="home-hero"',
+  'The news that matters. Made clear for Filipinos.',
+  '/news/assets/css/fmb-news-reference.css',
+  '/news/assets/css/fmb-news-reference-final.css',
+  'class="lead-grid"',
+  'class="brief-promo"',
+  'class="more-list"'
+];
+for (const signal of metallicHomeSignals) {
+  if (!builtHome.includes(signal)) throw new Error(`Metallic FMB News design regression: homepage is missing ${signal}`);
+}
+if (!/linear-gradient\(108deg,#210529 0%,#5b1768 22%,#a77ab0 42%,#6b2875 54%,#3b0b48 72%,#1f0528 100%\)/i.test(metallicCss.replace(/\s+/g, ''))) {
+  throw new Error('Metallic FMB News design regression: approved plum metallic gradient is missing');
+}
+
+const designArticlePath = resolve('dist/news/zambales-flood-control-damage-569-million-august-30-2026/index.html');
+await access(designArticlePath);
+const designArticle = await readFile(designArticlePath, 'utf8');
+for (const signal of ['class="article-grid"', 'class="article-figure"', 'class="related"', 'class="lens"', 'class="sources"', '/news/assets/css/fmb-news-reference-final.css']) {
+  if (!designArticle.includes(signal)) throw new Error(`Metallic FMB News design regression: article template is missing ${signal}`);
+}
+if (designArticle.includes('[object Object]')) throw new Error('FMB News article byline rendered invalid object text');
 
 const worldEntries = await readdir(resolve('site/world'), { withFileTypes: true });
 const worldEditions = worldEntries
@@ -115,5 +154,5 @@ for (const rel of scanRoots) await scan(resolve(rel));
 await scanBuiltAssets(resolve('dist/news'));
 
 console.log(
-  `FMBNews standalone verification passed: ${articleDays.length} article date folders, ${briefEditions.length} archived FMB Brief editions, ${worldEditions.length} archived FMB Worldwide editions, live CMS surfaces, Cloudflare /news routing, scoped assets, and no retired-repo dependency.`
+  `FMBNews standalone verification passed: approved metallic newspaper design locked; ${articleDays.length} article date folders, ${briefEditions.length} archived FMB Brief editions, ${worldEditions.length} archived FMB Worldwide editions, live CMS surfaces, Cloudflare /news routing, scoped assets, and no retired-repo dependency.`
 );
