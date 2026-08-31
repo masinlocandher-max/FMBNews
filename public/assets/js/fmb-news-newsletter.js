@@ -1,7 +1,7 @@
 (()=>{
   if(!document.querySelector('script[data-fmb-image-hardfix-loader]')){
     const script=document.createElement('script');
-    script.src='/news/assets/js/fmb-news-image-hardfix.js?v=20260831-image-hardfix';
+    script.src='/assets/js/fmb-news-image-hardfix.js?v=20260831-image-hardfix';
     script.async=false;
     script.dataset.fmbImageHardfixLoader='true';
     document.head.appendChild(script);
