@@ -9,9 +9,12 @@ async function walk(dir){const out=[];let entries=[];try{entries=await readdir(d
 
 function identity(rel){
   const p=rel.replaceAll('\\','/').toLowerCase();
-  if(p.startsWith('world/')) return {title:'FMB Worldwide',cls:'fmb-worldwide-route',descriptor:''};
-  if(p.startsWith('fmb-brief/')||/^fmb-brief-[^/]+\//.test(p)) return {title:'FMB Daily Brief',cls:'fmb-daily-brief-route',descriptor:'Daily Newsletter'};
-  return {title:'FMB News',cls:'fmb-news-route',descriptor:''};
+  if(p.startsWith('world/')) return {title:'FMB Worldwide',cls:'fmb-worldwide-route',descriptor:'',active:'FMB Worldwide'};
+  if(p.startsWith('fmb-brief/')||/^fmb-brief-[^/]+\//.test(p)) return {title:'FMB Daily Brief',cls:'fmb-daily-brief-route',descriptor:'Daily Newsletter',active:'FMB Daily Brief'};
+  if(p.startsWith('archive/')) return {title:'FMB News',cls:'fmb-news-route',descriptor:'',active:'Archive'};
+  if(p.startsWith('about/')) return {title:'FMB News',cls:'fmb-news-route',descriptor:'',active:'About'};
+  if(p==='index.html') return {title:'FMB News',cls:'fmb-news-route',descriptor:'',active:'Latest'};
+  return {title:'FMB News',cls:'fmb-news-route',descriptor:'',active:''};
 }
 
 function mastTitle(id){
@@ -28,32 +31,32 @@ function applyMast(html,id){
   return html.replace(/<header class="mast"><div class="shell">[\s\S]*?<\/div><\/header>/i,`<header class="mast"><div class="shell">${mastTitle(id)}</div></header>`);
 }
 
-function applyNav(html){
-  let out=html.replace(/>FMB Brief<\/a>/g,'>FMB Daily Brief</a>');
-  // Keep the network order stable: FMB News, FMB Worldwide, FMB Daily Brief.
-  out=out.replace(/(<nav class="nav"[\s\S]*?<div class="shell">)([\s\S]*?)(<a href="\/news\/archive\/">Archive<\/a>)/i,(_m,start,items,archive)=>{
-    const latest=items.match(/<a href="\/news\/"[^>]*>Latest<\/a>/i)?.[0]||'<a href="/news/">Latest</a>';
-    const world=items.match(/<a href="\/news\/world\/"[^>]*>FMB Worldwide<\/a>/i)?.[0]||'<a href="/news/world/">FMB Worldwide</a>';
-    const brief=items.match(/<a href="\/news\/fmb-brief\/"[^>]*>FMB Daily Brief<\/a>/i)?.[0]||'<a href="/news/fmb-brief/">FMB Daily Brief</a>';
-    return `${start}${latest}${world}${brief}${archive}`;
-  });
-  return out;
+function canonicalNav(active){
+  const items=[['Latest','/news/'],['FMB Worldwide','/news/world/'],['FMB Daily Brief','/news/fmb-brief/'],['Archive','/news/archive/'],['About','/news/about/']];
+  const links=items.map(([label,href])=>`<a href="${href}"${active===label?' aria-current="page"':''}>${label}</a>`).join('');
+  return `<nav class="nav" aria-label="FMB News"><div class="shell">${links}<a class="submit" href="mailto:withlovefmb@gmail.com?subject=Story%20Submission%20for%20FMB%20News">Submit a Story</a><a class="search" href="/news/archive/" aria-label="Search FMB News"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg><span>Search</span></a></div></nav>`;
+}
+
+function applyNav(html,active){
+  return html.replace(/<nav class="nav"[\s\S]*?<\/nav>/i,canonicalNav(active));
+}
+
+function canonicalFooter(){
+  return `<footer class="footer"><div class="shell footer-grid"><div><div class="footer-publication-title">Filipino Media Bulletin</div><div class="footer-publication-kicker">Information with Purpose</div><p>Verified reporting, useful context, and clear explanations for Filipino readers.</p><a href="/news/about/"><strong>About Filipino Media Bulletin →</strong></a><div class="footer-socials" aria-label="Filipino Media Bulletin social links"><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a><a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X">×</a><a href="mailto:withlovefmb@gmail.com" aria-label="Email Filipino Media Bulletin">✉</a></div></div><div><h3>Publications</h3><a href="/news/">FMB News</a><a href="/news/world/">FMB Worldwide</a><a href="/news/fmb-brief/">FMB Daily Brief</a><a href="/news/archive/">Archive</a></div><div><h3>Resources</h3><a href="/news/about/">About</a><a href="mailto:withlovefmb@gmail.com?subject=Story%20Submission%20for%20FMB%20News">Submit a Story</a><a href="/news/about/#standards">Corrections Policy</a><a href="/privacy/">Privacy Policy</a></div><div class="newsletter"><h3>GET THE FMB DAILY BRIEF</h3><p>Daily newsletter. One concise briefing.<br>The developments worth knowing.</p><form data-fmb-newsletter-form novalidate><label class="sr-only" for="fmb-newsletter-email">Email address</label><input id="fmb-newsletter-email" type="email" name="email" placeholder="Enter your email address" autocomplete="email" required><button type="submit">Subscribe</button><input data-fmb-newsletter-honeypot name="company" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px"><label class="consent"><input type="checkbox" data-fmb-newsletter-consent required><span>I agree to receive the FMB Daily Brief and understand I can unsubscribe at any time. Read our <a href="/privacy/">Privacy Policy</a>.</span></label><p class="status" data-fmb-newsletter-status role="status" aria-live="polite"></p></form></div></div><div class="shell footer-bottom">© 2026 Filipino Media Bulletin. All rights reserved.</div></footer>`;
 }
 
 function applyFooter(html){
-  const marker='<footer class="footer">';
-  const start=html.indexOf(marker); if(start<0) return html;
-  const end=html.indexOf('</footer>',start); if(end<0) return html;
-  const current=html.slice(start,end+9);
-  let next=current;
-  next=next.replace(/<a class="brand-wordmark brand-wordmark-footer"[\s\S]*?<\/a><div class="brand-subtitle brand-subtitle-footer">[\s\S]*?<\/div>/i,'<div class="footer-publication-title">Filipino Media Bulletin</div><div class="footer-publication-kicker">FMB News Network</div>');
-  next=next.replace(/>FMB Brief<\/a>/g,'>FMB Daily Brief</a>');
-  next=next.replace(/© 2026 FMB News\. All rights reserved\./g,'© 2026 Filipino Media Bulletin. All rights reserved.');
-  return html.slice(0,start)+next+html.slice(end+9);
+  const approved=canonicalFooter();
+  if(/<footer class="(?:footer|brief-footer|fnc-footer)"/i.test(html)) return html.replace(/<footer class="(?:footer|brief-footer|fnc-footer)"[\s\S]*?<\/footer>/i,approved);
+  return html.replace('</body>',`${approved}</body>`);
+}
+
+function normalizeLegacyProductName(html){
+  return html.replaceAll('FMB Brief','FMB Daily Brief');
 }
 
 function ensureCss(html){return html.includes('/assets/css/fmb-news-product-identity.css')?html:html.replace('</head>','<link rel="stylesheet" href="/assets/css/fmb-news-product-identity.css?v=20260831-product-lock"></head>')}
 
 const pages=await walk(newsRoot);let changed=0;
-for(const file of pages){const rel=path.relative(newsRoot,file);const id=identity(rel);let html=await readFile(file,'utf8');const before=html;html=ensureCss(html);html=applyBodyClass(html,id.cls);html=applyMast(html,id);html=applyNav(html);html=applyFooter(html);if(html!==before){await writeFile(file,html,'utf8');changed++}}
-console.log(`Product identity hard fix applied to ${changed} pages: FMB News, FMB Worldwide, FMB Daily Brief (Daily Newsletter); footer locked to Filipino Media Bulletin.`);
+for(const file of pages){const rel=path.relative(newsRoot,file);const id=identity(rel);let html=await readFile(file,'utf8');const before=html;html=ensureCss(html);html=normalizeLegacyProductName(html);html=applyBodyClass(html,id.cls);html=applyMast(html,id);html=applyNav(html,id.active);html=applyFooter(html);if(html!==before){await writeFile(file,html,'utf8');changed++}}
+console.log(`Product identity hard fix applied to ${changed} pages: FMB News, FMB Worldwide, FMB Daily Brief (Daily Newsletter); every footer is Filipino Media Bulletin.`);
