@@ -65,28 +65,35 @@ jobs:
             return 1
           }
 
-          fetch_with_retry 'https://www.francinemariebautista.com/news/' /tmp/news-home.html /tmp/news-home.headers 'News home'
+          fetch_with_retry 'https://www.francinemariebautista.com/news/' /tmp/news-home.html /tmp/news-home.headers 'FMB News'
           cat /tmp/news-home.headers
           grep -qi 'FMB News' /tmp/news-home.html
+          grep -qi 'FMB Worldwide' /tmp/news-home.html
+          grep -qi 'FMB Daily Brief' /tmp/news-home.html
+          grep -qi 'Filipino Media Bulletin' /tmp/news-home.html
           if ! tr -d '\r' < /tmp/news-home.headers | grep -Eqi '^x-fmb-news-worker: fmb-news$'; then
             echo '::error::Public /news traffic is not reaching the FMBNews Cloudflare Worker. Ensure the www DNS record is Proxied (orange cloud) in Cloudflare.'
             exit 1
           fi
-          echo 'News home is confirmed on the FMBNews Worker.'
+          echo 'FMB News home is confirmed on the FMBNews Worker.'
 
           fetch_with_retry 'https://www.francinemariebautista.com/news/world/' /tmp/news-world.html /tmp/news-world.headers 'FMB Worldwide'
-          grep -qi 'FMB Worldwide' /tmp/news-world.html
+          grep -qi 'aria-label="FMB Worldwide"' /tmp/news-world.html
+          grep -qi 'Filipino Media Bulletin' /tmp/news-world.html
           tr -d '\r' < /tmp/news-world.headers | grep -Eqi '^x-fmb-news-worker: fmb-news$'
 
-          fetch_with_retry 'https://www.francinemariebautista.com/news/fmb-brief/' /tmp/news-brief.html /tmp/news-brief.headers 'FMB Brief'
-          grep -qi 'FMB Brief' /tmp/news-brief.html
+          fetch_with_retry 'https://www.francinemariebautista.com/news/fmb-brief/' /tmp/news-brief.html /tmp/news-brief.headers 'FMB Daily Brief'
+          grep -qi 'aria-label="FMB Daily Brief"' /tmp/news-brief.html
+          grep -qi 'Daily Newsletter' /tmp/news-brief.html
+          grep -qi 'Filipino Media Bulletin' /tmp/news-brief.html
           tr -d '\r' < /tmp/news-brief.headers | grep -Eqi '^x-fmb-news-worker: fmb-news$'
 
-          fetch_with_retry 'https://www.francinemariebautista.com/news/world/live/' /tmp/news-world-live.html /tmp/news-world-live.headers 'Worldwide live desk'
-          grep -qi 'FMB Worldwide' /tmp/news-world-live.html
+          fetch_with_retry 'https://www.francinemariebautista.com/news/world/live/' /tmp/news-world-live.html /tmp/news-world-live.headers 'FMB Worldwide live desk'
+          grep -qi 'aria-label="FMB Worldwide"' /tmp/news-world-live.html
 
-          fetch_with_retry 'https://www.francinemariebautista.com/news/fmb-brief/live/' /tmp/news-brief-live.html /tmp/news-brief-live.headers 'Brief live edition'
-          grep -qi 'FMB Brief' /tmp/news-brief-live.html
+          fetch_with_retry 'https://www.francinemariebautista.com/news/fmb-brief/live/' /tmp/news-brief-live.html /tmp/news-brief-live.headers 'FMB Daily Brief live edition'
+          grep -qi 'aria-label="FMB Daily Brief"' /tmp/news-brief-live.html
+          grep -qi 'Daily Newsletter' /tmp/news-brief-live.html
 
           fetch_with_retry 'https://www.francinemariebautista.com/news/assets/css/fmb-news-final.css' /tmp/news.css /tmp/news-css.headers 'News scoped CSS'
           test -s /tmp/news.css
@@ -101,4 +108,4 @@ jobs:
           echo "$headers" | grep -Eq '^HTTP/[^ ]+ 30[178]'
           echo "$headers" | grep -Eqi '^location: https://www\.francinemariebautista\.com/news/?'
 
-          echo 'Public FMB News cutover verified.'
+          echo 'Public FMB News network cutover verified.'
