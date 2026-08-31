@@ -21,6 +21,11 @@ await import('./render-metallic-reference.mjs');
 // About and CMS live/read routes. No route is allowed to keep an orphan shell.
 await import('./hardfix-metallic-network.mjs');
 
+// Final shared-header pass. This deliberately runs after both renderers so
+// every route gets exactly one fixed PHT clock, moving headlines without
+// duplicate timestamps, and the same premium ticker typography.
+await import('./hardfix-ticker.mjs');
+
 const textExtensions = new Set(['.html', '.css', '.js', '.mjs', '.json', '.xml', '.txt', '.svg']);
 
 async function rewriteAssetPaths(target) {
@@ -39,4 +44,4 @@ async function rewriteAssetPaths(target) {
 }
 
 await rewriteAssetPaths(newsRoot);
-console.log('Built self-contained FMB News application with one locked metallic network system across all routes.');
+console.log('Built self-contained FMB News application with one locked metallic network system and one normalized premium headline ticker across all routes.');
