@@ -1,121 +1,107 @@
-/* Filipino Media Bulletin landing page hard fix
-   One publication. Three clear products. No duplicated calls to action. */
+/* Filipino Media Bulletin landing
+   Official emblem + simplified publication hierarchy. */
 
 .fmb-ref.fmb-network-landing{background:#fff}
-.fmb-ref.fmb-network-landing .mast{padding:32px 0 25px}
+.fmb-ref.fmb-network-landing .publication-mast{padding:24px 0 20px;background:linear-gradient(180deg,#fff 0%,#fdfafd 100%)}
+.fmb-ref.fmb-network-landing .publication-lockup{display:flex;align-items:center;justify-content:center;gap:24px}
+.fmb-ref.fmb-network-landing .publication-emblem{display:block;width:92px;height:92px;object-fit:contain;flex:none}
+.fmb-ref.fmb-network-landing .publication-name{text-align:left}
 .fmb-ref.fmb-network-landing .publication-wordmark{
   display:block;
   color:#24102b;
   text-decoration:none;
-  text-align:center;
-  font-family:"Bodoni 72","Didot","Bodoni MT","Times New Roman",serif;
-  font-size:clamp(54px,7vw,104px);
+  font-family:var(--fmb-display)!important;
+  font-size:clamp(52px,6.4vw,92px);
   font-weight:600;
-  line-height:.86;
-  letter-spacing:-.055em;
+  line-height:.82;
+  letter-spacing:-.04em;
+  white-space:nowrap;
 }
 .fmb-ref.fmb-network-landing .publication-tagline{
-  margin-top:17px;
-  color:#4b1057;
-  font:800 10px/1 Arial,Helvetica,sans-serif;
+  margin-top:12px;
+  color:#6c4d1b;
+  font:800 9px/1 var(--fmb-ui)!important;
   letter-spacing:.28em;
   text-transform:uppercase;
 }
-.fmb-ref.fmb-network-landing .nav .shell{gap:clamp(22px,4vw,58px)}
+.fmb-ref.fmb-network-landing .nav .shell{gap:clamp(22px,4vw,62px)}
+.fmb-ref.fmb-network-landing .nav a{font-weight:700;letter-spacing:.01em}
 .fmb-ref.fmb-network-landing .nav .submit,
 .fmb-ref.fmb-network-landing .nav .search{display:none!important}
 
-.fmb-ref .network-home{width:min(1280px,calc(100% - 40px));margin:0 auto;padding:30px 0 4px}
-.fmb-ref .network-intro{
-  position:relative;
-  overflow:hidden;
-  display:grid;
-  grid-template-columns:minmax(0,1.08fr) minmax(340px,.92fr);
-  gap:50px;
-  align-items:end;
-  padding:46px 46px 42px;
-  background:linear-gradient(118deg,#fff 0%,#faf6fb 48%,#efe2f2 100%);
-  border:1px solid #e1d3e4;
-  box-shadow:0 22px 55px rgba(45,10,52,.09);
-}
-.fmb-ref .network-intro::before{content:"";position:absolute;inset:0 auto 0 0;width:6px;background:linear-gradient(180deg,#210529,#a77ab0 42%,#4b1057 82%,#1f0528)}
-.fmb-ref .network-intro::after{content:"";position:absolute;width:430px;height:430px;right:-210px;top:-215px;border-radius:50%;border:78px solid rgba(92,31,105,.07);pointer-events:none}
-.fmb-ref .network-intro-copy{position:relative;z-index:1}
-.fmb-ref .network-kicker{margin:0 0 16px;color:#5b1768;font:800 10px/1 Arial,Helvetica,sans-serif;letter-spacing:.22em;text-transform:uppercase}
-.fmb-ref .network-intro h1{max-width:760px;margin:0;font:600 clamp(48px,6vw,82px)/.92 "Bodoni 72","Didot","Bodoni MT","Times New Roman",serif;letter-spacing:-.048em;color:#221624}
-.fmb-ref .network-intro p{max-width:680px;margin:22px 0 0;color:#5b545d;font:18px/1.6 Arial,Helvetica,sans-serif}
-.fmb-ref .network-principles{position:relative;z-index:1;display:grid;gap:1px;background:#d9c9dc;border:1px solid #d9c9dc}
-.fmb-ref .network-principle{padding:20px 22px;background:rgba(255,255,255,.92)}
-.fmb-ref .network-principle strong{display:block;margin-bottom:5px;color:#35103f;font:700 16px/1.1 "Bodoni 72","Didot","Times New Roman",serif}
-.fmb-ref .network-principle span{color:#706871;font:12px/1.45 Arial,Helvetica,sans-serif}
-
-.fmb-ref .network-products{display:grid;grid-template-columns:1fr 1fr;gap:22px;padding:24px 0}
+.fmb-ref .network-home{width:min(1240px,calc(100% - 40px));margin:0 auto;padding:30px 0 6px}
+.fmb-ref .network-products{display:grid;grid-template-columns:1fr 1fr;gap:22px;padding:0 0 22px}
 .fmb-ref .network-product{
   position:relative;
-  min-height:420px;
+  min-height:390px;
   overflow:hidden;
-  padding:36px;
-  border:1px solid #e4d8e6;
-  background:#fff;
-  box-shadow:0 14px 34px rgba(43,10,50,.06);
+  display:flex;
+  flex-direction:column;
+  padding:38px 38px 34px;
+  border:1px solid #e3d9e5;
+  background:linear-gradient(145deg,#fff 0%,#fbf8fc 100%);
+  box-shadow:0 16px 38px rgba(43,10,50,.065);
   text-decoration:none;
   transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
 }
-.fmb-ref .network-product:hover{transform:translateY(-3px);border-color:#c3a9c8;box-shadow:0 20px 44px rgba(43,10,50,.1)}
-.fmb-ref .network-product::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:linear-gradient(90deg,#210529,#7e3d89 45%,#b68abe,#4b1057)}
-.fmb-ref .network-product.world{background:linear-gradient(145deg,#25082d 0%,#4b1057 54%,#241027 100%);color:#fff;border-color:#3d1047}
-.fmb-ref .network-product.world::before{background:linear-gradient(90deg,#b98bc2,#fff 48%,#7e3d89)}
-.fmb-ref .network-product .product-index{display:block;margin-bottom:66px;color:#7c6f80;font:800 9px/1 Arial,Helvetica,sans-serif;letter-spacing:.2em;text-transform:uppercase}
-.fmb-ref .network-product.world .product-index{color:#dfcfe3}
-.fmb-ref .network-product h2{margin:0 0 18px;font:600 clamp(42px,4.5vw,64px)/.92 "Bodoni 72","Didot","Bodoni MT","Times New Roman",serif;letter-spacing:-.045em}
-.fmb-ref .network-product p{max-width:500px;margin:0;color:#625b64;font:16px/1.58 Arial,Helvetica,sans-serif}
-.fmb-ref .network-product.world p{color:#e5dce7}
-.fmb-ref .network-product .product-link{position:absolute;left:36px;bottom:34px;color:#4b1057;font:800 11px/1 Arial,Helvetica,sans-serif;letter-spacing:.06em;text-transform:uppercase}
-.fmb-ref .network-product.world .product-link{color:#fff}
+.fmb-ref .network-product:hover{transform:translateY(-3px);border-color:#c8b1cc;box-shadow:0 22px 48px rgba(43,10,50,.1)}
+.fmb-ref .network-product::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,#a9771f,#e1bd58 48%,#7d5312)}
+.fmb-ref .network-product.world{background:linear-gradient(145deg,#220729 0%,#4b1057 55%,#25082d 100%);color:#fff;border-color:#3c1046}
+.fmb-ref .network-product.world::before{background:linear-gradient(90deg,#a9771f,#f2d06d 52%,#b17a19)}
+.fmb-ref .network-product .product-index{display:block;color:#7c6f80;font:800 9px/1 var(--fmb-ui)!important;letter-spacing:.19em;text-transform:uppercase}
+.fmb-ref .network-product.world .product-index{color:#e5d8e8}
+.fmb-ref .network-product .product-copy{margin:auto 0 72px}
+.fmb-ref .network-product h2{margin:0 0 18px;font:600 clamp(48px,5.2vw,72px)/.86 var(--fmb-display)!important;letter-spacing:-.04em}
+.fmb-ref .network-product p{max-width:500px;margin:0;color:#5d565f;font:500 16px/1.65 var(--fmb-ui)!important}
+.fmb-ref .network-product.world p{color:#e7dfe9}
+.fmb-ref .network-product .product-link{position:absolute;left:38px;bottom:34px;color:#4b1057;font:800 10px/1 var(--fmb-ui)!important;letter-spacing:.08em;text-transform:uppercase}
+.fmb-ref .network-product.world .product-link{color:#f5e4b3}
 
 .fmb-ref .daily-brief-signup{
   position:relative;
+  overflow:hidden;
   display:grid;
-  grid-template-columns:minmax(0,.9fr) minmax(380px,1.1fr);
-  gap:56px;
+  grid-template-columns:minmax(0,.85fr) minmax(400px,1.15fr);
+  gap:54px;
   align-items:center;
   margin:0 0 34px;
   padding:42px 46px;
-  background:linear-gradient(110deg,#f7eff9,#fff 62%);
+  background:linear-gradient(110deg,#f7eff9,#fff 64%);
   border:1px solid #dccbdf;
   box-shadow:0 16px 40px rgba(43,10,50,.07);
 }
-.fmb-ref .daily-brief-signup .brief-label{color:#5b1768;font:800 10px/1 Arial,Helvetica,sans-serif;letter-spacing:.22em;text-transform:uppercase}
-.fmb-ref .daily-brief-signup h2{margin:10px 0 12px;font:600 clamp(40px,4.5vw,62px)/.94 "Bodoni 72","Didot","Bodoni MT","Times New Roman",serif;letter-spacing:-.04em}
-.fmb-ref .daily-brief-signup p{margin:0;color:#625b64;font:15px/1.55 Arial,Helvetica,sans-serif}
-.fmb-ref .daily-brief-signup form{display:grid;grid-template-columns:1fr auto;gap:0}
-.fmb-ref .daily-brief-signup input[type=email]{min-width:0;height:54px;padding:0 16px;border:1px solid #cbb9cf;border-right:0;background:#fff;font:14px/1 Arial,Helvetica,sans-serif}
-.fmb-ref .daily-brief-signup button{height:54px;padding:0 26px;border:0;background:linear-gradient(105deg,#4b1057,#7c3a87,#4b1057);color:#fff;font:800 11px/1 Arial,Helvetica,sans-serif;letter-spacing:.05em;text-transform:uppercase}
-.fmb-ref .daily-brief-signup .consent{grid-column:1/-1;display:flex;gap:8px;align-items:flex-start;margin-top:11px;color:#716873;font:10px/1.45 Arial,Helvetica,sans-serif}
+.fmb-ref .daily-brief-signup::after{content:"";position:absolute;right:-38px;bottom:-64px;width:210px;height:210px;background:url('/news/assets/images/brand/fmb-bulletin-emblem.svg') center/contain no-repeat;opacity:.055;pointer-events:none}
+.fmb-ref .daily-brief-signup .brief-copy{position:relative;z-index:1}
+.fmb-ref .daily-brief-signup .brief-label{color:#8f6418;font:800 9px/1 var(--fmb-ui)!important;letter-spacing:.22em;text-transform:uppercase}
+.fmb-ref .daily-brief-signup h2{margin:9px 0 10px;font:600 clamp(44px,4.8vw,66px)/.9 var(--fmb-display)!important;letter-spacing:-.035em}
+.fmb-ref .daily-brief-signup p{margin:0;color:#625b64;font:500 15px/1.55 var(--fmb-ui)!important}
+.fmb-ref .daily-brief-signup form{position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;gap:0}
+.fmb-ref .daily-brief-signup input[type=email]{min-width:0;height:54px;padding:0 16px;border:1px solid #cbb9cf;border-right:0;background:#fff;font:500 14px/1 var(--fmb-ui)!important}
+.fmb-ref .daily-brief-signup button{height:54px;padding:0 28px;border:0;background:linear-gradient(105deg,#4b1057,#7c3a87,#4b1057);color:#fff;font:800 10px/1 var(--fmb-ui)!important;letter-spacing:.08em;text-transform:uppercase}
+.fmb-ref .daily-brief-signup .consent{grid-column:1/-1;display:flex;gap:8px;align-items:flex-start;margin-top:11px;color:#716873;font:500 10px/1.45 var(--fmb-ui)!important}
 .fmb-ref .daily-brief-signup .consent a{display:inline;text-decoration:underline}
-.fmb-ref .daily-brief-signup .status{grid-column:1/-1;min-height:16px;margin:7px 0 0;color:#5b1768;font:11px/1.3 Arial,Helvetica,sans-serif}
-
-.fmb-ref .footer-grid{grid-template-columns:1.25fr .8fr .8fr!important}
+.fmb-ref .daily-brief-signup .status{grid-column:1/-1;min-height:16px;margin:7px 0 0;color:#5b1768;font:600 11px/1.3 var(--fmb-ui)!important}
 
 @media(max-width:900px){
-  .fmb-ref .network-intro,.fmb-ref .daily-brief-signup{grid-template-columns:1fr}
+  .fmb-ref.fmb-network-landing .publication-emblem{width:78px;height:78px}
   .fmb-ref .network-products{grid-template-columns:1fr}
   .fmb-ref .network-product{min-height:340px}
-  .fmb-ref .network-product .product-index{margin-bottom:42px}
+  .fmb-ref .daily-brief-signup{grid-template-columns:1fr}
 }
 @media(max-width:680px){
-  .fmb-ref.fmb-network-landing .publication-wordmark{font-size:clamp(43px,13vw,62px)}
-  .fmb-ref.fmb-network-landing .publication-tagline{font-size:8px;letter-spacing:.22em}
+  .fmb-ref.fmb-network-landing .publication-mast{padding:19px 0 16px}
+  .fmb-ref.fmb-network-landing .publication-lockup{gap:13px}
+  .fmb-ref.fmb-network-landing .publication-emblem{width:58px;height:58px}
+  .fmb-ref.fmb-network-landing .publication-wordmark{font-size:clamp(36px,11.5vw,52px);white-space:normal;line-height:.84}
+  .fmb-ref.fmb-network-landing .publication-tagline{margin-top:8px;font-size:7px;letter-spacing:.2em}
   .fmb-ref .network-home{width:calc(100% - 28px);padding-top:18px}
-  .fmb-ref .network-intro{padding:30px 22px 28px;gap:30px}
-  .fmb-ref .network-intro h1{font-size:48px}
-  .fmb-ref .network-intro p{font-size:16px}
-  .fmb-ref .network-product{padding:28px 24px;min-height:320px}
-  .fmb-ref .network-product h2{font-size:44px}
+  .fmb-ref .network-product{padding:28px 24px;min-height:310px}
+  .fmb-ref .network-product h2{font-size:48px}
+  .fmb-ref .network-product .product-copy{margin:auto 0 62px}
   .fmb-ref .network-product .product-link{left:24px;bottom:27px}
   .fmb-ref .daily-brief-signup{padding:30px 22px;gap:28px}
+  .fmb-ref .daily-brief-signup h2{font-size:48px}
   .fmb-ref .daily-brief-signup form{grid-template-columns:1fr}
   .fmb-ref .daily-brief-signup input[type=email]{border-right:1px solid #cbb9cf}
   .fmb-ref .daily-brief-signup button{margin-top:8px}
-  .fmb-ref .footer-grid{grid-template-columns:1fr!important}
 }
