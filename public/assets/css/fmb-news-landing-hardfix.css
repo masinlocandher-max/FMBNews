@@ -70,7 +70,7 @@
   border:1px solid #dccbdf;
   box-shadow:0 16px 40px rgba(43,10,50,.07);
 }
-.fmb-ref .daily-brief-signup::after{content:"";position:absolute;right:-38px;bottom:-64px;width:210px;height:210px;background:url('/news/assets/images/brand/fmb-bulletin-emblem.svg') center/contain no-repeat;opacity:.055;pointer-events:none}
+.fmb-ref .daily-brief-signup::after{content:"";position:absolute;right:-38px;bottom:-64px;width:210px;height:210px;background:url('/assets/images/brand/fmb-bulletin-emblem.svg') center/contain no-repeat;opacity:.055;pointer-events:none}
 .fmb-ref .daily-brief-signup .brief-copy{position:relative;z-index:1}
 .fmb-ref .daily-brief-signup .brief-label{color:#8f6418;font:800 9px/1 var(--fmb-ui)!important;letter-spacing:.22em;text-transform:uppercase}
 .fmb-ref .daily-brief-signup h2{margin:9px 0 10px;font:600 clamp(44px,4.8vw,66px)/.9 var(--fmb-display)!important;letter-spacing:-.035em}
