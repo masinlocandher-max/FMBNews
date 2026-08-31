@@ -11,10 +11,15 @@ await mkdir(newsRoot, { recursive: true });
 await cp(path.join(root, 'site'), newsRoot, { recursive: true });
 await cp(path.join(root, 'public', 'assets'), path.join(newsRoot, 'assets'), { recursive: true });
 
-// The approved metallic newspaper renderer is authoritative for the core newsroom.
-// Run it after static routes are copied so homepage/archive/article pages cannot drift
-// back to a later experimental design during deployment.
+// The approved metallic newspaper renderer is authoritative for homepage,
+// archive and structured article pages.
 await import('./render-metallic-reference.mjs');
+
+// The network hard fix runs after every route has been copied/rendered.
+// It owns the shared mast, navigation, footer, metallic CSS stack and body
+// identity for every built HTML page, including FMB Worldwide, FMB Brief,
+// About and CMS live/read routes. No route is allowed to keep an orphan shell.
+await import('./hardfix-metallic-network.mjs');
 
 const textExtensions = new Set(['.html', '.css', '.js', '.mjs', '.json', '.xml', '.txt', '.svg']);
 
@@ -34,4 +39,4 @@ async function rewriteAssetPaths(target) {
 }
 
 await rewriteAssetPaths(newsRoot);
-console.log('Built self-contained FMB News application into dist/news with the metallic reference newsroom and scoped assets.');
+console.log('Built self-contained FMB News application with one locked metallic network system across all routes.');
