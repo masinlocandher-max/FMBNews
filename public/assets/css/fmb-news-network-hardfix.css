@@ -1,0 +1,166 @@
+/* FMB News network hard fix
+   Authoritative cross-route layer for FMB News, FMB Brief, FMB Worldwide,
+   CMS live/read surfaces, About and dated editions. */
+
+:root{
+  --fmb-network-metal:linear-gradient(108deg,#210529 0%,#5b1768 22%,#a77ab0 42%,#6b2875 54%,#3b0b48 72%,#1f0528 100%);
+  --fmb-network-soft:linear-gradient(135deg,#fbf8fc 0%,#f0e4f3 52%,#fff 100%);
+  --fmb-network-paper:#fff;
+  --fmb-network-ink:#24172b;
+  --fmb-network-muted:#675b6d;
+  --fmb-network-plum:#4b1057;
+  --fmb-network-line:#e4d8e7;
+  --fmb-network-shadow:0 16px 42px rgba(45,10,52,.08);
+}
+
+html{background:#fff}
+body.fmb-ref{background:linear-gradient(180deg,#fff 0%,#fff 74%,#fbf8fc 100%)!important;color:var(--fmb-network-ink)}
+body.fmb-ref main{min-height:40vh}
+body.fmb-ref h1,body.fmb-ref h2,body.fmb-ref h3{color:var(--fmb-network-ink)}
+body.fmb-ref a{accent-color:var(--fmb-network-plum)}
+body.fmb-ref img{max-width:100%}
+
+/* Ensure the unified mast remains dominant over legacy route CSS. */
+body.fmb-ref>.headline-ticker{position:relative;z-index:60}
+body.fmb-ref>.utility{position:relative;z-index:58;background:#fff}
+body.fmb-ref>.mast{position:relative;z-index:57}
+body.fmb-ref>.nav{position:relative;z-index:56}
+body.fmb-ref>.nav .shell{display:flex;align-items:center;justify-content:center;gap:26px;min-height:48px;overflow-x:auto;scrollbar-width:none}
+body.fmb-ref>.nav .shell::-webkit-scrollbar{display:none}
+body.fmb-ref>.nav a{white-space:nowrap}
+
+/* FMB Worldwide landing and dated editions: newspaper first, metallic second. */
+.fmb-ref .world-hero,.fmb-ref .edition-hero,.fmb-ref .cms-live-hero{
+  position:relative;
+  padding:44px 0 34px!important;
+  background:linear-gradient(118deg,#fff 0%,#fbf7fc 56%,#efe3f2 100%)!important;
+  color:var(--fmb-network-ink)!important;
+  border-bottom:1px solid var(--fmb-network-line);
+  overflow:hidden;
+}
+.fmb-ref .world-hero::before,.fmb-ref .edition-hero::before,.fmb-ref .cms-live-hero::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--fmb-network-metal)
+}
+.fmb-ref .world-hero::after,.fmb-ref .edition-hero::after,.fmb-ref .cms-live-hero::after{
+  content:"";position:absolute;width:380px;height:380px;border-radius:50%;right:-150px;top:-210px;border:1px solid rgba(91,23,104,.13);box-shadow:0 0 0 55px rgba(91,23,104,.035),0 0 0 110px rgba(91,23,104,.02);pointer-events:none
+}
+.fmb-ref .world-kicker,.fmb-ref .edition-kicker,.fmb-ref .country-meta,.fmb-ref .cms-entry-meta{
+  color:var(--fmb-network-plum)!important;font-weight:800;letter-spacing:.12em;text-transform:uppercase
+}
+.fmb-ref .world-hero h1,.fmb-ref .edition-hero h1,.fmb-ref .cms-edition-header h1{
+  margin:.16em 0 .22em!important;
+  color:#24102b!important;
+  font-family:"Bodoni 72","Didot","Bodoni MT","Times New Roman",serif!important;
+  font-weight:700!important;
+  letter-spacing:-.045em!important;
+  line-height:.96!important;
+}
+.fmb-ref .world-hero h1{font-size:clamp(3.2rem,8vw,6.4rem)!important}
+.fmb-ref .edition-hero h1{font-size:clamp(2.6rem,6vw,5rem)!important}
+.fmb-ref .world-hero p,.fmb-ref .edition-hero p,.fmb-ref .cms-live-hero p{color:#514755!important;max-width:790px;line-height:1.68}
+.fmb-ref .world-rule{
+  color:#fff!important;background:var(--fmb-network-metal)!important;border:0!important;border-radius:999px!important;box-shadow:0 8px 20px rgba(61,13,72,.16);font-weight:800
+}
+.fmb-ref .edition-hero .back,.fmb-ref .cms-live-hero a{color:var(--fmb-network-plum)!important}
+
+.fmb-ref .world-feed,.fmb-ref .edition-body{background:#fff!important}
+.fmb-ref .world-feed-head,.fmb-ref .archive-head{border-bottom:2px solid transparent;border-image:linear-gradient(90deg,#3b0c46,#a779af 35%,#e1cfe5 74%,transparent) 1;padding-bottom:14px}
+.fmb-ref .world-feed-head h2,.fmb-ref .archive-head h2{font-family:"Bodoni 72","Didot","Bodoni MT","Times New Roman",serif;font-weight:700;letter-spacing:-.03em}
+.fmb-ref .edition-link{border:1px solid #d7c5dc!important;color:var(--fmb-network-plum)!important;background:#fff;box-shadow:0 7px 18px rgba(45,10,52,.05)}
+
+.fmb-ref .country-grid{gap:20px!important}
+.fmb-ref .country-card,.fmb-ref .country-entry,.fmb-ref .archive-card,.fmb-ref .cms-edition-entry{
+  position:relative;
+  background:linear-gradient(180deg,#fff,#fdfbfd)!important;
+  border:1px solid var(--fmb-network-line)!important;
+  border-radius:18px!important;
+  box-shadow:0 10px 28px rgba(45,10,52,.055)!important;
+  overflow:hidden;
+}
+.fmb-ref .country-card::before,.fmb-ref .country-entry::before,.fmb-ref .archive-card::before,.fmb-ref .cms-edition-entry::before{
+  content:"";position:absolute;left:0;top:0;right:0;height:3px;background:var(--fmb-network-metal)
+}
+.fmb-ref .country-card:hover,.fmb-ref .archive-card:hover{transform:translateY(-3px)!important;box-shadow:0 18px 38px rgba(45,10,52,.10)!important}
+.fmb-ref .country-card small{color:#704078!important}
+.fmb-ref .country-card h3,.fmb-ref .country-entry h2,.fmb-ref .cms-edition-entry h2{font-family:"Bodoni 72","Didot","Bodoni MT","Times New Roman",serif;letter-spacing:-.025em}
+.fmb-ref .country-card p,.fmb-ref .country-entry p,.fmb-ref .cms-edition-entry p{color:#574f5a!important}
+.fmb-ref .analysis,.fmb-ref .cms-analysis,.fmb-ref .cms-entry-analysis{
+  background:linear-gradient(100deg,#faf6fb,#f1e6f4 72%,#fff)!important;
+  border-left:3px solid #6e2879!important;
+  border-radius:10px!important;
+}
+.fmb-ref .source-link,.fmb-ref .cms-entry-sources a{color:var(--fmb-network-plum)!important;font-weight:800}
+.fmb-ref .world-note,.fmb-ref .edition-note{background:#f8f3f9!important;border:1px solid #eadfec!important;border-left:4px solid #6e2879!important;border-radius:10px!important}
+
+.fmb-ref .edition-art{background:#fff!important;padding:22px 0 4px!important}
+.fmb-ref .edition-art img{border-radius:14px!important;border:1px solid #e1d4e4;box-shadow:var(--fmb-network-shadow)}
+
+/* Live CMS Worldwide/read surfaces. */
+.fmb-ref .cms-page{background:#fff!important;padding-bottom:54px}
+.fmb-ref .cms-page>.shell{padding-top:30px}
+.fmb-ref .cms-edition-header{
+  position:relative;margin:0 auto 24px;padding:28px;background:var(--fmb-network-soft);border:1px solid var(--fmb-network-line);border-left:5px solid #6e2879;box-shadow:var(--fmb-network-shadow)
+}
+.fmb-ref .cms-edition-header h1{font-size:clamp(2.1rem,5vw,4rem)}
+.fmb-ref .cms-edition-list{display:grid;gap:18px}
+.fmb-ref .cms-edition-entry{padding:24px!important}
+.fmb-ref .cms-article{max-width:1120px;margin:28px auto;padding:0}
+.fmb-ref .cms-article header,.fmb-ref .cms-article-content{max-width:780px}
+.fmb-ref .cms-article h1{font-family:"Bodoni 72","Didot","Bodoni MT","Times New Roman",serif;font-size:clamp(2.4rem,6vw,4.9rem);line-height:.98;letter-spacing:-.04em}
+.fmb-ref .cms-article figure{margin:28px 0;padding:10px;background:linear-gradient(145deg,#fff,#f2e8f4);border:1px solid #e1d1e4;box-shadow:var(--fmb-network-shadow)}
+
+/* FMB Brief: same newsroom identity, distinct product treatment. */
+.fmb-ref .brief-edition-bar{background:var(--fmb-network-metal)!important;color:#fff!important;border:0!important;box-shadow:0 8px 22px rgba(45,10,52,.12)}
+.fmb-ref .brief-edition-bar *{color:#fff!important}
+.fmb-ref .brief-archive-hero{
+  position:relative;padding:48px 0 38px!important;background:linear-gradient(118deg,#fff 0%,#fbf7fc 58%,#efe3f2 100%)!important;border-bottom:1px solid var(--fmb-network-line)
+}
+.fmb-ref .brief-archive-hero::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--fmb-network-metal)}
+.fmb-ref .brief-archive-hero h1{font-family:"Bodoni 72","Didot","Bodoni MT","Times New Roman",serif!important;font-size:clamp(3rem,8vw,6rem)!important;letter-spacing:-.05em!important;line-height:.9!important;color:#24102b!important}
+.fmb-ref .brief-archive-hero p{color:#574e5a!important;max-width:860px!important}
+.fmb-ref .brief-issues{background:#fff!important;padding:36px 0 54px!important}
+.fmb-ref .brief-issue{
+  position:relative;background:#fff!important;border:1px solid var(--fmb-network-line)!important;border-radius:16px!important;box-shadow:0 10px 28px rgba(45,10,52,.055)!important;overflow:hidden!important;transition:.2s ease
+}
+.fmb-ref .brief-issue::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--fmb-network-metal)}
+.fmb-ref .brief-issue:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(45,10,52,.09)!important}
+.fmb-ref .brief-issue time{color:var(--fmb-network-plum)!important;font-weight:800!important}
+.fmb-ref .brief-issue h2{font-family:"Bodoni 72","Didot","Bodoni MT","Times New Roman",serif!important;letter-spacing:-.025em!important}
+.fmb-ref .brief-method{background:linear-gradient(180deg,#faf6fb,#fff)!important;border-top:1px solid var(--fmb-network-line)!important}
+.fmb-ref .brief-method-grid>div{border-top:3px solid transparent;border-image:var(--fmb-network-metal) 1;padding-top:18px}
+
+/* About: preserve the strong editorial content, remove the orphaned visual system. */
+.fmb-ref.fmb-news-about .fmb-about-hero,.fmb-ref .fmb-about-hero{background:linear-gradient(118deg,#fff,#fbf7fc 58%,#efe3f2)!important;border-bottom:1px solid var(--fmb-network-line)!important}
+.fmb-ref .fmb-about-label{color:var(--fmb-network-plum)!important;font-weight:800!important;letter-spacing:.14em!important;text-transform:uppercase}
+.fmb-ref .fmb-about-hero h1,.fmb-ref .fmb-about-purpose h2,.fmb-ref .fmb-about-mv h2,.fmb-ref .fmb-about-method h2,.fmb-ref .fmb-about-name h2,.fmb-ref .fmb-about-standards h2,.fmb-ref .fmb-about-closing h2{
+  font-family:"Bodoni 72","Didot","Bodoni MT","Times New Roman",serif!important;letter-spacing:-.035em!important;color:#24102b!important
+}
+.fmb-ref .fmb-about-purpose,.fmb-ref .fmb-about-method,.fmb-ref .fmb-about-name,.fmb-ref .fmb-about-standards{background:#fff!important}
+.fmb-ref .fmb-about-mission-vision,.fmb-ref .fmb-about-closing{background:linear-gradient(180deg,#faf6fb,#fff)!important}
+.fmb-ref .fmb-about-mv,.fmb-ref .fmb-about-principles article{border-color:var(--fmb-network-line)!important}
+.fmb-ref .fmb-about-method-list li{border-top-color:#dfd0e3!important}
+.fmb-ref .fmb-about-closing a{color:var(--fmb-network-plum)!important}
+
+/* Archive and generic legacy cards that survive route-specific CSS. */
+.fmb-ref .archive-panel,.fmb-ref .archive-list,.fmb-ref .archive-results{background:#fff!important}
+.fmb-ref .archive-card,.fmb-ref .archive-item{transition:.2s ease}
+
+/* Shared footer must always visually terminate the network. */
+.fmb-ref>.footer{margin-top:44px!important}
+
+@media(max-width:860px){
+  body.fmb-ref>.nav .shell{justify-content:flex-start;padding-left:18px;padding-right:18px;gap:20px}
+  .fmb-ref .world-hero,.fmb-ref .edition-hero,.fmb-ref .cms-live-hero,.fmb-ref .brief-archive-hero{padding:34px 0 28px!important}
+  .fmb-ref .cms-edition-header{padding:22px}
+}
+
+@media(max-width:680px){
+  .fmb-ref .world-hero h1{font-size:clamp(2.8rem,16vw,4.6rem)!important}
+  .fmb-ref .edition-hero h1{font-size:clamp(2.25rem,12vw,3.6rem)!important}
+  .fmb-ref .country-card,.fmb-ref .country-entry,.fmb-ref .cms-edition-entry{border-radius:14px!important}
+  .fmb-ref .country-entry,.fmb-ref .cms-edition-entry{padding:20px!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .fmb-ref .country-card,.fmb-ref .archive-card,.fmb-ref .brief-issue{transition:none!important;transform:none!important}
+}
