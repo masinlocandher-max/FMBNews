@@ -12,7 +12,7 @@ const mobileGlobalCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-
 const mobileProductsCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-products.css?v=20260901-products-v1">';
 const mobileProductHeroesCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-product-heroes.css?v=20260902-product-heroes-v1">';
 const mobilePolishCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-app-polish.css?v=20260902-polish-v2">';
-const mobileLiveHeroCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-home-live-hero.css?v=20260902-live-hero-v1&p=2">';
+const mobileLiveHeroCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-home-live-hero.css?v=20260902-live-hero-v2">';
 const mobileContrastCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-contrast-lock.css?v=20260902-contrast-v1">';
 const personalizationJs='<script src="/assets/js/fmb-news-mobile-personalization.js?v=20260901-personal-v2" defer></script>';
 const premiumJs='<script src="/assets/js/fmb-news-mobile-premium.js?v=20260901-premium-v2" defer></script>';
@@ -59,7 +59,7 @@ async function apply(target){
   html=upsertCss(html,'/assets/css/fmb-news-mobile-products.css',mobileProductsCss,'20260901-products-v1');
   html=upsertCss(html,'/assets/css/fmb-news-mobile-product-heroes.css',mobileProductHeroesCss,'20260902-product-heroes-v1');
   html=upsertCss(html,'/assets/css/fmb-news-mobile-app-polish.css',mobilePolishCss,'20260902-polish-v2');
-  html=upsertCss(html,'/assets/css/fmb-news-mobile-home-live-hero.css',mobileLiveHeroCss,'20260902-live-hero-v1&p=2');
+  html=upsertCss(html,'/assets/css/fmb-news-mobile-home-live-hero.css',mobileLiveHeroCss,'20260902-live-hero-v2');
   html=upsertCss(html,'/assets/css/fmb-news-mobile-contrast-lock.css',mobileContrastCss,'20260902-contrast-v1');
   if(!html.includes('/news/manifest.webmanifest'))html=html.replace('</head>',`${pwaMeta}</head>`);
   html=upsertJs(html,'/assets/js/fmb-news-mobile-personalization.js',personalizationJs,'20260901-personal-v2');
