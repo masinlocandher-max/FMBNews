@@ -34,12 +34,19 @@ jobs:
             grep -q 'FMB Explainer' "$file"
             grep -q 'FMB Daily Brief' "$file"
             grep -q 'fmb-news-mobile-personalization.css?v=20260901-personal-v3' "$file"
-            grep -q 'fmb-news-mobile-home.css?v=20260901-app-home-v2' "$file"
             grep -q 'fmb-news-mobile-global.css?v=20260901-global-v3' "$file"
-            grep -q 'fmb-news-mobile-global.js?v=20260901-global-v3' "$file"
             grep -q 'fmb-news-mobile-products.css?v=20260901-products-v1' "$file"
-            grep -q 'fmb-news-mobile-products.js?v=20260901-products-v2' "$file"
+            grep -q 'fmb-news-mobile-products.js?v=20260902-products-v3' "$file"
+            grep -q 'fmb-news-mobile-product-heroes.css?v=20260902-product-heroes-v4' "$file"
+            grep -q 'fmb-news-mobile-menu-holder.css?v=20260902-menu-holder-v2' "$file"
+            grep -q 'fmb-news-mobile-home-live-hero.css?v=20260902-approved-hero-v3' "$file"
           done
+
+          grep -q 'Read the Latest' dist/news/index.html
+          grep -q '>Customize<' dist/news/index.html
+          grep -q 'fmb-approved-hero-copy' dist/news/index.html
+          grep -q 'fmb-approved-hero-ticker' dist/news/index.html
+          grep -q '14fKTwMW0qnVi36eVSAjSBr05_VZgq4kf' scripts/fetch-approved-mobile-assets.mjs
 
           test -f dist/news/manifest.webmanifest
           test -f dist/news/sw.js
@@ -48,48 +55,26 @@ jobs:
           test "$(stat -c%s dist/news/assets/images/mobile/fmb-mobile-hero.jpg)" -gt 20000
           test "$(stat -c%s dist/news/assets/images/mobile/fmb-daily-brief-mug.jpg)" -gt 20000
 
-          test -f dist/news/assets/css/fmb-news-mobile-global.css
-          test -f dist/news/assets/css/fmb-news-mobile-products.css
-          test -f dist/news/assets/css/fmb-news-mobile-features.css
-          test -f dist/news/assets/css/fmb-news-mobile-personalization.css
-          test -f dist/news/assets/js/fmb-news-mobile-global.js
-          test -f dist/news/assets/js/fmb-news-mobile-products.js
-          test -f dist/news/assets/js/fmb-news-weekly-horoscope.js
-          test -f dist/news/assets/js/fmb-news-weekly-crossword.js
-
           grep -q 'min-height:44px' dist/news/assets/css/fmb-news-mobile-personalization.css
-          grep -q 'z-index:2' dist/news/assets/css/fmb-news-mobile-personalization.css
           grep -q 'focus-visible' dist/news/assets/css/fmb-news-mobile-personalization.css
-
-          grep -q 'fmb-mobile-route-archive' dist/news/assets/css/fmb-news-mobile-products.css
-          grep -q 'fmb-mobile-route-world' dist/news/assets/css/fmb-news-mobile-products.css
-          grep -q 'fmb-mobile-route-explainer' dist/news/assets/css/fmb-news-mobile-products.css
-          grep -q 'fmb-mobile-route-brief' dist/news/assets/css/fmb-news-mobile-products.css
-          grep -q 'fmb-mobile-route-horoscope' dist/news/assets/css/fmb-news-mobile-products.css
-          grep -q 'fmb-mobile-route-crossword' dist/news/assets/css/fmb-news-mobile-products.css
-          grep -q 'fmb-mobile-route-about' dist/news/assets/css/fmb-news-mobile-products.css
-          grep -q 'fmb-mobile-route-article' dist/news/assets/css/fmb-news-mobile-products.css
-
-          grep -q 'addArchiveIntro' dist/news/assets/js/fmb-news-mobile-products.js
-          grep -q 'addWorldSignature' dist/news/assets/js/fmb-news-mobile-products.js
-          grep -q 'addExplainerSignature' dist/news/assets/js/fmb-news-mobile-products.js
-          grep -q 'addBriefSignature' dist/news/assets/js/fmb-news-mobile-products.js
-          grep -q '.brief-archive-hero .brief-shell' dist/news/assets/js/fmb-news-mobile-products.js
-          grep -q 'addHoroscopeSignature' dist/news/assets/js/fmb-news-mobile-products.js
-          grep -q 'addCrosswordSignature' dist/news/assets/js/fmb-news-mobile-products.js
-          grep -q 'addAboutSignature' dist/news/assets/js/fmb-news-mobile-products.js
-          grep -q 'addArticleProgress' dist/news/assets/js/fmb-news-mobile-products.js
+          grep -q 'min-height:46px!important' dist/news/assets/css/fmb-news-mobile-menu-holder.css
+          grep -q 'One exact hero canvas' dist/news/assets/css/fmb-news-mobile-product-heroes.css
+          grep -q 'height:300px' dist/news/assets/css/fmb-news-mobile-product-heroes.css
+          grep -q 'font-size:46px' dist/news/assets/css/fmb-news-mobile-product-heroes.css
 
           grep -q 'Hindi hawak ng mga bituin ang ating kapalaran, meron tayong freewill gamitin natin' dist/news/horoscope/index.html
           for icon in '♈' '♉' '♊' '♋' '♌' '♍' '♎' '♏' '♐' '♑' '♒' '♓'; do grep -q "$icon" dist/news/assets/js/fmb-news-weekly-horoscope.js; done
 
+          grep -q '20260902-features-v3' dist/news/crossword/index.html
+          grep -q '20260902-current-events-v3' dist/news/crossword/index.html
           grep -q 'MIN_WORDS=35' dist/news/assets/js/fmb-news-weekly-crossword.js
-          grep -q 'PAXSILICA' dist/news/assets/js/fmb-news-weekly-crossword.js
-          grep -q 'IMPEACHMENT' dist/news/assets/js/fmb-news-weekly-crossword.js
-          grep -q 'PADILLA' dist/news/assets/js/fmb-news-weekly-crossword.js
-          grep -q 'HABAGAT' dist/news/assets/js/fmb-news-weekly-crossword.js
-          grep -q 'PILANDOK' dist/news/assets/js/fmb-news-weekly-crossword.js
-          grep -q 'releasedPuzzles=\[\]' dist/news/assets/js/fmb-news-weekly-crossword.js
+          grep -q 'news_crossword_progress' dist/news/assets/js/fmb-news-weekly-crossword.js
+          grep -q 'on_conflict=user_id,puzzle_id' dist/news/assets/js/fmb-news-weekly-crossword.js
+          grep -q 'scheduleSave' dist/news/assets/js/fmb-news-weekly-crossword.js
+          grep -q 'Continue without saving' dist/news/assets/js/fmb-news-weekly-crossword.js
+          grep -q 'fmb-crossword-clue-popover' dist/news/assets/js/fmb-news-weekly-crossword.js
+          grep -q 'fmb-crossword-save-gate' dist/news/assets/css/fmb-news-mobile-features.css
+          grep -q 'fmb-crossword-clue-popover' dist/news/assets/css/fmb-news-mobile-features.css
           ! grep -E -q 'Reveal Letter|Reveal Word|Reveal Puzzle|data-cw-reveal' dist/news/crossword/index.html
           ! grep -E -q 'Reveal Letter|Reveal Word|Reveal Puzzle|data-cw-reveal' dist/news/assets/js/fmb-news-weekly-crossword.js
 
@@ -101,11 +86,13 @@ jobs:
           personal_pages="$(grep -rl 'fmb-news-mobile-personalization.css?v=20260901-personal-v3' dist/news --include='index.html' | wc -l | tr -d ' ')"
           global_pages="$(grep -rl 'fmb-news-mobile-global.css?v=20260901-global-v3' dist/news --include='index.html' | wc -l | tr -d ' ')"
           product_pages="$(grep -rl 'fmb-news-mobile-products.css?v=20260901-products-v1' dist/news --include='index.html' | wc -l | tr -d ' ')"
-          product_js_pages="$(grep -rl 'fmb-news-mobile-products.js?v=20260901-products-v2' dist/news --include='index.html' | wc -l | tr -d ' ')"
+          product_js_pages="$(grep -rl 'fmb-news-mobile-products.js?v=20260902-products-v3' dist/news --include='index.html' | wc -l | tr -d ' ')"
+          approved_hero_pages="$(grep -rl 'fmb-news-mobile-home-live-hero.css?v=20260902-approved-hero-v3' dist/news --include='index.html' | wc -l | tr -d ' ')"
           test "$total_pages" -eq "$personal_pages"
           test "$total_pages" -eq "$global_pages"
           test "$total_pages" -eq "$product_pages"
           test "$total_pages" -eq "$product_js_pages"
+          test "$total_pages" -eq "$approved_hero_pages"
 
           grep -q 'rel="manifest" href="/news/manifest.webmanifest"' dist/news/index.html
           grep -q 'serviceWorker.register' dist/news/assets/js/fmb-news-mobile-personalization.js
