@@ -38,10 +38,12 @@ jobs:
           test -f dist/news/assets/css/fmb-news-mobile-personalization.css
           test -f dist/news/assets/css/fmb-news-mobile-premium.css
           test -f dist/news/assets/css/fmb-news-mobile-home.css
+          test -f dist/news/assets/css/fmb-news-mobile-global.css
           test -f dist/news/assets/css/fmb-news-mobile-features.css
           test -f dist/news/assets/js/fmb-news-mobile-personalization.js
           test -f dist/news/assets/js/fmb-news-mobile-premium.js
           test -f dist/news/assets/js/fmb-news-mobile-home.js
+          test -f dist/news/assets/js/fmb-news-mobile-global.js
           test -f dist/news/assets/js/fmb-news-weekly-horoscope.js
           test -f dist/news/assets/js/fmb-news-weekly-crossword.js
           test -f dist/news/assets/js/fmb-explained-library.js
@@ -57,6 +59,8 @@ jobs:
             grep -q 'fmb-news-mobile-premium.js?v=20260901-premium-v2' "$page"
             grep -q 'fmb-news-mobile-home.css?v=20260901-app-home-v1' "$page"
             grep -q 'fmb-news-mobile-home.js?v=20260901-app-home-v1' "$page"
+            grep -q 'fmb-news-mobile-global.css?v=20260901-global-v1' "$page"
+            grep -q 'fmb-news-mobile-global.js?v=20260901-global-v1' "$page"
           done
           ! grep -R -E '>FMB Explained<' dist/news --include='*.html'
           grep -q '206 topics, explained' dist/news/explainer/index.html
@@ -75,18 +79,28 @@ jobs:
           responsive_pages="$(grep -rl 'fmb-news-mobile-first-site.css' dist/news --include='index.html' | wc -l | tr -d ' ')"
           premium_pages="$(grep -rl 'fmb-news-mobile-premium.css' dist/news --include='index.html' | wc -l | tr -d ' ')"
           home_layer_pages="$(grep -rl 'fmb-news-mobile-home.css' dist/news --include='index.html' | wc -l | tr -d ' ')"
+          global_css_pages="$(grep -rl 'fmb-news-mobile-global.css?v=20260901-global-v1' dist/news --include='index.html' | wc -l | tr -d ' ')"
+          global_js_pages="$(grep -rl 'fmb-news-mobile-global.js?v=20260901-global-v1' dist/news --include='index.html' | wc -l | tr -d ' ')"
           test "$total_pages" -eq "$responsive_pages"
           test "$total_pages" -eq "$premium_pages"
           test "$total_pages" -eq "$home_layer_pages"
+          test "$total_pages" -eq "$global_css_pages"
+          test "$total_pages" -eq "$global_js_pages"
 
           grep -q '@media (max-width:699px)' dist/news/assets/css/fmb-news-mobile-premium.css
           grep -q '@media(max-width:699px)' dist/news/assets/css/fmb-news-mobile-home.css
+          grep -q '@media(max-width:699px)' dist/news/assets/css/fmb-news-mobile-global.css
           grep -q -- '--app-plum:#2b1235' dist/news/assets/css/fmb-news-mobile-premium.css
           grep -q -- '--app-bg:#f5f5f7' dist/news/assets/css/fmb-news-mobile-premium.css
           grep -q 'fmb-bulletin-emblem.svg' dist/news/assets/css/fmb-news-mobile-premium.css
           ! grep -q 'location.replace' dist/news/assets/js/fmb-news-mobile-premium.js
           grep -q 'open-meteo.com' dist/news/assets/js/fmb-news-mobile-home.js
           grep -q 'geolocation' dist/news/assets/js/fmb-news-mobile-home.js
+          grep -q 'data-fmb-global-utility' dist/news/assets/js/fmb-news-mobile-global.js
+          grep -q '/news/horoscope/' dist/news/assets/js/fmb-news-mobile-global.js
+          grep -q '/news/crossword/' dist/news/assets/js/fmb-news-mobile-global.js
+          grep -q 'fmbSavedStoriesV1' dist/news/assets/js/fmb-news-mobile-global.js
+          grep -q 'fmb-mobile-reader-actions' dist/news/assets/css/fmb-news-mobile-global.css
 
           grep -q 'rel="manifest" href="/news/manifest.webmanifest"' dist/news/index.html
           grep -q 'apple-mobile-web-app-capable' dist/news/index.html
