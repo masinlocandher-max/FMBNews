@@ -13,7 +13,11 @@
         hrefs.some(h=>h.startsWith('/news/explainer')),
         hrefs.some(h=>h.startsWith('/news/fmb-brief'))
       ].filter(Boolean).length;
-      if(hits>=3)nav.classList.add('fmb-legacy-product-rail');
+      if(hits>=3){
+        nav.classList.add('fmb-legacy-product-rail');
+        if(!nav.hidden)nav.hidden=true;
+        nav.setAttribute('aria-hidden','true');
+      }
     }
   }
 
