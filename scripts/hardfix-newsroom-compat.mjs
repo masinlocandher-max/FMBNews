@@ -17,6 +17,7 @@ const css=[
 ['/assets/css/fmb-news-mobile-contrast-lock.css','20260902-contrast-v1']
 ];
 const js=[
+['/assets/js/fmb-news-newsletter.js','20260902-audit-v1'],
 ['/assets/js/fmb-news-mobile-global.js','20260901-global-v3'],
 ['/assets/js/fmb-news-mobile-products.js','20260902-products-v3'],
 ['/assets/js/fmb-news-mobile-app-polish.js','20260902-polish-v2']
@@ -43,4 +44,4 @@ source=source.replace(/new Intl\.DateTimeFormat\(undefined,\{month:'short',day:'
   .replace(/new Intl\.DateTimeFormat\(undefined,\{weekday:'short'\}\)/g,"new Intl.DateTimeFormat('en-PH',{timeZone:'Asia/Manila',weekday:'short'})")
   .replace(/new Intl\.DateTimeFormat\(undefined,\{hour:'numeric',minute:'2-digit'\}\)/g,"new Intl.DateTimeFormat('en-PH',{timeZone:'Asia/Manila',hour:'numeric',minute:'2-digit',hour12:true})");
 await writeFile(homeJs,source,'utf8');
-console.log('Preserved FMB mobile QA contracts while locking restrained homepage copy, Philippine Standard Time, and newsroom utility-route product identity.');
+console.log('Preserved FMB mobile QA contracts while locking restrained homepage copy, Philippine Standard Time, newsroom utility-route product identity, and shared image recovery.');
