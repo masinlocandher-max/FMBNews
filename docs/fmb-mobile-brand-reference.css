@@ -1,0 +1,199 @@
+/*
+  FMB NEWS MOBILE BRAND REFERENCE
+  Source of truth for mobile logo, type and control-icon styling.
+  Production implementation may refactor class names but must preserve these visual rules.
+*/
+:root{
+  --fmb-plum:#2B1235;
+  --fmb-plum-deep:#1A0B20;
+  --fmb-violet:#6E3A8A;
+  --fmb-lilac:#E9DFF0;
+  --fmb-bg:#F5F5F7;
+  --fmb-surface:#FFFFFF;
+  --fmb-ink:#1D1D1F;
+  --fmb-muted:#6E6E73;
+  --fmb-line:#D9D9DF;
+  --fmb-gold:#C9A84D;
+  --fmb-ui:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,Helvetica,Arial,sans-serif;
+  --fmb-display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Inter,Helvetica,Arial,sans-serif;
+}
+
+.fmb-mobile-brand-bar{
+  min-height:72px;
+  padding:calc(7px + env(safe-area-inset-top)) 16px 7px;
+  display:flex;
+  align-items:center;
+  background:linear-gradient(180deg,var(--fmb-plum) 0%,var(--fmb-plum-deep) 100%);
+  color:#fff;
+}
+
+.fmb-brand-lockup{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:0;
+  color:#fff;
+  text-decoration:none;
+}
+
+.fmb-brand-icon{
+  display:block;
+  width:40px;
+  height:40px;
+  flex:0 0 40px;
+  object-fit:contain;
+}
+
+.fmb-brand-copy{
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+  line-height:1;
+}
+
+.fmb-brand-title{
+  color:#fff;
+  font-family:var(--fmb-display);
+  font-size:20px;
+  font-weight:750;
+  line-height:1.05;
+  letter-spacing:-.025em;
+}
+
+.fmb-brand-subtitle{
+  margin-top:4px;
+  color:rgba(255,255,255,.68);
+  font-family:var(--fmb-ui);
+  font-size:9.5px;
+  font-weight:650;
+  line-height:1;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+
+.fmb-mobile-header-actions{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  gap:4px;
+}
+
+.fmb-icon-button{
+  width:44px;
+  height:44px;
+  padding:0;
+  border:0;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  background:transparent;
+  color:#fff;
+}
+
+.fmb-icon-button svg{
+  width:24px;
+  height:24px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.9;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.fmb-icon-button:focus-visible{
+  outline:2px solid #fff;
+  outline-offset:2px;
+}
+
+.fmb-product-rail{
+  display:flex;
+  gap:24px;
+  min-height:48px;
+  overflow-x:auto;
+  scrollbar-width:none;
+  white-space:nowrap;
+  padding:0 16px;
+  background:#fff;
+  border-bottom:1px solid var(--fmb-line);
+}
+
+.fmb-product-rail::-webkit-scrollbar{display:none}
+
+.fmb-product-rail a{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  min-height:48px;
+  flex:0 0 auto;
+  color:var(--fmb-muted);
+  font-family:var(--fmb-ui);
+  font-size:13px;
+  font-weight:650;
+  text-decoration:none;
+}
+
+.fmb-product-rail a[aria-current="page"]{
+  color:var(--fmb-plum);
+  font-weight:800;
+}
+
+.fmb-product-rail a[aria-current="page"]::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:2px;
+  border-radius:2px;
+  background:var(--fmb-violet);
+}
+
+.fmb-hero-title,
+.fmb-section-title,
+.fmb-story-title{
+  font-family:var(--fmb-display);
+  color:var(--fmb-ink);
+}
+
+.fmb-hero-title{
+  font-size:clamp(31px,9vw,36px);
+  line-height:1.02;
+  font-weight:800;
+  letter-spacing:-.045em;
+}
+
+.fmb-section-title{
+  font-size:clamp(24px,7vw,28px);
+  line-height:1.05;
+  font-weight:800;
+  letter-spacing:-.035em;
+}
+
+.fmb-story-title{
+  font-size:17px;
+  line-height:1.2;
+  font-weight:750;
+  letter-spacing:-.025em;
+}
+
+.fmb-article-body{
+  font-family:var(--fmb-ui);
+  font-size:17px;
+  line-height:1.72;
+  color:var(--fmb-ink);
+}
+
+/* Gold is reserved for the official emblem and rare prestige accents.
+   Do not recolor all UI icons or navigation gold. */
+.fmb-prestige-accent{color:var(--fmb-gold)}
+
+@media (min-width:700px){
+  /* This reference is mobile-only. Production desktop publication styling must win at 700px+. */
+  .fmb-mobile-brand-bar,
+  .fmb-product-rail{all:unset}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
