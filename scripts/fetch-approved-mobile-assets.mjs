@@ -8,8 +8,8 @@ await mkdir(outDir,{recursive:true});
 
 const assets=[
   {
-    name:'FMB mobile hero',
-    id:'1BFsbaXgrFqyBuD4R2ummFR87FUSxACq1',
+    name:'FMB approved Philippines hero',
+    id:'14fKTwMW0qnVi36eVSAjSBr05_VZgq4kf',
     file:'fmb-mobile-hero.jpg',
     width:2200
   },
