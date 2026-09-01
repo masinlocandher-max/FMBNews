@@ -33,11 +33,12 @@ jobs:
             grep -q 'FMB Worldwide' "$file"
             grep -q 'FMB Explainer' "$file"
             grep -q 'FMB Daily Brief' "$file"
+            grep -q 'fmb-news-mobile-personalization.css?v=20260901-personal-v3' "$file"
             grep -q 'fmb-news-mobile-home.css?v=20260901-app-home-v2' "$file"
             grep -q 'fmb-news-mobile-global.css?v=20260901-global-v3' "$file"
             grep -q 'fmb-news-mobile-global.js?v=20260901-global-v3' "$file"
             grep -q 'fmb-news-mobile-products.css?v=20260901-products-v1' "$file"
-            grep -q 'fmb-news-mobile-products.js?v=20260901-products-v1' "$file"
+            grep -q 'fmb-news-mobile-products.js?v=20260901-products-v2' "$file"
           done
 
           test -f dist/news/manifest.webmanifest
@@ -50,10 +51,15 @@ jobs:
           test -f dist/news/assets/css/fmb-news-mobile-global.css
           test -f dist/news/assets/css/fmb-news-mobile-products.css
           test -f dist/news/assets/css/fmb-news-mobile-features.css
+          test -f dist/news/assets/css/fmb-news-mobile-personalization.css
           test -f dist/news/assets/js/fmb-news-mobile-global.js
           test -f dist/news/assets/js/fmb-news-mobile-products.js
           test -f dist/news/assets/js/fmb-news-weekly-horoscope.js
           test -f dist/news/assets/js/fmb-news-weekly-crossword.js
+
+          grep -q 'min-height:44px' dist/news/assets/css/fmb-news-mobile-personalization.css
+          grep -q 'z-index:2' dist/news/assets/css/fmb-news-mobile-personalization.css
+          grep -q 'focus-visible' dist/news/assets/css/fmb-news-mobile-personalization.css
 
           grep -q 'fmb-mobile-route-archive' dist/news/assets/css/fmb-news-mobile-products.css
           grep -q 'fmb-mobile-route-world' dist/news/assets/css/fmb-news-mobile-products.css
@@ -68,6 +74,7 @@ jobs:
           grep -q 'addWorldSignature' dist/news/assets/js/fmb-news-mobile-products.js
           grep -q 'addExplainerSignature' dist/news/assets/js/fmb-news-mobile-products.js
           grep -q 'addBriefSignature' dist/news/assets/js/fmb-news-mobile-products.js
+          grep -q '.brief-archive-hero .brief-shell' dist/news/assets/js/fmb-news-mobile-products.js
           grep -q 'addHoroscopeSignature' dist/news/assets/js/fmb-news-mobile-products.js
           grep -q 'addCrosswordSignature' dist/news/assets/js/fmb-news-mobile-products.js
           grep -q 'addAboutSignature' dist/news/assets/js/fmb-news-mobile-products.js
@@ -91,9 +98,11 @@ jobs:
           ! grep -R -E '(["'"'"'(=])\/assets\/' dist/news --include='*.html' --include='*.css' --include='*.js' --include='*.mjs'
 
           total_pages="$(find dist/news -type f -name index.html | wc -l | tr -d ' ')"
+          personal_pages="$(grep -rl 'fmb-news-mobile-personalization.css?v=20260901-personal-v3' dist/news --include='index.html' | wc -l | tr -d ' ')"
           global_pages="$(grep -rl 'fmb-news-mobile-global.css?v=20260901-global-v3' dist/news --include='index.html' | wc -l | tr -d ' ')"
           product_pages="$(grep -rl 'fmb-news-mobile-products.css?v=20260901-products-v1' dist/news --include='index.html' | wc -l | tr -d ' ')"
-          product_js_pages="$(grep -rl 'fmb-news-mobile-products.js?v=20260901-products-v1' dist/news --include='index.html' | wc -l | tr -d ' ')"
+          product_js_pages="$(grep -rl 'fmb-news-mobile-products.js?v=20260901-products-v2' dist/news --include='index.html' | wc -l | tr -d ' ')"
+          test "$total_pages" -eq "$personal_pages"
           test "$total_pages" -eq "$global_pages"
           test "$total_pages" -eq "$product_pages"
           test "$total_pages" -eq "$product_js_pages"
