@@ -62,7 +62,7 @@ for(const token of ['hideLegacyProductRails','cleanGlobalUtility','utility.remov
 const homeCss=await read('dist/news/assets/css/fmb-news-mobile-home.css');
 for(const token of ['.fmb-app-brand-hero','color:#fff','fmb-app-lead h2'])must(homeCss.includes(token),`Mobile home visual regression: missing ${token}`);
 const liveHeroCss=await read('dist/news/assets/css/fmb-news-mobile-home-live-hero.css');
-for(const token of ['width:100vw','border-radius:0','fmb-hero-readable-shade','fmb-hero-greeting','fmb-hero-live-overlay','font-size:clamp(38px','fmb-hero-weather-copy>strong'])must(liveHeroCss.includes(token),`Full-bleed live Home hero regression: missing ${token}`);
+for(const token of ['width:100%!important','max-width:none!important','overflow:hidden!important','border-radius:0','fmb-hero-readable-shade','fmb-hero-greeting','fmb-hero-live-overlay','font-size:clamp(38px','fmb-hero-weather-copy>strong'])must(liveHeroCss.includes(token),`Full-bleed live Home hero regression: missing ${token}`);
 const homeJs=await read('dist/news/assets/js/fmb-news-mobile-home.js');
 for(const token of ['Hello, night owl.','Good morning, news fan.','Hello, lunch-break reader.','Good afternoon, news fan.','Still up?','data-fmb-greeting-line'])must(homeJs.includes(token),`Dynamic Home greeting regression: missing ${token}`);
 const contrastCss=await read('dist/news/assets/css/fmb-news-mobile-contrast-lock.css');
