@@ -39,7 +39,7 @@ for (const signal of [
 ]) {
   if (!sourceGuard.includes(signal)) throw new Error(`Image hard-fix regression: source guard is missing ${signal}`);
 }
-for(const signal of ['isArticle','hasContentImage','injectFigure','og:image','twitter:image','fmb-guaranteed-article-figure']){
+for(const signal of ['isArticle','article-grid','hasContentImage','injectFigure','og:image','twitter:image','fmb-guaranteed-article-figure']){
   if(!articleImageHardfix.includes(signal))throw new Error(`Article image build hard rule is missing ${signal}`);
 }
 if (!sourceNewsletter.includes('/assets/js/fmb-news-image-hardfix.js')) {
@@ -58,7 +58,7 @@ if (!fallback.includes('<svg') || !fallback.includes('FMB News editorial visual'
   throw new Error('Image hard-fix regression: fallback visual is invalid');
 }
 
-const isArticle=html=>/property=["']og:type["'][^>]*content=["']article["']/i.test(html)||/content=["']article["'][^>]*property=["']og:type["']/i.test(html)||/["']@type["']\s*:\s*["'](?:NewsArticle|Article)["']/i.test(html);
+const isArticle=html=>html.includes('class="article-grid"')||/property=["']og:type["'][^>]*content=["']article["']/i.test(html)||/content=["']article["'][^>]*property=["']og:type["']/i.test(html)||/["']@type["']\s*:\s*["'](?:NewsArticle|Article)["']/i.test(html);
 const hasArticleImage=html=>/class=["'][^"']*(?:article-figure|cms-article-image|explainer-article-image|article-hero-image)[^"']*["'][\s\S]*?<img\s+[^>]*src=["'][^"']+/i.test(html)||/<article\b[\s\S]*?<img\s+[^>]*src=["'][^"']+/i.test(html);
 
 let htmlPages = 0;
@@ -100,7 +100,7 @@ async function scan(target) {
 
 await scan(resolve('dist/news'));
 if (generatedArticles === 0) throw new Error('Image hard-fix regression: no generated article pages were inspected');
-if (articlePages === 0) throw new Error('Article image regression: no Article/NewsArticle routes were inspected');
-if (articlePages < generatedArticles) throw new Error(`Article image regression: only ${articlePages} Article/NewsArticle routes inspected vs ${generatedArticles} generated articles`);
+if (articlePages === 0) throw new Error('Article image regression: no article routes were inspected');
+if (articlePages < generatedArticles) throw new Error(`Article image regression: only ${articlePages} article routes inspected vs ${generatedArticles} generated articles`);
 
-console.log(`FMB News image verification passed: all ${articlePages} Article/NewsArticle routes have visible content images and og:image metadata; ${generatedArticles} generated articles have figure images; ${htmlPages} built HTML pages load broken/missing-image recovery.`);
+console.log(`FMB News image verification passed: all ${articlePages} article routes have visible content images and og:image metadata; ${generatedArticles} generated articles have figure images; ${htmlPages} built HTML pages load broken/missing-image recovery.`);
