@@ -35,7 +35,7 @@ jobs:
       - name: Verify deployable output
         shell: bash
         run: |
-          set -euo pipefail
+          set -euxo pipefail
 
           for page in index archive world explainer fmb-brief horoscope crossword about; do
             if [ "$page" = index ]; then file="dist/news/index.html"; else file="dist/news/$page/index.html"; fi
@@ -63,8 +63,10 @@ jobs:
           test -f dist/news/sw.js
           test -f dist/news/assets/images/mobile/fmb-mobile-hero.jpg
           test -f dist/news/assets/images/mobile/fmb-daily-brief-mug.jpg
+          test -f dist/news/assets/images/mobile/fmb-explainer-fallback.jpg
           test "$(stat -c%s dist/news/assets/images/mobile/fmb-mobile-hero.jpg)" -gt 20000
           test "$(stat -c%s dist/news/assets/images/mobile/fmb-daily-brief-mug.jpg)" -gt 20000
+          test "$(stat -c%s dist/news/assets/images/mobile/fmb-explainer-fallback.jpg)" -gt 20000
 
           grep -q 'min-height:44px' dist/news/assets/css/fmb-news-mobile-personalization.css
           grep -q 'focus-visible' dist/news/assets/css/fmb-news-mobile-personalization.css
@@ -99,6 +101,7 @@ jobs:
           product_pages="$(grep -rl 'fmb-news-mobile-products.css?v=20260901-products-v1' dist/news --include='index.html' | wc -l | tr -d ' ')"
           product_js_pages="$(grep -rl 'fmb-news-mobile-products.js?v=20260902-products-v3' dist/news --include='index.html' | wc -l | tr -d ' ')"
           approved_hero_pages="$(grep -rl 'fmb-news-mobile-home-live-hero.css?v=20260902-approved-hero-v3' dist/news --include='index.html' | wc -l | tr -d ' ')"
+          echo "coverage total=$total_pages personal=$personal_pages global=$global_pages product=$product_pages product_js=$product_js_pages hero=$approved_hero_pages"
           test "$total_pages" -eq "$personal_pages"
           test "$total_pages" -eq "$global_pages"
           test "$total_pages" -eq "$product_pages"
