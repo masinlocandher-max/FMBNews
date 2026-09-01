@@ -1,0 +1,109 @@
+/* FMB News premium mobile-app presentation. Desktop is intentionally untouched. */
+@media (max-width:699px){
+:root{--app-plum:#2b1235;--app-plum-deep:#1a0b20;--app-violet:#6e3a8a;--app-lilac:#e9dff0;--app-bg:#f5f5f7;--app-surface:#fff;--app-ink:#1d1d1f;--app-muted:#6e6e73;--app-line:#e1e1e6;--app-gold:#c9a84d;--app-radius:18px;--app-shadow:0 8px 28px rgba(26,11,32,.08)}
+html{background:var(--app-bg)!important}
+body.fmb-mobile-first{background:var(--app-bg)!important;color:var(--app-ink)!important;padding:0!important;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif!important}
+body.fmb-mobile-first .headline-ticker,body.fmb-mobile-first .utility{display:none!important}
+
+/* Native-feeling app bar. */
+body.fmb-mobile-first .mast,body.fmb-mobile-first .masthead,body.fmb-mobile-first .publication-mast,body.fmb-mobile-first .brief-network,body.fmb-mobile-first .nc-site-header{position:sticky!important;top:0!important;z-index:400!important;margin:0!important;padding:0!important;background:linear-gradient(180deg,var(--app-plum) 0%,var(--app-plum-deep) 100%)!important;border:0!important;box-shadow:0 1px 0 rgba(255,255,255,.08)!important;color:#fff!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+body.fmb-mobile-first .mast>.shell,body.fmb-mobile-first .masthead .mast-row,body.fmb-mobile-first .publication-header-inner,body.fmb-mobile-first .brief-network-row,body.fmb-mobile-first .nc-nav-shell{width:100%!important;min-height:64px!important;padding:calc(7px + env(safe-area-inset-top)) 16px 7px!important;margin:0!important;display:flex!important;align-items:center!important;flex-wrap:nowrap!important;gap:10px!important}
+body.fmb-mobile-first .product-wordmark{display:flex!important;align-items:center!important;gap:10px!important;min-width:0!important;color:#fff!important;text-decoration:none!important;letter-spacing:-.02em!important}
+body.fmb-mobile-first .product-wordmark::before{content:"";display:block!important;width:40px!important;height:40px!important;flex:0 0 40px!important;background:url('/news/assets/images/brand/fmb-bulletin-emblem.svg') center/contain no-repeat!important}
+body.fmb-mobile-first .product-fmb,body.fmb-mobile-first .product-name{color:#fff!important;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Arial,sans-serif!important;font-size:20px!important;line-height:1!important;font-weight:700!important;text-transform:none!important;letter-spacing:-.025em!important}
+body.fmb-mobile-first .product-fmb{font-weight:800!important}
+body.fmb-mobile-first .product-descriptor{display:none!important}
+body.fmb-mobile-first .publication-lockup{display:flex!important;align-items:center!important;gap:10px!important;color:#fff!important;text-decoration:none!important}
+body.fmb-mobile-first .publication-emblem{width:42px!important;height:42px!important;filter:none!important}
+body.fmb-mobile-first .publication-name{min-width:0!important}
+body.fmb-mobile-first .publication-wordmark{color:#fff!important;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif!important;font-size:20px!important;line-height:1.05!important;font-weight:750!important;letter-spacing:-.03em!important;white-space:nowrap!important}
+body.fmb-mobile-first .publication-tagline{display:none!important}
+body.fmb-mobile-first .brand,body.fmb-mobile-first .brief-news-logo,body.fmb-mobile-first .nc-publication-brand{color:#fff!important}
+body.fmb-mobile-first .actions{margin-left:auto!important;flex:0 0 auto!important}
+body.fmb-mobile-first .submit-button,body.fmb-mobile-first .submit,body.fmb-mobile-first .menu-button,body.fmb-mobile-first .nc-menu-toggle{display:none!important}
+
+/* Four official products are the mobile app's primary rail. */
+body.fmb-mobile-first .nav,body.fmb-mobile-first .publication-nav,body.fmb-mobile-first .desktop-nav,body.fmb-mobile-first .brief-network nav,body.fmb-mobile-first .nc-site-links{position:sticky!important;top:calc(64px + env(safe-area-inset-top))!important;z-index:390!important;width:100%!important;min-height:47px!important;margin:0!important;padding:0!important;background:rgba(255,255,255,.96)!important;border:0!important;border-bottom:1px solid var(--app-line)!important;box-shadow:none!important;backdrop-filter:blur(18px) saturate(1.25)!important;-webkit-backdrop-filter:blur(18px) saturate(1.25)!important}
+body.fmb-mobile-first .nav>.shell,body.fmb-mobile-first .publication-nav,body.fmb-mobile-first .desktop-nav,body.fmb-mobile-first .brief-network nav,body.fmb-mobile-first .nc-site-links{display:flex!important;align-items:center!important;gap:22px!important;width:100%!important;max-width:none!important;min-height:47px!important;padding:0 16px!important;margin:0!important;overflow-x:auto!important;overflow-y:hidden!important;white-space:nowrap!important;scrollbar-width:none!important}
+body.fmb-mobile-first .nav>.shell::-webkit-scrollbar,body.fmb-mobile-first .publication-nav::-webkit-scrollbar,body.fmb-mobile-first .desktop-nav::-webkit-scrollbar{display:none!important}
+body.fmb-mobile-first .nav a,body.fmb-mobile-first .publication-nav a,body.fmb-mobile-first .desktop-nav a,body.fmb-mobile-first .brief-network nav a,body.fmb-mobile-first .nc-site-links a{position:relative!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;flex:0 0 auto!important;min-height:47px!important;padding:0!important;border:0!important;background:transparent!important;color:var(--app-muted)!important;font-size:13px!important;font-weight:650!important;line-height:1!important;letter-spacing:-.01em!important;text-transform:none!important;text-decoration:none!important}
+body.fmb-mobile-first .nav a[aria-current="page"],body.fmb-mobile-first .publication-nav a[aria-current="page"],body.fmb-mobile-first .desktop-nav a[aria-current="page"]{color:var(--app-plum)!important;font-weight:800!important}
+body.fmb-mobile-first .nav a[aria-current="page"]::after,body.fmb-mobile-first .publication-nav a[aria-current="page"]::after,body.fmb-mobile-first .desktop-nav a[aria-current="page"]::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;border-radius:2px;background:var(--app-violet)}
+body.fmb-mobile-first .nav a[href="/news/about/"],body.fmb-mobile-first .publication-nav a[href="/news/about/"],body.fmb-mobile-first .nav .search,body.fmb-mobile-first .publication-search{display:none!important}
+
+/* Main app canvas. */
+body.fmb-mobile-first main{background:var(--app-bg)!important}
+body.fmb-mobile-first .shell,body.fmb-mobile-first .wrap,body.fmb-mobile-first .brief-shell{width:calc(100% - 28px)!important;max-width:none!important;margin-inline:auto!important}
+body.fmb-mobile-first .home-hero{display:none!important}
+body.fmb-mobile-first .section{padding:18px 0 8px!important}
+body.fmb-mobile-first .section-title,body.fmb-mobile-first .section-heading{display:flex!important;align-items:end!important;justify-content:space-between!important;gap:12px!important;margin:0 0 8px!important}
+body.fmb-mobile-first .section-title h2,body.fmb-mobile-first .section-heading h2{margin:0!important;color:var(--app-ink)!important;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif!important;font-size:28px!important;line-height:1.02!important;font-weight:800!important;letter-spacing:-.04em!important;text-transform:none!important}
+body.fmb-mobile-first .section-title>a,body.fmb-mobile-first .section-heading>a{color:var(--app-violet)!important;font-size:12px!important;font-weight:700!important;text-decoration:none!important}
+
+/* Lead story feels like an app feature card, not a desktop article tile. */
+body.fmb-mobile-first .lead-grid{display:block!important}
+body.fmb-mobile-first .lead-story{overflow:hidden!important;margin:0 0 10px!important;padding:0 0 18px!important;border:0!important;border-radius:var(--app-radius)!important;background:var(--app-surface)!important;box-shadow:var(--app-shadow)!important}
+body.fmb-mobile-first .lead-story .media{display:block!important}
+body.fmb-mobile-first .lead-story .media img{display:block!important;width:100%!important;height:auto!important;aspect-ratio:16/10!important;object-fit:cover!important;border-radius:var(--app-radius) var(--app-radius) 0 0!important}
+body.fmb-mobile-first .lead-story>.meta,body.fmb-mobile-first .lead-story>h2,body.fmb-mobile-first .lead-story>p{margin-left:16px!important;margin-right:16px!important}
+body.fmb-mobile-first .lead-story>.meta{margin-top:14px!important}
+body.fmb-mobile-first .lead-story h2{margin-top:7px!important;margin-bottom:8px!important;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif!important;font-size:25px!important;line-height:1.08!important;font-weight:800!important;letter-spacing:-.035em!important}
+body.fmb-mobile-first .lead-story p{display:block!important;margin-top:0!important;margin-bottom:0!important;color:var(--app-muted)!important;font-size:15px!important;line-height:1.48!important}
+body.fmb-mobile-first .meta,body.fmb-mobile-first .article-date{color:var(--app-muted)!important;font-size:11px!important;line-height:1.3!important}
+body.fmb-mobile-first .meta .category,body.fmb-mobile-first .article-kicker{color:var(--app-violet)!important;font-weight:800!important;text-transform:none!important;letter-spacing:0!important}
+
+/* Compact scrolling news list. */
+body.fmb-mobile-first .support-list,body.fmb-mobile-first .more-list,body.fmb-mobile-first .story-grid{display:block!important;margin:0!important;padding:0!important;background:var(--app-surface)!important;border-radius:var(--app-radius)!important;box-shadow:0 1px 0 rgba(26,11,32,.04)!important;overflow:hidden!important}
+body.fmb-mobile-first .support-item,body.fmb-mobile-first .more-item,body.fmb-mobile-first .story-card{display:grid!important;grid-template-columns:minmax(0,1fr) 104px!important;gap:14px!important;align-items:center!important;min-height:112px!important;margin:0!important;padding:14px!important;border:0!important;border-bottom:1px solid var(--app-line)!important;border-radius:0!important;background:#fff!important;box-shadow:none!important;color:var(--app-ink)!important;text-decoration:none!important}
+body.fmb-mobile-first .support-item:last-child,body.fmb-mobile-first .more-item:last-child,body.fmb-mobile-first .story-card:last-child{border-bottom:0!important}
+body.fmb-mobile-first .support-item>img,body.fmb-mobile-first .more-item>img,body.fmb-mobile-first .story-card>img{grid-column:2!important;grid-row:1!important;width:104px!important;height:84px!important;object-fit:cover!important;border-radius:13px!important;margin:0!important}
+body.fmb-mobile-first .support-item>div,body.fmb-mobile-first .more-item>div,body.fmb-mobile-first .story-card>div{grid-column:1!important;grid-row:1!important;min-width:0!important;padding:0!important}
+body.fmb-mobile-first .support-item h3,body.fmb-mobile-first .more-item h3,body.fmb-mobile-first .story-card h3{margin:5px 0 0!important;color:var(--app-ink)!important;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif!important;font-size:17px!important;line-height:1.2!important;font-weight:750!important;letter-spacing:-.025em!important}
+body.fmb-mobile-first .support-item p,body.fmb-mobile-first .more-item p,body.fmb-mobile-first .story-card p{display:none!important}
+
+/* Daily Brief becomes a premium app module. */
+body.fmb-mobile-first .brief-promo,body.fmb-mobile-first .daily-brief-signup{display:grid!important;grid-template-columns:1fr!important;gap:12px!important;margin:18px 0!important;padding:20px!important;border:0!important;border-radius:22px!important;background:linear-gradient(145deg,var(--app-plum) 0%,var(--app-plum-deep) 100%)!important;color:#fff!important;box-shadow:0 12px 34px rgba(43,18,53,.18)!important}
+body.fmb-mobile-first .brief-promo .brief-cover{display:none!important}
+body.fmb-mobile-first .brief-promo .category,body.fmb-mobile-first .daily-brief-signup .brief-label{color:#dcc37b!important}
+body.fmb-mobile-first .brief-promo h2,body.fmb-mobile-first .daily-brief-signup h2{margin:0!important;color:#fff!important;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif!important;font-size:27px!important;line-height:1.05!important;font-weight:800!important;letter-spacing:-.035em!important;text-transform:none!important}
+body.fmb-mobile-first .brief-promo p,body.fmb-mobile-first .daily-brief-signup .brief-promise{color:rgba(255,255,255,.82)!important;font-size:14px!important;line-height:1.5!important}
+body.fmb-mobile-first .brief-promo .button,body.fmb-mobile-first .daily-brief-signup button{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:48px!important;border:0!important;border-radius:14px!important;background:#fff!important;color:var(--app-plum)!important;font-size:14px!important;font-weight:800!important;text-decoration:none!important}
+body.fmb-mobile-first .daily-brief-signup input[type=email]{height:50px!important;border:1px solid rgba(255,255,255,.18)!important;border-radius:14px!important;background:rgba(255,255,255,.11)!important;color:#fff!important;font-size:16px!important}
+body.fmb-mobile-first .daily-brief-signup input[type=email]::placeholder{color:rgba(255,255,255,.65)!important}
+
+/* Article reading experience. */
+body.fmb-mobile-first .article-shell{width:100%!important;margin:0!important;padding:18px 14px 48px!important;background:var(--app-bg)!important}
+body.fmb-mobile-first .article-grid{display:block!important}
+body.fmb-mobile-first .article{padding:20px 16px 32px!important;border:0!important;border-radius:22px!important;background:#fff!important;box-shadow:none!important}
+body.fmb-mobile-first .back{display:inline-flex!important;min-height:38px!important;align-items:center!important;margin:0 0 10px 4px!important;color:var(--app-violet)!important;font-size:13px!important;font-weight:700!important;text-decoration:none!important}
+body.fmb-mobile-first .article h1{margin:9px 0 12px!important;color:var(--app-ink)!important;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif!important;font-size:clamp(32px,9.5vw,43px)!important;line-height:1.02!important;font-weight:800!important;letter-spacing:-.045em!important}
+body.fmb-mobile-first .article-deck{margin:0 0 18px!important;color:#4f4f55!important;font-size:17px!important;line-height:1.52!important}
+body.fmb-mobile-first .byline{padding:14px 0!important;border-top:1px solid var(--app-line)!important;border-bottom:1px solid var(--app-line)!important}
+body.fmb-mobile-first .article-figure{margin:20px -16px 22px!important}
+body.fmb-mobile-first .article-figure img{width:100%!important;border-radius:0!important}
+body.fmb-mobile-first .article-figure figcaption{padding:9px 16px!important;color:var(--app-muted)!important;font-size:11px!important;line-height:1.45!important}
+body.fmb-mobile-first .article section p{color:#28282b!important;font-size:17px!important;line-height:1.68!important}
+body.fmb-mobile-first .article section h2{margin-top:30px!important;color:var(--app-ink)!important;font-size:24px!important;line-height:1.12!important;letter-spacing:-.025em!important}
+body.fmb-mobile-first .related,body.fmb-mobile-first aside{max-width:100%!important}
+
+/* FMB Worldwide / Explainer / Daily Brief inherit app surfaces. */
+body.fmb-mobile-first .world-hero,body.fmb-mobile-first .brief-archive-hero{padding:28px 0 22px!important;background:linear-gradient(145deg,var(--app-plum) 0%,var(--app-plum-deep) 100%)!important;color:#fff!important}
+body.fmb-mobile-first .world-hero h1,body.fmb-mobile-first .brief-archive-hero h1{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif!important;font-size:40px!important;line-height:1!important;font-weight:800!important;letter-spacing:-.045em!important}
+body.fmb-mobile-first .country-grid{display:grid!important;grid-template-columns:1fr!important;gap:10px!important}
+body.fmb-mobile-first .country-card,body.fmb-mobile-first .archive-card,body.fmb-mobile-first .brief-issue,body.fmb-mobile-first .explainer-card{border:0!important;border-radius:18px!important;background:#fff!important;box-shadow:none!important}
+body.fmb-mobile-first .country-card{padding:18px!important}
+body.fmb-mobile-first .country-card h3{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif!important;font-size:21px!important;line-height:1.15!important;letter-spacing:-.025em!important}
+
+/* Personalization sheets match the app identity. */
+body.fmb-mobile-first .fmb-account-panel{background:#fff!important;color:var(--app-ink)!important;border-radius:28px 28px 0 0!important}
+body.fmb-mobile-first .fmb-account-panel form button{background:var(--app-plum)!important;color:#fff!important}
+body.fmb-mobile-first .fmb-section-prefs label span{color:var(--app-ink)!important}
+body.fmb-mobile-first .fmb-install-card{border:1px solid rgba(43,18,53,.08)!important;border-radius:20px!important;background:rgba(255,255,255,.98)!important;box-shadow:var(--app-shadow)!important}
+body.fmb-mobile-first .fmb-install-mark{background:var(--app-plum)!important}
+body.fmb-mobile-first .fmb-install-primary{background:var(--app-plum)!important}
+
+/* Explicitly prohibit the old low-navigation pattern. */
+body.fmb-mobile-first .nc-mobile-dock,body.fmb-mobile-first .fmb-app-dock,body.fmb-mobile-first .mobile-bottom-nav,body.fmb-mobile-first .bottom-nav,body.fmb-mobile-first nav[aria-label="Mobile news navigation"]{display:none!important}
+
+@media (prefers-reduced-motion:no-preference){body.fmb-mobile-first a,body.fmb-mobile-first button{transition:opacity .16s ease,transform .16s ease}body.fmb-mobile-first a:active,body.fmb-mobile-first button:active{transform:scale(.985)}}
+}
