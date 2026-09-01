@@ -21,6 +21,10 @@ await import('./hardfix-metallic-network.mjs');
 await import('./hardfix-ticker.mjs');
 await import('./hardfix-product-identity.mjs');
 
+// Hard editorial rule: every Article/NewsArticle route gets an actual content
+// image plus social-image metadata before the page can be published.
+await import('./hardfix-all-article-images.mjs');
+
 // Desktop /news/ remains the Filipino Media Bulletin publication landing.
 await import('./hardfix-publication-landing.mjs');
 
@@ -46,4 +50,4 @@ async function rewriteAssetPaths(target) {
 }
 
 await rewriteAssetPaths(newsRoot);
-console.log('Built Filipino Media Bulletin with desktop publication landing plus a dedicated premium mobile app home, four official editorial products, localized approved visual assets, long-form FMB Explainer routes, personalization/PWA support, live utilities, and no fixed bottom navigation.');
+console.log('Built Filipino Media Bulletin with desktop publication landing plus a dedicated premium mobile app home, four official editorial products, localized approved visual assets, guaranteed imagery on every article route, long-form FMB Explainer routes, personalization/PWA support, live utilities, and no fixed bottom navigation.');
