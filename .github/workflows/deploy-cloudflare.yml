@@ -23,6 +23,28 @@ jobs:
         run: npm run build
       - name: Verify standalone newsroom
         run: npm run verify
+      - name: Install mobile browser QA runtime
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Run mobile browser QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m http.server 4173 --directory dist >/tmp/fmb-news-qa-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for attempt in 1 2 3 4 5; do
+            if curl --fail --silent 'http://127.0.0.1:4173/news/' >/dev/null; then
+              break
+            fi
+            if [ "$attempt" -eq 5 ]; then
+              cat /tmp/fmb-news-qa-server.log
+              exit 1
+            fi
+            sleep 1
+          done
+          FMB_QA_BASE_URL='http://127.0.0.1:4173' node scripts/browser-qa.mjs
       - name: Check Cloudflare credentials
         shell: bash
         env:
@@ -108,4 +130,10 @@ jobs:
           echo "$headers" | grep -Eq '^HTTP/[^ ]+ 30[178]'
           echo "$headers" | grep -Eqi '^location: https://www\.francinemariebautista\.com/news/?'
 
-          echo 'Public FMB News network cutover verified.'
+          legacy_headers="$(curl --silent --show-error --head --connect-timeout 10 --max-time 30 'https://www.francinemariebautista.com/fmbnews/' | tr -d '\r')"
+          echo "$legacy_headers"
+          echo "$legacy_headers" | grep -Eq '^HTTP/[^ ]+ 30[178]'
+          echo "$legacy_headers" | grep -Eqi '^location: https://www\.francinemariebautista\.com/news/'
+          echo "$legacy_headers" | grep -Eqi '^x-fmb-news-worker: fmb-news$'
+
+          echo 'Public FMB News network cutover and legacy-route ownership verified.'
