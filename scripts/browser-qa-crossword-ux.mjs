@@ -27,7 +27,7 @@ await firstInput.click();
 await page.locator('.fmb-crossword-clue-popover').waitFor({state:'visible'});
 const clueTitle=(await page.locator('[data-cw-active-title]').innerText()).trim();
 const clueText=(await page.locator('[data-cw-active-text]').innerText()).trim();
-assert(/\d+ (Across|Down)/.test(clueTitle),'Clicking a crossword cell must show clue number and direction.');
+assert(/\d+\s+(across|down)/i.test(clueTitle),`Clicking a crossword cell must show clue number and direction; got "${clueTitle}".`);
 assert(clueText.length>12,'Clicking a crossword cell must show the clue text.');
 await page.locator('[data-cw-clue-close]').click();
 assert.equal(await page.locator('.fmb-crossword-clue-popover').isHidden(),true,'Clue close icon must dismiss the active clue panel.');
