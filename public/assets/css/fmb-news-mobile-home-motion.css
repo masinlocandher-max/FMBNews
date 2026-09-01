@@ -1,17 +1,29 @@
 /* Final Home hero motion + spacing repair. Keep this after the approved hero layer. */
 @media(max-width:699px){
-body.fmb-mobile-route-home .fmb-approved-hero-copy{bottom:87px!important}
+body.fmb-mobile-route-home .fmb-approved-hero-copy{bottom:78px!important}
+body.fmb-mobile-route-home .fmb-approved-hero-ticker{bottom:34px!important;height:30px!important}
+body.fmb-mobile-route-home .fmb-approved-hero-ticker>strong{padding:0 9px!important;font-size:7.5px!important}
 body.fmb-mobile-route-home .fmb-approved-hero-ticker-window{display:block!important;min-width:0!important;overflow:hidden!important;white-space:nowrap!important}
 body.fmb-mobile-route-home .fmb-approved-hero-ticker-track{display:flex!important;width:max-content!important;will-change:transform!important;animation:fmbHomeHeadlineCrawl 34s linear infinite!important}
 body.fmb-mobile-route-home .fmb-approved-hero-ticker-group{display:inline-flex!important;align-items:center!important;flex:0 0 auto!important;white-space:nowrap!important}
-body.fmb-mobile-route-home .fmb-approved-hero-ticker-group>i{display:inline-flex!important;align-items:center!important;font-style:normal!important;color:rgba(255,255,255,.88)!important;font-size:8px!important;line-height:1!important;font-weight:580!important;padding:0 14px!important;white-space:nowrap!important}
-body.fmb-mobile-route-home .fmb-approved-hero-ticker-group>i+i::before{content:"•"!important;margin-right:14px!important;color:#b8363e!important;font-size:10px!important}
+body.fmb-mobile-route-home .fmb-approved-hero-ticker-group>i{display:inline-flex!important;align-items:center!important;font-style:normal!important;color:rgba(255,255,255,.88)!important;font-size:7.5px!important;line-height:1!important;font-weight:580!important;padding:0 13px!important;white-space:nowrap!important}
+body.fmb-mobile-route-home .fmb-approved-hero-ticker-group>i+i::before{content:"•"!important;margin-right:13px!important;color:#b8363e!important;font-size:9px!important}
 body.fmb-mobile-route-home .fmb-approved-hero-ticker:hover .fmb-approved-hero-ticker-track,body.fmb-mobile-route-home .fmb-approved-hero-ticker:focus-visible .fmb-approved-hero-ticker-track{animation-play-state:paused!important}
-body.fmb-mobile-route-home .fmb-hero-live-overlay{gap:14px!important;padding-left:14px!important;padding-right:14px!important}
-body.fmb-mobile-route-home .fmb-hero-clock{gap:10px!important}
-body.fmb-mobile-route-home .fmb-hero-weather{gap:7px!important}
-body.fmb-mobile-route-home .fmb-hero-weather-copy{gap:6px!important}
+body.fmb-mobile-route-home .fmb-hero-live-overlay{height:34px!important;min-height:34px!important;gap:10px!important;padding-left:13px!important;padding-right:13px!important}
+body.fmb-mobile-route-home .fmb-hero-clock{gap:7px!important}
+body.fmb-mobile-route-home .fmb-hero-clock strong{font-size:7px!important}
+body.fmb-mobile-route-home .fmb-hero-clock span{font-size:8.5px!important}
+body.fmb-mobile-route-home .fmb-hero-weather{gap:5px!important;min-height:28px!important}
+body.fmb-mobile-route-home .fmb-hero-weather-icon{font-size:14px!important}
+body.fmb-mobile-route-home .fmb-hero-weather-copy{gap:4px!important}
+body.fmb-mobile-route-home .fmb-hero-weather-copy>strong{font-size:12px!important}
+body.fmb-mobile-route-home .fmb-hero-weather-copy>small{max-width:78px!important;font-size:6.5px!important}
 @keyframes fmbHomeHeadlineCrawl{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
-@media(max-width:380px){body.fmb-mobile-route-home .fmb-approved-hero-copy{bottom:85px!important}body.fmb-mobile-route-home .fmb-hero-live-overlay{gap:10px!important;padding-left:11px!important;padding-right:11px!important}}
+@media(max-width:380px){
+body.fmb-mobile-route-home .fmb-approved-hero-copy{bottom:76px!important}
+body.fmb-mobile-route-home .fmb-hero-live-overlay{gap:8px!important;padding-left:10px!important;padding-right:10px!important}
+body.fmb-mobile-route-home .fmb-hero-clock{gap:5px!important}
+body.fmb-mobile-route-home .fmb-hero-weather-copy>small{max-width:64px!important}
+}
 @media(prefers-reduced-motion:reduce){body.fmb-mobile-route-home .fmb-approved-hero-ticker-track{animation:none!important}}
 }
