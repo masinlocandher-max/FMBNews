@@ -1,0 +1,81 @@
+/* Final mobile app polish: one FMB shell, one product rail, immediate product content. */
+@media(max-width:699px){
+:root{--fmb-polish-plum:#2b1235;--fmb-polish-deep:#16081d;--fmb-polish-violet:#6e3a8a;--fmb-polish-gold:#c9a84d;--fmb-polish-bg:#f5f5f7;--fmb-polish-ink:#1d1d1f;--fmb-polish-muted:#6e6e73;--fmb-polish-line:#e4e2e7}
+
+/* One real app chrome. Everything legacy stays out of the phone UI. */
+body.fmb-mobile-first .fmb-legacy-product-rail,
+body.fmb-mobile-first>.section-rail,
+body.fmb-mobile-first .desktop-nav,
+body.fmb-mobile-first .mobile-nav,
+body.fmb-mobile-first .publication-nav,
+body.fmb-mobile-first .brief-network nav,
+body.fmb-mobile-first .nc-site-links{display:none!important}
+
+.fmb-mobile-app-shell{position:sticky!important;top:0!important;z-index:900!important;width:100%!important;background:#fff!important;box-shadow:0 1px 0 rgba(22,8,29,.08)!important}
+.fmb-mobile-shell-head{min-height:64px!important;padding:8px 14px!important;background:linear-gradient(180deg,#2f123a 0%,var(--fmb-polish-deep) 100%)!important}
+.fmb-mobile-shell-brand{gap:9px!important}
+.fmb-mobile-shell-brand img{width:36px!important;height:36px!important;flex-basis:36px!important}
+.fmb-mobile-shell-copy strong{font-size:18px!important;font-weight:790!important;letter-spacing:-.035em!important}
+.fmb-mobile-shell-copy small{margin-top:3px!important;color:rgba(255,255,255,.66)!important;font-size:8.5px!important;font-weight:650!important;letter-spacing:.055em!important}
+.fmb-mobile-shell-actions{gap:1px!important}
+.fmb-mobile-shell-actions a,.fmb-mobile-shell-actions button{width:42px!important;height:42px!important;min-width:42px!important;min-height:42px!important}
+.fmb-mobile-shell-actions svg{width:20px!important;height:20px!important;stroke-width:1.85!important}
+
+.fmb-mobile-product-rail{min-height:44px!important;gap:20px!important;padding:0 14px!important;border-bottom:1px solid var(--fmb-polish-line)!important;background:rgba(255,255,255,.985)!important;box-shadow:none!important}
+.fmb-mobile-product-rail a{min-height:44px!important;color:#77737b!important;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,Helvetica,Arial,sans-serif!important;font-size:12.5px!important;font-weight:680!important;letter-spacing:-.018em!important}
+.fmb-mobile-product-rail a[aria-current="page"]{color:var(--fmb-polish-plum)!important;font-weight:820!important}
+.fmb-mobile-product-rail a[aria-current="page"]::after{height:2px!important;background:var(--fmb-polish-violet)!important}
+
+/* Date/weather is context, not navigation. It exists only on Home and stays quiet. */
+.fmb-global-mobile-utility{display:none!important}
+body.fmb-mobile-route-home .fmb-global-mobile-utility{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;min-height:34px!important;margin:0!important;padding:4px 2px 2px!important;border:0!important;background:transparent!important;box-shadow:none!important;color:var(--fmb-polish-muted)!important}
+body.fmb-mobile-route-home .fmb-global-mobile-utility .fmb-app-clock{display:flex!important;flex-direction:row!important;align-items:center!important;gap:6px!important;min-width:0!important}
+body.fmb-mobile-route-home .fmb-global-mobile-utility .fmb-app-clock strong{color:#666169!important;font-size:10.5px!important;line-height:1!important;font-weight:760!important;letter-spacing:.01em!important}
+body.fmb-mobile-route-home .fmb-global-mobile-utility .fmb-app-clock span{color:#8a868d!important;font-size:10.5px!important;line-height:1!important;font-variant-numeric:tabular-nums!important}
+body.fmb-mobile-route-home .fmb-global-mobile-utility .fmb-app-clock span::before{content:"·";margin-right:6px;color:#b0adb3}
+body.fmb-mobile-route-home .fmb-global-mobile-utility .fmb-app-weather{display:inline-flex!important;align-items:center!important;justify-content:flex-end!important;min-height:32px!important;max-width:48%!important;padding:0!important;border:0!important;background:transparent!important;color:var(--fmb-polish-violet)!important;font-size:10.5px!important;font-weight:760!important;white-space:nowrap!important;text-align:right!important}
+body.fmb-mobile-route-home .fmb-global-mobile-utility [data-fmb-weather-icon]{display:none!important}
+.fmb-global-week-actions{display:none!important}
+
+/* Home starts with identity, then quiet context, then personalized journalism. */
+body.fmb-mobile-route-home .fmb-app-brand-hero{margin:10px 0 4px!important;border-radius:22px!important;box-shadow:0 10px 28px rgba(22,8,29,.11)!important}
+body.fmb-mobile-route-home .fmb-app-brand-hero img{aspect-ratio:16/8.8!important}
+body.fmb-mobile-route-home .fmb-app-greeting{padding:12px 2px 12px!important}
+body.fmb-mobile-route-home .fmb-app-greeting p{margin-bottom:3px!important;color:#77737b!important;font-size:12px!important}
+body.fmb-mobile-route-home .fmb-app-greeting h1{font-size:34px!important;font-weight:860!important;letter-spacing:-.048em!important}
+body.fmb-mobile-route-home .fmb-app-greeting button{min-height:40px!important;font-size:12px!important;font-weight:780!important}
+
+/* Every internal product starts immediately after the rail. */
+body.fmb-mobile-route-world .world-hero,
+body.fmb-mobile-route-explainer .explainer-hero,
+body.fmb-mobile-route-brief .brief-archive-hero,
+body.fmb-mobile-route-horoscope .fmb-feature-hero,
+body.fmb-mobile-route-crossword .fmb-feature-hero,
+body.fmb-mobile-route-about .fmb-about-hero{margin-top:0!important}
+body.fmb-mobile-route-world .world-hero{padding-top:30px!important;padding-bottom:30px!important}
+body.fmb-mobile-route-explainer .explainer-hero{padding-top:26px!important;padding-bottom:28px!important}
+body.fmb-mobile-route-brief .brief-archive-hero{padding-top:24px!important;padding-bottom:22px!important}
+body.fmb-mobile-route-horoscope .fmb-feature-shell,
+body.fmb-mobile-route-crossword .fmb-feature-shell{padding-top:0!important}
+body.fmb-mobile-route-horoscope .fmb-feature-back,
+body.fmb-mobile-route-crossword .fmb-feature-back{display:none!important}
+
+/* No accidental horizontal chrome or generic website menu residue. */
+body.fmb-mobile-first main{margin-top:0!important}
+body.fmb-mobile-first .fmb-mobile-app-shell+main,
+body.fmb-mobile-first .fmb-mobile-app-shell+.fmb-global-mobile-utility+main{margin-top:0!important}
+
+/* More restrained radii and shadows make the app feel editorial, not template-driven. */
+body.fmb-mobile-first .country-card,
+body.fmb-mobile-first .archive-row,
+body.fmb-mobile-first .brief-issue,
+body.fmb-mobile-first .explainer-card{box-shadow:0 1px 0 rgba(22,8,29,.045)!important}
+
+@media(max-width:380px){
+.fmb-mobile-product-rail{gap:17px!important;padding-inline:12px!important}
+.fmb-mobile-product-rail a{font-size:12px!important}
+.fmb-mobile-shell-copy strong{font-size:17px!important}
+body.fmb-mobile-route-home .fmb-global-mobile-utility .fmb-app-weather{max-width:44%!important}
+}
+}
+@media(min-width:700px){.fmb-mobile-app-polish-only{display:none!important}}
