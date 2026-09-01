@@ -6,11 +6,11 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const file=path.join(root,'dist','news','index.html');
 let html=await readFile(file,'utf8');
 
-html=html.replace(/<title>[\s\S]*?<\/title>/i,'<title>Filipino Media Bulletin | FMB News, Worldwide, Explainer and Daily Brief</title>');
-html=html.replace(/<meta name="description" content="[^"]*">/i,'<meta name="description" content="Filipino Media Bulletin brings together FMB News, FMB Worldwide, FMB Explainer, and FMB Daily Brief.">');
+html=html.replace(/<title>[\s\S]*?<\/title>/i,'<title>Filipino Media Bulletin | FMB News, Worldwide, Explained and Daily Brief</title>');
+html=html.replace(/<meta name="description" content="[^"]*">/i,'<meta name="description" content="Filipino Media Bulletin brings together FMB News, FMB Worldwide, FMB Explained, and FMB Daily Brief.">');
 html=html.replace(/<meta property="og:site_name" content="[^"]*">/i,'<meta property="og:site_name" content="Filipino Media Bulletin">');
 html=html.replace(/<meta property="og:title" content="[^"]*">/i,'<meta property="og:title" content="Filipino Media Bulletin">');
-html=html.replace(/<meta property="og:description" content="[^"]*">/i,'<meta property="og:description" content="Four editorial products: FMB News, FMB Worldwide, FMB Explainer, and FMB Daily Brief.">');
+html=html.replace(/<meta property="og:description" content="[^"]*">/i,'<meta property="og:description" content="Four editorial products: FMB News, FMB Worldwide, FMB Explained, and FMB Daily Brief.">');
 
 if(!html.includes('/assets/css/fmb-news-landing-hardfix.css')){
   html=html.replace('</head>','<link rel="stylesheet" href="/assets/css/fmb-news-landing-hardfix.css?v=20260831-approved-buildwebapps"></head>');
@@ -37,7 +37,7 @@ const globeIcon='<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy=
 const explainerIcon='<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M13 9h22v30H13z"></path><path d="M18 16h12M18 22h12M18 28h8"></path><circle cx="32" cy="31" r="5"></circle><path d="m35.5 34.5 4 4"></path></svg>';
 const envelopeIcon='<svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="12" width="32" height="24" rx="2"></rect><path d="m10 15 14 12 14-12"></path></svg>';
 
-const mast=`<header class="mast publication-mast"><div class="shell publication-header-inner"><a class="publication-lockup" href="/news/" aria-label="Filipino Media Bulletin"><img class="publication-emblem" src="/assets/images/brand/fmb-bulletin-emblem.svg" alt=""><span class="publication-name"><strong class="publication-wordmark">Filipino Media Bulletin</strong><span class="publication-tagline"><span></span>Information with Purpose<span></span></span></span></a><nav class="nav publication-nav" aria-label="Filipino Media Bulletin"><a href="/news/archive/">FMB News</a><a href="/news/world/">FMB Worldwide</a><a href="/news/explainer/">FMB Explainer</a><a href="/news/fmb-brief/">FMB Daily Brief</a><a href="/news/about/">About</a><a class="publication-search" href="/news/archive/" aria-label="Search FMB News">${searchIcon}</a></nav></div></header>`;
+const mast=`<header class="mast publication-mast"><div class="shell publication-header-inner"><a class="publication-lockup" href="/news/" aria-label="Filipino Media Bulletin"><img class="publication-emblem" src="/assets/images/brand/fmb-bulletin-emblem.svg" alt=""><span class="publication-name"><strong class="publication-wordmark">Filipino Media Bulletin</strong><span class="publication-tagline"><span></span>Information with Purpose<span></span></span></span></a><nav class="nav publication-nav" aria-label="Filipino Media Bulletin"><a href="/news/archive/">FMB News</a><a href="/news/world/">FMB Worldwide</a><a href="/news/explainer/">FMB Explained</a><a href="/news/fmb-brief/">FMB Daily Brief</a><a href="/news/about/">About</a><a class="publication-search" href="/news/archive/" aria-label="Search FMB News">${searchIcon}</a></nav></div></header>`;
 html=html.replace(/<header class="mast[^"]*"[\s\S]*?<\/header>\s*<nav class="nav"[\s\S]*?<\/nav>/i,mast);
 
 const main=`<main class="network-home">
@@ -69,10 +69,10 @@ const main=`<main class="network-home">
 
         <a class="network-product explainer" href="/news/explainer/">
           <span class="network-product-icon">${explainerIcon}</span>
-          <h2>FMB Explainer</h2>
+          <h2>FMB Explained</h2>
           <span class="network-card-rule"><i></i></span>
           <p>Go beyond the headline.<br>Understand how things work,<br>why they happen, and why they matter.</p>
-          <span class="product-link">Open Explainer <b>›</b></span>
+          <span class="product-link">Open FMB Explained <b>›</b></span>
         </a>
 
         <a class="network-product brief" href="#fmb-daily-brief-signup">
@@ -108,10 +108,10 @@ const main=`<main class="network-home">
 </main>`;
 html=html.replace(/<main[\s\S]*?<\/main>/i,main);
 
-const footer=`<footer class="footer publication-footer"><div class="shell publication-footer-inner"><img class="publication-footer-emblem" src="/assets/images/brand/fmb-bulletin-emblem.svg" alt=""><div><div class="footer-publication-title">Filipino Media Bulletin</div><div class="footer-publication-kicker">FMB News · FMB Worldwide · FMB Explainer · FMB Daily Brief</div></div></div></footer>`;
+const footer=`<footer class="footer publication-footer"><div class="shell publication-footer-inner"><img class="publication-footer-emblem" src="/assets/images/brand/fmb-bulletin-emblem.svg" alt=""><div><div class="footer-publication-title">Filipino Media Bulletin</div><div class="footer-publication-kicker">FMB News · FMB Worldwide · FMB Explained · FMB Daily Brief</div></div></div></footer>`;
 html=html.replace(/<footer class="footer"[\s\S]*?<\/footer>/i,footer);
 
 html=html.replace(/<div class="ticker-label">[\s\S]*?<\/div>/i,'<div class="ticker-label"><span class="ticker-pulse" aria-hidden="true"></span>HEADLINES</div>');
 
 await writeFile(file,html,'utf8');
-console.log('Applied four official FMB products: FMB News, FMB Worldwide, FMB Explainer, and FMB Daily Brief.');
+console.log('Applied four official FMB products: FMB News, FMB Worldwide, FMB Explained, and FMB Daily Brief.');
