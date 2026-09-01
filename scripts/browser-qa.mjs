@@ -30,7 +30,8 @@ await page.locator('[data-fmb-account]').waitFor({state:'visible'});
 await page.locator('[data-fmb-customize]').click();
 await page.locator('.fmb-account-panel').waitFor({state:'visible'});
 const culture=page.locator('[data-section="Culture"]');
-await culture.check();
+await culture.locator('xpath=..').click();
+assert.equal(await culture.isChecked(),true,'Culture preference did not toggle from the visible label.');
 await page.waitForFunction(()=>JSON.parse(localStorage.getItem('fmbNewsPrefsV1')||'{}').sections?.includes('Culture'));
 await page.locator('[data-account-close]').last().click();
 
