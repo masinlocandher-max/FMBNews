@@ -17,6 +17,7 @@ await import('./fetch-approved-mobile-assets.mjs');
 
 await import('./render-metallic-reference.mjs');
 await import('./render-fmb-explained.mjs');
+await import('./fix-explainer-original-chronology.mjs');
 await import('./hardfix-metallic-network.mjs');
 await import('./hardfix-ticker.mjs');
 await import('./hardfix-product-identity.mjs');
