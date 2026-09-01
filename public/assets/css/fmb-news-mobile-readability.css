@@ -1,0 +1,71 @@
+@media (max-width:699px){
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  .fmb-mobile-app{color:#171719}
+
+  .fmb-app-brand span{font-size:10.5px;line-height:1.15;font-weight:800;letter-spacing:.16em;opacity:1}
+  .fmb-app-tab{font-size:14px;font-weight:700;color:rgba(255,255,255,.9)}
+  .fmb-app-tab[aria-selected="true"]{background:#7b4598;color:#fff}
+
+  .fmb-app-wire{min-height:62px;align-items:flex-start;padding-top:12px;padding-bottom:12px}
+  .fmb-app-wire-label{font-size:12px;line-height:1.35;font-weight:800;color:#edc8fb}
+  .fmb-app-wire-text{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;white-space:normal;overflow:hidden;text-overflow:clip;font-size:13px;line-height:1.35;font-weight:520;color:rgba(255,255,255,.96)}
+
+  .fmb-app-lead:after{background:linear-gradient(180deg,rgba(7,5,8,.08) 8%,rgba(9,6,10,.28) 38%,rgba(10,7,11,.72) 67%,rgba(8,5,9,.98) 100%)}
+  .fmb-app-lead-content{padding:27px 22px 23px;text-shadow:0 1px 2px rgba(0,0,0,.36)}
+  .fmb-app-category{margin-bottom:9px;color:#f0cafc;font-size:11.5px;line-height:1.25;font-weight:800;letter-spacing:.025em}
+  .fmb-app-lead h1{max-width:100%;font-size:31px;line-height:1.07;font-weight:760;letter-spacing:-.035em}
+  .fmb-app-lead p{max-width:100%;margin-top:12px;font-size:15.5px;line-height:1.5;font-weight:470;color:rgba(255,255,255,.96)}
+  .fmb-app-meta{margin-top:14px;font-size:12px;line-height:1.3;font-weight:600;color:rgba(255,255,255,.9)}
+  .fmb-app-save{top:15px;right:15px;bottom:auto;background:rgba(12,8,14,.66);border-color:rgba(255,255,255,.62)}
+
+  .fmb-app-section-head h2{font-size:27px;line-height:1.05}
+  .fmb-app-section-head button,.fmb-app-section-head a{font-size:13px;font-weight:720;color:#57216f}
+
+  .fmb-app-story{grid-template-columns:116px minmax(0,1fr);gap:14px;min-height:120px;padding:15px 0}
+  .fmb-app-story-media{width:116px;height:98px}
+  .fmb-app-story-copy{padding-right:40px}
+  .fmb-app-story .fmb-app-category{margin:2px 0 7px;color:#57216f;font-size:11px;line-height:1.2;font-weight:800}
+  .fmb-app-story h3{font-size:17.5px;line-height:1.22;font-weight:700;letter-spacing:-.018em}
+  .fmb-app-story .fmb-app-story-meta{margin-top:8px;color:#515157;font-size:12px;line-height:1.25;font-weight:560}
+  .fmb-app-story-save{top:50%;right:0;bottom:auto;transform:translateY(-50%);color:#59595f}
+
+  .fmb-app-brief small{font-size:12px;line-height:1.3;font-weight:800;color:#654a37}
+  .fmb-app-brief h2{font-size:35px;line-height:1.02}
+  .fmb-app-brief p{max-width:245px;font-size:14.5px;line-height:1.52;color:#51473f}
+  .fmb-app-brief span{font-size:13px;font-weight:720}
+
+  .fmb-app-dock button,.fmb-app-dock a{gap:5px;font-size:11px;line-height:1.1;font-weight:680;color:#5e5e64}
+  .fmb-app-dock [aria-current="page"],.fmb-app-dock .is-active{color:#421758}
+
+  .fmb-app-sheet-head h2{font-size:26px;line-height:1.1}
+  .fmb-app-search-result small{font-size:11px;line-height:1.2;font-weight:800;color:#57216f}
+  .fmb-app-search-result strong{font-size:17px;line-height:1.28}
+  .fmb-app-menu-links a{font-size:17px;line-height:1.25}
+  .fmb-app-empty{font-size:15px;line-height:1.55;color:#55555b}
+  .fmb-app-toast{font-size:13px;line-height:1.25}
+
+  .fmb-app-image-label{min-height:24px;padding:0 9px;background:rgba(12,9,14,.9);color:#fff;font-size:10px;font-weight:820;letter-spacing:.07em;box-shadow:0 1px 3px rgba(0,0,0,.25)}
+
+  .fmb-app-lead--no-image .fmb-app-category{color:#f0cafc}
+  .fmb-app-lead--no-image .fmb-app-lead-content{text-shadow:none}
+  .fmb-app-story--no-image h3{font-size:19px;line-height:1.22}
+  .fmb-app-story--no-image .fmb-app-story-copy{padding-right:8px}
+  .fmb-app-story--no-image .fmb-app-story-save{top:50%;bottom:auto;transform:translateY(-50%)}
+}
+
+@media (max-width:374px){
+  .fmb-app-brand strong{font-size:31px}
+  .fmb-app-lead h1{font-size:29px}
+  .fmb-app-story{grid-template-columns:104px minmax(0,1fr);gap:12px}
+  .fmb-app-story-media{width:104px;height:94px}
+}
+
+@media (prefers-contrast:more) and (max-width:699px){
+  .fmb-app-top{background:#2b1235}
+  .fmb-app-tab{color:#fff}
+  .fmb-app-lead:after{background:linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.52) 48%,#080609 100%)}
+  .fmb-app-lead p,.fmb-app-meta{color:#fff}
+  .fmb-app-story .fmb-app-category,.fmb-app-section-head button,.fmb-app-section-head a{color:#421758}
+  .fmb-app-story .fmb-app-story-meta{color:#3b3b40}
+  .fmb-app-dock button,.fmb-app-dock a{color:#3f3f44}
+}
