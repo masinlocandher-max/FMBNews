@@ -10,6 +10,7 @@ const premiumCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-premi
 const mobileHomeCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-home.css?v=20260901-app-home-v2">';
 const mobileGlobalCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-global.css?v=20260901-global-v3">';
 const mobileProductsCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-products.css?v=20260901-products-v1">';
+const mobileProductHeroesCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-product-heroes.css?v=20260902-product-heroes-v1">';
 const mobilePolishCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-app-polish.css?v=20260902-polish-v2">';
 const mobileLiveHeroCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-home-live-hero.css?v=20260902-live-hero-v2">';
 const mobileContrastCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-contrast-lock.css?v=20260902-contrast-v1">';
@@ -56,6 +57,7 @@ async function apply(target){
   html=upsertCss(html,'/assets/css/fmb-news-mobile-home.css',mobileHomeCss,'20260901-app-home-v2');
   html=upsertCss(html,'/assets/css/fmb-news-mobile-global.css',mobileGlobalCss,'20260901-global-v3');
   html=upsertCss(html,'/assets/css/fmb-news-mobile-products.css',mobileProductsCss,'20260901-products-v1');
+  html=upsertCss(html,'/assets/css/fmb-news-mobile-product-heroes.css',mobileProductHeroesCss,'20260902-product-heroes-v1');
   html=upsertCss(html,'/assets/css/fmb-news-mobile-app-polish.css',mobilePolishCss,'20260902-polish-v2');
   html=upsertCss(html,'/assets/css/fmb-news-mobile-home-live-hero.css',mobileLiveHeroCss,'20260902-live-hero-v2');
   html=upsertCss(html,'/assets/css/fmb-news-mobile-contrast-lock.css',mobileContrastCss,'20260902-contrast-v1');
@@ -69,4 +71,4 @@ async function apply(target){
   await writeFile(target,html,'utf8');
 }
 await apply(newsRoot);
-console.log('Applied the unified Filipino Media Bulletin mobile system with one masthead, one product rail, proportional full-bleed live Home hero, final contrast lock, immediate internal product content, and no legacy duplicate navigation.');
+console.log('Applied the unified Filipino Media Bulletin mobile system with one masthead, one product rail, proportional full-bleed Home hero, matching cinematic Explainer/Daily Brief product heroes, final contrast lock, immediate internal product content, and no legacy duplicate navigation.');
