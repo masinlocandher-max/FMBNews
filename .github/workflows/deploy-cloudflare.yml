@@ -110,6 +110,21 @@ jobs:
           grep -qi 'Filipino Media Bulletin' /tmp/news-brief.html
           tr -d '\r' < /tmp/news-brief.headers | grep -Eqi '^x-fmb-news-worker: fmb-news$'
 
+          fetch_with_retry 'https://www.francinemariebautista.com/news/explainer/' /tmp/news-explainer.html /tmp/news-explainer.headers 'FMB Explainer'
+          grep -qi 'FMB Explainer' /tmp/news-explainer.html
+          grep -qi 'fmbExplainedSearch' /tmp/news-explainer.html
+          tr -d '\r' < /tmp/news-explainer.headers | grep -Eqi '^x-fmb-news-worker: fmb-news$'
+
+          fetch_with_retry 'https://www.francinemariebautista.com/news/explainer/leptospirosis-after-flood-resilience-metro-manila/' /tmp/news-explainer-first.html /tmp/news-explainer-first.headers 'FMB Explainer article 001'
+          grep -qi 'Leptospirosis After the Flood' /tmp/news-explainer-first.html
+          grep -qi '<h2>Sources</h2>' /tmp/news-explainer-first.html
+          tr -d '\r' < /tmp/news-explainer-first.headers | grep -Eqi '^x-fmb-news-worker: fmb-news$'
+
+          fetch_with_retry 'https://www.francinemariebautista.com/news/explainer/bakit-humihina-ang-halaga-ng-peso-laban-sa-dolyar/' /tmp/news-explainer-last.html /tmp/news-explainer-last.headers 'FMB Explainer article 206'
+          grep -qi 'Bakit humihina ang halaga ng peso laban sa dolyar' /tmp/news-explainer-last.html
+          grep -qi '<h2>Sources</h2>' /tmp/news-explainer-last.html
+          tr -d '\r' < /tmp/news-explainer-last.headers | grep -Eqi '^x-fmb-news-worker: fmb-news$'
+
           fetch_with_retry 'https://www.francinemariebautista.com/news/world/live/' /tmp/news-world-live.html /tmp/news-world-live.headers 'FMB Worldwide live desk'
           grep -qi 'aria-label="FMB Worldwide"' /tmp/news-world-live.html
 
@@ -136,4 +151,4 @@ jobs:
           echo "$legacy_headers" | grep -Eqi '^location: https://www\.francinemariebautista\.com/news/'
           echo "$legacy_headers" | grep -Eqi '^x-fmb-news-worker: fmb-news$'
 
-          echo 'Public FMB News network cutover and legacy-route ownership verified.'
+          echo 'Public FMB News network cutover, FMB Explainer endpoints, and legacy-route ownership verified.'
