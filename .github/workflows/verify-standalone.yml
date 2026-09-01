@@ -32,9 +32,11 @@ jobs:
           test -f dist/news/manifest.webmanifest
           test -f dist/news/assets/css/fmb-news-final.css
           test -f dist/news/assets/css/fmb-news-mobile-app.css
+          test -f dist/news/assets/css/fmb-news-mobile-image-quality.css
           test -f dist/news/assets/js/fmb-news-approved.js
           test -f dist/news/assets/js/fmb-news-cms.js
           test -f dist/news/assets/js/fmb-news-mobile-app.js
+          test -f dist/news/assets/js/fmb-news-mobile-image-quality.js
           grep -q "FMB News" dist/news/index.html
           grep -q "FMB Worldwide" dist/news/index.html
           grep -q "FMB Daily Brief" dist/news/index.html
@@ -44,8 +46,13 @@ jobs:
           grep -q "Filipino Media Bulletin" dist/news/index.html
           grep -q "fmb-news-mobile-app.css" dist/news/archive/index.html
           grep -q "fmb-news-mobile-app.js" dist/news/archive/index.html
+          grep -q "fmb-news-mobile-image-quality.css" dist/news/archive/index.html
+          grep -q "fmb-news-mobile-image-quality.js" dist/news/archive/index.html
           grep -q "manifest.webmanifest" dist/news/archive/index.html
           grep -q "apple-mobile-web-app-capable" dist/news/archive/index.html
+          grep -q "ARCHIVE PHOTO" dist/news/assets/js/fmb-news-mobile-image-quality.js
+          grep -q "FILE PHOTO" dist/news/assets/js/fmb-news-mobile-image-quality.js
+          grep -q "fmb-app-story--no-image" dist/news/assets/js/fmb-news-mobile-image-quality.js
           ! grep -R -E '(["'"'"'(=])\/assets\/' dist/news --include='*.html' --include='*.css' --include='*.js' --include='*.mjs'
           test "$(find dist/news/world -mindepth 2 -maxdepth 2 -name index.html | wc -l)" -ge 1
           test "$(find dist/news -mindepth 2 -maxdepth 2 -type f -path '*/fmb-brief-*/index.html' | wc -l)" -ge 1
