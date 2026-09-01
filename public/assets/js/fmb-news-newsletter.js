@@ -1,39 +1,10 @@
 (()=>{
-  if(!document.querySelector('script[data-fmb-image-hardfix-loader]')){
-    const script=document.createElement('script');
-    script.src='/assets/js/fmb-news-image-hardfix.js?v=20260831-image-hardfix';
-    script.async=false;
-    script.dataset.fmbImageHardfixLoader='true';
-    document.head.appendChild(script);
-  }
-
-  const config=window.FMB_CONFIG||{};
-  const url=config.SUPABASE_URL;
-  const key=config.SUPABASE_ANON_KEY;
-  const forms=[...document.querySelectorAll('[data-fmb-newsletter-form]')];
+  if(!document.querySelector('script[data-fmb-image-hardfix-loader]')){const script=document.createElement('script');script.src='/assets/js/fmb-news-image-hardfix.js?v=20260831-image-hardfix';script.async=false;script.dataset.fmbImageHardfixLoader='true';document.head.appendChild(script)}
+  const config=window.FMB_CONFIG||{},url=config.SUPABASE_URL,key=config.SUPABASE_ANON_KEY,forms=[...document.querySelectorAll('[data-fmb-newsletter-form]')],emailPattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if(!forms.length)return;
-  const emailPattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const setState=(form,message,state='idle')=>{const status=form.querySelector('[data-fmb-newsletter-status]');if(status){status.textContent=message;status.dataset.state=state;}};
-  for(const form of forms){
-    form.addEventListener('submit',async(event)=>{
-      event.preventDefault();
-      const input=form.querySelector('input[type="email"]');
-      const consent=form.querySelector('[data-fmb-newsletter-consent]');
-      const button=form.querySelector('button[type="submit"]');
-      const honeypot=form.querySelector('[data-fmb-newsletter-honeypot]');
-      const email=(input?.value||'').trim().toLowerCase();
-      if(honeypot?.value){setState(form,'Thank you.','success');return;}
-      if(!emailPattern.test(email)){setState(form,'Enter a valid email address.','error');input?.focus();return;}
-      if(consent&&!consent.checked){setState(form,'Please confirm that you agree to receive the FMB News Daily Brief.','error');consent.focus();return;}
-      if(!url||!key){setState(form,'Newsletter signup is temporarily unavailable.','error');return;}
-      button?.setAttribute('disabled','');form.setAttribute('aria-busy','true');setState(form,'Subscribing…','loading');
-      try{
-        const response=await fetch(`${url}/rest/v1/fmb_news_subscribers`,{method:'POST',headers:{apikey:key,Authorization:`Bearer ${key}`,'Content-Type':'application/json',Prefer:'return=minimal'},body:JSON.stringify({email,status:'subscribed',source:'fmb-news-web',landing_path:location.pathname,user_agent:navigator.userAgent.slice(0,500)})});
-        if(response.ok){input.value='';if(consent)consent.checked=false;setState(form,'You’re subscribed to the FMB News Daily Brief.','success');return;}
-        if(response.status===409){setState(form,'This email is already subscribed.','success');return;}
-        throw new Error(`Subscription failed (${response.status})`);
-      }catch(error){console.error('FMB News newsletter signup failed',error);setState(form,'We couldn’t subscribe you right now. Please try again.','error');}
-      finally{button?.removeAttribute('disabled');form.removeAttribute('aria-busy');}
-    });
-  }
+  const setState=(form,message,state='idle')=>{const status=form.querySelector('[data-fmb-newsletter-status]');if(status){status.textContent=message;status.dataset.state=state}};
+  for(const form of forms){const button=form.querySelector('button[type="submit"]');if(button)button.textContent='Continue with email';const consent=form.querySelector('[data-fmb-newsletter-consent]');const consentText=consent?.closest('label')?.querySelector('span');if(consentText)consentText.innerHTML='Personalize FMB News and receive the Daily Brief. <a href="/privacy/">Privacy Policy</a>.';
+    form.addEventListener('submit',async event=>{event.preventDefault();const input=form.querySelector('input[type="email"]'),honeypot=form.querySelector('[data-fmb-newsletter-honeypot]'),email=(input?.value||'').trim().toLowerCase();if(honeypot?.value){setState(form,'Thank you.','success');return}if(!emailPattern.test(email)){setState(form,'Enter a valid email address.','error');input?.focus();return}if(consent&&!consent.checked){setState(form,'Please confirm personalization and Daily Brief delivery.','error');consent.focus();return}if(!url||!key){setState(form,'Email sign in is temporarily unavailable.','error');return}button?.setAttribute('disabled','');form.setAttribute('aria-busy','true');setState(form,'Sending your secure sign-in link…','loading');
+      try{await fetch(`${url}/rest/v1/fmb_news_subscribers`,{method:'POST',headers:{apikey:key,Authorization:`Bearer ${key}`,'Content-Type':'application/json',Prefer:'return=minimal'},body:JSON.stringify({email,status:'subscribed',source:'fmb-news-email-login',landing_path:location.pathname,user_agent:navigator.userAgent.slice(0,500)})});const auth=await fetch(`${url}/auth/v1/otp`,{method:'POST',headers:{apikey:key,'Content-Type':'application/json'},body:JSON.stringify({email,create_user:true,options:{email_redirect_to:`${location.origin}/news/archive/?fmb_login=1`,data:{product:'fmb-news',daily_brief:true}}})});if(!auth.ok)throw new Error('auth');localStorage.setItem('fmbNewsEmailV1',email);setState(form,'Check your inbox to finish signing in to FMB News.','success');window.dispatchEvent(new CustomEvent('fmb:email-obtained',{detail:{email}}));}
+      catch(error){console.error('FMB News email login failed',error);setState(form,'We couldn’t send the sign-in link right now. Please try again.','error')}finally{button?.removeAttribute('disabled');form.removeAttribute('aria-busy')}})}
 })();
