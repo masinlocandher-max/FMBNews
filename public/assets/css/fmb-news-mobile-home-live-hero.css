@@ -3,7 +3,7 @@
 body.fmb-mobile-route-home .fmb-mobile-app-home{width:100%!important;max-width:none!important;margin:0!important;padding:0!important;overflow:hidden!important;background:#f5f5f7!important}
 
 /* Preserve the hero composition. Full width, never forced into a tall portrait panel. */
-body.fmb-mobile-route-home .fmb-app-brand-hero{position:relative!important;width:100%!important;max-width:none!important;aspect-ratio:16/10!important;height:auto!important;min-height:0!important;margin:0!important;border:0!important;border-radius:0!important;background:#16081d!important;box-shadow:none!important;overflow:hidden!important;isolation:isolate!important}
+body.fmb-mobile-route-home .fmb-app-brand-hero{position:relative!important;width:100vw!important;max-width:none!important;aspect-ratio:16/10!important;height:auto!important;min-height:0!important;margin:0!important;border:0!important;border-radius:0!important;background:#16081d!important;box-shadow:none!important;overflow:hidden!important;isolation:isolate!important}
 body.fmb-mobile-route-home .fmb-app-brand-hero>img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:none!important;aspect-ratio:auto!important;object-fit:cover!important;object-position:center 48%!important;border:0!important;border-radius:0!important;filter:saturate(1.02) contrast(1.02)!important;transform:none!important}
 body.fmb-mobile-route-home .fmb-hero-readable-shade{position:absolute!important;inset:0!important;z-index:1!important;background:linear-gradient(180deg,rgba(8,3,12,.12) 0%,rgba(8,3,12,.12) 35%,rgba(8,3,12,.44) 68%,rgba(8,3,12,.82) 100%)!important;pointer-events:none!important}
 
