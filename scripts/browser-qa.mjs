@@ -64,6 +64,28 @@ async function assertContrast(selector,min,message){
   const r=ratio(colors.fg,colors.bg);assert(r>=min,`${message}: contrast ${r.toFixed(2)} is below ${min}`);
 }
 
+async function heroMetrics(heroSelector,innerSelector,titleSelector,copySelector,ruleSelector){
+  await page.locator(heroSelector).waitFor({state:'visible'});
+  await page.locator('.fmb-product-signal').waitFor({state:'visible'});
+  await page.locator(ruleSelector).waitFor({state:'visible'});
+  return page.evaluate(({heroSelector,innerSelector,titleSelector,copySelector,ruleSelector})=>{
+    const hero=document.querySelector(heroSelector),inner=document.querySelector(innerSelector),title=document.querySelector(titleSelector),copy=document.querySelector(copySelector),rule=document.querySelector(ruleSelector),signal=document.querySelector('.fmb-product-signal');
+    if(!hero||!inner||!title||!copy||!rule||!signal)throw new Error('Hero structure missing');
+    const hs=getComputedStyle(hero),is=getComputedStyle(inner),ts=getComputedStyle(title),ps=getComputedStyle(copy),rs=getComputedStyle(rule),ss=getComputedStyle(signal);
+    return{
+      height:Math.round(hero.getBoundingClientRect().height),
+      paddingLeft:parseFloat(is.paddingLeft),paddingRight:parseFloat(is.paddingRight),paddingTop:parseFloat(is.paddingTop),paddingBottom:parseFloat(is.paddingBottom),
+      titleSize:parseFloat(ts.fontSize),titleLine:parseFloat(ts.lineHeight),copySize:parseFloat(ps.fontSize),copyLine:parseFloat(ps.lineHeight),
+      ruleRadius:rs.borderRadius,ruleMarginTop:parseFloat(rs.marginTop),signalGap:parseFloat(ss.columnGap||ss.gap),borderRadius:hs.borderRadius
+    };
+  },{heroSelector,innerSelector,titleSelector,copySelector,ruleSelector});
+}
+function assertSameHero(actual,expected,label){
+  for(const key of ['height','paddingLeft','paddingRight','paddingTop','paddingBottom','titleSize','titleLine','copySize','copyLine','ruleMarginTop','signalGap'])assert(Math.abs(actual[key]-expected[key])<=1,`${label} hero ${key} drifted: ${actual[key]} vs ${expected[key]}`);
+  assert.equal(actual.ruleRadius,expected.ruleRadius,`${label} hero capsule radius drifted`);
+  assert.equal(actual.borderRadius,expected.borderRadius,`${label} hero outer radius drifted`);
+}
+
 await open('/news/');
 await page.locator('[data-fmb-mobile-home]').waitFor({state:'visible'});
 assert.equal(await page.locator('.network-home').evaluate(el=>getComputedStyle(el).display),'none','Desktop publication home must be hidden on phone view.');
@@ -107,24 +129,33 @@ assert((await page.locator('.archive-row img').count())>0,'Archive must remain i
 
 await open('/news/world/');
 assert.equal(await page.locator('body').getAttribute('data-fmb-route'),'world','Worldwide route art direction missing.');
-await page.locator('.fmb-world-signal').waitFor({state:'visible'});
+await page.locator('.fmb-product-signal.fmb-world-signal').waitFor({state:'visible'});
 await assertReadable('.world-hero h1','Worldwide headline is unreadable.');
 await assertReadable('.world-hero p','Worldwide deck is unreadable.');
+const sharedHero=await heroMetrics('.world-hero','.world-hero .shell','.world-hero h1','.world-hero p','.world-rule');
+assert.equal(sharedHero.height,300,'Worldwide hero must define the shared 300px product canvas.');
 assert((await page.locator('.country-card').count())>=1,'Worldwide cards missing.');
 await assertContrast('.country-card h3',4.5,'Worldwide card headline is low contrast');
 
 await open('/news/explainer/');
 assert.equal(await page.locator('body').getAttribute('data-fmb-route'),'explainer','Explainer route art direction missing.');
-await page.locator('.fmb-explainer-mark').waitFor({state:'visible'});
+await page.locator('.fmb-product-signal.fmb-explainer-signal').waitFor({state:'visible'});
+assert.equal(await page.locator('.fmb-explainer-mark:visible').count(),0,'Explainer must not show the old 206 hero badge.');
+assert(!(await page.locator('.explainer-hero').innerText()).includes('206'),'Explainer hero must not expose the 206 badge text.');
+await page.locator('.explainer-rule').waitFor({state:'visible'});
 assert.equal((await page.locator('.explainer-hero h1').textContent())?.trim(),'FMB Explainer','FMB Explainer product name drifted.');
 await assertReadable('.explainer-hero p','Explainer introduction is unreadable.');
+assertSameHero(await heroMetrics('.explainer-hero','.explainer-hero .shell','.explainer-hero h1','.explainer-hero p','.explainer-rule'),sharedHero,'Explainer');
 await page.locator('#fmbExplainedSearch').waitFor({state:'visible'});
 await assertContrast('.explainer-card h2',4.5,'Explainer card heading is low contrast');
 
 await open('/news/fmb-brief/');
 assert.equal(await page.locator('body').getAttribute('data-fmb-route'),'brief','Daily Brief route art direction missing.');
-await assertImage('.fmb-brief-signature-visual','Daily Brief signature mug failed to render.');
+await page.locator('.fmb-product-signal.fmb-brief-signal').waitFor({state:'visible'});
+assert.equal(await page.locator('.fmb-brief-signature-visual:visible').count(),0,'Daily Brief must not show a floating mug in the hero.');
+await page.locator('.brief-rule').waitFor({state:'visible'});
 await assertReadable('.brief-archive-hero h1','Daily Brief heading is unreadable.');
+assertSameHero(await heroMetrics('.brief-archive-hero','.brief-archive-hero .brief-shell','.brief-archive-hero h1','.brief-archive-hero p','.brief-rule'),sharedHero,'Daily Brief');
 assert((await page.locator('.brief-issue').count())>=1,'Daily Brief editions missing.');
 await assertContrast('.brief-issue h2',4.5,'Daily Brief issue headline is low contrast');
 
@@ -175,4 +206,4 @@ assert.equal(structured['@type'],'Article','FMB Explainer structured data is not
 assert(structured.datePublished,'FMB Explainer structured data is missing the publication timestamp.');
 
 await browser.close();
-console.log('Mobile browser QA passed: one compact FMB shell, full-bleed live Home hero with large time/weather and conversational greeting, no duplicate navigation, explicit mobile contrast checks, and dedicated Archive, Worldwide, Explainer, Daily Brief, Horoscope, Crossword, About, and article experiences.');
+console.log('Mobile browser QA passed: one compact FMB shell, strict 300px shared Worldwide/Explainer/Daily Brief hero geometry with no 206 badge or floating hero marks, full-bleed live Home hero, explicit mobile contrast checks, and dedicated Archive, Horoscope, Crossword, About, and article experiences.');
