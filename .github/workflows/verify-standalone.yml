@@ -39,15 +39,22 @@ jobs:
           test -f dist/news/assets/js/fmb-news-approved.js
           test -f dist/news/assets/js/fmb-news-cms.js
           test -f dist/news/assets/js/fmb-news-mobile-personalization.js
+          test -f dist/news/assets/js/fmb-explained-library.js
+          test -d dist/news/assets/data/fmb-explained
+          test "$(find dist/news/assets/data/fmb-explained -maxdepth 1 -type f -name '*.json' | wc -l | tr -d ' ')" -eq 9
 
           grep -q "FMB News" dist/news/index.html
           grep -q "FMB Worldwide" dist/news/index.html
-          grep -q "FMB Explainer" dist/news/index.html
+          grep -q "FMB Explained" dist/news/index.html
           grep -q "FMB Daily Brief" dist/news/index.html
           grep -q "FMB Worldwide" dist/news/world/index.html
-          grep -q "FMB Explainer" dist/news/explainer/index.html
+          grep -q "FMB Explained" dist/news/explainer/index.html
+          grep -q "206 topics, explained" dist/news/explainer/index.html
+          grep -q "fmb-explained-library.js" dist/news/explainer/index.html
           grep -q "FMB Daily Brief" dist/news/fmb-brief/index.html
           grep -q "Filipino Media Bulletin" dist/news/index.html
+          ! grep -q ">FMB Explainer<" dist/news/index.html
+          ! grep -q ">FMB Explainer<" dist/news/explainer/index.html
 
           # Every generated page keeps one responsive publication shell.
           total_pages="$(find dist/news -type f -name index.html | wc -l | tr -d ' ')"
@@ -63,7 +70,7 @@ jobs:
           for page in dist/news/index.html dist/news/archive/index.html dist/news/world/index.html dist/news/explainer/index.html dist/news/fmb-brief/index.html; do
             grep -q 'FMB News' "$page"
             grep -q 'FMB Worldwide' "$page"
-            grep -q 'FMB Explainer' "$page"
+            grep -q 'FMB Explained' "$page"
             grep -q 'FMB Daily Brief' "$page"
           done
 
