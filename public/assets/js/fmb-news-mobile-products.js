@@ -35,15 +35,6 @@
     hero.prepend(el);
   }
 
-  function addExplainerSignature(){
-    const hero=document.querySelector('.explainer-hero .shell');
-    if(!hero||hero.querySelector('.fmb-explainer-mark'))return;
-    const mark=document.createElement('div');
-    mark.className='fmb-explainer-mark';
-    mark.innerHTML='<span>206</span><small>TOPICS<br>MADE CLEAR</small>';
-    hero.prepend(mark);
-  }
-
   function addBriefSignature(){
     const hero=document.querySelector('.brief-archive-hero .brief-shell,.brief-archive-hero .shell');
     if(!hero||hero.querySelector('.fmb-brief-signature-visual'))return;
@@ -101,7 +92,7 @@
     update();addEventListener('scroll',update,{passive:true});addEventListener('resize',update,{passive:true});
   }
 
-  ({archive:addArchiveIntro,world:addWorldSignature,explainer:addExplainerSignature,brief:addBriefSignature,horoscope:addHoroscopeSignature,crossword:addCrosswordSignature,about:addAboutSignature,article:addArticleProgress}[route]||(()=>{}))();
+  ({archive:addArchiveIntro,world:addWorldSignature,brief:addBriefSignature,horoscope:addHoroscopeSignature,crossword:addCrosswordSignature,about:addAboutSignature,article:addArticleProgress}[route]||(()=>{}))();
   // Reading progress belongs to every true long-form article even when the
   // page remains inside a branded product family such as FMB Explainer.
   addArticleProgress();
