@@ -6,7 +6,7 @@ const $=selector=>document.querySelector(selector);
 const list=$('#fmbExplainedList'),search=$('#fmbExplainedSearch'),count=$('#fmbExplainedCount'),status=$('#fmbExplainedStatus');
 let library=[],published=new Map();
 function cleanTitle(title){return String(title).replace(/^EXPLAINER\s*\|\s*/i,'').replace(/^#FactsFirstRedefined\s*\|\s*/i,'').replace(/\s*\[duplicate archive title\]\s*/i,' — Energy reliability revisited').trim()}
-function escapeHtml(value=''){return String(value).replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#039;'})[char])}
+function escapeHtml(value=''){return String(value).replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'})[char])}
 function publicationLabel(pub){
   if(pub?.originalPublishedAt){
     return new Intl.DateTimeFormat('en-PH',{timeZone:'Asia/Manila',month:'long',day:'numeric',year:'numeric'}).format(new Date(pub.originalPublishedAt));
@@ -31,6 +31,12 @@ function ensureDirectArticleStyles(){
   `;
   document.head.append(style);
 }
+function updateExplainerCopy(){
+  const intro=document.querySelector('.explainer-feed-head p');
+  if(intro)intro.textContent='Search the archive, then tap any story to open the complete long-form FMB Explainer immediately.';
+  const heading=document.querySelector('.explainer-feed-head h2');
+  if(heading)heading.textContent='206 full explainers';
+}
 function render(items){
   if(!list)return;
   if(count)count.textContent=`${items.length} of ${library.length} full articles`;
@@ -52,6 +58,7 @@ function filterLibrary(){
 async function loadLibrary(){
   try{
     ensureDirectArticleStyles();
+    updateExplainerCopy();
     if(status)status.textContent='Loading 206 full explainers…';
     const responses=await Promise.all([...FMB_EXPLAINED_SHARDS,PUBLISHED_INDEX].map(url=>fetch(url,{cache:'no-store'})));
     const failed=responses.find(response=>!response.ok);if(failed)throw new Error(`Library request failed: ${failed.status}`);
