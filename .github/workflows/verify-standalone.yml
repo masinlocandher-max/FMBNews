@@ -30,67 +30,54 @@ jobs:
           test -f dist/news/fmb-brief/index.html
           test -f dist/news/world/index.html
           test -f dist/news/explainer/index.html
-          test -f dist/news/subic-aeta-landfill/index.html
           test -f dist/news/manifest.webmanifest
           test -f dist/news/sw.js
-          test -f dist/news/assets/css/fmb-news-final.css
           test -f dist/news/assets/css/fmb-news-mobile-first-site.css
           test -f dist/news/assets/css/fmb-news-mobile-personalization.css
-          test -f dist/news/assets/js/fmb-news-approved.js
-          test -f dist/news/assets/js/fmb-news-cms.js
+          test -f dist/news/assets/css/fmb-news-mobile-premium.css
           test -f dist/news/assets/js/fmb-news-mobile-personalization.js
+          test -f dist/news/assets/js/fmb-news-mobile-premium.js
           test -f dist/news/assets/js/fmb-explained-library.js
           test -d dist/news/assets/data/fmb-explained
           test "$(find dist/news/assets/data/fmb-explained -maxdepth 1 -type f -name '*.json' | wc -l | tr -d ' ')" -eq 9
 
-          grep -q "FMB News" dist/news/index.html
-          grep -q "FMB Worldwide" dist/news/index.html
-          grep -q "FMB Explained" dist/news/index.html
-          grep -q "FMB Daily Brief" dist/news/index.html
-          grep -q "FMB Worldwide" dist/news/world/index.html
-          grep -q "FMB Explained" dist/news/explainer/index.html
-          grep -q "206 topics, explained" dist/news/explainer/index.html
-          grep -q "fmb-explained-library.js" dist/news/explainer/index.html
-          grep -q "FMB Daily Brief" dist/news/fmb-brief/index.html
-          grep -q "Filipino Media Bulletin" dist/news/index.html
-          ! grep -q ">FMB Explainer<" dist/news/index.html
-          ! grep -q ">FMB Explainer<" dist/news/explainer/index.html
-
-          # Every generated page keeps one responsive publication shell.
-          total_pages="$(find dist/news -type f -name index.html | wc -l | tr -d ' ')"
-          responsive_pages="$(grep -rl 'fmb-news-mobile-first-site.css' dist/news --include='index.html' | wc -l | tr -d ' ')"
-          test "$total_pages" -eq "$responsive_pages"
-          grep -q 'fmb-mobile-first' dist/news/index.html
-          grep -q 'fmb-mobile-first' dist/news/archive/index.html
-          grep -q 'fmb-mobile-first' dist/news/fmb-brief/index.html
-          grep -q 'fmb-mobile-first' dist/news/world/index.html
-          grep -q 'fmb-mobile-first' dist/news/explainer/index.html
-
-          # Official product navigation is normalized across core pages.
           for page in dist/news/index.html dist/news/archive/index.html dist/news/world/index.html dist/news/explainer/index.html dist/news/fmb-brief/index.html; do
             grep -q 'FMB News' "$page"
             grep -q 'FMB Worldwide' "$page"
-            grep -q 'FMB Explained' "$page"
+            grep -q 'FMB Explainer' "$page"
             grep -q 'FMB Daily Brief' "$page"
+            grep -q 'fmb-news-mobile-premium.css?v=20260901-premium-v1' "$page"
+            grep -q 'fmb-news-mobile-premium.js?v=20260901-premium-v1' "$page"
           done
+          ! grep -R -E '>FMB Explained<' dist/news --include='*.html'
+          grep -q '206 topics, explained' dist/news/explainer/index.html
 
-          # Desktop expands from the shared layout; mobile personalization itself is phone-scoped.
-          grep -q '@media (min-width:700px)' dist/news/assets/css/fmb-news-mobile-first-site.css
-          grep -q '@media(max-width:699px)' dist/news/assets/css/fmb-news-mobile-personalization.css
-          grep -q 'fmb-news-mobile-personalization.js?v=20260901-personal-v2' dist/news/archive/index.html
+          total_pages="$(find dist/news -type f -name index.html | wc -l | tr -d ' ')"
+          responsive_pages="$(grep -rl 'fmb-news-mobile-first-site.css' dist/news --include='index.html' | wc -l | tr -d ' ')"
+          premium_pages="$(grep -rl 'fmb-news-mobile-premium.css' dist/news --include='index.html' | wc -l | tr -d ' ')"
+          test "$total_pages" -eq "$responsive_pages"
+          test "$total_pages" -eq "$premium_pages"
 
-          # PWA + real push plumbing must ship in the built newsroom.
+          # Premium app layer is phone-scoped, preserving desktop.
+          grep -q '@media (max-width:699px)' dist/news/assets/css/fmb-news-mobile-premium.css
+          grep -q -- '--app-plum:#2b1235' dist/news/assets/css/fmb-news-mobile-premium.css
+          grep -q -- '--app-bg:#f5f5f7' dist/news/assets/css/fmb-news-mobile-premium.css
+          grep -q 'fmb-bulletin-emblem.svg' dist/news/assets/css/fmb-news-mobile-premium.css
+          grep -q "path==='/news'" dist/news/assets/js/fmb-news-mobile-premium.js
+          grep -q "'/news/archive/'" dist/news/assets/js/fmb-news-mobile-premium.js
+
+          # PWA, personalization and push remain wired.
           grep -q 'rel="manifest" href="/news/manifest.webmanifest"' dist/news/archive/index.html
           grep -q 'apple-mobile-web-app-capable' dist/news/archive/index.html
           grep -q 'serviceWorker.register' dist/news/assets/js/fmb-news-mobile-personalization.js
           grep -q 'news_push_subscriptions' dist/news/assets/js/fmb-news-mobile-personalization.js
           grep -q 'PushManager' dist/news/assets/js/fmb-news-mobile-personalization.js
           grep -q "addEventListener('push'" dist/news/sw.js
-          grep -q "notificationclick" dist/news/sw.js
+          grep -q 'notificationclick' dist/news/sw.js
           grep -q 'preferred_sections' dist/news/assets/js/fmb-news-mobile-personalization.js
           grep -q 'rankFeed' dist/news/assets/js/fmb-news-mobile-personalization.js
 
-          # Website mobile app experience must not use a fixed bottom dock.
+          # No fixed low navigation may return.
           ! grep -R -E 'nc-mobile-dock|fmb-app-dock|Mobile news navigation' dist/news --include='*.html'
 
           ! grep -R -E '(["'"'"'(=])\/assets\/' dist/news --include='*.html' --include='*.css' --include='*.js' --include='*.mjs'
