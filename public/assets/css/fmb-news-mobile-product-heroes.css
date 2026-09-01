@@ -5,7 +5,7 @@
 /* One exact hero canvas. */
 body.fmb-mobile-route-world .world-hero,
 body.fmb-mobile-route-explainer .explainer-hero,
-body.fmb-mobile-route-brief .brief-archive-hero{
+body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero{
   position:relative!important;
   overflow:hidden!important;
   width:100%!important;
@@ -23,7 +23,7 @@ body.fmb-mobile-route-brief .brief-archive-hero{
 }
 body.fmb-mobile-route-world .world-hero::after,
 body.fmb-mobile-route-explainer .explainer-hero::after,
-body.fmb-mobile-route-brief .brief-archive-hero::after{
+body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero::after{
   content:"";
   position:absolute!important;
   right:-72px!important;
@@ -39,8 +39,8 @@ body.fmb-mobile-route-brief .brief-archive-hero::after{
 /* One exact inner grid. */
 body.fmb-mobile-route-world .world-hero .shell,
 body.fmb-mobile-route-explainer .explainer-hero .shell,
-body.fmb-mobile-route-brief .brief-archive-hero .brief-shell,
-body.fmb-mobile-route-brief .brief-archive-hero .shell{
+body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero .brief-shell,
+body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero .shell{
   position:relative!important;
   z-index:2!important;
   display:flex!important;
@@ -54,13 +54,7 @@ body.fmb-mobile-route-brief .brief-archive-hero .shell{
 }
 
 /* Same top desk signal on all three products. */
-.fmb-product-signal{
-  display:flex!important;
-  align-items:center!important;
-  gap:10px!important;
-  margin:0 0 auto!important;
-  color:#fff!important;
-}
+.fmb-product-signal{display:flex!important;align-items:center!important;gap:10px!important;margin:0 0 auto!important;color:#fff!important}
 .fmb-product-signal>div{min-width:0!important}
 .fmb-product-signal strong{display:block!important;color:#f1dfaa!important;font-size:10px!important;line-height:1!important;font-weight:900!important;letter-spacing:.16em!important}
 .fmb-product-signal small{display:block!important;margin-top:4px!important;color:rgba(255,255,255,.62)!important;font-size:9px!important;line-height:1.2!important;font-weight:650!important}
@@ -73,15 +67,15 @@ body.fmb-mobile-route-brief .brief-archive-hero .shell{
 
 /* Remove old product-specific floating marks. */
 body.fmb-mobile-route-explainer .fmb-explainer-mark,
-body.fmb-mobile-route-brief .fmb-brief-signature-visual{display:none!important}
-body.fmb-mobile-route-brief .brief-edition-bar{display:none!important}
-body.fmb-mobile-route-brief .brief-archive-hero .brief-shell::before,
-body.fmb-mobile-route-brief .brief-archive-hero .shell::before{content:none!important;display:none!important}
+body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .fmb-brief-signature-visual{display:none!important}
+body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-edition-bar{display:none!important}
+body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero .brief-shell::before,
+body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero .shell::before{content:none!important;display:none!important}
 
 /* Same kicker. */
 body.fmb-mobile-route-world .world-kicker,
 body.fmb-mobile-route-explainer .explainer-kicker,
-body.fmb-mobile-route-brief .brief-kicker{
+body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-kicker{
   margin:24px 0 0!important;
   color:#d8c2e4!important;
   font-size:9px!important;
@@ -94,7 +88,7 @@ body.fmb-mobile-route-brief .brief-kicker{
 /* Same title. */
 body.fmb-mobile-route-world .world-hero h1,
 body.fmb-mobile-route-explainer .explainer-hero h1,
-body.fmb-mobile-route-brief .brief-archive-hero h1{
+body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero h1{
   max-width:330px!important;
   margin:8px 0 14px!important;
   color:#fff!important;
@@ -109,7 +103,7 @@ body.fmb-mobile-route-brief .brief-archive-hero h1{
 /* Same supporting copy footprint. */
 body.fmb-mobile-route-world .world-hero p,
 body.fmb-mobile-route-explainer .explainer-hero p,
-body.fmb-mobile-route-brief .brief-archive-hero p{
+body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero p{
   display:-webkit-box!important;
   overflow:hidden!important;
   max-width:330px!important;
@@ -125,7 +119,7 @@ body.fmb-mobile-route-brief .brief-archive-hero p{
 /* Same bottom capsule. */
 body.fmb-mobile-route-world .world-rule,
 body.fmb-mobile-route-explainer .explainer-rule,
-body.fmb-mobile-route-brief .brief-rule{
+body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-rule{
   display:inline-flex!important;
   align-self:flex-start!important;
   max-width:100%!important;
@@ -146,19 +140,19 @@ body.fmb-mobile-route-brief .brief-rule{
 @media(max-width:380px){
   body.fmb-mobile-route-world .world-hero,
   body.fmb-mobile-route-explainer .explainer-hero,
-  body.fmb-mobile-route-brief .brief-archive-hero{height:282px!important;min-height:282px!important}
+  body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero{height:282px!important;min-height:282px!important}
   body.fmb-mobile-route-world .world-hero .shell,
   body.fmb-mobile-route-explainer .explainer-hero .shell,
-  body.fmb-mobile-route-brief .brief-archive-hero .brief-shell,
-  body.fmb-mobile-route-brief .brief-archive-hero .shell{height:282px!important;min-height:282px!important;padding:24px 18px 23px!important}
+  body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero .brief-shell,
+  body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero .shell{height:282px!important;min-height:282px!important;padding:24px 18px 23px!important}
   body.fmb-mobile-route-world .world-hero h1,
   body.fmb-mobile-route-explainer .explainer-hero h1,
-  body.fmb-mobile-route-brief .brief-archive-hero h1{font-size:42px!important}
+  body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero h1{font-size:42px!important}
   body.fmb-mobile-route-world .world-hero p,
   body.fmb-mobile-route-explainer .explainer-hero p,
-  body.fmb-mobile-route-brief .brief-archive-hero p{font-size:13px!important;-webkit-line-clamp:3!important}
+  body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero p{font-size:13px!important;-webkit-line-clamp:3!important}
   body.fmb-mobile-route-world .world-rule,
   body.fmb-mobile-route-explainer .explainer-rule,
-  body.fmb-mobile-route-brief .brief-rule{font-size:7.2px!important;letter-spacing:.06em!important}
+  body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-rule{font-size:7.2px!important;letter-spacing:.06em!important}
 }
 }
