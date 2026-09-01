@@ -12,12 +12,12 @@ const pwaMeta='<link rel="manifest" href="/news/manifest.webmanifest"><meta name
 function addBodyClass(html){if(/<body\b[^>]*class=["'][^"']*\bfmb-mobile-first\b/i.test(html))return html;if(/<body\b[^>]*class=["']/i.test(html))return html.replace(/<body\b([^>]*?)class=(["'])([^"']*)\2/i,(_m,b,q,c)=>`<body${b}class=${q}${c} fmb-mobile-first${q}`);return html.replace(/<body\b([^>]*)>/i,'<body$1 class="fmb-mobile-first">')}
 function removeBottomNav(html){return html.replace(/<nav\b[^>]*class=["'][^"']*\bnc-mobile-dock\b[^"']*["'][^>]*>[\s\S]*?<\/nav>\s*/gi,'').replace(/<nav\b[^>]*class=["'][^"']*\bfmb-app-dock\b[^"']*["'][^>]*>[\s\S]*?<\/nav>\s*/gi,'').replace(/<nav\b[^>]*aria-label=["']Mobile news navigation["'][^>]*>[\s\S]*?<\/nav>\s*/gi,'')}
 function normalizeProductNavigation(html){
-  html=html.replace(/FMB Brief/g,'FMB Daily Brief');
+  html=html.replace(/FMB Brief/g,'FMB Daily Brief').replace(/FMB Explainer/g,'FMB Explained');
   return html.replace(/<nav\b([^>]*class=["'][^"']*(?:desktop-nav|mobile-nav|publication-nav)[^"']*["'][^>]*)>([\s\S]*?)<\/nav>/gi,(whole,attrs,inner)=>{
     if(inner.includes('/news/explainer/'))return whole;
     const world=/(<a\b[^>]*href=["']\/news\/world\/?["'][^>]*>[\s\S]*?<\/a>)/i;
-    if(world.test(inner))inner=inner.replace(world,'$1<a href="/news/explainer/">FMB Explainer</a>');
-    else inner=`<a href="/news/explainer/">FMB Explainer</a>${inner}`;
+    if(world.test(inner))inner=inner.replace(world,'$1<a href="/news/explainer/">FMB Explained</a>');
+    else inner=`<a href="/news/explainer/">FMB Explained</a>${inner}`;
     return `<nav${attrs}>${inner}</nav>`;
   });
 }
