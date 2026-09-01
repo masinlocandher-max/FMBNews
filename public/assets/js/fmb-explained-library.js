@@ -14,14 +14,26 @@ function publicationLabel(pub){
   return 'Original publication chronology';
 }
 function render(items){
-  if(!list)return;if(count)count.textContent=`${items.length} of ${library.length} explainers`;
+  if(!list)return;
+  if(count)count.textContent=`${items.length} of ${library.length} full articles`;
   if(!items.length){list.innerHTML='<div class="explained-no-results"><strong>No matching explainer.</strong><span>Try another word, place, policy, person, or issue.</span></div>';return}
-  list.innerHTML=items.map(item=>{const pub=published.get(Number(item.id));const title=pub?.title||cleanTitle(item.title);const date=pub?`<div class="explained-source-note">${escapeHtml(publicationLabel(pub))}</div>`:'';const read=pub?`<a class="explained-read" href="/news/explainer/${escapeHtml(pub.articleSlug)}/">Read the full article →</a>`:'';return `<details class="explained-item" id="topic-${item.id}"><summary><span class="explained-number">${String(item.id).padStart(3,'0')}</span><span class="explained-title">${escapeHtml(title)}</span><span class="explained-plus" aria-hidden="true">+</span></summary><div class="explained-body"><section><div class="explained-label">Overview</div><p>${escapeHtml(item.explanation)}</p></section><section class="explained-why"><div class="explained-label">Why it matters</div><p>${escapeHtml(item.why)}</p></section>${date}${read}</div></details>`}).join('')
+  list.innerHTML=items.map(item=>{
+    const pub=published.get(Number(item.id));
+    const title=pub?.title||cleanTitle(item.title);
+    const href=pub?`/news/explainer/${escapeHtml(pub.articleSlug)}/`:'#';
+    const category=pub?.category||'FMB Explainer';
+    const deck=String(item.explanation||'').trim();
+    return `<a class="explained-item explainer-article-link" id="topic-${item.id}" href="${href}" aria-label="Read full article: ${escapeHtml(title)}"><span class="explained-number">${String(item.id).padStart(3,'0')}</span><span class="explained-card-copy"><span class="explained-meta">${escapeHtml(category)} · ${escapeHtml(publicationLabel(pub))}</span><span class="explained-title">${escapeHtml(title)}</span><span class="explained-deck">${escapeHtml(deck)}</span></span><span class="explained-arrow" aria-hidden="true">→</span></a>`;
+  }).join('');
 }
-function filterLibrary(){const q=(search?.value||'').trim().toLocaleLowerCase('en-PH');if(!q)return render(library);render(library.filter(item=>`${published.get(Number(item.id))?.title||item.title} ${item.explanation} ${item.why}`.toLocaleLowerCase('en-PH').includes(q)))}
+function filterLibrary(){
+  const q=(search?.value||'').trim().toLocaleLowerCase('en-PH');
+  if(!q)return render(library);
+  render(library.filter(item=>`${published.get(Number(item.id))?.title||item.title} ${published.get(Number(item.id))?.category||''} ${item.explanation} ${item.why}`.toLocaleLowerCase('en-PH').includes(q)));
+}
 async function loadLibrary(){
   try{
-    if(status)status.textContent='Loading 206 explainers…';
+    if(status)status.textContent='Loading 206 full explainers…';
     const responses=await Promise.all([...FMB_EXPLAINED_SHARDS,PUBLISHED_INDEX].map(url=>fetch(url,{cache:'no-store'})));
     const failed=responses.find(response=>!response.ok);if(failed)throw new Error(`Library request failed: ${failed.status}`);
     const payloads=await Promise.all(responses.map(response=>response.json()));
@@ -30,8 +42,14 @@ async function loadLibrary(){
     published=new Map(index.map(item=>[Number(item.id),item]));
     library=payloads.slice(0,-1).flat().sort((a,b)=>(published.get(Number(a.id))?.sourceOrder??Number(a.id))-(published.get(Number(b.id))?.sourceOrder??Number(b.id)));
     if(library.length!==206)throw new Error(`Expected 206 topics, received ${library.length}`);
-    if(status)status.textContent='206 full articles · original publication order';render(library);
-    const hash=location.hash.match(/^#topic-(\d+)$/);if(hash){const target=document.querySelector(location.hash);if(target){target.open=true;setTimeout(()=>target.scrollIntoView({behavior:'smooth',block:'start'}),50)}}
-  }catch(error){console.error(error);if(status)status.textContent='FMB Explainer library unavailable';if(list)list.innerHTML='<div class="explained-no-results"><strong>The explainer library could not load.</strong><span>Please refresh the page.</span></div>'}
+    if(status)status.textContent='206 full articles · tap any story to read immediately';
+    render(library);
+    const hash=location.hash.match(/^#topic-(\d+)$/);
+    if(hash){const target=document.querySelector(location.hash);if(target)setTimeout(()=>target.scrollIntoView({behavior:'smooth',block:'center'}),50)}
+  }catch(error){
+    console.error(error);
+    if(status)status.textContent='FMB Explainer library unavailable';
+    if(list)list.innerHTML='<div class="explained-no-results"><strong>The explainer library could not load.</strong><span>Please refresh the page.</span></div>';
+  }
 }
 search?.addEventListener('input',filterLibrary);loadLibrary();
