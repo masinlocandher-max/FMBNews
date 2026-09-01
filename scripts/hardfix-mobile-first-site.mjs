@@ -6,9 +6,11 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const newsRoot=path.join(root,'dist','news');
 const mobileFirstAsset='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-first-site.css?v=20260901-site-v1">';
 const personalizationCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-personalization.css?v=20260901-personal-v2">';
-const premiumCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-premium.css?v=20260901-premium-v1">';
+const premiumCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-premium.css?v=20260901-premium-v2">';
+const mobileHomeCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-home.css?v=20260901-app-home-v1">';
 const personalizationJs='<script src="/assets/js/fmb-news-mobile-personalization.js?v=20260901-personal-v2" defer></script>';
-const premiumJs='<script src="/assets/js/fmb-news-mobile-premium.js?v=20260901-premium-v1" defer></script>';
+const premiumJs='<script src="/assets/js/fmb-news-mobile-premium.js?v=20260901-premium-v2" defer></script>';
+const mobileHomeJs='<script src="/assets/js/fmb-news-mobile-home.js?v=20260901-app-home-v1" defer></script>';
 const pwaMeta='<link rel="manifest" href="/news/manifest.webmanifest"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="FMB News"><meta name="theme-color" content="#2b1235">';
 
 function addBodyClass(html){if(/<body\b[^>]*class=["'][^"']*\bfmb-mobile-first\b/i.test(html))return html;if(/<body\b[^>]*class=["']/i.test(html))return html.replace(/<body\b([^>]*?)class=(["'])([^"']*)\2/i,(_m,b,q,c)=>`<body${b}class=${q}${c} fmb-mobile-first${q}`);return html.replace(/<body\b([^>]*)>/i,'<body$1 class="fmb-mobile-first">')}
@@ -33,11 +35,13 @@ async function apply(target){
   html=normalizeProductNavigation(html);
   if(!html.includes('/assets/css/fmb-news-mobile-first-site.css'))html=html.replace('</head>',`${mobileFirstAsset}</head>`);
   if(!html.includes('/assets/css/fmb-news-mobile-personalization.css'))html=html.replace('</head>',`${personalizationCss}</head>`);else html=html.replace(/fmb-news-mobile-personalization\.css\?v=[^"']+/g,'fmb-news-mobile-personalization.css?v=20260901-personal-v2');
-  if(!html.includes('/assets/css/fmb-news-mobile-premium.css'))html=html.replace('</head>',`${premiumCss}</head>`);else html=html.replace(/fmb-news-mobile-premium\.css\?v=[^"']+/g,'fmb-news-mobile-premium.css?v=20260901-premium-v1');
+  if(!html.includes('/assets/css/fmb-news-mobile-premium.css'))html=html.replace('</head>',`${premiumCss}</head>`);else html=html.replace(/fmb-news-mobile-premium\.css\?v=[^"']+/g,'fmb-news-mobile-premium.css?v=20260901-premium-v2');
+  if(!html.includes('/assets/css/fmb-news-mobile-home.css'))html=html.replace('</head>',`${mobileHomeCss}</head>`);else html=html.replace(/fmb-news-mobile-home\.css\?v=[^"']+/g,'fmb-news-mobile-home.css?v=20260901-app-home-v1');
   if(!html.includes('/news/manifest.webmanifest'))html=html.replace('</head>',`${pwaMeta}</head>`);
   if(!html.includes('/assets/js/fmb-news-mobile-personalization.js'))html=html.replace('</body>',`${personalizationJs}</body>`);else html=html.replace(/fmb-news-mobile-personalization\.js\?v=[^"']+/g,'fmb-news-mobile-personalization.js?v=20260901-personal-v2');
-  if(!html.includes('/assets/js/fmb-news-mobile-premium.js'))html=html.replace('</body>',`${premiumJs}</body>`);else html=html.replace(/fmb-news-mobile-premium\.js\?v=[^"']+/g,'fmb-news-mobile-premium.js?v=20260901-premium-v1');
+  if(!html.includes('/assets/js/fmb-news-mobile-premium.js'))html=html.replace('</body>',`${premiumJs}</body>`);else html=html.replace(/fmb-news-mobile-premium\.js\?v=[^"']+/g,'fmb-news-mobile-premium.js?v=20260901-premium-v2');
+  if(!html.includes('/assets/js/fmb-news-mobile-home.js'))html=html.replace('</body>',`${mobileHomeJs}</body>`);else html=html.replace(/fmb-news-mobile-home\.js\?v=[^"']+/g,'fmb-news-mobile-home.js?v=20260901-app-home-v1');
   await writeFile(target,html,'utf8');
 }
 await apply(newsRoot);
-console.log('Applied desktop-preserving FMB News build with premium mobile app presentation, four official FMB products, personalization, push/PWA support, and no fixed bottom navigation.');
+console.log('Applied complete FMB News mobile app experience: dedicated home, four official products, personalization, live utilities, push/PWA support, weekly features, and no fixed bottom navigation.');
