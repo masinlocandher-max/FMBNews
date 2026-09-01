@@ -24,12 +24,18 @@ if(!ss.length)throw new Error('Cannot build FMB mobile app home without publishe
 const lead=ss[0],latest=ss.slice(1,6),breaking=breakingStory(ss);
 const mobileHome=`<div class="fmb-mobile-app-home" data-fmb-mobile-home>
   ${breaking?`<a class="fmb-app-breaking" href="/news/${esc(breaking.slug)}/"><strong>BREAKING</strong><span>${esc(breaking.headline)}</span><b aria-hidden="true">›</b></a>`:''}
-  <section class="fmb-app-brand-hero" aria-label="FMB News">
+  <section class="fmb-app-brand-hero" aria-label="FMB News live home">
     <img src="${approvedHero}" alt="FMB News global newsroom collage with the official gold shell emblem" fetchpriority="high" data-fmb-approved-hero>
-  </section>
-  <section class="fmb-app-utility" aria-label="Local information">
-    <div class="fmb-app-clock"><strong data-fmb-local-date>Today</strong><span data-fmb-local-time>--:--</span></div>
-    <button class="fmb-app-weather" type="button" data-fmb-weather-button aria-label="Set local weather"><span data-fmb-weather-icon aria-hidden="true">○</span><span data-fmb-weather>Set local weather</span></button>
+    <div class="fmb-hero-live-overlay" aria-label="Live local date, time and weather">
+      <div class="fmb-hero-clock">
+        <strong data-fmb-local-date>Today</strong>
+        <span data-fmb-local-time>--:--</span>
+      </div>
+      <button class="fmb-hero-weather" type="button" data-fmb-weather-button aria-label="Set local weather">
+        <span class="fmb-hero-weather-icon" data-fmb-weather-icon aria-hidden="true">☀</span>
+        <span class="fmb-hero-weather-copy"><strong data-fmb-weather>Weather</strong><small>Tap for local weather</small></span>
+      </button>
+    </div>
   </section>
   <section class="fmb-app-greeting">
     <div><p data-fmb-greeting>Good day</p><h1>For You</h1></div><button type="button" data-fmb-customize>Customize</button>
