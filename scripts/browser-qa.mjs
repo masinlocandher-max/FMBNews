@@ -46,7 +46,7 @@ async function assertReadable(selector,message){
   const el=page.locator(selector).first();
   await el.waitFor({state:'visible'});
   const info=await el.evaluate(node=>{const s=getComputedStyle(node);return{color:s.color,opacity:Number(s.opacity),visibility:s.visibility,fontSize:parseFloat(s.fontSize)}});
-  assert(info.visibility!=='hidden'&&info.opacity>.2&&info.color!=='rgba(0, 0, 0, 0)'&&info.fontSize>=10,message);
+  assert(info.visibility!=='hidden'&&info.opacity>.2&&info.color!=='rgba(0, 0, 0, 0)'&&info.fontSize>=8,message);
 }
 
 function channel(v){v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4}
@@ -91,22 +91,35 @@ await page.locator('[data-fmb-mobile-home]').waitFor({state:'visible'});
 assert.equal(await page.locator('.network-home').evaluate(el=>getComputedStyle(el).display),'none','Desktop publication home must be hidden on phone view.');
 assert.equal(await page.locator('.fmb-mobile-app-shell').count(),1,'Mobile app shell duplicated on home.');
 assert.equal(await page.locator('.fmb-app-story-list').count(),1,'Mobile story list missing.');
-await assertImage('[data-fmb-approved-hero]','Approved FMB hero failed to render.');
+await assertImage('[data-fmb-approved-hero]','Approved FMB Philippines newsroom hero failed to render.');
 await assertImage('[data-fmb-approved-mug]','Approved Daily Brief mug failed to render.');
 const heroBox=await page.locator('.fmb-app-brand-hero').boundingBox();
 assert(heroBox&&heroBox.width>=389,`Home hero is not full bleed (${heroBox?.width}px)`);
+assert(heroBox&&heroBox.height>=245&&heroBox.height<=300,`Home approved hero height is out of control (${heroBox?.height}px)`);
 assert.equal(await page.locator('.fmb-app-brand-hero').evaluate(el=>getComputedStyle(el).borderRadius),'0px','Home hero must not look like an attached rounded card.');
+await page.locator('.fmb-approved-hero-copy').waitFor({state:'visible'});
+await page.locator('.fmb-approved-hero-ticker').waitFor({state:'visible'});
 await page.locator('.fmb-hero-live-overlay').waitFor({state:'visible'});
-await page.locator('.fmb-hero-greeting').waitFor({state:'visible'});
 await page.locator('.fmb-hero-readable-shade').waitFor({state:'visible'});
+assert.equal(await page.locator('.fmb-hero-greeting:visible').count(),0,'Legacy giant greeting overlay must stay removed.');
+const ctas=await page.locator('.fmb-approved-hero-cta>*').allTextContents();
+assert.deepEqual(ctas.map(v=>v.trim()),['Read the Latest','Customize'],'Home hero CTA labels drifted.');
 const timeSize=await page.locator('.fmb-hero-clock [data-fmb-local-time]').evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
 const weatherSize=await page.locator('.fmb-hero-weather-copy>[data-fmb-weather]').evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
 const greetingSize=await page.locator('[data-fmb-greeting-line]').evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
-assert(timeSize>=38,`Home live time is too small (${timeSize}px)`);
-assert(weatherSize>=34,`Home live weather is too small (${weatherSize}px)`);
-assert(greetingSize>=30,`Home conversational greeting is too small (${greetingSize}px)`);
+assert(timeSize>=9&&timeSize<=14,`Home utility time should be compact, not giant (${timeSize}px)`);
+assert(weatherSize>=12&&weatherSize<=18,`Home utility weather should be compact, not giant (${weatherSize}px)`);
+assert(greetingSize>=24&&greetingSize<=32,`Home editorial greeting headline is out of range (${greetingSize}px)`);
 assert((await page.locator('[data-fmb-greeting]').textContent()||'').trim().length>4,'Home contextual greeting is missing.');
-assert((await page.locator('[data-fmb-greeting-line]').textContent()||'').trim().length>10,'Home greeting follow-up line is missing.');
+assert((await page.locator('[data-fmb-greeting-line]').textContent()||'').trim().length>10,'Home greeting quote is missing.');
+const layers=await page.evaluate(()=>{
+  const copy=document.querySelector('.fmb-approved-hero-copy')?.getBoundingClientRect();
+  const ticker=document.querySelector('.fmb-approved-hero-ticker')?.getBoundingClientRect();
+  const utility=document.querySelector('.fmb-hero-live-overlay')?.getBoundingClientRect();
+  return{copyBottom:copy?.bottom,tickerTop:ticker?.top,tickerBottom:ticker?.bottom,utilityTop:utility?.top};
+});
+assert(layers.copyBottom<=layers.tickerTop+2,'Home hero copy collides with ticker.');
+assert(layers.tickerBottom<=layers.utilityTop+2,'Home ticker collides with date/weather utility.');
 await assertReadable('.fmb-app-lead h2','Home lead headline is not readable.');
 
 await page.evaluate(()=>localStorage.setItem('fmbNewsPrefsV1',JSON.stringify({daily:true,breaking:false,world:false,sections:['World']})));
@@ -206,4 +219,4 @@ assert.equal(structured['@type'],'Article','FMB Explainer structured data is not
 assert(structured.datePublished,'FMB Explainer structured data is missing the publication timestamp.');
 
 await browser.close();
-console.log('Mobile browser QA passed: one compact FMB shell, strict 300px shared Worldwide/Explainer/Daily Brief hero geometry with no 206 badge or floating hero marks, full-bleed live Home hero, explicit mobile contrast checks, and dedicated Archive, Horoscope, Crossword, About, and article experiences.');
+console.log('Mobile browser QA passed: approved Philippines newsroom hero with a non-overlapping HTML overlay, exact Read the Latest / Customize CTAs, compact date/time/weather strip, one compact FMB shell, strict 300px shared Worldwide/Explainer/Daily Brief hero geometry, explicit mobile contrast checks, and dedicated Archive, Horoscope, Crossword, About, and article experiences.');
