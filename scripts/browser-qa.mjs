@@ -6,8 +6,6 @@ const browser=await chromium.launch({headless:true});
 const context=await browser.newContext({...devices['iPhone 13'],serviceWorkers:'block'});
 const page=await context.newPage();
 
-// Keep QA deterministic. Local app assets remain available; external weather,
-// auth, analytics and third-party imagery are not required for core UI proof.
 await page.route('https://**/*',route=>route.abort());
 
 async function open(path){
@@ -23,12 +21,14 @@ async function open(path){
   assert.equal(await page.locator('.fmb-mobile-product-rail:visible').count(),1,`${path} must have exactly one visible FMB product rail`);
   const duplicateRails=await page.evaluate(()=>[...document.querySelectorAll('nav')].filter(nav=>{
     if(nav.classList.contains('fmb-mobile-product-rail')||nav.closest('footer'))return false;
-    const style=getComputedStyle(nav);if(style.display==='none'||style.visibility==='hidden')return false;
+    const rect=nav.getBoundingClientRect();
+    if(nav.getClientRects().length===0||rect.width<2||rect.height<2)return false;
+    const style=getComputedStyle(nav);if(style.visibility==='hidden'||style.opacity==='0')return false;
     const hrefs=[...nav.querySelectorAll('a[href]')].map(a=>a.getAttribute('href')||'');
-    const hits=[hrefs.some(h=>/^\/news\/?(?:$|[?#])/.test(h)),hrefs.some(h=>h.startsWith('/news/world')),hrefs.some(h=>h.startsWith('/news/explainer')),hrefs.some(h=>h.startsWith('/news/fmb-brief'))].filter(Boolean).length;
+    const hits=[hrefs.some(h=>/^\/news\/?(?:$|[?#])/.test(h)||h.startsWith('/news/archive')),hrefs.some(h=>h.startsWith('/news/world')),hrefs.some(h=>h.startsWith('/news/explainer')),hrefs.some(h=>h.startsWith('/news/fmb-brief'))].filter(Boolean).length;
     return hits>=3;
   }).length);
-  assert.equal(duplicateRails,0,`${path} exposes a duplicate legacy product navigation`);
+  assert.equal(duplicateRails,0,`${path} exposes a rendered duplicate legacy product navigation`);
   assert.equal(await page.locator('.fmb-global-week-actions:visible').count(),0,`${path} must not expose Horoscope/Crossword as top chrome`);
   const shellBox=await page.locator('.fmb-mobile-app-shell').boundingBox();
   assert(shellBox&&shellBox.height<=112,`${path} mobile chrome is too tall (${shellBox?.height}px)`);
@@ -57,7 +57,6 @@ async function assertReadable(selector,message){
   assert(info.visibility!=='hidden'&&info.opacity>.2&&info.color!=='rgba(0, 0, 0, 0)'&&info.fontSize>=10,message);
 }
 
-// HOME: approved identity assets, readable hero, compact professional context, personalization, and one shell.
 await open('/news/');
 await page.locator('[data-fmb-mobile-home]').waitFor({state:'visible'});
 assert.equal(await page.locator('.network-home').evaluate(el=>getComputedStyle(el).display),'none','Desktop publication home must be hidden on phone view.');
@@ -79,14 +78,12 @@ assert.equal(await culture.isChecked(),true,'Culture preference did not toggle.'
 await page.waitForFunction(()=>JSON.parse(localStorage.getItem('fmbNewsPrefsV1')||'{}').sections?.includes('Culture'),null,{timeout:5000});
 await page.locator('[data-account-close]').last().click();
 
-// ARCHIVE: dedicated newsroom-index treatment.
 await open('/news/archive/');
 assert.equal(await page.locator('body').getAttribute('data-fmb-route'),'archive','Archive route art direction missing.');
 await page.locator('.fmb-archive-signature').waitFor({state:'visible'});
 await assertReadable('.fmb-archive-signature h1','Archive signature is unreadable.');
 assert((await page.locator('.archive-row img').count())>0,'Archive must remain image-led.');
 
-// WORLDWIDE: separate global-desk personality inside the same FMB system.
 await open('/news/world/');
 assert.equal(await page.locator('body').getAttribute('data-fmb-route'),'world','Worldwide route art direction missing.');
 await page.locator('.fmb-world-signal').waitFor({state:'visible'});
@@ -94,7 +91,6 @@ await assertReadable('.world-hero h1','Worldwide headline is unreadable.');
 await assertReadable('.world-hero p','Worldwide deck is unreadable.');
 assert((await page.locator('.country-card').count())>=1,'Worldwide cards missing.');
 
-// EXPLAINER: reference-library treatment and correct product name.
 await open('/news/explainer/');
 assert.equal(await page.locator('body').getAttribute('data-fmb-route'),'explainer','Explainer route art direction missing.');
 await page.locator('.fmb-explainer-mark').waitFor({state:'visible'});
@@ -102,14 +98,12 @@ assert.equal((await page.locator('.explainer-hero h1').textContent())?.trim(),'F
 await assertReadable('.explainer-hero p','Explainer introduction is unreadable.');
 await page.locator('#fmbExplainedSearch').waitFor({state:'visible'});
 
-// DAILY BRIEF: executive briefing treatment with signature mug.
 await open('/news/fmb-brief/');
 assert.equal(await page.locator('body').getAttribute('data-fmb-route'),'brief','Daily Brief route art direction missing.');
 await assertImage('.fmb-brief-signature-visual','Daily Brief signature mug failed to render.');
 await assertReadable('.brief-archive-hero h1','Daily Brief heading is unreadable.');
 assert((await page.locator('.brief-issue').count())>=1,'Daily Brief editions missing.');
 
-// HOROSCOPE: all 12 signs, icons, free-will editorial statement, usable reading.
 await open('/news/horoscope/');
 assert.equal(await page.locator('body').getAttribute('data-fmb-route'),'horoscope','Horoscope route art direction missing.');
 await page.locator('.fmb-horoscope-constellation').waitFor({state:'visible'});
@@ -119,7 +113,6 @@ await page.locator('button[data-sign="Pisces"]').click();
 assert.equal(await page.evaluate(()=>localStorage.getItem('fmbZodiacV1')),'Pisces','Horoscope preference did not persist.');
 assert.equal((await page.locator('[data-horoscope-reading] h2').textContent())?.trim(),'Pisces','Horoscope reading did not update.');
 
-// CROSSWORD: 36-answer current-events desk, playable, no answer reveal controls.
 await open('/news/crossword/');
 assert.equal(await page.locator('body').getAttribute('data-fmb-route'),'crossword','Crossword route art direction missing.');
 await page.locator('.fmb-crossword-count').waitFor({state:'visible'});
@@ -130,13 +123,11 @@ const crosswordText=await page.locator('body').innerText();
 for(const forbidden of ['Reveal Letter','Reveal Word','Reveal Puzzle'])assert(!crosswordText.includes(forbidden),`Crossword exposes forbidden control: ${forbidden}`);
 assert(crosswordText.includes('The complete answer key is released only when the next weekly crossword goes live'),'Weekly crossword answer-release policy missing.');
 
-// ABOUT: institutional manifesto remains visibly part of Filipino Media Bulletin.
 await open('/news/about/');
 assert.equal(await page.locator('body').getAttribute('data-fmb-route'),'about','About route art direction missing.');
 await page.locator('.fmb-about-fmb-mark').waitFor({state:'visible'});
 await assertReadable('.fmb-about-hero h1','About manifesto headline is unreadable.');
 
-// ARTICLE: premium reading room, progress, Save, metadata.
 await open('/news/explainer/leptospirosis-after-flood-resilience-metro-manila/');
 assert.equal(await page.locator('body').getAttribute('data-fmb-route'),'explainer','Explainer article must stay in the Explainer product family.');
 await page.locator('article.article').waitFor({state:'visible'});
@@ -152,4 +143,4 @@ assert.equal(structured['@type'],'NewsArticle','FMB Explainer structured data is
 assert(structured.datePublished,'FMB Explainer structured data is missing the publication timestamp.');
 
 await browser.close();
-console.log('Mobile browser QA passed: one compact premium FMB masthead and product rail, no duplicate legacy navigation, Home-only professional date/weather context, immediate internal product content, and dedicated Home, Archive, Worldwide, Explainer, Daily Brief, Horoscope, Crossword, About, and article experiences.');
+console.log('Mobile browser QA passed: one compact premium FMB masthead and product rail, no rendered duplicate navigation, Home-only professional date/weather context, immediate internal product content, and dedicated Home, Archive, Worldwide, Explainer, Daily Brief, Horoscope, Crossword, About, and article experiences.');
