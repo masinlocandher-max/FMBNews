@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en-PH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>FMB News Mobile App Home Reference</title>
+<meta name="theme-color" content="#2B1235">
+<style>
+/*
+  FMB NEWS MOBILE APP HOME — CODED DESIGN REFERENCE
+  ------------------------------------------------
+  This file is a visual/structural contract for Claude/Codex.
+  It is NOT the production feed and must not ship fictional content.
+  Replace data hooks with live FMB content and keep the visual hierarchy.
+
+  MOBILE ONLY: target <700px. Desktop publication remains separate.
+  NO fixed bottom navigation.
+*/
+:root{
+  --fmb-plum:#2B1235;
+  --fmb-plum-deep:#1A0B20;
+  --fmb-violet:#6E3A8A;
+  --fmb-lilac:#E9DFF0;
+  --fmb-bg:#F5F5F7;
+  --fmb-surface:#FFFFFF;
+  --fmb-ink:#1D1D1F;
+  --fmb-muted:#6E6E73;
+  --fmb-line:#D9D9DF;
+  --fmb-gold:#C9A84D;
+  --fmb-danger:#B4232B;
+  --radius-lg:24px;
+  --radius-md:18px;
+  --radius-sm:14px;
+  --shadow-soft:0 10px 30px rgba(26,11,32,.10);
+  --font-ui:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,Helvetica,Arial,sans-serif;
+  --font-display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Inter,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{background:var(--fmb-plum-deep)}
+body{margin:0;background:var(--fmb-bg);color:var(--fmb-ink);font-family:var(--font-ui);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button,input{font:inherit}
+img{display:block;max-width:100%}
+.app{min-height:100dvh;background:var(--fmb-bg);padding-bottom:28px}
+.shell{width:min(100% - 28px,560px);margin-inline:auto}
+
+/* 1. APP HEADER */
+.app-header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,var(--fmb-plum) 0%,var(--fmb-plum-deep) 100%);color:#fff;padding-top:env(safe-area-inset-top);box-shadow:0 1px 0 rgba(255,255,255,.08)}
+.header-row{min-height:72px;display:flex;align-items:center;gap:12px}
+.brand{display:flex;align-items:center;gap:11px;min-width:0;text-decoration:none}
+.brand-emblem{width:48px;height:48px;object-fit:contain;flex:0 0 auto}
+.brand-copy{min-width:0}
+.brand-title{font-family:var(--font-display);font-size:22px;line-height:1;font-weight:800;letter-spacing:-.035em}
+.brand-subtitle{margin-top:4px;color:#E6C661;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.header-actions{display:flex;align-items:center;gap:6px;margin-left:auto}
+.icon-btn{width:44px;height:44px;border:0;border-radius:14px;background:transparent;color:#fff;display:grid;place-items:center;cursor:pointer}
+.icon-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.icon-btn svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.profile-ring{width:38px;height:38px;border:1.5px solid rgba(201,168,77,.9);border-radius:999px;display:grid;place-items:center}
+.profile-ring svg{width:21px;height:21px}
+
+/* 2. PRODUCT RAIL */
+.product-rail-wrap{border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.10)}
+.product-rail{display:flex;gap:24px;overflow-x:auto;scrollbar-width:none;padding:0 14px;white-space:nowrap}
+.product-rail::-webkit-scrollbar{display:none}
+.product-rail a{position:relative;display:inline-flex;align-items:center;min-height:52px;text-decoration:none;color:rgba(255,255,255,.70);font-size:14px;font-weight:650}
+.product-rail a[aria-current="page"]{color:#F0D67A}
+.product-rail a[aria-current="page"]::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;border-radius:3px 3px 0 0;background:linear-gradient(90deg,#F0D67A,var(--fmb-gold))}
+
+/* 3. LIVE UTILITY STRIP */
+.utility-strip{background:#fff;border-bottom:1px solid var(--fmb-line)}
+.utility-row{min-height:48px;display:flex;align-items:center;gap:10px;overflow-x:auto;scrollbar-width:none}
+.utility-row::-webkit-scrollbar{display:none}
+.utility-chip{display:inline-flex;align-items:center;gap:7px;flex:0 0 auto;min-height:36px;padding:0 10px;border:1px solid #E7E7EB;border-radius:999px;background:#FAFAFB;color:#4D4D52;font-size:12px;font-weight:650}
+.utility-chip.weather{cursor:pointer;background:#F4F0F7;border-color:#E4D9EB;color:var(--fmb-plum)}
+.utility-dot{width:5px;height:5px;border-radius:999px;background:var(--fmb-gold)}
+
+/* MAIN */
+.main{padding-top:22px}
+.greeting-row{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:18px}
+.greeting-copy{min-width:0}
+.eyebrow{color:var(--fmb-violet);font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.greeting{margin:4px 0 2px;font-family:var(--font-display);font-size:30px;line-height:1.03;font-weight:800;letter-spacing:-.045em}
+.greeting-sub{margin:0;color:var(--fmb-muted);font-size:15px}
+.customize{min-height:44px;padding:0 14px;border:1px solid #DED5E4;border-radius:14px;background:#fff;color:var(--fmb-plum);font-size:13px;font-weight:750;box-shadow:0 3px 10px rgba(43,18,53,.05)}
+
+/* 4. HERO */
+.hero{position:relative;overflow:hidden;border-radius:var(--radius-lg);min-height:475px;background:#100714;box-shadow:var(--shadow-soft)}
+.hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,7,18,.02) 28%,rgba(14,7,18,.48) 58%,rgba(14,7,18,.96) 100%)}
+.hero-content{position:absolute;z-index:2;left:20px;right:20px;bottom:20px;color:#fff}
+.hero-kicker{display:inline-flex;align-items:center;gap:7px;color:#F0D67A;font-size:11px;font-weight:850;letter-spacing:.08em;text-transform:uppercase}
+.hero-title{margin:7px 0 8px;font-family:var(--font-display);font-size:34px;line-height:1.02;font-weight:800;letter-spacing:-.045em}
+.hero-deck{margin:0;color:rgba(255,255,255,.82);font-size:15px;line-height:1.48;max-width:34ch}
+.hero-meta{display:flex;align-items:center;gap:8px;margin-top:14px;color:rgba(255,255,255,.68);font-size:11px;font-weight:650}
+.hero-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px}
+.primary-cta{min-height:44px;padding:0 16px;border:1px solid rgba(255,255,255,.26);border-radius:14px;background:rgba(43,18,53,.72);color:#fff;font-size:13px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;gap:10px;backdrop-filter:blur(10px)}
+.save-btn{width:44px;height:44px;border:1px solid rgba(255,255,255,.25);border-radius:14px;background:rgba(0,0,0,.18);color:#fff;display:grid;place-items:center}
+
+/* 5. SECTION HEAD */
+.section{margin-top:26px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:12px}
+.section-head h2{margin:0;font-family:var(--font-display);font-size:25px;line-height:1;font-weight:800;letter-spacing:-.035em}
+.section-head a{color:var(--fmb-violet);font-size:12px;font-weight:800;text-decoration:none}
+
+/* 6. LATEST NEWS */
+.latest-list{overflow:hidden;border:1px solid #E6E6EA;border-radius:var(--radius-md);background:#fff}
+.story{display:grid;grid-template-columns:minmax(0,1fr) 104px;gap:14px;align-items:center;min-height:118px;padding:14px;border-bottom:1px solid #ECECEF;text-decoration:none}
+.story:last-child{border-bottom:0}
+.story-copy{min-width:0}
+.story-category{color:var(--fmb-violet);font-size:10px;font-weight:850;letter-spacing:.04em;text-transform:uppercase}
+.story-title{margin:5px 0 7px;font-family:var(--font-display);font-size:17px;line-height:1.18;font-weight:760;letter-spacing:-.025em}
+.story-meta{color:var(--fmb-muted);font-size:11px}
+.story-image{width:104px;height:88px;object-fit:cover;border-radius:13px;background:#EEE}
+
+/* 7. DAILY BRIEF */
+.brief-card{display:grid;grid-template-columns:116px minmax(0,1fr);gap:16px;overflow:hidden;padding:14px;border:1px solid #55305F;border-radius:22px;background:linear-gradient(135deg,#32103F 0%,#1C0B25 70%);color:#fff;box-shadow:0 12px 30px rgba(43,18,53,.18)}
+.brief-image{width:116px;height:150px;object-fit:cover;border-radius:15px;background:#2A1232}
+.brief-copy{align-self:center;min-width:0}
+.brief-label{color:#E8C65C;font-size:11px;font-weight:850;letter-spacing:.06em;text-transform:uppercase}
+.brief-title{margin:7px 0 8px;font-family:var(--font-display);font-size:23px;line-height:1.08;font-weight:800;letter-spacing:-.035em}
+.brief-text{margin:0;color:rgba(255,255,255,.76);font-size:13px;line-height:1.45}
+.brief-cta{display:inline-flex;align-items:center;min-height:42px;margin-top:13px;padding:0 14px;border-radius:13px;background:#fff;color:var(--fmb-plum);font-size:12px;font-weight:850;text-decoration:none}
+
+/* 8. THIS WEEK */
+.week-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.week-card{min-height:180px;padding:17px;border:1px solid #E5DFE9;border-radius:20px;background:#fff;text-decoration:none;box-shadow:0 4px 16px rgba(26,11,32,.04)}
+.week-icon{width:42px;height:42px;border-radius:14px;background:#F3ECF7;color:var(--fmb-violet);display:grid;place-items:center;font-size:21px;font-weight:800}
+.week-card h3{margin:14px 0 7px;font-family:var(--font-display);font-size:19px;line-height:1.08;font-weight:800;letter-spacing:-.03em}
+.week-card p{margin:0;color:var(--fmb-muted);font-size:12px;line-height:1.45}
+.week-link{display:inline-block;margin-top:14px;color:var(--fmb-violet);font-size:11px;font-weight:850}
+.crossword-preview{display:grid;grid-template-columns:repeat(5,11px);gap:2px;margin-top:12px}
+.crossword-preview span{width:11px;height:11px;border:1px solid #B9B0BE;background:#fff}
+.crossword-preview span.block{background:var(--fmb-plum);border-color:var(--fmb-plum)}
+
+/* 9. BREAKING — hidden unless real breaking data exists */
+.breaking{display:none;margin-top:18px;min-height:52px;align-items:center;gap:10px;padding:10px 13px;border:1px solid #D43B43;border-radius:16px;background:#3D1016;color:#fff}
+.breaking[data-active="true"]{display:flex}
+.breaking-label{flex:0 0 auto;color:#FFB7BA;font-size:10px;font-weight:900;letter-spacing:.05em;text-transform:uppercase}
+.breaking-title{min-width:0;flex:1;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* RESPONSIVE */
+@media (max-width:390px){
+  .brand-subtitle{display:none}
+  .greeting{font-size:27px}
+  .hero{min-height:440px}
+  .hero-title{font-size:31px}
+  .brief-card{grid-template-columns:96px minmax(0,1fr)}
+  .brief-image{width:96px;height:136px}
+  .week-grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="app" data-fmb-mobile-reference>
+  <header class="app-header">
+    <div class="shell header-row">
+      <a class="brand" href="/news/archive/" aria-label="FMB News home">
+        <!-- EXISTING OFFICIAL EMBLEM. DO NOT REDRAW. -->
+        <img class="brand-emblem" src="/news/assets/images/brand/fmb-bulletin-emblem.svg" alt="">
+        <span class="brand-copy">
+          <span class="brand-title">FMB News</span>
+          <span class="brand-subtitle">Filipino Media Bulletin</span>
+        </span>
+      </a>
+      <div class="header-actions">
+        <button class="icon-btn" type="button" aria-label="Search FMB">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m15.5 15.5 4.5 4.5"></path></svg>
+        </button>
+        <button class="icon-btn" type="button" aria-label="Your FMB">
+          <span class="profile-ring"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.2"></circle><path d="M5.5 19c.8-3.6 3-5.4 6.5-5.4s5.7 1.8 6.5 5.4"></path></svg></span>
+        </button>
+      </div>
+    </div>
+    <div class="product-rail-wrap">
+      <nav class="product-rail" aria-label="Filipino Media Bulletin products">
+        <a href="/news/archive/" aria-current="page">FMB News</a>
+        <a href="/news/world/">FMB Worldwide</a>
+        <a href="/news/explainer/">FMB Explainer</a>
+        <a href="/news/fmb-brief/">FMB Daily Brief</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="utility-strip" aria-label="Local date time and weather">
+    <div class="shell utility-row">
+      <span class="utility-chip"><span class="utility-dot"></span><span data-fmb-date>Loading date</span></span>
+      <span class="utility-chip"><span data-fmb-time>Loading time</span></span>
+      <button class="utility-chip weather" type="button" data-fmb-weather>Set local weather</button>
+    </div>
+  </section>
+
+  <main class="main">
+    <div class="shell">
+      <section class="greeting-row" aria-label="Personalized greeting">
+        <div class="greeting-copy">
+          <div class="eyebrow">Your FMB</div>
+          <h1 class="greeting" data-fmb-greeting>Good evening</h1>
+          <p class="greeting-sub">Here’s what matters today.</p>
+        </div>
+        <button class="customize" type="button">Customize</button>
+      </section>
+
+      <!--
+        HERO ASSET CONTRACT:
+        Replace this source with the exact supplied approved FMB global/news collage once committed.
+        Expected production path: /news/assets/images/mobile/fmb-mobile-hero.jpg
+        The story text/link must come from live FMB story data, not the concept mockup.
+      -->
+      <article class="hero" data-fmb-hero>
+        <img class="hero-image" data-fmb-hero-image src="/news/assets/images/mobile/fmb-mobile-hero.jpg" alt="FMB News global coverage collage">
+        <div class="hero-content">
+          <div class="hero-kicker"><span>◆</span><span data-fmb-hero-category>Top Story</span></div>
+          <h2 class="hero-title" data-fmb-hero-title>[LIVE STORY HEADLINE]</h2>
+          <p class="hero-deck" data-fmb-hero-deck>[LIVE STORY DECK]</p>
+          <div class="hero-meta"><span data-fmb-hero-time>[TIME]</span><span>•</span><span data-fmb-hero-readtime>[READ TIME]</span></div>
+          <div class="hero-actions">
+            <a class="primary-cta" data-fmb-hero-link href="/news/archive/">Read story <span>›</span></a>
+            <button class="save-btn" type="button" aria-label="Save story">♡</button>
+          </div>
+        </div>
+      </article>
+
+      <section class="section" aria-labelledby="latest-title">
+        <div class="section-head"><h2 id="latest-title">Latest News</h2><a href="/news/archive/">See all ›</a></div>
+        <!-- Production should render 3–5 LIVE stories. Every visible card MUST have an image. -->
+        <div class="latest-list" data-fmb-latest>
+          <a class="story" href="#" data-story-template>
+            <div class="story-copy"><div class="story-category">[CATEGORY]</div><h3 class="story-title">[LIVE STORY HEADLINE]</h3><div class="story-meta">[TIME] · [READ TIME]</div></div>
+            <img class="story-image" src="/news/assets/images/news/fmb-news-editorial-fallback.svg" alt="">
+          </a>
+          <a class="story" href="#" data-story-template>
+            <div class="story-copy"><div class="story-category">[CATEGORY]</div><h3 class="story-title">[LIVE STORY HEADLINE]</h3><div class="story-meta">[TIME] · [READ TIME]</div></div>
+            <img class="story-image" src="/news/assets/images/news/fmb-news-editorial-fallback.svg" alt="">
+          </a>
+          <a class="story" href="#" data-story-template>
+            <div class="story-copy"><div class="story-category">[CATEGORY]</div><h3 class="story-title">[LIVE STORY HEADLINE]</h3><div class="story-meta">[TIME] · [READ TIME]</div></div>
+            <img class="story-image" src="/news/assets/images/news/fmb-news-editorial-fallback.svg" alt="">
+          </a>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="brief-title">
+        <!--
+          MUG ASSET CONTRACT:
+          Use the exact approved branded coffee-mug image once committed.
+          Expected production path: /news/assets/images/mobile/fmb-daily-brief-mug.jpg
+        -->
+        <article class="brief-card">
+          <img class="brief-image" src="/news/assets/images/mobile/fmb-daily-brief-mug.jpg" alt="FMB Daily Brief coffee mug">
+          <div class="brief-copy">
+            <div class="brief-label">FMB Daily Brief</div>
+            <h2 class="brief-title" id="brief-title">Your 5-minute morning advantage.</h2>
+            <p class="brief-text">Top developments, useful context, and what matters next.</p>
+            <a class="brief-cta" href="/news/fmb-brief/live/">Read today’s brief ›</a>
+          </div>
+        </article>
+      </section>
+
+      <section class="section" aria-labelledby="week-title">
+        <div class="section-head"><h2 id="week-title">This Week</h2></div>
+        <div class="week-grid">
+          <a class="week-card" href="/news/horoscope/">
+            <div class="week-icon" aria-hidden="true">✦</div>
+            <h3>Weekly Horoscope</h3>
+            <p>Choose your sign for a clearly labeled lifestyle/entertainment reading.</p>
+            <span class="week-link">Read your week ›</span>
+          </a>
+          <a class="week-card" href="/news/crossword/">
+            <div class="week-icon" aria-hidden="true">#</div>
+            <h3>Weekly Crossword</h3>
+            <p>One real crossword each week. Save progress and continue anytime.</p>
+            <div class="crossword-preview" aria-label="Crossword grid preview">
+              <span></span><span></span><span class="block"></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span class="block"></span>
+              <span class="block"></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span class="block"></span><span></span><span></span>
+              <span></span><span class="block"></span><span></span><span></span><span></span>
+            </div>
+            <span class="week-link">Play this week’s puzzle ›</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Only activate this when audit_metadata.push_alert === true or equivalent editorial breaking flag. -->
+      <aside class="breaking" data-fmb-breaking data-active="false" aria-live="polite">
+        <span class="breaking-label">Breaking</span>
+        <span class="breaking-title" data-fmb-breaking-title></span>
+        <span>›</span>
+      </aside>
+    </div>
+  </main>
+</div>
+<script>
+/*
+  REFERENCE BEHAVIOR ONLY.
+  Production data should be hydrated from the existing FMB News content pipeline.
+  Expected optional object shape:
+  window.FMB_MOBILE_DATA = {
+    reader: { firstName: "..." },
+    hero: { category, headline, deck, href, image, publishedAt, readTime },
+    latest: [{ category, headline, href, image, publishedAt, readTime }],
+    weather: { label: "29°C · Partly cloudy" },
+    breaking: { active: true, headline, href }
+  }
+*/
+(()=>{
+  const data=window.FMB_MOBILE_DATA||{};
+  const dateNode=document.querySelector('[data-fmb-date]');
+  const timeNode=document.querySelector('[data-fmb-time]');
+  const weatherNode=document.querySelector('[data-fmb-weather]');
+  const greetingNode=document.querySelector('[data-fmb-greeting]');
+
+  function tick(){
+    const now=new Date();
+    if(dateNode)dateNode.textContent=new Intl.DateTimeFormat('en-PH',{weekday:'short',month:'short',day:'numeric'}).format(now);
+    if(timeNode)timeNode.textContent=new Intl.DateTimeFormat('en-PH',{hour:'numeric',minute:'2-digit',hour12:true}).format(now);
+    const hour=now.getHours();
+    const period=hour<12?'Good morning':hour<18?'Good afternoon':'Good evening';
+    const name=data.reader?.firstName?.trim();
+    if(greetingNode)greetingNode.textContent=name?`${period}, ${name}`:period;
+  }
+  tick();setInterval(tick,30000);
+
+  if(weatherNode&&data.weather?.label)weatherNode.textContent=data.weather.label;
+  weatherNode?.addEventListener('click',()=>window.dispatchEvent(new CustomEvent('fmb:open-weather')));
+
+  if(data.hero){
+    const h=data.hero;
+    const set=(s,v)=>{const n=document.querySelector(s);if(n&&v)n.textContent=v};
+    set('[data-fmb-hero-category]',h.category||'Top Story');
+    set('[data-fmb-hero-title]',h.headline);
+    set('[data-fmb-hero-deck]',h.deck);
+    set('[data-fmb-hero-readtime]',h.readTime);
+    const link=document.querySelector('[data-fmb-hero-link]');if(link&&h.href)link.href=h.href;
+    const img=document.querySelector('[data-fmb-hero-image]');if(img&&h.image)img.src=h.image;
+    if(h.publishedAt)set('[data-fmb-hero-time]',new Intl.RelativeTimeFormat('en',{numeric:'auto'}).format(Math.round((new Date(h.publishedAt)-Date.now())/3600000),'hour'));
+  }
+
+  if(Array.isArray(data.latest)&&data.latest.length){
+    const list=document.querySelector('[data-fmb-latest]');
+    if(list){list.innerHTML=data.latest.slice(0,5).map(story=>`<a class="story" href="${story.href||'#'}"><div class="story-copy"><div class="story-category">${story.category||'News'}</div><h3 class="story-title">${story.headline||''}</h3><div class="story-meta">${story.readTime||''}</div></div><img class="story-image" src="${story.image||'/news/assets/images/news/fmb-news-editorial-fallback.svg'}" alt=""></a>`).join('')}
+  }
+
+  const breaking=document.querySelector('[data-fmb-breaking]');
+  if(breaking&&data.breaking?.active){
+    breaking.dataset.active='true';
+    breaking.querySelector('[data-fmb-breaking-title]').textContent=data.breaking.headline||'';
+    if(data.breaking.href)breaking.addEventListener('click',()=>location.href=data.breaking.href);
+  }
+})();
+</script>
+</body>
+</html>
