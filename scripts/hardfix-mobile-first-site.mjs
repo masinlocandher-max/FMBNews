@@ -13,7 +13,7 @@ const mobileProductsCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobil
 const mobilePolishCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-app-polish.css?v=20260902-polish-v2">';
 const mobileLiveHeroCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-home-live-hero.css?v=20260902-live-hero-v2">';
 const mobileContrastCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-contrast-lock.css?v=20260902-contrast-v1">';
-const mobileProductHeroesCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-product-heroes.css?v=20260902-product-heroes-v3">';
+const mobileProductHeroesCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-product-heroes.css?v=20260902-product-heroes-v4">';
 const mobileMenuHolderCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-menu-holder.css?v=20260902-menu-holder-v2">';
 const personalizationJs='<script src="/assets/js/fmb-news-mobile-personalization.js?v=20260901-personal-v2" defer></script>';
 const premiumJs='<script src="/assets/js/fmb-news-mobile-premium.js?v=20260901-premium-v2" defer></script>';
@@ -61,7 +61,7 @@ async function apply(target){
   html=upsertCss(html,'/assets/css/fmb-news-mobile-app-polish.css',mobilePolishCss,'20260902-polish-v2');
   html=upsertCss(html,'/assets/css/fmb-news-mobile-home-live-hero.css',mobileLiveHeroCss,'20260902-live-hero-v2');
   html=upsertCss(html,'/assets/css/fmb-news-mobile-contrast-lock.css',mobileContrastCss,'20260902-contrast-v1');
-  html=upsertCss(html,'/assets/css/fmb-news-mobile-product-heroes.css',mobileProductHeroesCss,'20260902-product-heroes-v3');
+  html=upsertCss(html,'/assets/css/fmb-news-mobile-product-heroes.css',mobileProductHeroesCss,'20260902-product-heroes-v4');
   html=upsertCss(html,'/assets/css/fmb-news-mobile-menu-holder.css',mobileMenuHolderCss,'20260902-menu-holder-v2');
   if(!html.includes('/news/manifest.webmanifest'))html=html.replace('</head>',`${pwaMeta}</head>`);
   html=upsertJs(html,'/assets/js/fmb-news-mobile-personalization.js',personalizationJs,'20260901-personal-v2');
@@ -73,4 +73,4 @@ async function apply(target){
   await writeFile(target,html,'utf8');
 }
 await apply(newsRoot);
-console.log('Applied the unified Filipino Media Bulletin mobile system with one masthead, one compact premium dark product menu holder, proportional full-bleed Home hero, strict shared Worldwide/Explainer/Daily Brief hero geometry, final contrast lock, immediate internal product content, and no legacy duplicate navigation.');
+console.log('Applied the unified Filipino Media Bulletin mobile system with one masthead, one compact premium dark product menu holder, proportional full-bleed Home hero, strict shared Worldwide/Explainer/Daily Brief hero geometry with final Daily Brief specificity, final contrast lock, immediate internal product content, and no legacy duplicate navigation.');
