@@ -1,105 +1,36 @@
 (()=>{
   if(!matchMedia('(max-width:699px)').matches)return;
   document.documentElement.setAttribute('data-fmb-global-mobile','true');
-  const $=(q,s=document)=>s.querySelector(q);
-  const $$=(q,s=document)=>[...s.querySelectorAll(q)];
-  const WEATHER_KEY='fmbWeatherV1';
-  const SAVED_KEY='fmbSavedStoriesV1';
-  const PREF_KEY='fmbNewsPrefsV1';
-  const INTEREST_KEY='fmbNewsInterestV1';
+  const $=(q,s=document)=>s.querySelector(q),$$=(q,s=document)=>[...s.querySelectorAll(q)];
+  const WEATHER_KEY='fmbWeatherV1',SAVED_KEY='fmbSavedStoriesV1';
   const weatherLabels={0:['Clear','☀'],1:['Mostly clear','☀'],2:['Partly cloudy','◐'],3:['Cloudy','☁'],45:['Fog','≋'],48:['Fog','≋'],51:['Drizzle','☂'],53:['Drizzle','☂'],55:['Drizzle','☂'],61:['Rain','☂'],63:['Rain','☂'],65:['Heavy rain','☂'],71:['Snow','❄'],73:['Snow','❄'],75:['Snow','❄'],80:['Showers','☂'],81:['Showers','☂'],82:['Heavy showers','☂'],95:['Thunderstorm','ϟ'],96:['Thunderstorm','ϟ'],99:['Thunderstorm','ϟ']};
-  const jget=(k,d=null)=>{try{return JSON.parse(localStorage.getItem(k)||JSON.stringify(d))}catch{return d}};
-  const jset=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
-  const normalize=v=>(v||'').toLowerCase().replace(/\s+/g,' ').trim();
+  const jget=(k,d=null)=>{try{return JSON.parse(localStorage.getItem(k)||JSON.stringify(d))}catch{return d}},jset=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
 
-  function productForPath(){
-    const p=location.pathname.replace(/\/+$/,'')||'/news';
-    if(p.startsWith('/news/world'))return{key:'world',label:'FMB Worldwide'};
-    if(p.startsWith('/news/explainer'))return{key:'explainer',label:'FMB Explainer'};
-    if(p.startsWith('/news/fmb-brief'))return{key:'brief',label:'FMB Daily Brief'};
-    return{key:'news',label:'FMB News'};
-  }
+  function productForPath(){const p=location.pathname.replace(/\/+$/,'')||'/news';if(p.startsWith('/news/world'))return{key:'world',label:'FMB Worldwide'};if(p.startsWith('/news/explainer'))return{key:'explainer',label:'FMB Explainer'};if(p.startsWith('/news/fmb-brief'))return{key:'brief',label:'FMB Daily Brief'};return{key:'news',label:'FMB News'}}
 
   function ensureShell(){
-    let shell=$('.fmb-mobile-app-shell');if(shell)return shell;
-    const product=productForPath();
-    const isHome=location.pathname.replace(/\/+$/,'')==='/news';
-    shell=document.createElement('div');
+    if($('.fmb-mobile-app-shell'))return $('.fmb-mobile-app-shell');
+    const product=productForPath(),isHome=location.pathname.replace(/\/+$/,'')==='/news',shell=document.createElement('div');
     shell.className=`fmb-mobile-app-shell${isHome?' is-home':''}`;
-    shell.dataset.fmbMobileShell='';
     shell.innerHTML=`<div class="fmb-mobile-shell-head"><a class="fmb-mobile-shell-brand" href="/news/" aria-label="${product.label} — Filipino Media Bulletin"><img src="/news/assets/images/brand/fmb-bulletin-emblem.svg" alt=""><span class="fmb-mobile-shell-copy"><strong>${product.label}</strong><small>Filipino Media Bulletin</small></span></a><div class="fmb-mobile-shell-actions"><a href="/news/archive/" aria-label="Search FMB News"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg></a><button type="button" data-fmb-shell-account aria-label="Your FMB"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.2"></circle><path d="M5.8 19c.8-3.4 3-5.2 6.2-5.2s5.4 1.8 6.2 5.2"></path></svg></button></div></div><nav class="fmb-mobile-product-rail" aria-label="FMB products"><a href="/news/" data-product="news">FMB News</a><a href="/news/world/" data-product="world">FMB Worldwide</a><a href="/news/explainer/" data-product="explainer">FMB Explainer</a><a href="/news/fmb-brief/" data-product="brief">FMB Daily Brief</a></nav><section class="fmb-global-mobile-utility" data-fmb-global-utility aria-label="FMB mobile utilities"><div class="fmb-app-clock"><strong data-fmb-local-date>Today</strong><span data-fmb-local-time>--:--</span></div><button class="fmb-app-weather" type="button" data-fmb-weather-button aria-label="Set local weather"><span data-fmb-weather-icon aria-hidden="true">○</span><span data-fmb-weather>Set local weather</span></button><nav class="fmb-global-week-actions" aria-label="FMB weekly features"><a href="/news/horoscope/">Horoscope</a><a href="/news/crossword/">Crossword</a></nav></section>`;
-    const active=$(`[data-product="${product.key}"]`,shell);if(active)active.setAttribute('aria-current','page');
-    document.body.prepend(shell);
-    setTimeout(()=>active?.scrollIntoView({behavior:'auto',block:'nearest',inline:'center'}),0);
-    $('[data-fmb-shell-account]',shell)?.addEventListener('click',()=>{
-      const target=document.querySelector('[data-fmb-account],.fmb-account-button,[data-account]');
-      if(target&&target!==event?.currentTarget)target.click();
-    });
+    const active=$(`[data-product="${product.key}"]`,shell);active?.setAttribute('aria-current','page');document.body.prepend(shell);setTimeout(()=>active?.scrollIntoView({block:'nearest',inline:'center'}),0);
+    $('[data-fmb-shell-account]',shell)?.addEventListener('click',()=>{const target=document.querySelector('[data-fmb-account],.fmb-account-button,[data-account]');if(target)target.click()});
     return shell;
   }
 
-  function tick(){
-    const n=new Date();
-    const date=new Intl.DateTimeFormat(undefined,{weekday:'short',month:'short',day:'numeric'}).format(n);
-    const time=new Intl.DateTimeFormat(undefined,{hour:'numeric',minute:'2-digit'}).format(n);
-    $$('[data-fmb-local-date]').forEach(el=>el.textContent=date);
-    $$('[data-fmb-local-time]').forEach(el=>el.textContent=time);
-    $$('[data-fmb-greeting]').forEach(el=>{const h=n.getHours();el.textContent=h<12?'Good morning':h<18?'Good afternoon':'Good evening'});
-  }
+  function tick(){const n=new Date(),date=new Intl.DateTimeFormat(undefined,{weekday:'short',month:'short',day:'numeric'}).format(n),time=new Intl.DateTimeFormat(undefined,{hour:'numeric',minute:'2-digit'}).format(n);$$('[data-fmb-local-date]').forEach(el=>el.textContent=date);$$('[data-fmb-local-time]').forEach(el=>el.textContent=time);$$('[data-fmb-greeting]').forEach(el=>{const h=n.getHours();el.textContent=h<12?'Good morning':h<18?'Good afternoon':'Good evening'})}
 
-  function renderWeather(data){
-    if(!data)return;
-    const label=weatherLabels[Number(data.code)]||['Weather','○'];
-    const stale=Date.now()-Number(data.savedAt||0)>30*60*1000;
-    $$('[data-fmb-weather-icon]').forEach(el=>el.textContent=label[1]);
-    $$('[data-fmb-weather]').forEach(el=>el.textContent=`${Math.round(data.temp)}° · ${data.city||label[0]}${stale?' · cached':''}`);
-  }
+  function renderWeather(data){if(!data)return;const label=weatherLabels[Number(data.code)]||['Weather','○'],stale=Date.now()-Number(data.savedAt||0)>30*60*1000;$$('[data-fmb-weather-icon]').forEach(el=>el.textContent=label[1]);$$('[data-fmb-weather]').forEach(el=>el.textContent=`${Math.round(data.temp)}° · ${data.city||label[0]}${stale?' · cached':''}`)}
 
-  async function fetchWeather(lat,lon,city){
-    const u=new URL('https://api.open-meteo.com/v1/forecast');
-    u.searchParams.set('latitude',lat);u.searchParams.set('longitude',lon);u.searchParams.set('current','temperature_2m,weather_code');u.searchParams.set('timezone','auto');
-    const r=await fetch(u);if(!r.ok)throw new Error('Weather is unavailable right now.');
-    const d=await r.json();const data={temp:d.current?.temperature_2m,code:d.current?.weather_code,city:city||'Local weather',savedAt:Date.now()};jset(WEATHER_KEY,data);renderWeather(data);return data;
-  }
-
-  async function geocode(city){
-    const u=new URL('https://geocoding-api.open-meteo.com/v1/search');u.searchParams.set('name',city);u.searchParams.set('count','1');u.searchParams.set('language','en');u.searchParams.set('format','json');
-    const r=await fetch(u);if(!r.ok)throw new Error('Could not find that city.');const d=await r.json(),hit=d.results?.[0];if(!hit)throw new Error('Could not find that city.');return hit;
-  }
+  async function fetchWeather(lat,lon,city){const u=new URL('https://api.open-meteo.com/v1/forecast');u.searchParams.set('latitude',lat);u.searchParams.set('longitude',lon);u.searchParams.set('current','temperature_2m,weather_code');u.searchParams.set('timezone','auto');const r=await fetch(u);if(!r.ok)throw new Error('Weather is unavailable right now.');const d=await r.json(),data={temp:d.current?.temperature_2m,code:d.current?.weather_code,city:city||'Local weather',savedAt:Date.now()};jset(WEATHER_KEY,data);renderWeather(data)}
+  async function geocode(city){const u=new URL('https://geocoding-api.open-meteo.com/v1/search');u.searchParams.set('name',city);u.searchParams.set('count','1');u.searchParams.set('language','en');u.searchParams.set('format','json');const r=await fetch(u);if(!r.ok)throw new Error('Could not find that city.');const d=await r.json(),hit=d.results?.[0];if(!hit)throw new Error('Could not find that city.');return hit}
 
   function weatherSheet(){
-    $('.fmb-weather-sheet')?.remove();const el=document.createElement('div');el.className='fmb-weather-sheet';
-    el.innerHTML='<section class="fmb-weather-panel" role="dialog" aria-modal="true" aria-labelledby="fmb-weather-title"><h2 id="fmb-weather-title">Local weather</h2><p>Location is requested only after you choose it. You can also enter a city manually.</p><div class="fmb-weather-actions"><button type="button" data-use-location>Use Current Location</button><button type="button" class="secondary" data-close-weather>Not now</button></div><form class="fmb-weather-manual"><input type="text" autocomplete="address-level2" placeholder="City, e.g. Masinloc" aria-label="City"><button type="submit">Set</button></form><div class="fmb-weather-status" role="status" aria-live="polite"></div></section>';
-    document.body.append(el);const status=$('.fmb-weather-status',el);$('[data-close-weather]',el).onclick=()=>el.remove();el.addEventListener('click',e=>{if(e.target===el)el.remove()});
-    $('[data-use-location]',el).onclick=()=>{if(!navigator.geolocation){status.textContent='Location is not supported on this device.';return}status.textContent='Getting your location…';navigator.geolocation.getCurrentPosition(async pos=>{try{await fetchWeather(pos.coords.latitude,pos.coords.longitude,'Near you');el.remove()}catch(err){status.textContent=err.message}},()=>{status.textContent='Location was not shared. Enter a city instead.'},{enableHighAccuracy:false,timeout:10000,maximumAge:30*60*1000})};
-    $('.fmb-weather-manual',el).onsubmit=async e=>{e.preventDefault();const city=$('input',e.currentTarget).value.trim();if(!city)return;status.textContent='Finding weather…';try{const hit=await geocode(city);await fetchWeather(hit.latitude,hit.longitude,hit.name);el.remove()}catch(err){status.textContent=err.message}};
+    $('.fmb-weather-sheet')?.remove();const el=document.createElement('div');el.className='fmb-weather-sheet';el.innerHTML='<section class="fmb-weather-panel" role="dialog" aria-modal="true" aria-labelledby="fmb-weather-title"><h2 id="fmb-weather-title">Local weather</h2><p>Location is requested only after you choose it. You can also enter a city manually.</p><div class="fmb-weather-actions"><button type="button" data-use-location>Use Current Location</button><button type="button" class="secondary" data-close-weather>Not now</button></div><form class="fmb-weather-manual"><input type="text" autocomplete="address-level2" placeholder="City, e.g. Masinloc" aria-label="City"><button type="submit">Set</button></form><div class="fmb-weather-status" role="status" aria-live="polite"></div></section>';document.body.append(el);
+    const status=$('.fmb-weather-status',el);$('[data-close-weather]',el).onclick=()=>el.remove();el.addEventListener('click',e=>{if(e.target===el)el.remove()});$('[data-use-location]',el).onclick=()=>{if(!navigator.geolocation){status.textContent='Location is not supported on this device.';return}status.textContent='Getting your location…';navigator.geolocation.getCurrentPosition(async p=>{try{await fetchWeather(p.coords.latitude,p.coords.longitude,'Near you');el.remove()}catch(err){status.textContent=err.message}},()=>status.textContent='Location was not shared. Enter a city instead.',{enableHighAccuracy:false,timeout:10000,maximumAge:1800000})};$('.fmb-weather-manual',el).onsubmit=async e=>{e.preventDefault();const city=$('input',e.currentTarget).value.trim();if(!city)return;status.textContent='Finding weather…';try{const hit=await geocode(city);await fetchWeather(hit.latitude,hit.longitude,hit.name);el.remove()}catch(err){status.textContent=err.message}};
   }
 
-  function rankMobileHome(){
-    const list=$('.fmb-app-story-list');if(!list)return;
-    const prefs=jget(PREF_KEY,{})||{};const sections=(Array.isArray(prefs.sections)?prefs.sections:[]).map(normalize).filter(Boolean);const interest=jget(INTEREST_KEY,{})||{};const rows=$$('.fmb-app-story-row',list);if(!rows.length)return;
-    rows.map((row,index)=>{const category=normalize($('.fmb-app-story-meta span:first-child',row)?.textContent||'');let score=-index;for(const section of sections)if(category.includes(section)||section.includes(category))score+=100;for(const [key,value] of Object.entries(interest))if(category.includes(normalize(key)))score+=Number(value||0)*8;return{row,score,index}}).sort((a,b)=>b.score-a.score||a.index-b.index).forEach(item=>list.append(item.row));
-    list.dataset.fmbPersonalized=(sections.length||Object.keys(interest).length)?'true':'false';
-  }
+  function addReaderActions(){const article=$('.article,.cms-article,article.article');if(!article||$('.fmb-mobile-reader-actions'))return;const title=$('h1',article)?.textContent?.trim()||document.title.replace(/\s*\|.*$/,''),toolbar=document.createElement('div');toolbar.className='fmb-mobile-reader-actions';toolbar.innerHTML='<button type="button" data-fmb-reader-back aria-label="Go back">← Back</button><span></span><button type="button" data-fmb-reader-save>Save</button><button type="button" data-fmb-reader-share>Share</button>';article.prepend(toolbar);$('[data-fmb-reader-back]',toolbar).onclick=()=>history.length>1?history.back():location.assign('/news/');const save=$('[data-fmb-reader-save]',toolbar),saved=jget(SAVED_KEY,[]),current=()=>saved.some(x=>x.path===location.pathname),sync=()=>{save.textContent=current()?'Saved':'Save';save.setAttribute('aria-pressed',String(current()))};sync();save.onclick=()=>{const i=saved.findIndex(x=>x.path===location.pathname);if(i>=0)saved.splice(i,1);else saved.unshift({path:location.pathname,title,savedAt:Date.now()});jset(SAVED_KEY,saved.slice(0,100));sync()};$('[data-fmb-reader-share]',toolbar).onclick=async()=>{try{if(navigator.share)await navigator.share({title,url:location.href});else{await navigator.clipboard.writeText(location.href);const b=$('[data-fmb-reader-share]',toolbar);b.textContent='Copied';setTimeout(()=>b.textContent='Share',1200)}}catch{}}}
 
-  function trackMobileInterest(event){
-    const row=event.target.closest('.fmb-app-story-row');if(!row)return;const category=normalize($('.fmb-app-story-meta span:first-child',row)?.textContent||'');if(!category)return;const interest=jget(INTEREST_KEY,{})||{};interest[category]=Math.min(20,Number(interest[category]||0)+1);jset(INTEREST_KEY,interest);
-  }
-
-  function addReaderActions(){
-    const article=$('.article,.cms-article,article.article');if(!article||$('.fmb-mobile-reader-actions'))return;
-    const title=$('h1',article)?.textContent?.trim()||document.title.replace(/\s*\|.*$/,'');const toolbar=document.createElement('div');toolbar.className='fmb-mobile-reader-actions';toolbar.innerHTML='<button type="button" data-fmb-reader-back aria-label="Go back">← Back</button><span></span><button type="button" data-fmb-reader-save>Save</button><button type="button" data-fmb-reader-share>Share</button>';article.prepend(toolbar);
-    $('[data-fmb-reader-back]',toolbar).onclick=()=>{if(history.length>1)history.back();else location.href='/news/'};
-    const save=$('[data-fmb-reader-save]',toolbar);const saved=jget(SAVED_KEY,[]);const current=()=>saved.some(x=>x.path===location.pathname);const sync=()=>{save.textContent=current()?'Saved':'Save';save.setAttribute('aria-pressed',String(current()))};sync();
-    save.onclick=()=>{const i=saved.findIndex(x=>x.path===location.pathname);if(i>=0)saved.splice(i,1);else saved.unshift({path:location.pathname,title,savedAt:Date.now()});jset(SAVED_KEY,saved.slice(0,100));sync()};
-    $('[data-fmb-reader-share]',toolbar).onclick=async()=>{try{if(navigator.share)await navigator.share({title,url:location.href});else{await navigator.clipboard.writeText(location.href);const b=$('[data-fmb-reader-share]',toolbar);b.textContent='Copied';setTimeout(()=>b.textContent='Share',1200)}}catch{}};
-  }
-
-  ensureShell();tick();setInterval(tick,30000);renderWeather(jget(WEATHER_KEY,null));
-  $$('[data-fmb-weather-button]').forEach(btn=>{if(!btn.dataset.fmbWeatherBound){btn.dataset.fmbWeatherBound='1';btn.addEventListener('click',weatherSheet)}});
-  $('[data-fmb-customize]')?.addEventListener('click',()=>document.querySelector('[data-fmb-account],.fmb-account-button,[data-account]')?.click());
-  document.addEventListener('click',trackMobileInterest,true);
-  document.addEventListener('change',e=>{if(e.target.matches?.('[data-pref],[data-section]'))setTimeout(rankMobileHome,0)},true);
-  window.addEventListener('storage',e=>{if(e.key===PREF_KEY||e.key===INTEREST_KEY)rankMobileHome()});
-  rankMobileHome();addReaderActions();
+  ensureShell();tick();setInterval(tick,30000);renderWeather(jget(WEATHER_KEY,null));$$('[data-fmb-weather-button]').forEach(btn=>{if(!btn.dataset.fmbWeatherBound){btn.dataset.fmbWeatherBound='1';btn.addEventListener('click',weatherSheet)}});$('[data-fmb-customize]')?.addEventListener('click',()=>document.querySelector('[data-fmb-account],.fmb-account-button,[data-account]')?.click());addReaderActions();
 })();
