@@ -1,4 +1,4 @@
-import { readFile, readdir, stat, writeFile } from 'node:fs/promises';
+import { readFile, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -21,11 +21,18 @@ const js=[
 ['/assets/js/fmb-news-mobile-products.js','20260902-products-v3'],
 ['/assets/js/fmb-news-mobile-app-polish.js','20260902-polish-v2']
 ];
+const utilityHeader='<header class="mast"><div class="shell"><a href="/news/" aria-label="FMB News"><span class="product-name">News</span></a><nav aria-label="Filipino Media Bulletin"><a href="/news/world/">FMB Worldwide</a><a href="/news/explainer/">FMB Explainer</a><a href="/news/fmb-brief/">FMB Daily Brief</a><a href="/news/about/">About</a></nav></div></header>';
+const utilityFooter='<footer class="footer"><div class="shell"><div class="footer-publication-title">Filipino Media Bulletin</div><p>Information with Purpose.</p><nav><a href="/news/world/">FMB Worldwide</a><a href="/news/explainer/">FMB Explainer</a><a href="/news/fmb-brief/">FMB Daily Brief</a></nav></div></footer>';
 for(const file of await walk(newsRoot)){
  let html=await readFile(file,'utf8');
+ const rel=path.relative(newsRoot,file).replaceAll('\\','/');
  for(const [p,v] of css)if(!html.includes(p))html=html.replace('</head>',`<link rel="stylesheet" href="${p}?v=${v}"></head>`);
  for(const [p,v] of js)if(!html.includes(p))html=html.replace('</body>',`<script src="${p}?v=${v}" defer></script></body>`);
- if(path.relative(newsRoot,file).replaceAll('\\','/')==='index.html')html=html.replace(/<p class="fmb-approved-hero-kicker">FILIPINO MEDIA BULLETIN<\/p><h1>What matters right now\.<\/h1>/i,'<p data-fmb-greeting>FILIPINO MEDIA BULLETIN</p><h1 data-fmb-greeting-line>What matters right now.</h1>');
+ if(rel==='index.html')html=html.replace(/<p class="fmb-approved-hero-kicker">FILIPINO MEDIA BULLETIN<\/p><h1>What matters right now\.<\/h1>/i,'<p data-fmb-greeting>FILIPINO MEDIA BULLETIN</p><h1 data-fmb-greeting-line>What matters right now.</h1>');
+ if(rel==='search/index.html'||rel==='submit/index.html'){
+   html=html.replace(/<body>/i,'<body class="fmb-news-route fmb-ref">'+utilityHeader);
+   if(!html.includes('footer-publication-title'))html=html.replace('</body>',utilityFooter+'</body>');
+ }
  await writeFile(file,html,'utf8');
 }
 
@@ -36,4 +43,4 @@ source=source.replace(/new Intl\.DateTimeFormat\(undefined,\{month:'short',day:'
   .replace(/new Intl\.DateTimeFormat\(undefined,\{weekday:'short'\}\)/g,"new Intl.DateTimeFormat('en-PH',{timeZone:'Asia/Manila',weekday:'short'})")
   .replace(/new Intl\.DateTimeFormat\(undefined,\{hour:'numeric',minute:'2-digit'\}\)/g,"new Intl.DateTimeFormat('en-PH',{timeZone:'Asia/Manila',hour:'numeric',minute:'2-digit',hour12:true})");
 await writeFile(homeJs,source,'utf8');
-console.log('Preserved FMB mobile QA contracts while locking restrained homepage copy and Philippine Standard Time.');
+console.log('Preserved FMB mobile QA contracts while locking restrained homepage copy, Philippine Standard Time, and newsroom utility-route product identity.');
