@@ -2,7 +2,7 @@
 @media(max-width:699px){
 :root{--fmb-hero-plum:#17091f;--fmb-hero-plum-2:#32133f;--fmb-hero-gold:#d6bd72}
 
-/* EXPLORE / EXPLAINER — same FMB cinematic hero language, knowledge-led copy. */
+/* EXPLAINER — same FMB cinematic hero language, knowledge-led copy. */
 body.fmb-mobile-route-explainer .explainer-hero{
   position:relative!important;
   overflow:hidden!important;
@@ -16,19 +16,6 @@ body.fmb-mobile-route-explainer .explainer-hero{
     linear-gradient(0deg,rgba(14,5,19,.62),rgba(14,5,19,.06) 58%),
     url('/news/assets/images/mobile/fmb-mobile-hero.jpg') center 48%/cover no-repeat!important;
   color:#fff!important;
-}
-body.fmb-mobile-route-explainer .explainer-hero::after{
-  content:"";
-  position:absolute;
-  right:18px;
-  top:24px;
-  width:112px;
-  height:112px;
-  z-index:1;
-  background:url('/news/assets/images/brand/fmb-bulletin-emblem.svg') center/contain no-repeat;
-  opacity:.92;
-  filter:drop-shadow(0 10px 24px rgba(0,0,0,.28));
-  pointer-events:none;
 }
 body.fmb-mobile-route-explainer .explainer-hero .shell{
   position:relative!important;
@@ -113,19 +100,6 @@ body.fmb-mobile-route-brief .brief-archive-hero{
     url('/news/assets/images/mobile/fmb-mobile-hero.jpg') center 48%/cover no-repeat!important;
   color:#fff!important;
 }
-body.fmb-mobile-route-brief .brief-archive-hero::after{
-  content:"";
-  position:absolute;
-  right:18px;
-  top:24px;
-  width:112px;
-  height:112px;
-  z-index:1;
-  background:url('/news/assets/images/brand/fmb-bulletin-emblem.svg') center/contain no-repeat;
-  opacity:.92;
-  filter:drop-shadow(0 10px 24px rgba(0,0,0,.28));
-  pointer-events:none;
-}
 body.fmb-mobile-route-brief .brief-archive-hero .brief-shell,
 body.fmb-mobile-route-brief .brief-archive-hero .shell{
   position:relative!important;
@@ -192,8 +166,6 @@ body.fmb-mobile-route-brief .fmb-brief-signature-visual{
   body.fmb-mobile-route-explainer .explainer-hero .shell,
   body.fmb-mobile-route-brief .brief-archive-hero .brief-shell,
   body.fmb-mobile-route-brief .brief-archive-hero .shell{min-height:238px!important;padding:20px 15px 21px!important}
-  body.fmb-mobile-route-explainer .explainer-hero::after,
-  body.fmb-mobile-route-brief .brief-archive-hero::after{right:14px;top:20px;width:100px;height:100px}
   body.fmb-mobile-route-explainer .explainer-hero h1,
   body.fmb-mobile-route-brief .brief-archive-hero h1{font-size:37px!important}
   body.fmb-mobile-route-explainer .explainer-hero p,
