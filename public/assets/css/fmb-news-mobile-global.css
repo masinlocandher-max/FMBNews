@@ -1,10 +1,80 @@
-/* Global FMB mobile app layer. Applies to every /news/* route below 700px. */
+/* Global FMB mobile app shell. This is the final visual authority below 700px. */
 @media(max-width:699px){
-.fmb-global-mobile-utility{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"clock weather" "week week";align-items:center;gap:6px 12px;padding:10px 14px 8px;border-bottom:1px solid #e2e2e7;background:rgba(255,255,255,.97);color:#1d1d1f;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,Helvetica,Arial,sans-serif;box-shadow:0 1px 0 rgba(26,11,32,.03)}
-.fmb-global-mobile-utility .fmb-app-clock{grid-area:clock;display:flex;min-width:0;flex-direction:column;gap:1px}.fmb-global-mobile-utility .fmb-app-clock strong{font-size:12px;line-height:1.2;font-weight:800}.fmb-global-mobile-utility .fmb-app-clock span{color:#6e6e73;font-size:11px;font-variant-numeric:tabular-nums}
-.fmb-global-mobile-utility .fmb-app-weather{grid-area:weather;display:flex;align-items:center;justify-content:flex-end;gap:6px;min-height:44px;max-width:180px;padding:0;border:0;background:transparent;color:#6e3a8a;font-size:11px;font-weight:800;text-align:right}.fmb-global-mobile-utility .fmb-app-weather [data-fmb-weather-icon]{display:grid;place-items:center;width:28px;height:28px;flex:0 0 28px;border-radius:50%;background:#e9dff0;color:#2b1235}
-.fmb-global-week-actions{grid-area:week;display:flex;align-items:center;gap:18px;min-height:34px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}.fmb-global-week-actions::-webkit-scrollbar{display:none}.fmb-global-week-actions a{color:#6e3a8a!important;font-size:11px!important;font-weight:800!important;text-decoration:none!important}.fmb-global-week-actions a::before{display:inline-block;margin-right:5px;color:#c9a84d}.fmb-global-week-actions a[href="/news/horoscope/"]::before{content:"✦"}.fmb-global-week-actions a[href="/news/crossword/"]::before{content:"▦"}
-.fmb-mobile-reader-actions{display:grid;grid-template-columns:auto 1fr auto auto;gap:7px;align-items:center;margin:-4px 0 14px;padding:8px 0;border-bottom:1px solid #e2e2e7;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,Helvetica,Arial,sans-serif}.fmb-mobile-reader-actions button{min-height:40px;padding:0 10px;border:1px solid #e2e2e7;border-radius:12px;background:#fff;color:#2b1235;font-size:12px;font-weight:800}.fmb-mobile-reader-actions button[data-fmb-reader-back]{padding-left:4px;border-color:transparent;background:transparent}.fmb-mobile-reader-actions button[aria-pressed="true"]{border-color:#2b1235;background:#2b1235;color:#fff}
+:root{--fmb-shell-plum:#2b1235;--fmb-shell-deep:#16081d;--fmb-shell-violet:#6e3a8a;--fmb-shell-lilac:#eee5f3;--fmb-shell-gold:#c9a84d;--fmb-shell-bg:#f5f5f7;--fmb-shell-ink:#1d1d1f;--fmb-shell-muted:#6e6e73;--fmb-shell-line:#e2e2e7}
+html,body{overflow-x:hidden!important}
+body.fmb-mobile-first{background:var(--fmb-shell-bg)!important}
+
+/* Remove every legacy route header on mobile. One app shell replaces them. */
+body.fmb-mobile-first>.top-wire,
+body.fmb-mobile-first>header,
+body.fmb-mobile-first>.mast,
+body.fmb-mobile-first>.masthead,
+body.fmb-mobile-first>.publication-mast,
+body.fmb-mobile-first>.brief-network,
+body.fmb-mobile-first>.nc-site-header,
+body.fmb-mobile-first>.section-rail,
+body.fmb-mobile-first>.brief-edition-bar,
+body.fmb-mobile-first>.headline-ticker{display:none!important}
+
+.fmb-mobile-app-shell{display:block!important;width:100%;margin:0!important;background:#fff;color:var(--fmb-shell-ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,Helvetica,Arial,sans-serif;border:0;box-shadow:0 1px 0 rgba(26,11,32,.05);position:relative;z-index:800}
+.fmb-mobile-shell-head{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;min-height:72px;padding:10px 14px;background:linear-gradient(180deg,var(--fmb-shell-plum) 0%,var(--fmb-shell-deep) 100%);color:#fff}
+.fmb-mobile-shell-brand{display:flex;align-items:center;min-width:0;gap:10px;color:#fff!important;text-decoration:none!important}
+.fmb-mobile-shell-brand img{display:block;width:38px;height:38px;flex:0 0 38px;object-fit:contain}
+.fmb-mobile-shell-copy{min-width:0;display:block}
+.fmb-mobile-shell-copy strong{display:block;overflow:hidden;color:#fff!important;font-size:19px;line-height:1.05;font-weight:800;letter-spacing:-.035em;text-overflow:ellipsis;white-space:nowrap}
+.fmb-mobile-shell-copy small{display:block;margin-top:3px;color:rgba(255,255,255,.62)!important;font-size:9px;line-height:1;font-weight:650;letter-spacing:.035em;white-space:nowrap}
+.fmb-mobile-shell-actions{display:flex;align-items:center;gap:3px}
+.fmb-mobile-shell-actions a,.fmb-mobile-shell-actions button{display:grid!important;place-items:center!important;width:44px!important;height:44px!important;min-width:44px!important;min-height:44px!important;padding:0!important;border:0!important;border-radius:50%!important;background:transparent!important;color:#fff!important;text-decoration:none!important;box-shadow:none!important}
+.fmb-mobile-shell-actions svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+
+.fmb-mobile-product-rail{display:flex!important;align-items:stretch!important;gap:14px!important;width:100%!important;min-height:48px!important;margin:0!important;padding:0 14px!important;overflow-x:auto!important;overflow-y:hidden!important;background:#fff!important;border-bottom:1px solid var(--fmb-shell-line)!important;white-space:nowrap!important;scrollbar-width:none!important;scroll-snap-type:x proximity}
+.fmb-mobile-product-rail::-webkit-scrollbar{display:none}
+.fmb-mobile-product-rail a{position:relative;display:inline-flex!important;align-items:center!important;justify-content:center!important;flex:0 0 auto!important;min-height:48px!important;padding:0!important;color:#77747a!important;font-size:12px!important;line-height:1!important;font-weight:720!important;letter-spacing:-.015em!important;text-decoration:none!important;text-transform:none!important;scroll-snap-align:center}
+.fmb-mobile-product-rail a[aria-current="page"]{color:var(--fmb-shell-plum)!important;font-weight:850!important}
+.fmb-mobile-product-rail a[aria-current="page"]::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;border-radius:2px;background:var(--fmb-shell-violet)}
+
+.fmb-global-mobile-utility{display:grid!important;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"clock weather" "week week";align-items:center;gap:4px 12px;padding:10px 14px 8px;border-bottom:1px solid var(--fmb-shell-line);background:#fff;color:var(--fmb-shell-ink);box-shadow:none}
+.fmb-global-mobile-utility .fmb-app-clock{grid-area:clock;display:flex;min-width:0;flex-direction:column;gap:1px}.fmb-global-mobile-utility .fmb-app-clock strong{font-size:12px;line-height:1.2;font-weight:800}.fmb-global-mobile-utility .fmb-app-clock span{color:var(--fmb-shell-muted);font-size:11px;font-variant-numeric:tabular-nums}
+.fmb-global-mobile-utility .fmb-app-weather{grid-area:weather;display:flex;align-items:center;justify-content:flex-end;gap:6px;min-height:40px;max-width:190px;padding:0;border:0;background:transparent;color:var(--fmb-shell-violet);font-size:11px;font-weight:800;text-align:right}.fmb-global-mobile-utility .fmb-app-weather [data-fmb-weather-icon]{display:grid;place-items:center;width:28px;height:28px;flex:0 0 28px;border-radius:50%;background:var(--fmb-shell-lilac);color:var(--fmb-shell-plum)}
+.fmb-global-week-actions{grid-area:week;display:flex;align-items:center;gap:18px;min-height:30px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}.fmb-global-week-actions::-webkit-scrollbar{display:none}.fmb-global-week-actions a{color:var(--fmb-shell-violet)!important;font-size:11px!important;font-weight:800!important;text-decoration:none!important}.fmb-global-week-actions a::before{display:inline-block;margin-right:5px;color:var(--fmb-shell-gold)}.fmb-global-week-actions a[href="/news/horoscope/"]::before{content:"✦"}.fmb-global-week-actions a[href="/news/crossword/"]::before{content:"▦"}
+.fmb-mobile-app-shell.is-home .fmb-global-week-actions{display:none!important}.fmb-mobile-app-shell.is-home .fmb-global-mobile-utility{grid-template-areas:"clock weather";padding-bottom:10px}
+
+/* The dedicated home already has its own utility block. Remove the duplicate. */
+body.fmb-mobile-first .fmb-mobile-app-home>.fmb-app-utility{display:none!important}
+body.fmb-mobile-first.fmb-network-landing .fmb-mobile-app-home{padding-top:0!important}
+
+/* Fix the dark-on-dark text visible in the supplied iPhone screenshots. */
+body.fmb-mobile-first .fmb-mobile-app-home .fmb-app-lead h2{color:#fff!important;text-shadow:0 1px 12px rgba(0,0,0,.28)!important}
+body.fmb-mobile-first .fmb-mobile-app-home .fmb-app-lead p{color:rgba(255,255,255,.88)!important}
+body.fmb-mobile-first .fmb-mobile-app-home .fmb-app-lead-shade{background:linear-gradient(180deg,rgba(10,5,13,.01) 28%,rgba(12,6,16,.24) 52%,rgba(13,6,18,.96) 100%)!important}
+body.fmb-mobile-first .fmb-mobile-app-home .fmb-app-brief-copy h2,
+body.fmb-mobile-first .fmb-mobile-app-home .fmb-app-week-card.horoscope h3{color:#fff!important}
+body.fmb-mobile-first .fmb-mobile-app-home .fmb-app-brief-copy p{color:rgba(255,255,255,.82)!important}
+body.fmb-mobile-first .fmb-mobile-app-home .fmb-app-week-card.horoscope p{color:rgba(255,255,255,.76)!important}
+
+/* Daily Brief archive: remove the giant unreadable purple block and restore a clean editorial hierarchy. */
+body.fmb-mobile-first.brief-route .brief-archive-hero{margin:0!important;padding:24px 0 18px!important;border-bottom:1px solid var(--fmb-shell-line)!important;background:#fff!important;color:var(--fmb-shell-ink)!important}
+body.fmb-mobile-first.brief-route .brief-archive-hero h1{margin:0!important;color:var(--fmb-shell-ink)!important;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Inter,Helvetica,Arial,sans-serif!important;font-size:34px!important;line-height:1!important;font-weight:850!important;letter-spacing:-.045em!important}
+body.fmb-mobile-first.brief-route .brief-archive-hero p{margin:10px 0 0!important;color:#56535a!important;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,Helvetica,Arial,sans-serif!important;font-size:14px!important;line-height:1.5!important}
+body.fmb-mobile-first.brief-route .brief-issues{padding:10px 0 48px!important;background:var(--fmb-shell-bg)!important}
+body.fmb-mobile-first.brief-route .brief-issue-list{gap:10px!important;border-top:0!important}
+body.fmb-mobile-first.brief-route .brief-issue{display:grid!important;grid-template-columns:minmax(0,1fr) 92px!important;grid-template-rows:auto auto!important;gap:6px 12px!important;align-items:center!important;padding:14px!important;border:0!important;border-radius:18px!important;background:#fff!important;color:var(--fmb-shell-ink)!important;text-decoration:none!important}
+body.fmb-mobile-first.brief-route .brief-issue time{grid-column:1!important;grid-row:1!important;color:var(--fmb-shell-violet)!important;font-size:10px!important;font-weight:850!important;letter-spacing:.05em!important}
+body.fmb-mobile-first.brief-route .brief-issue>div{grid-column:1!important;grid-row:2!important;min-width:0!important}
+body.fmb-mobile-first.brief-route .brief-issue h2{display:-webkit-box!important;overflow:hidden!important;margin:0!important;color:var(--fmb-shell-ink)!important;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Inter,Helvetica,Arial,sans-serif!important;font-size:18px!important;line-height:1.17!important;font-weight:780!important;letter-spacing:-.025em!important;-webkit-box-orient:vertical!important;-webkit-line-clamp:3!important}
+body.fmb-mobile-first.brief-route .brief-issue p{display:none!important}
+body.fmb-mobile-first.brief-route .brief-issue img{display:block!important;grid-column:2!important;grid-row:1/3!important;width:92px!important;height:76px!important;object-fit:cover!important;border-radius:12px!important}
+body.fmb-mobile-first.brief-route .brief-method{padding:28px 0 44px!important}
+
+/* Product pages should begin cleanly after the shared shell. */
+body.fmb-mobile-first main{margin-top:0!important}
+body.fmb-mobile-first .world-hero{margin-top:0!important}
+
+/* Consistent mobile article controls. */
+.fmb-mobile-reader-actions{display:grid;grid-template-columns:auto 1fr auto auto;gap:7px;align-items:center;margin:-4px 0 14px;padding:8px 0;border-bottom:1px solid var(--fmb-shell-line);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,Helvetica,Arial,sans-serif}.fmb-mobile-reader-actions button{min-height:40px;padding:0 10px;border:1px solid var(--fmb-shell-line);border-radius:12px;background:#fff;color:var(--fmb-shell-plum);font-size:12px;font-weight:800}.fmb-mobile-reader-actions button[data-fmb-reader-back]{padding-left:4px;border-color:transparent;background:transparent}.fmb-mobile-reader-actions button[aria-pressed="true"]{border-color:var(--fmb-shell-plum);background:var(--fmb-shell-plum);color:#fff}
 body.fmb-mobile-first .fmb-feature-shell{padding-top:14px!important}.fmb-feature-page .fmb-feature-back{margin-bottom:8px!important}
+
+/* No legacy low navigation. */
+body.fmb-mobile-first .nc-mobile-dock,body.fmb-mobile-first .fmb-app-dock,body.fmb-mobile-first .mobile-bottom-nav,body.fmb-mobile-first .bottom-nav,body.fmb-mobile-first nav[aria-label="Mobile news navigation"]{display:none!important}
 }
-@media(min-width:700px){.fmb-global-mobile-utility,.fmb-mobile-reader-actions{display:none!important}}
+@media(min-width:700px){.fmb-mobile-app-shell,.fmb-global-mobile-utility,.fmb-mobile-reader-actions{display:none!important}}
