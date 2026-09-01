@@ -5,9 +5,12 @@
   const $$=(q,s=document)=>[...s.querySelectorAll(q)];
   const WEATHER_KEY='fmbWeatherV1';
   const SAVED_KEY='fmbSavedStoriesV1';
+  const PREF_KEY='fmbNewsPrefsV1';
+  const INTEREST_KEY='fmbNewsInterestV1';
   const weatherLabels={0:['Clear','☀'],1:['Mostly clear','☀'],2:['Partly cloudy','◐'],3:['Cloudy','☁'],45:['Fog','≋'],48:['Fog','≋'],51:['Drizzle','☂'],53:['Drizzle','☂'],55:['Drizzle','☂'],61:['Rain','☂'],63:['Rain','☂'],65:['Heavy rain','☂'],71:['Snow','❄'],73:['Snow','❄'],75:['Snow','❄'],80:['Showers','☂'],81:['Showers','☂'],82:['Heavy showers','☂'],95:['Thunderstorm','ϟ'],96:['Thunderstorm','ϟ'],99:['Thunderstorm','ϟ']};
   const jget=(k,d=null)=>{try{return JSON.parse(localStorage.getItem(k)||JSON.stringify(d))}catch{return d}};
   const jset=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
+  const normalize=v=>(v||'').toLowerCase().replace(/\s+/g,' ').trim();
 
   function ensureUtility(){
     const home=$('[data-fmb-mobile-home]');
@@ -64,6 +67,35 @@
     $('.fmb-weather-manual',el).onsubmit=async e=>{e.preventDefault();const city=$('input',e.currentTarget).value.trim();if(!city)return;status.textContent='Finding weather…';try{const hit=await geocode(city);await fetchWeather(hit.latitude,hit.longitude,hit.name);el.remove()}catch(err){status.textContent=err.message}};
   }
 
+  function rankMobileHome(){
+    const list=$('.fmb-app-story-list');
+    if(!list)return;
+    const prefs=jget(PREF_KEY,{})||{};
+    const sections=(Array.isArray(prefs.sections)?prefs.sections:[]).map(normalize).filter(Boolean);
+    const interest=jget(INTEREST_KEY,{})||{};
+    const rows=$$('.fmb-app-story-row',list);
+    if(!rows.length)return;
+    const ranked=rows.map((row,index)=>{
+      const category=normalize($('.fmb-app-story-meta span:first-child',row)?.textContent||'');
+      let score=-index;
+      for(const section of sections)if(category.includes(section)||section.includes(category))score+=100;
+      for(const [key,value] of Object.entries(interest))if(category.includes(normalize(key)))score+=Number(value||0)*8;
+      return{row,score,index};
+    }).sort((a,b)=>b.score-a.score||a.index-b.index);
+    ranked.forEach(item=>list.append(item.row));
+    list.dataset.fmbPersonalized=(sections.length||Object.keys(interest).length)?'true':'false';
+  }
+
+  function trackMobileInterest(event){
+    const row=event.target.closest('.fmb-app-story-row');
+    if(!row)return;
+    const category=normalize($('.fmb-app-story-meta span:first-child',row)?.textContent||'');
+    if(!category)return;
+    const interest=jget(INTEREST_KEY,{})||{};
+    interest[category]=Math.min(20,Number(interest[category]||0)+1);
+    jset(INTEREST_KEY,interest);
+  }
+
   function addReaderActions(){
     const article=$('.article,.cms-article,article.article');if(!article||$('.fmb-mobile-reader-actions'))return;
     const title=$('h1',article)?.textContent?.trim()||document.title.replace(/\s*\|.*$/,'');
@@ -79,5 +111,9 @@
   ensureUtility();tick();setInterval(tick,30000);renderWeather(jget(WEATHER_KEY,null));
   $$('[data-fmb-weather-button]').forEach(btn=>{if(!btn.dataset.fmbWeatherBound){btn.dataset.fmbWeatherBound='1';btn.addEventListener('click',weatherSheet)}});
   $('[data-fmb-customize]')?.addEventListener('click',()=>document.querySelector('[data-fmb-account]')?.click());
+  document.addEventListener('click',trackMobileInterest,true);
+  document.addEventListener('change',e=>{if(e.target.matches?.('[data-pref],[data-section]'))setTimeout(rankMobileHome,0)},true);
+  window.addEventListener('storage',e=>{if(e.key===PREF_KEY||e.key===INTEREST_KEY)rankMobileHome()});
+  rankMobileHome();
   addReaderActions();
 })();
