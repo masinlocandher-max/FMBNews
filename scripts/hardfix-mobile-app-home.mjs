@@ -6,8 +6,8 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const page=path.join(root,'dist','news','index.html');
 const contentRoot=path.join(root,'content','news','articles');
 const fallback='/assets/images/news/fmb-news-editorial-fallback.svg';
-const approvedHero='https://drive.google.com/thumbnail?id=1BFsbaXgrFqyBuD4R2ummFR87FUSxACq1&sz=w1600';
-const approvedMug='https://drive.google.com/thumbnail?id=1KUeapU5-UNZocnOPWRze220hlm5BYg_h&sz=w1200';
+const approvedHero='/assets/images/mobile/fmb-mobile-hero.jpg';
+const approvedMug='/assets/images/mobile/fmb-daily-brief-mug.jpg';
 
 const esc=(v='')=>String(v).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
 const fmtTime=iso=>{try{return new Intl.DateTimeFormat('en-PH',{timeZone:'Asia/Manila',hour:'numeric',minute:'2-digit',hour12:true}).format(new Date(iso))+' PHT'}catch{return''}};
@@ -22,10 +22,11 @@ function breakingStory(ss){return ss.find(s=>s?.audit?.push_alert===true||s?.pus
 const ss=await stories();
 if(!ss.length)throw new Error('Cannot build FMB mobile app home without published stories.');
 const lead=ss[0],latest=ss.slice(1,6),breaking=breakingStory(ss);
-const leadSource=imageFor(lead);
-const leadHero=leadSource===fallback?approvedHero:leadSource;
-const mobileHome=`<div class="fmb-mobile-app-home" data-fmb-mobile-home data-fmb-brand-fallback="${esc(approvedHero)}">
+const mobileHome=`<div class="fmb-mobile-app-home" data-fmb-mobile-home>
   ${breaking?`<a class="fmb-app-breaking" href="/news/${esc(breaking.slug)}/"><strong>BREAKING</strong><span>${esc(breaking.headline)}</span><b aria-hidden="true">›</b></a>`:''}
+  <section class="fmb-app-brand-hero" aria-label="FMB News">
+    <img src="${approvedHero}" alt="FMB News global newsroom collage with the official gold shell emblem" fetchpriority="high" data-fmb-approved-hero>
+  </section>
   <section class="fmb-app-utility" aria-label="Local information">
     <div class="fmb-app-clock"><strong data-fmb-local-date>Today</strong><span data-fmb-local-time>--:--</span></div>
     <button class="fmb-app-weather" type="button" data-fmb-weather-button aria-label="Set local weather"><span data-fmb-weather-icon aria-hidden="true">○</span><span data-fmb-weather>Set local weather</span></button>
@@ -34,7 +35,7 @@ const mobileHome=`<div class="fmb-mobile-app-home" data-fmb-mobile-home data-fmb
     <div><p data-fmb-greeting>Good day</p><h1>For You</h1></div><button type="button" data-fmb-customize>Customize</button>
   </section>
   <section class="fmb-app-lead" aria-label="Lead story">
-    <a href="/news/${esc(lead.slug)}/" class="fmb-app-lead-media"><img src="${esc(leadHero)}" alt="${esc(lead.image?.alt||lead.headline)}" fetchpriority="high" data-fmb-lead-story-image><span class="fmb-app-lead-shade" aria-hidden="true"></span><div class="fmb-app-lead-copy">${meta(lead)}<h2>${esc(lead.headline)}</h2><p>${esc(lead.deck||lead.seoDescription||'')}</p><span class="fmb-app-read">Read story <b aria-hidden="true">›</b></span></div></a>
+    <a href="/news/${esc(lead.slug)}/" class="fmb-app-lead-media"><img src="${esc(imageFor(lead))}" alt="${esc(lead.image?.alt||lead.headline)}" fetchpriority="high" data-fmb-lead-story-image><span class="fmb-app-lead-shade" aria-hidden="true"></span><div class="fmb-app-lead-copy">${meta(lead)}<h2>${esc(lead.headline)}</h2><p>${esc(lead.deck||lead.seoDescription||'')}</p><span class="fmb-app-read">Read story <b aria-hidden="true">›</b></span></div></a>
   </section>
   <section class="fmb-app-section" aria-labelledby="fmb-app-latest-title">
     <div class="fmb-app-section-head"><h2 id="fmb-app-latest-title">Latest News</h2><a href="/news/archive/">View all</a></div>
@@ -47,8 +48,8 @@ const mobileHome=`<div class="fmb-mobile-app-home" data-fmb-mobile-home data-fmb
   <section class="fmb-app-section fmb-app-week" aria-labelledby="fmb-app-week-title">
     <div class="fmb-app-section-head"><h2 id="fmb-app-week-title">This Week</h2></div>
     <div class="fmb-app-week-grid">
-      <a class="fmb-app-week-card horoscope" href="/news/horoscope/"><span class="fmb-app-week-art" aria-hidden="true">☾</span><span class="fmb-app-week-kicker">Lifestyle · Entertainment</span><h3>Weekly Horoscope</h3><p>A reflective outlook for all 12 zodiac signs.</p><b>Read this week ›</b></a>
-      <a class="fmb-app-week-card crossword" href="/news/crossword/"><span class="fmb-mini-grid" aria-hidden="true"><i></i><i></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i><i class="on"></i><i></i></span><span class="fmb-app-week-kicker">Weekly Mini</span><h3>FMB Crossword</h3><p>Six connected clues built around news and media.</p><b>Play now ›</b></a>
+      <a class="fmb-app-week-card horoscope" href="/news/horoscope/"><span class="fmb-app-week-art" aria-hidden="true">☾</span><span class="fmb-app-week-kicker">Lifestyle · Entertainment</span><h3>Weekly Horoscope</h3><p>All 12 zodiac signs, with free will kept front and center.</p><b>Read this week ›</b></a>
+      <a class="fmb-app-week-card crossword" href="/news/crossword/"><span class="fmb-mini-grid" aria-hidden="true"><i></i><i></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i><i class="on"></i><i></i></span><span class="fmb-app-week-kicker">Weekly Current Events</span><h3>FMB Crossword</h3><p>35+ clues drawn from the week’s verified news cycle.</p><b>Play now ›</b></a>
     </div>
   </section>
 </div>`;
@@ -57,4 +58,4 @@ let html=await readFile(page,'utf8');
 html=html.replace(/<div class="fmb-mobile-app-home"[\s\S]*?<\/div>\s*(?=<main class="network-home")/i,'');
 if(!html.includes('data-fmb-mobile-home'))html=html.replace('<main class="network-home">',`${mobileHome}<main class="network-home">`);
 await writeFile(page,html,'utf8');
-console.log(`Injected FMB mobile app home using ${Math.min(ss.length,6)} live published stories${breaking?' with a real breaking strip':''}.`);
+console.log(`Injected FMB mobile app home using the localized approved hero and mug plus ${Math.min(ss.length,6)} live published stories${breaking?' with a real breaking strip':''}.`);
