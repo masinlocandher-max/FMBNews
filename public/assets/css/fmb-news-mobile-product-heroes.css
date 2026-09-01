@@ -1,174 +1,176 @@
-/* FMB product hero system: shared cinematic grammar for premium mobile landings. */
+/* Strict FMB product hero system for Worldwide, Explainer, and Daily Brief. */
 @media(max-width:699px){
-:root{--fmb-hero-plum:#17091f;--fmb-hero-plum-2:#32133f;--fmb-hero-gold:#d6bd72}
+:root{--fmb-hero-plum:#17091f;--fmb-hero-plum-2:#32133f;--fmb-hero-gold:#d6bd72;--fmb-hero-violet:#9a6bb7}
 
-/* EXPLAINER — same FMB cinematic hero language, knowledge-led copy. */
-body.fmb-mobile-route-explainer .explainer-hero{
-  position:relative!important;
-  overflow:hidden!important;
-  min-height:252px!important;
-  margin:0!important;
-  padding:0!important;
-  border:0!important;
-  border-radius:0!important;
-  background:
-    linear-gradient(90deg,rgba(17,6,23,.96) 0%,rgba(23,8,30,.86) 42%,rgba(23,8,30,.42) 72%,rgba(23,8,30,.30) 100%),
-    linear-gradient(0deg,rgba(14,5,19,.62),rgba(14,5,19,.06) 58%),
-    url('/news/assets/images/mobile/fmb-mobile-hero.jpg') center 48%/cover no-repeat!important;
-  color:#fff!important;
-}
-body.fmb-mobile-route-explainer .explainer-hero .shell{
-  position:relative!important;
-  z-index:2!important;
-  display:flex!important;
-  min-height:252px!important;
-  flex-direction:column!important;
-  justify-content:flex-end!important;
-  width:100%!important;
-  margin:0!important;
-  padding:24px 18px 24px!important;
-}
-body.fmb-mobile-route-explainer .fmb-explainer-mark{
-  display:flex!important;
-  align-items:center!important;
-  gap:8px!important;
-  margin:0 0 auto!important;
-  padding-top:2px!important;
-}
-body.fmb-mobile-route-explainer .fmb-explainer-mark span{
-  display:block!important;
-  width:auto!important;
-  height:auto!important;
-  padding:0!important;
-  border-radius:0!important;
-  background:transparent!important;
-  box-shadow:none!important;
-  color:var(--fmb-hero-gold)!important;
-  font-size:27px!important;
-  line-height:.9!important;
-  font-weight:900!important;
-  letter-spacing:-.055em!important;
-}
-body.fmb-mobile-route-explainer .fmb-explainer-mark small{
-  color:rgba(255,255,255,.72)!important;
-  font-size:8px!important;
-  line-height:1.12!important;
-  font-weight:850!important;
-  letter-spacing:.11em!important;
-}
-body.fmb-mobile-route-explainer .explainer-kicker{
-  margin-top:28px!important;
-  color:#e7d5ed!important;
-  font-size:9px!important;
-  line-height:1!important;
-  font-weight:850!important;
-  letter-spacing:.14em!important;
-  text-transform:uppercase!important;
-}
-body.fmb-mobile-route-explainer .explainer-hero h1{
-  max-width:290px!important;
-  margin:7px 0 9px!important;
-  color:#fff!important;
-  font-size:40px!important;
-  line-height:.93!important;
-  font-weight:870!important;
-  letter-spacing:-.055em!important;
-  text-shadow:0 3px 20px rgba(0,0,0,.30)!important;
-}
-body.fmb-mobile-route-explainer .explainer-hero p{
-  max-width:300px!important;
-  margin:0!important;
-  color:rgba(255,255,255,.82)!important;
-  font-size:12.5px!important;
-  line-height:1.46!important;
-  text-shadow:0 2px 14px rgba(0,0,0,.26)!important;
-}
-
-/* DAILY BRIEF — same cinematic grammar, executive/morning ritual personality. */
-body.fmb-mobile-route-brief .brief-edition-bar{display:none!important}
+/* One exact hero canvas. */
+body.fmb-mobile-route-world .world-hero,
+body.fmb-mobile-route-explainer .explainer-hero,
 body.fmb-mobile-route-brief .brief-archive-hero{
   position:relative!important;
   overflow:hidden!important;
-  min-height:252px!important;
+  min-height:300px!important;
   margin:0!important;
   padding:0!important;
   border:0!important;
   border-radius:0!important;
   background:
-    linear-gradient(90deg,rgba(16,5,22,.96) 0%,rgba(29,10,37,.86) 46%,rgba(29,10,37,.34) 100%),
-    linear-gradient(0deg,rgba(14,5,19,.66),rgba(14,5,19,.08) 60%),
-    url('/news/assets/images/mobile/fmb-mobile-hero.jpg') center 48%/cover no-repeat!important;
+    radial-gradient(circle at 88% 8%,rgba(214,189,114,.18),transparent 22%),
+    radial-gradient(circle at 8% 100%,rgba(110,58,138,.36),transparent 40%),
+    linear-gradient(145deg,#16081d 0%,#2f123d 55%,#16081d 100%)!important;
   color:#fff!important;
 }
+body.fmb-mobile-route-world .world-hero::after,
+body.fmb-mobile-route-explainer .explainer-hero::after,
+body.fmb-mobile-route-brief .brief-archive-hero::after{
+  content:"";
+  position:absolute!important;
+  right:-72px!important;
+  top:-52px!important;
+  width:232px!important;
+  height:232px!important;
+  border:1px solid rgba(255,255,255,.08)!important;
+  border-radius:50%!important;
+  box-shadow:0 0 0 28px rgba(255,255,255,.025),0 0 0 58px rgba(255,255,255,.015)!important;
+  pointer-events:none!important;
+}
+
+/* One exact inner grid. */
+body.fmb-mobile-route-world .world-hero .shell,
+body.fmb-mobile-route-explainer .explainer-hero .shell,
 body.fmb-mobile-route-brief .brief-archive-hero .brief-shell,
 body.fmb-mobile-route-brief .brief-archive-hero .shell{
   position:relative!important;
   z-index:2!important;
   display:flex!important;
-  min-height:252px!important;
+  min-height:300px!important;
   flex-direction:column!important;
   justify-content:flex-end!important;
   width:100%!important;
   margin:0!important;
-  padding:24px 18px 24px!important;
+  padding:28px 22px 26px!important;
 }
-body.fmb-mobile-route-brief .brief-archive-hero .brief-shell::before,
-body.fmb-mobile-route-brief .brief-archive-hero .shell::before{
-  content:"FMB DAILY BRIEF · EXECUTIVE EDITION";
-  display:block;
-  margin:0 0 auto;
-  padding-top:2px;
-  color:var(--fmb-hero-gold);
-  font-size:9px;
-  line-height:1;
-  font-weight:900;
-  letter-spacing:.13em;
-}
-body.fmb-mobile-route-brief .brief-archive-hero h1{
-  max-width:280px!important;
-  margin:0 0 9px!important;
+
+/* Same top desk signal on all three products. */
+.fmb-product-signal{
+  display:flex!important;
+  align-items:center!important;
+  gap:10px!important;
+  margin:0 0 auto!important;
   color:#fff!important;
-  font-size:40px!important;
-  line-height:.93!important;
-  font-weight:870!important;
-  letter-spacing:-.055em!important;
-  text-shadow:0 3px 20px rgba(0,0,0,.30)!important;
 }
+.fmb-product-signal>div{min-width:0!important}
+.fmb-product-signal strong{
+  display:block!important;
+  color:#f1dfaa!important;
+  font-size:10px!important;
+  line-height:1!important;
+  font-weight:900!important;
+  letter-spacing:.16em!important;
+}
+.fmb-product-signal small{
+  display:block!important;
+  margin-top:4px!important;
+  color:rgba(255,255,255,.62)!important;
+  font-size:9px!important;
+  line-height:1.2!important;
+  font-weight:650!important;
+}
+.fmb-product-symbol{
+  position:relative!important;
+  display:block!important;
+  width:34px!important;
+  height:34px!important;
+  flex:0 0 34px!important;
+  border:1px solid rgba(235,216,164,.70)!important;
+  border-radius:50%!important;
+}
+.fmb-world-symbol::before,.fmb-world-symbol::after{
+  content:"";position:absolute;left:50%;top:50%;border:1px solid rgba(235,216,164,.45);border-radius:50%;transform:translate(-50%,-50%)
+}
+.fmb-world-symbol::before{width:14px;height:30px}.fmb-world-symbol::after{width:30px;height:12px}
+.fmb-explainer-symbol::before{content:"";position:absolute;left:9px;right:9px;top:9px;height:2px;background:#eadcae;box-shadow:0 7px 0 #eadcae,0 14px 0 #eadcae}
+.fmb-brief-symbol::before{content:"";position:absolute;left:8px;right:8px;top:8px;bottom:8px;border:1px solid #eadcae;border-radius:4px}
+.fmb-brief-symbol::after{content:"";position:absolute;left:12px;right:12px;top:13px;height:1px;background:#eadcae;box-shadow:0 5px 0 #eadcae}
+
+/* Remove old product-specific floating marks. */
+body.fmb-mobile-route-explainer .fmb-explainer-mark,
+body.fmb-mobile-route-brief .fmb-brief-signature-visual{display:none!important}
+body.fmb-mobile-route-brief .brief-edition-bar{display:none!important}
+body.fmb-mobile-route-brief .brief-archive-hero .brief-shell::before,
+body.fmb-mobile-route-brief .brief-archive-hero .shell::before{content:none!important;display:none!important}
+
+/* Same kicker. */
+body.fmb-mobile-route-world .world-kicker,
+body.fmb-mobile-route-explainer .explainer-kicker,
+body.fmb-mobile-route-brief .brief-kicker{
+  margin:24px 0 0!important;
+  color:#d8c2e4!important;
+  font-size:9px!important;
+  line-height:1!important;
+  font-weight:850!important;
+  letter-spacing:.16em!important;
+  text-transform:uppercase!important;
+}
+
+/* Same title. */
+body.fmb-mobile-route-world .world-hero h1,
+body.fmb-mobile-route-explainer .explainer-hero h1,
+body.fmb-mobile-route-brief .brief-archive-hero h1{
+  max-width:330px!important;
+  margin:8px 0 14px!important;
+  color:#fff!important;
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Inter,Helvetica,Arial,sans-serif!important;
+  font-size:46px!important;
+  line-height:.90!important;
+  font-weight:880!important;
+  letter-spacing:-.06em!important;
+  text-shadow:0 3px 20px rgba(0,0,0,.28)!important;
+}
+
+/* Same supporting copy. */
+body.fmb-mobile-route-world .world-hero p,
+body.fmb-mobile-route-explainer .explainer-hero p,
 body.fmb-mobile-route-brief .brief-archive-hero p{
-  max-width:300px!important;
+  max-width:330px!important;
   margin:0!important;
   color:rgba(255,255,255,.82)!important;
-  font-size:12.5px!important;
-  line-height:1.46!important;
-  text-shadow:0 2px 14px rgba(0,0,0,.26)!important;
+  font-size:14px!important;
+  line-height:1.56!important;
+  text-shadow:none!important;
 }
-body.fmb-mobile-route-brief .fmb-brief-signature-visual{
-  position:absolute!important;
-  right:-8px!important;
-  bottom:-2px!important;
-  z-index:1!important;
-  width:138px!important;
-  height:138px!important;
-  min-height:0!important;
-  object-fit:cover!important;
-  object-position:center!important;
-  border-radius:50%!important;
-  opacity:.36!important;
-  filter:saturate(.92) contrast(1.05)!important;
-  mask-image:radial-gradient(circle at center,#000 48%,transparent 74%)!important;
-  -webkit-mask-image:radial-gradient(circle at center,#000 48%,transparent 74%)!important;
-  pointer-events:none!important;
+
+/* Same bottom capsule. */
+body.fmb-mobile-route-world .world-rule,
+body.fmb-mobile-route-explainer .explainer-rule,
+body.fmb-mobile-route-brief .brief-rule{
+  display:inline-flex!important;
+  align-self:flex-start!important;
+  margin-top:18px!important;
+  padding:8px 10px!important;
+  border:1px solid rgba(255,255,255,.16)!important;
+  border-radius:999px!important;
+  background:rgba(255,255,255,.05)!important;
+  color:#f0e9f4!important;
+  font-size:8px!important;
+  line-height:1.2!important;
+  font-weight:800!important;
+  letter-spacing:.08em!important;
+  text-transform:uppercase!important;
 }
 
 @media(max-width:380px){
+  body.fmb-mobile-route-world .world-hero,
   body.fmb-mobile-route-explainer .explainer-hero,
-  body.fmb-mobile-route-brief .brief-archive-hero{min-height:238px!important}
+  body.fmb-mobile-route-brief .brief-archive-hero{min-height:282px!important}
+  body.fmb-mobile-route-world .world-hero .shell,
   body.fmb-mobile-route-explainer .explainer-hero .shell,
   body.fmb-mobile-route-brief .brief-archive-hero .brief-shell,
-  body.fmb-mobile-route-brief .brief-archive-hero .shell{min-height:238px!important;padding:20px 15px 21px!important}
+  body.fmb-mobile-route-brief .brief-archive-hero .shell{min-height:282px!important;padding:24px 18px 23px!important}
+  body.fmb-mobile-route-world .world-hero h1,
   body.fmb-mobile-route-explainer .explainer-hero h1,
-  body.fmb-mobile-route-brief .brief-archive-hero h1{font-size:37px!important}
+  body.fmb-mobile-route-brief .brief-archive-hero h1{font-size:42px!important}
+  body.fmb-mobile-route-world .world-hero p,
   body.fmb-mobile-route-explainer .explainer-hero p,
-  body.fmb-mobile-route-brief .brief-archive-hero p{max-width:278px!important}
+  body.fmb-mobile-route-brief .brief-archive-hero p{font-size:13px!important}
 }
 }
