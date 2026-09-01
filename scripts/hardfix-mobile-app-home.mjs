@@ -24,7 +24,7 @@ if(!ss.length)throw new Error('Cannot build FMB mobile app home without publishe
 const lead=ss[0],latest=ss.slice(1,6),breaking=breakingStory(ss);
 const leadSource=imageFor(lead);
 const leadHero=leadSource===fallback?approvedHero:leadSource;
-const mobileHome=`<div class="fmb-mobile-app-home" data-fmb-mobile-home>
+const mobileHome=`<div class="fmb-mobile-app-home" data-fmb-mobile-home data-fmb-brand-fallback="${esc(approvedHero)}">
   ${breaking?`<a class="fmb-app-breaking" href="/news/${esc(breaking.slug)}/"><strong>BREAKING</strong><span>${esc(breaking.headline)}</span><b aria-hidden="true">›</b></a>`:''}
   <section class="fmb-app-utility" aria-label="Local information">
     <div class="fmb-app-clock"><strong data-fmb-local-date>Today</strong><span data-fmb-local-time>--:--</span></div>
