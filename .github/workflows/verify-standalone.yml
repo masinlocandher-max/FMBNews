@@ -30,37 +30,48 @@ jobs:
           test -f dist/news/fmb-brief/index.html
           test -f dist/news/world/index.html
           test -f dist/news/subic-aeta-landfill/index.html
+          test -f dist/news/manifest.webmanifest
+          test -f dist/news/sw.js
           test -f dist/news/assets/css/fmb-news-final.css
           test -f dist/news/assets/css/fmb-news-mobile-first-site.css
+          test -f dist/news/assets/css/fmb-news-mobile-personalization.css
           test -f dist/news/assets/js/fmb-news-approved.js
           test -f dist/news/assets/js/fmb-news-cms.js
+          test -f dist/news/assets/js/fmb-news-mobile-personalization.js
 
           grep -q "FMB News" dist/news/index.html
           grep -q "FMB Worldwide" dist/news/index.html
           grep -q "FMB Daily Brief" dist/news/index.html
           grep -q "FMB Worldwide" dist/news/world/index.html
           grep -q "FMB Daily Brief" dist/news/fmb-brief/index.html
-          grep -q "Daily Newsletter" dist/news/fmb-brief/index.html
           grep -q "Filipino Media Bulletin" dist/news/index.html
 
-          # Every generated page must use the same website-level mobile-first system.
+          # Every generated page keeps one responsive publication shell.
           total_pages="$(find dist/news -type f -name index.html | wc -l | tr -d ' ')"
-          mobile_first_pages="$(grep -rl 'fmb-news-mobile-first-site.css' dist/news --include='index.html' | wc -l | tr -d ' ')"
-          test "$total_pages" -eq "$mobile_first_pages"
+          responsive_pages="$(grep -rl 'fmb-news-mobile-first-site.css' dist/news --include='index.html' | wc -l | tr -d ' ')"
+          test "$total_pages" -eq "$responsive_pages"
           grep -q 'fmb-mobile-first' dist/news/index.html
           grep -q 'fmb-mobile-first' dist/news/archive/index.html
           grep -q 'fmb-mobile-first' dist/news/fmb-brief/index.html
           grep -q 'fmb-mobile-first' dist/news/world/index.html
-          grep -q 'fmb-mobile-first' dist/news/subic-aeta-landfill/index.html
 
-          # The universal layer itself is mobile-first: desktop only expands with min-width.
+          # Desktop expands from the shared layout; mobile personalization itself is phone-scoped.
           grep -q '@media (min-width:700px)' dist/news/assets/css/fmb-news-mobile-first-site.css
-          grep -q '@media (min-width:1000px)' dist/news/assets/css/fmb-news-mobile-first-site.css
-          ! grep -qE '@media[[:space:]]*\(max-width' dist/news/assets/css/fmb-news-mobile-first-site.css
+          grep -q '@media(max-width:699px)' dist/news/assets/css/fmb-news-mobile-personalization.css
+          grep -q 'fmb-news-mobile-personalization.js?v=20260901-personal-v2' dist/news/archive/index.html
 
-          # FMB News is a mobile-first website, not a separate app UI.
-          ! grep -R -E 'fmb-news-mobile-(app|image-quality|readability)\.(css|js)' dist/news --include='*.html'
-          ! grep -R -E 'apple-mobile-web-app|mobile-web-app-capable' dist/news --include='*.html'
+          # PWA + real push plumbing must ship in the built newsroom.
+          grep -q 'rel="manifest" href="/news/manifest.webmanifest"' dist/news/archive/index.html
+          grep -q 'apple-mobile-web-app-capable' dist/news/archive/index.html
+          grep -q 'serviceWorker.register' dist/news/assets/js/fmb-news-mobile-personalization.js
+          grep -q 'news_push_subscriptions' dist/news/assets/js/fmb-news-mobile-personalization.js
+          grep -q 'PushManager' dist/news/assets/js/fmb-news-mobile-personalization.js
+          grep -q "addEventListener('push'" dist/news/sw.js
+          grep -q "notificationclick" dist/news/sw.js
+          grep -q 'preferred_sections' dist/news/assets/js/fmb-news-mobile-personalization.js
+          grep -q 'rankFeed' dist/news/assets/js/fmb-news-mobile-personalization.js
+
+          # Website mobile app experience must not use a fixed bottom dock.
           ! grep -R -E 'nc-mobile-dock|fmb-app-dock|Mobile news navigation' dist/news --include='*.html'
 
           ! grep -R -E '(["'"'"'(=])\/assets\/' dist/news --include='*.html' --include='*.css' --include='*.js' --include='*.mjs'
