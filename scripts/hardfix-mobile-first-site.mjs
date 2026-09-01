@@ -14,7 +14,7 @@ const personalizationJs='<script src="/assets/js/fmb-news-mobile-personalization
 const premiumJs='<script src="/assets/js/fmb-news-mobile-premium.js?v=20260901-premium-v2" defer></script>';
 const mobileHomeJs='<script src="/assets/js/fmb-news-mobile-home.js?v=20260901-app-home-v1" defer></script>';
 const mobileGlobalJs='<script src="/assets/js/fmb-news-mobile-global.js?v=20260901-global-v3" defer></script>';
-const mobileProductsJs='<script src="/assets/js/fmb-news-mobile-products.js?v=20260901-products-v1" defer></script>';
+const mobileProductsJs='<script src="/assets/js/fmb-news-mobile-products.js?v=20260901-products-v2" defer></script>';
 const pwaMeta='<link rel="manifest" href="/news/manifest.webmanifest"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="FMB News"><meta name="theme-color" content="#2b1235">';
 
 function addBodyClass(html){if(/<body\b[^>]*class=["'][^"']*\bfmb-mobile-first\b/i.test(html))return html;if(/<body\b[^>]*class=["']/i.test(html))return html.replace(/<body\b([^>]*?)class=(["'])([^"']*)\2/i,(_m,b,q,c)=>`<body${b}class=${q}${c} fmb-mobile-first${q}`);return html.replace(/<body\b([^>]*)>/i,'<body$1 class="fmb-mobile-first">')}
@@ -48,7 +48,7 @@ async function apply(target){
   if(!html.includes('/assets/js/fmb-news-mobile-premium.js'))html=html.replace('</body>',`${premiumJs}</body>`);else html=html.replace(/fmb-news-mobile-premium\.js\?v=[^"']+/g,'fmb-news-mobile-premium.js?v=20260901-premium-v2');
   if(!html.includes('/assets/js/fmb-news-mobile-home.js'))html=html.replace('</body>',`${mobileHomeJs}</body>`);else html=html.replace(/fmb-news-mobile-home\.js\?v=[^"']+/g,'fmb-news-mobile-home.js?v=20260901-app-home-v1');
   if(!html.includes('/assets/js/fmb-news-mobile-global.js'))html=html.replace('</body>',`${mobileGlobalJs}</body>`);else html=html.replace(/fmb-news-mobile-global\.js\?v=[^"']+/g,'fmb-news-mobile-global.js?v=20260901-global-v3');
-  if(!html.includes('/assets/js/fmb-news-mobile-products.js'))html=html.replace('</body>',`${mobileProductsJs}</body>`);else html=html.replace(/fmb-news-mobile-products\.js\?v=[^"']+/g,'fmb-news-mobile-products.js?v=20260901-products-v1');
+  if(!html.includes('/assets/js/fmb-news-mobile-products.js'))html=html.replace('</body>',`${mobileProductsJs}</body>`);else html=html.replace(/fmb-news-mobile-products\.js\?v=[^"']+/g,'fmb-news-mobile-products.js?v=20260901-products-v2');
   await writeFile(target,html,'utf8');
 }
 await apply(newsRoot);
