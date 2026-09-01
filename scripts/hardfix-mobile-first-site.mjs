@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const newsRoot=path.join(root,'dist','news');
 const mobileFirstAsset='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-first-site.css?v=20260901-site-v1">';
-const personalizationCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-personalization.css?v=20260901-personal-v2">';
+const personalizationCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-personalization.css?v=20260901-personal-v3">';
 const premiumCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-premium.css?v=20260901-premium-v2">';
 const mobileHomeCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-home.css?v=20260901-app-home-v2">';
 const mobileGlobalCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-global.css?v=20260901-global-v3">';
@@ -29,11 +29,6 @@ function normalizeProductNavigation(html){
     return `<nav${attrs}>${inner}</nav>`;
   });
 }
-function ensureAsset(html,pathName,tag,version){
-  if(!html.includes(pathName))return html.replace(tag==='css'?'</head>':'</body>',`${tag==='css'?`<link rel="stylesheet" href="${pathName}?v=${version}">`:`<script src="${pathName}?v=${version}" defer></script>`}${tag==='css'?'</head>':'</body>'}`);
-  const escaped=pathName.split('/').pop().replaceAll('.','\\.');
-  return html.replace(new RegExp(`${escaped}\\?v=[^"']+`,'g'),`${pathName.split('/').pop()}?v=${version}`);
-}
 async function apply(target){
   const info=await stat(target);
   if(info.isDirectory()){for(const entry of await readdir(target))await apply(path.join(target,entry));return}
@@ -43,7 +38,7 @@ async function apply(target){
   html=addBodyClass(html);
   html=normalizeProductNavigation(html);
   if(!html.includes('/assets/css/fmb-news-mobile-first-site.css'))html=html.replace('</head>',`${mobileFirstAsset}</head>`);
-  if(!html.includes('/assets/css/fmb-news-mobile-personalization.css'))html=html.replace('</head>',`${personalizationCss}</head>`);else html=html.replace(/fmb-news-mobile-personalization\.css\?v=[^"']+/g,'fmb-news-mobile-personalization.css?v=20260901-personal-v2');
+  if(!html.includes('/assets/css/fmb-news-mobile-personalization.css'))html=html.replace('</head>',`${personalizationCss}</head>`);else html=html.replace(/fmb-news-mobile-personalization\.css\?v=[^"']+/g,'fmb-news-mobile-personalization.css?v=20260901-personal-v3');
   if(!html.includes('/assets/css/fmb-news-mobile-premium.css'))html=html.replace('</head>',`${premiumCss}</head>`);else html=html.replace(/fmb-news-mobile-premium\.css\?v=[^"']+/g,'fmb-news-mobile-premium.css?v=20260901-premium-v2');
   if(!html.includes('/assets/css/fmb-news-mobile-home.css'))html=html.replace('</head>',`${mobileHomeCss}</head>`);else html=html.replace(/fmb-news-mobile-home\.css\?v=[^"']+/g,'fmb-news-mobile-home.css?v=20260901-app-home-v2');
   if(!html.includes('/assets/css/fmb-news-mobile-global.css'))html=html.replace('</head>',`${mobileGlobalCss}</head>`);else html=html.replace(/fmb-news-mobile-global\.css\?v=[^"']+/g,'fmb-news-mobile-global.css?v=20260901-global-v3');
