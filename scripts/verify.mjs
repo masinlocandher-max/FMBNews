@@ -6,12 +6,12 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const resolve=(...parts)=>path.join(root,...parts);
 
 const required=[
-  'site/index.html','site/fmb-brief/index.html','site/fmb-brief/live/index.html','site/world/index.html','site/world/live/index.html','site/read/index.html',
+  'site/index.html','site/fmb-brief/index.html','site/fmb-brief/live/index.html','site/world/index.html','site/world/live/index.html','site/explainer/index.html','site/read/index.html',
   'public/assets/css/fmb-news-reference.css','public/assets/css/fmb-news-reference-final.css','public/assets/css/fmb-news-network-hardfix.css','public/assets/css/fmb-news-ticker-hardfix.css','public/assets/css/fmb-news-product-identity.css','public/assets/css/fmb-news-landing-hardfix.css',
   'public/assets/images/brand/fmb-bulletin-emblem.svg','public/assets/js/fmb-news-cms.js','content/news/articles',
   'scripts/render-metallic-reference.mjs','scripts/hardfix-metallic-network.mjs','scripts/hardfix-ticker.mjs','scripts/hardfix-product-identity.mjs','scripts/hardfix-publication-landing.mjs',
   'src/worker.js','wrangler.jsonc',
-  'dist/news/index.html','dist/news/archive/index.html','dist/news/world/index.html','dist/news/world/live/index.html','dist/news/fmb-brief/index.html','dist/news/fmb-brief/live/index.html','dist/news/about/index.html','dist/news/read/index.html',
+  'dist/news/index.html','dist/news/archive/index.html','dist/news/world/index.html','dist/news/world/live/index.html','dist/news/explainer/index.html','dist/news/fmb-brief/index.html','dist/news/fmb-brief/live/index.html','dist/news/about/index.html','dist/news/read/index.html',
   'dist/news/assets/css/fmb-news-reference-final.css','dist/news/assets/css/fmb-news-network-hardfix.css','dist/news/assets/css/fmb-news-ticker-hardfix.css','dist/news/assets/css/fmb-news-product-identity.css','dist/news/assets/css/fmb-news-landing-hardfix.css','dist/news/assets/images/brand/fmb-bulletin-emblem.svg'
 ];
 for(const rel of required) await access(resolve(rel));
@@ -31,10 +31,10 @@ if(!metallicCss.includes('linear-gradient(108deg'))throw new Error('Approved met
 
 const builtHome=await readFile(resolve('dist/news/index.html'),'utf8');
 for(const signal of [
-  '<title>Filipino Media Bulletin | Trusted News. Meaningful Perspectives.</title>',
+  '<title>Filipino Media Bulletin | FMB News, Worldwide, Explainer and Daily Brief</title>',
   'fmb-network-landing','class="publication-emblem"','/news/assets/images/brand/fmb-bulletin-emblem.svg','class="publication-wordmark"','aria-label="Filipino Media Bulletin"',
-  'class="network-hero"','Trusted News.','Meaningful Perspectives.','class="network-products"','<h2>FMB News</h2>','<h2>FMB Worldwide</h2>','<h2>FMB Daily Brief</h2>',
-  'Philippine news, explained.','The world, made relevant.','Explore FMB News','Explore FMB Worldwide','Subscribe Now','id="fmb-daily-brief-signup"','Subscribe to our daily newsletter',
+  'class="network-hero"','Trusted News.','Meaningful Perspectives.','class="network-products"','<h2>FMB News</h2>','<h2>FMB Worldwide</h2>','<h2>FMB Explainer</h2>','<h2>FMB Daily Brief</h2>',
+  'Verified Philippine reporting.','Major global developments.','Go beyond the headline.','Explore FMB News','Explore Worldwide','Open Explainer','Continue with Email','id="fmb-daily-brief-signup"','Your personalized FMB News',
   '/news/assets/css/fmb-news-landing-hardfix.css','<div class="footer-publication-title">Filipino Media Bulletin</div>'
 ]) if(!builtHome.includes(signal))throw new Error(`Approved Filipino Media Bulletin landing regression: missing ${signal}`);
 for(const obsolete of ['class="shell home-hero"','class="lead-grid"','class="brief-promo"','class="network-intro"','One publication. Three focused products.','Clear reporting without the noise.','Verified first','Context included','Useful by design','Philippines · Explainers · Overviews','World · Explainers · Overviews'])if(builtHome.includes(obsolete))throw new Error(`Retired landing block or copy returned: ${obsolete}`);
@@ -57,6 +57,7 @@ function assertCommon(label,html,expected=[]){
 const builtArchive=await readFile(resolve('dist/news/archive/index.html'),'utf8');
 const builtWorld=await readFile(resolve('dist/news/world/index.html'),'utf8');
 const builtWorldLive=await readFile(resolve('dist/news/world/live/index.html'),'utf8');
+const builtExplainer=await readFile(resolve('dist/news/explainer/index.html'),'utf8');
 const builtBrief=await readFile(resolve('dist/news/fmb-brief/index.html'),'utf8');
 const builtBriefLive=await readFile(resolve('dist/news/fmb-brief/live/index.html'),'utf8');
 const builtAbout=await readFile(resolve('dist/news/about/index.html'),'utf8');
@@ -64,6 +65,7 @@ const builtReader=await readFile(resolve('dist/news/read/index.html'),'utf8');
 assertCommon('FMB News archive',builtArchive,['aria-label="FMB News"','fmb-news-route','aria-current="page">FMB News']);
 assertCommon('FMB Worldwide landing',builtWorld,['aria-label="FMB Worldwide"','fmb-worldwide-route','aria-current="page">FMB Worldwide']);
 assertCommon('FMB Worldwide live',builtWorldLive,['data-cms-edition="worldwide"','aria-label="FMB Worldwide"','fmb-worldwide-route']);
+assertCommon('FMB Explainer',builtExplainer,['aria-label="FMB Explainer"','fmb-explainer-route','aria-current="page">FMB Explainer']);
 assertCommon('FMB Daily Brief archive',builtBrief,['aria-label="FMB Daily Brief"','fmb-daily-brief-route','<div class="product-descriptor">Daily Newsletter</div>','aria-current="page">FMB Daily Brief']);
 assertCommon('FMB Daily Brief live',builtBriefLive,['data-cms-edition="brief"','aria-label="FMB Daily Brief"','fmb-daily-brief-route','Daily Newsletter']);
 assertCommon('About',builtAbout,['aria-current="page">About']);
@@ -97,4 +99,4 @@ async function scanBuilt(target){const info=await stat(target);if(info.isDirecto
 for(const rel of scanRoots)await scanSource(resolve(rel));
 await scanBuilt(resolve('dist/news'));
 
-console.log(`FMBNews verification passed: approved Build Web Apps landing is locked; ${htmlPagesChecked} pages retain shared network chrome; ${articleDays.length} article date folders, ${briefEditions.length} Daily Brief editions, ${worldEditions.length} Worldwide editions.`);
+console.log(`FMBNews verification passed: four official FMB products are locked; ${htmlPagesChecked} pages retain shared network chrome; ${articleDays.length} article date folders, ${briefEditions.length} Daily Brief editions, ${worldEditions.length} Worldwide editions.`);
