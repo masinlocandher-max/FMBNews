@@ -1,0 +1,202 @@
+/* FMB product hero system: shared cinematic grammar for premium mobile landings. */
+@media(max-width:699px){
+:root{--fmb-hero-plum:#17091f;--fmb-hero-plum-2:#32133f;--fmb-hero-gold:#d6bd72}
+
+/* EXPLORE / EXPLAINER — same FMB cinematic hero language, knowledge-led copy. */
+body.fmb-mobile-route-explainer .explainer-hero{
+  position:relative!important;
+  overflow:hidden!important;
+  min-height:252px!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:
+    linear-gradient(90deg,rgba(17,6,23,.96) 0%,rgba(23,8,30,.86) 42%,rgba(23,8,30,.42) 72%,rgba(23,8,30,.30) 100%),
+    linear-gradient(0deg,rgba(14,5,19,.62),rgba(14,5,19,.06) 58%),
+    url('/news/assets/images/mobile/fmb-mobile-hero.jpg') center 48%/cover no-repeat!important;
+  color:#fff!important;
+}
+body.fmb-mobile-route-explainer .explainer-hero::after{
+  content:"";
+  position:absolute;
+  right:18px;
+  top:24px;
+  width:112px;
+  height:112px;
+  z-index:1;
+  background:url('/news/assets/images/brand/fmb-bulletin-emblem.svg') center/contain no-repeat;
+  opacity:.92;
+  filter:drop-shadow(0 10px 24px rgba(0,0,0,.28));
+  pointer-events:none;
+}
+body.fmb-mobile-route-explainer .explainer-hero .shell{
+  position:relative!important;
+  z-index:2!important;
+  display:flex!important;
+  min-height:252px!important;
+  flex-direction:column!important;
+  justify-content:flex-end!important;
+  width:100%!important;
+  margin:0!important;
+  padding:24px 18px 24px!important;
+}
+body.fmb-mobile-route-explainer .fmb-explainer-mark{
+  display:flex!important;
+  align-items:center!important;
+  gap:8px!important;
+  margin:0 0 auto!important;
+  padding-top:2px!important;
+}
+body.fmb-mobile-route-explainer .fmb-explainer-mark span{
+  display:block!important;
+  width:auto!important;
+  height:auto!important;
+  padding:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  color:var(--fmb-hero-gold)!important;
+  font-size:27px!important;
+  line-height:.9!important;
+  font-weight:900!important;
+  letter-spacing:-.055em!important;
+}
+body.fmb-mobile-route-explainer .fmb-explainer-mark small{
+  color:rgba(255,255,255,.72)!important;
+  font-size:8px!important;
+  line-height:1.12!important;
+  font-weight:850!important;
+  letter-spacing:.11em!important;
+}
+body.fmb-mobile-route-explainer .explainer-kicker{
+  margin-top:28px!important;
+  color:#e7d5ed!important;
+  font-size:9px!important;
+  line-height:1!important;
+  font-weight:850!important;
+  letter-spacing:.14em!important;
+  text-transform:uppercase!important;
+}
+body.fmb-mobile-route-explainer .explainer-hero h1{
+  max-width:290px!important;
+  margin:7px 0 9px!important;
+  color:#fff!important;
+  font-size:40px!important;
+  line-height:.93!important;
+  font-weight:870!important;
+  letter-spacing:-.055em!important;
+  text-shadow:0 3px 20px rgba(0,0,0,.30)!important;
+}
+body.fmb-mobile-route-explainer .explainer-hero p{
+  max-width:300px!important;
+  margin:0!important;
+  color:rgba(255,255,255,.82)!important;
+  font-size:12.5px!important;
+  line-height:1.46!important;
+  text-shadow:0 2px 14px rgba(0,0,0,.26)!important;
+}
+
+/* DAILY BRIEF — same cinematic grammar, executive/morning ritual personality. */
+body.fmb-mobile-route-brief .brief-edition-bar{display:none!important}
+body.fmb-mobile-route-brief .brief-archive-hero{
+  position:relative!important;
+  overflow:hidden!important;
+  min-height:252px!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:
+    linear-gradient(90deg,rgba(16,5,22,.96) 0%,rgba(29,10,37,.86) 46%,rgba(29,10,37,.34) 100%),
+    linear-gradient(0deg,rgba(14,5,19,.66),rgba(14,5,19,.08) 60%),
+    url('/news/assets/images/mobile/fmb-mobile-hero.jpg') center 48%/cover no-repeat!important;
+  color:#fff!important;
+}
+body.fmb-mobile-route-brief .brief-archive-hero::after{
+  content:"";
+  position:absolute;
+  right:18px;
+  top:24px;
+  width:112px;
+  height:112px;
+  z-index:1;
+  background:url('/news/assets/images/brand/fmb-bulletin-emblem.svg') center/contain no-repeat;
+  opacity:.92;
+  filter:drop-shadow(0 10px 24px rgba(0,0,0,.28));
+  pointer-events:none;
+}
+body.fmb-mobile-route-brief .brief-archive-hero .brief-shell,
+body.fmb-mobile-route-brief .brief-archive-hero .shell{
+  position:relative!important;
+  z-index:2!important;
+  display:flex!important;
+  min-height:252px!important;
+  flex-direction:column!important;
+  justify-content:flex-end!important;
+  width:100%!important;
+  margin:0!important;
+  padding:24px 18px 24px!important;
+}
+body.fmb-mobile-route-brief .brief-archive-hero .brief-shell::before,
+body.fmb-mobile-route-brief .brief-archive-hero .shell::before{
+  content:"FMB DAILY BRIEF · EXECUTIVE EDITION";
+  display:block;
+  margin:0 0 auto;
+  padding-top:2px;
+  color:var(--fmb-hero-gold);
+  font-size:9px;
+  line-height:1;
+  font-weight:900;
+  letter-spacing:.13em;
+}
+body.fmb-mobile-route-brief .brief-archive-hero h1{
+  max-width:280px!important;
+  margin:0 0 9px!important;
+  color:#fff!important;
+  font-size:40px!important;
+  line-height:.93!important;
+  font-weight:870!important;
+  letter-spacing:-.055em!important;
+  text-shadow:0 3px 20px rgba(0,0,0,.30)!important;
+}
+body.fmb-mobile-route-brief .brief-archive-hero p{
+  max-width:300px!important;
+  margin:0!important;
+  color:rgba(255,255,255,.82)!important;
+  font-size:12.5px!important;
+  line-height:1.46!important;
+  text-shadow:0 2px 14px rgba(0,0,0,.26)!important;
+}
+body.fmb-mobile-route-brief .fmb-brief-signature-visual{
+  position:absolute!important;
+  right:-8px!important;
+  bottom:-2px!important;
+  z-index:1!important;
+  width:138px!important;
+  height:138px!important;
+  min-height:0!important;
+  object-fit:cover!important;
+  object-position:center!important;
+  border-radius:50%!important;
+  opacity:.36!important;
+  filter:saturate(.92) contrast(1.05)!important;
+  mask-image:radial-gradient(circle at center,#000 48%,transparent 74%)!important;
+  -webkit-mask-image:radial-gradient(circle at center,#000 48%,transparent 74%)!important;
+  pointer-events:none!important;
+}
+
+@media(max-width:380px){
+  body.fmb-mobile-route-explainer .explainer-hero,
+  body.fmb-mobile-route-brief .brief-archive-hero{min-height:238px!important}
+  body.fmb-mobile-route-explainer .explainer-hero .shell,
+  body.fmb-mobile-route-brief .brief-archive-hero .brief-shell,
+  body.fmb-mobile-route-brief .brief-archive-hero .shell{min-height:238px!important;padding:20px 15px 21px!important}
+  body.fmb-mobile-route-explainer .explainer-hero::after,
+  body.fmb-mobile-route-brief .brief-archive-hero::after{right:14px;top:20px;width:100px;height:100px}
+  body.fmb-mobile-route-explainer .explainer-hero h1,
+  body.fmb-mobile-route-brief .brief-archive-hero h1{font-size:37px!important}
+  body.fmb-mobile-route-explainer .explainer-hero p,
+  body.fmb-mobile-route-brief .brief-archive-hero p{max-width:278px!important}
+}
+}
