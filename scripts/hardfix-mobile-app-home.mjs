@@ -22,7 +22,7 @@ function breakingStory(ss){return ss.find(s=>s?.audit?.push_alert===true||s?.pus
 const ss=await stories();
 if(!ss.length)throw new Error('Cannot build FMB mobile app home without published stories.');
 const lead=ss[0],latest=ss.slice(1,6),breaking=breakingStory(ss),tickerStories=[lead,...latest].slice(0,4);
-const tickerLabel=breaking?'BREAKING NEWS':'LATEST';
+const tickerLabel=breaking?'BREAKING':'HEADLINES';
 const tickerHref=breaking?`/news/${esc(breaking.slug)}/`:'#fmb-app-latest-title';
 const tickerGroup=tickerStories.map(s=>`<i>${esc(s.headline)}</i>`).join('');
 const mobileHome=`<div class="fmb-mobile-app-home" data-fmb-mobile-home>
@@ -30,7 +30,6 @@ const mobileHome=`<div class="fmb-mobile-app-home" data-fmb-mobile-home>
     <img src="${approvedHero}" alt="FMB News Philippines newsroom hero with the Philippine flag, global map, broadcast camera and official gold shell emblem" fetchpriority="high" data-fmb-approved-hero>
     <span class="fmb-hero-readable-shade" aria-hidden="true"></span>
     <div class="fmb-approved-hero-copy">
-      <span class="fmb-approved-hero-label">LATEST UPDATE</span>
       <p data-fmb-greeting>Hello, night owl.</p>
       <h1 data-fmb-greeting-line>The world is still moving. Here’s what changed.</h1>
       <p class="fmb-approved-hero-deck">Stay informed with verified facts, meaningful context, and perspectives that help you understand what matters.</p>
@@ -78,4 +77,4 @@ let html=await readFile(page,'utf8');
 html=html.replace(/<div class="fmb-mobile-app-home"[\s\S]*?<\/div>\s*(?=<main class="network-home")/i,'');
 if(!html.includes('data-fmb-mobile-home'))html=html.replace('<main class="network-home">',`${mobileHome}<main class="network-home">`);
 await writeFile(page,html,'utf8');
-console.log(`Injected the approved FMB Philippines hero as an HTML-overlay mobile home with Read the Latest / Customize CTAs, a continuous headline crawl, and ${Math.min(ss.length,6)} live published stories.`);
+console.log(`Injected the approved FMB Philippines hero as an HTML-overlay mobile home with Read the Latest / Customize CTAs, a continuous ${tickerLabel.toLowerCase()} crawl, and ${Math.min(ss.length,6)} live published stories.`);
