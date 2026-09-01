@@ -36,11 +36,11 @@ function normalizeProductNavigation(html){
 function escapedAssetPath(pathName){return pathName.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
 function upsertCss(html,pathName,asset,version){
   if(!html.includes(pathName))return html.replace('</head>',`${asset}</head>`);
-  return html.replace(new RegExp(`${escapedAssetPath(pathName)}\\?v=[^"']+`,'g'),`${pathName}?v=${version}`);
+  return html.replace(new RegExp(`${escapedAssetPath(pathName)}(?:\\?v=[^"']+)?`,'g'),`${pathName}?v=${version}`);
 }
 function upsertJs(html,pathName,asset,version){
   if(!html.includes(pathName))return html.replace('</body>',`${asset}</body>`);
-  return html.replace(new RegExp(`${escapedAssetPath(pathName)}\\?v=[^"']+`,'g'),`${pathName}?v=${version}`);
+  return html.replace(new RegExp(`${escapedAssetPath(pathName)}(?:\\?v=[^"']+)?`,'g'),`${pathName}?v=${version}`);
 }
 async function apply(target){
   const info=await stat(target);
