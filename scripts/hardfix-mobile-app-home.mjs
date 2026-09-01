@@ -22,7 +22,9 @@ function breakingStory(ss){return ss.find(s=>s?.audit?.push_alert===true||s?.pus
 const ss=await stories();
 if(!ss.length)throw new Error('Cannot build FMB mobile app home without published stories.');
 const lead=ss[0],latest=ss.slice(1,6),breaking=breakingStory(ss);
-const mobileHome=`<div class="fmb-mobile-app-home" data-fmb-mobile-home>
+const leadSource=imageFor(lead);
+const leadHero=leadSource===fallback?approvedHero:leadSource;
+const mobileHome=`<div class="fmb-mobile-app-home" data-fmb-mobile-home data-fmb-brand-fallback="${esc(approvedHero)}">
   ${breaking?`<a class="fmb-app-breaking" href="/news/${esc(breaking.slug)}/"><strong>BREAKING</strong><span>${esc(breaking.headline)}</span><b aria-hidden="true">›</b></a>`:''}
   <section class="fmb-app-utility" aria-label="Local information">
     <div class="fmb-app-clock"><strong data-fmb-local-date>Today</strong><span data-fmb-local-time>--:--</span></div>
@@ -32,7 +34,7 @@ const mobileHome=`<div class="fmb-mobile-app-home" data-fmb-mobile-home>
     <div><p data-fmb-greeting>Good day</p><h1>For You</h1></div><button type="button" data-fmb-customize>Customize</button>
   </section>
   <section class="fmb-app-lead" aria-label="Lead story">
-    <a href="/news/${esc(lead.slug)}/" class="fmb-app-lead-media"><img src="${approvedHero}" alt="FMB News global news collage" fetchpriority="high" data-fmb-approved-hero><span class="fmb-app-lead-shade" aria-hidden="true"></span><div class="fmb-app-lead-copy">${meta(lead)}<h2>${esc(lead.headline)}</h2><p>${esc(lead.deck||lead.seoDescription||'')}</p><span class="fmb-app-read">Read story <b aria-hidden="true">›</b></span></div></a>
+    <a href="/news/${esc(lead.slug)}/" class="fmb-app-lead-media"><img src="${esc(leadHero)}" alt="${esc(lead.image?.alt||lead.headline)}" fetchpriority="high" data-fmb-lead-story-image><span class="fmb-app-lead-shade" aria-hidden="true"></span><div class="fmb-app-lead-copy">${meta(lead)}<h2>${esc(lead.headline)}</h2><p>${esc(lead.deck||lead.seoDescription||'')}</p><span class="fmb-app-read">Read story <b aria-hidden="true">›</b></span></div></a>
   </section>
   <section class="fmb-app-section" aria-labelledby="fmb-app-latest-title">
     <div class="fmb-app-section-head"><h2 id="fmb-app-latest-title">Latest News</h2><a href="/news/archive/">View all</a></div>

@@ -20,10 +20,20 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     const isNewsPath = url.pathname === '/news' || url.pathname.startsWith('/news/');
+    const isLegacyNewsPath = url.pathname === '/fmbnews' || url.pathname.startsWith('/fmbnews/');
 
-    // The /news* route is intentionally narrow. Anything that merely begins
-    // with the letters "news" but is not inside the newsroom passes through.
-    if (!isNewsPath) return fetch(request);
+    // FMBNews owns both the canonical newsroom and its legacy /fmbnews aliases.
+    // No other application should render or redirect these paths.
+    if (!isNewsPath && !isLegacyNewsPath) return fetch(request);
+
+    // Legacy FMB News URLs canonicalize here, inside the canonical FMBNews Worker.
+    if (isLegacyNewsPath) {
+      const suffix = url.pathname.slice('/fmbnews'.length);
+      url.hostname = 'www.francinemariebautista.com';
+      url.pathname = `/news${suffix || '/'}`;
+      const response = Response.redirect(url.toString(), 308);
+      return withWorkerMarker(response);
+    }
 
     // Keep one canonical hostname for the newsroom.
     if (url.hostname === 'francinemariebautista.com') {
