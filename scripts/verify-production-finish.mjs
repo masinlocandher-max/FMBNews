@@ -29,8 +29,9 @@ for(const file of await walk(explainedRoot)){
   let article;try{article=JSON.parse(await readFile(file,'utf8'))}catch{continue}
   if(article.status!=='published'||!article.slug)continue;
   const built=path.join(root,'dist','news','explainer',article.slug,'index.html');await access(built);const html=await readFile(built,'utf8');
-  for(const token of ['property="og:type" content="article"','name="twitter:card" content="summary_large_image"','type="application/ld+json"','"@type":"NewsArticle"'])must(html.includes(token),`${article.slug}: missing ${token}`);
+  for(const token of ['property="og:type" content="article"','name="twitter:card" content="summary_large_image"','type="application/ld+json"'])must(html.includes(token),`${article.slug}: missing ${token}`);
+  must(html.includes('"@type":"Article"')||html.includes('"@type":"NewsArticle"'),`${article.slug}: missing valid Article schema type`);
   if(article.publishedAt)must(html.includes(`"datePublished":"${article.publishedAt}"`),`${article.slug}: structured data must use the actual publication timestamp`);checked++;
 }
 must(checked>0,'No published long-form FMB Explainer article was verified.');
-console.log(`Production finish verification passed: canonical routing, personalization/PWA systems, localized approved hero/mug, and ${checked} structured FMB Explainer article(s) verified.`);
+console.log(`Production finish verification passed: canonical routing, personalization/PWA systems, localized approved hero/mug, and ${checked} structured FMB Explainer article(s) verified; Explainer essays may use Article schema while news reports retain NewsArticle.`);
