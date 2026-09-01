@@ -30,45 +30,66 @@ jobs:
           test -f dist/news/fmb-brief/index.html
           test -f dist/news/world/index.html
           test -f dist/news/explainer/index.html
+          test -f dist/news/horoscope/index.html
+          test -f dist/news/crossword/index.html
           test -f dist/news/manifest.webmanifest
           test -f dist/news/sw.js
           test -f dist/news/assets/css/fmb-news-mobile-first-site.css
           test -f dist/news/assets/css/fmb-news-mobile-personalization.css
           test -f dist/news/assets/css/fmb-news-mobile-premium.css
+          test -f dist/news/assets/css/fmb-news-mobile-home.css
+          test -f dist/news/assets/css/fmb-news-mobile-features.css
           test -f dist/news/assets/js/fmb-news-mobile-personalization.js
           test -f dist/news/assets/js/fmb-news-mobile-premium.js
+          test -f dist/news/assets/js/fmb-news-mobile-home.js
+          test -f dist/news/assets/js/fmb-news-weekly-horoscope.js
+          test -f dist/news/assets/js/fmb-news-weekly-crossword.js
           test -f dist/news/assets/js/fmb-explained-library.js
           test -d dist/news/assets/data/fmb-explained
           test "$(find dist/news/assets/data/fmb-explained -maxdepth 1 -type f -name '*.json' | wc -l | tr -d ' ')" -eq 9
 
-          for page in dist/news/index.html dist/news/archive/index.html dist/news/world/index.html dist/news/explainer/index.html dist/news/fmb-brief/index.html; do
+          for page in dist/news/index.html dist/news/archive/index.html dist/news/world/index.html dist/news/explainer/index.html dist/news/fmb-brief/index.html dist/news/horoscope/index.html dist/news/crossword/index.html; do
             grep -q 'FMB News' "$page"
             grep -q 'FMB Worldwide' "$page"
             grep -q 'FMB Explainer' "$page"
             grep -q 'FMB Daily Brief' "$page"
-            grep -q 'fmb-news-mobile-premium.css?v=20260901-premium-v1' "$page"
-            grep -q 'fmb-news-mobile-premium.js?v=20260901-premium-v1' "$page"
+            grep -q 'fmb-news-mobile-premium.css?v=20260901-premium-v2' "$page"
+            grep -q 'fmb-news-mobile-premium.js?v=20260901-premium-v2' "$page"
+            grep -q 'fmb-news-mobile-home.css?v=20260901-app-home-v1' "$page"
+            grep -q 'fmb-news-mobile-home.js?v=20260901-app-home-v1' "$page"
           done
           ! grep -R -E '>FMB Explained<' dist/news --include='*.html'
           grep -q '206 topics, explained' dist/news/explainer/index.html
 
+          grep -q 'data-fmb-mobile-home' dist/news/index.html
+          grep -q 'data-fmb-weather-button' dist/news/index.html
+          grep -q 'Weekly Horoscope' dist/news/index.html
+          grep -q 'FMB Crossword' dist/news/index.html
+          grep -q '1BFsbaXgrFqyBuD4R2ummFR87FUSxACq1' dist/news/index.html
+          grep -q '1KUeapU5-UNZocnOPWRze220hlm5BYg_h' dist/news/index.html
+          grep -q 'PAXSILICA' dist/news/assets/js/fmb-news-weekly-crossword.js
+          grep -q 'IMPEACHMENT' dist/news/assets/js/fmb-news-weekly-crossword.js
+          grep -q 'PADILLA' dist/news/assets/js/fmb-news-weekly-crossword.js
+
           total_pages="$(find dist/news -type f -name index.html | wc -l | tr -d ' ')"
           responsive_pages="$(grep -rl 'fmb-news-mobile-first-site.css' dist/news --include='index.html' | wc -l | tr -d ' ')"
           premium_pages="$(grep -rl 'fmb-news-mobile-premium.css' dist/news --include='index.html' | wc -l | tr -d ' ')"
+          home_layer_pages="$(grep -rl 'fmb-news-mobile-home.css' dist/news --include='index.html' | wc -l | tr -d ' ')"
           test "$total_pages" -eq "$responsive_pages"
           test "$total_pages" -eq "$premium_pages"
+          test "$total_pages" -eq "$home_layer_pages"
 
-          # Premium app layer is phone-scoped, preserving desktop.
           grep -q '@media (max-width:699px)' dist/news/assets/css/fmb-news-mobile-premium.css
+          grep -q '@media(max-width:699px)' dist/news/assets/css/fmb-news-mobile-home.css
           grep -q -- '--app-plum:#2b1235' dist/news/assets/css/fmb-news-mobile-premium.css
           grep -q -- '--app-bg:#f5f5f7' dist/news/assets/css/fmb-news-mobile-premium.css
           grep -q 'fmb-bulletin-emblem.svg' dist/news/assets/css/fmb-news-mobile-premium.css
-          grep -q "path==='/news'" dist/news/assets/js/fmb-news-mobile-premium.js
-          grep -q "'/news/archive/'" dist/news/assets/js/fmb-news-mobile-premium.js
+          ! grep -q 'location.replace' dist/news/assets/js/fmb-news-mobile-premium.js
+          grep -q 'open-meteo.com' dist/news/assets/js/fmb-news-mobile-home.js
+          grep -q 'geolocation' dist/news/assets/js/fmb-news-mobile-home.js
 
-          # PWA, personalization and push remain wired.
-          grep -q 'rel="manifest" href="/news/manifest.webmanifest"' dist/news/archive/index.html
-          grep -q 'apple-mobile-web-app-capable' dist/news/archive/index.html
+          grep -q 'rel="manifest" href="/news/manifest.webmanifest"' dist/news/index.html
+          grep -q 'apple-mobile-web-app-capable' dist/news/index.html
           grep -q 'serviceWorker.register' dist/news/assets/js/fmb-news-mobile-personalization.js
           grep -q 'news_push_subscriptions' dist/news/assets/js/fmb-news-mobile-personalization.js
           grep -q 'PushManager' dist/news/assets/js/fmb-news-mobile-personalization.js
@@ -77,9 +98,7 @@ jobs:
           grep -q 'preferred_sections' dist/news/assets/js/fmb-news-mobile-personalization.js
           grep -q 'rankFeed' dist/news/assets/js/fmb-news-mobile-personalization.js
 
-          # No fixed low navigation may return.
           ! grep -R -E 'nc-mobile-dock|fmb-app-dock|Mobile news navigation' dist/news --include='*.html'
-
           ! grep -R -E '(["'"'"'(=])\/assets\/' dist/news --include='*.html' --include='*.css' --include='*.js' --include='*.mjs'
           test "$(find dist/news/world -mindepth 2 -maxdepth 2 -name index.html | wc -l)" -ge 1
           test "$(find dist/news -mindepth 2 -maxdepth 2 -type f -path '*/fmb-brief-*/index.html' | wc -l)" -ge 1
