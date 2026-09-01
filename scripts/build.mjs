@@ -15,12 +15,16 @@ await import('./render-metallic-reference.mjs');
 await import('./hardfix-metallic-network.mjs');
 await import('./hardfix-ticker.mjs');
 await import('./hardfix-product-identity.mjs');
-await import('./hardfix-mobile-app.mjs');
 
 // The root /news/ page is the Filipino Media Bulletin publication landing,
-// not a duplicate FMB News feed. This final pass keeps the three products
-// distinct and gives FMB Daily Brief exactly one landing-page subscription CTA.
+// not a duplicate FMB News feed. This pass keeps the three products distinct
+// and gives FMB Daily Brief exactly one landing-page subscription CTA.
 await import('./hardfix-publication-landing.mjs');
+
+// Mobile is the source of truth across the entire publication. Apply this last
+// so every generated page, including legacy articles, uses the same website
+// navigation and responsive system. No route gets a separate app-only shell.
+await import('./hardfix-mobile-first-site.mjs');
 
 const textExtensions = new Set(['.html', '.css', '.js', '.mjs', '.json', '.xml', '.txt', '.svg']);
 
@@ -38,4 +42,4 @@ async function rewriteAssetPaths(target) {
 }
 
 await rewriteAssetPaths(newsRoot);
-console.log('Built Filipino Media Bulletin with idempotent /news asset scoping, emblem-backed landing, upgraded typography, dedicated mobile app view for FMB News, distinct FMB News and FMB Worldwide products, and one FMB Daily Brief subscription CTA.');
+console.log('Built Filipino Media Bulletin with one universal mobile-first website system, no fixed bottom navigation, idempotent /news asset scoping, distinct FMB News/FMB Worldwide/FMB Daily Brief products, and one Daily Brief subscription CTA.');
