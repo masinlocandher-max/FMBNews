@@ -27,7 +27,7 @@ await page.locator('[data-fmb-mobile-home]').waitFor({state:'visible'});
 await page.locator('.fmb-app-story-list').waitFor({state:'visible'});
 assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('fmbNewsPrefsV1')||'{}').sections),['World'],'Personalization preference did not persist across reload.');
 
-await page.locator('[data-fmb-account]').waitFor({state:'visible'});
+await page.locator('[data-fmb-customize]').waitFor({state:'visible'});
 await page.locator('[data-fmb-customize]').click();
 await page.locator('.fmb-account-panel').waitFor({state:'visible'});
 const culture=page.locator('[data-section="Culture"]');
@@ -59,4 +59,4 @@ assert.equal(structured['@type'],'NewsArticle','FMB Explained structured data is
 assert(structured.datePublished,'FMB Explained structured data is missing the real publication timestamp.');
 
 await browser.close();
-console.log('Mobile browser QA passed: app home, personalization preference persistence, customization, horoscope, crossword, reader save, and FMB Explained metadata are functional.');
+console.log('Mobile browser QA passed: app home, personalization preference persistence, visible customization flow, horoscope, crossword, reader save, and FMB Explained metadata are functional.');
