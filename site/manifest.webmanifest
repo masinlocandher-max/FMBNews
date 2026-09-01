@@ -8,5 +8,13 @@
   "background_color": "#ffffff",
   "theme_color": "#2b1235",
   "orientation": "portrait-primary",
-  "categories": ["news", "magazines"]
+  "categories": ["news", "magazines"],
+  "icons": [
+    {
+      "src": "/news/assets/images/brand/fmb-bulletin-emblem.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
 }
