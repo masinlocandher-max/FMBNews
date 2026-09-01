@@ -41,6 +41,7 @@ await import('./hardfix-mobile-app-home.mjs');
 // Final newsroom integrity pass creates search/submit utility pages and applies
 // the newsroom-level copy/navigation rules.
 await import('./hardfix-newsroom-audit.mjs');
+await import('./hardfix-late-newsroom-shell.mjs');
 
 // Apply the universal responsive/PWA/personalization system only after every
 // newsroom page exists, including late-generated search and submission routes.
