@@ -4,23 +4,17 @@
   const SUPABASE_URL = 'https://wjnavdpppnhxbuydkrkd.supabase.co';
   const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_bpdFntTHbHmxsG4L0PtcCw_5dJ8gpr8';
   const API = `${SUPABASE_URL}/rest/v1`;
+  const FALLBACK_IMAGE = '/news/assets/images/news/fmb-news-editorial-fallback.svg';
 
-  const headers = {
-    apikey: SUPABASE_PUBLISHABLE_KEY,
-    Accept: 'application/json'
-  };
-
+  const headers = { apikey: SUPABASE_PUBLISHABLE_KEY, Accept: 'application/json' };
   const text = (value) => value == null ? '' : String(value);
+
   const formatDate = (value, options = {}) => {
     if (!value) return '';
     const date = new Date(value);
     if (Number.isNaN(date.getTime())) return '';
     return new Intl.DateTimeFormat('en-PH', {
-      timeZone: 'Asia/Manila',
-      month: 'long',
-      day: 'numeric',
-      year: 'numeric',
-      ...options
+      timeZone: 'Asia/Manila', month: 'long', day: 'numeric', year: 'numeric', ...options
     }).format(date);
   };
 
@@ -30,10 +24,6 @@
     return response.json();
   }
 
-  function storyHref(article) {
-    return article.canonical_path || `/news/read/${encodeURIComponent(article.slug)}/`;
-  }
-
   function el(tag, className, value) {
     const node = document.createElement(tag);
     if (className) node.className = className;
@@ -41,35 +31,46 @@
     return node;
   }
 
+  function storyHref(article) {
+    return article.canonical_path || `/news/read/${encodeURIComponent(article.slug)}/`;
+  }
+
+  function makeImage(src, alt, className = '') {
+    const img = document.createElement('img');
+    img.src = src || FALLBACK_IMAGE;
+    img.alt = alt || 'FMB News';
+    if (className) img.className = className;
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    img.addEventListener('error', () => {
+      if (img.dataset.fmbFallback === 'true') return;
+      img.dataset.fmbFallback = 'true';
+      img.src = FALLBACK_IMAGE;
+    }, { once: true });
+    return img;
+  }
+
+  function normalizedSources(value) {
+    if (!Array.isArray(value)) return [];
+    return value.map((source) => {
+      if (typeof source === 'string') return { url: source, publisher: 'Source' };
+      return source && typeof source === 'object' ? source : null;
+    }).filter(Boolean);
+  }
+
   async function hydrateHomepageStories() {
     const section = document.getElementById('stories');
     const grid = section?.querySelector('.story-grid');
     if (!grid) return;
-
-    const fields = [
-      'slug','canonical_path','title','summary','deck','category','region',
-      'image_url','image_credit','published_at'
-    ].join(',');
-    const articles = await get(
-      'news_articles',
-      `select=${fields}&status=eq.published&order=published_at.desc&limit=8`
-    );
-    if (!Array.isArray(articles) || articles.length === 0) return;
+    const fields = ['slug','canonical_path','title','summary','deck','category','region','image_url','image_credit','published_at'].join(',');
+    const articles = await get('news_articles', `select=${fields}&status=eq.published&order=published_at.desc&limit=8`);
+    if (!Array.isArray(articles) || !articles.length) return;
 
     const fragment = document.createDocumentFragment();
     for (const article of articles) {
       const link = el('a', 'story-card');
       link.href = storyHref(article);
-
-      if (article.image_url) {
-        const img = document.createElement('img');
-        img.src = article.image_url;
-        img.alt = article.title || 'FMB News';
-        img.loading = 'lazy';
-        img.decoding = 'async';
-        link.appendChild(img);
-      }
-
+      link.appendChild(makeImage(article.image_url, article.title || 'FMB News'));
       const body = document.createElement('div');
       body.appendChild(el('em', '', article.region || article.category || 'FMB News'));
       body.appendChild(el('h3', '', article.title));
@@ -77,24 +78,17 @@
       link.appendChild(body);
       fragment.appendChild(link);
     }
-
     grid.replaceChildren(fragment);
     section.dataset.cmsHydrated = 'true';
   }
 
   async function latestEdition(type) {
-    const editions = await get(
-      'news_editions',
-      `select=id,edition_type,edition_date,slug,title,deck,hero_image_url,hero_image_credit,published_at,window_start,window_end&edition_type=eq.${encodeURIComponent(type)}&status=eq.published&order=edition_date.desc&limit=1`
-    );
+    const editions = await get('news_editions', `select=id,edition_type,edition_date,slug,title,deck,hero_image_url,hero_image_credit,published_at,window_start,window_end&edition_type=eq.${encodeURIComponent(type)}&status=eq.published&order=edition_date.desc&limit=1`);
     return Array.isArray(editions) && editions.length ? editions[0] : null;
   }
 
   async function editionEntries(editionId) {
-    return get(
-      'news_edition_entries',
-      `select=id,entry_key,country,section,category,headline,verified_fact,why_it_matters,reputation_implication,opportunity_risk,source_links,image_url,image_credit,sort_order&edition_id=eq.${encodeURIComponent(editionId)}&order=sort_order.asc,created_at.asc`
-    );
+    return get('news_edition_entries', `select=id,entry_key,country,section,category,headline,verified_fact,why_it_matters,reputation_implication,opportunity_risk,source_links,image_url,image_credit,sort_order&edition_id=eq.${encodeURIComponent(editionId)}&order=sort_order.asc,created_at.asc`);
   }
 
   async function hydrateWorldwideLanding() {
@@ -102,6 +96,7 @@
     const grid = document.querySelector('.country-grid');
     const heading = document.querySelector('.world-feed-head h2');
     const intro = document.querySelector('.world-feed-head p');
+    const editionLink = document.querySelector('.edition-link');
     if (!grid) return;
 
     const edition = await latestEdition('worldwide');
@@ -111,11 +106,18 @@
 
     if (heading) heading.textContent = formatDate(`${edition.edition_date}T12:00:00+08:00`);
     if (intro) intro.textContent = edition.deck || 'Current FMB Worldwide edition. Verified facts are separated from FMB analysis.';
+    if (editionLink) {
+      editionLink.href = `/news/world/${edition.edition_date === '2026-09-01' ? 'september-1-2026' : 'live'}/`;
+      editionLink.textContent = `Read full ${formatDate(`${edition.edition_date}T12:00:00+08:00`, { month: 'long', day: 'numeric' })} edition →`;
+    }
 
     const fragment = document.createDocumentFragment();
     for (const entry of entries.slice(0, 8)) {
       const link = el('a', 'country-card');
       link.href = `/news/world/live/#${encodeURIComponent(entry.entry_key)}`;
+      const image = makeImage(entry.image_url, entry.headline || 'FMB Worldwide', 'country-card-image');
+      image.style.cssText = 'width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border-radius:14px;margin:0 0 16px;';
+      link.appendChild(image);
       const small = document.createElement('small');
       small.appendChild(el('span', '', entry.country || entry.section || 'Worldwide'));
       small.appendChild(el('span', '', entry.category || 'Update'));
@@ -133,13 +135,11 @@
     if (!feature) return;
     const edition = await latestEdition('brief');
     if (!edition) return;
-
     const latestLink = feature.querySelector('.brief-feature-actions a:first-child');
     const cardLink = feature.querySelector('.brief-feature-latest a');
     const cardTitle = feature.querySelector('.brief-feature-latest h3');
     const cardCopy = feature.querySelector('.brief-feature-latest p');
     const cardMeta = feature.querySelector('.brief-feature-latest small');
-
     if (latestLink) latestLink.href = '/news/fmb-brief/live/';
     if (cardLink) cardLink.href = '/news/fmb-brief/live/';
     if (cardTitle) cardTitle.textContent = edition.title;
@@ -153,9 +153,7 @@
     for (const section of sections) {
       const block = el('section', 'cms-article-section');
       if (section.heading) block.appendChild(el('h2', '', section.heading));
-      for (const paragraph of Array.isArray(section.paragraphs) ? section.paragraphs : []) {
-        block.appendChild(el('p', '', paragraph));
-      }
+      for (const paragraph of Array.isArray(section.paragraphs) ? section.paragraphs : []) block.appendChild(el('p', '', paragraph));
       container.appendChild(block);
     }
   }
@@ -163,25 +161,14 @@
   async function renderArticleReader() {
     const mount = document.querySelector('[data-cms-article]');
     if (!mount) return;
-
     const pathMatch = location.pathname.match(/\/news\/read\/([^/]+)\/?$/i);
     const slug = pathMatch?.[1] ? decodeURIComponent(pathMatch[1]) : new URLSearchParams(location.search).get('slug');
-    if (!slug) {
-      mount.replaceChildren(el('p', 'cms-error', 'No article was specified.'));
-      return;
-    }
+    if (!slug) { mount.replaceChildren(el('p', 'cms-error', 'No article was specified.')); return; }
 
-    const fields = [
-      'slug','title','kicker','deck','summary','body','category','region','author_line',
-      'image_url','image_credit','published_at','updated_at','seo_title','seo_description',
-      'content_json','sources_json','image_metadata','canonical_path'
-    ].join(',');
+    const fields = ['slug','title','kicker','deck','summary','body','category','region','author_line','image_url','image_credit','published_at','updated_at','seo_title','seo_description','content_json','sources_json','image_metadata','canonical_path'].join(',');
     const rows = await get('news_articles', `select=${fields}&slug=eq.${encodeURIComponent(slug)}&status=eq.published&limit=1`);
     const article = rows?.[0];
-    if (!article) {
-      mount.replaceChildren(el('p', 'cms-error', 'This article is not available.'));
-      return;
-    }
+    if (!article) { mount.replaceChildren(el('p', 'cms-error', 'This article is not available.')); return; }
 
     document.title = article.seo_title || `${article.title} | FMB News`;
     const meta = document.querySelector('meta[name="description"]');
@@ -195,45 +182,34 @@
     header.appendChild(el('div', 'cms-byline', `${article.author_line || 'FMB News Desk'} · ${formatDate(article.published_at)}`));
     wrapper.appendChild(header);
 
-    if (article.image_url) {
-      const figure = document.createElement('figure');
-      const img = document.createElement('img');
-      img.src = article.image_url;
-      img.alt = article.image_metadata?.alt || article.title;
-      img.decoding = 'async';
-      figure.appendChild(img);
-      const captionText = article.image_metadata?.caption || article.image_credit;
-      if (captionText) figure.appendChild(el('figcaption', '', captionText));
-      wrapper.appendChild(figure);
-    }
+    const figure = document.createElement('figure');
+    const hero = makeImage(article.image_url, article.image_metadata?.alt || article.title);
+    hero.loading = 'eager';
+    figure.appendChild(hero);
+    const captionText = article.image_metadata?.caption || article.image_credit || (article.image_url ? '' : 'FMB News editorial visual');
+    if (captionText) figure.appendChild(el('figcaption', '', captionText));
+    wrapper.appendChild(figure);
 
     const body = el('div', 'cms-article-body');
-    if (article.content_json && Array.isArray(article.content_json.sections)) {
-      appendParagraphs(body, article.content_json);
-    } else if (article.body) {
-      for (const paragraph of article.body.split(/\n\s*\n/).filter(Boolean)) body.appendChild(el('p', '', paragraph));
-    }
+    if (article.content_json && Array.isArray(article.content_json.sections)) appendParagraphs(body, article.content_json);
+    else if (article.body) for (const paragraph of article.body.split(/\n\s*\n/).filter(Boolean)) body.appendChild(el('p', '', paragraph));
     wrapper.appendChild(body);
 
-    const sources = Array.isArray(article.sources_json) ? article.sources_json : [];
+    const sources = normalizedSources(article.sources_json);
     if (sources.length) {
       const sourceBox = el('aside', 'cms-sources');
       sourceBox.appendChild(el('h2', '', 'Sources'));
       const list = document.createElement('ul');
       for (const source of sources) {
+        if (!source.url) continue;
         const item = document.createElement('li');
         const link = document.createElement('a');
-        link.href = source.url || '#';
-        link.target = '_blank';
-        link.rel = 'noopener noreferrer';
-        link.textContent = [source.publisher, source.title].filter(Boolean).join(' — ') || source.url || 'Source';
-        item.appendChild(link);
-        list.appendChild(item);
+        link.href = source.url; link.target = '_blank'; link.rel = 'noopener noreferrer';
+        link.textContent = [source.publisher, source.title].filter(Boolean).join(' — ') || source.url;
+        item.appendChild(link); list.appendChild(item);
       }
-      sourceBox.appendChild(list);
-      wrapper.appendChild(sourceBox);
+      sourceBox.appendChild(list); wrapper.appendChild(sourceBox);
     }
-
     mount.replaceChildren(wrapper);
   }
 
@@ -241,19 +217,15 @@
     const mount = document.querySelector('[data-cms-edition]');
     if (!mount || mount.dataset.cmsEdition !== type) return;
     const edition = await latestEdition(type);
-    if (!edition) {
-      mount.replaceChildren(el('p', 'cms-error', `No published ${type === 'worldwide' ? 'FMB Worldwide' : 'FMB Brief'} edition is available yet.`));
-      return;
-    }
+    if (!edition) { mount.replaceChildren(el('p', 'cms-error', `No published ${type === 'worldwide' ? 'FMB Worldwide' : 'FMB Brief'} edition is available yet.`)); return; }
     const entries = await editionEntries(edition.id);
 
     document.title = `${edition.title} | ${type === 'worldwide' ? 'FMB Worldwide' : 'FMB Brief'}`;
+    const wrapper = el('div', 'cms-edition');
     const header = el('header', 'cms-edition-header');
     header.appendChild(el('div', 'cms-kicker', `${type === 'worldwide' ? 'FMB Worldwide' : 'FMB Brief'} · ${formatDate(`${edition.edition_date}T12:00:00+08:00`)}`));
     header.appendChild(el('h1', '', edition.title));
     if (edition.deck) header.appendChild(el('p', 'cms-deck', edition.deck));
-
-    const wrapper = el('div', 'cms-edition');
     wrapper.appendChild(header);
 
     for (const entry of entries || []) {
@@ -261,35 +233,32 @@
       article.id = entry.entry_key;
       article.appendChild(el('div', 'cms-entry-meta', [entry.country || entry.section, entry.category].filter(Boolean).join(' · ')));
       article.appendChild(el('h2', '', entry.headline));
-      if (entry.verified_fact) {
-        const p = el('p', 'cms-fact', entry.verified_fact);
-        p.prepend(el('strong', '', 'Verified: '));
-        article.appendChild(p);
+
+      const figure = document.createElement('figure');
+      figure.className = 'cms-entry-figure';
+      figure.style.cssText = 'margin:18px 0 22px;';
+      const image = makeImage(entry.image_url, entry.headline || 'FMB Worldwide');
+      image.style.cssText = 'width:100%;max-height:560px;aspect-ratio:16/9;object-fit:cover;display:block;border-radius:18px;';
+      figure.appendChild(image);
+      if (entry.image_credit) {
+        const caption = el('figcaption', '', entry.image_credit);
+        caption.style.cssText = 'font-size:.78rem;line-height:1.45;color:#746b77;margin-top:8px;';
+        figure.appendChild(caption);
       }
-      if (entry.why_it_matters) {
-        const p = el('p', '', entry.why_it_matters);
-        p.prepend(el('strong', '', 'Why it matters: '));
-        article.appendChild(p);
-      }
-      if (entry.reputation_implication) {
-        const p = el('p', '', entry.reputation_implication);
-        p.prepend(el('strong', '', 'Reputation / communications: '));
-        article.appendChild(p);
-      }
-      if (entry.opportunity_risk) {
-        const p = el('p', '', entry.opportunity_risk);
-        p.prepend(el('strong', '', 'Opportunity / risk: '));
-        article.appendChild(p);
-      }
-      const sources = Array.isArray(entry.source_links) ? entry.source_links : [];
+      article.appendChild(figure);
+
+      if (entry.verified_fact) { const p = el('p', 'cms-fact', entry.verified_fact); p.prepend(el('strong', '', 'Verified: ')); article.appendChild(p); }
+      if (entry.why_it_matters) { const p = el('p', '', entry.why_it_matters); p.prepend(el('strong', '', 'Why it matters: ')); article.appendChild(p); }
+      if (entry.reputation_implication) { const p = el('p', '', entry.reputation_implication); p.prepend(el('strong', '', 'Reputation / communications: ')); article.appendChild(p); }
+      if (entry.opportunity_risk) { const p = el('p', '', entry.opportunity_risk); p.prepend(el('strong', '', 'Opportunity / risk: ')); article.appendChild(p); }
+
+      const sources = normalizedSources(entry.source_links);
       if (sources.length) {
         const links = el('div', 'cms-entry-sources');
         for (const source of sources) {
-          if (!source?.url) continue;
+          if (!source.url) continue;
           const link = document.createElement('a');
-          link.href = source.url;
-          link.target = '_blank';
-          link.rel = 'noopener noreferrer';
+          link.href = source.url; link.target = '_blank'; link.rel = 'noopener noreferrer';
           link.textContent = source.publisher || source.title || 'Source';
           links.appendChild(link);
         }
@@ -297,20 +266,14 @@
       }
       wrapper.appendChild(article);
     }
-
     mount.replaceChildren(wrapper);
   }
 
   async function boot() {
-    const tasks = [
-      hydrateHomepageStories(),
-      hydrateWorldwideLanding(),
-      hydrateBriefFeature(),
-      renderArticleReader(),
-      renderEdition('worldwide'),
-      renderEdition('brief')
-    ];
-    await Promise.allSettled(tasks);
+    await Promise.allSettled([
+      hydrateHomepageStories(), hydrateWorldwideLanding(), hydrateBriefFeature(),
+      renderArticleReader(), renderEdition('worldwide'), renderEdition('brief')
+    ]);
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot, { once: true });
