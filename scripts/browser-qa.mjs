@@ -139,7 +139,7 @@ const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('fmbSavedSto
 assert(saved.some(item=>item.path.includes('/news/explainer/leptospirosis-after-flood-resilience-metro-manila/')),'Reader Save did not persist the article.');
 assert.equal(await page.locator('meta[property="og:type"]').getAttribute('content'),'article','Open Graph article metadata missing.');
 const structured=JSON.parse(await page.locator('script[type="application/ld+json"]').textContent());
-assert.equal(structured['@type'],'NewsArticle','FMB Explainer structured data is not NewsArticle.');
+assert.equal(structured['@type'],'Article','FMB Explainer structured data is not Article.');
 assert(structured.datePublished,'FMB Explainer structured data is missing the publication timestamp.');
 
 await browser.close();
