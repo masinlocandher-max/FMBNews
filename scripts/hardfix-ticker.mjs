@@ -56,14 +56,30 @@ function clockScript() {
 
 function ensureTickerStyles(html) {
   if (html.includes('/assets/css/fmb-news-ticker-hardfix.css')) return html;
-  return html.replace('</head>', '<link rel="stylesheet" href="/assets/css/fmb-news-ticker-hardfix.css?v=20260831-ticker-hardfix"></head>');
+  return html.replace('</head>', '<link rel="stylesheet" href="/assets/css/fmb-news-ticker-hardfix.css?v=20260902-ticker-hardfix"></head>');
 }
 
 function replaceTickerRegion(html, stories) {
+  const normalized = `${ticker(stories)}${utility()}`;
   const start = html.indexOf('<div class="headline-ticker"');
-  const mast = html.indexOf('<header class="mast">', start);
-  if (start < 0 || mast < 0) return html;
-  return `${html.slice(0, start)}${ticker(stories)}${utility()}${html.slice(mast)}`;
+  const mastAfterTicker = start >= 0 ? html.indexOf('<header class="mast', start) : -1;
+  if (start >= 0 && mastAfterTicker >= 0) {
+    return `${html.slice(0, start)}${normalized}${html.slice(mastAfterTicker)}`;
+  }
+
+  const mast = html.indexOf('<header class="mast');
+  if (mast >= 0) return `${html.slice(0, mast)}${normalized}${html.slice(mast)}`;
+
+  const main = html.indexOf('<main');
+  if (main >= 0) {
+    return `${html.slice(0, main)}${normalized}<header class="mast audit-network-mast" hidden></header>${html.slice(main)}`;
+  }
+
+  const bodyEnd = html.indexOf('>', html.indexOf('<body'));
+  if (bodyEnd >= 0) {
+    return `${html.slice(0, bodyEnd + 1)}${normalized}<header class="mast audit-network-mast" hidden></header>${html.slice(bodyEnd + 1)}`;
+  }
+  return html;
 }
 
 function normalizeClockScripts(html) {
@@ -89,4 +105,4 @@ for (const page of pages) {
   }
 }
 
-console.log(`FMB ticker hard fix applied to ${changed} built HTML pages: one fixed PHT clock, one clock process, no moving-story timestamps, unified editorial headline typography.`);
+console.log(`FMB ticker hard fix applied to ${changed} built HTML pages: one fixed PHT clock, one clock process, no moving-story timestamps, unified editorial headline typography, including late-generated newsroom utility pages.`);
