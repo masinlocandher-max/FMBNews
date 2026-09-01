@@ -15,6 +15,7 @@ await import('./render-metallic-reference.mjs');
 await import('./hardfix-metallic-network.mjs');
 await import('./hardfix-ticker.mjs');
 await import('./hardfix-product-identity.mjs');
+await import('./hardfix-mobile-app.mjs');
 
 // The root /news/ page is the Filipino Media Bulletin publication landing,
 // not a duplicate FMB News feed. This final pass keeps the three products
@@ -37,4 +38,4 @@ async function rewriteAssetPaths(target) {
 }
 
 await rewriteAssetPaths(newsRoot);
-console.log('Built Filipino Media Bulletin with idempotent /news asset scoping, emblem-backed landing, upgraded typography, distinct FMB News and FMB Worldwide products, and one FMB Daily Brief subscription CTA.');
+console.log('Built Filipino Media Bulletin with idempotent /news asset scoping, emblem-backed landing, upgraded typography, dedicated mobile app view for FMB News, distinct FMB News and FMB Worldwide products, and one FMB Daily Brief subscription CTA.');
