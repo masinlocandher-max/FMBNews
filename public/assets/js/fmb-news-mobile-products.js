@@ -85,11 +85,12 @@
 
   function addCrosswordSignature(){
     const hero=document.querySelector('.fmb-feature-hero');
-    if(!hero||hero.querySelector('.fmb-crossword-count'))return;
-    const count=document.createElement('div');
-    count.className='fmb-crossword-count';
-    count.innerHTML='<strong>36</strong><span>CURRENT-EVENT<br>ANSWERS</span>';
-    hero.prepend(count);
+    if(!hero||hero.querySelector('.fmb-crossword-visual'))return;
+    const art=document.createElement('div');
+    art.className='fmb-crossword-visual';
+    art.setAttribute('aria-hidden','true');
+    art.innerHTML='<i></i><i></i><i class="on"></i><i></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i>';
+    hero.prepend(art);
   }
 
   function addAboutSignature(){
