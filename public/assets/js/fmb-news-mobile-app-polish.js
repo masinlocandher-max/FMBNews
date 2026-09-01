@@ -21,23 +21,18 @@
     }
   }
 
-  function placeHomeContext(){
+  function cleanGlobalUtility(){
     const utility=$('.fmb-global-mobile-utility');
-    if(!utility)return;
-    $('.fmb-global-week-actions',utility)?.remove();
-    const isHome=document.body.dataset.fmbRoute==='home'||location.pathname.replace(/\/+$/,'')==='/news';
-    if(!isHome){utility.remove();return}
-    const hero=$('.fmb-app-brand-hero');
-    if(!hero)return;
-    utility.classList.add('fmb-hero-live-overlay');
-    if(utility.parentElement!==hero)hero.append(utility);
-    const weather=$('[data-fmb-weather]',utility);
+    if(utility)utility.remove();
+    const heroOverlay=$('.fmb-app-brand-hero>.fmb-hero-live-overlay');
+    if(!heroOverlay)return;
+    const weather=$('[data-fmb-weather]',heroOverlay);
     if(weather&&/set local weather/i.test(weather.textContent||''))weather.textContent='Weather';
-    const button=$('[data-fmb-weather-button]',utility);
+    const button=$('[data-fmb-weather-button]',heroOverlay);
     if(button)button.setAttribute('aria-label','Set local weather');
   }
 
-  function clean(){hideLegacyProductRails();placeHomeContext()}
+  function clean(){hideLegacyProductRails();cleanGlobalUtility()}
   clean();
   addEventListener('DOMContentLoaded',clean,{once:true});
   addEventListener('load',clean,{once:true});
