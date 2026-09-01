@@ -10,13 +10,14 @@ const premiumCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-premi
 const mobileHomeCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-home.css?v=20260901-app-home-v2">';
 const mobileGlobalCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-global.css?v=20260901-global-v3">';
 const mobileProductsCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-products.css?v=20260901-products-v1">';
-const mobilePolishCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-app-polish.css?v=20260902-polish-v1">';
+const mobilePolishCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-app-polish.css?v=20260902-polish-v2">';
+const mobileLiveHeroCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-home-live-hero.css?v=20260902-live-hero-v1">';
 const personalizationJs='<script src="/assets/js/fmb-news-mobile-personalization.js?v=20260901-personal-v2" defer></script>';
 const premiumJs='<script src="/assets/js/fmb-news-mobile-premium.js?v=20260901-premium-v2" defer></script>';
-const mobileHomeJs='<script src="/assets/js/fmb-news-mobile-home.js?v=20260901-app-home-v1" defer></script>';
+const mobileHomeJs='<script src="/assets/js/fmb-news-mobile-home.js?v=20260902-app-home-v2" defer></script>';
 const mobileGlobalJs='<script src="/assets/js/fmb-news-mobile-global.js?v=20260901-global-v3" defer></script>';
 const mobileProductsJs='<script src="/assets/js/fmb-news-mobile-products.js?v=20260901-products-v2" defer></script>';
-const mobilePolishJs='<script src="/assets/js/fmb-news-mobile-app-polish.js?v=20260902-polish-v1" defer></script>';
+const mobilePolishJs='<script src="/assets/js/fmb-news-mobile-app-polish.js?v=20260902-polish-v2" defer></script>';
 const pwaMeta='<link rel="manifest" href="/news/manifest.webmanifest"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="FMB News"><meta name="theme-color" content="#2b1235">';
 
 function addBodyClass(html){if(/<body\b[^>]*class=["'][^"']*\bfmb-mobile-first\b/i.test(html))return html;if(/<body\b[^>]*class=["']/i.test(html))return html.replace(/<body\b([^>]*?)class=(["'])([^"']*)\2/i,(_m,b,q,c)=>`<body${b}class=${q}${c} fmb-mobile-first${q}`);return html.replace(/<body\b([^>]*)>/i,'<body$1 class="fmb-mobile-first">')}
@@ -54,15 +55,16 @@ async function apply(target){
   html=upsertCss(html,'/assets/css/fmb-news-mobile-home.css',mobileHomeCss,'20260901-app-home-v2');
   html=upsertCss(html,'/assets/css/fmb-news-mobile-global.css',mobileGlobalCss,'20260901-global-v3');
   html=upsertCss(html,'/assets/css/fmb-news-mobile-products.css',mobileProductsCss,'20260901-products-v1');
-  html=upsertCss(html,'/assets/css/fmb-news-mobile-app-polish.css',mobilePolishCss,'20260902-polish-v1');
+  html=upsertCss(html,'/assets/css/fmb-news-mobile-app-polish.css',mobilePolishCss,'20260902-polish-v2');
+  html=upsertCss(html,'/assets/css/fmb-news-mobile-home-live-hero.css',mobileLiveHeroCss,'20260902-live-hero-v1');
   if(!html.includes('/news/manifest.webmanifest'))html=html.replace('</head>',`${pwaMeta}</head>`);
   html=upsertJs(html,'/assets/js/fmb-news-mobile-personalization.js',personalizationJs,'20260901-personal-v2');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-premium.js',premiumJs,'20260901-premium-v2');
-  html=upsertJs(html,'/assets/js/fmb-news-mobile-home.js',mobileHomeJs,'20260901-app-home-v1');
+  html=upsertJs(html,'/assets/js/fmb-news-mobile-home.js',mobileHomeJs,'20260902-app-home-v2');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-global.js',mobileGlobalJs,'20260901-global-v3');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-products.js',mobileProductsJs,'20260901-products-v2');
-  html=upsertJs(html,'/assets/js/fmb-news-mobile-app-polish.js',mobilePolishJs,'20260902-polish-v1');
+  html=upsertJs(html,'/assets/js/fmb-news-mobile-app-polish.js',mobilePolishJs,'20260902-polish-v2');
   await writeFile(target,html,'utf8');
 }
 await apply(newsRoot);
-console.log('Applied the unified Filipino Media Bulletin mobile system with final premium app polish: one masthead, one product rail, quiet Home context, immediate internal product content, and no legacy duplicate navigation.');
+console.log('Applied the unified Filipino Media Bulletin mobile system with one masthead, one product rail, full-bleed live Home hero, immediate internal product content, and no legacy duplicate navigation.');
