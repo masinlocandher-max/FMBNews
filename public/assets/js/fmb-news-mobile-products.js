@@ -26,24 +26,51 @@
     main.prepend(el);
   }
 
+  function productSignal(hero,label,description,kind){
+    if(!hero||hero.querySelector('.fmb-product-signal'))return;
+    const el=document.createElement('div');
+    el.className=`fmb-product-signal fmb-${kind}-signal`;
+    el.innerHTML=`<span class="fmb-product-symbol fmb-${kind}-symbol" aria-hidden="true"></span><div><strong>${label}</strong><small>${description}</small></div>`;
+    hero.prepend(el);
+  }
+
   function addWorldSignature(){
     const hero=document.querySelector('.world-hero .shell');
-    if(!hero||hero.querySelector('.fmb-world-signal'))return;
-    const el=document.createElement('div');
-    el.className='fmb-world-signal';
-    el.innerHTML='<span class="fmb-world-orbit" aria-hidden="true"></span><div><strong>GLOBAL DESK</strong><small>24-hour verified intelligence for Filipino readers</small></div>';
-    hero.prepend(el);
+    if(!hero)return;
+    productSignal(hero,'GLOBAL DESK','24-hour verified intelligence for Filipino readers','world');
+  }
+
+  function addExplainerSignature(){
+    const hero=document.querySelector('.explainer-hero .shell');
+    if(!hero)return;
+    productSignal(hero,'EXPLAINER DESK','Clear context for complicated issues','explainer');
+    const kicker=hero.querySelector('.explainer-kicker');
+    if(kicker)kicker.textContent='FMB News · Explainer Desk';
+    if(!hero.querySelector('.explainer-rule')){
+      const rule=document.createElement('div');
+      rule.className='explainer-rule';
+      rule.textContent='PLAIN LANGUAGE · CONTEXT FIRST · FILIPINO RELEVANCE';
+      hero.append(rule);
+    }
   }
 
   function addBriefSignature(){
     const hero=document.querySelector('.brief-archive-hero .brief-shell,.brief-archive-hero .shell');
-    if(!hero||hero.querySelector('.fmb-brief-signature-visual'))return;
-    const img=document.createElement('img');
-    img.className='fmb-brief-signature-visual';
-    img.src='/news/assets/images/mobile/fmb-daily-brief-mug.jpg';
-    img.alt='Purple FMB Daily Brief coffee mug with gold FMB emblem';
-    img.loading='eager';
-    hero.append(img);
+    if(!hero)return;
+    productSignal(hero,'DAILY DESK','One complete briefing for Filipino readers','brief');
+    const title=hero.querySelector('h1');
+    if(title&&!hero.querySelector('.brief-kicker')){
+      const kicker=document.createElement('div');
+      kicker.className='brief-kicker';
+      kicker.textContent='FMB News · Daily Brief';
+      title.before(kicker);
+    }
+    if(!hero.querySelector('.brief-rule')){
+      const rule=document.createElement('div');
+      rule.className='brief-rule';
+      rule.textContent='DAILY EDITION · TOP STORIES · CONTEXT · WHAT TO WATCH';
+      hero.append(rule);
+    }
   }
 
   function addHoroscopeSignature(){
@@ -92,8 +119,6 @@
     update();addEventListener('scroll',update,{passive:true});addEventListener('resize',update,{passive:true});
   }
 
-  ({archive:addArchiveIntro,world:addWorldSignature,brief:addBriefSignature,horoscope:addHoroscopeSignature,crossword:addCrosswordSignature,about:addAboutSignature,article:addArticleProgress}[route]||(()=>{}))();
-  // Reading progress belongs to every true long-form article even when the
-  // page remains inside a branded product family such as FMB Explainer.
+  ({archive:addArchiveIntro,world:addWorldSignature,explainer:addExplainerSignature,brief:addBriefSignature,horoscope:addHoroscopeSignature,crossword:addCrosswordSignature,about:addAboutSignature,article:addArticleProgress}[route]||(()=>{}))();
   addArticleProgress();
 })();
