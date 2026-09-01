@@ -19,6 +19,11 @@ async function open(path){
   const products=await page.locator('.fmb-mobile-product-rail>a').allTextContents();
   assert.deepEqual(products.map(v=>v.trim()),['FMB News','FMB Worldwide','FMB Explainer','FMB Daily Brief'],`${path} product rail drifted`);
   assert.equal(await page.locator('.fmb-mobile-product-rail:visible').count(),1,`${path} must have exactly one visible FMB product rail`);
+  const activeTab=page.locator('.fmb-mobile-product-rail a[aria-current="page"]');
+  await activeTab.waitFor({state:'visible'});
+  const activeStyle=await activeTab.evaluate(el=>({background:getComputedStyle(el).backgroundColor,color:getComputedStyle(el).color}));
+  assert.equal(activeStyle.background,'rgb(255, 255, 255)',`${path} active product toggle must be white`);
+  assert.equal(activeStyle.color,'rgb(43, 18, 53)',`${path} active product toggle text must be deep plum`);
   const duplicateRails=await page.evaluate(()=>[...document.querySelectorAll('nav')].filter(nav=>{
     if(nav.classList.contains('fmb-mobile-product-rail')||nav.closest('footer'))return false;
     const rect=nav.getBoundingClientRect();
@@ -102,13 +107,15 @@ await page.locator('.fmb-approved-hero-ticker').waitFor({state:'visible'});
 await page.locator('.fmb-hero-live-overlay').waitFor({state:'visible'});
 await page.locator('.fmb-hero-readable-shade').waitFor({state:'visible'});
 assert.equal(await page.locator('.fmb-hero-greeting:visible').count(),0,'Legacy giant greeting overlay must stay removed.');
+assert.equal(await page.locator('.fmb-approved-hero-label:visible').count(),0,'Home must not show a label/CTA above the greeting.');
+assert.equal((await page.locator('.fmb-approved-hero-ticker>strong').textContent())?.trim(),'HEADLINES','Home moving news bar must say HEADLINES.');
 const ctas=await page.locator('.fmb-approved-hero-cta>*').allTextContents();
 assert.deepEqual(ctas.map(v=>v.trim()),['Read the Latest','Customize'],'Home hero CTA labels drifted.');
 const timeSize=await page.locator('.fmb-hero-clock [data-fmb-local-time]').evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
 const weatherSize=await page.locator('.fmb-hero-weather-copy>[data-fmb-weather]').evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
 const greetingSize=await page.locator('[data-fmb-greeting-line]').evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
-assert(timeSize>=9&&timeSize<=14,`Home utility time should be compact, not giant (${timeSize}px)`);
-assert(weatherSize>=12&&weatherSize<=18,`Home utility weather should be compact, not giant (${weatherSize}px)`);
+assert(timeSize>=9&&timeSize<=12,`Home utility time should stay small (${timeSize}px)`);
+assert(weatherSize>=12&&weatherSize<=15,`Home utility weather should stay small (${weatherSize}px)`);
 assert(greetingSize>=24&&greetingSize<=32,`Home editorial greeting headline is out of range (${greetingSize}px)`);
 assert((await page.locator('[data-fmb-greeting]').textContent()||'').trim().length>4,'Home contextual greeting is missing.');
 assert((await page.locator('[data-fmb-greeting-line]').textContent()||'').trim().length>10,'Home greeting quote is missing.');
@@ -184,8 +191,9 @@ await assertContrast('.fmb-horoscope-section p',4.5,'Horoscope reading text is l
 
 await open('/news/crossword/');
 assert.equal(await page.locator('body').getAttribute('data-fmb-route'),'crossword','Crossword route art direction missing.');
-await page.locator('.fmb-crossword-count').waitFor({state:'visible'});
-assert.equal((await page.locator('.fmb-crossword-count strong').textContent())?.trim(),'36','Crossword current-event answer count is wrong.');
+assert.equal(await page.locator('.fmb-crossword-count:visible').count(),0,'Crossword numeric hero count must stay removed.');
+await page.locator('.fmb-crossword-visual').waitFor({state:'visible'});
+assert.equal(await page.locator('.fmb-crossword-visual i').count(),9,'Crossword decorative grid must remain intact.');
 await page.locator('[data-cw-grid]').waitFor({state:'visible'});
 assert((await page.locator('[data-cw-grid] input').count())>0,'Crossword has no playable cells.');
 const crosswordText=await page.locator('body').innerText();
@@ -219,4 +227,4 @@ assert.equal(structured['@type'],'Article','FMB Explainer structured data is not
 assert(structured.datePublished,'FMB Explainer structured data is missing the publication timestamp.');
 
 await browser.close();
-console.log('Mobile browser QA passed: approved Philippines newsroom hero with a non-overlapping HTML overlay, exact Read the Latest / Customize CTAs, compact date/time/weather strip, one compact FMB shell, strict 300px shared Worldwide/Explainer/Daily Brief hero geometry, explicit mobile contrast checks, and dedicated Archive, Horoscope, Crossword, About, and article experiences.');
+console.log('Mobile browser QA passed: white active product toggle, approved Philippines newsroom hero with HEADLINES crawl and compact date/time/weather, exact Read the Latest / Customize CTAs, strict 300px shared Worldwide/Explainer/Daily Brief hero geometry, enhanced Crossword with no numeric hero count, explicit contrast checks, and dedicated Archive, Horoscope, About, and article experiences.');
