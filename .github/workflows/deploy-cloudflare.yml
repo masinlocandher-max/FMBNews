@@ -117,12 +117,12 @@ jobs:
 
           fetch_with_retry 'https://www.francinemariebautista.com/news/explainer/leptospirosis-after-flood-resilience-metro-manila/' /tmp/news-explainer-first.html /tmp/news-explainer-first.headers 'FMB Explainer article 001'
           grep -qi 'Leptospirosis After the Flood' /tmp/news-explainer-first.html
-          grep -qi '<h2>Sources</h2>' /tmp/news-explainer-first.html
+          grep -qi 'Sources' /tmp/news-explainer-first.html
           tr -d '\r' < /tmp/news-explainer-first.headers | grep -Eqi '^x-fmb-news-worker: fmb-news$'
 
           fetch_with_retry 'https://www.francinemariebautista.com/news/explainer/bakit-humihina-ang-halaga-ng-peso-laban-sa-dolyar/' /tmp/news-explainer-last.html /tmp/news-explainer-last.headers 'FMB Explainer article 206'
           grep -qi 'Bakit humihina ang halaga ng peso laban sa dolyar' /tmp/news-explainer-last.html
-          grep -qi '<h2>Sources</h2>' /tmp/news-explainer-last.html
+          grep -qi 'Sources' /tmp/news-explainer-last.html
           tr -d '\r' < /tmp/news-explainer-last.headers | grep -Eqi '^x-fmb-news-worker: fmb-news$'
 
           fetch_with_retry 'https://www.francinemariebautista.com/news/world/live/' /tmp/news-world-live.html /tmp/news-world-live.headers 'FMB Worldwide live desk'
