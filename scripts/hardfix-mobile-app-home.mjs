@@ -21,17 +21,27 @@ function breakingStory(ss){return ss.find(s=>s?.audit?.push_alert===true||s?.pus
 
 const ss=await stories();
 if(!ss.length)throw new Error('Cannot build FMB mobile app home without published stories.');
-const lead=ss[0],latest=ss.slice(1,6),breaking=breakingStory(ss);
+const lead=ss[0],latest=ss.slice(1,6),breaking=breakingStory(ss),tickerStories=[lead,...latest].slice(0,4);
+const tickerLabel=breaking?'BREAKING NEWS':'LATEST';
+const tickerHref=breaking?`/news/${esc(breaking.slug)}/`:'#fmb-app-latest-title';
 const mobileHome=`<div class="fmb-mobile-app-home" data-fmb-mobile-home>
-  ${breaking?`<a class="fmb-app-breaking" href="/news/${esc(breaking.slug)}/"><strong>BREAKING</strong><span>${esc(breaking.headline)}</span><b aria-hidden="true">›</b></a>`:''}
   <section class="fmb-app-brand-hero" aria-label="FMB News live home">
-    <img src="${approvedHero}" alt="FMB News global newsroom collage with the official gold shell emblem" fetchpriority="high" data-fmb-approved-hero>
+    <img src="${approvedHero}" alt="FMB News Philippines newsroom hero with the Philippine flag, global map, broadcast camera and official gold shell emblem" fetchpriority="high" data-fmb-approved-hero>
     <span class="fmb-hero-readable-shade" aria-hidden="true"></span>
-    <div class="fmb-hero-greeting">
-      <p data-fmb-greeting>Hello, news fan.</p>
-      <h1 data-fmb-greeting-line>Let’s see what matters right now.</h1>
-      <button type="button" data-fmb-customize>Customize your FMB</button>
+    <div class="fmb-approved-hero-copy">
+      <span class="fmb-approved-hero-label">LATEST UPDATE</span>
+      <p data-fmb-greeting>Hello, night owl.</p>
+      <h1 data-fmb-greeting-line>The world is still moving. Here’s what changed.</h1>
+      <p class="fmb-approved-hero-deck">Stay informed with verified facts, meaningful context, and perspectives that help you understand what matters.</p>
+      <div class="fmb-approved-hero-cta">
+        <a href="#fmb-app-latest-title">Read the Latest</a>
+        <button type="button" data-fmb-customize>Customize</button>
+      </div>
     </div>
+    <a class="fmb-approved-hero-ticker" href="${tickerHref}" aria-label="${tickerLabel}">
+      <strong>${tickerLabel}</strong>
+      <span class="fmb-approved-hero-ticker-window">${tickerStories.map(s=>`<i>${esc(s.headline)}</i>`).join('')}</span>
+    </a>
     <div class="fmb-hero-live-overlay" aria-label="Live local date, time and weather">
       <div class="fmb-hero-clock">
         <strong data-fmb-local-date>Today</strong>
@@ -67,4 +77,4 @@ let html=await readFile(page,'utf8');
 html=html.replace(/<div class="fmb-mobile-app-home"[\s\S]*?<\/div>\s*(?=<main class="network-home")/i,'');
 if(!html.includes('data-fmb-mobile-home'))html=html.replace('<main class="network-home">',`${mobileHome}<main class="network-home">`);
 await writeFile(page,html,'utf8');
-console.log(`Injected FMB mobile app home using the localized approved hero and mug plus ${Math.min(ss.length,6)} live published stories${breaking?' with a real breaking strip':''}.`);
+console.log(`Injected the approved FMB Philippines hero as an HTML-overlay mobile home with Read the Latest / Customize CTAs and ${Math.min(ss.length,6)} live published stories.`);
