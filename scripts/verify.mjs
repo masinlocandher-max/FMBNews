@@ -43,10 +43,10 @@ for (const [name, html] of Object.entries(pages)) {
   if (!html.includes('fmb-news-mobile-first-site.css')) throw new Error(`${name}: responsive layer missing`);
   if (!html.includes('fmb-news-mobile-premium.css?v=20260901-premium-v2')) throw new Error(`${name}: premium mobile app layer missing`);
   if (!html.includes('fmb-news-mobile-home.css?v=20260901-app-home-v1')) throw new Error(`${name}: mobile app visual layer missing`);
-  if (!html.includes('fmb-news-mobile-global.css?v=20260901-global-v1')) throw new Error(`${name}: global mobile app CSS missing`);
+  if (!html.includes('fmb-news-mobile-global.css?v=20260901-global-v2')) throw new Error(`${name}: global mobile app CSS missing`);
   if (!html.includes('fmb-news-mobile-premium.js?v=20260901-premium-v2')) throw new Error(`${name}: premium mobile behavior missing`);
   if (!html.includes('fmb-news-mobile-home.js?v=20260901-app-home-v1')) throw new Error(`${name}: mobile home behavior missing`);
-  if (!html.includes('fmb-news-mobile-global.js?v=20260901-global-v1')) throw new Error(`${name}: global mobile app runtime missing`);
+  if (!html.includes('fmb-news-mobile-global.js?v=20260901-global-v2')) throw new Error(`${name}: global mobile app runtime missing`);
   if (html.includes('/news/news/assets/')) throw new Error(`${name}: double-scoped asset path`);
 }
 if (!pages.explainer.includes('aria-label="FMB Explainer"') || !pages.explainer.includes('fmb-explainer-route') || !pages.explainer.includes('206 topics, explained')) throw new Error('FMB Explainer product route regression');
@@ -64,8 +64,8 @@ for (const token of ['@media (max-width:699px)','--app-plum:#2b1235','--app-bg:#
 if (!premiumJs.includes("matchMedia('(max-width:699px)')") || premiumJs.includes('location.replace')) throw new Error('Mobile app home must stay on /news/ without archive redirect');
 for (const token of ['.fmb-mobile-app-home','max-width:699px','.fmb-app-brief-card','.fmb-app-week-grid','.fmb-app-weather']) if (!mobileHomeCss.includes(token)) throw new Error(`Mobile app home CSS regression: missing ${token}`);
 for (const token of ['open-meteo.com','geolocation','data-fmb-local-date','data-fmb-weather']) if (!mobileHomeJs.includes(token)) throw new Error(`Mobile app home utility regression: missing ${token}`);
-for (const token of ['.fmb-global-mobile-utility','.fmb-global-week-actions','.fmb-mobile-reader-actions','@media(max-width:699px)']) if (!mobileGlobalCss.includes(token)) throw new Error(`Global mobile CSS regression: missing ${token}`);
-for (const token of ['data-fmb-global-utility','open-meteo.com','geolocation','/news/horoscope/','/news/crossword/','fmbSavedStoriesV1','.article,.cms-article,article.article']) if (!mobileGlobalJs.includes(token)) throw new Error(`Global mobile runtime regression: missing ${token}`);
+for (const token of ['.fmb-mobile-app-shell','.fmb-mobile-shell-head','.fmb-mobile-product-rail','.fmb-global-mobile-utility','.fmb-mobile-reader-actions','brief-archive-hero','fmb-app-lead h2','@media(max-width:699px)']) if (!mobileGlobalCss.includes(token)) throw new Error(`Global mobile CSS regression: missing ${token}`);
+for (const token of ['fmb-mobile-app-shell','fmb-mobile-product-rail','data-fmb-global-utility','open-meteo.com','geolocation','/news/horoscope/','/news/crossword/','fmbSavedStoriesV1','.article,.cms-article,article.article']) if (!mobileGlobalJs.includes(token)) throw new Error(`Global mobile runtime regression: missing ${token}`);
 for (const token of ['PAXSILICA','IMPEACHMENT','PADILLA','DUTERTE','SENATE','TARLAC','BCDA','AETA','DEPED']) if (!crosswordJs.includes(token)) throw new Error(`Current-events crossword regression: missing ${token}`);
 
 const emblem = await readFile(resolve('dist/news/assets/images/brand/fmb-bulletin-emblem.svg'),'utf8');
@@ -95,9 +95,9 @@ async function scanBuilt(target) {
   if (text.includes('/news/news/assets/')) throw new Error(`Double-scoped asset in ${path.relative(root,target)}`);
   if (path.basename(target) === 'index.html') {
     builtPageCount++;
-    if (!text.includes('fmb-news-mobile-global.css?v=20260901-global-v1')) throw new Error(`Global mobile CSS not injected in ${path.relative(root,target)}`);
-    if (!text.includes('fmb-news-mobile-global.js?v=20260901-global-v1')) throw new Error(`Global mobile runtime not injected in ${path.relative(root,target)}`);
+    if (!text.includes('fmb-news-mobile-global.css?v=20260901-global-v2')) throw new Error(`Global mobile CSS not injected in ${path.relative(root,target)}`);
+    if (!text.includes('fmb-news-mobile-global.js?v=20260901-global-v2')) throw new Error(`Global mobile runtime not injected in ${path.relative(root,target)}`);
   }
 }
 await scanBuilt(resolve('dist/news'));
-console.log(`FMBNews verification passed: four official products locked, ${explainerCount} FMB Explainer topics verified, and the global mobile app layer is injected across all ${builtPageCount} built news pages.`);
+console.log(`FMBNews verification passed: four official products locked, ${explainerCount} FMB Explainer topics verified, and unified mobile shell v2 is injected across all ${builtPageCount} built news pages.`);
