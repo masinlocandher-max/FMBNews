@@ -24,6 +24,7 @@ if(!ss.length)throw new Error('Cannot build FMB mobile app home without publishe
 const lead=ss[0],latest=ss.slice(1,6),breaking=breakingStory(ss),tickerStories=[lead,...latest].slice(0,4);
 const tickerLabel=breaking?'BREAKING NEWS':'LATEST';
 const tickerHref=breaking?`/news/${esc(breaking.slug)}/`:'#fmb-app-latest-title';
+const tickerGroup=tickerStories.map(s=>`<i>${esc(s.headline)}</i>`).join('');
 const mobileHome=`<div class="fmb-mobile-app-home" data-fmb-mobile-home>
   <section class="fmb-app-brand-hero" aria-label="FMB News live home">
     <img src="${approvedHero}" alt="FMB News Philippines newsroom hero with the Philippine flag, global map, broadcast camera and official gold shell emblem" fetchpriority="high" data-fmb-approved-hero>
@@ -40,7 +41,7 @@ const mobileHome=`<div class="fmb-mobile-app-home" data-fmb-mobile-home>
     </div>
     <a class="fmb-approved-hero-ticker" href="${tickerHref}" aria-label="${tickerLabel}">
       <strong>${tickerLabel}</strong>
-      <span class="fmb-approved-hero-ticker-window">${tickerStories.map(s=>`<i>${esc(s.headline)}</i>`).join('')}</span>
+      <span class="fmb-approved-hero-ticker-window"><span class="fmb-approved-hero-ticker-track"><span class="fmb-approved-hero-ticker-group">${tickerGroup}</span><span class="fmb-approved-hero-ticker-group" aria-hidden="true">${tickerGroup}</span></span></span>
     </a>
     <div class="fmb-hero-live-overlay" aria-label="Live local date, time and weather">
       <div class="fmb-hero-clock">
@@ -77,4 +78,4 @@ let html=await readFile(page,'utf8');
 html=html.replace(/<div class="fmb-mobile-app-home"[\s\S]*?<\/div>\s*(?=<main class="network-home")/i,'');
 if(!html.includes('data-fmb-mobile-home'))html=html.replace('<main class="network-home">',`${mobileHome}<main class="network-home">`);
 await writeFile(page,html,'utf8');
-console.log(`Injected the approved FMB Philippines hero as an HTML-overlay mobile home with Read the Latest / Customize CTAs and ${Math.min(ss.length,6)} live published stories.`);
+console.log(`Injected the approved FMB Philippines hero as an HTML-overlay mobile home with Read the Latest / Customize CTAs, a continuous headline crawl, and ${Math.min(ss.length,6)} live published stories.`);
