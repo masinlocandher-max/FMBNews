@@ -22,6 +22,7 @@ const headAssets=[
   '<meta name="apple-mobile-web-app-title" content="FMB News">',
   '<link rel="stylesheet" href="/assets/css/fmb-news-mobile-app.css?v=20260901-app-v1">',
   '<link rel="stylesheet" href="/assets/css/fmb-news-mobile-image-quality.css?v=20260901-image-quality-v1">',
+  '<link rel="stylesheet" href="/assets/css/fmb-news-mobile-readability.css?v=20260901-readability-v1">',
   '<script src="/assets/js/fmb-news-mobile-app.js?v=20260901-app-v1" defer></script>',
   '<script src="/assets/js/fmb-news-mobile-image-quality.js?v=20260901-image-quality-v1" defer></script>'
 ];
@@ -35,4 +36,4 @@ for(const asset of headAssets){
 
 html=html.replace(/<meta name="theme-color" content="[^"]*">/i,'<meta name="theme-color" content="#2b1235">');
 await writeFile(target,html,'utf8');
-console.log('Applied dedicated mobile app shell and credible-image quality gate to /news/archive/.');
+console.log('Applied dedicated mobile app shell, credible-image quality gate, and readability layer to /news/archive/.');
