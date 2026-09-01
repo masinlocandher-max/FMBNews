@@ -1,0 +1,12 @@
+{
+  "name": "FMB News",
+  "short_name": "FMB News",
+  "description": "Verified Philippine news, worldwide context, and FMB Brief.",
+  "start_url": "/news/archive/",
+  "scope": "/news/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2b1235",
+  "orientation": "portrait-primary",
+  "categories": ["news", "magazines"]
+}
