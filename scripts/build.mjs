@@ -40,6 +40,7 @@ await import('./hardfix-mobile-first-site.mjs');
 // fallbacks, product-first navigation, working search/submission routes, Daily
 // Brief freshness, metadata cleanup, restrained homepage copy, and source links.
 await import('./hardfix-newsroom-audit.mjs');
+await import('./hardfix-newsroom-compat.mjs');
 
 const textExtensions = new Set(['.html', '.css', '.js', '.mjs', '.json', '.xml', '.txt', '.svg']);
 
