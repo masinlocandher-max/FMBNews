@@ -10,19 +10,21 @@
 
   function greetingFor(date){
     const h=date.getHours();
-    if(h<5)return['Hello, night owl.','The world kept moving. Here’s what changed.'];
-    if(h<8)return['Good morning, early bird.','Start informed, not overwhelmed.'];
-    if(h<12)return['Good morning, news fan.','Let’s get you caught up on what matters.'];
-    if(h<14)return['Hello, lunch-break reader.','A quick catch-up before you get back to it.'];
-    if(h<18)return['Good afternoon, news fan.','Here’s what deserves your attention right now.'];
-    if(h<22)return['Good evening.','Let’s make sense of the day together.'];
-    return['Still up?','One smart night read before you call it a day.'];
+    if(h<5)return['Hello, night owl.','The world is still moving. Here’s what changed.'];
+    if(h<12)return['Good morning.','The world kept moving. Here’s what changed.'];
+    if(h<17)return['Good afternoon.','Step back in. Here’s what matters now.'];
+    if(h<21)return['Good evening.','The day moved fast. Here’s the clearest view.'];
+    return['Still up?','One smart catch-up before you call it a day.'];
   }
 
   function tick(){
     const n=new Date();
     const date=$('[data-fmb-local-date]',root),time=$('[data-fmb-local-time]',root),greet=$('[data-fmb-greeting]',root),line=$('[data-fmb-greeting-line]',root);
-    if(date)date.textContent=new Intl.DateTimeFormat(undefined,{weekday:'long',month:'long',day:'numeric'}).format(n);
+    if(date){
+      const d=new Intl.DateTimeFormat(undefined,{month:'short',day:'numeric',year:'numeric'}).format(n);
+      const w=new Intl.DateTimeFormat(undefined,{weekday:'short'}).format(n);
+      date.textContent=`${d} · ${w}`;
+    }
     if(time)time.textContent=new Intl.DateTimeFormat(undefined,{hour:'numeric',minute:'2-digit'}).format(n);
     const [hello,sub]=greetingFor(n);if(greet)greet.textContent=hello;if(line)line.textContent=sub;
   }
@@ -30,7 +32,7 @@
 
   function renderWeather(data){
     const text=$('[data-fmb-weather]',root),icon=$('[data-fmb-weather-icon]',root),note=$('[data-fmb-weather-note]',root);
-    if(!data){if(text)text.textContent='Weather';if(note)note.textContent='Tap for local weather';return}
+    if(!data){if(text)text.textContent='Weather';if(note)note.textContent='Set local';return}
     const label=weatherLabels[Number(data.code)]||['Weather','○'],age=Date.now()-Number(data.savedAt||0),stale=age>30*60*1000;
     if(icon)icon.textContent=label[1];
     if(text)text.textContent=`${Math.round(data.temp)}°`;
