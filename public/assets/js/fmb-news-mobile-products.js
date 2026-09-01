@@ -45,7 +45,7 @@
   }
 
   function addBriefSignature(){
-    const hero=document.querySelector('.brief-archive-hero .shell');
+    const hero=document.querySelector('.brief-archive-hero .brief-shell,.brief-archive-hero .shell');
     if(!hero||hero.querySelector('.fmb-brief-signature-visual'))return;
     const img=document.createElement('img');
     img.className='fmb-brief-signature-visual';
@@ -102,4 +102,7 @@
   }
 
   ({archive:addArchiveIntro,world:addWorldSignature,explainer:addExplainerSignature,brief:addBriefSignature,horoscope:addHoroscopeSignature,crossword:addCrosswordSignature,about:addAboutSignature,article:addArticleProgress}[route]||(()=>{}))();
+  // Reading progress belongs to every true long-form article even when the
+  // page remains inside a branded product family such as FMB Explainer.
+  addArticleProgress();
 })();
