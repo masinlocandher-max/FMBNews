@@ -30,17 +30,9 @@ async function open(path){
   }).length);
   assert.equal(duplicateRails,0,`${path} exposes a rendered duplicate legacy product navigation`);
   assert.equal(await page.locator('.fmb-global-week-actions:visible').count(),0,`${path} must not expose Horoscope/Crossword as top chrome`);
+  assert.equal(await page.locator('.fmb-global-mobile-utility:visible').count(),0,`${path} must not expose the old utility strip`);
   const shellBox=await page.locator('.fmb-mobile-app-shell').boundingBox();
   assert(shellBox&&shellBox.height<=112,`${path} mobile chrome is too tall (${shellBox?.height}px)`);
-  if(path==='/news/'||path==='/news'){
-    assert.equal(await page.locator('.fmb-global-mobile-utility:visible').count(),1,'Home should retain one quiet date/weather context line');
-    const utilityBox=await page.locator('.fmb-global-mobile-utility').boundingBox();
-    assert(utilityBox&&utilityBox.height<=40,`Home date/weather context is too tall (${utilityBox?.height}px)`);
-    const weather=(await page.locator('[data-fmb-weather]').first().textContent()||'').trim();
-    assert(!/set local weather/i.test(weather),'Home weather must not look like an unfinished settings placeholder');
-  }else{
-    assert.equal(await page.locator('.fmb-global-mobile-utility:visible').count(),0,`${path} should start product content immediately after the product rail`);
-  }
 }
 
 async function assertImage(selector,message){
@@ -57,6 +49,21 @@ async function assertReadable(selector,message){
   assert(info.visibility!=='hidden'&&info.opacity>.2&&info.color!=='rgba(0, 0, 0, 0)'&&info.fontSize>=10,message);
 }
 
+function channel(v){v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4}
+function luminance([r,g,b]){return .2126*channel(r)+.7152*channel(g)+.0722*channel(b)}
+function ratio(a,b){const l1=luminance(a),l2=luminance(b);return(Math.max(l1,l2)+.05)/(Math.min(l1,l2)+.05)}
+async function assertContrast(selector,min,message){
+  const el=page.locator(selector).first();await el.waitFor({state:'visible'});
+  const colors=await el.evaluate(node=>{
+    const rgb=s=>{const m=String(s).match(/rgba?\((\d+)[, ]+(\d+)[, ]+(\d+)/);return m?[+m[1],+m[2],+m[3]]:null};
+    const fg=rgb(getComputedStyle(node).color);let cur=node,bg=null;
+    while(cur&&!bg){const s=getComputedStyle(cur),m=String(s.backgroundColor).match(/rgba?\((\d+)[, ]+(\d+)[, ]+(\d+)(?:[, /]+([\d.]+))?/);if(m&&Number(m[4]??1)>.2)bg=[+m[1],+m[2],+m[3]];cur=cur.parentElement}
+    return{fg,bg:bg||[255,255,255]};
+  });
+  assert(colors.fg&&colors.bg,`${message}: colors could not be resolved`);
+  const r=ratio(colors.fg,colors.bg);assert(r>=min,`${message}: contrast ${r.toFixed(2)} is below ${min}`);
+}
+
 await open('/news/');
 await page.locator('[data-fmb-mobile-home]').waitFor({state:'visible'});
 assert.equal(await page.locator('.network-home').evaluate(el=>getComputedStyle(el).display),'none','Desktop publication home must be hidden on phone view.');
@@ -64,7 +71,21 @@ assert.equal(await page.locator('.fmb-mobile-app-shell').count(),1,'Mobile app s
 assert.equal(await page.locator('.fmb-app-story-list').count(),1,'Mobile story list missing.');
 await assertImage('[data-fmb-approved-hero]','Approved FMB hero failed to render.');
 await assertImage('[data-fmb-approved-mug]','Approved Daily Brief mug failed to render.');
-await assertReadable('.fmb-app-lead h2','Home hero headline is not readable.');
+const heroBox=await page.locator('.fmb-app-brand-hero').boundingBox();
+assert(heroBox&&heroBox.width>=389,`Home hero is not full bleed (${heroBox?.width}px)`);
+assert.equal(await page.locator('.fmb-app-brand-hero').evaluate(el=>getComputedStyle(el).borderRadius),'0px','Home hero must not look like an attached rounded card.');
+await page.locator('.fmb-hero-live-overlay').waitFor({state:'visible'});
+await page.locator('.fmb-hero-greeting').waitFor({state:'visible'});
+await page.locator('.fmb-hero-readable-shade').waitFor({state:'visible'});
+const timeSize=await page.locator('.fmb-hero-clock [data-fmb-local-time]').evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
+const weatherSize=await page.locator('.fmb-hero-weather-copy>[data-fmb-weather]').evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
+const greetingSize=await page.locator('[data-fmb-greeting-line]').evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
+assert(timeSize>=38,`Home live time is too small (${timeSize}px)`);
+assert(weatherSize>=34,`Home live weather is too small (${weatherSize}px)`);
+assert(greetingSize>=30,`Home conversational greeting is too small (${greetingSize}px)`);
+assert((await page.locator('[data-fmb-greeting]').textContent()||'').trim().length>4,'Home contextual greeting is missing.');
+assert((await page.locator('[data-fmb-greeting-line]').textContent()||'').trim().length>10,'Home greeting follow-up line is missing.');
+await assertReadable('.fmb-app-lead h2','Home lead headline is not readable.');
 
 await page.evaluate(()=>localStorage.setItem('fmbNewsPrefsV1',JSON.stringify({daily:true,breaking:false,world:false,sections:['World']})));
 await page.reload({waitUntil:'domcontentloaded'});
@@ -90,6 +111,7 @@ await page.locator('.fmb-world-signal').waitFor({state:'visible'});
 await assertReadable('.world-hero h1','Worldwide headline is unreadable.');
 await assertReadable('.world-hero p','Worldwide deck is unreadable.');
 assert((await page.locator('.country-card').count())>=1,'Worldwide cards missing.');
+await assertContrast('.country-card h3',4.5,'Worldwide card headline is low contrast');
 
 await open('/news/explainer/');
 assert.equal(await page.locator('body').getAttribute('data-fmb-route'),'explainer','Explainer route art direction missing.');
@@ -97,12 +119,14 @@ await page.locator('.fmb-explainer-mark').waitFor({state:'visible'});
 assert.equal((await page.locator('.explainer-hero h1').textContent())?.trim(),'FMB Explainer','FMB Explainer product name drifted.');
 await assertReadable('.explainer-hero p','Explainer introduction is unreadable.');
 await page.locator('#fmbExplainedSearch').waitFor({state:'visible'});
+await assertContrast('.explainer-card h2',4.5,'Explainer card heading is low contrast');
 
 await open('/news/fmb-brief/');
 assert.equal(await page.locator('body').getAttribute('data-fmb-route'),'brief','Daily Brief route art direction missing.');
 await assertImage('.fmb-brief-signature-visual','Daily Brief signature mug failed to render.');
 await assertReadable('.brief-archive-hero h1','Daily Brief heading is unreadable.');
 assert((await page.locator('.brief-issue').count())>=1,'Daily Brief editions missing.');
+await assertContrast('.brief-issue h2',4.5,'Daily Brief issue headline is low contrast');
 
 await open('/news/horoscope/');
 assert.equal(await page.locator('body').getAttribute('data-fmb-route'),'horoscope','Horoscope route art direction missing.');
@@ -112,6 +136,7 @@ assert((await page.locator('body').innerText()).includes('Hindi hawak ng mga bit
 await page.locator('button[data-sign="Pisces"]').click();
 assert.equal(await page.evaluate(()=>localStorage.getItem('fmbZodiacV1')),'Pisces','Horoscope preference did not persist.');
 assert.equal((await page.locator('[data-horoscope-reading] h2').textContent())?.trim(),'Pisces','Horoscope reading did not update.');
+await assertContrast('.fmb-horoscope-section p',4.5,'Horoscope reading text is low contrast');
 
 await open('/news/crossword/');
 assert.equal(await page.locator('body').getAttribute('data-fmb-route'),'crossword','Crossword route art direction missing.');
@@ -122,6 +147,12 @@ assert((await page.locator('[data-cw-grid] input').count())>0,'Crossword has no 
 const crosswordText=await page.locator('body').innerText();
 for(const forbidden of ['Reveal Letter','Reveal Word','Reveal Puzzle'])assert(!crosswordText.includes(forbidden),`Crossword exposes forbidden control: ${forbidden}`);
 assert(crosswordText.includes('The complete answer key is released only when the next weekly crossword goes live'),'Weekly crossword answer-release policy missing.');
+await assertContrast('.fmb-clue button',4.5,'Crossword clue text is not readable');
+await assertContrast('.fmb-clue-group h2',4.5,'Crossword clue heading is not readable');
+await assertContrast('.fmb-crossword-status',4.5,'Crossword status text is not readable');
+await assertContrast('.fmb-cell input',7,'Crossword cell letters are not high contrast');
+await assertContrast('.fmb-news-context p',4.5,'Crossword context text is not readable');
+await assertContrast('.fmb-answer-release p',4.5,'Crossword answer-policy text is not readable');
 
 await open('/news/about/');
 assert.equal(await page.locator('body').getAttribute('data-fmb-route'),'about','About route art direction missing.');
@@ -134,6 +165,7 @@ await page.locator('article.article').waitFor({state:'visible'});
 await page.locator('.fmb-mobile-reader-actions').waitFor({state:'visible'});
 await page.locator('.fmb-reading-progress').waitFor({state:'visible'});
 await assertReadable('article.article h1','Article headline is unreadable.');
+await assertContrast('article.article p',4.5,'Article body text is low contrast');
 await page.locator('[data-fmb-reader-save]').click();
 const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('fmbSavedStoriesV1')||'[]'));
 assert(saved.some(item=>item.path.includes('/news/explainer/leptospirosis-after-flood-resilience-metro-manila/')),'Reader Save did not persist the article.');
@@ -143,4 +175,4 @@ assert.equal(structured['@type'],'Article','FMB Explainer structured data is not
 assert(structured.datePublished,'FMB Explainer structured data is missing the publication timestamp.');
 
 await browser.close();
-console.log('Mobile browser QA passed: one compact premium FMB masthead and product rail, no rendered duplicate navigation, Home-only professional date/weather context, immediate internal product content, and dedicated Home, Archive, Worldwide, Explainer, Daily Brief, Horoscope, Crossword, About, and article experiences.');
+console.log('Mobile browser QA passed: one compact FMB shell, full-bleed live Home hero with large time/weather and conversational greeting, no duplicate navigation, explicit mobile contrast checks, and dedicated Archive, Worldwide, Explainer, Daily Brief, Horoscope, Crossword, About, and article experiences.');
