@@ -8,7 +8,7 @@ const fallback='/assets/images/news/fmb-news-editorial-fallback.svg';
 
 const esc=(value='')=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 const strip=value=>String(value||'').replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();
-const isArticle=html=>/property=["']og:type["'][^>]*content=["']article["']/i.test(html)||/content=["']article["'][^>]*property=["']og:type["']/i.test(html)||/["']@type["']\s*:\s*["'](?:NewsArticle|Article)["']/i.test(html);
+const isArticle=html=>html.includes('class="article-grid"')||/property=["']og:type["'][^>]*content=["']article["']/i.test(html)||/content=["']article["'][^>]*property=["']og:type["']/i.test(html)||/["']@type["']\s*:\s*["'](?:NewsArticle|Article)["']/i.test(html);
 const hasContentImage=html=>/class=["'][^"']*(?:article-figure|cms-article-image|explainer-article-image|article-hero-image)[^"']*["'][\s\S]*?<img\b[^>]*src=["'][^"']+/i.test(html)||/<article\b[\s\S]*?<img\b[^>]*src=["'][^"']+/i.test(html);
 
 function articleTitle(html){
