@@ -45,6 +45,7 @@ jobs:
             sleep 1
           done
           FMB_QA_BASE_URL='http://127.0.0.1:4173' node scripts/browser-qa.mjs
+          FMB_QA_BASE_URL='http://127.0.0.1:4173' node scripts/browser-qa-crossword-ux.mjs
       - name: Check Cloudflare credentials
         shell: bash
         env:
