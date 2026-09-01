@@ -11,6 +11,10 @@ await mkdir(newsRoot, { recursive: true });
 await cp(path.join(root, 'site'), newsRoot, { recursive: true });
 await cp(path.join(root, 'public', 'assets'), path.join(newsRoot, 'assets'), { recursive: true });
 
+// Pull the exact approved Drive visuals into the deployable asset tree so
+// production pages reference local /news/assets files instead of Drive URLs.
+await import('./fetch-approved-mobile-assets.mjs');
+
 await import('./render-metallic-reference.mjs');
 await import('./render-fmb-explained.mjs');
 await import('./hardfix-metallic-network.mjs');
@@ -42,4 +46,4 @@ async function rewriteAssetPaths(target) {
 }
 
 await rewriteAssetPaths(newsRoot);
-console.log('Built Filipino Media Bulletin with desktop publication landing plus a dedicated premium mobile app home, four official editorial products, long-form FMB Explained routes, personalization/PWA support, live utilities, and no fixed bottom navigation.');
+console.log('Built Filipino Media Bulletin with desktop publication landing plus a dedicated premium mobile app home, four official editorial products, localized approved visual assets, long-form FMB Explainer routes, personalization/PWA support, live utilities, and no fixed bottom navigation.');
