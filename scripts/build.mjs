@@ -36,6 +36,11 @@ await import('./hardfix-mobile-app-home.mjs');
 // Apply the universal responsive/PWA/personalization system last.
 await import('./hardfix-mobile-first-site.mjs');
 
+// Final newsroom integrity pass: crawl-safe Explainer HTML, Philippine-time
+// fallbacks, product-first navigation, working search/submission routes, Daily
+// Brief freshness, metadata cleanup, restrained homepage copy, and source links.
+await import('./hardfix-newsroom-audit.mjs');
+
 const textExtensions = new Set(['.html', '.css', '.js', '.mjs', '.json', '.xml', '.txt', '.svg']);
 
 async function rewriteAssetPaths(target) {
@@ -51,4 +56,4 @@ async function rewriteAssetPaths(target) {
 }
 
 await rewriteAssetPaths(newsRoot);
-console.log('Built Filipino Media Bulletin with desktop publication landing plus a dedicated premium mobile app home, four official editorial products, localized approved visual assets, guaranteed imagery on every article route, long-form FMB Explainer routes, personalization/PWA support, live utilities, and no fixed bottom navigation.');
+console.log('Built Filipino Media Bulletin with desktop publication landing plus a dedicated premium mobile app home, four official editorial products, localized approved visual assets, guaranteed imagery on every article route, long-form FMB Explainer routes, personalization/PWA support, live utilities, newsroom search and intake, and no fixed bottom navigation.');
