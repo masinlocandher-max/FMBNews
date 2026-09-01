@@ -15,20 +15,22 @@
       ].filter(Boolean).length;
       if(hits>=3){
         nav.classList.add('fmb-legacy-product-rail');
-        if(!nav.hidden)nav.hidden=true;
+        nav.hidden=true;
         nav.setAttribute('aria-hidden','true');
       }
     }
   }
 
   function placeHomeContext(){
-    const shell=$('.fmb-mobile-app-shell'),utility=$('.fmb-global-mobile-utility');
-    if(!shell||!utility)return;
+    const utility=$('.fmb-global-mobile-utility');
+    if(!utility)return;
     $('.fmb-global-week-actions',utility)?.remove();
     const isHome=document.body.dataset.fmbRoute==='home'||location.pathname.replace(/\/+$/,'')==='/news';
     if(!isHome){utility.remove();return}
     const hero=$('.fmb-app-brand-hero');
-    if(hero&&utility.previousElementSibling!==hero)hero.after(utility);
+    if(!hero)return;
+    utility.classList.add('fmb-hero-live-overlay');
+    if(utility.parentElement!==hero)hero.append(utility);
     const weather=$('[data-fmb-weather]',utility);
     if(weather&&/set local weather/i.test(weather.textContent||''))weather.textContent='Weather';
     const button=$('[data-fmb-weather-button]',utility);
