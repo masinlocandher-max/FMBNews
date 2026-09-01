@@ -14,10 +14,16 @@ const assets=[
     width:2200
   },
   {
-    name:'FMB Daily Brief mug',
-    id:'1KUeapU5-UNZocnOPWRze220hlm5BYg_h',
+    name:'FMB Explainer designated fallback',
+    id:'10HcTVO9w4V4keGTm2ic9GwNh7RYsjkXY',
+    file:'fmb-explainer-fallback.jpg',
+    width:1800
+  },
+  {
+    name:'FMB Daily Brief designated fallback',
+    id:'1jYDM1WoAfI3RfnUWJkfk9Uw0fwMgEBjs',
     file:'fmb-daily-brief-mug.jpg',
-    width:1400
+    width:1800
   }
 ];
 
