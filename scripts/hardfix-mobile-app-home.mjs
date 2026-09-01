@@ -26,6 +26,12 @@ const mobileHome=`<div class="fmb-mobile-app-home" data-fmb-mobile-home>
   ${breaking?`<a class="fmb-app-breaking" href="/news/${esc(breaking.slug)}/"><strong>BREAKING</strong><span>${esc(breaking.headline)}</span><b aria-hidden="true">›</b></a>`:''}
   <section class="fmb-app-brand-hero" aria-label="FMB News live home">
     <img src="${approvedHero}" alt="FMB News global newsroom collage with the official gold shell emblem" fetchpriority="high" data-fmb-approved-hero>
+    <span class="fmb-hero-readable-shade" aria-hidden="true"></span>
+    <div class="fmb-hero-greeting">
+      <p data-fmb-greeting>Hello, news fan.</p>
+      <h1 data-fmb-greeting-line>Let’s see what matters right now.</h1>
+      <button type="button" data-fmb-customize>Customize your FMB</button>
+    </div>
     <div class="fmb-hero-live-overlay" aria-label="Live local date, time and weather">
       <div class="fmb-hero-clock">
         <strong data-fmb-local-date>Today</strong>
@@ -33,12 +39,9 @@ const mobileHome=`<div class="fmb-mobile-app-home" data-fmb-mobile-home>
       </div>
       <button class="fmb-hero-weather" type="button" data-fmb-weather-button aria-label="Set local weather">
         <span class="fmb-hero-weather-icon" data-fmb-weather-icon aria-hidden="true">☀</span>
-        <span class="fmb-hero-weather-copy"><strong data-fmb-weather>Weather</strong><small>Tap for local weather</small></span>
+        <span class="fmb-hero-weather-copy"><strong data-fmb-weather>Weather</strong><small data-fmb-weather-note>Tap for local weather</small></span>
       </button>
     </div>
-  </section>
-  <section class="fmb-app-greeting">
-    <div><p data-fmb-greeting>Good day</p><h1>For You</h1></div><button type="button" data-fmb-customize>Customize</button>
   </section>
   <section class="fmb-app-lead" aria-label="Lead story">
     <a href="/news/${esc(lead.slug)}/" class="fmb-app-lead-media"><img src="${esc(imageFor(lead))}" alt="${esc(lead.image?.alt||lead.headline)}" fetchpriority="high" data-fmb-lead-story-image><span class="fmb-app-lead-shade" aria-hidden="true"></span><div class="fmb-app-lead-copy">${meta(lead)}<h2>${esc(lead.headline)}</h2><p>${esc(lead.deck||lead.seoDescription||'')}</p><span class="fmb-app-read">Read story <b aria-hidden="true">›</b></span></div></a>
