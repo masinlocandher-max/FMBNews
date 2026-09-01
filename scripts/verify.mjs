@@ -9,13 +9,13 @@ const must=(value,message)=>{if(!value)throw new Error(message)};
 
 const required=[
   'site/index.html','site/fmb-brief/index.html','site/world/index.html','site/explainer/index.html','site/horoscope/index.html','site/crossword/index.html','site/about/index.html',
-  'public/assets/css/fmb-news-mobile-premium.css','public/assets/css/fmb-news-mobile-home.css','public/assets/css/fmb-news-mobile-global.css','public/assets/css/fmb-news-mobile-products.css','public/assets/css/fmb-news-mobile-features.css',
+  'public/assets/css/fmb-news-mobile-premium.css','public/assets/css/fmb-news-mobile-home.css','public/assets/css/fmb-news-mobile-global.css','public/assets/css/fmb-news-mobile-products.css','public/assets/css/fmb-news-mobile-features.css','public/assets/css/fmb-news-mobile-personalization.css',
   'public/assets/js/fmb-news-mobile-personalization.js','public/assets/js/fmb-news-mobile-global.js','public/assets/js/fmb-news-mobile-products.js','public/assets/js/fmb-news-weekly-horoscope.js','public/assets/js/fmb-news-weekly-crossword.js',
   'public/assets/images/brand/fmb-bulletin-emblem.svg','public/assets/data/fmb-explained','content/news/articles',
   'scripts/fetch-approved-mobile-assets.mjs','scripts/hardfix-mobile-app-home.mjs','scripts/hardfix-mobile-first-site.mjs','src/worker.js','wrangler.jsonc',
   'dist/news/index.html','dist/news/archive/index.html','dist/news/world/index.html','dist/news/explainer/index.html','dist/news/fmb-brief/index.html','dist/news/horoscope/index.html','dist/news/crossword/index.html','dist/news/about/index.html',
   'dist/news/assets/images/mobile/fmb-mobile-hero.jpg','dist/news/assets/images/mobile/fmb-daily-brief-mug.jpg','dist/news/assets/images/brand/fmb-bulletin-emblem.svg',
-  'dist/news/assets/css/fmb-news-mobile-global.css','dist/news/assets/css/fmb-news-mobile-products.css','dist/news/assets/css/fmb-news-mobile-features.css','dist/news/assets/js/fmb-news-mobile-products.js','dist/news/assets/js/fmb-news-weekly-crossword.js'
+  'dist/news/assets/css/fmb-news-mobile-global.css','dist/news/assets/css/fmb-news-mobile-products.css','dist/news/assets/css/fmb-news-mobile-features.css','dist/news/assets/css/fmb-news-mobile-personalization.css','dist/news/assets/js/fmb-news-mobile-products.js','dist/news/assets/js/fmb-news-weekly-crossword.js'
 ];
 for(const rel of required)await access(resolve(rel));
 
@@ -36,11 +36,12 @@ const pages={
 };
 for(const[name,html]of Object.entries(pages)){
   for(const label of ['FMB News','FMB Worldwide','FMB Explainer','FMB Daily Brief'])must(html.includes(label),`${name}: missing ${label}`);
+  must(html.includes('fmb-news-mobile-personalization.css?v=20260901-personal-v3'),`${name}: corrected personalization CSS v3 missing`);
   must(html.includes('fmb-news-mobile-home.css?v=20260901-app-home-v2'),`${name}: mobile home CSS v2 missing`);
   must(html.includes('fmb-news-mobile-global.css?v=20260901-global-v3'),`${name}: global mobile CSS v3 missing`);
   must(html.includes('fmb-news-mobile-global.js?v=20260901-global-v3'),`${name}: global mobile runtime v3 missing`);
   must(html.includes('fmb-news-mobile-products.css?v=20260901-products-v1'),`${name}: dedicated product CSS missing`);
-  must(html.includes('fmb-news-mobile-products.js?v=20260901-products-v1'),`${name}: dedicated product runtime missing`);
+  must(html.includes('fmb-news-mobile-products.js?v=20260901-products-v2'),`${name}: corrected dedicated product runtime missing`);
 }
 
 const globalCss=await read('dist/news/assets/css/fmb-news-mobile-global.css');
@@ -48,9 +49,11 @@ for(const token of ['.fmb-mobile-app-shell','.fmb-mobile-product-rail','SF Pro T
 const productCss=await read('dist/news/assets/css/fmb-news-mobile-products.css');
 for(const token of ['fmb-mobile-route-archive','fmb-mobile-route-world','fmb-mobile-route-explainer','fmb-mobile-route-brief','fmb-mobile-route-horoscope','fmb-mobile-route-crossword','fmb-mobile-route-about','fmb-mobile-route-article'])must(productCss.includes(token),`Dedicated mobile product design missing: ${token}`);
 const productJs=await read('dist/news/assets/js/fmb-news-mobile-products.js');
-for(const token of ['addArchiveIntro','addWorldSignature','addExplainerSignature','addBriefSignature','addHoroscopeSignature','addCrosswordSignature','addAboutSignature','addArticleProgress'])must(productJs.includes(token),`Dedicated mobile product runtime missing: ${token}`);
+for(const token of ['addArchiveIntro','addWorldSignature','addExplainerSignature','addBriefSignature','addHoroscopeSignature','addCrosswordSignature','addAboutSignature','addArticleProgress','.brief-archive-hero .brief-shell'])must(productJs.includes(token),`Dedicated mobile product runtime missing: ${token}`);
 const homeCss=await read('dist/news/assets/css/fmb-news-mobile-home.css');
 for(const token of ['.fmb-app-brand-hero','color:#fff','fmb-app-lead h2'])must(homeCss.includes(token),`Mobile home visual regression: missing ${token}`);
+const personalCss=await read('dist/news/assets/css/fmb-news-mobile-personalization.css');
+for(const token of ['min-height:44px','z-index:2','cursor:pointer','focus-visible'])must(personalCss.includes(token),`Personalization touch-target regression: missing ${token}`);
 
 const horoscopeHtml=pages.horoscope,horoscopeJs=await read('public/assets/js/fmb-news-weekly-horoscope.js');
 must(horoscopeHtml.includes('Hindi hawak ng mga bituin ang ating kapalaran, meron tayong freewill gamitin natin'),'Horoscope free-will header missing');
@@ -73,6 +76,6 @@ const shards=(await readdir(resolve('public/assets/data/fmb-explained'))).filter
 let explainerCount=0;for(const shard of shards){const items=JSON.parse(await readFile(resolve('public/assets/data/fmb-explained',shard),'utf8'));explainerCount+=items.length}must(explainerCount===206,`FMB Explainer must contain 206 topics; found ${explainerCount}`);
 
 let builtPageCount=0;
-async function scan(target){const info=await stat(target);if(info.isDirectory()){for(const e of await readdir(target))await scan(path.join(target,e));return}if(path.basename(target)!=='index.html')return;const text=await readFile(target,'utf8');builtPageCount++;must(text.includes('fmb-news-mobile-global.css?v=20260901-global-v3'),`Global mobile CSS not injected in ${path.relative(root,target)}`);must(text.includes('fmb-news-mobile-global.js?v=20260901-global-v3'),`Global mobile runtime not injected in ${path.relative(root,target)}`);must(text.includes('fmb-news-mobile-products.css?v=20260901-products-v1'),`Dedicated product CSS not injected in ${path.relative(root,target)}`);must(text.includes('fmb-news-mobile-products.js?v=20260901-products-v1'),`Dedicated product runtime not injected in ${path.relative(root,target)}`);must(!text.includes('/news/news/assets/'),`Double-scoped asset in ${path.relative(root,target)}`)}
+async function scan(target){const info=await stat(target);if(info.isDirectory()){for(const e of await readdir(target))await scan(path.join(target,e));return}if(path.basename(target)!=='index.html')return;const text=await readFile(target,'utf8');builtPageCount++;must(text.includes('fmb-news-mobile-personalization.css?v=20260901-personal-v3'),`Personalization CSS v3 not injected in ${path.relative(root,target)}`);must(text.includes('fmb-news-mobile-global.css?v=20260901-global-v3'),`Global mobile CSS not injected in ${path.relative(root,target)}`);must(text.includes('fmb-news-mobile-global.js?v=20260901-global-v3'),`Global mobile runtime not injected in ${path.relative(root,target)}`);must(text.includes('fmb-news-mobile-products.css?v=20260901-products-v1'),`Dedicated product CSS not injected in ${path.relative(root,target)}`);must(text.includes('fmb-news-mobile-products.js?v=20260901-products-v2'),`Dedicated product runtime v2 not injected in ${path.relative(root,target)}`);must(!text.includes('/news/news/assets/'),`Double-scoped asset in ${path.relative(root,target)}`)}
 await scan(resolve('dist/news'));
-console.log(`FMBNews verification passed: localized approved hero/mug, readable unified system, eight dedicated mobile route designs, 12-icon horoscope, ${entryCount}-entry current-events crossword with no active reveals, ${explainerCount} Explainer topics, and full FMB shell coverage across ${builtPageCount} pages.`);
+console.log(`FMBNews verification passed: localized approved hero/mug, readable unified system, eight dedicated mobile route designs, corrected preference touch targets, 12-icon horoscope, ${entryCount}-entry current-events crossword with no active reveals, ${explainerCount} Explainer topics, and full FMB shell coverage across ${builtPageCount} pages.`);
