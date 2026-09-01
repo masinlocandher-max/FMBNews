@@ -15,10 +15,32 @@ async function open(path){
   assert(response?.ok(),`${path} returned ${response?.status()}`);
   await page.locator('.fmb-mobile-app-shell').waitFor({state:'visible'});
   await page.waitForFunction(()=>document.body.classList.contains('fmb-mobile-product-page'));
+  await page.waitForFunction(()=>document.documentElement.hasAttribute('data-fmb-mobile-polish'));
   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-window.innerWidth);
   assert(overflow<=1,`${path} has ${overflow}px horizontal page overflow`);
   const products=await page.locator('.fmb-mobile-product-rail>a').allTextContents();
   assert.deepEqual(products.map(v=>v.trim()),['FMB News','FMB Worldwide','FMB Explainer','FMB Daily Brief'],`${path} product rail drifted`);
+  assert.equal(await page.locator('.fmb-mobile-product-rail:visible').count(),1,`${path} must have exactly one visible FMB product rail`);
+  const duplicateRails=await page.evaluate(()=>[...document.querySelectorAll('nav')].filter(nav=>{
+    if(nav.classList.contains('fmb-mobile-product-rail')||nav.closest('footer'))return false;
+    const style=getComputedStyle(nav);if(style.display==='none'||style.visibility==='hidden')return false;
+    const hrefs=[...nav.querySelectorAll('a[href]')].map(a=>a.getAttribute('href')||'');
+    const hits=[hrefs.some(h=>/^\/news\/?(?:$|[?#])/.test(h)),hrefs.some(h=>h.startsWith('/news/world')),hrefs.some(h=>h.startsWith('/news/explainer')),hrefs.some(h=>h.startsWith('/news/fmb-brief'))].filter(Boolean).length;
+    return hits>=3;
+  }).length);
+  assert.equal(duplicateRails,0,`${path} exposes a duplicate legacy product navigation`);
+  assert.equal(await page.locator('.fmb-global-week-actions:visible').count(),0,`${path} must not expose Horoscope/Crossword as top chrome`);
+  const shellBox=await page.locator('.fmb-mobile-app-shell').boundingBox();
+  assert(shellBox&&shellBox.height<=112,`${path} mobile chrome is too tall (${shellBox?.height}px)`);
+  if(path==='/news/'||path==='/news'){
+    assert.equal(await page.locator('.fmb-global-mobile-utility:visible').count(),1,'Home should retain one quiet date/weather context line');
+    const utilityBox=await page.locator('.fmb-global-mobile-utility').boundingBox();
+    assert(utilityBox&&utilityBox.height<=40,`Home date/weather context is too tall (${utilityBox?.height}px)`);
+    const weather=(await page.locator('[data-fmb-weather]').first().textContent()||'').trim();
+    assert(!/set local weather/i.test(weather),'Home weather must not look like an unfinished settings placeholder');
+  }else{
+    assert.equal(await page.locator('.fmb-global-mobile-utility:visible').count(),0,`${path} should start product content immediately after the product rail`);
+  }
 }
 
 async function assertImage(selector,message){
@@ -35,7 +57,7 @@ async function assertReadable(selector,message){
   assert(info.visibility!=='hidden'&&info.opacity>.2&&info.color!=='rgba(0, 0, 0, 0)'&&info.fontSize>=10,message);
 }
 
-// HOME: approved identity assets, readable hero, personalization, and one shell.
+// HOME: approved identity assets, readable hero, compact professional context, personalization, and one shell.
 await open('/news/');
 await page.locator('[data-fmb-mobile-home]').waitFor({state:'visible'});
 assert.equal(await page.locator('.network-home').evaluate(el=>getComputedStyle(el).display),'none','Desktop publication home must be hidden on phone view.');
@@ -130,4 +152,4 @@ assert.equal(structured['@type'],'NewsArticle','FMB Explainer structured data is
 assert(structured.datePublished,'FMB Explainer structured data is missing the publication timestamp.');
 
 await browser.close();
-console.log('Mobile browser QA passed: unified Filipino Media Bulletin shell plus dedicated Home, Archive, Worldwide, Explainer, Daily Brief, Horoscope, Crossword, About, and article experiences are rendered, readable, usable, and overflow-safe.');
+console.log('Mobile browser QA passed: one compact premium FMB masthead and product rail, no duplicate legacy navigation, Home-only professional date/weather context, immediate internal product content, and dedicated Home, Archive, Worldwide, Explainer, Daily Brief, Horoscope, Crossword, About, and article experiences.');
