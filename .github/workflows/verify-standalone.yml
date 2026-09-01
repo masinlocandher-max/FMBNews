@@ -78,8 +78,8 @@ jobs:
           grep -q 'Hindi hawak ng mga bituin ang ating kapalaran, meron tayong freewill gamitin natin' dist/news/horoscope/index.html
           for icon in '♈' '♉' '♊' '♋' '♌' '♍' '♎' '♏' '♐' '♑' '♒' '♓'; do grep -q "$icon" dist/news/assets/js/fmb-news-weekly-horoscope.js; done
 
-          grep -q '20260902-features-v3' dist/news/crossword/index.html
-          grep -q '20260902-current-events-v3' dist/news/crossword/index.html
+          grep -q '20260902-features-v4' dist/news/crossword/index.html
+          grep -q '20260902-current-events-v4' dist/news/crossword/index.html
           grep -q 'MIN_WORDS=35' dist/news/assets/js/fmb-news-weekly-crossword.js
           grep -q 'news_crossword_progress' dist/news/assets/js/fmb-news-weekly-crossword.js
           grep -q 'on_conflict=user_id,puzzle_id' dist/news/assets/js/fmb-news-weekly-crossword.js
