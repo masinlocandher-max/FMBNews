@@ -1,0 +1,28 @@
+/* Cache-safe final FMB mobile overrides: active menu, Home utility scale, Crossword cleanup. */
+@media(max-width:699px){
+/* Selected/toggled product must read immediately against the dark rail. */
+.fmb-mobile-product-rail{gap:10px!important;padding:5px 12px!important}
+.fmb-mobile-product-rail a{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:36px!important;padding:0 10px!important;border-radius:999px!important;color:rgba(255,255,255,.72)!important;text-shadow:none!important}
+.fmb-mobile-product-rail a[aria-current="page"]{background:#fff!important;color:#2b1235!important;font-weight:850!important;box-shadow:0 4px 14px rgba(0,0,0,.16),inset 0 0 0 1px rgba(43,18,53,.05)!important}
+.fmb-mobile-product-rail a[aria-current="page"]::after{display:none!important}
+
+/* Home: no label above greeting, smaller live utility, clean separation. */
+body.fmb-mobile-route-home .fmb-approved-hero-label{display:none!important}
+body.fmb-mobile-route-home .fmb-approved-hero-copy{bottom:78px!important}
+body.fmb-mobile-route-home .fmb-approved-hero-ticker{bottom:34px!important;height:30px!important}
+body.fmb-mobile-route-home .fmb-approved-hero-ticker>strong{padding:0 9px!important;font-size:7.5px!important}
+body.fmb-mobile-route-home .fmb-approved-hero-ticker-group>i{font-size:7.5px!important;padding-left:13px!important;padding-right:13px!important}
+body.fmb-mobile-route-home .fmb-hero-live-overlay{height:34px!important;min-height:34px!important;gap:10px!important;padding-left:13px!important;padding-right:13px!important}
+body.fmb-mobile-route-home .fmb-hero-clock{gap:7px!important}
+body.fmb-mobile-route-home .fmb-hero-clock strong{font-size:7px!important}
+body.fmb-mobile-route-home .fmb-hero-clock span{font-size:9px!important}
+body.fmb-mobile-route-home .fmb-hero-weather{gap:5px!important;min-height:28px!important}
+body.fmb-mobile-route-home .fmb-hero-weather-icon{font-size:14px!important}
+body.fmb-mobile-route-home .fmb-hero-weather-copy{gap:4px!important}
+body.fmb-mobile-route-home .fmb-hero-weather-copy>strong{font-size:12px!important}
+body.fmb-mobile-route-home .fmb-hero-weather-copy>small{max-width:78px!important;font-size:6.5px!important}
+
+/* The numeric Crossword hero badge is retired. */
+body.fmb-mobile-route-crossword .fmb-crossword-count{display:none!important}
+@media(max-width:390px){.fmb-mobile-product-rail{gap:8px!important;padding-left:9px!important;padding-right:9px!important}.fmb-mobile-product-rail a{padding-left:9px!important;padding-right:9px!important;font-size:12.25px!important}body.fmb-mobile-route-home .fmb-approved-hero-copy{bottom:76px!important}}
+}
