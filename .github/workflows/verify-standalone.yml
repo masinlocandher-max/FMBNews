@@ -29,6 +29,7 @@ jobs:
           test -f dist/news/archive/index.html
           test -f dist/news/fmb-brief/index.html
           test -f dist/news/world/index.html
+          test -f dist/news/explainer/index.html
           test -f dist/news/subic-aeta-landfill/index.html
           test -f dist/news/manifest.webmanifest
           test -f dist/news/sw.js
@@ -41,8 +42,10 @@ jobs:
 
           grep -q "FMB News" dist/news/index.html
           grep -q "FMB Worldwide" dist/news/index.html
+          grep -q "FMB Explainer" dist/news/index.html
           grep -q "FMB Daily Brief" dist/news/index.html
           grep -q "FMB Worldwide" dist/news/world/index.html
+          grep -q "FMB Explainer" dist/news/explainer/index.html
           grep -q "FMB Daily Brief" dist/news/fmb-brief/index.html
           grep -q "Filipino Media Bulletin" dist/news/index.html
 
@@ -54,6 +57,15 @@ jobs:
           grep -q 'fmb-mobile-first' dist/news/archive/index.html
           grep -q 'fmb-mobile-first' dist/news/fmb-brief/index.html
           grep -q 'fmb-mobile-first' dist/news/world/index.html
+          grep -q 'fmb-mobile-first' dist/news/explainer/index.html
+
+          # Official product navigation is normalized across core pages.
+          for page in dist/news/index.html dist/news/archive/index.html dist/news/world/index.html dist/news/explainer/index.html dist/news/fmb-brief/index.html; do
+            grep -q 'FMB News' "$page"
+            grep -q 'FMB Worldwide' "$page"
+            grep -q 'FMB Explainer' "$page"
+            grep -q 'FMB Daily Brief' "$page"
+          done
 
           # Desktop expands from the shared layout; mobile personalization itself is phone-scoped.
           grep -q '@media (min-width:700px)' dist/news/assets/css/fmb-news-mobile-first-site.css
