@@ -43,20 +43,20 @@ await import('./hardfix-mobile-app-home.mjs');
 await import('./hardfix-newsroom-audit.mjs');
 await import('./hardfix-late-newsroom-shell.mjs');
 
+// Generate Fact Check before the universal mobile/PWA passes so all 124 new
+// pages receive the same shared newsroom runtime, accessibility and QA contract.
+await import('./render-fmb-fact-check.mjs');
+await import('./hardfix-fact-check-qa.mjs');
+
 // Apply the universal responsive/PWA/personalization system only after every
-// newsroom page exists, including late-generated search and submission routes.
+// newsroom page exists, including late-generated search, submission and Fact
+// Check routes.
 await import('./hardfix-mobile-first-site.mjs');
 
 // Normalize the ticker after all pages exist so every surface receives one PHT
 // clock and the same network headline bar.
 await import('./hardfix-ticker.mjs');
 await import('./hardfix-newsroom-compat.mjs');
-
-// FMB Fact Check is generated last so its route and menu item are applied across
-// the final desktop and mobile newsroom shells. Public pages use FMB-owned copy,
-// preserve approximate archive periods when necessary, and never expose the
-// source-publication links used to identify research leads.
-await import('./render-fmb-fact-check.mjs');
 
 const textExtensions = new Set(['.html', '.css', '.js', '.mjs', '.json', '.xml', '.txt', '.svg']);
 
