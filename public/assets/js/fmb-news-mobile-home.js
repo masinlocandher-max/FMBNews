@@ -25,7 +25,7 @@
   }
   tick();setInterval(tick,30000);
 
-  const slogan=$('[data-fmb-rotating-slogan]',root);
+  const slogan=$('[data-fmb-rotating-slogan],[data-fmb-greeting-line]',root);
   if(slogan){let index=Math.max(0,slogans.indexOf(slogan.textContent.trim()));setInterval(()=>{index=(index+1)%slogans.length;slogan.classList.add('is-changing');setTimeout(()=>{slogan.textContent=slogans[index];slogan.classList.remove('is-changing')},180)},7200)}
 
   function renderWeather(data){
