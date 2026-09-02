@@ -30,7 +30,7 @@
     };return icons[key]||'';
   }
   function productRail(active){
-    const items=[['news','/news/','FMB News'],['world','/news/world/','Worldwide'],['explainer','/news/explainer/','Explainer'],['fact','/news/fact-check/','Fact Check'],['brief','/news/fmb-brief/','Daily Brief']];
+    const items=[['news','/news/','FMB News'],['world','/news/world/','FMB Worldwide'],['explainer','/news/explainer/','FMB Explainer'],['fact','/news/fact-check/','FMB Fact Check'],['brief','/news/fmb-brief/','FMB Daily Brief']];
     return `<nav class="fmb-mobile-product-rail" aria-label="FMB products">${items.map(([key,href,label])=>`<a href="${href}" data-product="${key}"${key===active?' aria-current="page"':''}>${svg(key)}<span>${label}</span></a>`).join('')}</nav>`;
   }
   function openSheet(title,body){
