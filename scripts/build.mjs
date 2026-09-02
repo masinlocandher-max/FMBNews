@@ -52,6 +52,12 @@ await import('./hardfix-mobile-first-site.mjs');
 await import('./hardfix-ticker.mjs');
 await import('./hardfix-newsroom-compat.mjs');
 
+// FMB Fact Check is generated last so its route and menu item are applied across
+// the final desktop and mobile newsroom shells. Public pages use FMB-owned copy,
+// preserve approximate archive periods when necessary, and never expose the
+// source-publication links used to identify research leads.
+await import('./render-fmb-fact-check.mjs');
+
 const textExtensions = new Set(['.html', '.css', '.js', '.mjs', '.json', '.xml', '.txt', '.svg']);
 
 async function rewriteAssetPaths(target) {
@@ -67,4 +73,4 @@ async function rewriteAssetPaths(target) {
 }
 
 await rewriteAssetPaths(newsRoot);
-console.log('Built Filipino Media Bulletin with desktop publication landing plus a dedicated premium mobile app home, four official editorial products, localized approved visual assets, product-designated fallback imagery, guaranteed imagery on every article route, long-form FMB Explainer routes, personalization/PWA support, live utilities, newsroom search and intake, and no fixed bottom navigation.');
+console.log('Built Filipino Media Bulletin with five official editorial products: FMB News, FMB Worldwide, FMB Explainer, FMB Fact Check, and FMB Daily Brief; plus localized visual assets, product-designated fallback imagery, guaranteed article imagery, personalization/PWA support, live utilities, newsroom search and intake, and no fixed bottom navigation.');
