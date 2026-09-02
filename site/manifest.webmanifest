@@ -1,20 +1,64 @@
 {
-  "name": "FMB News",
+  "id": "/news/",
+  "name": "FMB News | Filipino Media Bulletin",
   "short_name": "FMB News",
-  "description": "Verified Philippine news, worldwide context, and FMB Brief.",
-  "start_url": "/news/archive/",
+  "description": "Verified Philippine news, worldwide context, explainers, fact checks and the FMB Daily Brief.",
+  "start_url": "/news/?source=pwa",
   "scope": "/news/",
   "display": "standalone",
-  "background_color": "#ffffff",
+  "display_override": ["standalone", "minimal-ui"],
+  "background_color": "#170b24",
   "theme_color": "#2b1235",
   "orientation": "portrait-primary",
+  "lang": "en-PH",
+  "dir": "ltr",
   "categories": ["news", "magazines"],
+  "prefer_related_applications": false,
   "icons": [
+    {
+      "src": "/news/assets/images/icon-transparent.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/news/assets/images/icon-transparent.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
     {
       "src": "/news/assets/images/brand/fmb-bulletin-emblem.svg",
       "sizes": "any",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Latest News",
+      "short_name": "Latest",
+      "url": "/news/?source=pwa-shortcut"
+    },
+    {
+      "name": "FMB Worldwide",
+      "short_name": "Worldwide",
+      "url": "/news/world/?source=pwa-shortcut"
+    },
+    {
+      "name": "FMB Explainer",
+      "short_name": "Explainer",
+      "url": "/news/explainer/?source=pwa-shortcut"
+    },
+    {
+      "name": "FMB Daily Brief",
+      "short_name": "Daily Brief",
+      "url": "/news/fmb-brief/?source=pwa-shortcut"
+    },
+    {
+      "name": "FMB Fact Check",
+      "short_name": "Fact Check",
+      "url": "/news/fact-check/?source=pwa-shortcut"
     }
   ]
 }
