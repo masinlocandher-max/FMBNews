@@ -22,7 +22,9 @@ body.fmb-mobile-route-home .fmb-hero-weather-copy{gap:4px!important}
 body.fmb-mobile-route-home .fmb-hero-weather-copy>strong{font-size:12px!important}
 body.fmb-mobile-route-home .fmb-hero-weather-copy>small{max-width:78px!important;font-size:6.5px!important}
 
-/* The numeric Crossword hero badge is retired. */
+/* Crossword app layers must remain actionable above the fixed bottom navigation. */
 body.fmb-mobile-route-crossword .fmb-crossword-count{display:none!important}
+body.fmb-mobile-route-crossword .fmb-crossword-save-gate{z-index:2100!important;padding-bottom:max(18px,calc(env(safe-area-inset-bottom) + 18px))!important}
+body.fmb-mobile-route-crossword .fmb-crossword-clue-popover{z-index:1200!important;bottom:max(82px,calc(env(safe-area-inset-bottom) + 82px))!important}
 @media(max-width:390px){.fmb-mobile-product-rail{gap:8px!important;padding-left:9px!important;padding-right:9px!important}.fmb-mobile-product-rail a{padding-left:9px!important;padding-right:9px!important;font-size:12.25px!important}body.fmb-mobile-route-home .fmb-approved-hero-copy{bottom:76px!important}}
 }
