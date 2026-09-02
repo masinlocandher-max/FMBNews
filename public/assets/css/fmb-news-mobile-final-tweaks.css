@@ -6,9 +6,9 @@
 .fmb-mobile-product-rail a[aria-current="page"]{background:#fff!important;color:#2b1235!important;font-weight:850!important;box-shadow:0 4px 14px rgba(0,0,0,.16),inset 0 0 0 1px rgba(43,18,53,.05)!important;transition:none!important}
 .fmb-mobile-product-rail a[aria-current="page"]::after{display:none!important}
 
-/* Home: no label above greeting, smaller live utility, clean separation. */
+/* Home: keep the editorial slogan clear of the live date/time/weather block. */
 body.fmb-mobile-route-home .fmb-approved-hero-label{display:none!important}
-body.fmb-mobile-route-home .fmb-approved-hero-copy{bottom:78px!important}
+body.fmb-mobile-route-home .fmb-approved-hero-copy{width:min(52%,208px)!important;bottom:78px!important}
 body.fmb-mobile-route-home .fmb-approved-hero-ticker{bottom:34px!important;height:30px!important}
 body.fmb-mobile-route-home .fmb-approved-hero-ticker>strong{padding:0 9px!important;font-size:7.5px!important}
 body.fmb-mobile-route-home .fmb-approved-hero-ticker-group>i{font-size:7.5px!important;padding-left:13px!important;padding-right:13px!important}
@@ -26,5 +26,5 @@ body.fmb-mobile-route-home .fmb-hero-weather-copy>small{max-width:78px!important
 body.fmb-mobile-route-crossword .fmb-crossword-count{display:none!important}
 body.fmb-mobile-route-crossword .fmb-crossword-save-gate{z-index:2100!important;padding-bottom:max(18px,calc(env(safe-area-inset-bottom) + 18px))!important}
 body.fmb-mobile-route-crossword .fmb-crossword-clue-popover{z-index:1200!important;bottom:max(82px,calc(env(safe-area-inset-bottom) + 82px))!important}
-@media(max-width:390px){.fmb-mobile-product-rail{gap:8px!important;padding-left:9px!important;padding-right:9px!important}.fmb-mobile-product-rail a{padding-left:9px!important;padding-right:9px!important;font-size:12.25px!important}body.fmb-mobile-route-home .fmb-approved-hero-copy{bottom:76px!important}}
+@media(max-width:390px){.fmb-mobile-product-rail{gap:8px!important;padding-left:9px!important;padding-right:9px!important}.fmb-mobile-product-rail a{padding-left:9px!important;padding-right:9px!important;font-size:12.25px!important}body.fmb-mobile-route-home .fmb-approved-hero-copy{width:min(50%,194px)!important;bottom:76px!important}}
 }
