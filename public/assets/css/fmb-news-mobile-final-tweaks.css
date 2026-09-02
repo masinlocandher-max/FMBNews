@@ -40,12 +40,13 @@ body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-top-ticker .fmb-approved-he
 
 /* Hero remains the visual event. Keep the image and slogan; simplify everything layered over it. */
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-label{display:none!important}
-body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-copy{width:min(56%,224px)!important;bottom:54px!important}
-body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-copy>p[data-fmb-greeting]{margin-bottom:4px!important;font-size:8px!important;color:rgba(242,209,122,.92)!important}
-body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-copy>h1{font-size:clamp(24px,6.6vw,29px)!important;line-height:.98!important}
-body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-cta{gap:8px!important;margin-top:10px!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-copy{width:min(56%,224px)!important;bottom:42px!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-copy>p[data-fmb-greeting]{display:none!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-copy>.fmb-approved-hero-deck{display:none!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-copy>h1{margin:0!important;font-size:clamp(24px,6.6vw,29px)!important;line-height:.98!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-cta{gap:8px!important;margin-top:11px!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-cta>a{min-height:32px!important;padding:0 11px!important;border-radius:6px!important;border:1px solid rgba(215,179,228,.30)!important;background:linear-gradient(135deg,#734086 0%,#522064 48%,#2b0f3a 100%)!important;font-size:8px!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 5px 14px rgba(33,8,45,.17)!important}
-body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-cta>button[data-fmb-customize]{min-height:32px!important;padding:0 4px!important;border:0!important;background:transparent!important;color:rgba(255,255,255,.62)!important;font-size:7.6px!important;font-weight:760!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-cta>button[data-fmb-customize]{min-height:32px!important;padding:0 4px!important;border:0!important;background:transparent!important;color:rgba(255,255,255,.58)!important;font-size:7.4px!important;font-weight:720!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
 
 /* Date and time only are visually promoted. Weather remains available in the app runtime but does not crowd the hero. */
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-hero-live-overlay{right:13px!important;top:15px!important;display:flex!important;width:auto!important;height:auto!important;min-height:0!important;gap:6px!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
@@ -54,9 +55,27 @@ body.fmb-mobile-first.fmb-mobile-route-home .fmb-hero-clock strong{font-size:7.5
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-hero-clock span{font-size:20px!important;line-height:1!important;font-weight:520!important;color:#fff!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-hero-weather{display:none!important}
 
-/* Let Latest News begin immediately after the hero. */
-body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section{margin-top:15px!important}
-body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head{margin-bottom:8px!important}
+/* Editorial feed: remove card-within-page styling and let type/image hierarchy do the work. */
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-app-home{background:#fff!important;padding-bottom:34px!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section{margin-top:18px!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head{margin:0 1px 7px!important;align-items:center!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head h2{font-size:23px!important;line-height:1!important;font-weight:760!important;letter-spacing:-.035em!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head a{display:flex!important;align-items:center!important;min-height:28px!important;color:#6e3a8a!important;font-size:10px!important;font-weight:730!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-list{overflow:visible!important;border:0!important;border-radius:0!important;background:transparent!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-row{grid-template-columns:minmax(0,1fr) 96px!important;gap:14px!important;min-height:102px!important;padding:12px 0!important;border-bottom:1px solid #e8e6ea!important;background:transparent!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-row img{width:96px!important;height:72px!important;border-radius:8px!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-meta{gap:4px!important;font-size:8.5px!important;line-height:1.2!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-row h3{margin-top:5px!important;font-size:16px!important;line-height:1.17!important;font-weight:690!important;letter-spacing:-.022em!important;-webkit-line-clamp:3!important}
+
+/* Downstream features: less card chrome, less radius, more publication rhythm. */
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-grid{gap:8px!important;margin-top:22px!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card{min-height:180px!important;border-radius:12px!important;box-shadow:none!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card h2{font-size:20px!important;line-height:1.02!important;letter-spacing:-.035em!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-week{margin-top:24px!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-week-grid{gap:8px!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-week-card{min-height:190px!important;padding:15px!important;border-radius:12px!important;border-color:rgba(26,11,32,.035)!important;box-shadow:none!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-week-card h3{font-size:18px!important;font-weight:740!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-week-card p{font-size:10.5px!important}
 
 /* Crossword layers stay actionable even though the redundant bottom navigation is gone. */
 body.fmb-mobile-route-crossword .fmb-crossword-count{display:none!important}
@@ -68,6 +87,8 @@ body.fmb-mobile-route-crossword .fmb-crossword-clue-popover{z-index:1200!importa
   body.fmb-mobile-first .fmb-mobile-shell-actions{width:44px!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail{grid-template-columns:repeat(5,minmax(64px,1fr))!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a{min-width:64px!important;font-size:7.2px!important}
-  body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-copy{width:min(55%,206px)!important;bottom:52px!important}
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-copy{width:min(55%,206px)!important;bottom:40px!important}
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-row{grid-template-columns:minmax(0,1fr) 88px!important;gap:12px!important}
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-row img{width:88px!important;height:68px!important}
 }
 }
