@@ -17,7 +17,7 @@ for(const signal of ['--landing-burgundy','#c69a3b','.network-hero','.network-pr
 if(landingCss.includes('/news/news/assets/'))throw new Error('Landing asset is double-scoped');
 
 async function walk(dir){const out=[];for(const e of await readdir(dir,{withFileTypes:true})){const p=path.join(dir,e.name);if(e.isDirectory())out.push(...await walk(p));else if(e.isFile()&&e.name.endsWith('.html'))out.push(p)}return out}
-function expected(rel){const p=rel.replaceAll('\\','/').toLowerCase();if(p==='index.html')return{title:'Filipino Media Bulletin',cls:'fmb-network-landing',kind:'landing'};if(p.startsWith('world/'))return{title:'FMB Worldwide',cls:'fmb-worldwide-route',kind:'world'};if(p.startsWith('explainer/'))return{title:'FMB Explainer',cls:'fmb-explainer-route',kind:'explainer'};if(p.startsWith('fmb-brief/')||/^fmb-brief-[^/]+\//.test(p))return{title:'FMB Daily Brief',cls:'fmb-daily-brief-route',kind:'brief'};return{title:'FMB News',cls:'fmb-news-route',kind:'news'}}
+function expected(rel){const p=rel.replaceAll('\\','/').toLowerCase();if(p==='index.html')return{title:'Filipino Media Bulletin',cls:'fmb-network-landing',kind:'landing'};if(p.startsWith('world/'))return{title:'FMB Worldwide',cls:'fmb-worldwide-route',kind:'world'};if(p.startsWith('explainer/'))return{title:'FMB Explainer',cls:'fmb-explainer-route',kind:'explainer'};if(p.startsWith('fact-check/'))return{title:'FMB Fact Check',cls:'fmb-fact-check-route',kind:'factcheck'};if(p.startsWith('fmb-brief/')||/^fmb-brief-[^/]+\//.test(p))return{title:'FMB Daily Brief',cls:'fmb-daily-brief-route',kind:'brief'};return{title:'FMB News',cls:'fmb-news-route',kind:'news'}}
 
 const pages=await walk(newsRoot);let checked=0;
 for(const file of pages){
@@ -32,11 +32,13 @@ for(const file of pages){
   if(exp.kind==='brief'){if(!html.includes('<span class="product-name">Daily Brief</span>'))throw new Error(`${rel}: Daily Brief title is not exact`);if(!html.includes('<div class="product-descriptor">Daily Newsletter</div>'))throw new Error(`${rel}: Daily Newsletter descriptor missing`)}
   if(exp.kind==='world'&&!html.includes('<span class="product-name">Worldwide</span>'))throw new Error(`${rel}: Worldwide title is not exact`);
   if(exp.kind==='explainer'&&!html.includes('<span class="product-name">Explainer</span>'))throw new Error(`${rel}: Explainer title is not exact`);
+  if(exp.kind==='factcheck'&&!html.includes('FMB Fact Check'))throw new Error(`${rel}: Fact Check product identity is missing`);
   if(exp.kind==='news'&&!html.includes('<span class="product-name">News</span>'))throw new Error(`${rel}: News title is not exact`);
   if(!html.includes('<div class="footer-publication-title">Filipino Media Bulletin</div>'))throw new Error(`${rel}: footer publication is not Filipino Media Bulletin`);
   if(html.includes('>FMB Brief</a>'))throw new Error(`${rel}: obsolete visible FMB Brief label remains`);
   if(html.includes('>FMB Explained</a>'))throw new Error(`${rel}: obsolete visible FMB Explained label remains`);
   if(!html.includes('/news/explainer/'))throw new Error(`${rel}: FMB Explainer is missing from product navigation`);
+  if(!html.includes('/news/fact-check/'))throw new Error(`${rel}: FMB Fact Check is missing from product navigation`);
   const footer=html.slice(html.indexOf('<footer class="footer'));if(footer.includes('data-fmb-newsletter-form'))throw new Error(`${rel}: footer contains redundant newsletter form`);
 }
-console.log(`Product identity verification passed across ${checked} pages: Filipino Media Bulletin with FMB News, FMB Worldwide, FMB Explainer, FMB Daily Brief, and non-redundant footer.`);
+console.log(`Product identity verification passed across ${checked} pages: Filipino Media Bulletin with FMB News, FMB Worldwide, FMB Explainer, FMB Fact Check, FMB Daily Brief, and non-redundant footer.`);
