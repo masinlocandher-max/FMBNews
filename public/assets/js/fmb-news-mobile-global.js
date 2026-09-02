@@ -67,6 +67,10 @@
     if(isHome){
       const head=$('.fmb-mobile-shell-head',shell),side=window.innerWidth<=380?'84px':'92px';
       head?.style.setProperty('grid-template-columns',`${side} minmax(0,1fr) ${side}`,'important');
+      const active=$('.fmb-mobile-product-rail a[aria-current="page"]',shell);
+      active?.style.setProperty('color','#f2d17a','important');
+      active?.style.setProperty('background','linear-gradient(180deg,rgba(99,6,97,.42),rgba(34,13,80,.92))','important');
+      active?.style.setProperty('text-shadow','0 1px 10px rgba(0,0,0,.28)','important');
       const track=$('.fmb-app-top-ticker .fmb-approved-hero-ticker-track');
       track?.style.setProperty('animation','fmbHomeHeadlineCrawl 34s linear infinite','important');
     }
