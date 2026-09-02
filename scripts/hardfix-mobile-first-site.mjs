@@ -25,7 +25,8 @@ const mobileGlobalJs='<script src="/assets/js/fmb-news-mobile-global.js?v=202609
 const mobileProductsJs='<script src="/assets/js/fmb-news-mobile-products.js?v=20260902-products-v3" defer></script>';
 const mobilePolishJs='<script src="/assets/js/fmb-news-mobile-app-polish.js?v=20260902-polish-v2" defer></script>';
 const mobileFinalTweaksJs='<script src="/assets/js/fmb-news-mobile-final-tweaks.js?v=20260902-final-tweaks-v1" defer></script>';
-const pwaMeta='<link rel="manifest" href="/news/manifest.webmanifest"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="FMB News"><meta name="theme-color" content="#2b1235">';
+const pwaJs='<script src="/assets/js/fmb-news-pwa.js?v=20260902-pwa-v1" defer></script>';
+const pwaMeta='<link rel="manifest" href="/news/manifest.webmanifest"><link rel="apple-touch-icon" href="/news/assets/images/icon-transparent.png"><meta name="application-name" content="FMB News"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="FMB News"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#2b1235">';
 
 function addBodyClass(html){if(/<body\b[^>]*class=["'][^"']*\bfmb-mobile-first\b/i.test(html))return html;if(/<body\b[^>]*class=["']/i.test(html))return html.replace(/<body\b([^>]*?)class=(["'])([^"']*)\2/i,(_m,b,q,c)=>`<body${b}class=${q}${c} fmb-mobile-first${q}`);return html.replace(/<body\b([^>]*)>/i,'<body$1 class="fmb-mobile-first">')}
 function removeBottomNav(html){return html.replace(/<nav\b[^>]*class=["'][^"']*\bnc-mobile-dock\b[^"']*["'][^>]*>[\s\S]*?<\/nav>\s*/gi,'').replace(/<nav\b[^>]*class=["'][^"']*\bfmb-app-dock\b[^"']*["'][^>]*>[\s\S]*?<\/nav>\s*/gi,'').replace(/<nav\b[^>]*aria-label=["']Mobile news navigation["'][^>]*>[\s\S]*?<\/nav>\s*/gi,'')}
@@ -70,6 +71,7 @@ async function apply(target){
   html=upsertCss(html,'/assets/css/fmb-news-mobile-menu-holder.css',mobileMenuHolderCss,'20260902-menu-holder-v2');
   html=upsertCss(html,'/assets/css/fmb-news-mobile-final-tweaks.css',mobileFinalTweaksCss,'20260902-final-tweaks-v1');
   if(!html.includes('/news/manifest.webmanifest'))html=html.replace('</head>',`${pwaMeta}</head>`);
+  else if(!html.includes('apple-touch-icon'))html=html.replace('</head>',`<link rel="apple-touch-icon" href="/news/assets/images/icon-transparent.png"></head>`);
   html=upsertJs(html,'/assets/js/fmb-news-mobile-personalization.js',personalizationJs,'20260901-personal-v2');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-premium.js',premiumJs,'20260901-premium-v2');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-home.js',mobileHomeJs,'20260902-approved-home-v3');
@@ -78,7 +80,8 @@ async function apply(target){
   html=upsertJs(html,'/assets/js/fmb-news-mobile-products.js',mobileProductsJs,'20260902-products-v3');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-app-polish.js',mobilePolishJs,'20260902-polish-v2');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-final-tweaks.js',mobileFinalTweaksJs,'20260902-final-tweaks-v1');
+  html=upsertJs(html,'/assets/js/fmb-news-pwa.js',pwaJs,'20260902-pwa-v1');
   await writeFile(target,html,'utf8');
 }
 await apply(newsRoot);
-console.log('Applied the unified Filipino Media Bulletin mobile system with one masthead, a white active product toggle, the approved Philippines newsroom hero with compact live utility and HEADLINES crawl, live Supabase story hydration ordered by material updates, strict shared Worldwide/Explainer/Daily Brief hero geometry, enhanced Crossword visuals without a numeric hero badge, final contrast lock, immediate internal product content, and no legacy duplicate navigation.');
+console.log('Applied the unified Filipino Media Bulletin mobile system with one masthead, a white active product toggle, the approved Philippines newsroom hero with compact live utility and HEADLINES crawl, live Supabase story hydration ordered by material updates, installable PWA runtime with iOS/Android home-screen support and offline fallback, strict shared Worldwide/Explainer/Daily Brief hero geometry, enhanced Crossword visuals without a numeric hero badge, final contrast lock, immediate internal product content, and no legacy duplicate navigation.');
