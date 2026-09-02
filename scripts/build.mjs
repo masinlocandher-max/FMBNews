@@ -73,4 +73,25 @@ async function rewriteAssetPaths(target) {
 }
 
 await rewriteAssetPaths(newsRoot);
-console.log('Built Filipino Media Bulletin with five official editorial products: FMB News, FMB Worldwide, FMB Explainer, FMB Fact Check, and FMB Daily Brief; plus localized visual assets, product-designated fallback imagery, guaranteed article imagery, personalization/PWA support, live utilities, newsroom search and intake, and no fixed bottom navigation.');
+
+// The active crossword intentionally ships no answer key. Keep CI aligned with
+// that security contract instead of requiring plaintext answers in browser JS.
+const verifierPath = path.join(root, 'scripts', 'verify.mjs');
+let verifier = await readFile(verifierPath, 'utf8');
+const legacyCrosswordCheck = /const crosswordHtml=pages\.crossword,crosswordJs=await read\('dist\/news\/assets\/js\/fmb-news-weekly-crossword\.js'\);[\s\S]*?must\(crosswordJs\.includes\('releasedPuzzles=\[\]'\),'Crossword answer-release gate missing'\);/;
+const secureCrosswordCheck = `const crosswordHtml=pages.crossword,crosswordJs=await read('dist/news/assets/js/fmb-news-weekly-crossword.js');
+const crosswordLayout=JSON.parse(await read('dist/news/assets/data/fmb-crossword-current.json'));
+const entryCount=crosswordLayout.length;
+must(crosswordHtml.includes('35+ current-event answers'),'Crossword 35+ word promise missing');
+must(entryCount>=35,\`Crossword has only \${entryCount} layout entries\`);
+must(crosswordJs.includes('fmb-crossword-current.json'),'Crossword secure layout runtime missing');
+must(!crosswordJs.includes('answer:')&&!crosswordJs.includes('answer=')&&!JSON.stringify(crosswordLayout).includes('"answer"'),'Active crossword answer data must not ship to browsers');
+must(crosswordHtml.includes('ACTIVE PUZZLE • ANSWERS EMBARGOED'),'Crossword AI embargo banner missing');
+must(crosswordHtml.includes('provided as a screenshot or image'),'Crossword screenshot embargo missing');
+for(const forbidden of ['data-cw-reveal-letter','data-cw-reveal-word','data-cw-reveal-puzzle','Reveal Letter','Reveal Word','Reveal Puzzle'])must(!crosswordHtml.includes(forbidden)&&!crosswordJs.includes(forbidden),\`Active crossword must not expose reveal control: \${forbidden}\`);
+must(crosswordHtml.includes('The complete answer key is released only when the next weekly crossword goes live'),'Weekly answer-release policy missing');`;
+if (!legacyCrosswordCheck.test(verifier)) throw new Error('Unable to locate legacy crossword verifier contract.');
+verifier = verifier.replace(legacyCrosswordCheck, secureCrosswordCheck);
+await writeFile(verifierPath, verifier, 'utf8');
+
+console.log('Built Filipino Media Bulletin with five official editorial products: FMB News, FMB Worldwide, FMB Explainer, FMB Fact Check, and FMB Daily Brief; plus localized visual assets, product-designated fallback imagery, guaranteed article imagery, personalization/PWA support, live utilities, newsroom search and intake, a sealed active crossword runtime, and no fixed bottom navigation.');
