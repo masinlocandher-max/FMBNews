@@ -17,16 +17,17 @@ const mobileContrastCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobil
 const mobileProductHeroesCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-product-heroes.css?v=20260902-product-heroes-v4">';
 const mobileMenuHolderCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-menu-holder.css?v=20260902-menu-holder-v2">';
 const mobileFinalTweaksCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-final-tweaks.css?v=20260902-final-tweaks-v1">';
+const approvedHomeCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-approved-home.css?v=20260902-approved-metallic-v1">';
 const personalizationJs='<script src="/assets/js/fmb-news-mobile-personalization.js?v=20260901-personal-v2" defer></script>';
 const premiumJs='<script src="/assets/js/fmb-news-mobile-premium.js?v=20260901-premium-v2" defer></script>';
-const mobileHomeJs='<script src="/assets/js/fmb-news-mobile-home.js?v=20260902-approved-home-v3" defer></script>';
-const mobileLiveFeedJs='<script src="/assets/js/fmb-news-mobile-live-feed.js?v=20260902-live-feed-v1" defer></script>';
-const mobileGlobalJs='<script src="/assets/js/fmb-news-mobile-global.js?v=20260901-global-v3" defer></script>';
+const mobileHomeJs='<script src="/assets/js/fmb-news-mobile-home.js?v=20260902-approved-home-v4" defer></script>';
+const mobileLiveFeedJs='<script src="/assets/js/fmb-news-mobile-live-feed.js?v=20260902-live-feed-v2" defer></script>';
+const mobileGlobalJs='<script src="/assets/js/fmb-news-mobile-global.js?v=20260901-global-v3&build=approved-shell-v1" defer></script>';
 const mobileProductsJs='<script src="/assets/js/fmb-news-mobile-products.js?v=20260902-products-v3" defer></script>';
 const mobilePolishJs='<script src="/assets/js/fmb-news-mobile-app-polish.js?v=20260902-polish-v2" defer></script>';
 const mobileFinalTweaksJs='<script src="/assets/js/fmb-news-mobile-final-tweaks.js?v=20260902-final-tweaks-v1" defer></script>';
 const pwaJs='<script src="/assets/js/fmb-news-pwa.js?v=20260902-pwa-v1" defer></script>';
-const pwaMeta='<link rel="manifest" href="/news/manifest.webmanifest"><link rel="apple-touch-icon" href="/news/assets/images/icon-transparent.png"><meta name="application-name" content="FMB News"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="FMB News"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#2b1235">';
+const pwaMeta='<link rel="manifest" href="/news/manifest.webmanifest"><link rel="apple-touch-icon" href="/news/assets/images/icon-transparent.png"><meta name="application-name" content="FMB News"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="FMB News"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#220d50">';
 
 function addBodyClass(html){if(/<body\b[^>]*class=["'][^"']*\bfmb-mobile-first\b/i.test(html))return html;if(/<body\b[^>]*class=["']/i.test(html))return html.replace(/<body\b([^>]*?)class=(["'])([^"']*)\2/i,(_m,b,q,c)=>`<body${b}class=${q}${c} fmb-mobile-first${q}`);return html.replace(/<body\b([^>]*)>/i,'<body$1 class="fmb-mobile-first">')}
 function removeBottomNav(html){return html.replace(/<nav\b[^>]*class=["'][^"']*\bnc-mobile-dock\b[^"']*["'][^>]*>[\s\S]*?<\/nav>\s*/gi,'').replace(/<nav\b[^>]*class=["'][^"']*\bfmb-app-dock\b[^"']*["'][^>]*>[\s\S]*?<\/nav>\s*/gi,'').replace(/<nav\b[^>]*aria-label=["']Mobile news navigation["'][^>]*>[\s\S]*?<\/nav>\s*/gi,'')}
@@ -41,22 +42,14 @@ function normalizeProductNavigation(html){
   });
 }
 function escapedAssetPath(pathName){return pathName.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
-function upsertCss(html,pathName,asset,version){
-  if(!html.includes(pathName))return html.replace('</head>',`${asset}</head>`);
-  return html.replace(new RegExp(`${escapedAssetPath(pathName)}(?:\\?v=[^"']+)?`,'g'),`${pathName}?v=${version}`);
-}
-function upsertJs(html,pathName,asset,version){
-  if(!html.includes(pathName))return html.replace('</body>',`${asset}</body>`);
-  return html.replace(new RegExp(`${escapedAssetPath(pathName)}(?:\\?v=[^"']+)?`,'g'),`${pathName}?v=${version}`);
-}
+function upsertCss(html,pathName,asset,version){if(!html.includes(pathName))return html.replace('</head>',`${asset}</head>`);return html.replace(new RegExp(`${escapedAssetPath(pathName)}(?:\\?v=[^"']+)?`,'g'),`${pathName}?v=${version}`)}
+function upsertJs(html,pathName,asset,version){if(!html.includes(pathName))return html.replace('</body>',`${asset}</body>`);return html.replace(new RegExp(`${escapedAssetPath(pathName)}(?:\\?v=[^"']+)?`,'g'),`${pathName}?v=${version}`)}
 async function apply(target){
   const info=await stat(target);
   if(info.isDirectory()){for(const entry of await readdir(target))await apply(path.join(target,entry));return}
   if(path.basename(target)!=='index.html')return;
   let html=await readFile(target,'utf8');
-  html=removeBottomNav(html);
-  html=addBodyClass(html);
-  html=normalizeProductNavigation(html);
+  html=removeBottomNav(html);html=addBodyClass(html);html=normalizeProductNavigation(html);
   html=upsertCss(html,'/assets/css/fmb-news-mobile-first-site.css',mobileFirstAsset,'20260901-site-v1');
   html=upsertCss(html,'/assets/css/fmb-news-mobile-personalization.css',personalizationCss,'20260901-personal-v3');
   html=upsertCss(html,'/assets/css/fmb-news-mobile-premium.css',premiumCss,'20260901-premium-v2');
@@ -70,13 +63,13 @@ async function apply(target){
   html=upsertCss(html,'/assets/css/fmb-news-mobile-product-heroes.css',mobileProductHeroesCss,'20260902-product-heroes-v4');
   html=upsertCss(html,'/assets/css/fmb-news-mobile-menu-holder.css',mobileMenuHolderCss,'20260902-menu-holder-v2');
   html=upsertCss(html,'/assets/css/fmb-news-mobile-final-tweaks.css',mobileFinalTweaksCss,'20260902-final-tweaks-v1');
-  if(!html.includes('/news/manifest.webmanifest'))html=html.replace('</head>',`${pwaMeta}</head>`);
-  else if(!html.includes('apple-touch-icon'))html=html.replace('</head>',`<link rel="apple-touch-icon" href="/news/assets/images/icon-transparent.png"></head>`);
+  html=upsertCss(html,'/assets/css/fmb-news-mobile-approved-home.css',approvedHomeCss,'20260902-approved-metallic-v1');
+  if(!html.includes('/news/manifest.webmanifest'))html=html.replace('</head>',`${pwaMeta}</head>`);else if(!html.includes('apple-touch-icon'))html=html.replace('</head>',`<link rel="apple-touch-icon" href="/news/assets/images/icon-transparent.png"></head>`);
   html=upsertJs(html,'/assets/js/fmb-news-mobile-personalization.js',personalizationJs,'20260901-personal-v2');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-premium.js',premiumJs,'20260901-premium-v2');
-  html=upsertJs(html,'/assets/js/fmb-news-mobile-home.js',mobileHomeJs,'20260902-approved-home-v3');
-  html=upsertJs(html,'/assets/js/fmb-news-mobile-live-feed.js',mobileLiveFeedJs,'20260902-live-feed-v1');
-  html=upsertJs(html,'/assets/js/fmb-news-mobile-global.js',mobileGlobalJs,'20260901-global-v3');
+  html=upsertJs(html,'/assets/js/fmb-news-mobile-home.js',mobileHomeJs,'20260902-approved-home-v4');
+  html=upsertJs(html,'/assets/js/fmb-news-mobile-live-feed.js',mobileLiveFeedJs,'20260902-live-feed-v2');
+  html=upsertJs(html,'/assets/js/fmb-news-mobile-global.js',mobileGlobalJs,'20260901-global-v3&build=approved-shell-v1');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-products.js',mobileProductsJs,'20260902-products-v3');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-app-polish.js',mobilePolishJs,'20260902-polish-v2');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-final-tweaks.js',mobileFinalTweaksJs,'20260902-final-tweaks-v1');
@@ -84,4 +77,4 @@ async function apply(target){
   await writeFile(target,html,'utf8');
 }
 await apply(newsRoot);
-console.log('Applied the unified Filipino Media Bulletin mobile system with one masthead, a white active product toggle, the approved Philippines newsroom hero with compact live utility and HEADLINES crawl, live Supabase story hydration ordered by material updates, installable PWA runtime with iOS/Android home-screen support and offline fallback, strict shared Worldwide/Explainer/Daily Brief hero geometry, enhanced Crossword visuals without a numeric hero badge, final contrast lock, immediate internal product content, and no legacy duplicate navigation.');
+console.log('Applied the unified Filipino Media Bulletin mobile system with the approved centered FMB News masthead, icon-based five-product rail, one HEADLINES/BREAKING ticker, current cinematic hero, rotating slogan, live date/time/weather overlay, metallic violet/purple final color authority, live Supabase Latest feed, installable PWA runtime, bottom Home/Search/Saved/Brief/More app navigation, and no duplicate hero or legacy mobile navigation.');
