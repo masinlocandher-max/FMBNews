@@ -21,11 +21,16 @@ async function open(path){
   assert.equal(await page.locator('.fmb-mobile-product-rail:visible').count(),1,`${path} must have exactly one visible FMB product rail`);
   const activeTab=page.locator('.fmb-mobile-product-rail a[aria-current="page"]');
   await activeTab.waitFor({state:'visible'});
-  const activeStyle=await activeTab.evaluate(el=>({background:getComputedStyle(el).backgroundColor,color:getComputedStyle(el).color}));
-  assert.equal(activeStyle.background,'rgb(255, 255, 255)',`${path} active product toggle must be white`);
-  assert.equal(activeStyle.color,'rgb(43, 18, 53)',`${path} active product toggle text must be deep plum`);
+  const activeStyle=await activeTab.evaluate(el=>({background:getComputedStyle(el).backgroundColor,backgroundImage:getComputedStyle(el).backgroundImage,color:getComputedStyle(el).color}));
+  if(path==='/news/'){
+    assert(activeStyle.backgroundImage.includes('linear-gradient'),`${path} active product toggle lost the approved metallic violet surface`);
+    assert.equal(activeStyle.color,'rgb(242, 209, 122)',`${path} active product toggle must use the approved gold highlight`);
+  }else{
+    assert.equal(activeStyle.background,'rgb(255, 255, 255)',`${path} active product toggle must be white`);
+    assert.equal(activeStyle.color,'rgb(43, 18, 53)',`${path} active product toggle text must be deep plum`);
+  }
   const duplicateRails=await page.evaluate(()=>[...document.querySelectorAll('nav')].filter(nav=>{
-    if(nav.classList.contains('fmb-mobile-product-rail')||nav.closest('footer'))return false;
+    if(nav.classList.contains('fmb-mobile-product-rail')||nav.classList.contains('fmb-approved-bottom-nav')||nav.closest('footer'))return false;
     const rect=nav.getBoundingClientRect();
     if(nav.getClientRects().length===0||rect.width<2||rect.height<2)return false;
     const style=getComputedStyle(nav);if(style.visibility==='hidden'||style.opacity==='0')return false;
@@ -37,7 +42,8 @@ async function open(path){
   assert.equal(await page.locator('.fmb-global-week-actions:visible').count(),0,`${path} must not expose Horoscope/Crossword as top chrome`);
   assert.equal(await page.locator('.fmb-global-mobile-utility:visible').count(),0,`${path} must not expose the old utility strip`);
   const shellBox=await page.locator('.fmb-mobile-app-shell').boundingBox();
-  assert(shellBox&&shellBox.height<=112,`${path} mobile chrome is too tall (${shellBox?.height}px)`);
+  const shellLimit=path==='/news/'?150:112;
+  assert(shellBox&&shellBox.height<=shellLimit,`${path} mobile chrome is too tall (${shellBox?.height}px)`);
 }
 
 async function assertImage(selector,message){
@@ -96,6 +102,7 @@ await page.locator('[data-fmb-mobile-home]').waitFor({state:'visible'});
 assert.equal(await page.locator('.network-home').evaluate(el=>getComputedStyle(el).display),'none','Desktop publication home must be hidden on phone view.');
 assert.equal(await page.locator('.fmb-mobile-app-shell').count(),1,'Mobile app shell duplicated on home.');
 assert.equal(await page.locator('.fmb-app-story-list').count(),1,'Mobile story list missing.');
+assert.equal(await page.locator('.fmb-mobile-product-rail svg').count(),5,'Approved icon product menu must show five icons.');
 await assertImage('[data-fmb-approved-hero]','Approved FMB Philippines newsroom hero failed to render.');
 await assertImage('[data-fmb-approved-mug]','Approved Daily Brief mug failed to render.');
 const heroBox=await page.locator('.fmb-app-brand-hero').boundingBox();
@@ -103,31 +110,37 @@ assert(heroBox&&heroBox.width>=389,`Home hero is not full bleed (${heroBox?.widt
 assert(heroBox&&heroBox.height>=245&&heroBox.height<=300,`Home approved hero height is out of control (${heroBox?.height}px)`);
 assert.equal(await page.locator('.fmb-app-brand-hero').evaluate(el=>getComputedStyle(el).borderRadius),'0px','Home hero must not look like an attached rounded card.');
 await page.locator('.fmb-approved-hero-copy').waitFor({state:'visible'});
-await page.locator('.fmb-approved-hero-ticker').waitFor({state:'visible'});
+await page.locator('.fmb-app-top-ticker').waitFor({state:'visible'});
 await page.locator('.fmb-hero-live-overlay').waitFor({state:'visible'});
 await page.locator('.fmb-hero-readable-shade').waitFor({state:'visible'});
+assert.equal(await page.locator('.fmb-approved-hero-ticker:visible').count(),1,'Home must expose exactly one moving HEADLINES/BREAKING ticker.');
 assert.equal(await page.locator('.fmb-hero-greeting:visible').count(),0,'Legacy giant greeting overlay must stay removed.');
 assert.equal(await page.locator('.fmb-approved-hero-label:visible').count(),0,'Home must not show a label/CTA above the greeting.');
-assert.equal((await page.locator('.fmb-approved-hero-ticker>strong').textContent())?.trim(),'HEADLINES','Home moving news bar must say HEADLINES.');
+assert.equal((await page.locator('.fmb-app-top-ticker>strong').textContent())?.trim(),'HEADLINES','Home moving news bar must say HEADLINES.');
+const tickerBeforeHero=await page.evaluate(()=>{
+  const ticker=document.querySelector('.fmb-app-top-ticker'),hero=document.querySelector('.fmb-app-brand-hero');
+  return Boolean(ticker&&hero&&(ticker.compareDocumentPosition(hero)&Node.DOCUMENT_POSITION_FOLLOWING));
+});
+assert(tickerBeforeHero,'Approved HEADLINES ticker must sit between the product menu and cinematic hero.');
 const ctas=await page.locator('.fmb-approved-hero-cta>*').allTextContents();
 assert.deepEqual(ctas.map(v=>v.trim()),['Read the Latest','Customize'],'Home hero CTA labels drifted.');
 const timeSize=await page.locator('.fmb-hero-clock [data-fmb-local-time]').evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
 const weatherSize=await page.locator('.fmb-hero-weather-copy>[data-fmb-weather]').evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
 const greetingSize=await page.locator('[data-fmb-greeting-line]').evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
-assert(timeSize>=9&&timeSize<=12,`Home utility time should stay small (${timeSize}px)`);
-assert(weatherSize>=12&&weatherSize<=15,`Home utility weather should stay small (${weatherSize}px)`);
+assert(timeSize>=18&&timeSize<=24,`Home approved date/time emphasis drifted (${timeSize}px)`);
+assert(weatherSize>=12&&weatherSize<=15,`Home utility weather should stay compact (${weatherSize}px)`);
 assert(greetingSize>=24&&greetingSize<=32,`Home editorial greeting headline is out of range (${greetingSize}px)`);
 assert((await page.locator('[data-fmb-greeting]').textContent()||'').trim().length>4,'Home contextual greeting is missing.');
-assert((await page.locator('[data-fmb-greeting-line]').textContent()||'').trim().length>10,'Home greeting quote is missing.');
-const layers=await page.evaluate(()=>{
-  const copy=document.querySelector('.fmb-approved-hero-copy')?.getBoundingClientRect();
-  const ticker=document.querySelector('.fmb-approved-hero-ticker')?.getBoundingClientRect();
-  const utility=document.querySelector('.fmb-hero-live-overlay')?.getBoundingClientRect();
-  return{copyBottom:copy?.bottom,tickerTop:ticker?.top,tickerBottom:ticker?.bottom,utilityTop:utility?.top};
+assert((await page.locator('[data-fmb-greeting-line]').textContent()||'').trim().length>10,'Home rotating slogan is missing.');
+const mastheadAlignment=await page.evaluate(()=>{
+  const brand=document.querySelector('.fmb-mobile-shell-brand')?.getBoundingClientRect();
+  return brand?Math.abs((brand.left+brand.width/2)-(innerWidth/2)):999;
 });
-assert(layers.copyBottom<=layers.tickerTop+2,'Home hero copy collides with ticker.');
-assert(layers.tickerBottom<=layers.utilityTop+2,'Home ticker collides with date/weather utility.');
-await assertReadable('.fmb-app-lead h2','Home lead headline is not readable.');
+assert(mastheadAlignment<=10,`FMB News masthead logo is not centered (${mastheadAlignment.toFixed(1)}px drift)`);
+assert.equal(await page.locator('.fmb-app-lead:visible').count(),0,'Approved home must not reintroduce a second full-height lead hero.');
+await assertReadable('.fmb-app-story-row h3','Home Latest News headline is not readable.');
+const bottomLabels=await page.locator('.fmb-approved-bottom-nav>*').allTextContents();
+assert.deepEqual(bottomLabels.map(v=>v.trim()),['Home','Search','Saved','Brief','More'],'Approved bottom app navigation drifted.');
 
 await page.evaluate(()=>localStorage.setItem('fmbNewsPrefsV1',JSON.stringify({daily:true,breaking:false,world:false,sections:['World']})));
 await page.reload({waitUntil:'domcontentloaded'});
@@ -227,4 +240,4 @@ assert.equal(structured['@type'],'Article','FMB Explainer structured data is not
 assert(structured.datePublished,'FMB Explainer structured data is missing the publication timestamp.');
 
 await browser.close();
-console.log('Mobile browser QA passed: five-product rail with white active product toggle, approved Philippines newsroom hero with HEADLINES crawl and compact date/time/weather, exact Read the Latest / Customize CTAs, strict 300px shared Worldwide/Explainer/Daily Brief hero geometry, enhanced Crossword with no numeric hero count, explicit contrast checks, and dedicated Archive, Horoscope, About, and article experiences.');
+console.log('Mobile browser QA passed: approved metallic-violet FMB News home with centered masthead, icon-based five-product rail, one HEADLINES ticker above the cinematic hero, rotating slogan, emphasized live date/time/weather, exact Read the Latest / Customize CTAs, no duplicate lead hero, app bottom navigation, strict shared product hero geometry, and dedicated Archive, Horoscope, Crossword, About, and article experiences.');
