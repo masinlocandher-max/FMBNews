@@ -5,8 +5,17 @@
   if(path==='/news'){
     const copy=document.querySelector('.fmb-approved-hero-copy');
     if(copy){
-      copy.style.setProperty('width',window.innerWidth<=390?'min(50%,194px)':'min(52%,208px)','important');
-      copy.style.setProperty('max-width',window.innerWidth<=390?'194px':'208px','important');
+      copy.style.setProperty('width',window.innerWidth<=390?'min(55%,206px)':'min(56%,224px)','important');
+      copy.style.setProperty('max-width',window.innerWidth<=390?'206px':'224px','important');
+    }
+
+    /* The shared runtime used to force a heavier selected-product tile inline.
+       Clear only those old presentation properties so the final minimal metallic CSS is authoritative. */
+    const active=document.querySelector('.fmb-mobile-product-rail a[aria-current="page"]');
+    if(active){
+      active.style.removeProperty('color');
+      active.style.removeProperty('background');
+      active.style.removeProperty('text-shadow');
     }
   }
 
