@@ -64,6 +64,12 @@
       $(`[data-product="${product.key}"]`,shell)?.setAttribute('aria-current','page');
     }
     document.body.prepend(shell);
+    if(isHome){
+      const head=$('.fmb-mobile-shell-head',shell),side=window.innerWidth<=380?'84px':'92px';
+      head?.style.setProperty('grid-template-columns',`${side} minmax(0,1fr) ${side}`,'important');
+      const track=$('.fmb-app-top-ticker .fmb-approved-hero-ticker-track');
+      track?.style.setProperty('animation','fmbHomeHeadlineCrawl 34s linear infinite','important');
+    }
     $('[data-fmb-shell-account]',shell)?.addEventListener('click',()=>{const target=document.querySelector('[data-fmb-account],.fmb-account-button,[data-account]');if(target)target.click()});
     $('[data-fmb-shell-menu]',shell)?.addEventListener('click',openMore);
     return shell;
