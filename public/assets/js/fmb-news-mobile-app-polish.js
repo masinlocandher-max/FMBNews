@@ -3,6 +3,19 @@
   const $=(q,s=document)=>s.querySelector(q),$$=(q,s=document)=>[...s.querySelectorAll(q)];
   document.documentElement.setAttribute('data-fmb-mobile-polish','true');
 
+  function dedupeProductRails(){
+    for(const nav of $$('.fmb-mobile-product-rail')){
+      const seen=new Set();
+      for(const link of $$('a[href]',nav)){
+        const href=(link.getAttribute('href')||'').replace(/[?#].*$/,'').replace(/\/+$/,'/')||'/';
+        const key=href==='/news/'?'news':href.startsWith('/news/world/')?'world':href.startsWith('/news/explainer/')?'explainer':href.startsWith('/news/fact-check/')?'fact':href.startsWith('/news/fmb-brief/')?'brief':null;
+        if(!key)continue;
+        if(seen.has(key)){link.remove();continue}
+        seen.add(key);
+      }
+    }
+  }
+
   function hideLegacyProductRails(){
     for(const nav of $$('nav')){
       if(nav.classList.contains('fmb-mobile-product-rail')||nav.closest('footer'))continue;
@@ -32,7 +45,7 @@
     if(button)button.setAttribute('aria-label','Set local weather');
   }
 
-  function clean(){hideLegacyProductRails();cleanGlobalUtility()}
+  function clean(){dedupeProductRails();hideLegacyProductRails();cleanGlobalUtility()}
   clean();
   addEventListener('DOMContentLoaded',clean,{once:true});
   addEventListener('load',clean,{once:true});
