@@ -17,7 +17,7 @@ async function open(path){
   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-window.innerWidth);
   assert(overflow<=1,`${path} has ${overflow}px horizontal page overflow`);
   const products=await page.locator('.fmb-mobile-product-rail>a').allTextContents();
-  assert.deepEqual(products.map(v=>v.trim()),['FMB News','FMB Worldwide','FMB Explainer','FMB Daily Brief'],`${path} product rail drifted`);
+  assert.deepEqual(products.map(v=>v.trim()),['FMB News','FMB Worldwide','FMB Explainer','FMB Fact Check','FMB Daily Brief'],`${path} product rail drifted`);
   assert.equal(await page.locator('.fmb-mobile-product-rail:visible').count(),1,`${path} must have exactly one visible FMB product rail`);
   const activeTab=page.locator('.fmb-mobile-product-rail a[aria-current="page"]');
   await activeTab.waitFor({state:'visible'});
@@ -227,4 +227,4 @@ assert.equal(structured['@type'],'Article','FMB Explainer structured data is not
 assert(structured.datePublished,'FMB Explainer structured data is missing the publication timestamp.');
 
 await browser.close();
-console.log('Mobile browser QA passed: white active product toggle, approved Philippines newsroom hero with HEADLINES crawl and compact date/time/weather, exact Read the Latest / Customize CTAs, strict 300px shared Worldwide/Explainer/Daily Brief hero geometry, enhanced Crossword with no numeric hero count, explicit contrast checks, and dedicated Archive, Horoscope, About, and article experiences.');
+console.log('Mobile browser QA passed: five-product rail with white active product toggle, approved Philippines newsroom hero with HEADLINES crawl and compact date/time/weather, exact Read the Latest / Customize CTAs, strict 300px shared Worldwide/Explainer/Daily Brief hero geometry, enhanced Crossword with no numeric hero count, explicit contrast checks, and dedicated Archive, Horoscope, About, and article experiences.');
