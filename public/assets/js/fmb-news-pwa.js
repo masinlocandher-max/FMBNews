@@ -4,6 +4,7 @@
   const isStandalone=()=>window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
   const isIOS=()=>/iphone|ipad|ipod/i.test(navigator.userAgent);
   const isMobile=()=>window.matchMedia('(max-width: 899px)').matches;
+  const isNewsHome=()=>location.pathname.replace(/\/+$/,'')==='/news';
   let installPrompt=null;
 
   function addStyles(){
@@ -56,13 +57,16 @@
   }
 
   function updateInstallUI(){
+    const existing=document.querySelector('[data-fmb-install-app]');
     if(isStandalone()){
       document.documentElement.classList.add('fmb-pwa-installed');
-      const button=document.querySelector('[data-fmb-install-app]');
-      if(button)button.dataset.visible='false';
+      if(existing)existing.dataset.visible='false';
       return;
     }
-    if(!isMobile())return;
+    if(!isMobile()||!isNewsHome()){
+      if(existing)existing.dataset.visible='false';
+      return;
+    }
     const button=installButton();
     const shouldShow=Boolean(installPrompt)||isIOS();
     button.dataset.visible=shouldShow?'true':'false';
