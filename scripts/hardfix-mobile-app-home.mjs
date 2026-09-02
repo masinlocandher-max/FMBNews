@@ -26,22 +26,23 @@ const tickerLabel=breaking?'BREAKING':'HEADLINES';
 const tickerHref=breaking?`/news/${esc(breaking.slug)}/`:'#fmb-app-latest-title';
 const tickerGroup=tickerStories.map(s=>`<i>${esc(s.headline)}</i>`).join('');
 const mobileHome=`<div class="fmb-mobile-app-home" data-fmb-mobile-home>
+  <a class="fmb-approved-hero-ticker fmb-app-top-ticker" href="${tickerHref}" aria-label="${tickerLabel}">
+    <strong>${tickerLabel}</strong>
+    <span class="fmb-approved-hero-ticker-window"><span class="fmb-approved-hero-ticker-track"><span class="fmb-approved-hero-ticker-group">${tickerGroup}</span><span class="fmb-approved-hero-ticker-group" aria-hidden="true">${tickerGroup}</span></span></span>
+    <b aria-hidden="true">›</b>
+  </a>
   <section class="fmb-app-brand-hero" aria-label="FMB News live home">
     <img src="${approvedHero}" alt="FMB News Philippines newsroom hero with the Philippine flag, global map, broadcast camera and official gold shell emblem" fetchpriority="high" data-fmb-approved-hero>
     <span class="fmb-hero-readable-shade" aria-hidden="true"></span>
     <div class="fmb-approved-hero-copy">
-      <p data-fmb-greeting>Hello, night owl.</p>
-      <h1 data-fmb-greeting-line>The world is still moving. Here’s what changed.</h1>
+      <p data-fmb-greeting>Good afternoon.</p>
+      <h1 data-fmb-greeting-line data-fmb-rotating-slogan>The world is still moving. Here’s what changed.</h1>
       <p class="fmb-approved-hero-deck">Stay informed with verified facts, meaningful context, and perspectives that help you understand what matters.</p>
       <div class="fmb-approved-hero-cta">
         <a href="#fmb-app-latest-title">Read the Latest</a>
         <button type="button" data-fmb-customize>Customize</button>
       </div>
     </div>
-    <a class="fmb-approved-hero-ticker" href="${tickerHref}" aria-label="${tickerLabel}">
-      <strong>${tickerLabel}</strong>
-      <span class="fmb-approved-hero-ticker-window"><span class="fmb-approved-hero-ticker-track"><span class="fmb-approved-hero-ticker-group">${tickerGroup}</span><span class="fmb-approved-hero-ticker-group" aria-hidden="true">${tickerGroup}</span></span></span>
-    </a>
     <div class="fmb-hero-live-overlay" aria-label="Live local date, time and weather">
       <div class="fmb-hero-clock">
         <strong data-fmb-local-date>Today</strong>
@@ -60,9 +61,16 @@ const mobileHome=`<div class="fmb-mobile-app-home" data-fmb-mobile-home>
     <div class="fmb-app-section-head"><h2 id="fmb-app-latest-title">Latest News</h2><a href="/news/archive/">View all</a></div>
     <div class="fmb-app-story-list">${latest.map(storyRow).join('')}</div>
   </section>
-  <section class="fmb-app-brief-card">
-    <img src="${approvedMug}" alt="Purple FMB Daily Brief coffee mug with gold FMB emblem" loading="lazy" data-fmb-approved-mug>
-    <div class="fmb-app-brief-copy"><span>FMB Daily Brief</span><h2>Know what matters today.</h2><p>A concise daily briefing with the developments, context and implications worth knowing.</p><a href="/news/fmb-brief/live/">Read today’s brief <b aria-hidden="true">›</b></a></div>
+  <section class="fmb-app-feature-grid" aria-label="FMB News features">
+    <a class="fmb-app-feature-card brief" href="/news/fmb-brief/live/">
+      <img src="${approvedMug}" alt="FMB Daily Brief coffee mug with gold FMB emblem" loading="lazy" data-fmb-approved-mug>
+      <span class="fmb-feature-shade" aria-hidden="true"></span>
+      <div><span>FMB Daily Brief</span><h2>Your essential rundown in minutes.</h2><b>Read today’s brief ›</b></div>
+    </a>
+    <a class="fmb-app-feature-card worldwide" href="/news/world/">
+      <span class="fmb-world-grid" aria-hidden="true"></span>
+      <div><span>FMB Worldwide</span><h2>Global stories. Local perspective.</h2><b>Explore Worldwide ›</b></div>
+    </a>
   </section>
   <section class="fmb-app-section fmb-app-week" aria-labelledby="fmb-app-week-title">
     <div class="fmb-app-section-head"><h2 id="fmb-app-week-title">This Week</h2></div>
@@ -77,4 +85,4 @@ let html=await readFile(page,'utf8');
 html=html.replace(/<div class="fmb-mobile-app-home"[\s\S]*?<\/div>\s*(?=<main class="network-home")/i,'');
 if(!html.includes('data-fmb-mobile-home'))html=html.replace('<main class="network-home">',`${mobileHome}<main class="network-home">`);
 await writeFile(page,html,'utf8');
-console.log(`Injected the approved FMB Philippines hero as an HTML-overlay mobile home with Read the Latest / Customize CTAs, a continuous ${tickerLabel.toLowerCase()} crawl, and ${Math.min(ss.length,6)} live published stories.`);
+console.log(`Injected the approved FMB mobile home with one ${tickerLabel.toLowerCase()} rail, the existing cinematic hero, live date/time/weather, dual feature cards, and ${Math.min(ss.length,6)} published stories.`);
