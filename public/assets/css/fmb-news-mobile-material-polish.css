@@ -1,0 +1,72 @@
+/* Final material polish for the minimal FMB News mobile home. Loaded last on purpose. */
+@media(max-width:699px){
+/* Keep the shell quiet, but make the existing violet/plum palette read as polished metal rather than a flat gradient. */
+body.fmb-mobile-first .fmb-mobile-shell-head{
+  background:
+    linear-gradient(108deg,transparent 0 30%,rgba(213,161,231,.08) 43%,rgba(255,255,255,.07) 49%,rgba(186,122,211,.10) 54%,transparent 67%),
+    linear-gradient(180deg,#351042 0%,#210829 44%,#130419 100%)!important;
+  border-bottom:1px solid rgba(211,157,229,.08)!important;
+}
+body.fmb-mobile-first .fmb-mobile-shell-brand img{filter:drop-shadow(0 0 5px rgba(192,132,215,.16))!important}
+body.fmb-mobile-first .fmb-mobile-shell-menu,
+body.fmb-mobile-first .fmb-mobile-shell-actions a{color:rgba(255,255,255,.88)!important}
+body.fmb-mobile-first .fmb-mobile-shell-menu svg,
+body.fmb-mobile-first .fmb-mobile-shell-actions svg{stroke-width:1.6!important}
+
+/* The five products should read as one editorial rail, not five tiles. */
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail{
+  background:
+    linear-gradient(104deg,transparent 0 36%,rgba(132,73,154,.12) 48%,rgba(255,255,255,.025) 51%,transparent 64%),
+    linear-gradient(180deg,#18061f 0%,#0f0314 100%)!important;
+  border-top:0!important;
+  border-bottom:1px solid rgba(201,154,219,.11)!important;
+}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a{border-right:0!important;color:rgba(255,255,255,.72)!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a[aria-current="page"]{
+  background:linear-gradient(180deg,rgba(126,65,148,.035),rgba(99,6,97,.095))!important;
+  color:#efd17b!important;
+}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a[aria-current="page"]::after{
+  background:linear-gradient(90deg,transparent,#9b6aad 24%,#efd17b 50%,#9b6aad 76%,transparent)!important;
+  opacity:.86!important;
+}
+
+/* Ticker belongs to the same material family as the rail and hero. */
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-top-ticker{
+  background:
+    linear-gradient(100deg,rgba(118,62,138,.08),transparent 24% 68%,rgba(118,62,138,.06)),
+    linear-gradient(90deg,#190620 0%,#2b0b37 48%,#16051e 100%)!important;
+  border-bottom:1px solid rgba(173,113,194,.12)!important;
+}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-top-ticker>strong{color:#efd17b!important;font-weight:720!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-top-ticker .fmb-approved-hero-ticker-group>i{color:rgba(255,255,255,.82)!important}
+
+/* Keep the hero editorial. The image stays untouched; only the UI chrome is refined. */
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-cta>a{
+  border-color:rgba(218,176,232,.24)!important;
+  background:linear-gradient(135deg,rgba(113,61,132,.84),rgba(68,23,82,.88) 52%,rgba(31,8,40,.92))!important;
+  font-weight:690!important;
+  letter-spacing:.005em!important;
+}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-cta>button[data-fmb-customize]{color:rgba(255,255,255,.43)!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-hero-clock strong{letter-spacing:.035em!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-hero-clock span{letter-spacing:-.025em!important}
+
+/* Editorial feed: type carries hierarchy; controls recede. */
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head a{color:#77707a!important;font-weight:620!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-row{border-bottom-color:#ebe9ed!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-row:last-child{border-bottom:0!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-row img{border-radius:7px!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-meta span:first-child{color:#6d3b7e!important;font-weight:740!important}
+
+/* Feature surfaces remain distinct, but stop looking like generic app cards. */
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card,
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-week-card{border-radius:9px!important;box-shadow:none!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-week-card{border-color:rgba(35,15,43,.045)!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-week-kicker{letter-spacing:.045em!important}
+
+@media(max-width:390px){
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a{font-size:8.15px!important}
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head a{font-size:9.8px!important}
+}
+}
