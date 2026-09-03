@@ -32,8 +32,22 @@ for(const token of ['font-size:8.8px!important','font-size:8.2px!important','fon
   must(materialCss.includes(token),`Critical mobile readability/touch-target override missing: ${token}`);
 }
 
+const routePolish={
+  archive:['fmb-mobile-route-archive .archive-row','border-radius:0!important'],
+  world:['fmb-mobile-route-world .country-card','font-size:13px!important'],
+  explainer:['fmb-mobile-route-explainer .explained-item','font-size:15px!important'],
+  brief:['fmb-mobile-route-brief .brief-issue','font-size:18px!important'],
+  horoscope:['fmb-mobile-route-horoscope .fmb-zodiac-grid button','border-radius:var(--fmb-screen-radius)!important'],
+  crossword:['fmb-mobile-route-crossword .fmb-crossword-toolbar button','min-height:44px!important'],
+  about:['fmb-mobile-route-about .fmb-about-method-list li','font-size:14px!important'],
+  article:['fmb-mobile-route-article .article-body p','font-size:17.5px!important']
+};
+for(const[route,tokens]of Object.entries(routePolish))for(const token of tokens)must(materialCss.includes(token),`All-screen mobile polish missing for ${route}: ${token}`);
+must(materialCss.includes('body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail'),'Internal product screens must share the compact editorial product rail');
+must(materialCss.includes('--fmb-screen-gutter:16px'),'Internal routes must share the 16px mobile spacing system');
+
 must(mobilePass.includes("const MOBILE_SYSTEM_FILE='fmb-news-mobile-system.css'"),'Mobile CSS must ship through the single system bundle');
 must(mobilePass.includes("createHash('sha256')"),'Mobile CSS system bundle must be content-versioned');
 must(mobilePass.includes('MOBILE_SYSTEM_SHEETS'),'Mobile CSS cascade order must remain explicit and verifiable');
 
-console.log('Mobile stabilization contracts passed: one PHT runtime, CSS-owned presentation, no hidden Home account/bottom nav, keyboard-safe sheets, reduced-motion slogan, and readable touch chrome.');
+console.log('Mobile stabilization contracts passed across Home and internal screens: one PHT runtime, CSS-owned presentation, accessible sheets, reduced motion, readable chrome, and route-wide spacing/polish.');
