@@ -34,6 +34,11 @@ async function assertPersistentShell(page,path){
   assert(Math.abs(geometry.brandCenter-geometry.viewport/2)<=12,`${path} FMB logo is not centered.`);
   assert(geometry.menuCenter>geometry.viewport*.75,`${path} hamburger must always stay on the right.`);
   assert.equal(geometry.icons,5,`${path} must use the five-icon FMB product rail.`);
+
+  await page.evaluate(()=>scrollTo(0,Math.min(420,document.documentElement.scrollHeight-innerHeight)));
+  await page.waitForTimeout(80);
+  const pinned=await shell.evaluate(el=>el.getBoundingClientRect().top);
+  assert(Math.abs(pinned)<=1,`${path} FMB shell stopped pinning after scroll (${pinned}px).`);
 }
 
 {
@@ -59,9 +64,24 @@ async function assertPersistentShell(page,path){
   });
   assert.equal(pht.actual,pht.expected,`Home clock must stay in Philippine Standard Time even for a New York device (${pht.actual} vs ${pht.expected}).`);
 
-  const tickerPosition=await page.locator('.fmb-app-top-ticker').evaluate(el=>({position:getComputedStyle(el).position,top:getComputedStyle(el).top}));
-  assert.equal(tickerPosition.position,'sticky','Home Headlines ticker must stay attached below the sticky FMB shell.');
-  assert.equal(tickerPosition.top,'100px','Home Headlines ticker must sit immediately below the 100px shell stack.');
+  const tickerGeometry=await page.evaluate(()=>{
+    const shell=document.querySelector('.fmb-mobile-app-shell');
+    const ticker=document.querySelector('.fmb-app-top-ticker');
+    const hero=document.querySelector('.fmb-app-brand-hero');
+    if(!shell||!ticker||!hero)throw new Error('Home sticky shell/ticker/hero structure missing.');
+    const s=shell.getBoundingClientRect(),t=ticker.getBoundingClientRect(),h=hero.getBoundingClientRect();
+    return{
+      insideShell:ticker.parentElement===shell,
+      position:getComputedStyle(ticker).position,
+      top:getComputedStyle(ticker).top,
+      shellTop:s.top,shellBottom:s.bottom,tickerTop:t.top,tickerBottom:t.bottom,heroTop:h.top
+    };
+  });
+  assert.equal(tickerGeometry.insideShell,true,'Home Headlines ticker must be a direct child of the sticky FMB shell.');
+  assert.equal(tickerGeometry.position,'relative','Home Headlines ticker must stay in normal flow inside the sticky FMB shell.');
+  assert.equal(tickerGeometry.top,'auto','Home Headlines ticker must not use a second sticky offset.');
+  assert(Math.abs(tickerGeometry.tickerBottom-tickerGeometry.shellBottom)<=1,'Home Headlines must end at the bottom of the sticky FMB shell.');
+  assert(tickerGeometry.tickerBottom<=tickerGeometry.heroTop+1,'Home Headlines must not overlap the cinematic hero.');
 
   const menu=page.locator('[data-fmb-shell-menu]');
   await menu.focus();
@@ -104,4 +124,4 @@ async function assertPersistentShell(page,path){
 }
 
 await browser.close();
-console.log('Mobile stabilization browser QA passed: sticky shell, search-left/brand-center/hamburger-right geometry, profile inside menu, non-floating install flow, PHT authority, focus restoration, and reduced motion.');
+console.log('Mobile stabilization browser QA passed: sticky shell with in-flow Headlines, search-left/brand-center/hamburger-right geometry, profile inside menu, non-floating install flow, PHT authority, focus restoration, and reduced motion.');
