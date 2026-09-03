@@ -63,8 +63,25 @@
     return sheet;
   }
 
+  function openInstallGuide(opener){
+    const ios=/iphone|ipad|ipod/i.test(navigator.userAgent);
+    const body=ios
+      ? '<div class="fmb-install-guide"><strong>Add FMB News like an iPhone app</strong><p>Tap Safari’s Share button, then choose <b>Add to Home Screen</b>. Apple controls the final system sheet.</p></div>'
+      : '<div class="fmb-install-guide"><strong>Add FMB News to your Home Screen</strong><p>Open your browser menu and choose <b>Add to Home screen</b> or <b>Install app</b>.</p></div>';
+    return openSheet('Add to Home Screen',body,opener);
+  }
+
   function openMore(opener){
-    return openSheet('More from FMB News','<a href="/news/world/">Worldwide <span>›</span></a><a href="/news/explainer/">Explainer <span>›</span></a><a href="/news/fact-check/">Fact Check <span>›</span></a><a href="/news/horoscope/">Horoscope <span>›</span></a><a href="/news/crossword/">Crossword Puzzle <span>›</span></a><a href="/news/about/">About FMB News <span>›</span></a><a href="/news/submit/">Submit a story <span>›</span></a>',opener);
+    const sheet=openSheet('More from FMB News','<button type="button" data-fmb-open-account>Your FMB <span>›</span></button><button type="button" data-fmb-install>Add to Home Screen <span>›</span></button><a href="/news/world/">Worldwide <span>›</span></a><a href="/news/explainer/">Explainer <span>›</span></a><a href="/news/fact-check/">Fact Check <span>›</span></a><a href="/news/horoscope/">Horoscope <span>›</span></a><a href="/news/crossword/">Crossword Puzzle <span>›</span></a><a href="/news/about/">About FMB News <span>›</span></a><a href="/news/submit/">Submit a story <span>›</span></a>',opener);
+    $('[data-fmb-open-account]',sheet)?.addEventListener('click',()=>{
+      $('[data-close-sheet]',sheet)?.click();
+      requestAnimationFrame(()=>document.querySelector('[data-fmb-account],.fmb-account-button,[data-account]')?.click());
+    });
+    $('[data-fmb-install]',sheet)?.addEventListener('click',e=>{
+      $('[data-close-sheet]',sheet)?.click();
+      requestAnimationFrame(()=>openInstallGuide(e.currentTarget));
+    });
+    return sheet;
   }
 
   function ensureShell(){
@@ -74,17 +91,8 @@
     const shell=document.createElement('div');
     shell.className=`fmb-mobile-app-shell${isHome?' is-home':''}`;
     const brand=`<a class="fmb-mobile-shell-brand" href="/news/" aria-label="FMB News — Filipino Media Bulletin"><img src="/news/assets/images/brand/fmb-bulletin-emblem.svg" alt=""><span class="fmb-mobile-shell-copy"><strong>FMB News</strong><small>Filipino Media Bulletin</small></span></a>`;
-    if(isHome){
-      shell.innerHTML=`<div class="fmb-mobile-shell-head"><button class="fmb-mobile-shell-menu" type="button" data-fmb-shell-menu aria-label="Open FMB News menu" aria-haspopup="dialog">${svg('menu')}</button>${brand}<div class="fmb-mobile-shell-actions"><a href="/news/search/" aria-label="Search FMB News">${svg('search')}</a></div></div>${productRail(product.key)}`;
-    }else{
-      shell.innerHTML=`<div class="fmb-mobile-shell-head">${brand}<div class="fmb-mobile-shell-actions"><a href="/news/search/" aria-label="Search FMB News">${svg('search')}</a><button type="button" data-fmb-shell-account aria-label="Your FMB">${svg('account')}</button></div></div><nav class="fmb-mobile-product-rail" aria-label="FMB products"><a href="/news/" data-product="news">FMB News</a><a href="/news/world/" data-product="world">FMB Worldwide</a><a href="/news/explainer/" data-product="explainer">FMB Explainer</a><a href="/news/fact-check/" data-product="fact">FMB Fact Check</a><a href="/news/fmb-brief/" data-product="brief">FMB Daily Brief</a></nav>`;
-      $(`[data-product="${product.key}"]`,shell)?.setAttribute('aria-current','page');
-    }
+    shell.innerHTML=`<div class="fmb-mobile-shell-head"><div class="fmb-mobile-shell-actions fmb-mobile-shell-search"><a href="/news/search/" aria-label="Search FMB News">${svg('search')}</a></div>${brand}<button class="fmb-mobile-shell-menu" type="button" data-fmb-shell-menu aria-label="Open FMB News menu" aria-haspopup="dialog">${svg('menu')}</button></div>${productRail(product.key)}`;
     document.body.prepend(shell);
-    $('[data-fmb-shell-account]',shell)?.addEventListener('click',()=>{
-      const target=document.querySelector('[data-fmb-account],.fmb-account-button,[data-account]');
-      if(target)target.click();
-    });
     $('[data-fmb-shell-menu]',shell)?.addEventListener('click',e=>openMore(e.currentTarget));
     return shell;
   }
