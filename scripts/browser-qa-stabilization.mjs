@@ -39,6 +39,11 @@ async function assertPersistentShell(page,path){
   await page.waitForTimeout(80);
   const pinned=await shell.evaluate(el=>el.getBoundingClientRect().top);
   assert(Math.abs(pinned)<=1,`${path} FMB shell stopped pinning after scroll (${pinned}px).`);
+
+  // Sticky persistence and initial-flow geometry are separate scenarios.
+  // Restore the page before any caller inspects ticker/hero adjacency.
+  await page.evaluate(()=>scrollTo(0,0));
+  await page.waitForTimeout(80);
 }
 
 {
