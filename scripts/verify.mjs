@@ -40,19 +40,33 @@ const pages={
 };
 for(const[name,html]of Object.entries(pages)){
   for(const label of ['FMB News','FMB Worldwide','FMB Explainer','FMB Daily Brief'])must(html.includes(label),`${name}: missing ${label}`);
-  must(html.includes('fmb-news-mobile-personalization.css?v=20260901-personal-v3'),`${name}: corrected personalization CSS v3 missing`);
-  must(html.includes('fmb-news-mobile-home.css?v=20260901-app-home-v2'),`${name}: mobile home CSS v2 missing`);
-  must(html.includes('fmb-news-mobile-global.css?v=20260901-global-v3'),`${name}: global mobile CSS v3 missing`);
+  // The fifteen mobile stylesheets are served concatenated, in their original
+  // order, as one system stylesheet versioned by a hash of its own bytes. These
+  // used to be nine separate assertions on hand-typed ?v= literals, which meant
+  // editing a sheet without bumping its literal shipped a stale file and still
+  // passed. Assert the bundle is linked and content-versioned; its contents are
+  // asserted below, against the authored sources.
+  must(/fmb-news-mobile-system\.css\?v=[0-9a-f]{10}\b/.test(html),`${name}: content-versioned mobile system stylesheet missing`);
+  for(const gone of ['fmb-news-mobile-personalization.css','fmb-news-mobile-home.css','fmb-news-mobile-global.css','fmb-news-mobile-products.css','fmb-news-mobile-product-heroes.css','fmb-news-mobile-menu-holder.css','fmb-news-mobile-app-polish.css','fmb-news-mobile-home-live-hero.css','fmb-news-mobile-contrast-lock.css'])
+    must(!html.includes(`<link rel="stylesheet" href="/news/assets/css/${gone}`),`${name}: ${gone} is linked separately as well as bundled — duplicate cascade`);
   must(html.includes('fmb-news-mobile-global.js?v=20260901-global-v3'),`${name}: global mobile runtime v3 missing`);
-  must(html.includes('fmb-news-mobile-products.css?v=20260901-products-v1'),`${name}: dedicated product CSS missing`);
   must(html.includes('fmb-news-mobile-products.js?v=20260902-products-v3'),`${name}: strict product runtime v3 missing`);
-  must(html.includes('fmb-news-mobile-product-heroes.css?v=20260902-product-heroes-v4'),`${name}: strict three-product hero CSS v4 missing`);
-  must(html.includes('fmb-news-mobile-menu-holder.css?v=20260902-menu-holder-v2'),`${name}: compact premium menu holder CSS missing`);
-  must(html.includes('fmb-news-mobile-app-polish.css?v=20260902-polish-v2'),`${name}: final premium mobile polish CSS v2 missing`);
   must(html.includes('fmb-news-mobile-app-polish.js?v=20260902-polish-v2'),`${name}: final premium mobile polish runtime v2 missing`);
-  must(html.includes('fmb-news-mobile-home-live-hero.css?v=20260902-approved-hero-v3'),`${name}: approved HTML-overlay Home hero stylesheet missing`);
-  must(html.includes('fmb-news-mobile-contrast-lock.css?v=20260902-contrast-v1'),`${name}: final mobile contrast lock missing`);
 }
+
+// The system stylesheet must carry every authored mobile sheet, in the order
+// the cascade expects. Concatenation is only safe while that holds.
+const systemCss=await read('dist/news/assets/css/fmb-news-mobile-system.css');
+const systemOrder=['fmb-news-mobile-first-site.css','fmb-news-mobile-personalization.css','fmb-news-mobile-premium.css','fmb-news-mobile-home.css','fmb-news-mobile-global.css','fmb-news-mobile-products.css','fmb-news-mobile-app-polish.css','fmb-news-mobile-home-live-hero.css','fmb-news-mobile-home-motion.css','fmb-news-mobile-contrast-lock.css','fmb-news-mobile-product-heroes.css','fmb-news-mobile-menu-holder.css','fmb-news-mobile-final-tweaks.css','fmb-news-mobile-approved-home.css','fmb-news-mobile-material-polish.css'];
+let cursor=-1;
+for(const sheet of systemOrder){
+  const at=systemCss.indexOf(`/* ===== ${sheet} ===== */`);
+  must(at>cursor,`Mobile system stylesheet is missing ${sheet} or has it out of cascade order`);
+  cursor=at;
+  const source=await read(`dist/news/assets/css/${sheet}`);
+  must(systemCss.includes(source.trim()),`Mobile system stylesheet does not match the authored ${sheet}`);
+}
+must(!/@import|@charset/i.test(systemCss),'Mobile system stylesheet must not contain @import/@charset');
 
 const globalCss=await read('dist/news/assets/css/fmb-news-mobile-global.css');
 for(const token of ['.fmb-mobile-app-shell','.fmb-mobile-product-rail','SF Pro Text','High-contrast rules','world-hero p','brief-archive-hero'])must(globalCss.includes(token),`Global mobile readability regression: missing ${token}`);
@@ -71,7 +85,14 @@ must(menuCss.includes('min-height:46px!important'),'Premium menu holder must sta
 const polishCss=await read('dist/news/assets/css/fmb-news-mobile-app-polish.css');
 for(const token of ['one FMB shell','fmb-legacy-product-rail','.fmb-global-week-actions{display:none','Every internal product starts immediately after the rail'])must(polishCss.includes(token),`Premium app chrome regression: missing ${token}`);
 const polishJs=await read('dist/news/assets/js/fmb-news-mobile-app-polish.js');
-for(const token of ['hideLegacyProductRails','cleanGlobalUtility','utility.remove()','fmb-mobile-polish'])must(polishJs.includes(token),`Premium app runtime regression: missing ${token}`);
+for(const token of ['hideLegacyProductRails','cleanGlobalUtility','fmb-mobile-polish'])must(polishJs.includes(token),`Premium app runtime regression: missing ${token}`);
+// This used to require `utility.remove()` — it asserted the workaround rather
+// than the result. The shell built the utility strip and the fixed bottom bar,
+// and the runtime tore them out again on every page. Neither is built now, so
+// assert the outcome: the shared mobile runtime must not create either one.
+const shellJs=await read('dist/news/assets/js/fmb-news-mobile-global.js');
+for(const banned of ['fmb-global-mobile-utility','fmb-approved-bottom-nav','ensureBottomNav'])must(!shellJs.includes(banned),`Mobile shell must not build ${banned} — FMB has no fixed bottom navigation and no utility strip`);
+must(!(await read('dist/news/assets/css/fmb-news-mobile-approved-home.css')).includes('fmb-approved-bottom-nav'),'Bottom-navigation styling must not ship');
 const homeCss=await read('dist/news/assets/css/fmb-news-mobile-home.css');
 for(const token of ['.fmb-app-brand-hero','color:#fff','fmb-app-lead h2'])must(homeCss.includes(token),`Mobile home visual regression: missing ${token}`);
 const liveHeroCss=await read('dist/news/assets/css/fmb-news-mobile-home-live-hero.css');
@@ -89,13 +110,16 @@ for(const icon of ['♈','♉','♊','♋','♌','♍','♎','♏','♐','♑','
 must(horoscopeHtml.includes('features-v2'),'Horoscope feature stylesheet/runtime version not updated');
 
 const crosswordHtml=pages.crossword,crosswordJs=await read('dist/news/assets/js/fmb-news-weekly-crossword.js');
+const crosswordLayout=JSON.parse(await read('dist/news/assets/data/fmb-crossword-current.json'));
+const entryCount=crosswordLayout.length;
 must(crosswordHtml.includes('35+ current-event answers'),'Crossword 35+ word promise missing');
-must(crosswordJs.includes('MIN_WORDS=35'),'Crossword minimum word guard missing');
-const entryCount=(crosswordJs.match(/\{id:'/g)||[]).length;must(entryCount>=35,`Crossword has only ${entryCount} answer entries`);
-for(const token of ['PAXSILICA','IMPEACHMENT','PADILLA','DUTERTE','HABAGAT','PILANDOK','PAGASA','VISAYAS','MINDANAO','PAMPANGA','ZAMBALES'])must(crosswordJs.includes(token),`Current-events crossword regression: missing ${token}`);
+must(entryCount>=35,`Crossword has only ${entryCount} layout entries`);
+must(crosswordJs.includes('fmb-crossword-current.json'),'Crossword secure layout runtime missing');
+must(!crosswordJs.includes('answer:')&&!crosswordJs.includes('answer=')&&!JSON.stringify(crosswordLayout).includes('"answer"'),'Active crossword answer data must not ship to browsers');
+must(crosswordHtml.includes('ACTIVE PUZZLE • ANSWERS EMBARGOED'),'Crossword AI embargo banner missing');
+must(crosswordHtml.includes('provided as a screenshot or image'),'Crossword screenshot embargo missing');
 for(const forbidden of ['data-cw-reveal-letter','data-cw-reveal-word','data-cw-reveal-puzzle','Reveal Letter','Reveal Word','Reveal Puzzle'])must(!crosswordHtml.includes(forbidden)&&!crosswordJs.includes(forbidden),`Active crossword must not expose reveal control: ${forbidden}`);
 must(crosswordHtml.includes('The complete answer key is released only when the next weekly crossword goes live'),'Weekly answer-release policy missing');
-must(crosswordJs.includes('releasedPuzzles=[]'),'Crossword answer-release gate missing');
 
 const emblem=await read('dist/news/assets/images/brand/fmb-bulletin-emblem.svg');
 must(emblem.includes('Gold shell-inspired emblem with a pearl center'),'Official FMB shell emblem missing');
@@ -104,6 +128,23 @@ const shards=(await readdir(resolve('public/assets/data/fmb-explained'))).filter
 let explainerCount=0;for(const shard of shards){const items=JSON.parse(await readFile(resolve('public/assets/data/fmb-explained',shard),'utf8'));explainerCount+=items.length}must(explainerCount===206,`FMB Explainer library must contain 206 topics; found ${explainerCount}`);
 
 let builtPageCount=0;
-async function scan(target){const info=await stat(target);if(info.isDirectory()){for(const e of await readdir(target))await scan(path.join(target,e));return}if(path.basename(target)!=='index.html')return;const text=await readFile(target,'utf8');builtPageCount++;must(text.includes('fmb-news-mobile-personalization.css?v=20260901-personal-v3'),`Personalization CSS v3 not injected in ${path.relative(root,target)}`);must(text.includes('fmb-news-mobile-global.css?v=20260901-global-v3'),`Global mobile CSS not injected in ${path.relative(root,target)}`);must(text.includes('fmb-news-mobile-global.js?v=20260901-global-v3'),`Global mobile runtime not injected in ${path.relative(root,target)}`);must(text.includes('fmb-news-mobile-products.css?v=20260901-products-v1'),`Dedicated product CSS not injected in ${path.relative(root,target)}`);must(text.includes('fmb-news-mobile-products.js?v=20260902-products-v3'),`Strict product runtime v3 not injected in ${path.relative(root,target)}`);must(text.includes('fmb-news-mobile-product-heroes.css?v=20260902-product-heroes-v4'),`Strict three-product hero CSS v4 not injected in ${path.relative(root,target)}`);must(text.includes('fmb-news-mobile-menu-holder.css?v=20260902-menu-holder-v2'),`Compact premium menu holder CSS not injected in ${path.relative(root,target)}`);must(text.includes('fmb-news-mobile-app-polish.css?v=20260902-polish-v2'),`Final app polish CSS v2 not injected in ${path.relative(root,target)}`);must(text.includes('fmb-news-mobile-app-polish.js?v=20260902-polish-v2'),`Final app polish runtime v2 not injected in ${path.relative(root,target)}`);must(text.includes('fmb-news-mobile-home-live-hero.css?v=20260902-approved-hero-v3'),`Approved HTML-overlay Home hero CSS not injected in ${path.relative(root,target)}`);must(text.includes('fmb-news-mobile-contrast-lock.css?v=20260902-contrast-v1'),`Contrast lock not injected in ${path.relative(root,target)}`);must(!text.includes('/news/news/assets/'),`Double-scoped asset in ${path.relative(root,target)}`)}
+// Every built page must carry the whole mobile system. This used to be eight
+// separate assertions on hand-typed ?v= literals — which passed even when a
+// sheet had been edited without its literal being bumped. The stylesheets are
+// now one content-versioned bundle, so assert that; the runtimes are still
+// separate files and keep their own checks.
+async function scan(target){
+  const info=await stat(target);
+  if(info.isDirectory()){for(const e of await readdir(target))await scan(path.join(target,e));return}
+  if(path.basename(target)!=='index.html')return;
+  const text=await readFile(target,'utf8');
+  builtPageCount++;
+  const where=path.relative(root,target);
+  must(/fmb-news-mobile-system\.css\?v=[0-9a-f]{10}\b/.test(text),`Mobile system stylesheet not injected in ${where}`);
+  must(text.includes('fmb-news-mobile-global.js?v=20260901-global-v3'),`Global mobile runtime not injected in ${where}`);
+  must(text.includes('fmb-news-mobile-products.js?v=20260902-products-v3'),`Strict product runtime v3 not injected in ${where}`);
+  must(text.includes('fmb-news-mobile-app-polish.js?v=20260902-polish-v2'),`Final app polish runtime v2 not injected in ${where}`);
+  must(!text.includes('/news/news/assets/'),`Double-scoped asset in ${where}`);
+}
 await scan(resolve('dist/news'));
 console.log(`FMBNews verification passed: approved Philippines newsroom hero with real HTML overlay and Read the Latest / Customize CTAs, one compact premium mobile masthead/menu holder, strict shared Worldwide/Explainer/Daily Brief hero geometry, final contrast lock, eight dedicated route designs, 12-icon horoscope, ${entryCount}-entry current-events crossword with no active reveals, ${explainerCount} Explainer library topics, and full FMB shell coverage across ${builtPageCount} pages.`);

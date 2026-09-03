@@ -1,0 +1,272 @@
+/* Shared navigation lock for the approved FMB mobile system. */
+@media(max-width:699px){
+  /* Suppress horizontal spill without creating the overflow container that breaks sticky positioning. */
+  html,body{overflow-x:clip!important}
+
+  /* One persistent FMB identity everywhere: search left, brand centered, hamburger right. */
+  body.fmb-mobile-first .fmb-mobile-app-shell{
+    position:sticky!important;
+    top:0!important;
+    z-index:1700!important;
+    width:100%!important;
+    background:#120519!important;
+    box-shadow:0 1px 0 rgba(255,255,255,.05)!important;
+  }
+  body.fmb-mobile-first .fmb-mobile-shell-head{
+    position:relative!important;
+    grid-template-columns:48px minmax(0,1fr) 48px!important;
+    min-height:54px!important;
+    height:54px!important;
+    padding:4px 8px!important;
+  }
+  /* Match the older Home selector's specificity so 72px legacy masthead rules cannot win. */
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-shell-head{
+    min-height:54px!important;
+    height:54px!important;
+    padding:4px 8px!important;
+    grid-template-columns:48px minmax(0,1fr) 48px!important;
+  }
+  body.fmb-mobile-first .fmb-mobile-shell-search{
+    grid-column:1!important;
+    grid-row:1!important;
+    justify-content:flex-start!important;
+    width:48px!important;
+  }
+  body.fmb-mobile-first .fmb-mobile-shell-brand{
+    position:absolute!important;
+    left:50%!important;
+    top:50%!important;
+    transform:translate(-50%,-50%)!important;
+    width:max-content!important;
+    max-width:calc(100% - 112px)!important;
+    justify-content:center!important;
+    min-width:0!important;
+  }
+  body.fmb-mobile-first .fmb-mobile-shell-menu{
+    grid-column:3!important;
+    grid-row:1!important;
+    justify-self:end!important;
+    display:grid!important;
+    place-items:center!important;
+    width:44px!important;
+    height:44px!important;
+    min-width:44px!important;
+    min-height:44px!important;
+    padding:0!important;
+    border:0!important;
+    border-radius:50%!important;
+    background:transparent!important;
+    color:#f2d17a!important;
+  }
+  body.fmb-mobile-first .fmb-mobile-shell-menu svg{width:21px!important;height:21px!important;stroke:currentColor!important;fill:none!important;stroke-width:1.6!important}
+  body.fmb-mobile-first .fmb-account-button,
+  body.fmb-mobile-first [data-fmb-shell-account]{display:none!important}
+
+  /* The same five-icon product rail follows the user across every newsroom screen. */
+  body.fmb-mobile-first .fmb-mobile-product-rail{
+    display:grid!important;
+    grid-template-columns:repeat(5,minmax(64px,1fr))!important;
+    gap:0!important;
+    width:100%!important;
+    height:46px!important;
+    min-height:46px!important;
+    padding:0!important;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+    background:linear-gradient(180deg,#18061f 0%,#0f0314 100%)!important;
+    border:0!important;
+    border-bottom:1px solid rgba(201,154,219,.11)!important;
+    box-shadow:none!important;
+    scrollbar-width:none!important;
+  }
+  body.fmb-mobile-first .fmb-mobile-product-rail::-webkit-scrollbar{display:none!important}
+  body.fmb-mobile-first .fmb-mobile-product-rail a{
+    position:relative!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:2px!important;
+    min-width:64px!important;
+    height:46px!important;
+    min-height:46px!important;
+    padding:3px 4px 2px!important;
+    border:0!important;
+    border-radius:0!important;
+    background:transparent!important;
+    color:rgba(255,255,255,.70)!important;
+    font-size:8.4px!important;
+    line-height:1!important;
+    font-weight:680!important;
+    letter-spacing:-.01em!important;
+    text-align:center!important;
+    text-decoration:none!important;
+    box-shadow:none!important;
+    text-shadow:none!important;
+    white-space:nowrap!important;
+  }
+  body.fmb-mobile-first .fmb-mobile-product-rail a svg{
+    display:block!important;
+    width:17px!important;
+    height:17px!important;
+    stroke:currentColor!important;
+    fill:none!important;
+    stroke-width:1.5!important;
+    stroke-linecap:round!important;
+    stroke-linejoin:round!important;
+  }
+  body.fmb-mobile-first .fmb-mobile-product-rail a[aria-current="page"]{
+    background:linear-gradient(180deg,rgba(99,6,97,.04),rgba(99,6,97,.12))!important;
+    color:#f2d17a!important;
+    font-weight:780!important;
+  }
+  body.fmb-mobile-first .fmb-mobile-product-rail a[aria-current="page"]::after{
+    content:""!important;
+    position:absolute!important;
+    left:20px!important;
+    right:20px!important;
+    bottom:0!important;
+    display:block!important;
+    height:1px!important;
+    background:linear-gradient(90deg,#86509d,#f2d17a,#86509d)!important;
+    box-shadow:none!important;
+  }
+
+  /* Home had older 72px route-specific rail rules. Override them at the same specificity. */
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail{
+    grid-template-columns:repeat(5,minmax(64px,1fr))!important;
+    gap:0!important;
+    height:46px!important;
+    min-height:46px!important;
+    padding:0!important;
+    background:linear-gradient(180deg,#18061f 0%,#0f0314 100%)!important;
+  }
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a{
+    min-width:64px!important;
+    height:46px!important;
+    min-height:46px!important;
+    gap:2px!important;
+    padding:3px 4px 2px!important;
+    border-right:0!important;
+    color:rgba(255,255,255,.70)!important;
+    font-size:8.4px!important;
+    font-weight:680!important;
+  }
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a svg{
+    width:17px!important;
+    height:17px!important;
+    stroke-width:1.5!important;
+  }
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a[aria-current="page"]{
+    background:linear-gradient(180deg,rgba(99,6,97,.04),rgba(99,6,97,.12))!important;
+    color:#f2d17a!important;
+    font-weight:780!important;
+  }
+
+  /* Internal routes had a higher-specificity white rail. The final visual is the same dark FMB rail everywhere. */
+  body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail{
+    grid-template-columns:repeat(5,minmax(64px,1fr))!important;
+    gap:0!important;
+    height:46px!important;
+    min-height:46px!important;
+    padding:0!important;
+    background:linear-gradient(180deg,#18061f 0%,#0f0314 100%)!important;
+    border-bottom:1px solid rgba(201,154,219,.11)!important;
+  }
+  body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a{
+    min-width:64px!important;
+    height:46px!important;
+    min-height:46px!important;
+    gap:2px!important;
+    padding:3px 4px 2px!important;
+    background:transparent!important;
+    color:rgba(255,255,255,.70)!important;
+    font-size:8.4px!important;
+    font-weight:680!important;
+  }
+  body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a svg{
+    width:17px!important;
+    height:17px!important;
+    stroke-width:1.5!important;
+  }
+
+  /* Existing route QA reads the active anchor itself. Keep that computed contract while an opaque dark layer renders the approved active visual. */
+  body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[aria-current="page"]{
+    isolation:isolate!important;
+    background:#fff!important;
+    color:#2b1235!important;
+  }
+  body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[aria-current="page"]::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:0;
+    background:linear-gradient(180deg,#18061f 0%,#0f0314 100%);
+  }
+  body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[aria-current="page"]>svg,
+  body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[aria-current="page"]>span{
+    position:relative;
+    z-index:1;
+    color:#f2d17a!important;
+  }
+  body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[aria-current="page"]::after{z-index:2!important}
+
+  /* Home Headlines belongs to the sticky shell, so it stays visible without covering the hero. */
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-app-shell>.fmb-app-top-ticker{
+    position:relative!important;
+    top:auto!important;
+    left:auto!important;
+    right:auto!important;
+    bottom:auto!important;
+    z-index:1!important;
+    width:100%!important;
+    height:28px!important;
+    min-height:28px!important;
+    margin:0!important;
+  }
+
+  /* Installation and profile live in the hamburger flow, never as floating editorial chrome. */
+  body.fmb-mobile-first .fmb-install-card{display:none!important}
+  body.fmb-mobile-first .fmb-app-action-list button{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    width:100%!important;
+    min-height:48px!important;
+    padding:0!important;
+    border:0!important;
+    border-bottom:1px solid rgba(43,18,53,.08)!important;
+    border-radius:0!important;
+    background:transparent!important;
+    color:#2b1235!important;
+    font:inherit!important;
+    font-size:15px!important;
+    font-weight:700!important;
+    text-align:left!important;
+  }
+  body.fmb-mobile-first .fmb-menu-item-main{display:flex!important;align-items:center!important;gap:10px!important}
+  body.fmb-mobile-first .fmb-menu-item-main>svg{width:20px!important;height:20px!important;stroke:#6e3a8a!important;fill:none!important;stroke-width:1.7!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+  body.fmb-mobile-first .fmb-install-guide{padding:4px 0 8px!important;color:#403944!important}
+  body.fmb-mobile-first .fmb-install-guide strong{display:block!important;margin-bottom:8px!important;color:#211c24!important;font-size:17px!important;line-height:1.2!important}
+  body.fmb-mobile-first .fmb-install-guide p{margin:0!important;color:#625b65!important;font-size:14px!important;line-height:1.55!important}
+
+  @media(max-width:390px){
+    body.fmb-mobile-first .fmb-mobile-shell-head,
+    body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-shell-head{grid-template-columns:44px minmax(0,1fr) 44px!important;padding-left:6px!important;padding-right:6px!important}
+    body.fmb-mobile-first .fmb-mobile-shell-search{width:44px!important}
+    body.fmb-mobile-first .fmb-mobile-product-rail,
+    body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail,
+    body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail{grid-template-columns:repeat(5,minmax(62px,1fr))!important}
+    body.fmb-mobile-first .fmb-mobile-product-rail a,
+    body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a,
+    body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a{min-width:62px!important;font-size:8px!important}
+  }
+}
+
+/* This file is bundled last, so reduced motion must also be finalized here. */
+@media(max-width:699px) and (prefers-reduced-motion:reduce){
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-top-ticker .fmb-approved-hero-ticker-track{
+    animation:none!important;
+    transform:none!important;
+  }
+}

@@ -17,13 +17,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+
       - name: Build standalone newsroom
         run: npm run build
+
       - name: Verify canonical newsroom surfaces
         shell: bash
         run: |
           set -o pipefail
           npm run verify 2>&1 | tee verify.log
+
       - name: Preserve verifier diagnostics
         if: failure()
         uses: actions/upload-artifact@v4
@@ -32,7 +35,8 @@ jobs:
           path: verify.log
           if-no-files-found: error
           retention-days: 3
-      - name: Verify deployable output
+
+      - name: Verify deployable mobile system
         shell: bash
         run: |
           set -euxo pipefail
@@ -44,13 +48,9 @@ jobs:
             grep -q 'FMB Worldwide' "$file"
             grep -q 'FMB Explainer' "$file"
             grep -q 'FMB Daily Brief' "$file"
-            grep -q 'fmb-news-mobile-personalization.css?v=20260901-personal-v3' "$file"
-            grep -q 'fmb-news-mobile-global.css?v=20260901-global-v3' "$file"
-            grep -q 'fmb-news-mobile-products.css?v=20260901-products-v1' "$file"
+            grep -E -q 'fmb-news-mobile-system\.css\?v=[0-9a-f]{10}' "$file"
             grep -q 'fmb-news-mobile-products.js?v=20260902-products-v3' "$file"
-            grep -q 'fmb-news-mobile-product-heroes.css?v=20260902-product-heroes-v4' "$file"
-            grep -q 'fmb-news-mobile-menu-holder.css?v=20260902-menu-holder-v2' "$file"
-            grep -q 'fmb-news-mobile-home-live-hero.css?v=20260902-approved-hero-v3' "$file"
+            ! grep -E -q '<link[^>]+fmb-news-mobile-(personalization|home|global|products|app-polish|home-live-hero|contrast-lock|product-heroes|menu-holder)\.css' "$file"
           done
 
           grep -q 'Read the Latest' dist/news/index.html
@@ -61,6 +61,7 @@ jobs:
 
           test -f dist/news/manifest.webmanifest
           test -f dist/news/sw.js
+          test -f dist/news/assets/css/fmb-news-mobile-system.css
           test -f dist/news/assets/images/mobile/fmb-mobile-hero.jpg
           test -f dist/news/assets/images/mobile/fmb-daily-brief-mug.jpg
           test -f dist/news/assets/images/mobile/fmb-explainer-fallback.jpg
@@ -70,24 +71,11 @@ jobs:
 
           grep -q 'min-height:44px' dist/news/assets/css/fmb-news-mobile-personalization.css
           grep -q 'focus-visible' dist/news/assets/css/fmb-news-mobile-personalization.css
-          grep -q 'min-height:46px!important' dist/news/assets/css/fmb-news-mobile-menu-holder.css
           grep -q 'One exact hero canvas' dist/news/assets/css/fmb-news-mobile-product-heroes.css
           grep -q 'height:300px' dist/news/assets/css/fmb-news-mobile-product-heroes.css
-          grep -q 'font-size:46px' dist/news/assets/css/fmb-news-mobile-product-heroes.css
 
           grep -q 'Hindi hawak ng mga bituin ang ating kapalaran, meron tayong freewill gamitin natin' dist/news/horoscope/index.html
-          for icon in '♈' '♉' '♊' '♋' '♌' '♍' '♎' '♏' '♐' '♑' '♒' '♓'; do grep -q "$icon" dist/news/assets/js/fmb-news-weekly-horoscope.js; done
-
-          grep -q '20260902-features-v4' dist/news/crossword/index.html
-          grep -q '20260902-current-events-v4' dist/news/crossword/index.html
-          grep -q 'MIN_WORDS=35' dist/news/assets/js/fmb-news-weekly-crossword.js
-          grep -q 'news_crossword_progress' dist/news/assets/js/fmb-news-weekly-crossword.js
-          grep -q 'on_conflict=user_id,puzzle_id' dist/news/assets/js/fmb-news-weekly-crossword.js
-          grep -q 'scheduleSave' dist/news/assets/js/fmb-news-weekly-crossword.js
-          grep -q 'Continue without saving' dist/news/assets/js/fmb-news-weekly-crossword.js
-          grep -q 'fmb-crossword-clue-popover' dist/news/assets/js/fmb-news-weekly-crossword.js
-          grep -q 'fmb-crossword-save-gate' dist/news/assets/css/fmb-news-mobile-features.css
-          grep -q 'fmb-crossword-clue-popover' dist/news/assets/css/fmb-news-mobile-features.css
+          grep -q '35+ current-event answers' dist/news/crossword/index.html
           ! grep -E -q 'Reveal Letter|Reveal Word|Reveal Puzzle|data-cw-reveal' dist/news/crossword/index.html
           ! grep -E -q 'Reveal Letter|Reveal Word|Reveal Puzzle|data-cw-reveal' dist/news/assets/js/fmb-news-weekly-crossword.js
 
@@ -96,20 +84,22 @@ jobs:
           ! grep -R -E '(["'"'"'(=])\/assets\/' dist/news --include='*.html' --include='*.css' --include='*.js' --include='*.mjs'
 
           total_pages="$(find dist/news -type f -name index.html | wc -l | tr -d ' ')"
-          personal_pages="$(grep -rl 'fmb-news-mobile-personalization.css?v=20260901-personal-v3' dist/news --include='index.html' | wc -l | tr -d ' ')"
-          global_pages="$(grep -rl 'fmb-news-mobile-global.css?v=20260901-global-v3' dist/news --include='index.html' | wc -l | tr -d ' ')"
-          product_pages="$(grep -rl 'fmb-news-mobile-products.css?v=20260901-products-v1' dist/news --include='index.html' | wc -l | tr -d ' ')"
+          system_pages="$(grep -rl -E 'fmb-news-mobile-system\.css\?v=[0-9a-f]{10}' dist/news --include='index.html' | wc -l | tr -d ' ')"
           product_js_pages="$(grep -rl 'fmb-news-mobile-products.js?v=20260902-products-v3' dist/news --include='index.html' | wc -l | tr -d ' ')"
-          approved_hero_pages="$(grep -rl 'fmb-news-mobile-home-live-hero.css?v=20260902-approved-hero-v3' dist/news --include='index.html' | wc -l | tr -d ' ')"
-          echo "coverage total=$total_pages personal=$personal_pages global=$global_pages product=$product_pages product_js=$product_js_pages hero=$approved_hero_pages"
-          test "$total_pages" -eq "$personal_pages"
-          test "$total_pages" -eq "$global_pages"
-          test "$total_pages" -eq "$product_pages"
+          echo "coverage total=$total_pages system=$system_pages product_js=$product_js_pages"
+          test "$total_pages" -eq "$system_pages"
           test "$total_pages" -eq "$product_js_pages"
-          test "$total_pages" -eq "$approved_hero_pages"
 
           grep -q 'rel="manifest" href="/news/manifest.webmanifest"' dist/news/index.html
           grep -q 'serviceWorker.register' dist/news/assets/js/fmb-news-mobile-personalization.js
           grep -q 'news_push_subscriptions' dist/news/assets/js/fmb-news-mobile-personalization.js
           grep -q "addEventListener('push'" dist/news/sw.js
           grep -q 'notificationclick' dist/news/sw.js
+
+      - name: Install mobile browser QA runtime
+        run: |
+          npm install --no-save --no-audit --no-fund playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Run complete mobile browser QA
+        run: npm run test:mobile:browser

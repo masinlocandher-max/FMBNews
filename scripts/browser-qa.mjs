@@ -41,6 +41,23 @@ async function open(path){
   assert.equal(duplicateRails,0,`${path} exposes a rendered duplicate legacy product navigation`);
   assert.equal(await page.locator('.fmb-global-week-actions:visible').count(),0,`${path} must not expose Horoscope/Crossword as top chrome`);
   assert.equal(await page.locator('.fmb-global-mobile-utility:visible').count(),0,`${path} must not expose the old utility strip`);
+  // "No fixed bottom navigation" is a locked product rule. It used to be honoured
+  // by building the bar and then hiding it, so the only thing standing between a
+  // reader and a bottom bar was one display:none. These assert it is never built,
+  // and that nothing else pins chrome to the bottom of the viewport.
+  assert.equal(await page.locator('.fmb-approved-bottom-nav').count(),0,`${path} must not build a fixed bottom navigation`);
+  assert.equal(await page.locator('.fmb-global-mobile-utility').count(),0,`${path} must not build the old utility strip`);
+  // A bottom navigation bar is a short, full-width strip pinned to the bottom
+  // edge. Dialogs and sheets are also position:fixed but occupy the upper half
+  // or most of the viewport, and are excluded by the height and top tests.
+  const bottomPinned=await page.evaluate(()=>[...document.querySelectorAll('nav,footer,div')].filter(el=>{
+    const s=getComputedStyle(el);
+    if(s.position!=='fixed'||s.display==='none'||s.visibility==='hidden')return false;
+    if(el.getAttribute('role')==='dialog'||el.closest('[role="dialog"]'))return false;
+    const r=el.getBoundingClientRect();
+    return r.height>0&&r.height<=innerHeight*0.2&&r.top>=innerHeight*0.6&&r.bottom>=innerHeight-2&&r.width>=innerWidth*0.6;
+  }).map(el=>el.className||el.tagName));
+  assert.deepEqual(bottomPinned,[],`${path} pins chrome to the bottom of the viewport: ${bottomPinned.join(', ')}`);
   const shellBox=await page.locator('.fmb-mobile-app-shell').boundingBox();
   const shellLimit=path==='/news/'?150:112;
   assert(shellBox&&shellBox.height<=shellLimit,`${path} mobile chrome is too tall (${shellBox?.height}px)`);
@@ -139,8 +156,13 @@ const mastheadAlignment=await page.evaluate(()=>{
 assert(mastheadAlignment<=10,`FMB News masthead logo is not centered (${mastheadAlignment.toFixed(1)}px drift)`);
 assert.equal(await page.locator('.fmb-app-lead:visible').count(),0,'Approved home must not reintroduce a second full-height lead hero.');
 await assertReadable('.fmb-app-story-row h3','Home Latest News headline is not readable.');
-const bottomLabels=await page.locator('.fmb-approved-bottom-nav>*').allTextContents();
-assert.deepEqual(bottomLabels.map(v=>v.trim()),['Home','Search','Saved','Brief','More'],'Approved bottom app navigation drifted.');
+// This used to assert the contents of a Home/Search/Saved/Brief/More bottom bar.
+// That bar was built by the shell runtime, styled position:fixed;bottom:0, and
+// then hidden again by fmb-news-mobile-final-tweaks.css — it measured display:none
+// at 0x0 on every route, so it was never a navigation a reader could use, and
+// "no fixed bottom navigation" is a locked product rule. It is no longer built,
+// and the per-route checks in open() assert nothing pins chrome to the bottom.
+assert.equal(await page.locator('.fmb-approved-bottom-nav').count(),0,'FMB has no fixed bottom navigation; it must not be built.');
 
 await page.evaluate(()=>localStorage.setItem('fmbNewsPrefsV1',JSON.stringify({daily:true,breaking:false,world:false,sections:['World']})));
 await page.reload({waitUntil:'domcontentloaded'});
