@@ -49,6 +49,8 @@ async function assertPersistentShell(page,path){
     scrollTo(0,0);
   });
   await page.waitForFunction(()=>Math.abs(scrollY)<=1);
+  const restoredY=await page.evaluate(()=>scrollY);
+  assert(Math.abs(restoredY)<=1,`${path} did not restore to the initial layout before geometry QA (${restoredY}px).`);
 }
 
 {
