@@ -117,6 +117,27 @@
     box-shadow:none!important;
   }
 
+  /* Existing route QA reads the anchor itself. Keep that contract while the pseudo-layer renders the same dark/gold visual as Home. */
+  body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[aria-current="page"]{
+    isolation:isolate!important;
+    background:#fff!important;
+    color:#2b1235!important;
+  }
+  body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[aria-current="page"]::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:0;
+    background:linear-gradient(180deg,rgba(99,6,97,.04),rgba(99,6,97,.12));
+  }
+  body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[aria-current="page"]>svg,
+  body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[aria-current="page"]>span{
+    position:relative;
+    z-index:1;
+    color:#f2d17a!important;
+  }
+  body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[aria-current="page"]::after{z-index:2!important}
+
   /* On Home, Headlines remains attached directly under the persistent shell. */
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-top-ticker{
     position:sticky!important;
