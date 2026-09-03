@@ -87,6 +87,10 @@
     const brand=`<a class="fmb-mobile-shell-brand" href="/news/" aria-label="FMB News — Filipino Media Bulletin"><img src="/news/assets/images/brand/fmb-bulletin-emblem.svg" alt=""><span class="fmb-mobile-shell-copy"><strong>FMB News</strong><small>Filipino Media Bulletin</small></span></a>`;
     shell.innerHTML=`<div class="fmb-mobile-shell-head"><div class="fmb-mobile-shell-actions fmb-mobile-shell-search"><a href="/news/search/" aria-label="Search FMB News">${svg('search')}</a></div>${brand}<button class="fmb-mobile-shell-menu" type="button" data-fmb-shell-menu aria-label="Open FMB News menu" aria-haspopup="dialog">${svg('menu')}</button></div>${productRail(product.key)}`;
     document.body.prepend(shell);
+    if(isHome){
+      const ticker=$('.fmb-app-top-ticker');
+      if(ticker)shell.append(ticker);
+    }
     $('[data-fmb-shell-menu]',shell)?.addEventListener('click',e=>openMore(e.currentTarget));
     return shell;
   }
