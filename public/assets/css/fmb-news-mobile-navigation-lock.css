@@ -143,11 +143,17 @@
   }
   body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[aria-current="page"]::after{z-index:2!important}
 
-  /* On Home, Headlines remains attached directly under the persistent shell. */
-  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-top-ticker{
-    position:sticky!important;
-    top:100px!important;
-    z-index:1650!important;
+  /* Home Headlines belongs to the sticky shell, so it stays visible without covering the hero. */
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-app-shell>.fmb-app-top-ticker{
+    position:relative!important;
+    top:auto!important;
+    left:auto!important;
+    right:auto!important;
+    bottom:auto!important;
+    z-index:1!important;
+    width:100%!important;
+    height:28px!important;
+    min-height:28px!important;
     margin:0!important;
   }
 
