@@ -41,9 +41,14 @@ async function assertPersistentShell(page,path){
   assert(Math.abs(pinned)<=1,`${path} FMB shell stopped pinning after scroll (${pinned}px).`);
 
   // Sticky persistence and initial-flow geometry are separate scenarios.
-  // Restore the page before any caller inspects ticker/hero adjacency.
-  await page.evaluate(()=>scrollTo(0,0));
-  await page.waitForTimeout(80);
+  // Force an immediate reset so site-level smooth scrolling cannot leave the
+  // next initial-layout assertion partway through an animated scroll.
+  await page.evaluate(()=>{
+    document.documentElement.style.scrollBehavior='auto';
+    document.body.style.scrollBehavior='auto';
+    scrollTo(0,0);
+  });
+  await page.waitForFunction(()=>Math.abs(scrollY)<=1);
 }
 
 {
@@ -84,7 +89,7 @@ async function assertPersistentShell(page,path){
   assert.equal(tickerGeometry.insideShell,true,'Home Headlines ticker must be a direct child of the sticky FMB shell.');
   assert.equal(tickerGeometry.position,'relative','Home Headlines ticker must stay in normal flow inside the sticky FMB shell.');
   assert(Math.abs(tickerGeometry.tickerBottom-tickerGeometry.shellBottom)<=1,'Home Headlines must end at the bottom of the sticky FMB shell.');
-  assert(tickerGeometry.tickerBottom<=tickerGeometry.heroTop+1,'Home Headlines must not overlap the cinematic hero.');
+  assert(tickerGeometry.tickerBottom<=tickerGeometry.heroTop+1,`Home Headlines must not overlap the cinematic hero (${(tickerGeometry.tickerBottom-tickerGeometry.heroTop).toFixed(1)}px overlap).`);
 
   const menu=page.locator('[data-fmb-shell-menu]');
   await menu.focus();
