@@ -1,5 +1,8 @@
 /* Shared navigation lock for the approved FMB mobile system. */
 @media(max-width:699px){
+  /* Suppress horizontal spill without creating the overflow container that breaks sticky positioning. */
+  html,body{overflow-x:clip!important}
+
   /* One persistent FMB identity everywhere: search left, brand centered, hamburger right. */
   body.fmb-mobile-first .fmb-mobile-app-shell{
     position:sticky!important;
