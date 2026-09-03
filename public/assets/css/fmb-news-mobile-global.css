@@ -109,6 +109,6 @@ body.fmb-mobile-first.brief-route .brief-method{padding:28px 0 44px!important}
 body.fmb-mobile-first .fmb-feature-shell{padding-top:14px!important}.fmb-feature-page .fmb-feature-back{margin-bottom:8px!important}
 
 /* No legacy low navigation. */
-body.fmb-mobile-first .nc-mobile-dock,body.fmb-mobile-first .fmb-app-dock,body.fmb-mobile-first .mobile-bottom-nav,body.fmb-mobile-first .bottom-nav,body.fmb-mobile-first nav[aria-label="Mobile news navigation"]{display:none!important}
+
 }
 @media(min-width:700px){.fmb-mobile-app-shell,.fmb-global-mobile-utility,.fmb-mobile-reader-actions{display:none!important}}

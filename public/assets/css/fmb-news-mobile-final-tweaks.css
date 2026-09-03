@@ -1,7 +1,7 @@
 /* Final FMB mobile refinement: minimal chrome, current metallic violet identity, hero-first hierarchy. */
 @media(max-width:699px){
 /* Remove redundant app chrome without disturbing the existing reader/product routes. */
-body.fmb-mobile-first .fmb-approved-bottom-nav{display:none!important}
+
 body.fmb-mobile-first.fmb-mobile-route-home{padding-bottom:0!important}
 
 /* Masthead: centered identity, one menu icon, one search icon. */

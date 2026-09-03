@@ -27,7 +27,13 @@ const utilityFooter='<footer class="footer"><div class="shell"><div class="foote
 for(const file of await walk(newsRoot)){
  let html=await readFile(file,'utf8');
  const rel=path.relative(newsRoot,file).replaceAll('\\','/');
- for(const [p,v] of css)if(!html.includes(p))html=html.replace('</head>',`<link rel="stylesheet" href="${p}?v=${v}"></head>`);
+ // These nine sheets are a safety net for any page the mobile pass missed. They
+ // are all contained in fmb-news-mobile-system.css, so a page carrying the
+ // system stylesheet already has them — re-adding them here would duplicate
+ // every rule and, because this pass runs after the ticker pass, would land
+ // them later in the cascade than the block they came from.
+ const hasMobileSystem=html.includes('fmb-news-mobile-system.css');
+ if(!hasMobileSystem)for(const [p,v] of css)if(!html.includes(p))html=html.replace('</head>',`<link rel="stylesheet" href="${p}?v=${v}"></head>`);
  for(const [p,v] of js)if(!html.includes(p))html=html.replace('</body>',`<script src="${p}?v=${v}" defer></script></body>`);
  if(rel==='index.html')html=html.replace(/<p class="fmb-approved-hero-kicker">FILIPINO MEDIA BULLETIN<\/p><h1>What matters right now\.<\/h1>/i,'<p data-fmb-greeting>FILIPINO MEDIA BULLETIN</p><h1 data-fmb-greeting-line>What matters right now.</h1>');
  if(rel==='search/index.html'||rel==='submit/index.html'){

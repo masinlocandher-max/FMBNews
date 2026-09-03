@@ -35,8 +35,9 @@
   }
 
   function cleanGlobalUtility(){
-    const utility=$('.fmb-global-mobile-utility');
-    if(utility)utility.remove();
+    // The old utility strip used to be built into the shell here and then torn
+    // out again on every page, which also meant it could flash before removal.
+    // It is no longer built, so there is nothing to remove.
     const heroOverlay=$('.fmb-app-brand-hero>.fmb-hero-live-overlay');
     if(!heroOverlay)return;
     const weather=$('[data-fmb-weather]',heroOverlay);

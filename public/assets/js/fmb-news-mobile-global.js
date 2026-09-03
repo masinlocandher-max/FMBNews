@@ -40,17 +40,10 @@
     return sheet;
   }
   function openMore(){openSheet('More from FMB News','<a href="/news/world/">Worldwide <span>›</span></a><a href="/news/explainer/">Explainer <span>›</span></a><a href="/news/fact-check/">Fact Check <span>›</span></a><a href="/news/horoscope/">Horoscope <span>›</span></a><a href="/news/crossword/">Crossword Puzzle <span>›</span></a><a href="/news/about/">About FMB News <span>›</span></a><a href="/news/submit/">Submit a story <span>›</span></a>')}
-  function openSaved(){
-    const saved=jget(SAVED_KEY,[]);
-    if(!saved.length){openSheet('Saved','<div style="padding:16px 4px;color:#756d78;font-size:14px;line-height:1.5">Stories you save while reading will appear here.</div>');return}
-    openSheet('Saved',saved.slice(0,30).map(item=>`<a href="${item.path}"><span>${String(item.title||'Saved story').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;')}</span><span>›</span></a>`).join(''));
-  }
-  function ensureBottomNav(){
-    if($('.fmb-approved-bottom-nav'))return;
-    const p=location.pathname.replace(/\/+$/,'')||'/news',nav=document.createElement('nav');nav.className='fmb-approved-bottom-nav';nav.setAttribute('aria-label','FMB app navigation');
-    nav.innerHTML=`<a href="/news/"${p==='/news'?' aria-current="page"':''}>${svg('home')}<span>Home</span></a><a href="/news/search/">${svg('search')}<span>Search</span></a><button type="button" data-fmb-bottom-saved>${svg('saved')}<span>Saved</span></button><a href="/news/fmb-brief/live/"${p.startsWith('/news/fmb-brief')?' aria-current="page"':''}>${svg('brief')}<span>Brief</span></a><button type="button" data-fmb-bottom-more>${svg('more')}<span>More</span></button>`;
-    document.body.append(nav);$('[data-fmb-bottom-saved]',nav).onclick=openSaved;$('[data-fmb-bottom-more]',nav).onclick=openMore;
-  }
+  // The fixed bottom navigation and its Saved sheet were built here at runtime,
+  // styled by fmb-news-mobile-approved-home.css, and then hidden again by
+  // fmb-news-mobile-final-tweaks.css — it rendered display:none at 0x0 on every
+  // route. FMB has no fixed bottom navigation, so it is no longer built.
 
   function ensureShell(){
     if($('.fmb-mobile-app-shell'))return $('.fmb-mobile-app-shell');
@@ -60,7 +53,7 @@
     if(isHome){
       shell.innerHTML=`<div class="fmb-mobile-shell-head"><button class="fmb-mobile-shell-menu" type="button" data-fmb-shell-menu aria-label="Open FMB News menu">${svg('menu')}</button>${brand}<div class="fmb-mobile-shell-actions"><a href="/news/search/" aria-label="Search FMB News">${svg('search')}</a><button type="button" data-fmb-shell-account aria-label="Your FMB">${svg('account')}</button></div></div>${productRail(product.key)}`;
     }else{
-      shell.innerHTML=`<div class="fmb-mobile-shell-head">${brand}<div class="fmb-mobile-shell-actions"><a href="/news/search/" aria-label="Search FMB News">${svg('search')}</a><button type="button" data-fmb-shell-account aria-label="Your FMB">${svg('account')}</button></div></div><nav class="fmb-mobile-product-rail" aria-label="FMB products"><a href="/news/" data-product="news">FMB News</a><a href="/news/world/" data-product="world">FMB Worldwide</a><a href="/news/explainer/" data-product="explainer">FMB Explainer</a><a href="/news/fact-check/" data-product="fact">FMB Fact Check</a><a href="/news/fmb-brief/" data-product="brief">FMB Daily Brief</a></nav><section class="fmb-global-mobile-utility" data-fmb-global-utility aria-label="FMB mobile utilities"><div class="fmb-app-clock"><strong data-fmb-local-date>Today</strong><span data-fmb-local-time>--:--</span></div><button class="fmb-app-weather" type="button" data-fmb-weather-button aria-label="Set local weather"><span data-fmb-weather-icon aria-hidden="true">○</span><span data-fmb-weather>Set local weather</span></button><nav class="fmb-global-week-actions" aria-label="FMB weekly features"><a href="/news/horoscope/">Horoscope</a><a href="/news/crossword/">Crossword</a></nav></section>`;
+      shell.innerHTML=`<div class="fmb-mobile-shell-head">${brand}<div class="fmb-mobile-shell-actions"><a href="/news/search/" aria-label="Search FMB News">${svg('search')}</a><button type="button" data-fmb-shell-account aria-label="Your FMB">${svg('account')}</button></div></div><nav class="fmb-mobile-product-rail" aria-label="FMB products"><a href="/news/" data-product="news">FMB News</a><a href="/news/world/" data-product="world">FMB Worldwide</a><a href="/news/explainer/" data-product="explainer">FMB Explainer</a><a href="/news/fact-check/" data-product="fact">FMB Fact Check</a><a href="/news/fmb-brief/" data-product="brief">FMB Daily Brief</a></nav>`;
       $(`[data-product="${product.key}"]`,shell)?.setAttribute('aria-current','page');
     }
     document.body.prepend(shell);
@@ -89,5 +82,5 @@
   }
   function addReaderActions(){const article=$('.article,.cms-article,article.article');if(!article||$('.fmb-mobile-reader-actions'))return;const title=$('h1',article)?.textContent?.trim()||document.title.replace(/\s*\|.*$/,''),toolbar=document.createElement('div');toolbar.className='fmb-mobile-reader-actions';toolbar.innerHTML='<button type="button" data-fmb-reader-back aria-label="Go back">← Back</button><span></span><button type="button" data-fmb-reader-save>Save</button><button type="button" data-fmb-reader-share>Share</button>';article.prepend(toolbar);$('[data-fmb-reader-back]',toolbar).onclick=()=>history.length>1?history.back():location.assign('/news/');const save=$('[data-fmb-reader-save]',toolbar),saved=jget(SAVED_KEY,[]),current=()=>saved.some(x=>x.path===location.pathname),sync=()=>{save.textContent=current()?'Saved':'Save';save.setAttribute('aria-pressed',String(current()))};sync();save.onclick=()=>{const i=saved.findIndex(x=>x.path===location.pathname);if(i>=0)saved.splice(i,1);else saved.unshift({path:location.pathname,title,savedAt:Date.now()});jset(SAVED_KEY,saved.slice(0,100));sync()};$('[data-fmb-reader-share]',toolbar).onclick=async()=>{try{if(navigator.share)await navigator.share({title,url:location.href});else{await navigator.clipboard.writeText(location.href);const b=$('[data-fmb-reader-share]',toolbar);b.textContent='Copied';setTimeout(()=>b.textContent='Share',1200)}}catch{}}}
 
-  ensureShell();ensureBottomNav();tick();setInterval(tick,30000);renderWeather(jget(WEATHER_KEY,null));$$('[data-fmb-weather-button]').forEach(btn=>{if(!btn.dataset.fmbWeatherBound){btn.dataset.fmbWeatherBound='1';btn.addEventListener('click',weatherSheet)}});$('[data-fmb-customize]')?.addEventListener('click',()=>document.querySelector('[data-fmb-account],.fmb-account-button,[data-account]')?.click());addReaderActions();
+  ensureShell();tick();setInterval(tick,30000);renderWeather(jget(WEATHER_KEY,null));$$('[data-fmb-weather-button]').forEach(btn=>{if(!btn.dataset.fmbWeatherBound){btn.dataset.fmbWeatherBound='1';btn.addEventListener('click',weatherSheet)}});$('[data-fmb-customize]')?.addEventListener('click',()=>document.querySelector('[data-fmb-account],.fmb-account-button,[data-account]')?.click());addReaderActions();
 })();

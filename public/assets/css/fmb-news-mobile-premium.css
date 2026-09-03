@@ -103,7 +103,7 @@ body.fmb-mobile-first .fmb-install-mark{background:var(--app-plum)!important}
 body.fmb-mobile-first .fmb-install-primary{background:var(--app-plum)!important}
 
 /* Explicitly prohibit the old low-navigation pattern. */
-body.fmb-mobile-first .nc-mobile-dock,body.fmb-mobile-first .fmb-app-dock,body.fmb-mobile-first .mobile-bottom-nav,body.fmb-mobile-first .bottom-nav,body.fmb-mobile-first nav[aria-label="Mobile news navigation"]{display:none!important}
+
 
 @media (prefers-reduced-motion:no-preference){body.fmb-mobile-first a,body.fmb-mobile-first button{transition:opacity .16s ease,transform .16s ease}body.fmb-mobile-first a:active,body.fmb-mobile-first button:active{transform:scale(.985)}}
 }

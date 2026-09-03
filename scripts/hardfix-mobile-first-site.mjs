@@ -1,24 +1,53 @@
 import { readFile, readdir, stat, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const newsRoot=path.join(root,'dist','news');
-const mobileFirstAsset='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-first-site.css?v=20260901-site-v1">';
-const personalizationCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-personalization.css?v=20260901-personal-v3">';
-const premiumCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-premium.css?v=20260901-premium-v2">';
-const mobileHomeCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-home.css?v=20260901-app-home-v2">';
-const mobileGlobalCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-global.css?v=20260901-global-v3">';
-const mobileProductsCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-products.css?v=20260901-products-v1">';
-const mobilePolishCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-app-polish.css?v=20260902-polish-v2">';
-const mobileLiveHeroCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-home-live-hero.css?v=20260902-approved-hero-v3">';
-const mobileHomeMotionCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-home-motion.css?v=20260902-home-motion-v1">';
-const mobileContrastCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-contrast-lock.css?v=20260902-contrast-v1">';
-const mobileProductHeroesCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-product-heroes.css?v=20260902-product-heroes-v4">';
-const mobileMenuHolderCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-menu-holder.css?v=20260902-menu-holder-v2">';
-const mobileFinalTweaksCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-final-tweaks.css?v=20260902-final-tweaks-v1">';
-const approvedHomeCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-approved-home.css?v=20260902-approved-metallic-v1">';
-const mobileMaterialPolishCss='<link rel="stylesheet" href="/assets/css/fmb-news-mobile-material-polish.css?v=20260903-material-v1">';
+// The mobile system used to ship as fifteen separate stylesheets, injected here
+// one after another so they always landed as one contiguous, ordered block in
+// <head>. Concatenating them in that same order is cascade-identical by
+// construction — the browser sees the identical declaration sequence — while
+// leaving one authoritative stylesheet to reason about instead of fifteen, and
+// one request instead of fifteen. None of them contains @import or @charset,
+// which are the only at-rules whose meaning depends on file position.
+//
+// The authored files stay separate on disk: they are the editable sources, and
+// the verifiers assert against them.
+const MOBILE_SYSTEM_SHEETS=[
+  'fmb-news-mobile-first-site.css',
+  'fmb-news-mobile-personalization.css',
+  'fmb-news-mobile-premium.css',
+  'fmb-news-mobile-home.css',
+  'fmb-news-mobile-global.css',
+  'fmb-news-mobile-products.css',
+  'fmb-news-mobile-app-polish.css',
+  'fmb-news-mobile-home-live-hero.css',
+  'fmb-news-mobile-home-motion.css',
+  'fmb-news-mobile-contrast-lock.css',
+  'fmb-news-mobile-product-heroes.css',
+  'fmb-news-mobile-menu-holder.css',
+  'fmb-news-mobile-final-tweaks.css',
+  'fmb-news-mobile-approved-home.css',
+  'fmb-news-mobile-material-polish.css',
+];
+const MOBILE_SYSTEM_FILE='fmb-news-mobile-system.css';
+const cssDir=path.join(newsRoot,'assets','css');
+
+let bundle='';
+for(const name of MOBILE_SYSTEM_SHEETS){
+  const text=await readFile(path.join(cssDir,name),'utf8');
+  if(/@import|@charset/i.test(text))throw new Error(`${name} contains @import/@charset and cannot be concatenated safely`);
+  bundle+=`/* ===== ${name} ===== */\n${text}\n`;
+}
+// Version by content, so editing any source sheet changes the URL. The service
+// worker serves /news/assets/* stale-while-revalidate out of a cache whose name
+// the build never bumps, so a hand-typed ?v= can hold a stale sheet for good.
+const mobileSystemVersion=createHash('sha256').update(bundle).digest('hex').slice(0,10);
+await writeFile(path.join(cssDir,MOBILE_SYSTEM_FILE),bundle,'utf8');
+const mobileSystemCss=`<link rel="stylesheet" href="/assets/css/${MOBILE_SYSTEM_FILE}?v=${mobileSystemVersion}">`;
+
 const personalizationJs='<script src="/assets/js/fmb-news-mobile-personalization.js?v=20260901-personal-v2" defer></script>';
 const premiumJs='<script src="/assets/js/fmb-news-mobile-premium.js?v=20260901-premium-v2" defer></script>';
 const mobileHomeJs='<script src="/assets/js/fmb-news-mobile-home.js?v=20260902-approved-home-v4" defer></script>';
@@ -44,6 +73,17 @@ function normalizeProductNavigation(html){
 }
 function escapedAssetPath(pathName){return pathName.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
 function upsertCss(html,pathName,asset,version){if(!html.includes(pathName))return html.replace('</head>',`${asset}</head>`);return html.replace(new RegExp(`${escapedAssetPath(pathName)}(?:\\?v=[^"']+)?`,'g'),`${pathName}?v=${version}`)}
+// Drop any link to an individual mobile sheet (some routes emit their own) and
+// leave exactly one link to the concatenated system stylesheet, in the position
+// the block always occupied: last in <head> before the ticker pass appends.
+function useMobileSystemStylesheet(html){
+  for(const name of MOBILE_SYSTEM_SHEETS){
+    html=html.replace(new RegExp(`<link\\b[^>]*href=["'][^"']*${escapedAssetPath(name)}(?:\\?[^"']*)?["'][^>]*>`,'gi'),'');
+  }
+  const existing=new RegExp(`<link\\b[^>]*href=["'][^"']*${escapedAssetPath(MOBILE_SYSTEM_FILE)}(?:\\?[^"']*)?["'][^>]*>`,'gi');
+  if(existing.test(html))return html.replace(existing,mobileSystemCss);
+  return html.replace('</head>',`${mobileSystemCss}</head>`);
+}
 function upsertJs(html,pathName,asset,version){if(!html.includes(pathName))return html.replace('</body>',`${asset}</body>`);return html.replace(new RegExp(`${escapedAssetPath(pathName)}(?:\\?v=[^"']+)?`,'g'),`${pathName}?v=${version}`)}
 async function apply(target){
   const info=await stat(target);
@@ -51,21 +91,7 @@ async function apply(target){
   if(path.basename(target)!=='index.html')return;
   let html=await readFile(target,'utf8');
   html=removeBottomNav(html);html=addBodyClass(html);html=normalizeProductNavigation(html);
-  html=upsertCss(html,'/assets/css/fmb-news-mobile-first-site.css',mobileFirstAsset,'20260901-site-v1');
-  html=upsertCss(html,'/assets/css/fmb-news-mobile-personalization.css',personalizationCss,'20260901-personal-v3');
-  html=upsertCss(html,'/assets/css/fmb-news-mobile-premium.css',premiumCss,'20260901-premium-v2');
-  html=upsertCss(html,'/assets/css/fmb-news-mobile-home.css',mobileHomeCss,'20260901-app-home-v2');
-  html=upsertCss(html,'/assets/css/fmb-news-mobile-global.css',mobileGlobalCss,'20260901-global-v3');
-  html=upsertCss(html,'/assets/css/fmb-news-mobile-products.css',mobileProductsCss,'20260901-products-v1');
-  html=upsertCss(html,'/assets/css/fmb-news-mobile-app-polish.css',mobilePolishCss,'20260902-polish-v2');
-  html=upsertCss(html,'/assets/css/fmb-news-mobile-home-live-hero.css',mobileLiveHeroCss,'20260902-approved-hero-v3');
-  html=upsertCss(html,'/assets/css/fmb-news-mobile-home-motion.css',mobileHomeMotionCss,'20260902-home-motion-v1');
-  html=upsertCss(html,'/assets/css/fmb-news-mobile-contrast-lock.css',mobileContrastCss,'20260902-contrast-v1');
-  html=upsertCss(html,'/assets/css/fmb-news-mobile-product-heroes.css',mobileProductHeroesCss,'20260902-product-heroes-v4');
-  html=upsertCss(html,'/assets/css/fmb-news-mobile-menu-holder.css',mobileMenuHolderCss,'20260902-menu-holder-v2');
-  html=upsertCss(html,'/assets/css/fmb-news-mobile-final-tweaks.css',mobileFinalTweaksCss,'20260902-final-tweaks-v1');
-  html=upsertCss(html,'/assets/css/fmb-news-mobile-approved-home.css',approvedHomeCss,'20260902-approved-metallic-v1');
-  html=upsertCss(html,'/assets/css/fmb-news-mobile-material-polish.css',mobileMaterialPolishCss,'20260903-material-v1');
+  html=useMobileSystemStylesheet(html);
   if(!html.includes('/news/manifest.webmanifest'))html=html.replace('</head>',`${pwaMeta}</head>`);else if(!html.includes('apple-touch-icon'))html=html.replace('</head>',`<link rel="apple-touch-icon" href="/news/assets/images/icon-transparent.png"></head>`);
   html=upsertJs(html,'/assets/js/fmb-news-mobile-personalization.js',personalizationJs,'20260901-personal-v2');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-premium.js',premiumJs,'20260901-premium-v2');
