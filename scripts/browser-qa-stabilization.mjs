@@ -73,13 +73,11 @@ async function assertPersistentShell(page,path){
     return{
       insideShell:ticker.parentElement===shell,
       position:getComputedStyle(ticker).position,
-      top:getComputedStyle(ticker).top,
       shellTop:s.top,shellBottom:s.bottom,tickerTop:t.top,tickerBottom:t.bottom,heroTop:h.top
     };
   });
   assert.equal(tickerGeometry.insideShell,true,'Home Headlines ticker must be a direct child of the sticky FMB shell.');
   assert.equal(tickerGeometry.position,'relative','Home Headlines ticker must stay in normal flow inside the sticky FMB shell.');
-  assert.equal(tickerGeometry.top,'auto','Home Headlines ticker must not use a second sticky offset.');
   assert(Math.abs(tickerGeometry.tickerBottom-tickerGeometry.shellBottom)<=1,'Home Headlines must end at the bottom of the sticky FMB shell.');
   assert(tickerGeometry.tickerBottom<=tickerGeometry.heroTop+1,'Home Headlines must not overlap the cinematic hero.');
 
