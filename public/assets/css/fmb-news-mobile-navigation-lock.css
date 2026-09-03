@@ -128,7 +128,7 @@
     position:absolute;
     inset:0;
     z-index:0;
-    background:linear-gradient(180deg,rgba(99,6,97,.04),rgba(99,6,97,.12));
+    background:linear-gradient(180deg,#18061f 0%,#0f0314 100%);
   }
   body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[aria-current="page"]>svg,
   body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[aria-current="page"]>span{
