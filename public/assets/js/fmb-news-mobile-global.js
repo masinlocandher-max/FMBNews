@@ -63,23 +63,17 @@
     return sheet;
   }
 
-  function openInstallGuide(opener){
-    const ios=/iphone|ipad|ipod/i.test(navigator.userAgent);
-    const body=ios
-      ? '<div class="fmb-install-guide"><strong>Add FMB News like an iPhone app</strong><p>Tap Safari’s Share button, then choose <b>Add to Home Screen</b>. Apple controls the final system sheet.</p></div>'
-      : '<div class="fmb-install-guide"><strong>Add FMB News to your Home Screen</strong><p>Open your browser menu and choose <b>Add to Home screen</b> or <b>Install app</b>.</p></div>';
-    return openSheet('Add to Home Screen',body,opener);
-  }
-
   function openMore(opener){
-    const sheet=openSheet('More from FMB News','<button type="button" data-fmb-open-account>Your FMB <span>›</span></button><button type="button" data-fmb-install>Add to Home Screen <span>›</span></button><a href="/news/world/">Worldwide <span>›</span></a><a href="/news/explainer/">Explainer <span>›</span></a><a href="/news/fact-check/">Fact Check <span>›</span></a><a href="/news/horoscope/">Horoscope <span>›</span></a><a href="/news/crossword/">Crossword Puzzle <span>›</span></a><a href="/news/about/">About FMB News <span>›</span></a><a href="/news/submit/">Submit a story <span>›</span></a>',opener);
+    const accountItem=`<button type="button" data-fmb-open-account><span class="fmb-menu-item-main">${svg('account')}<span>Your FMB</span></span><span>›</span></button>`;
+    const installItem='<button type="button" data-fmb-install><span>Add to Home Screen</span><span>›</span></button>';
+    const sheet=openSheet('More from FMB News',`${accountItem}${installItem}<a href="/news/world/">Worldwide <span>›</span></a><a href="/news/explainer/">Explainer <span>›</span></a><a href="/news/fact-check/">Fact Check <span>›</span></a><a href="/news/horoscope/">Horoscope <span>›</span></a><a href="/news/crossword/">Crossword Puzzle <span>›</span></a><a href="/news/about/">About FMB News <span>›</span></a><a href="/news/submit/">Submit a story <span>›</span></a>`,opener);
     $('[data-fmb-open-account]',sheet)?.addEventListener('click',()=>{
       $('[data-close-sheet]',sheet)?.click();
       requestAnimationFrame(()=>document.querySelector('[data-fmb-account],.fmb-account-button,[data-account]')?.click());
     });
-    $('[data-fmb-install]',sheet)?.addEventListener('click',e=>{
+    $('[data-fmb-install]',sheet)?.addEventListener('click',()=>{
       $('[data-close-sheet]',sheet)?.click();
-      requestAnimationFrame(()=>openInstallGuide(e.currentTarget));
+      requestAnimationFrame(()=>document.dispatchEvent(new CustomEvent('fmb:install-request')));
     });
     return sheet;
   }
