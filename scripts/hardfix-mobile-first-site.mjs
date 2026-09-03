@@ -32,6 +32,7 @@ const MOBILE_SYSTEM_SHEETS=[
   'fmb-news-mobile-approved-home.css',
   'fmb-news-mobile-material-polish.css',
   'fmb-news-mobile-all-screens.css',
+  'fmb-news-mobile-navigation-lock.css',
 ];
 const MOBILE_SYSTEM_FILE='fmb-news-mobile-system.css';
 const cssDir=path.join(newsRoot,'assets','css');
@@ -42,9 +43,6 @@ for(const name of MOBILE_SYSTEM_SHEETS){
   if(/@import|@charset/i.test(text))throw new Error(`${name} contains @import/@charset and cannot be concatenated safely`);
   bundle+=`/* ===== ${name} ===== */\n${text}\n`;
 }
-// Version by content, so editing any source sheet changes the URL. The service
-// worker serves /news/assets/* stale-while-revalidate out of a cache whose name
-// the build never bumps, so a hand-typed ?v= can hold a stale sheet for good.
 const mobileSystemVersion=createHash('sha256').update(bundle).digest('hex').slice(0,10);
 await writeFile(path.join(cssDir,MOBILE_SYSTEM_FILE),bundle,'utf8');
 const mobileSystemCss=`<link rel="stylesheet" href="/assets/css/${MOBILE_SYSTEM_FILE}?v=${mobileSystemVersion}">`;
@@ -73,10 +71,6 @@ function normalizeProductNavigation(html){
   });
 }
 function escapedAssetPath(pathName){return pathName.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
-function upsertCss(html,pathName,asset,version){if(!html.includes(pathName))return html.replace('</head>',`${asset}</head>`);return html.replace(new RegExp(`${escapedAssetPath(pathName)}(?:\\?v=[^"']+)?`,'g'),`${pathName}?v=${version}`)}
-// Drop any link to an individual mobile sheet (some routes emit their own) and
-// leave exactly one link to the concatenated system stylesheet, in the position
-// the block always occupied: last in <head> before the ticker pass appends.
 function useMobileSystemStylesheet(html){
   for(const name of MOBILE_SYSTEM_SHEETS){
     html=html.replace(new RegExp(`<link\\b[^>]*href=["'][^"']*${escapedAssetPath(name)}(?:\\?[^"']*)?["'][^>]*>`,'gi'),'');
@@ -106,4 +100,4 @@ async function apply(target){
   await writeFile(target,html,'utf8');
 }
 await apply(newsRoot);
-console.log('Applied the unified Filipino Media Bulletin mobile system with centered FMB News identity, five-product icon rail, one HEADLINES/BREAKING ticker, current cinematic hero, rotating slogan, live date/time, metallic violet/purple final material polish, all-screen mobile spacing, live Supabase Latest feed, installable PWA runtime, and no duplicate hero or legacy bottom navigation.');
+console.log('Applied the unified Filipino Media Bulletin mobile system with sticky centered FMB identity, right-side hamburger, five-product icon rail, one HEADLINES/BREAKING ticker, current cinematic hero, rotating slogan, live date/time, metallic violet/purple final material polish, all-screen mobile spacing, live Supabase Latest feed, installable PWA runtime, and no duplicate hero or legacy bottom navigation.');
