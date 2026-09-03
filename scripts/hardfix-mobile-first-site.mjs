@@ -51,11 +51,11 @@ const personalizationJs='<script src="/assets/js/fmb-news-mobile-personalization
 const premiumJs='<script src="/assets/js/fmb-news-mobile-premium.js?v=20260901-premium-v2" defer></script>';
 const mobileHomeJs='<script src="/assets/js/fmb-news-mobile-home.js?v=20260902-approved-home-v4" defer></script>';
 const mobileLiveFeedJs='<script src="/assets/js/fmb-news-mobile-live-feed.js?v=20260902-live-feed-v2" defer></script>';
-const mobileGlobalJs='<script src="/assets/js/fmb-news-mobile-global.js?v=20260901-global-v3&build=approved-shell-v1" defer></script>';
+const mobileGlobalJs='<script src="/assets/js/fmb-news-mobile-global.js?v=20260904-global-v4&build=right-menu-v1" defer></script>';
 const mobileProductsJs='<script src="/assets/js/fmb-news-mobile-products.js?v=20260902-products-v3" defer></script>';
 const mobilePolishJs='<script src="/assets/js/fmb-news-mobile-app-polish.js?v=20260902-polish-v2" defer></script>';
 const mobileFinalTweaksJs='<script src="/assets/js/fmb-news-mobile-final-tweaks.js?v=20260902-final-tweaks-v1" defer></script>';
-const pwaJs='<script src="/assets/js/fmb-news-pwa.js?v=20260902-pwa-v1" defer></script>';
+const pwaJs='<script src="/assets/js/fmb-news-pwa.js?v=20260904-pwa-v2" defer></script>';
 const pwaMeta='<link rel="manifest" href="/news/manifest.webmanifest"><link rel="apple-touch-icon" href="/news/assets/images/icon-transparent.png"><meta name="application-name" content="FMB News"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="FMB News"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#220d50">';
 
 function addBodyClass(html){if(/<body\b[^>]*class=["'][^"']*\bfmb-mobile-first\b/i.test(html))return html;if(/<body\b[^>]*class=["']/i.test(html))return html.replace(/<body\b([^>]*?)class=(["'])([^"']*)\2/i,(_m,b,q,c)=>`<body${b}class=${q}${c} fmb-mobile-first${q}`);return html.replace(/<body\b([^>]*)>/i,'<body$1 class="fmb-mobile-first">')}
@@ -92,11 +92,11 @@ async function apply(target){
   html=upsertJs(html,'/assets/js/fmb-news-mobile-premium.js',premiumJs,'20260901-premium-v2');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-home.js',mobileHomeJs,'20260902-approved-home-v4');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-live-feed.js',mobileLiveFeedJs,'20260902-live-feed-v2');
-  html=upsertJs(html,'/assets/js/fmb-news-mobile-global.js',mobileGlobalJs,'20260901-global-v3&build=approved-shell-v1');
+  html=upsertJs(html,'/assets/js/fmb-news-mobile-global.js',mobileGlobalJs,'20260904-global-v4&build=right-menu-v1');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-products.js',mobileProductsJs,'20260902-products-v3');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-app-polish.js',mobilePolishJs,'20260902-polish-v2');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-final-tweaks.js',mobileFinalTweaksJs,'20260902-final-tweaks-v1');
-  html=upsertJs(html,'/assets/js/fmb-news-pwa.js',pwaJs,'20260902-pwa-v1');
+  html=upsertJs(html,'/assets/js/fmb-news-pwa.js',pwaJs,'20260904-pwa-v2');
   await writeFile(target,html,'utf8');
 }
 await apply(newsRoot);
