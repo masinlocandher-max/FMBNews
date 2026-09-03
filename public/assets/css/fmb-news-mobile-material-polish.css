@@ -1,4 +1,4 @@
-/* Final material polish for the minimal FMB News mobile home. Loaded last on purpose. */
+/* Final material polish for the minimal FMB News mobile system. Loaded last on purpose. */
 @media(max-width:699px){
 /* Keep the shell quiet, but make the existing violet/plum palette read as polished metal rather than a flat gradient. */
 body.fmb-mobile-first .fmb-mobile-shell-head{
@@ -17,7 +17,7 @@ body.fmb-mobile-first .fmb-mobile-shell-menu svg,
 body.fmb-mobile-first .fmb-mobile-shell-actions svg{stroke-width:1.6!important}
 body.fmb-mobile-first .fmb-mobile-shell-copy small{font-size:8.2px!important;letter-spacing:.09em!important}
 
-/* The five products should read as one editorial rail, not five tiles. */
+/* Home: five products read as one editorial rail, not five tiles. */
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail{
   background:
     linear-gradient(104deg,transparent 0 36%,rgba(132,73,154,.12) 48%,rgba(255,255,255,.025) 51%,transparent 64%),
@@ -26,53 +26,158 @@ body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail{
   border-bottom:1px solid rgba(201,154,219,.11)!important;
 }
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a{border-right:0!important;color:rgba(255,255,255,.72)!important;font-size:8.8px!important;letter-spacing:-.012em!important}
-body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a[aria-current="page"]{
-  background:linear-gradient(180deg,rgba(126,65,148,.035),rgba(99,6,97,.095))!important;
-  color:#f2d17a!important;
-}
-body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a[aria-current="page"]::after{
-  background:linear-gradient(90deg,transparent,#9b6aad 24%,#f2d17a 50%,#9b6aad 76%,transparent)!important;
-  opacity:.86!important;
-}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a[aria-current="page"]{background:linear-gradient(180deg,rgba(126,65,148,.035),rgba(99,6,97,.095))!important;color:#f2d17a!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a[aria-current="page"]::after{background:linear-gradient(90deg,transparent,#9b6aad 24%,#f2d17a 50%,#9b6aad 76%,transparent)!important;opacity:.86!important}
 
-/* Ticker belongs to the same material family as the rail and hero. */
-body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-top-ticker{
-  background:
-    linear-gradient(100deg,rgba(118,62,138,.08),transparent 24% 68%,rgba(118,62,138,.06)),
-    linear-gradient(90deg,#190620 0%,#2b0b37 48%,#16051e 100%)!important;
-  border-bottom:1px solid rgba(173,113,194,.12)!important;
-}
+/* Internal screens share the same product family without competing with content. */
+body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail{min-height:46px!important;height:46px!important;padding:0 10px!important;gap:4px!important;background:#fff!important;border-bottom:1px solid #ece8ee!important;box-shadow:none!important}
+body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a{min-height:46px!important;height:46px!important;padding:0 7px!important;border-radius:0!important;background:transparent!important;color:#746d78!important;font-size:9.5px!important;font-weight:680!important;letter-spacing:-.01em!important;box-shadow:none!important;text-shadow:none!important}
+body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[aria-current="page"]{background:transparent!important;color:#2b1235!important;font-weight:790!important}
+body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[aria-current="page"]::after{left:10px!important;right:10px!important;bottom:0!important;height:2px!important;background:linear-gradient(90deg,#6e3a8a,#c9a84d)!important;box-shadow:none!important}
+
+/* Home ticker and hero material. */
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-top-ticker{background:linear-gradient(100deg,rgba(118,62,138,.08),transparent 24% 68%,rgba(118,62,138,.06)),linear-gradient(90deg,#190620 0%,#2b0b37 48%,#16051e 100%)!important;border-bottom:1px solid rgba(173,113,194,.12)!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-top-ticker>strong{color:#f2d17a!important;font-weight:720!important;font-size:8.2px!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-top-ticker .fmb-approved-hero-ticker-group>i{color:rgba(255,255,255,.82)!important;font-size:8.4px!important}
-
-/* Keep the hero editorial. The image stays untouched; only the UI chrome is refined. */
-body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-cta>a{
-  border-color:rgba(218,176,232,.24)!important;
-  background:linear-gradient(135deg,rgba(113,61,132,.84),rgba(68,23,82,.88) 52%,rgba(31,8,40,.92))!important;
-  font-weight:690!important;
-  font-size:9px!important;
-  letter-spacing:.005em!important;
-}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-cta>a{border-color:rgba(218,176,232,.24)!important;background:linear-gradient(135deg,rgba(113,61,132,.84),rgba(68,23,82,.88) 52%,rgba(31,8,40,.92))!important;font-weight:690!important;font-size:9px!important;letter-spacing:.005em!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-cta>button[data-fmb-customize]{color:rgba(255,255,255,.52)!important;font-size:8.5px!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-hero-clock strong{letter-spacing:.035em!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-hero-clock span{letter-spacing:-.025em!important}
-
-/* Editorial feed: type carries hierarchy; controls recede. */
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head a{color:#77707a!important;font-weight:620!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-row{border-bottom-color:#ebe9ed!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-row:last-child{border-bottom:0!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-row img{border-radius:7px!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-meta{font-size:9.5px!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-meta span:first-child{color:#6d3b7e!important;font-weight:740!important}
-
-/* Feature surfaces remain distinct, but stop looking like generic app cards. */
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card,
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-week-card{border-radius:9px!important;box-shadow:none!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-week-card{border-color:rgba(35,15,43,.045)!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-week-kicker{letter-spacing:.045em!important}
 
+/* ALL INTERNAL SCREENS: consistent breathing room and flatter editorial surfaces. */
+body.fmb-mobile-product-page:not(.fmb-mobile-route-home){--fmb-screen-gutter:16px;--fmb-screen-gap:12px;--fmb-screen-radius:12px;--fmb-screen-line:#e8e4ea}
+body.fmb-mobile-product-page:not(.fmb-mobile-route-home) main{min-height:60vh!important}
+body.fmb-mobile-product-page:not(.fmb-mobile-route-home) main a,body.fmb-mobile-product-page:not(.fmb-mobile-route-home) main button{touch-action:manipulation}
+
+/* Archive */
+body.fmb-mobile-route-archive main.shell.section{padding:0 var(--fmb-screen-gutter) 62px!important;background:#f7f6f8!important}
+body.fmb-mobile-route-archive main.shell.section>.section-title{padding:25px 2px 12px!important}
+body.fmb-mobile-route-archive main.shell.section>.section-title h2{font-size:25px!important;font-weight:800!important}
+body.fmb-mobile-route-archive .fmb-archive-signature{margin:0 calc(var(--fmb-screen-gutter) * -1)!important;padding:30px 20px 28px!important;background:linear-gradient(135deg,#fff 0,#f6f1f8 100%)!important}
+body.fmb-mobile-route-archive .fmb-archive-signature small{font-size:9.5px!important}
+body.fmb-mobile-route-archive .fmb-archive-signature p{font-size:13.5px!important;line-height:1.55!important}
+body.fmb-mobile-route-archive .archive-grid{gap:0!important}
+body.fmb-mobile-route-archive .archive-row{grid-template-columns:104px minmax(0,1fr)!important;gap:7px 13px!important;padding:14px 0!important;border-bottom:1px solid var(--fmb-screen-line)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+body.fmb-mobile-route-archive .archive-row>img{width:104px!important;height:84px!important;border-radius:8px!important}
+body.fmb-mobile-route-archive .archive-row h2{font-size:17.5px!important;line-height:1.18!important;font-weight:720!important}
+body.fmb-mobile-route-archive .archive-row>time{font-size:10.5px!important;font-weight:620!important}
+
+/* Worldwide */
+body.fmb-mobile-route-world .world-feed{padding:30px var(--fmb-screen-gutter) 20px!important;background:#f7f6f8!important}
+body.fmb-mobile-route-world .world-feed-head{gap:8px!important;margin:0 0 16px!important}
+body.fmb-mobile-route-world .world-feed-head h2{font-size:28px!important;font-weight:800!important}
+body.fmb-mobile-route-world .world-feed-head p{font-size:13px!important;line-height:1.5!important}
+body.fmb-mobile-route-world .country-grid{gap:var(--fmb-screen-gap)!important}
+body.fmb-mobile-route-world .country-card{padding:18px 17px!important;border:1px solid #ebe6ed!important;border-radius:var(--fmb-screen-radius)!important;box-shadow:none!important}
+body.fmb-mobile-route-world .country-card::before{width:2px!important}
+body.fmb-mobile-route-world .country-card small{font-size:9.5px!important}
+body.fmb-mobile-route-world .country-card h3{font-size:20.5px!important;line-height:1.12!important;font-weight:730!important}
+body.fmb-mobile-route-world .country-card p{font-size:13px!important;line-height:1.55!important}
+body.fmb-mobile-route-world .world-note{padding:15px 16px!important;border-radius:var(--fmb-screen-radius)!important;font-size:12px!important}
+body.fmb-mobile-route-world .archive{padding:18px var(--fmb-screen-gutter) 58px!important;background:#f7f6f8!important}
+body.fmb-mobile-route-world .archive-card{grid-template-columns:92px minmax(0,1fr)!important;gap:13px!important;margin:0!important;padding:13px 0!important;border-bottom:1px solid var(--fmb-screen-line)!important;border-radius:0!important;background:transparent!important}
+body.fmb-mobile-route-world .archive-card img{border-radius:8px!important}
+body.fmb-mobile-route-world .archive-card h3{font-size:16px!important;line-height:1.2!important}
+
+/* Explainer */
+body.fmb-mobile-route-explainer .explainer-principles{padding:22px var(--fmb-screen-gutter) 8px!important}
+body.fmb-mobile-route-explainer .explainer-grid{gap:10px!important}
+body.fmb-mobile-route-explainer .explainer-card{padding:15px!important;border:1px solid #ece7ee!important;border-radius:var(--fmb-screen-radius)!important;box-shadow:none!important}
+body.fmb-mobile-route-explainer .explainer-card h2{font-size:16.5px!important;font-weight:740!important}
+body.fmb-mobile-route-explainer .explainer-card p{font-size:12.5px!important;line-height:1.5!important}
+body.fmb-mobile-route-explainer .explainer-feed{padding:24px var(--fmb-screen-gutter) 60px!important}
+body.fmb-mobile-route-explainer .explainer-feed-head{padding-top:22px!important}
+body.fmb-mobile-route-explainer .explainer-feed p{font-size:13px!important;line-height:1.5!important}
+body.fmb-mobile-route-explainer .explained-tools{margin:16px calc(var(--fmb-screen-gutter) * -1) 12px!important;padding:10px var(--fmb-screen-gutter)!important}
+body.fmb-mobile-route-explainer .explained-search{height:44px!important;border-radius:10px!important}
+body.fmb-mobile-route-explainer .explained-status{font-size:10px!important}
+body.fmb-mobile-route-explainer .explained-list{gap:9px!important}
+body.fmb-mobile-route-explainer .explained-item{border:1px solid #ece7ee!important;border-radius:var(--fmb-screen-radius)!important;box-shadow:none!important}
+body.fmb-mobile-route-explainer .explained-item[open]{box-shadow:0 8px 24px rgba(27,10,34,.06)!important}
+body.fmb-mobile-route-explainer .explained-item summary{padding:15px!important}
+body.fmb-mobile-route-explainer .explained-title{font-size:15.5px!important}
+body.fmb-mobile-route-explainer .explained-body{padding:0 15px 18px!important}
+body.fmb-mobile-route-explainer .explained-body p{font-size:15px!important;line-height:1.65!important}
+body.fmb-mobile-route-explainer .explainer-method-note{border-radius:var(--fmb-screen-radius)!important;font-size:12px!important;line-height:1.5!important}
+
+/* Daily Brief */
+body.fmb-mobile-route-brief .brief-issues{padding:24px var(--fmb-screen-gutter) 60px!important;background:#f7f6f8!important}
+body.fmb-mobile-route-brief .brief-issue-list{gap:0!important}
+body.fmb-mobile-route-brief .brief-issue{grid-template-columns:minmax(0,1fr) 92px!important;gap:14px!important;padding:15px 0!important;border-bottom:1px solid var(--fmb-screen-line)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+body.fmb-mobile-route-brief .brief-issue h2{font-size:18px!important;line-height:1.18!important;font-weight:730!important}
+body.fmb-mobile-route-brief .brief-issue img{width:92px!important;height:76px!important;border-radius:8px!important}
+body.fmb-mobile-route-brief .brief-issue time{font-size:10px!important}
+body.fmb-mobile-route-brief .brief-method{margin:0 var(--fmb-screen-gutter) 48px!important;padding:18px!important;border:1px solid #e8e2ea!important;border-radius:var(--fmb-screen-radius)!important;background:#f0ebf2!important}
+
+/* Horoscope */
+body.fmb-mobile-route-horoscope .fmb-feature-shell{padding:16px var(--fmb-screen-gutter) 60px!important}
+body.fmb-mobile-route-horoscope .fmb-feature-hero{border-radius:16px!important;box-shadow:0 12px 32px rgba(43,18,53,.12)!important}
+body.fmb-mobile-route-horoscope .fmb-feature-hero p{font-size:13px!important;line-height:1.52!important}
+body.fmb-mobile-route-horoscope .fmb-zodiac-grid{gap:9px!important;margin:18px 0!important}
+body.fmb-mobile-route-horoscope .fmb-zodiac-grid button{min-height:78px!important;border:1px solid rgba(43,18,53,.045)!important;border-radius:var(--fmb-screen-radius)!important;box-shadow:none!important}
+body.fmb-mobile-route-horoscope .fmb-zodiac-grid button[aria-pressed="true"]{box-shadow:0 8px 20px rgba(43,18,53,.12)!important}
+body.fmb-mobile-route-horoscope .fmb-horoscope-reading{border-radius:16px!important;box-shadow:0 6px 22px rgba(43,18,53,.055)!important}
+body.fmb-mobile-route-horoscope .fmb-entertainment-note{padding:4px 2px 0!important;font-size:11px!important;line-height:1.5!important}
+
+/* Crossword */
+body.fmb-mobile-route-crossword .fmb-feature-shell{padding:16px var(--fmb-screen-gutter) 60px!important}
+body.fmb-mobile-route-crossword .fmb-feature-hero{border-radius:16px!important;box-shadow:none!important}
+body.fmb-mobile-route-crossword .fmb-feature-hero p{font-size:13px!important;line-height:1.52!important}
+body.fmb-mobile-route-crossword .fmb-crossword-toolbar{margin:14px calc(var(--fmb-screen-gutter) * -1) 12px!important;padding:10px var(--fmb-screen-gutter)!important}
+body.fmb-mobile-route-crossword .fmb-crossword-toolbar button{min-height:44px!important;border:1px solid #e7e2e9!important;border-radius:10px!important;box-shadow:none!important}
+body.fmb-mobile-route-crossword .fmb-crossword-board{border-radius:14px!important;box-shadow:0 8px 24px rgba(43,18,53,.06)!important}
+body.fmb-mobile-route-crossword .fmb-clue-group{border-radius:14px!important;box-shadow:none!important}
+body.fmb-mobile-route-crossword .fmb-news-context,body.fmb-mobile-route-crossword .fmb-answer-release{border-radius:14px!important}
+
+/* About */
+body.fmb-mobile-route-about .fmb-about-hero-grid{padding:34px 20px 38px!important}
+body.fmb-mobile-route-about .fmb-about-hero-statement p{font-size:14px!important;line-height:1.6!important}
+body.fmb-mobile-route-about .fmb-about-purpose,body.fmb-mobile-route-about .fmb-about-mission-vision,body.fmb-mobile-route-about .fmb-about-method,body.fmb-mobile-route-about .fmb-about-name,body.fmb-mobile-route-about .fmb-about-standards,body.fmb-mobile-route-about .fmb-about-closing{padding:34px 18px!important}
+body.fmb-mobile-route-about section h2{font-size:29px!important;font-weight:800!important}
+body.fmb-mobile-route-about section p{font-size:14px!important;line-height:1.65!important}
+body.fmb-mobile-route-about .fmb-about-mv{padding:20px!important;border:1px solid #ebe6ed!important;border-radius:var(--fmb-screen-radius)!important;box-shadow:none!important}
+body.fmb-mobile-route-about .fmb-about-method-list{gap:10px!important;margin-top:20px!important}
+body.fmb-mobile-route-about .fmb-about-method-list li{padding:15px!important;border:1px solid #ece7ee!important;border-radius:var(--fmb-screen-radius)!important}
+body.fmb-mobile-route-about .fmb-about-method-list p{font-size:12.5px!important;line-height:1.55!important}
+body.fmb-mobile-route-about .fmb-about-principles{gap:10px!important}
+body.fmb-mobile-route-about .fmb-about-principles article{padding:16px!important;border:1px solid #ece7ee!important;border-radius:var(--fmb-screen-radius)!important}
+body.fmb-mobile-route-about .fmb-about-closing{margin:4px var(--fmb-screen-gutter) 48px!important;border-radius:16px!important}
+body.fmb-mobile-route-about .fmb-about-closing a{min-height:44px!important;display:flex!important;align-items:center!important;font-size:13px!important}
+
+/* Article / Fact Check reading surfaces */
+body.fmb-mobile-route-article .article-shell,body.fmb-mobile-route-article .cms-page>.shell{padding:20px var(--fmb-screen-gutter) 64px!important}
+body.fmb-mobile-route-article .article-date{margin:10px 0 18px!important;font-size:10.5px!important}
+body.fmb-mobile-route-article .article-kicker{font-size:10.5px!important}
+body.fmb-mobile-route-article .article h1{margin:9px 0 14px!important;font-size:37px!important;line-height:1!important;font-weight:810!important}
+body.fmb-mobile-route-article .article-deck{margin-bottom:20px!important;font-size:16.5px!important;line-height:1.52!important}
+body.fmb-mobile-route-article .byline{padding:14px 0 17px!important}
+body.fmb-mobile-route-article .article-figure{margin:20px calc(var(--fmb-screen-gutter) * -1) 26px!important}
+body.fmb-mobile-route-article .article-figure figcaption{padding:10px var(--fmb-screen-gutter) 0!important;font-size:10.5px!important;line-height:1.5!important}
+body.fmb-mobile-route-article .article-body h2{margin:34px 0 12px!important;font-size:25px!important;line-height:1.08!important}
+body.fmb-mobile-route-article .article-body p{margin-bottom:20px!important;font-size:17.5px!important;line-height:1.7!important}
+body.fmb-mobile-route-article .lens{grid-template-columns:38px minmax(0,1fr)!important;gap:13px!important;margin:20px 0!important;padding:17px!important;border-radius:var(--fmb-screen-radius)!important;box-shadow:none!important}
+body.fmb-mobile-route-article .lens p{font-size:14.5px!important;line-height:1.6!important}
+body.fmb-mobile-route-article .sources{margin-top:26px!important;padding:18px!important;border:1px solid #e6e0e8!important;border-radius:var(--fmb-screen-radius)!important;background:#f0ebf2!important}
+body.fmb-mobile-route-article .sources li{font-size:12px!important;line-height:1.5!important}
+body.fmb-mobile-route-article .related{margin-top:34px!important;padding-top:26px!important}
+body.fmb-mobile-route-article .related-item{grid-template-columns:minmax(0,1fr) 96px!important;gap:14px!important;padding:14px 0!important}
+body.fmb-mobile-route-article .related-item h3{font-size:16px!important;line-height:1.22!important}
+body.fmb-mobile-route-article .related-item img{border-radius:8px!important}
+
 @media(max-width:390px){
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a{font-size:8.5px!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head a{font-size:9.8px!important}
+  body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a{font-size:9px!important;padding-inline:5px!important}
+  body.fmb-mobile-route-article .article h1{font-size:35px!important}
 }
 }
