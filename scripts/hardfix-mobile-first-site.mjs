@@ -5,13 +5,13 @@ import { fileURLToPath } from 'node:url';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const newsRoot=path.join(root,'dist','news');
-// The mobile system used to ship as fifteen separate stylesheets, injected here
+// The mobile system used to ship as many separate stylesheets, injected here
 // one after another so they always landed as one contiguous, ordered block in
 // <head>. Concatenating them in that same order is cascade-identical by
 // construction — the browser sees the identical declaration sequence — while
-// leaving one authoritative stylesheet to reason about instead of fifteen, and
-// one request instead of fifteen. None of them contains @import or @charset,
-// which are the only at-rules whose meaning depends on file position.
+// leaving one authoritative network request to reason about. None of them
+// contains @import or @charset, the only at-rules whose meaning depends on file
+// position.
 //
 // The authored files stay separate on disk: they are the editable sources, and
 // the verifiers assert against them.
@@ -31,6 +31,7 @@ const MOBILE_SYSTEM_SHEETS=[
   'fmb-news-mobile-final-tweaks.css',
   'fmb-news-mobile-approved-home.css',
   'fmb-news-mobile-material-polish.css',
+  'fmb-news-mobile-all-screens.css',
 ];
 const MOBILE_SYSTEM_FILE='fmb-news-mobile-system.css';
 const cssDir=path.join(newsRoot,'assets','css');
@@ -105,4 +106,4 @@ async function apply(target){
   await writeFile(target,html,'utf8');
 }
 await apply(newsRoot);
-console.log('Applied the unified Filipino Media Bulletin mobile system with centered FMB News identity, five-product icon rail, one HEADLINES/BREAKING ticker, current cinematic hero, rotating slogan, live date/time, metallic violet/purple final material polish, live Supabase Latest feed, installable PWA runtime, and no duplicate hero or legacy bottom navigation.');
+console.log('Applied the unified Filipino Media Bulletin mobile system with centered FMB News identity, five-product icon rail, one HEADLINES/BREAKING ticker, current cinematic hero, rotating slogan, live date/time, metallic violet/purple final material polish, all-screen mobile spacing, live Supabase Latest feed, installable PWA runtime, and no duplicate hero or legacy bottom navigation.');
