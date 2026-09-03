@@ -98,7 +98,7 @@ jobs:
 
       - name: Install mobile browser QA runtime
         run: |
-          npm install --no-save playwright@1.55.0
+          npm install --no-save --no-audit --no-fund playwright@1.55.0
           npx playwright install --with-deps chromium
 
       - name: Run complete mobile browser QA
