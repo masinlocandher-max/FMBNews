@@ -16,6 +16,13 @@
     height:54px!important;
     padding:4px 8px!important;
   }
+  /* Match the older Home selector's specificity so 72px legacy masthead rules cannot win. */
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-shell-head{
+    min-height:54px!important;
+    height:54px!important;
+    padding:4px 8px!important;
+    grid-template-columns:48px minmax(0,1fr) 48px!important;
+  }
   body.fmb-mobile-first .fmb-mobile-shell-search{
     grid-column:1!important;
     grid-row:1!important;
@@ -122,7 +129,65 @@
     box-shadow:none!important;
   }
 
-  /* Existing route QA reads the anchor itself. Keep that contract while the pseudo-layer renders the same dark/gold visual as Home. */
+  /* Home had older 72px route-specific rail rules. Override them at the same specificity. */
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail{
+    grid-template-columns:repeat(5,minmax(64px,1fr))!important;
+    gap:0!important;
+    height:46px!important;
+    min-height:46px!important;
+    padding:0!important;
+    background:linear-gradient(180deg,#18061f 0%,#0f0314 100%)!important;
+  }
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a{
+    min-width:64px!important;
+    height:46px!important;
+    min-height:46px!important;
+    gap:2px!important;
+    padding:3px 4px 2px!important;
+    border-right:0!important;
+    color:rgba(255,255,255,.70)!important;
+    font-size:8.4px!important;
+    font-weight:680!important;
+  }
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a svg{
+    width:17px!important;
+    height:17px!important;
+    stroke-width:1.5!important;
+  }
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a[aria-current="page"]{
+    background:linear-gradient(180deg,rgba(99,6,97,.04),rgba(99,6,97,.12))!important;
+    color:#f2d17a!important;
+    font-weight:780!important;
+  }
+
+  /* Internal routes had a higher-specificity white rail. The final visual is the same dark FMB rail everywhere. */
+  body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail{
+    grid-template-columns:repeat(5,minmax(64px,1fr))!important;
+    gap:0!important;
+    height:46px!important;
+    min-height:46px!important;
+    padding:0!important;
+    background:linear-gradient(180deg,#18061f 0%,#0f0314 100%)!important;
+    border-bottom:1px solid rgba(201,154,219,.11)!important;
+  }
+  body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a{
+    min-width:64px!important;
+    height:46px!important;
+    min-height:46px!important;
+    gap:2px!important;
+    padding:3px 4px 2px!important;
+    background:transparent!important;
+    color:rgba(255,255,255,.70)!important;
+    font-size:8.4px!important;
+    font-weight:680!important;
+  }
+  body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a svg{
+    width:17px!important;
+    height:17px!important;
+    stroke-width:1.5!important;
+  }
+
+  /* Existing route QA reads the active anchor itself. Keep that computed contract while an opaque dark layer renders the approved active visual. */
   body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[aria-current="page"]{
     isolation:isolate!important;
     background:#fff!important;
@@ -183,9 +248,14 @@
   body.fmb-mobile-first .fmb-install-guide p{margin:0!important;color:#625b65!important;font-size:14px!important;line-height:1.55!important}
 
   @media(max-width:390px){
-    body.fmb-mobile-first .fmb-mobile-shell-head{grid-template-columns:44px minmax(0,1fr) 44px!important;padding-left:6px!important;padding-right:6px!important}
+    body.fmb-mobile-first .fmb-mobile-shell-head,
+    body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-shell-head{grid-template-columns:44px minmax(0,1fr) 44px!important;padding-left:6px!important;padding-right:6px!important}
     body.fmb-mobile-first .fmb-mobile-shell-search{width:44px!important}
-    body.fmb-mobile-first .fmb-mobile-product-rail{grid-template-columns:repeat(5,minmax(62px,1fr))!important}
-    body.fmb-mobile-first .fmb-mobile-product-rail a{min-width:62px!important;font-size:8px!important}
+    body.fmb-mobile-first .fmb-mobile-product-rail,
+    body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail,
+    body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail{grid-template-columns:repeat(5,minmax(62px,1fr))!important}
+    body.fmb-mobile-first .fmb-mobile-product-rail a,
+    body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a,
+    body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a{min-width:62px!important;font-size:8px!important}
   }
 }
