@@ -259,3 +259,11 @@
     body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a{min-width:62px!important;font-size:8px!important}
   }
 }
+
+/* This file is bundled last, so reduced motion must also be finalized here. */
+@media(max-width:699px) and (prefers-reduced-motion:reduce){
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-top-ticker .fmb-approved-hero-ticker-track{
+    animation:none!important;
+    transform:none!important;
+  }
+}
