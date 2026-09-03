@@ -59,7 +59,12 @@
       if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
       else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
     });
-    requestAnimationFrame(()=>{const first=$(focusableSelector,panel);(first||panel).focus({preventScroll:true})});
+    const focusInside=()=>{
+      const first=$(focusableSelector,panel);
+      (first||panel).focus({preventScroll:true});
+    };
+    focusInside();
+    requestAnimationFrame(()=>{if(!sheet.contains(document.activeElement))focusInside()});
     return sheet;
   }
 
