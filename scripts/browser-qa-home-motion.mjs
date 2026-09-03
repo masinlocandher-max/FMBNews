@@ -59,7 +59,7 @@ const verticalOverlap=Math.min(geometry.copyBottom,geometry.utilityBottom)-Math.
 if(verticalOverlap>0)assert(geometry.copyRight<=geometry.utilityLeft+2,`Hero slogan and date/time overlap by ${(geometry.copyRight-geometry.utilityLeft).toFixed(1)}px`);
 assert(geometry.utilityGap>=6,`Date/time internal spacing is too tight (${geometry.utilityGap}px)`);
 assert(geometry.trackWidth>geometry.windowWidth,`Ticker track is not wide enough to crawl (${geometry.trackWidth}px vs ${geometry.windowWidth}px)`);
-assert(geometry.animationName.includes('fmbHomeHeadlineCrawl'),`Ticker crawl animation is not active (${geometry.animationName})`);
+assert.equal(geometry.animationName,'fmbTickerCrawl',`Ticker crawl animation is not active (${geometry.animationName})`);
 
 await page.waitForTimeout(900);
 const movedX=await page.locator('.fmb-app-top-ticker .fmb-approved-hero-ticker-track').evaluate(track=>{
