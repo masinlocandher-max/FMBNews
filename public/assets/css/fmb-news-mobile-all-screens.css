@@ -54,3 +54,93 @@ body.fmb-news-route.fmb-mobile-route-article .audit-result strong{font-size:16px
 body.fmb-news-route.fmb-mobile-route-article .audit-option h2{font-size:19px!important;line-height:1.15!important}
 body.fmb-news-route.fmb-mobile-route-article .audit-option p{font-size:13px!important;line-height:1.55!important}
 }
+
+/* Final visual freeze: one restrained mobile publication system across every route. */
+@media(max-width:699px){
+:root{--fmb-mobile-gutter:16px;--fmb-mobile-shell-height:100px;--fmb-mobile-line:#e5e1e7;--fmb-mobile-surface:#f7f6f8}
+html,body{overflow-x:clip!important}
+body.fmb-mobile-first{background:var(--fmb-mobile-surface)!important}
+body.fmb-mobile-first main{scroll-margin-top:var(--fmb-mobile-shell-height)}
+
+/* Home: one action, one editorial focus. Keep personalization and install in the hamburger. */
+body.fmb-mobile-route-home [data-fmb-customize],body.fmb-mobile-route-home .fmb-hero-weather,body.fmb-mobile-route-home .fmb-install-card{display:none!important}
+body.fmb-mobile-route-home .fmb-approved-hero-cta{display:block!important;width:auto!important;margin-top:18px!important}
+body.fmb-mobile-route-home .fmb-approved-hero-cta>a{display:inline-flex!important;width:auto!important;min-height:42px!important;padding:0 16px!important;border-radius:10px!important;box-shadow:none!important}
+body.fmb-mobile-route-home .fmb-app-section{padding-left:var(--fmb-mobile-gutter)!important;padding-right:var(--fmb-mobile-gutter)!important}
+body.fmb-mobile-route-home .fmb-app-story-row{padding:14px 0!important;border-bottom:1px solid var(--fmb-mobile-line)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+body.fmb-mobile-route-home .fmb-app-story-row img{border-radius:9px!important}
+body.fmb-mobile-route-home .fmb-app-feature-card{border-radius:14px!important;box-shadow:none!important}
+body.fmb-mobile-route-home .fmb-app-week-card{border-radius:12px!important;box-shadow:none!important}
+
+/* Archive: editorial index, not stacked app cards. */
+body.fmb-mobile-route-archive main.shell.section{padding-left:var(--fmb-mobile-gutter)!important;padding-right:var(--fmb-mobile-gutter)!important}
+body.fmb-mobile-route-archive .fmb-archive-signature{margin-left:calc(var(--fmb-mobile-gutter) * -1)!important;margin-right:calc(var(--fmb-mobile-gutter) * -1)!important;padding-left:var(--fmb-mobile-gutter)!important;padding-right:var(--fmb-mobile-gutter)!important}
+body.fmb-mobile-route-archive .archive-grid{gap:0!important}
+body.fmb-mobile-route-archive .archive-row{grid-template-columns:100px minmax(0,1fr)!important;gap:7px 12px!important;padding:14px 0!important;border-bottom:1px solid var(--fmb-mobile-line)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+body.fmb-mobile-route-archive .archive-row>img{width:100px!important;height:82px!important;border-radius:9px!important}
+body.fmb-mobile-route-archive .archive-row h2{font-size:17px!important;line-height:1.2!important}
+
+/* Worldwide: preserve cinematic identity but remove clipping, pills and floating-card repetition. */
+body.fmb-mobile-route-world .world-hero{margin:0!important;padding:30px var(--fmb-mobile-gutter) 34px!important}
+body.fmb-mobile-route-world .world-hero h1,body.fmb-mobile-route-world .world-hero p{max-width:100%!important;overflow:visible!important;text-overflow:clip!important;white-space:normal!important}
+body.fmb-mobile-route-world .world-rule{display:block!important;width:100%!important;max-width:100%!important;padding:9px 0!important;border:0!important;border-top:1px solid rgba(255,255,255,.16)!important;border-radius:0!important;background:transparent!important;white-space:normal!important;overflow-wrap:anywhere!important;line-height:1.45!important}
+body.fmb-mobile-route-world .world-feed,body.fmb-mobile-route-world .archive{padding-left:var(--fmb-mobile-gutter)!important;padding-right:var(--fmb-mobile-gutter)!important}
+body.fmb-mobile-route-world .country-grid{gap:0!important}
+body.fmb-mobile-route-world .country-card{padding:18px 0!important;border-bottom:1px solid var(--fmb-mobile-line)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+body.fmb-mobile-route-world .country-card::before{display:none!important}
+body.fmb-mobile-route-world .archive-card{grid-template-columns:92px minmax(0,1fr)!important;margin:0!important;padding:14px 0!important;border-bottom:1px solid var(--fmb-mobile-line)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+body.fmb-mobile-route-world .archive-card img{border-radius:9px!important}
+body.fmb-mobile-route-world .edition-link{min-height:44px!important;padding:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+
+/* Explainer: tools pin below the persistent FMB shell; reference cards stay quiet. */
+body.fmb-mobile-route-explainer .explained-tools{top:var(--fmb-mobile-shell-height)!important;z-index:80!important;margin-left:calc(var(--fmb-mobile-gutter) * -1)!important;margin-right:calc(var(--fmb-mobile-gutter) * -1)!important;padding-left:var(--fmb-mobile-gutter)!important;padding-right:var(--fmb-mobile-gutter)!important}
+body.fmb-mobile-route-explainer .explainer-card{border-radius:10px!important;box-shadow:none!important}
+body.fmb-mobile-route-explainer .explained-list{gap:0!important}
+body.fmb-mobile-route-explainer .explained-item,body.fmb-mobile-route-explainer .explained-item[open]{border-radius:0!important;border-bottom:1px solid var(--fmb-mobile-line)!important;background:transparent!important;box-shadow:none!important}
+body.fmb-mobile-route-explainer .explained-item summary{padding-left:0!important;padding-right:0!important}
+
+/* Daily Brief: compact executive list, not a stack of pills. */
+body.fmb-mobile-route-brief .brief-issues{padding-left:var(--fmb-mobile-gutter)!important;padding-right:var(--fmb-mobile-gutter)!important}
+body.fmb-mobile-route-brief .brief-issue-list{gap:0!important}
+body.fmb-mobile-route-brief .brief-issue{padding:15px 0!important;border-bottom:1px solid var(--fmb-mobile-line)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+body.fmb-mobile-route-brief .brief-issue img{border-radius:9px!important}
+body.fmb-mobile-route-brief .brief-method{margin-left:var(--fmb-mobile-gutter)!important;margin-right:var(--fmb-mobile-gutter)!important;border-radius:10px!important;box-shadow:none!important}
+
+/* Horoscope: keep luxury atmosphere, reduce component chrome. */
+body.fmb-mobile-route-horoscope .fmb-feature-shell{padding-left:var(--fmb-mobile-gutter)!important;padding-right:var(--fmb-mobile-gutter)!important}
+body.fmb-mobile-route-horoscope .fmb-feature-hero{border-radius:16px!important;box-shadow:none!important}
+body.fmb-mobile-route-horoscope .fmb-zodiac-grid button{border-radius:11px!important;box-shadow:none!important}
+body.fmb-mobile-route-horoscope .fmb-zodiac-grid button[aria-pressed="true"]{box-shadow:none!important}
+body.fmb-mobile-route-horoscope .fmb-horoscope-reading{border-radius:14px!important;box-shadow:none!important}
+
+/* Crossword: game controls stay available without colliding with the persistent shell. */
+body.fmb-mobile-route-crossword .fmb-feature-shell{padding-left:var(--fmb-mobile-gutter)!important;padding-right:var(--fmb-mobile-gutter)!important}
+body.fmb-mobile-route-crossword .fmb-feature-hero{border-radius:16px!important;box-shadow:none!important}
+body.fmb-mobile-route-crossword .fmb-crossword-toolbar{top:var(--fmb-mobile-shell-height)!important;z-index:80!important;margin-left:calc(var(--fmb-mobile-gutter) * -1)!important;margin-right:calc(var(--fmb-mobile-gutter) * -1)!important;padding-left:var(--fmb-mobile-gutter)!important;padding-right:var(--fmb-mobile-gutter)!important}
+body.fmb-mobile-route-crossword .fmb-crossword-board{border-radius:12px!important;box-shadow:none!important}
+body.fmb-mobile-route-crossword .fmb-clue-group,body.fmb-mobile-route-crossword .fmb-news-context,body.fmb-mobile-route-crossword .fmb-answer-release{border-radius:12px!important;box-shadow:none!important}
+
+/* About: manifesto rhythm with fewer card containers. */
+body.fmb-mobile-route-about .fmb-about-purpose,body.fmb-mobile-route-about .fmb-about-mission-vision,body.fmb-mobile-route-about .fmb-about-method,body.fmb-mobile-route-about .fmb-about-name,body.fmb-mobile-route-about .fmb-about-standards,body.fmb-mobile-route-about .fmb-about-closing{padding-left:var(--fmb-mobile-gutter)!important;padding-right:var(--fmb-mobile-gutter)!important}
+body.fmb-mobile-route-about .fmb-about-mv,body.fmb-mobile-route-about .fmb-about-method-list li,body.fmb-mobile-route-about .fmb-about-principles article{border-radius:10px!important;box-shadow:none!important}
+body.fmb-mobile-route-about .fmb-about-closing{border-radius:16px!important;box-shadow:none!important}
+
+/* Articles: keep the reading room open and move progress below the persistent shell. */
+body.fmb-mobile-route-article .fmb-reading-progress{top:var(--fmb-mobile-shell-height)!important;z-index:90!important}
+body.fmb-mobile-route-article .article-shell,body.fmb-mobile-route-article .cms-page>.shell{padding-left:var(--fmb-mobile-gutter)!important;padding-right:var(--fmb-mobile-gutter)!important;padding-bottom:68px!important}
+body.fmb-mobile-route-article .article h1{font-size:36px!important;line-height:1!important}
+body.fmb-mobile-route-article .article-figure{margin-left:calc(var(--fmb-mobile-gutter) * -1)!important;margin-right:calc(var(--fmb-mobile-gutter) * -1)!important}
+body.fmb-mobile-route-article .article-body p{font-size:17px!important;line-height:1.72!important}
+body.fmb-mobile-route-article .lens{border-radius:10px!important;box-shadow:none!important}
+body.fmb-mobile-route-article .sources{border-radius:10px!important;box-shadow:none!important}
+body.fmb-mobile-route-article .fmb-mobile-reader-actions{border-radius:0!important;box-shadow:none!important}
+
+/* Fact Check and utility routes inherit the same final material restraint. */
+body.fmb-fact-check-route .fc-rating-key,body.fmb-fact-check-route .fc-evidence{border-radius:9px!important;box-shadow:none!important}
+body.fmb-fact-check-route .fc-article h1{font-size:35px!important;line-height:1.02!important}
+body.fmb-news-route.fmb-mobile-route-article .audit-toolbar input{border-radius:9px!important;box-shadow:none!important}
+body.fmb-news-route.fmb-mobile-route-article .audit-result,body.fmb-news-route.fmb-mobile-route-article .audit-option{box-shadow:none!important}
+
+/* Never allow personalization to surface a second install card over editorial content. */
+.fmb-install-card,[data-fmb-install-app]{display:none!important}
+}

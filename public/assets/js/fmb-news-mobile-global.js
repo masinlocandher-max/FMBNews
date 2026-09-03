@@ -70,12 +70,15 @@
 
   function openMore(opener){
     const accountItem=`<button type="button" data-fmb-open-account><span class="fmb-menu-item-main">${svg('account')}<span>Your FMB</span></span><span>›</span></button>`;
+    const customizeItem='<button type="button" data-fmb-menu-customize><span>Customize your feed</span><span>›</span></button>';
     const installItem='<button type="button" data-fmb-install><span>Add to Home Screen</span><span>›</span></button>';
-    const sheet=openSheet('More from FMB News',`${accountItem}${installItem}<a href="/news/world/">Worldwide <span>›</span></a><a href="/news/explainer/">Explainer <span>›</span></a><a href="/news/fact-check/">Fact Check <span>›</span></a><a href="/news/horoscope/">Horoscope <span>›</span></a><a href="/news/crossword/">Crossword Puzzle <span>›</span></a><a href="/news/about/">About FMB News <span>›</span></a><a href="/news/submit/">Submit a story <span>›</span></a>`,opener);
-    $('[data-fmb-open-account]',sheet)?.addEventListener('click',()=>{
+    const sheet=openSheet('More from FMB News',`${accountItem}${customizeItem}${installItem}<a href="/news/world/">Worldwide <span>›</span></a><a href="/news/explainer/">Explainer <span>›</span></a><a href="/news/fact-check/">Fact Check <span>›</span></a><a href="/news/horoscope/">Horoscope <span>›</span></a><a href="/news/crossword/">Crossword Puzzle <span>›</span></a><a href="/news/about/">About FMB News <span>›</span></a><a href="/news/submit/">Submit a story <span>›</span></a>`,opener);
+    const openAccount=()=>{
       $('[data-close-sheet]',sheet)?.click();
       requestAnimationFrame(()=>document.querySelector('[data-fmb-account],.fmb-account-button,[data-account]')?.click());
-    });
+    };
+    $('[data-fmb-open-account]',sheet)?.addEventListener('click',openAccount);
+    $('[data-fmb-menu-customize]',sheet)?.addEventListener('click',openAccount);
     $('[data-fmb-install]',sheet)?.addEventListener('click',()=>{
       $('[data-close-sheet]',sheet)?.click();
       requestAnimationFrame(()=>document.dispatchEvent(new CustomEvent('fmb:install-request')));
