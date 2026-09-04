@@ -92,10 +92,27 @@ function crosswordFairPlayScript() {
 }
 
 async function serveAsset(request, env, pathname, searchParams, extraHeaders = {}) {
-  const assetUrl = new URL(request.url);
-  assetUrl.pathname = pathname;
-  if (searchParams) assetUrl.search = searchParams.toString();
-  const response = await env.ASSETS.fetch(new Request(assetUrl, request));
+  const requestUrl = new URL(request.url);
+  const requestedSearch = searchParams ? searchParams.toString() : requestUrl.searchParams.toString();
+  let response;
+
+  if (pathname === requestUrl.pathname && requestedSearch === requestUrl.searchParams.toString()) {
+    // Keep the original request intact for Cloudflare's static-asset router.
+    // This preserves the internal metadata used by html_handling to resolve
+    // clean SSG directory URLs such as /news/ and /news/world/.
+    response = await env.ASSETS.fetch(request);
+  } else {
+    const assetUrl = new URL(request.url);
+    assetUrl.pathname = pathname;
+    assetUrl.search = requestedSearch;
+    const assetRequest = new Request(assetUrl.toString(), {
+      method: request.method,
+      headers: request.headers,
+      redirect: request.redirect,
+    });
+    response = await env.ASSETS.fetch(assetRequest);
+  }
+
   return withWorkerMarker(response, extraHeaders);
 }
 
@@ -216,7 +233,12 @@ async function serveCmsReader(request, env, slug, searchParams) {
     article = null;
   }
 
-  const template = await env.ASSETS.fetch(new Request(assetUrl, request));
+  const templateRequest = new Request(assetUrl.toString(), {
+    method: 'GET',
+    headers: request.headers,
+    redirect: request.redirect,
+  });
+  const template = await env.ASSETS.fetch(templateRequest);
   if (!lookupSucceeded) {
     return withWorkerMarker(template, {
       'X-Robots-Tag': 'noindex, follow',
@@ -295,8 +317,7 @@ export default {
 
     // FMB News is an SSG newsroom. Cloudflare's native HTML handling owns the
     // directory-to-index mapping, so clean public URLs such as /news/world/
-    // resolve directly to dist/news/world/index.html. Do not rewrite them to
-    // /index.html in Worker code; that bypasses the supported SSG route path.
+    // resolve directly to dist/news/world/index.html.
     const crosswordHeaders = isActiveCrosswordPath(url.pathname)
       ? {
           'Cache-Control': 'private, no-store, max-age=0',
