@@ -1,0 +1,6 @@
+/* Final rendered-geometry guard for the approved Home hero. */
+@media(max-width:699px){
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-copy{
+    width:min(60%,240px)!important;
+  }
+}
