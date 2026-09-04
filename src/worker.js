@@ -97,9 +97,6 @@ async function serveAsset(request, env, pathname, searchParams, extraHeaders = {
   let response;
 
   if (pathname === requestUrl.pathname && requestedSearch === requestUrl.searchParams.toString()) {
-    // Keep the original request intact for Cloudflare's static-asset router.
-    // This preserves the internal metadata used by html_handling to resolve
-    // clean SSG directory URLs such as /news/ and /news/world/.
     response = await env.ASSETS.fetch(request);
   } else {
     const assetUrl = new URL(request.url);
@@ -218,9 +215,6 @@ async function serveCmsReader(request, env, slug, searchParams) {
   const params = new URLSearchParams(searchParams);
   params.set('slug', slug);
   const assetUrl = new URL(request.url);
-  // Let Cloudflare's native SSG router map this clean directory path to
-  // dist/news/read/index.html. Fetching /index.html directly would be
-  // canonicalized back to /news/read/ under auto-trailing-slash handling.
   assetUrl.pathname = '/news/read/';
   assetUrl.search = params.toString();
 
@@ -272,12 +266,20 @@ export default {
     const url = new URL(request.url);
     const isNewsPath = url.pathname === '/news' || url.pathname.startsWith('/news/');
 
-    // This Worker is intentionally scoped to the canonical /news path only.
-    // Requests outside /news belong to the main PCO site or another explicit route owner.
     if (!isNewsPath) return fetch(request);
 
-    // Active puzzle protection: known AI/search agents receive a friendly fair-play
-    // notice instead of the live crossword or its answer-bearing runtime asset.
+    // Canonicalise the apex before any asset or origin fetch. Cloudflare can preserve
+    // the original Host header even when URL metadata is normalised internally, so
+    // check both values to make the redirect deterministic at the edge.
+    const requestHost = (request.headers.get('host') || '').split(':')[0].toLowerCase();
+    if (url.hostname === 'francinemariebautista.com' || requestHost === 'francinemariebautista.com') {
+      const canonicalUrl = new URL(request.url);
+      canonicalUrl.protocol = 'https:';
+      canonicalUrl.hostname = 'www.francinemariebautista.com';
+      canonicalUrl.port = '';
+      return withWorkerMarker(Response.redirect(canonicalUrl.toString(), 308));
+    }
+
     if (isAIAgent(request) && isActiveCrosswordPath(url.pathname)) {
       return withWorkerMarker(crosswordFairPlayPage());
     }
@@ -285,23 +287,11 @@ export default {
       return withWorkerMarker(crosswordFairPlayScript());
     }
 
-    // Keep one canonical hostname for the newsroom.
-    if (url.hostname === 'francinemariebautista.com') {
-      url.hostname = 'www.francinemariebautista.com';
-      const response = Response.redirect(url.toString(), 308);
-      return withWorkerMarker(response);
-    }
-
-    // Canonicalize the newsroom root.
     if (url.pathname === '/news') {
       url.pathname = '/news/';
-      const response = Response.redirect(url.toString(), 308);
-      return withWorkerMarker(response);
+      return withWorkerMarker(Response.redirect(url.toString(), 308));
     }
 
-    // The generic reader template stays noindex. A clean CMS article reader path
-    // gets server-visible canonical, social and NewsArticle metadata at the edge,
-    // while the existing client runtime continues to render the full story body.
     const readerMatch = url.pathname.match(/^\/news\/read\/([^/]+)\/?$/);
     if (readerMatch) {
       let slug;
@@ -315,14 +305,6 @@ export default {
       return serveCmsReader(request, env, slug, url.searchParams);
     }
 
-    // FMB News is an SSG newsroom. Cloudflare's native HTML handling owns the
-    // directory-to-index mapping, so clean public URLs such as /news/world/
-    // resolve directly to dist/news/world/index.html.
-    // A fact check held pending verification has no page. Those URLs were live,
-    // so they redirect to the desk rather than 404. The probe runs only for a
-    // /news/fact-check/<slug>/ request, and only redirects when the asset is
-    // genuinely missing, so a slug verified and published later resolves
-    // normally with no redirect.
     if (/^\/news\/fact-check\/[^/]+\/?$/.test(url.pathname)) {
       const probe = await serveAsset(request, env, url.pathname, url.searchParams);
       if (probe.status === 404) {
