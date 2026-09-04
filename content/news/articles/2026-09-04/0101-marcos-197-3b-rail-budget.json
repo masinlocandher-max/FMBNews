@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "marcos-197-3b-rail-budget-2027-september-2026",
+  "headline": "Marcos Administration Proposes ₱197.3 Billion for Rail Transport in 2027",
+  "seoTitle": "₱197.3B Rail Budget Proposed for 2027 | FMB News",
+  "seoDescription": "The proposed 2027 budget allocates ₱197.3 billion to rail transport, with nearly 97 percent for the NSCR and Metro Manila Subway.",
+  "keywords": ["197.3 billion rail budget 2027", "NSCR budget 2027", "Metro Manila Subway budget"],
+  "category": "National",
+  "kicker": "Infrastructure · Budget",
+  "deck": "The proposal would more than triple 2026 rail funding and concentrate most of the allocation on the North-South Commuter Railway and Metro Manila Subway.",
+  "publishedAt": "2026-09-04T01:00:00+08:00",
+  "updatedAt": "2026-09-04T18:11:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["The Marcos administration proposed ₱197.3 billion for the rail transport program under the 2027 National Expenditure Program, more than triple the amount provided under the 2026 General Appropriations Act."]},
+    {"heading":"Largest allocations","paragraphs":["About ₱191.28 billion, nearly 97 percent of the proposed rail budget, is earmarked for two flagship projects: ₱123.84 billion for the North-South Commuter Railway and ₱67.44 billion for Phase I of the Metro Manila Subway."]},
+    {"heading":"Other projects","paragraphs":["The proposal also includes funding for the LRT-1 Cavite Extension, MRT-3 rehabilitation and interim operations related to the common-station connection among major rail lines."]},
+    {"heading":"What happens next","paragraphs":["The amount is an executive budget proposal and remains subject to congressional scrutiny, amendment and approval."]}
+  ],
+  "sources": [
+    {"publisher":"Philippine News Agency","title":"Marcos admin proposes P197.3-B rail budget for 2027","publishedAt":"2026-09-03T21:32:00+08:00","url":"https://www.pna.gov.ph/articles/1283303"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://www.pna.gov.ph/articles/1283303","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because source railway photography was not ingested with independently verified reuse rights.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the 2027 rail-budget proposal.","alt":"FMB News editorial visual for the proposed rail transport budget","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-09-04T18:11:00+08:00","recoveredAt":"2026-09-04T18:11:00+08:00","recoveryStatus":"source-checked-backfill","notes":["Recovered from the September 4 1:00 AM brief.","Corrected the brief by using DBM/PNA's exact project allocations and by labeling the amount as a proposal subject to Congress."]}
+}
