@@ -1,0 +1,34 @@
+name: Diagnose FMB News routes
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/diagnose-news-routes.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    if: github.event.head_commit.message == 'Diagnose FMB News 404 routes'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check public routes
+        shell: bash
+        run: |
+          set -u
+          for url in \
+            'https://www.francinemariebautista.com/news/' \
+            'https://www.francinemariebautista.com/news/world/' \
+            'https://www.francinemariebautista.com/news/sara-duterte-arrest-warrant-grave-threats-september-4-2026/' \
+            'https://fmb-news.info-senz-pr.workers.dev/news/' \
+            'https://fmb-news.info-senz-pr.workers.dev/news/world/' \
+            'https://fmb-news.info-senz-pr.workers.dev/news/sara-duterte-arrest-warrant-grave-threats-september-4-2026/'
+          do
+            echo "=== $url ==="
+            curl -sS -o /tmp/body -D /tmp/headers -w 'HTTP %{http_code}\n' --connect-timeout 10 --max-time 30 -H 'Cache-Control: no-cache' "${url}?diag=${GITHUB_SHA}" || true
+            tr -d '\r' < /tmp/headers | grep -Ei '^(HTTP/|server:|location:|x-fmb-news-worker:|cf-cache-status:)' || true
+            head -c 220 /tmp/body | tr '\n' ' ' || true
+            echo
+          done
