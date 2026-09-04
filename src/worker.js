@@ -108,7 +108,17 @@ function escapeHtml(value = '') {
     .replaceAll("'", '&#39;');
 }
 
-function absoluteNewsUrl(value, fallbackPath) {
+function canonicalArticleUrl(value, fallbackPath) {
+  const raw = String(value || '').trim();
+  if (raw.startsWith('/news/')) return `${CANONICAL_ORIGIN}${raw}`;
+  try {
+    const parsed = new URL(raw);
+    if (parsed.origin === CANONICAL_ORIGIN && parsed.pathname.startsWith('/news/')) return parsed.toString();
+  } catch {}
+  return `${CANONICAL_ORIGIN}${fallbackPath}`;
+}
+
+function absoluteMediaUrl(value, fallbackPath) {
   const raw = String(value || '').trim();
   if (/^https:\/\//i.test(raw)) return raw;
   if (raw.startsWith('/')) return `${CANONICAL_ORIGIN}${raw}`;
@@ -135,10 +145,10 @@ async function lookupPublishedArticle(slug) {
 
 function injectArticleMetadata(html, article, slug) {
   const readerPath = `/news/read/${encodeURIComponent(slug)}/`;
-  const canonical = absoluteNewsUrl(article.canonical_path, readerPath);
+  const canonical = canonicalArticleUrl(article.canonical_path, readerPath);
   const title = String(article.seo_title || `${article.title} | FMB News`).trim();
   const description = String(article.seo_description || article.deck || article.summary || 'Verified reporting and context from FMB News.').trim();
-  const image = article.image_url ? absoluteNewsUrl(article.image_url, '/news/assets/images/news/fmb-news-editorial-fallback.svg') : `${CANONICAL_ORIGIN}/news/assets/images/news/fmb-news-editorial-fallback.svg`;
+  const image = article.image_url ? absoluteMediaUrl(article.image_url, '/news/assets/images/news/fmb-news-editorial-fallback.svg') : `${CANONICAL_ORIGIN}/news/assets/images/news/fmb-news-editorial-fallback.svg`;
   const published = article.published_at || '';
   const modified = article.updated_at || article.published_at || '';
   const section = article.region || article.category || 'FMB News';
@@ -279,7 +289,15 @@ export default {
     // while the existing client runtime continues to render the full story body.
     const readerMatch = url.pathname.match(/^\/news\/read\/([^/]+)\/?$/);
     if (readerMatch) {
-      return serveCmsReader(request, env, decodeURIComponent(readerMatch[1]), url.searchParams);
+      let slug;
+      try {
+        slug = decodeURIComponent(readerMatch[1]);
+      } catch {
+        return withWorkerMarker(new Response('Invalid article path', { status: 400 }), {
+          'X-Robots-Tag': 'noindex, follow',
+        });
+      }
+      return serveCmsReader(request, env, slug, url.searchParams);
     }
 
     // FMB News is a static-site snapshot enhanced by the live Supabase CMS.
