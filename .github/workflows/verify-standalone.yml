@@ -18,6 +18,17 @@ jobs:
         with:
           node-version: 22
 
+      - name: Enforce canonical deployment boundary
+        shell: bash
+        run: |
+          set -euxo pipefail
+          test ! -f vercel.json
+          test ! -d .vercel
+          grep -q 'www.francinemariebautista.com/news\*' wrangler.jsonc
+          grep -q 'francinemariebautista.com/news\*' wrangler.jsonc
+          ! grep -q '/fmbnews' wrangler.jsonc
+          ! grep -R -n -E 'masinlocandher-max/FMB-Ecosystem' src site public scripts package.json wrangler.jsonc
+
       - name: Build standalone newsroom
         run: npm run build
 
