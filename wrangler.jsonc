@@ -19,14 +19,6 @@
     {
       "pattern": "francinemariebautista.com/news*",
       "zone_name": "francinemariebautista.com"
-    },
-    {
-      "pattern": "www.francinemariebautista.com/fmbnews*",
-      "zone_name": "francinemariebautista.com"
-    },
-    {
-      "pattern": "francinemariebautista.com/fmbnews*",
-      "zone_name": "francinemariebautista.com"
     }
   ]
 }
