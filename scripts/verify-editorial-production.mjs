@@ -78,18 +78,22 @@ for(const file of await walk(contentRoot)){
   must(typeof story.deck==='string'&&story.deck.trim().length>=55&&story.deck.length<=280,`${label}: deck must be 55-280 characters`);
   must(words(sectionText(story))>=100,`${label}: modern report is too thin; minimum 100 body words`);
   const headings=(story.sections||[]).map(s=>String(s.heading||'').trim().toLowerCase());
-  must(headings.some(h=>/^(what happened|verified facts|latest national toll|sunday forecast)/.test(h)),`${label}: modern report needs a clear opening facts section`);
+  must(headings.some(h=>/^(what happened|what changed|verified facts|latest national toll|sunday forecast)/.test(h)),`${label}: modern report needs a clear opening facts/change section`);
   must(headings.some(h=>h==='context'),`${label}: modern report needs Context`);
   must(headings.some(h=>h.startsWith('why this matters')),`${label}: modern report needs Why this matters`);
   must(headings.some(h=>h==='what to watch next'),`${label}: modern report needs What to watch next`);
-  must(Array.isArray(story.sources)&&story.sources.length>=2,`${label}: modern report requires at least two public sources`);
-  const sourceUrls=new Set();
+  must(Array.isArray(story.sources)&&story.sources.length>=2,`${label}: modern report requires source records`);
+  const sourceUrls=new Set();let externalSources=0;
   for(const src of story.sources){
     must(typeof src.publisher==='string'&&src.publisher.trim(),`${label}: source publisher is missing`);
     must(typeof src.title==='string'&&src.title.trim(),`${label}: source title is missing`);
-    must(/^https:\/\//i.test(String(src.url||'')),`${label}: source URL must use HTTPS`);
-    must(!sourceUrls.has(src.url),`${label}: duplicate source URL ${src.url}`);sourceUrls.add(src.url);
+    const url=String(src.url||'');
+    const external=/^https:\/\//i.test(url),internal=/^\/news\//i.test(url);
+    must(external||internal,`${label}: source URL must be HTTPS or an internal /news/ continuity link`);
+    if(external)externalSources++;
+    must(!sourceUrls.has(url),`${label}: duplicate source URL ${url}`);sourceUrls.add(url);
   }
+  must(externalSources>=2,`${label}: modern report requires at least two external HTTPS sources`);
   must(story.image&&typeof story.image.url==='string'&&story.image.url.trim(),`${label}: content image URL is missing`);
   must(typeof story.image.alt==='string'&&story.image.alt.trim(),`${label}: image alt text is missing`);
   must(typeof story.image.caption==='string'&&story.image.caption.trim(),`${label}: image caption is required`);
