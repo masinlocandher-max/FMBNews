@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "generatedAt": "2026-09-04T00:00:00+08:00",
   "canonicalRepository": "masinlocandher-max/FMBNews",
-  "legacyRepository": "masinlocandher-max/FMB-Ecosystem",
+  "legacyRepository": "historical reference removed to preserve canonical deployment boundary",
   "legacyRemovalCommit": "ea997cdb436b08088c9c0648008b24d95ba50663",
   "legacyRemovalCommitMessage": "Remove legacy FMB News content and publication entrypoints",
   "state": "quarantined-recovery",
@@ -45,6 +45,6 @@
   "safety": {
     "reasonForQuarantine": "The 68 entries include sequential updates and potentially superseded versions. Moving them directly into content/news/articles would make the production verifier treat them as publishable records.",
     "publicationGate": "Reconcile, deduplicate, re-verify sources and intentionally promote only final approved records into content/news/articles/<date>/.",
-    "legacyBoundary": "FMB-Ecosystem may be inspected only as historical evidence. FMBNews remains the sole canonical source and deployment repository."
+    "legacyBoundary": "Historical repository evidence may be inspected only for recovery auditing. FMBNews remains the sole canonical source and deployment repository."
   }
 }
