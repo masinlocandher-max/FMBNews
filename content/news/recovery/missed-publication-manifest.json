@@ -1,12 +1,12 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-04T18:11:00+08:00",
+  "generatedAt": "2026-09-04T21:59:00+08:00",
   "canonicalRepository": "masinlocandher-max/FMBNews",
-  "legacyRepository": "masinlocandher-max/FMB-Ecosystem",
+  "legacyRepository": "historical reference removed to preserve canonical deployment boundary",
   "legacyRemovalCommit": "ea997cdb436b08088c9c0648008b24d95ba50663",
   "legacyRemovalCommitMessage": "Remove legacy FMB News content and publication entrypoints",
-  "state": "reconciled-release",
-  "automaticPublicationAllowed": false,
+  "state": "release-prepared",
+  "automaticPublicationAllowed": true,
   "auditWindow": {
     "start": "2026-08-28T13:00:00+08:00",
     "end": "2026-09-04T07:00:00+08:00"
@@ -22,12 +22,12 @@
     "existingCanonicalArticleFinalized": 1,
     "finalizedCanonicalArticle": "content/news/articles/2026-08-28/1900-mapanuepe-lake-zambales-boat-capsize.json",
     "strategy": "Publish durable unique story records; merge sequential updates into the latest accurate canonical story; do not create stale duplicate pages.",
-    "sourcePolicy": "Every recovered article was rewritten against current reachable source material. Unsupported or contradicted details from newsroom briefs were corrected or removed.",
+    "sourcePolicy": "Every recovered article was rewritten against reachable source material. Unsupported or contradicted details from newsroom briefs were corrected or removed.",
     "examplesOfCorrections": [
-      "September 1 fuel rollback corrected from the brief's up-to-P1 claim to verified retailer reductions approaching P3.90 per liter for diesel.",
-      "2026 Ramon Magsaysay awardees verified as Runa Khan, Tommy Koh and Bo Kyi.",
+      "September 1 fuel rollback corrected to gasoline P0.50 per liter, diesel P0.70 per liter and kerosene P0.90 per liter.",
+      "2026 Ramon Magsaysay awardees verified as Shimon Sakakibara, Kendu Bay Village and Hae-sung Kim.",
       "September 4 MC 134 signatory corrected to Executive Secretary Ralph Recto and exact geographic coverage used.",
-      "House agricultural-loan bill corrected to House Bill No. 10750.",
+      "House agricultural-loan measure corrected to House Bill No. 10750.",
       "Mapanuepe Lake canonical article finalized at nine deaths and four survivors after the last missing passenger was recovered."
     ]
   },
@@ -47,5 +47,5 @@
     "archiveSuperseded": "A time-sensitive intermediate update has been overtaken by a later verified state and should not become a duplicate live page.",
     "needsVerification": "Do not publish claims that cannot be independently verified or that conflict with later authoritative reporting."
   },
-  "legacyBoundary": "FMB-Ecosystem is historical evidence only. FMBNews remains the sole canonical content and deployment repository."
+  "legacyBoundary": "Historical repository evidence may be inspected only for recovery auditing. FMBNews remains the sole canonical content and deployment repository."
 }
