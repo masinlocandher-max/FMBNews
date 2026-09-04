@@ -39,6 +39,25 @@ jobs:
           printf '%s\n' "${actual[@]}" > /tmp/actual-ns
           diff -u /tmp/expected-ns /tmp/actual-ns
 
+      - name: Confirm Cloudflare token can edit DNS
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          auth=(-H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H 'Content-Type: application/json')
+          name="_fmb-news-dns-write-test.francinemariebautista.com"
+          payload="$(jq -nc --arg name "$name" --arg content "${GITHUB_SHA}" '{type:"TXT",name:$name,content:$content,ttl:60,comment:"temporary FMB News DNS write permission test"}')"
+          status="$(curl -sS -o /tmp/create-test.json -w '%{http_code}' -X POST "${auth[@]}" "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records" --data "$payload" || true)"
+          if [ "$status" != '200' ] && [ "$status" != '201' ]; then
+            echo "::error::Cloudflare API token can read the zone but cannot create DNS records (HTTP ${status}). The token needs Zone > DNS > Edit for francinemariebautista.com."
+            jq -r '.errors[]?.message // empty' /tmp/create-test.json 2>/dev/null || true
+            exit 1
+          fi
+          id="$(jq -r '.result.id // empty' /tmp/create-test.json)"
+          test -n "$id"
+          curl -sS --fail -X DELETE "${auth[@]}" "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records/${id}" | jq -e '.success == true' >/dev/null
+
       - name: Restore canonical apex records in Cloudflare
         shell: bash
         env:
@@ -48,27 +67,19 @@ jobs:
           auth=(-H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H 'Content-Type: application/json')
           hostname='francinemariebautista.com'
           expected_ips=(185.199.108.153 185.199.109.153 185.199.110.153 185.199.111.153)
-
           current="$(curl -sS --fail "${auth[@]}" "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records?name=${hostname}")"
-          echo "$current" | jq -e '.success == true' >/dev/null
-
-          # Remove conflicting address/alias records only when they are not one of the canonical GitHub Pages A records.
-          echo "$current" | jq -c '.result[] | select(.type == "AAAA" or .type == "CNAME" or (.type == "A" and (.content | IN("185.199.108.153","185.199.109.153","185.199.110.153","185.199.111.153") | not))) | {id,type,content}' | while read -r record; do
-            id="$(echo "$record" | jq -r '.id')"
+          echo "$current" | jq -r '.result[] | select(.type == "AAAA" or .type == "CNAME" or (.type == "A" and (.content | IN("185.199.108.153","185.199.109.153","185.199.110.153","185.199.111.153") | not))) | .id' | while read -r id; do
+            [ -n "$id" ] || continue
             curl -sS --fail -X DELETE "${auth[@]}" "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records/${id}" | jq -e '.success == true' >/dev/null
           done
-
           for ip in "${expected_ips[@]}"; do
             current="$(curl -sS --fail "${auth[@]}" "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records?type=A&name=${hostname}&content=${ip}")"
             id="$(echo "$current" | jq -r '.result[0].id // empty')"
             if [ -z "$id" ]; then
               payload="$(jq -nc --arg name "$hostname" --arg content "$ip" '{type:"A",name:$name,content:$content,ttl:1,proxied:true,comment:"PCO GitHub Pages canonical apex; FMB News edge enabled"}')"
-              created="$(curl -sS --fail -X POST "${auth[@]}" "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records" --data "$payload")"
-              echo "$created" | jq -e '.success == true and .result.proxied == true' >/dev/null
+              curl -sS --fail -X POST "${auth[@]}" "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records" --data "$payload" | jq -e '.success == true and .result.proxied == true' >/dev/null
             else
-              payload="$(jq -nc '{proxied:true,ttl:1}')"
-              patched="$(curl -sS --fail -X PATCH "${auth[@]}" "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records/${id}" --data "$payload")"
-              echo "$patched" | jq -e '.success == true and .result.proxied == true' >/dev/null
+              curl -sS --fail -X PATCH "${auth[@]}" "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records/${id}" --data '{"proxied":true,"ttl":1}' | jq -e '.success == true and .result.proxied == true' >/dev/null
             fi
           done
 
@@ -80,18 +91,13 @@ jobs:
           set -euo pipefail
           auth=(-H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H 'Content-Type: application/json')
           hostname='www.francinemariebautista.com'
-          target='masinlocandher-max.github.io'
           current="$(curl -sS --fail "${auth[@]}" "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records?name=${hostname}")"
-          echo "$current" | jq -e '.success == true' >/dev/null
-
           echo "$current" | jq -r '.result[] | select(.type == "A" or .type == "AAAA" or .type == "CNAME") | .id' | while read -r id; do
             [ -n "$id" ] || continue
             curl -sS --fail -X DELETE "${auth[@]}" "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records/${id}" | jq -e '.success == true' >/dev/null
           done
-
-          payload="$(jq -nc --arg name "$hostname" --arg content "$target" '{type:"CNAME",name:$name,content:$content,ttl:1,proxied:true,comment:"PCO GitHub Pages canonical www; FMB News edge enabled"}')"
-          created="$(curl -sS --fail -X POST "${auth[@]}" "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records" --data "$payload")"
-          echo "$created" | jq -e '.success == true and .result.proxied == true' >/dev/null
+          payload='{"type":"CNAME","name":"www.francinemariebautista.com","content":"masinlocandher-max.github.io","ttl":1,"proxied":true,"comment":"PCO GitHub Pages canonical www; FMB News edge enabled"}'
+          curl -sS --fail -X POST "${auth[@]}" "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records" --data "$payload" | jq -e '.success == true and .result.proxied == true' >/dev/null
 
       - name: Verify Cloudflare DNS records are canonical and proxied
         shell: bash
@@ -116,7 +122,6 @@ jobs:
               status="$(curl -sS -o /tmp/b -D /tmp/h -w '%{http_code}' --connect-timeout 10 --max-time 30 -H 'Cache-Control: no-cache' "${url}?proxyfix=${GITHUB_SHA}-${attempt}" || true)"
               worker=false
               tr -d '\r' < /tmp/h | grep -Eqi '^x-fmb-news-worker: fmb-news$' && worker=true || true
-              echo "${url}: HTTP ${status}, worker=${worker}"
               if [ "$status" = '200' ] && [ "$worker" = true ] && grep -qi "$needle" /tmp/b; then return 0; fi
               sleep 3
             done
@@ -127,4 +132,4 @@ jobs:
           check 'https://www.francinemariebautista.com/news/world/' 'FMB Worldwide'
           check 'https://www.francinemariebautista.com/news/sara-duterte-arrest-warrant-grave-threats-september-4-2026/' 'QC Court Issues Arrest Warrant Against VP Sara Duterte'
 
-# Trigger marker: 2026-09-05 restore authoritative Cloudflare records and FMB News edge.
+# Trigger marker: 2026-09-05 verify DNS edit permission then restore /news.
