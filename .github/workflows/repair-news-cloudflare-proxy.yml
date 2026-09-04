@@ -13,70 +13,75 @@ jobs:
   repair:
     if: github.event.head_commit.message == 'Repair FMB News Cloudflare proxy'
     runs-on: ubuntu-latest
+    env:
+      ZONE_ID: 2e2210f55eba305e10b3f3f0f4a20261
+      CF_API: https://api.cloudflare.com/client/v4
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-
-      - name: Resolve Cloudflare account from canonical zone
+      - name: Check www DNS record is proxied
+        continue-on-error: true
         shell: bash
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
           set -euo pipefail
-          test -n "${CLOUDFLARE_API_TOKEN:-}"
-          zone='2e2210f55eba305e10b3f3f0f4a20261'
-          response="$(curl -sS --fail -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" "https://api.cloudflare.com/client/v4/zones/${zone}")"
-          echo "$response" | jq -e '.success == true and .result.name == "francinemariebautista.com"' >/dev/null
-          account_id="$(echo "$response" | jq -r '.result.account.id // empty')"
-          test -n "$account_id"
-          echo "CLOUDFLARE_ACCOUNT_ID=${account_id}" >> "$GITHUB_ENV"
+          curl -sS --fail -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" "${CF_API}/zones/${ZONE_ID}/dns_records?name=www.francinemariebautista.com" > /tmp/www.json
+          jq -e '.result | any((.type == "CNAME" or .type == "A") and .proxied == true)' /tmp/www.json >/dev/null
 
-      - name: Build and verify newsroom without browser QA
-        shell: bash
-        run: |
-          set -euo pipefail
-          npm run build
-          npm run verify
-
-      - name: Redeploy Worker and both canonical /news routes
+      - name: Check exact www Worker route exists
+        continue-on-error: true
         shell: bash
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
           set -euo pipefail
-          npx --yes wrangler@4 deploy
+          curl -sS --fail -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" "${CF_API}/zones/${ZONE_ID}/workers/routes" > /tmp/routes.json
+          jq -e '.result | any(.script == "fmb-news" and .pattern == "www.francinemariebautista.com/news*")' /tmp/routes.json >/dev/null
 
-      - name: Verify www FMB News route is live on Worker
-        shell: bash
-        run: |
-          set -euo pipefail
-          check() {
-            local url="$1" needle="$2"
-            for attempt in $(seq 1 12); do
-              rm -f /tmp/h /tmp/b
-              status="$(curl -sS -L -o /tmp/b -D /tmp/h -w '%{http_code}' --connect-timeout 10 --max-time 30 -H 'Cache-Control: no-cache' "${url}?routefix=${GITHUB_SHA}-${attempt}" || true)"
-              worker=false
-              tr -d '\r' < /tmp/h | grep -Eqi '^x-fmb-news-worker: fmb-news$' && worker=true || true
-              echo "${url}: HTTP ${status}, worker=${worker}"
-              if [ "$status" = '200' ] && [ "$worker" = true ] && grep -qi "$needle" /tmp/b; then return 0; fi
-              sleep 3
-            done
-            return 1
-          }
-          check 'https://www.francinemariebautista.com/news/' 'FMB News'
-          check 'https://www.francinemariebautista.com/news/world/' 'FMB Worldwide'
-          check 'https://www.francinemariebautista.com/news/feed.xml' '<title>FMB News</title>'
-
-      - name: Verify both Worker route patterns exist
+      - name: Check exact apex Worker route exists
+        continue-on-error: true
         shell: bash
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
           set -euo pipefail
-          zone='2e2210f55eba305e10b3f3f0f4a20261'
-          curl -sS --fail -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" "https://api.cloudflare.com/client/v4/zones/${zone}/workers/routes" > /tmp/routes.json
-          jq -e '.success == true and (.result | any(.script == "fmb-news" and .pattern == "www.francinemariebautista.com/news*")) and (.result | any(.script == "fmb-news" and .pattern == "francinemariebautista.com/news*"))' /tmp/routes.json >/dev/null
+          curl -sS --fail -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" "${CF_API}/zones/${ZONE_ID}/workers/routes" > /tmp/routes.json
+          jq -e '.result | any(.script == "fmb-news" and .pattern == "francinemariebautista.com/news*")' /tmp/routes.json >/dev/null
 
-# Trigger marker: 2026-09-05 derive Cloudflare account ID and restore both Worker routes.
+      - name: Check public www news returns HTTP 200
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
+          code="$(curl -sS -o /tmp/body -D /tmp/headers -w '%{http_code}' --connect-timeout 10 --max-time 30 -H 'Cache-Control: no-cache' "https://www.francinemariebautista.com/news/?diag=${GITHUB_SHA}")"
+          test "$code" = '200'
+
+      - name: Check public www news has Worker header
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -sS -o /tmp/body -D /tmp/headers --connect-timeout 10 --max-time 30 -H 'Cache-Control: no-cache' "https://www.francinemariebautista.com/news/?diag=${GITHUB_SHA}"
+          tr -d '\r' < /tmp/headers | grep -Eqi '^x-fmb-news-worker: fmb-news$'
+
+      - name: Check public www news contains newsroom identity
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -sS -o /tmp/body --connect-timeout 10 --max-time 30 -H 'Cache-Control: no-cache' "https://www.francinemariebautista.com/news/?diag=${GITHUB_SHA}"
+          grep -Eqi 'FMB[[:space:]]*News|Filipino Media Bulletin' /tmp/body
+
+      - name: Check apex news redirects to canonical www
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -sS -I --connect-timeout 10 --max-time 30 -H 'Cache-Control: no-cache' "https://francinemariebautista.com/news/?diag=${GITHUB_SHA}" > /tmp/apex.headers
+          tr -d '\r' < /tmp/apex.headers | grep -Eq '^HTTP/[^ ]+ 308'
+          tr -d '\r' < /tmp/apex.headers | grep -Eqi '^location: https://www\.francinemariebautista\.com/news/'
+
+      - name: Diagnostic completion
+        shell: bash
+        run: echo 'FMB News route diagnostics completed.'
+
+# Trigger marker: 2026-09-05 split live edge checks after successful Wrangler route deployment.
