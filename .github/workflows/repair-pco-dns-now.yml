@@ -1,0 +1,84 @@
+name: Cut root domain to PCO GitHub Pages now
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/repair-pco-dns-now.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  cutover:
+    if: github.event.head_commit.message == 'Cut root domain to PCO GitHub Pages now'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Replace apex and www Vercel-origin DNS with PCO GitHub Pages
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euxo pipefail
+          test -n "${CLOUDFLARE_API_TOKEN:-}"
+          api='https://api.cloudflare.com/client/v4'
+          auth=(-H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H 'Content-Type: application/json')
+          zone_json="$(curl --fail --silent --show-error "${auth[@]}" "${api}/zones?name=francinemariebautista.com&status=active")"
+          zone_id="$(printf '%s' "$zone_json" | jq -r '.result[0].id // empty')"
+          test -n "$zone_id"
+
+          for hostname in francinemariebautista.com www.francinemariebautista.com; do
+            records="$(curl --fail --silent --show-error "${auth[@]}" "${api}/zones/${zone_id}/dns_records?name=${hostname}")"
+            printf '%s' "$records" | jq -e '.success == true' >/dev/null
+            printf '%s' "$records" | jq -r '.result[] | select(.type=="A" or .type=="AAAA" or .type=="CNAME") | .id' | while IFS= read -r record_id; do
+              [ -n "$record_id" ] || continue
+              curl --silent --show-error -X DELETE "${auth[@]}" "${api}/zones/${zone_id}/dns_records/${record_id}" >/dev/null || true
+            done
+          done
+
+          create_record() {
+            payload="$1"
+            response="$(curl --fail --silent --show-error -X POST "${auth[@]}" "${api}/zones/${zone_id}/dns_records" --data "$payload")"
+            printf '%s' "$response" | jq -e '.success == true' >/dev/null
+          }
+
+          for ip in 185.199.108.153 185.199.109.153 185.199.110.153 185.199.111.153; do
+            create_record "$(jq -nc --arg name 'francinemariebautista.com' --arg content "$ip" '{type:"A",name:$name,content:$content,ttl:1,proxied:true}')"
+          done
+          create_record "$(jq -nc --arg name 'www.francinemariebautista.com' --arg content 'masinlocandher-max.github.io' '{type:"CNAME",name:$name,content:$content,ttl:1,proxied:true}')"
+
+          apex="$(curl --fail --silent --show-error "${auth[@]}" "${api}/zones/${zone_id}/dns_records?name=francinemariebautista.com")"
+          www="$(curl --fail --silent --show-error "${auth[@]}" "${api}/zones/${zone_id}/dns_records?name=www.francinemariebautista.com")"
+          printf '%s' "$apex" | jq -e '[.result[] | select(.type=="A" and (.content=="185.199.108.153" or .content=="185.199.109.153" or .content=="185.199.110.153" or .content=="185.199.111.153") and .proxied==true)] | length == 4' >/dev/null
+          printf '%s' "$www" | jq -e '[.result[] | select(.type=="CNAME" and .content=="masinlocandher-max.github.io" and .proxied==true)] | length == 1' >/dev/null
+          ! printf '%s\n%s' "$apex" "$www" | grep -Eqi 'vercel|76\.76\.21\.21|216\.198\.79\.1'
+
+      - name: Verify PCO owns root and FMB News remains under news
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 36); do
+            rm -f /tmp/root.html /tmp/news.html /tmp/news.headers
+            curl --silent --show-error --location --connect-timeout 10 --max-time 30 \
+              -H 'Cache-Control: no-cache' \
+              "https://francinemariebautista.com/?pco-cutover=${GITHUB_SHA}-${attempt}" \
+              -o /tmp/root.html || true
+            curl --silent --show-error --location --connect-timeout 10 --max-time 30 \
+              -H 'Cache-Control: no-cache' -D /tmp/news.headers \
+              "https://www.francinemariebautista.com/news/?pco-cutover=${GITHUB_SHA}-${attempt}" \
+              -o /tmp/news.html || true
+
+            if grep -q 'What brought you here?' /tmp/root.html \
+              && grep -q 'STRATEGY · COMMUNICATION · CREATIVE DIRECTION' /tmp/root.html \
+              && ! grep -qi 'Official Ecosystem Bulletin' /tmp/root.html \
+              && tr -d '\r' < /tmp/news.headers | grep -Eqi '^x-fmb-news-worker: fmb-news$' \
+              && grep -qi 'FMB News' /tmp/news.html; then
+              echo 'CUTOVER VERIFIED: PCO owns root; FMBNews remains at /news.'
+              exit 0
+            fi
+            sleep 5
+          done
+          echo '::error::PCO/FMBNews routing did not verify after DNS replacement.'
+          head -c 1000 /tmp/root.html || true
+          cat /tmp/news.headers || true
+          exit 1
