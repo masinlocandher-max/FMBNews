@@ -63,6 +63,12 @@ await import('./hardfix-mobile-first-site.mjs');
 await import('./hardfix-ticker.mjs');
 await import('./hardfix-newsroom-compat.mjs');
 
+// Footer is deliberately the final visual shell pass. Earlier renderers still
+// emit their historical footer variants, but none of them may survive into the
+// deployable newsroom. Every page ends with one restrained publication footer,
+// all five editorial products, newsroom utilities and the real local FMB emblem.
+await import('./hardfix-footer.mjs');
+
 const textExtensions = new Set(['.html', '.css', '.js', '.mjs', '.json', '.xml', '.txt', '.svg']);
 
 async function rewriteAssetPaths(target) {
@@ -91,4 +97,4 @@ await import('./generate-news-distribution.mjs');
 // own source tree and fail on the second consecutive run — the legacy block it
 // searched for was already gone. The assertions now live in verify.mjs itself.
 
-console.log('Built Filipino Media Bulletin with five official editorial products: FMB News, FMB Worldwide, FMB Explainer, FMB Fact Check, and FMB Daily Brief; plus localized visual assets, product-designated fallback imagery, guaranteed article imagery, personalization/PWA support, live utilities, newsroom search and intake, canonical sitemap and RSS distribution, a sealed active crossword runtime, and no fixed bottom navigation.');
+console.log('Built Filipino Media Bulletin with five official editorial products: FMB News, FMB Worldwide, FMB Explainer, FMB Fact Check, and FMB Daily Brief; plus localized visual assets, product-designated fallback imagery, guaranteed article imagery, personalization/PWA support, live utilities, newsroom search and intake, one consolidated footer, canonical sitemap and RSS distribution, a sealed active crossword runtime, and no fixed bottom navigation.');
