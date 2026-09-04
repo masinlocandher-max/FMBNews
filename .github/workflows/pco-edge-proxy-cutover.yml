@@ -1,0 +1,117 @@
+name: Emergency PCO edge cutover
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/pco-edge-proxy-cutover.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  cutover:
+    if: github.event.head_commit.message == 'Emergency PCO edge cutover'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Enforce repository boundaries
+        shell: bash
+        run: |
+          set -euxo pipefail
+          test ! -f vercel.json
+          test ! -d .vercel
+          ! grep -R -n '/fmbnews' src wrangler.jsonc
+          grep -q 'www.francinemariebautista.com/news\*' wrangler.jsonc
+          grep -q 'francinemariebautista.com/news\*' wrangler.jsonc
+
+      - name: Create lightweight PCO origin Worker
+        shell: bash
+        run: |
+          cat > /tmp/pco-edge-proxy.mjs <<'EOF'
+          const SOURCE = 'https://raw.githubusercontent.com/masinlocandher-max/PCO/main';
+          const TYPES = {
+            '.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'application/javascript; charset=utf-8',
+            '.json':'application/json; charset=utf-8','.xml':'application/xml; charset=utf-8','.txt':'text/plain; charset=utf-8',
+            '.svg':'image/svg+xml','.webp':'image/webp','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg',
+            '.mp3':'audio/mpeg','.pdf':'application/pdf','.ico':'image/x-icon'
+          };
+          function typeFor(path){const i=path.lastIndexOf('.');return i>=0?TYPES[path.slice(i).toLowerCase()]||'application/octet-stream':'application/octet-stream'}
+          export default {
+            async fetch(request) {
+              const incoming = new URL(request.url);
+              if (incoming.pathname === '/news' || incoming.pathname.startsWith('/news/')) return fetch(request);
+              let path = incoming.pathname;
+              if (path === '/') path = '/index.html';
+              if (path.endsWith('/')) path += 'index.html';
+              const sourceUrl = SOURCE + path;
+              const upstream = await fetch(sourceUrl, {
+                headers: { 'User-Agent':'FMB-PCO-Edge/1.0', 'Accept':'*/*' },
+                cf: { cacheEverything: true, cacheTtl: 300 }
+              });
+              if (!upstream.ok) return new Response('Not found', {status: upstream.status === 404 ? 404 : 502});
+              const headers = new Headers(upstream.headers);
+              headers.set('Content-Type', typeFor(path));
+              headers.set('Cache-Control', path.endsWith('.html') ? 'public, max-age=60' : 'public, max-age=300');
+              headers.set('X-FMB-Root-Source','PCO');
+              headers.set('X-FMB-Root-Repository','masinlocandher-max/PCO');
+              headers.delete('content-security-policy');
+              return new Response(upstream.body,{status:upstream.status,headers});
+            }
+          };
+          EOF
+          cat > /tmp/pco-edge-wrangler.jsonc <<'EOF'
+          {
+            "name":"fmb-pco-edge",
+            "main":"/tmp/pco-edge-proxy.mjs",
+            "compatibility_date":"2026-09-04",
+            "workers_dev":true
+          }
+          EOF
+
+      - name: Deploy PCO edge Worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npx --yes wrangler@4 deploy --config /tmp/pco-edge-wrangler.jsonc
+
+      - name: Attach www then apex to PCO Custom Domain
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          set -euxo pipefail
+          account_id="${CLOUDFLARE_ACCOUNT_ID:-4821fa52e064d5aa269e76619559ec95}"
+          zone_id='2e2210f55eba305e10b3f3f0f4a20261'
+          api='https://api.cloudflare.com/client/v4'
+          for hostname in www.francinemariebautista.com francinemariebautista.com; do
+            payload="$(jq -nc --arg hostname "$hostname" --arg service 'fmb-pco-edge' --arg zone_id "$zone_id" --arg zone_name 'francinemariebautista.com' '{hostname:$hostname,service:$service,zone_id:$zone_id,zone_name:$zone_name}')"
+            response="$(curl --silent --show-error -X PUT -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H 'Content-Type: application/json' "${api}/accounts/${account_id}/workers/domains" --data "$payload")"
+            echo "$response" | jq '{success,errors,messages,result:{hostname:.result.hostname,service:.result.service,zone_name:.result.zone_name}}'
+            printf '%s' "$response" | jq -e '.success == true and .result.service == "fmb-pco-edge"' >/dev/null
+          done
+
+      - name: Verify root PCO and news FMBNews
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 20); do
+            rm -f /tmp/a.h /tmp/a.html /tmp/n.h /tmp/n.html
+            curl -sSLo /tmp/a.html -D /tmp/a.h --max-time 20 -H 'Cache-Control: no-cache' "https://francinemariebautista.com/?edge=${GITHUB_SHA}-${attempt}" || true
+            curl -sSLo /tmp/n.html -D /tmp/n.h --max-time 20 -H 'Cache-Control: no-cache' "https://www.francinemariebautista.com/news/?edge=${GITHUB_SHA}-${attempt}" || true
+            root=false; news=false
+            tr -d '\r' < /tmp/a.h | grep -Eqi '^x-fmb-root-source: PCO$' && grep -q 'What brought you here?' /tmp/a.html && root=true || true
+            tr -d '\r' < /tmp/n.h | grep -Eqi '^x-fmb-news-worker: fmb-news$' && grep -qi 'FMB News' /tmp/n.html && news=true || true
+            echo "check ${attempt}: root=${root} news=${news}"
+            if [ "$root" = true ] && [ "$news" = true ]; then
+              echo 'RESOLVED: PCO=root, FMBNews=/news, Vercel/FMB-Ecosystem bypassed.'
+              exit 0
+            fi
+            sleep 3
+          done
+          echo '::error::Live ownership split not verified.'
+          echo 'root'; cat /tmp/a.h || true; head -c 500 /tmp/a.html || true
+          echo 'news'; cat /tmp/n.h || true; head -c 500 /tmp/n.html || true
+          exit 1
