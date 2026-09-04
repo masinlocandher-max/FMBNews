@@ -30,8 +30,12 @@ jobs:
             -H 'Content-Type: application/json' \
             "${api}/zones/${zone_id}/dns_records?name=${hostname}")"
 
-          echo "$response" | jq '{success,errors,result:[.result[]|{id,type,name,content,proxied,proxiable}]}'
-          printf '%s' "$response" | jq -e '.success == true and (.result|length) > 0' >/dev/null
+          echo "$response" | jq '{success,errors,messages,result:((.result // [])|map({id,type,name,content,proxied,proxiable}))}'
+          if ! printf '%s' "$response" | jq -e '.success == true' >/dev/null; then
+            echo '::error::Cloudflare token cannot read DNS records for this zone.'
+            exit 1
+          fi
+          printf '%s' "$response" | jq -e '(.result|length) > 0' >/dev/null
 
           mapfile -t ids < <(printf '%s' "$response" | jq -r '.result[] | select(.proxiable == true) | .id')
           test "${#ids[@]}" -gt 0
@@ -44,7 +48,7 @@ jobs:
                 -H 'Content-Type: application/json' \
                 "${api}/zones/${zone_id}/dns_records/${id}" \
                 --data '{"proxied":true}')"
-              echo "$update" | jq '{success,errors,result:{id:.result.id,type:.result.type,name:.result.name,content:.result.content,proxied:.result.proxied}}'
+              echo "$update" | jq '{success,errors,messages,result:{id:.result.id,type:.result.type,name:.result.name,content:.result.content,proxied:.result.proxied}}'
               printf '%s' "$update" | jq -e '.success == true and .result.proxied == true' >/dev/null
             else
               echo "DNS record ${id} is already proxied."
