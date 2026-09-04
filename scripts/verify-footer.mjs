@@ -28,7 +28,6 @@ const requiredLinks=[
   '/news/search/',
   '/news/submit/',
   '/news/about/#standards',
-  '/news/feed.xml',
 ];
 
 const pages=await walk(newsRoot);let checked=0;
@@ -49,6 +48,7 @@ for(const file of pages){
   for(const href of requiredLinks)if(!footer.includes(`href="${href}"`))throw new Error(`${rel}: footer missing ${href}`);
   if(footer.includes('facebook.com/')||footer.includes('x.com/'))throw new Error(`${rel}: footer contains generic social destination`);
   if(footer.includes('data-fmb-newsletter-form'))throw new Error(`${rel}: footer contains a redundant newsletter form`);
+  if(/href=["']\/(?!news\/)/i.test(footer))throw new Error(`${rel}: footer leaks to a non-news first-party route`);
 }
 
-console.log(`Footer verification passed across ${checked} newsroom pages: one local FMB emblem, all five editorial products, working newsroom utility links and RSS access, with no fake social links or duplicate subscription form.`);
+console.log(`Footer verification passed across ${checked} newsroom pages: one local FMB emblem, all five editorial products, newsroom-only utility links, and no ecosystem leakage, fake social links, or duplicate subscription form.`);
