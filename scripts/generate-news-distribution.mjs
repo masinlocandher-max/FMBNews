@@ -65,7 +65,7 @@ for(const file of await walk(newsRoot,f=>path.basename(f)==='index.html')){
   pages.push({loc:canonical,lastmod:extractLastmod(html)});
 }
 const deduped=[...new Map(pages.map(p=>[p.loc,p])).values()].sort((a,b)=>a.loc.localeCompare(b.loc));
-const sitemap=`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/sitemap/0.9">\n${deduped.map(p=>`  <url>\n    <loc>${xml(p.loc)}</loc>${p.lastmod?`\n    <lastmod>${xml(p.lastmod)}</lastmod>`:''}\n  </url>`).join('\n')}\n</urlset>\n`;
+const sitemap=`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${deduped.map(p=>`  <url>\n    <loc>${xml(p.loc)}</loc>${p.lastmod?`\n    <lastmod>${xml(p.lastmod)}</lastmod>`:''}\n  </url>`).join('\n')}\n</urlset>\n`;
 await writeFile(path.join(newsRoot,'sitemap.xml'),sitemap,'utf8');
 
 const stories=[];
@@ -80,7 +80,7 @@ stories.sort((a,b)=>Date.parse(b.publishedAt)-Date.parse(a.publishedAt));
 
 const now=Date.now();
 const fresh=stories.filter(s=>{const age=now-Date.parse(s.publishedAt);return age>=-5*60*1000&&age<=TWO_DAYS});
-const newsSitemap=`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n${fresh.map(s=>`  <url>\n    <loc>${xml(`${NEWS}${s.slug}/`)}</loc>\n    <news:news>\n      <news:publication>\n        <news:name>FMB News</news:name>\n        <news:language>en</news:language>\n      </news:publication>\n      <news:publication_date>${xml(new Date(s.publishedAt).toISOString())}</news:publication_date>\n      <news:title>${xml(s.headline)}</news:title>\n    </news:news>\n  </url>`).join('\n')}\n</urlset>\n`;
+const newsSitemap=`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n${fresh.map(s=>`  <url>\n    <loc>${xml(`${NEWS}${s.slug}/`)}</loc>\n    <news:news>\n      <news:publication>\n        <news:name>FMB News</news:name>\n        <news:language>en</news:language>\n      </news:publication>\n      <news:publication_date>${xml(new Date(s.publishedAt).toISOString())}</news:publication_date>\n      <news:title>${xml(s.headline)}</news:title>\n    </news:news>\n  </url>`).join('\n')}\n</urlset>\n`;
 await writeFile(path.join(newsRoot,'news-sitemap.xml'),newsSitemap,'utf8');
 
 const latest=stories.slice(0,50);
