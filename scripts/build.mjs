@@ -79,16 +79,11 @@ async function rewriteAssetPaths(target) {
 
 await rewriteAssetPaths(newsRoot);
 
-// Generate discovery surfaces from the final deployable newsroom only after all
-// routes, canonical URLs, article metadata and scoped asset paths have settled.
-// This creates the canonical sitemap, the rolling 48-hour Google News sitemap,
-// the newest-first RSS feed, and RSS autodiscovery without changing page design.
-await import('./generate-news-distribution.mjs');
-
 // The active crossword intentionally ships no answer key, and scripts/verify.mjs
 // asserts that secure contract directly. The build used to rewrite verify.mjs on
 // disk here to install those assertions, which made `npm run build` mutate its
 // own source tree and fail on the second consecutive run — the legacy block it
 // searched for was already gone. The assertions now live in verify.mjs itself.
 
-console.log('Built Filipino Media Bulletin with five official editorial products: FMB News, FMB Worldwide, FMB Explainer, FMB Fact Check, and FMB Daily Brief; plus localized visual assets, product-designated fallback imagery, guaranteed article imagery, personalization/PWA support, live utilities, newsroom search and intake, canonical sitemap and RSS distribution, a sealed active crossword runtime, and no fixed bottom navigation.');
+
+console.log('Built Filipino Media Bulletin with five official editorial products: FMB News, FMB Worldwide, FMB Explainer, FMB Fact Check, and FMB Daily Brief; plus localized visual assets, product-designated fallback imagery, guaranteed article imagery, personalization/PWA support, live utilities, newsroom search and intake, a sealed active crossword runtime, and no fixed bottom navigation.');

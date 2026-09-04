@@ -95,28 +95,11 @@ jobs:
           grep -qi 'FMB Worldwide' /tmp/news-home.html
           grep -qi 'FMB Daily Brief' /tmp/news-home.html
           grep -qi 'Filipino Media Bulletin' /tmp/news-home.html
-          grep -qi 'type="application/rss+xml"' /tmp/news-home.html
-          grep -qi 'href="/news/feed.xml"' /tmp/news-home.html
           if ! tr -d '\r' < /tmp/news-home.headers | grep -Eqi '^x-fmb-news-worker: fmb-news$'; then
             echo '::error::Public /news traffic is not reaching the FMBNews Cloudflare Worker. Ensure the www DNS record is Proxied (orange cloud) in Cloudflare.'
             exit 1
           fi
           echo 'FMB News home is confirmed on the FMBNews Worker.'
-
-          fetch_with_retry 'https://www.francinemariebautista.com/news/sitemap.xml' /tmp/news-sitemap.xml /tmp/news-sitemap.headers 'FMB News sitemap'
-          grep -q 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"' /tmp/news-sitemap.xml
-          grep -q 'https://www.francinemariebautista.com/news/' /tmp/news-sitemap.xml
-          tr -d '\r' < /tmp/news-sitemap.headers | grep -Eqi '^x-fmb-news-worker: fmb-news$'
-
-          fetch_with_retry 'https://www.francinemariebautista.com/news/news-sitemap.xml' /tmp/google-news-sitemap.xml /tmp/google-news-sitemap.headers 'Google News sitemap'
-          grep -q 'xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"' /tmp/google-news-sitemap.xml
-          tr -d '\r' < /tmp/google-news-sitemap.headers | grep -Eqi '^x-fmb-news-worker: fmb-news$'
-
-          fetch_with_retry 'https://www.francinemariebautista.com/news/feed.xml' /tmp/news-feed.xml /tmp/news-feed.headers 'FMB News RSS feed'
-          grep -q '<rss version="2.0"' /tmp/news-feed.xml
-          grep -q '<title>FMB News</title>' /tmp/news-feed.xml
-          grep -q 'https://www.francinemariebautista.com/news/feed.xml' /tmp/news-feed.xml
-          tr -d '\r' < /tmp/news-feed.headers | grep -Eqi '^x-fmb-news-worker: fmb-news$'
 
           fetch_with_retry 'https://www.francinemariebautista.com/news/world/' /tmp/news-world.html /tmp/news-world.headers 'FMB Worldwide'
           grep -qi 'aria-label="FMB Worldwide"' /tmp/news-world.html
@@ -170,4 +153,4 @@ jobs:
           echo "$legacy_headers" | grep -Eqi '^location: https://www\.francinemariebautista\.com/news/'
           echo "$legacy_headers" | grep -Eqi '^x-fmb-news-worker: fmb-news$'
 
-          echo 'Public FMB News network cutover, discovery feeds, FMB Explainer endpoints, and legacy-route ownership verified.'
+          echo 'Public FMB News network cutover, FMB Explainer endpoints, and legacy-route ownership verified.'
