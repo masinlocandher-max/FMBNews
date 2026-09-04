@@ -13,27 +13,81 @@ jobs:
   repair:
     if: github.event.head_commit.message == 'Repair FMB News Cloudflare proxy'
     runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_ZONE_ID: 2e2210f55eba305e10b3f3f0f4a20261
+      CLOUDFLARE_API: https://api.cloudflare.com/client/v4
     steps:
+      - name: Confirm Cloudflare token is configured
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ -z "${CLOUDFLARE_API_TOKEN:-}" ]; then
+            echo '::error::CLOUDFLARE_API_TOKEN is not configured for this repository.'
+            exit 1
+          fi
+          echo 'Cloudflare API token is configured.'
+
+      - name: Confirm Cloudflare zone is accessible
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          http_code="$(curl -sS -o /tmp/zone.json -w '%{http_code}' \
+            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+            -H 'Content-Type: application/json' \
+            "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}" || true)"
+          echo "Cloudflare zone API returned HTTP ${http_code}."
+          if [ "$http_code" != '200' ] || ! jq -e '.success == true' /tmp/zone.json >/dev/null 2>&1; then
+            echo '::error::Cloudflare token cannot access the configured zone, or the zone ID is no longer valid.'
+            jq -r '.errors[]?.message // empty' /tmp/zone.json 2>/dev/null || true
+            exit 1
+          fi
+          zone_name="$(jq -r '.result.name // empty' /tmp/zone.json)"
+          echo "Accessible zone: ${zone_name:-unknown}."
+          if [ "$zone_name" != 'francinemariebautista.com' ]; then
+            echo "::error::Configured zone resolves to '${zone_name:-unknown}', expected 'francinemariebautista.com'."
+            exit 1
+          fi
+
+      - name: Confirm canonical DNS records exist in Cloudflare
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          for hostname in www.francinemariebautista.com francinemariebautista.com; do
+            http_code="$(curl -sS -o /tmp/dns.json -w '%{http_code}' \
+              -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+              -H 'Content-Type: application/json' \
+              "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records?name=${hostname}" || true)"
+            echo "${hostname}: DNS API HTTP ${http_code}."
+            if [ "$http_code" != '200' ] || ! jq -e '.success == true' /tmp/dns.json >/dev/null 2>&1; then
+              echo "::error::Unable to read Cloudflare DNS records for ${hostname}."
+              exit 1
+            fi
+            count="$(jq '[.result[] | select(.type == "A" or .type == "AAAA" or .type == "CNAME")] | length' /tmp/dns.json)"
+            if [ "$count" -lt 1 ]; then
+              echo "::error::No A, AAAA, or CNAME record exists in Cloudflare for ${hostname}."
+              exit 1
+            fi
+            jq -r '.result[] | select(.type == "A" or .type == "AAAA" or .type == "CNAME") | "Found \(.type) \(.name) -> \(.content); proxied=\(.proxied)"' /tmp/dns.json
+          done
+
       - name: Enable Cloudflare proxy for canonical hostnames
         shell: bash
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
           set -euo pipefail
-          test -n "${CLOUDFLARE_API_TOKEN:-}"
-          zone_id='2e2210f55eba305e10b3f3f0f4a20261'
-          api='https://api.cloudflare.com/client/v4'
-
           for hostname in www.francinemariebautista.com francinemariebautista.com; do
-            echo "Checking ${hostname}"
             response="$(curl --silent --show-error --fail \
               -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
               -H 'Content-Type: application/json' \
-              "${api}/zones/${zone_id}/dns_records?name=${hostname}")"
+              "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records?name=${hostname}")"
             echo "$response" | jq -e '.success == true' >/dev/null
-            count="$(echo "$response" | jq '[.result[] | select(.type == "A" or .type == "AAAA" or .type == "CNAME")] | length')"
-            test "$count" -gt 0
-
             echo "$response" | jq -c '.result[] | select(.type == "A" or .type == "AAAA" or .type == "CNAME") | {id,type,name,content,proxied}' | while read -r record; do
               id="$(echo "$record" | jq -r '.id')"
               type="$(echo "$record" | jq -r '.type')"
@@ -45,7 +99,7 @@ jobs:
                 patched="$(curl --silent --show-error --fail -X PATCH \
                   -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
                   -H 'Content-Type: application/json' \
-                  "${api}/zones/${zone_id}/dns_records/${id}" \
+                  "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records/${id}" \
                   --data '{"proxied":true}')"
                 echo "$patched" | jq -e '.success == true and .result.proxied == true' >/dev/null
                 echo "Enabled Cloudflare proxy for ${name} (${type})."
@@ -53,7 +107,7 @@ jobs:
             done
           done
 
-      - name: Verify canonical FMB News routes leave Vercel and reach Worker
+      - name: Verify canonical FMB News routes reach Worker
         shell: bash
         run: |
           set -euo pipefail
@@ -71,7 +125,7 @@ jobs:
               fi
               sleep 3
             done
-            echo "::error::${url} still does not reach the FMB News Worker"
+            echo "::error::${url} still does not reach the FMB News Worker."
             cat /tmp/h || true
             head -c 500 /tmp/b || true
             return 1
@@ -82,4 +136,4 @@ jobs:
           check 'https://www.francinemariebautista.com/news/sara-duterte-arrest-warrant-grave-threats-september-4-2026/' 'QC Court Issues Arrest Warrant Against VP Sara Duterte'
           echo 'RESOLVED: canonical /news routes are served by FMBNews through Cloudflare.'
 
-# Trigger marker: 2026-09-05 restore /news after proxy regression.
+# Trigger marker: 2026-09-05 diagnose and restore /news edge routing.
