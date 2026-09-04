@@ -1,0 +1,83 @@
+name: Repair FMB News Cloudflare proxy
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/repair-news-cloudflare-proxy.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  repair:
+    if: github.event.head_commit.message == 'Repair FMB News Cloudflare proxy'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enable Cloudflare proxy for canonical hostnames
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          test -n "${CLOUDFLARE_API_TOKEN:-}"
+          zone_id='2e2210f55eba305e10b3f3f0f4a20261'
+          api='https://api.cloudflare.com/client/v4'
+
+          for hostname in www.francinemariebautista.com francinemariebautista.com; do
+            echo "Checking ${hostname}"
+            response="$(curl --silent --show-error --fail \
+              -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+              -H 'Content-Type: application/json' \
+              "${api}/zones/${zone_id}/dns_records?name=${hostname}")"
+            echo "$response" | jq -e '.success == true' >/dev/null
+            count="$(echo "$response" | jq '[.result[] | select(.type == "A" or .type == "AAAA" or .type == "CNAME")] | length')"
+            test "$count" -gt 0
+
+            echo "$response" | jq -c '.result[] | select(.type == "A" or .type == "AAAA" or .type == "CNAME") | {id,type,name,content,proxied}' | while read -r record; do
+              id="$(echo "$record" | jq -r '.id')"
+              type="$(echo "$record" | jq -r '.type')"
+              name="$(echo "$record" | jq -r '.name')"
+              content="$(echo "$record" | jq -r '.content')"
+              proxied="$(echo "$record" | jq -r '.proxied')"
+              echo "${type} ${name} -> ${content}; proxied=${proxied}"
+              if [ "$proxied" != 'true' ]; then
+                patched="$(curl --silent --show-error --fail -X PATCH \
+                  -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+                  -H 'Content-Type: application/json' \
+                  "${api}/zones/${zone_id}/dns_records/${id}" \
+                  --data '{"proxied":true}')"
+                echo "$patched" | jq -e '.success == true and .result.proxied == true' >/dev/null
+                echo "Enabled Cloudflare proxy for ${name} (${type})."
+              fi
+            done
+          done
+
+      - name: Verify canonical FMB News routes leave Vercel and reach Worker
+        shell: bash
+        run: |
+          set -euo pipefail
+          check() {
+            local url="$1" needle="$2"
+            for attempt in $(seq 1 20); do
+              rm -f /tmp/h /tmp/b
+              status="$(curl -sS -o /tmp/b -D /tmp/h -w '%{http_code}' --connect-timeout 10 --max-time 30 -H 'Cache-Control: no-cache' "${url}?proxyfix=${GITHUB_SHA}-${attempt}" || true)"
+              server="$(tr -d '\r' < /tmp/h | awk 'BEGIN{IGNORECASE=1} /^server:/{print $2}' | tail -1)"
+              worker=false
+              tr -d '\r' < /tmp/h | grep -Eqi '^x-fmb-news-worker: fmb-news$' && worker=true || true
+              echo "${url}: HTTP ${status}, server=${server:-unknown}, worker=${worker}"
+              if [ "$status" = '200' ] && [ "$worker" = true ] && grep -qi "$needle" /tmp/b; then
+                return 0
+              fi
+              sleep 3
+            done
+            echo "::error::${url} still does not reach the FMB News Worker"
+            cat /tmp/h || true
+            head -c 500 /tmp/b || true
+            return 1
+          }
+
+          check 'https://www.francinemariebautista.com/news/' 'FMB News'
+          check 'https://www.francinemariebautista.com/news/world/' 'FMB Worldwide'
+          check 'https://www.francinemariebautista.com/news/sara-duterte-arrest-warrant-grave-threats-september-4-2026/' 'QC Court Issues Arrest Warrant Against VP Sara Duterte'
+          echo 'RESOLVED: canonical /news routes are served by FMBNews through Cloudflare.'
