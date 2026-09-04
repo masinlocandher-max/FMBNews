@@ -1,6 +1,6 @@
 /* Final Home hero motion + spacing repair. Keep this after the approved hero layer. */
 @media(max-width:699px){
-body.fmb-mobile-route-home .fmb-approved-hero-copy{bottom:78px!important}
+body.fmb-mobile-route-home .fmb-approved-hero-copy{bottom:78px!important;width:min(60%,240px)!important}
 body.fmb-mobile-route-home .fmb-approved-hero-ticker{bottom:34px!important;height:30px!important}
 body.fmb-mobile-route-home .fmb-approved-hero-ticker>strong{padding:0 9px!important;font-size:7.5px!important}
 body.fmb-mobile-route-home .fmb-approved-hero-ticker-window{display:block!important;min-width:0!important;overflow:hidden!important;white-space:nowrap!important}
@@ -20,7 +20,7 @@ body.fmb-mobile-route-home .fmb-hero-weather-copy>strong{font-size:12px!importan
 body.fmb-mobile-route-home .fmb-hero-weather-copy>small{max-width:78px!important;font-size:6.5px!important}
 @keyframes fmbHomeHeadlineCrawl{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
 @media(max-width:380px){
-body.fmb-mobile-route-home .fmb-approved-hero-copy{bottom:76px!important}
+body.fmb-mobile-route-home .fmb-approved-hero-copy{bottom:76px!important;width:min(59%,224px)!important}
 body.fmb-mobile-route-home .fmb-hero-live-overlay{gap:8px!important;padding-left:10px!important;padding-right:10px!important}
 body.fmb-mobile-route-home .fmb-hero-clock{gap:5px!important}
 body.fmb-mobile-route-home .fmb-hero-weather-copy>small{max-width:64px!important}
