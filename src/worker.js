@@ -16,6 +16,10 @@ const AI_AGENTS = [
   'Amazonbot',
 ];
 
+const CMS_URL = 'https://wjnavdpppnhxbuydkrkd.supabase.co';
+const CMS_PUBLISHABLE_KEY = 'sb_publishable_bpdFntTHbHmxsG4L0PtcCw_5dJ8gpr8';
+const CANONICAL_ORIGIN = 'https://www.francinemariebautista.com';
+
 function withWorkerMarker(response, extraHeaders = {}) {
   const headers = new Headers(response.headers);
   headers.set('X-FMB-News-Worker', 'fmb-news');
@@ -95,6 +99,139 @@ async function serveAsset(request, env, pathname, searchParams, extraHeaders = {
   return withWorkerMarker(response, extraHeaders);
 }
 
+function escapeHtml(value = '') {
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+}
+
+function absoluteNewsUrl(value, fallbackPath) {
+  const raw = String(value || '').trim();
+  if (/^https:\/\//i.test(raw)) return raw;
+  if (raw.startsWith('/')) return `${CANONICAL_ORIGIN}${raw}`;
+  return `${CANONICAL_ORIGIN}${fallbackPath}`;
+}
+
+async function lookupPublishedArticle(slug) {
+  const endpoint = new URL(`${CMS_URL}/rest/v1/news_articles`);
+  endpoint.searchParams.set('select', 'slug,title,seo_title,seo_description,deck,summary,image_url,published_at,updated_at,canonical_path,author_line,category,region');
+  endpoint.searchParams.set('slug', `eq.${slug}`);
+  endpoint.searchParams.set('status', 'eq.published');
+  endpoint.searchParams.set('limit', '1');
+  const response = await fetch(endpoint, {
+    headers: {
+      apikey: CMS_PUBLISHABLE_KEY,
+      Accept: 'application/json',
+    },
+    cf: { cacheTtl: 60, cacheEverything: true },
+  });
+  if (!response.ok) throw new Error(`FMB CMS metadata lookup failed (${response.status})`);
+  const rows = await response.json();
+  return Array.isArray(rows) ? rows[0] || null : null;
+}
+
+function injectArticleMetadata(html, article, slug) {
+  const readerPath = `/news/read/${encodeURIComponent(slug)}/`;
+  const canonical = absoluteNewsUrl(article.canonical_path, readerPath);
+  const title = String(article.seo_title || `${article.title} | FMB News`).trim();
+  const description = String(article.seo_description || article.deck || article.summary || 'Verified reporting and context from FMB News.').trim();
+  const image = article.image_url ? absoluteNewsUrl(article.image_url, '/news/assets/images/news/fmb-news-editorial-fallback.svg') : `${CANONICAL_ORIGIN}/news/assets/images/news/fmb-news-editorial-fallback.svg`;
+  const published = article.published_at || '';
+  const modified = article.updated_at || article.published_at || '';
+  const section = article.region || article.category || 'FMB News';
+  const author = article.author_line || 'FMB News Desk';
+  const structured = {
+    '@context': 'https://schema.org',
+    '@type': 'NewsArticle',
+    mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+    headline: article.title,
+    description,
+    datePublished: published || undefined,
+    dateModified: modified || undefined,
+    articleSection: section,
+    author: { '@type': 'Organization', name: author },
+    publisher: {
+      '@type': 'Organization',
+      name: 'FMB News',
+      alternateName: 'Filipino Media Bulletin',
+      url: `${CANONICAL_ORIGIN}/news/`,
+    },
+    image: image ? [image] : undefined,
+  };
+  const jsonLd = JSON.stringify(structured).replaceAll('<', '\\u003c');
+  const metadata = [
+    `<link rel="canonical" href="${escapeHtml(canonical)}">`,
+    `<meta property="og:type" content="article">`,
+    `<meta property="og:site_name" content="FMB News">`,
+    `<meta property="og:title" content="${escapeHtml(title)}">`,
+    `<meta property="og:description" content="${escapeHtml(description)}">`,
+    `<meta property="og:url" content="${escapeHtml(canonical)}">`,
+    `<meta property="og:image" content="${escapeHtml(image)}">`,
+    published ? `<meta property="article:published_time" content="${escapeHtml(published)}">` : '',
+    modified ? `<meta property="article:modified_time" content="${escapeHtml(modified)}">` : '',
+    `<meta name="twitter:card" content="summary_large_image">`,
+    `<meta name="twitter:title" content="${escapeHtml(title)}">`,
+    `<meta name="twitter:description" content="${escapeHtml(description)}">`,
+    `<meta name="twitter:image" content="${escapeHtml(image)}">`,
+    `<script type="application/ld+json">${jsonLd}</script>`,
+  ].filter(Boolean).join('');
+
+  let output = html
+    .replace(/<title>[\s\S]*?<\/title>/i, `<title>${escapeHtml(title)}</title>`)
+    .replace(/<meta\s+name=["']description["'][^>]*>/i, `<meta name="description" content="${escapeHtml(description)}">`)
+    .replace(/<meta\s+name=["']robots["'][^>]*>/i, '<meta name="robots" content="index,follow,max-image-preview:large">');
+  output = output.replace('</head>', `${metadata}</head>`);
+  return output;
+}
+
+async function serveCmsReader(request, env, slug, searchParams) {
+  const params = new URLSearchParams(searchParams);
+  params.set('slug', slug);
+  const assetUrl = new URL(request.url);
+  assetUrl.pathname = '/news/read/index.html';
+  assetUrl.search = params.toString();
+
+  let article;
+  let lookupSucceeded = false;
+  try {
+    article = await lookupPublishedArticle(slug);
+    lookupSucceeded = true;
+  } catch {
+    article = null;
+  }
+
+  const template = await env.ASSETS.fetch(new Request(assetUrl, request));
+  if (!lookupSucceeded) {
+    return withWorkerMarker(template, {
+      'X-Robots-Tag': 'noindex, follow',
+      'Cache-Control': 'private, no-store, max-age=0',
+    });
+  }
+
+  const body = await template.text();
+  if (!article) {
+    return withWorkerMarker(new Response(body, {
+      status: 404,
+      headers: template.headers,
+    }), {
+      'X-Robots-Tag': 'noindex, follow',
+      'Cache-Control': 'public, max-age=60',
+    });
+  }
+
+  const rendered = injectArticleMetadata(body, article, slug);
+  return withWorkerMarker(new Response(rendered, {
+    status: 200,
+    headers: template.headers,
+  }), {
+    'X-Robots-Tag': 'index, follow, max-image-preview:large',
+    'Cache-Control': 'public, max-age=60, stale-while-revalidate=300',
+  });
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -137,12 +274,12 @@ export default {
       return withWorkerMarker(response);
     }
 
-    // CMS article URLs remain clean while the static reader receives the slug.
+    // The generic reader template stays noindex. A clean CMS article reader path
+    // gets server-visible canonical, social and NewsArticle metadata at the edge,
+    // while the existing client runtime continues to render the full story body.
     const readerMatch = url.pathname.match(/^\/news\/read\/([^/]+)\/?$/);
     if (readerMatch) {
-      const params = new URLSearchParams(url.searchParams);
-      params.set('slug', decodeURIComponent(readerMatch[1]));
-      return serveAsset(request, env, '/news/read/index.html', params);
+      return serveCmsReader(request, env, decodeURIComponent(readerMatch[1]), url.searchParams);
     }
 
     // FMB News is a static-site snapshot enhanced by the live Supabase CMS.
