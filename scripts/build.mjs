@@ -15,6 +15,11 @@ await cp(path.join(root, 'public', 'assets'), path.join(newsRoot, 'assets'), { r
 // production pages reference local /news/assets files instead of Drive URLs.
 await import('./fetch-approved-mobile-assets.mjs');
 
+// Published article records are authoritative. Preserve existing hand-built
+// routes, render any missing published story pages, and always rebuild the
+// newest-first /news/archive/ index from the same records.
+await import('./render-published-news-records.mjs');
+
 await import('./render-metallic-reference.mjs');
 await import('./render-fmb-explained.mjs');
 await import('./fix-explainer-original-chronology.mjs');
