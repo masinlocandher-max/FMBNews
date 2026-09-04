@@ -69,9 +69,18 @@ async function assertPersistentShell(page,path){
   }));
   for(const[key,value]of Object.entries(inlinePresentation))assert.equal(value,'',`${key} must not carry inline presentation styles: ${value}`);
 
+  // The page clock refreshes on an interval. If this assertion lands exactly on
+  // a minute rollover, the DOM may still show the previous minute for a fraction
+  // of a second. Wait briefly for the real clock runtime to converge instead of
+  // comparing two samples taken on opposite sides of the boundary. The test is
+  // still strict: it passes only when the rendered value equals Asia/Manila now.
+  await page.waitForFunction(()=>{
+    const actual=(document.querySelector('[data-fmb-local-time]')?.textContent||'').trim();
+    const expected=new Intl.DateTimeFormat('en-PH',{timeZone:'Asia/Manila',hour:'numeric',minute:'2-digit',hour12:true}).format(new Date())+' PHT';
+    return actual===expected;
+  },null,{timeout:2500});
   const pht=await page.evaluate(()=>{
-    const now=new Date();
-    const expected=new Intl.DateTimeFormat('en-PH',{timeZone:'Asia/Manila',hour:'numeric',minute:'2-digit',hour12:true}).format(now)+' PHT';
+    const expected=new Intl.DateTimeFormat('en-PH',{timeZone:'Asia/Manila',hour:'numeric',minute:'2-digit',hour12:true}).format(new Date())+' PHT';
     return{expected,actual:(document.querySelector('[data-fmb-local-time]')?.textContent||'').trim()};
   });
   assert.equal(pht.actual,pht.expected,`Home clock must stay in Philippine Standard Time even for a New York device (${pht.actual} vs ${pht.expected}).`);
