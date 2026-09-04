@@ -22,8 +22,7 @@ jobs:
         shell: bash
         run: |
           set -euxo pipefail
-          test -f vercel.json
-          grep -q '"deploymentEnabled": false' vercel.json
+          test ! -f vercel.json
           test ! -d .vercel
           grep -q 'www.francinemariebautista.com/news\*' wrangler.jsonc
           grep -q 'francinemariebautista.com/news\*' wrangler.jsonc
