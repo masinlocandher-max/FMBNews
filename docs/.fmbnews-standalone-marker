@@ -1,0 +1,1 @@
+FMBNews is the standalone canonical repository for FMB News. Do not depend on FMB-Ecosystem for build, deploy, routing, content, assets, or runtime behavior.
