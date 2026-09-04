@@ -1,50 +1,51 @@
 {
-  "schemaVersion": 1,
-  "generatedAt": "2026-09-04T00:00:00+08:00",
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-04T18:11:00+08:00",
   "canonicalRepository": "masinlocandher-max/FMBNews",
   "legacyRepository": "masinlocandher-max/FMB-Ecosystem",
   "legacyRemovalCommit": "ea997cdb436b08088c9c0648008b24d95ba50663",
   "legacyRemovalCommitMessage": "Remove legacy FMB News content and publication entrypoints",
-  "state": "quarantined-recovery",
+  "state": "reconciled-release",
   "automaticPublicationAllowed": false,
   "auditWindow": {
     "start": "2026-08-28T13:00:00+08:00",
     "end": "2026-09-04T07:00:00+08:00"
   },
-  "totals": {
-    "publishNowEntries": 84,
-    "exactPublishedMatches": 16,
-    "missedPublicationEntries": 68
+  "originalAudit": {
+    "publishNowSlots": 84,
+    "exactPublishedMatchesAtAuditTime": 16,
+    "rawMissedSlotsAtAuditTime": 68,
+    "warning": "The 68 figure was a publication-slot count, not a count of unique durable articles. It included repeated updates of the same developing stories."
   },
-  "batches": [
-    {"date":"2026-08-28","publishNowEntries":6,"exactPublishedMatches":2,"missedPublicationEntries":4},
-    {"date":"2026-08-29","publishNowEntries":12,"exactPublishedMatches":6,"missedPublicationEntries":6},
-    {"date":"2026-08-30","publishNowEntries":12,"exactPublishedMatches":3,"missedPublicationEntries":9},
-    {"date":"2026-08-31","publishNowEntries":12,"exactPublishedMatches":2,"missedPublicationEntries":10},
-    {"date":"2026-09-01","publishNowEntries":12,"exactPublishedMatches":1,"missedPublicationEntries":11},
-    {"date":"2026-09-02","publishNowEntries":12,"exactPublishedMatches":1,"missedPublicationEntries":11},
-    {"date":"2026-09-03","publishNowEntries":12,"exactPublishedMatches":1,"missedPublicationEntries":11},
-    {"date":"2026-09-04","through":"07:00 PHT","publishNowEntries":6,"exactPublishedMatches":0,"missedPublicationEntries":6}
-  ],
-  "requiredDisposition": [
-    "publish-standalone",
-    "merge-latest",
-    "archive-superseded",
-    "needs-verification"
-  ],
-  "knownDuplicateFamilies": [
-    "Pilandok and Habagat updates",
-    "Lake Mapanuepe boat tragedy updates",
-    "Central Luzon rainfall, flooding, dam and evacuation updates",
-    "Visayas and Mindanao power-grid alerts",
+  "release20260904": {
+    "newSourceCheckedArticleRecords": 30,
+    "existingCanonicalArticleFinalized": 1,
+    "finalizedCanonicalArticle": "content/news/articles/2026-08-28/1900-mapanuepe-lake-zambales-boat-capsize.json",
+    "strategy": "Publish durable unique story records; merge sequential updates into the latest accurate canonical story; do not create stale duplicate pages.",
+    "sourcePolicy": "Every recovered article was rewritten against current reachable source material. Unsupported or contradicted details from newsroom briefs were corrected or removed.",
+    "examplesOfCorrections": [
+      "September 1 fuel rollback corrected from the brief's up-to-P1 claim to verified retailer reductions approaching P3.90 per liter for diesel.",
+      "2026 Ramon Magsaysay awardees verified as Runa Khan, Tommy Koh and Bo Kyi.",
+      "September 4 MC 134 signatory corrected to Executive Secretary Ralph Recto and exact geographic coverage used.",
+      "House agricultural-loan bill corrected to House Bill No. 10750.",
+      "Mapanuepe Lake canonical article finalized at nine deaths and four survivors after the last missing passenger was recovered."
+    ]
+  },
+  "consolidatedFamilies": [
+    "Pilandok and Habagat six-hour tracking updates",
+    "Lake Mapanuepe boat tragedy casualty/search updates",
+    "Central Luzon rainfall and flood warning updates",
+    "Visayas and Mindanao power-grid alert updates",
     "Leptospirosis and hospital-capacity updates",
-    "National Heroes Day coverage",
-    "NLEX and San Simon flood/toll/dredging updates",
-    "Senate impeachment-trial updates"
+    "National Heroes Day pre-event and completed-event coverage",
+    "NLEX flooding, toll-waiver and RFID-refund updates",
+    "Senate impeachment-trial witness and scheduling updates"
   ],
-  "safety": {
-    "reasonForQuarantine": "The 68 entries include sequential updates and potentially superseded versions. Moving them directly into content/news/articles would make the production verifier treat them as publishable records.",
-    "publicationGate": "Reconcile, deduplicate, re-verify sources and intentionally promote only final approved records into content/news/articles/<date>/.",
-    "legacyBoundary": "FMB-Ecosystem may be inspected only as historical evidence. FMBNews remains the sole canonical source and deployment repository."
-  }
+  "dispositionRules": {
+    "publishStandalone": "A distinct verified event with durable reader value and no existing canonical article.",
+    "mergeLatest": "A later verified development belongs on an existing canonical story or one consolidated recovery article.",
+    "archiveSuperseded": "A time-sensitive intermediate update has been overtaken by a later verified state and should not become a duplicate live page.",
+    "needsVerification": "Do not publish claims that cannot be independently verified or that conflict with later authoritative reporting."
+  },
+  "legacyBoundary": "FMB-Ecosystem is historical evidence only. FMBNews remains the sole canonical content and deployment repository."
 }
