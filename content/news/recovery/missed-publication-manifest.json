@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-04T00:00:00+08:00",
+  "canonicalRepository": "masinlocandher-max/FMBNews",
+  "legacyRepository": "masinlocandher-max/FMB-Ecosystem",
+  "legacyRemovalCommit": "ea997cdb436b08088c9c0648008b24d95ba50663",
+  "legacyRemovalCommitMessage": "Remove legacy FMB News content and publication entrypoints",
+  "state": "quarantined-recovery",
+  "automaticPublicationAllowed": false,
+  "auditWindow": {
+    "start": "2026-08-28T13:00:00+08:00",
+    "end": "2026-09-04T07:00:00+08:00"
+  },
+  "totals": {
+    "publishNowEntries": 84,
+    "exactPublishedMatches": 16,
+    "missedPublicationEntries": 68
+  },
+  "batches": [
+    {"date":"2026-08-28","publishNowEntries":6,"exactPublishedMatches":2,"missedPublicationEntries":4},
+    {"date":"2026-08-29","publishNowEntries":12,"exactPublishedMatches":6,"missedPublicationEntries":6},
+    {"date":"2026-08-30","publishNowEntries":12,"exactPublishedMatches":3,"missedPublicationEntries":9},
+    {"date":"2026-08-31","publishNowEntries":12,"exactPublishedMatches":2,"missedPublicationEntries":10},
+    {"date":"2026-09-01","publishNowEntries":12,"exactPublishedMatches":1,"missedPublicationEntries":11},
+    {"date":"2026-09-02","publishNowEntries":12,"exactPublishedMatches":1,"missedPublicationEntries":11},
+    {"date":"2026-09-03","publishNowEntries":12,"exactPublishedMatches":1,"missedPublicationEntries":11},
+    {"date":"2026-09-04","through":"07:00 PHT","publishNowEntries":6,"exactPublishedMatches":0,"missedPublicationEntries":6}
+  ],
+  "requiredDisposition": [
+    "publish-standalone",
+    "merge-latest",
+    "archive-superseded",
+    "needs-verification"
+  ],
+  "knownDuplicateFamilies": [
+    "Pilandok and Habagat updates",
+    "Lake Mapanuepe boat tragedy updates",
+    "Central Luzon rainfall, flooding, dam and evacuation updates",
+    "Visayas and Mindanao power-grid alerts",
+    "Leptospirosis and hospital-capacity updates",
+    "National Heroes Day coverage",
+    "NLEX and San Simon flood/toll/dredging updates",
+    "Senate impeachment-trial updates"
+  ],
+  "safety": {
+    "reasonForQuarantine": "The 68 entries include sequential updates and potentially superseded versions. Moving them directly into content/news/articles would make the production verifier treat them as publishable records.",
+    "publicationGate": "Reconcile, deduplicate, re-verify sources and intentionally promote only final approved records into content/news/articles/<date>/.",
+    "legacyBoundary": "FMB-Ecosystem may be inspected only as historical evidence. FMBNews remains the sole canonical source and deployment repository."
+  }
+}
