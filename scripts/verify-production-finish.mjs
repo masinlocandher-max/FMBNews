@@ -13,8 +13,9 @@ const globalMobile=await read('public/assets/js/fmb-news-mobile-global.js');
 const homeMobile=await read('public/assets/js/fmb-news-mobile-home.js');
 const home=await read('dist/news/index.html');
 
-for(const token of ["'/fmbnews'","startsWith('/fmbnews/')",'FMBNews owns both the canonical newsroom'])must(worker.includes(token),`Canonical worker ownership regression: missing ${token}`);
-for(const route of ['www.francinemariebautista.com/fmbnews*','francinemariebautista.com/fmbnews*'])must(wrangler.includes(route),`Legacy news route is not owned by FMBNews: ${route}`);
+for(const token of ["url.pathname === '/news'","url.pathname.startsWith('/news/')",'CANONICAL_ORIGIN'])must(worker.includes(token),`Canonical worker ownership regression: missing ${token}`);
+for(const route of ['www.francinemariebautista.com/news*','francinemariebautista.com/news*'])must(wrangler.includes(route),`Canonical news route is not owned by FMBNews: ${route}`);
+must(!wrangler.includes('/fmbnews'),'Legacy /fmbnews route must not be registered; FMBNews is public at /news only.');
 for(const token of ['fmbNewsPrefsV1','fmbNewsInterestV1','rankFeed','news_reader_profiles','news_push_subscriptions'])must(personalization.includes(token),`Personalization regression: missing ${token}`);
 for(const token of ['fmb-mobile-app-shell','fmb-mobile-product-rail','fmbSavedStoriesV1'])must(globalMobile.includes(token),`Global mobile runtime regression: missing ${token}`);
 must(!globalMobile.includes('open-meteo.com'),'Weather must not be duplicated in the global mobile runtime');
@@ -37,4 +38,4 @@ for(const file of await walk(explainedRoot)){
   if(article.publishedAt)must(html.includes(`"datePublished":"${article.publishedAt}"`),`${article.slug}: structured data must use the actual publication timestamp`);checked++;
 }
 must(checked>0,'No published long-form FMB Explainer article was verified.');
-console.log(`Production finish verification passed: canonical routing, personalization/PWA systems, one Home-owned PHT/weather runtime, localized approved hero/mug, and ${checked} structured FMB Explainer article(s) verified; Explainer essays may use Article schema while news reports retain NewsArticle.`);
+console.log(`Production finish verification passed: canonical /news routing, personalization/PWA systems, one Home-owned PHT/weather runtime, localized approved hero/mug, and ${checked} structured FMB Explainer article(s) verified; Explainer essays may use Article schema while news reports retain NewsArticle.`);
