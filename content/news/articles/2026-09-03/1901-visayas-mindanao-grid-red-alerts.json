@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "visayas-mindanao-grid-red-alerts-september-3-2026",
+  "headline": "Visayas and Mindanao Grids Placed Under Extended Red Alerts",
+  "seoTitle": "Visayas, Mindanao Red Alerts September 3 | FMB News",
+  "seoDescription": "NGCP placed the Visayas and Mindanao grids under lengthy red-alert periods on September 3 as plant outages and derated units tightened supply.",
+  "keywords": ["Visayas Mindanao red alert September 3 2026", "NGCP power supply", "Visayas grid Mindanao grid"],
+  "category": "Business",
+  "kicker": "Energy · Grid Supply",
+  "deck": "The Visayas grid faced a nine-hour red alert while Mindanao was also under red alert for much of the day as available capacity remained tight.",
+  "publishedAt": "2026-09-03T19:00:00+08:00",
+  "updatedAt": "2026-09-04T18:11:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["NGCP placed both the Visayas and Mindanao grids under red alert on September 3 because available capacity and operating reserves were insufficient for demand and contingency requirements.","The Visayas red alert was scheduled from 1 p.m. to 10 p.m., while Mindanao was under red alert from noon to 9 p.m."]},
+    {"heading":"Visayas supply","paragraphs":["Available capacity in the Visayas was about 2,187 MW against projected peak demand of 2,575 MW. NGCP cited forced outages, long-term unavailable units and derated plants, with total capacity losses reported at about 792 MW."]},
+    {"heading":"Why it matters","paragraphs":["A red alert signals that supply cannot meet consumer demand plus the grid's regulating requirements, increasing the risk of power interruptions if conditions deteriorate."]},
+    {"heading":"What to watch next","paragraphs":["Consumers and businesses should monitor NGCP and local distribution-utility advisories for changes in alert periods and supply restoration."]}
+  ],
+  "sources": [
+    {"publisher":"Philippine News Agency","title":"Visayas, Mindanao grids remain under red alert Thursday","publishedAt":"2026-09-03T09:18:00+08:00","url":"https://www.pna.gov.ph/articles/1283214"},
+    {"publisher":"GMA News Online","title":"Visayas, Mindanao grids placed on red alert on September 3, 2026","publishedAt":"2026-09-03T08:56:00+08:00","url":"https://www.gmanetwork.com/news/money/economy/1000958/visayas-mindanao-grids-placed-on-red-alert-on-september-3-2026/story/"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://www.pna.gov.ph/articles/1283214","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because source grid photography was not ingested with independently verified reuse rights.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the power-grid alert report.","alt":"FMB News editorial visual for Visayas and Mindanao red alerts","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-09-04T18:11:00+08:00","recoveredAt":"2026-09-04T18:11:00+08:00","recoveryStatus":"source-checked-backfill","notes":["Recovered from the September 3 7:00 PM brief.","Used NGCP-reported alert windows and supply data and omitted the brief's unsupported city-by-city blackout claims."]}
+}

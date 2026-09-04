@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "visayas-grid-red-yellow-alerts-august-28-2026",
+  "headline": "Visayas Grid Faces Red and Yellow Alerts as Power Supply Tightens",
+  "seoTitle": "Visayas Grid Under Red, Yellow Alerts August 28 | FMB News",
+  "seoDescription": "NGCP placed the Visayas grid under red and yellow alerts on August 28 as available capacity fell below projected peak demand.",
+  "keywords": ["Visayas grid red alert August 28 2026", "NGCP Visayas power alert", "power supply Visayas"],
+  "category": "Business",
+  "kicker": "Energy · Public Utilities",
+  "deck": "Available generation in the Visayas fell below projected peak demand as several power plants remained unavailable.",
+  "publishedAt": "2026-08-28T19:00:00+08:00",
+  "updatedAt": "2026-09-04T18:11:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["NGCP placed the Visayas grid under a red alert from 5 p.m. to 8 p.m. on August 28, with yellow alerts before and after the evening red-alert window.","Available capacity was estimated at 2,307 megawatts against projected peak demand of about 2,402 MW."]},
+    {"heading":"Why the grid was tight","paragraphs":["The shortage reflected the continued unavailability of several generating units and limited electricity imports from Mindanao, reducing operating reserves during peak hours."]},
+    {"heading":"Why it matters","paragraphs":["A red alert means supply is insufficient to meet demand and required reserves, increasing the risk of manual load dropping or rotational interruptions."]},
+    {"heading":"What to watch next","paragraphs":["Consumers and businesses were advised to monitor NGCP and local distribution-utility advisories for changes in alert windows and possible power interruptions."]}
+  ],
+  "sources": [
+    {"publisher":"Philippine News Agency","title":"Visayas grid on red alert anew due to limited supply","publishedAt":"2026-08-28T17:11:00+08:00","url":"https://www.pna.gov.ph/articles/1282891"},
+    {"publisher":"ABS-CBN News","title":"Visayas grid still on Red, Yellow Alerts on August 28","publishedAt":"2026-08-28T10:28:00+08:00","url":"https://www.abs-cbn.com/news/business/2026/8/28/visayas-grid-still-on-red-yellow-alerts-on-august-28-1028"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://www.pna.gov.ph/articles/1282891","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used for this recovered archive report because no stable rights-verified image file was ingested with the recovery package.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying this recovered report.","alt":"FMB News editorial visual for Visayas Grid Faces Red and Yellow Alerts as Power Supply Tightens","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-09-04T18:11:00+08:00","recoveredAt":"2026-09-04T18:11:00+08:00","recoveryStatus":"source-checked-backfill","notes":["Recovered from the August 28 FMB News briefs.","Used NGCP/PNA capacity and alert windows; omitted unsupported claims about specific electricity-rate effects."]}
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "deped-7-7b-school-repairs-habagat-cyclones-september-2026",
+  "headline": "DepEd Estimates ₱7.783 Billion Needed to Repair Schools Hit by Habagat and Cyclones",
+  "seoTitle": "DepEd: ₱7.783B Needed for Damaged Schools | FMB News",
+  "seoDescription": "DepEd estimated ₱7.783 billion for cleanup, repairs and reconstruction after monsoon rains and cyclones damaged more than 11,000 classrooms nationwide.",
+  "keywords": ["DepEd 7.783 billion school repairs", "Habagat damaged schools 2026", "classroom reconstruction Philippines"],
+  "category": "National",
+  "kicker": "Education · Disaster Recovery",
+  "deck": "The estimate covers immediate cleanup, minor and major repairs, and reconstruction of heavily damaged school sites.",
+  "publishedAt": "2026-09-03T13:00:00+08:00",
+  "updatedAt": "2026-09-04T18:11:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["The Department of Education estimated that rehabilitation of schools damaged by floods, the southwest monsoon and recent tropical cyclones would require about ₱7.783 billion.","More than 11,000 classrooms were affected nationwide."]},
+    {"heading":"Where the money would go","paragraphs":["DepEd's estimate included about ₱65.036 million for cleanup and clearing at 2,243 schools, ₱319.97 million for minor repairs at 1,487 schools, ₱1.194 billion for major repairs at 669 schools and about ₱5.62 billion to reconstruct 490 heavily damaged school sites."]},
+    {"heading":"Why it matters","paragraphs":["Damaged classrooms disrupt learning well after floodwaters recede, making school rehabilitation a major part of disaster recovery rather than a short-term cleanup task."]},
+    {"heading":"What to watch next","paragraphs":["The final pace of repairs will depend on funding releases, damage validation, procurement and the ability to keep learning going while facilities are restored."]}
+  ],
+  "sources": [
+    {"publisher":"Philippine Daily Inquirer","title":"P7.7B needed to fix schools hit by ‘habagat,’ cyclones","publishedAt":"2026-09-03T05:48:00+08:00","url":"https://newsinfo.inquirer.net/2297988/p7-7b-needed-to-fix-schools-hit-by-habagat-cyclones"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://newsinfo.inquirer.net/2297988/p7-7b-needed-to-fix-schools-hit-by-habagat-cyclones","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because source photography was not ingested with independently verified reuse rights.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the school-repair estimate.","alt":"FMB News editorial visual for school disaster repairs","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-09-04T18:11:00+08:00","recoveredAt":"2026-09-04T18:11:00+08:00","recoveryStatus":"source-checked-backfill","notes":["Recovered from the September 3 1:00 PM brief.","Corrected the brief's '2,400 schools' summary by using DepEd's detailed figures and the reported count of more than 11,000 affected classrooms."]}
+}

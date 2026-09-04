@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "ramon-ang-nlex-flooding-tulaoc-bridge-debris-september-2-2026",
+  "headline": "Ramon Ang Cites Tulaoc Bridge Debris as Factor in NLEX Flooding",
+  "seoTitle": "Ramon Ang Cites Debris in NLEX Flooding | FMB News",
+  "seoDescription": "SMC president Ramon Ang said soil and debris left from 2024 Tulaoc Bridge works obstructed water flow and contributed to NLEX flooding in San Simon, Pampanga.",
+  "keywords": ["Ramon Ang NLEX flooding", "Tulaoc Bridge debris", "San Simon Pampanga flood"],
+  "category": "National",
+  "kicker": "Transport · Flooding",
+  "deck": "MPTC also pointed to a broader drainage problem and extreme water volume, making the flooding a multi-factor infrastructure issue.",
+  "publishedAt": "2026-09-02T07:00:00+08:00",
+  "updatedAt": "2026-09-04T18:11:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["San Miguel Corp. president Ramon Ang said soil and debris left after the 2024 repair of the NLEX Tulaoc Bridge obstructed water flow and contributed to severe flooding along the expressway in San Simon, Pampanga.","The flooding caused hours-long traffic congestion during the prolonged monsoon rains."]},
+    {"heading":"Other factors cited","paragraphs":["NLEX operator MPTC said the flooding also reflected a broader drainage problem in Pampanga. It cited saturated downstream communities and the large volume of monsoon water that could not readily drain toward Manila Bay."]},
+    {"heading":"Response","paragraphs":["Ang offered heavy equipment to help clear obstructions, while MPTC coordinated with transport and public-works agencies on flood-mitigation measures and planned elevation work around the Tulaoc section."]},
+    {"heading":"Why it matters","paragraphs":["The competing explanations show why recurrent expressway flooding needs a system-level drainage assessment rather than a single-cause narrative."]}
+  ],
+  "sources": [
+    {"publisher":"Philippine Daily Inquirer","title":"Ang: NLEx flooding due to blocked dam water","publishedAt":"2026-09-02T05:45:00+08:00","url":"https://newsinfo.inquirer.net/2297193/ang-nlex-flooding-due-to-blocked-dam-water"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://newsinfo.inquirer.net/2297193/ang-nlex-flooding-due-to-blocked-dam-water","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because publisher photography was not ingested with independently verified reuse rights.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the NLEX flooding report.","alt":"FMB News editorial visual for NLEX flooding at San Simon","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-09-04T18:11:00+08:00","recoveredAt":"2026-09-04T18:11:00+08:00","recoveryStatus":"source-checked-backfill","notes":["Recovered from the September 2 7:00 AM brief.","Changed the brief's definitive causation to attribution and included MPTC's broader-drainage explanation."]}
+}

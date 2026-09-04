@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "noah-1941-flood-control-master-plan-september-2026",
+  "headline": "Project NOAH Head Says Decades of Ignoring 1941 Flood Plan Worsened Flood Risk",
+  "seoTitle": "Project NOAH Head on 1941 Flood Control Plan | FMB News",
+  "seoDescription": "UP resilience expert Mahar Lagmay said decades of failure to follow a 1941 flood-control master plan contributed to recurring flooding.",
+  "keywords": ["1941 flood control master plan Philippines", "Mahar Lagmay Project NOAH", "Metro Manila flooding master plan"],
+  "category": "National",
+  "kicker": "Flood Control · Science",
+  "deck": "Mahar Lagmay called for science-based, system-wide flood planning rather than disconnected projects as severe flooding continued.",
+  "publishedAt": "2026-09-01T07:00:00+08:00",
+  "updatedAt": "2026-09-04T18:11:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["UP Resilience Institute executive director and Project NOAH head Mahar Lagmay said recurring flooding reflects decades of failure to follow a comprehensive flood-control master plan drafted in 1941.","He argued that flood mitigation should be treated as a connected watershed and drainage problem rather than as a collection of isolated projects."]},
+    {"heading":"Context","paragraphs":["The comments came as Metro Manila and parts of Luzon experienced prolonged flooding after repeated monsoon rain."]},
+    {"heading":"Why it matters","paragraphs":["Flood-control infrastructure can shift water problems downstream if projects are designed without basin-wide hydrology, land-use planning and drainage capacity in mind."]},
+    {"heading":"What to watch next","paragraphs":["The policy question is whether national and local agencies will align future flood-control spending with updated science-based basin plans and transparent project evaluation."]}
+  ],
+  "sources": [
+    {"publisher":"Philstar.com","title":"NOAH head: Philippines ignored 1941 flood control master plan","publishedAt":"2026-09-01T00:00:00+08:00","url":"https://www.philstar.com/headlines/2026/09/01/2553178/noah-head-philippines-ignored-1941-flood-control-master-plan"},
+    {"publisher":"UP Resilience Institute / Project NOAH","title":"Project NOAH","publishedAt":"2026-09-01T00:00:00+08:00","url":"https://noah.up.edu.ph/"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://www.philstar.com/headlines/2026/09/01/2553178/noah-head-philippines-ignored-1941-flood-control-master-plan","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used for this recovered archive report because no stable rights-verified image file was ingested with the recovery package.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying this recovered report.","alt":"FMB News editorial visual for Project NOAH Head Says Decades of Ignoring 1941 Flood Plan Worsened Flood Risk","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-09-04T18:11:00+08:00","recoveredAt":"2026-09-04T18:11:00+08:00","recoveryStatus":"source-checked-backfill","notes":["Recovered from the September 1 7:00 AM brief.","Attributed the 1941-plan argument to Mahar Lagmay instead of presenting causation as an uncontested finding."]}
+}
