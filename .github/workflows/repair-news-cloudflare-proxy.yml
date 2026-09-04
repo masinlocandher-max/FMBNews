@@ -27,7 +27,6 @@ jobs:
             echo '::error::CLOUDFLARE_API_TOKEN is not configured for this repository.'
             exit 1
           fi
-          echo 'Cloudflare API token is configured.'
 
       - name: Confirm Cloudflare zone is accessible
         shell: bash
@@ -35,46 +34,54 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
           set -euo pipefail
-          http_code="$(curl -sS -o /tmp/zone.json -w '%{http_code}' \
-            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
-            -H 'Content-Type: application/json' \
-            "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}" || true)"
-          echo "Cloudflare zone API returned HTTP ${http_code}."
+          http_code="$(curl -sS -o /tmp/zone.json -w '%{http_code}' -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H 'Content-Type: application/json' "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}" || true)"
           if [ "$http_code" != '200' ] || ! jq -e '.success == true' /tmp/zone.json >/dev/null 2>&1; then
-            echo '::error::Cloudflare token cannot access the configured zone, or the zone ID is no longer valid.'
-            jq -r '.errors[]?.message // empty' /tmp/zone.json 2>/dev/null || true
+            echo '::error::Cloudflare token cannot access the configured zone, or the zone ID is invalid.'
             exit 1
           fi
-          zone_name="$(jq -r '.result.name // empty' /tmp/zone.json)"
-          echo "Accessible zone: ${zone_name:-unknown}."
-          if [ "$zone_name" != 'francinemariebautista.com' ]; then
-            echo "::error::Configured zone resolves to '${zone_name:-unknown}', expected 'francinemariebautista.com'."
-            exit 1
-          fi
+          test "$(jq -r '.result.name // empty' /tmp/zone.json)" = 'francinemariebautista.com'
 
-      - name: Confirm canonical DNS records exist in Cloudflare
+      - name: Confirm public DNS delegates to this Cloudflare zone
         shell: bash
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
           set -euo pipefail
-          for hostname in www.francinemariebautista.com francinemariebautista.com; do
-            http_code="$(curl -sS -o /tmp/dns.json -w '%{http_code}' \
-              -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
-              -H 'Content-Type: application/json' \
-              "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records?name=${hostname}" || true)"
-            echo "${hostname}: DNS API HTTP ${http_code}."
-            if [ "$http_code" != '200' ] || ! jq -e '.success == true' /tmp/dns.json >/dev/null 2>&1; then
-              echo "::error::Unable to read Cloudflare DNS records for ${hostname}."
-              exit 1
-            fi
-            count="$(jq '[.result[] | select(.type == "A" or .type == "AAAA" or .type == "CNAME")] | length' /tmp/dns.json)"
-            if [ "$count" -lt 1 ]; then
-              echo "::error::No A, AAAA, or CNAME record exists in Cloudflare for ${hostname}."
-              exit 1
-            fi
-            jq -r '.result[] | select(.type == "A" or .type == "AAAA" or .type == "CNAME") | "Found \(.type) \(.name) -> \(.content); proxied=\(.proxied)"' /tmp/dns.json
-          done
+          curl -sS --fail -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H 'Content-Type: application/json' "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}" > /tmp/zone.json
+          mapfile -t expected < <(jq -r '.result.name_servers[]?' /tmp/zone.json | tr '[:upper:]' '[:lower:]' | sed 's/\.$//' | sort -u)
+          mapfile -t actual < <(dig +short NS francinemariebautista.com | tr '[:upper:]' '[:lower:]' | sed 's/\.$//' | sort -u)
+          if [ "${#expected[@]}" -lt 2 ]; then
+            echo '::error::Cloudflare zone did not return its assigned nameservers.'
+            exit 1
+          fi
+          if [ "${#actual[@]}" -lt 2 ]; then
+            echo '::error::Public DNS did not return a valid nameserver delegation.'
+            exit 1
+          fi
+          printf '%s\n' "${expected[@]}" > /tmp/expected-ns
+          printf '%s\n' "${actual[@]}" > /tmp/actual-ns
+          if ! diff -u /tmp/expected-ns /tmp/actual-ns; then
+            echo '::error::The domain is not delegated to the Cloudflare nameservers assigned to this zone. Cloudflare Worker routes cannot own /news until delegation is restored.'
+            exit 1
+          fi
+
+      - name: Confirm apex DNS record exists in Cloudflare
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          curl -sS --fail -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H 'Content-Type: application/json' "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records?name=francinemariebautista.com" > /tmp/dns.json
+          jq -e '.success == true and ([.result[] | select(.type == "A" or .type == "AAAA" or .type == "CNAME")] | length > 0)' /tmp/dns.json >/dev/null
+
+      - name: Confirm www DNS record exists in Cloudflare
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          curl -sS --fail -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H 'Content-Type: application/json' "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records?name=www.francinemariebautista.com" > /tmp/dns.json
+          jq -e '.success == true and ([.result[] | select(.type == "A" or .type == "AAAA" or .type == "CNAME")] | length > 0)' /tmp/dns.json >/dev/null
 
       - name: Enable Cloudflare proxy for canonical hostnames
         shell: bash
@@ -83,26 +90,13 @@ jobs:
         run: |
           set -euo pipefail
           for hostname in www.francinemariebautista.com francinemariebautista.com; do
-            response="$(curl --silent --show-error --fail \
-              -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
-              -H 'Content-Type: application/json' \
-              "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records?name=${hostname}")"
-            echo "$response" | jq -e '.success == true' >/dev/null
+            response="$(curl --silent --show-error --fail -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H 'Content-Type: application/json' "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records?name=${hostname}")"
             echo "$response" | jq -c '.result[] | select(.type == "A" or .type == "AAAA" or .type == "CNAME") | {id,type,name,content,proxied}' | while read -r record; do
               id="$(echo "$record" | jq -r '.id')"
-              type="$(echo "$record" | jq -r '.type')"
-              name="$(echo "$record" | jq -r '.name')"
-              content="$(echo "$record" | jq -r '.content')"
               proxied="$(echo "$record" | jq -r '.proxied')"
-              echo "${type} ${name} -> ${content}; proxied=${proxied}"
               if [ "$proxied" != 'true' ]; then
-                patched="$(curl --silent --show-error --fail -X PATCH \
-                  -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
-                  -H 'Content-Type: application/json' \
-                  "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records/${id}" \
-                  --data '{"proxied":true}')"
+                patched="$(curl --silent --show-error --fail -X PATCH -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H 'Content-Type: application/json' "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records/${id}" --data '{"proxied":true}')"
                 echo "$patched" | jq -e '.success == true and .result.proxied == true' >/dev/null
-                echo "Enabled Cloudflare proxy for ${name} (${type})."
               fi
             done
           done
@@ -116,24 +110,16 @@ jobs:
             for attempt in $(seq 1 20); do
               rm -f /tmp/h /tmp/b
               status="$(curl -sS -o /tmp/b -D /tmp/h -w '%{http_code}' --connect-timeout 10 --max-time 30 -H 'Cache-Control: no-cache' "${url}?proxyfix=${GITHUB_SHA}-${attempt}" || true)"
-              server="$(tr -d '\r' < /tmp/h | awk 'BEGIN{IGNORECASE=1} /^server:/{print $2}' | tail -1)"
               worker=false
               tr -d '\r' < /tmp/h | grep -Eqi '^x-fmb-news-worker: fmb-news$' && worker=true || true
-              echo "${url}: HTTP ${status}, server=${server:-unknown}, worker=${worker}"
-              if [ "$status" = '200' ] && [ "$worker" = true ] && grep -qi "$needle" /tmp/b; then
-                return 0
-              fi
+              if [ "$status" = '200' ] && [ "$worker" = true ] && grep -qi "$needle" /tmp/b; then return 0; fi
               sleep 3
             done
             echo "::error::${url} still does not reach the FMB News Worker."
-            cat /tmp/h || true
-            head -c 500 /tmp/b || true
             return 1
           }
-
           check 'https://www.francinemariebautista.com/news/' 'FMB News'
           check 'https://www.francinemariebautista.com/news/world/' 'FMB Worldwide'
           check 'https://www.francinemariebautista.com/news/sara-duterte-arrest-warrant-grave-threats-september-4-2026/' 'QC Court Issues Arrest Warrant Against VP Sara Duterte'
-          echo 'RESOLVED: canonical /news routes are served by FMBNews through Cloudflare.'
 
-# Trigger marker: 2026-09-05 diagnose and restore /news edge routing.
+# Trigger marker: 2026-09-05 identify authoritative DNS before repair.
