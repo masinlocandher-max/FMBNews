@@ -1,0 +1,84 @@
+name: Incident restore Cloudflare proxy for FMB News
+
+on:
+  push:
+    branches:
+      - incident/restore-cloudflare-proxy-20260904
+    paths:
+      - '.github/workflows/incident-restore-cloudflare-proxy.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Inspect and restore www Cloudflare proxy
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          zone_id='2e2210f55eba305e10b3f3f0f4a20261'
+          api='https://api.cloudflare.com/client/v4'
+          hostname='www.francinemariebautista.com'
+
+          response="$(curl --silent --show-error \
+            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+            -H 'Content-Type: application/json' \
+            "${api}/zones/${zone_id}/dns_records?name=${hostname}")"
+
+          echo "$response" | jq '{success,errors,result:[.result[]|{id,type,name,content,proxied,proxiable}]}'
+          printf '%s' "$response" | jq -e '.success == true and (.result|length) > 0' >/dev/null
+
+          mapfile -t ids < <(printf '%s' "$response" | jq -r '.result[] | select(.proxiable == true) | .id')
+          test "${#ids[@]}" -gt 0
+
+          for id in "${ids[@]}"; do
+            current="$(printf '%s' "$response" | jq -r --arg id "$id" '.result[] | select(.id==$id) | .proxied')"
+            if [ "$current" != 'true' ]; then
+              update="$(curl --silent --show-error -X PATCH \
+                -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+                -H 'Content-Type: application/json' \
+                "${api}/zones/${zone_id}/dns_records/${id}" \
+                --data '{"proxied":true}')"
+              echo "$update" | jq '{success,errors,result:{id:.result.id,type:.result.type,name:.result.name,content:.result.content,proxied:.result.proxied}}'
+              printf '%s' "$update" | jq -e '.success == true and .result.proxied == true' >/dev/null
+            else
+              echo "DNS record ${id} is already proxied."
+            fi
+          done
+
+      - name: Verify FMB News route ownership live
+        shell: bash
+        run: |
+          set -euo pipefail
+          check() {
+            local url="$1"
+            local label="$2"
+            for attempt in $(seq 1 20); do
+              rm -f /tmp/fmb.h /tmp/fmb.body
+              status="$(curl --silent --show-error --output /tmp/fmb.body --dump-header /tmp/fmb.h \
+                --write-out '%{http_code}' --connect-timeout 10 --max-time 30 \
+                -H 'Cache-Control: no-cache' "${url}?incident=${GITHUB_SHA}-${attempt}" || true)"
+              marker="$(tr -d '\r' < /tmp/fmb.h | awk -F': ' 'tolower($1)=="x-fmb-news-worker"{print $2}' | tail -1)"
+              server="$(tr -d '\r' < /tmp/fmb.h | awk -F': ' 'tolower($1)=="server"{print $2}' | tail -1)"
+              echo "${label} attempt ${attempt}: status=${status} worker=${marker:-none} server=${server:-none}"
+              if [ "$status" = '200' ] && [ "$marker" = 'fmb-news' ]; then
+                return 0
+              fi
+              sleep 3
+            done
+            echo "::error::${label} still not on FMB News Worker"
+            cat /tmp/fmb.h || true
+            head -c 800 /tmp/fmb.body || true
+            return 1
+          }
+
+          check 'https://www.francinemariebautista.com/news/' 'Home'
+          check 'https://www.francinemariebautista.com/news/world/' 'Worldwide'
+          check 'https://www.francinemariebautista.com/news/explainer/' 'Explainer'
+          check 'https://www.francinemariebautista.com/news/fmb-brief/' 'Daily Brief'
+          echo 'FMB News Cloudflare route ownership restored.'
