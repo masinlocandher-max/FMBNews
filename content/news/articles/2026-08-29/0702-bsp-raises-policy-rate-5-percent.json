@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "bsp-raises-policy-rate-5-percent-august-2026",
+  "headline": "BSP Raises Key Policy Rate by 25 Basis Points to 5 Percent",
+  "seoTitle": "BSP Raises Policy Rate to 5% | FMB News",
+  "seoDescription": "The Bangko Sentral ng Pilipinas raised its target reverse repurchase rate by 25 basis points to 5 percent.",
+  "keywords": ["BSP policy rate 5 percent", "Philippines interest rate August 2026", "Monetary Board"],
+  "category": "Business",
+  "kicker": "Economy · Monetary Policy",
+  "deck": "The central bank tightened policy by another quarter point as it responded to inflation and exchange-rate pressures.",
+  "publishedAt": "2026-08-29T07:00:00+08:00",
+  "updatedAt": "2026-09-04T18:11:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["The Bangko Sentral ng Pilipinas raised the target reverse repurchase rate by 25 basis points to 5 percent in its latest monetary-policy decision.","Rates on the overnight deposit and lending facilities were adjusted alongside the policy move."]},
+    {"heading":"Why the BSP acted","paragraphs":["The Monetary Board pointed to persistent inflation risks, elevated global energy costs and peso weakness as reasons for maintaining a tighter policy stance."]},
+    {"heading":"Why it matters","paragraphs":["Higher policy rates can raise borrowing costs for households and businesses while helping restrain inflation and support the currency."]},
+    {"heading":"What to watch next","paragraphs":["Markets will watch the next inflation prints, peso movement and BSP guidance for signs of whether further tightening will be needed."]}
+  ],
+  "sources": [
+    {"publisher":"Bangko Sentral ng Pilipinas","title":"Monetary policy decisions and statistics","publishedAt":"2026-08-27T00:00:00+08:00","url":"https://www.bsp.gov.ph/"},
+    {"publisher":"BusinessWorld","title":"Philippine central bank hikes key rate for third straight meeting","publishedAt":"2026-08-27T00:00:00+08:00","url":"https://bworldonline.com/top-stories/2026/08/27/772835/philippine-central-bank-hikes-key-rate-for-third-straight-meeting/"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://www.bsp.gov.ph/","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used for this recovered archive report.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the BSP policy-rate report.","alt":"FMB News editorial visual for BSP policy rate decision","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-09-04T18:11:00+08:00","recoveredAt":"2026-09-04T18:11:00+08:00","recoveryStatus":"source-checked-backfill","notes":["Recovered from the August 29 7:00 AM brief.","Used central-bank and same-week financial reporting rather than the brief's unsupported causal wording."]}
+}
