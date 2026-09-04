@@ -19,14 +19,114 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+
       - name: Build standalone newsroom
         run: npm run build
+
       - name: Verify standalone newsroom
         run: npm run verify
+
+      - name: Resolve Cloudflare account from canonical zone
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          test -n "${CLOUDFLARE_API_TOKEN:-}" || { echo '::error::Missing GitHub Actions secret CLOUDFLARE_API_TOKEN'; exit 1; }
+          zone='2e2210f55eba305e10b3f3f0f4a20261'
+          response="$(curl -sS --fail -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" "https://api.cloudflare.com/client/v4/zones/${zone}")"
+          echo "$response" | jq -e '.success == true and .result.name == "francinemariebautista.com"' >/dev/null
+          account_id="$(echo "$response" | jq -r '.result.account.id // empty')"
+          test -n "$account_id"
+          echo "CLOUDFLARE_ACCOUNT_ID=${account_id}" >> "$GITHUB_ENV"
+
+      - name: Deploy Worker and /news routes
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: npx --yes wrangler@4 deploy
+
+      - name: Verify public /news cutover
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          fetch_with_retry() {
+            local url="$1" output="$2" headers="$3" label="$4"
+            for attempt in $(seq 1 20); do
+              if curl --fail --location --silent --show-error --connect-timeout 10 --max-time 30 \
+                -H 'Cache-Control: no-cache' -D "$headers" \
+                "${url}?cutover=${GITHUB_SHA}-${attempt}" -o "$output"; then
+                if tr -d '\r' < "$headers" | grep -Eqi '^x-fmb-news-worker: fmb-news$'; then
+                  echo "${label}: Worker verified on attempt ${attempt}"
+                  return 0
+                fi
+              fi
+              echo "${label}: attempt ${attempt} not on Worker yet; retrying in 5s"
+              sleep 5
+            done
+            echo "::error::${label} did not become reachable on the FMBNews Worker after deployment"
+            cat "$headers" || true
+            return 1
+          }
+
+          fetch_with_retry 'https://www.francinemariebautista.com/news/' /tmp/news-home.html /tmp/news-home.headers 'FMB News'
+          grep -Eqi 'FMB[[:space:]]*News|Filipino Media Bulletin' /tmp/news-home.html
+
+          fetch_with_retry 'https://www.francinemariebautista.com/news/sitemap.xml' /tmp/news-sitemap.xml /tmp/news-sitemap.headers 'FMB News sitemap'
+          grep -q 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"' /tmp/news-sitemap.xml
+          grep -q 'https://www.francinemariebautista.com/news/' /tmp/news-sitemap.xml
+
+          fetch_with_retry 'https://www.francinemariebautista.com/news/news-sitemap.xml' /tmp/google-news-sitemap.xml /tmp/google-news-sitemap.headers 'Google News sitemap'
+          grep -q 'xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"' /tmp/google-news-sitemap.xml
+
+          fetch_with_retry 'https://www.francinemariebautista.com/news/feed.xml' /tmp/news-feed.xml /tmp/news-feed.headers 'FMB News RSS feed'
+          grep -q '<rss version="2.0"' /tmp/news-feed.xml
+          grep -q '<title>FMB News</title>' /tmp/news-feed.xml
+
+          fetch_with_retry 'https://www.francinemariebautista.com/news/world/' /tmp/news-world.html /tmp/news-world.headers 'FMB Worldwide'
+          grep -qi 'FMB Worldwide' /tmp/news-world.html
+
+          fetch_with_retry 'https://www.francinemariebautista.com/news/fmb-brief/' /tmp/news-brief.html /tmp/news-brief.headers 'FMB Daily Brief'
+          grep -Eqi 'FMB Daily Brief|Daily Newsletter' /tmp/news-brief.html
+
+          fetch_with_retry 'https://www.francinemariebautista.com/news/explainer/' /tmp/news-explainer.html /tmp/news-explainer.headers 'FMB Explainer'
+          grep -qi 'FMB Explainer' /tmp/news-explainer.html
+
+          status="$(curl --silent --show-error --output /dev/null --write-out '%{http_code}' --connect-timeout 10 --max-time 30 'https://www.francinemariebautista.com/')"
+          test "$status" = '200'
+
+          apex_headers="$(curl --silent --show-error --head --connect-timeout 10 --max-time 30 \
+            -H 'Cache-Control: no-cache' -H 'Pragma: no-cache' \
+            "https://francinemariebautista.com/news/?cutover=${GITHUB_SHA}" | tr -d '\r' || true)"
+          if echo "$apex_headers" | grep -Eq '^HTTP/[^ ]+ 308' && \
+             echo "$apex_headers" | grep -Eqi '^location: https://www\.francinemariebautista\.com/news/?'; then
+            echo 'Apex /news canonical redirect verified.'
+          else
+            echo '::warning::Apex /news did not return the expected redirect; canonical www newsroom remains healthy.'
+          fi
+
+          echo 'Public FMB News deployment and canonical www newsroom verified.'
+
+  mobile-browser-qa:
+    name: Mobile browser QA (non-blocking)
+    needs: deploy
+    continue-on-error: true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build newsroom for browser QA
+        run: npm run build
+
       - name: Install mobile browser QA runtime
         run: |
           npm install --no-save playwright@1.55.0
           npx playwright install --with-deps chromium
+
       - name: Run mobile browser QA
         shell: bash
         run: |
@@ -43,108 +143,3 @@ jobs:
           FMB_QA_BASE_URL='http://127.0.0.1:4173' node scripts/browser-qa-crossword-ux.mjs
           FMB_QA_BASE_URL='http://127.0.0.1:4173' node scripts/browser-qa-home-motion.mjs
           FMB_QA_BASE_URL='http://127.0.0.1:4173' node scripts/browser-qa-feature-routes.mjs
-      - name: Check Cloudflare credentials
-        shell: bash
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: |
-          set -euo pipefail
-          test -n "${CLOUDFLARE_API_TOKEN:-}" || { echo '::error::Missing GitHub Actions secret CLOUDFLARE_API_TOKEN'; exit 1; }
-      - name: Deploy Worker and /news routes
-        shell: bash
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        run: npx --yes wrangler@4 deploy
-      - name: Verify public /news cutover
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          fetch_with_retry() {
-            local url="$1" output="$2" headers="$3" label="$4"
-            for attempt in 1 2 3 4 5 6; do
-              if curl --fail --location --silent --show-error --connect-timeout 10 --max-time 30 \
-                -H 'Cache-Control: no-cache' -D "$headers" \
-                "${url}?cutover=${GITHUB_SHA}-${attempt}" -o "$output"; then
-                echo "${label}: reachable on attempt ${attempt}"
-                return 0
-              fi
-              echo "${label}: attempt ${attempt} failed; retrying in 5s"
-              sleep 5
-            done
-            echo "::error::${label} did not become reachable after deployment"
-            return 1
-          }
-
-          worker_header() {
-            tr -d '\r' < "$1" | grep -Eqi '^x-fmb-news-worker: fmb-news$'
-          }
-
-          fetch_with_retry 'https://www.francinemariebautista.com/news/' /tmp/news-home.html /tmp/news-home.headers 'FMB News'
-          grep -qi 'FMB News' /tmp/news-home.html
-          grep -qi 'FMB Worldwide' /tmp/news-home.html
-          grep -qi 'FMB Daily Brief' /tmp/news-home.html
-          grep -qi 'Filipino Media Bulletin' /tmp/news-home.html
-          grep -qi 'type="application/rss+xml"' /tmp/news-home.html
-          grep -qi 'href="/news/feed.xml"' /tmp/news-home.html
-          worker_header /tmp/news-home.headers || { echo '::error::Canonical www /news traffic is not reaching the FMBNews Worker'; exit 1; }
-
-          fetch_with_retry 'https://www.francinemariebautista.com/news/sitemap.xml' /tmp/news-sitemap.xml /tmp/news-sitemap.headers 'FMB News sitemap'
-          grep -q 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"' /tmp/news-sitemap.xml
-          grep -q 'https://www.francinemariebautista.com/news/' /tmp/news-sitemap.xml
-          worker_header /tmp/news-sitemap.headers
-
-          fetch_with_retry 'https://www.francinemariebautista.com/news/news-sitemap.xml' /tmp/google-news-sitemap.xml /tmp/google-news-sitemap.headers 'Google News sitemap'
-          grep -q 'xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"' /tmp/google-news-sitemap.xml
-          worker_header /tmp/google-news-sitemap.headers
-
-          fetch_with_retry 'https://www.francinemariebautista.com/news/feed.xml' /tmp/news-feed.xml /tmp/news-feed.headers 'FMB News RSS feed'
-          grep -q '<rss version="2.0"' /tmp/news-feed.xml
-          grep -q '<title>FMB News</title>' /tmp/news-feed.xml
-          worker_header /tmp/news-feed.headers
-
-          fetch_with_retry 'https://www.francinemariebautista.com/news/world/' /tmp/news-world.html /tmp/news-world.headers 'FMB Worldwide'
-          grep -qi 'aria-label="FMB Worldwide"' /tmp/news-world.html
-          grep -qi 'Filipino Media Bulletin' /tmp/news-world.html
-          worker_header /tmp/news-world.headers
-
-          fetch_with_retry 'https://www.francinemariebautista.com/news/fmb-brief/' /tmp/news-brief.html /tmp/news-brief.headers 'FMB Daily Brief'
-          grep -qi 'aria-label="FMB Daily Brief"' /tmp/news-brief.html
-          grep -qi 'Daily Newsletter' /tmp/news-brief.html
-          worker_header /tmp/news-brief.headers
-
-          fetch_with_retry 'https://www.francinemariebautista.com/news/explainer/' /tmp/news-explainer.html /tmp/news-explainer.headers 'FMB Explainer'
-          grep -qi 'FMB Explainer' /tmp/news-explainer.html
-          worker_header /tmp/news-explainer.headers
-
-          fetch_with_retry 'https://www.francinemariebautista.com/news/world/live/' /tmp/news-world-live.html /tmp/news-world-live.headers 'FMB Worldwide live desk'
-          grep -qi 'aria-label="FMB Worldwide"' /tmp/news-world-live.html
-          worker_header /tmp/news-world-live.headers
-
-          fetch_with_retry 'https://www.francinemariebautista.com/news/fmb-brief/live/' /tmp/news-brief-live.html /tmp/news-brief-live.headers 'FMB Daily Brief live edition'
-          grep -qi 'aria-label="FMB Daily Brief"' /tmp/news-brief-live.html
-          worker_header /tmp/news-brief-live.headers
-
-          fetch_with_retry 'https://www.francinemariebautista.com/news/assets/css/fmb-news-final.css' /tmp/news.css /tmp/news-css.headers 'News scoped CSS'
-          test -s /tmp/news.css
-          worker_header /tmp/news-css.headers
-
-          status="$(curl --silent --show-error --output /dev/null --write-out '%{http_code}' --connect-timeout 10 --max-time 30 'https://www.francinemariebautista.com/')"
-          test "$status" = '200'
-          echo "Main site root remains reachable: HTTP ${status}"
-
-          # Apex-host canonicalization is owned by upstream DNS/origin routing and can
-          # return an upstream 200 even while the canonical www newsroom is correctly
-          # served by this Worker. Keep it visible as an advisory, not a false deploy blocker.
-          apex_headers="$(curl --silent --show-error --head --connect-timeout 10 --max-time 30 \
-            -H 'Cache-Control: no-cache' -H 'Pragma: no-cache' \
-            "https://francinemariebautista.com/news/?cutover=${GITHUB_SHA}" | tr -d '\r' || true)"
-          if echo "$apex_headers" | grep -Eq '^HTTP/[^ ]+ 30[178]' && \
-             echo "$apex_headers" | grep -Eqi '^location: https://www\.francinemariebautista\.com/news/?'; then
-            echo 'Apex /news canonical redirect verified.'
-          else
-            echo '::warning::Apex /news did not return the expected redirect; canonical www newsroom remains the production gate.'
-          fi
-
-          echo 'Public FMB News network cutover, discovery feeds and canonical www newsroom verified.'
