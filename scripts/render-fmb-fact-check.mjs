@@ -40,8 +40,9 @@ function splitArticles(text){
       ['FMB bottom line',field('FMB BOTTOM LINE',['PRIMARY EVIDENCE CHECKLIST'])]
     ].filter(([,v])=>v);
     const checklist=field('PRIMARY EVIDENCE CHECKLIST',['EDITORIAL STATUS']).split(/\\n+/).map(x=>x.replace(/^[-•]\\s*/,'').trim()).filter(Boolean);
+    const editorialStatus=field('EDITORIAL STATUS',[]);
     const title=stripRating(headline);
-    out.push({id,title,period,claim,rating,sections,checklist,slug:slugify(title)});
+    out.push({id,title,period,claim,rating,sections,checklist,editorialStatus,slug:slugify(title)});
   }
   if(out.length!==123)throw new Error(`Expected 123 FMB Fact Check articles, found ${out.length}`);
   if(out.some(a=>!a.title||!a.rating||!a.period))throw new Error('Fact Check master parsing failed: one or more required fields are empty.');
@@ -76,11 +77,11 @@ function nav(){return `<header class="masthead"><div class="shell mast-row"><a c
 function footer(){return `<footer class="footer"><div class="shell footer-bottom"><span>© 2026 Filipino Media Bulletin.</span><span>FMB Fact Check · Evidence over virality</span></div></footer>`}
 function commonHead(title,desc,canonical){return `<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>${esc(title)}</title><meta name="description" content="${esc(desc)}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="${esc(canonical)}"><meta property="og:type" content="article"><meta property="og:site_name" content="Filipino Media Bulletin"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${esc(canonical)}"><link rel="stylesheet" href="/assets/css/fmb-news-final.css?v=20260902"><link rel="stylesheet" href="/assets/css/fmb-news-mobile-global.css?v=20260902"><link rel="stylesheet" href="/assets/css/fmb-news-mobile-products.css?v=20260902"><link rel="stylesheet" href="/assets/css/fmb-news-mobile-menu-holder.css?v=20260902"><link rel="stylesheet" href="/assets/css/fmb-news-mobile-app-polish.css?v=20260902"><link rel="stylesheet" href="/assets/css/fmb-fact-check.css?v=20260902">`}
 
-function archivePage(articles){
+function archivePage(articles,heldCount=0){
   const items=articles.map(a=>`<a class="fc-card" href="/news/fact-check/${esc(a.slug)}/" data-rating="${esc(a.rating)}" data-search="${esc((a.title+' '+a.claim+' '+a.rating+' '+a.period).toLowerCase())}"><div class="fc-card-date">${esc(periodLabel(a.period))}</div><div><h2>${esc(a.title)}</h2><p>${esc(a.claim)}</p></div><div>${ratingBadge(a.rating)}<span class="fc-arrow" aria-hidden="true">›</span></div></a>`).join('');
   const counts=Object.fromEntries(Object.keys(ratingMeta).map(r=>[r,articles.filter(a=>a.rating===r).length]));
   const script=`<script>(()=>{const q=document.querySelector('#fcSearch'),cards=[...document.querySelectorAll('.fc-card')],count=document.querySelector('#fcCount');function run(){const s=(q.value||'').trim().toLowerCase();let n=0;cards.forEach(c=>{const on=!s||c.dataset.search.includes(s);c.hidden=!on;if(on)n++});count.textContent=n+' of '+cards.length+' fact checks'}q.addEventListener('input',run);run()})()</script>`;
-  return `<!doctype html><html lang="en-PH"><head>${commonHead('FMB Fact Check | Filipino Media Bulletin','FMB Fact Check examines viral claims, public statements, images and reports using a clear four-level rating system.',`${origin}/news/fact-check/`)}</head><body class="fmb-fact-check-route">${nav()}<main><section class="fc-hero"><div class="fc-shell"><div class="fc-kicker">FILIPINO MEDIA BULLETIN · FACT CHECK DESK</div><h1>FMB Fact Check</h1><p>Claims are separated from evidence. Each item is tagged TRUE, VERIFIED FACT, MISLEADING, or FALSE, then arranged by publication chronology with the newest checks first.</p><div class="fc-ratings"><div class="fc-rating-key">${ratingBadge('TRUE',true)}</div><div class="fc-rating-key">${ratingBadge('VERIFIED FACT',true)}</div><div class="fc-rating-key">${ratingBadge('MISLEADING',true)}</div><div class="fc-rating-key">${ratingBadge('FALSE',true)}</div></div></div></section><section class="fc-archive"><div class="fc-shell"><div class="fc-toolbar"><input id="fcSearch" type="search" placeholder="Search a claim, person, issue or rating" aria-label="Search FMB Fact Check"><span id="fcCount">${articles.length} fact checks</span></div><p class="fc-counts">${counts.TRUE} TRUE · ${counts['VERIFIED FACT']} VERIFIED FACT · ${counts.MISLEADING} MISLEADING · ${counts.FALSE} FALSE</p><div class="fc-list">${items}</div></div></section></main>${footer()}${script}<script src="/assets/js/fmb-news-mobile-global.js?v=20260902" defer></script><script src="/assets/js/fmb-news-mobile-products.js?v=20260902" defer></script></body></html>`;
+  return `<!doctype html><html lang="en-PH"><head>${commonHead('FMB Fact Check | Filipino Media Bulletin','FMB Fact Check examines viral claims, public statements, images and reports using a clear four-level rating system.',`${origin}/news/fact-check/`)}</head><body class="fmb-fact-check-route">${nav()}<main><section class="fc-hero"><div class="fc-shell"><div class="fc-kicker">FILIPINO MEDIA BULLETIN · FACT CHECK DESK</div><h1>FMB Fact Check</h1><p>Claims are separated from evidence. Each item is tagged TRUE, VERIFIED FACT, MISLEADING, or FALSE, then arranged by publication chronology with the newest checks first. A check publishes only once FMB has attached the primary records it rests on.</p><div class="fc-ratings"><div class="fc-rating-key">${ratingBadge('TRUE',true)}</div><div class="fc-rating-key">${ratingBadge('VERIFIED FACT',true)}</div><div class="fc-rating-key">${ratingBadge('MISLEADING',true)}</div><div class="fc-rating-key">${ratingBadge('FALSE',true)}</div></div></div></section><section class="fc-archive"><div class="fc-shell"><div class="fc-toolbar"><input id="fcSearch" type="search" placeholder="Search a claim, person, issue or rating" aria-label="Search FMB Fact Check"><span id="fcCount">${articles.length} fact checks</span></div><p class="fc-counts">${counts.TRUE} TRUE · ${counts['VERIFIED FACT']} VERIFIED FACT · ${counts.MISLEADING} MISLEADING · ${counts.FALSE} FALSE</p><div class="fc-list">${items}</div>${articles.length?'':`<div class="fc-empty"><h2 style="margin:0 0 10px;font-size:22px;letter-spacing:-.03em">No fact checks are published yet</h2><p style="margin:0;line-height:1.6">The FMB Fact Check desk is re-verifying its archive. ${heldCount} drafted item${heldCount===1?' is':'s are'} held back until FMB has checked the claim against primary records &mdash; statutes, court decisions, official agency records, public datasets, or the original post as it circulated &mdash; and can publish those records alongside the rating. FMB Fact Check stands on FMB&rsquo;s own verification, so nothing appears here before that work is done.</p></div>`}</div></section></main>${footer()}${script}<script src="/assets/js/fmb-news-mobile-global.js?v=20260902" defer></script><script src="/assets/js/fmb-news-mobile-products.js?v=20260902" defer></script></body></html>`;
 }
 
 function articlePage(a){
@@ -90,7 +91,7 @@ function articlePage(a){
   const json={'@context':'https://schema.org','@type':'Article',headline:a.title,description:desc,mainEntityOfPage:{'@type':'WebPage','@id':canonical},articleSection:'FMB Fact Check',genre:'Fact Check',author:{'@type':'Organization',name:'FMB Fact Check Editorial Team'},publisher:{'@type':'Organization',name:'Filipino Media Bulletin',url:`${origin}/news/`}};
   if(exact.test(a.period))json.datePublished=`${a.period}T08:00:00+08:00`;
   const sections=a.sections.map(([h,p])=>`<section><h2>${esc(h)}</h2><p>${esc(p)}</p></section>`).join('');
-  const evidence=a.checklist.length?`<section class="fc-evidence"><h2>Evidence FMB checks</h2><ul>${a.checklist.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><p class="fc-note">This list identifies the records relevant to the claim. FMB Fact Check does not reproduce or link the source publication used to identify the research lead.</p></section>`:'';
+  const evidence=a.checklist.length?`<section class="fc-evidence"><h2>Evidence FMB checks</h2><ul>${a.checklist.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><p class="fc-note">These are the records FMB checked for this claim, published alongside the rating so readers can follow the same evidence.</p></section>`:'';
   return `<!doctype html><html lang="en-PH"><head>${commonHead(`${a.rating}: ${a.title} | FMB Fact Check`,desc,canonical)}<script type="application/ld+json">${JSON.stringify(json).replaceAll('<','\\u003c')}</script></head><body class="fmb-fact-check-route">${nav()}<main class="fc-article-wrap"><div class="fc-shell"><article class="fc-article article"><a class="fc-back" href="/news/fact-check/">← FMB Fact Check</a><div class="fc-article-meta"><span class="fc-date">${esc(periodLabel(a.period))} · ${readTime(bodyText)} min read</span>${ratingBadge(a.rating,true)}</div><h1>${esc(a.title)}</h1><div class="fc-claim"><strong>Claim:</strong> ${esc(a.claim)}</div>${sections}${evidence}</article></div></main>${footer()}<script src="/assets/js/fmb-news-mobile-global.js?v=20260902" defer></script><script src="/assets/js/fmb-news-mobile-products.js?v=20260902" defer></script></body></html>`;
 }
 
@@ -102,13 +103,61 @@ if(!masterParts.length)throw new Error('FMB Fact Check master is missing.');
 let encoded='';for(const name of masterParts)encoded+=(await readFile(path.join(masterRoot,name),'utf8')).trim();
 const text=brotliDecompressSync(Buffer.from(encoded,'base64')).toString('utf8');
 const articles=splitArticles(text).sort((a,b)=>sortKey(b).localeCompare(sortKey(a))||a.id-b.id);
+// ---------------------------------------------------------------- evidence gate
+//
+// Every item in the master corpus carries this, in its own words:
+//
+//   FULL-LENGTH FMB ARTICLE DRAFT. FINAL PUBLICATION REQUIRES INDEPENDENT
+//   SOURCE VERIFICATION AND SOURCE LINKS.
+//
+// The renderer never parsed that field. It dropped the warning and published the
+// draft anyway, with a definitive TRUE/FALSE/MISLEADING badge, about named
+// people. No item in the corpus contains a single URL, the "evidence" was a list
+// of record types to consult rather than records consulted, and the page note
+// said so: "FMB Fact Check does not reproduce or link the source publication
+// used to identify the research lead."
+//
+// A fact check publishes only when FMB's own evidence is attached in
+// content/fact-check/evidence/<slug>.json. See the README there.
+const evidenceRoot=path.join(root,'content','fact-check','evidence');
+async function evidenceFor(slug){
+  try{return JSON.parse(await readFile(path.join(evidenceRoot,`${slug}.json`),'utf8'))}catch{return null}
+}
+function gateFailures(article,record){
+  const bad=[];
+  if(!record){
+    if(/\bDRAFT\b/i.test(article.editorialStatus||''))bad.push('master item is an unverified draft');
+    bad.push('no evidence record');
+    return bad;
+  }
+  const ev=Array.isArray(record.evidence)?record.evidence:[];
+  const primary=ev.filter(e=>e&&e.kind==='primary'&&/^https?:\/\//i.test(String(e.url||'')));
+  if(!primary.length)bad.push('no primary evidence with a resolvable URL');
+  if(!/^https?:\/\//i.test(String(record.claimSource&&record.claimSource.url||'')))bad.push('no archived claim source');
+  if(record.ratingReachedBy!=='FMB')bad.push(`rating not reached by FMB (${record.ratingReachedBy||'unstated'})`);
+  if(record.rating&&record.rating!==article.rating)bad.push(`evidence rating ${record.rating} contradicts master rating ${article.rating}`);
+  return bad;
+}
+
+const published=[],held=[];
+for(const a of articles){
+  const record=await evidenceFor(a.slug);
+  const bad=gateFailures(a,record);
+  if(bad.length)held.push({...a,heldBecause:bad});else published.push({...a,record});
+}
+await writeFile(path.join(root,'content','fact-check','HELD.json'),JSON.stringify({
+  generatedAt:new Date().toISOString().slice(0,10),
+  total:articles.length,published:published.length,held:held.length,
+  items:held.map(a=>({id:a.id,slug:a.slug,title:a.title,rating:a.rating,reasons:a.heldBecause}))
+},null,2)+'\n','utf8');
+
 const factRoot=path.join(newsRoot,'fact-check');
 await mkdir(factRoot,{recursive:true});
-await writeFile(path.join(factRoot,'index.html'),archivePage(articles),'utf8');
-for(const a of articles){const dir=path.join(factRoot,a.slug);await mkdir(dir,{recursive:true});await writeFile(path.join(dir,'index.html'),articlePage(a),'utf8')}
+await writeFile(path.join(factRoot,'index.html'),archivePage(published,held.length),'utf8');
+for(const a of published){const dir=path.join(factRoot,a.slug);await mkdir(dir,{recursive:true});await writeFile(path.join(dir,'index.html'),articlePage(a),'utf8')}
 const cssDir=path.join(newsRoot,'assets','css');await mkdir(cssDir,{recursive:true});await writeFile(path.join(cssDir,'fmb-fact-check.css'),css,'utf8');
 const dataDir=path.join(newsRoot,'assets','data','fmb-fact-check');await mkdir(dataDir,{recursive:true});
-await writeFile(path.join(dataDir,'index.json'),JSON.stringify(articles.map(a=>({id:a.id,title:a.title,rating:a.rating,period:a.period,sortKey:sortKey(a),slug:a.slug,url:`/news/fact-check/${a.slug}/`})),null,2),'utf8');
+await writeFile(path.join(dataDir,'index.json'),JSON.stringify(published.map(a=>({id:a.id,title:a.title,rating:a.rating,period:a.period,sortKey:sortKey(a),slug:a.slug,url:`/news/fact-check/${a.slug}/`})),null,2),'utf8');
 
 for(const file of await walkIndex(newsRoot)){if(file.startsWith(factRoot+path.sep))continue;let html=await readFile(file,'utf8');const updated=injectMenu(html);if(updated!==html)await writeFile(file,updated,'utf8')}
 
@@ -133,4 +182,4 @@ try{
   await writeFile(mobileProducts,js,'utf8');
 }catch{}
 
-console.log(`Rendered ${articles.length} FMB Fact Check articles, newest first, with TRUE / VERIFIED FACT / MISLEADING / FALSE tags and no source-publication links.`);
+console.log(`Rendered ${published.length} published / ${held.length} held FMB Fact Check articles, newest first, with TRUE / VERIFIED FACT / MISLEADING / FALSE tags and no source-publication links.`);

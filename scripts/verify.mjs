@@ -23,6 +23,11 @@ for(const rel of required)await access(resolve(rel));
 const worker=await read('src/worker.js'),wrangler=await read('wrangler.jsonc');
 must(worker.includes("url.pathname === '/news'")&&worker.includes("url.pathname.startsWith('/news/')"),'Cloudflare Worker /news boundary missing');
 must(wrangler.includes('www.francinemariebautista.com/news*')&&wrangler.includes('francinemariebautista.com/news*'),'Cloudflare /news routes missing');
+// Everything must land on www.francinemariebautista.com/news. The apex
+// canonicalises onto the www host, and a Fact Check held pending verification
+// reaches the desk instead of 404ing a URL that was live.
+must(worker.includes("hostname = 'www.francinemariebautista.com'")||worker.includes('www.francinemariebautista.com'),'Worker does not canonicalise onto the www host');
+must(/fact-check[\s\S]{0,500}308/.test(worker),'Worker does not redirect held Fact Check URLs to the desk');
 
 const fetchApproved=await read('scripts/fetch-approved-mobile-assets.mjs');
 must(fetchApproved.includes('14fKTwMW0qnVi36eVSAjSBr05_VZgq4kf'),'Approved Philippines newsroom hero Drive asset is not locked');

@@ -318,6 +318,22 @@ export default {
     // FMB News is an SSG newsroom. Cloudflare's native HTML handling owns the
     // directory-to-index mapping, so clean public URLs such as /news/world/
     // resolve directly to dist/news/world/index.html.
+    // A fact check held pending verification has no page. Those URLs were live,
+    // so they redirect to the desk rather than 404. The probe runs only for a
+    // /news/fact-check/<slug>/ request, and only redirects when the asset is
+    // genuinely missing, so a slug verified and published later resolves
+    // normally with no redirect.
+    if (/^\/news\/fact-check\/[^/]+\/?$/.test(url.pathname)) {
+      const probe = await serveAsset(request, env, url.pathname, url.searchParams);
+      if (probe.status === 404) {
+        const desk = new URL(url);
+        desk.pathname = '/news/fact-check/';
+        desk.search = '';
+        return withWorkerMarker(Response.redirect(desk.toString(), 308));
+      }
+      return probe;
+    }
+
     const crosswordHeaders = isActiveCrosswordPath(url.pathname)
       ? {
           'Cache-Control': 'private, no-store, max-age=0',

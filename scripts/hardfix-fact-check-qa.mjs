@@ -48,7 +48,10 @@ for(const file of await walk(factRoot)){
     html=html.replace(/<footer class="footer"><div class="shell footer-bottom">/i,'<footer class="footer"><div class="shell"><div class="footer-publication-title">Filipino Media Bulletin</div><p>Information with Purpose.</p></div><div class="shell footer-bottom">');
   }
 
-  html=html.replace(/This list identifies the records relevant to the claim\. FMB Fact Check does not reproduce or link the source publication used to identify the research lead\./gi,'This list identifies the records relevant to the claim. FMB Fact Check evaluates the claim against the relevant records and evidence available for editorial review.');
+  // This rewrote the page note into "FMB Fact Check evaluates the claim against
+  // the relevant records and evidence available for editorial review" — asserting
+  // verification that had not happened, over a note that was at least honest.
+  // Only evidenced checks publish now, and the renderer states that plainly.
 
   if(rel==='index.html'){
     html=html.replace(/<meta property="og:type" content="article">/i,'<meta property="og:type" content="website">');

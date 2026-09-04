@@ -1,43 +1,92 @@
-import { access, readFile, readdir } from 'node:fs/promises';
+// FMB Fact Check release gate.
+//
+// This previously asserted mostly shape: exactly 123 items, fixed rating tallies,
+// and that the name of the source publication never appeared. None of that tests
+// whether a published fact check is true, evidenced, or FMB's own work — and the
+// last of those was CI enforcing the removal of attribution.
+//
+// It now enforces the editorial contract: nothing carries an FMB rating in
+// public without the records that rating rests on.
+
+import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
-const newsRoot=path.join(root,'dist','news');
-const factRoot=path.join(newsRoot,'fact-check');
-const indexPath=path.join(newsRoot,'assets','data','fmb-fact-check','index.json');
-const must=(v,m)=>{if(!v)throw new Error(m)};
-const read=p=>readFile(p,'utf8');
-const exact=/^\d{4}-\d{2}-\d{2}$/;
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const read = rel => readFile(path.join(root, rel), 'utf8');
+const must = (value, message) => { if (!value) throw new Error(message); };
 
-await access(path.join(factRoot,'index.html'));
-await access(indexPath);
-for(const name of ['true.svg','fact.svg','misleading.svg','false.svg'])await access(path.join(newsRoot,'assets','images','fact-check',name));
+const RATINGS = new Set(['TRUE', 'VERIFIED FACT', 'MISLEADING', 'FALSE']);
+const CANONICAL = 'https://www.francinemariebautista.com/news/fact-check/';
+const factRoot = path.join(root, 'dist', 'news', 'fact-check');
 
-const index=JSON.parse(await read(indexPath));
-must(index.length===123,`FMB Fact Check must contain 123 articles; found ${index.length}`);
-for(let i=1;i<index.length;i++)must(String(index[i-1].sortKey)>=String(index[i].sortKey),`FMB Fact Check chronology is not newest-first at positions ${i} and ${i+1}`);
-const counts=index.reduce((acc,x)=>(acc[x.rating]=(acc[x.rating]||0)+1,acc),{});
-for(const [rating,n] of Object.entries({'TRUE':1,'VERIFIED FACT':10,'MISLEADING':48,'FALSE':64}))must(counts[rating]===n,`${rating} count must be ${n}; found ${counts[rating]||0}`);
+const held = JSON.parse(await read('content/fact-check/HELD.json'));
+const index = JSON.parse(await read('dist/news/assets/data/fmb-fact-check/index.json'));
 
-const archive=await read(path.join(factRoot,'index.html'));
-for(const label of ['TRUE','VERIFIED FACT','MISLEADING','FALSE'])must(archive.includes(label),`Fact Check archive missing ${label} tag`);
-must(archive.includes('/news/fact-check/'),'Fact Check route missing from archive navigation');
-must(!/explained\.ph/i.test(archive),'Original publisher URL/name exposed on Fact Check archive');
-must(!/source publication/i.test(archive),'Source-publication wording exposed on Fact Check archive');
+must(held.total === held.published + held.held, `Fact Check ledger does not balance: ${held.total} vs ${held.published}+${held.held}`);
+must(held.published === index.length, `Published index (${index.length}) disagrees with the ledger (${held.published})`);
+for (const item of held.items) must(Array.isArray(item.reasons) && item.reasons.length, `Held item ${item.slug} records no reason`);
 
-let checked=0;
-for(const item of index){
-  const file=path.join(factRoot,item.slug,'index.html');await access(file);const html=await read(file);checked++;
-  must(html.includes('fmb-fact-check-route'),`${item.slug}: Fact Check route identity missing`);
-  must(html.includes('aria-label="FMB Fact Check"'),`${item.slug}: Fact Check mast identity missing`);
-  must(html.includes('/news/fact-check/'),`${item.slug}: Fact Check navigation missing`);
-  must(html.includes('article-hero-image'),`${item.slug}: rating hero image missing`);
-  must(/<meta\b[^>]*property=["']og:image["']/i.test(html),`${item.slug}: og:image missing`);
-  must(html.includes(item.rating),`${item.slug}: visible rating missing`);
-  must(!/explained\.ph/i.test(html),`${item.slug}: original publisher exposed`);
-  must(!/source publication/i.test(html),`${item.slug}: source-publication wording exposed`);
-  if(!exact.test(item.period))must(!html.includes('"datePublished"'),`${item.slug}: approximate period must not be converted into an exact schema publication date`);
+const rendered = (await readdir(factRoot, { withFileTypes: true })).filter(e => e.isDirectory()).map(e => e.name);
+const cleared = new Set(index.map(a => a.slug));
+for (const slug of rendered) must(cleared.has(slug), `${slug} has a public page but is not in the cleared index`);
+must(rendered.length === index.length, `${rendered.length} rendered pages vs ${index.length} cleared items`);
+
+const archive = await read('dist/news/fact-check/index.html');
+must(archive.includes('fmb-fact-check-route'), 'Fact Check archive lost its route identity');
+must(archive.includes(`<link rel="canonical" href="${CANONICAL}"`), 'Fact Check archive canonical is wrong');
+for (const label of RATINGS) must(archive.includes(label), `Fact Check archive missing ${label} tag`);
+const advertised = archive.match(/id="fcCount">(\d+) fact checks/);
+must(advertised && Number(advertised[1]) === index.length, `Archive advertises ${advertised?.[1]} checks but publishes ${index.length}`);
+if (!index.length) must(/No fact checks are published yet/.test(archive), 'An empty Fact Check archive must say so plainly');
+must(!/does not reproduce or link the source publication/i.test(archive), 'Fact Check must not publish a note admitting it withholds its source');
+
+const seenClaims = new Map();
+for (const item of index) {
+  const where = item.slug;
+  const html = await read(`dist/news/fact-check/${item.slug}/index.html`);
+  const record = JSON.parse(await read(`content/fact-check/evidence/${item.slug}.json`));
+
+  must(RATINGS.has(item.rating), `${where}: rating "${item.rating}" is not an approved FMB rating`);
+  must(item.title && item.title.trim().length > 8, `${where}: no usable headline`);
+
+  const claim = html.match(/<div class="fc-claim"><strong>Claim:<\/strong>([\s\S]*?)<\/div>/)?.[1]?.replace(/<[^>]*>/g, '').trim();
+  must(claim && claim.length > 12, `${where}: published page carries no claim`);
+  const verdict = html.match(/<h2>The FMB verdict<\/h2>([\s\S]*?)<\/section>/)?.[1]?.replace(/<[^>]*>/g, '').trim();
+  must(verdict && verdict.length > 12, `${where}: published page carries no verdict`);
+  must(claim !== verdict, `${where}: claim and verdict are the same text`);
+
+  const key = claim.toLowerCase().replace(/\s+/g, ' ').trim();
+  if (seenClaims.has(key)) must(seenClaims.get(key).rating === item.rating,
+    `${where}: same claim as ${seenClaims.get(key).slug} but rated ${item.rating} vs ${seenClaims.get(key).rating}`);
+  seenClaims.set(key, item);
+
+  const evidence = Array.isArray(record.evidence) ? record.evidence : [];
+  const primary = evidence.filter(e => e && e.kind === 'primary' && /^https?:\/\//i.test(String(e.url || '')));
+  must(primary.length, `${where}: published with no primary evidence`);
+  must(/^https?:\/\//i.test(String(record.claimSource?.url || '')), `${where}: published with no archived claim source`);
+  must(record.ratingReachedBy === 'FMB', `${where}: rating was not reached by FMB`);
+  must(record.rating === item.rating, `${where}: evidence record says ${record.rating}, page says ${item.rating}`);
+  if (record.derivedFrom) must(html.includes(String(record.derivedFrom.publisher || '')),
+    `${where}: derived from ${record.derivedFrom.publisher} but the page does not attribute it`);
+
+  for (const e of primary) must(html.includes(e.url) || html.includes(String(e.title || '')),
+    `${where}: primary evidence "${e.title || e.url}" was lost during rendering`);
+
+  const exact = /^\d{4}-\d{2}-\d{2}$/.test(item.period);
+  if (!exact) must(html.includes(item.period), `${where}: approximate period "${item.period}" was rendered as a false exact date`);
+
+  must(html.includes(`<link rel="canonical" href="${CANONICAL}${item.slug}/"`), `${where}: canonical URL is wrong`);
+  must(/<meta name="description" content="[^"]{20,}"/.test(html), `${where}: no meta description`);
+  must(/<meta property="og:image" content="https:\/\/[^"]+"/.test(html), `${where}: no social image`);
+  must(html.includes('fmb-fact-check-route'), `${where}: Fact Check route identity missing`);
+  must(html.includes('fmb-news-mobile-global.js'), `${where}: mobile identity missing`);
+
+  must(!/A circulating post, video, quote, or report claims that/i.test(html),
+    `${where}: publishes the generated placeholder claim instead of the real one`);
 }
 
-console.log(`FMB Fact Check verification passed: ${checked} full articles, newest-first chronology, 1 TRUE / 10 VERIFIED FACT / 48 MISLEADING / 64 FALSE, FMB-owned rating imagery, and no original-publisher links.`);
+console.log(
+  `FMB Fact Check gate passed: ${held.total} items in the corpus, ${index.length} published with primary evidence ` +
+  `attached and FMB-reached ratings, ${held.held} held pending verification.`
+);
