@@ -1,0 +1,58 @@
+name: Emergency breaking news public route
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/emergency-breaking-news-publish.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    if: github.event.head_commit.message == 'Emergency verify breaking news public route'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build and verify newsroom
+        run: |
+          npm run build
+          npm run verify
+      - name: Deploy canonical FMB News Worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npx --yes wrangler@4 deploy
+      - name: Verify breaking story on public FMB News
+        shell: bash
+        run: |
+          set -euo pipefail
+          home='https://www.francinemariebautista.com/news/'
+          world='https://www.francinemariebautista.com/news/world/'
+          article='https://www.francinemariebautista.com/news/sara-duterte-arrest-warrant-grave-threats-september-4-2026/'
+          fetch() {
+            local url="$1" out="$2" headers="$3"
+            for attempt in 1 2 3 4 5 6; do
+              if curl --fail --location --silent --show-error --connect-timeout 10 --max-time 30 -H 'Cache-Control: no-cache' -D "$headers" "${url}?breaking=${GITHUB_SHA}-${attempt}" -o "$out"; then
+                return 0
+              fi
+              sleep 3
+            done
+            return 1
+          }
+          fetch "$home" /tmp/home.html /tmp/home.headers
+          grep -qi 'FMB News' /tmp/home.html
+          grep -qi 'QC Court Issues Arrest Warrant Against VP Sara Duterte' /tmp/home.html
+          tr -d '\r' < /tmp/home.headers | grep -Eqi '^x-fmb-news-worker: fmb-news$'
+          fetch "$world" /tmp/world.html /tmp/world.headers
+          grep -qi 'FMB Worldwide' /tmp/world.html
+          tr -d '\r' < /tmp/world.headers | grep -Eqi '^x-fmb-news-worker: fmb-news$'
+          fetch "$article" /tmp/article.html /tmp/article.headers
+          grep -qi 'QC Court Issues Arrest Warrant Against VP Sara Duterte in Grave Threats Case' /tmp/article.html
+          grep -qi 'Issuance of an arrest warrant is not a finding of guilt' /tmp/article.html
+          tr -d '\r' < /tmp/article.headers | grep -Eqi '^x-fmb-news-worker: fmb-news$'
+          echo 'LIVE: FMB News home, nested route, and Sara Duterte breaking article verified.'
