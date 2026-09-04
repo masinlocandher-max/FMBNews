@@ -246,7 +246,10 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     const isNewsPath = url.pathname === '/news' || url.pathname.startsWith('/news/');
-    const isLegacyNewsPath = url.pathname === '/fmbnews' || url.pathname.startsWith('/fmbnews/');
+
+    // This Worker is intentionally scoped to the canonical /news path only.
+    // Requests outside /news belong to the main PCO site or another explicit route owner.
+    if (!isNewsPath) return fetch(request);
 
     // Active puzzle protection: known AI/search agents receive a friendly fair-play
     // notice instead of the live crossword or its answer-bearing runtime asset.
@@ -255,19 +258,6 @@ export default {
     }
     if (isAIAgent(request) && isCrosswordAnswerAsset(url.pathname)) {
       return withWorkerMarker(crosswordFairPlayScript());
-    }
-
-    // FMBNews owns both the canonical newsroom and its legacy /fmbnews aliases.
-    // No other application should render or redirect these paths.
-    if (!isNewsPath && !isLegacyNewsPath) return fetch(request);
-
-    // Legacy FMB News URLs canonicalize here, inside the canonical FMBNews Worker.
-    if (isLegacyNewsPath) {
-      const suffix = url.pathname.slice('/fmbnews'.length);
-      url.hostname = 'www.francinemariebautista.com';
-      url.pathname = `/news${suffix || '/'}`;
-      const response = Response.redirect(url.toString(), 308);
-      return withWorkerMarker(response);
     }
 
     // Keep one canonical hostname for the newsroom.
