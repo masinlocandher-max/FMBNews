@@ -18,14 +18,14 @@
     "warning": "The 68 figure was a publication-slot count, not a count of unique durable articles. It included repeated updates of the same developing stories."
   },
   "release20260904": {
-    "newSourceCheckedArticleRecords": 30,
+    "newSourceCheckedArticleRecords": 31,
     "existingCanonicalArticleFinalized": 1,
     "finalizedCanonicalArticle": "content/news/articles/2026-08-28/1900-mapanuepe-lake-zambales-boat-capsize.json",
     "strategy": "Publish durable unique story records; merge sequential updates into the latest accurate canonical story; do not create stale duplicate pages.",
-    "sourcePolicy": "Every recovered article was rewritten against reachable source material. Unsupported or contradicted details from newsroom briefs were corrected or removed.",
+    "sourcePolicy": "Recovered articles were rewritten against reachable source material. Unsupported or contradicted details from newsroom briefs were corrected or removed.",
     "examplesOfCorrections": [
-      "September 1 fuel rollback corrected to gasoline P0.50 per liter, diesel P0.70 per liter and kerosene P0.90 per liter.",
-      "2026 Ramon Magsaysay awardees verified as Shimon Sakakibara, Kendu Bay Village and Hae-sung Kim.",
+      "September 1 fuel rollback corrected from the brief's up-to-P1 claim to verified retailer cuts of P0.30-P0.40 per liter for gasoline and about P3.80-P3.90 for diesel, with kerosene cuts around P3.80-P3.84.",
+      "2026 Ramon Magsaysay awardees verified as Tommy Koh, Runa Khan and Bo Kyi.",
       "September 4 MC 134 signatory corrected to Executive Secretary Ralph Recto and exact geographic coverage used.",
       "House agricultural-loan measure corrected to House Bill No. 10750.",
       "Mapanuepe Lake canonical article finalized at nine deaths and four survivors after the last missing passenger was recovered."
