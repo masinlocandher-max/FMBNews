@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "national-heroes-day-2026-marcos-libingan-ng-mga-bayani",
+  "headline": "Marcos Leads National Heroes Day Rites at Libingan ng mga Bayani",
+  "seoTitle": "National Heroes Day 2026: Marcos Leads Rites | FMB News",
+  "seoDescription": "President Ferdinand Marcos Jr. led National Heroes Day rites at the Libingan ng mga Bayani and urged Filipinos to carry forward the country's tradition of service.",
+  "keywords": ["National Heroes Day 2026 Philippines", "Marcos Libingan ng mga Bayani", "Filipino heroes"],
+  "category": "National",
+  "kicker": "National Heroes Day · Public Service",
+  "deck": "The President honored historical and modern-day heroes and called for continued service, patriotism and defense of Philippine sovereignty.",
+  "publishedAt": "2026-08-31T08:00:00+08:00",
+  "updatedAt": "2026-09-04T18:11:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["President Ferdinand R. Marcos Jr. led the National Heroes Day commemoration on August 31 at the Tomb of the Unknown Soldier in the Libingan ng mga Bayani in Taguig City.","Government officials, military and uniformed personnel, scouts, civil servants and members of the public joined the ceremony."]},
+    {"heading":"The President's message","paragraphs":["Marcos called on Filipinos to honor the country's heroes by continuing their tradition of service and patriotism, and cited workers, responders, teachers, health personnel, farmers, fisherfolk and overseas Filipinos among today's everyday heroes."]},
+    {"heading":"Context","paragraphs":["National Heroes Day is observed on the last Monday of August and honors Filipinos who contributed to the country's freedom and nation-building."]},
+    {"heading":"Why it matters","paragraphs":["The annual commemoration connects historical remembrance with current civic responsibility, including public service and protection of national sovereignty."]}
+  ],
+  "sources": [
+    {"publisher":"Presidential Communications Office","title":"PBBM leads National Heroes’ Day rites at Libingan ng mga Bayani","publishedAt":"2026-08-31T09:00:00+08:00","url":"https://pco.gov.ph/news_releases/pbbm-leads-national-heroes-day-rites-at-libingan-ng-mga-bayani/"},
+    {"publisher":"Philippine News Agency","title":"PBBM: Defending PH territory a shared responsibility","publishedAt":"2026-08-31T09:36:00+08:00","url":"https://www.pna.gov.ph/articles/1282964"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://pco.gov.ph/news_releases/pbbm-leads-national-heroes-day-rites-at-libingan-ng-mga-bayani/","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used for this recovered archive report because no stable rights-verified image file was ingested with the recovery package.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying this recovered report.","alt":"FMB News editorial visual for Marcos Leads National Heroes Day Rites at Libingan ng mga Bayani","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-09-04T18:11:00+08:00","recoveredAt":"2026-09-04T18:11:00+08:00","recoveryStatus":"source-checked-backfill","notes":["Recovered from the August 31 National Heroes Day briefs.","Used the completed ceremony and official speech rather than the pre-event language in the 1:00 AM brief."]}
+}

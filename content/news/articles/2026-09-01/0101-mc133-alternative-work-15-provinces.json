@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "mc133-alternative-work-arrangements-15-provinces-september-1-2026",
+  "headline": "Palace Orders Alternative Government Work Arrangements in 15 Luzon Provinces",
+  "seoTitle": "MC 133: Alternative Work in 15 Luzon Provinces | FMB News",
+  "seoDescription": "Malacañang ordered government offices in 15 Luzon provinces to adopt alternative work arrangements on September 1 because of expected Habagat rains.",
+  "keywords": ["Memorandum Circular 133 September 1 2026", "alternative work arrangements Luzon", "Habagat government work"],
+  "category": "National",
+  "kicker": "Public Service · Weather",
+  "deck": "Essential and disaster-response services were required to continue operating while covered offices shifted to alternative arrangements.",
+  "publishedAt": "2026-09-01T01:00:00+08:00",
+  "updatedAt": "2026-09-04T18:11:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["Malacañang directed government agencies in 15 provinces in Northern and Central Luzon to adopt appropriate alternative work arrangements on September 1 because of expected heavy rainfall from the enhanced southwest monsoon.","The directive was issued through Memorandum Circular No. 133 upon the recommendation of the National Disaster Risk Reduction and Management Council."]},
+    {"heading":"Areas covered","paragraphs":["The circular covered Ilocos Norte, Ilocos Sur, La Union, Pangasinan, Abra, Benguet, Kalinga, Mountain Province, Apayao, Batanes, Nueva Vizcaya, Zambales, Tarlac, Pampanga and Bataan."]},
+    {"heading":"Essential services","paragraphs":["Agencies responsible for basic and health services, disaster preparedness and response, and other vital functions were required to continue operations."]},
+    {"heading":"Why it matters","paragraphs":["The order was intended to reduce travel exposure and disruption while maintaining essential government services during severe monsoon conditions."]}
+  ],
+  "sources": [
+    {"publisher":"Philippine Information Agency / Presidential Communications Office","title":"Palace orders gov’t agencies in 15 Luzon provinces to observe alternative work arrangements on Sept. 1 due to Habagat","publishedAt":"2026-08-31T18:00:00+08:00","url":"https://pia.gov.ph/news/palace-orders-govt-agencies-in-15-luzon-provinces-to-observe-alternative-work-arrangements-on-sept-1-due-to-habagat/"},
+    {"publisher":"GMA News Online","title":"Malacañang shifts gov't work, classes in 15 provinces to alternative mode on Sept. 1, 2026","publishedAt":"2026-08-31T18:49:00+08:00","url":"https://www.gmanetwork.com/news/topstories/regions/1000572/malaca-ang-shifts-gov-t-work-classes-in-15-provinces-to-alternative-mode-on-sept-1-2026/story/"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://pia.gov.ph/news/palace-orders-govt-agencies-in-15-luzon-provinces-to-observe-alternative-work-arrangements-on-sept-1-due-to-habagat/","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used for this recovered archive report because no stable rights-verified image file was ingested with the recovery package.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying this recovered report.","alt":"FMB News editorial visual for Palace Orders Alternative Government Work Arrangements in 15 Luzon Provinces","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-09-04T18:11:00+08:00","recoveredAt":"2026-09-04T18:11:00+08:00","recoveryStatus":"source-checked-backfill","notes":["Recovered from the September 1 1:00 AM brief.","Corrected the coverage to the 15 provinces named in MC 133 and removed unsupported claims about a blanket private-sector suspension."]}
+}
