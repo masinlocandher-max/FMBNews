@@ -27,7 +27,10 @@ jobs:
           grep -q 'www.francinemariebautista.com/news\*' wrangler.jsonc
           grep -q 'francinemariebautista.com/news\*' wrangler.jsonc
           ! grep -R -n '/fmbnews' src wrangler.jsonc
-          ! grep -R -n -E 'masinlocandher-max/FMB-Ecosystem' src site public scripts package.json wrangler.jsonc
+          # scripts/verify-standalone-boundary.mjs is the real check and runs in
+          # npm run verify, so it also gates deploys. This stays as a fast
+          # pre-build tripwire over the same source paths.
+          ! grep -R -n -E 'masinlocandher-max/FMB-Ecosystem' src site public scripts content package.json wrangler.jsonc
 
       - name: Build standalone newsroom
         run: npm run build

@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "verify": "node --check src/worker.js && node scripts/verify.mjs && node scripts/verify-explainer.mjs && node scripts/verify-images.mjs && node scripts/verify-ticker.mjs && node scripts/verify-product-identity.mjs && node scripts/verify-production-finish.mjs && node scripts/verify-pwa.mjs && node scripts/verify-fact-check.mjs && node scripts/verify-mobile-stabilization.mjs && node scripts/verify-editorial-production.mjs && node scripts/verify-news-distribution.mjs",
+    "verify": "node --check src/worker.js && node scripts/verify.mjs && node scripts/verify-explainer.mjs && node scripts/verify-images.mjs && node scripts/verify-ticker.mjs && node scripts/verify-product-identity.mjs && node scripts/verify-production-finish.mjs && node scripts/verify-pwa.mjs && node scripts/verify-fact-check.mjs && node scripts/verify-standalone-boundary.mjs && node scripts/verify-mobile-stabilization.mjs && node scripts/verify-editorial-production.mjs && node scripts/verify-news-distribution.mjs",
     "test:mobile:browser": "node scripts/run-mobile-qa.mjs",
     "test:mobile": "npm run build && npm run verify && npm run test:mobile:browser",
     "deploy:cloudflare": "npm run build && npm run verify && npx wrangler deploy"
