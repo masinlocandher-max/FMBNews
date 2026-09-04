@@ -8,6 +8,21 @@ Standalone repository for **FMB News / Filipino Media Bulletin** and its four ed
 
 This repository owns the public **`/news/`** application. All newsroom development, publishing logic, visual systems, archive content, CMS integration, assets, personalization, mobile app-style presentation, and deployment configuration live here. It does not import, sync, or depend on another application repository.
 
+## Hard deployment boundary
+
+The production architecture is fixed:
+
+- Main public website repository: `masinlocandher-max/PCO`
+- Main public domain: `https://francinemariebautista.com`
+- News repository: `masinlocandher-max/FMBNews`
+- News public route: `https://www.francinemariebautista.com/news/`
+- News edge host: Cloudflare Workers + Static Assets
+- Forbidden production dependency: `masinlocandher-max/FMB-Ecosystem`
+
+`FMB-Ecosystem` must not be used as the Git source, deployment source, origin, proxy target, route owner, domain owner, or fallback for FMB News. FMB News must not be attached to a Vercel project sourced from `FMB-Ecosystem`.
+
+There is no canonical `/fmbnews` public route. The newsroom route is `/news/` only.
+
 ## Mobile design handoff
 
 The approved mobile home direction and Claude takeover instructions are documented in:
