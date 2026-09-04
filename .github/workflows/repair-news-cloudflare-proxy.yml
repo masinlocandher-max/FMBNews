@@ -81,3 +81,5 @@ jobs:
           check 'https://www.francinemariebautista.com/news/world/' 'FMB Worldwide'
           check 'https://www.francinemariebautista.com/news/sara-duterte-arrest-warrant-grave-threats-september-4-2026/' 'QC Court Issues Arrest Warrant Against VP Sara Duterte'
           echo 'RESOLVED: canonical /news routes are served by FMBNews through Cloudflare.'
+
+# Trigger marker: 2026-09-04 canonical discovery implementation.
