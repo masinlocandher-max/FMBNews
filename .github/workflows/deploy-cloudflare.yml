@@ -160,15 +160,22 @@ jobs:
           test "$status" = '200'
           echo "Main site root remains reachable: HTTP ${status}"
 
-          headers="$(curl --silent --show-error --head --connect-timeout 10 --max-time 30 'https://francinemariebautista.com/news/' | tr -d '\r')"
+          # The apex must canonicalise onto www. This check needs the same cache
+          # buster fetch_with_retry uses: without it Cloudflare answered from its
+          # edge cache (cf-cache-status: HIT) with a 200 captured while routing was
+          # being repaired, and the redirect assertion failed against a stale copy
+          # rather than against what the Worker actually serves.
+          headers="$(curl --silent --show-error --head --connect-timeout 10 --max-time 30 \
+            -H 'Cache-Control: no-cache' -H 'Pragma: no-cache' \
+            "https://francinemariebautista.com/news/?cutover=${GITHUB_SHA}" | tr -d '\r')"
           echo "$headers"
           echo "$headers" | grep -Eq '^HTTP/[^ ]+ 30[178]'
           echo "$headers" | grep -Eqi '^location: https://www\.francinemariebautista\.com/news/?'
 
-          legacy_headers="$(curl --silent --show-error --head --connect-timeout 10 --max-time 30 'https://www.francinemariebautista.com/fmbnews/' | tr -d '\r')"
-          echo "$legacy_headers"
-          echo "$legacy_headers" | grep -Eq '^HTTP/[^ ]+ 30[178]'
-          echo "$legacy_headers" | grep -Eqi '^location: https://www\.francinemariebautista\.com/news/'
-          echo "$legacy_headers" | grep -Eqi '^x-fmb-news-worker: fmb-news$'
+          # /fmbnews is no longer asserted here. Legacy ownership was deliberately
+          # removed from the Worker and from wrangler.jsonc in "Remove legacy
+          # /fmbnews ownership from FMB News worker", so a redirect assertion for it
+          # can never pass and was failing every deploy after the newsroom itself
+          # had already verified green.
 
-          echo 'Public FMB News network cutover, discovery feeds, FMB Explainer endpoints, and legacy-route ownership verified.'
+          echo 'Public FMB News network cutover, discovery feeds and FMB Explainer endpoints verified on www.francinemariebautista.com/news.'
