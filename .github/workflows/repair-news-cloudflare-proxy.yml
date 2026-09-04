@@ -19,6 +19,20 @@ jobs:
         with:
           node-version: 22
 
+      - name: Resolve Cloudflare account from canonical zone
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          test -n "${CLOUDFLARE_API_TOKEN:-}"
+          zone='2e2210f55eba305e10b3f3f0f4a20261'
+          response="$(curl -sS --fail -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" "https://api.cloudflare.com/client/v4/zones/${zone}")"
+          echo "$response" | jq -e '.success == true and .result.name == "francinemariebautista.com"' >/dev/null
+          account_id="$(echo "$response" | jq -r '.result.account.id // empty')"
+          test -n "$account_id"
+          echo "CLOUDFLARE_ACCOUNT_ID=${account_id}" >> "$GITHUB_ENV"
+
       - name: Build and verify newsroom without browser QA
         shell: bash
         run: |
@@ -30,11 +44,8 @@ jobs:
         shell: bash
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           set -euo pipefail
-          test -n "${CLOUDFLARE_API_TOKEN:-}"
-          test -n "${CLOUDFLARE_ACCOUNT_ID:-}"
           npx --yes wrangler@4 deploy
 
       - name: Verify www FMB News route is live on Worker
@@ -52,7 +63,6 @@ jobs:
               if [ "$status" = '200' ] && [ "$worker" = true ] && grep -qi "$needle" /tmp/b; then return 0; fi
               sleep 3
             done
-            echo "::error::${url} is not being served by fmb-news Worker."
             return 1
           }
           check 'https://www.francinemariebautista.com/news/' 'FMB News'
@@ -66,8 +76,7 @@ jobs:
         run: |
           set -euo pipefail
           zone='2e2210f55eba305e10b3f3f0f4a20261'
-          api='https://api.cloudflare.com/client/v4'
-          curl -sS --fail -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" "${api}/zones/${zone}/workers/routes" > /tmp/routes.json
+          curl -sS --fail -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" "https://api.cloudflare.com/client/v4/zones/${zone}/workers/routes" > /tmp/routes.json
           jq -e '.success == true and (.result | any(.script == "fmb-news" and .pattern == "www.francinemariebautista.com/news*")) and (.result | any(.script == "fmb-news" and .pattern == "francinemariebautista.com/news*"))' /tmp/routes.json >/dev/null
 
-# Trigger marker: 2026-09-05 redeploy both /news Worker routes without browser QA gate.
+# Trigger marker: 2026-09-05 derive Cloudflare account ID and restore both Worker routes.
