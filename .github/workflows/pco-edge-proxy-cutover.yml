@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Enforce repository boundaries
+      - name: Enforce canonical repository boundaries
         shell: bash
         run: |
           set -euxo pipefail
@@ -26,92 +26,82 @@ jobs:
           grep -q 'www.francinemariebautista.com/news\*' wrangler.jsonc
           grep -q 'francinemariebautista.com/news\*' wrangler.jsonc
 
-      - name: Create lightweight PCO origin Worker
-        shell: bash
-        run: |
-          cat > /tmp/pco-edge-proxy.mjs <<'EOF'
-          const SOURCE = 'https://raw.githubusercontent.com/masinlocandher-max/PCO/main';
-          const TYPES = {
-            '.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'application/javascript; charset=utf-8',
-            '.json':'application/json; charset=utf-8','.xml':'application/xml; charset=utf-8','.txt':'text/plain; charset=utf-8',
-            '.svg':'image/svg+xml','.webp':'image/webp','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg',
-            '.mp3':'audio/mpeg','.pdf':'application/pdf','.ico':'image/x-icon'
-          };
-          function typeFor(path){const i=path.lastIndexOf('.');return i>=0?TYPES[path.slice(i).toLowerCase()]||'application/octet-stream':'application/octet-stream'}
-          export default {
-            async fetch(request) {
-              const incoming = new URL(request.url);
-              if (incoming.pathname === '/news' || incoming.pathname.startsWith('/news/')) return fetch(request);
-              let path = incoming.pathname;
-              if (path === '/') path = '/index.html';
-              if (path.endsWith('/')) path += 'index.html';
-              const sourceUrl = SOURCE + path;
-              const upstream = await fetch(sourceUrl, {
-                headers: { 'User-Agent':'FMB-PCO-Edge/1.0', 'Accept':'*/*' },
-                cf: { cacheEverything: true, cacheTtl: 300 }
-              });
-              if (!upstream.ok) return new Response('Not found', {status: upstream.status === 404 ? 404 : 502});
-              const headers = new Headers(upstream.headers);
-              headers.set('Content-Type', typeFor(path));
-              headers.set('Cache-Control', path.endsWith('.html') ? 'public, max-age=60' : 'public, max-age=300');
-              headers.set('X-FMB-Root-Source','PCO');
-              headers.set('X-FMB-Root-Repository','masinlocandher-max/PCO');
-              headers.delete('content-security-policy');
-              return new Response(upstream.body,{status:upstream.status,headers});
-            }
-          };
-          EOF
-          cat > /tmp/pco-edge-wrangler.jsonc <<'EOF'
-          {
-            "name":"fmb-pco-edge",
-            "main":"/tmp/pco-edge-proxy.mjs",
-            "compatibility_date":"2026-09-04",
-            "workers_dev":true
-          }
-          EOF
-
-      - name: Deploy PCO edge Worker
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        run: npx --yes wrangler@4 deploy --config /tmp/pco-edge-wrangler.jsonc
-
-      - name: Attach www then apex to PCO Custom Domain
+      - name: Confirm Cloudflare credential
         shell: bash
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
-          set -euxo pipefail
-          account_id="${CLOUDFLARE_ACCOUNT_ID:-4821fa52e064d5aa269e76619559ec95}"
+          set -euo pipefail
+          test -n "${CLOUDFLARE_API_TOKEN:-}" || { echo '::error::Missing CLOUDFLARE_API_TOKEN'; exit 1; }
+
+      - name: Proxy existing PCO DNS records through Cloudflare
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
           zone_id='2e2210f55eba305e10b3f3f0f4a20261'
           api='https://api.cloudflare.com/client/v4'
-          for hostname in www.francinemariebautista.com francinemariebautista.com; do
-            payload="$(jq -nc --arg hostname "$hostname" --arg service 'fmb-pco-edge' --arg zone_id "$zone_id" --arg zone_name 'francinemariebautista.com' '{hostname:$hostname,service:$service,zone_id:$zone_id,zone_name:$zone_name}')"
-            response="$(curl --silent --show-error -X PUT -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H 'Content-Type: application/json' "${api}/accounts/${account_id}/workers/domains" --data "$payload")"
-            echo "$response" | jq '{success,errors,messages,result:{hostname:.result.hostname,service:.result.service,zone_name:.result.zone_name}}'
-            printf '%s' "$response" | jq -e '.success == true and .result.service == "fmb-pco-edge"' >/dev/null
+
+          for hostname in francinemariebautista.com www.francinemariebautista.com; do
+            records="$(curl --fail-with-body --silent --show-error \
+              -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+              -H 'Content-Type: application/json' \
+              --get --data-urlencode "name=${hostname}" \
+              "${api}/zones/${zone_id}/dns_records")"
+
+            printf '%s' "$records" | jq -e '.success == true' >/dev/null
+            mapfile -t record_ids < <(printf '%s' "$records" | jq -r '.result[] | select(.type == "A" or .type == "AAAA" or .type == "CNAME") | .id')
+
+            if [ "${#record_ids[@]}" -eq 0 ]; then
+              echo "::error::No existing A/AAAA/CNAME DNS records found for ${hostname}; refusing to invent or replace DNS targets."
+              exit 1
+            fi
+
+            echo "Found ${#record_ids[@]} existing origin record(s) for ${hostname}; preserving targets and enabling Cloudflare proxy only."
+
+            for record_id in "${record_ids[@]}"; do
+              response="$(curl --fail-with-body --silent --show-error -X PATCH \
+                -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+                -H 'Content-Type: application/json' \
+                "${api}/zones/${zone_id}/dns_records/${record_id}" \
+                --data '{"proxied":true}')"
+              printf '%s' "$response" | jq -e '.success == true and .result.proxied == true' >/dev/null
+              printf '%s' "$response" | jq '{success,result:{name:.result.name,type:.result.type,proxied:.result.proxied}}'
+            done
           done
 
-      - name: Verify root PCO and news FMBNews
+      - name: Verify PCO root and FMBNews /news routing
         shell: bash
         run: |
           set -euo pipefail
+          article='https://www.francinemariebautista.com/news/sara-duterte-arrest-warrant-grave-threats-september-4-2026/'
+
           for attempt in $(seq 1 20); do
-            rm -f /tmp/a.h /tmp/a.html /tmp/n.h /tmp/n.html
-            curl -sSLo /tmp/a.html -D /tmp/a.h --max-time 20 -H 'Cache-Control: no-cache' "https://francinemariebautista.com/?edge=${GITHUB_SHA}-${attempt}" || true
-            curl -sSLo /tmp/n.html -D /tmp/n.h --max-time 20 -H 'Cache-Control: no-cache' "https://www.francinemariebautista.com/news/?edge=${GITHUB_SHA}-${attempt}" || true
-            root=false; news=false
-            tr -d '\r' < /tmp/a.h | grep -Eqi '^x-fmb-root-source: PCO$' && grep -q 'What brought you here?' /tmp/a.html && root=true || true
-            tr -d '\r' < /tmp/n.h | grep -Eqi '^x-fmb-news-worker: fmb-news$' && grep -qi 'FMB News' /tmp/n.html && news=true || true
-            echo "check ${attempt}: root=${root} news=${news}"
-            if [ "$root" = true ] && [ "$news" = true ]; then
-              echo 'RESOLVED: PCO=root, FMBNews=/news, Vercel/FMB-Ecosystem bypassed.'
+            rm -f /tmp/root.h /tmp/root.html /tmp/news.h /tmp/news.html /tmp/article.h /tmp/article.html
+
+            curl -sSLo /tmp/root.html -D /tmp/root.h -L --max-time 30 -H 'Cache-Control: no-cache' \
+              "https://francinemariebautista.com/?cutover=${GITHUB_SHA}-${attempt}" || true
+            curl -sSLo /tmp/news.html -D /tmp/news.h -L --max-time 30 -H 'Cache-Control: no-cache' \
+              "https://www.francinemariebautista.com/news/?cutover=${GITHUB_SHA}-${attempt}" || true
+            curl -sSLo /tmp/article.html -D /tmp/article.h -L --max-time 30 -H 'Cache-Control: no-cache' \
+              "${article}?cutover=${GITHUB_SHA}-${attempt}" || true
+
+            root=false; news=false; breaking=false
+            grep -q 'What brought you here?' /tmp/root.html && root=true || true
+            tr -d '\r' < /tmp/news.h | grep -Eqi '^x-fmb-news-worker: fmb-news$' && grep -qi 'FMB News' /tmp/news.html && news=true || true
+            tr -d '\r' < /tmp/article.h | grep -Eqi '^x-fmb-news-worker: fmb-news$' && grep -qi 'QC Court Issues Arrest Warrant Against VP Sara Duterte' /tmp/article.html && breaking=true || true
+
+            echo "check ${attempt}: PCO-root=${root} FMBNews-home=${news} breaking-article=${breaking}"
+            if [ "$root" = true ] && [ "$news" = true ] && [ "$breaking" = true ]; then
+              echo 'RESOLVED: PCO remains the root origin; FMBNews owns /news through Cloudflare; Vercel/FMB-Ecosystem is not used.'
               exit 0
             fi
-            sleep 3
+            sleep 4
           done
-          echo '::error::Live ownership split not verified.'
-          echo 'root'; cat /tmp/a.h || true; head -c 500 /tmp/a.html || true
-          echo 'news'; cat /tmp/n.h || true; head -c 500 /tmp/n.html || true
+
+          echo '::error::Public routing did not converge after Cloudflare proxy activation.'
+          echo 'ROOT HEADERS'; cat /tmp/root.h || true
+          echo 'NEWS HEADERS'; cat /tmp/news.h || true
+          echo 'ARTICLE HEADERS'; cat /tmp/article.h || true
           exit 1
