@@ -63,6 +63,12 @@ await import('./hardfix-mobile-first-site.mjs');
 await import('./hardfix-ticker.mjs');
 await import('./hardfix-newsroom-compat.mjs');
 
+// Final public-web discovery pass. It leaves the visual system untouched while
+// exposing canonical newsroom identity, trust policies, permissive snippet/image
+// directives, and normalized publisher/author structured data to search and AI
+// discovery systems.
+await import('./hardfix-ai-discovery.mjs');
+
 const textExtensions = new Set(['.html', '.css', '.js', '.mjs', '.json', '.xml', '.txt', '.svg']);
 
 async function rewriteAssetPaths(target) {
@@ -91,4 +97,4 @@ await import('./generate-news-distribution.mjs');
 // own source tree and fail on the second consecutive run — the legacy block it
 // searched for was already gone. The assertions now live in verify.mjs itself.
 
-console.log('Built Filipino Media Bulletin with five official editorial products: FMB News, FMB Worldwide, FMB Explainer, FMB Fact Check, and FMB Daily Brief; plus localized visual assets, product-designated fallback imagery, guaranteed article imagery, personalization/PWA support, live utilities, newsroom search and intake, canonical sitemap and RSS distribution, a sealed active crossword runtime, and no fixed bottom navigation.');
+console.log('Built Filipino Media Bulletin with five official editorial products: FMB News, FMB Worldwide, FMB Explainer, FMB Fact Check, and FMB Daily Brief; plus localized visual assets, product-designated fallback imagery, guaranteed article imagery, personalization/PWA support, live utilities, newsroom search and intake, canonical sitemap and RSS distribution, a sealed active crossword runtime, explicit editorial trust surfaces, normalized search/AI discovery metadata, and no fixed bottom navigation.');
