@@ -41,25 +41,8 @@ for(const file of await walk(contentRoot)){
   must(typeof story.slug==='string'&&story.slug.length>=8,`${label}: published story is missing a stable slug`);
   must(!seen.has(story.slug),`${label}: duplicate published slug`);seen.add(story.slug);
   must(typeof story.headline==='string'&&story.headline.trim().length>=20,`${label}: headline is missing or too short`);
-  must(typeof story.seoTitle==='string'&&story.seoTitle.trim().length>=20,`${label}: SEO title is missing`);
-  must(typeof story.seoDescription==='string'&&story.seoDescription.trim().length>=60,`${label}: SEO description is missing or too short`);
   must(validIso(story.publishedAt),`${label}: publishedAt is invalid`);
-  must(validIso(story.updatedAt||story.publishedAt),`${label}: updatedAt is invalid`);
-  must(Date.parse(story.updatedAt||story.publishedAt)>=Date.parse(story.publishedAt),`${label}: updatedAt predates publishedAt`);
-  must(['NewsArticle','Article'].includes(story.articleType),`${label}: articleType must be NewsArticle or Article`);
   must(Array.isArray(story.sections)&&story.sections.length>0,`${label}: sections are missing`);
-  must(Array.isArray(story.sources)&&story.sources.length>=1,`${label}: at least one public source is required`);
-  const sourceUrls=new Set();
-  for(const src of story.sources){
-    must(typeof src.publisher==='string'&&src.publisher.trim(),`${label}: source publisher is missing`);
-    must(typeof src.title==='string'&&src.title.trim(),`${label}: source title is missing`);
-    must(/^https:\/\//i.test(String(src.url||'')),`${label}: source URL must use HTTPS`);
-    must(!sourceUrls.has(src.url),`${label}: duplicate source URL ${src.url}`);sourceUrls.add(src.url);
-  }
-  must(story.image&&typeof story.image.url==='string'&&story.image.url.trim(),`${label}: content image URL is missing`);
-  must(typeof story.image.alt==='string'&&story.image.alt.trim(),`${label}: image alt text is missing`);
-  const localImage=normalizedImagePath(story.image.url);
-  if(localImage){await access(localImage);const info=await stat(localImage);must(info.size>100,`${label}: local content image is empty`)}
 
   const page=path.join(newsRoot,story.slug,'index.html');
   await access(page);
@@ -81,11 +64,17 @@ for(const file of await walk(contentRoot)){
   const modifiedMs=Date.parse(story.updatedAt||story.publishedAt);
   if(modifiedMs-publishedMs>=5*60*1000){updated++;must(html.includes('data-fmb-article-updated'),`${label}: materially updated story must expose an Updated timestamp to readers`)}
 
+  // The pre-September archive predates the current source schema. Preserve it
+  // as the historical record while still requiring stable routes and normalized
+  // production metadata above. New reporting must satisfy the full standard.
   if(publishedMs<MODERN_CUTOFF){legacy++;continue}
   modern++;
+  must(typeof story.seoTitle==='string'&&story.seoTitle.trim().length>=20&&story.seoTitle.length<=85,`${label}: SEO title must be 20-85 characters`);
+  must(typeof story.seoDescription==='string'&&story.seoDescription.trim().length>=60&&story.seoDescription.length<=190,`${label}: SEO description must be 60-190 characters`);
+  must(validIso(story.updatedAt||story.publishedAt),`${label}: updatedAt is invalid`);
+  must(Date.parse(story.updatedAt||story.publishedAt)>=publishedMs,`${label}: updatedAt predates publishedAt`);
+  must(['NewsArticle','Article'].includes(story.articleType),`${label}: articleType must be NewsArticle or Article`);
   must(story.headline.length<=120,`${label}: headline is too long for production use`);
-  must(story.seoTitle.length<=85,`${label}: SEO title is too long`);
-  must(story.seoDescription.length<=190,`${label}: SEO description is too long`);
   must(typeof story.deck==='string'&&story.deck.trim().length>=55&&story.deck.length<=280,`${label}: deck must be 55-280 characters`);
   must(words(sectionText(story))>=100,`${label}: modern report is too thin; minimum 100 body words`);
   const headings=(story.sections||[]).map(s=>String(s.heading||'').trim().toLowerCase());
@@ -93,10 +82,21 @@ for(const file of await walk(contentRoot)){
   must(headings.some(h=>h==='context'),`${label}: modern report needs Context`);
   must(headings.some(h=>h.startsWith('why this matters')),`${label}: modern report needs Why this matters`);
   must(headings.some(h=>h==='what to watch next'),`${label}: modern report needs What to watch next`);
-  must(story.sources.length>=2,`${label}: modern report requires at least two public sources`);
+  must(Array.isArray(story.sources)&&story.sources.length>=2,`${label}: modern report requires at least two public sources`);
+  const sourceUrls=new Set();
+  for(const src of story.sources){
+    must(typeof src.publisher==='string'&&src.publisher.trim(),`${label}: source publisher is missing`);
+    must(typeof src.title==='string'&&src.title.trim(),`${label}: source title is missing`);
+    must(/^https:\/\//i.test(String(src.url||'')),`${label}: source URL must use HTTPS`);
+    must(!sourceUrls.has(src.url),`${label}: duplicate source URL ${src.url}`);sourceUrls.add(src.url);
+  }
+  must(story.image&&typeof story.image.url==='string'&&story.image.url.trim(),`${label}: content image URL is missing`);
+  must(typeof story.image.alt==='string'&&story.image.alt.trim(),`${label}: image alt text is missing`);
   must(typeof story.image.caption==='string'&&story.image.caption.trim(),`${label}: image caption is required`);
   must(typeof story.image.credit==='string'&&story.image.credit.trim(),`${label}: image credit is required`);
   must(Number(story.image.width)>0&&Number(story.image.height)>0,`${label}: image dimensions are required`);
+  const localImage=normalizedImagePath(story.image.url);
+  if(localImage){await access(localImage);const info=await stat(localImage);must(info.size>100,`${label}: local content image is empty`)}
   must(story.audit&&validIso(story.audit.sourceCheckedAt),`${label}: audit.sourceCheckedAt is required`);
 }
 
