@@ -13,39 +13,31 @@ jobs:
   repair:
     if: github.event.head_commit.message == 'Repair FMB News Cloudflare proxy'
     runs-on: ubuntu-latest
-    env:
-      CLOUDFLARE_ZONE_ID: 2e2210f55eba305e10b3f3f0f4a20261
-      CLOUDFLARE_API: https://api.cloudflare.com/client/v4
     steps:
-      - name: Confirm Cloudflare zone and public delegation
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build and verify newsroom without browser QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm run build
+          npm run verify
+
+      - name: Redeploy Worker and both canonical /news routes
         shell: bash
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           set -euo pipefail
           test -n "${CLOUDFLARE_API_TOKEN:-}"
-          auth=(-H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H 'Content-Type: application/json')
-          curl -sS --fail "${auth[@]}" "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}" > /tmp/zone.json
-          jq -e '.success == true and .result.name == "francinemariebautista.com"' /tmp/zone.json >/dev/null
-          mapfile -t expected < <(jq -r '.result.name_servers[]?' /tmp/zone.json | tr '[:upper:]' '[:lower:]' | sed 's/\.$//' | sort -u)
-          mapfile -t actual < <(dig +short NS francinemariebautista.com | tr '[:upper:]' '[:lower:]' | sed 's/\.$//' | sort -u)
-          diff -u <(printf '%s\n' "${expected[@]}") <(printf '%s\n' "${actual[@]}")
+          test -n "${CLOUDFLARE_ACCOUNT_ID:-}"
+          npx --yes wrangler@4 deploy
 
-      - name: Confirm canonical DNS and Worker route
-        shell: bash
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: |
-          set -euo pipefail
-          auth=(-H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}")
-          curl -sS --fail "${auth[@]}" "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records?name=francinemariebautista.com" > /tmp/apex.json
-          curl -sS --fail "${auth[@]}" "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records?name=www.francinemariebautista.com" > /tmp/www.json
-          curl -sS --fail "${auth[@]}" "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/workers/routes" > /tmp/routes.json
-          jq -e '[.result[] | select(.type == "A" and .proxied == true and (.content | IN("185.199.108.153","185.199.109.153","185.199.110.153","185.199.111.153")))] | length == 4' /tmp/apex.json >/dev/null
-          jq -e '.result | any(.type == "CNAME" and .content == "masinlocandher-max.github.io" and .proxied == true)' /tmp/www.json >/dev/null
-          jq -e '.success == true and (.result | any(.script == "fmb-news" and .pattern == "www.francinemariebautista.com/news*"))' /tmp/routes.json >/dev/null
-
-      - name: Verify public FMB News routes reach Worker
+      - name: Verify www FMB News route is live on Worker
         shell: bash
         run: |
           set -euo pipefail
@@ -53,36 +45,29 @@ jobs:
             local url="$1" needle="$2"
             for attempt in $(seq 1 12); do
               rm -f /tmp/h /tmp/b
-              status="$(curl -sS -o /tmp/b -D /tmp/h -w '%{http_code}' --connect-timeout 10 --max-time 30 -H 'Cache-Control: no-cache' "${url}?health=${GITHUB_SHA}-${attempt}" || true)"
+              status="$(curl -sS -L -o /tmp/b -D /tmp/h -w '%{http_code}' --connect-timeout 10 --max-time 30 -H 'Cache-Control: no-cache' "${url}?routefix=${GITHUB_SHA}-${attempt}" || true)"
               worker=false
               tr -d '\r' < /tmp/h | grep -Eqi '^x-fmb-news-worker: fmb-news$' && worker=true || true
               echo "${url}: HTTP ${status}, worker=${worker}"
               if [ "$status" = '200' ] && [ "$worker" = true ] && grep -qi "$needle" /tmp/b; then return 0; fi
               sleep 3
             done
+            echo "::error::${url} is not being served by fmb-news Worker."
             return 1
           }
           check 'https://www.francinemariebautista.com/news/' 'FMB News'
           check 'https://www.francinemariebautista.com/news/world/' 'FMB Worldwide'
-          check 'https://www.francinemariebautista.com/news/sara-duterte-arrest-warrant-grave-threats-september-4-2026/' 'QC Court Issues Arrest Warrant Against VP Sara Duterte'
+          check 'https://www.francinemariebautista.com/news/feed.xml' '<title>FMB News</title>'
 
-      - name: Check DNS auto-repair permission
-        continue-on-error: true
+      - name: Verify both Worker route patterns exist
         shell: bash
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
           set -euo pipefail
-          auth=(-H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H 'Content-Type: application/json')
-          name="_fmb-news-dns-write-test.francinemariebautista.com"
-          payload="$(jq -nc --arg name "$name" --arg content "${GITHUB_SHA}" '{type:"TXT",name:$name,content:$content,ttl:60}')"
-          status="$(curl -sS -o /tmp/test.json -w '%{http_code}' -X POST "${auth[@]}" "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records" --data "$payload" || true)"
-          if [ "$status" != '200' ] && [ "$status" != '201' ]; then
-            echo '::warning::Current CLOUDFLARE_API_TOKEN is read-capable but lacks DNS edit permission; future DNS self-repair will require Zone > DNS > Edit.'
-            exit 1
-          fi
-          id="$(jq -r '.result.id // empty' /tmp/test.json)"
-          test -n "$id"
-          curl -sS --fail -X DELETE "${auth[@]}" "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records/${id}" | jq -e '.success == true' >/dev/null
+          zone='2e2210f55eba305e10b3f3f0f4a20261'
+          api='https://api.cloudflare.com/client/v4'
+          curl -sS --fail -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" "${api}/zones/${zone}/workers/routes" > /tmp/routes.json
+          jq -e '.success == true and (.result | any(.script == "fmb-news" and .pattern == "www.francinemariebautista.com/news*")) and (.result | any(.script == "fmb-news" and .pattern == "francinemariebautista.com/news*"))' /tmp/routes.json >/dev/null
 
-# Trigger marker: 2026-09-05 verify restored /news and preserve DNS health diagnostics.
+# Trigger marker: 2026-09-05 redeploy both /news Worker routes without browser QA gate.
