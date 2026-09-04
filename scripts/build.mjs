@@ -43,7 +43,7 @@ await import('./hardfix-mobile-app-home.mjs');
 await import('./hardfix-newsroom-audit.mjs');
 await import('./hardfix-late-newsroom-shell.mjs');
 
-// Generate Fact Check before the universal mobile/PWA passes so all 124 new
+// Generate Fact Check before the universal mobile/PWA passes so all generated
 // pages receive the same shared newsroom runtime, accessibility and QA contract.
 await import('./render-fmb-fact-check.mjs');
 await import('./hardfix-fact-check-qa.mjs');
@@ -62,6 +62,12 @@ await import('./hardfix-mobile-first-site.mjs');
 // clock and the same network headline bar.
 await import('./hardfix-ticker.mjs');
 await import('./hardfix-newsroom-compat.mjs');
+
+// FMB News owns its final shell. Historical footer variants and broader-site
+// ecosystem links are removed after every route has been rendered, so no other
+// FMB product can re-enter the newsroom chrome through an earlier generator.
+await import('./hardfix-footer.mjs');
+await import('./hardfix-newsroom-isolation.mjs');
 
 const textExtensions = new Set(['.html', '.css', '.js', '.mjs', '.json', '.xml', '.txt', '.svg']);
 
@@ -86,9 +92,6 @@ await rewriteAssetPaths(newsRoot);
 await import('./generate-news-distribution.mjs');
 
 // The active crossword intentionally ships no answer key, and scripts/verify.mjs
-// asserts that secure contract directly. The build used to rewrite verify.mjs on
-// disk here to install those assertions, which made `npm run build` mutate its
-// own source tree and fail on the second consecutive run — the legacy block it
-// searched for was already gone. The assertions now live in verify.mjs itself.
+// asserts that secure contract directly. The assertions live in verify.mjs itself.
 
-console.log('Built Filipino Media Bulletin with five official editorial products: FMB News, FMB Worldwide, FMB Explainer, FMB Fact Check, and FMB Daily Brief; plus localized visual assets, product-designated fallback imagery, guaranteed article imagery, personalization/PWA support, live utilities, newsroom search and intake, canonical sitemap and RSS distribution, a sealed active crossword runtime, and no fixed bottom navigation.');
+console.log('Built standalone Filipino Media Bulletin with five official editorial products: FMB News, FMB Worldwide, FMB Explainer, FMB Fact Check, and FMB Daily Brief; plus localized visual assets, guaranteed article imagery, personalization/PWA support, live utilities, newsroom search and intake, one consolidated footer, zero broader FMB ecosystem navigation, canonical sitemap and RSS distribution, a sealed active crossword runtime, and no fixed bottom navigation.');
