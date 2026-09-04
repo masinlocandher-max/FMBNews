@@ -48,6 +48,11 @@ await import('./hardfix-late-newsroom-shell.mjs');
 await import('./render-fmb-fact-check.mjs');
 await import('./hardfix-fact-check-qa.mjs');
 
+// Normalize FMB News article publication/modification metadata, article JSON-LD,
+// and reader-visible update transparency. This is an editorial production pass
+// only; it intentionally does not alter the frozen visual system.
+await import('./hardfix-editorial-production.mjs');
+
 // Apply the universal responsive/PWA/personalization system only after every
 // newsroom page exists, including late-generated search, submission and Fact
 // Check routes.
