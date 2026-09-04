@@ -201,7 +201,10 @@ async function serveCmsReader(request, env, slug, searchParams) {
   const params = new URLSearchParams(searchParams);
   params.set('slug', slug);
   const assetUrl = new URL(request.url);
-  assetUrl.pathname = '/news/read/index.html';
+  // Let Cloudflare's native SSG router map this clean directory path to
+  // dist/news/read/index.html. Fetching /index.html directly would be
+  // canonicalized back to /news/read/ under auto-trailing-slash handling.
+  assetUrl.pathname = '/news/read/';
   assetUrl.search = params.toString();
 
   let article;
@@ -290,19 +293,10 @@ export default {
       return serveCmsReader(request, env, slug, url.searchParams);
     }
 
-    // FMB News is a static-site snapshot enhanced by the live Supabase CMS.
-    // Resolve clean directory URLs explicitly so deployment does not depend on
-    // platform-specific automatic index-file handling.
-    let assetPath = url.pathname;
-    const lastSegment = assetPath.split('/').filter(Boolean).at(-1) || '';
-    const hasExtension = lastSegment.includes('.');
-
-    if (assetPath.endsWith('/')) {
-      assetPath += 'index.html';
-    } else if (!hasExtension) {
-      assetPath += '/index.html';
-    }
-
+    // FMB News is an SSG newsroom. Cloudflare's native HTML handling owns the
+    // directory-to-index mapping, so clean public URLs such as /news/world/
+    // resolve directly to dist/news/world/index.html. Do not rewrite them to
+    // /index.html in Worker code; that bypasses the supported SSG route path.
     const crosswordHeaders = isActiveCrosswordPath(url.pathname)
       ? {
           'Cache-Control': 'private, no-store, max-age=0',
@@ -312,6 +306,6 @@ export default {
         }
       : {};
 
-    return serveAsset(request, env, assetPath, url.searchParams, crosswordHeaders);
+    return serveAsset(request, env, url.pathname, url.searchParams, crosswordHeaders);
   },
 };
