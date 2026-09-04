@@ -1,0 +1,49 @@
+name: Publish approved FMB News emergency Worker endpoint
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/emergency-publish-workers-dev.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    if: github.event.head_commit.message == 'Publish approved FMB News emergency Worker endpoint'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build approved standalone newsroom
+        run: npm run build
+      - name: Verify approved standalone newsroom
+        run: npm run verify
+      - name: Deploy Worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npx --yes wrangler@4 deploy
+      - name: Verify direct Worker endpoint
+        shell: bash
+        run: |
+          set -euo pipefail
+          url="https://fmb-news.info-senz-pr.workers.dev/news/?restore=${GITHUB_SHA}"
+          for attempt in $(seq 1 12); do
+            if curl --fail --silent --show-error --location -D /tmp/h "$url&attempt=$attempt" -o /tmp/b; then
+              if tr -d '\r' < /tmp/h | grep -Eqi '^x-fmb-news-worker: fmb-news$' \
+                && grep -qi 'FMB News' /tmp/b \
+                && grep -qi 'FMB Worldwide' /tmp/b \
+                && grep -qi 'FMB Explainer' /tmp/b \
+                && grep -qi 'FMB Fact Check' /tmp/b \
+                && grep -qi 'FMB Daily Brief' /tmp/b; then
+                echo 'Approved standalone FMB News is live on the direct Worker endpoint.'
+                exit 0
+              fi
+            fi
+            sleep 5
+          done
+          exit 1
