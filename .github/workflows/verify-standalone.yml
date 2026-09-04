@@ -26,7 +26,7 @@ jobs:
           test ! -d .vercel
           grep -q 'www.francinemariebautista.com/news\*' wrangler.jsonc
           grep -q 'francinemariebautista.com/news\*' wrangler.jsonc
-          ! grep -q '/fmbnews' wrangler.jsonc
+          ! grep -R -n '/fmbnews' src wrangler.jsonc
           ! grep -R -n -E 'masinlocandher-max/FMB-Ecosystem' src site public scripts package.json wrangler.jsonc
 
       - name: Build standalone newsroom
