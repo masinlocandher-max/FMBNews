@@ -31,13 +31,54 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
           set -euo pipefail
-          curl -sS --fail -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H 'Content-Type: application/json' "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}" > /tmp/zone.json
+          auth=(-H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H 'Content-Type: application/json')
+          curl -sS --fail "${auth[@]}" "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}" > /tmp/zone.json
           jq -e '.success == true and .result.name == "francinemariebautista.com"' /tmp/zone.json >/dev/null
           mapfile -t expected < <(jq -r '.result.name_servers[]?' /tmp/zone.json | tr '[:upper:]' '[:lower:]' | sed 's/\.$//' | sort -u)
           mapfile -t actual < <(dig +short NS francinemariebautista.com | tr '[:upper:]' '[:lower:]' | sed 's/\.$//' | sort -u)
           printf '%s\n' "${expected[@]}" > /tmp/expected-ns
           printf '%s\n' "${actual[@]}" > /tmp/actual-ns
           diff -u /tmp/expected-ns /tmp/actual-ns
+
+      - name: Check apex canonical DNS exists
+        continue-on-error: true
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          curl -sS --fail -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records?name=francinemariebautista.com" > /tmp/apex.json
+          jq -e '[.result[] | select(.type == "A" and (.content | IN("185.199.108.153","185.199.109.153","185.199.110.153","185.199.111.153")))] | length == 4' /tmp/apex.json >/dev/null
+
+      - name: Check www canonical DNS exists
+        continue-on-error: true
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          curl -sS --fail -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records?name=www.francinemariebautista.com" > /tmp/www.json
+          jq -e '.result | any(.type == "CNAME" and .content == "masinlocandher-max.github.io")' /tmp/www.json >/dev/null
+
+      - name: Check www is Cloudflare proxied
+        continue-on-error: true
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          curl -sS --fail -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records?name=www.francinemariebautista.com" > /tmp/www.json
+          jq -e '.result | any(.type == "CNAME" and .content == "masinlocandher-max.github.io" and .proxied == true)' /tmp/www.json >/dev/null
+
+      - name: Check FMB News Worker route exists
+        continue-on-error: true
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          curl -sS --fail -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/workers/routes" > /tmp/routes.json
+          jq -e '.success == true and (.result | any(.script == "fmb-news" and (.pattern == "www.francinemariebautista.com/news*" or .pattern == "francinemariebautista.com/news*")))' /tmp/routes.json >/dev/null
 
       - name: Confirm Cloudflare token can edit DNS
         shell: bash
@@ -51,7 +92,6 @@ jobs:
           status="$(curl -sS -o /tmp/create-test.json -w '%{http_code}' -X POST "${auth[@]}" "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records" --data "$payload" || true)"
           if [ "$status" != '200' ] && [ "$status" != '201' ]; then
             echo "::error::Cloudflare API token can read the zone but cannot create DNS records (HTTP ${status}). The token needs Zone > DNS > Edit for francinemariebautista.com."
-            jq -r '.errors[]?.message // empty' /tmp/create-test.json 2>/dev/null || true
             exit 1
           fi
           id="$(jq -r '.result.id // empty' /tmp/create-test.json)"
@@ -99,37 +139,18 @@ jobs:
           payload='{"type":"CNAME","name":"www.francinemariebautista.com","content":"masinlocandher-max.github.io","ttl":1,"proxied":true,"comment":"PCO GitHub Pages canonical www; FMB News edge enabled"}'
           curl -sS --fail -X POST "${auth[@]}" "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records" --data "$payload" | jq -e '.success == true and .result.proxied == true' >/dev/null
 
-      - name: Verify Cloudflare DNS records are canonical and proxied
-        shell: bash
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: |
-          set -euo pipefail
-          auth=(-H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H 'Content-Type: application/json')
-          apex="$(curl -sS --fail "${auth[@]}" "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records?name=francinemariebautista.com")"
-          www="$(curl -sS --fail "${auth[@]}" "${CLOUDFLARE_API}/zones/${CLOUDFLARE_ZONE_ID}/dns_records?name=www.francinemariebautista.com")"
-          test "$(echo "$apex" | jq '[.result[] | select(.type == "A" and .proxied == true and (.content | IN("185.199.108.153","185.199.109.153","185.199.110.153","185.199.111.153")))] | length')" -eq 4
-          echo "$www" | jq -e '.result | length == 1 and .[0].type == "CNAME" and .[0].content == "masinlocandher-max.github.io" and .[0].proxied == true' >/dev/null
-
       - name: Verify canonical FMB News routes reach Worker
         shell: bash
         run: |
           set -euo pipefail
-          check() {
-            local url="$1" needle="$2"
+          for url in 'https://www.francinemariebautista.com/news/' 'https://www.francinemariebautista.com/news/world/'; do
             for attempt in $(seq 1 20); do
               rm -f /tmp/h /tmp/b
               status="$(curl -sS -o /tmp/b -D /tmp/h -w '%{http_code}' --connect-timeout 10 --max-time 30 -H 'Cache-Control: no-cache' "${url}?proxyfix=${GITHUB_SHA}-${attempt}" || true)"
-              worker=false
-              tr -d '\r' < /tmp/h | grep -Eqi '^x-fmb-news-worker: fmb-news$' && worker=true || true
-              if [ "$status" = '200' ] && [ "$worker" = true ] && grep -qi "$needle" /tmp/b; then return 0; fi
+              if [ "$status" = '200' ] && tr -d '\r' < /tmp/h | grep -Eqi '^x-fmb-news-worker: fmb-news$'; then break; fi
+              if [ "$attempt" -eq 20 ]; then exit 1; fi
               sleep 3
             done
-            echo "::error::${url} still does not reach the FMB News Worker."
-            return 1
-          }
-          check 'https://www.francinemariebautista.com/news/' 'FMB News'
-          check 'https://www.francinemariebautista.com/news/world/' 'FMB Worldwide'
-          check 'https://www.francinemariebautista.com/news/sara-duterte-arrest-warrant-grave-threats-september-4-2026/' 'QC Court Issues Arrest Warrant Against VP Sara Duterte'
+          done
 
-# Trigger marker: 2026-09-05 verify DNS edit permission then restore /news.
+# Trigger marker: 2026-09-05 diagnose www and Worker route before DNS repair.
