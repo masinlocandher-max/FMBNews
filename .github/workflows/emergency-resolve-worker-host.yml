@@ -1,0 +1,41 @@
+name: Resolve standalone FMB News Worker host
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/emergency-resolve-worker-host.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  resolve:
+    if: github.event.head_commit.message == 'Resolve standalone FMB News Worker host'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Resolve and verify workers.dev hostname
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          account_id='4821fa52e064d5aa269e76619559ec95'
+          api='https://api.cloudflare.com/client/v4'
+          response="$(curl --fail --silent --show-error \
+            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+            "${api}/accounts/${account_id}/workers/subdomain")"
+          subdomain="$(printf '%s' "$response" | jq -r '.result.subdomain // empty')"
+          test -n "$subdomain"
+          host="fmb-news.${subdomain}.workers.dev"
+          echo "FMB_NEWS_WORKER_HOST=${host}"
+          curl --fail --silent --show-error --location \
+            -D /tmp/worker.headers \
+            "https://${host}/news/?approved-host-check=${GITHUB_SHA}" \
+            -o /tmp/worker.html
+          grep -qi 'FMB News' /tmp/worker.html
+          grep -qi 'FMB Worldwide' /tmp/worker.html
+          grep -qi 'FMB Explainer' /tmp/worker.html
+          grep -qi 'FMB Fact Check' /tmp/worker.html
+          grep -qi 'FMB Daily Brief' /tmp/worker.html
+          echo 'Verified approved standalone FMB News on workers.dev.'
