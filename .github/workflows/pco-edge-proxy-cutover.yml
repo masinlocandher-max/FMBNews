@@ -105,3 +105,5 @@ jobs:
           echo 'NEWS HEADERS'; cat /tmp/news.h || true
           echo 'ARTICLE HEADERS'; cat /tmp/article.h || true
           exit 1
+
+# Trigger marker: 2026-09-05 14:35 Asia/Manila emergency /news recovery.
