@@ -119,4 +119,4 @@ jobs:
           echo 'NEWS HEADERS'; cat /tmp/news.h || true
           exit 1
 
-# Trigger marker: 2026-09-07 separate DNS write credential.
+# Trigger marker: 2026-09-07 execute DNS cutover.
