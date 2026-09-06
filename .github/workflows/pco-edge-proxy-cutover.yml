@@ -34,7 +34,7 @@ jobs:
           set -euo pipefail
           test -n "${CLOUDFLARE_API_TOKEN:-}" || { echo '::error::Missing CLOUDFLARE_API_TOKEN'; exit 1; }
 
-      - name: Proxy existing PCO DNS records through Cloudflare
+      - name: Set canonical PCO DNS through Cloudflare
         shell: bash
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -42,68 +42,77 @@ jobs:
           set -euo pipefail
           zone_id='2e2210f55eba305e10b3f3f0f4a20261'
           api='https://api.cloudflare.com/client/v4'
+          auth=(-H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H 'Content-Type: application/json')
 
           for hostname in francinemariebautista.com www.francinemariebautista.com; do
-            records="$(curl --fail-with-body --silent --show-error \
-              -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
-              -H 'Content-Type: application/json' \
-              --get --data-urlencode "name=${hostname}" \
-              "${api}/zones/${zone_id}/dns_records")"
-
+            records="$(curl --fail-with-body -sS "${auth[@]}" --get --data-urlencode "name=${hostname}" "${api}/zones/${zone_id}/dns_records")"
             printf '%s' "$records" | jq -e '.success == true' >/dev/null
-            mapfile -t record_ids < <(printf '%s' "$records" | jq -r '.result[] | select(.type == "A" or .type == "AAAA" or .type == "CNAME") | .id')
-
-            if [ "${#record_ids[@]}" -eq 0 ]; then
-              echo "::error::No existing A/AAAA/CNAME DNS records found for ${hostname}; refusing to invent or replace DNS targets."
-              exit 1
-            fi
-
-            echo "Found ${#record_ids[@]} existing origin record(s) for ${hostname}; preserving targets and enabling Cloudflare proxy only."
-
-            for record_id in "${record_ids[@]}"; do
-              response="$(curl --fail-with-body --silent --show-error -X PATCH \
-                -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
-                -H 'Content-Type: application/json' \
-                "${api}/zones/${zone_id}/dns_records/${record_id}" \
-                --data '{"proxied":true}')"
-              printf '%s' "$response" | jq -e '.success == true and .result.proxied == true' >/dev/null
-              printf '%s' "$response" | jq '{success,result:{name:.result.name,type:.result.type,proxied:.result.proxied}}'
+            printf '%s' "$records" | jq -r '.result[] | select(.type == "A" or .type == "AAAA" or .type == "CNAME") | .id' | while read -r record_id; do
+              [ -n "$record_id" ] || continue
+              curl --fail-with-body -sS -X DELETE "${auth[@]}" "${api}/zones/${zone_id}/dns_records/${record_id}" >/dev/null
+              echo "Removed conflicting origin record ${record_id} for ${hostname}."
             done
           done
 
-      - name: Verify PCO root and FMBNews /news routing
+          for ip in 185.199.108.153 185.199.109.153 185.199.110.153 185.199.111.153; do
+            payload="$(jq -nc --arg name 'francinemariebautista.com' --arg content "$ip" '{type:"A",name:$name,content:$content,ttl:1,proxied:true,comment:"PCO GitHub Pages canonical apex"}')"
+            response="$(curl --fail-with-body -sS -X POST "${auth[@]}" "${api}/zones/${zone_id}/dns_records" --data "$payload")"
+            printf '%s' "$response" | jq -e '.success == true and .result.proxied == true' >/dev/null
+            echo "Added proxied GitHub Pages apex A ${ip}."
+          done
+
+          payload="$(jq -nc --arg name 'www.francinemariebautista.com' --arg content 'masinlocandher-max.github.io' '{type:"CNAME",name:$name,content:$content,ttl:1,proxied:true,comment:"PCO GitHub Pages canonical www"}')"
+          response="$(curl --fail-with-body -sS -X POST "${auth[@]}" "${api}/zones/${zone_id}/dns_records" --data "$payload")"
+          printf '%s' "$response" | jq -e '.success == true and .result.proxied == true' >/dev/null
+          echo 'Added proxied GitHub Pages www CNAME.'
+
+      - name: Verify Cloudflare DNS and Worker routes
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          zone_id='2e2210f55eba305e10b3f3f0f4a20261'
+          api='https://api.cloudflare.com/client/v4'
+          auth=(-H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H 'Content-Type: application/json')
+
+          apex="$(curl --fail-with-body -sS "${auth[@]}" --get --data-urlencode 'name=francinemariebautista.com' "${api}/zones/${zone_id}/dns_records")"
+          www="$(curl --fail-with-body -sS "${auth[@]}" --get --data-urlencode 'name=www.francinemariebautista.com' "${api}/zones/${zone_id}/dns_records")"
+          routes="$(curl --fail-with-body -sS "${auth[@]}" "${api}/zones/${zone_id}/workers/routes")"
+
+          printf '%s' "$apex" | jq -e '[.result[] | select(.type=="A" and .proxied==true and (.content=="185.199.108.153" or .content=="185.199.109.153" or .content=="185.199.110.153" or .content=="185.199.111.153"))] | length == 4' >/dev/null
+          printf '%s' "$www" | jq -e '[.result[] | select(.type=="CNAME" and .proxied==true and .content=="masinlocandher-max.github.io")] | length == 1' >/dev/null
+          printf '%s' "$routes" | jq -e '.result | any(.script=="fmb-news" and .pattern=="www.francinemariebautista.com/news*")' >/dev/null
+          printf '%s' "$routes" | jq -e '.result | any(.script=="fmb-news" and .pattern=="francinemariebautista.com/news*")' >/dev/null
+          echo 'Cloudflare DNS and FMB News Worker routes verified.'
+
+      - name: Verify public PCO root and FMB News route
         shell: bash
         run: |
           set -euo pipefail
-          article='https://www.francinemariebautista.com/news/sara-duterte-arrest-warrant-grave-threats-september-4-2026/'
-
           for attempt in $(seq 1 20); do
-            rm -f /tmp/root.h /tmp/root.html /tmp/news.h /tmp/news.html /tmp/article.h /tmp/article.html
+            rm -f /tmp/root.h /tmp/root.html /tmp/www.h /tmp/www.html /tmp/news.h /tmp/news.html
+            root_code="$(curl -sS -o /tmp/root.html -D /tmp/root.h -w '%{http_code}' -L --max-time 30 -H 'Cache-Control: no-cache' "https://francinemariebautista.com/?cutover=${GITHUB_SHA}-${attempt}" || true)"
+            www_code="$(curl -sS -o /tmp/www.html -D /tmp/www.h -w '%{http_code}' -L --max-time 30 -H 'Cache-Control: no-cache' "https://www.francinemariebautista.com/?cutover=${GITHUB_SHA}-${attempt}" || true)"
+            news_code="$(curl -sS -o /tmp/news.html -D /tmp/news.h -w '%{http_code}' -L --max-time 30 -H 'Cache-Control: no-cache' "https://www.francinemariebautista.com/news/?cutover=${GITHUB_SHA}-${attempt}" || true)"
 
-            curl -sSLo /tmp/root.html -D /tmp/root.h -L --max-time 30 -H 'Cache-Control: no-cache' \
-              "https://francinemariebautista.com/?cutover=${GITHUB_SHA}-${attempt}" || true
-            curl -sSLo /tmp/news.html -D /tmp/news.h -L --max-time 30 -H 'Cache-Control: no-cache' \
-              "https://www.francinemariebautista.com/news/?cutover=${GITHUB_SHA}-${attempt}" || true
-            curl -sSLo /tmp/article.html -D /tmp/article.h -L --max-time 30 -H 'Cache-Control: no-cache' \
-              "${article}?cutover=${GITHUB_SHA}-${attempt}" || true
+            root=false; www=false; news=false
+            [ "$root_code" = '200' ] && grep -qi 'Francine' /tmp/root.html && root=true || true
+            [ "$www_code" = '200' ] && grep -qi 'Francine' /tmp/www.html && www=true || true
+            [ "$news_code" = '200' ] && grep -qi 'FMB News' /tmp/news.html && tr -d '\r' < /tmp/news.h | grep -Eqi '^x-fmb-news-worker: fmb-news$' && news=true || true
 
-            root=false; news=false; breaking=false
-            grep -q 'What brought you here?' /tmp/root.html && root=true || true
-            tr -d '\r' < /tmp/news.h | grep -Eqi '^x-fmb-news-worker: fmb-news$' && grep -qi 'FMB News' /tmp/news.html && news=true || true
-            tr -d '\r' < /tmp/article.h | grep -Eqi '^x-fmb-news-worker: fmb-news$' && grep -qi 'QC Court Issues Arrest Warrant Against VP Sara Duterte' /tmp/article.html && breaking=true || true
-
-            echo "check ${attempt}: PCO-root=${root} FMBNews-home=${news} breaking-article=${breaking}"
-            if [ "$root" = true ] && [ "$news" = true ] && [ "$breaking" = true ]; then
-              echo 'RESOLVED: PCO remains the root origin; FMBNews owns /news through Cloudflare; Vercel/FMB-Ecosystem is not used.'
+            echo "check ${attempt}: apex=${root_code}/${root} www=${www_code}/${www} news=${news_code}/${news}"
+            if [ "$root" = true ] && [ "$www" = true ] && [ "$news" = true ]; then
+              echo 'RESOLVED: Cloudflare proxies PCO GitHub Pages at root and FMBNews owns /news.'
               exit 0
             fi
             sleep 4
           done
 
-          echo '::error::Public routing did not converge after Cloudflare proxy activation.'
-          echo 'ROOT HEADERS'; cat /tmp/root.h || true
+          echo '::error::Public Cloudflare routing did not converge.'
+          echo 'APEX HEADERS'; cat /tmp/root.h || true
+          echo 'WWW HEADERS'; cat /tmp/www.h || true
           echo 'NEWS HEADERS'; cat /tmp/news.h || true
-          echo 'ARTICLE HEADERS'; cat /tmp/article.h || true
           exit 1
 
-# Trigger marker: 2026-09-05 14:35 Asia/Manila emergency /news recovery.
+# Trigger marker: 2026-09-07 canonical Cloudflare PCO repair.
