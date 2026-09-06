@@ -26,23 +26,25 @@ jobs:
           grep -q 'www.francinemariebautista.com/news\*' wrangler.jsonc
           grep -q 'francinemariebautista.com/news\*' wrangler.jsonc
 
-      - name: Confirm Cloudflare credential
+      - name: Confirm Cloudflare credentials
         shell: bash
         env:
+          CLOUDFLARE_DNS_TOKEN: ${{ secrets.CLOUDFLARE_DNS_TOKEN }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
           set -euo pipefail
+          test -n "${CLOUDFLARE_DNS_TOKEN:-}" || { echo '::error::Missing CLOUDFLARE_DNS_TOKEN'; exit 1; }
           test -n "${CLOUDFLARE_API_TOKEN:-}" || { echo '::error::Missing CLOUDFLARE_API_TOKEN'; exit 1; }
 
       - name: Set canonical PCO DNS through Cloudflare
         shell: bash
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_DNS_TOKEN: ${{ secrets.CLOUDFLARE_DNS_TOKEN }}
         run: |
           set -euo pipefail
           zone_id='2e2210f55eba305e10b3f3f0f4a20261'
           api='https://api.cloudflare.com/client/v4'
-          auth=(-H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H 'Content-Type: application/json')
+          auth=(-H "Authorization: Bearer ${CLOUDFLARE_DNS_TOKEN}" -H 'Content-Type: application/json')
 
           for hostname in francinemariebautista.com www.francinemariebautista.com; do
             records="$(curl --fail-with-body -sS "${auth[@]}" --get --data-urlencode "name=${hostname}" "${api}/zones/${zone_id}/dns_records")"
@@ -69,16 +71,18 @@ jobs:
       - name: Verify Cloudflare DNS and Worker routes
         shell: bash
         env:
+          CLOUDFLARE_DNS_TOKEN: ${{ secrets.CLOUDFLARE_DNS_TOKEN }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
           set -euo pipefail
           zone_id='2e2210f55eba305e10b3f3f0f4a20261'
           api='https://api.cloudflare.com/client/v4'
-          auth=(-H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H 'Content-Type: application/json')
+          dns_auth=(-H "Authorization: Bearer ${CLOUDFLARE_DNS_TOKEN}" -H 'Content-Type: application/json')
+          worker_auth=(-H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H 'Content-Type: application/json')
 
-          apex="$(curl --fail-with-body -sS "${auth[@]}" --get --data-urlencode 'name=francinemariebautista.com' "${api}/zones/${zone_id}/dns_records")"
-          www="$(curl --fail-with-body -sS "${auth[@]}" --get --data-urlencode 'name=www.francinemariebautista.com' "${api}/zones/${zone_id}/dns_records")"
-          routes="$(curl --fail-with-body -sS "${auth[@]}" "${api}/zones/${zone_id}/workers/routes")"
+          apex="$(curl --fail-with-body -sS "${dns_auth[@]}" --get --data-urlencode 'name=francinemariebautista.com' "${api}/zones/${zone_id}/dns_records")"
+          www="$(curl --fail-with-body -sS "${dns_auth[@]}" --get --data-urlencode 'name=www.francinemariebautista.com' "${api}/zones/${zone_id}/dns_records")"
+          routes="$(curl --fail-with-body -sS "${worker_auth[@]}" "${api}/zones/${zone_id}/workers/routes")"
 
           printf '%s' "$apex" | jq -e '[.result[] | select(.type=="A" and .proxied==true and (.content=="185.199.108.153" or .content=="185.199.109.153" or .content=="185.199.110.153" or .content=="185.199.111.153"))] | length == 4' >/dev/null
           printf '%s' "$www" | jq -e '[.result[] | select(.type=="CNAME" and .proxied==true and .content=="masinlocandher-max.github.io")] | length == 1' >/dev/null
@@ -115,4 +119,4 @@ jobs:
           echo 'NEWS HEADERS'; cat /tmp/news.h || true
           exit 1
 
-# Trigger marker: 2026-09-07 canonical Cloudflare PCO repair.
+# Trigger marker: 2026-09-07 separate DNS write credential.
