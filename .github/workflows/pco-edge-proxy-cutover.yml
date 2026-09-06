@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   cutover:
-    if: github.event.head_commit.message == 'Emergency PCO edge cutover'
+    if: github.event.head_commit.message == 'Emergency PCO edge cutover' || github.event.head_commit.message == 'Diagnose FMB DNS delegation'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -36,7 +36,37 @@ jobs:
           test -n "${CLOUDFLARE_DNS_TOKEN:-}" || { echo '::error::Missing CLOUDFLARE_DNS_TOKEN'; exit 1; }
           test -n "${CLOUDFLARE_API_TOKEN:-}" || { echo '::error::Missing CLOUDFLARE_API_TOKEN'; exit 1; }
 
+      - name: Diagnose authoritative DNS delegation
+        shell: bash
+        env:
+          CLOUDFLARE_DNS_TOKEN: ${{ secrets.CLOUDFLARE_DNS_TOKEN }}
+        run: |
+          set -euo pipefail
+          zone_id='2e2210f55eba305e10b3f3f0f4a20261'
+          api='https://api.cloudflare.com/client/v4'
+          auth=(-H "Authorization: Bearer ${CLOUDFLARE_DNS_TOKEN}" -H 'Content-Type: application/json')
+
+          echo '=== CLOUDFLARE ZONE ==='
+          zone="$(curl --fail-with-body -sS "${auth[@]}" "${api}/zones/${zone_id}")"
+          printf '%s' "$zone" | jq '{success,result:{name,status,paused,type,name_servers,original_name_servers,original_registrar}}'
+
+          echo '=== PUBLIC NS VIA GOOGLE DNS ==='
+          curl --fail-with-body -sS 'https://dns.google/resolve?name=francinemariebautista.com&type=NS' | jq '{Status,Answer}'
+
+          echo '=== PUBLIC A VIA GOOGLE DNS ==='
+          curl --fail-with-body -sS 'https://dns.google/resolve?name=francinemariebautista.com&type=A' | jq '{Status,Answer}'
+
+          echo '=== PUBLIC WWW VIA GOOGLE DNS ==='
+          curl --fail-with-body -sS 'https://dns.google/resolve?name=www.francinemariebautista.com&type=CNAME' | jq '{Status,Answer}'
+
+          echo '=== PUBLIC HEADERS ==='
+          for url in https://francinemariebautista.com/ https://www.francinemariebautista.com/ https://www.francinemariebautista.com/news/; do
+            echo "--- ${url}"
+            curl -sS -I -L --max-time 20 "$url" | tr -d '\r' | grep -Ei '^(HTTP/|server:|location:|cf-ray:|x-vercel-|x-fmb-news-worker:)' || true
+          done
+
       - name: Set canonical PCO DNS through Cloudflare
+        if: github.event.head_commit.message == 'Emergency PCO edge cutover'
         shell: bash
         env:
           CLOUDFLARE_DNS_TOKEN: ${{ secrets.CLOUDFLARE_DNS_TOKEN }}
@@ -69,6 +99,7 @@ jobs:
           echo 'Added proxied GitHub Pages www CNAME.'
 
       - name: Verify Cloudflare DNS and Worker routes
+        if: github.event.head_commit.message == 'Emergency PCO edge cutover'
         shell: bash
         env:
           CLOUDFLARE_DNS_TOKEN: ${{ secrets.CLOUDFLARE_DNS_TOKEN }}
@@ -91,6 +122,7 @@ jobs:
           echo 'Cloudflare DNS and FMB News Worker routes verified.'
 
       - name: Verify public PCO root and FMB News route
+        if: github.event.head_commit.message == 'Emergency PCO edge cutover'
         shell: bash
         run: |
           set -euo pipefail
@@ -119,4 +151,4 @@ jobs:
           echo 'NEWS HEADERS'; cat /tmp/news.h || true
           exit 1
 
-# Trigger marker: 2026-09-07 execute DNS cutover.
+# Trigger marker: 2026-09-07 diagnose authoritative DNS delegation.
