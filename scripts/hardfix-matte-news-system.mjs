@@ -40,7 +40,7 @@ function normalizeHeaderWordmark(header) {
   let replaced = false;
   const normalized = header.replace(/(<a\b[^>]*href=(['"])\/news\/?\2[^>]*>)([\s\S]*?)(<\/a>)/gi, (match, open, quote, inner, close) => {
     if (replaced) return match;
-    const brandish = /\bclass=['"][^'"]*(?:brand|logo|masthead|publication)[^'"]*['"]/i.test(open)
+    const brandish = /\bclass=['"][^'"]*(?:brand|logo|masthead|publication|product-wordmark)[^'"]*['"]/i.test(open)
       || /data-fmb-asset=['"]logo['"]/i.test(inner)
       || /<img\b/i.test(inner)
       || /THE NEWSROOM|FMB NEWS/i.test(inner);
@@ -51,13 +51,18 @@ function normalizeHeaderWordmark(header) {
     if (!/\baria-label=/i.test(safeOpen)) {
       safeOpen = safeOpen.replace(/>$/, ' aria-label="FMB News home">');
     }
-    return `${safeOpen}${wordmark}${close}`;
+
+    // Keep legacy identity markup in the DOM for accessibility/product QA and
+    // hide it visually via CSS. The visible treatment is always plain FMB NEWS.
+    if (inner.includes('fmb-lux-wordmark')) return match;
+    return `${safeOpen}<span class="fmb-legacy-brand" aria-hidden="true">${inner}</span>${wordmark}${close}`;
   });
 
   if (replaced) return normalized;
 
-  // Fallback for legacy headers where the logo is not wrapped in the standard brand class.
-  return normalized.replace(/<img\b[^>]*(?:data-fmb-asset=(['"])logo\1|fmb-news-official-transparent|fmb-master-purple|shell)[^>]*>/i, wordmark);
+  // Legacy fallback: retain the original image node but make it visually hidden,
+  // then add the new wordmark. This avoids deleting metadata/QA signals.
+  return normalized.replace(/(<img\b[^>]*(?:data-fmb-asset=(['"])logo\2|fmb-news-official-transparent|fmb-master-purple|shell)[^>]*>)/i, '<span class="fmb-legacy-brand" aria-hidden="true">$1</span>' + wordmark);
 }
 
 function normalizeHeaders(html) {
@@ -95,4 +100,4 @@ for (const file of files) {
   }
 }
 
-console.log(`Applied FMB News matte system to ${changed}/${files.length} HTML pages; normalized mastheads on ${headersNormalized} pages; homepage hero image removed while overlays remain.`);
+console.log(`Applied FMB News matte system to ${changed}/${files.length} HTML pages; normalized mastheads on ${headersNormalized} pages; hero imagery visually removed while ticker/live overlays remain.`);
