@@ -1,0 +1,490 @@
+/* FMB News universal matte-glass brand system — 2026-09-11 */
+:root {
+  --fmb-brand-violet: #220D50;
+  --fmb-brand-plum: #630661;
+  --fmb-brand-peach: #F9AB60;
+  --fmb-news: #630661;
+  --fmb-news-deep: #220D50;
+  --fmb-ink-soft: #5d5364;
+  --fmb-line-strong: rgba(34, 13, 80, 0.24);
+  --fmb-scroll: 0;
+  --fmb-matte-ink: #1b1420;
+  --fmb-matte-paper: #fbf9fc;
+  --fmb-matte-line: rgba(34, 13, 80, 0.14);
+  --fmb-matte-glass: rgba(34, 13, 80, 0.90);
+  --fmb-matte-glass-2: rgba(99, 6, 97, 0.82);
+  --fmb-luxury-serif: "Cormorant Garamond", "Playfair Display", "Bodoni 72", Didot, Georgia, serif;
+}
+
+body.fmb-matte-system {
+  margin: 0;
+  color: var(--fmb-matte-ink);
+  background: var(--fmb-matte-paper);
+  overflow-x: clip;
+}
+
+body.fmb-matte-system *,
+body.fmb-matte-system *::before,
+body.fmb-matte-system *::after {
+  box-sizing: border-box;
+}
+
+/* One publication identity across every newsroom template. */
+body.fmb-matte-system .fmb-lux-wordmark {
+  display: inline-block;
+  color: #fff;
+  font-family: var(--fmb-luxury-serif);
+  font-size: clamp(1.42rem, 2.25vw, 2.08rem);
+  font-weight: 600;
+  line-height: 0.94;
+  letter-spacing: 0.145em;
+  white-space: nowrap;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.fmb-matte-system :is(.masthead, .fnc-header, .nc-site-header, .brief-network) {
+  color: #fff !important;
+  background:
+    linear-gradient(118deg, var(--fmb-matte-glass), var(--fmb-matte-glass-2)) !important;
+  border-bottom: 1px solid rgba(249, 171, 96, 0.22) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.10),
+    0 10px 30px rgba(34, 13, 80, 0.10) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(78%);
+  backdrop-filter: blur(24px) saturate(78%);
+  isolation: isolate;
+}
+
+body.fmb-matte-system :is(.masthead, .fnc-header, .nc-site-header, .brief-network) :is(a, button) {
+  color: inherit;
+}
+
+body.fmb-matte-system :is(.masthead, .fnc-header, .nc-site-header, .brief-network) nav {
+  min-width: 0;
+}
+
+body.fmb-matte-system :is(.desktop-nav, .fnc-nav, .nc-site-links, .brief-network nav) {
+  align-items: center;
+  gap: clamp(14px, 1.7vw, 26px);
+}
+
+body.fmb-matte-system :is(.desktop-nav, .fnc-nav, .nc-site-links, .brief-network nav) a {
+  color: rgba(255, 255, 255, 0.82) !important;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+body.fmb-matte-system :is(.desktop-nav, .fnc-nav, .nc-site-links, .brief-network nav) a:is(:hover, :focus-visible, [aria-current="page"]) {
+  color: #fff !important;
+}
+
+body.fmb-matte-system .nc-corporate-link,
+body.fmb-matte-system .fnc-submit,
+body.fmb-matte-system .submit-button {
+  color: var(--fmb-brand-peach) !important;
+}
+
+body.fmb-matte-system :is(.icon-button, .menu-button, .nc-menu-toggle, .fnc-menu) {
+  color: #fff !important;
+}
+
+body.fmb-matte-system :is(.nc-menu-toggle, .fnc-menu) span {
+  background: #fff !important;
+}
+
+/* Existing newsroom overlays remain, but use the same restrained palette. */
+body.fmb-matte-system :is(.top-wire, .fnc-livebar, .nc-brandline) {
+  color: rgba(255, 255, 255, 0.92);
+  background: #16082d !important;
+  border-color: rgba(249, 171, 96, 0.16) !important;
+}
+
+body.fmb-matte-system :is(.section-rail, .brief-edition-bar, .nc-topic-rail) {
+  color: var(--fmb-brand-violet);
+  background: rgba(250, 247, 251, 0.90) !important;
+  border-color: var(--fmb-matte-line) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(84%);
+  backdrop-filter: blur(18px) saturate(84%);
+}
+
+body.fmb-matte-system .mobile-nav[data-open],
+body.fmb-matte-system .nc-site-links.is-open {
+  color: #fff !important;
+  background: rgba(34, 13, 80, 0.98) !important;
+  border-color: rgba(249, 171, 96, 0.18) !important;
+}
+
+/* Homepage: the approved image is intentionally removed. Keep copy, ticker and overlay logic. */
+body.fmb-matte-system .hero {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(249, 171, 96, 0.13), transparent 30%),
+    radial-gradient(circle at 20% 84%, rgba(255, 255, 255, 0.08), transparent 34%),
+    linear-gradient(138deg, #220D50 0%, #430b66 48%, #630661 100%) !important;
+}
+
+body.fmb-matte-system .hero-image {
+  display: none !important;
+}
+
+body.fmb-matte-system .hero::after {
+  background:
+    linear-gradient(90deg, rgba(22, 8, 45, 0.70), rgba(34, 13, 80, 0.36) 58%, rgba(99, 6, 97, 0.18)) !important;
+}
+
+body.fmb-matte-system .hero-copy h1 {
+  font-family: var(--fmb-luxury-serif);
+  letter-spacing: -0.035em;
+}
+
+body.fmb-matte-system .hero-copy h1 span {
+  color: #f7d7bd;
+}
+
+body.fmb-matte-system .hero-cta .primary {
+  color: var(--fmb-brand-violet);
+  background: #fff8f1;
+}
+
+body.fmb-matte-system .hero-cta .secondary {
+  border-color: rgba(249, 171, 96, 0.46);
+  background: rgba(34, 13, 80, 0.22);
+}
+
+/* FMB About had incomplete base styles and undefined tokens. This makes every section readable. */
+body.fmb-matte-system.fmb-news-clean,
+body.fmb-matte-system.fmb-news-about {
+  min-width: 320px;
+  background: #fff;
+  color: #1b1420;
+  font-family: Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.fmb-matte-system .fnc-shell {
+  width: min(calc(100% - 48px), 1380px);
+  margin-inline: auto;
+}
+
+body.fmb-matte-system .fnc-livebar {
+  min-height: 34px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  overflow: hidden;
+}
+
+body.fmb-matte-system .fnc-live-label,
+body.fmb-matte-system .fnc-pht {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+body.fmb-matte-system .fnc-live-label i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--fmb-brand-peach);
+}
+
+body.fmb-matte-system .fnc-ticker {
+  min-width: 0;
+  overflow: hidden;
+  border-inline: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+body.fmb-matte-system .fnc-ticker-track {
+  display: flex;
+  width: max-content;
+  min-height: 34px;
+  align-items: center;
+}
+
+body.fmb-matte-system .fnc-ticker-track span {
+  padding-inline: 22px;
+  color: rgba(255, 255, 255, 0.80);
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+body.fmb-matte-system .fnc-header {
+  position: sticky;
+  top: 0;
+  z-index: 80;
+}
+
+body.fmb-matte-system .fnc-header-row {
+  min-height: 78px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: clamp(16px, 2vw, 30px);
+}
+
+body.fmb-matte-system .fnc-brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+body.fmb-matte-system .fnc-brand img {
+  display: none !important;
+}
+
+body.fmb-matte-system .fnc-nav {
+  display: flex;
+  justify-content: center;
+}
+
+body.fmb-matte-system .fnc-submit {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px;
+  border: 1px solid rgba(249, 171, 96, 0.36);
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+body.fmb-matte-system .fnc-menu {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+}
+
+body.fmb-matte-system .fnc-menu span {
+  display: block;
+  width: 23px;
+  height: 1px;
+  margin: 6px auto;
+}
+
+body.fmb-matte-system.fmb-news-about main {
+  overflow: clip;
+  color: #1b1420;
+  background: #fff;
+}
+
+body.fmb-matte-system .fmb-about-hero,
+body.fmb-matte-system .fmb-about-purpose,
+body.fmb-matte-system .fmb-about-method,
+body.fmb-matte-system .fmb-about-name,
+body.fmb-matte-system .fmb-about-standards {
+  color: #1b1420;
+}
+
+body.fmb-matte-system .fmb-about-hero-copy h1 {
+  max-width: 12ch;
+  font-size: clamp(54px, 7.4vw, 116px) !important;
+  line-height: 0.93 !important;
+  letter-spacing: -0.045em !important;
+}
+
+body.fmb-matte-system .fmb-about-hero-statement p,
+body.fmb-matte-system .fmb-about-purpose-copy p,
+body.fmb-matte-system .fmb-about-name-grid > div:last-child p,
+body.fmb-matte-system .fmb-about-method-list p,
+body.fmb-matte-system .fmb-about-principles p {
+  color: #3f3546;
+}
+
+body.fmb-matte-system .fmb-about-mission-vision {
+  color: #fff !important;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(249, 171, 96, 0.08), transparent 30%),
+    linear-gradient(135deg, #16082d 0%, #220D50 56%, #4d0756 100%) !important;
+}
+
+body.fmb-matte-system .fmb-about-mv > p:last-child {
+  color: rgba(255, 255, 255, 0.84) !important;
+}
+
+body.fmb-matte-system .fmb-about-closing {
+  color: #fff !important;
+  background:
+    radial-gradient(circle at 82% 24%, rgba(249, 171, 96, 0.10), transparent 28%),
+    linear-gradient(135deg, #220D50 0%, #630661 100%) !important;
+}
+
+body.fmb-matte-system .fmb-about-closing h2,
+body.fmb-matte-system .fmb-about-closing nav a {
+  color: #fff !important;
+}
+
+body.fmb-matte-system .fmb-about-label,
+body.fmb-matte-system .fmb-about-method-list li > span,
+body.fmb-matte-system .fmb-about-principles span,
+body.fmb-matte-system .fmb-about-name strong {
+  color: var(--fmb-brand-plum) !important;
+}
+
+body.fmb-matte-system .fmb-about-mv .fmb-about-label,
+body.fmb-matte-system .fmb-about-closing .fmb-about-label {
+  color: #f4c6a1 !important;
+}
+
+body.fmb-matte-system .fnc-footer {
+  padding: 64px 0 30px;
+  color: #fff;
+  background: #120822 !important;
+  border-top: 1px solid rgba(249, 171, 96, 0.16);
+}
+
+body.fmb-matte-system .fnc-footer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr) minmax(220px, 0.65fr);
+  gap: clamp(34px, 5vw, 76px);
+}
+
+body.fmb-matte-system .fnc-footer-brand img,
+body.fmb-matte-system .footer-logo,
+body.fmb-matte-system .brief-footer [data-fmb-asset="logo"] {
+  display: none !important;
+}
+
+body.fmb-matte-system .fnc-footer-brand::before,
+body.fmb-matte-system .footer-grid > div:first-child::before,
+body.fmb-matte-system .brief-footer-row > div:first-child::before {
+  content: "FMB NEWS";
+  display: block;
+  margin-bottom: 16px;
+  color: #fff;
+  font-family: var(--fmb-luxury-serif);
+  font-size: clamp(1.55rem, 2.4vw, 2.15rem);
+  font-weight: 600;
+  letter-spacing: 0.145em;
+  line-height: 1;
+}
+
+/* Prevent masthead and navigation collisions on intermediate widths. */
+body.fmb-matte-system :is(.mast-row, .fnc-header-row, .nc-nav-shell, .brief-network-row) > * {
+  min-width: 0;
+}
+
+@media (max-width: 1100px) {
+  body.fmb-matte-system .fnc-header-row {
+    grid-template-columns: auto 1fr auto;
+    min-height: 70px;
+  }
+
+  body.fmb-matte-system .fnc-nav,
+  body.fmb-matte-system .fnc-submit {
+    display: none;
+  }
+
+  body.fmb-matte-system .fnc-menu {
+    display: block;
+    justify-self: end;
+  }
+
+  body.fmb-matte-system .fmb-about-hero-grid,
+  body.fmb-matte-system .fmb-about-purpose-grid,
+  body.fmb-matte-system .fmb-about-name-grid,
+  body.fmb-matte-system .fmb-about-standards-grid,
+  body.fmb-matte-system .fmb-about-method-head,
+  body.fmb-matte-system .fmb-about-closing-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  body.fmb-matte-system .fmb-about-mv-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.fmb-matte-system .fmb-about-mv + .fmb-about-mv {
+    border-left: 0 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+  }
+}
+
+@media (max-width: 760px) {
+  body.fmb-matte-system .fmb-lux-wordmark {
+    font-size: 1.38rem;
+    letter-spacing: 0.12em;
+  }
+
+  body.fmb-matte-system .fnc-shell {
+    width: min(calc(100% - 28px), 1380px);
+  }
+
+  body.fmb-matte-system .fnc-livebar {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  body.fmb-matte-system .fnc-pht {
+    display: none;
+  }
+
+  body.fmb-matte-system .fnc-live-label {
+    padding-inline: 12px;
+  }
+
+  body.fmb-matte-system .fnc-ticker-track span {
+    padding-inline: 16px;
+  }
+
+  body.fmb-matte-system .fmb-about-hero {
+    min-height: auto !important;
+    padding: 82px 0 68px !important;
+  }
+
+  body.fmb-matte-system .fmb-about-hero-copy h1 {
+    max-width: none;
+    font-size: clamp(44px, 13vw, 62px) !important;
+    line-height: 0.98 !important;
+  }
+
+  body.fmb-matte-system .fmb-about-purpose,
+  body.fmb-matte-system .fmb-about-name,
+  body.fmb-matte-system .fmb-about-standards,
+  body.fmb-matte-system .fmb-about-method,
+  body.fmb-matte-system .fmb-about-closing {
+    padding-block: 68px !important;
+  }
+
+  body.fmb-matte-system .fmb-about-mv {
+    min-height: auto !important;
+    padding: 58px 24px !important;
+  }
+
+  body.fmb-matte-system .fmb-about-method-list li,
+  body.fmb-matte-system .fmb-about-principles article {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  body.fmb-matte-system .fnc-footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.fmb-matte-system .brief-network-row nav {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.fmb-matte-system *,
+  body.fmb-matte-system *::before,
+  body.fmb-matte-system *::after {
+    scroll-behavior: auto !important;
+  }
+}
