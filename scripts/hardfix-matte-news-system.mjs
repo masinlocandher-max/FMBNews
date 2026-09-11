@@ -6,6 +6,8 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const newsRoot = path.join(root, 'dist', 'news');
 const stylesheetHref = '/assets/css/fmb-news-matte-system.css?v=20260911';
 const stylesheetTag = `<link rel="stylesheet" href="${stylesheetHref}">`;
+const aboutReadabilityHref = '/assets/css/fmb-about-readability-lock.css?v=20260911';
+const aboutReadabilityTag = `<link rel="stylesheet" href="${aboutReadabilityHref}">`;
 const wordmark = '<span class="fmb-lux-wordmark">FMB NEWS</span>';
 
 async function listHtmlFiles(dir) {
@@ -34,6 +36,11 @@ function addBodyClass(html) {
 function ensureStylesheet(html) {
   if (html.includes('fmb-news-matte-system.css')) return html;
   return html.replace(/<\/head>/i, `${stylesheetTag}</head>`);
+}
+
+function ensureAboutReadability(html, relativePath) {
+  if (relativePath !== 'about/index.html' || html.includes('fmb-about-readability-lock.css')) return html;
+  return html.replace(/<\/head>/i, `${aboutReadabilityTag}</head>`);
 }
 
 function normalizeHeaderWordmark(header) {
@@ -87,6 +94,7 @@ for (const file of files) {
 
   html = addBodyClass(html);
   html = ensureStylesheet(html);
+  html = ensureAboutReadability(html, relativePath);
 
   const beforeHeaders = html;
   html = normalizeHeaders(html);
@@ -100,4 +108,4 @@ for (const file of files) {
   }
 }
 
-console.log(`Applied FMB News matte system to ${changed}/${files.length} HTML pages; normalized mastheads on ${headersNormalized} pages; hero imagery visually removed while ticker/live overlays remain.`);
+console.log(`Applied FMB News matte system to ${changed}/${files.length} HTML pages; normalized mastheads on ${headersNormalized} pages; hero imagery visually removed while ticker/live overlays remain; About gets a dedicated readability lock.`);
