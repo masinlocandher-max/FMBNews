@@ -69,6 +69,12 @@ await import('./hardfix-newsroom-compat.mjs');
 // discovery systems.
 await import('./hardfix-ai-discovery.mjs');
 
+// Final visual pass: one restrained FMB News masthead across every generated
+// route, no landing hero image, the existing ticker/overlay layers preserved,
+// and repaired About-page contrast/layout. Run this after all page generators so
+// no older template can reintroduce the previous icon/image-led header.
+await import('./hardfix-matte-news-system.mjs');
+
 const textExtensions = new Set(['.html', '.css', '.js', '.mjs', '.json', '.xml', '.txt', '.svg']);
 
 async function rewriteAssetPaths(target) {
@@ -97,4 +103,4 @@ await import('./generate-news-distribution.mjs');
 // own source tree and fail on the second consecutive run — the legacy block it
 // searched for was already gone. The assertions now live in verify.mjs itself.
 
-console.log('Built Filipino Media Bulletin with five official editorial products: FMB News, FMB Worldwide, FMB Explainer, FMB Fact Check, and FMB Daily Brief; plus localized visual assets, product-designated fallback imagery, guaranteed article imagery, personalization/PWA support, live utilities, newsroom search and intake, canonical sitemap and RSS distribution, a sealed active crossword runtime, explicit editorial trust surfaces, normalized search/AI discovery metadata, and no fixed bottom navigation.');
+console.log('Built Filipino Media Bulletin with five official editorial products: FMB News, FMB Worldwide, FMB Explainer, FMB Fact Check, and FMB Daily Brief; plus localized visual assets, product-designated fallback imagery, guaranteed article imagery, personalization/PWA support, live utilities, newsroom search and intake, canonical sitemap and RSS distribution, a sealed active crossword runtime, explicit editorial trust surfaces, normalized search/AI discovery metadata, a universal matte FMB News masthead, readable trust pages, and no fixed bottom navigation.');
