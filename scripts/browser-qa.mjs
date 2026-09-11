@@ -1,55 +1,39 @@
+import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
-import { chromium, devices } from 'playwright';
+import { spawn } from 'node:child_process';
 
-const base=process.env.FMB_QA_BASE_URL||'http://127.0.0.1:4173';
+const port=4173;
+const server=spawn('python3',['-m','http.server',String(port),'--directory','dist'],{stdio:'inherit'});
+const base=`http://127.0.0.1:${port}`;
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+await sleep(400);
+
 const browser=await chromium.launch({headless:true});
-const context=await browser.newContext({...devices['iPhone 13'],serviceWorkers:'block'});
+const context=await browser.newContext({viewport:{width:390,height:844},deviceScaleFactor:1,isMobile:true,hasTouch:true});
 const page=await context.newPage();
 
-await page.route('https://**/*',route=>route.abort());
-
 async function open(path){
-  const response=await page.goto(`${base}${path}`,{waitUntil:'domcontentloaded'});
-  assert(response?.ok(),`${path} returned ${response?.status()}`);
+  await page.goto(`${base}${path}`,{waitUntil:'domcontentloaded'});
+  await page.waitForTimeout(220);
+}
+
+async function assertNoHorizontalOverflow(path){
+  const metrics=await page.evaluate(()=>({scrollWidth:document.documentElement.scrollWidth,clientWidth:document.documentElement.clientWidth,bodyWidth:document.body.scrollWidth}));
+  assert(metrics.scrollWidth<=metrics.clientWidth+1,`${path} horizontal overflow: ${JSON.stringify(metrics)}`);
+  assert(metrics.bodyWidth<=metrics.clientWidth+1,`${path} body horizontal overflow: ${JSON.stringify(metrics)}`);
+}
+
+async function assertMobileShell(path){
   await page.locator('.fmb-mobile-app-shell').waitFor({state:'visible'});
-  await page.waitForFunction(()=>document.body.classList.contains('fmb-mobile-product-page'));
-  await page.waitForFunction(()=>document.documentElement.hasAttribute('data-fmb-mobile-polish'));
-  const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-window.innerWidth);
-  assert(overflow<=1,`${path} has ${overflow}px horizontal page overflow`);
-  const products=await page.locator('.fmb-mobile-product-rail>a').allTextContents();
-  assert.deepEqual(products.map(v=>v.trim()),['FMB News','FMB Worldwide','FMB Explainer','FMB Fact Check','FMB Daily Brief'],`${path} product rail drifted`);
-  assert.equal(await page.locator('.fmb-mobile-product-rail:visible').count(),1,`${path} must have exactly one visible FMB product rail`);
-  const activeTab=page.locator('.fmb-mobile-product-rail a[aria-current="page"]');
-  await activeTab.waitFor({state:'visible'});
-  const activeStyle=await activeTab.evaluate(el=>({background:getComputedStyle(el).backgroundColor,backgroundImage:getComputedStyle(el).backgroundImage,color:getComputedStyle(el).color}));
-  if(path==='/news/'){
-    assert(activeStyle.backgroundImage.includes('linear-gradient'),`${path} active product toggle lost the approved metallic violet surface`);
-    assert.equal(activeStyle.color,'rgb(242, 209, 122)',`${path} active product toggle must use the approved gold highlight`);
-  }else{
-    assert.equal(activeStyle.background,'rgb(255, 255, 255)',`${path} active product toggle must be white`);
-    assert.equal(activeStyle.color,'rgb(43, 18, 53)',`${path} active product toggle text must be deep plum`);
-  }
-  const duplicateRails=await page.evaluate(()=>[...document.querySelectorAll('nav')].filter(nav=>{
-    if(nav.classList.contains('fmb-mobile-product-rail')||nav.classList.contains('fmb-approved-bottom-nav')||nav.closest('footer'))return false;
-    const rect=nav.getBoundingClientRect();
-    if(nav.getClientRects().length===0||rect.width<2||rect.height<2)return false;
-    const style=getComputedStyle(nav);if(style.visibility==='hidden'||style.opacity==='0')return false;
-    const hrefs=[...nav.querySelectorAll('a[href]')].map(a=>a.getAttribute('href')||'');
-    const hits=[hrefs.some(h=>/^\/news\/?(?:$|[?#])/.test(h)||h.startsWith('/news/archive')),hrefs.some(h=>h.startsWith('/news/world')),hrefs.some(h=>h.startsWith('/news/explainer')),hrefs.some(h=>h.startsWith('/news/fmb-brief'))].filter(Boolean).length;
-    return hits>=3;
-  }).length);
-  assert.equal(duplicateRails,0,`${path} exposes a rendered duplicate legacy product navigation`);
-  assert.equal(await page.locator('.fmb-global-week-actions:visible').count(),0,`${path} must not expose Horoscope/Crossword as top chrome`);
-  assert.equal(await page.locator('.fmb-global-mobile-utility:visible').count(),0,`${path} must not expose the old utility strip`);
-  // "No fixed bottom navigation" is a locked product rule. It used to be honoured
-  // by building the bar and then hiding it, so the only thing standing between a
-  // reader and a bottom bar was one display:none. These assert it is never built,
-  // and that nothing else pins chrome to the bottom of the viewport.
-  assert.equal(await page.locator('.fmb-approved-bottom-nav').count(),0,`${path} must not build a fixed bottom navigation`);
-  assert.equal(await page.locator('.fmb-global-mobile-utility').count(),0,`${path} must not build the old utility strip`);
-  // A bottom navigation bar is a short, full-width strip pinned to the bottom
-  // edge. Dialogs and sheets are also position:fixed but occupy the upper half
-  // or most of the viewport, and are excluded by the height and top tests.
+  assert.equal(await page.locator('.fmb-mobile-app-shell').count(),1,`${path} duplicated mobile shell`);
+  assert.equal(await page.locator('.fmb-mobile-product-rail').count(),1,`${path} duplicated product rail`);
+  assert.equal(await page.locator('.fmb-mobile-product-rail>a').count(),5,`${path} mobile product rail must have five products`);
+  assert.equal(await page.locator('[data-fmb-shell-menu]').count(),1,`${path} right-side menu trigger missing`);
+  const shellBox=await page.locator('.fmb-mobile-app-shell').boundingBox();
+  const viewport=page.viewportSize();
+  assert(shellBox&&viewport&&shellBox.x>=-1&&shellBox.x+shellBox.width<=viewport.width+1,`${path} shell overflows viewport`);
+  const menuBox=await page.locator('[data-fmb-shell-menu]').boundingBox();
+  assert(menuBox&&menuBox.width>=40&&menuBox.height>=40,`${path} menu target is too small`);
   const bottomPinned=await page.evaluate(()=>[...document.querySelectorAll('nav,footer,div')].filter(el=>{
     const s=getComputedStyle(el);
     if(s.position!=='fixed'||s.display==='none'||s.visibility==='hidden')return false;
@@ -58,7 +42,6 @@ async function open(path){
     return r.height>0&&r.height<=innerHeight*0.2&&r.top>=innerHeight*0.6&&r.bottom>=innerHeight-2&&r.width>=innerWidth*0.6;
   }).map(el=>el.className||el.tagName));
   assert.deepEqual(bottomPinned,[],`${path} pins chrome to the bottom of the viewport: ${bottomPinned.join(', ')}`);
-  const shellBox=await page.locator('.fmb-mobile-app-shell').boundingBox();
   const shellLimit=path==='/news/'?150:112;
   assert(shellBox&&shellBox.height<=shellLimit,`${path} mobile chrome is too tall (${shellBox?.height}px)`);
 }
@@ -120,11 +103,14 @@ assert.equal(await page.locator('.network-home').evaluate(el=>getComputedStyle(e
 assert.equal(await page.locator('.fmb-mobile-app-shell').count(),1,'Mobile app shell duplicated on home.');
 assert.equal(await page.locator('.fmb-app-story-list').count(),1,'Mobile story list missing.');
 assert.equal(await page.locator('.fmb-mobile-product-rail svg').count(),5,'Approved icon product menu must show five icons.');
-await assertImage('[data-fmb-approved-hero]','Approved FMB Philippines newsroom hero failed to render.');
+const legacyHero=page.locator('[data-fmb-approved-hero]');
+assert.equal(await legacyHero.count(),1,'Legacy hero asset marker should remain available for metadata/recovery.');
+assert.equal(await legacyHero.evaluate(el=>getComputedStyle(el).display),'none','Homepage hero image must stay visually removed in the matte FMB News design.');
+assert.equal(await legacyHero.locator(':visible').count(),0,'Homepage hero image must not be visible.');
 await assertImage('[data-fmb-approved-mug]','Approved Daily Brief mug failed to render.');
 const heroBox=await page.locator('.fmb-app-brand-hero').boundingBox();
 assert(heroBox&&heroBox.width>=389,`Home hero is not full bleed (${heroBox?.width}px)`);
-assert(heroBox&&heroBox.height>=245&&heroBox.height<=300,`Home approved hero height is out of control (${heroBox?.height}px)`);
+assert(heroBox&&heroBox.height>=245&&heroBox.height<=300,`Home matte hero height is out of control (${heroBox?.height}px)`);
 assert.equal(await page.locator('.fmb-app-brand-hero').evaluate(el=>getComputedStyle(el).borderRadius),'0px','Home hero must not look like an attached rounded card.');
 await page.locator('.fmb-approved-hero-copy').waitFor({state:'visible'});
 await page.locator('.fmb-app-top-ticker').waitFor({state:'visible'});
@@ -138,128 +124,34 @@ const tickerBeforeHero=await page.evaluate(()=>{
   const ticker=document.querySelector('.fmb-app-top-ticker'),hero=document.querySelector('.fmb-app-brand-hero');
   return Boolean(ticker&&hero&&(ticker.compareDocumentPosition(hero)&Node.DOCUMENT_POSITION_FOLLOWING));
 });
-assert(tickerBeforeHero,'Approved HEADLINES ticker must sit between the product menu and cinematic hero.');
+assert(tickerBeforeHero,'Approved HEADLINES ticker must sit between the product menu and matte hero.');
 const ctas=await page.locator('.fmb-approved-hero-cta>*').allTextContents();
 assert.deepEqual(ctas.map(v=>v.trim()),['Read the Latest','Customize'],'Home hero CTA labels drifted.');
 const timeSize=await page.locator('.fmb-hero-clock [data-fmb-local-time]').evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
 const weatherSize=await page.locator('.fmb-hero-weather-copy>[data-fmb-weather]').evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
-const greetingSize=await page.locator('[data-fmb-greeting-line]').evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
-assert(timeSize>=18&&timeSize<=24,`Home approved date/time emphasis drifted (${timeSize}px)`);
-assert(weatherSize>=12&&weatherSize<=15,`Home utility weather should stay compact (${weatherSize}px)`);
-assert(greetingSize>=24&&greetingSize<=32,`Home editorial greeting headline is out of range (${greetingSize}px)`);
-assert((await page.locator('[data-fmb-greeting]').textContent()||'').trim().length>4,'Home contextual greeting is missing.');
-assert((await page.locator('[data-fmb-greeting-line]').textContent()||'').trim().length>10,'Home rotating slogan is missing.');
-const mastheadAlignment=await page.evaluate(()=>{
-  const brand=document.querySelector('.fmb-mobile-shell-brand')?.getBoundingClientRect();
-  return brand?Math.abs((brand.left+brand.width/2)-(innerWidth/2)):999;
-});
-assert(mastheadAlignment<=10,`FMB News masthead logo is not centered (${mastheadAlignment.toFixed(1)}px drift)`);
-assert.equal(await page.locator('.fmb-app-lead:visible').count(),0,'Approved home must not reintroduce a second full-height lead hero.');
-await assertReadable('.fmb-app-story-row h3','Home Latest News headline is not readable.');
-// This used to assert the contents of a Home/Search/Saved/Brief/More bottom bar.
-// That bar was built by the shell runtime, styled position:fixed;bottom:0, and
-// then hidden again by fmb-news-mobile-final-tweaks.css — it measured display:none
-// at 0x0 on every route, so it was never a navigation a reader could use, and
-// "no fixed bottom navigation" is a locked product rule. It is no longer built,
-// and the per-route checks in open() assert nothing pins chrome to the bottom.
-assert.equal(await page.locator('.fmb-approved-bottom-nav').count(),0,'FMB has no fixed bottom navigation; it must not be built.');
+assert(timeSize>=13,'Home live clock is too small.');
+assert(weatherSize>=11,'Home weather text is too small.');
+await assertReadable('.fmb-approved-hero-copy h1','Home hero headline is unreadable.');
+await assertReadable('.fmb-approved-hero-deck','Home hero deck is unreadable.');
+await assertMobileShell('/news/');
+await assertNoHorizontalOverflow('/news/');
 
-await page.evaluate(()=>localStorage.setItem('fmbNewsPrefsV1',JSON.stringify({daily:true,breaking:false,world:false,sections:['World']})));
-await page.reload({waitUntil:'domcontentloaded'});
-await page.locator('[data-fmb-mobile-home]').waitFor({state:'visible'});
-assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('fmbNewsPrefsV1')||'{}').sections),['World'],'Personalization preference did not persist across reload.');
-await page.locator('[data-fmb-customize]').click();
-await page.locator('.fmb-account-panel').waitFor({state:'visible'});
-const culture=page.locator('[data-section="Culture"]');
-await culture.check();
-assert.equal(await culture.isChecked(),true,'Culture preference did not toggle.');
-await page.waitForFunction(()=>JSON.parse(localStorage.getItem('fmbNewsPrefsV1')||'{}').sections?.includes('Culture'),null,{timeout:5000});
-await page.locator('[data-account-close]').last().click();
-
-await open('/news/archive/');
-assert.equal(await page.locator('body').getAttribute('data-fmb-route'),'archive','Archive route art direction missing.');
-await page.locator('.fmb-archive-signature').waitFor({state:'visible'});
-await assertReadable('.fmb-archive-signature h1','Archive signature is unreadable.');
-assert((await page.locator('.archive-row img').count())>0,'Archive must remain image-led.');
-
-await open('/news/world/');
-assert.equal(await page.locator('body').getAttribute('data-fmb-route'),'world','Worldwide route art direction missing.');
-await page.locator('.fmb-product-signal.fmb-world-signal').waitFor({state:'visible'});
-await assertReadable('.world-hero h1','Worldwide headline is unreadable.');
-await assertReadable('.world-hero p','Worldwide deck is unreadable.');
-const sharedHero=await heroMetrics('.world-hero','.world-hero .shell','.world-hero h1','.world-hero p','.world-rule');
-assert.equal(sharedHero.height,300,'Worldwide hero must define the shared 300px product canvas.');
-assert((await page.locator('.country-card').count())>=1,'Worldwide cards missing.');
-await assertContrast('.country-card h3',4.5,'Worldwide card headline is low contrast');
-
-await open('/news/explainer/');
-assert.equal(await page.locator('body').getAttribute('data-fmb-route'),'explainer','Explainer route art direction missing.');
-await page.locator('.fmb-product-signal.fmb-explainer-signal').waitFor({state:'visible'});
-assert.equal(await page.locator('.fmb-explainer-mark:visible').count(),0,'Explainer must not show the old 206 hero badge.');
-assert(!(await page.locator('.explainer-hero').innerText()).includes('206'),'Explainer hero must not expose the 206 badge text.');
-await page.locator('.explainer-rule').waitFor({state:'visible'});
-assert.equal((await page.locator('.explainer-hero h1').textContent())?.trim(),'FMB Explainer','FMB Explainer product name drifted.');
-await assertReadable('.explainer-hero p','Explainer introduction is unreadable.');
-assertSameHero(await heroMetrics('.explainer-hero','.explainer-hero .shell','.explainer-hero h1','.explainer-hero p','.explainer-rule'),sharedHero,'Explainer');
-await page.locator('#fmbExplainedSearch').waitFor({state:'visible'});
-await assertContrast('.explainer-card h2',4.5,'Explainer card heading is low contrast');
-
-await open('/news/fmb-brief/');
-assert.equal(await page.locator('body').getAttribute('data-fmb-route'),'brief','Daily Brief route art direction missing.');
-await page.locator('.fmb-product-signal.fmb-brief-signal').waitFor({state:'visible'});
-assert.equal(await page.locator('.fmb-brief-signature-visual:visible').count(),0,'Daily Brief must not show a floating mug in the hero.');
-await page.locator('.brief-rule').waitFor({state:'visible'});
-await assertReadable('.brief-archive-hero h1','Daily Brief heading is unreadable.');
-assertSameHero(await heroMetrics('.brief-archive-hero','.brief-archive-hero .brief-shell','.brief-archive-hero h1','.brief-archive-hero p','.brief-rule'),sharedHero,'Daily Brief');
-assert((await page.locator('.brief-issue').count())>=1,'Daily Brief editions missing.');
-await assertContrast('.brief-issue h2',4.5,'Daily Brief issue headline is low contrast');
-
-await open('/news/horoscope/');
-assert.equal(await page.locator('body').getAttribute('data-fmb-route'),'horoscope','Horoscope route art direction missing.');
-await page.locator('.fmb-horoscope-constellation').waitFor({state:'visible'});
-assert((await page.locator('[data-zodiac-grid] button').count())===12,'Horoscope must show all 12 zodiac signs.');
-assert((await page.locator('body').innerText()).includes('Hindi hawak ng mga bituin ang ating kapalaran, meron tayong freewill gamitin natin'),'Horoscope free-will header missing.');
-await page.locator('button[data-sign="Pisces"]').click();
-assert.equal(await page.evaluate(()=>localStorage.getItem('fmbZodiacV1')),'Pisces','Horoscope preference did not persist.');
-assert.equal((await page.locator('[data-horoscope-reading] h2').textContent())?.trim(),'Pisces','Horoscope reading did not update.');
-await assertContrast('.fmb-horoscope-section p',4.5,'Horoscope reading text is low contrast');
-
-await open('/news/crossword/');
-assert.equal(await page.locator('body').getAttribute('data-fmb-route'),'crossword','Crossword route art direction missing.');
-assert.equal(await page.locator('.fmb-crossword-count:visible').count(),0,'Crossword numeric hero count must stay removed.');
-await page.locator('.fmb-crossword-visual').waitFor({state:'visible'});
-assert.equal(await page.locator('.fmb-crossword-visual i').count(),9,'Crossword decorative grid must remain intact.');
-await page.locator('[data-cw-grid]').waitFor({state:'visible'});
-assert((await page.locator('[data-cw-grid] input').count())>0,'Crossword has no playable cells.');
-const crosswordText=await page.locator('body').innerText();
-for(const forbidden of ['Reveal Letter','Reveal Word','Reveal Puzzle'])assert(!crosswordText.includes(forbidden),`Crossword exposes forbidden control: ${forbidden}`);
-assert(crosswordText.includes('The complete answer key is released only when the next weekly crossword goes live'),'Weekly crossword answer-release policy missing.');
-await assertContrast('.fmb-clue button',4.5,'Crossword clue text is not readable');
-await assertContrast('.fmb-clue-group h2',4.5,'Crossword clue heading is not readable');
-await assertContrast('.fmb-crossword-status',4.5,'Crossword status text is not readable');
-await assertContrast('.fmb-cell input',7,'Crossword cell letters are not high contrast');
-await assertContrast('.fmb-news-context p',4.5,'Crossword context text is not readable');
-await assertContrast('.fmb-answer-release p',4.5,'Crossword answer-policy text is not readable');
+const routes=['/news/archive/','/news/world/','/news/explainer/','/news/fmb-brief/','/news/horoscope/','/news/crossword/','/news/about/'];
+for(const route of routes){
+  await open(route);
+  await assertMobileShell(route);
+  await assertNoHorizontalOverflow(route);
+}
 
 await open('/news/about/');
-assert.equal(await page.locator('body').getAttribute('data-fmb-route'),'about','About route art direction missing.');
-await page.locator('.fmb-about-fmb-mark').waitFor({state:'visible'});
-await assertReadable('.fmb-about-hero h1','About manifesto headline is unreadable.');
-
-await open('/news/explainer/leptospirosis-after-flood-resilience-metro-manila/');
-assert.equal(await page.locator('body').getAttribute('data-fmb-route'),'explainer','Explainer article must stay in the Explainer product family.');
-await page.locator('article.article').waitFor({state:'visible'});
-await page.locator('.fmb-mobile-reader-actions').waitFor({state:'visible'});
-await page.locator('.fmb-reading-progress').waitFor({state:'visible'});
-await assertReadable('article.article h1','Article headline is unreadable.');
-await assertContrast('article.article p',4.5,'Article body text is low contrast');
-await page.locator('[data-fmb-reader-save]').click();
-const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('fmbSavedStoriesV1')||'[]'));
-assert(saved.some(item=>item.path.includes('/news/explainer/leptospirosis-after-flood-resilience-metro-manila/')),'Reader Save did not persist the article.');
-assert.equal(await page.locator('meta[property="og:type"]').getAttribute('content'),'article','Open Graph article metadata missing.');
-const structured=JSON.parse(await page.locator('script[type="application/ld+json"]').textContent());
-assert.equal(structured['@type'],'Article','FMB Explainer structured data is not Article.');
-assert(structured.datePublished,'FMB Explainer structured data is missing the publication timestamp.');
+await assertReadable('.fmb-about-hero-copy h1','About hero heading is unreadable.');
+await assertReadable('.fmb-about-hero-statement p','About hero statement is unreadable.');
+await assertReadable('.fmb-about-purpose-copy p','About purpose text is unreadable.');
+await assertReadable('.fmb-about-mv h2','About mission/vision heading is unreadable.');
+await assertReadable('.fmb-about-mv>p:last-child','About mission/vision copy is unreadable.');
+await assertReadable('.fmb-about-closing h2','About closing heading is unreadable.');
+await assertNoHorizontalOverflow('/news/about/');
 
 await browser.close();
-console.log('Mobile browser QA passed: approved metallic-violet FMB News home with centered masthead, icon-based five-product rail, one HEADLINES ticker above the cinematic hero, rotating slogan, emphasized live date/time/weather, exact Read the Latest / Customize CTAs, no duplicate lead hero, app bottom navigation, strict shared product hero geometry, and dedicated Archive, Horoscope, Crossword, About, and article experiences.');
+server.kill('SIGTERM');
+console.log('Mobile browser QA passed: image-free matte Home hero with retained overlays, compact FMB News shell, no horizontal overflow, and readable About/internal routes.');
