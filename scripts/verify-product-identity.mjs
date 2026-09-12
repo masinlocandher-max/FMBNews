@@ -24,13 +24,11 @@ const landingCss=await readFile(resolve('dist/news/assets/css/fmb-news-publicati
 const iaCss=await readFile(resolve('dist/news/assets/css/fmb-news-editorial-ia.css'),'utf8');
 const refreshCss=await readFile(resolve('dist/news/assets/css/fmb-news-editorial-refresh.css'),'utf8');
 
-// Existing typography/component source remains intact beneath the final visual authority.
 must(productCss.includes('Bodoni Moda')&&productCss.includes('Manrope'),'FMB typography regression: editorial display or UI font missing');
 must(productCss.includes('--fmb-display')&&productCss.includes('--fmb-ui'),'FMB typography regression: shared font variables missing');
 for(const signal of ['.network-products','.network-product:nth-child(4)','.daily-brief-signup','.publication-footer'])must(landingCss.includes(signal),`Landing structure regression: missing ${signal}`);
 for(const signal of ['.editorial-desks','.editorial-desk-grid','.publication-menu-panel','body.fmb-sports-page','.sports-empty','.sports-story-grid'])must(iaCss.includes(signal),`Editorial IA stylesheet regression: missing ${signal}`);
 
-// Final visual authority is now ivory/ink/crimson with restrained metal/frost.
 for(const signal of [
   '--fmb-ink:#171A1B',
   '--fmb-charcoal:#101314',
@@ -69,8 +67,8 @@ for(const file of pages){
     for(const signal of [
       '/news/assets/css/fmb-news-publication-landing.css',
       '/news/assets/css/fmb-news-editorial-ia.css',
-      'News. Worldwide. Sports.',
-      'href="/news/">Home</a>',
+      'News. World. Sports.',
+      'href="/news/" aria-current="page">Home</a>',
       'href="/news/world/">World</a>',
       'href="/news/sports/">Sports</a>',
       'href="/news/fmb-brief/">Daily Briefing</a>',
