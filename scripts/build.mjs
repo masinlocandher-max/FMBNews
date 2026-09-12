@@ -63,9 +63,14 @@ await import('./hardfix-editorial-production.mjs');
 await import('./hardfix-mobile-first-site.mjs');
 
 // Temporary compatibility layer still guards missed mobile assets, utility-route
-// recovery, and legacy mobile-home runtime behavior. Its ticker responsibility
-// has been removed and now belongs to render-network-shell.mjs.
+// recovery, and legacy mobile-home runtime behavior.
 await import('./hardfix-newsroom-compat.mjs');
+
+// Compatibility can reconstruct utility-page markup after the route-wide mobile
+// pass. Reassert the same canonical shell one final time instead of relying on a
+// separate ticker repair script. This keeps search/submit and every other route
+// on the same mast/ticker/clock/footer source of truth.
+await renderNetworkShell();
 
 // Public-web discovery pass. It leaves presentation untouched while exposing
 // canonical identity, trust policies, snippet/image directives, and normalized
