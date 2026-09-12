@@ -4,8 +4,12 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const newsRoot = path.join(root, 'dist', 'news');
-const stylesheetHref = '/assets/css/fmb-news-matte-system.css?v=20260911';
+const stylesheetHref = '/assets/css/fmb-news-matte-system.css?v=20260912';
 const stylesheetTag = `<link rel="stylesheet" href="${stylesheetHref}">`;
+const themeStylesheetHref = '/assets/css/fmb-news-theme.css?v=20260912';
+const themeStylesheetTag = `<link rel="stylesheet" href="${themeStylesheetHref}">`;
+const themeRuntimeTag = '<script src="/assets/js/fmb-news-theme.js?v=20260912" defer></script>';
+const themeBootTag = `<script data-fmb-theme-boot>(()=>{try{let m=localStorage.getItem('fmbThemeModeV1')||'system';if(!['system','light','dark'].includes(m))m='system';const r=m==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):m;document.documentElement.setAttribute('data-fmb-theme-mode',m);document.documentElement.setAttribute('data-fmb-theme',r)}catch{}})();</script>`;
 const aboutReadabilityHref = '/assets/css/fmb-about-readability-lock.css?v=20260911';
 const aboutReadabilityTag = `<link rel="stylesheet" href="${aboutReadabilityHref}">`;
 const wordmark = '<span class="fmb-lux-wordmark">FMB NEWS</span>';
@@ -33,9 +37,13 @@ function addBodyClass(html) {
   });
 }
 
-function ensureStylesheet(html) {
-  if (html.includes('fmb-news-matte-system.css')) return html;
-  return html.replace(/<\/head>/i, `${stylesheetTag}</head>`);
+function ensureBrandAssets(html) {
+  if (!html.includes('data-fmb-theme-boot')) html = html.replace(/<head>/i, `<head>${themeBootTag}`);
+  if (!html.includes('fmb-news-matte-system.css')) html = html.replace(/<\/head>/i, `${stylesheetTag}</head>`);
+  else html = html.replace(/\/assets\/css\/fmb-news-matte-system\.css\?v=[^"']+/i, stylesheetHref);
+  if (!html.includes('fmb-news-theme.css')) html = html.replace(/<\/head>/i, `${themeStylesheetTag}</head>`);
+  if (!html.includes('fmb-news-theme.js')) html = html.replace(/<\/head>/i, `${themeRuntimeTag}</head>`);
+  return html;
 }
 
 function ensureAboutReadability(html, relativePath) {
@@ -55,20 +63,12 @@ function normalizeHeaderWordmark(header) {
 
     replaced = true;
     let safeOpen = open;
-    if (!/\baria-label=/i.test(safeOpen)) {
-      safeOpen = safeOpen.replace(/>$/, ' aria-label="FMB News home">');
-    }
-
-    // Keep legacy identity markup in the DOM for accessibility/product QA and
-    // hide it visually via CSS. The visible treatment is always plain FMB NEWS.
+    if (!/\baria-label=/i.test(safeOpen)) safeOpen = safeOpen.replace(/>$/, ' aria-label="FMB News home">');
     if (inner.includes('fmb-lux-wordmark')) return match;
     return `${safeOpen}<span class="fmb-legacy-brand" aria-hidden="true">${inner}</span>${wordmark}${close}`;
   });
 
   if (replaced) return normalized;
-
-  // Legacy fallback: retain the original image node but make it visually hidden,
-  // then add the new wordmark. This avoids deleting metadata/QA signals.
   return normalized.replace(/(<img\b[^>]*(?:data-fmb-asset=(['"])logo\2|fmb-news-official-transparent|fmb-master-purple|shell)[^>]*>)/i, '<span class="fmb-legacy-brand" aria-hidden="true">$1</span>' + wordmark);
 }
 
@@ -93,7 +93,7 @@ for (const file of files) {
   let html = source;
 
   html = addBodyClass(html);
-  html = ensureStylesheet(html);
+  html = ensureBrandAssets(html);
   html = ensureAboutReadability(html, relativePath);
 
   const beforeHeaders = html;
@@ -108,4 +108,4 @@ for (const file of files) {
   }
 }
 
-console.log(`Applied FMB News matte system to ${changed}/${files.length} HTML pages; normalized mastheads on ${headersNormalized} pages; hero imagery visually removed while ticker/live overlays remain; About gets a dedicated readability lock.`);
+console.log(`Applied canonical FMB News brand system to ${changed}/${files.length} HTML pages; normalized mastheads on ${headersNormalized} pages; installed System/Light/Dark appearance runtime; About readability preserved.`);

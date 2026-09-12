@@ -12,7 +12,13 @@ async function waitForServer(){
   throw new Error('Mobile QA server did not become ready.');
 }
 
-const tests=['scripts/browser-qa.mjs','scripts/browser-qa-crossword-ux.mjs','scripts/browser-qa-home-motion.mjs','scripts/browser-qa-stabilization.mjs'];
+const tests=[
+  'scripts/browser-qa.mjs',
+  'scripts/browser-qa-crossword-ux.mjs',
+  'scripts/browser-qa-home-motion.mjs',
+  'scripts/browser-qa-stabilization.mjs',
+  'scripts/browser-qa-theme.mjs',
+];
 try{
   await waitForServer();
   for(const test of tests){
