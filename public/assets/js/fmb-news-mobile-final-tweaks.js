@@ -3,11 +3,8 @@
   const path=location.pathname.replace(/\/+$/,'')||'/news';
 
   if(path==='/news'){
-    const copy=document.querySelector('.fmb-approved-hero-copy');
-    if(copy){
-      copy.style.setProperty('width',window.innerWidth<=390?'min(55%,206px)':'min(56%,224px)','important');
-      copy.style.setProperty('max-width',window.innerWidth<=390?'206px':'224px','important');
-    }
+    /* The final visual system owns hero geometry in CSS. Keep JavaScript limited
+       to behavior so runtime inline styles cannot override responsive layout. */
 
     /* The shared runtime used to force a heavier selected-product tile inline.
        Clear only those old presentation properties so the final minimal metallic CSS is authoritative. */

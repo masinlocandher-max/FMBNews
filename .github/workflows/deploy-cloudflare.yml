@@ -93,9 +93,8 @@ jobs:
           fetch_with_retry 'https://www.francinemariebautista.com/news/explainer/' /tmp/news-explainer.html /tmp/news-explainer.headers 'FMB Explainer'
           grep -qi 'FMB Explainer' /tmp/news-explainer.html
 
-          status="$(curl --silent --show-error --output /dev/null --write-out '%{http_code}' --connect-timeout 10 --max-time 30 'https://www.francinemariebautista.com/')"
-          test "$status" = '200'
-
+          # This repository owns /news only. The parent site's homepage is an
+          # independent deployment and must never make a healthy FMB News release fail.
           apex_headers="$(curl --silent --show-error --head --connect-timeout 10 --max-time 30 \
             -H 'Cache-Control: no-cache' -H 'Pragma: no-cache' \
             "https://francinemariebautista.com/news/?cutover=${GITHUB_SHA}" | tr -d '\r' || true)"
