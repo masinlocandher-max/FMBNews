@@ -23,12 +23,20 @@ async function walk(dir) {
   return files;
 }
 
+const founder = () => ({
+  '@type': 'Person',
+  '@id': FMB_PERSON_ID,
+  name: 'Francine Marie Bautista',
+  url: FMB_PROFILE,
+});
+
 const organization = () => ({
   '@type': 'NewsMediaOrganization',
   '@id': ORG_ID,
   name: 'FMB News',
   alternateName: 'Filipino Media Bulletin',
   url: NEWS,
+  founder: { '@id': FMB_PERSON_ID },
   logo: {
     '@type': 'ImageObject',
     url: `${NEWS}assets/images/fmb-approved/fmb-news-official-transparent.webp`,
@@ -139,7 +147,7 @@ function addPublisherMeta(html) {
 function addDiscoveryGraph(html, relative) {
   if (html.includes('data-fmb-discovery-schema')) return html;
 
-  const graph = [organization(), website()];
+  const graph = [organization(), website(), founder()];
   let page = null;
 
   if (relative === 'index.html') {
@@ -162,6 +170,7 @@ function addDiscoveryGraph(html, relative) {
       inLanguage: 'en-PH',
       isPartOf: { '@id': WEBSITE_ID },
       mainEntity: { '@id': ORG_ID },
+      mentions: { '@id': FMB_PERSON_ID },
     };
   } else if (relative === 'editorial-standards/index.html') {
     page = {
@@ -225,4 +234,4 @@ for (const file of await walk(newsRoot)) {
   pages++;
 }
 
-console.log(`AI/search discovery hardening applied to ${pages} FMB News pages; ${articleSchemas} pages received normalized publisher/author article schema. Editorial standards and corrections policies are exposed as canonical trust surfaces.`);
+console.log(`AI/search discovery hardening applied to ${pages} FMB News pages; ${articleSchemas} pages received normalized publisher/author article schema. Canonical founder identity, editorial standards and corrections policies are exposed as trust surfaces.`);

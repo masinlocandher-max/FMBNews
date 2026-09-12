@@ -19,6 +19,7 @@ const tests=[
   'scripts/browser-qa-stabilization.mjs',
   'scripts/browser-qa-theme.mjs',
   'scripts/browser-qa-editorial-ia.mjs',
+  'scripts/browser-qa-founder-about.mjs',
 ];
 try{
   await waitForServer();
@@ -31,4 +32,4 @@ try{
   server.kill('SIGTERM');
 }
 if(process.exitCode)process.exit(process.exitCode);
-console.log('All FMB mobile and desktop editorial browser QA suites passed.');
+console.log('All FMB mobile, desktop editorial, and founder identity browser QA suites passed.');
