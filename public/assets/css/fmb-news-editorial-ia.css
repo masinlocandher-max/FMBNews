@@ -1,0 +1,98 @@
+/* FMB News editorial desk information architecture — 2026-09-12 */
+
+/* Desktop publication navigation: News / Worldwide / Sports stay direct desks.
+   Brief, Fact Check and Explainer remain direct editorial tools. Entertainment
+   owns Horoscope + Crossword so those utilities never become top-level products. */
+@media (min-width:700px){
+  body.fmb-network-landing .publication-nav{gap:clamp(12px,1.25vw,22px)!important}
+  body.fmb-network-landing .publication-nav>a,
+  body.fmb-network-landing .publication-nav>details>summary{
+    display:inline-flex;align-items:center;min-height:38px;padding:0!important;
+    color:rgba(255,255,255,.80)!important;font-family:Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+    font-size:10px!important;font-weight:800!important;letter-spacing:.075em!important;text-transform:uppercase!important;
+    text-decoration:none!important;white-space:nowrap;cursor:pointer;list-style:none
+  }
+  body.fmb-network-landing .publication-nav>details>summary::-webkit-details-marker{display:none}
+  body.fmb-network-landing .publication-nav>details>summary::after{content:"+";margin-left:6px;color:#F9AB60;font-size:13px;font-weight:600}
+  body.fmb-network-landing .publication-nav>details[open]>summary::after{content:"−"}
+  body.fmb-network-landing .publication-nav>a:is(:hover,:focus-visible),
+  body.fmb-network-landing .publication-nav>details>summary:is(:hover,:focus-visible){color:#fff!important;outline:none}
+  body.fmb-network-landing .publication-menu{position:relative}
+  body.fmb-network-landing .publication-menu-panel{
+    position:absolute;top:calc(100% + 10px);right:0;z-index:120;min-width:220px;padding:10px;
+    border:1px solid rgba(249,171,96,.22);border-radius:16px;background:rgba(22,8,45,.96);
+    box-shadow:0 22px 58px rgba(8,2,20,.36);-webkit-backdrop-filter:blur(22px) saturate(88%);backdrop-filter:blur(22px) saturate(88%)
+  }
+  body.fmb-network-landing .publication-menu-panel a{display:block;padding:11px 12px;border-radius:10px;color:#fff!important;font-size:12px;font-weight:700;text-decoration:none}
+  body.fmb-network-landing .publication-menu-panel a:hover{background:rgba(255,255,255,.08)}
+}
+
+/* Three newsroom desks requested for the landing. These are content desks, not
+   extra products, so the five-product network rail remains unchanged. */
+.fmb-ref.fmb-network-landing .editorial-desks{margin:0 0 22px}
+.fmb-ref.fmb-network-landing .editorial-desks-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin:0 0 12px}
+.fmb-ref.fmb-network-landing .editorial-desks-head div>span{display:block;margin-bottom:4px;color:#F9AB60;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.fmb-ref.fmb-network-landing .editorial-desks-head h2{margin:0;color:#fff;font-family:var(--fmb-luxury-serif,Georgia,serif);font-size:clamp(28px,3.1vw,48px);font-weight:600;letter-spacing:-.025em;line-height:1}
+.fmb-ref.fmb-network-landing .editorial-desks-head p{max-width:530px;margin:0;color:rgba(255,255,255,.66);font-size:12px;line-height:1.55;text-align:right}
+.fmb-ref.fmb-network-landing .editorial-desk-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.fmb-ref.fmb-network-landing .editorial-desk{
+  min-height:152px;padding:19px 20px;display:flex;flex-direction:column;border:1px solid rgba(249,171,96,.18);border-radius:18px;
+  color:#fff!important;background:linear-gradient(145deg,rgba(255,255,255,.095),rgba(255,255,255,.045));
+  box-shadow:inset 0 1px rgba(255,255,255,.08),0 16px 40px rgba(10,2,24,.14);text-decoration:none!important;
+  -webkit-backdrop-filter:blur(20px) saturate(88%);backdrop-filter:blur(20px) saturate(88%);transition:transform .18s ease,border-color .18s ease,background .18s ease
+}
+.fmb-ref.fmb-network-landing .editorial-desk:is(:hover,:focus-visible){transform:translateY(-2px);border-color:rgba(249,171,96,.44);background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.06));outline:none}
+.fmb-ref.fmb-network-landing .editorial-desk-top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:17px}
+.fmb-ref.fmb-network-landing .editorial-desk-top strong{font-family:var(--fmb-luxury-serif,Georgia,serif);font-size:24px;font-weight:600;letter-spacing:-.015em}
+.fmb-ref.fmb-network-landing .editorial-desk-top span{color:#F9AB60;font-size:9px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
+.fmb-ref.fmb-network-landing .editorial-desk p{margin:auto 0 0;color:rgba(255,255,255,.72)!important;font-size:12px!important;line-height:1.5!important}
+.fmb-ref.fmb-network-landing .editorial-desk b{display:block;margin-top:8px;color:#fff;font-size:12px;font-weight:700;line-height:1.4}
+.fmb-ref.fmb-network-landing .editorial-desk.sports.is-empty b{color:#f2d2b6}
+
+/* Sports desk route. It intentionally has a real empty state until Sports-tagged
+   inventory exists; the renderer automatically replaces it with story cards. */
+body.fmb-sports-page .sports-main{min-height:70vh;background:var(--fmb-theme-bg,#fbf9fc);color:var(--fmb-theme-ink,#1b1420)}
+body.fmb-sports-page .sports-shell{width:min(1180px,calc(100% - 48px));margin-inline:auto}
+body.fmb-sports-page .sports-hero{padding:74px 0 58px;color:#fff;background:radial-gradient(circle at 82% 12%,rgba(249,171,96,.13),transparent 30%),linear-gradient(135deg,#16082d,#220D50 55%,#630661)}
+body.fmb-sports-page .sports-hero p:first-child{margin:0 0 10px;color:#F9AB60;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+body.fmb-sports-page .sports-hero h1{margin:0;font-family:var(--fmb-luxury-serif,Georgia,serif);font-size:clamp(56px,8vw,104px);font-weight:600;line-height:.9;letter-spacing:-.045em}
+body.fmb-sports-page .sports-hero span{display:block;width:72px;height:2px;margin:22px 0 17px;background:#F9AB60}
+body.fmb-sports-page .sports-hero p:last-child{max-width:660px;margin:0;color:rgba(255,255,255,.78);font-size:16px;line-height:1.65}
+body.fmb-sports-page .sports-content{padding:52px 0 76px}
+body.fmb-sports-page .sports-empty{max-width:760px;padding:34px;border:1px solid var(--fmb-theme-line,rgba(34,13,80,.14));border-radius:22px;background:var(--fmb-theme-surface,#fff);box-shadow:var(--fmb-theme-shadow,0 18px 50px rgba(34,13,80,.10))}
+body.fmb-sports-page .sports-empty>span{color:#630661;font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+body.fmb-sports-page .sports-empty h2{margin:10px 0 12px;font-family:var(--fmb-luxury-serif,Georgia,serif);font-size:clamp(28px,4vw,46px);line-height:1.02}
+body.fmb-sports-page .sports-empty p{margin:0 0 22px;color:var(--fmb-theme-muted,#655b69);line-height:1.7}
+body.fmb-sports-page .sports-empty a{display:inline-flex;min-height:42px;align-items:center;padding:0 16px;border-radius:999px;background:#220D50;color:#fff;text-decoration:none;font-size:12px;font-weight:800}
+body.fmb-sports-page .sports-story-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+body.fmb-sports-page .sports-story{overflow:hidden;border:1px solid var(--fmb-theme-line,rgba(34,13,80,.14));border-radius:20px;background:var(--fmb-theme-surface,#fff);box-shadow:var(--fmb-theme-shadow,0 18px 50px rgba(34,13,80,.10))}
+body.fmb-sports-page .sports-story>a{display:grid;grid-template-columns:42% minmax(0,1fr);height:100%;color:inherit;text-decoration:none}
+body.fmb-sports-page .sports-story img{width:100%;height:100%;min-height:230px;object-fit:cover}
+body.fmb-sports-page .sports-story>a>div{padding:24px;display:flex;flex-direction:column}
+body.fmb-sports-page .sports-story span{color:#630661;font-size:9px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
+body.fmb-sports-page .sports-story h2{margin:8px 0 10px;font-family:var(--fmb-luxury-serif,Georgia,serif);font-size:clamp(23px,2.6vw,34px);line-height:1.02}
+body.fmb-sports-page .sports-story p{margin:0 0 20px;color:var(--fmb-theme-muted,#655b69);font-size:13px;line-height:1.55}
+body.fmb-sports-page .sports-story time{margin-top:auto;color:var(--fmb-theme-muted,#655b69);font-size:10px;font-weight:700}
+html[data-fmb-theme="dark"] body.fmb-sports-page .sports-empty>span,
+html[data-fmb-theme="dark"] body.fmb-sports-page .sports-story span{color:#F9AB60}
+
+@media(max-width:1080px){
+  .fmb-ref.fmb-network-landing .editorial-desks-head{align-items:start;flex-direction:column}
+  .fmb-ref.fmb-network-landing .editorial-desks-head p{text-align:left}
+  .fmb-ref.fmb-network-landing .editorial-desk-grid{grid-template-columns:1fr 1fr}
+  .fmb-ref.fmb-network-landing .editorial-desk:last-child{grid-column:1/-1}
+}
+@media(max-width:699px){
+  .fmb-ref.fmb-network-landing .editorial-desks{display:none!important}
+  body.fmb-sports-page .sports-shell{width:min(100% - 30px,1180px)}
+  body.fmb-sports-page .sports-hero{padding:56px 0 44px}
+  body.fmb-sports-page .sports-content{padding:34px 0 58px}
+  body.fmb-sports-page .sports-story-grid{grid-template-columns:1fr}
+  body.fmb-sports-page .sports-story>a{grid-template-columns:1fr}
+  body.fmb-sports-page .sports-story img{min-height:200px;max-height:260px}
+  body.fmb-sports-page .sports-empty{padding:26px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .fmb-ref.fmb-network-landing .editorial-desk{transition:none}
+}
