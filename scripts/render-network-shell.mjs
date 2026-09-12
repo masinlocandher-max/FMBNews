@@ -45,20 +45,7 @@ async function latestStories() {
 
   return stories
     .sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt))
-    .slice(0, 7);
-}
-
-function formatPhtTime(iso) {
-  try {
-    return `${new Intl.DateTimeFormat('en-PH', {
-      timeZone: 'Asia/Manila',
-      hour: 'numeric',
-      minute: '2-digit',
-      hour12: true,
-    }).format(new Date(iso))} PHT`;
-  } catch {
-    return '';
-  }
+    .slice(0, 8);
 }
 
 function routeIdentity(relativePath) {
@@ -79,14 +66,14 @@ function routeIdentity(relativePath) {
 function ticker(stories) {
   const run = stories.map((story, index) => {
     const separator = index < stories.length - 1 ? '<span class="ticker-dot" aria-hidden="true">◆</span>' : '';
-    return `<a href="/news/${esc(story.slug)}/"><time datetime="${esc(story.publishedAt)}">${esc(formatPhtTime(story.publishedAt))}</time><span class="ticker-headline">${esc(story.headline)}</span></a>${separator}`;
+    return `<a href="/news/${esc(story.slug)}/"><span class="ticker-headline">${esc(story.headline)}</span></a>${separator}`;
   }).join('');
 
-  return `<div class="headline-ticker" role="region" aria-label="Latest FMB News headlines"><div class="ticker-label"><span class="ticker-pulse" aria-hidden="true"></span>LATEST</div><div class="ticker-window"><div class="ticker-track"><div class="ticker-run">${run}</div><div class="ticker-run" aria-hidden="true">${run}</div></div></div></div>`;
+  return `<div class="headline-ticker" role="region" aria-label="Latest FMB News headlines"><div class="ticker-clock" aria-label="Philippine Standard Time"><span data-pht-clock>--:--</span><small>PHT</small></div><div class="ticker-label"><span class="ticker-pulse" aria-hidden="true"></span>LATEST</div><div class="ticker-window"><div class="ticker-track"><div class="ticker-run">${run}</div><div class="ticker-run" aria-hidden="true">${run}</div></div></div></div>`;
 }
 
 function utility() {
-  return '<div class="utility"><div class="shell"><span><span data-pht-date></span> &nbsp; | &nbsp; Philippine Standard Time <span data-pht-clock></span></span><span>Stay informed. Stay independent.</span></div></div>';
+  return '<div class="utility"><div class="shell"><span><span data-pht-date></span></span><span class="utility-context">Philippine Standard Time · Information with Purpose.</span></div></div>';
 }
 
 function semanticProductMarkup(identity) {
@@ -124,6 +111,13 @@ function clockRuntime() {
   return `<script data-fmb-network-clock>(()=>{const d=document.querySelector('[data-pht-date]'),t=document.querySelector('[data-pht-clock]');const tick=()=>{const n=new Date();if(d)d.textContent=new Intl.DateTimeFormat('en-PH',{timeZone:'Asia/Manila',weekday:'long',month:'long',day:'numeric',year:'numeric'}).format(n);if(t)t.textContent=new Intl.DateTimeFormat('en-PH',{timeZone:'Asia/Manila',hour:'numeric',minute:'2-digit',second:'2-digit',hour12:true}).format(n)};tick();setInterval(tick,1000)})();</script>`;
 }
 
+function normalizeClockRuntime(html) {
+  let out = html;
+  out = out.replace(/<script data-fmb-network-clock>[\s\S]*?<\/script>/gi, '');
+  out = out.replace(/<script>\(\(\)=>\{const d=document\.querySelector\('\[data-pht-date\]'\),t=document\.querySelector\('\[data-pht-clock\]'\);[\s\S]*?<\/script>/gi, '');
+  return out.replace('</body>', `${clockRuntime()}</body>`);
+}
+
 function ensureThemeColor(html) {
   if (/<meta name="theme-color"/i.test(html)) {
     return html.replace(/<meta name="theme-color" content="[^"]*">/i, '<meta name="theme-color" content="#ffffff">');
@@ -139,6 +133,7 @@ function ensureBaseAssets(html) {
     '/assets/css/fmb-news-reference-final.css?v=20260831-metallic',
     '/assets/css/fmb-news-network-hardfix.css?v=20260831-network-hardfix',
     '/assets/css/fmb-news-product-identity.css?v=20260831-product-lock',
+    '/assets/css/fmb-news-ticker-hardfix.css?v=20260902-ticker-hardfix',
   ];
 
   let out = html;
@@ -229,7 +224,7 @@ export async function renderNetworkShell() {
     html = normalizeBodyClass(html, identity, relativePath);
     html = replaceChrome(html, stories, identity, relativePath);
     html = replaceFooter(html, relativePath);
-    if (!html.includes('data-fmb-network-clock')) html = html.replace('</body>', `${clockRuntime()}</body>`);
+    html = normalizeClockRuntime(html);
 
     if (html !== source) {
       await writeFile(file, html, 'utf8');
@@ -237,5 +232,5 @@ export async function renderNetworkShell() {
     }
   }
 
-  console.log(`Rendered canonical FMB News network shell across ${changed}/${pages.length} HTML pages with one product-aware masthead, five editorial products, ticker, utility chrome, and non-redundant footer.`);
+  console.log(`Rendered canonical FMB News network shell across ${changed}/${pages.length} HTML pages with one product-aware masthead, five editorial products, one normalized PHT ticker/clock, utility chrome, and non-redundant footer.`);
 }
