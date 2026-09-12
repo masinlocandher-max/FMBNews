@@ -15,7 +15,10 @@ await cp(path.join(root, 'public', 'assets'), path.join(newsRoot, 'assets'), { r
 // production pages reference local /news/assets files instead of Drive URLs.
 await import('./fetch-approved-mobile-assets.mjs');
 
-await import('./render-metallic-reference.mjs');
+// Archive and structured news articles are rendered independently from the
+// publication homepage. The canonical home is authored later by exactly one
+// renderer, so no legacy homepage is generated and then overwritten.
+await import('./render-news-routes.mjs');
 await import('./render-fmb-explained.mjs');
 await import('./fix-explainer-original-chronology.mjs');
 
@@ -40,8 +43,8 @@ await import('./hardfix-all-article-images.mjs');
 await import('./hardfix-newsroom-audit.mjs');
 await import('./hardfix-late-newsroom-shell.mjs');
 
-// The canonical homepage renderer now runs after the generic audit so its
-// News/Worldwide/Sports desk hierarchy and Entertainment grouping are final
+// The canonical homepage renderer is the sole owner of /news/index.html. It
+// runs after the generic audit so News/Worldwide/Sports and Entertainment are
 // source-owned decisions rather than late hardfix output.
 await import('./render-home-experience.mjs');
 
@@ -104,4 +107,4 @@ await rewriteAssetPaths(newsRoot);
 // routes, canonical URLs, article metadata and scoped asset paths have settled.
 await import('./generate-news-distribution.mjs');
 
-console.log('Built Filipino Media Bulletin with five official editorial products: FMB News, FMB Worldwide, FMB Explainer, FMB Fact Check, and FMB Daily Brief; plus News/Worldwide/Sports editorial desks, localized visual assets, product-designated fallback imagery, guaranteed article imagery, personalization/PWA support, live utilities, newsroom search and intake, canonical sitemap and RSS distribution, a sealed active crossword runtime, explicit editorial trust surfaces, normalized search/AI discovery metadata, a canonical network shell with one PHT ticker/clock, a canonical matte-glass brand system with System/Light/Dark appearance, readable trust pages, and no late newsroom compatibility mutation.');
+console.log('Built Filipino Media Bulletin with one canonical homepage renderer; five official editorial products: FMB News, FMB Worldwide, FMB Explainer, FMB Fact Check, and FMB Daily Brief; News/Worldwide/Sports editorial desks; localized visual assets; product-designated fallback imagery; guaranteed article imagery; personalization/PWA support; live utilities; newsroom search and intake; canonical sitemap and RSS distribution; a sealed active crossword runtime; explicit editorial trust surfaces; normalized search/AI discovery metadata; one PHT ticker/clock shell; a matte-glass System/Light/Dark brand system; readable trust pages; and no duplicate legacy homepage generation.');
