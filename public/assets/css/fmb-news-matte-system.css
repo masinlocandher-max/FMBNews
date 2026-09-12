@@ -94,7 +94,7 @@ body.fmb-matte-system .fmb-app-brand-hero{
 body.fmb-matte-system .fmb-hero-readable-shade{display:block!important}
 /* Keep the live date/time panel and rotating slogan in separate columns on phone widths. */
 @media(max-width:699px){
-  html[data-fmb-global-mobile="true"] body.fmb-matte-system.fmb-mobile-route-home .fmb-approved-hero-copy{width:min(56%,218px)!important}
+  html[data-fmb-global-mobile="true"] body.fmb-matte-system.fmb-mobile-route-home .fmb-approved-hero-copy{width:min(50%,194px)!important;max-width:194px!important}
 }
 
 /* About page base structure and contrast repair. */
