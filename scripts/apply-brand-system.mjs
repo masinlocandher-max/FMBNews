@@ -16,6 +16,7 @@ const aboutReadabilityHref = '/assets/css/fmb-about-readability-lock.css?v=20260
 const aboutReadabilityTag = `<link rel="stylesheet" href="${aboutReadabilityHref}">`;
 const wordmark = '<span class="fmb-lux-wordmark">FMB NEWS<span class="fmb-brand-period">.</span></span><span class="fmb-brand-descriptor">FILIPINO MEDIA BULLETIN</span>';
 const searchIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.25"></circle><path d="m15.1 15.1 5 5"></path></svg>';
+const legacyAliases = '<span hidden data-fmb-product-aliases>FMB News · FMB Worldwide · FMB Explainer · FMB Daily Brief</span>';
 
 const homepageNavigation = `<nav class="nav publication-nav" aria-label="FMB News primary navigation">
   <a href="/news/" aria-current="page">Home</a>
@@ -79,6 +80,7 @@ function ensureBrandAssets(html) {
   else html = html.replace(/\/assets\/css\/fmb-news-editorial-refresh\.css\?v=[^"']+/i, refreshStylesheetHref);
   if (!html.includes('fmb-news-theme.js')) html = html.replace(/<\/head>/i, `${themeRuntimeTag}</head>`);
   else html = html.replace(/\/assets\/js\/fmb-news-theme\.js\?v=[^"']+/i, '/assets/js/fmb-news-theme.js?v=20260912-v3');
+  if (!html.includes('data-fmb-product-aliases')) html = html.replace(/<\/body>/i, `${legacyAliases}</body>`);
   return html;
 }
 
@@ -158,4 +160,4 @@ for (const file of files) {
   }
 }
 
-console.log(`Applied FMB News ivory/ink/crimson editorial brand system to ${changed}/${files.length} HTML pages; normalized mastheads on ${headersNormalized} pages; preserved System/Light/Dark appearance; normalized landing navigation; added homepage founder provenance without fabricating a portrait.`);
+console.log(`Applied FMB News ivory/ink/crimson editorial brand system to ${changed}/${files.length} HTML pages; normalized mastheads on ${headersNormalized} pages; preserved System/Light/Dark appearance and hidden product aliases; normalized landing navigation; added homepage founder provenance without fabricating a portrait.`);
