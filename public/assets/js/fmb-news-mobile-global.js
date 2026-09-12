@@ -102,7 +102,7 @@
     return sheet;
   }
 
-  function ensureBottomNav(active){
+  function mountBottomNav(active){
     if($('.fmb-mobile-bottom-nav'))return;
     const nav=document.createElement('nav');
     nav.className='fmb-mobile-bottom-nav';
@@ -134,7 +134,7 @@
     }
     $('[data-fmb-shell-menu]',shell)?.addEventListener('click',e=>openMore(e.currentTarget));
     $('[data-fmb-mobile-theme]',shell)?.addEventListener('click',()=>document.dispatchEvent(new CustomEvent('fmb:theme-cycle')));
-    ensureBottomNav(route.key);
+    mountBottomNav(route.key);
     return shell;
   }
 
