@@ -15,6 +15,19 @@ const themeBootTag = `<script data-fmb-theme-boot>(()=>{try{let m=localStorage.g
 const aboutReadabilityHref = '/assets/css/fmb-about-readability-lock.css?v=20260911';
 const aboutReadabilityTag = `<link rel="stylesheet" href="${aboutReadabilityHref}">`;
 const wordmark = '<span class="fmb-lux-wordmark">FMB NEWS<span class="fmb-brand-period">.</span></span><span class="fmb-brand-descriptor">FILIPINO MEDIA BULLETIN</span>';
+const searchIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.25"></circle><path d="m15.1 15.1 5 5"></path></svg>';
+
+const homepageNavigation = `<nav class="nav publication-nav" aria-label="FMB News primary navigation">
+  <a href="/news/" aria-current="page">Home</a>
+  <a href="/news/world/">World</a>
+  <a href="/news/sports/">Sports</a>
+  <a href="/news/fmb-brief/">Daily Briefing</a>
+  <a href="/news/fact-check/">Fact Check</a>
+  <a href="/news/explainer/">Explainers</a>
+  <details class="publication-menu"><summary>Entertainment</summary><div class="publication-menu-panel"><a href="/news/horoscope/">Horoscope</a><a href="/news/crossword/">Crossword</a></div></details>
+  <a href="/news/about/">About</a>
+  <a class="publication-search" href="/news/search/" aria-label="Search FMB News">${searchIcon}</a>
+</nav>`;
 
 const homepageFounder = `<section class="about-fmb-home" aria-labelledby="about-fmb-home-title">
   <div class="about-fmb-home-inner">
@@ -111,6 +124,7 @@ function normalizeHomepage(html, relativePath) {
   let out = html;
   out = out.replace(/(<strong>)HEADLINES(<\/strong>)/gi, '$1LATEST$2');
   out = out.replace(/(<div class="ticker-label">[\s\S]*?)(HEADLINES)([\s\S]*?<\/div>)/i, '$1LATEST$3');
+  out = out.replace(/<nav class="nav publication-nav"[\s\S]*?<\/nav>/i, homepageNavigation);
   if (!out.includes('about-fmb-home')) {
     if (/<footer\b/i.test(out)) out = out.replace(/<footer\b/i, `${homepageFounder}<footer`);
     else out = out.replace('</body>', `${homepageFounder}</body>`);
@@ -144,4 +158,4 @@ for (const file of files) {
   }
 }
 
-console.log(`Applied FMB News ivory/ink/crimson editorial brand system to ${changed}/${files.length} HTML pages; normalized mastheads on ${headersNormalized} pages; preserved System/Light/Dark appearance; added homepage founder provenance without fabricating a portrait.`);
+console.log(`Applied FMB News ivory/ink/crimson editorial brand system to ${changed}/${files.length} HTML pages; normalized mastheads on ${headersNormalized} pages; preserved System/Light/Dark appearance; normalized landing navigation; added homepage founder provenance without fabricating a portrait.`);
