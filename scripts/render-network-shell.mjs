@@ -16,12 +16,7 @@ const esc = (value = '') => String(value)
 async function walk(dir, predicate = () => true) {
   const out = [];
   let entries = [];
-  try {
-    entries = await readdir(dir, { withFileTypes: true });
-  } catch {
-    return out;
-  }
-
+  try { entries = await readdir(dir, { withFileTypes: true }); } catch { return out; }
   for (const entry of entries) {
     const target = path.join(dir, entry.name);
     if (entry.isDirectory()) out.push(...await walk(target, predicate));
@@ -33,31 +28,24 @@ async function walk(dir, predicate = () => true) {
 async function latestStories() {
   const stories = [];
   const files = await walk(contentRoot, (target) => target.endsWith('.json'));
-
   for (const file of files) {
     try {
       const story = JSON.parse(await readFile(file, 'utf8'));
       if (story.status === 'published' && story.slug && story.headline && story.publishedAt) stories.push(story);
     } catch {
-      // Editorial validation owns malformed records. The shell only consumes valid published stories.
+      // Editorial validation owns malformed records. The shell consumes valid published stories only.
     }
   }
-
-  return stories
-    .sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt))
-    .slice(0, 8);
+  return stories.sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt)).slice(0, 8);
 }
 
 function routeIdentity(relativePath) {
   const rel = relativePath.replaceAll('\\', '/').toLowerCase();
-
   if (rel === 'index.html') return { title: 'FMB News', cls: 'fmb-news-route', descriptor: '', active: '' };
   if (rel.startsWith('world/')) return { title: 'FMB Worldwide', cls: 'fmb-worldwide-route', descriptor: '', active: 'FMB Worldwide' };
   if (rel.startsWith('explainer/')) return { title: 'FMB Explainer', cls: 'fmb-explainer-route', descriptor: '', active: 'FMB Explainer' };
   if (rel.startsWith('fact-check/')) return { title: 'FMB Fact Check', cls: 'fmb-fact-check-route', descriptor: '', active: 'FMB Fact Check' };
-  if (rel.startsWith('fmb-brief/') || /^fmb-brief-[^/]+\//.test(rel)) {
-    return { title: 'FMB Daily Brief', cls: 'fmb-daily-brief-route', descriptor: 'Daily Newsletter', active: 'FMB Daily Brief' };
-  }
+  if (rel.startsWith('fmb-brief/') || /^fmb-brief-[^/]+\//.test(rel)) return { title: 'FMB Daily Brief', cls: 'fmb-daily-brief-route', descriptor: 'Daily Newsletter', active: 'FMB Daily Brief' };
   if (rel.startsWith('about/')) return { title: 'FMB News', cls: 'fmb-news-route', descriptor: '', active: 'About' };
   if (rel.startsWith('archive/')) return { title: 'FMB News', cls: 'fmb-news-route', descriptor: '', active: 'FMB News' };
   return { title: 'FMB News', cls: 'fmb-news-route', descriptor: '', active: 'FMB News' };
@@ -68,7 +56,6 @@ function ticker(stories) {
     const separator = index < stories.length - 1 ? '<span class="ticker-dot" aria-hidden="true">◆</span>' : '';
     return `<a href="/news/${esc(story.slug)}/"><span class="ticker-headline">${esc(story.headline)}</span></a>${separator}`;
   }).join('');
-
   return `<div class="headline-ticker" role="region" aria-label="Latest FMB News headlines"><div class="ticker-clock" aria-label="Philippine Standard Time"><span data-pht-clock>--:--</span><small>PHT</small></div><div class="ticker-label"><span class="ticker-pulse" aria-hidden="true"></span>LATEST</div><div class="ticker-window"><div class="ticker-track"><div class="ticker-run">${run}</div><div class="ticker-run" aria-hidden="true">${run}</div></div></div></div>`;
 }
 
@@ -95,11 +82,7 @@ function navigation(active) {
     ['FMB Daily Brief', '/news/fmb-brief/'],
     ['About', '/news/about/'],
   ];
-
-  const links = items
-    .map(([label, href]) => `<a href="${href}"${active === label ? ' aria-current="page"' : ''}>${label}</a>`)
-    .join('');
-
+  const links = items.map(([label, href]) => `<a href="${href}"${active === label ? ' aria-current="page"' : ''}>${label}</a>`).join('');
   return `<nav class="nav" aria-label="Filipino Media Bulletin"><div class="shell">${links}<a class="submit" href="mailto:withlovefmb@gmail.com?subject=Story%20Submission%20for%20FMB%20News">Submit a Story</a><a class="search" href="/news/archive/" aria-label="Search FMB News"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg><span>Search</span></a></div></nav>`;
 }
 
@@ -119,9 +102,7 @@ function normalizeClockRuntime(html) {
 }
 
 function ensureThemeColor(html) {
-  if (/<meta name="theme-color"/i.test(html)) {
-    return html.replace(/<meta name="theme-color" content="[^"]*">/i, '<meta name="theme-color" content="#ffffff">');
-  }
+  if (/<meta name="theme-color"/i.test(html)) return html.replace(/<meta name="theme-color" content="[^"]*">/i, '<meta name="theme-color" content="#ffffff">');
   return html.replace('</head>', '<meta name="theme-color" content="#ffffff"></head>');
 }
 
@@ -135,34 +116,25 @@ function ensureBaseAssets(html) {
     '/assets/css/fmb-news-product-identity.css?v=20260831-product-lock',
     '/assets/css/fmb-news-ticker-hardfix.css?v=20260902-ticker-hardfix',
   ];
-
   let out = html;
   for (const href of stylesheets) {
     const base = href.split('?')[0];
     if (!out.includes(base)) out = out.replace('</head>', `<link rel="stylesheet" href="${href}"></head>`);
   }
-
-  if (!out.includes('/assets/js/fmb-news-newsletter.js')) {
-    out = out.replace('</head>', '<script src="/assets/js/fmb-news-newsletter.js?v=20260831-metallic" defer></script></head>');
-  }
+  if (!out.includes('/assets/js/fmb-news-newsletter.js')) out = out.replace('</head>', '<script src="/assets/js/fmb-news-newsletter.js?v=20260831-metallic" defer></script></head>');
   return out;
 }
 
 function normalizeBodyClass(html, identity, relativePath) {
-  const known = [
-    'fmb-news-route', 'fmb-daily-brief-route', 'fmb-worldwide-route', 'fmb-explainer-route',
-    'fmb-fact-check-route', 'fmb-network-landing',
-  ];
+  const known = ['fmb-news-route', 'fmb-daily-brief-route', 'fmb-worldwide-route', 'fmb-explainer-route', 'fmb-fact-check-route', 'fmb-network-landing'];
   const isLanding = relativePath.replaceAll('\\', '/') === 'index.html' && html.includes('publication-mast');
   const routeClass = isLanding ? 'fmb-network-landing' : identity.cls;
-
   return html.replace(/<body\b([^>]*)>/i, (_match, attrs) => {
     const classMatch = attrs.match(/\bclass=(['"])([^'"]*)\1/i);
     const classes = new Set(classMatch ? classMatch[2].split(/\s+/).filter(Boolean) : []);
     classes.add('fmb-ref');
     for (const cls of known) classes.delete(cls);
     classes.add(routeClass);
-
     if (classMatch) {
       const replacement = `class=${classMatch[1]}${[...classes].join(' ')}${classMatch[1]}`;
       return `<body${attrs.replace(classMatch[0], replacement)}>`;
@@ -171,35 +143,54 @@ function normalizeBodyClass(html, identity, relativePath) {
   });
 }
 
+function insertBeforeFirstMainOrBodyEnd(html, fragment) {
+  if (/<main\b/i.test(html)) return html.replace(/<main\b/i, `${fragment}<main`);
+  return html.replace('</body>', `${fragment}</body>`);
+}
+
 function replaceChrome(html, stories, identity, relativePath) {
   const isLanding = relativePath.replaceAll('\\', '/') === 'index.html' && html.includes('publication-mast');
   if (isLanding) return html;
 
-  const shell = `${ticker(stories)}${utility()}${mast(identity)}${navigation(identity.active)}`;
+  const chrome = `${ticker(stories)}${utility()}`;
+  const approvedMast = mast(identity);
+  const approvedNav = navigation(identity.active);
+  const shell = `${chrome}${approvedMast}${approvedNav}`;
   let out = html;
 
-  // Replace current canonical/legacy shells as one unit when possible.
+  // Full existing shells are replaced atomically.
   out = out.replace(/<div class="headline-ticker"[\s\S]*?<nav class="nav"[\s\S]*?<\/nav>/i, shell);
   out = out.replace(/<div class="fnc-livebar"[\s\S]*?<header class="fnc-header"[\s\S]*?<\/header>/i, shell);
   out = out.replace(/<header class="brief-network"[\s\S]*?<\/header>/i, shell);
   out = out.replace(/<header class="masthead"[\s\S]*?<\/header>/i, shell);
 
-  if (!out.includes('<header class="mast">')) out = out.replace(/<body([^>]*)>/i, `<body$1>${shell}`);
+  const hasTicker = /<div class="headline-ticker"/i.test(out);
+  const hasUtility = /<div class="utility">/i.test(out);
+  const hasMast = /<header class="mast\b/i.test(out);
+  const hasNav = /<nav class="nav\b/i.test(out);
 
-  // Product identity may have left a canonical mast with a separate nav. Make the final output exact.
-  out = out.replace(/<header class="mast"><div class="shell">[\s\S]*?<\/div><\/header>/i, mast(identity));
-  out = out.replace(/<nav class="nav"[\s\S]*?<\/nav>/i, navigation(identity.active));
+  // Utility/search pages historically arrived with only mast/nav. Fill missing
+  // chrome explicitly instead of relying on a later ticker-specific repair pass.
+  if (!hasMast) {
+    if (hasTicker) out = insertBeforeFirstMainOrBodyEnd(out, `${hasUtility ? '' : utility()}${approvedMast}${hasNav ? '' : approvedNav}`);
+    else out = insertBeforeFirstMainOrBodyEnd(out, shell);
+  } else {
+    if (!hasTicker) out = out.replace(/<header class="mast\b/i, `${chrome}<header class="mast`);
+    else if (!hasUtility) out = out.replace(/<header class="mast\b/i, `${utility()}<header class="mast`);
+    if (!hasNav) out = out.replace(/(<header class="mast\b[^>]*>[\s\S]*?<\/header>)/i, `$1${approvedNav}`);
+  }
+
+  // Normalize mast/nav content after structural recovery.
+  out = out.replace(/<header class="mast\b[^>]*>[\s\S]*?<\/header>/i, approvedMast);
+  out = out.replace(/<nav class="nav\b[^>]*>[\s\S]*?<\/nav>/i, approvedNav);
   return out;
 }
 
 function replaceFooter(html, relativePath) {
   const isLanding = relativePath.replaceAll('\\', '/') === 'index.html' && html.includes('publication-footer');
   if (isLanding) return html;
-
   const approved = footer();
-  if (/<footer class="(?:footer|brief-footer|fnc-footer)"/i.test(html)) {
-    return html.replace(/<footer class="(?:footer|brief-footer|fnc-footer)"[\s\S]*?<\/footer>/i, approved);
-  }
+  if (/<footer class="(?:footer|brief-footer|fnc-footer)"/i.test(html)) return html.replace(/<footer class="(?:footer|brief-footer|fnc-footer)"[\s\S]*?<\/footer>/i, approved);
   return html.replace('</body>', `${approved}</body>`);
 }
 
@@ -211,13 +202,11 @@ export async function renderNetworkShell() {
   const stories = await latestStories();
   const pages = await walk(newsRoot, (target) => target.endsWith('.html'));
   let changed = 0;
-
   for (const file of pages) {
     const relativePath = path.relative(newsRoot, file);
     const identity = routeIdentity(relativePath);
     const source = await readFile(file, 'utf8');
     let html = source;
-
     html = ensureThemeColor(html);
     html = ensureBaseAssets(html);
     html = normalizeLegacyNames(html);
@@ -225,12 +214,10 @@ export async function renderNetworkShell() {
     html = replaceChrome(html, stories, identity, relativePath);
     html = replaceFooter(html, relativePath);
     html = normalizeClockRuntime(html);
-
     if (html !== source) {
       await writeFile(file, html, 'utf8');
       changed += 1;
     }
   }
-
   console.log(`Rendered canonical FMB News network shell across ${changed}/${pages.length} HTML pages with one product-aware masthead, five editorial products, one normalized PHT ticker/clock, utility chrome, and non-redundant footer.`);
 }
