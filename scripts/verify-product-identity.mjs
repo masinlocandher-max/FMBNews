@@ -72,8 +72,12 @@ for(const file of pages){
     if((html.match(/data-fmb-newsletter-form/g)||[]).length!==1)throw new Error(`${rel}: landing must contain exactly one Daily Brief email form`);
   }
   if(exp.kind==='sports'){
-    for(const signal of ['<h1 id="sports-title">Sports</h1>','FMB News · Editorial Desk','/news/assets/css/fmb-news-editorial-ia.css','No Sports report is published yet.'])if(!html.includes(signal))throw new Error(`${rel}: Sports desk contract missing ${signal}`);
-    if(html.includes('class="sports-story"')&&!html.includes('SPORTS'))throw new Error(`${rel}: Sports story inventory is not labeled as Sports`);
+    for(const signal of ['<h1 id="sports-title">Sports</h1>','FMB News · Editorial Desk','/news/assets/css/fmb-news-editorial-ia.css'])if(!html.includes(signal))throw new Error(`${rel}: Sports desk contract missing ${signal}`);
+    const hasStories=html.includes('class="sports-story-grid"');
+    const hasEmptyState=html.includes('class="sports-empty"');
+    if(hasStories===hasEmptyState)throw new Error(`${rel}: Sports desk must expose either story inventory or one explicit empty state`);
+    if(hasStories&&!html.includes('class="sports-story"'))throw new Error(`${rel}: Sports story grid contains no rendered Sports stories`);
+    if(hasEmptyState&&!html.includes('No Sports report is published yet.'))throw new Error(`${rel}: Sports empty state is not explicit`);
   }
   if(exp.kind==='brief'){if(!html.includes('<span class="product-name">Daily Brief</span>'))throw new Error(`${rel}: Daily Brief title is not exact`);if(!html.includes('<div class="product-descriptor">Daily Newsletter</div>'))throw new Error(`${rel}: Daily Newsletter descriptor missing`)}
   if(exp.kind==='world'&&!html.includes('<span class="product-name">Worldwide</span>'))throw new Error(`${rel}: Worldwide title is not exact`);
@@ -87,4 +91,4 @@ for(const file of pages){
   if(!html.includes('/news/fact-check/'))throw new Error(`${rel}: FMB Fact Check is missing from product navigation`);
   const footer=html.slice(html.indexOf('<footer class="footer'));if(footer.includes('data-fmb-newsletter-form'))throw new Error(`${rel}: footer contains redundant newsletter form`);
 }
-console.log(`Product identity verification passed across ${checked} pages: News/Worldwide/Sports desk IA, canonical five-product Filipino Media Bulletin identity, Entertainment grouping, real Sports route, and non-redundant footer.`);
+console.log(`Product identity verification passed across ${checked} pages: News/Worldwide/Sports desk IA, canonical five-product Filipino Media Bulletin identity, Entertainment grouping, inventory-aware Sports route, and non-redundant footer.`);
