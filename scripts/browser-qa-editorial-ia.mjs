@@ -11,15 +11,21 @@ const homeResponse=await page.goto(`${base}/news/`,{waitUntil:'domcontentloaded'
 assert(homeResponse?.ok(),`Desktop Home returned ${homeResponse?.status()}`);
 await page.locator('.network-home').waitFor({state:'visible'});
 
+const masthead=page.locator('.publication-lockup .fmb-lux-wordmark');
+await masthead.waitFor({state:'visible'});
+assert.equal((await masthead.textContent())?.replace(/\s+/g,'').trim(),'FMBNEWS.','Desktop masthead must render FMB NEWS.');
+assert.equal((await page.locator('.publication-lockup .fmb-brand-descriptor').textContent())?.trim(),'FILIPINO MEDIA BULLETIN','Desktop masthead descriptor changed.');
+assert.equal(await page.locator('.publication-lockup .publication-emblem:visible').count(),0,'Retired shell emblem must not be visible in the masthead.');
+
 const deskLinks=await page.locator('.editorial-desk').evaluateAll(nodes=>nodes.map(node=>({
   title:(node.querySelector('.editorial-desk-top strong')?.textContent||'').trim(),
   href:node.getAttribute('href')||''
 })));
 assert.deepEqual(deskLinks,[
   {title:'News',href:'/news/archive/'},
-  {title:'Worldwide',href:'/news/world/'},
+  {title:'World',href:'/news/world/'},
   {title:'Sports',href:'/news/sports/'},
-],'Desktop landing must expose exactly News, Worldwide and Sports as direct editorial desks.');
+],'Desktop landing must expose exactly News, World and Sports as direct editorial desks.');
 
 const navState=await page.evaluate(()=>{
   const nav=document.querySelector('.publication-nav');
@@ -36,8 +42,8 @@ const navState=await page.evaluate(()=>{
 assert(navState.overflow<=1,`Desktop landing has ${navState.overflow}px horizontal overflow.`);
 assert(navState.left>=-1&&navState.right<=navState.viewport+1,`Publication navigation escapes viewport (${navState.left.toFixed(1)}–${navState.right.toFixed(1)} of ${navState.viewport}).`);
 for(const item of [
-  ['News','/news/archive/'],['Worldwide','/news/world/'],['Sports','/news/sports/'],
-  ['Daily Brief','/news/fmb-brief/'],['Fact Check','/news/fact-check/'],['Explainer','/news/explainer/'],['About','/news/about/']
+  ['Home','/news/'],['World','/news/world/'],['Sports','/news/sports/'],
+  ['Daily Briefing','/news/fmb-brief/'],['Fact Check','/news/fact-check/'],['Explainers','/news/explainer/'],['About','/news/about/']
 ])assert(navState.direct.some(link=>link.text===item[0]&&link.href===item[1]),`Publication navigation missing ${item[0]} → ${item[1]}`);
 assert(navState.direct.some(link=>link.href==='/news/search/'),'Desktop publication search control must open the real Search route.');
 
@@ -45,13 +51,23 @@ const entertainment=page.locator('.publication-menu');
 assert.equal(await entertainment.count(),1,'Entertainment must be one grouped desktop menu.');
 await entertainment.locator('summary').click();
 assert(await entertainment.evaluate(node=>node.hasAttribute('open')),'Entertainment menu did not open.');
-for(const [label,href] of [['Weekly Horoscope','/news/horoscope/'],['FMB Crossword','/news/crossword/']]){
+for(const [label,href] of [['Horoscope','/news/horoscope/'],['Crossword','/news/crossword/']]){
   const link=entertainment.locator(`a[href="${href}"]`);
   assert.equal(await link.count(),1,`Entertainment must contain ${label}.`);
   assert(await link.isVisible(),`${label} must be visible when Entertainment is open.`);
 }
 assert.equal(await page.locator('.publication-nav > a[href="/news/horoscope/"]').count(),0,'Horoscope must not be a top-level publication nav item.');
 assert.equal(await page.locator('.publication-nav > a[href="/news/crossword/"]').count(),0,'Crossword must not be a top-level publication nav item.');
+
+const latest=page.locator('.headline-ticker .ticker-label');
+await latest.waitFor({state:'visible'});
+assert((await latest.textContent())?.includes('LATEST'),'Desktop moving headline rail must be labeled LATEST.');
+
+const founder=page.locator('.about-fmb-home');
+await founder.waitFor({state:'visible'});
+assert.equal((await founder.locator('h2').textContent())?.trim(),'Francine Marie Bautista','Homepage founder identity changed.');
+assert((await founder.textContent())?.includes('Founder, FMB News'),'Homepage founder role is missing.');
+assert.equal(await founder.locator('img').count(),0,'Homepage founder module must not fabricate a founder portrait.');
 
 const sportsResponse=await page.goto(`${base}/news/sports/`,{waitUntil:'domcontentloaded'});
 assert(sportsResponse?.ok(),`Sports route returned ${sportsResponse?.status()}`);
@@ -69,4 +85,4 @@ assert(sportsState.overflow<=1,`Sports route has ${sportsState.overflow}px horiz
 
 await context.close();
 await browser.close();
-console.log(`Desktop editorial IA QA passed: three direct desks, grouped Entertainment, bounded navigation, real Search target, and Sports route (${sportsState.stories} stories${sportsState.empty?', empty state':''}).`);
+console.log(`Desktop editorial IA QA passed: FMB NEWS. masthead, News/World/Sports desks, approved primary navigation, grouped Entertainment, LATEST rail, founder provenance, and Sports route (${sportsState.stories} stories${sportsState.empty?', empty state':''}).`);
