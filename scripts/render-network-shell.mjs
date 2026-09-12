@@ -41,19 +41,21 @@ async function latestStories() {
 
 function routeIdentity(relativePath) {
   const rel = relativePath.replaceAll('\\', '/').toLowerCase();
-  if (rel === 'index.html') return { title: 'FMB News', cls: 'fmb-news-route', descriptor: '', active: '' };
-  if (rel.startsWith('world/')) return { title: 'FMB Worldwide', cls: 'fmb-worldwide-route', descriptor: '', active: 'FMB Worldwide' };
-  if (rel.startsWith('explainer/')) return { title: 'FMB Explainer', cls: 'fmb-explainer-route', descriptor: '', active: 'FMB Explainer' };
-  if (rel.startsWith('fact-check/')) return { title: 'FMB Fact Check', cls: 'fmb-fact-check-route', descriptor: '', active: 'FMB Fact Check' };
-  if (rel.startsWith('fmb-brief/') || /^fmb-brief-[^/]+\//.test(rel)) return { title: 'FMB Daily Brief', cls: 'fmb-daily-brief-route', descriptor: 'Daily Newsletter', active: 'FMB Daily Brief' };
-  if (rel.startsWith('about/')) return { title: 'FMB News', cls: 'fmb-news-route', descriptor: '', active: 'About' };
-  if (rel.startsWith('archive/')) return { title: 'FMB News', cls: 'fmb-news-route', descriptor: '', active: 'FMB News' };
-  return { title: 'FMB News', cls: 'fmb-news-route', descriptor: '', active: 'FMB News' };
+  if (rel === 'index.html') return { title: 'FMB News', cls: 'fmb-news-route', active: 'Home' };
+  if (rel.startsWith('world/')) return { title: 'FMB Worldwide', cls: 'fmb-worldwide-route', active: 'World' };
+  if (rel.startsWith('sports/')) return { title: 'FMB Sports', cls: 'fmb-news-route', active: 'Sports' };
+  if (rel.startsWith('explainer/')) return { title: 'FMB Explainer', cls: 'fmb-explainer-route', active: 'Explainers' };
+  if (rel.startsWith('fact-check/')) return { title: 'FMB Fact Check', cls: 'fmb-fact-check-route', active: 'Fact Check' };
+  if (rel.startsWith('fmb-brief/') || /^fmb-brief-[^/]+\//.test(rel)) return { title: 'FMB Daily Brief', cls: 'fmb-daily-brief-route', active: 'Daily Briefing' };
+  if (rel.startsWith('horoscope/') || rel.startsWith('crossword/')) return { title: 'FMB Entertainment', cls: 'fmb-news-route', active: 'Entertainment' };
+  if (rel.startsWith('about/')) return { title: 'FMB News', cls: 'fmb-news-route', active: 'About' };
+  if (rel.startsWith('archive/')) return { title: 'FMB News', cls: 'fmb-news-route', active: 'Home' };
+  return { title: 'FMB News', cls: 'fmb-news-route', active: 'Home' };
 }
 
 function ticker(stories) {
   const run = stories.map((story, index) => {
-    const separator = index < stories.length - 1 ? '<span class="ticker-dot" aria-hidden="true">◆</span>' : '';
+    const separator = index < stories.length - 1 ? '<span class="ticker-dot" aria-hidden="true">·</span>' : '';
     return `<a href="/news/${esc(story.slug)}/"><span class="ticker-headline">${esc(story.headline)}</span></a>${separator}`;
   }).join('');
   return `<div class="headline-ticker" role="region" aria-label="Latest FMB News headlines"><div class="ticker-clock" aria-label="Philippine Standard Time"><span data-pht-clock>--:--</span><small>PHT</small></div><div class="ticker-label"><span class="ticker-pulse" aria-hidden="true"></span>LATEST</div><div class="ticker-window"><div class="ticker-track"><div class="ticker-run">${run}</div><div class="ticker-run" aria-hidden="true">${run}</div></div></div></div>`;
@@ -64,9 +66,7 @@ function utility() {
 }
 
 function semanticProductMarkup(identity) {
-  const productName = identity.title.replace(/^FMB\s+/, '');
-  const descriptor = identity.descriptor ? `<div class="product-descriptor">${identity.descriptor}</div>` : '';
-  return `<a class="product-wordmark" href="/news/" aria-label="${identity.title}"><span class="fmb-legacy-brand" aria-hidden="true"><span class="product-fmb">FMB</span><span class="product-name">${productName}</span></span><span class="fmb-lux-wordmark">FMB NEWS</span></a>${descriptor}`;
+  return `<a class="product-wordmark" href="/news/" aria-label="FMB News home"><span class="fmb-lux-wordmark">FMB NEWS<span class="fmb-brand-period">.</span></span><span class="fmb-brand-descriptor">FILIPINO MEDIA BULLETIN</span></a><span class="sr-only">${esc(identity.title)}</span>`;
 }
 
 function mast(identity) {
@@ -74,24 +74,26 @@ function mast(identity) {
 }
 
 function navigation(active) {
-  const items = [
-    ['FMB News', '/news/archive/'],
-    ['FMB Worldwide', '/news/world/'],
-    ['FMB Explainer', '/news/explainer/'],
-    ['FMB Fact Check', '/news/fact-check/'],
-    ['FMB Daily Brief', '/news/fmb-brief/'],
-    ['About', '/news/about/'],
-  ];
-  const links = items.map(([label, href]) => `<a href="${href}"${active === label ? ' aria-current="page"' : ''}>${label}</a>`).join('');
-  return `<nav class="nav" aria-label="Filipino Media Bulletin"><div class="shell">${links}<a class="submit" href="mailto:withlovefmb@gmail.com?subject=Story%20Submission%20for%20FMB%20News">Submit a Story</a><a class="search" href="/news/archive/" aria-label="Search FMB News"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg><span>Search</span></a></div></nav>`;
+  const current = (label) => active === label ? ' aria-current="page"' : '';
+  return `<nav class="nav" aria-label="FMB News primary navigation"><div class="shell">
+    <a href="/news/"${current('Home')}>Home</a>
+    <a href="/news/world/"${current('World')}>World</a>
+    <a href="/news/sports/"${current('Sports')}>Sports</a>
+    <a href="/news/fmb-brief/"${current('Daily Briefing')}>Daily Briefing</a>
+    <a href="/news/fact-check/"${current('Fact Check')}>Fact Check</a>
+    <a href="/news/explainer/"${current('Explainers')}>Explainers</a>
+    <details class="publication-menu"${active === 'Entertainment' ? ' open' : ''}><summary${active === 'Entertainment' ? ' aria-current="page"' : ''}>Entertainment</summary><div class="publication-menu-panel"><a href="/news/horoscope/">Horoscope</a><a href="/news/crossword/">Crossword</a></div></details>
+    <a href="/news/about/"${current('About')}>About</a>
+    <a class="search" href="/news/search/" aria-label="Search FMB News"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg><span>Search</span></a>
+  </div></nav>`;
 }
 
 function footer() {
-  return '<footer class="footer"><div class="shell footer-grid"><div><div class="footer-publication-title">Filipino Media Bulletin</div><div class="footer-publication-kicker">Information with Purpose</div><p>Verified reporting, useful context, and clear explanations for Filipino readers.</p><a href="/news/about/"><strong>About Filipino Media Bulletin →</strong></a><div class="footer-socials" aria-label="Filipino Media Bulletin social links"><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a><a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X">×</a><a href="mailto:withlovefmb@gmail.com" aria-label="Email Filipino Media Bulletin">✉</a></div></div><div><h3>Publications</h3><a href="/news/archive/">FMB News</a><a href="/news/world/">FMB Worldwide</a><a href="/news/explainer/">FMB Explainer</a><a href="/news/fact-check/">FMB Fact Check</a><a href="/news/fmb-brief/">FMB Daily Brief</a></div><div><h3>Resources</h3><a href="/news/about/">About</a><a href="mailto:withlovefmb@gmail.com?subject=Story%20Submission%20for%20FMB%20News">Submit a Story</a><a href="/news/about/#standards">Corrections Policy</a><a href="/privacy/">Privacy Policy</a></div></div><div class="shell footer-bottom">© 2026 Filipino Media Bulletin. All rights reserved.</div></footer>';
+  return '<footer class="footer"><div class="shell footer-grid"><div><div class="footer-publication-title">FMB NEWS<span class="fmb-brand-period">.</span></div><div class="footer-publication-kicker">Filipino Media Bulletin · Information with Purpose.</div><p>Verified reporting, useful context, and clear explanations for Filipino readers.</p><a href="/news/about/"><strong>About FMB →</strong></a></div><div><h3>Sections</h3><a href="/news/">Home</a><a href="/news/world/">World</a><a href="/news/sports/">Sports</a><a href="/news/fmb-brief/">Daily Briefing</a><a href="/news/fact-check/">Fact Check</a><a href="/news/explainer/">Explainers</a></div><div><h3>Entertainment & Trust</h3><a href="/news/horoscope/">Horoscope</a><a href="/news/crossword/">Crossword</a><a href="/news/about/">About FMB</a><a href="/news/editorial-standards/">Editorial Standards</a><a href="/news/corrections/">Corrections</a><a href="mailto:withlovefmb@gmail.com">Contact</a></div></div><div class="shell footer-bottom">© 2026 Filipino Media Bulletin. All rights reserved.</div></footer>';
 }
 
 function clockRuntime() {
-  return `<script data-fmb-network-clock>(()=>{const d=document.querySelector('[data-pht-date]'),t=document.querySelector('[data-pht-clock]');const tick=()=>{const n=new Date();if(d)d.textContent=new Intl.DateTimeFormat('en-PH',{timeZone:'Asia/Manila',weekday:'long',month:'long',day:'numeric',year:'numeric'}).format(n);if(t)t.textContent=new Intl.DateTimeFormat('en-PH',{timeZone:'Asia/Manila',hour:'numeric',minute:'2-digit',second:'2-digit',hour12:true}).format(n)};tick();setInterval(tick,1000)})();</script>`;
+  return `<script data-fmb-network-clock>(()=>{const d=document.querySelector('[data-pht-date]'),t=document.querySelector('[data-pht-clock]');const tick=()=>{const n=new Date();if(d)d.textContent=new Intl.DateTimeFormat('en-PH',{timeZone:'Asia/Manila',weekday:'long',month:'long',day:'numeric',year:'numeric'}).format(n);if(t)t.textContent=new Intl.DateTimeFormat('en-PH',{timeZone:'Asia/Manila',hour:'numeric',minute:'2-digit',hour12:true}).format(n)};tick();setInterval(tick,30000)})();</script>`;
 }
 
 function normalizeClockRuntime(html) {
@@ -102,8 +104,8 @@ function normalizeClockRuntime(html) {
 }
 
 function ensureThemeColor(html) {
-  if (/<meta name="theme-color"/i.test(html)) return html.replace(/<meta name="theme-color" content="[^"]*">/i, '<meta name="theme-color" content="#ffffff">');
-  return html.replace('</head>', '<meta name="theme-color" content="#ffffff"></head>');
+  if (/<meta name="theme-color"/i.test(html)) return html.replace(/<meta name="theme-color" content="[^"]*">/i, '<meta name="theme-color" content="#F4F0E8">');
+  return html.replace('</head>', '<meta name="theme-color" content="#F4F0E8"></head>');
 }
 
 function ensureBaseAssets(html) {
@@ -158,7 +160,6 @@ function replaceChrome(html, stories, identity, relativePath) {
   const shell = `${chrome}${approvedMast}${approvedNav}`;
   let out = html;
 
-  // Full existing shells are replaced atomically.
   out = out.replace(/<div class="headline-ticker"[\s\S]*?<nav class="nav"[\s\S]*?<\/nav>/i, shell);
   out = out.replace(/<div class="fnc-livebar"[\s\S]*?<header class="fnc-header"[\s\S]*?<\/header>/i, shell);
   out = out.replace(/<header class="brief-network"[\s\S]*?<\/header>/i, shell);
@@ -169,8 +170,6 @@ function replaceChrome(html, stories, identity, relativePath) {
   const hasMast = /<header class="mast\b/i.test(out);
   const hasNav = /<nav class="nav\b/i.test(out);
 
-  // Utility/search pages historically arrived with only mast/nav. Fill missing
-  // chrome explicitly instead of relying on a later ticker-specific repair pass.
   if (!hasMast) {
     if (hasTicker) out = insertBeforeFirstMainOrBodyEnd(out, `${hasUtility ? '' : utility()}${approvedMast}${hasNav ? '' : approvedNav}`);
     else out = insertBeforeFirstMainOrBodyEnd(out, shell);
@@ -180,7 +179,6 @@ function replaceChrome(html, stories, identity, relativePath) {
     if (!hasNav) out = out.replace(/(<header class="mast\b[^>]*>[\s\S]*?<\/header>)/i, `$1${approvedNav}`);
   }
 
-  // Normalize mast/nav content after structural recovery.
   out = out.replace(/<header class="mast\b[^>]*>[\s\S]*?<\/header>/i, approvedMast);
   out = out.replace(/<nav class="nav\b[^>]*>[\s\S]*?<\/nav>/i, approvedNav);
   return out;
@@ -219,5 +217,5 @@ export async function renderNetworkShell() {
       changed += 1;
     }
   }
-  console.log(`Rendered canonical FMB News network shell across ${changed}/${pages.length} HTML pages with one product-aware masthead, five editorial products, one normalized PHT ticker/clock, utility chrome, and non-redundant footer.`);
+  console.log(`Rendered canonical FMB News shell across ${changed}/${pages.length} HTML pages with ivory/ink/crimson masthead identity, Home/World/Sports editorial navigation, Daily Briefing, Fact Check, Explainers, Entertainment, one PHT clock, latest-headline rail, and production-safe footer.`);
 }
