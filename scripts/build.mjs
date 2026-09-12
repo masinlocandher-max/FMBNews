@@ -40,6 +40,11 @@ await import('./hardfix-all-article-images.mjs');
 // together, eliminating order-dependent home-page post-processing.
 await import('./render-home-experience.mjs');
 
+// Sports is an editorial desk, not a sixth product. Generate a real category
+// destination from published Sports-tagged inventory. When inventory is empty,
+// the route states that explicitly instead of borrowing unrelated stories.
+await import('./render-sports.mjs');
+
 // Final newsroom integrity pass creates search/submit utility pages and applies
 // the newsroom-level copy/navigation rules.
 await import('./hardfix-newsroom-audit.mjs');
@@ -99,4 +104,4 @@ await rewriteAssetPaths(newsRoot);
 // routes, canonical URLs, article metadata and scoped asset paths have settled.
 await import('./generate-news-distribution.mjs');
 
-console.log('Built Filipino Media Bulletin with five official editorial products: FMB News, FMB Worldwide, FMB Explainer, FMB Fact Check, and FMB Daily Brief; plus localized visual assets, product-designated fallback imagery, guaranteed article imagery, personalization/PWA support, live utilities, newsroom search and intake, canonical sitemap and RSS distribution, a sealed active crossword runtime, explicit editorial trust surfaces, normalized search/AI discovery metadata, a canonical network shell with one PHT ticker/clock, a canonical matte-glass brand system with System/Light/Dark appearance, readable trust pages, and no late newsroom compatibility mutation.');
+console.log('Built Filipino Media Bulletin with five official editorial products: FMB News, FMB Worldwide, FMB Explainer, FMB Fact Check, and FMB Daily Brief; plus News/Worldwide/Sports editorial desks, localized visual assets, product-designated fallback imagery, guaranteed article imagery, personalization/PWA support, live utilities, newsroom search and intake, canonical sitemap and RSS distribution, a sealed active crossword runtime, explicit editorial trust surfaces, normalized search/AI discovery metadata, a canonical network shell with one PHT ticker/clock, a canonical matte-glass brand system with System/Light/Dark appearance, readable trust pages, and no late newsroom compatibility mutation.');
