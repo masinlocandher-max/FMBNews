@@ -19,14 +19,21 @@ assert(pages.length>0,'No built newsroom pages found for appearance verification
 
 for(const page of pages){
   const html=await readFile(page,'utf8');
-  assert(html.includes('data-fmb-theme-boot'),`${path.relative(newsRoot,page)} is missing early theme boot.`);
-  assert(html.includes('/news/assets/css/fmb-news-theme.css?v=20260912'),`${path.relative(newsRoot,page)} is missing theme stylesheet.`);
-  assert(html.includes('/news/assets/js/fmb-news-theme.js?v=20260912'),`${path.relative(newsRoot,page)} is missing theme runtime.`);
+  const rel=path.relative(newsRoot,page);
+  assert(html.includes('data-fmb-theme-boot'),`${rel} is missing early theme boot.`);
+  assert(html.includes('/news/assets/css/fmb-news-theme.css?v=20260912-v3'),`${rel} is missing refreshed theme stylesheet.`);
+  assert(html.includes('/news/assets/css/fmb-news-editorial-refresh.css?v=20260912-v3'),`${rel} is missing editorial refresh stylesheet.`);
+  assert(html.includes('/news/assets/js/fmb-news-theme.js?v=20260912-v3'),`${rel} is missing refreshed theme runtime.`);
 }
 
 const css=await readFile(path.join(newsRoot,'assets','css','fmb-news-theme.css'),'utf8');
+const refresh=await readFile(path.join(newsRoot,'assets','css','fmb-news-editorial-refresh.css'),'utf8');
 const js=await readFile(path.join(newsRoot,'assets','js','fmb-news-theme.js'),'utf8');
-for(const token of ['data-fmb-theme="dark"','--fmb-theme-bg','fmb-theme-toggle','prefers-reduced-motion'])assert(css.includes(token),`Theme CSS missing ${token}.`);
-for(const token of ["'system'","'light'","'dark'",'fmbThemeModeV1','prefers-color-scheme: dark','data-fmb-theme-menu'])assert(js.includes(token),`Theme runtime missing ${token}.`);
 
-console.log(`FMB News appearance verification passed across ${pages.length} built pages: System/Light/Dark boot, stylesheet and runtime are universally installed.`);
+for(const token of ['data-fmb-theme="dark"','--fmb-theme-bg','fmb-theme-toggle','prefers-reduced-motion'])assert(css.includes(token),`Theme CSS missing ${token}.`);
+for(const token of ["'system'","'light'","'dark'",'fmbThemeModeV1','prefers-color-scheme: dark','data-fmb-theme-menu','#F4F0E8','#101314'])assert(js.includes(token),`Theme runtime missing ${token}.`);
+for(const token of ['#F4F0E8','#FAF8F3','#171A1B','#101314','#A71930','#861226','#C6C8C7','#E1E1DD','#8A8E90','fmb-brand-period','fmb-brand-descriptor','fmb-mobile-bottom-nav','about-fmb-home','prefers-reduced-motion'])assert(refresh.includes(token),`Editorial refresh CSS missing ${token}.`);
+
+assert(!refresh.includes('neon'),'Editorial refresh must not introduce neon styling.');
+
+console.log(`FMB News appearance verification passed across ${pages.length} built pages: System/Light/Dark boot, ivory/ink/crimson editorial refresh, restrained metallic tokens, founder module and mobile bottom navigation are universally available.`);
