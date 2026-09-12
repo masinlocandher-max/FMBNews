@@ -6,14 +6,25 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const newsRoot=path.join(root,'dist','news');
 const resolve=(...parts)=>path.join(root,...parts);
 
-for(const rel of ['public/assets/images/brand/fmb-bulletin-emblem.svg','dist/news/assets/images/brand/fmb-bulletin-emblem.svg','public/assets/css/fmb-news-product-identity.css','dist/news/assets/css/fmb-news-product-identity.css','public/assets/css/fmb-news-landing-hardfix.css','dist/news/assets/css/fmb-news-landing-hardfix.css'])await access(resolve(rel));
+for(const rel of [
+  'public/assets/images/brand/fmb-bulletin-emblem.svg',
+  'dist/news/assets/images/brand/fmb-bulletin-emblem.svg',
+  'public/assets/css/fmb-news-product-identity.css',
+  'dist/news/assets/css/fmb-news-product-identity.css',
+  'public/assets/css/fmb-news-publication-landing.css',
+  'dist/news/assets/css/fmb-news-publication-landing.css',
+])await access(resolve(rel));
+
 const productCss=await readFile(resolve('dist/news/assets/css/fmb-news-product-identity.css'),'utf8');
-const landingCss=await readFile(resolve('dist/news/assets/css/fmb-news-landing-hardfix.css'),'utf8');
+const landingCss=await readFile(resolve('dist/news/assets/css/fmb-news-publication-landing.css'),'utf8');
 const emblem=await readFile(resolve('dist/news/assets/images/brand/fmb-bulletin-emblem.svg'),'utf8');
+
 if(!productCss.includes('Bodoni Moda')||!productCss.includes('Manrope'))throw new Error('FMB typography regression: approved editorial display or UI font missing');
 if(!productCss.includes('--fmb-display')||!productCss.includes('--fmb-ui'))throw new Error('FMB typography regression: shared font variables missing');
 if(!emblem.includes('<svg')||!emblem.includes('Filipino Media Bulletin emblem')||!emblem.includes('fill-rule="evenodd"'))throw new Error('Bulletin emblem asset is invalid');
-for(const signal of ['--landing-burgundy','#c69a3b','.network-hero','.network-product-icon','.daily-brief-signup','.publication-footer'])if(!landingCss.includes(signal))throw new Error(`Landing visual-system regression: missing ${signal}`);
+for(const signal of ['--landing-violet:#220D50','--landing-plum:#630661','--landing-peach:#F9AB60','.network-hero-art{display:none!important}','.network-products','.network-product:nth-child(4)','.daily-brief-signup','.publication-footer'])if(!landingCss.includes(signal))throw new Error(`Landing visual-system regression: missing ${signal}`);
+if(landingCss.includes('--landing-burgundy')||landingCss.includes('#c69a3b'))throw new Error('Legacy burgundy/gold landing palette returned to the canonical publication stylesheet');
+if(landingCss.includes('commons.wikimedia.org')||landingCss.includes('Special:Redirect'))throw new Error('Canonical publication landing must not depend on remote hero artwork');
 if(landingCss.includes('/news/news/assets/'))throw new Error('Landing asset is double-scoped');
 
 async function walk(dir){const out=[];for(const e of await readdir(dir,{withFileTypes:true})){const p=path.join(dir,e.name);if(e.isDirectory())out.push(...await walk(p));else if(e.isFile()&&e.name.endsWith('.html'))out.push(p)}return out}
@@ -26,7 +37,27 @@ for(const file of pages){
   if(!html.includes(`aria-label="${exp.title}"`))throw new Error(`${rel}: mast title is not exactly ${exp.title}`);
   if(html.includes('/news/news/assets/'))throw new Error(`${rel}: double-scoped asset path remains`);
   if(exp.kind==='landing'){
-    for(const signal of ['class="publication-emblem"','/news/assets/images/brand/fmb-bulletin-emblem.svg','class="publication-wordmark"','Filipino Media Bulletin</strong>','<h2>FMB News</h2>','<h2>FMB Worldwide</h2>','<h2>FMB Explainer</h2>','<h2>FMB Daily Brief</h2>','Explore FMB News','Explore Worldwide','Open FMB Explainer','Continue with Email'])if(!html.includes(signal))throw new Error(`${rel}: approved landing content missing ${signal}`);
+    for(const signal of [
+      '/news/assets/css/fmb-news-publication-landing.css',
+      'class="publication-emblem"',
+      '/news/assets/images/brand/fmb-bulletin-emblem.svg',
+      'class="publication-wordmark"',
+      'Filipino Media Bulletin</strong>',
+      'Five distinct editorial products',
+      '<h2>FMB News</h2>',
+      '<h2>FMB Worldwide</h2>',
+      '<h2>FMB Explainer</h2>',
+      '<h2>FMB Fact Check</h2>',
+      '<h2>FMB Daily Brief</h2>',
+      'Explore FMB News',
+      'Explore Worldwide',
+      'Open FMB Explainer',
+      'Open Fact Check',
+      'Get the Daily Brief',
+    ])if(!html.includes(signal))throw new Error(`${rel}: five-product landing content missing ${signal}`);
+    if(html.includes('fmb-news-landing-hardfix.css'))throw new Error(`${rel}: legacy landing hardfix is still referenced by the canonical homepage`);
+    if(html.includes('Four editorial products')||html.includes('Four distinct editorial products'))throw new Error(`${rel}: obsolete four-product copy remains`);
+    if((html.match(/class="network-product /g)||[]).length!==5)throw new Error(`${rel}: landing must expose exactly five editorial product cards`);
     if((html.match(/data-fmb-newsletter-form/g)||[]).length!==1)throw new Error(`${rel}: landing must contain exactly one Daily Brief email form`);
   }
   if(exp.kind==='brief'){if(!html.includes('<span class="product-name">Daily Brief</span>'))throw new Error(`${rel}: Daily Brief title is not exact`);if(!html.includes('<div class="product-descriptor">Daily Newsletter</div>'))throw new Error(`${rel}: Daily Newsletter descriptor missing`)}
@@ -41,4 +72,4 @@ for(const file of pages){
   if(!html.includes('/news/fact-check/'))throw new Error(`${rel}: FMB Fact Check is missing from product navigation`);
   const footer=html.slice(html.indexOf('<footer class="footer'));if(footer.includes('data-fmb-newsletter-form'))throw new Error(`${rel}: footer contains redundant newsletter form`);
 }
-console.log(`Product identity verification passed across ${checked} pages: Filipino Media Bulletin with FMB News, FMB Worldwide, FMB Explainer, FMB Fact Check, FMB Daily Brief, and non-redundant footer.`);
+console.log(`Product identity verification passed across ${checked} pages: canonical five-product Filipino Media Bulletin landing, FMB News network identity, and non-redundant footer.`);
