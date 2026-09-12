@@ -4,12 +4,20 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const resolve = (...parts) => path.join(root, ...parts);
+const must = (value, message) => { if (!value) throw new Error(message); };
 
 for (const rel of [
-  'scripts/hardfix-ticker.mjs',
+  'scripts/render-network-shell.mjs',
   'public/assets/css/fmb-news-ticker-hardfix.css',
   'dist/news/assets/css/fmb-news-ticker-hardfix.css'
 ]) await access(resolve(rel));
+
+const build = await readFile(resolve('scripts/build.mjs'), 'utf8');
+const renderer = await readFile(resolve('scripts/render-network-shell.mjs'), 'utf8');
+must(!build.includes('hardfix-ticker.mjs'), 'Superseded ticker hardfix returned to the build path');
+for (const signal of ['ticker-clock', 'data-pht-clock', 'ticker-headline', 'Philippine Standard Time · Information with Purpose.', 'normalizeClockRuntime']) {
+  must(renderer.includes(signal), `Canonical network renderer is missing ticker responsibility: ${signal}`);
+}
 
 const css = await readFile(resolve('dist/news/assets/css/fmb-news-ticker-hardfix.css'), 'utf8');
 for (const signal of [
@@ -20,7 +28,7 @@ for (const signal of [
   'animation:fmbNewsTicker 64s',
   '.fmb-ref .utility'
 ]) {
-  if (!css.includes(signal)) throw new Error(`Ticker hard-fix CSS regression: missing ${signal}`);
+  must(css.includes(signal), `Ticker presentation regression: missing ${signal}`);
 }
 
 let pagesChecked = 0;
@@ -36,15 +44,14 @@ async function scan(target) {
   pagesChecked += 1;
   const html = await readFile(target, 'utf8');
   if (!html.includes('/news/assets/css/fmb-news-ticker-hardfix.css')) {
-    throw new Error(`Ticker hard-fix stylesheet missing from ${path.relative(root, target)}`);
+    throw new Error(`Ticker stylesheet missing from ${path.relative(root, target)}`);
   }
 
   const tickerStart = html.indexOf('<div class="headline-ticker"');
   const utilityStart = html.indexOf('<div class="utility">', tickerStart);
-  // Mast may carry additional route-specific classes such as publication-mast.
   const mastStart = html.indexOf('<header class="mast', utilityStart);
   if (tickerStart < 0 || utilityStart < 0 || mastStart < 0) {
-    throw new Error(`Normalized ticker structure missing from ${path.relative(root, target)}`);
+    throw new Error(`Canonical ticker structure missing from ${path.relative(root, target)}`);
   }
 
   const ticker = html.slice(tickerStart, utilityStart);
@@ -80,4 +87,4 @@ async function scan(target) {
 await scan(resolve('dist/news'));
 if (pagesChecked === 0) throw new Error('Ticker verification did not inspect any built HTML pages');
 
-console.log(`FMB ticker verification passed across ${pagesChecked} built HTML pages: one PHT clock, one clock process, no moving-story timestamps, premium editorial ticker typography.`);
+console.log(`FMB ticker verification passed across ${pagesChecked} built HTML pages: canonical shell owns one PHT clock/process, moving headlines carry no redundant timestamps, and editorial ticker styling remains intact.`);
