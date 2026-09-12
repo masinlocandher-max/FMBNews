@@ -21,8 +21,6 @@ await import('./fix-explainer-original-chronology.mjs');
 
 // One renderer owns the shared newsroom masthead, product navigation, final
 // moving-headline ticker, single PHT clock process, utility chrome, and footer.
-// Run it before homepage composition for a stable shell target and again after
-// all late utility/Fact Check routes exist so every generated page receives it.
 const { renderNetworkShell } = await import('./render-network-shell.mjs');
 await renderNetworkShell();
 
@@ -35,20 +33,22 @@ await import('./hardfix-designated-fallbacks.mjs');
 // content image plus social-image metadata before the page can be published.
 await import('./hardfix-all-article-images.mjs');
 
-// One canonical renderer owns the public /news/ experience across breakpoints.
-// It writes the desktop Filipino Media Bulletin landing and the mobile app home
-// together, eliminating order-dependent home-page post-processing.
+// Generic newsroom integrity runs before the purpose-built homepage renderer.
+// It creates Search/Submit and repairs cross-route copy/navigation, but it must
+// not get the final word on the publication landing's editorial information
+// architecture.
+await import('./hardfix-newsroom-audit.mjs');
+await import('./hardfix-late-newsroom-shell.mjs');
+
+// The canonical homepage renderer now runs after the generic audit so its
+// News/Worldwide/Sports desk hierarchy and Entertainment grouping are final
+// source-owned decisions rather than late hardfix output.
 await import('./render-home-experience.mjs');
 
 // Sports is an editorial desk, not a sixth product. Generate a real category
 // destination from published Sports-tagged inventory. When inventory is empty,
 // the route states that explicitly instead of borrowing unrelated stories.
 await import('./render-sports.mjs');
-
-// Final newsroom integrity pass creates search/submit utility pages and applies
-// the newsroom-level copy/navigation rules.
-await import('./hardfix-newsroom-audit.mjs');
-await import('./hardfix-late-newsroom-shell.mjs');
 
 // Generate Fact Check before the universal mobile/PWA passes so all new pages
 // receive the same shared newsroom runtime, accessibility and QA contract.
