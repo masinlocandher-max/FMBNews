@@ -1,0 +1,44 @@
+/* FMB News founder identity — source-level About section, 2026-09-12 */
+.fmb-about-founder{
+  position:relative;overflow:hidden;padding:clamp(84px,9vw,142px) 0;color:#fff;
+  background:radial-gradient(circle at 80% 14%,rgba(249,171,96,.11),transparent 30%),linear-gradient(135deg,#16082d 0%,#220D50 54%,#630661 100%);
+  border-bottom:1px solid rgba(249,171,96,.18)
+}
+.fmb-about-founder::before{
+  content:"";position:absolute;right:-18vw;bottom:-36vw;width:70vw;height:70vw;border:1px solid rgba(255,255,255,.10);border-radius:50%;box-shadow:0 0 0 7vw rgba(255,255,255,.018);pointer-events:none
+}
+.fmb-about-founder-grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(260px,.72fr) minmax(0,1.28fr);gap:clamp(46px,7vw,112px);align-items:center}
+.fmb-founder-portrait{margin:0}
+.fmb-founder-photo-placeholder{
+  aspect-ratio:4/5;max-width:430px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:8px;padding:28px;
+  border:1px solid rgba(249,171,96,.34);border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.035));
+  box-shadow:inset 0 1px rgba(255,255,255,.12),0 30px 80px rgba(7,2,18,.24);-webkit-backdrop-filter:blur(24px) saturate(80%);backdrop-filter:blur(24px) saturate(80%)
+}
+.fmb-founder-photo-placeholder::before{
+  content:"";width:min(46%,142px);aspect-ratio:1;border:1px solid rgba(255,255,255,.22);border-radius:50%;background:radial-gradient(circle at 50% 34%,rgba(255,255,255,.14),rgba(255,255,255,.035) 68%,transparent 69%)
+}
+.fmb-founder-photo-placeholder span{color:#fff;font-family:var(--fmb-luxury-serif,var(--fmb-serif,Georgia,serif));font-size:clamp(28px,3vw,44px);font-weight:600;line-height:1;letter-spacing:-.02em}
+.fmb-founder-photo-placeholder small{color:rgba(255,255,255,.58);font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.fmb-about-founder-copy{max-width:760px}
+.fmb-about-founder .fmb-about-label{color:#F9AB60!important}
+.fmb-about-founder h2{margin:16px 0 10px;color:#fff;font-family:var(--fmb-luxury-serif,var(--fmb-serif,Georgia,serif));font-size:clamp(48px,6vw,94px);font-weight:600;line-height:.93;letter-spacing:-.045em;text-wrap:balance}
+.fmb-founder-role{margin:0 0 34px;color:#f4c7a0;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.fmb-founder-statement{max-width:660px;margin:0 0 20px;color:rgba(255,255,255,.84);font-family:Georgia,"Times New Roman",serif;font-size:clamp(19px,1.45vw,23px);line-height:1.72}
+.fmb-founder-transparency{max-width:660px;margin:0 0 30px;color:rgba(255,255,255,.66);font-size:15px;line-height:1.72}
+.fmb-founder-profile-link{display:inline-flex;min-height:44px;align-items:center;padding:0 17px;border:1px solid rgba(249,171,96,.36);border-radius:999px;color:#fff!important;background:rgba(255,255,255,.06);font-size:10px;font-weight:800;letter-spacing:.10em;text-decoration:none;text-transform:uppercase}
+.fmb-founder-profile-link:is(:hover,:focus-visible){background:rgba(255,255,255,.12);border-color:rgba(249,171,96,.62);outline:none;box-shadow:0 0 0 3px rgba(249,171,96,.16)}
+
+@media(max-width:900px){
+  .fmb-about-founder-grid{grid-template-columns:1fr;gap:38px}
+  .fmb-founder-photo-placeholder{max-width:340px}
+  .fmb-about-founder-copy{max-width:760px}
+}
+@media(max-width:760px){
+  .fmb-about-founder{padding:58px 0}
+  .fmb-founder-photo-placeholder{max-width:280px;border-radius:22px;padding:22px}
+  .fmb-about-founder h2{font-size:clamp(38px,12vw,54px);line-height:.98}
+  .fmb-founder-role{margin-bottom:24px}
+  .fmb-founder-statement{font-size:19px;line-height:1.62}
+  .fmb-founder-transparency{font-size:14px;line-height:1.65}
+}
+@media(prefers-reduced-motion:reduce){.fmb-founder-profile-link{transition:none}}
