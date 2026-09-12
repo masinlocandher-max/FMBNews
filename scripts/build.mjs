@@ -19,10 +19,10 @@ await import('./render-metallic-reference.mjs');
 await import('./render-fmb-explained.mjs');
 await import('./fix-explainer-original-chronology.mjs');
 
-// One renderer now owns the shared newsroom masthead, product navigation,
-// ticker, utility chrome, and footer. Run it once before the homepage renderer
-// so the landing renderer has a stable shell target, then once more after all
-// late utility/Fact Check routes exist so every generated page receives it.
+// One renderer owns the shared newsroom masthead, product navigation, final
+// moving-headline ticker, single PHT clock process, utility chrome, and footer.
+// Run it before homepage composition for a stable shell target and again after
+// all late utility/Fact Check routes exist so every generated page receives it.
 const { renderNetworkShell } = await import('./render-network-shell.mjs');
 await renderNetworkShell();
 
@@ -62,9 +62,9 @@ await import('./hardfix-editorial-production.mjs');
 // page exists, including search, submission and Fact Check routes.
 await import('./hardfix-mobile-first-site.mjs');
 
-// Normalize the ticker after all pages exist so every surface receives one PHT
-// clock and the same network headline bar.
-await import('./hardfix-ticker.mjs');
+// Temporary compatibility layer still guards missed mobile assets, utility-route
+// recovery, and legacy mobile-home runtime behavior. Its ticker responsibility
+// has been removed and now belongs to render-network-shell.mjs.
 await import('./hardfix-newsroom-compat.mjs');
 
 // Public-web discovery pass. It leaves presentation untouched while exposing
@@ -96,4 +96,4 @@ await rewriteAssetPaths(newsRoot);
 // routes, canonical URLs, article metadata and scoped asset paths have settled.
 await import('./generate-news-distribution.mjs');
 
-console.log('Built Filipino Media Bulletin with five official editorial products: FMB News, FMB Worldwide, FMB Explainer, FMB Fact Check, and FMB Daily Brief; plus localized visual assets, product-designated fallback imagery, guaranteed article imagery, personalization/PWA support, live utilities, newsroom search and intake, canonical sitemap and RSS distribution, a sealed active crossword runtime, explicit editorial trust surfaces, normalized search/AI discovery metadata, a canonical network shell, a canonical matte-glass brand system with System/Light/Dark appearance, readable trust pages, and no fixed bottom navigation.');
+console.log('Built Filipino Media Bulletin with five official editorial products: FMB News, FMB Worldwide, FMB Explainer, FMB Fact Check, and FMB Daily Brief; plus localized visual assets, product-designated fallback imagery, guaranteed article imagery, personalization/PWA support, live utilities, newsroom search and intake, canonical sitemap and RSS distribution, a sealed active crossword runtime, explicit editorial trust surfaces, normalized search/AI discovery metadata, a canonical network shell with one PHT ticker/clock, a canonical matte-glass brand system with System/Light/Dark appearance, readable trust pages, and no fixed bottom navigation.');
