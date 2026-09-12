@@ -63,9 +63,9 @@ await import('./hardfix-newsroom-compat.mjs');
 // publisher/author structured data.
 await import('./hardfix-ai-discovery.mjs');
 
-// Final visual authority: restrained matte-glass FMB News identity across every
-// generated route, with shared contrast and About-page readability rules.
-await import('./hardfix-matte-news-system.mjs');
+// Final visual authority: restrained matte-glass FMB News identity, shared
+// contrast, About-page readability, and persistent System/Light/Dark appearance.
+await import('./apply-brand-system.mjs');
 
 const textExtensions = new Set(['.html', '.css', '.js', '.mjs', '.json', '.xml', '.txt', '.svg']);
 
@@ -87,4 +87,4 @@ await rewriteAssetPaths(newsRoot);
 // routes, canonical URLs, article metadata and scoped asset paths have settled.
 await import('./generate-news-distribution.mjs');
 
-console.log('Built Filipino Media Bulletin with five official editorial products: FMB News, FMB Worldwide, FMB Explainer, FMB Fact Check, and FMB Daily Brief; plus localized visual assets, product-designated fallback imagery, guaranteed article imagery, personalization/PWA support, live utilities, newsroom search and intake, canonical sitemap and RSS distribution, a sealed active crossword runtime, explicit editorial trust surfaces, normalized search/AI discovery metadata, a universal matte FMB News masthead, readable trust pages, and no fixed bottom navigation.');
+console.log('Built Filipino Media Bulletin with five official editorial products: FMB News, FMB Worldwide, FMB Explainer, FMB Fact Check, and FMB Daily Brief; plus localized visual assets, product-designated fallback imagery, guaranteed article imagery, personalization/PWA support, live utilities, newsroom search and intake, canonical sitemap and RSS distribution, a sealed active crossword runtime, explicit editorial trust surfaces, normalized search/AI discovery metadata, a canonical matte-glass brand system with System/Light/Dark appearance, readable trust pages, and no fixed bottom navigation.');
