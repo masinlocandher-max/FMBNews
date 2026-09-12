@@ -84,6 +84,24 @@ function breakingStory(stories) {
   return stories.find((story) => story?.audit?.push_alert === true || story?.push_alert === true || story?.breaking === true);
 }
 
+function isWorldStory(story) {
+  return String(story?.category || '').trim().toLowerCase() === 'world';
+}
+
+function isSportsStory(story) {
+  const category = String(story?.category || '').trim().toLowerCase();
+  const kicker = String(story?.kicker || '').toLowerCase();
+  return category === 'sports' || category === 'sport' || /(^|[ ·|])sports?([ ·|]|$)/i.test(kicker);
+}
+
+function deskCard({ cls, href, title, label, story, emptyCopy }) {
+  const state = story ? 'Latest' : 'Desk ready';
+  const detail = story
+    ? `<b>${esc(story.headline)}</b><p>${esc(story.deck || `Open the latest ${title} report.`)}</p>`
+    : `<b>${esc(emptyCopy)}</b><p>Coverage appears here only when a matching verified report is published.</p>`;
+  return `<a class="editorial-desk ${cls}${story ? '' : ' is-empty'}" href="${href}"><div class="editorial-desk-top"><strong>${title}</strong><span>${state}</span></div>${detail}<span class="sr-only">${label}</span></a>`;
+}
+
 function renderMobileHome(stories) {
   if (!stories.length) throw new Error('Cannot build FMB mobile app home without published stories.');
 
@@ -135,17 +153,20 @@ function renderMobileHome(stories) {
 </div>`;
 }
 
-function applyDesktopPublicationLanding(html) {
-  html = html.replace(/<title>[\s\S]*?<\/title>/i, '<title>Filipino Media Bulletin | FMB News, Worldwide, Explainer, Fact Check and Daily Brief</title>');
-  html = html.replace(/<meta name="description" content="[^"]*">/i, '<meta name="description" content="Filipino Media Bulletin brings together FMB News, FMB Worldwide, FMB Explainer, FMB Fact Check, and FMB Daily Brief.">');
+function applyDesktopPublicationLanding(html, stories) {
+  html = html.replace(/<title>[\s\S]*?<\/title>/i, '<title>Filipino Media Bulletin | News, Worldwide, Sports, Explainer, Fact Check and Daily Brief</title>');
+  html = html.replace(/<meta name="description" content="[^"]*">/i, '<meta name="description" content="Filipino Media Bulletin brings together FMB News, FMB Worldwide, Sports, FMB Explainer, FMB Fact Check, and FMB Daily Brief.">');
   html = html.replace(/<meta property="og:site_name" content="[^"]*">/i, '<meta property="og:site_name" content="Filipino Media Bulletin">');
   html = html.replace(/<meta property="og:title" content="[^"]*">/i, '<meta property="og:title" content="Filipino Media Bulletin">');
-  html = html.replace(/<meta property="og:description" content="[^"]*">/i, '<meta property="og:description" content="Five editorial products: FMB News, FMB Worldwide, FMB Explainer, FMB Fact Check, and FMB Daily Brief.">');
+  html = html.replace(/<meta property="og:description" content="[^"]*">/i, '<meta property="og:description" content="News, Worldwide and Sports desks, plus FMB Explainer, FMB Fact Check and FMB Daily Brief.">');
 
   html = html.replace(/<link[^>]+fmb-news-landing-hardfix\.css[^>]*>/gi, '');
   html = html.replace(/<style data-fmb-four-products>[\s\S]*?<\/style>/gi, '');
   if (!html.includes('/assets/css/fmb-news-publication-landing.css')) {
     html = html.replace('</head>', '<link rel="stylesheet" href="/assets/css/fmb-news-publication-landing.css?v=20260912-five-product"></head>');
+  }
+  if (!html.includes('/assets/css/fmb-news-editorial-ia.css')) {
+    html = html.replace('</head>', '<link rel="stylesheet" href="/assets/css/fmb-news-editorial-ia.css?v=20260912-desk-v1"></head>');
   }
   if (!html.includes('/assets/images/brand/fmb-bulletin-emblem.svg')) {
     html = html.replace('</head>', '<link rel="icon" type="image/svg+xml" href="/assets/images/brand/fmb-bulletin-emblem.svg"></head>');
@@ -165,8 +186,13 @@ function applyDesktopPublicationLanding(html) {
   const factCheckIcon = '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 7 38 12v10c0 9-5.8 15.2-14 19-8.2-3.8-14-10-14-19V12L24 7Z"></path><path d="m17.5 23.5 4.2 4.2 9-10"></path></svg>';
   const envelopeIcon = '<svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="12" width="32" height="24" rx="2"></rect><path d="m10 15 14 12 14-12"></path></svg>';
 
-  const mast = `<header class="mast publication-mast"><div class="shell publication-header-inner"><a class="publication-lockup" href="/news/" aria-label="Filipino Media Bulletin"><img class="publication-emblem" src="/assets/images/brand/fmb-bulletin-emblem.svg" alt=""><span class="publication-name"><strong class="publication-wordmark">Filipino Media Bulletin</strong><span class="publication-tagline"><span></span>Information with Purpose<span></span></span></span></a><nav class="nav publication-nav" aria-label="Filipino Media Bulletin"><a href="/news/archive/">FMB News</a><a href="/news/world/">FMB Worldwide</a><a href="/news/explainer/">FMB Explainer</a><a href="/news/fact-check/">FMB Fact Check</a><a href="/news/fmb-brief/">FMB Daily Brief</a><a href="/news/about/">About</a><a class="publication-search" href="/news/archive/" aria-label="Search FMB News">${searchIcon}</a></nav></div></header>`;
+  const mast = `<header class="mast publication-mast"><div class="shell publication-header-inner"><a class="publication-lockup" href="/news/" aria-label="Filipino Media Bulletin"><img class="publication-emblem" src="/assets/images/brand/fmb-bulletin-emblem.svg" alt=""><span class="publication-name"><strong class="publication-wordmark">Filipino Media Bulletin</strong><span class="publication-tagline"><span></span>Information with Purpose<span></span></span></span></a><nav class="nav publication-nav" aria-label="Filipino Media Bulletin"><a href="/news/archive/">News</a><a href="/news/world/">Worldwide</a><a href="/news/sports/">Sports</a><a href="/news/fmb-brief/">Daily Brief</a><a href="/news/fact-check/">Fact Check</a><a href="/news/explainer/">Explainer</a><details class="publication-menu"><summary>Entertainment</summary><div class="publication-menu-panel"><a href="/news/horoscope/">Weekly Horoscope</a><a href="/news/crossword/">FMB Crossword</a></div></details><a href="/news/about/">About</a><a class="publication-search" href="/news/search/" aria-label="Search FMB News">${searchIcon}</a></nav></div></header>`;
   html = html.replace(/<header class="mast[^"]*"[\s\S]*?<\/header>\s*<nav class="nav"[\s\S]*?<\/nav>/i, mast);
+
+  const newsLead = stories.find((story) => !isWorldStory(story) && !isSportsStory(story)) || stories[0];
+  const worldLead = stories.find(isWorldStory);
+  const sportsLead = stories.find(isSportsStory);
+  const desks = `${deskCard({ cls:'news', href:'/news/archive/', title:'News', label:'Open FMB News', story:newsLead, emptyCopy:'Latest verified reports from FMB News.' })}${deskCard({ cls:'worldwide', href:'/news/world/', title:'Worldwide', label:'Open FMB Worldwide', story:worldLead, emptyCopy:'Worldwide coverage will appear here when published.' })}${deskCard({ cls:'sports', href:'/news/sports/', title:'Sports', label:'Open Sports desk', story:sportsLead, emptyCopy:'No Sports report is published yet.' })}`;
 
   const main = `<main class="network-home">
   <section class="network-hero" aria-labelledby="network-hero-title">
@@ -175,8 +201,9 @@ function applyDesktopPublicationLanding(html) {
       <div class="network-hero-copy">
         <h1 id="network-hero-title"><span>Trusted News.</span><span>Meaningful Perspectives.</span></h1>
         <div class="network-hero-rule"><span></span></div>
-        <p>Five distinct editorial products, one Filipino Media Bulletin standard: verified information, useful context, and clear relevance for Filipino readers.</p>
+        <p>Three editorial desks for the news cycle, backed by five Filipino Media Bulletin products for deeper context, verification, and daily briefing.</p>
       </div>
+      <section class="editorial-desks" aria-labelledby="editorial-desks-title"><div class="editorial-desks-head"><div><span>Browse by desk</span><h2 id="editorial-desks-title">News. Worldwide. Sports.</h2></div><p>Direct reporting desks stay separate from FMB’s explanation, fact-checking, and briefing products.</p></div><div class="editorial-desk-grid">${desks}</div></section>
       <div class="network-products" aria-label="Five Filipino Media Bulletin editorial products">
         <a class="network-product news" href="/news/archive/"><span class="network-product-icon">${newspaperIcon}</span><h2>FMB News</h2><span class="network-card-rule"><i></i></span><p>Verified Philippine reporting.<br>Clear facts, concise updates,<br>and meaningful context.</p><span class="product-link">Explore FMB News <b>›</b></span></a>
         <a class="network-product world" href="/news/world/"><span class="network-product-icon">${globeIcon}</span><h2>FMB Worldwide</h2><span class="network-card-rule"><i></i></span><p>Major global developments.<br>Filtered for importance<br>and Filipino relevance.</p><span class="product-link">Explore Worldwide <b>›</b></span></a>
@@ -195,7 +222,7 @@ function applyDesktopPublicationLanding(html) {
 </main>`;
   html = html.replace(/<main[\s\S]*?<\/main>/i, main);
 
-  const footer = '<footer class="footer publication-footer"><div class="shell publication-footer-inner"><img class="publication-footer-emblem" src="/assets/images/brand/fmb-bulletin-emblem.svg" alt=""><div><div class="footer-publication-title">Filipino Media Bulletin</div><div class="footer-publication-kicker">FMB News · FMB Worldwide · FMB Explainer · FMB Fact Check · FMB Daily Brief</div></div></div></footer>';
+  const footer = '<footer class="footer publication-footer"><div class="shell publication-footer-inner"><img class="publication-footer-emblem" src="/assets/images/brand/fmb-bulletin-emblem.svg" alt=""><div><div class="footer-publication-title">Filipino Media Bulletin</div><div class="footer-publication-kicker">News · Worldwide · Sports · FMB Explainer · FMB Fact Check · FMB Daily Brief</div></div></div></footer>';
   html = html.replace(/<footer class="footer"[\s\S]*?<\/footer>/i, footer);
   html = html.replace(/<div class="ticker-label">[\s\S]*?<\/div>/i, '<div class="ticker-label"><span class="ticker-pulse" aria-hidden="true"></span>HEADLINES</div>');
 
@@ -204,9 +231,9 @@ function applyDesktopPublicationLanding(html) {
 
 const stories = await publishedStories();
 let html = await readFile(page, 'utf8');
-html = applyDesktopPublicationLanding(html);
+html = applyDesktopPublicationLanding(html, stories);
 html = html.replace(/<div class="fmb-mobile-app-home"[\s\S]*?<\/div>\s*(?=<main class="network-home")/i, '');
 html = html.replace('<main class="network-home">', `${renderMobileHome(stories)}<main class="network-home">`);
 await writeFile(page, html, 'utf8');
 
-console.log(`Rendered canonical FMB News home experience in one pass: five-product desktop Filipino Media Bulletin landing plus mobile app home with ${stories.slice(0, 5).length} latest stories.`);
+console.log(`Rendered canonical FMB News home experience in one pass: News/Worldwide/Sports desktop desk hierarchy, five-product Filipino Media Bulletin system, and mobile app home with ${stories.slice(0, 5).length} latest stories.`);
