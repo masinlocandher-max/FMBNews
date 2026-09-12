@@ -9,14 +9,14 @@ const must=(value,message)=>{if(!value)throw new Error(message)};
 
 const required=[
   'site/index.html','site/fmb-brief/index.html','site/world/index.html','site/explainer/index.html','site/horoscope/index.html','site/crossword/index.html','site/about/index.html',
-  'public/assets/css/fmb-news-mobile-premium.css','public/assets/css/fmb-news-mobile-home.css','public/assets/css/fmb-news-mobile-global.css','public/assets/css/fmb-news-mobile-products.css','public/assets/css/fmb-news-mobile-product-heroes.css','public/assets/css/fmb-news-mobile-menu-holder.css','public/assets/css/fmb-news-mobile-app-polish.css','public/assets/css/fmb-news-mobile-home-live-hero.css','public/assets/css/fmb-news-mobile-contrast-lock.css','public/assets/css/fmb-news-mobile-features.css','public/assets/css/fmb-news-mobile-personalization.css',
-  'public/assets/js/fmb-news-mobile-personalization.js','public/assets/js/fmb-news-mobile-home.js','public/assets/js/fmb-news-mobile-global.js','public/assets/js/fmb-news-mobile-products.js','public/assets/js/fmb-news-mobile-app-polish.js','public/assets/js/fmb-news-weekly-horoscope.js','public/assets/js/fmb-news-weekly-crossword.js',
+  'public/assets/css/fmb-news-mobile-premium.css','public/assets/css/fmb-news-mobile-home.css','public/assets/css/fmb-news-mobile-global.css','public/assets/css/fmb-news-mobile-products.css','public/assets/css/fmb-news-mobile-product-heroes.css','public/assets/css/fmb-news-mobile-menu-holder.css','public/assets/css/fmb-news-mobile-app-polish.css','public/assets/css/fmb-news-mobile-home-live-hero.css','public/assets/css/fmb-news-mobile-contrast-lock.css','public/assets/css/fmb-news-mobile-features.css','public/assets/css/fmb-news-mobile-personalization.css','public/assets/css/fmb-news-theme.css',
+  'public/assets/js/fmb-news-mobile-personalization.js','public/assets/js/fmb-news-mobile-home.js','public/assets/js/fmb-news-mobile-global.js','public/assets/js/fmb-news-mobile-products.js','public/assets/js/fmb-news-mobile-app-polish.js','public/assets/js/fmb-news-weekly-horoscope.js','public/assets/js/fmb-news-weekly-crossword.js','public/assets/js/fmb-news-theme.js',
   'public/assets/images/brand/fmb-bulletin-emblem.svg','public/assets/data/fmb-explained','content/news/articles',
-  'scripts/fetch-approved-mobile-assets.mjs','scripts/hardfix-mobile-app-home.mjs','scripts/hardfix-mobile-first-site.mjs','src/worker.js','wrangler.jsonc',
+  'scripts/fetch-approved-mobile-assets.mjs','scripts/render-home-experience.mjs','scripts/apply-brand-system.mjs','scripts/hardfix-mobile-first-site.mjs','src/worker.js','wrangler.jsonc',
   'dist/news/index.html','dist/news/archive/index.html','dist/news/world/index.html','dist/news/explainer/index.html','dist/news/fmb-brief/index.html','dist/news/horoscope/index.html','dist/news/crossword/index.html','dist/news/about/index.html',
   'dist/news/assets/images/mobile/fmb-mobile-hero.jpg','dist/news/assets/images/mobile/fmb-daily-brief-mug.jpg','dist/news/assets/images/brand/fmb-bulletin-emblem.svg',
-  'dist/news/assets/css/fmb-news-mobile-global.css','dist/news/assets/css/fmb-news-mobile-products.css','dist/news/assets/css/fmb-news-mobile-product-heroes.css','dist/news/assets/css/fmb-news-mobile-menu-holder.css','dist/news/assets/css/fmb-news-mobile-app-polish.css','dist/news/assets/css/fmb-news-mobile-home-live-hero.css','dist/news/assets/css/fmb-news-mobile-contrast-lock.css','dist/news/assets/css/fmb-news-mobile-features.css','dist/news/assets/css/fmb-news-mobile-personalization.css',
-  'dist/news/assets/js/fmb-news-mobile-home.js','dist/news/assets/js/fmb-news-mobile-products.js','dist/news/assets/js/fmb-news-mobile-app-polish.js','dist/news/assets/js/fmb-news-weekly-crossword.js'
+  'dist/news/assets/css/fmb-news-mobile-global.css','dist/news/assets/css/fmb-news-mobile-products.css','dist/news/assets/css/fmb-news-mobile-product-heroes.css','dist/news/assets/css/fmb-news-mobile-menu-holder.css','dist/news/assets/css/fmb-news-mobile-app-polish.css','dist/news/assets/css/fmb-news-mobile-home-live-hero.css','dist/news/assets/css/fmb-news-mobile-contrast-lock.css','dist/news/assets/css/fmb-news-mobile-features.css','dist/news/assets/css/fmb-news-mobile-personalization.css','dist/news/assets/css/fmb-news-theme.css',
+  'dist/news/assets/js/fmb-news-mobile-home.js','dist/news/assets/js/fmb-news-mobile-products.js','dist/news/assets/js/fmb-news-mobile-app-polish.js','dist/news/assets/js/fmb-news-weekly-crossword.js','dist/news/assets/js/fmb-news-theme.js'
 ];
 for(const rel of required)await access(resolve(rel));
 
@@ -31,9 +31,13 @@ must(/fact-check[\s\S]{0,500}308/.test(worker),'Worker does not redirect held Fa
 
 const fetchApproved=await read('scripts/fetch-approved-mobile-assets.mjs');
 must(fetchApproved.includes('14fKTwMW0qnVi36eVSAjSBr05_VZgq4kf'),'Approved Philippines newsroom hero Drive asset is not locked');
+const canonicalHomeRenderer=await read('scripts/render-home-experience.mjs');
+for(const token of ['applyDesktopPublicationLanding','renderMobileHome','data-fmb-mobile-home','network-home'])must(canonicalHomeRenderer.includes(token),`Canonical home renderer regression: missing ${token}`);
+const canonicalBrandSystem=await read('scripts/apply-brand-system.mjs');
+for(const token of ['fmb-news-theme.css','fmb-news-theme.js','data-fmb-theme-boot','fmb-lux-wordmark'])must(canonicalBrandSystem.includes(token),`Canonical brand system regression: missing ${token}`);
 
 const home=await read('dist/news/index.html');
-for(const signal of ['FMB News','FMB Worldwide','FMB Explainer','FMB Daily Brief','data-fmb-mobile-home','fmb-approved-hero-copy','fmb-approved-hero-ticker','fmb-hero-live-overlay','data-fmb-greeting','data-fmb-greeting-line','data-fmb-local-time','data-fmb-weather-button','Read the Latest','Customize','Weekly Horoscope','FMB Crossword','/news/assets/images/mobile/fmb-mobile-hero.jpg','/news/assets/images/mobile/fmb-daily-brief-mug.jpg'])must(home.includes(signal),`Mobile home regression: missing ${signal}`);
+for(const signal of ['FMB News','FMB Worldwide','FMB Explainer','FMB Daily Brief','data-fmb-mobile-home','fmb-approved-hero-copy','fmb-approved-hero-ticker','fmb-hero-live-overlay','data-fmb-greeting','data-fmb-greeting-line','data-fmb-local-time','data-fmb-weather-button','Read the Latest','Customize','Weekly Horoscope','FMB Crossword','/news/assets/images/mobile/fmb-mobile-hero.jpg','/news/assets/images/mobile/fmb-daily-brief-mug.jpg','data-fmb-theme-boot','fmb-news-theme.css','fmb-news-theme.js'])must(home.includes(signal),`Mobile home regression: missing ${signal}`);
 must(!home.includes('FMB Explained'),'Obsolete FMB Explained label remains');
 
 for(const asset of ['dist/news/assets/images/mobile/fmb-mobile-hero.jpg','dist/news/assets/images/mobile/fmb-daily-brief-mug.jpg']){
@@ -57,6 +61,8 @@ for(const[name,html]of Object.entries(pages)){
   must(html.includes('fmb-news-mobile-global.js?v=20260901-global-v3'),`${name}: global mobile runtime v3 missing`);
   must(html.includes('fmb-news-mobile-products.js?v=20260902-products-v3'),`${name}: strict product runtime v3 missing`);
   must(html.includes('fmb-news-mobile-app-polish.js?v=20260902-polish-v2'),`${name}: final premium mobile polish runtime v2 missing`);
+  must(html.includes('/news/assets/css/fmb-news-theme.css?v=20260912'),`${name}: canonical appearance stylesheet missing`);
+  must(html.includes('/news/assets/js/fmb-news-theme.js?v=20260912'),`${name}: canonical appearance runtime missing`);
 }
 
 // The system stylesheet must carry every authored mobile sheet, in the order
@@ -149,7 +155,9 @@ async function scan(target){
   must(text.includes('fmb-news-mobile-global.js?v=20260901-global-v3'),`Global mobile runtime not injected in ${where}`);
   must(text.includes('fmb-news-mobile-products.js?v=20260902-products-v3'),`Strict product runtime v3 not injected in ${where}`);
   must(text.includes('fmb-news-mobile-app-polish.js?v=20260902-polish-v2'),`Final app polish runtime v2 not injected in ${where}`);
+  must(text.includes('/news/assets/css/fmb-news-theme.css?v=20260912'),`Canonical appearance stylesheet not injected in ${where}`);
+  must(text.includes('/news/assets/js/fmb-news-theme.js?v=20260912'),`Canonical appearance runtime not injected in ${where}`);
   must(!text.includes('/news/news/assets/'),`Double-scoped asset in ${where}`);
 }
 await scan(resolve('dist/news'));
-console.log(`FMBNews verification passed: approved Philippines newsroom hero with real HTML overlay and Read the Latest / Customize CTAs, one compact premium mobile masthead/menu holder, strict shared Worldwide/Explainer/Daily Brief hero geometry, final contrast lock, eight dedicated route designs, 12-icon horoscope, ${entryCount}-entry current-events crossword with no active reveals, ${explainerCount} Explainer library topics, and full FMB shell coverage across ${builtPageCount} pages.`);
+console.log(`FMBNews verification passed: canonical desktop/mobile home renderer, canonical brand/theme system, approved Philippines newsroom hero with real HTML overlay and Read the Latest / Customize CTAs, one compact premium mobile masthead/menu holder, strict shared Worldwide/Explainer/Daily Brief hero geometry, final contrast lock, eight dedicated route designs, 12-icon horoscope, ${entryCount}-entry current-events crossword with no active reveals, ${explainerCount} Explainer library topics, and full FMB shell coverage across ${builtPageCount} pages.`);
