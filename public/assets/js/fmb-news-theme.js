@@ -33,12 +33,13 @@
   function apply(mode,{persist=true}={}){
     if(!MODES.includes(mode))mode='system';
     if(persist){try{localStorage.setItem(STORAGE_KEY,mode)}catch{}}
+    const appearance=resolved(mode);
     root.setAttribute('data-fmb-theme-mode',mode);
-    root.setAttribute('data-fmb-theme',resolved(mode));
+    root.setAttribute('data-fmb-theme',appearance);
     const themeColor=document.querySelector('meta[name="theme-color"]');
-    if(themeColor)themeColor.setAttribute('content',resolved(mode)==='dark'?'#120822':'#220D50');
+    if(themeColor)themeColor.setAttribute('content',appearance==='dark'?'#101314':'#F4F0E8');
     syncControls(mode);
-    document.dispatchEvent(new CustomEvent('fmb:theme-change',{detail:{mode,resolved:resolved(mode)}}));
+    document.dispatchEvent(new CustomEvent('fmb:theme-change',{detail:{mode,resolved:appearance}}));
   }
 
   function cycle(){
@@ -48,7 +49,7 @@
   }
 
   function desktopControl(){
-    if(document.querySelector('[data-fmb-theme-control]'))return;
+    if(document.querySelector('.publication-header-inner [data-fmb-theme-control],.mast>.shell [data-fmb-theme-control],.mast-row [data-fmb-theme-control],.fnc-header-row [data-fmb-theme-control],.nc-nav-shell [data-fmb-theme-control],.brief-network-row [data-fmb-theme-control]'))return;
     const host=document.querySelector('.publication-header-inner,.mast>.shell,.mast-row,.fnc-header-row,.nc-nav-shell,.brief-network-row');
     if(!host)return;
     const button=document.createElement('button');
@@ -74,13 +75,16 @@
   }
 
   const observer=new MutationObserver((records)=>{
+    let needsSync=false;
     for(const record of records){
       for(const node of record.addedNodes){
         if(!(node instanceof HTMLElement))continue;
         if(node.matches('.fmb-app-action-sheet'))enhanceMobileSheet(node);
         node.querySelectorAll?.('.fmb-app-action-sheet').forEach(enhanceMobileSheet);
+        if(node.matches('[data-fmb-theme-control],[data-fmb-theme-menu]')||node.querySelector?.('[data-fmb-theme-control],[data-fmb-theme-menu]'))needsSync=true;
       }
     }
+    if(needsSync)syncControls(root.getAttribute('data-fmb-theme-mode')||stored());
   });
 
   media.addEventListener?.('change',()=>{
