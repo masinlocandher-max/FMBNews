@@ -1,5 +1,6 @@
 /* FMB News appearance system — System / Light / Dark */
-:root{
+:root,
+html[data-fmb-theme="light"]{
   color-scheme:light;
   --fmb-theme-bg:#fbf9fc;
   --fmb-theme-surface:#ffffff;
@@ -27,6 +28,19 @@ body.fmb-matte-system{
   background:var(--fmb-theme-bg)!important;
   color:var(--fmb-theme-ink)!important;
   transition:background-color .22s ease,color .22s ease;
+}
+
+/* Resolved appearance owns the page canvas even when older mobile-ready or
+   route-specific classes carry stronger background declarations. */
+html[data-fmb-theme="light"] body.fmb-matte-system,
+html[data-fmb-theme="light"] body.fmb-matte-system.fmb-news-route,
+html[data-fmb-theme="light"] body.fmb-matte-system.fmb-network-landing{
+  background:#fbf9fc!important;color:#1b1420!important;
+}
+html[data-fmb-theme="dark"] body.fmb-matte-system,
+html[data-fmb-theme="dark"] body.fmb-matte-system.fmb-news-route,
+html[data-fmb-theme="dark"] body.fmb-matte-system.fmb-network-landing{
+  background:#0e0a12!important;color:#f8f4fb!important;
 }
 
 /* Desktop appearance control. */
@@ -95,6 +109,7 @@ html[data-fmb-theme="dark"] body.fmb-matte-system.fmb-news-about main{background
 
 @media(max-width:699px){
   .fmb-theme-toggle{display:none!important}
+  html[data-fmb-theme="light"] body.fmb-matte-system .fmb-mobile-app-home{background:#fbf9fc!important;color:#1b1420!important}
   html[data-fmb-theme="dark"] body.fmb-matte-system .fmb-mobile-app-home{background:var(--fmb-theme-bg)!important;color:var(--fmb-theme-ink)!important}
   html[data-fmb-theme="dark"] body.fmb-matte-system .fmb-app-action-sheet{background:rgba(0,0,0,.55)!important}
 }
