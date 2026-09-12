@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "boransing-no-deped-confidential-funds-army-youth-summits-september-1-2026",
+  "headline": "Army Officer Says His Unit Received No DepEd Confidential Funds for Youth Summits",
+  "seoTitle": "Boransing: No DepEd Confidential Funds for Army Youth Summits | FMB News",
+  "seoDescription": "Col. Manaros Boransing II told the Senate impeachment court that his Army unit did not receive DepEd confidential funds for youth leadership activities in 2023.",
+  "keywords": ["Manaros Boransing DepEd confidential funds", "Sara Duterte impeachment trial September 1", "Youth Leadership Summit Army"],
+  "category": "National",
+  "kicker": "Impeachment · Testimony",
+  "deck": "Boransing said the Army funded its own participation and that his certification was not meant to validate DepEd's use of confidential funds.",
+  "publishedAt": "2026-09-01T19:00:00+08:00",
+  "updatedAt": "2026-09-04T18:11:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["Army Col. Manaros Boransing II testified during Day 20 of Vice President Sara Duterte's impeachment trial that his unit did not receive confidential funds from the Department of Education for Youth Leadership Summit activities in 2023."]},
+    {"heading":"What the certification meant","paragraphs":["Boransing said the Army certification documented participation in the activities and was not intended to certify how DepEd spent its confidential funds. He said he had no personal knowledge of DepEd's funding source for the department's own participation."]},
+    {"heading":"Context","paragraphs":["The prosecution questioned military certifications that appeared in DepEd's response to audit findings involving confidential-fund expenditures."]},
+    {"heading":"Why it matters","paragraphs":["The testimony bears on whether military activities cited in supporting documents actually received or used the confidential funds under scrutiny. It does not by itself determine liability in the impeachment case."]}
+  ],
+  "sources": [
+    {"publisher":"GMA News Online","title":"Boransing: No confi funds from Sara Duterte's DepEd in Army youth seminars","publishedAt":"2026-09-01T12:37:00+08:00","url":"https://www.gmanetwork.com/news/topstories/nation/1000660/boransing-no-confi-funds-from-sara-duterte-s-deped-in-army-youth-seminars/story/"},
+    {"publisher":"INQUIRER.net","title":"Boransing insists: No Duterte offices’ funds in Army youth summits","publishedAt":"2026-09-01T12:01:00+08:00","url":"https://newsinfo.inquirer.net/2296490/boransing-insists-no-duterte-offices-funds-in-army-youth-summits"},
+    {"publisher":"Philippine News Agency","title":"P15.5-M DepEd rewards questioned against youth leadership summit costs","publishedAt":"2026-09-01T16:56:00+08:00","url":"https://www.pna.gov.ph/articles/1283064"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://www.pna.gov.ph/articles/1283064","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because source courtroom photography was not ingested with independently verified reuse terms.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the Boransing testimony report.","alt":"FMB News editorial visual for Army testimony in the impeachment trial","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-09-04T18:11:00+08:00","recoveredAt":"2026-09-04T18:11:00+08:00","recoveryStatus":"source-checked-backfill","notes":["Recovered from the September 1 7:00 PM brief.","Separated Boransing's firsthand testimony from prosecution interpretations of the documentary record."]}
+}

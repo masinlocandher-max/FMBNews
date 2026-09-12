@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "indonesia-haze-metro-manila-air-quality-september-2-2026",
+  "headline": "DENR Says Indonesia Wildfire Haze Reached the Philippines as NCR Air Quality Improves",
+  "seoTitle": "Indonesia Haze Reaches PH; NCR Air Improves | FMB News",
+  "seoDescription": "DENR-EMB said haze linked to fires in Indonesia affected parts of the Philippines, while changing winds improved Metro Manila air quality on September 2.",
+  "keywords": ["Metro Manila haze September 2026", "Indonesia wildfire smoke Philippines", "DENR EMB air quality"],
+  "category": "Environment",
+  "kicker": "Air Quality · Regional Haze",
+  "deck": "The haze shifted with changing winds, underscoring how transboundary smoke can quickly change local air-quality conditions.",
+  "publishedAt": "2026-09-02T19:00:00+08:00",
+  "updatedAt": "2026-09-04T18:11:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["The DENR Environmental Management Bureau said haze associated with forest and peatland fires in Indonesia had affected parts of the Philippines, including Metro Manila.","By Wednesday, air quality in Metro Manila had improved as wind direction shifted the haze away from Luzon toward parts of the Visayas and Mindanao."]},
+    {"heading":"Health context","paragraphs":["Air-quality conditions varied by monitoring station and time. Sensitive groups were advised to reduce prolonged outdoor exposure when local readings reached unhealthy levels."]},
+    {"heading":"Why it matters","paragraphs":["Transboundary haze can change rapidly with wind direction, so a clear skyline in one period does not necessarily mean the regional smoke episode has ended."]},
+    {"heading":"What to watch next","paragraphs":["Residents should use official air-quality monitoring and public-health advisories for current conditions rather than rely on visibility alone."]}
+  ],
+  "sources": [
+    {"publisher":"GMA News Online","title":"Improved Metro Manila air quality due to change in wind direction - DENR-EMB","publishedAt":"2026-09-02T15:52:00+08:00","url":"https://www.gmanetwork.com/news/topstories/metro/1000870/improved-metro-manila-air-quality-due-to-change-in-wind-direction-denr-emb/story/"},
+    {"publisher":"Philippine News Agency","title":"DENR-EMB: Air improves in NCR as haze shifts to Visayas, Mindanao","publishedAt":"2026-09-02T18:11:00+08:00","url":"https://www.pna.gov.ph/articles/1283178"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://www.pna.gov.ph/articles/1283178","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because source skyline photography was not ingested with independently verified reuse rights.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the regional haze report.","alt":"FMB News editorial visual for Metro Manila air quality and haze","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-09-04T18:11:00+08:00","recoveredAt":"2026-09-04T18:11:00+08:00","recoveryStatus":"source-checked-backfill","notes":["Recovered from the September 2 7:00 PM brief.","Updated the article to reflect DENR-EMB's same-day report that NCR air quality improved as haze shifted southward."]}
+}

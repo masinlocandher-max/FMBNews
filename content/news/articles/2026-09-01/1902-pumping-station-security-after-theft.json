@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "pnp-pcg-pumping-station-security-theft-september-1-2026",
+  "headline": "Police and Coast Guard Tighten Security at Flood-Control Facilities After Theft",
+  "seoTitle": "Security Tightened at Metro Manila Pumping Stations | FMB News",
+  "seoDescription": "Police and Coast Guard personnel strengthened security around Metro Manila pumping stations and flood-control facilities after theft disrupted operations.",
+  "keywords": ["pumping station theft Metro Manila", "PNP flood control security", "Sunog Apog pumping station"],
+  "category": "National",
+  "kicker": "Public Safety · Flood Control",
+  "deck": "Authorities increased protection of critical drainage infrastructure after stolen equipment disrupted flood-mitigation operations.",
+  "publishedAt": "2026-09-01T19:00:00+08:00",
+  "updatedAt": "2026-09-04T18:11:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["The Philippine National Police ordered stronger security around MMDA pumping stations and other flood-control facilities after theft of vital equipment disrupted flood-mitigation operations.","Coast Guard personnel were also deployed to help secure facilities including the Sunog Apog pumping station in Manila."]},
+    {"heading":"Why the facilities matter","paragraphs":["Pumping stations move stormwater out of low-lying communities and are especially critical during prolonged monsoon rainfall. Damage or theft can reduce drainage capacity when flooding risk is already high."]},
+    {"heading":"Response","paragraphs":["Police commanders were told to coordinate with government agencies, local governments and facility operators, especially in flood-prone areas."]},
+    {"heading":"Why it matters","paragraphs":["Protecting flood-control equipment is part of disaster readiness: infrastructure that exists on paper cannot reduce flooding if it is disabled when storms arrive."]}
+  ],
+  "sources": [
+    {"publisher":"Philippine News Agency","title":"PNP beefs up security of MMDA facilities after pumping station theft","publishedAt":"2026-09-01T16:17:00+08:00","url":"https://www.pna.gov.ph/articles/1283058"},
+    {"publisher":"Philippine Information Agency","title":"Authorities secure pumping stations amid flood-control equipment theft","publishedAt":"2026-09-01T17:00:00+08:00","url":"https://pia.gov.ph/"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://www.pna.gov.ph/articles/1283058","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because no rights-cleared facility photograph was ingested.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the flood-control security report.","alt":"FMB News editorial visual for Metro Manila pumping station security","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-09-04T18:11:00+08:00","recoveredAt":"2026-09-04T18:11:00+08:00","recoveryStatus":"source-checked-backfill","notes":["Recovered from September 1 briefs.","Removed the brief's unsupported claim that armed marshals were assigned to exactly 70 pumping stations."]}
+}

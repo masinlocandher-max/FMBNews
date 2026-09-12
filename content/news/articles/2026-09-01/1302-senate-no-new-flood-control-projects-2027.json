@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "senate-budget-panel-no-new-flood-control-projects-2027",
+  "headline": "Senate Budget Panel Chair Says No Funding for New Flood-Control Projects in 2027",
+  "seoTitle": "Senate: No New Flood-Control Projects in 2027 | FMB News",
+  "seoDescription": "The Senate finance committee chair said the 2027 budget should not fund new flood-control projects while existing projects and backlogs are reviewed.",
+  "keywords": ["2027 budget flood control Philippines", "Senate finance committee DPWH", "flood control project review"],
+  "category": "National",
+  "kicker": "Budget · Flood Control",
+  "deck": "The Senate budget panel signaled tighter scrutiny of flood-control spending after severe flooding and questions over project performance.",
+  "publishedAt": "2026-09-01T13:00:00+08:00",
+  "updatedAt": "2026-09-04T18:11:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["The chair of the Senate finance committee said no funding for new flood-control projects should be included in the 2027 national budget while the government reviews existing projects, implementation backlogs and the performance of flood-mitigation spending."]},
+    {"heading":"Context","paragraphs":["The position followed widespread flooding in Luzon and renewed scrutiny of Department of Public Works and Highways flood-control projects."]},
+    {"heading":"Why it matters","paragraphs":["A pause on new projects would shift attention toward completing, auditing and evaluating existing infrastructure before additional public funds are committed."]},
+    {"heading":"What to watch next","paragraphs":["The proposed 2027 budget remains subject to committee hearings and plenary deliberations, where project-level allocations can still change."]}
+  ],
+  "sources": [
+    {"publisher":"ABS-CBN News","title":"No funding for new flood control projects in 2027—Senate budget panel chair","publishedAt":"2026-09-01T13:28:00+08:00","url":"https://www.abs-cbn.com/news/nation/2026/9/1/no-funding-for-new-flood-control-projects-in-2027-senate-budget-panel-chair-1328"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://www.abs-cbn.com/news/nation/2026/9/1/no-funding-for-new-flood-control-projects-in-2027-senate-budget-panel-chair-1328","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because no rights-cleared source image was ingested.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the 2027 flood-control budget report.","alt":"FMB News editorial visual for Senate flood-control budget scrutiny","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-09-04T18:11:00+08:00","recoveredAt":"2026-09-04T18:11:00+08:00","recoveryStatus":"source-checked-backfill","notes":["Recovered from the September 1 1:00 PM brief.","Narrowed the claim to the Senate budget panel chair's stated position rather than presenting a final enacted budget decision."]}
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "mc134-alternative-learning-ncr-15-provinces-september-4-2026",
+  "headline": "Palace Orders Alternative Learning in NCR and 15 Provinces Amid Habagat and Haze",
+  "seoTitle": "MC 134: Alternative Learning in NCR, 15 Provinces | FMB News",
+  "seoDescription": "Memorandum Circular 134 ordered alternative learning modes in Metro Manila and 15 provinces because of continued Habagat rainfall and poor NCR air quality from haze.",
+  "keywords": ["Memorandum Circular 134", "alternative learning September 4 2026", "Habagat haze classes"],
+  "category": "National",
+  "kicker": "Education · Public Safety",
+  "deck": "The directive covers public and private educational institutions and took effect immediately, while local executives retained authority over localized class suspensions.",
+  "publishedAt": "2026-09-04T07:00:00+08:00",
+  "updatedAt": "2026-09-04T18:11:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["Malacañang ordered all public and private educational institutions in Metro Manila and 15 provinces to implement alternative learning modes and learning-continuity measures on September 4.","The directive was contained in Memorandum Circular No. 134 signed by Executive Secretary Ralph Recto upon the recommendation of the National Disaster Risk Reduction and Management Council."]},
+    {"heading":"Areas covered","paragraphs":["The order covers Metro Manila, Ilocos Norte, Ilocos Sur, La Union, Pangasinan, Abra, Benguet, Zambales, Bataan, Bulacan, Tarlac, Pampanga, Cavite, Laguna, Batangas and Occidental Mindoro."]},
+    {"heading":"Why it was issued","paragraphs":["The Palace cited anticipated continued heavy rainfall associated with the enhanced southwest monsoon and poor air quality in Metro Manila due to haze from severe forest and peatland fires in Kalimantan and Sumatra, Indonesia."]},
+    {"heading":"Local authority remains","paragraphs":["Local chief executives may still order localized cancellation or suspension of classes under existing rules."]}
+  ],
+  "sources": [
+    {"publisher":"Philippine News Agency","title":"Palace orders NCR, 15 provinces to adopt alternative learning modes","publishedAt":"2026-09-04T07:13:00+08:00","url":"https://www.pna.gov.ph/articles/1283306"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://www.pna.gov.ph/articles/1283306","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because source education imagery was not ingested with independently verified reuse rights.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the alternative-learning directive.","alt":"FMB News editorial visual for MC 134 and alternative learning","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-09-04T18:11:00+08:00","recoveredAt":"2026-09-04T18:11:00+08:00","recoveryStatus":"source-checked-backfill","notes":["Recovered from the September 4 7:00 AM brief.","Corrected the brief's signatory to Executive Secretary Ralph Recto and used the exact 15-province coverage from MC 134."]}
+}

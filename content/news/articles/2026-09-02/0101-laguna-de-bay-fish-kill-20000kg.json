@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "laguna-de-bay-fish-kill-20000kg-jala-jala-september-2026",
+  "headline": "More Than 20,000 Kilograms of Fish Die in Laguna de Bay Fish Kill",
+  "seoTitle": "20,000 Kg Fish Die in Laguna de Bay Fish Kill | FMB News",
+  "seoDescription": "More than 20,000 kilograms of tilapia and bighead carp died in fish cages in Jala-jala, Rizal, with the cause still under investigation.",
+  "keywords": ["Laguna de Bay fish kill September 2026", "Jala-jala Rizal fish kill", "tilapia bighead carp"],
+  "category": "Environment",
+  "kicker": "Laguna de Bay · Fisheries",
+  "deck": "The incident affected more than 30 fish cages across over seven hectares; fishers suspected contamination, but the cause had not been established.",
+  "publishedAt": "2026-09-02T01:00:00+08:00",
+  "updatedAt": "2026-09-04T18:11:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["More than 20,000 kilograms of tilapia and bighead carp died in a fish kill affecting more than 30 cages in Laguna de Bay in Jala-jala, Rizal, according to fisherfolk group Pamalakaya.","The affected cages covered more than seven hectares, with initial losses estimated at about ₱700,000."]},
+    {"heading":"Cause not yet established","paragraphs":["Fishers reported unusual water discoloration and suspected that pollution may have contributed, but the Laguna Lake Development Authority had not established the cause of the latest incident.","The LLDA had previously warned that changes in weather, algal blooms and falling dissolved-oxygen levels can create fish-kill risks in the lake."]},
+    {"heading":"Why it matters","paragraphs":["Fish kills can quickly erase the working capital of small fishers and cage operators while raising broader questions about lake water quality and pollution monitoring."]},
+    {"heading":"What to watch next","paragraphs":["The key next step is an LLDA investigation identifying the cause and determining whether pollution, water chemistry, algal conditions or multiple factors were involved."]}
+  ],
+  "sources": [
+    {"publisher":"INQUIRER.net","title":"Over 20,000 kg of fish die in latest Laguna de Bay fish kill","publishedAt":"2026-09-01T00:00:00+08:00","url":"https://newsinfo.inquirer.net/2296477/over-20000-kg-of-fish-die-in-latest-laguna-de-bay-fish-kill"},
+    {"publisher":"INQUIRER.net","title":"Laguna Lake water level stays above critical-high mark","publishedAt":"2026-09-03T15:24:00+08:00","url":"https://newsinfo.inquirer.net/2298372/laguna-lake-water-level-stays-above-critical-high-mark"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://newsinfo.inquirer.net/2296477/over-20000-kg-of-fish-die-in-latest-laguna-de-bay-fish-kill","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because publisher photography was not ingested with independently verified reuse rights.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the Laguna de Bay fish-kill report.","alt":"FMB News editorial visual for the Laguna de Bay fish kill","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-09-04T18:11:00+08:00","recoveredAt":"2026-09-04T18:11:00+08:00","recoveryStatus":"source-checked-backfill","notes":["Recovered from the September 2 1:00 AM brief.","Corrected the fish species to tilapia and bighead carp and did not present chemical contamination or monsoon runoff as an established cause."]}
+}

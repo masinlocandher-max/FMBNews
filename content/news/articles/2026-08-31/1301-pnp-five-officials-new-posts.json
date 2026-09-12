@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "pnp-five-officials-new-posts-august-31-2026",
+  "headline": "Five Senior Police Officials Get New Posts in Latest PNP Reorganization",
+  "seoTitle": "Five Senior PNP Officials Reassigned | FMB News",
+  "seoDescription": "Five senior police officials received new assignments in the latest Philippine National Police reorganization.",
+  "keywords": ["PNP reshuffle August 2026", "PNP Maritime Group Highway Patrol Group", "police reorganization Philippines"],
+  "category": "National",
+  "kicker": "Police · Leadership",
+  "deck": "The changes included new acting leadership for the Maritime Group, Highway Patrol Group and PNP training posts.",
+  "publishedAt": "2026-08-31T13:00:00+08:00",
+  "updatedAt": "2026-09-04T18:11:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["Five senior Philippine National Police officials received new assignments in a reorganization that took effect on August 29 and was reported over the National Heroes Day weekend.","Brig. Gen. Rommel Batangan, formerly head of the Highway Patrol Group, became acting director of the Maritime Group, while Brig. Gen. Joyce Patrick Sangalang was assigned to lead the Highway Patrol Group."]},
+    {"heading":"Other assignments","paragraphs":["Brig. Gen. Francisco Ebreo was assigned as acting director of the training service, Brig. Gen. Roland Bulalacao moved to the PNP Academy, and Col. Renell Sabaldica was reassigned as executive officer of the Directorate for Comptrollership."]},
+    {"heading":"Context","paragraphs":["The changes followed a broader round of senior-level police transfers involving regional and national support units."]},
+    {"heading":"Why it matters","paragraphs":["Leadership changes in operational groups can affect priorities in maritime security, highway enforcement, training and internal administration."]}
+  ],
+  "sources": [
+    {"publisher":"Philippine News Agency","title":"5 officials get new posts in latest PNP revamp","publishedAt":"2026-08-30T15:01:00+08:00","url":"https://www.pna.gov.ph/articles/1282950"},
+    {"publisher":"Philippine News Agency","title":"9 ranking officials get new posts in latest PNP revamp","publishedAt":"2026-08-28T14:18:00+08:00","url":"https://www.pna.gov.ph/articles/1282861"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://www.pna.gov.ph/articles/1282950","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used for this recovered archive report because no stable rights-verified image file was ingested with the recovery package.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying this recovered report.","alt":"FMB News editorial visual for Five Senior Police Officials Get New Posts in Latest PNP Reorganization","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-09-04T18:11:00+08:00","recoveredAt":"2026-09-04T18:11:00+08:00","recoveryStatus":"source-checked-backfill","notes":["Recovered from the August 31 1:00 PM brief.","Replaced the brief's broad 'strategic command reshuffle' framing with the specific assignments confirmed by PNA."]}
+}

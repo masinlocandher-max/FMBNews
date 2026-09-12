@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "nlex-pulilan-san-fernando-free-toll-rfid-refunds-september-2026",
+  "headline": "Free Toll Implemented Between Pulilan and San Fernando; RFID Users to Get Refunds",
+  "seoTitle": "NLEX Pulilan-San Fernando Free Toll, RFID Refunds | FMB News",
+  "seoDescription": "The Pulilan-San Fernando NLEX route was placed under a toll waiver during flood-related traffic disruption, with TRB assuring refunds for RFID charges.",
+  "keywords": ["NLEX free toll Pulilan San Fernando", "RFID refunds NLEX", "San Simon flooding toll waiver"],
+  "category": "National",
+  "kicker": "Transport · Motorist Relief",
+  "deck": "The waiver was introduced as flooding near Tulaoc Bridge in San Simon caused severe traffic disruption along the expressway.",
+  "publishedAt": "2026-09-03T07:00:00+08:00",
+  "updatedAt": "2026-09-04T18:11:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["The Department of Transportation secured a toll waiver for all vehicle classes traveling between Pulilan, Bulacan, and San Fernando, Pampanga, and vice versa, as flooding near the Tulaoc Bridge disrupted NLEX traffic."]},
+    {"heading":"RFID refunds","paragraphs":["The Toll Regulatory Board said motorists using RFID could initially see normal charges posted to their accounts, but the toll operator would perform backroom adjustments to return charges covered by the waiver."]},
+    {"heading":"Why it matters","paragraphs":["The toll relief reduced the financial burden on motorists already facing unusually long delays caused by flood-related traffic conditions."]},
+    {"heading":"What to watch next","paragraphs":["Motorists should monitor NLEX and TRB advisories for the duration of the waiver, account adjustments and changes in road conditions around San Simon."]}
+  ],
+  "sources": [
+    {"publisher":"Philippine News Agency","title":"Free toll set on Pulilan-San Fernando route amid NLEX flood traffic","publishedAt":"2026-09-02T15:54:00+08:00","url":"https://www.pna.gov.ph/articles/1283168"},
+    {"publisher":"Philippine News Agency","title":"TRB assures refunds for RFID users during NLEX toll waiver","publishedAt":"2026-09-03T19:30:00+08:00","url":"https://www.pna.gov.ph/articles/1283293"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://www.pna.gov.ph/articles/1283293","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because source tollway photography was not ingested with independently verified reuse rights.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the NLEX toll-waiver report.","alt":"FMB News editorial visual for NLEX free toll and RFID refunds","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-09-04T18:11:00+08:00","recoveredAt":"2026-09-04T18:11:00+08:00","recoveryStatus":"source-checked-backfill","notes":["Recovered from the September 3 7:00 AM brief and updated with the later verified RFID-refund guidance.","Merged the toll-waiver and refund updates into one durable article."]}
+}

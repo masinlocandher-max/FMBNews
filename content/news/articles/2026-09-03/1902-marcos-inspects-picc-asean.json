@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "marcos-inspects-picc-asean-summit-september-3-2026",
+  "headline": "Marcos Inspects PICC Ahead of Philippines' ASEAN Summit Hosting",
+  "seoTitle": "Marcos Inspects PICC Ahead of ASEAN Summit | FMB News",
+  "seoDescription": "President Ferdinand Marcos Jr. inspected the PICC on September 3 to assess preparations for the 49th ASEAN Summit and Related Summits.",
+  "keywords": ["Marcos PICC ASEAN Summit 2026", "49th ASEAN Summit Philippines", "PICC renovation"],
+  "category": "National",
+  "kicker": "Diplomacy · ASEAN",
+  "deck": "The November summit will bring regional leaders to Manila, making venue readiness, security and logistics a major government priority.",
+  "publishedAt": "2026-09-03T19:00:00+08:00",
+  "updatedAt": "2026-09-04T18:11:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["President Ferdinand R. Marcos Jr. inspected the Philippine International Convention Center in Pasay City on September 3 as part of preparations for the Philippines' hosting of the 49th ASEAN Summit and Related Summits."]},
+    {"heading":"What he checked","paragraphs":["The President conducted a walkthrough to assess the venue's readiness following renovation and preparation work for the regional meetings."]},
+    {"heading":"Schedule","paragraphs":["The main ASEAN gathering is scheduled for November 10 to 12, with related events continuing through November 15."]},
+    {"heading":"Why it matters","paragraphs":["Hosting the summit requires coordinated diplomatic, security, transport, media and venue operations for leaders and delegations from across Southeast Asia and partner countries."]}
+  ],
+  "sources": [
+    {"publisher":"Philippine News Agency","title":"Marcos inspects PICC ahead of PH hosting of ASEAN Summit","publishedAt":"2026-09-03T14:09:00+08:00","url":"https://www.pna.gov.ph/articles/1283232"},
+    {"publisher":"INQUIRER.net","title":"LOOK: Marcos inspects renovated PICC ahead of Asean Summit","publishedAt":"2026-09-03T15:05:00+08:00","url":"https://newsinfo.inquirer.net/2298362/look-marcos-inspects-renovated-picc-ahead-of-asean-summit"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://www.pna.gov.ph/articles/1283232","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because source PICC photography was not ingested with independently verified reuse rights.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the PICC inspection report.","alt":"FMB News editorial visual for PICC ASEAN Summit preparations","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-09-04T18:11:00+08:00","recoveredAt":"2026-09-04T18:11:00+08:00","recoveryStatus":"source-checked-backfill","notes":["Recovered from the September 3 7:00 PM brief.","Removed unsupported claims about specific security-command systems and limited the article to verified inspection and summit-preparation facts."]}
+}
