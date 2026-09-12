@@ -14,15 +14,13 @@ const refreshCss=await read('public/assets/css/fmb-news-editorial-refresh.css');
 const pwaJs=await read('public/assets/js/fmb-news-pwa.js');
 const mobilePass=await read('scripts/hardfix-mobile-first-site.mjs');
 
-// Shared mobile chrome must not duplicate Home-owned weather/PHT behavior.
 for(const duplicate of ['WEATHER_KEY','weatherLabels','fetchWeather(','geocode(','weatherSheet(','data-fmb-local-time','data-fmb-weather-button']){
   must(!globalJs.includes(duplicate),`Shared mobile shell must not own Home clock/weather runtime: ${duplicate}`);
 }
 must(!globalJs.includes('.style.setProperty'),'Shared mobile shell must not paint presentation with inline style.setProperty');
 
-// Approved 2026-09-12 app navigation: compact masthead + category rail + fixed five-item dock.
 for(const token of [
-  'ensureBottomNav',
+  'mountBottomNav',
   'fmb-mobile-bottom-nav',
   '<span>Home</span>',
   '<span>World</span>',
@@ -51,7 +49,6 @@ for(const pht of ["timeZone:'Asia/Manila'",'phtHour(',' PHT'])must(homeJs.includ
 must(homeJs.includes("prefers-reduced-motion: reduce")&&homeJs.includes('clearInterval(sloganTimer)')&&homeJs.includes('reducedMotion.matches'),'Rotating Home copy must stop when reduced motion is requested');
 must(homeJs.includes("e.key==='Escape'")&&homeJs.includes('opener.focus({preventScroll:true})'),'Weather dialog must support Escape and restore focus while that Home utility remains available');
 
-// Existing route-level touch/readability hardening stays intact.
 for(const token of ['font-size:8.8px!important','font-size:8.2px!important','font-size:9px!important','font-size:9.5px!important','min-width:44px!important']){
   must(materialCss.includes(token),`Critical mobile readability/touch-target override missing: ${token}`);
 }
@@ -77,8 +74,6 @@ for(const token of [
   'env(safe-area-inset-bottom,0px)',
 ])must(refreshCss.includes(token),`Editorial mobile refresh missing: ${token}`);
 
-// Older navigation-lock CSS may still control structure beneath the final refresh;
-// it must remain sticky and the PWA install flow must remain menu-owned.
 for(const token of ['position:sticky!important','.fmb-mobile-app-shell>.fmb-app-top-ticker','position:relative!important','top:auto!important','.fmb-install-card{display:none!important']){
   must(navCss.includes(token),`Shared navigation lock missing: ${token}`);
 }
@@ -90,7 +85,7 @@ must(mobilePass.includes("const MOBILE_SYSTEM_FILE='fmb-news-mobile-system.css'"
 must(mobilePass.includes("createHash('sha256')"),'Mobile CSS system bundle must be content-versioned');
 must(mobilePass.includes('MOBILE_SYSTEM_SHEETS'),'Mobile CSS cascade order must remain explicit and verifiable');
 must(mobilePass.includes("'fmb-news-mobile-navigation-lock.css'"),'Shared navigation lock must remain last in the legacy mobile bundle');
-must(mobilePass.includes('20260912-editorial-v5'),'Refreshed mobile shell runtime must be cache-busted');
+must(mobilePass.includes('v=20260901-global-v3&build=editorial-v5'),'Refreshed mobile shell runtime must be cache-busted without breaking the stable asset key');
 must(mobilePass.includes('content="#F4F0E8"'),'PWA first-paint theme color must match Editorial Ivory');
 
 console.log('Mobile stabilization contracts passed: FMB identity left, Search/Theme/Menu right, editorial category rail, five-item Home/World/Sports/Briefing/Menu dock, accessible menu sheets, one Home-owned PHT/weather runtime, PWA install flow, and route-wide readability safeguards.');
