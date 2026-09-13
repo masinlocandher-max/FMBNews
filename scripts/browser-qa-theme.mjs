@@ -43,11 +43,49 @@ response=await mobilePage.goto(`${base}/news/`,{waitUntil:'domcontentloaded'});
 assert(response?.ok(),`Mobile Home returned ${response?.status()}`);
 assert.equal(await mobilePage.locator('html').getAttribute('data-fmb-theme-mode'),'system','Fresh mobile context must default to System.');
 assert.equal(await mobilePage.locator('html').getAttribute('data-fmb-theme'),'dark','System mode should resolve to the mobile context dark preference.');
-await mobilePage.waitForFunction(()=>{
-  const shell=document.querySelector('.fmb-mobile-app-shell');
-  return shell&&getComputedStyle(shell).backgroundColor==='rgb(11, 15, 17)';
-},null,{timeout:1500});
-assert.equal(await mobilePage.locator('.fmb-mobile-app-shell').evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(11, 15, 17)','Mobile editorial masthead must remain newsroom black.');
+await mobilePage.locator('.fmb-mobile-app-shell').first().waitFor({state:'attached'});
+const shellDiagnostics=await mobilePage.evaluate(()=>{
+  const shellRules=[];
+  for(const sheet of [...document.styleSheets]){
+    let rules=[];
+    try{rules=[...(sheet.cssRules||[])]}catch{continue}
+    const walk=(items,media='')=>{
+      for(const rule of items){
+        if(rule.cssRules){
+          const nextMedia=rule.media?.mediaText||media;
+          walk([...rule.cssRules],nextMedia);
+          continue;
+        }
+        if(rule.selectorText?.includes('.fmb-mobile-app-shell'))shellRules.push({href:sheet.href||'inline',media,selector:rule.selectorText,css:rule.style?.cssText||''});
+      }
+    };
+    walk(rules);
+  }
+  return{
+    innerWidth,
+    devicePixelRatio,
+    mobileMedia:matchMedia('(max-width:699px)').matches,
+    bodyClass:document.body.className,
+    theme:document.documentElement.getAttribute('data-fmb-theme'),
+    themeMode:document.documentElement.getAttribute('data-fmb-theme-mode'),
+    shells:[...document.querySelectorAll('.fmb-mobile-app-shell')].map((el,index)=>({
+      index,
+      className:el.className,
+      inline:el.getAttribute('style')||'',
+      background:getComputedStyle(el).backgroundColor,
+      display:getComputedStyle(el).display,
+      position:getComputedStyle(el).position,
+      rect:{width:el.getBoundingClientRect().width,height:el.getBoundingClientRect().height,top:el.getBoundingClientRect().top},
+      parent:el.parentElement?.tagName||''
+    })),
+    themeLinks:[...document.querySelectorAll('link[rel="stylesheet"]')].filter(link=>link.href.includes('fmb-news-theme')||link.href.includes('fmb-news-mobile-system')).map(link=>({href:link.href,loaded:Boolean(link.sheet)})),
+    shellRules
+  };
+});
+console.log('MOBILE_THEME_DIAGNOSTICS '+JSON.stringify(shellDiagnostics));
+assert.equal(shellDiagnostics.mobileMedia,true,'iPhone QA context must match the mobile stylesheet breakpoint.');
+assert.equal(shellDiagnostics.shells.length,1,`Mobile Home must expose exactly one editorial shell; diagnostics: ${JSON.stringify(shellDiagnostics.shells)}`);
+assert.equal(shellDiagnostics.shells[0].background,'rgb(11, 15, 17)',`Mobile editorial masthead must remain newsroom black; diagnostics: ${JSON.stringify(shellDiagnostics)}`);
 
 await mobilePage.locator('[data-fmb-shell-menu]').click();
 const appearance=mobilePage.locator('[data-fmb-theme-menu]');
