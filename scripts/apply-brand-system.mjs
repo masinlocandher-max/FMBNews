@@ -64,7 +64,11 @@ function normalizeHeaderWordmark(header) {
     replaced = true;
     let safeOpen = open;
     if (!/\baria-label=/i.test(safeOpen)) safeOpen = safeOpen.replace(/>$/, ' aria-label="FMB News home">');
-    if (inner.includes('fmb-lux-wordmark')) return match;
+
+    // The canonical landing owns its own editorial FMB NEWS. lockup. Do not
+    // classify it as legacy and replace it with the shared internal-route mark.
+    if (inner.includes('fmb-editorial-wordmark') || inner.includes('fmb-lux-wordmark')) return match;
+
     return `${safeOpen}<span class="fmb-legacy-brand" aria-hidden="true">${inner}</span>${wordmark}${close}`;
   });
 
@@ -108,4 +112,4 @@ for (const file of files) {
   }
 }
 
-console.log(`Applied canonical FMB News brand system to ${changed}/${files.length} HTML pages; normalized mastheads on ${headersNormalized} pages; installed System/Light/Dark appearance runtime; About readability preserved.`);
+console.log(`Applied canonical FMB News brand system to ${changed}/${files.length} HTML pages; preserved the FMB NEWS. editorial landing masthead; normalized shared mastheads on ${headersNormalized} other pages; installed System/Light/Dark appearance runtime; About readability preserved.`);
