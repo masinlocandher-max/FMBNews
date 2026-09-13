@@ -99,6 +99,7 @@
     const isHome=location.pathname.replace(/\/+$/,'')==='/news';
     const shell=document.createElement('div');
     shell.className=`fmb-mobile-app-shell${isHome?' is-home':''}`;
+    shell.style.background='#0b0f11';
     const brand='<a class="fmb-mobile-shell-brand" href="/news/" aria-label="FMB News — Filipino Media Bulletin"><span class="fmb-mobile-shell-copy"><strong>FMB NEWS<span class="fmb-mobile-brand-dot">.</span></strong><small>FILIPINO MEDIA BULLETIN</small></span></a>';
     shell.innerHTML=`<div class="fmb-mobile-shell-head"><div class="fmb-mobile-shell-actions fmb-mobile-shell-search"><a href="/news/search/" aria-label="Search FMB News">${svg('search')}</a></div>${brand}<button class="fmb-mobile-shell-menu" type="button" data-fmb-shell-menu aria-label="Open FMB News menu" aria-haspopup="dialog">${svg('menu')}</button></div>${productRail(product.key)}`;
     document.body.prepend(shell);
