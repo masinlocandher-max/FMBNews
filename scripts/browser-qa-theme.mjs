@@ -43,6 +43,10 @@ response=await mobilePage.goto(`${base}/news/`,{waitUntil:'domcontentloaded'});
 assert(response?.ok(),`Mobile Home returned ${response?.status()}`);
 assert.equal(await mobilePage.locator('html').getAttribute('data-fmb-theme-mode'),'system','Fresh mobile context must default to System.');
 assert.equal(await mobilePage.locator('html').getAttribute('data-fmb-theme'),'dark','System mode should resolve to the mobile context dark preference.');
+await mobilePage.waitForFunction(()=>{
+  const shell=document.querySelector('.fmb-mobile-app-shell');
+  return document.body.classList.contains('fmb-mobile-first')&&shell&&getComputedStyle(shell).backgroundColor==='rgb(11, 15, 17)';
+},null,{timeout:1500});
 assert.equal(await mobilePage.locator('.fmb-mobile-app-shell').evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(11, 15, 17)','Mobile editorial masthead must remain newsroom black.');
 
 await mobilePage.locator('[data-fmb-shell-menu]').click();
