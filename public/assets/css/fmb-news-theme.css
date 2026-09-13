@@ -1,27 +1,30 @@
-/* FMB News appearance system — System / Light / Dark */
+/* FMB News appearance system — System / Light / Dark
+   2026 editorial identity: warm ivory, newsroom black, signal red. */
 :root,
 html[data-fmb-theme="light"]{
   color-scheme:light;
-  --fmb-theme-bg:#fbf9fc;
-  --fmb-theme-surface:#ffffff;
-  --fmb-theme-surface-soft:#f7f2f8;
-  --fmb-theme-ink:#1b1420;
-  --fmb-theme-muted:#655b69;
-  --fmb-theme-line:rgba(34,13,80,.14);
-  --fmb-theme-glass:rgba(255,255,255,.76);
-  --fmb-theme-shadow:0 18px 50px rgba(34,13,80,.10);
+  --fmb-theme-bg:#f4efe6;
+  --fmb-theme-surface:#faf6ee;
+  --fmb-theme-surface-soft:#eee8dd;
+  --fmb-theme-ink:#111417;
+  --fmb-theme-muted:#66615b;
+  --fmb-theme-line:rgba(17,20,23,.16);
+  --fmb-theme-glass:rgba(250,246,238,.94);
+  --fmb-theme-shadow:0 18px 50px rgba(17,20,23,.07);
+  --fmb-theme-accent:#a91d31;
 }
 
 html[data-fmb-theme="dark"]{
   color-scheme:dark;
-  --fmb-theme-bg:#0e0a12;
-  --fmb-theme-surface:#17101d;
-  --fmb-theme-surface-soft:#1d1424;
-  --fmb-theme-ink:#f8f4fb;
-  --fmb-theme-muted:#c8bdcc;
-  --fmb-theme-line:rgba(255,255,255,.12);
-  --fmb-theme-glass:rgba(23,16,29,.78);
+  --fmb-theme-bg:#0e1213;
+  --fmb-theme-surface:#14191a;
+  --fmb-theme-surface-soft:#1a2021;
+  --fmb-theme-ink:#f3f0ea;
+  --fmb-theme-muted:#aaa59e;
+  --fmb-theme-line:rgba(255,255,255,.13);
+  --fmb-theme-glass:rgba(14,18,19,.94);
   --fmb-theme-shadow:0 22px 58px rgba(0,0,0,.34);
+  --fmb-theme-accent:#d42a43;
 }
 
 body.fmb-matte-system{
@@ -30,35 +33,33 @@ body.fmb-matte-system{
   transition:background-color .22s ease,color .22s ease;
 }
 
-/* Resolved appearance owns the page canvas even when older mobile-ready or
-   route-specific classes carry stronger background declarations. */
 html[data-fmb-theme="light"] body.fmb-matte-system,
 html[data-fmb-theme="light"] body.fmb-matte-system.fmb-news-route,
 html[data-fmb-theme="light"] body.fmb-matte-system.fmb-network-landing{
-  background:#fbf9fc!important;color:#1b1420!important;
+  background:#f4efe6!important;color:#111417!important;
 }
 html[data-fmb-theme="dark"] body.fmb-matte-system,
 html[data-fmb-theme="dark"] body.fmb-matte-system.fmb-news-route,
 html[data-fmb-theme="dark"] body.fmb-matte-system.fmb-network-landing{
-  background:#0e0a12!important;color:#f8f4fb!important;
+  background:#0e1213!important;color:#f3f0ea!important;
 }
 
 /* Desktop appearance control. */
 .fmb-theme-toggle{
   display:inline-flex;min-height:38px;align-items:center;justify-content:center;gap:7px;
-  padding:8px 11px;border:1px solid rgba(255,255,255,.20);border-radius:999px;
-  background:rgba(255,255,255,.08);color:#fff;font:700 10px/1.1 Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  letter-spacing:.07em;text-transform:uppercase;cursor:pointer;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)
+  padding:8px 11px;border:1px solid currentColor;border-radius:999px;
+  background:transparent;color:inherit;font:700 10px/1.1 Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  letter-spacing:.07em;text-transform:uppercase;cursor:pointer
 }
 .fmb-theme-toggle svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.fmb-theme-toggle:is(:hover,:focus-visible){background:rgba(255,255,255,.15);outline:none;box-shadow:0 0 0 3px rgba(249,171,96,.22)}
+.fmb-theme-toggle:is(:hover,:focus-visible){outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--fmb-theme-accent) 18%,transparent)}
 .fmb-theme-toggle [data-fmb-theme-label]{white-space:nowrap}
 
-/* Keep navigation glass readable in both themes. */
+/* Navigation and shared rails follow the editorial canvas. */
 html[data-fmb-theme="dark"] body.fmb-matte-system :is(.nav,.section-rail,.brief-edition-bar,.nc-topic-rail){
-  color:#f8f4fb!important;background:rgba(17,10,22,.91)!important;border-color:var(--fmb-theme-line)!important
+  color:#f3f0ea!important;background:#101415!important;border-color:var(--fmb-theme-line)!important
 }
-html[data-fmb-theme="dark"] body.fmb-matte-system :is(.nav,.section-rail,.brief-edition-bar,.nc-topic-rail) a{color:rgba(248,244,251,.82)!important}
+html[data-fmb-theme="dark"] body.fmb-matte-system :is(.nav,.section-rail,.brief-edition-bar,.nc-topic-rail) a{color:rgba(243,240,234,.82)!important}
 html[data-fmb-theme="dark"] body.fmb-matte-system :is(.nav,.section-rail,.brief-edition-bar,.nc-topic-rail) a:is(:hover,:focus-visible,[aria-current="page"]){color:#fff!important}
 
 /* Universal reading surfaces. */
@@ -73,7 +74,7 @@ html[data-fmb-theme="dark"] body.fmb-matte-system :is(
   .archive-card,.world-card,.explainer-card,.fact-check-card,.fmb-search-result,.fmb-submit-panel
 ){
   background:var(--fmb-theme-surface)!important;color:var(--fmb-theme-ink)!important;
-  border-color:var(--fmb-theme-line)!important;box-shadow:var(--fmb-theme-shadow)
+  border-color:var(--fmb-theme-line)!important;box-shadow:none
 }
 
 html[data-fmb-theme="dark"] body.fmb-matte-system :is(
@@ -90,11 +91,11 @@ html[data-fmb-theme="dark"] body.fmb-matte-system :is(
 html[data-fmb-theme="dark"] body.fmb-matte-system :is(input,textarea,select){
   color:var(--fmb-theme-ink)!important;background:var(--fmb-theme-surface-soft)!important;border-color:var(--fmb-theme-line)!important
 }
-html[data-fmb-theme="dark"] body.fmb-matte-system :is(input,textarea)::placeholder{color:#96899d!important}
+html[data-fmb-theme="dark"] body.fmb-matte-system :is(input,textarea)::placeholder{color:#87827c!important}
 
-/* Article and card links remain high-contrast; product accents stay branded. */
+/* Editorial accents use signal red in both modes. */
+body.fmb-matte-system :is(.category,.article-kicker,.fmb-app-week-kicker,.brief-label){color:var(--fmb-theme-accent)!important}
 html[data-fmb-theme="dark"] body.fmb-matte-system :is(.article,.story-card,.support-item,.more-item,.related-item,.fmb-app-story-row) a{color:inherit}
-html[data-fmb-theme="dark"] body.fmb-matte-system :is(.category,.article-kicker,.fmb-app-week-kicker,.brief-label){color:#f4b77f!important}
 
 /* Mobile menu appearance row inherits the action-sheet anatomy. */
 .fmb-app-action-list [data-fmb-theme-menu]{width:100%;text-align:left}
@@ -109,9 +110,9 @@ html[data-fmb-theme="dark"] body.fmb-matte-system.fmb-news-about main{background
 
 @media(max-width:699px){
   .fmb-theme-toggle{display:none!important}
-  html[data-fmb-theme="light"] body.fmb-matte-system .fmb-mobile-app-home{background:#fbf9fc!important;color:#1b1420!important}
-  html[data-fmb-theme="dark"] body.fmb-matte-system .fmb-mobile-app-home{background:var(--fmb-theme-bg)!important;color:var(--fmb-theme-ink)!important}
-  html[data-fmb-theme="dark"] body.fmb-matte-system .fmb-app-action-sheet{background:rgba(0,0,0,.55)!important}
+  html[data-fmb-theme="light"] body.fmb-matte-system .fmb-mobile-app-home{background:#f4efe6!important;color:#111417!important}
+  html[data-fmb-theme="dark"] body.fmb-matte-system .fmb-mobile-app-home{background:#0e1213!important;color:#f3f0ea!important}
+  html[data-fmb-theme="dark"] body.fmb-matte-system .fmb-app-action-sheet{background:rgba(0,0,0,.58)!important}
 }
 
 @media(prefers-reduced-motion:reduce){
