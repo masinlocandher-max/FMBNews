@@ -26,9 +26,9 @@ const emblem=await readFile(resolve('dist/news/assets/images/brand/fmb-bulletin-
 if(!productCss.includes('Bodoni Moda')||!productCss.includes('Manrope'))throw new Error('FMB typography regression: approved editorial display or UI font missing');
 if(!productCss.includes('--fmb-display')||!productCss.includes('--fmb-ui'))throw new Error('FMB typography regression: shared font variables missing');
 if(!emblem.includes('<svg')||!emblem.includes('Filipino Media Bulletin emblem')||!emblem.includes('fill-rule="evenodd"'))throw new Error('Bulletin emblem asset is invalid');
-for(const signal of ['--landing-violet:#220D50','--landing-plum:#630661','--landing-peach:#F9AB60','.network-hero-art{display:none!important}','.network-products','.network-product:nth-child(4)','.daily-brief-signup','.publication-footer'])if(!landingCss.includes(signal))throw new Error(`Landing visual-system regression: missing ${signal}`);
+for(const signal of ['--landing-paper:#f4efe6','--landing-ink:#111417','--landing-red:#a91d31','.network-hero-art{display:none!important}','.network-products','.network-product:nth-child(4)','.daily-brief-signup','.publication-footer'])if(!landingCss.includes(signal))throw new Error(`Landing visual-system regression: missing ${signal}`);
 for(const signal of ['.editorial-desks','.editorial-desk-grid','.publication-menu-panel','body.fmb-sports-page','.sports-empty','.sports-story-grid'])if(!iaCss.includes(signal))throw new Error(`Editorial IA stylesheet regression: missing ${signal}`);
-if(landingCss.includes('--landing-burgundy')||landingCss.includes('#c69a3b'))throw new Error('Legacy burgundy/gold landing palette returned to the canonical publication stylesheet');
+if(landingCss.includes('--landing-violet:#220D50')||landingCss.includes('--landing-plum:#630661')||landingCss.includes('--landing-peach:#F9AB60'))throw new Error('Superseded violet/plum/peach landing palette returned to the canonical publication stylesheet');
 if(landingCss.includes('commons.wikimedia.org')||landingCss.includes('Special:Redirect'))throw new Error('Canonical publication landing must not depend on remote hero artwork');
 if(landingCss.includes('/news/news/assets/')||iaCss.includes('/news/news/assets/'))throw new Error('Landing asset is double-scoped');
 
