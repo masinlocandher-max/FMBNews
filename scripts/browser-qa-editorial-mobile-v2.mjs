@@ -66,6 +66,9 @@ for(const [path,active] of [
   ['/news/crossword/','Home'],
 ])await open(path,active);
 
+// Crossword intentionally owns a save-gate dialog. Validate the global Menu
+// from a clean Home route so the QA does not click through another modal.
+await open('/news/','Home');
 await page.locator('[data-fmb-dock-menu]').click();
 const dialog=page.locator('.fmb-app-action-panel[role="dialog"]');
 await dialog.waitFor({state:'visible'});
