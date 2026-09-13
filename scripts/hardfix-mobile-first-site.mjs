@@ -5,16 +5,9 @@ import { fileURLToPath } from 'node:url';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const newsRoot=path.join(root,'dist','news');
-// The mobile system used to ship as many separate stylesheets, injected here
-// one after another so they always landed as one contiguous, ordered block in
-// <head>. Concatenating them in that same order is cascade-identical by
-// construction — the browser sees the identical declaration sequence — while
-// leaving one authoritative network request to reason about. None of them
-// contains @import or @charset, the only at-rules whose meaning depends on file
-// position.
-//
-// The authored files stay separate on disk: they are the editable sources, and
-// the verifiers assert against them.
+// The mobile system ships as one content-versioned bundle while authored
+// source files remain separate and ordered here. The final navigation lock
+// intentionally owns the black/ivory/red editorial shell and bottom dock.
 const MOBILE_SYSTEM_SHEETS=[
   'fmb-news-mobile-first-site.css',
   'fmb-news-mobile-personalization.css',
@@ -51,12 +44,12 @@ const personalizationJs='<script src="/assets/js/fmb-news-mobile-personalization
 const premiumJs='<script src="/assets/js/fmb-news-mobile-premium.js?v=20260901-premium-v2" defer></script>';
 const mobileHomeJs='<script src="/assets/js/fmb-news-mobile-home.js?v=20260902-approved-home-v4" defer></script>';
 const mobileLiveFeedJs='<script src="/assets/js/fmb-news-mobile-live-feed.js?v=20260902-live-feed-v2" defer></script>';
-const mobileGlobalJs='<script src="/assets/js/fmb-news-mobile-global.js?v=20260901-global-v3&build=right-menu-v4" defer></script>';
+const mobileGlobalJs='<script src="/assets/js/fmb-news-mobile-global.js?v=20260913-editorial-shell-v1" defer></script>';
 const mobileProductsJs='<script src="/assets/js/fmb-news-mobile-products.js?v=20260902-products-v3" defer></script>';
 const mobilePolishJs='<script src="/assets/js/fmb-news-mobile-app-polish.js?v=20260902-polish-v2" defer></script>';
 const mobileFinalTweaksJs='<script src="/assets/js/fmb-news-mobile-final-tweaks.js?v=20260902-final-tweaks-v1" defer></script>';
 const pwaJs='<script src="/assets/js/fmb-news-pwa.js?v=20260902-pwa-v1&build=menu-install-v2" defer></script>';
-const pwaMeta='<link rel="manifest" href="/news/manifest.webmanifest"><link rel="apple-touch-icon" href="/news/assets/images/icon-transparent.png"><meta name="application-name" content="FMB News"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="FMB News"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#220d50">';
+const pwaMeta='<link rel="manifest" href="/news/manifest.webmanifest"><link rel="apple-touch-icon" href="/news/assets/images/icon-transparent.png"><meta name="application-name" content="FMB News"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="FMB News"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0b0f11">';
 
 function addBodyClass(html){if(/<body\b[^>]*class=["'][^"']*\bfmb-mobile-first\b/i.test(html))return html;if(/<body\b[^>]*class=["']/i.test(html))return html.replace(/<body\b([^>]*?)class=(["'])([^"']*)\2/i,(_m,b,q,c)=>`<body${b}class=${q}${c} fmb-mobile-first${q}`);return html.replace(/<body\b([^>]*)>/i,'<body$1 class="fmb-mobile-first">')}
 function removeBottomNav(html){return html.replace(/<nav\b[^>]*class=["'][^"']*\bnc-mobile-dock\b[^"']*["'][^>]*>[\s\S]*?<\/nav>\s*/gi,'').replace(/<nav\b[^>]*class=["'][^"']*\bfmb-app-dock\b[^"']*["'][^>]*>[\s\S]*?<\/nav>\s*/gi,'').replace(/<nav\b[^>]*aria-label=["']Mobile news navigation["'][^>]*>[\s\S]*?<\/nav>\s*/gi,'')}
@@ -80,19 +73,23 @@ function useMobileSystemStylesheet(html){
   return html.replace('</head>',`${mobileSystemCss}</head>`);
 }
 function upsertJs(html,pathName,asset,version){if(!html.includes(pathName))return html.replace('</body>',`${asset}</body>`);return html.replace(new RegExp(`${escapedAssetPath(pathName)}(?:\\?v=[^"']+)?`,'g'),`${pathName}?v=${version}`)}
+function normalizeThemeColor(html){
+  if(/<meta name="theme-color"/i.test(html))return html.replace(/<meta name="theme-color" content="[^"]*">/i,'<meta name="theme-color" content="#0b0f11">');
+  return html.replace('</head>','<meta name="theme-color" content="#0b0f11"></head>');
+}
 async function apply(target){
   const info=await stat(target);
   if(info.isDirectory()){for(const entry of await readdir(target))await apply(path.join(target,entry));return}
   if(path.basename(target)!=='index.html')return;
   let html=await readFile(target,'utf8');
-  html=removeBottomNav(html);html=addBodyClass(html);html=normalizeProductNavigation(html);
+  html=removeBottomNav(html);html=addBodyClass(html);html=normalizeProductNavigation(html);html=normalizeThemeColor(html);
   html=useMobileSystemStylesheet(html);
   if(!html.includes('/news/manifest.webmanifest'))html=html.replace('</head>',`${pwaMeta}</head>`);else if(!html.includes('apple-touch-icon'))html=html.replace('</head>',`<link rel="apple-touch-icon" href="/news/assets/images/icon-transparent.png"></head>`);
   html=upsertJs(html,'/assets/js/fmb-news-mobile-personalization.js',personalizationJs,'20260901-personal-v2');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-premium.js',premiumJs,'20260901-premium-v2');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-home.js',mobileHomeJs,'20260902-approved-home-v4');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-live-feed.js',mobileLiveFeedJs,'20260902-live-feed-v2');
-  html=upsertJs(html,'/assets/js/fmb-news-mobile-global.js',mobileGlobalJs,'20260901-global-v3&build=right-menu-v4');
+  html=upsertJs(html,'/assets/js/fmb-news-mobile-global.js',mobileGlobalJs,'20260913-editorial-shell-v1');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-products.js',mobileProductsJs,'20260902-products-v3');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-app-polish.js',mobilePolishJs,'20260902-polish-v2');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-final-tweaks.js',mobileFinalTweaksJs,'20260902-final-tweaks-v1');
@@ -100,4 +97,4 @@ async function apply(target){
   await writeFile(target,html,'utf8');
 }
 await apply(newsRoot);
-console.log('Applied the unified Filipino Media Bulletin mobile system with sticky centered FMB identity, right-side hamburger, five-product icon rail, Home Headlines inside the sticky shell, current cinematic hero, rotating slogan, live date/time, metallic violet/purple final material polish, all-screen mobile spacing, live Supabase Latest feed, installable PWA runtime, and no duplicate hero or legacy bottom navigation.');
+console.log('Applied the unified FMB News mobile editorial system with newsroom-black masthead, signal-red section state, story-led Home, persistent five-item bottom dock, current PHT runtime, accessible action sheets, live feed, and installable PWA behavior.');
