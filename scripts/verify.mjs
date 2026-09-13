@@ -68,7 +68,7 @@ for(const token of ['fmb-editorial-mobile-dock','FMB NEWS<span class="fmb-mobile
 for(const banned of ['fmb-global-mobile-utility','fmb-approved-bottom-nav','ensureBottomNav'])must(!shellJs.includes(banned),`Retired mobile shell element returned: ${banned}`);
 
 const navLock=await read('dist/news/assets/css/fmb-news-mobile-navigation-lock.css');
-for(const token of ['--fmb-mobile-red:#a61f32','--fmb-mobile-black:#0b0f11','.fmb-editorial-mobile-dock','position:fixed!important','bottom:0!important','fmb-editorial-mobile-rail-item','data-fmb-editorial-lead'])must(navLock.includes(token),`New black/red mobile reference lock missing ${token}`);
+for(const token of ['--fmb-mobile-red:#a61f32','--fmb-mobile-black:#0b0f11','.fmb-editorial-mobile-dock','position:fixed!important','bottom:0!important','fmb-editorial-mobile-rail-item','fmb-editorial-mobile-lead-image'])must(navLock.includes(token),`New black/red mobile reference lock missing ${token}`);
 must(!navLock.includes('#630661'),'Superseded plum accent returned to final mobile navigation lock');
 must(!navLock.includes('#f2d17a'),'Superseded gold accent returned to final mobile navigation lock');
 
