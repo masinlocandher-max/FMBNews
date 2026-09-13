@@ -94,7 +94,8 @@
   }
 
   function ensureShell(){
-    if($('.fmb-mobile-app-shell'))return $('.fmb-mobile-app-shell');
+    const existing=$('.fmb-mobile-app-shell');
+    if(existing){existing.style.background='#0b0f11';return existing}
     const product=productForPath();
     const isHome=location.pathname.replace(/\/+$/,'')==='/news';
     const shell=document.createElement('div');
