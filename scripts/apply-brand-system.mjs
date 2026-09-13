@@ -87,6 +87,17 @@ function removeLandingHeroImage(html, relativePath) {
     .replace(/<picture\b[^>]*>[\s\S]*?data-fmb-asset=(['"])hero\1[\s\S]*?<\/picture>/gi, '');
 }
 
+function normalizeLandingClock(html, relativePath) {
+  if (relativePath !== 'index.html') return html;
+  // The canonical ticker owns the single live PHT clock/process. The editorial
+  // masthead keeps a small static PHT descriptor so the reference composition
+  // stays balanced without duplicating a second live clock or date runtime.
+  return html.replace(
+    /<div class="publication-date-block"><span data-pht-date>Philippine Standard Time<\/span><br><span data-pht-clock>--:--<\/span><\/div>/i,
+    '<div class="publication-date-block"><span>Philippine Standard Time</span><br><span class="publication-time-label">Live newsroom clock above</span></div>',
+  );
+}
+
 const files = await listHtmlFiles(newsRoot);
 let changed = 0;
 let headersNormalized = 0;
@@ -105,6 +116,7 @@ for (const file of files) {
   if (html !== beforeHeaders) headersNormalized += 1;
 
   html = removeLandingHeroImage(html, relativePath);
+  html = normalizeLandingClock(html, relativePath);
 
   if (html !== source) {
     await writeFile(file, html, 'utf8');
@@ -112,4 +124,4 @@ for (const file of files) {
   }
 }
 
-console.log(`Applied canonical FMB News brand system to ${changed}/${files.length} HTML pages; preserved the FMB NEWS. editorial landing masthead; normalized shared mastheads on ${headersNormalized} other pages; installed System/Light/Dark appearance runtime; About readability preserved.`);
+console.log(`Applied canonical FMB News brand system to ${changed}/${files.length} HTML pages; preserved the FMB NEWS. editorial landing masthead; normalized shared mastheads on ${headersNormalized} other pages; kept one authoritative PHT clock/process; installed System/Light/Dark appearance runtime; About readability preserved.`);
