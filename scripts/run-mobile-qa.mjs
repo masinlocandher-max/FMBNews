@@ -13,7 +13,7 @@ async function waitForServer(){
 }
 
 const tests=[
-  'scripts/browser-qa.mjs',
+  'scripts/browser-qa-editorial-mobile-v2.mjs',
   'scripts/browser-qa-crossword-ux.mjs',
   'scripts/browser-qa-home-motion.mjs',
   'scripts/browser-qa-stabilization.mjs',
@@ -32,4 +32,4 @@ try{
   server.kill('SIGTERM');
 }
 if(process.exitCode)process.exit(process.exitCode);
-console.log('All FMB mobile, desktop editorial, and founder identity browser QA suites passed.');
+console.log('All FMB mobile editorial, desktop editorial, feature, theme, and founder identity browser QA suites passed.');
