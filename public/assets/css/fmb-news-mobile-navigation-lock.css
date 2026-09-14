@@ -27,6 +27,42 @@
        accent with Signal Red reserved for highlights used sparingly. White on
        #D71920 measures 5.19:1; on #EF1B24 it is 4.33:1. */
     --fmb-mobile-red:#D71920;
+
+    /* SHELL ROLE TOKENS -- masthead, product rail and dock.
+       These exist so the app chrome follows the resolved appearance instead of
+       being permanently black. The defaults below ARE the current Dark values,
+       so Dark is unchanged by their introduction; the Light block that follows
+       is the only place the chrome changes.
+       The FMB identity in Light is carried by the FMB NEWS. wordmark, the red
+       period, the red active indicator, the type and the editorial rules --
+       not by forcing dark chrome onto a daylight page. */
+    --fmb-shell-surface:var(--fmb-mobile-black);
+    --fmb-shell-dock:rgba(10,14,16,.98);
+    --fmb-shell-ink:var(--fmb-mobile-white);
+    --fmb-shell-ink-soft:#ddd8d0;
+    --fmb-shell-muted:#c8c4bd;
+    --fmb-shell-dock-ink:#d0cbc3;
+    --fmb-shell-rule:var(--fmb-mobile-rule);
+    --fmb-shell-dock-rule:#303538;
+    --fmb-shell-active:#fff;
+    --fmb-shell-dock-active:#db4056;
+  }
+
+  /* Light appearance. Warm FMB White paper, Editorial Black ink, Steel Gray for
+     muted labels, and a neutral hairline -- every value is an approved brand
+     colour, none is new. FMB Red keeps the active state and the brand dot in
+     both appearances, which is what makes the two read as one publication. */
+  html[data-fmb-theme="light"]{
+    --fmb-shell-surface:var(--fmb-mobile-white);
+    --fmb-shell-dock:rgba(245,243,239,.98);
+    --fmb-shell-ink:#141414;
+    --fmb-shell-ink-soft:#3A3D3E;
+    --fmb-shell-muted:#6D7072;
+    --fmb-shell-dock-ink:#6D7072;
+    --fmb-shell-rule:rgba(20,20,20,.16);
+    --fmb-shell-dock-rule:rgba(20,20,20,.14);
+    --fmb-shell-active:#141414;
+    --fmb-shell-dock-active:var(--fmb-mobile-red);
   }
 
   html,body{overflow-x:clip!important}
@@ -41,8 +77,8 @@
     top:0!important;
     z-index:1700!important;
     width:100%!important;
-    background:var(--fmb-mobile-black)!important;
-    border-bottom:1px solid var(--fmb-mobile-rule)!important;
+    background:var(--fmb-shell-surface)!important;
+    border-bottom:1px solid var(--fmb-shell-rule)!important;
     box-shadow:none!important;
   }
   body.fmb-mobile-first .fmb-mobile-shell-head,
@@ -54,8 +90,8 @@
     min-height:62px!important;
     height:62px!important;
     padding:4px 8px!important;
-    background:var(--fmb-mobile-black)!important;
-    color:var(--fmb-mobile-white)!important;
+    background:var(--fmb-shell-surface)!important;
+    color:var(--fmb-shell-ink)!important;
   }
   body.fmb-mobile-first .fmb-mobile-shell-search{
     grid-column:3!important;
@@ -68,7 +104,7 @@
     place-items:center!important;
     width:44px!important;
     height:44px!important;
-    color:var(--fmb-mobile-white)!important;
+    color:var(--fmb-shell-ink)!important;
   }
   body.fmb-mobile-first .fmb-mobile-shell-search svg{width:22px!important;height:22px!important;stroke:currentColor!important;fill:none!important;stroke-width:1.55!important}
   body.fmb-mobile-first .fmb-mobile-shell-menu{
@@ -85,7 +121,7 @@
     border:0!important;
     border-radius:0!important;
     background:transparent!important;
-    color:var(--fmb-mobile-white)!important;
+    color:var(--fmb-shell-ink)!important;
   }
   body.fmb-mobile-first .fmb-mobile-shell-menu svg{width:24px!important;height:24px!important;stroke:currentColor!important;fill:none!important;stroke-width:1.5!important;stroke-linecap:round!important}
   body.fmb-mobile-first .fmb-mobile-shell-brand{
@@ -96,13 +132,13 @@
     width:max-content!important;
     max-width:calc(100% - 112px)!important;
     justify-content:center!important;
-    color:var(--fmb-mobile-white)!important;
+    color:var(--fmb-shell-ink)!important;
     text-decoration:none!important;
   }
   body.fmb-mobile-first .fmb-mobile-shell-copy{display:block!important;text-align:center!important;line-height:1!important}
   body.fmb-mobile-first .fmb-mobile-shell-copy strong{
     display:block!important;
-    color:var(--fmb-mobile-white)!important;
+    color:var(--fmb-shell-ink)!important;
     font-family:"Bodoni Moda","Cormorant Garamond","Playfair Display",Georgia,serif!important;
     font-size:28px!important;
     line-height:.86!important;
@@ -114,7 +150,7 @@
   body.fmb-mobile-first .fmb-mobile-shell-copy small{
     display:block!important;
     margin-top:7px!important;
-    color:#ddd8d0!important;
+    color:var(--fmb-shell-ink-soft)!important;
     font:700 6.4px/1 Inter,Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
     letter-spacing:.25em!important;
     text-transform:uppercase!important;
@@ -136,9 +172,9 @@
     padding:0 6px!important;
     overflow-x:auto!important;
     overflow-y:hidden!important;
-    background:var(--fmb-mobile-black)!important;
+    background:var(--fmb-shell-surface)!important;
     border:0!important;
-    border-bottom:1px solid var(--fmb-mobile-rule)!important;
+    border-bottom:1px solid var(--fmb-shell-rule)!important;
     box-shadow:none!important;
     scrollbar-width:none!important;
   }
@@ -158,7 +194,7 @@
     border:0!important;
     border-radius:0!important;
     background:transparent!important;
-    color:#c8c4bd!important;
+    color:var(--fmb-shell-muted)!important;
     font:700 8.4px/1 Inter,Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
     letter-spacing:.02em!important;
     text-transform:uppercase!important;
@@ -173,7 +209,7 @@
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a[aria-current="page"],
   body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[aria-current="page"]{
     background:transparent!important;
-    color:#fff!important;
+    color:var(--fmb-shell-active)!important;
     font-weight:820!important;
   }
   body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[aria-current="page"]::before{display:none!important}
@@ -438,8 +474,8 @@
     grid-template-columns:repeat(5,minmax(0,1fr))!important;
     min-height:58px!important;
     padding:4px 4px env(safe-area-inset-bottom)!important;
-    border-top:1px solid #303538!important;
-    background:rgba(10,14,16,.98)!important;
+    border-top:1px solid var(--fmb-shell-dock-rule)!important;
+    background:var(--fmb-shell-dock)!important;
     box-shadow:0 -8px 24px rgba(0,0,0,.20)!important;
     backdrop-filter:blur(14px)!important;
     -webkit-backdrop-filter:blur(14px)!important;
@@ -457,14 +493,14 @@
     border:0!important;
     border-radius:0!important;
     background:transparent!important;
-    color:#d0cbc3!important;
+    color:var(--fmb-shell-dock-ink)!important;
     font:700 7.5px/1 Inter,Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
     text-decoration:none!important;
     text-transform:uppercase!important;
     letter-spacing:.015em!important;
   }
   body.fmb-mobile-first .fmb-editorial-mobile-dock svg{width:21px!important;height:21px!important;stroke:currentColor!important;fill:none!important;stroke-width:1.55!important;stroke-linecap:round!important;stroke-linejoin:round!important}
-  body.fmb-mobile-first .fmb-editorial-mobile-dock a[aria-current="page"]{color:#db4056!important}
+  body.fmb-mobile-first .fmb-editorial-mobile-dock a[aria-current="page"]{color:var(--fmb-shell-dock-active)!important}
   body.fmb-mobile-first .fmb-editorial-mobile-dock a[aria-current="page"]::before{content:""!important;position:absolute!important;top:-5px!important;left:25%!important;right:25%!important;height:2px!important;background:var(--fmb-mobile-red)!important}
 
   /* Menu / install surfaces remain accessible but lose the obsolete plum accent. */
@@ -1704,5 +1740,75 @@
      10-15% band across 320 to 430 again. */
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-grid>*{
     flex:0 0 calc(100% - 10px)!important;
+  }
+}
+
+/* ============================================================================
+   LIGHT APPEARANCE -- APP CHROME
+   ----------------------------------------------------------------------------
+   The role tokens at the top of this file flip the masthead, rail and dock
+   surfaces with the appearance. Four inks did not follow, because rules later
+   in the cascade re-assert white or a Home-only near-black:
+
+     .fmb-mobile-route-home .fmb-mobile-shell-copy strong   color:#fff
+     .fmb-mobile-route-home .fmb-mobile-shell-menu          color: metal gold
+     .fmb-mobile-route-home .fmb-mobile-app-shell.is-home   background: black
+     an unscoped rule painting the brand dot and the dock active label with the
+     dark-tuned red
+
+   and fmb-news-matte-system.css, which loads AFTER this bundle, carries
+       html[data-fmb-global-mobile] body.fmb-matte-system
+         .fmb-mobile-shell-head :is(a,button){color:#fff!important}
+   at specificity (0,3,3). Equal specificity would lose on source order, so the
+   selectors below open with html:root[data-fmb-theme="light"] for (0,4,3).
+   That is the reason for the :root -- not decoration.
+
+   Dark is untouched by everything in this block. */
+@media (max-width:699px){
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-mobile-app-shell,
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-app-shell,
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-app-shell.is-home{
+    background:var(--fmb-shell-surface)!important;
+    background-color:var(--fmb-shell-surface)!important;
+    border-bottom:1px solid var(--fmb-shell-rule)!important;
+  }
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-mobile-shell-head,
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-shell-head{
+    background:var(--fmb-shell-surface)!important;
+    color:var(--fmb-shell-ink)!important;
+  }
+  /* FMB NEWS. in Editorial Black, and the icons that flank it. */
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-mobile-shell-head :is(a,button),
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-mobile-shell-brand,
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-mobile-shell-copy strong,
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-shell-copy strong,
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-mobile-shell-menu,
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-shell-menu,
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-mobile-shell-search a{
+    color:var(--fmb-shell-ink)!important;
+  }
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-mobile-shell-copy small{
+    color:var(--fmb-shell-ink-soft)!important;
+  }
+  /* The red period stays red. FMB Red on FMB White measures 5.19:1, where the
+     dark-tuned Signal variant is a daylight liability. */
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-mobile-brand-dot{
+    color:var(--fmb-mobile-red)!important;
+  }
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-mobile-product-rail{
+    background:var(--fmb-shell-surface)!important;
+    border-bottom:1px solid var(--fmb-shell-rule)!important;
+  }
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-editorial-mobile-dock{
+    background:var(--fmb-shell-dock)!important;
+    border-top:1px solid var(--fmb-shell-dock-rule)!important;
+  }
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-editorial-mobile-dock :is(a,button){
+    color:var(--fmb-shell-dock-ink)!important;
+  }
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-editorial-mobile-dock a[aria-current="page"],
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-editorial-mobile-dock a[aria-current="page"] span,
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-editorial-mobile-dock a.is-active span{
+    color:var(--fmb-shell-dock-active)!important;
   }
 }
