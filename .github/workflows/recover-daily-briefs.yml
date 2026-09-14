@@ -1,0 +1,52 @@
+name: Recover Daily Brief archive
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - recovery/daily-brief-2026-08-18-to-09-15
+    paths:
+      - scripts/generate-daily-brief-recovery.mjs
+      - content/news/recovery/daily-brief-seed-2026-09-15.json
+      - .github/workflows/recover-daily-briefs.yml
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out recovery branch
+        uses: actions/checkout@v4
+        with:
+          ref: recovery/daily-brief-2026-08-18-to-09-15
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Generate missing Daily Brief editions
+        run: node scripts/generate-daily-brief-recovery.mjs
+
+      - name: Validate recovery output
+        run: |
+          test -f content/news/recovery/daily-brief-recovery-manifest.json
+          count=$(find content/news/morning-special -maxdepth 1 -type f \( -name '2026-08-*.json' -o -name '2026-09-*.json' \) | sort | awk '$0 >= "content/news/morning-special/2026-08-18.json" && $0 <= "content/news/morning-special/2026-09-15.json"' | wc -l)
+          echo "Recovered edition count: $count"
+          test "$count" -ge 29
+          node -e "const fs=require('fs');const m=JSON.parse(fs.readFileSync('content/news/recovery/daily-brief-recovery-manifest.json','utf8'));if(m.editions.length!==29)throw new Error('Expected 29 editions');for(const e of m.editions){if(!e.storyCount)throw new Error('Empty edition: '+e.date)}console.log('Manifest validated:',m.editions.length,'editions');"
+
+      - name: Commit recovered editions
+        run: |
+          git config user.name "FMB News Recovery"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content/news/morning-special/2026-08-*.json content/news/morning-special/2026-09-*.json content/news/recovery/daily-brief-recovery-manifest.json
+          if git diff --cached --quiet; then
+            echo "No recovery changes to commit."
+            exit 0
+          fi
+          git commit -m "Recover missing Daily Brief editions"
+          git push origin HEAD:recovery/daily-brief-2026-08-18-to-09-15
