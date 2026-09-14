@@ -1818,3 +1818,49 @@ body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[ari
     color:var(--fmb-shell-dock-active)!important;
   }
 }
+
+/* ============================================================================
+   HOME LEAD COMPOSITION — mobile
+   ----------------------------------------------------------------------------
+   Two things made the phone Home read as assembled rather than designed:
+
+   1. The lead artwork carries the story's headline baked in as heavy white
+      sans. Shown at 390px tall directly above the real Bodoni headline, the
+      page opened with the same story told twice, in two voices, with the
+      weaker one first and larger.
+   2. The hero's dark ground ran on past the artwork and under the PHT clock,
+      producing a full-width black slab across the middle of a warm paper page.
+
+   The artwork cannot be regenerated here, so the composition carries it: the
+   art becomes a band rather than a slab, and the hero ground follows the
+   resolved appearance so the dateline reads as editorial furniture instead of
+   a black bar. Nothing is hidden and no markup changes. */
+@media (max-width:699px){
+  html:root body.fmb-mobile-first .fmb-app-brand-hero{
+    background:var(--fmb-shell-surface,#F5F3EF)!important;
+    background-image:none!important;
+    color:var(--fmb-shell-ink,#141414)!important;
+    /* The hero was pinned to aspect-ratio 16/10.6 (394px at 393 wide) while the
+       art inside it is a 208px band, so ~186px of empty hero ground showed
+       below the artwork -- the black slab. Height follows content now. */
+    aspect-ratio:auto!important;
+    height:auto!important;
+    min-height:0!important;
+  }
+  html:root body.fmb-mobile-first .fmb-editorial-mobile-lead-image{
+    aspect-ratio:16/7!important;
+    object-fit:cover!important;
+    width:100%!important;
+  }
+  /* The dateline: small caps on paper, separated by one hairline. */
+  html:root body.fmb-mobile-first .fmb-hero-live-overlay{
+    background:transparent!important;
+    color:var(--fmb-shell-muted,#6D7072)!important;
+    border-top:1px solid var(--fmb-shell-rule,rgba(20,20,20,.16))!important;
+    padding-top:10px!important;
+  }
+  html:root body.fmb-mobile-first .fmb-hero-live-overlay *{
+    color:inherit!important;
+    text-shadow:none!important;
+  }
+}

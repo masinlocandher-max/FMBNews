@@ -606,3 +606,29 @@ html[data-fmb-theme="dark"]:root body.fmb-ref.fmb-network-landing{
    route -- a first attempt at the reading measure was written here and silently
    did nothing. It lives in fmb-news-product-identity.css, which loads on every
    page. */
+
+/* ---------------------------------------------------------------- lead order
+   The generated lead artwork carries the story's headline baked into it as
+   heavy white sans. Rendered above the real Bodoni headline it read as two
+   competing headlines in two different voices, with the weaker one on top and
+   occupying roughly 40% of the front page.
+
+   The art cannot be regenerated in this pass, so the composition changes
+   instead: the headline leads, the artwork follows as supporting material, and
+   it is cropped to a band rather than a slab. This is what a front page does
+   when the art is weak -- the writing carries the page.
+
+   Order only; no element is hidden and the markup is untouched. */
+.fmb-ref.fmb-network-landing .editorial-lead-story{
+  display:flex!important;flex-direction:column!important;
+}
+.fmb-ref.fmb-network-landing .editorial-lead-story .editorial-kicker{order:1!important}
+.fmb-ref.fmb-network-landing .editorial-lead-story h1{order:2!important}
+.fmb-ref.fmb-network-landing .editorial-lead-story p{order:3!important}
+.fmb-ref.fmb-network-landing .editorial-lead-image{
+  order:4!important;
+  margin-top:26px!important;
+  aspect-ratio:16/7!important;
+  object-fit:cover!important;
+  width:100%!important;
+}
