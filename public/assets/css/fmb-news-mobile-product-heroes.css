@@ -1,30 +1,34 @@
 /* Strict FMB product hero system for Worldwide, Explainer, and Daily Brief. */
 @media(max-width:699px){
-:root{--fmb-hero-plum:#17091f;--fmb-hero-plum-2:#32133f;--fmb-hero-gold:#d6bd72;--fmb-hero-violet:#9a6bb7}
+:root{--fmb-hero-plum:#0A0A0A;--fmb-hero-plum-2:#141414;--fmb-hero-gold:#BFC1C2;--fmb-hero-violet:#6D7072}
 
-/* One exact hero canvas. */
+/* The desk opener. This was a 300px "product hero canvas" -- a poster with a
+   gradient ground, a gold arc and white display type, which is what made
+   Worldwide, Explainer and the Daily Brief read as three separate products
+   rather than three desks of one newsroom. It is now the same editorial opener
+   the other desks use: paper ground, editorial ink, one thin rule, height set
+   by its own content. */
 body.fmb-mobile-route-world .world-hero,
 body.fmb-mobile-route-explainer .explainer-hero,
 body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero{
   position:relative!important;
-  overflow:hidden!important;
+  overflow:visible!important;
   width:100%!important;
-  height:300px!important;
-  min-height:300px!important;
+  height:auto!important;
+  min-height:0!important;
   margin:0!important;
-  padding:0!important;
+  padding:28px 0 24px!important;
   border:0!important;
+  border-bottom:1px solid var(--fmb-shell-rule,rgba(20,20,20,.16))!important;
   border-radius:0!important;
-  background:
-    radial-gradient(circle at 88% 8%,rgba(214,189,114,.18),transparent 22%),
-    radial-gradient(circle at 8% 100%,rgba(20,20,20,.36),transparent 40%),
-    linear-gradient(145deg,#0A0A0A 0%,#141414 55%,#0A0A0A 100%)!important;
-  color:#fff!important;
+  background:var(--fmb-shell-surface,#F5F3EF)!important;
+  background-image:none!important;
+  color:var(--fmb-shell-ink,#141414)!important;
 }
 body.fmb-mobile-route-world .world-hero::after,
 body.fmb-mobile-route-explainer .explainer-hero::after,
 body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero::after{
-  content:"";
+  content:none;display:none;
   position:absolute!important;
   right:-72px!important;
   top:-52px!important;
@@ -36,7 +40,9 @@ body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero::af
   pointer-events:none!important;
 }
 
-/* One exact inner grid. */
+/* The opener's inner column. It was pinned to the poster's 300px and pushed to
+   flex-end so the type sat at the bottom of the canvas. An opener is sized by
+   its own content and reads from the top. */
 body.fmb-mobile-route-world .world-hero .shell,
 body.fmb-mobile-route-explainer .explainer-hero .shell,
 body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero .brief-shell,
@@ -45,19 +51,19 @@ body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero .sh
   z-index:2!important;
   display:flex!important;
   width:100%!important;
-  height:300px!important;
-  min-height:300px!important;
+  height:auto!important;
+  min-height:0!important;
   flex-direction:column!important;
-  justify-content:flex-end!important;
+  justify-content:flex-start!important;
   margin:0!important;
-  padding:28px 22px 26px!important;
+  padding:0 16px!important;
 }
 
 /* Same top desk signal on all three products. */
-.fmb-product-signal{display:flex!important;align-items:center!important;gap:10px!important;margin:0 0 auto!important;color:#fff!important}
+.fmb-product-signal{display:flex!important;align-items:center!important;gap:10px!important;margin:0 0 auto!important;color:var(--fmb-shell-ink,#141414)!important}
 .fmb-product-signal>div{min-width:0!important}
-.fmb-product-signal strong{display:block!important;color:#f1dfaa!important;font-size:10px!important;line-height:1!important;font-weight:900!important;letter-spacing:.16em!important}
-.fmb-product-signal small{display:block!important;margin-top:4px!important;color:rgba(255,255,255,.62)!important;font-size:9px!important;line-height:1.2!important;font-weight:650!important}
+.fmb-product-signal strong{display:block!important;color:var(--fmb-desk-accent,#D71920)!important;font-size:10px!important;line-height:1!important;font-weight:900!important;letter-spacing:.16em!important}
+.fmb-product-signal small{display:block!important;margin-top:4px!important;color:var(--fmb-shell-muted,#6D7072)!important;font-size:9px!important;line-height:1.2!important;font-weight:650!important}
 .fmb-product-symbol{position:relative!important;display:block!important;width:34px!important;height:34px!important;flex:0 0 34px!important;border:1px solid rgba(235,216,164,.70)!important;border-radius:50%!important}
 .fmb-world-symbol::before,.fmb-world-symbol::after{content:"";position:absolute;left:50%;top:50%;border:1px solid rgba(235,216,164,.45);border-radius:50%;transform:translate(-50%,-50%)}
 .fmb-world-symbol::before{width:14px;height:30px}.fmb-world-symbol::after{width:30px;height:12px}
@@ -91,7 +97,7 @@ body.fmb-mobile-route-explainer .explainer-hero h1,
 body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero h1{
   max-width:330px!important;
   margin:8px 0 14px!important;
-  color:#fff!important;
+  color:var(--fmb-shell-ink,#141414)!important;
   font-family:"Bodoni Moda","Libre Bodoni","Didot","Bodoni 72","Baskerville","Times New Roman",serif!important;
   font-size:46px!important;
   line-height:.90!important;
