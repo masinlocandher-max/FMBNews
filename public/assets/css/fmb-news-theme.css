@@ -466,3 +466,86 @@ body.fmb-fact-check-route :is(.fc-panel,.fc-card,.fc-legend){
   border-radius:2px!important;
   background:var(--fmb-desk-paper)!important;
 }
+
+/* ============================================================================
+   FEATURE CONVERGENCE — /news/horoscope/ and /news/crossword/
+   ----------------------------------------------------------------------------
+   The Entertainment features were outside the desk convergence pass, so they
+   still carried the retired plum-and-gold identity. One of them carried a real
+   accessibility failure with it:
+
+     the crossword hero card paints a LIGHT gradient in BOTH appearances, while
+     its title takes the appearance ink. In Dark that is near-white type on a
+     near-white card -- the title is effectively invisible.
+
+   The card now follows the resolved appearance, which is what makes the title
+   legible in Dark rather than any change to the type itself.
+
+   Scope: both selectors are qualified by a feature route class. Neither Home
+   nor the five desks carry those classes, so this block cannot reach them.
+
+   Nothing here touches crossword answers, clue data or puzzle state. This is
+   surface colour and type only. */
+@media (max-width:699px){
+  html:root body.fmb-mobile-route-crossword .fmb-feature-hero,
+  html:root body.fmb-mobile-route-horoscope .fmb-feature-hero{
+    background:var(--fmb-shell-surface,#F5F3EF)!important;
+    background-image:none!important;
+    color:var(--fmb-shell-ink,#141414)!important;
+    border:1px solid var(--fmb-shell-rule,rgba(20,20,20,.16))!important;
+    border-radius:2px!important;
+    box-shadow:none!important;
+  }
+  html:root body.fmb-mobile-route-crossword .fmb-feature-hero::before,
+  html:root body.fmb-mobile-route-crossword .fmb-feature-hero::after,
+  html:root body.fmb-mobile-route-horoscope .fmb-feature-hero::before,
+  html:root body.fmb-mobile-route-horoscope .fmb-feature-hero::after{
+    background:none!important;background-image:none!important;opacity:0!important;
+  }
+  /* Feature titles take the editorial display face, like every desk title. */
+  html:root body.fmb-mobile-route-crossword .fmb-feature-hero :is(h1,h2),
+  html:root body.fmb-mobile-route-horoscope .fmb-feature-hero :is(h1,h2){
+    font-family:"Bodoni Moda","Libre Bodoni","Didot","Bodoni 72","Baskerville","Times New Roman",serif!important;
+    color:var(--fmb-shell-ink,#141414)!important;
+    font-weight:600!important;
+    -webkit-text-fill-color:currentColor!important;
+    text-shadow:none!important;
+  }
+  html:root body.fmb-mobile-route-crossword .fmb-feature-hero p,
+  html:root body.fmb-mobile-route-horoscope .fmb-feature-hero p,
+  html:root body.fmb-mobile-route-crossword .fmb-feature-week,
+  html:root body.fmb-mobile-route-horoscope .fmb-feature-week{
+    color:var(--fmb-shell-muted,#6D7072)!important;
+  }
+  html:root body.fmb-mobile-route-crossword .fmb-feature-hero [class*="kicker"],
+  html:root body.fmb-mobile-route-horoscope .fmb-feature-hero [class*="kicker"]{
+    color:var(--fmb-mobile-red,#D71920)!important;
+  }
+  /* The puzzle frame and the blocked squares were plum. Newsroom black keeps
+     the open squares reading as paper. Cell state and answers are untouched. */
+  html:root body.fmb-mobile-route-crossword .fmb-crossword-grid{
+    background:var(--fmb-shell-ink,#141414)!important;
+    box-shadow:none!important;
+  }
+  html:root body.fmb-mobile-route-crossword .fmb-cell.block{
+    background:var(--fmb-shell-ink,#141414)!important;
+  }
+  /* Zodiac chips: brand neutral, red for the chosen sign. */
+  html:root body.fmb-mobile-route-horoscope .fmb-zodiac-art,
+  html:root body.fmb-mobile-route-horoscope .fmb-feature-hero button{
+    background:transparent!important;
+    background-image:none!important;
+    border:1px solid var(--fmb-shell-rule,rgba(20,20,20,.16))!important;
+    color:var(--fmb-shell-ink,#141414)!important;
+    box-shadow:none!important;
+  }
+  html:root body.fmb-mobile-route-horoscope .fmb-feature-hero button[aria-pressed="true"],
+  html:root body.fmb-mobile-route-horoscope .fmb-feature-hero button[aria-current="true"]{
+    border-color:var(--fmb-mobile-red,#D71920)!important;
+    color:var(--fmb-mobile-red,#D71920)!important;
+  }
+  html:root body.fmb-mobile-route-horoscope .fmb-horoscope-constellation{
+    color:var(--fmb-shell-muted,#6D7072)!important;
+    border-color:var(--fmb-shell-rule,rgba(20,20,20,.16))!important;
+  }
+}

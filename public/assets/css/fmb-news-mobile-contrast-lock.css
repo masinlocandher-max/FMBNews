@@ -81,7 +81,7 @@ body.fmb-mobile-route-crossword .fmb-cell.correct{background:#dff0e5!important}
 body.fmb-mobile-route-crossword .fmb-cell.wrong{background:#f8dada!important}
 body.fmb-mobile-route-crossword .fmb-clue{color:#27242a!important}
 body.fmb-mobile-route-crossword .fmb-clue button{color:#27242a!important;-webkit-text-fill-color:#27242a!important;opacity:1!important;font-weight:650!important}
-body.fmb-mobile-route-crossword .fmb-clue strong{color:#5b276e!important;font-weight:900!important}
+body.fmb-mobile-route-crossword .fmb-clue strong{color:#D71920!important;font-weight:900!important}
 body.fmb-mobile-route-crossword .fmb-clue[data-selected]{background:#f1e8f5!important;border-radius:10px!important;padding-left:8px!important;padding-right:8px!important}
 body.fmb-mobile-route-crossword .fmb-news-context p,
 body.fmb-mobile-route-crossword .fmb-answer-release p{color:#454149!important}

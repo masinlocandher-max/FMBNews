@@ -2,7 +2,7 @@
 .fmb-horoscope-page .fmb-horoscope-hero{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) minmax(190px,32%);align-items:center;gap:28px;padding:34px 34px 32px;border:1px solid rgba(255,255,255,.08);border-radius:28px;background:radial-gradient(circle at 82% 34%,rgba(228,203,131,.22),transparent 29%),radial-gradient(circle at 91% 90%,rgba(123,75,151,.28),transparent 35%),linear-gradient(145deg,#141414 0%,#19091f 58%,#100714 100%);box-shadow:0 24px 60px rgba(31,12,38,.18);color:#fff}
 .fmb-horoscope-page .fmb-horoscope-hero::before{content:"";position:absolute;inset:auto -70px -115px auto;width:270px;height:270px;border:1px solid rgba(228,203,131,.16);border-radius:50%;box-shadow:0 0 0 34px rgba(228,203,131,.025),0 0 0 70px rgba(228,203,131,.018);pointer-events:none}
 .fmb-horoscope-hero-copy{position:relative;z-index:2;min-width:0}
-.fmb-horoscope-page .fmb-horoscope-hero small{color:#dec9e7!important;font-size:10px;font-weight:850;letter-spacing:.1em;text-transform:uppercase}
+.fmb-horoscope-page .fmb-horoscope-hero small{color:#BFC1C2!important;font-size:10px;font-weight:850;letter-spacing:.1em;text-transform:uppercase}
 .fmb-horoscope-page .fmb-horoscope-hero h1{margin:9px 0 12px;color:#fff!important;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Inter,sans-serif;font-size:clamp(38px,5vw,62px);line-height:.96;font-weight:860;letter-spacing:-.052em}
 .fmb-horoscope-page .fmb-horoscope-hero .fmb-freewill-line{max-width:700px;margin:0 0 13px!important;color:#fff7dc!important;font-size:clamp(16px,2vw,20px)!important;line-height:1.3!important;font-weight:760!important;letter-spacing:-.025em!important}
 .fmb-horoscope-page .fmb-horoscope-hero p{max-width:650px;margin:0;color:rgba(255,255,255,.78)!important;font-size:14px;line-height:1.58}
@@ -16,7 +16,7 @@
 .fmb-horoscope-page .fmb-zodiac-grid{gap:10px;margin:18px 0}
 .fmb-horoscope-page .fmb-zodiac-grid button{min-height:88px;padding:10px 8px;border-color:#e2dde5;border-radius:18px;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease,background .18s ease}
 .fmb-horoscope-page .fmb-zodiac-grid .fmb-zodiac-art{width:50px!important;height:50px!important;box-shadow:0 5px 14px rgba(36,16,44,.08)}
-.fmb-horoscope-page .fmb-zodiac-grid button[aria-pressed="true"]{border-color:#141414;background:#141414;box-shadow:0 8px 22px rgba(43,18,53,.18)}
+.fmb-horoscope-page .fmb-zodiac-grid button[aria-pressed="true"]{border-color:#141414;background:#141414;box-shadow:0 8px 22px rgba(20,20,20,.18)}
 .fmb-horoscope-page .fmb-zodiac-grid button[aria-pressed="true"] .fmb-zodiac-art{box-shadow:0 0 0 2px #e4cb83,0 8px 20px rgba(0,0,0,.2)}
 @media(hover:hover){.fmb-horoscope-page .fmb-zodiac-grid button:hover{transform:translateY(-2px);border-color:#bdaec4}}
 @media(max-width:699px){
