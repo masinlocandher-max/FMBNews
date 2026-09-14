@@ -200,8 +200,8 @@
 .fmb-ref.fmb-network-landing .editorial-side-rail .editorial-desk-top{display:flex!important;justify-content:space-between!important;gap:10px!important;margin:0 0 7px!important}
 .fmb-ref.fmb-network-landing .editorial-side-rail .editorial-desk-top strong,.fmb-ref.fmb-network-landing .editorial-feature .editorial-kicker{color:var(--fmb-red-ink,var(--fmb-red))!important;font:800 9px/1 Inter,Manrope,sans-serif!important;letter-spacing:.04em!important;text-transform:uppercase!important}
 .fmb-ref.fmb-network-landing .editorial-side-rail .editorial-desk-top span{display:none!important}
-.fmb-ref.fmb-network-landing .editorial-side-rail a>b,.fmb-ref.fmb-network-landing .editorial-side-rail .editorial-side-copy h3{display:block!important;margin:0!important;color:var(--fmb-theme-ink,var(--fmb-ink))!important;font-family:var(--fmb-luxury-serif,Georgia,serif)!important;font-size:clamp(21px,1.8vw,28px)!important;line-height:1!important;font-weight:560!important}
-.fmb-ref.fmb-network-landing .editorial-side-rail a>p{display:none!important}
+.fmb-ref.fmb-network-landing .editorial-side-rail .editorial-side-copy :is(b,h3){display:block!important;margin:0!important;color:var(--fmb-theme-ink,var(--fmb-ink))!important;font-family:var(--fmb-luxury-serif,Georgia,serif)!important;font-size:clamp(21px,1.8vw,28px)!important;line-height:1.12!important;font-weight:600!important;letter-spacing:-.02em}
+.fmb-ref.fmb-network-landing .editorial-side-rail .editorial-side-copy p{margin:12px 0 0;color:var(--fmb-theme-muted,var(--fmb-muted))!important;font:400 13px/1.55 var(--fmb-ui,Inter,sans-serif)!important;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 
 .fmb-ref.fmb-network-landing .network-products{display:grid!important;grid-template-columns:repeat(12,minmax(0,1fr))!important;gap:0!important;padding:0!important;border-bottom:1px solid var(--fmb-rule)!important}
 .fmb-ref.fmb-network-landing .network-product{position:relative!important;display:block!important;min-height:0!important;padding:20px 18px 22px!important;border:0!important;border-right:1px solid var(--fmb-rule)!important;border-radius:0!important;background:transparent!important;color:inherit!important;text-align:left!important;text-decoration:none!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;transform:none!important}
@@ -468,28 +468,15 @@ html[data-fmb-theme="dark"]:root body.fmb-ref.fmb-network-landing{
 /* ---------------------------------------------------------------------------
    Editorial artwork sits inside the publication, not on top of it
    ---------------------------------------------------------------------------
-   Every lead and module visual on this page is an FMB-owned generated graphic
-   built on the retired identity's plum-to-gold gradient -- including the exact
-   plum accent that scripts/verify.mjs forbids from appearing in this file, so
-   the hexes are named in docs/fmb-news-approved-editorial-design.md rather than
-   here, where quoting one would trip a guard that is doing its job.
-   Against warm ivory, near-black ink and a single signal red, they are by a
-   wide margin the loudest thing on the page, and they pull the composition
-   back toward a palette the design has retired.
-
-   The assets are editorial content. They are not rewritten, recoloured or
-   replaced here -- that is an asset-system phase, and the standard it needs is
-   written down in docs/fmb-news-approved-editorial-design.md. What this layer
-   can honestly do is treat them the way the mobile authority already treats
-   photography, with a restrained saturation so the artwork supports the
-   headline instead of competing with it. Nothing is hidden and no image loses
-   information.
+   Photographs keep their original colour. The existing brand build classifies
+   legacy FMB-owned SVG graphics and applies their neutral display treatment in
+   the shared theme. Do not desaturate photographs with a blanket selector.
    -------------------------------------------------------------------------- */
 .fmb-ref.fmb-network-landing .editorial-lead-story img,
 .fmb-ref.fmb-network-landing .editorial-side-rail img,
 .fmb-ref.fmb-network-landing .network-product img,
 .fmb-ref.fmb-network-landing .editorial-feature img{
-  filter:saturate(.84)!important;
+  filter:none!important;
 }
 
 /* ---------------------------------------------------------------------------
@@ -619,4 +606,3 @@ html[data-fmb-theme="dark"]:root body.fmb-ref.fmb-network-landing{
    route -- a first attempt at the reading measure was written here and silently
    did nothing. It lives in fmb-news-product-identity.css, which loads on every
    page. */
-

@@ -17,23 +17,23 @@
    --fmb-plum, --fmb-violet and --fmb-gold at :root with different values
    (fmb-news-apple-texture.css sets --fmb-plum:#141414). Because this sheet
    loads last, an unprefixed name here silently repaints everything downstream
-   that consumes theirs: it moved an About-page link from #D71920 to #630661
+   that consumes theirs: it moved an About-page link from #D71920 to #D71920
    before the computed-style check caught it.
 
-   Identity palette (unchanged): deep violet #220D50, rich plum #630661,
-   warm peach #F9AB60. Editorial surfaces stay predominantly neutral so the
+   Identity palette: newsroom black, warm white, FMB Red and metallic silver.
+   Legacy token names remain compatible; their values follow the approved brand. Editorial surfaces stay predominantly neutral so the
    journalism, not the brand, carries the page.
    =========================================================================== */
 
 :root{
   /* -- brand ------------------------------------------------------------- */
-  --fmbv2-violet:#220D50;
-  --fmbv2-violet-lift:#331a6b;
-  --fmbv2-plum:#630661;
-  --fmbv2-plum-lift:#7d1a7a;
-  --fmbv2-peach:#F9AB60;
-  --fmbv2-peach-deep:#e08c38;
-  --fmbv2-gold:#f2d17a;
+  --fmbv2-violet:#0A0A0A;
+  --fmbv2-violet-lift:#141414;
+  --fmbv2-plum:#D71920;
+  --fmbv2-plum-lift:#B20F16;
+  --fmbv2-peach:#BFC1C2;
+  --fmbv2-peach-deep:#6D7072;
+  --fmbv2-gold:#BFC1C2;
 
   /* -- spacing: one 4px-based rhythm ------------------------------------- */
   --fmbv2-space-1:4px;   --fmbv2-space-2:8px;   --fmbv2-space-3:12px;
@@ -42,7 +42,7 @@
   --fmbv2-space-16:64px; --fmbv2-space-20:80px; --fmbv2-space-24:96px;
 
   /* -- type scale -------------------------------------------------------- */
-  --fmbv2-font-sans:-apple-system,BlinkMacSystemFont,"SF Pro Text",Manrope,"Segoe UI",Inter,system-ui,sans-serif;
+  --fmbv2-font-sans:Inter,-apple-system,BlinkMacSystemFont,"SF Pro Text",Manrope,"Segoe UI",system-ui,sans-serif;
   --fmbv2-font-display:"Bodoni Moda",Georgia,"Times New Roman",serif;
   --fmbv2-text-xs:12px;   --fmbv2-text-sm:13px;  --fmbv2-text-base:15px;
   --fmbv2-text-md:17px;   --fmbv2-text-lg:19px;  --fmbv2-text-xl:22px;
@@ -76,9 +76,9 @@
   --fmbv2-dur-fast:.14s; --fmbv2-dur-base:.22s; --fmbv2-dur-slow:.38s;
 
   /* -- metallic: identity only, never body text or every card ------------ */
-  --fmbv2-metal-plum:linear-gradient(135deg,#3a1160 0%,#630661 38%,#8a2b84 62%,#3a1160 100%);
-  --fmbv2-metal-gold:linear-gradient(135deg,#c9a24a 0%,#f2d17a 42%,#fff3cf 55%,#c9a24a 100%);
-  --fmbv2-metal-edge:linear-gradient(90deg,transparent,rgba(249,171,96,.55),transparent);
+  --fmbv2-metal-plum:linear-gradient(135deg,#141414 0%,#242424 50%,#0A0A0A 100%);
+  --fmbv2-metal-gold:linear-gradient(135deg,#6D7072 0%,#BFC1C2 42%,#F5F3EF 55%,#6D7072 100%);
+  --fmbv2-metal-edge:linear-gradient(90deg,transparent,rgba(191,193,194,.55),transparent);
 }
 
 /* Theme-dependent tokens. The eight --fmb-theme-* names below are the
@@ -87,36 +87,36 @@
 :root,
 html[data-fmb-theme="light"]{
   --fmbv2-surface-1:#ffffff;
-  --fmbv2-surface-2:#f7f2f8;
-  --fmbv2-surface-3:#efe8f1;
-  --fmbv2-ink-1:#1b1420;
-  --fmbv2-ink-2:#655b69;
-  --fmbv2-ink-3:#8b8190;
-  --fmbv2-line-1:rgba(34,13,80,.14);
-  --fmbv2-line-2:rgba(34,13,80,.24);
+  --fmbv2-surface-2:#F5F3EF;
+  --fmbv2-surface-3:#EFEDE8;
+  --fmbv2-ink-1:#141414;
+  --fmbv2-ink-2:#6D7072;
+  --fmbv2-ink-3:#6D7072;
+  --fmbv2-line-1:rgba(20,20,20,.14);
+  --fmbv2-line-2:rgba(20,20,20,.24);
   --fmbv2-accent:var(--fmbv2-plum);
   --fmbv2-accent-ink:#ffffff;
-  --fmbv2-elev-1:0 1px 2px rgba(34,13,80,.06);
-  --fmbv2-elev-2:0 6px 18px rgba(34,13,80,.08);
-  --fmbv2-elev-3:0 18px 50px rgba(34,13,80,.10);
+  --fmbv2-elev-1:0 1px 2px rgba(20,20,20,.06);
+  --fmbv2-elev-2:0 6px 18px rgba(20,20,20,.08);
+  --fmbv2-elev-3:0 18px 50px rgba(20,20,20,.10);
   --fmbv2-glass-bg:rgba(255,255,255,.76);
   --fmbv2-glass-line:rgba(255,255,255,.6);
 }
 html[data-fmb-theme="dark"]{
-  --fmbv2-surface-1:#17101d;
-  --fmbv2-surface-2:#1d1424;
-  --fmbv2-surface-3:#241a2d;
-  --fmbv2-ink-1:#f8f4fb;
-  --fmbv2-ink-2:#c8bdcc;
-  --fmbv2-ink-3:#9b8fa1;
+  --fmbv2-surface-1:#141414;
+  --fmbv2-surface-2:#1A1A1A;
+  --fmbv2-surface-3:#242424;
+  --fmbv2-ink-1:#F5F3EF;
+  --fmbv2-ink-2:#BFC1C2;
+  --fmbv2-ink-3:#A0A0A0;
   --fmbv2-line-1:rgba(255,255,255,.12);
   --fmbv2-line-2:rgba(255,255,255,.2);
-  --fmbv2-accent:#c99bff;
-  --fmbv2-accent-ink:#1b1420;
+  --fmbv2-accent:#F53A3F;
+  --fmbv2-accent-ink:#141414;
   --fmbv2-elev-1:0 1px 2px rgba(0,0,0,.3);
   --fmbv2-elev-2:0 8px 22px rgba(0,0,0,.28);
   --fmbv2-elev-3:0 22px 58px rgba(0,0,0,.34);
-  --fmbv2-glass-bg:rgba(23,16,29,.78);
+  --fmbv2-glass-bg:rgba(20,20,20,.78);
   --fmbv2-glass-line:rgba(255,255,255,.14);
 }
 
@@ -124,12 +124,12 @@ html[data-fmb-theme="dark"]{
    surface rather than blur, in both themes. */
 @media (prefers-reduced-transparency:reduce){
   :root,html[data-fmb-theme="light"]{--fmbv2-glass-bg:#ffffff}
-  html[data-fmb-theme="dark"]{--fmbv2-glass-bg:#17101d}
+  html[data-fmb-theme="dark"]{--fmbv2-glass-bg:#141414}
 }
 /* Browsers without backdrop-filter get the same solid fallback. */
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
   :root,html[data-fmb-theme="light"]{--fmbv2-glass-bg:#ffffff}
-  html[data-fmb-theme="dark"]{--fmbv2-glass-bg:#17101d}
+  html[data-fmb-theme="dark"]{--fmbv2-glass-bg:#141414}
 }
 
 /* FMB News appearance system — System / Light / Dark */
@@ -174,7 +174,7 @@ html[data-fmb-theme="light"] body.fmb-matte-system.fmb-network-landing{
 html[data-fmb-theme="dark"] body.fmb-matte-system,
 html[data-fmb-theme="dark"] body.fmb-matte-system.fmb-news-route,
 html[data-fmb-theme="dark"] body.fmb-matte-system.fmb-network-landing{
-  background:#0e0a12!important;color:#f8f4fb!important;
+  background:#0A0A0A!important;color:#F5F3EF!important;
 }
 
 /* Desktop appearance control. */
@@ -201,9 +201,9 @@ html[data-fmb-theme="dark"] body.fmb-matte-system.fmb-network-landing{
 
 /* Keep navigation glass readable in both themes. */
 html[data-fmb-theme="dark"] body.fmb-matte-system :is(.nav,.section-rail,.brief-edition-bar,.nc-topic-rail){
-  color:#f8f4fb!important;background:rgba(17,10,22,.91)!important;border-color:var(--fmb-theme-line)!important
+  color:#F5F3EF!important;background:rgba(20,20,20,.91)!important;border-color:var(--fmb-theme-line)!important
 }
-html[data-fmb-theme="dark"] body.fmb-matte-system :is(.nav,.section-rail,.brief-edition-bar,.nc-topic-rail) a{color:rgba(248,244,251,.82)!important}
+html[data-fmb-theme="dark"] body.fmb-matte-system :is(.nav,.section-rail,.brief-edition-bar,.nc-topic-rail) a{color:rgba(245,243,239,.82)!important}
 html[data-fmb-theme="dark"] body.fmb-matte-system :is(.nav,.section-rail,.brief-edition-bar,.nc-topic-rail) a:is(:hover,:focus-visible,[aria-current="page"]){color:#fff!important}
 
 /* Universal reading surfaces. */
@@ -235,11 +235,11 @@ html[data-fmb-theme="dark"] body.fmb-matte-system :is(
 html[data-fmb-theme="dark"] body.fmb-matte-system :is(input,textarea,select){
   color:var(--fmb-theme-ink)!important;background:var(--fmb-theme-surface-soft)!important;border-color:var(--fmb-theme-line)!important
 }
-html[data-fmb-theme="dark"] body.fmb-matte-system :is(input,textarea)::placeholder{color:#96899d!important}
+html[data-fmb-theme="dark"] body.fmb-matte-system :is(input,textarea)::placeholder{color:#A0A0A0!important}
 
 /* Article and card links remain high-contrast; product accents stay branded. */
 html[data-fmb-theme="dark"] body.fmb-matte-system :is(.article,.story-card,.support-item,.more-item,.related-item,.fmb-app-story-row) a{color:inherit}
-html[data-fmb-theme="dark"] body.fmb-matte-system :is(.category,.article-kicker,.fmb-app-week-kicker,.brief-label){color:#f4b77f!important}
+html[data-fmb-theme="dark"] body.fmb-matte-system :is(.category,.article-kicker,.fmb-app-week-kicker,.brief-label){color:#F53A3F!important}
 
 /* Mobile menu appearance row inherits the action-sheet anatomy. */
 .fmb-app-action-list [data-fmb-theme-menu]{width:100%;text-align:left}

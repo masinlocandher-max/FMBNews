@@ -11,9 +11,9 @@
     const style = document.createElement('style');
     style.id = STYLE_ID;
     style.textContent = `
-      .fmb-ref img[data-fmb-image-fallback="true"]{background:#f4edf6}
-      .fmb-ref .${AUTO_CLASS}{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#f4edf6}
-      .fmb-ref .${AUTO_FIGURE_CLASS}{margin:20px 0;padding:8px;background:linear-gradient(145deg,#fff,#f2e8f4);border:1px solid #e1d1e4;box-shadow:0 12px 30px rgba(45,10,52,.08)}
+      .fmb-ref img[data-fmb-image-fallback="true"]{background:var(--fmb-theme-surface-soft,#EFEDE8)}
+      .fmb-ref .${AUTO_CLASS}{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--fmb-theme-surface-soft,#EFEDE8)}
+      .fmb-ref .${AUTO_FIGURE_CLASS}{margin:20px 0;padding:8px;background:var(--fmb-theme-surface,#fff);border:1px solid var(--fmb-theme-line,rgba(20,20,20,.14));box-shadow:none}
       .fmb-ref .${AUTO_FIGURE_CLASS} img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
       .fmb-ref .country-card>.${AUTO_CLASS}{width:calc(100% + 48px);max-width:none;margin:-24px -24px 18px}
       .fmb-ref .country-entry>.${AUTO_FIGURE_CLASS},.fmb-ref .cms-edition-entry>.${AUTO_FIGURE_CLASS}{margin:16px 0 20px}
