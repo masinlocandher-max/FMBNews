@@ -497,7 +497,7 @@
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card,
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card.brief,
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card.worldwide{
-    background:var(--fmb-mobile-surface,#131416)!important;
+    background:var(--fmb-mobile-black-raised,#171c1f)!important;
     background-image:none!important;
     border:1px solid var(--fmb-mobile-line,#292a2d)!important;
   }
@@ -573,4 +573,130 @@
   body.fmb-mobile-first .fmb-app-story-row:active,
   body.fmb-mobile-first .fmb-app-feature-card:active{transform:none!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-grid{scroll-behavior:auto!important}
+}
+
+/* ============================================================================
+   Mobile light mode
+   ============================================================================
+   The mobile surface was authored entirely for dark: off-white ink on
+   newsroom black. In light mode the ground flips to paper but the ink did not,
+   so twelve components rendered off-white on white — every Latest News
+   headline at 1.16:1, the "Latest News" heading at 1.10:1, the feature
+   headings at 1.07:1, the desk chevrons and the newsroom row at 1.34:1. They
+   were not dim; they were invisible.
+
+   Light is art-directed here rather than inverted: editorial paper ink
+   (#111416), warm secondary and muted greys, and the light-mode signal red
+   from the approved palette. The sticky header stays newsroom black in both
+   themes, as the design contract specifies.
+   ========================================================================== */
+
+@media (max-width:699px){
+  html[data-fmb-theme="light"] body.fmb-mobile-first{
+    --fmb-mobile-white:#111416;
+    --fmb-mobile-muted:#77716a;
+    --fmb-mobile-rule:#d5cfc5;
+    --fmb-mobile-red:#b51f24;
+  }
+
+  /* Editorial ink on every story surface. */
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-story-copy h3,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-story-row h2,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-section-head h2,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-editorial-mobile-rail-item h2,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-editorial-mobile-rail-item h3,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-feature-card h2,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-feature-card h3{
+    color:#111416!important;
+  }
+
+  /* Secondary editorial copy and the newsroom row. */
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-editorial-newsroom-row,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-editorial-newsroom-row span,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-feature-card p{
+    color:#4f4c47!important;
+  }
+
+  /* Metadata stays quieter than the headline but must still clear AA. */
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-story-meta,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-story-meta time,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-story-meta span,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-approved-hero-deck{
+    color:#77716a!important;
+  }
+
+  /* Affordances and links carry the light-mode signal red. */
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-section-head a,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-feature-card b,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-editorial-mobile-rail-item>b{
+    color:#b51f24!important;
+  }
+
+  /* Paper surfaces for the feature rail; the dark tiles were a dark-mode idea. */
+  html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card{
+    background:#fffdf8!important;
+    border-color:#d5cfc5!important;
+  }
+  html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-mobile-route-home .fmb-feature-shade{
+    background-image:linear-gradient(90deg,rgba(255,253,248,.94),rgba(255,253,248,.6) 62%,rgba(255,253,248,.2))!important;
+  }
+
+  /* The lead copy sits on paper in light mode, not on the dark hero ground. */
+  html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-copy{
+    background:var(--fmb-paper,#f4f0e8)!important;
+    border-bottom-color:#d5cfc5!important;
+  }
+  html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-copy>h1{
+    color:#111416!important;
+  }
+  html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-mobile-route-home .fmb-hero-live-overlay{
+    color:#77716a!important;
+    border-bottom-color:#d5cfc5!important;
+  }
+}
+
+/* ============================================================================
+   Two contrast corrections
+   ============================================================================
+   1. The legacy "Read the Latest / Customize" control is hidden in the approved
+      design and was hidden with position:absolute + clip. Moving the lead copy
+      to position:static took its containing block away, so it reappeared — as
+      white text on paper, 1.14:1. A regression introduced by the lead fix. It
+      is hidden as intended again, by removal rather than by clipping, so no
+      containing-block change can bring it back.
+
+   2. Section labels used one red, #db4056, for both themes: 3.79:1 on paper and
+      4.47:1 on newsroom black, both under AA for 8px type. They now take the
+      per-theme signal red from the approved palette.
+   ========================================================================== */
+
+@media (max-width:699px){
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-cta{
+    display:none!important;
+  }
+
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-editorial-mobile-rail-item>div>span,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-story-meta span:first-child,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-editorial-mobile-kicker{
+    color:#b51f24!important;
+  }
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-editorial-mobile-rail-item>div>span,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-app-story-meta span:first-child,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-editorial-mobile-kicker{
+    color:#e5484d!important;
+  }
+}
+
+@media (max-width:699px){
+  /* The feature-tile kickers kept the light-mode red on the raised dark
+     surface: 3.65:1 at 8px. Dark takes the dark signal red. */
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-app-feature-card span,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-app-feature-card .fmb-app-week-kicker{
+    /* On the raised surface #e5484d reached only 4.39:1 at 7.5px. The approved
+       dark palette's lifted red clears AA, and 7.5px was below the size this
+       publication sets any label at. */
+    color:#f05a5f!important;
+    font-size:9px!important;
+    letter-spacing:.09em!important;
+  }
 }
