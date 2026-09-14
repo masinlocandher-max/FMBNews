@@ -96,3 +96,105 @@ html[data-fmb-theme="dark"] body.fmb-sports-page .sports-story span{color:#F9AB6
 @media(prefers-reduced-motion:reduce){
   .fmb-ref.fmb-network-landing .editorial-desk{transition:none}
 }
+
+/* ===========================================================================
+   Founder and Entertainment
+   ===========================================================================
+   Two destinations the publication referenced but never had: /news/founder/ and
+   /news/entertainment/ both returned 404. Both consume the --fmbv2-* tokens in
+   fmb-news-theme.css rather than minting new raw values, and both are written
+   for light and dark without inverting one into the other.
+   =========================================================================== */
+
+.fmb-sec{padding:var(--fmbv2-space-16) 0 var(--fmbv2-space-20)}
+.fmb-sec-shell{width:min(1080px,calc(100% - var(--fmbv2-space-10)));margin-inline:auto}
+.fmb-sec-kicker{
+  margin:0 0 var(--fmbv2-space-3);font:800 var(--fmbv2-text-xs)/1.2 var(--fmbv2-font-sans);
+  letter-spacing:var(--fmbv2-tracking-kicker);text-transform:uppercase;color:var(--fmbv2-ink-2)
+}
+.fmb-sec h1{
+  margin:0 0 var(--fmbv2-space-4);font-family:var(--fmbv2-font-display);
+  font-size:clamp(var(--fmbv2-text-3xl),6vw,var(--fmbv2-text-5xl));
+  line-height:var(--fmbv2-leading-tight);letter-spacing:var(--fmbv2-tracking-display);
+  color:var(--fmbv2-ink-1)
+}
+.fmb-sec-lede{
+  margin:0;max-width:var(--fmbv2-read-measure);
+  font:400 var(--fmbv2-text-lg)/var(--fmbv2-leading-body) var(--fmbv2-font-sans);color:var(--fmbv2-ink-2)
+}
+/* The one place a metallic edge earns its keep: a section marker, not body text. */
+.fmb-sec-rule{
+  height:2px;width:84px;margin:var(--fmbv2-space-5) 0 var(--fmbv2-space-6);
+  border-radius:var(--fmbv2-radius-pill);background:var(--fmbv2-metal-gold)
+}
+
+/* ------------------------------------------------------------------ founder */
+.fmb-founder-grid{
+  display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);
+  gap:var(--fmbv2-space-10);align-items:start
+}
+.fmb-founder-portrait{
+  margin:0;border-radius:var(--fmbv2-radius-lg);overflow:hidden;
+  background:var(--fmbv2-surface-2);border:1px solid var(--fmbv2-line-1);box-shadow:var(--fmbv2-elev-2)
+}
+/* Placeholder until an approved portrait is supplied. It is deliberately a
+   typographic monogram, not a stock face or a generated likeness. */
+.fmb-founder-placeholder{
+  aspect-ratio:4/5;display:grid;place-items:center;gap:var(--fmbv2-space-2);
+  background:var(--fmbv2-metal-plum);color:#fff;text-align:center;padding:var(--fmbv2-space-4)
+}
+.fmb-founder-placeholder b{font:800 var(--fmbv2-text-3xl)/1 var(--fmbv2-font-sans);letter-spacing:.02em}
+.fmb-founder-placeholder span{
+  font:700 var(--fmbv2-text-xs)/1.4 var(--fmbv2-font-sans);
+  letter-spacing:var(--fmbv2-tracking-kicker);text-transform:uppercase;opacity:.82;max-width:15ch
+}
+.fmb-founder-portrait figcaption{
+  padding:var(--fmbv2-space-3) var(--fmbv2-space-4);
+  font:500 var(--fmbv2-text-xs)/1.5 var(--fmbv2-font-sans);color:var(--fmbv2-ink-3);
+  background:var(--fmbv2-surface-1);border-top:1px solid var(--fmbv2-line-1)
+}
+.fmb-founder-name{margin:0 0 var(--fmbv2-space-1);font:800 var(--fmbv2-text-2xl)/1.2 var(--fmbv2-font-sans);color:var(--fmbv2-ink-1);letter-spacing:-.02em}
+.fmb-founder-role{margin:0 0 var(--fmbv2-space-6);font:600 var(--fmbv2-text-sm)/1.5 var(--fmbv2-font-sans);color:var(--fmbv2-ink-2)}
+.fmb-founder-body p{
+  margin:0 0 var(--fmbv2-space-5);max-width:var(--fmbv2-read-measure);
+  font:400 var(--fmbv2-read-size)/var(--fmbv2-read-leading) var(--fmbv2-font-sans);color:var(--fmbv2-ink-1)
+}
+.fmb-founder-principles{list-style:none;margin:var(--fmbv2-space-6) 0 0;padding:0;display:grid;gap:var(--fmbv2-space-3)}
+.fmb-founder-principles li{
+  display:flex;gap:var(--fmbv2-space-3);align-items:baseline;
+  padding:var(--fmbv2-space-3) var(--fmbv2-space-4);
+  border:1px solid var(--fmbv2-line-1);border-radius:var(--fmbv2-radius-md);
+  background:var(--fmbv2-surface-1);
+  font:500 var(--fmbv2-text-base)/1.55 var(--fmbv2-font-sans);color:var(--fmbv2-ink-1)
+}
+.fmb-founder-principles b{color:var(--fmbv2-accent);font-weight:800;white-space:nowrap}
+
+/* ------------------------------------------------------------ entertainment */
+.fmb-ent-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--fmbv2-space-5)}
+.fmb-ent-card{
+  display:flex;flex-direction:column;gap:var(--fmbv2-space-3);
+  padding:var(--fmbv2-space-6);text-decoration:none;
+  border:1px solid var(--fmbv2-line-1);border-radius:var(--fmbv2-radius-lg);
+  background:var(--fmbv2-surface-1);box-shadow:var(--fmbv2-elev-1);
+  transition:transform var(--fmbv2-dur-base) var(--fmbv2-ease),box-shadow var(--fmbv2-dur-base) var(--fmbv2-ease),border-color var(--fmbv2-dur-base) var(--fmbv2-ease)
+}
+.fmb-ent-card:is(:hover,:focus-visible){transform:translateY(-2px);box-shadow:var(--fmbv2-elev-2);border-color:var(--fmbv2-line-2);outline:none}
+.fmb-ent-card:focus-visible{box-shadow:var(--fmbv2-elev-2),0 0 0 3px var(--fmbv2-accent)}
+.fmb-ent-card em{
+  font-style:normal;font:800 var(--fmbv2-text-xs)/1.2 var(--fmbv2-font-sans);
+  letter-spacing:var(--fmbv2-tracking-kicker);text-transform:uppercase;color:var(--fmbv2-accent)
+}
+.fmb-ent-card h2{margin:0;font:800 var(--fmbv2-text-xl)/1.25 var(--fmbv2-font-sans);color:var(--fmbv2-ink-1);letter-spacing:-.02em}
+.fmb-ent-card p{margin:0;font:400 var(--fmbv2-text-base)/1.6 var(--fmbv2-font-sans);color:var(--fmbv2-ink-2)}
+.fmb-ent-card span[data-go]{margin-top:auto;padding-top:var(--fmbv2-space-2);font:700 var(--fmbv2-text-sm)/1 var(--fmbv2-font-sans);color:var(--fmbv2-accent)}
+
+@media (max-width:820px){
+  .fmb-sec{padding:var(--fmbv2-space-10) 0 var(--fmbv2-space-12)}
+  .fmb-sec-shell{width:min(1080px,calc(100% - var(--fmbv2-space-8)))}
+  .fmb-founder-grid{grid-template-columns:minmax(0,1fr);gap:var(--fmbv2-space-6)}
+  .fmb-founder-portrait{max-width:220px}
+}
+@media (prefers-reduced-motion:reduce){
+  .fmb-ent-card{transition:none}
+  .fmb-ent-card:is(:hover,:focus-visible){transform:none}
+}

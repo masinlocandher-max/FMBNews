@@ -53,6 +53,12 @@ await import('./render-home-experience.mjs');
 // the route states that explicitly instead of borrowing unrelated stories.
 await import('./render-sports.mjs');
 
+// Founder and Entertainment. Both were referenced by the publication but had no
+// route and returned 404. Rendered here, before the newsroom audit, mobile and
+// brand passes, so they inherit the shared shell, navigation, footer, theme and
+// mobile system rather than carrying a private copy of the chrome.
+await import('./render-publication-sections.mjs');
+
 // Generate Fact Check before the universal mobile/PWA passes so all new pages
 // receive the same shared newsroom runtime, accessibility and QA contract.
 await import('./render-fmb-fact-check.mjs');
