@@ -166,11 +166,26 @@ const entertainment = page({
 //   analytics        none -- no gtag, GTM, Meta pixel, Hotjar, Plausible,
 //                    Matomo, Segment or Mixpanel appears anywhere
 //
-// The paragraphs that carry legal effect rather than describing observable
-// behaviour are marked as pending the publisher's review, visibly on the page.
-// A drafted policy that has not been reviewed should not read as if it has.
+// REVIEW STATUS -- internal record, deliberately not rendered.
+//
+// These pages carried a visible "Status: draft pending review." note while they
+// were being drafted. That note was removed for release at the publisher's
+// instruction; this comment is the surviving record that it existed and why.
+//
+// The technical descriptions below were taken from the audit above and are
+// accurate as built. The clauses that carry legal effect -- the governing-law
+// clause, the copyright permissions, the sale/rental commitment -- are
+// publisher policy statements, not observations about code, and were released
+// on the publisher's authority rather than verified by this build.
+//
+// Wording discipline that must survive future edits: state observable product
+// behaviour as observable product behaviour, and publisher commitments as
+// commitments. Do not infer an organisational practice from the absence of
+// matching JavaScript -- "no such code ships in the current frontend" and "the
+// publisher does not do this" are different claims, and only the first one can
+// be established by reading this repository.
 
-const LEGAL_REVIEW = `<p class="fmb-legal-status" role="note"><b>Status: draft pending review.</b> The technical descriptions on this page were taken directly from the FMB News codebase and are accurate as built. The clauses that carry legal effect have not yet been reviewed by the publisher or by counsel, and should be reviewed before this page is relied upon.</p>`;
+const LEGAL_DATES = `<p class="fmb-legal-dates"><span>Effective: September 15, 2026</span> <span>Last updated: September 15, 2026</span></p>`;
 
 const legalPage = ({ slug, h1, kicker, title, description, lede, sections }) => page({
   slug,
@@ -193,7 +208,7 @@ const legalPage = ({ slug, h1, kicker, title, description, lede, sections }) => 
       <div class="fmb-sec-rule" aria-hidden="true"></div>
       <p class="fmb-sec-lede">${lede}</p>
       <div class="fmb-legal">
-        ${LEGAL_REVIEW}
+        ${LEGAL_DATES}
         ${sections.map(([heading, ...paras]) => `<section aria-labelledby="${heading.toLowerCase().replace(/[^a-z0-9]+/g, '-')}"><h2 id="${heading.toLowerCase().replace(/[^a-z0-9]+/g, '-')}">${esc(heading)}</h2>${paras.join('')}</section>`).join('')}
       </div>
     </div>`,
@@ -206,24 +221,25 @@ const privacy = legalPage({
   kicker: 'FMB News · Filipino Media Bulletin',
   h1: 'Privacy',
   title: 'Privacy | FMB News · Filipino Media Bulletin',
-  description: 'What FMB News stores on your device, what you send us, which services we rely on, and what we deliberately do not do. FMB News sets no cookies and runs no analytics.',
+  description: 'What FMB News stores on your device, what you send us, which services we rely on, and what we deliberately do not do. FMB News sets no cookies, and the current frontend ships no third-party analytics integrations.',
   lede: 'FMB News is a newsroom, not an advertising business. This page states plainly what is stored, what is sent, and who else is involved when you read the bulletin.',
   sections: [
     ['What we do not do',
-      '<p>FMB News sets <b>no cookies</b>. It runs <b>no analytics</b>, no advertising, no tracking pixels and no third-party measurement of any kind. There is no advertising network, no data broker and no sale or rental of reader information. These are not policy promises layered on top of the product &mdash; there is no such code in the site.</p>'],
+      '<p>FMB News sets <b>no cookies</b>. The current FMB News frontend contains <b>no advertising pixels</b> and <b>no third-party analytics integrations</b> such as Google Analytics, Google Tag Manager, Meta Pixel, Hotjar, Plausible, Matomo, Segment or Mixpanel.</p>',
+      '<p>Separately, as a matter of publisher policy: <b>FMB News does not sell or rent personal information to data brokers or advertisers.</b></p>'],
     ['What stays on your device',
-      '<p>Your reading preferences are kept in your own browser&rsquo;s local storage. They are never uploaded on their own, and clearing your browser data removes them permanently.</p>',
+      '<p>FMB News stores certain reader preferences in your browser&rsquo;s local storage. The current frontend does not automatically transmit these preferences. Clearing site data in that browser removes the local copies stored there.</p>',
       '<ul><li><b>Appearance</b> &mdash; whether you chose System, Light or Dark.</li><li><b>Feed preferences</b> &mdash; the desks and topics you asked to see more of.</li><li><b>Saved stories</b> &mdash; the reports you saved to read later.</li><li><b>Sign-in email</b> &mdash; only if you asked to stay signed in.</li><li><b>Horoscope sign</b> &mdash; only if you chose one.</li></ul>'],
     ['What reaches FMB News',
       '<p>Three things, each only when you start them:</p>',
       '<ul><li><b>The Daily Brief.</b> If you subscribe, your email address is stored so the briefing can be sent to you.</li><li><b>Signing in.</b> FMB News uses passwordless sign-in: you give an email address, we send a one-time code, and there is no password to store or lose.</li><li><b>Story alerts.</b> If you turn on alerts, your browser&rsquo;s push address, its encryption keys, your platform and a shortened browser identification string are stored so a notification can reach that device. Turning alerts off deletes it.</li></ul>'],
     ['Weather and location',
-      '<p>The weather panel is the only feature that can use your location, and only when you tap to allow it. FMB News requests <b>low-accuracy</b> location, uses it once to fetch the forecast, and does not store it. You can type a city instead and share nothing. The forecast itself comes from Open-Meteo.</p>'],
+      '<p>The weather panel is the only feature that can use your location, and only when you tap to allow it. When you explicitly allow location access, FMB News <b>does not request high-accuracy mode</b>. The coordinates are used to request a forecast and are not intentionally persisted by the current FMB News frontend. You can type a city instead and share nothing. The forecast itself comes from Open-Meteo.</p>'],
     ['Services FMB News relies on',
       '<ul><li><b>Supabase</b> &mdash; database, passwordless sign-in and alert delivery.</li><li><b>Cloudflare</b> &mdash; serving the site. Like any host, it processes the network request that delivers a page to you.</li><li><b>Google Fonts</b> &mdash; delivering the typefaces. Loading a font makes a request to Google, which sees the IP address that request comes from.</li><li><b>Open-Meteo</b> &mdash; the weather forecast, as described above.</li></ul>',
       '<p>Image credits sometimes link to Wikimedia Commons. Following such a link takes you to that site, under its own terms.</p>'],
     ['Your controls',
-      '<ul><li>Clear your browser data to remove everything stored on your device.</li><li>Unsubscribe from any Daily Brief email to stop the briefing.</li><li>Turn off alerts in the Menu to delete the push record for that device.</li><li>Write to us at ' + CONTACT + ' to ask what is held about you, or to ask for it to be deleted.</li></ul>'],
+      '<ul><li>Clear site data in a browser to remove the local copies stored there.</li><li>Unsubscribe from any Daily Brief email to stop the briefing.</li><li>Turn off alerts in the Menu to delete the push record for that device.</li><li>Write to us at ' + CONTACT + ' to ask what is held about you, or to ask for it to be deleted.</li></ul>'],
     ['Children',
       '<p>FMB News is a general news publication and is not directed at children.</p>'],
     ['Changes',
@@ -244,13 +260,13 @@ const terms = legalPage({
     ['Who publishes this',
       `<p>FMB News, the Filipino Media Bulletin, is published by Francine Marie Bautista. How the reporting is produced, sourced and corrected is set out in the <a href="/news/editorial-standards/">editorial standards</a> and the <a href="/news/corrections/">corrections policy</a>.</p>`],
     ['Using the bulletin',
-      '<p>You are welcome to read, link to, quote and share FMB News reporting with attribution. Republishing whole articles, or reproducing FMB-owned visuals outside a link or short quotation, needs permission first.</p>'],
+      '<p>You may link to FMB News and quote brief excerpts where permitted by law, with appropriate attribution. Republishing complete articles or reproducing substantial FMB-owned material may require permission.</p>'],
     ['Accuracy and corrections',
       `<p>FMB News reports what can be established and says plainly what is still open. When something is wrong, it is corrected on the record rather than edited away &mdash; see the <a href="/news/corrections/">corrections policy</a>. If you believe a report is inaccurate, write to ${CONTACT}.</p>`],
     ['Images and credits',
-      '<p>Photographs and documents from third parties are credited to their source and used under their own licences, including Creative Commons licences where stated. Visuals produced by FMB News are labelled as FMB-owned editorial visuals and are not documentary photographs; that label appears on the image itself.</p>'],
+      '<p>Photographs and documents from third parties are credited to their source and used under their own licences, including Creative Commons licences where stated. Where an FMB-owned visual is illustrative rather than documentary photography, FMB News should identify it accordingly.</p>'],
     ['Reader features',
-      '<p>The Weekly Horoscope and the FMB Crossword are entertainment features. The horoscope is reflective writing, not prediction, and nothing in it should be treated as advice &mdash; medical, financial, legal or otherwise. Crossword answers stay sealed until the following edition.</p>'],
+      '<p>The Weekly Horoscope and the FMB Crossword are entertainment features. The horoscope is reflective writing, not prediction, and nothing in it should be treated as professional advice &mdash; medical, financial, legal or otherwise.</p>'],
     ['Accounts, the Daily Brief and alerts',
       '<p>Signing in, subscribing to the Daily Brief and enabling alerts are optional and can be undone at any time. What each one stores is set out on the <a href="/news/privacy/">privacy page</a>. Please do not use these features to impersonate someone else or to submit an address you do not control.</p>'],
     ['Availability',

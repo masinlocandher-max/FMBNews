@@ -247,6 +247,34 @@ html[data-fmb-theme="dark"] body.fmb-matte-system :is(.category,.article-kicker,
 .fmb-app-action-list [data-fmb-theme-menu] svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .fmb-app-action-list [data-fmb-theme-menu] [data-fmb-theme-label]{opacity:.72}
 
+/* Appearance switch. A track and a knob, sized off the row's own type -- no
+   card, no glow, no second theme system. The 44px minimum is the frozen
+   touch-target floor, applied to the whole row rather than to the knob, so the
+   target is the thing the reader is actually aiming at. */
+.fmb-app-action-list [data-fmb-theme-menu]{min-height:44px}
+.fmb-app-action-list [data-fmb-theme-menu] .fmb-theme-switch-group{
+  display:inline-flex;align-items:center;gap:10px
+}
+.fmb-app-action-list [data-fmb-theme-menu] .fmb-theme-switch{
+  position:relative;flex:0 0 auto;width:38px;height:22px;border-radius:999px;
+  background:currentColor;opacity:.3;
+  transition:opacity .16s ease
+}
+.fmb-app-action-list [data-fmb-theme-menu] .fmb-theme-switch i{
+  position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;
+  background:var(--fmb-theme-bg,#fff);
+  transition:transform .16s ease
+}
+.fmb-app-action-list [data-fmb-theme-menu][aria-checked="true"] .fmb-theme-switch{opacity:.92}
+.fmb-app-action-list [data-fmb-theme-menu][aria-checked="true"] .fmb-theme-switch i{transform:translateX(16px)}
+.fmb-app-action-list [data-fmb-theme-menu]:focus-visible{
+  outline:2px solid var(--fmb-brand-red,#D71920);outline-offset:2px
+}
+@media(prefers-reduced-motion:reduce){
+  .fmb-app-action-list [data-fmb-theme-menu] .fmb-theme-switch,
+  .fmb-app-action-list [data-fmb-theme-menu] .fmb-theme-switch i{transition:none}
+}
+
 /* About has legacy hardcoded white content surfaces; dark mode owns them here. */
 html[data-fmb-theme="dark"] body.fmb-matte-system.fmb-news-about,
 html[data-fmb-theme="dark"] body.fmb-matte-system.fmb-news-clean,

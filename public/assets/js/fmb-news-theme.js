@@ -20,13 +20,28 @@
   const resolved=(mode)=>mode==='system'?(media.matches?'dark':'light'):mode;
 
   function syncControls(mode){
-    document.querySelectorAll('[data-fmb-theme-control],[data-fmb-theme-menu]').forEach((button)=>{
+    document.querySelectorAll('[data-fmb-theme-control]').forEach((button)=>{
       button.setAttribute('data-mode',mode);
       button.setAttribute('aria-label',`Appearance: ${label(mode)}. Activate to change.`);
       const iconTarget=button.querySelector('[data-fmb-theme-icon]');
       if(iconTarget)iconTarget.innerHTML=icon(mode);
       const text=button.querySelector('[data-fmb-theme-label]');
       if(text)text.textContent=label(mode);
+    });
+    // The mobile Menu control is a binary switch, not the three-way cycle. It
+    // reports the theme actually in force, so in System mode it reads whatever
+    // the device resolved to -- a switch that showed "System" while the screen
+    // was plainly dark would be lying about its own state.
+    const active=resolved(mode);
+    document.querySelectorAll('[data-fmb-theme-menu]').forEach((button)=>{
+      button.setAttribute('data-mode',mode);
+      button.setAttribute('role','switch');
+      button.setAttribute('aria-checked',active==='dark'?'true':'false');
+      button.setAttribute('aria-label','Dark appearance');
+      const iconTarget=button.querySelector('[data-fmb-theme-icon]');
+      if(iconTarget)iconTarget.innerHTML=icon(active);
+      const text=button.querySelector('[data-fmb-theme-label]');
+      if(text)text.textContent=active==='dark'?'Dark':'Light';
     });
   }
 
@@ -36,7 +51,11 @@
     root.setAttribute('data-fmb-theme-mode',mode);
     root.setAttribute('data-fmb-theme',resolved(mode));
     const themeColor=document.querySelector('meta[name="theme-color"]');
-    if(themeColor)themeColor.setAttribute('content',resolved(mode)==='dark'?'#120822':'#220D50');
+    // Brand values. This line previously wrote the retired plum pair at runtime,
+    // overwriting the newsroom-black the build stamps into the document -- so the
+    // approved theme-color survived exactly until the first theme apply. Not a
+    // palette change: a palette regression, restored to what the build declares.
+    if(themeColor)themeColor.setAttribute('content',resolved(mode)==='dark'?'#0A0A0A':'#F5F3EF');
     syncControls(mode);
     document.dispatchEvent(new CustomEvent('fmb:theme-change',{detail:{mode,resolved:resolved(mode)}}));
   }
@@ -45,6 +64,17 @@
     const current=root.getAttribute('data-fmb-theme-mode')||stored();
     const next=MODES[(MODES.indexOf(current)+1)%MODES.length];
     apply(next);
+  }
+
+  // Binary Light/Dark for the mobile Menu switch. System is preserved as a
+  // supported internal mode -- it stays the default, it still follows the
+  // device, and the desktop control still cycles to it -- but the first manual
+  // flip of this switch resolves System into the explicit choice the reader
+  // just made, rather than presenting a confusing third state on a two-state
+  // control. From there the explicit choice persists.
+  function toggleBinary(){
+    const current=root.getAttribute('data-fmb-theme-mode')||stored();
+    apply(resolved(current)==='dark'?'light':'dark');
   }
 
   function desktopControl(){
@@ -67,8 +97,10 @@
     const button=document.createElement('button');
     button.type='button';
     button.setAttribute('data-fmb-theme-menu','');
-    button.innerHTML='<span class="fmb-theme-menu-main"><span data-fmb-theme-icon aria-hidden="true"></span><span>Appearance</span></span><span data-fmb-theme-label>System</span>';
-    button.addEventListener('click',cycle);
+    button.setAttribute('role','switch');
+    button.setAttribute('aria-checked','false');
+    button.innerHTML='<span class="fmb-theme-menu-main"><span data-fmb-theme-icon aria-hidden="true"></span><span>Appearance</span></span><span class="fmb-theme-switch-group"><span data-fmb-theme-label>Light</span><span class="fmb-theme-switch" aria-hidden="true"><i></i></span></span>';
+    button.addEventListener('click',toggleBinary);
     list.prepend(button);
     syncControls(root.getAttribute('data-fmb-theme-mode')||stored());
   }

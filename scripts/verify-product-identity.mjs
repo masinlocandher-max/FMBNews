@@ -42,6 +42,9 @@ function expected(rel){const p=rel.replaceAll('\\','/').toLowerCase();if(p==='in
 const pages=await walk(newsRoot);let checked=0;
 for(const file of pages){
   const rel=path.relative(newsRoot,file);const exp=expected(rel);const html=await readFile(file,'utf8');checked++;
+  // Root-level legal links 404: the worker serves /news/* only.
+  for(const dead of ['href="/privacy/"','href="/terms/"'])
+    if(html.includes(dead))throw new Error(`${rel} links ${dead}, which the worker does not serve`);
   if(!html.includes(exp.cls))throw new Error(`${rel}: missing ${exp.cls}`);
   if(!html.includes(`aria-label="${exp.title}"`))throw new Error(`${rel}: mast title is not exactly ${exp.title}`);
   if(html.includes('/news/news/assets/'))throw new Error(`${rel}: double-scoped asset path remains`);
@@ -118,6 +121,19 @@ for(const slug of ['privacy','terms']){
   if((legal.match(/<h1/g)||[]).length!==1)throw new Error(`/news/${slug}/ must expose exactly one h1`);
   if(!/aria-labelledby="/.test(legal))throw new Error(`/news/${slug}/ sections must be labelled for assistive technology`);
   if(legal.includes('--fmbv2-accent'))throw new Error(`/news/${slug}/ must not paint the retired accent`);
+  // A legal page states when it takes effect and when it last moved.
+  if(!/Effective:\s*September 15, 2026/.test(legal))throw new Error(`/news/${slug}/ must state its effective date`);
+  if(!/Last updated:\s*September 15, 2026/.test(legal))throw new Error(`/news/${slug}/ must state its last-updated date`);
+  // WebPage, and specifically NOT NewsArticle: these are standing policy pages,
+  // not reporting, and filing them as news would misrepresent them to indexers.
+  if(!legal.includes('"@type":"WebPage"'))throw new Error(`/news/${slug}/ must carry WebPage schema`);
+  if(legal.includes('NewsArticle'))throw new Error(`/news/${slug}/ must not carry NewsArticle schema`);
+  // The drafting-period review notice must not ship to readers.
+  if(/draft pending review/i.test(legal))throw new Error(`/news/${slug}/ must not ship the draft-review notice`);
+  // Wording discipline: absence of code is evidence about the frontend, not
+  // about the publisher's practices. These phrasings conflated the two.
+  for(const overclaim of ['third-party measurement of any kind','no data broker and no sale','never uploaded','removes them permanently','low-accuracy'])
+    if(legal.includes(overclaim))throw new Error(`/news/${slug}/ still carries the overclaiming phrase "${overclaim}"`);
 }
 const newsSitemap=await readFile(resolve('dist/news/news-sitemap.xml'),'utf8');
 const rss=await readFile(resolve('dist/news/feed.xml'),'utf8');
@@ -128,5 +144,16 @@ for(const slug of ['privacy','terms']){
 const canonicalSitemap=await readFile(resolve('dist/news/sitemap.xml'),'utf8');
 for(const slug of ['privacy','terms'])
   if(!canonicalSitemap.includes(`/news/${slug}/`))throw new Error(`/news/${slug}/ is missing from the canonical sitemap`);
+
+// The mobile Menu is the only route to these pages below 700px, where the
+// desktop footer is hidden. Both surfaces are asserted, and the dead root-level
+// paths must not come back: that regression is what made them 404 in the first
+// place, and it is invisible until a reader taps one.
+const menuRuntime=await readFile(resolve('dist/news/assets/js/fmb-news-mobile-global.js'),'utf8');
+for(const slug of ['privacy','terms'])
+  if(!menuRuntime.includes(`href="/news/${slug}/"`))throw new Error(`the mobile Menu must link /news/${slug}/`);
+const footerPage=await readFile(resolve('dist/news/about/index.html'),'utf8');
+for(const slug of ['privacy','terms'])
+  if(!footerPage.includes(`href="/news/${slug}/"`))throw new Error(`the publication footer must link /news/${slug}/`);
 
 console.log(`Product identity verification passed across ${checked} pages: approved FMB NEWS. editorial reference, News/Worldwide/Sports desk IA, five publication products, Entertainment grouping, founder identity, inventory-aware Sports, and non-redundant footer; /news/privacy/ and /news/terms/ resolve, carry legal-page structure, and stay out of the news sitemap and RSS.`);

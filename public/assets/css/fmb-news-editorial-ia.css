@@ -246,11 +246,20 @@ html[data-fmb-theme="dark"] body.fmb-sports-page .sports-story span{color:#F9AB6
 .fmb-legal a{color:var(--fmb-brand-red,#D71920);text-underline-offset:2px}
 html[data-fmb-theme="dark"] .fmb-legal a{color:var(--fmb-brand-red-signal,#EF1B24)}
 
-/* The draft-status note. A rule and a quieter ground, not a coloured alert
-   box: it is a statement about the page, not a warning about the product. */
-.fmb-legal-status{
-  margin:0 0 var(--fmbv2-space-8);padding:var(--fmbv2-space-4);
-  border-left:2px solid var(--fmb-brand-red,#D71920);
-  background:var(--fmbv2-surface-2);
-  max-width:var(--fmbv2-read-measure)
+/* Effective / last-updated dates. Institutional metadata typography -- the same
+   uppercase small caps the kicker and the founder meta line use -- deliberately
+   not a banner or a card. A legal page states its dates; it does not announce
+   them. Two lines on a phone, one on a wider screen. */
+/* Specificity note: .fmb-legal p above is (0,1,1) and would otherwise win over a
+   bare .fmb-legal-dates (0,1,0) whatever the source order. Qualified here so the
+   rule actually lands -- an inert declaration is the failure mode this file has
+   hit before. */
+.fmb-legal p.fmb-legal-dates{
+  display:flex;flex-wrap:wrap;gap:var(--fmbv2-space-1) var(--fmbv2-space-4);
+  margin:0 0 var(--fmbv2-space-6);padding:0 0 var(--fmbv2-space-4);
+  border-bottom:1px solid var(--fmbv2-line-1);
+  max-width:var(--fmbv2-read-measure);
+  font:500 var(--fmbv2-text-xs)/1.5 var(--fmbv2-font-sans);
+  letter-spacing:var(--fmbv2-tracking-kicker);text-transform:uppercase;
+  color:var(--fmbv2-ink-3)
 }
