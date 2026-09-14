@@ -127,6 +127,14 @@ function normalizeLandingClock(html, relativePath) {
   );
 }
 
+function removeLegacyLandingScaffolding(html, relativePath) {
+  if (relativePath !== 'index.html') return html;
+  return html
+    .replace(/<div class="top-wire">[\s\S]*?<div class="wire-time"[^>]*>[\s\S]*?<\/div>\s*<\/div>/i, '')
+    .replace(/<div class="section-rail">[\s\S]*?<\/div>\s*<\/div>/i, '')
+    .replace(/href="#stories"/gi, 'href="/news/archive/"');
+}
+
 const files = await listHtmlFiles(newsRoot);
 let changed = 0;
 let headersNormalized = 0;
@@ -148,6 +156,7 @@ for (const file of files) {
 
   html = removeLandingHeroImage(html, relativePath);
   html = normalizeLandingClock(html, relativePath);
+  html = removeLegacyLandingScaffolding(html, relativePath);
 
   if (html !== source) {
     await writeFile(file, html, 'utf8');
@@ -155,4 +164,4 @@ for (const file of files) {
   }
 }
 
-console.log(`Applied canonical FMB News brand system to ${changed}/${files.length} HTML pages; preserved the approved FMB NEWS. editorial landing masthead; kept content-hashed appearance assets; installed the approved editorial reference last on Home; normalized shared mastheads on ${headersNormalized} pages; kept one authoritative PHT clock/process; About readability preserved.`);
+console.log(`Applied canonical FMB News brand system to ${changed}/${files.length} HTML pages; preserved the approved FMB NEWS. editorial landing masthead; kept content-hashed appearance assets; installed the approved editorial reference last on Home; removed retired template Home scaffolding; normalized shared mastheads on ${headersNormalized} pages; kept one authoritative PHT clock/process; About readability preserved.`);
