@@ -561,3 +561,62 @@ html[data-fmb-theme="dark"]:root body.fmb-ref.fmb-network-landing{
     z-index:2!important;
   }
 }
+
+/* ===========================================================================
+   Brand Guidelines section 06 -- editorial geometry
+   ===========================================================================
+   Measured on the built Home before this block, at 1440 / 1280 / 1024:
+
+     outer margin        36 / 36 / 18 px      target 70-90 on large desktop
+     headline to copy     9 px                target 20-28
+     kicker to headline   7 px                target 12-18 (metadata spacing)
+     section gaps         0 px                target 48-72
+     lead / rail split    66% / 34%           a 12-column 8/4 split is 67/33
+     photo area           41% / 40% / 31%     target 40-65
+     rules                1-2 px              in spec
+     headline lines       3                   in spec (2-4)
+
+   So four numbers were out, and the split, photography share and rules were
+   already right. Only the four move.
+
+   The margin scales rather than stepping: 72px is the guideline floor at large
+   desktop, and below 1200 it narrows proportionally instead of compressing the
+   columns, which is what the brief asks for at narrower widths. clamp() with a
+   vw term does that in one declaration and keeps the two inner wrappers and
+   the footer on exactly the same measure. */
+
+.fmb-ref.fmb-network-landing .publication-header-inner,
+.fmb-ref.fmb-network-landing .network-hero-inner,
+.fmb-ref.fmb-network-landing .publication-footer-inner{
+  /* clamp() here is the per-side margin, so it is subtracted twice. 5vw puts
+     72px a side at 1440 and 64px at 1280, and narrows proportionally below
+     that rather than compressing the columns. */
+  width:min(1440px,calc(100% - 2*clamp(36px,5vw,90px)))!important;
+}
+
+/* Headline to supporting copy, and the kicker above it. Both were set tight
+   enough that the lead read as one block instead of a headline with a deck. */
+.fmb-ref.fmb-network-landing .editorial-kicker{margin:14px 0 14px!important}
+.fmb-ref.fmb-network-landing .editorial-lead-story p{margin-top:22px!important}
+
+/* Major section spacing. The three bands sat flush, so the page read as one
+   continuous column with rules in it rather than as sections.
+
+   The 48-72px target is the gap between sections, so it is split across the
+   two adjacent paddings rather than applied to each -- 30 and 30 plus the 1px
+   rule gives 61px between content edges, mid-band. Applying 52 to each side
+   was a first attempt here and produced 105px, which is half again over the
+   top of the band. */
+.fmb-ref.fmb-network-landing .editorial-top-grid{padding-bottom:30px!important}
+.fmb-ref.fmb-network-landing .network-products{
+  padding-top:30px!important;
+  padding-bottom:30px!important;
+}
+.fmb-ref.fmb-network-landing .editorial-bottom-grid{padding-top:30px!important}
+
+/* Article reading geometry is NOT here. fmb-news-editorial-reference-v2.css is
+   injected on index.html only, so nothing in this file reaches an article
+   route -- a first attempt at the reading measure was written here and silently
+   did nothing. It lives in fmb-news-product-identity.css, which loads on every
+   page. */
+

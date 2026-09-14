@@ -124,3 +124,32 @@ body.fmb-ref{font-family:var(--fmb-ui)}
   .fmb-ref .footer-grid{grid-template-columns:1fr!important}
   .fmb-ref .footer-grid>div:first-child{grid-column:auto}
 }
+
+
+/* ===========================================================================
+   Brand Guidelines section 06 -- article reading geometry
+   ===========================================================================
+   Measured on a built article before this block:
+
+     body measure   100ch at 1440, 82ch at 1280     target 60-75ch
+     image/caption  0px between them
+     byline/figure  0px between them
+
+   The article column is sized by the page grid, not for reading, so the body
+   copy inherited the full 899px column. The cap goes on the running text
+   alone: the headline, deck and figure keep the column, which is what lets
+   photography hold 40-65% of the composition, and only the prose is brought to
+   measure. 68ch is mid-band and holds at every desktop width without touching
+   the grid.
+
+   This lives here rather than in the editorial reference layer because that
+   layer is injected on index.html only and never reaches an article route.
+   =========================================================================== */
+
+.fmb-ref .article .article-body,
+.fmb-ref .article .article-body>section,
+.fmb-ref .article .article-body>p{max-width:68ch}
+
+/* Metadata spacing band is 12-18px; both of these sat flush. */
+.fmb-ref .article .article-figure figcaption{margin-top:12px}
+.fmb-ref .article .byline{margin-bottom:24px}

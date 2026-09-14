@@ -1594,3 +1594,115 @@
   body.fmb-mobile-first .fmb-editorial-mobile-dock a.is-active span,
   body.fmb-mobile-first .fmb-mobile-brand-dot{color:#F53A3F!important}
 }
+
+/* ============================================================================
+   Brand Guidelines section 06 -- mobile geometry
+   ============================================================================
+   Mobile deliberately does not take the 70-90px desktop margin. Measured on
+   the built Home at 320 / 390 / 430 before this block:
+
+     horizontal inset    12px on story rows, section heads and desk rows
+                         0px on the lead copy, which sits full-bleed and
+                         carries its own 18px padding instead -- so the text
+                         inset was 18 against 12 everywhere else
+     story row height    92px at every width           compact, in spec
+     touch targets       40px minimum                  target is 44px
+     dock / body pad     58px / 78px                   clears, in spec
+     horizontal overflow 0px                           in spec
+
+   Two things move. The section rail was the only control under 44px, and it is
+   the one a thumb reaches for most; it goes to 44 and the shell grows by the
+   same 4px. And the lead copy's text inset comes to 16px so every text edge on
+   the page lines up on one vertical, which is what makes a phone layout read
+   as designed rather than as a stack of independently padded blocks.
+
+   16px rather than 12: the row insets are 12 on the box, but their text starts
+   after a 100px thumbnail plus a 12px gap, so the only copy actually sitting on
+   the 12px edge is the section heads. Bringing the lead to 16 and the heads to
+   16 puts every left text edge on one line without touching row density.
+   ========================================================================== */
+
+@media (max-width:699px){
+  /* The page inset lives on the section wrappers, which carried 12px; every
+     row and heading inside them sits at 0 and inherits it. So the inset moves
+     once, on the wrappers, rather than being added to each child -- adding it
+     to children stacks it and pushes copy to 28px, which is what a first
+     attempt here did. */
+  body.fmb-mobile-first .fmb-app-section,
+  body.fmb-mobile-first .fmb-editorial-mobile-rail{
+    margin-inline:16px!important;
+  }
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-copy{
+    padding-inline:16px!important;
+  }
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-row,
+  body.fmb-mobile-first .fmb-editorial-mobile-rail-item,
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head,
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-editorial-newsroom-row{
+    padding-inline:0!important;
+    margin-inline:0!important;
+  }
+  /* The feature rail's inline padding is its gutter and sets the peek, which is
+     held at 10-14% of the next card. It moves to the same 16px as everything
+     else and the peek is re-measured against it. */
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-grid{
+    padding-inline:16px!important;
+    scroll-padding-inline:16px!important;
+  }
+
+  /* The section rail and the search control were the only targets under 44px. */
+  body.fmb-mobile-first .fmb-mobile-product-rail,
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail,
+  body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail{
+    height:44px!important;
+    min-height:44px!important;
+  }
+  body.fmb-mobile-first .fmb-mobile-product-rail a,
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a,
+  body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a{
+    height:44px!important;
+    min-height:44px!important;
+  }
+  body.fmb-mobile-first .fmb-mobile-shell-search a{
+    height:44px!important;
+    min-height:44px!important;
+  }
+}
+
+@media (max-width:699px){
+  /* Both of these are re-asserted by Home-scoped rules at (0,3,1) and (0,3,2):
+     .fmb-app-section by margin:20px 12px 0, and the search control by a 42px
+     height. Matched here rather than escalated, keeping the 20px section
+     rhythm and changing only the inline inset. */
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section{
+    margin:20px 16px 0!important;
+  }
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-editorial-mobile-rail{
+    margin-inline:16px!important;
+  }
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-shell-actions a,
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-shell-actions button{
+    height:44px!important;
+    min-height:44px!important;
+  }
+}
+
+@media (max-width:699px){
+  /* An explicit width:calc(100% - 24px) was left over from the 12px inset, so
+     with a 16px margin the box ran 8px short on the right -- 16 left, 8 right.
+     The margins define the box now, which is what makes the inset symmetrical
+     and keeps it symmetrical at any width. */
+  body.fmb-mobile-first .fmb-app-section,
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section,
+  body.fmb-mobile-first .fmb-editorial-mobile-rail,
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-editorial-mobile-rail,
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-list{
+    width:auto!important;
+  }
+  /* The rail gutter moved from 18px to 16px with everything else, which took
+     the peek down to 9% at 430. Four pixels back onto the peek holds it in the
+     10-15% band across 320 to 430 again. */
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-grid>*{
+    flex:0 0 calc(100% - 10px)!important;
+  }
+}
