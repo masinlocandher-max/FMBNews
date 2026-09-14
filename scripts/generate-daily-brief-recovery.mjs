@@ -9,6 +9,13 @@ const SEED_PATH = path.join(RECOVERY_DIR, 'daily-brief-seed-2026-09-15.json');
 const START = '2026-08-18';
 const END = '2026-09-15';
 const MAX_STORIES = 6;
+const BRAND_PHOTO = {
+  src: '/assets/images/mobile/fmb-daily-brief-coffee.webp',
+  alt: 'FMB Daily Brief coffee visual with the FMB shell emblem',
+  caption: 'Approved FMB Daily Brief photographic visual used when a recovered edition has no suitable rights-cleared documentary photograph.',
+  credit: 'FMB News',
+  sourceUrl: ''
+};
 
 fs.mkdirSync(BRIEFS_DIR, { recursive: true });
 fs.mkdirSync(RECOVERY_DIR, { recursive: true });
@@ -78,6 +85,12 @@ function articleImage(article) {
     credit: clean(image.credit || image.creator || image.source || 'FMB News'),
     sourceUrl: clean(image.sourcePage || image.sourceUrl || '')
   };
+}
+
+function isPhotographicImage(image) {
+  if (!image?.src) return false;
+  const pathOnly = String(image.src).toLowerCase().split('?')[0].split('#')[0];
+  return /\.(jpe?g|webp|avif)$/.test(pathOnly);
 }
 
 function sourceList(article) {
@@ -200,6 +213,15 @@ function findImageByKeyword(keyword) {
   return matches.length ? articleImage(matches[0].article) : null;
 }
 
+function normalizeSeedSource(source) {
+  const label = clean(source?.label || '');
+  let url = source?.url || '';
+  if (url === 'https://businessmirror.com.ph/' && /big-time pump price hikes/i.test(label)) {
+    url = 'https://businessmirror.com.ph/2026/09/14/big-time-pump-price-hikes-gas-at-%E2%82%B15-68-diesel-at-%E2%82%B14-31/';
+  }
+  return { label, url };
+}
+
 function currentSeedStories(date) {
   if (date !== '2026-09-15' || !fs.existsSync(SEED_PATH)) return [];
   const seed = readJson(SEED_PATH);
@@ -212,18 +234,23 @@ function currentSeedStories(date) {
       headline: clean(s.headline),
       deck: clean(s.deck),
       body: (s.body || []).map(sentence).filter(Boolean),
-      sources: (s.sources || []).filter((x) => x?.url).map((x) => ({ label: clean(x.label), url: x.url })),
+      sources: (s.sources || []).filter((x) => x?.url).map(normalizeSeedSource),
       image,
       sourceArticle: null
     };
   });
 }
 
+function chooseHero(stories) {
+  const photographic = stories.map((story) => story.image).find(isPhotographicImage);
+  return photographic || { ...BRAND_PHOTO };
+}
+
 function buildEdition(date) {
   const current = currentSeedStories(date);
   const selected = current.length ? [] : chooseForDate(date);
   const stories = current.length ? current : selected.map((record, index) => storyFromArticle(record, index + 1, date));
-  const hero = stories[0]?.image || null;
+  const hero = chooseHero(stories);
   const archive = date !== '2026-09-15';
   const leadNames = stories.slice(0, 3).map((s) => s.headline).filter(Boolean);
   return {
@@ -250,7 +277,7 @@ const manifest = {
   generatedAt: '2026-09-15T03:30:00+08:00',
   branchPurpose: 'Recover missing FMB Daily Brief editions without changing main.',
   range: { start: START, end: END },
-  editorialRule: 'Historical editions are reconstructed from FMB News published article records and explicitly marked as archive recovery. September 15 uses a separately verified current-news seed.',
+  editorialRule: 'Historical editions are reconstructed from FMB News published article records and explicitly marked as archive recovery. Every edition is required to carry a photographic hero. September 15 uses a separately verified current-news seed.',
   editions: []
 };
 
@@ -263,6 +290,7 @@ for (const date of dateRange(START, END)) {
     file: path.relative(ROOT, target).replaceAll('\\', '/'),
     storyCount: edition.stories.length,
     status: date === '2026-09-15' ? 'current-prepared' : 'archive-recovered',
+    photographicHero: isPhotographicImage(edition.hero),
     sourceArticles: edition.stories.map((s) => s.sourceArticle).filter(Boolean)
   });
 }
@@ -270,10 +298,10 @@ for (const date of dateRange(START, END)) {
 const manifestPath = path.join(RECOVERY_DIR, 'daily-brief-recovery-manifest.json');
 fs.writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, 'utf8');
 
-const incomplete = manifest.editions.filter((e) => e.storyCount === 0);
+const incomplete = manifest.editions.filter((e) => e.storyCount === 0 || !e.photographicHero);
 if (incomplete.length) {
-  throw new Error(`Recovery produced empty editions for: ${incomplete.map((e) => e.date).join(', ')}`);
+  throw new Error(`Recovery failed completeness/photo QA for: ${incomplete.map((e) => e.date).join(', ')}`);
 }
 
-console.log(`Prepared ${manifest.editions.length} Daily Brief editions (${START} through ${END}).`);
+console.log(`Prepared ${manifest.editions.length} Daily Brief editions (${START} through ${END}) with photographic heroes.`);
 console.log(`Manifest: ${path.relative(ROOT, manifestPath)}`);
