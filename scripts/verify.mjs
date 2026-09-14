@@ -61,8 +61,10 @@ for(const[name,html]of Object.entries(pages)){
   must(html.includes('fmb-news-mobile-global.js?v=20260901-global-v3'),`${name}: global mobile runtime v3 missing`);
   must(html.includes('fmb-news-mobile-products.js?v=20260902-products-v3'),`${name}: strict product runtime v3 missing`);
   must(html.includes('fmb-news-mobile-app-polish.js?v=20260902-polish-v2'),`${name}: final premium mobile polish runtime v2 missing`);
-  must(html.includes('/news/assets/css/fmb-news-theme.css?v=20260912'),`${name}: canonical appearance stylesheet missing`);
-  must(html.includes('/news/assets/js/fmb-news-theme.js?v=20260912'),`${name}: canonical appearance runtime missing`);
+  // Content-hashed, not a hand-typed literal: editing the theme without also
+  // editing the literal used to ship a stale appearance past a passing gate.
+  must(/\/news\/assets\/css\/fmb-news-theme\.css\?v=[0-9a-f]{10}\b/.test(html),`${name}: content-versioned appearance stylesheet missing`);
+  must(/\/news\/assets\/js\/fmb-news-theme\.js\?v=[0-9a-f]{10}\b/.test(html),`${name}: content-versioned appearance runtime missing`);
 }
 
 // The system stylesheet must carry every authored mobile sheet, in the order
@@ -155,8 +157,8 @@ async function scan(target){
   must(text.includes('fmb-news-mobile-global.js?v=20260901-global-v3'),`Global mobile runtime not injected in ${where}`);
   must(text.includes('fmb-news-mobile-products.js?v=20260902-products-v3'),`Strict product runtime v3 not injected in ${where}`);
   must(text.includes('fmb-news-mobile-app-polish.js?v=20260902-polish-v2'),`Final app polish runtime v2 not injected in ${where}`);
-  must(text.includes('/news/assets/css/fmb-news-theme.css?v=20260912'),`Canonical appearance stylesheet not injected in ${where}`);
-  must(text.includes('/news/assets/js/fmb-news-theme.js?v=20260912'),`Canonical appearance runtime not injected in ${where}`);
+  must(/\/news\/assets\/css\/fmb-news-theme\.css\?v=[0-9a-f]{10}\b/.test(text),`Content-versioned appearance stylesheet not injected in ${where}`);
+  must(/\/news\/assets\/js\/fmb-news-theme\.js\?v=[0-9a-f]{10}\b/.test(text),`Content-versioned appearance runtime not injected in ${where}`);
   must(!text.includes('/news/news/assets/'),`Double-scoped asset in ${where}`);
 }
 await scan(resolve('dist/news'));

@@ -1,3 +1,137 @@
+/* ===========================================================================
+   FMB News — design tokens
+   ===========================================================================
+   The repository carries several visual generations layered on top of one
+   another: 14 stylesheets, 2,554 rules and 4,369 !important declarations reach
+   the homepage, with 1,164 selector+property pairs set to conflicting values
+   across files. Consolidating that safely starts here, with one place to name
+   a colour, a radius, a shadow or a duration — so new work consumes a token
+   instead of minting another raw value, and the layers below can be retired
+   against a fixed reference rather than by guesswork.
+
+   Adding tokens changes no computed style on its own. Nothing below reassigns
+   an existing declaration; the eight --fmb-theme-* names the build already
+   consumes keep their exact values and are now derived from this scale.
+
+   Tokens are namespaced --fmbv2-* deliberately. Legacy sheets already define
+   --fmb-plum, --fmb-violet and --fmb-gold at :root with different values
+   (fmb-news-apple-texture.css sets --fmb-plum:#2b1235). Because this sheet
+   loads last, an unprefixed name here silently repaints everything downstream
+   that consumes theirs: it moved an About-page link from #4B1057 to #630661
+   before the computed-style check caught it.
+
+   Identity palette (unchanged): deep violet #220D50, rich plum #630661,
+   warm peach #F9AB60. Editorial surfaces stay predominantly neutral so the
+   journalism, not the brand, carries the page.
+   =========================================================================== */
+
+:root{
+  /* -- brand ------------------------------------------------------------- */
+  --fmbv2-violet:#220D50;
+  --fmbv2-violet-lift:#331a6b;
+  --fmbv2-plum:#630661;
+  --fmbv2-plum-lift:#7d1a7a;
+  --fmbv2-peach:#F9AB60;
+  --fmbv2-peach-deep:#e08c38;
+  --fmbv2-gold:#f2d17a;
+
+  /* -- spacing: one 4px-based rhythm ------------------------------------- */
+  --fmbv2-space-1:4px;   --fmbv2-space-2:8px;   --fmbv2-space-3:12px;
+  --fmbv2-space-4:16px;  --fmbv2-space-5:20px;  --fmbv2-space-6:24px;
+  --fmbv2-space-8:32px;  --fmbv2-space-10:40px; --fmbv2-space-12:48px;
+  --fmbv2-space-16:64px; --fmbv2-space-20:80px; --fmbv2-space-24:96px;
+
+  /* -- type scale -------------------------------------------------------- */
+  --fmbv2-font-sans:-apple-system,BlinkMacSystemFont,"SF Pro Text",Manrope,"Segoe UI",Inter,system-ui,sans-serif;
+  --fmbv2-font-display:"Bodoni Moda",Georgia,"Times New Roman",serif;
+  --fmbv2-text-xs:12px;   --fmbv2-text-sm:13px;  --fmbv2-text-base:15px;
+  --fmbv2-text-md:17px;   --fmbv2-text-lg:19px;  --fmbv2-text-xl:22px;
+  --fmbv2-text-2xl:27px;  --fmbv2-text-3xl:34px; --fmbv2-text-4xl:44px;
+  --fmbv2-text-5xl:56px;
+  /* Article body: ~17-19px with a comfortable measure. */
+  --fmbv2-read-size:18px;
+  --fmbv2-read-leading:1.72;
+  --fmbv2-read-measure:68ch;
+  --fmbv2-leading-tight:1.12;
+  --fmbv2-leading-snug:1.3;
+  --fmbv2-leading-body:1.6;
+  --fmbv2-tracking-kicker:.14em;
+  --fmbv2-tracking-display:-.03em;
+
+  /* -- radii ------------------------------------------------------------- */
+  --fmbv2-radius-xs:6px;  --fmbv2-radius-sm:10px; --fmbv2-radius-md:14px;
+  --fmbv2-radius-lg:20px; --fmbv2-radius-xl:28px; --fmbv2-radius-pill:999px;
+
+  /* -- blur -------------------------------------------------------------- */
+  --fmbv2-blur-sm:8px; --fmbv2-blur-md:14px; --fmbv2-blur-lg:22px;
+
+  /* -- z-index: one ladder, so nothing invents 2147481500 again ---------- */
+  --fmbv2-z-base:0;      --fmbv2-z-raised:10;   --fmbv2-z-sticky:100;
+  --fmbv2-z-header:200;  --fmbv2-z-overlay:300; --fmbv2-z-modal:400;
+  --fmbv2-z-toast:500;
+
+  /* -- motion: restrained by default ------------------------------------- */
+  --fmbv2-ease:cubic-bezier(.22,.61,.36,1);
+  --fmbv2-ease-out:cubic-bezier(.16,1,.3,1);
+  --fmbv2-dur-fast:.14s; --fmbv2-dur-base:.22s; --fmbv2-dur-slow:.38s;
+
+  /* -- metallic: identity only, never body text or every card ------------ */
+  --fmbv2-metal-plum:linear-gradient(135deg,#3a1160 0%,#630661 38%,#8a2b84 62%,#3a1160 100%);
+  --fmbv2-metal-gold:linear-gradient(135deg,#c9a24a 0%,#f2d17a 42%,#fff3cf 55%,#c9a24a 100%);
+  --fmbv2-metal-edge:linear-gradient(90deg,transparent,rgba(249,171,96,.55),transparent);
+}
+
+/* Theme-dependent tokens. The eight --fmb-theme-* names below are the
+   established contract the rest of the build reads; the surface/ink/line scale
+   around them is new and additive. */
+:root,
+html[data-fmb-theme="light"]{
+  --fmbv2-surface-1:#ffffff;
+  --fmbv2-surface-2:#f7f2f8;
+  --fmbv2-surface-3:#efe8f1;
+  --fmbv2-ink-1:#1b1420;
+  --fmbv2-ink-2:#655b69;
+  --fmbv2-ink-3:#8b8190;
+  --fmbv2-line-1:rgba(34,13,80,.14);
+  --fmbv2-line-2:rgba(34,13,80,.24);
+  --fmbv2-accent:var(--fmbv2-plum);
+  --fmbv2-accent-ink:#ffffff;
+  --fmbv2-elev-1:0 1px 2px rgba(34,13,80,.06);
+  --fmbv2-elev-2:0 6px 18px rgba(34,13,80,.08);
+  --fmbv2-elev-3:0 18px 50px rgba(34,13,80,.10);
+  --fmbv2-glass-bg:rgba(255,255,255,.76);
+  --fmbv2-glass-line:rgba(255,255,255,.6);
+}
+html[data-fmb-theme="dark"]{
+  --fmbv2-surface-1:#17101d;
+  --fmbv2-surface-2:#1d1424;
+  --fmbv2-surface-3:#241a2d;
+  --fmbv2-ink-1:#f8f4fb;
+  --fmbv2-ink-2:#c8bdcc;
+  --fmbv2-ink-3:#9b8fa1;
+  --fmbv2-line-1:rgba(255,255,255,.12);
+  --fmbv2-line-2:rgba(255,255,255,.2);
+  --fmbv2-accent:#c99bff;
+  --fmbv2-accent-ink:#1b1420;
+  --fmbv2-elev-1:0 1px 2px rgba(0,0,0,.3);
+  --fmbv2-elev-2:0 8px 22px rgba(0,0,0,.28);
+  --fmbv2-elev-3:0 22px 58px rgba(0,0,0,.34);
+  --fmbv2-glass-bg:rgba(23,16,29,.78);
+  --fmbv2-glass-line:rgba(255,255,255,.14);
+}
+
+/* A reader who has asked their system for less transparency gets a solid
+   surface rather than blur, in both themes. */
+@media (prefers-reduced-transparency:reduce){
+  :root,html[data-fmb-theme="light"]{--fmbv2-glass-bg:#ffffff}
+  html[data-fmb-theme="dark"]{--fmbv2-glass-bg:#17101d}
+}
+/* Browsers without backdrop-filter get the same solid fallback. */
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  :root,html[data-fmb-theme="light"]{--fmbv2-glass-bg:#ffffff}
+  html[data-fmb-theme="dark"]{--fmbv2-glass-bg:#17101d}
+}
+
 /* FMB News appearance system — System / Light / Dark */
 :root,
 html[data-fmb-theme="light"]{

@@ -1,14 +1,31 @@
 import { readFile, readdir, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const newsRoot = path.join(root, 'dist', 'news');
-const stylesheetHref = '/assets/css/fmb-news-matte-system.css?v=20260912';
+// Version the appearance assets by a hash of their own bytes.
+//
+// These carried a hand-typed ?v=20260912 that was asserted verbatim in six
+// places across two verifiers. Editing the theme without also editing all seven
+// literals shipped a stale file — and site/sw.js serves /news/assets/* with
+// stale-while-revalidate from a cache whose name the build never bumps, so a
+// reader could hold the old appearance indefinitely. Every design change from
+// here has to actually reach readers, so the URL now changes with the content.
+const assetVersion = async relative => {
+  const bytes = await readFile(path.join(newsRoot, 'assets', relative));
+  return createHash('sha256').update(bytes).digest('hex').slice(0, 10);
+};
+const matteVersion = await assetVersion('css/fmb-news-matte-system.css');
+const themeCssVersion = await assetVersion('css/fmb-news-theme.css');
+const themeJsVersion = await assetVersion('js/fmb-news-theme.js');
+const stylesheetHref = `/assets/css/fmb-news-matte-system.css?v=${matteVersion}`;
 const stylesheetTag = `<link rel="stylesheet" href="${stylesheetHref}">`;
-const themeStylesheetHref = '/assets/css/fmb-news-theme.css?v=20260912';
+const themeStylesheetHref = `/assets/css/fmb-news-theme.css?v=${themeCssVersion}`;
 const themeStylesheetTag = `<link rel="stylesheet" href="${themeStylesheetHref}">`;
-const themeRuntimeTag = '<script src="/assets/js/fmb-news-theme.js?v=20260912" defer></script>';
+const themeRuntimeHref = `/assets/js/fmb-news-theme.js?v=${themeJsVersion}`;
+const themeRuntimeTag = `<script src="${themeRuntimeHref}" defer></script>`;
 const themeBootTag = `<script data-fmb-theme-boot>(()=>{try{let m=localStorage.getItem('fmbThemeModeV1')||'system';if(!['system','light','dark'].includes(m))m='system';const r=m==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):m;document.documentElement.setAttribute('data-fmb-theme-mode',m);document.documentElement.setAttribute('data-fmb-theme',r)}catch{}})();</script>`;
 const aboutReadabilityHref = '/assets/css/fmb-about-readability-lock.css?v=20260911';
 const aboutReadabilityTag = `<link rel="stylesheet" href="${aboutReadabilityHref}">`;
@@ -42,7 +59,9 @@ function ensureBrandAssets(html) {
   if (!html.includes('fmb-news-matte-system.css')) html = html.replace(/<\/head>/i, `${stylesheetTag}</head>`);
   else html = html.replace(/\/assets\/css\/fmb-news-matte-system\.css\?v=[^"']+/i, stylesheetHref);
   if (!html.includes('fmb-news-theme.css')) html = html.replace(/<\/head>/i, `${themeStylesheetTag}</head>`);
+  else html = html.replace(/\/assets\/css\/fmb-news-theme\.css\?v=[^"']+/gi, themeStylesheetHref);
   if (!html.includes('fmb-news-theme.js')) html = html.replace(/<\/head>/i, `${themeRuntimeTag}</head>`);
+  else html = html.replace(/\/assets\/js\/fmb-news-theme\.js\?v=[^"']+/gi, themeRuntimeHref);
   return html;
 }
 

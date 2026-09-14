@@ -20,8 +20,8 @@ assert(pages.length>0,'No built newsroom pages found for appearance verification
 for(const page of pages){
   const html=await readFile(page,'utf8');
   assert(html.includes('data-fmb-theme-boot'),`${path.relative(newsRoot,page)} is missing early theme boot.`);
-  assert(html.includes('/news/assets/css/fmb-news-theme.css?v=20260912'),`${path.relative(newsRoot,page)} is missing theme stylesheet.`);
-  assert(html.includes('/news/assets/js/fmb-news-theme.js?v=20260912'),`${path.relative(newsRoot,page)} is missing theme runtime.`);
+  assert(/\/news\/assets\/css\/fmb-news-theme\.css\?v=[0-9a-f]{10}\b/.test(html),`${path.relative(newsRoot,page)} is missing theme stylesheet.`);
+  assert(/\/news\/assets\/js\/fmb-news-theme\.js\?v=[0-9a-f]{10}\b/.test(html),`${path.relative(newsRoot,page)} is missing theme runtime.`);
 }
 
 const css=await readFile(path.join(newsRoot,'assets','css','fmb-news-theme.css'),'utf8');
