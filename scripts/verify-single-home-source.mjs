@@ -13,11 +13,15 @@ const routes=await read('scripts/render-news-routes.mjs');
 const homeRenderer=await read('scripts/render-home-experience.mjs');
 const home=await read('dist/news/index.html');
 const archive=await read('dist/news/archive/index.html');
+must(!home.includes('class="top-wire"'),'static template headlines must not accompany the canonical live ticker');
+must(!home.includes('href="#stories"'),'retired template links must not point at a missing stories anchor');
 
 must(build.includes("await import('./render-news-routes.mjs')"),'build does not use the focused archive/article renderer');
 must(build.includes("await import('./render-home-experience.mjs')"),'build does not invoke the canonical homepage renderer');
 must(!build.includes('render-metallic-reference.mjs'),'legacy all-in-one renderer returned to the build pipeline');
 must(build.indexOf("render-news-routes.mjs")<build.indexOf("render-home-experience.mjs"),'route renderer must run before the canonical homepage renderer');
+
+must(build.indexOf("await import('./render-fmb-fact-check.mjs')")<build.indexOf("await import('./render-home-experience.mjs')"),'current Fact Check ledger must be generated before the homepage reads it');
 
 for(const token of ['async function article','async function archive','/news/archive/','structured article routes'])must(routes.includes(token),`focused route renderer missing ${token}`);
 for(const banned of ['async function home(','writeRoute(\'/news/\'','heroPhoto=','heroSource=','briefPhoto='])must(!routes.includes(banned),`focused route renderer contains homepage-only code: ${banned}`);

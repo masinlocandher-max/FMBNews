@@ -15,19 +15,42 @@ for(const rel of [
   'dist/news/assets/css/fmb-news-publication-landing.css',
   'public/assets/css/fmb-news-editorial-ia.css',
   'dist/news/assets/css/fmb-news-editorial-ia.css',
+  'public/assets/css/fmb-news-home-v2.css',
+  'dist/news/assets/css/fmb-news-home-v2.css',
   'dist/news/sports/index.html',
 ])await access(resolve(rel));
 
 const productCss=await readFile(resolve('dist/news/assets/css/fmb-news-product-identity.css'),'utf8');
 const landingCss=await readFile(resolve('dist/news/assets/css/fmb-news-publication-landing.css'),'utf8');
 const iaCss=await readFile(resolve('dist/news/assets/css/fmb-news-editorial-ia.css'),'utf8');
+const homeCss=await readFile(resolve('dist/news/assets/css/fmb-news-home-v2.css'),'utf8');
 const emblem=await readFile(resolve('dist/news/assets/images/brand/fmb-bulletin-emblem.svg'),'utf8');
 
 if(!productCss.includes('Bodoni Moda')||!productCss.includes('Manrope'))throw new Error('FMB typography regression: approved editorial display or UI font missing');
 if(!productCss.includes('--fmb-display')||!productCss.includes('--fmb-ui'))throw new Error('FMB typography regression: shared font variables missing');
 if(!emblem.includes('<svg')||!emblem.includes('Filipino Media Bulletin emblem')||!emblem.includes('fill-rule="evenodd"'))throw new Error('Bulletin emblem asset is invalid');
-for(const signal of ['--landing-violet:#220D50','--landing-plum:#630661','--landing-peach:#F9AB60','.network-hero-art{display:none!important}','.network-products','.network-product:nth-child(4)','.daily-brief-signup','.publication-footer'])if(!landingCss.includes(signal))throw new Error(`Landing visual-system regression: missing ${signal}`);
-for(const signal of ['.editorial-desks','.editorial-desk-grid','.publication-menu-panel','body.fmb-sports-page','.sports-empty','.sports-story-grid'])if(!iaCss.includes(signal))throw new Error(`Editorial IA stylesheet regression: missing ${signal}`);
+// The homepage's stylesheets were split so that each rule has exactly one owner:
+// fmb-news-publication-landing.css keeps the chrome, fmb-news-editorial-ia.css
+// keeps the components it shares with Sports, and fmb-news-home-v2.css owns
+// everything inside <main>. These three checks follow the rules to their new
+// homes rather than asserting a layering that no longer exists — and the last
+// one holds the split in place, because a <main> rule reappearing in the chrome
+// sheet is how the old two-sheets-one-element override tangle grew back.
+for(const signal of ['--landing-violet:#220D50','--landing-plum:#630661','--landing-peach:#F9AB60','.publication-mast','.publication-nav','.publication-footer'])if(!landingCss.includes(signal))throw new Error(`Landing chrome regression: missing ${signal}`);
+for(const signal of ['.network-products','.network-product','.daily-brief-signup','.editorial-desks','.editorial-desk-grid','--fmbv2-','.fmbv2-lead','.fmbv2-stream'])if(!homeCss.includes(signal))throw new Error(`Homepage V2 stylesheet regression: missing ${signal}`);
+for(const stray of ['.network-product','.network-hero','.daily-brief-signup'])if(landingCss.includes(stray))throw new Error(`Homepage <main> rule is back in the chrome stylesheet: ${stray} belongs to fmb-news-home-v2.css`);
+// The sheet is injected last and owns its own selectors, so it should never
+// need !important to win a fight. The one exception is the reduced-motion
+// block, where !important is the point: it has to beat animations declared by
+// any other layer, and a reader who asks for less motion must get it.
+{
+  const declarations=homeCss
+    .replace(/\/\*[\s\S]*?\*\//g,'')
+    .replace(/@media\s*\(prefers-reduced-motion:\s*reduce\)\s*\{(?:[^{}]|\{[^{}]*\})*\}/g,'');
+  const offenders=declarations.split('\n').filter(line=>line.includes('!important'));
+  if(offenders.length)throw new Error(`fmb-news-home-v2.css owns its selectors outright and must not need !important outside prefers-reduced-motion:\n  ${offenders.join('\n  ')}`);
+}
+for(const signal of ['.publication-menu-panel','body.fmb-sports-page','.sports-empty','.sports-story-grid'])if(!iaCss.includes(signal))throw new Error(`Editorial IA stylesheet regression: missing ${signal}`);
 if(landingCss.includes('--landing-burgundy')||landingCss.includes('#c69a3b'))throw new Error('Legacy burgundy/gold landing palette returned to the canonical publication stylesheet');
 if(landingCss.includes('commons.wikimedia.org')||landingCss.includes('Special:Redirect'))throw new Error('Canonical publication landing must not depend on remote hero artwork');
 if(landingCss.includes('/news/news/assets/')||iaCss.includes('/news/news/assets/'))throw new Error('Landing asset is double-scoped');
@@ -45,6 +68,7 @@ for(const file of pages){
     for(const signal of [
       '/news/assets/css/fmb-news-publication-landing.css',
       '/news/assets/css/fmb-news-editorial-ia.css',
+      '/news/assets/css/fmb-news-home-v2.css',
       'class="publication-emblem"',
       '/news/assets/images/brand/fmb-bulletin-emblem.svg',
       'class="publication-wordmark"',

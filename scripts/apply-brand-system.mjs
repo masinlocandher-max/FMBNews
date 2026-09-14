@@ -17,7 +17,10 @@ const assetVersion = async relative => {
   const bytes = await readFile(path.join(newsRoot, 'assets', relative));
   return createHash('sha256').update(bytes).digest('hex').slice(0, 10);
 };
+const iaVersion = await assetVersion('css/fmb-news-editorial-ia.css');
+const chromeVersion = await assetVersion('css/fmb-news-publication-landing.css');
 const matteVersion = await assetVersion('css/fmb-news-matte-system.css');
+const homeV2Version = await assetVersion('css/fmb-news-home-v2.css');
 const themeCssVersion = await assetVersion('css/fmb-news-theme.css');
 const themeJsVersion = await assetVersion('js/fmb-news-theme.js');
 const stylesheetHref = `/assets/css/fmb-news-matte-system.css?v=${matteVersion}`;
@@ -27,6 +30,12 @@ const themeStylesheetTag = `<link rel="stylesheet" href="${themeStylesheetHref}"
 const themeRuntimeHref = `/assets/js/fmb-news-theme.js?v=${themeJsVersion}`;
 const themeRuntimeTag = `<script src="${themeRuntimeHref}" defer></script>`;
 const themeBootTag = `<script data-fmb-theme-boot>(()=>{try{let m=localStorage.getItem('fmbThemeModeV1')||'system';if(!['system','light','dark'].includes(m))m='system';const r=m==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):m;document.documentElement.setAttribute('data-fmb-theme-mode',m);document.documentElement.setAttribute('data-fmb-theme',r)}catch{}})();</script>`;
+// The homepage's authoritative stylesheet. It is injected here, and last,
+// because hardfix-mobile-first-site.mjs appends the concatenated mobile system
+// to </head> after the homepage renderer has already run — a link added during
+// home rendering would sit above 250KB of mobile rules and lose every tie.
+const homeV2Href = `/assets/css/fmb-news-home-v2.css?v=${homeV2Version}`;
+const homeV2Tag = `<link rel="stylesheet" href="${homeV2Href}">`;
 const aboutReadabilityHref = '/assets/css/fmb-about-readability-lock.css?v=20260911';
 const aboutReadabilityTag = `<link rel="stylesheet" href="${aboutReadabilityHref}">`;
 const wordmark = '<span class="fmb-lux-wordmark">FMB NEWS</span>';
@@ -62,7 +71,19 @@ function ensureBrandAssets(html) {
   else html = html.replace(/\/assets\/css\/fmb-news-theme\.css\?v=[^"']+/gi, themeStylesheetHref);
   if (!html.includes('fmb-news-theme.js')) html = html.replace(/<\/head>/i, `${themeRuntimeTag}</head>`);
   else html = html.replace(/\/assets\/js\/fmb-news-theme\.js\?v=[^"']+/gi, themeRuntimeHref);
+  // Every consumer gets the same current IA/chrome version, including Home
+  // and Sports, which previously kept fixed versions after these files changed.
+  for (const [name, version] of [['editorial-ia', iaVersion], ['publication-landing', chromeVersion]]) {
+    const asset = `/assets/css/fmb-news-${name}.css`;
+    html = html.replace(new RegExp(asset.replaceAll('.', '\\.') + '(?:\\?v=[^\"\']+)?', 'g'), `${asset}?v=${version}`);
+  }
   return html;
+}
+
+function ensureHomeV2(html, relativePath) {
+  if (relativePath !== 'index.html') return html;
+  if (!html.includes('fmb-news-home-v2.css')) return html.replace(/<\/head>/i, `${homeV2Tag}</head>`);
+  return html.replace(/\/assets\/css\/fmb-news-home-v2\.css\?v=[^"']+/gi, homeV2Href);
 }
 
 function ensureAboutReadability(html, relativePath) {
@@ -114,6 +135,7 @@ for (const file of files) {
   html = addBodyClass(html);
   html = ensureBrandAssets(html);
   html = ensureAboutReadability(html, relativePath);
+  html = ensureHomeV2(html, relativePath);
 
   const beforeHeaders = html;
   html = normalizeHeaders(html);
