@@ -832,3 +832,56 @@
     border-bottom-color:#d8394a!important;
   }
 }
+
+/* ============================================================================
+   The current-section indicator was still the retired identity
+   ============================================================================
+   Measured on the built mobile Home: the active item in the section rail is
+   underlined by a 2px pseudo-element painted
+   linear-gradient(90deg, transparent, rgb(155,106,173) 24%, rgb(242,209,122)
+   50%, ...) at 86% opacity -- the superseded plum-to-gold, and the second of
+   those two stops is the exact gold this file's own verifier forbids from
+   appearing here as a value. It is drawn from an earlier sheet in the bundle.
+
+   Six rules compete for this one 2px line across the bundle, four of them with
+   !important, and between them they propose three different violets, a
+   plum-to-gold gradient and -- from this file, already -- the signal red. The
+   red was losing: the winner is a Home-scoped selector at (0,4,3), and this
+   file's existing claim sits at (0,3,3). Matching its specificity is enough,
+   because this sheet is bundled last.
+
+   This is the single most meaningful mark in the rail: it tells the reader
+   which section they are in. In the approved design that job belongs to the
+   signal red. The rail is newsroom black in both themes, so it takes the
+   dark-ground red, the same value the dock's active label uses.
+   ========================================================================== */
+
+@media (max-width:699px){
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a[aria-current="page"]::after,
+  body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[aria-current="page"]::after{
+    left:8px!important;
+    right:8px!important;
+    height:2px!important;
+    border-radius:0!important;
+    background:#e5484d!important;
+    background-image:none!important;
+    opacity:1!important;
+  }
+}
+
+/* ============================================================================
+   The metallic sheen on the masthead
+   ============================================================================
+   fmb-news-mobile-approved-home.css lays --fmb-metal-sheen across the whole
+   sticky head as a pseudo-element: a 135deg white-alpha gradient from 11% down
+   to 2%. It is a metallic/glass device from the superseded concept, and the
+   approved editorial direction has essentially no metallic or glass treatment
+   -- the masthead is flat newsroom black in both themes. Retired here rather
+   than left to catch light across the wordmark.
+   ========================================================================== */
+
+@media (max-width:699px){
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-shell-head::after{
+    display:none!important;
+  }
+}

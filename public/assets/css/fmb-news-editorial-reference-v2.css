@@ -487,3 +487,73 @@ html[data-fmb-theme="dark"]:root body.fmb-ref.fmb-network-landing{
 .fmb-ref.fmb-network-landing .editorial-feature img{
   filter:saturate(.84)!important;
 }
+
+/* ---------------------------------------------------------------------------
+   The plum ribbon above the footer
+   ---------------------------------------------------------------------------
+   fmb-news-reference-final.css paints .fmb-ref .footer::before as a 3px
+   full-width gradient ribbon in the retired identity's plum and lilac. It runs
+   the entire width of the page directly above the footer, on warm ivory, and
+   it is UI rather than artwork -- the one piece of the retired palette still
+   drawn by a stylesheet on this page. Measured before this rule:
+   linear-gradient(90deg, rgb(75,19,87), rgb(187,138,196), rgb(106,40,117), ...)
+   at height 3px.
+
+   It becomes the publication's own hairline. Scoped to Home like the rest of
+   this pass; the same ribbon is still drawn on internal routes and goes with
+   the shared-appearance migration recorded in the design contract.
+   -------------------------------------------------------------------------- */
+.fmb-ref.fmb-network-landing .footer::before{
+  height:1px!important;
+  background:var(--fmb-theme-line,var(--fmb-rule))!important;
+  background-image:none!important;
+}
+
+/* The footer ribbon was not the only one. Two more plum gradients are drawn as
+   pseudo-elements on the masthead and the navigation row, measured on the built
+   page at 1440:
+
+     .publication-mast::after  linear-gradient(108deg, rgb(33,5,41), rgb(91,23,104),
+                               rgb(167,122,176), rgb(107,40,117) ...)  191px tall
+     .publication-nav::after   linear-gradient(90deg, transparent, rgb(139,91,147),
+                               rgb(58,13,69), rgb(139,91,147) ...)
+
+   The navigation one is a full-width lilac-to-plum band sitting directly under
+   the section links on warm ivory -- the most conspicuous piece of the retired
+   identity left anywhere in the interface. Both are retired on Home. Neither
+   carries information; they are decoration from the superseded concept. */
+.fmb-ref.fmb-network-landing .publication-mast::after,
+.fmb-ref.fmb-network-landing .publication-nav::after{
+  display:none!important;
+}
+
+/* ---------------------------------------------------------------------------
+   One fewer competing band above the lead
+   ---------------------------------------------------------------------------
+   Measured at 1440 before this rule: ticker 0-38, masthead 51-183, navigation
+   183-236, then the appearance control alone on its own full-width row
+   236-274, then the status strip at 292 and the lead at 319. A single 34px
+   control was claiming a whole horizontal band of the masthead, and the
+   masthead is meant to be dominant precisely because nothing else up there
+   competes with it.
+
+   The control moves up into the navigation row, right of the section links and
+   clear of the search button. Nothing is hidden, nothing moves in the DOM, and
+   the keyboard order is unchanged -- it is the same control in the same place
+   in the document, drawn on the row it belongs to.
+
+   Only above 1050px. Below that the navigation becomes a scrolling row and the
+   control keeps its own line, where there is room for it.
+   -------------------------------------------------------------------------- */
+@media(min-width:1051px){
+  .fmb-ref.fmb-network-landing .publication-header-inner>[data-fmb-theme-control]{
+    /* It ships as an inline-flex button on its own centred line, where neither
+       margin-left:auto nor a negative top margin does anything useful. Made a
+       block-level flex box of its own width, both work as intended. */
+    display:flex!important;
+    width:fit-content!important;
+    margin:-45px 46px 7px auto!important;
+    position:relative!important;
+    z-index:2!important;
+  }
+}
