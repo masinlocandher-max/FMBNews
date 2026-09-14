@@ -1,7 +1,7 @@
 (()=>{
 'use strict';
 
-const EDITION_ID='impeachment-refresher-v1';
+const EDITION_ID='impeachment-refresher-v2';
 const STORAGE_KEY='fmbReadBetweenHeadlinesV1';
 const POINTS_PER_CORRECT=100;
 
@@ -113,10 +113,64 @@ const questions=[
     prompt:'On Day 23, what did the prosecution do with the remaining 15 planned witnesses for Article I?',
     options:['It chose to forego presenting them','It presented all 15 in one session','It transferred them to the defense list','It withdrew Article I entirely'],
     answer:'It chose to forego presenting them'
+  },
+  {
+    id:'q21',day:'Day 9',type:'identification',
+    prompt:'Before closing its presentation on Article IV, the prosecution said it would no longer present how many additional witnesses for that article?',
+    answer:'6',aliases:['six','6 witnesses']
+  },
+  {
+    id:'q22',day:'Day 10',type:'single_select',
+    prompt:'Former LandBank manager Violeta Constantino testified that Gina Acosta encashed how many ₱125-million OVP checks between December 2022 and July 2023?',
+    options:['Four','Two','Six','Eight'],
+    answer:'Four'
+  },
+  {
+    id:'q23',day:'Day 11',type:'single_select',
+    prompt:'Which unusual name appeared in the confidential-fund records discussed during former COA auditor Roderick Wamil’s testimony?',
+    options:['Piattos','Mabini','Malakas','Bagwis'],
+    answer:'Piattos'
+  },
+  {
+    id:'q24',day:'Day 13',type:'true_false',
+    prompt:'Roderick Wamil testified that the OVP submitted receipts or sales invoices when it liquidated its ₱125-million confidential fund for 2022.',
+    options:['True','False'],answer:'False'
+  },
+  {
+    id:'q25',day:'Day 14',type:'single_select',
+    prompt:'After the defense declined a joint stipulation on the acknowledgement receipts, prosecutors said Xylene del Campo could have to testify on roughly how many documents?',
+    options:['More than 4,000','About 400','About 40','More than 40,000'],
+    answer:'More than 4,000'
+  },
+  {
+    id:'q26',day:'Day 15',type:'true_false',
+    prompt:'Xylene del Campo testified that supplier details for the OVP’s confidential-fund purchases were themselves confidential and therefore receipts or invoices were unnecessary.',
+    options:['True','False'],answer:'False'
+  },
+  {
+    id:'q27',day:'Day 16',type:'identification',
+    prompt:'Name the House records official who was excused after the defense stipulated to the documents presented through her.',
+    answer:'Marivic Pareja',aliases:['Pareja','Marivic P. Pareja']
+  },
+  {
+    id:'q28',day:'Day 17',type:'true_false',
+    prompt:'Gina Acosta testified that Col. Raymund Lachica was a bonded accountable officer responsible for accounting for confidential funds if they were lost.',
+    options:['True','False'],answer:'False'
+  },
+  {
+    id:'q29',day:'Day 23',type:'identification',
+    prompt:'By Day 23, how many Article I witnesses had the prosecution presented or covered through stipulated testimony before it dropped the remaining 15?',
+    answer:'12',aliases:['twelve','12 witnesses']
+  },
+  {
+    id:'q30',day:'Article I',type:'single_select',
+    prompt:'Which article of impeachment centered on the alleged misuse of ₱612.5 million in confidential funds from the OVP and DepEd?',
+    options:['Article I','Article II','Article III','Article IV'],
+    answer:'Article I'
   }
 ];
 
-if(questions.length!==20)throw new Error('Read Between the Headlines requires exactly 20 questions.');
+if(questions.length!==30)throw new Error('Read Between the Headlines requires exactly 30 questions.');
 
 const root=document.querySelector('[data-rbt-root]');
 if(!root)return;
@@ -187,13 +241,13 @@ function validAnswers(q){return [q.answer,...(q.aliases||[])].map(normalize);}
 function renderQuestion(){
   const q=questions[index];
   locked=false;
-  questionNo.textContent=`Question ${index+1} of 20`;
+  questionNo.textContent=`Question ${index+1} of ${questions.length}`;
   dayLabel.textContent=q.day;
   typeLabel.textContent=typeName(q.type);
   promptEl.textContent=q.prompt;
   scoreEl.textContent=score.toLocaleString('en-PH');
   lifetimeEl.textContent=profile.lifetimePoints.toLocaleString('en-PH');
-  progressFill.style.width=`${(index/20)*100}%`;
+  progressFill.style.width=`${(index/questions.length)*100}%`;
   feedback.textContent='';
   feedback.dataset.state='';
   answerArea.innerHTML='';
@@ -290,7 +344,7 @@ function finishGame(){
     persistProfile();
   }
   resultScore.textContent=score.toLocaleString('en-PH');
-  resultCorrect.textContent=`${correctCount} / 20`;
+  resultCorrect.textContent=`${correctCount} / ${questions.length}`;
   resultLifetime.textContent=profile.lifetimePoints.toLocaleString('en-PH');
   const note=resultView.querySelector('[data-rbt-result-note]');
   if(note)note.textContent=alreadyCompleted
