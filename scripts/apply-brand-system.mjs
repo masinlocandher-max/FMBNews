@@ -5,14 +5,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const newsRoot = path.join(root, 'dist', 'news');
-// Version the appearance assets by a hash of their own bytes.
-//
-// These carried a hand-typed ?v=20260912 that was asserted verbatim in six
-// places across two verifiers. Editing the theme without also editing all seven
-// literals shipped a stale file — and site/sw.js serves /news/assets/* with
-// stale-while-revalidate from a cache whose name the build never bumps, so a
-// reader could hold the old appearance indefinitely. Every design change from
-// here has to actually reach readers, so the URL now changes with the content.
+
 const assetVersion = async relative => {
   const bytes = await readFile(path.join(newsRoot, 'assets', relative));
   return createHash('sha256').update(bytes).digest('hex').slice(0, 10);
@@ -21,6 +14,7 @@ const iaVersion = await assetVersion('css/fmb-news-editorial-ia.css');
 const chromeVersion = await assetVersion('css/fmb-news-publication-landing.css');
 const matteVersion = await assetVersion('css/fmb-news-matte-system.css');
 const homeV2Version = await assetVersion('css/fmb-news-home-v2.css');
+const editorialReferenceVersion = await assetVersion('css/fmb-news-editorial-reference-v2.css');
 const themeCssVersion = await assetVersion('css/fmb-news-theme.css');
 const themeJsVersion = await assetVersion('js/fmb-news-theme.js');
 const stylesheetHref = `/assets/css/fmb-news-matte-system.css?v=${matteVersion}`;
@@ -30,12 +24,10 @@ const themeStylesheetTag = `<link rel="stylesheet" href="${themeStylesheetHref}"
 const themeRuntimeHref = `/assets/js/fmb-news-theme.js?v=${themeJsVersion}`;
 const themeRuntimeTag = `<script src="${themeRuntimeHref}" defer></script>`;
 const themeBootTag = `<script data-fmb-theme-boot>(()=>{try{let m=localStorage.getItem('fmbThemeModeV1')||'system';if(!['system','light','dark'].includes(m))m='system';const r=m==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):m;document.documentElement.setAttribute('data-fmb-theme-mode',m);document.documentElement.setAttribute('data-fmb-theme',r)}catch{}})();</script>`;
-// The homepage's authoritative stylesheet. It is injected here, and last,
-// because hardfix-mobile-first-site.mjs appends the concatenated mobile system
-// to </head> after the homepage renderer has already run — a link added during
-// home rendering would sit above 250KB of mobile rules and lose every tie.
 const homeV2Href = `/assets/css/fmb-news-home-v2.css?v=${homeV2Version}`;
 const homeV2Tag = `<link rel="stylesheet" href="${homeV2Href}">`;
+const editorialReferenceHref = `/assets/css/fmb-news-editorial-reference-v2.css?v=${editorialReferenceVersion}`;
+const editorialReferenceTag = `<link rel="stylesheet" href="${editorialReferenceHref}">`;
 const aboutReadabilityHref = '/assets/css/fmb-about-readability-lock.css?v=20260911';
 const aboutReadabilityTag = `<link rel="stylesheet" href="${aboutReadabilityHref}">`;
 const wordmark = '<span class="fmb-lux-wordmark">FMB NEWS</span>';
@@ -71,8 +63,6 @@ function ensureBrandAssets(html) {
   else html = html.replace(/\/assets\/css\/fmb-news-theme\.css\?v=[^"']+/gi, themeStylesheetHref);
   if (!html.includes('fmb-news-theme.js')) html = html.replace(/<\/head>/i, `${themeRuntimeTag}</head>`);
   else html = html.replace(/\/assets\/js\/fmb-news-theme\.js\?v=[^"']+/gi, themeRuntimeHref);
-  // Every consumer gets the same current IA/chrome version, including Home
-  // and Sports, which previously kept fixed versions after these files changed.
   for (const [name, version] of [['editorial-ia', iaVersion], ['publication-landing', chromeVersion]]) {
     const asset = `/assets/css/fmb-news-${name}.css`;
     html = html.replace(new RegExp(asset.replaceAll('.', '\\.') + '(?:\\?v=[^\"\']+)?', 'g'), `${asset}?v=${version}`);
@@ -84,6 +74,12 @@ function ensureHomeV2(html, relativePath) {
   if (relativePath !== 'index.html') return html;
   if (!html.includes('fmb-news-home-v2.css')) return html.replace(/<\/head>/i, `${homeV2Tag}</head>`);
   return html.replace(/\/assets\/css\/fmb-news-home-v2\.css\?v=[^"']+/gi, homeV2Href);
+}
+
+function ensureEditorialReference(html, relativePath) {
+  if (relativePath !== 'index.html') return html;
+  html = html.replace(/<link\b[^>]*href=["'][^"']*fmb-news-editorial-reference-v2\.css(?:\?[^"']*)?["'][^>]*>/gi, '');
+  return html.replace(/<\/head>/i, `${editorialReferenceTag}</head>`);
 }
 
 function ensureAboutReadability(html, relativePath) {
@@ -104,7 +100,7 @@ function normalizeHeaderWordmark(header) {
     replaced = true;
     let safeOpen = open;
     if (!/\baria-label=/i.test(safeOpen)) safeOpen = safeOpen.replace(/>$/, ' aria-label="FMB News home">');
-    if (inner.includes('fmb-lux-wordmark')) return match;
+    if (inner.includes('fmb-editorial-wordmark') || inner.includes('fmb-lux-wordmark')) return match;
     return `${safeOpen}<span class="fmb-legacy-brand" aria-hidden="true">${inner}</span>${wordmark}${close}`;
   });
 
@@ -123,6 +119,14 @@ function removeLandingHeroImage(html, relativePath) {
     .replace(/<picture\b[^>]*>[\s\S]*?data-fmb-asset=(['"])hero\1[\s\S]*?<\/picture>/gi, '');
 }
 
+function normalizeLandingClock(html, relativePath) {
+  if (relativePath !== 'index.html') return html;
+  return html.replace(
+    /<div class="publication-date-block"><span data-pht-date>Philippine Standard Time<\/span><br><span data-pht-clock>--:--<\/span><\/div>/i,
+    '<div class="publication-date-block"><span>Philippine Standard Time</span><br><span class="publication-time-label">Live newsroom clock above</span></div>',
+  );
+}
+
 const files = await listHtmlFiles(newsRoot);
 let changed = 0;
 let headersNormalized = 0;
@@ -136,12 +140,14 @@ for (const file of files) {
   html = ensureBrandAssets(html);
   html = ensureAboutReadability(html, relativePath);
   html = ensureHomeV2(html, relativePath);
+  html = ensureEditorialReference(html, relativePath);
 
   const beforeHeaders = html;
   html = normalizeHeaders(html);
   if (html !== beforeHeaders) headersNormalized += 1;
 
   html = removeLandingHeroImage(html, relativePath);
+  html = normalizeLandingClock(html, relativePath);
 
   if (html !== source) {
     await writeFile(file, html, 'utf8');
@@ -149,4 +155,4 @@ for (const file of files) {
   }
 }
 
-console.log(`Applied canonical FMB News brand system to ${changed}/${files.length} HTML pages; normalized mastheads on ${headersNormalized} pages; installed System/Light/Dark appearance runtime; About readability preserved.`);
+console.log(`Applied canonical FMB News brand system to ${changed}/${files.length} HTML pages; preserved the approved FMB NEWS. editorial landing masthead; kept content-hashed appearance assets; installed the approved editorial reference last on Home; normalized shared mastheads on ${headersNormalized} pages; kept one authoritative PHT clock/process; About readability preserved.`);
