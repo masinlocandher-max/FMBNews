@@ -1,0 +1,106 @@
+{
+  "date": "2026-09-15",
+  "preparedAt": "2026-09-15T03:45:00+08:00",
+  "timezone": "Asia/Manila",
+  "editorialNote": "Current-edition seed verified on September 15, 2026. Facts should still receive a final publication-time check before going live.",
+  "stories": [
+    {
+      "kicker": "BARMM ELECTION",
+      "headline": "Historic Bangsamoro vote moves into the results phase",
+      "deck": "The first parliamentary election in the Bangsamoro Autonomous Region enters its results phase after a landmark vote in the southern Philippines.",
+      "body": [
+        "The Bangsamoro Autonomous Region in Muslim Mindanao held its first parliamentary election on September 14, with nearly 2.4 million registered voters choosing members of an 80-seat regional parliament.",
+        "The vote is a major stage in the transition from an appointed interim government to an elected parliamentary administration under the peace process that created the autonomous region.",
+        "Voting proceeded under heightened security after election-related violence killed three people and wounded 15, while Comelec placed Cotabato City under its control.",
+        "Initial results were expected as early as Tuesday, making the canvass, acceptance of results, and the emerging balance among former rebel groups, political clans, and other parties the key developments to watch today."
+      ],
+      "sources": [
+        {
+          "label": "Reuters — What is the Philippines' BARMM regional election and why does it matter",
+          "url": "https://www.reuters.com/world/asia-pacific/what-is-philippines-barmm-regional-election-and-why-does-it-matter-2026-09-14/"
+        },
+        {
+          "label": "Reuters — Voting starts in Philippines' south after three killed in election violence",
+          "url": "https://www.reuters.com/world/asia-pacific/voting-starts-philippines-south-after-three-killed-election-violence-2026-09-14/"
+        }
+      ],
+      "imageFromArticle": "content/news/articles/2026-09-14/051704-barmm-first-parliamentary-election-voting-underway.json"
+    },
+    {
+      "kicker": "MONEY",
+      "headline": "Big fuel-price increases take effect today",
+      "deck": "DOE estimates put Tuesday's increase at P5.68 per liter for gasoline, P4.31 for diesel, and P4.62 for kerosene.",
+      "body": [
+        "Motorists face another large pump-price increase on September 15, with Department of Energy estimates putting gasoline up P5.68 per liter, diesel up P4.31, and kerosene up P4.62.",
+        "The increase follows another week of elevated international oil prices and tighter supply conditions linked to conflict and export disruptions in major producing regions.",
+        "The impact extends beyond motorists because sustained increases in diesel and gasoline can add pressure to transport, logistics, food distribution, and other operating costs.",
+        "Watch for the actual retail adjustments posted by individual oil companies and for any government response to the continued run-up in domestic fuel costs."
+      ],
+      "sources": [
+        {
+          "label": "BusinessMirror — Big-time pump price hikes: Gas at P5.68, diesel at P4.31",
+          "url": "https://businessmirror.com.ph/"
+        },
+        {
+          "label": "GMA News — Oil price hike expected for September 15",
+          "url": "https://www.gmanetwork.com/news/money/economy/1001998/oil-price-hike-of-up-to-p5-for-gasoline-p2-50-for-diesel-seen-next-week/story/"
+        }
+      ],
+      "imageFromArticle": "content/news/articles/2026-09-12/111900-saudi-east-west-pipeline-shutdown-continuation.json"
+    },
+    {
+      "kicker": "JUSTICE",
+      "headline": "Romualdez reaches New Quezon City Jail after PGH assessment",
+      "deck": "BJMP said former House Speaker Martin Romualdez arrived at the Payatas facility at 10:49 p.m. Monday following his transfer from PGH.",
+      "body": [
+        "Former House Speaker Martin Romualdez arrived at the New Quezon City Jail in Payatas at 10:49 p.m. on September 14, according to the Bureau of Jail Management and Penology as reported by Bombo Radyo.",
+        "The transfer followed an independent medical assessment at the Philippine General Hospital and the Sandiganbayan proceedings over whether continued hospital confinement was medically necessary.",
+        "BJMP said the standard admission process includes booking, medical evaluation, fingerprinting, mugshot, interview, and orientation.",
+        "The precise detention arrangement and any medical accommodation should be reported only from confirmed BJMP or court information as developments continue."
+      ],
+      "sources": [
+        {
+          "label": "Bombo Radyo Laoag — Romualdez arrives at Quezon City Jail",
+          "url": "https://laoag.bomboradyo.com/romualdez-addan-iti-quezon-city-jail/"
+        }
+      ],
+      "imageFromArticle": "content/news/articles/2026-09-13/051900-romualdez-pgh-assessment-continuation.json"
+    },
+    {
+      "kicker": "NATION",
+      "headline": "June Aster families face a long identification process",
+      "deck": "Authorities say identifying victims of the MV June Aster ferry fire may take weeks or months as the death toll stands at 76 and 13 remain missing.",
+      "body": [
+        "Authorities say the identification of victims from the MV June Aster ferry fire may take weeks or months because of the condition of many of the recovered remains.",
+        "The confirmed death toll stood at 76 as of the latest Reuters reporting, with 13 people still missing after the ferry caught fire near Coron, Palawan.",
+        "Forensic teams are collecting DNA samples while investigators continue examining the vessel to determine the cause of the fire.",
+        "For families, the immediate story is no longer only the casualty count but the identification process, the search for those still missing, and accountability for one of the country's deadliest recent maritime disasters."
+      ],
+      "sources": [
+        {
+          "label": "Reuters — Philippine ferry fire victims may take months to identify, authorities say",
+          "url": "https://www.reuters.com/world/asia-pacific/philippine-ferry-fire-victims-may-take-months-identify-authorities-say-2026-09-13/"
+        }
+      ],
+      "imageFromArticle": "content/news/articles/2026-09-12/232000-mv-june-aster-death-toll-76-continuation.json"
+    },
+    {
+      "kicker": "ASEAN",
+      "headline": "ASEAN disaster-resilience ministers gather in Manila",
+      "deck": "Ministers and disaster-management chiefs from across Southeast Asia meet in Manila on September 15 and 16 under the Philippines' 2026 ASEAN chairmanship.",
+      "body": [
+        "Ministers and heads of disaster-management agencies from ASEAN member states are gathering in Manila on September 15 and 16 for the ASEAN Ministerial Conference on Disaster Resilience.",
+        "The conference is a flagship event of the Philippines' 2026 ASEAN chairmanship and focuses on the region's exposure to typhoons, floods, earthquakes, droughts, and increasingly interconnected climate and disaster risks.",
+        "The policy significance is regional: disruption to ports, energy systems, food production, transport, and communications in one country can quickly affect supply chains and communities across Southeast Asia.",
+        "Watch for concrete regional commitments, financing mechanisms, and cross-border resilience measures announced during the two-day meeting."
+      ],
+      "sources": [
+        {
+          "label": "Philippine Information Agency — ASEAN Convenes in Manila to Confront the Region's Growing Disaster Risk",
+          "url": "https://pia.gov.ph/news/asean-convenes-in-manila-to-confront-the-regions-growing-disaster-risk/"
+        }
+      ],
+      "imageFromArticle": "content/news/articles/2026-09-13/052400-brics-new-delhi-declaration-marcos-asean-chair.json"
+    }
+  ]
+}
