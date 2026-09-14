@@ -85,8 +85,23 @@ jobs:
 
           grep -q 'min-height:44px' dist/news/assets/css/fmb-news-mobile-personalization.css
           grep -q 'focus-visible' dist/news/assets/css/fmb-news-mobile-personalization.css
-          grep -q 'One exact hero canvas' dist/news/assets/css/fmb-news-mobile-product-heroes.css
-          grep -q 'height:300px' dist/news/assets/css/fmb-news-mobile-product-heroes.css
+          # These two lines used to pin the literal comment "One exact hero canvas"
+          # and "height:300px" in the product hero stylesheet. Both described the
+          # retired 300px poster canvas, and neither was observable behaviour: the
+          # comment assertion would have passed with the rules deleted and the
+          # comment left behind, and it failed only when the canvas was honestly
+          # replaced by the editorial desk opener and documented as such.
+          #
+          # What replaces them is the contract the opener actually has to meet:
+          # the shared desk-hero rule still exists and covers all three products,
+          # it paints the editorial surface rather than a poster gradient, and it
+          # carries no fixed poster height. The rendered result is asserted in
+          # scripts/browser-qa-desk-convergence.mjs, which measures all five desks
+          # in both appearances.
+          grep -q 'body.fmb-mobile-route-world .world-hero,' dist/news/assets/css/fmb-news-mobile-product-heroes.css
+          grep -q 'body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero{' dist/news/assets/css/fmb-news-mobile-product-heroes.css
+          grep -q 'background:var(--fmb-shell-surface,#F5F3EF)!important' dist/news/assets/css/fmb-news-mobile-product-heroes.css
+          ! grep -q 'height:300px' dist/news/assets/css/fmb-news-mobile-product-heroes.css
 
           grep -q 'Hindi hawak ng mga bituin ang ating kapalaran, meron tayong freewill gamitin natin' dist/news/horoscope/index.html
           grep -q '35+ current-event answers' dist/news/crossword/index.html

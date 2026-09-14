@@ -40,7 +40,9 @@ body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero::af
   pointer-events:none!important;
 }
 
-/* One exact inner grid. */
+/* The opener's inner column. It was pinned to the poster's 300px and pushed to
+   flex-end so the type sat at the bottom of the canvas. An opener is sized by
+   its own content and reads from the top. */
 body.fmb-mobile-route-world .world-hero .shell,
 body.fmb-mobile-route-explainer .explainer-hero .shell,
 body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero .brief-shell,
@@ -49,12 +51,12 @@ body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero .sh
   z-index:2!important;
   display:flex!important;
   width:100%!important;
-  height:300px!important;
-  min-height:300px!important;
+  height:auto!important;
+  min-height:0!important;
   flex-direction:column!important;
-  justify-content:flex-end!important;
+  justify-content:flex-start!important;
   margin:0!important;
-  padding:28px 22px 26px!important;
+  padding:0 16px!important;
 }
 
 /* Same top desk signal on all three products. */
