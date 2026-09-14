@@ -606,3 +606,153 @@ html[data-fmb-theme="dark"]:root body.fmb-ref.fmb-network-landing{
    route -- a first attempt at the reading measure was written here and silently
    did nothing. It lives in fmb-news-product-identity.css, which loads on every
    page. */
+
+/* ===========================================================================
+   Depth pass — dimensional editorial hierarchy without new brand chrome
+   ===========================================================================
+   The palette convergence deliberately removed the retired plum/gold surfaces.
+   The remaining problem is spatial, not chromatic: photography, utility bands
+   and product modules were all painted on effectively the same plane. This pass
+   keeps the approved paper / black / red publication, square editorial geometry
+   and rule-led layout, then restores depth through neutral elevation, tonal
+   separation and restrained motion. No new product card system is introduced. */
+
+.fmb-ref.fmb-network-landing{
+  --fmb-depth-1:0 8px 24px rgba(20,20,20,.055),0 2px 7px rgba(20,20,20,.035);
+  --fmb-depth-2:0 18px 46px rgba(20,20,20,.09),0 5px 14px rgba(20,20,20,.055);
+  --fmb-depth-surface:color-mix(in srgb,var(--fmb-theme-surface,var(--fmb-paper-hi)) 82%,transparent);
+  --fmb-depth-soft:color-mix(in srgb,var(--fmb-theme-surface-soft,#EFEDE8) 64%,transparent);
+}
+html[data-fmb-theme="dark"] .fmb-ref.fmb-network-landing{
+  --fmb-depth-1:0 10px 28px rgba(0,0,0,.24),0 2px 8px rgba(0,0,0,.18);
+  --fmb-depth-2:0 22px 52px rgba(0,0,0,.38),0 6px 16px rgba(0,0,0,.24);
+}
+
+/* The publication header remains matte, but it now reads as a separate layer
+   above the reporting rather than another strip of the same paper. */
+.fmb-ref.fmb-network-landing .publication-mast{
+  box-shadow:0 10px 30px rgba(20,20,20,.045)!important;
+}
+html[data-fmb-theme="dark"] .fmb-ref.fmb-network-landing .publication-mast{
+  box-shadow:0 12px 34px rgba(0,0,0,.24)!important;
+}
+.fmb-ref.fmb-network-landing .editorial-status-strip{
+  position:relative;
+  z-index:2;
+  background:var(--fmb-depth-surface)!important;
+  box-shadow:var(--fmb-depth-1);
+}
+
+/* Photography supplies the strongest physical depth. The frame stays square
+   and documentary photographs keep their true colour. */
+.fmb-ref.fmb-network-landing .editorial-lead-image{
+  border:1px solid var(--fmb-theme-line,var(--fmb-rule));
+  box-shadow:var(--fmb-depth-2);
+  transition:transform .28s ease,box-shadow .28s ease;
+}
+.fmb-ref.fmb-network-landing .editorial-lead-story:is(:hover,:focus-visible) .editorial-lead-image{
+  transform:translateY(-3px);
+  box-shadow:0 24px 58px rgba(20,20,20,.12),0 7px 18px rgba(20,20,20,.06);
+}
+html[data-fmb-theme="dark"] .fmb-ref.fmb-network-landing .editorial-lead-story:is(:hover,:focus-visible) .editorial-lead-image{
+  box-shadow:0 28px 64px rgba(0,0,0,.48),0 8px 22px rgba(0,0,0,.3);
+}
+.fmb-ref.fmb-network-landing .editorial-side-rail img,
+.fmb-ref.fmb-network-landing .network-product .editorial-product-image{
+  border:1px solid var(--fmb-theme-line,var(--fmb-rule));
+  box-shadow:var(--fmb-depth-1);
+  transition:transform .22s ease,box-shadow .22s ease;
+}
+.fmb-ref.fmb-network-landing .editorial-side-rail>a{
+  transition:background-color .2s ease,box-shadow .2s ease,transform .2s ease!important;
+}
+.fmb-ref.fmb-network-landing .editorial-side-rail>a:is(:hover,:focus-visible){
+  background:var(--fmb-depth-surface)!important;
+  box-shadow:inset 3px 0 0 var(--fmb-red),var(--fmb-depth-1)!important;
+  transform:translateY(-2px)!important;
+}
+.fmb-ref.fmb-network-landing .editorial-side-rail>a:is(:hover,:focus-visible) img,
+.fmb-ref.fmb-network-landing .network-product:is(:hover,:focus-visible) .editorial-product-image{
+  transform:translateY(-2px);
+  box-shadow:var(--fmb-depth-2);
+}
+
+/* Product modules stay a newspaper grid, not floating rounded cards. Tonal
+   wells and hover elevation make the hierarchy legible without changing the
+   approved 6/6 then 4/4/4 editorial rhythm. */
+.fmb-ref.fmb-network-landing .network-products{
+  background:linear-gradient(180deg,var(--fmb-depth-soft),transparent 72%)!important;
+  box-shadow:inset 0 1px 0 var(--fmb-theme-line,var(--fmb-rule)),inset 0 -1px 0 var(--fmb-theme-line,var(--fmb-rule));
+}
+.fmb-ref.fmb-network-landing .network-product{
+  background:color-mix(in srgb,var(--fmb-theme-surface,var(--fmb-paper-hi)) 48%,transparent)!important;
+  transition:transform .2s ease,background-color .2s ease,box-shadow .2s ease!important;
+}
+.fmb-ref.fmb-network-landing .network-product:is(:hover,:focus-visible){
+  z-index:3!important;
+  transform:translateY(-3px)!important;
+  background:var(--fmb-theme-surface,var(--fmb-paper-hi))!important;
+  box-shadow:var(--fmb-depth-2)!important;
+}
+
+/* The lower modules gain a second paper plane. It is intentionally square and
+   rule-led, so the publication still reads like editorial design rather than a
+   dashboard. */
+.fmb-ref.fmb-network-landing .editorial-bottom-grid{
+  background:linear-gradient(180deg,transparent,var(--fmb-depth-soft) 100%);
+}
+.fmb-ref.fmb-network-landing .entertainment-art,
+.fmb-ref.fmb-network-landing .founder-portrait-placeholder{
+  box-shadow:var(--fmb-depth-1)!important;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.fmb-ref.fmb-network-landing .entertainment-card:is(:hover,:focus-visible) .entertainment-art{
+  transform:translateY(-2px);
+  box-shadow:var(--fmb-depth-2)!important;
+}
+
+/* Newsletter is a functional callout, so it is allowed a raised tonal band.
+   No gradient colour, glass or rounded marketing card is introduced. */
+.fmb-ref.fmb-network-landing .daily-brief-signup{
+  margin-top:18px!important;
+  padding:24px 22px!important;
+  border:1px solid var(--fmb-theme-line,var(--fmb-rule))!important;
+  background:var(--fmb-depth-surface)!important;
+  box-shadow:var(--fmb-depth-1)!important;
+}
+.fmb-ref.fmb-network-landing .brief-form-row{
+  box-shadow:0 8px 20px rgba(20,20,20,.06);
+}
+html[data-fmb-theme="dark"] .fmb-ref.fmb-network-landing .brief-form-row{
+  box-shadow:0 10px 24px rgba(0,0,0,.28);
+}
+
+.fmb-ref.fmb-network-landing :is(.editorial-lead-story,.editorial-side-rail>a,.network-product,.entertainment-card,.publication-search):focus-visible{
+  outline:2px solid var(--fmb-red)!important;
+  outline-offset:4px!important;
+}
+.fmb-ref.fmb-network-landing .publication-search{
+  transition:transform .18s ease,box-shadow .18s ease,background-color .18s ease;
+}
+.fmb-ref.fmb-network-landing .publication-search:is(:hover,:focus-visible){
+  transform:translateY(-1px);
+  background:var(--fmb-depth-surface)!important;
+  box-shadow:var(--fmb-depth-1)!important;
+}
+
+@media(prefers-reduced-motion:reduce){
+  .fmb-ref.fmb-network-landing .editorial-lead-image,
+  .fmb-ref.fmb-network-landing .editorial-side-rail img,
+  .fmb-ref.fmb-network-landing .network-product .editorial-product-image,
+  .fmb-ref.fmb-network-landing .editorial-side-rail>a,
+  .fmb-ref.fmb-network-landing .network-product,
+  .fmb-ref.fmb-network-landing .entertainment-art,
+  .fmb-ref.fmb-network-landing .founder-portrait-placeholder,
+  .fmb-ref.fmb-network-landing .publication-search{
+    transition:none!important;
+  }
+  .fmb-ref.fmb-network-landing :is(.editorial-lead-story,.editorial-side-rail>a,.network-product,.entertainment-card,.publication-search):is(:hover,:focus-visible),
+  .fmb-ref.fmb-network-landing :is(.editorial-lead-story,.editorial-side-rail>a,.network-product,.entertainment-card):is(:hover,:focus-visible) :is(img,.entertainment-art){
+    transform:none!important;
+  }
+}
