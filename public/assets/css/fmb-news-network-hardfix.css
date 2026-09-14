@@ -107,7 +107,7 @@ body.fmb-ref>.nav a{white-space:nowrap}
 .fmb-ref .cms-article{max-width:1120px;margin:28px auto;padding:0}
 .fmb-ref .cms-article header,.fmb-ref .cms-article-content{max-width:780px}
 .fmb-ref .cms-article h1{font-family:"Bodoni 72","Didot","Bodoni MT","Times New Roman",serif;font-size:clamp(2.4rem,6vw,4.9rem);line-height:.98;letter-spacing:-.04em}
-.fmb-ref .cms-article figure{margin:28px 0;padding:10px;background:linear-gradient(145deg,#fff,#f2e8f4);border:1px solid #e1d1e4;box-shadow:var(--fmb-network-shadow)}
+.fmb-ref .cms-article figure{margin:28px 0;padding:10px;background:var(--fmb-theme-surface-soft,#EFEDE8);border:1px solid var(--fmb-theme-line,rgba(20,20,20,.14));box-shadow:var(--fmb-network-shadow)}
 
 /* FMB Brief: same newsroom identity, distinct product treatment. */
 .fmb-ref .brief-edition-bar{background:var(--fmb-network-metal)!important;color:#fff!important;border:0!important;box-shadow:0 8px 22px rgba(20,20,20,.12)}

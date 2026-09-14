@@ -22,7 +22,7 @@
 
   /* -- type scale -------------------------------------------------------- */
   --fmbv2-font-sans:Inter,-apple-system,BlinkMacSystemFont,"SF Pro Text",Manrope,"Segoe UI",system-ui,sans-serif;
-  --fmbv2-font-display:"Bodoni Moda",Georgia,"Times New Roman",serif;
+  --fmbv2-font-display:"Bodoni Moda","Libre Bodoni","Didot","Bodoni 72","Baskerville","Times New Roman",serif;
   --fmbv2-text-xs:12px;   --fmbv2-text-sm:13px;  --fmbv2-text-base:15px;
   --fmbv2-text-md:17px;   --fmbv2-text-lg:19px;  --fmbv2-text-xl:22px;
   --fmbv2-text-2xl:27px;  --fmbv2-text-3xl:34px; --fmbv2-text-4xl:44px;
