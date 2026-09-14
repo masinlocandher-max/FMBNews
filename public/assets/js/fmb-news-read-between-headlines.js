@@ -192,9 +192,7 @@ function forfeitRun(){
   if(!activeRun||finishing)return;
   const result={status:'forfeited',score:0,correctCount:0,elapsedSeconds:elapsedSeconds(),finishedAt:Date.now()};
   recordEdition(result);
-  persistRun({editionId:EDITION_ID,status:'forfeited',...result});
-  activeRun=false;stopTimer();
-  if(document.visibilityState==='visible')showResult(result);
+  activeRun=false;stopTimer();showResult(result);
 }
 
 function startGame(){
@@ -212,7 +210,7 @@ function recoverInterruptedRun(){
   if(!run||run.editionId!==EDITION_ID)return false;
   if(run.status==='active'){
     const result={status:'forfeited',score:0,correctCount:0,elapsedSeconds:Math.max(0,Math.floor((Date.now()-Number(run.startedAt||Date.now()))/1000)),finishedAt:Date.now()};
-    recordEdition(result);persistRun({editionId:EDITION_ID,status:'forfeited',...result});showResult(result);return true;
+    recordEdition(result);showResult(result);return true;
   }
   return false;
 }
