@@ -50,8 +50,25 @@ assert.deepEqual((await page.locator('.fmb-editorial-mobile-rail-item>div>span')
 assert.equal(await page.locator('.fmb-app-story-list').count(),1,'Home must keep one Latest News list.');
 assert((await page.locator('.fmb-app-story-row').count())>=1,'Home Latest News must contain published stories.');
 assert.equal(await page.locator('[data-fmb-approved-mug]').count(),1,'Daily Brief image contract must remain available.');
-const hero=await page.locator('.fmb-app-brand-hero').boundingBox();
-assert(hero&&hero.height>=250&&hero.height<=290,`Mobile story hero height drifted (${hero?.height}px).`);
+// The lead block used to be a fixed-height frame with the headline overlaid on
+// the image, so its total height was the thing worth pinning. It is not that any
+// more: FMB's own editorial graphics carry the headline inside the artwork, so a
+// second headline on top collided with it, and the copy now sits below the image.
+// The block therefore grows with the headline, and pinning its total height would
+// pin the number of lines a headline is allowed to take.
+//
+// What the assertion was really protecting is that branding does not eat the
+// first screen. That is now asserted directly: the image keeps an editorial
+// proportion, the copy does not overlap it, and real journalism starts within
+// the first viewport.
+const heroImage=await page.locator('[data-fmb-editorial-lead]').boundingBox();
+assert(heroImage&&heroImage.height>=165&&heroImage.height<=220,`Mobile lead image proportion drifted (${heroImage?.height}px).`);
+const leadCopy=await page.locator('.fmb-approved-hero-copy').boundingBox();
+assert(leadCopy&&leadCopy.y>=heroImage.y+heroImage.height-2,'Mobile lead copy must sit below the image, never overlaid on artwork that already carries the headline.');
+assert(leadCopy.width>=heroImage.width*0.9,`Mobile lead copy must use the full editorial measure (${Math.round(leadCopy.width)}px of ${Math.round(heroImage.width)}px).`);
+const firstStory=await page.locator('.fmb-editorial-mobile-rail-item').first().boundingBox();
+const viewportHeight=page.viewportSize().height;
+assert(firstStory&&firstStory.y<viewportHeight,`Real journalism must start within the first screen (first story row at ${Math.round(firstStory?.y)}px of ${viewportHeight}px).`);
 assert((await page.locator('[data-fmb-greeting-line]').textContent()||'').trim().length>10,'Mobile lead headline is missing.');
 
 for(const [path,active] of [

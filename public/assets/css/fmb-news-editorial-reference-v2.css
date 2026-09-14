@@ -248,7 +248,10 @@
 .fmb-ref.fmb-network-landing .publication-footer{padding:22px 0 26px!important;background:transparent!important;border:0!important;color:var(--fmb-theme-ink,var(--fmb-ink))!important}
 .fmb-ref.fmb-network-landing .publication-footer-inner{width:min(1440px,calc(100% - 72px))!important;margin:0 auto!important;padding:0!important;display:flex!important;align-items:flex-end!important;justify-content:space-between!important;gap:24px!important}
 .fmb-ref.fmb-network-landing .publication-footer-emblem{display:none!important}
-.fmb-ref.fmb-network-landing .footer-publication-title{font-family:var(--fmb-luxury-serif,Georgia,serif)!important;font-size:26px!important;font-weight:560!important}
+.fmb-ref.fmb-network-landing .footer-publication-title{font-family:var(--fmb-luxury-serif,Georgia,serif)!important;font-size:26px!important;font-weight:560!important;color:var(--fmb-ink,#111)!important}
+/* fmb-news-publication-landing.css still paints this #fff for the retired dark
+   violet footer. The editorial footer sits on ivory paper, so the wordmark was
+   white on white. The colour is claimed here, in the Home visual authority. */
 .fmb-ref.fmb-network-landing .footer-publication-kicker{margin-top:4px!important;color:var(--fmb-muted)!important;font:600 9px/1.4 Manrope,sans-serif!important;letter-spacing:.03em!important}
 
 html[data-fmb-theme="dark"] .fmb-ref.fmb-network-landing{
@@ -276,4 +279,28 @@ html[data-fmb-theme="dark"] .fmb-ref.fmb-network-landing .entertainment-art{bord
 @media(max-width:699px){
   .fmb-ref.fmb-network-landing .network-home{display:none!important}
   .fmb-ref.fmb-network-landing .publication-mast{display:none!important}
+}
+
+
+/* ---------------------------------------------------------------------------
+   Entertainment marks
+   ---------------------------------------------------------------------------
+   Horoscope and Crossword have no photography and must not be given invented
+   imagery. Their tiles held a single glyph inside a tall dark slab, which read
+   as a broken image rather than a deliberate mark. Sized and centred as the
+   typographic marks they are, on the publication's own surface.
+   --------------------------------------------------------------------------- */
+.fmb-ref.fmb-network-landing .entertainment-art{
+  display:grid!important;
+  place-items:center!important;
+  aspect-ratio:16/7!important;
+  height:auto!important;
+  min-height:0!important;
+  margin-bottom:12px!important;
+  border:1px solid var(--fmb-line,#d5cfc5)!important;
+  background:var(--fmb-bg-secondary,#ebe6dc)!important;
+  color:var(--fmb-signal-red,#b51f24)!important;
+  font-family:var(--fmb-luxury-serif,Georgia,serif)!important;
+  font-size:34px!important;
+  line-height:1!important;
 }

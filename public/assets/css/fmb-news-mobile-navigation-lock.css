@@ -217,48 +217,61 @@
     background:var(--fmb-mobile-black)!important;
     color:var(--fmb-mobile-white)!important;
   }
+  /* The lead image is a frame, not a canvas for text. FMB's own editorial
+     graphics carry the headline inside the artwork, so a second headline
+     overlaid on top collided with it and was unreadable. The copy now sits
+     below the image (see .fmb-approved-hero-copy), which also frees the
+     headline from a 194px column and lets the first screen reach real
+     journalism instead of a near-square branding slab. */
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-brand-hero{
     position:relative!important;
     width:100%!important;
-    height:270px!important;
-    min-height:270px!important;
+    height:auto!important;
+    min-height:0!important;
     aspect-ratio:auto!important;
     margin:0!important;
     border:0!important;
     border-radius:0!important;
     background:#090d0f!important;
-    overflow:hidden!important;
+    overflow:visible!important;
     box-shadow:none!important;
   }
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-brand-hero>.fmb-editorial-mobile-lead-image{
     display:block!important;
-    position:absolute!important;
-    inset:0!important;
+    position:static!important;
+    inset:auto!important;
     width:100%!important;
-    height:100%!important;
+    height:208px!important;
     object-fit:cover!important;
     object-position:center!important;
     filter:saturate(.88) contrast(1.04)!important;
   }
   body.fmb-mobile-first.fmb-mobile-route-home [data-fmb-approved-hero],
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-legacy-hero-recovery{display:none!important}
+  /* Retired with the overlay: a readability scrim over an image that no longer
+     carries text only muddied the photograph. */
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-hero-readable-shade{
-    display:block!important;
+    display:none!important;
     position:absolute!important;
     inset:0!important;
     z-index:1!important;
-    background:linear-gradient(180deg,rgba(8,11,13,.05) 0%,rgba(8,11,13,.10) 36%,rgba(8,11,13,.72) 74%,rgba(8,11,13,.97) 100%)!important;
+    background:linear-gradient(180deg,rgba(8,11,13,0) 0%,rgba(8,11,13,0) 62%,rgba(8,11,13,.55) 88%,rgba(8,11,13,.92) 100%)!important;
     pointer-events:none!important;
   }
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-copy{
-    position:absolute!important;
-    left:18px!important;
-    right:34px!important;
-    bottom:22px!important;
-    z-index:3!important;
+    position:static!important;
+    left:auto!important;
+    right:auto!important;
+    bottom:auto!important;
+    z-index:auto!important;
+    display:block!important;
     width:auto!important;
-    color:#fff!important;
-    text-shadow:0 2px 18px rgba(0,0,0,.42)!important;
+    max-width:none!important;
+    margin:0!important;
+    padding:14px 18px 20px!important;
+    border-bottom:1px solid var(--fmb-mobile-line,#292a2d)!important;
+    color:var(--fmb-mobile-white,#f4f3ef)!important;
+    text-shadow:none!important;
   }
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-editorial-mobile-kicker{
     display:block!important;
@@ -272,37 +285,45 @@
     margin:0!important;
     color:#fff!important;
     font-family:"Bodoni Moda","Cormorant Garamond","Playfair Display",Georgia,serif!important;
-    font-size:29px!important;
-    line-height:.96!important;
+    font-size:clamp(25px,7.2vw,31px)!important;
+    line-height:1.04!important;
     font-weight:560!important;
-    letter-spacing:-.04em!important;
+    letter-spacing:-.032em!important;
     text-wrap:balance!important;
   }
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-deck{
     display:block!important;
-    max-width:92%!important;
-    margin:7px 0 0!important;
-    color:#c7c2ba!important;
-    font:500 11px/1.35 Manrope,sans-serif!important;
+    max-width:none!important;
+    margin:8px 0 0!important;
+    color:var(--fmb-mobile-ink-muted,#8c8a86)!important;
+    font:450 13px/1.5 -apple-system,BlinkMacSystemFont,"SF Pro Text",Manrope,sans-serif!important;
   }
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-cta{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important}
+  /* The Philippine date/time used to float over the top-right of the lead
+     image, landing on top of the artwork's own headline. It is newsroom
+     utility, not a caption, so it sits on the ground above the image as a
+     quiet dateline — no blur, no scrim, nothing over the journalism. */
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-hero-live-overlay{
-    position:absolute!important;
-    top:12px!important;
-    right:12px!important;
+    position:static!important;
+    top:auto!important;
+    right:auto!important;
     left:auto!important;
     bottom:auto!important;
-    z-index:4!important;
+    z-index:auto!important;
     display:flex!important;
-    align-items:flex-end!important;
-    padding:6px 7px!important;
-    border:1px solid rgba(255,255,255,.12)!important;
+    align-items:baseline!important;
+    justify-content:space-between!important;
+    gap:10px!important;
+    width:auto!important;
+    padding:9px 18px 10px!important;
+    border:0!important;
+    border-bottom:1px solid var(--fmb-mobile-line,#292a2d)!important;
     border-radius:0!important;
-    background:rgba(8,11,13,.56)!important;
-    color:#fff!important;
+    background:transparent!important;
+    color:var(--fmb-mobile-ink-muted,#8c8a86)!important;
     box-shadow:none!important;
-    backdrop-filter:blur(6px)!important;
-    -webkit-backdrop-filter:blur(6px)!important;
+    backdrop-filter:none!important;
+    -webkit-backdrop-filter:none!important;
   }
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-hero-clock{display:flex!important;flex-direction:column!important;align-items:flex-end!important;gap:6px!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-hero-clock strong{color:#c8c4bd!important;font:650 7px/1 Manrope,sans-serif!important;text-transform:uppercase!important}
@@ -446,8 +467,8 @@
     body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail,
     body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail{grid-template-columns:repeat(5,minmax(62px,1fr))!important}
     body.fmb-mobile-first .fmb-mobile-product-rail a{min-width:62px!important;font-size:7.8px!important;padding-inline:3px!important}
-    body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-brand-hero{height:260px!important;min-height:260px!important}
-    body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-copy>h1{font-size:27px!important}
+    body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-brand-hero>.fmb-editorial-mobile-lead-image{height:178px!important}
+    body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-copy>h1{font-size:24px!important}
     body.fmb-mobile-first.fmb-mobile-route-home .fmb-editorial-mobile-rail-item{grid-template-columns:100px minmax(0,1fr) 16px!important}
     body.fmb-mobile-first.fmb-mobile-route-home .fmb-editorial-mobile-rail-item img{width:100px!important;height:68px!important}
   }
