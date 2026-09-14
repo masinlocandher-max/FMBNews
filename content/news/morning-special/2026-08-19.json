@@ -1,0 +1,202 @@
+{
+  "date": "2026-08-19",
+  "publishedAt": "2026-08-19T07:00:00+08:00",
+  "editionLabel": "FMB Daily Brief · Archive Recovery",
+  "title": "The Stories That Defined the Day",
+  "deck": "Recovered FMB Daily Brief for 2026-08-19, reconstructed from FMB News' verified article archive. Key coverage includes Senate Impeachment Trial Postponed for Second Consecutive Day Amid Flooding; DepEd Says 9,142 Schools Shifted to Distance Learning Amid Neneng, Habagat; TD Neneng Tracks Toward Batanes as PAGASA Monitors Three Cyclonic Systems.",
+  "timezone": "Asia/Manila",
+  "recovery": {
+    "reconstructed": true,
+    "reconstructedAt": "2026-09-15T03:30:00+08:00",
+    "note": "Historical recovery edition. It was reconstructed after the original publication date and must not be represented as having been published contemporaneously."
+  },
+  "hero": {
+    "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "alt": "FMB News editorial visual for a Senate trial postponement",
+    "caption": "FMB News editorial visual accompanying the second impeachment-trial postponement.",
+    "credit": "FMB News editorial visual",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260819-001",
+      "kicker": "Impeachment · Weather",
+      "headline": "Senate Impeachment Trial Postponed for Second Consecutive Day Amid Flooding",
+      "deck": "The second weather delay pushes the trial calendar further back as Metro Manila remains under emergency work arrangements.",
+      "body": [
+        "The approved FMB News midday package reports that Presiding Officer Francis Escudero canceled the August 19 impeachment session, marking a second consecutive weather-related postponement.",
+        "The delay followed continuing monsoon flooding and the Palace directive shifting executive government work arrangements across NCR and several Luzon provinces.",
+        "Repeated postponements affect witness scheduling and the pace of a constitutional trial while prioritizing safe movement during severe weather.",
+        "Watch the Senate Impeachment Court for the Thursday session notice, witness lineup and any makeup-session adjustments."
+      ],
+      "sources": [
+        {
+          "label": "Senate of the Philippines — Official Senate public information",
+          "url": "https://www.senate.gov.ph/"
+        },
+        {
+          "label": "ABS-CBN News Channel — Weather-related impeachment postponement coverage cited by the approved package",
+          "url": "https://www.youtube.com/watch?v=tnlIRoWKyJ8"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for a Senate trial postponement",
+        "caption": "FMB News editorial visual accompanying the second impeachment-trial postponement.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-19/1300-impeachment-trial-postponed-second-day.json"
+    },
+    {
+      "id": "FMB-DB-20260819-002",
+      "kicker": "Education · Disaster response",
+      "headline": "DepEd Says 9,142 Schools Shifted to Distance Learning Amid Neneng, Habagat",
+      "deck": "The scale of the shift shows how prolonged severe weather is disrupting classroom instruction across Luzon.",
+      "body": [
+        "The approved FMB News midday package reports that 9,142 public and private schools across Metro Manila and 17 Luzon provinces suspended in-person classes and activated Alternative Delivery Modes on August 19.",
+        "Alternative Delivery Modes can include printed modules and asynchronous or remote learning, depending on school capacity and local instructions.",
+        "Large-scale learning disruption can compound existing education gaps, making both safety and continuity planning important during extended weather emergencies.",
+        "Watch DepEd for updated school counts, return-to-class guidance, damage assessments and support for affected learners and teachers."
+      ],
+      "sources": [
+        {
+          "label": "Department of Education — Official DepEd advisories and disaster monitoring",
+          "url": "https://www.deped.gov.ph/"
+        },
+        {
+          "label": "DOST-PAGASA — Tropical Depression Neneng bulletins",
+          "url": "https://www.pagasa.dost.gov.ph/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for schools shifting to distance learning",
+        "caption": "FMB News editorial visual accompanying the 9,142-school distance-learning report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-19/1300-9142-schools-distance-learning-neneng-habagat.json"
+    },
+    {
+      "id": "FMB-DB-20260819-003",
+      "kicker": "Weather · Marine safety",
+      "headline": "TD Neneng Tracks Toward Batanes as PAGASA Monitors Three Cyclonic Systems",
+      "deck": "The combined weather pattern keeps monsoon rains and gale conditions in focus for northern and western Luzon.",
+      "body": [
+        "The approved FMB News overnight package, citing PAGASA, reports Tropical Depression Neneng moving west-northwestward toward waters near Batanes with sustained winds around 45 km/h and gusts up to 55 km/h.",
+        "Neneng's center was forecast to remain mainly over water, but the wider circulation of the systems was continuing to enhance the Southwest Monsoon.",
+        "Batanes, Babuyan and coastal communities face marine and rainfall risks even when a cyclone center does not make direct landfall.",
+        "Watch PAGASA for track changes, intensity updates, gale warnings and monsoon rainfall advisories."
+      ],
+      "sources": [
+        {
+          "label": "DOST-PAGASA — Tropical Depression Neneng bulletins",
+          "url": "https://www.pagasa.dost.gov.ph/tropical-cyclone/severe-weather-bulletin"
+        },
+        {
+          "label": "ABS-CBN News — PAGASA monitors tropical cyclone trio inside, around PAR",
+          "url": "https://www.abs-cbn.com/news/weather-traffic/2026/8/19/pagasa-monitors-tropical-cyclone-trio-inside-around-par-0029"
+        }
+      ],
+      "image": {
+        "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Batanes_Sea_Coast_1.jpg",
+        "alt": "Batanes coastline used as a contextual image for Tropical Depression Neneng marine and rainfall risks",
+        "caption": "Batanes sea coast. Contextual file photograph; it does not depict Tropical Depression Neneng itself.",
+        "credit": "Photo: johrabino / Wikimedia Commons, CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Batanes_Sea_Coast_1.jpg"
+      },
+      "sourceArticle": "content/news/articles/2026-08-19/0100-neneng-tracks-batanes-cyclone-trio.json"
+    },
+    {
+      "id": "FMB-DB-20260819-004",
+      "kicker": "Government · Weather",
+      "headline": "Palace Extends Alternative Government Work to August 20 in NCR and 17 Provinces",
+      "deck": "The extension keeps flexible work arrangements in place as residual flood and transport risks continue.",
+      "body": [
+        "The approved FMB News evening package reports that Malacañang extended alternative work arrangements for executive government offices in Metro Manila and 17 Luzon provinces for Thursday, August 20.",
+        "The covered areas mirror the previous day's broad emergency setup, while class suspensions continue to depend on education and local-government decisions.",
+        "The extension affects civil-service operations, commuting and access to public offices while authorities work to restore flooded transport routes.",
+        "Watch Palace, agency and LGU advisories for the return to regular on-site operations and any further school suspension announcements."
+      ],
+      "sources": [
+        {
+          "label": "Presidential Communications Office — Official Palace advisories",
+          "url": "https://pco.gov.ph/"
+        },
+        {
+          "label": "Philippine News Agency — Government and disaster response information",
+          "url": "https://www.pna.gov.ph/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for a Palace work-arrangement advisory",
+        "caption": "FMB News editorial visual accompanying the August 20 alternative-work extension.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-19/1900-palace-alternative-work-august-20-ncr-17-provinces.json"
+    },
+    {
+      "id": "FMB-DB-20260819-005",
+      "kicker": "Impeachment · Legislature",
+      "headline": "Impeachment Court Set to Reconvene for Day 17 With Cash-Advance Custodians",
+      "deck": "The planned resumption follows a weather-related delay and returns attention to financial records and custody of cash advances.",
+      "body": [
+        "The approved FMB News 7:00 AM package reports that the Senate Impeachment Court was scheduled to resume Day 17 at 9:00 AM on August 19 after the previous day's weather postponement.",
+        "The testimony was part of an ongoing evidentiary process. Claims and interpretations advanced by either side are not treated as established facts unless supported by evidence accepted by the court.",
+        "Witness testimony about financial custody and documentation may affect how senator-judges assess disputed confidential-fund transactions.",
+        "Watch the Senate for the actual session status, witness appearances, cross-examination and evidentiary rulings."
+      ],
+      "sources": [
+        {
+          "label": "Senate of the Philippines — Official Senate proceedings and public information",
+          "url": "https://www.senate.gov.ph/"
+        },
+        {
+          "label": "GMA News Online — Impeachment trial resumption coverage cited by the approved package",
+          "url": "https://www.gmanetwork.com/news/topstories/nation/998853/impeachment-court-suspends-trial-on-august-18-2026-due-to-severe-weather/story/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Senate impeachment proceedings",
+        "caption": "FMB News editorial visual accompanying the planned Day 17 impeachment-court resumption.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-19/0700-impeachment-day-17-cash-advance-custodians.json"
+    },
+    {
+      "id": "FMB-DB-20260819-006",
+      "kicker": "Government · Public safety",
+      "headline": "Palace Suspends In-Person Classes, Shifts Government Work in NCR and 17 Provinces",
+      "deck": "The expanded directive covers 18 jurisdictions as continued Habagat rains keep flood and travel risks elevated.",
+      "body": [
+        "The approved FMB News package reports that Malacañang suspended in-person classes and ordered alternative work arrangements for executive government offices in Metro Manila and 17 provinces for Wednesday, August 19.",
+        "The package says frontline health, disaster response, law enforcement, fire protection and vital utility services remained subject to on-site operational requirements.",
+        "The directive affects school attendance, commuting and government-office operations across a large part of Luzon during a continuing weather emergency.",
+        "Check Palace, agency, LGU and school notices for implementation details, private-sector guidance and the timing of normal on-site operations."
+      ],
+      "sources": [
+        {
+          "label": "Presidential Communications Office — Official Palace advisories",
+          "url": "https://pco.gov.ph/"
+        },
+        {
+          "label": "DOST-PAGASA — Official weather advisories",
+          "url": "https://www.pagasa.dost.gov.ph/"
+        }
+      ],
+      "image": {
+        "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Quiapo%2C_Manila_Floods_Habagat-Carina_2024-1.jpg",
+        "alt": "Habagat flooding in Manila used as a contextual image for the August 19 class and government work suspension report",
+        "caption": "Habagat flooding in Quiapo, Manila in July 2024. Contextual file photograph; it is not from the August 19, 2026 suspension event.",
+        "credit": "Photo: Michael Peronce / Wikimedia Commons, CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Quiapo,_Manila_Floods_Habagat-Carina_2024-1.jpg"
+      },
+      "sourceArticle": "content/news/articles/2026-08-19/0100-palace-ncr-17-provinces-suspensions-august-19.json"
+    }
+  ]
+}

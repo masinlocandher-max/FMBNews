@@ -1,0 +1,150 @@
+{
+  "date": "2026-08-28",
+  "publishedAt": "2026-08-28T07:00:00+08:00",
+  "editionLabel": "FMB Daily Brief · Archive Recovery",
+  "title": "The Stories That Defined the Day",
+  "deck": "Recovered FMB Daily Brief for 2026-08-28, reconstructed from FMB News' verified article archive. Key coverage includes DBM Earmarks ₱45.67 Billion for 2027 Disaster Fund as El Niño Risks Loom; Visayas Grid Faces Red and Yellow Alerts as Power Supply Tightens; Mapanuepe Lake Boat Capsize Death Toll Reaches Nine as Last Missing Passenger Is Found.",
+  "timezone": "Asia/Manila",
+  "recovery": {
+    "reconstructed": true,
+    "reconstructedAt": "2026-09-15T03:30:00+08:00",
+    "note": "Historical recovery edition. It was reconstructed after the original publication date and must not be represented as having been published contemporaneously."
+  },
+  "hero": {
+    "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "alt": "FMB News editorial visual for the proposed 2027 Philippine disaster fund",
+    "caption": "FMB News editorial visual accompanying the proposed 2027 disaster-fund report; it does not depict the Senate budget briefing.",
+    "credit": "FMB News editorial visual",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260828-001",
+      "kicker": "Budget · Disaster Preparedness",
+      "headline": "DBM Earmarks ₱45.67 Billion for 2027 Disaster Fund as El Niño Risks Loom",
+      "deck": "The proposed calamity fund is 14.68% higher than the 2026 allocation and is intended to backstop regular agency resources during climate and disaster emergencies.",
+      "body": [
+        "The government has earmarked about ₱45.67 billion for the National Disaster Risk Reduction and Management Fund under the proposed 2027 National Expenditure Program, according to the Department of Budget and Management.",
+        "The approved FMB News brief described broader disaster-preparedness initiatives, but its claims about a separate ₱1-billion Project NOAH allocation and a formal 'Super El Niño' designation were not reproduced in the primary same-day source reviewed for publication. Those details are therefore not presented here as established components of the ₱45.67-billion fund.",
+        "The proposed increase would give the government a larger standby fund when regular agency budgets are insufficient, but its practical effect will depend on congressional approval, release rules and how quickly eligible communities can access support after a disaster.",
+        "The ₱45.67-billion allocation remains part of the proposed 2027 National Expenditure Program and will be subject to congressional budget deliberations before final enactment."
+      ],
+      "sources": [
+        {
+          "label": "Department of Budget and Management — Gov't not waiting for 2027 to prepare for El Niño; interventions already underway",
+          "url": "https://www.dbm.gov.ph/index.php/management-2/4190-dbm-gov-t-not-waiting-for-2027-to-prepare-for-el-nino-interventions-already-underway"
+        },
+        {
+          "label": "Philippine News Agency — DBM: P45.67-B NDRRMF in 2027 to cushion El Niño, disasters",
+          "url": "https://www.pna.gov.ph/articles/1282851"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for the proposed 2027 Philippine disaster fund",
+        "caption": "FMB News editorial visual accompanying the proposed 2027 disaster-fund report; it does not depict the Senate budget briefing.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-28/1300-dbm-45-67-billion-disaster-fund-2027.json"
+    },
+    {
+      "id": "FMB-DB-20260828-002",
+      "kicker": "Energy · Public Utilities",
+      "headline": "Visayas Grid Faces Red and Yellow Alerts as Power Supply Tightens",
+      "deck": "Available generation in the Visayas fell below projected peak demand as several power plants remained unavailable.",
+      "body": [
+        "NGCP placed the Visayas grid under a red alert from 5 p.m. to 8 p.m. on August 28, with yellow alerts before and after the evening red-alert window.",
+        "Consumers and businesses were advised to monitor NGCP and local distribution-utility advisories for changes in alert windows and possible power interruptions.",
+        "Available capacity was estimated at 2,307 megawatts against projected peak demand of about 2,402 MW.",
+        "The shortage reflected the continued unavailability of several generating units and limited electricity imports from Mindanao, reducing operating reserves during peak hours."
+      ],
+      "sources": [
+        {
+          "label": "Philippine News Agency — Visayas grid on red alert anew due to limited supply",
+          "url": "https://www.pna.gov.ph/articles/1282891"
+        },
+        {
+          "label": "ABS-CBN News — Visayas grid still on Red, Yellow Alerts on August 28",
+          "url": "https://www.abs-cbn.com/news/business/2026/8/28/visayas-grid-still-on-red-yellow-alerts-on-august-28-1028"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Visayas Grid Faces Red and Yellow Alerts as Power Supply Tightens",
+        "caption": "FMB News editorial visual accompanying this recovered report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.pna.gov.ph/articles/1282891"
+      },
+      "sourceArticle": "content/news/articles/2026-08-28/1901-visayas-grid-red-yellow-alerts.json"
+    },
+    {
+      "id": "FMB-DB-20260828-003",
+      "kicker": "Zambales · Search and Rescue",
+      "headline": "Mapanuepe Lake Boat Capsize Death Toll Reaches Nine as Last Missing Passenger Is Found",
+      "deck": "The Coast Guard recovered the body of the last missing passenger on August 30, ending the four-day search with nine fatalities and four survivors.",
+      "body": [
+        "The death toll from the Mapanuepe Lake boat capsize in San Marcelino, Zambales, reached nine after responders recovered the body of the final missing passenger on Sunday, August 30.",
+        "The tragedy highlights the risks faced by communities that rely on small boats for routine access to health, social-service and market centers during rapidly changing monsoon conditions.",
+        "The Philippine Coast Guard said the 26-year-old woman was found at about 11:20 a.m. after a four-day search. All 13 Aeta passengers have now been accounted for: nine died and four survived.",
+        "The boat capsized near the Sunken Church in Barangay Buhawen on August 27 while the group was returning to Sitio Lumibao. Two missing children were recovered on August 29, and the final missing adult was recovered the following day."
+      ],
+      "sources": [
+        {
+          "label": "Philippine News Agency — 6 dead, 4 rescued as motorboat capsizes in Zambales – PCG",
+          "url": "https://www.pna.gov.ph/articles/1282895"
+        },
+        {
+          "label": "INQUIRER.net — Bodies of 2 missing Aeta children retrieved from Zambales lake",
+          "url": "https://newsinfo.inquirer.net/2294692/bodies-of-2-missing-aeta-children-retrieved-from-zambales-lake"
+        },
+        {
+          "label": "INQUIRER.net — Body of missing pregnant Aeta found after 4-day search in Zambales lake",
+          "url": "https://newsinfo.inquirer.net/2295047/body-of-missing-pregnant-aeta-found-after-4-day-search-in-zambales-lake"
+        },
+        {
+          "label": "Manila Bulletin — PCG: Last missing Aeta passenger in Lake Mapanuepe tragedy in Zambales found dead",
+          "url": "https://mb.com.ph/2026/08/30/pcg-last-missing-aeta-passenger-in-lake-mapanuepe-tragedy-in-zambales-found-dead"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for the Mapanuepe Lake boat capsize in Zambales",
+        "caption": "FMB News editorial visual accompanying the Mapanuepe Lake search report; it does not depict the victims, boat or search operation.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-28/1900-mapanuepe-lake-zambales-boat-capsize.json"
+    },
+    {
+      "id": "FMB-DB-20260828-004",
+      "kicker": "Weather · Public Safety",
+      "headline": "LPA Inside PAR Enhances Habagat as Friday Class Suspensions Expand",
+      "deck": "A developing low-pressure area strengthened the southwest monsoon while local governments suspended in-person classes in rain-affected communities.",
+      "body": [
+        "PAGASA monitored a low-pressure area east of Northern Luzon on August 28 as the southwest monsoon continued to bring heavy rain over western sections of Luzon.",
+        "The weather system later became part of a sequence of disturbances that strengthened the monsoon over the following days. The main public hazard on August 28 was persistent rainfall rather than a direct cyclone landfall.",
+        "Residents were advised to follow PAGASA rainfall warnings and their own LGU or school announcements because suspension coverage and warning levels could change during the day.",
+        "Local governments announced class suspensions or shifts away from face-to-face instruction in rain-affected areas as flood and landslide risks increased."
+      ],
+      "sources": [
+        {
+          "label": "Philippine News Agency — Habagat, LPA to bring rains over Luzon, Visayas",
+          "url": "https://www.pna.gov.ph/articles/1282843"
+        },
+        {
+          "label": "ABS-CBN News — Class suspensions for August 28, 2026 due to habagat rains",
+          "url": "https://www.abs-cbn.com/news/weather-traffic/2026/8/27/-walangpasok-class-suspensions-for-august-28-2026-due-to-habagat-rains-2037"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for LPA Inside PAR Enhances Habagat as Friday Class Suspensions Expand",
+        "caption": "FMB News editorial visual accompanying this recovered report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.pna.gov.ph/articles/1282843"
+      },
+      "sourceArticle": "content/news/articles/2026-08-28/1301-lpa-08i-habagat-class-suspensions.json"
+    }
+  ]
+}

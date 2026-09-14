@@ -1,0 +1,208 @@
+{
+  "date": "2026-09-08",
+  "publishedAt": "2026-09-08T07:00:00+08:00",
+  "editionLabel": "FMB Daily Brief · Archive Recovery",
+  "title": "The Stories That Defined the Day",
+  "deck": "Recovered FMB Daily Brief for 2026-09-08, reconstructed from FMB News' verified article archive. Key coverage includes Manny Pacquiao Returns to Government as National Anti-Poverty Commission Chief; PSA Finds No Matching Civil Records for 1,685 Names in Duterte Fund Lists; Defense Says They Were Aliases; Peso Falls to Record ₱62.625 per Dollar as Oil and Rate Risks Build.",
+  "timezone": "Asia/Manila",
+  "recovery": {
+    "reconstructed": true,
+    "reconstructedAt": "2026-09-15T03:30:00+08:00",
+    "note": "Historical recovery edition. It was reconstructed after the original publication date and must not be represented as having been published contemporaneously."
+  },
+  "hero": {
+    "src": "/assets/images/news/2026-09-08/pacquiao-napc-16x9.svg",
+    "alt": "FMB News graphic announcing Manny Pacquiao's return to government as National Anti-Poverty Commission secretary and lead convenor",
+    "caption": "FMB News editorial graphic on Manny Pacquiao's appointment as secretary and lead convenor of the National Anti-Poverty Commission. This is not a documentary photograph.",
+    "credit": "Graphic: FMB News",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260908-001",
+      "kicker": "NATION · GOVERNMENT",
+      "headline": "Manny Pacquiao Returns to Government as National Anti-Poverty Commission Chief",
+      "deck": "Former senator Manny Pacquiao took his oath as secretary and lead convenor of the National Anti-Poverty Commission, a Cabinet-rank post that puts him in charge of coordinating the government's anti-poverty agenda.",
+      "body": [
+        "Former senator and boxing champion Manny Pacquiao returned to government service on September 8 after taking his oath as secretary and lead convenor of the National Anti-Poverty Commission before President Ferdinand Marcos Jr. at Malacañang.",
+        "The NAPC was created under Republic Act No. 8425 as the government's coordinating and advisory body for the Social Reform Agenda. Its mandate includes monitoring anti-poverty programs, recommending policy measures and ensuring that basic sectors participate in policymaking.",
+        "The NAPC role is not ceremonial. It sits at the center of how government agencies coordinate policies aimed at low-income communities, including questions of program overlap, targeting, resource allocation and participation by marginalized sectors.",
+        "The immediate test is the policy agenda Pacquiao sets for NAPC and how it aligns with the administration's broader poverty-reduction targets. Readers should watch for changes in program coordination, sector representation, budget priorities and measurable targets for the commission."
+      ],
+      "sources": [
+        {
+          "label": "Philippine News Agency — Pacquiao returns to gov't, joins Marcos Cabinet as NAPC chief",
+          "url": "https://www.pna.gov.ph/index.php/articles/1283533"
+        },
+        {
+          "label": "GMA News — Pacquiao takes oath as NAPC chief",
+          "url": "https://www.gmanetwork.com/news/topstories/nation/1001574/pacquiao-takes-oath-as-napc-chief/story/"
+        },
+        {
+          "label": "Reuters — Pacquiao takes up fight against poverty in Marcos cabinet",
+          "url": "https://www.reuters.com/world/philippines-pacquiao-takes-up-fight-against-poverty-marcos-cabinet-2026-09-08/"
+        },
+        {
+          "label": "Inquirer.net — Marcos appoints Manny Pacquiao as anti-poverty chief",
+          "url": "https://newsinfo.inquirer.net/2301196/marcos-appoints-manny-pacquiao-as-anti-poverty-secretary"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-08/pacquiao-napc-16x9.svg",
+        "alt": "FMB News graphic announcing Manny Pacquiao's return to government as National Anti-Poverty Commission secretary and lead convenor",
+        "caption": "FMB News editorial graphic on Manny Pacquiao's appointment as secretary and lead convenor of the National Anti-Poverty Commission. This is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-08/171757-manny-pacquiao-napc-appointment.json"
+    },
+    {
+      "id": "FMB-DB-20260908-002",
+      "kicker": "NATION · IMPEACHMENT",
+      "headline": "PSA Finds No Matching Civil Records for 1,685 Names in Duterte Fund Lists; Defense Says They Were Aliases",
+      "deck": "A PSA official testified that 1,685 of 2,669 names checked from OVP and DepEd confidential-fund payee lists had no matching civil records. The defense says the names were aliases; the testimony alone does not prove any payee was fictitious.",
+      "body": [
+        "Philippine Statistics Authority Assistant National Statistician Marizza Grande testified before the Senate impeachment court on September 7 that the agency found no matching birth, marriage or death records for 1,685 names submitted for verification from confidential-fund payee lists of the Office of the Vice President and Department of Education under Vice President Sara Duterte.",
+        "Grande testified as a prosecution witness on Article I of the impeachment case, which accuses Duterte of misuse, misappropriation and irregular liquidation of confidential funds under the OVP and DepEd. Duterte served as education secretary from 2022 to 2024 while also serving as vice president.",
+        "The testimony concerns accountability for confidential public funds and the evidentiary record in a constitutional proceeding against the sitting vice president. The case could affect public confidence in how confidential funds are documented, audited and overseen across government.",
+        "The prosecution is expected to continue presenting evidence before the defense presents its own case. A central unresolved question is what documentation or testimony the defense will offer to support its position that the names were aliases and how it says the underlying confidential-fund recipients were verified and accounted for."
+      ],
+      "sources": [
+        {
+          "label": "Philippine News Agency — No civil registry matches for 1.6K names in OVP, DepEd payee lists",
+          "url": "https://www.pna.gov.ph/articles/1283458"
+        },
+        {
+          "label": "GMA News — Sara Duterte impeachment trial Day 22: Confidential fund recipients include deceased",
+          "url": "https://www.gmanetwork.com/news/topstories/nation/1001532/sara-duterte-impeachment-trial-day-22-confidential-fund-recipients-include-deceased/story/"
+        },
+        {
+          "label": "News5 — #VPSaraOnTrial Day 22: VP camp confirms confidential funds recipients’ names are aliases",
+          "url": "https://news.tv5.com.ph/national/read/vpsaraontrial-day-22-vp-camp-confirms-confidential-funds-recipients-names-are-aliases"
+        },
+        {
+          "label": "Philstar.com — Sara Duterte trial recap, Sept. 7: '11th hour' admissions, switching articles",
+          "url": "https://www.philstar.com/headlines/2026/09/07/2554641/sara-duterte-trial-recap-sept-7-11th-hour-admissions-switching-articles"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-08/sara-impeachment-psa-16x9.svg",
+        "alt": "FMB News graphic stating that PSA found no matching civil records for 1,685 names checked from OVP and DepEd confidential-fund payee lists and that the defense said recipient names were aliases",
+        "caption": "FMB News editorial graphic on PSA testimony during Vice President Sara Duterte's impeachment trial. It reports the verified civil-registry search result and the defense's alias position. This is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-08/051926-sara-duterte-impeachment-psa-confidential-funds.json"
+    },
+    {
+      "id": "FMB-DB-20260908-003",
+      "kicker": "BUSINESS · ECONOMY",
+      "headline": "Peso Falls to Record ₱62.625 per Dollar as Oil and Rate Risks Build",
+      "deck": "The Philippine peso closed at a new all-time low of ₱62.625 to the US dollar on September 8, extending a year of repeated record lows as dollar strength and higher oil prices increase pressure on the currency.",
+      "body": [
+        "The Philippine peso weakened to a new record closing low of ₱62.625 against the US dollar on Tuesday, September 8.",
+        "The peso has been under sustained pressure from a stronger US dollar and changing expectations for US interest rates. A currency can weaken even when domestic economic activity is not collapsing if global investors prefer dollar assets or expect US rates to remain comparatively attractive.",
+        "A weaker peso makes dollar-priced imports more expensive in local-currency terms. The most visible effects can appear in fuel, transport, food inputs, medicines, machinery, electronics and other imported goods and services.",
+        "The next key questions are whether the peso stabilizes around current levels and whether global oil prices or US rate expectations move further against emerging-market currencies."
+      ],
+      "sources": [
+        {
+          "label": "GMA News — Peso hits 23rd record low of 2026 at P62.625:US$1",
+          "url": "https://www.gmanetwork.com/news/money/economy/1001638/peso-hits-23rd-record-low-of-2026-at-p62-625-us-1/story/"
+        },
+        {
+          "label": "Philippine STAR — Forex September 8, 2026: 1$:62.625",
+          "url": "https://www.philstar.com/business"
+        },
+        {
+          "label": "Philippine News Agency — PSEi recovers, peso slips vs US dollar",
+          "url": "https://www.pna.gov.ph/articles/1283598"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-08/peso-record-low-62-625-16x9.svg",
+        "alt": "FMB News graphic showing the Philippine peso record closing rate of 62.625 pesos per US dollar on September 8, 2026",
+        "caption": "FMB News editorial graphic on the Philippine peso's September 8, 2026 record closing low of ₱62.625 per US dollar. This is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-08/231853-peso-record-low-62-625.json"
+    },
+    {
+      "id": "FMB-DB-20260908-004",
+      "kicker": "NATION · EDUCATION",
+      "headline": "Philippines Posts Highest PISA Scores Yet, but Learning Gaps Remain Large",
+      "deck": "Filipino 15-year-olds posted the country's strongest PISA results since joining the assessment, with gains in science, mathematics and reading. The improvement is significant, but large learning gaps remain.",
+      "body": [
+        "The Philippines recorded its highest scores to date in the Programme for International Student Assessment after the OECD released the PISA 2025 results on September 8.",
+        "The Philippines first joined PISA in 2018 and has repeatedly ranked among the weakest-performing participating education systems. The 2025 improvement therefore marks a measurable change from the country's previous results rather than simply a change in ranking language.",
+        "The result is one of the clearest international measures of whether Philippine learning outcomes are moving in the right direction. Higher scores suggest that recent recovery efforts may be producing gains, but the country remains far from a point where strong foundational skills can be taken for granted.",
+        "The next question is whether the gains can be sustained and translated into a larger share of students reaching baseline proficiency, especially in reading and mathematics."
+      ],
+      "sources": [
+        {
+          "label": "OECD — PISA 2025 Results (Volume I): Future-Ready Students",
+          "url": "https://www.oecd.org/en/publications/pisa-2025-results-volume-i_73451bc5-en.html"
+        },
+        {
+          "label": "OECD — Programme for International Student Assessment (PISA)",
+          "url": "https://www.oecd.org/en/about/programmes/pisa.html"
+        },
+        {
+          "label": "Philstar.com — PISA 2025: Philippines breaks out of bottom 10, sees best lift in reading",
+          "url": "https://www.philstar.com/headlines/2026/09/08/2554872/pisa-2025-philippines-breaks-out-bottom-10-sees-best-lift-reading"
+        },
+        {
+          "label": "GMA News — PH posts highest PISA scores yet in reading, math, science — DepEd",
+          "url": "https://www.gmanetwork.com/news/topstories/nation/1001612/ph-posts-highest-pisa-scores-yet-in-reading-math-science-deped/story/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-08/pisa-2025-philippines-16x9.svg",
+        "alt": "FMB News graphic showing Philippines PISA 2025 scores of 373 in science, 371 in mathematics and 367 in reading",
+        "caption": "FMB News editorial graphic summarizing the Philippines' PISA 2025 scores in science, mathematics and reading. This is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-08/171757-pisa-2025-philippines-results.json"
+    },
+    {
+      "id": "FMB-DB-20260908-005",
+      "kicker": "DEVELOPING · CONTINUATION",
+      "headline": "Jakarta Airport Reopens as Anak Krakatau Ash Crisis Begins to Ease",
+      "deck": "Indonesia reopened Jakarta’s main airport and four other airports after volcanic ash from Anak Krakatau cleared from key airspace, but two airports remained closed and full recovery was still underway.",
+      "body": [
+        "Jakarta’s Soekarno-Hatta International Airport and four other Indonesian airports reopened early September 8 after volcanic ash from Anak Krakatau cleared from key airspace, Indonesia’s Transport Ministry said.",
+        "The eruption sequence from Anak Krakatau spread volcanic ash across western Indonesia and disrupted nearly 3,000 flights, affecting more than 340,000 travelers according to Indonesian authorities cited by Reuters and CNA.",
+        "Jakarta is a major Southeast Asian business and travel hub for Filipino passengers. Reopening Soekarno-Hatta reduces the immediate risk of broad cancellation waves, but passengers can still face rebooking delays as airlines reposition aircraft, crews and stranded travelers.",
+        "Watch for the reopening of the remaining airports, further Anak Krakatau eruptions, changes in ash-plume direction and airline recovery schedules."
+      ],
+      "sources": [
+        {
+          "label": "Reuters — Indonesia reopens Jakarta airport, four others after Anak Krakatau ash clears",
+          "url": "https://www.reuters.com/business/environment/indonesia-reopens-jakarta-airport-four-others-after-anak-krakatau-ash-clears-2026-09-08/"
+        },
+        {
+          "label": "Associated Press — Flights to and from Indonesia's capital resume after volcanic eruption forced a 2-day closure",
+          "url": "https://apnews.com/article/311bf9e4c81e4b5ff0c55a0406e7edd3"
+        },
+        {
+          "label": "Channel NewsAsia — Jakarta airport and others reopen after volcanic ash crisis",
+          "url": "https://www.channelnewsasia.com/asia/jakarta-airport-and-others-reopen-after-volcanic-ash-crisis-6368031"
+        },
+        {
+          "label": "FMB News — Anak Krakatau Eruption Disrupts Hundreds of Flights at Jakarta’s Main Airport",
+          "url": "https://www.francinemariebautista.com/news/anak-krakatau-eruption-jakarta-airport-flights-september-6-2026/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-08/anak-krakatau-airports-reopen-16x9.svg",
+        "alt": "FMB News graphic reporting Jakarta airport reopened, five airports operating again, two still closed and aircraft inspections continuing after Anak Krakatau ash disruption",
+        "caption": "FMB News editorial graphic on the September 8 reopening of Jakarta’s main airport and four other Indonesian airports after Anak Krakatau volcanic ash disruption. This is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-08/111738-anak-krakatau-airports-reopen-continuation.json"
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "date": "2026-08-31",
+  "publishedAt": "2026-08-31T07:00:00+08:00",
+  "editionLabel": "FMB Daily Brief · Archive Recovery",
+  "title": "The Stories That Defined the Day",
+  "deck": "Recovered FMB Daily Brief for 2026-08-31, reconstructed from FMB News' verified article archive. Key coverage includes DPWH Relieves Las Piñas–Muntinlupa Maintenance Chief Over Reported Delayed Calamity Response; U.S.–Iran Fire Resumes as Oil Prices Jump; NLEX Flooding Closes Libtong Exit; San Simon Motorists Told to Use Alternate Routes.",
+  "timezone": "Asia/Manila",
+  "recovery": {
+    "reconstructed": true,
+    "reconstructedAt": "2026-09-15T03:30:00+08:00",
+    "note": "Historical recovery edition. It was reconstructed after the original publication date and must not be represented as having been published contemporaneously."
+  },
+  "hero": {
+    "src": "/news/assets/images/news/2026-08-31/dpwh-maintenance-chief-relieved-calamity-response.svg",
+    "alt": "DPWH Relieves Las Piñas–Muntinlupa Maintenance Chief Over Reported Delayed Calamity Response",
+    "caption": "Original FMB News editorial graphic; not a documentary photograph.",
+    "credit": "FMB News",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260831-001",
+      "kicker": "DPWH · Accountability · Disaster response",
+      "headline": "DPWH Relieves Las Piñas–Muntinlupa Maintenance Chief Over Reported Delayed Calamity Response",
+      "deck": "The August 29 memorandum ordered an immediate turnover of pending documents, records and office property.",
+      "body": [
+        "Public Works Secretary Vince Dizon relieved engineer Loreto Balena Jr. as maintenance chief of the Las Piñas–Muntinlupa District Engineering Office.",
+        "The order came as Metro Manila and nearby areas dealt with heavy monsoon rains and flooding. Reports did not establish that any single flood incident was caused by Balena's actions or inaction.",
+        "Maintenance offices are responsible for keeping public infrastructure and flood-response systems operational. The case puts attention on accountability standards during emergencies.",
+        "Watch for the appointment or designation of a replacement, any formal administrative proceedings and whether DPWH releases performance findings beyond the relief memorandum."
+      ],
+      "sources": [
+        {
+          "label": "INQUIRER.net — Dizon sacks DPWH exec over delayed flood response",
+          "url": "https://newsinfo.inquirer.net/2295419/dizon-sacks-dpwh-exec-over-delayed-flood-response"
+        },
+        {
+          "label": "GMA News — Las Piñas-Muntinlupa DPWH official relieved over delayed calamity response",
+          "url": "https://www.gmanetwork.com/news/topstories/metro/1000434/las-pi-as-muntinlupa-dpwh-official-relieved-over-delayed-calamity-response/story/"
+        }
+      ],
+      "image": {
+        "src": "/news/assets/images/news/2026-08-31/dpwh-maintenance-chief-relieved-calamity-response.svg",
+        "alt": "DPWH Relieves Las Piñas–Muntinlupa Maintenance Chief Over Reported Delayed Calamity Response",
+        "caption": "Original FMB News editorial graphic; not a documentary photograph.",
+        "credit": "FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-31/113309-dpwh-maintenance-chief-relieved-calamity-response.json"
+    },
+    {
+      "id": "FMB-DB-20260831-002",
+      "kicker": "FMB Worldwide · Middle East",
+      "headline": "U.S.–Iran Fire Resumes as Oil Prices Jump",
+      "deck": "Renewed strikes around the Strait of Hormuz have put energy markets and regional security back on alert.",
+      "body": [
+        "The United States and Iran exchanged attacks over the weekend for the first time in about a month. U.S. forces struck Iranian rocket launchers on Larak Island in the Strait of Hormuz, while Iran said it retaliated against U.S. sites in Jordan.",
+        "The Strait of Hormuz is one of the world's most important oil-shipping routes. Any sustained disruption can quickly affect crude prices, transport costs and inflation expectations well beyond the Middle East.",
+        "For the Philippines, higher global oil prices can feed into fuel, transport and electricity costs. The immediate risk is not only military escalation but also prolonged pressure on energy prices and shipping confidence.",
+        "Watch for further U.S. or Iranian strikes, changes in commercial shipping through the Strait of Hormuz, new sanctions, and whether diplomatic contacts produce a pause in hostilities."
+      ],
+      "sources": [
+        {
+          "label": "Reuters — Oil rises over 2% as US and Iran resume military attacks",
+          "url": "https://www.reuters.com/business/energy/oil-jumps-more-than-2-after-us-attack-irans-larak-island-2026-08-30/"
+        },
+        {
+          "label": "Associated Press — UAE says it intercepted an Iranian drone after weekend US strikes on rocket launchers in Iran",
+          "url": "https://apnews.com/article/iran-us-war-uea-august-31-2026-9f34873bad9a928574c36ee984c3f96b"
+        }
+      ],
+      "image": {
+        "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/STS004-37-716_-_Strait_of_Hormuz.jpg?width=1600",
+        "alt": "Satellite view of the Strait of Hormuz between Iran, Oman and the United Arab Emirates",
+        "caption": "FILE PHOTO: NASA view of the Strait of Hormuz from the STS-4 mission. This contextual image is not from the August 2026 strikes.",
+        "credit": "NASA / Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:STS004-37-716_-_Strait_of_Hormuz.jpg"
+      },
+      "sourceArticle": "content/news/articles/2026-08-31/221401-us-iran-fire-resumes-oil-rises.json"
+    },
+    {
+      "id": "FMB-DB-20260831-003",
+      "kicker": "Transport · NLEX · Flooding",
+      "headline": "NLEX Flooding Closes Libtong Exit; San Simon Motorists Told to Use Alternate Routes",
+      "deck": "Flooding affected lanes near Tulaoc in San Simon and caused heavy traffic along parts of the expressway.",
+      "body": [
+        "NLEX Corporation advised motorists approaching San Simon in both directions to use alternate routes around a flooded section. Libtong Exit was temporarily closed to all vehicles due to flooding.",
+        "NLEX patrol officers were deployed to assist motorists. U-turn slots and exit-and-reentry options were identified for drivers trying to avoid the flooded section.",
+        "NLEX is a major freight and commuter corridor. Flood-related restrictions can quickly create long delays and affect deliveries, work trips and emergency travel.",
+        "Road conditions can change within hours. Check the latest NLEX advisory before entering the affected section and do not attempt to cross lanes declared impassable."
+      ],
+      "sources": [
+        {
+          "label": "GMA News / NLEX Corporation — NLEX motorist advisory: Motorists passing through San Simon may take alternative routes",
+          "url": "https://www.gmanetwork.com/news/serbisyopubliko/transportation/1000489/nlex-motorist-advisory-motorists-passing-through-san-simon-may-take-alternative-routes-to/story/"
+        },
+        {
+          "label": "GMA News / NLEX Corporation — San Simon northbound motorists may take alternative route",
+          "url": "https://www.gmanetwork.com/news/serbisyopubliko/transportation/1000476/nlex-motorist-advisory-san-simon-northbound-motorists-may-take-alternative-route/story/"
+        }
+      ],
+      "image": {
+        "src": "/news/assets/images/news/2026-08-31/nlex-libtong-san-simon-flooding.svg",
+        "alt": "NLEX Flooding Closes Libtong Exit; San Simon Motorists Told to Use Alternate Routes",
+        "caption": "Original FMB News editorial graphic; not a documentary photograph.",
+        "credit": "FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-31/113304-nlex-libtong-san-simon-flooding.json"
+    },
+    {
+      "id": "FMB-DB-20260831-004",
+      "kicker": "Dams · Flood safety · Luzon",
+      "headline": "Ambuklao, Binga and Ipo Dams Open Gates After Days of Heavy Rain",
+      "deck": "Ambuklao had eight gates open, Binga six and Ipo one as authorities warned nearby residents about possible river-level increases.",
+      "body": [
+        "PAGASA data showed Ambuklao Dam with eight gates open Monday morning, Binga with six and Ipo with one as reservoirs released water after several days of heavy rain.",
+        "Heavy southwest monsoon rain remained forecast over Luzon. Residents near downstream rivers were warned that water levels could rise.",
+        "Dam releases can add to river flows during already wet conditions, making timely downstream warnings important for communities near waterways.",
+        "Residents should follow PAGASA dam bulletins and LGU warnings and avoid riverbanks, spillways and low-lying crossings while releases continue."
+      ],
+      "sources": [
+        {
+          "label": "GMA News / PAGASA — Ambuklao, Binga, Ipo dams open gates to release water",
+          "url": "https://www.gmanetwork.com/news/topstories/regions/1000499/ambuklao-binga-ipo-dams-open-gates-to-release-water-aug-31-2026/story/"
+        },
+        {
+          "label": "PAGASA — Flood and dam information",
+          "url": "https://origin.pagasa.dost.gov.ph/flood"
+        }
+      ],
+      "image": {
+        "src": "/news/assets/images/news/2026-08-31/ambuklao-binga-ipo-dams-release-water.svg",
+        "alt": "Ambuklao, Binga and Ipo Dams Open Gates After Days of Heavy Rain",
+        "caption": "Original FMB News editorial graphic; not a documentary photograph.",
+        "credit": "FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-31/113306-ambuklao-binga-ipo-dams-release-water.json"
+    },
+    {
+      "id": "FMB-DB-20260831-005",
+      "kicker": "FMB Worldwide · South Asia",
+      "headline": "Nepal Says 903 Dead, About 4,200 Missing After Bhote Koshi Flood",
+      "deck": "Nepal has mobilized national resources and international assistance as rescue teams continue searching flood-hit areas and blocked infrastructure.",
+      "body": [
+        "Nepal's government said Monday that 903 bodies had been recovered after the August 26 flash floods in the Bhote Koshi River area, while about 4,200 people remained unaccounted for.",
+        "The disaster struck Himalayan communities and critical infrastructure along the Bhote Koshi corridor. The government has described saving lives, locating missing people and delivering urgent relief as its national priority.",
+        "The scale of the missing-person count makes this one of the region's most serious recent flood disasters. It also highlights the vulnerability of mountain communities, transport links and hydropower infrastructure to extreme flooding.",
+        "Casualty and missing-person figures may change as remote areas are reached. Authorities are also assessing the condition of hydropower facilities, roads and communities cut off by landslides and flood debris."
+      ],
+      "sources": [
+        {
+          "label": "Ministry of Foreign Affairs, Government of Nepal — Press Briefing by the Spokesperson on Bhote Koshi Flood",
+          "url": "https://mofa.gov.np/content/1868/press-briefing-by-the-spokesperson-on-bhote/"
+        },
+        {
+          "label": "Reuters — Nepal teams seek hundreds trapped in hydropower tunnels after deadly floods",
+          "url": "https://www.reuters.com/world/china/nepal-teams-seek-hundreds-trapped-hydropower-tunnels-after-deadly-floods-2026-08-31/"
+        }
+      ],
+      "image": {
+        "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Bhote_Koshi_River_in_Tataopani%2C_Sindhupalchok_District%2C_Nepal.jpg?width=1600",
+        "alt": "Bhote Koshi River in Tatopani, Sindhupalchok District, Nepal",
+        "caption": "FILE PHOTO: The Bhote Koshi River in Tatopani, Sindhupalchok District, Nepal, photographed October 28, 2025. This contextual image is not from the August 2026 flood response.",
+        "credit": "Saddam19 / Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bhote_Koshi_River_in_Tataopani%2C_Sindhupalchok_District%2C_Nepal.jpg"
+      },
+      "sourceArticle": "content/news/articles/2026-08-31/221402-nepal-bhote-koshi-flood-rescue.json"
+    },
+    {
+      "id": "FMB-DB-20260831-006",
+      "kicker": "Pampanga · Flooding · Evacuation",
+      "headline": "About 17,300 Pampanga Residents Stay in Evacuation Centers as Flooding Persists",
+      "deck": "The provincial count covers evacuees in centers and does not include residents who remained in flooded homes.",
+      "body": [
+        "Pampanga Governor Lilia Pineda said around 17,300 residents, representing 4,622 families, were staying in 270 evacuation centers as prolonged flooding continued across the province.",
+        "Pineda said the figure does not include people who remained in their homes. She described flooding in some areas as unusually severe, with backflow and saturated downstream communities contributing to persistent water levels.",
+        "Thousands of displaced residents need sustained food, water, sanitation, medical support and safe shelter while floodwaters remain high.",
+        "Evacuation numbers can change quickly. Watch provincial and municipal updates on water levels, road access, relief distribution and return-home advisories."
+      ],
+      "sources": [
+        {
+          "label": "GMA News — Over 17K Pampanga residents in evacuation centers due to flooding — Pineda",
+          "url": "https://www.gmanetwork.com/news/topstories/regions/1000501/over-17k-pampanga-residents-in-evacuation-centers-due-to-flooding-pineda/story/"
+        }
+      ],
+      "image": {
+        "src": "/news/assets/images/news/2026-08-31/pampanga-17300-evacuation-centers-flooding.svg",
+        "alt": "About 17,300 Pampanga Residents Stay in Evacuation Centers as Flooding Persists",
+        "caption": "Original FMB News editorial graphic; not a documentary photograph.",
+        "credit": "FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-31/113303-pampanga-17300-evacuation-centers-flooding.json"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "date": "2026-09-10",
+  "publishedAt": "2026-09-10T07:00:00+08:00",
+  "editionLabel": "FMB Daily Brief · Archive Recovery",
+  "title": "The Stories That Defined the Day",
+  "deck": "Recovered FMB Daily Brief for 2026-09-10, reconstructed from FMB News' verified article archive. Key coverage includes Japan Wildfire Mission Reaches Indonesia as Regional Haze Threat Persists; Ferry Fire Off Coron Leaves at Least 5 Dead as Search Continues.",
+  "timezone": "Asia/Manila",
+  "recovery": {
+    "reconstructed": true,
+    "reconstructedAt": "2026-09-15T03:30:00+08:00",
+    "note": "Historical recovery edition. It was reconstructed after the original publication date and must not be represented as having been published contemporaneously."
+  },
+  "hero": {
+    "src": "/assets/images/news/2026-09-10/japan-indonesia-wildfire-haze-16x9.svg",
+    "alt": "FMB News graphic reporting the arrival of Japan's wildfire disaster-relief mission in Indonesia amid regional haze concerns",
+    "caption": "FMB News editorial graphic on Japan's September 10, 2026 disaster-relief arrival in Indonesia for wildfire response. This is not a documentary photograph.",
+    "credit": "Graphic: FMB News",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260910-001",
+      "kicker": "FMB WORLDWIDE",
+      "headline": "Japan Wildfire Mission Reaches Indonesia as Regional Haze Threat Persists",
+      "deck": "Japan's disaster-relief force has arrived in Indonesia with three CH-47 helicopters to support wildfire suppression as smoke from the region's fires continues to pose cross-border air-quality risks.",
+      "body": [
+        "Japan's Ministry of Defense said the transport ship JS Kunisaki arrived at Kijing Port, Indonesia on September 10 carrying Japan Ground Self-Defense Force CH-47 helicopters for international disaster-relief operations in response to severe forest fires.",
+        "Indonesia is facing an intense wildfire season centered on parts of Kalimantan and Sumatra. Reuters reported that wildfire carbon emissions surged sharply in early September, while hazardous haze has affected areas inside Indonesia and neighboring countries.",
+        "The deployment matters to the Philippines because smoke from large Indonesian forest and peat fires can cross national borders depending on wind and weather patterns. That can worsen fine-particle pollution, reduce visibility and create health risks, particularly for children, older adults and people with heart or respiratory conditions.",
+        "FMB News will watch for confirmation that the Japanese helicopters have begun water-bombing operations, updated fire and hotspot data from Indonesian authorities, and new DENR-EMB air-quality advisories for Philippine cities."
+      ],
+      "sources": [
+        {
+          "label": "Japan Ministry of Defense — Arrival of JS Kunisaki at Kijing Port, Indonesia, for International Disaster Relief Activities",
+          "url": "https://www.mod.go.jp/en/article/2026/09/86f32f5d981edff3d18b227eaf8b5be862d2df38.html"
+        },
+        {
+          "label": "Associated Press — Japan deploys equipment to Indonesia's Borneo to help fight wildfires causing toxic haze",
+          "url": "https://apnews.com/article/4e422e76372f15bbf6d6e09265d1f39c"
+        },
+        {
+          "label": "Reuters — Japanese helicopters to join Indonesia's wildfires battle this weekend",
+          "url": "https://www.reuters.com/business/environment/japanese-helicopters-join-indonesias-wildfires-battle-this-weekend-2026-09-08/"
+        },
+        {
+          "label": "Reuters — Indonesian wildfire emissions surge to world's highest, data shows",
+          "url": "https://www.reuters.com/business/environment/indonesian-wildfire-emissions-surge-worlds-highest-data-shows-2026-09-09/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-10/japan-indonesia-wildfire-haze-16x9.svg",
+        "alt": "FMB News graphic reporting the arrival of Japan's wildfire disaster-relief mission in Indonesia amid regional haze concerns",
+        "caption": "FMB News editorial graphic on Japan's September 10, 2026 disaster-relief arrival in Indonesia for wildfire response. This is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-10/171800-japan-indonesia-wildfire-haze-response.json"
+    },
+    {
+      "id": "FMB-DB-20260910-002",
+      "kicker": "NATION · DEVELOPING",
+      "headline": "Ferry Fire Off Coron Leaves at Least 5 Dead as Search Continues",
+      "deck": "At least five people have died after the passenger ferry MV June Aster caught fire off Coron, Palawan, while rescuers continue searching for people still unaccounted for.",
+      "body": [
+        "At least five people were confirmed dead after the passenger ferry MV June Aster caught fire on the evening of September 9 in waters off Coron, Palawan, according to the Philippine Coast Guard and multiple news organizations reporting the Coast Guard's latest updates.",
+        "The Philippine Coast Guard deployed personnel and vessels to the area and coordinated with local disaster responders, fire personnel and other maritime units. Search operations continued into Thursday morning despite poor weather, strong waves and currents reported in the area.",
+        "Inter-island ferries are essential transportation in the Philippines, especially for communities and tourism-dependent areas separated by long sea routes. A casualty incident involving a regularly operating passenger vessel raises immediate questions about emergency response, passenger accounting, fire safety and vessel inspection.",
+        "Watch for a reconciled passenger list, official identification of casualties, any confirmed oil spill or environmental impact, and findings from the Philippine Coast Guard and Maritime Industry Authority."
+      ],
+      "sources": [
+        {
+          "label": "Reuters — Five dead, more than 80 missing after Philippine ferry fire",
+          "url": "https://www.reuters.com/world/asia-pacific/five-dead-after-philippine-ferry-catches-fire-2026-09-10/"
+        },
+        {
+          "label": "Associated Press — Fire on passenger ferry in Philippines leaves dozens missing and at least 5 dead",
+          "url": "https://apnews.com/article/6714628c11e1fafab17d93b8eece2aad"
+        },
+        {
+          "label": "GMA News — LIVE UPDATES: Fire hits passenger ship in Coron, Palawan",
+          "url": "https://www.gmanetwork.com/news/topstories/nation/1001833/live-updates-fire-hits-passenger-ship-in-coron-palawan/story/"
+        },
+        {
+          "label": "DZRH — 5 dead, 42 rescued after passenger ferry catches fire off Coron, Palawan",
+          "url": "https://www.dzrh.com.ph/post/5-dead-42-rescued-after-passenger-ferry-catches-fire-off-coron-palawan"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-10/mv-june-aster-ferry-fire-coron-16x9.svg",
+        "alt": "FMB News developing-story graphic reporting at least five deaths after the MV June Aster ferry fire off Coron, Palawan",
+        "caption": "FMB News editorial graphic on the September 9, 2026 MV June Aster ferry fire off Coron, Palawan. This is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-10/111400-mv-june-aster-ferry-fire-coron.json"
+    }
+  ]
+}

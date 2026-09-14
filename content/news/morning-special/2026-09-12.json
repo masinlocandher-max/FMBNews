@@ -1,0 +1,116 @@
+{
+  "date": "2026-09-12",
+  "publishedAt": "2026-09-12T07:00:00+08:00",
+  "editionLabel": "FMB Daily Brief · Archive Recovery",
+  "title": "The Stories That Defined the Day",
+  "deck": "Recovered FMB Daily Brief for 2026-09-12, reconstructed from FMB News' verified article archive. Key coverage includes MV June Aster Death Toll Rises to 76 as 13 Remain Missing; Saudi Arabia Shuts East-West Oil Pipeline After Drone Attack; Houthis Take Perim Island, Tightening Grip on Bab el-Mandeb Shipping Route.",
+  "timezone": "Asia/Manila",
+  "recovery": {
+    "reconstructed": true,
+    "reconstructedAt": "2026-09-15T03:30:00+08:00",
+    "note": "Historical recovery edition. It was reconstructed after the original publication date and must not be represented as having been published contemporaneously."
+  },
+  "hero": {
+    "src": "/assets/images/news/2026-09-12/mv-june-aster-death-toll-76-16x9.svg",
+    "alt": "FMB News developing-story graphic reporting that the MV June Aster ferry fire death toll rose to 76 with 13 people still missing",
+    "caption": "FMB News editorial graphic reporting the September 12, 2026 rise in the confirmed MV June Aster ferry-fire death toll to 76, with 13 people still missing. This is not a documentary photograph.",
+    "credit": "Graphic: FMB News",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260912-001",
+      "kicker": "NATION · DEVELOPING",
+      "headline": "MV June Aster Death Toll Rises to 76 as 13 Remain Missing",
+      "deck": "Authorities recovered more remains from the burned MV June Aster, raising the confirmed death toll to 76 while 13 people remain missing and investigators work to establish the cause of the fire.",
+      "body": [
+        "The confirmed death toll from the MV June Aster ferry fire off Coron, Palawan has risen to 76 after rescuers recovered more remains from the burned vessel on Saturday, September 12.",
+        "The ferry's original manifest listed 117 passengers and 17 crew members. Authorities later determined that two people on the manifest had not actually boarded, bringing the reconciled number aboard to 132.",
+        "The sharp rise in fatalities makes the June Aster fire a major Philippine maritime disaster and raises urgent questions about vessel fire protection, evacuation procedures, passenger accounting, crew response, inspections and regulatory enforcement.",
+        "Watch for final victim identification, recovery or accounting of the remaining missing people, Philippine Coast Guard and MARINA findings on the fire's origin and emergency response, and any administrative, civil or criminal action arising from the investigation."
+      ],
+      "sources": [
+        {
+          "label": "Reuters — Death toll in Philippine ferry fire rises to 76 as rescuers recover more remains",
+          "url": "https://www.reuters.com/world/asia-pacific/philippines-begins-identifying-victims-ferry-fire-dozens-still-missing-2026-09-12/"
+        },
+        {
+          "label": "Associated Press — Rescuers pull more bodies from burned Philippine ferry as death toll hits 76",
+          "url": "https://apnews.com/article/bc9474e96f2c9febe84c745ced6e9553"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-12/mv-june-aster-death-toll-76-16x9.svg",
+        "alt": "FMB News developing-story graphic reporting that the MV June Aster ferry fire death toll rose to 76 with 13 people still missing",
+        "caption": "FMB News editorial graphic reporting the September 12, 2026 rise in the confirmed MV June Aster ferry-fire death toll to 76, with 13 people still missing. This is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-12/232000-mv-june-aster-death-toll-76-continuation.json"
+    },
+    {
+      "id": "FMB-DB-20260912-002",
+      "kicker": "FMB Worldwide · DEVELOPING",
+      "headline": "Saudi Arabia Shuts East-West Oil Pipeline After Drone Attack",
+      "deck": "The precautionary shutdown removes a major Saudi route that bypasses the Strait of Hormuz just as Houthi gains are increasing pressure around Bab el-Mandeb.",
+      "body": [
+        "Saudi Arabia has temporarily shut its East-West oil pipeline after a drone attack hit the system, according to Saudi statements reported by Reuters and independently corroborated by the Associated Press and Saudi Gazette.",
+        "The East-West pipeline carries crude from Saudi Arabia’s eastern producing regions to the Red Sea coast near Yanbu. It has become especially important because commercial tanker movement through the Strait of Hormuz has fallen sharply during the wider Middle East conflict.",
+        "The Philippines is a net importer of petroleum products and is exposed to global crude prices, refined-fuel prices, shipping costs and foreign-exchange movements. A prolonged disruption affecting both Gulf and Red Sea export routes can add pressure to the landed cost of fuel and imported goods.",
+        "Watch for an official Saudi timeline for restarting the East-West pipeline, verified changes in Saudi crude exports from Yanbu, any Iraqi investigation or action against the perpetrators, further attacks on Gulf or Red Sea energy infrastructure, and the effect on global oil and refined-fuel prices."
+      ],
+      "sources": [
+        {
+          "label": "Reuters — Saudis shut down oil pipeline as Houthis tighten grip on Red Sea shipping",
+          "url": "https://www.reuters.com/business/energy/saudis-shut-down-oil-pipeline-houthis-tighten-grip-red-sea-shipping-2026-09-12/"
+        },
+        {
+          "label": "Associated Press — Saudi Arabia shuts down a pipeline as Houthis seize an island, opening a new front in the Iran war",
+          "url": "https://apnews.com/article/025d052a14d9481258d51009a76d0bd6"
+        },
+        {
+          "label": "Saudi Gazette — Saudi Arabia says drones from Iraq targeted East-West Pipeline, holds off response",
+          "url": "https://saudigazette.com.sa/article/664496/saudi-arabia/saudi-arabia-says-drones-from-iraq-targeted-east-west-pipeline-holds-off-response"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-12/saudi-east-west-pipeline-shutdown-16x9.svg",
+        "alt": "FMB News developing-story graphic reporting Saudi Arabia’s East-West oil pipeline shutdown after a drone attack",
+        "caption": "FMB News editorial graphic reporting Saudi Arabia’s temporary shutdown of the East-West oil pipeline after a drone attack. This is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-12/111900-saudi-east-west-pipeline-shutdown-continuation.json"
+    },
+    {
+      "id": "FMB-DB-20260912-003",
+      "kicker": "FMB Worldwide · DEVELOPING",
+      "headline": "Houthis Take Perim Island, Tightening Grip on Bab el-Mandeb Shipping Route",
+      "deck": "The capture of Perim, also known as Mayun, gives Houthi forces a new foothold inside the Bab el-Mandeb Strait as Middle East shipping and oil routes face mounting pressure.",
+      "body": [
+        "Iran-aligned Houthi forces have taken Perim Island, also known as Mayun, inside Yemen’s Bab el-Mandeb Strait, according to reporting independently corroborated by Reuters and the Associated Press.",
+        "Bab el-Mandeb connects the Red Sea with the Gulf of Aden and the Arabian Sea. It is a key route for vessels moving between Asia, the Middle East and Europe through the Suez Canal.",
+        "The Philippines depends heavily on imported fuel and on international maritime trade. Serious disruption around Bab el-Mandeb can lengthen shipping routes, increase freight and insurance costs, and add pressure to global oil and refined-fuel prices.",
+        "Watch for verified changes in commercial vessel traffic through Bab el-Mandeb, any counteroffensive for Perim or Dhubab, new attacks on merchant or energy infrastructure, Saudi or U.S. military responses, and further movement in global oil and refined-fuel prices."
+      ],
+      "sources": [
+        {
+          "label": "Reuters — Yemen's Houthis reach strategic island at mouth of vital shipping lane",
+          "url": "https://www.reuters.com/world/middle-east/yemens-houthis-reach-strategic-island-mouth-vital-shipping-lane-2026-09-11/"
+        },
+        {
+          "label": "Associated Press — Yemen’s Iranian-backed Houthis seize an island in a key strait, opening a new front in the Iran war",
+          "url": "https://apnews.com/article/yemen-houthis-iran-mokha-mandeb-shipping-saudi-025d052a14d9481258d51009a76d0bd6"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-12/houthis-perim-bab-el-mandeb-16x9.svg",
+        "alt": "FMB News developing-story graphic reporting the Houthi capture of Perim Island in the Bab el-Mandeb Strait",
+        "caption": "FMB News editorial graphic marking the verified capture of Perim (Mayun) Island by Houthi forces in the Bab el-Mandeb Strait. This is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-12/051400-houthis-perim-bab-el-mandeb-continuation.json"
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "date": "2026-08-26",
+  "publishedAt": "2026-08-26T07:00:00+08:00",
+  "editionLabel": "FMB Daily Brief · Archive Recovery",
+  "title": "The Stories That Defined the Day",
+  "deck": "Recovered FMB Daily Brief for 2026-08-26, reconstructed from FMB News' verified article archive. Key coverage includes Palace Urges Vigilance Over Alleged Foreign Influence in West Philippine Sea Debate; Bad Weather and Flooding Prompt Localized Class Suspensions in Parts of Luzon; PhilHealth and St. Luke's Global City Sign Pact to Expand No Co-Payment Care.",
+  "timezone": "Asia/Manila",
+  "recovery": {
+    "reconstructed": true,
+    "reconstructedAt": "2026-09-15T03:30:00+08:00",
+    "note": "Historical recovery edition. It was reconstructed after the original publication date and must not be represented as having been published contemporaneously."
+  },
+  "hero": {
+    "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "alt": "FMB News editorial visual for a report on alleged foreign influence in West Philippine Sea debate",
+    "caption": "FMB News editorial visual accompanying coverage of the Palace warning about alleged foreign influence; it does not depict an accused person.",
+    "credit": "FMB News editorial visual",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260826-001",
+      "kicker": "National Security · West Philippine Sea",
+      "headline": "Palace Urges Vigilance Over Alleged Foreign Influence in West Philippine Sea Debate",
+      "deck": "The Palace warning followed Defense Secretary Gilberto Teodoro Jr.'s statement that authorities had grounds to suspect some politicians may be receiving support from China; no officials were named or charged.",
+      "body": [
+        "Malacañang urged politicians to put Philippine interests first and avoid allowing another country to use them to shape public debate over the West Philippine Sea.",
+        "The statements concern alleged foreign influence over domestic political messaging and public opinion about Philippine maritime rights. Officials referred to the need for evidence before any allegation could support legal action.",
+        "Claims that foreign governments are influencing elected officials are serious because they affect public trust, national-security policy and democratic debate. Publishing the distinction between suspicion, evidence and a formal charge is essential when no person has been publicly identified or prosecuted in connection with the allegation.",
+        "Watch for any named investigation, financial evidence, official complaint or response from a person directly accused. Until such evidence is released, the government's statements should be understood as warnings and allegations rather than established findings against specific politicians."
+      ],
+      "sources": [
+        {
+          "label": "Philippine News Agency — Palace urges vigilance vs foreign influence in WPS discourse",
+          "url": "https://www.pna.gov.ph/articles/1282687"
+        },
+        {
+          "label": "INQUIRER.net — Palace warns 'China-backed politicians': Don't sell out PH",
+          "url": "https://globalnation.inquirer.net/335957/china-backed-politicians-warned-dont-sell-out-ph-to-stay-in-power"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for a report on alleged foreign influence in West Philippine Sea debate",
+        "caption": "FMB News editorial visual accompanying coverage of the Palace warning about alleged foreign influence; it does not depict an accused person.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-26/1900-palace-vigilance-foreign-influence-west-philippine-sea.json"
+    },
+    {
+      "id": "FMB-DB-20260826-002",
+      "kicker": "Weather · Education",
+      "headline": "Bad Weather and Flooding Prompt Localized Class Suspensions in Parts of Luzon",
+      "deck": "The verified list covers specific localities in Benguet, Bulacan, Pampanga and Pangasinan—not a region-wide shutdown.",
+      "body": [
+        "Local governments in parts of Benguet, Bulacan, Pampanga and Pangasinan suspended classes or shifted affected schools to alternative learning modes on Wednesday, August 26, because of bad weather and flooding.",
+        "The bulletin incorrectly named Zambales and Bataan localities that do not appear in the cited GMA News consolidation. Those claims, along with unsupported road-clearing and rainfall-total details, were removed.",
+        "Localized class advisories can change quickly as rainfall, river levels and road access shift. Parents, students and school staff should rely on their own LGU or school division for the final status of classes in their municipality.",
+        "Parents, students and school staff should monitor their LGU and school division channels for later additions, resumptions or changes to learning mode."
+      ],
+      "sources": [
+        {
+          "label": "GMA News — WALANG PASOK: Class suspensions for Wednesday, August 26, 2026",
+          "url": "https://www.gmanetwork.com/news/serbisyopubliko/walangpasok/999811/walang-pasok-class-suspensions-for-wednesday-august-26-2026/story/"
+        },
+        {
+          "label": "The Manila Times — Most of Luzon to experience rains due to 'Habagat' - Pagasa",
+          "url": "https://www.manilatimes.net/2026/08/26/news/most-of-luzon-to-experience-rains-due-to-habagat-pagasa/2412073"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for localized class suspensions in Luzon",
+        "caption": "FMB News editorial visual accompanying the August 26 class-suspension update.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-26/0700-habagat-class-suspensions-western-luzon.json"
+    },
+    {
+      "id": "FMB-DB-20260826-003",
+      "kicker": "Health · Universal Health Care",
+      "headline": "PhilHealth and St. Luke's Global City Sign Pact to Expand No Co-Payment Care",
+      "deck": "The agreement extends PhilHealth's No Co-Payment Policy to eligible patients admitted to basic or ward accommodations at St. Luke's Medical Center-Global City.",
+      "body": [
+        "PhilHealth and St. Luke's Medical Center-Global City signed a memorandum of agreement on August 25 to strengthen implementation of the No Co-Payment Policy for qualified PhilHealth members admitted to basic or ward accommodations.",
+        "The approved FMB News brief described the agreement as involving ₱1.4 billion in pending claims and a 30-day reconciliation mechanism. Those specific figures were not reproduced in the current PCO, PIA, PNA and DSWD releases reviewed by FMB News, so they are not stated here as independently verified terms of the agreement.",
+        "The agreement could reduce out-of-pocket costs for qualified patients who need specialized care available at St. Luke's Global City. Its benefit depends on clear eligibility rules, covered services and consistent implementation at the hospital level.",
+        "The practical impact will depend on implementation, patient eligibility and the scope of covered services. PhilHealth's push for similar agreements with additional private hospitals will determine how widely the model expands."
+      ],
+      "sources": [
+        {
+          "label": "Philippine Information Agency / PCO — President Marcos witnesses PhilHealth-St. Luke’s MOA signing to expand no co-payment policy for ward patients",
+          "url": "https://pia.gov.ph/news/president-marcos-witnesses-philhealth-st-lukes-moa-signing-to-expand-no-co-payment-policy-for-ward-patients-advance-universal-health-care-agenda/"
+        },
+        {
+          "label": "Philippine News Agency — PBBM: PhilHealth-St. Luke's pact to ease patients' financial burden",
+          "url": "https://www.pna.gov.ph/articles/1282578"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for the PhilHealth and St. Luke's no co-payment agreement",
+        "caption": "FMB News editorial visual accompanying coverage of the PhilHealth-St. Luke's Global City agreement; it does not depict the signing ceremony.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-26/0100-philhealth-st-lukes-no-copayment-pact.json"
+    },
+    {
+      "id": "FMB-DB-20260826-004",
+      "kicker": "Governance · Public Accountability",
+      "headline": "COA Seeks ₱2.2 Billion to Revive Pre-Audits for Government Infrastructure",
+      "deck": "The proposal would strengthen checks before public funds are released and expand digital verification of infrastructure projects.",
+      "body": [
+        "The Commission on Audit said during House deliberations on its proposed 2027 budget that it would need an estimated ₱2.2 billion and 146 additional teams to revive pre-auditing of government projects.",
+        "COA Chairperson Gamaliel Cordoba said personnel shortages had pushed the agency toward fraud audits after projects were implemented. Commissioner Douglas Michael Mallillin said the commission is exploring continuous auditing without necessarily restoring the former system exactly as it operated before.",
+        "Infrastructure spending involves large public outlays and long project timelines. Earlier verification can improve accountability if it is designed to catch irregularities without creating new bottlenecks for legitimate projects.",
+        "The next step is the House budget process, including whether lawmakers approve dedicated funding for expanded pre-audit staffing, engineering review and digital verification tools in the 2027 budget."
+      ],
+      "sources": [
+        {
+          "label": "GMA News — COA seeks P2.2B to revive pre-audit of government projects",
+          "url": "https://www.gmanetwork.com/news/topstories/nation/999848/coa-seeks-p2-2b-to-revive-pre-audit-of-government-projects/story/"
+        },
+        {
+          "label": "House of Representatives — House Resolution No. 291 - Mandatory pre-audit requirement for government-funded programs, activities and projects",
+          "url": "https://www.congress.gov.ph/house-members/view/L082"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for the Commission on Audit pre-audit proposal",
+        "caption": "FMB News editorial visual accompanying coverage of the COA pre-audit proposal.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-26/0700-coa-seeks-2-2-billion-pre-audit-infrastructure.json"
+    },
+    {
+      "id": "FMB-DB-20260826-005",
+      "kicker": "Defense · West Philippine Sea",
+      "headline": "AFP, US and Australia Complete 19th Maritime Cooperative Activity in West Philippine Sea",
+      "deck": "The weeklong activity included maritime-domain awareness, anti-submarine warfare, replenishment at sea and joint maneuver exercises.",
+      "body": [
+        "Naval and air units from the Philippines, United States and Australia completed the 19th Multilateral Maritime Cooperative Activity in the West Philippine Sea, the Armed Forces of the Philippines announced Wednesday.",
+        "The AFP said the activity was intended to improve maritime interoperability and operational coordination among participating forces and support a free, open and secure Indo-Pacific.",
+        "Regular multilateral activities test whether participating forces can communicate, maneuver and sustain operations together at sea and in the air. They also carry diplomatic significance because they take place amid continuing disputes and competing maritime claims in the South China Sea.",
+        "The AFP has said multilateral maritime activities with partner nations will continue. Future iterations will show how the participating forces expand the complexity and frequency of joint operations."
+      ],
+      "sources": [
+        {
+          "label": "Philippine News Agency — 19th MMCA in WPS with US, Australia successful - AFP",
+          "url": "https://www.pna.gov.ph/articles/1282668"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for the 19th MMCA in the West Philippine Sea",
+        "caption": "FMB News editorial visual accompanying coverage of the 19th Multilateral Maritime Cooperative Activity.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-26/1300-afp-19th-mmca-us-australia-west-philippine-sea.json"
+    },
+    {
+      "id": "FMB-DB-20260826-006",
+      "kicker": "Climate · Seasonal Outlook",
+      "headline": "PAGASA Forecasts Up to Seven More Tropical Cyclones Before Year-End",
+      "deck": "The state weather bureau expects five to seven tropical cyclones from September through December while El Niño raises the risk of below-normal rainfall in parts of the country.",
+      "body": [
+        "PAGASA expects five to seven more tropical cyclones to form within or enter the Philippine Area of Responsibility before the end of 2026, according to its updated seasonal outlook released Wednesday.",
+        "The cyclone outlook comes as El Niño conditions are present in the tropical Pacific. PAGASA has warned that the warming pattern increases the likelihood of below-normal rainfall and dry spells, although individual tropical cyclones can still produce intense rain, flooding, rough seas and storm surge.",
+        "The simultaneous risk of cyclones and seasonal drying requires local governments, farms, water utilities and households to plan for both short bursts of hazardous rain and longer periods of reduced water supply. The forecast ranges are planning guidance and will change as actual weather systems develop.",
+        "Watch PAGASA's monthly climate assessments and shorter-range tropical cyclone advisories for changes in expected activity. Track-specific warnings, rainfall forecasts and local evacuation notices should guide immediate safety decisions rather than the seasonal totals alone."
+      ],
+      "sources": [
+        {
+          "label": "ABS-CBN News — Up to 7 more tropical cyclones expected through the end of 2026: PAGASA",
+          "url": "https://news.abs-cbn.com/news/weather-traffic/2026/8/26/up-to-7-more-tropical-cyclones-expected-through-the-end-of-2026-pagasa-1721"
+        },
+        {
+          "label": "DOST-PAGASA — Philippine Tropical Cyclone Names",
+          "url": "https://pagasa.dost.gov.ph/learning-tools/philippine-tropical-cyclone-names"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for PAGASA's late-2026 cyclone outlook",
+        "caption": "FMB News editorial visual accompanying PAGASA's late-2026 tropical cyclone outlook; it is not a forecast map.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-26/1900-pagasa-five-seven-cyclones-el-nino-outlook.json"
+    }
+  ]
+}

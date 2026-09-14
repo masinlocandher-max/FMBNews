@@ -1,0 +1,132 @@
+{
+  "date": "2026-09-05",
+  "publishedAt": "2026-09-05T07:00:00+08:00",
+  "editionLabel": "FMB Daily Brief · Archive Recovery",
+  "title": "The Stories That Defined the Day",
+  "deck": "Recovered FMB Daily Brief for 2026-09-05, reconstructed from FMB News' verified article archive. Key coverage includes Leptospirosis Cases Rise to 6,253 as DOH Monitors Post-Flood Surge; Philippine Inflation Eases to 6.1%, but Lowest-Income Households Face 8.2%; Lea Salonga Becomes First Filipina Honored With a Hollywood Walk of Fame Star.",
+  "timezone": "Asia/Manila",
+  "recovery": {
+    "reconstructed": true,
+    "reconstructedAt": "2026-09-15T03:30:00+08:00",
+    "note": "Historical recovery edition. It was reconstructed after the original publication date and must not be represented as having been published contemporaneously."
+  },
+  "hero": {
+    "src": "/assets/images/news/2026-09-05/doh-6253-leptospirosis-16x9.svg",
+    "alt": "FMB News purple-violet editorial graphic stating leptospirosis cases rise to 6,253 and 378 deaths recorded",
+    "caption": "FMB News editorial graphic for the updated national leptospirosis tally of 6,253 cases and 378 deaths. This is not a documentary photograph.",
+    "credit": "Graphic: FMB News",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260905-001",
+      "kicker": "HEALTH · CONTINUATION",
+      "headline": "Leptospirosis Cases Rise to 6,253 as DOH Monitors Post-Flood Surge",
+      "deck": "The Department of Health says 6,253 leptospirosis cases and 378 deaths have been recorded nationwide, while recent infections rose sharply after widespread flooding and hospital pressure remains high in Metro Manila.",
+      "body": [
+        "DOH data cited by the Philippine News Agency, INQUIRER.net and The Philippine STAR show that 6,253 leptospirosis cases have been recorded nationwide so far this year. The total remains 12 percent lower than the comparable period in 2025, but the recent trend moved sharply upward after prolonged flooding.",
+        "Leptospirosis is a bacterial infection commonly associated with exposure to water or soil contaminated by the urine of infected animals. Flooding raises the risk because residents, workers and responders may have unavoidable contact with contaminated water.",
+        "The national year-to-date count is still below last year's comparable total, but the recent surge shows why flood exposure remains a major health risk even after water levels begin to recede. The illness can progress rapidly and severe cases may require dialysis or intensive hospital care.",
+        "Watch for the next DOH epidemiological update, changes in the death toll, new regional epidemic-threshold breaches and whether Metro Manila hospitals add further surge capacity."
+      ],
+      "sources": [
+        {
+          "label": "Department of Health via Philippine News Agency — Nationwide leptospirosis cases reach 6,253",
+          "url": "https://www.pna.gov.ph/articles/1283388"
+        },
+        {
+          "label": "INQUIRER.net — DOH: 6,253 leptospirosis cases logged as of August 29",
+          "url": "https://newsinfo.inquirer.net/2298518/doh-6253-leptospirosis-cases-logged-as-of-august-29"
+        },
+        {
+          "label": "The Philippine STAR — Leptospirosis cases reach 6,253; DOH warns of post-flood surge",
+          "url": "https://www.philstar.com/headlines/2026/09/04/2553874/leptospirosis-cases-reach-6253-doh-warns-post-flood-surge"
+        },
+        {
+          "label": "FMB News — DOH Records 5,835 Leptospirosis Cases Nationwide as Flood Exposure Drives Recent Rise",
+          "url": "https://www.francinemariebautista.com/news/doh-5835-leptospirosis-cases-september-1-2026/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-05/doh-6253-leptospirosis-16x9.svg",
+        "alt": "FMB News purple-violet editorial graphic stating leptospirosis cases rise to 6,253 and 378 deaths recorded",
+        "caption": "FMB News editorial graphic for the updated national leptospirosis tally of 6,253 cases and 378 deaths. This is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-05/171700-doh-6253-leptospirosis-continuation.json"
+    },
+    {
+      "id": "FMB-DB-20260905-002",
+      "kicker": "PHILIPPINES · ECONOMY",
+      "headline": "Philippine Inflation Eases to 6.1%, but Lowest-Income Households Face 8.2%",
+      "deck": "Headline inflation slowed for a fourth straight month in August, but official data show the country’s bottom 30% income households continued to experience substantially faster price increases than the national average.",
+      "body": [
+        "Philippine headline inflation eased to 6.1% in August 2026 from 6.2% in July, the Philippine Statistics Authority reported on September 4. It was the fourth consecutive month of slower headline inflation.",
+        "Inflation measures how quickly consumer prices are rising compared with a year earlier. A lower inflation rate means prices are increasing more slowly; it does not mean that the general price level has fallen.",
+        "For families already operating on tight budgets, the distinction between slower national inflation and actual household costs is significant. An 8.2% inflation rate for the lowest-income group means the basket of goods and services used to measure their spending was still becoming more expensive at a substantially faster pace than the national average.",
+        "Watch the September inflation reading for evidence that the four-month easing trend is continuing, and whether inflation for lower-income households begins to fall rather than merely hold steady."
+      ],
+      "sources": [
+        {
+          "label": "Philippine Statistics Authority — Summary Inflation Report Consumer Price Index (2018=100): August 2026",
+          "url": "https://psa.gov.ph/content/summary-inflation-report-consumer-price-index-2018100-august-2026"
+        },
+        {
+          "label": "Philippine Statistics Authority — Summary Inflation Report Consumer Price Index for the Bottom 30% Income Households (2018=100): August 2026",
+          "url": "https://psa.gov.ph/content/summary-inflation-report-consumer-price-index-bottom-30-income-households-2018100-august-2"
+        },
+        {
+          "label": "GMA News — Inflation slows down for fourth straight month at 6.1% in August",
+          "url": "https://www.gmanetwork.com/news/money/economy/1001109/inflation-slows-down-for-fourth-straight-month-at-6-1-in-august/story/"
+        },
+        {
+          "label": "Philippine News Agency — PH inflation slows to 6.1% in August",
+          "url": "https://www.pna.gov.ph/articles/1283319"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-05/august-inflation-6-1-bottom-30-8-2-16x9.svg",
+        "alt": "FMB News graphic showing Philippine headline inflation at 6.1 percent and inflation for the bottom 30 percent income households at 8.2 percent in August 2026",
+        "caption": "FMB News editorial graphic based on Philippine Statistics Authority August 2026 inflation data. It is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-05/051500-august-inflation-6-1-bottom-30-8-2.json"
+    },
+    {
+      "id": "FMB-DB-20260905-003",
+      "kicker": "WORLD · FILIPINO CULTURE",
+      "headline": "Lea Salonga Becomes First Filipina Honored With a Hollywood Walk of Fame Star",
+      "deck": "The Tony-winning theater icon received the 2,855th star on Hollywood Boulevard in Los Angeles, marking a verified first for a Filipina on the landmark.",
+      "body": [
+        "Filipina theater icon Lea Salonga received a star on the Hollywood Walk of Fame on September 4 in Los Angeles, becoming the first Filipina to receive the distinction, according to the Hollywood Chamber of Commerce and reporting after the ceremony.",
+        "Salonga's international career spans more than four decades. She is widely known for originating the role of Kim in 'Miss Saigon,' for which she won a Tony Award, and for providing the singing voices of Princess Jasmine in Disney's 'Aladdin' and Fa Mulan in 'Mulan.'.",
+        "The recognition places a Filipina performer whose career was built across Philippine, West End, Broadway, film and concert stages into one of Hollywood's most visible entertainment landmarks.",
+        "Salonga is also scheduled to receive the Icon Award at the Manila International Film Festival's closing-night gala in Beverly Hills on September 6."
+      ],
+      "sources": [
+        {
+          "label": "Hollywood Walk of Fame / Hollywood Chamber of Commerce — Hollywood Chamber of Commerce to honor Broadway star Lea Salonga with a Hollywood Walk of Fame star",
+          "url": "https://walkoffame.com/press_releases/hollywood-chamber-of-commerce-to-honor-broadway-star-lea-salonga-with-a-hollywood-walk-of-fame-star-making-her-the-first-filipina-to-be-honored-with-the-coveted-hollywood-star/"
+        },
+        {
+          "label": "GMA News — Lea Salonga makes history as she receives Hollywood Walk of Fame star",
+          "url": "https://www.gmanetwork.com/news/showbiz/chikaminute/1001233/lea-salonga-makes-history-as-she-receives-hollywood-walk-of-fame-star/story/"
+        },
+        {
+          "label": "Entertainment Weekly — Brandy praises Lea Salonga at Walk of Fame ceremony",
+          "url": "https://ew.com/brandy-praises-lea-salonga-voice-of-2-disney-princesses-walk-of-fame-ceremony-12108786"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-05/lea-salonga-hollywood-walk-of-fame-16x9.svg",
+        "alt": "FMB News graphic announcing that Lea Salonga became the first Filipina to receive a Hollywood Walk of Fame star",
+        "caption": "FMB News editorial graphic marking Lea Salonga's Hollywood Walk of Fame milestone. It is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-05/111500-lea-salonga-hollywood-walk-of-fame.json"
+    }
+  ]
+}

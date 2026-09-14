@@ -1,0 +1,60 @@
+{
+  "date": "2026-09-06",
+  "publishedAt": "2026-09-06T07:00:00+08:00",
+  "editionLabel": "FMB Daily Brief · Archive Recovery",
+  "title": "The Stories That Defined the Day",
+  "deck": "Recovered FMB Daily Brief for 2026-09-06, reconstructed from FMB News' verified article archive. Key coverage includes Anak Krakatau Eruption Disrupts Hundreds of Flights at Jakarta’s Main Airport.",
+  "timezone": "Asia/Manila",
+  "recovery": {
+    "reconstructed": true,
+    "reconstructedAt": "2026-09-15T03:30:00+08:00",
+    "note": "Historical recovery edition. It was reconstructed after the original publication date and must not be represented as having been published contemporaneously."
+  },
+  "hero": {
+    "src": "/assets/images/news/2026-09-06/anak-krakatau-jakarta-airport-16x9.svg",
+    "alt": "FMB News graphic reporting that the Anak Krakatau eruption disrupted hundreds of flights at Jakarta’s main airport",
+    "caption": "FMB News editorial graphic on the Anak Krakatau eruption and Jakarta airport flight disruption. It is not a documentary photograph.",
+    "credit": "Graphic: FMB News",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260906-001",
+      "kicker": "DEVELOPING · SOUTHEAST ASIA",
+      "headline": "Anak Krakatau Eruption Disrupts Hundreds of Flights at Jakarta’s Main Airport",
+      "deck": "Volcanic ash from Anak Krakatau forced flight suspensions at Jakarta’s Soekarno-Hatta International Airport and other Indonesian airports, disrupting hundreds of services as authorities monitored a continuing eruption.",
+      "body": [
+        "Indonesia’s Anak Krakatau volcano continued erupting on September 6, sending volcanic ash across parts of western Indonesia and forcing flight suspensions at Jakarta’s Soekarno-Hatta International Airport and several other airports.",
+        "Anak Krakatau sits in the Sunda Strait between Java and Sumatra and has been erupting since late September 4 into September 6. Indonesian authorities detected volcanic ash at Jakarta’s main airport early Sunday, prompting repeated extensions of flight restrictions as conditions evolved.",
+        "Jakarta is a major Southeast Asian business and travel hub. Filipinos flying to Indonesia, connecting through Jakarta, or traveling on regional itineraries that depend on Jakarta aircraft rotations may face delays, cancellations or rebooking even when their own route is not directly named in an initial advisory.",
+        "Watch for updated Indonesian aviation notices on airport reopening, further eruptions or changes in ash-plume direction, and airline-specific advisories for flights to, from or through Jakarta."
+      ],
+      "sources": [
+        {
+          "label": "Reuters — Indonesia's Anak Krakatau eruption halts flights, schools, fishing",
+          "url": "https://www.reuters.com/business/environment/indonesias-jakarta-airport-suspends-flights-due-ash-mount-anak-krakatau-2026-09-06/"
+        },
+        {
+          "label": "Associated Press — Indonesia cancels flights at Jakarta airport and others as Anak Krakatau volcano erupts",
+          "url": "https://apnews.com/article/indonesia-volcano-eruption-airport-flights-cancel-12c3cb67859b2c51054b378d60148d33"
+        },
+        {
+          "label": "Channel NewsAsia — Jakarta airport suspends flights due to Mount Anak Krakatau ash; SIA flights affected",
+          "url": "https://www.channelnewsasia.com/asia/jakarta-airport-suspends-flights-due-mount-anak-krakatau-ash-sia-flights-affected-6365251"
+        },
+        {
+          "label": "Singapore Airlines — Advisory on Singapore Airlines flights impacted by the eruption of Mount Anak Krakatau",
+          "url": "https://www.singaporeair.com/en_UK/dk/corporate/newsroom/newsalert-listing/advisory-on-singapore-airlines-flights-impacted-by-the-eruption-/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-06/anak-krakatau-jakarta-airport-16x9.svg",
+        "alt": "FMB News graphic reporting that the Anak Krakatau eruption disrupted hundreds of flights at Jakarta’s main airport",
+        "caption": "FMB News editorial graphic on the Anak Krakatau eruption and Jakarta airport flight disruption. It is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-06/171631-anak-krakatau-jakarta-airport-developing.json"
+    }
+  ]
+}
