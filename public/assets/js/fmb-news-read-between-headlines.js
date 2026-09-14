@@ -1,42 +1,42 @@
 (()=>{
 'use strict';
 
-const EDITION_ID='impeachment-refresher-v3';
+const EDITION_ID='fmb-current-events-mix-v1';
 const STORAGE_KEY='fmbReadBetweenHeadlinesV1';
 const RUN_KEY='fmbReadBetweenHeadlinesActiveRunV1';
 const POINTS_PER_CORRECT=10;
 
 const questions=[
-  {id:'q01',day:'Day 1',type:'single_select',prompt:'Who was elected presiding officer of the Senate impeachment court when the trial opened?',options:['Francis “Chiz” Escudero','Sherwin Gatchalian','Risa Hontiveros','Joel Villanueva'],answer:'Francis “Chiz” Escudero'},
-  {id:'q02',day:'Day 1',type:'identification',prompt:'How many votes did presiding officer Francis “Chiz” Escudero rule were needed to convict Vice President Sara Duterte?',answer:'16',aliases:['sixteen','16 votes']},
-  {id:'q03',day:'Day 2',type:'identification',prompt:'Name the NBI senior agent who became the prosecution’s first witness and testified about the authenticity of the November 2024 video.',answer:'John Mark Calilung',aliases:['Calilung','John Calilung']},
-  {id:'q04',day:'Day 2',type:'true_false',prompt:'The November 2024 video at the center of the grave-threat allegation was admitted as prosecution evidence despite defense objections.',options:['True','False'],answer:'True'},
-  {id:'q05',day:'Day 4',type:'single_select',prompt:'Who was presented as the prosecution’s second NBI witness?',options:['Jeremy Lotoc','Melvin Matibag','Michael Poa','Roderick Wamil'],answer:'Jeremy Lotoc'},
-  {id:'q06',day:'Day 4',type:'true_false',prompt:'NBI witness Jeremy Lotoc testified that the bureau had validated information identifying an alleged hitman supposedly linked to the threat.',options:['True','False'],answer:'False'},
-  {id:'q07',day:'Day 7',type:'single_select',prompt:'What records did the impeachment court allow prosecutors to subpoena in connection with Vice President Duterte and her husband?',options:['Financial records','Medical records','School records','Travel photographs'],answer:'Financial records'},
-  {id:'q08',day:'Day 8',type:'identification',prompt:'Name the NBI director who testified as the prosecution continued presenting evidence on Article IV.',answer:'Melvin Matibag',aliases:['Matibag','Melvin A. Matibag']},
-  {id:'q09',day:'Day 9',type:'true_false',prompt:'By Day 9, the prosecution had concluded its presentation of evidence on Article IV, the article involving the alleged grave threats.',options:['True','False'],answer:'True'},
-  {id:'q10',day:'Day 10',type:'single_select',prompt:'The two former branch managers who testified about large OVP and DepEd cash withdrawals previously worked for which bank?',options:['LandBank','DBP','PNB','BPI'],answer:'LandBank'},
-  {id:'q11',day:'Day 12',type:'identification',prompt:'Name the former COA Intelligence and Confidential Funds Audit Office state auditor who testified about confidential-fund documentation.',answer:'Roderick Wamil',aliases:['Wamil','Atty. Roderick Wamil','Lawyer Roderick Wamil']},
-  {id:'q12',day:'Day 12',type:'single_select',prompt:'According to Roderick Wamil’s testimony, how much of the OVP’s ₱250-million confidential-fund allocation for the first two quarters of 2023 lacked supporting documents for the stated purposes?',options:['₱129 million','₱73 million','₱250 million','₱37.5 million'],answer:'₱129 million'},
-  {id:'q13',day:'Day 14–15',type:'identification',prompt:'Name the COA state auditor who testified about the OVP’s 2022 confidential-fund disbursements and the notice of disallowance.',answer:'Xylene del Campo',aliases:['Del Campo','Xylene Del Campo']},
-  {id:'q14',day:'Day 14–15',type:'single_select',prompt:'What amount from the OVP’s 2022 confidential-fund spending was covered by the COA notice of disallowance discussed in Xylene del Campo’s testimony?',options:['₱73 million','₱125 million','₱129 million','₱500 million'],answer:'₱73 million'},
-  {id:'q15',day:'Day 16–17',type:'identification',prompt:'Which former OVP special disbursing officer was declared a hostile witness and testified about releasing confidential funds?',answer:'Gina Acosta',aliases:['Acosta','Gina B. Acosta']},
-  {id:'q16',day:'Day 16–17',type:'single_select',prompt:'According to Gina Acosta’s testimony, to whom did she release ₱500 million in OVP confidential funds on Vice President Duterte’s order?',options:['Col. Raymund Lachica','Atty. Michael Poa','Lemuel Ortonio','Jeremy Lotoc'],answer:'Col. Raymund Lachica'},
-  {id:'q17',day:'Day 18–19',type:'identification',prompt:'Name the OVP assistant secretary and assistant chief of staff who was declared the prosecution’s second hostile witness.',answer:'Lemuel Ortonio',aliases:['Ortonio','Lemuel B. Ortonio']},
-  {id:'q18',day:'Day 20',type:'true_false',prompt:'Army officers Manaros Boransing II and Magtanggol Panopio said their certifications attested to the propriety of DepEd confidential-fund expenditures.',options:['True','False'],answer:'False'},
-  {id:'q19',day:'Day 22',type:'identification',prompt:'Name the Philippine Statistics Authority assistant national statistician who testified after PSA records were checked against names listed as confidential-fund recipients.',answer:'Marizza Grande',aliases:['Grande','Marizza B. Grande']},
-  {id:'q20',day:'Day 23',type:'single_select',prompt:'On Day 23, what did the prosecution do with the remaining 15 planned witnesses for Article I?',options:['It chose to forego presenting them','It presented all 15 in one session','It transferred them to the defense list','It withdrew Article I entirely'],answer:'It chose to forego presenting them'},
-  {id:'q21',day:'Day 9',type:'identification',prompt:'Before closing its presentation on Article IV, the prosecution said it would no longer present how many additional witnesses for that article?',answer:'6',aliases:['six','6 witnesses']},
-  {id:'q22',day:'Day 10',type:'single_select',prompt:'Former LandBank manager Violeta Constantino testified that Gina Acosta encashed how many ₱125-million OVP checks between December 2022 and July 2023?',options:['Four','Two','Six','Eight'],answer:'Four'},
-  {id:'q23',day:'Day 11',type:'single_select',prompt:'Which unusual name appeared in the confidential-fund records discussed during former COA auditor Roderick Wamil’s testimony?',options:['Piattos','Mabini','Malakas','Bagwis'],answer:'Piattos'},
-  {id:'q24',day:'Day 13',type:'true_false',prompt:'Roderick Wamil testified that the OVP submitted receipts or sales invoices when it liquidated its ₱125-million confidential fund for 2022.',options:['True','False'],answer:'False'},
-  {id:'q25',day:'Day 14',type:'single_select',prompt:'After the defense declined a joint stipulation on the acknowledgement receipts, prosecutors said Xylene del Campo could have to testify on roughly how many documents?',options:['More than 4,000','About 400','About 40','More than 40,000'],answer:'More than 4,000'},
-  {id:'q26',day:'Day 15',type:'true_false',prompt:'Xylene del Campo testified that supplier details for the OVP’s confidential-fund purchases were themselves confidential and therefore receipts or invoices were unnecessary.',options:['True','False'],answer:'False'},
-  {id:'q27',day:'Day 16',type:'identification',prompt:'Name the House records official who was excused after the defense stipulated to the documents presented through her.',answer:'Marivic Pareja',aliases:['Pareja','Marivic P. Pareja']},
-  {id:'q28',day:'Day 17',type:'true_false',prompt:'Gina Acosta testified that Col. Raymund Lachica was a bonded accountable officer responsible for accounting for confidential funds if they were lost.',options:['True','False'],answer:'False'},
-  {id:'q29',day:'Day 23',type:'identification',prompt:'By Day 23, how many Article I witnesses had the prosecution presented or covered through stipulated testimony before it dropped the remaining 15?',answer:'12',aliases:['twelve','12 witnesses']},
-  {id:'q30',day:'Article I',type:'single_select',prompt:'Which article of impeachment centered on the alleged misuse of ₱612.5 million in confidential funds from the OVP and DepEd?',options:['Article I','Article II','Article III','Article IV'],answer:'Article I'}
+  {id:'q01',category:'Philippines',type:'single_select',prompt:'Which Philippine region is holding its first parliamentary election in 2026?',options:['BARMM','CAR','NCR','Region XII'],answer:'BARMM'},
+  {id:'q02',category:'Philippines',type:'identification',prompt:'Approximately how many registered voters are in the Bangsamoro region for the 2026 parliamentary election?',answer:'2.393 million',aliases:['2.393m','2.393 million voters','2393000','2,393,000']},
+  {id:'q03',category:'Philippines',type:'identification',prompt:'How many seats make up the Bangsamoro Parliament in the 2026 election?',answer:'80',aliases:['eighty','80 seats']},
+  {id:'q04',category:'Philippines',type:'single_select',prompt:'Of the 80 Bangsamoro parliamentary seats, how many are designated for party representatives?',options:['40','32','8','20'],answer:'40'},
+  {id:'q05',category:'Nation',type:'identification',prompt:'What was the name of the passenger vessel that caught fire off Coron, Palawan?',answer:'MV June Aster',aliases:['June Aster','MV June Aster']},
+  {id:'q06',category:'Nation',type:'single_select',prompt:'According to the Philippine Coast Guard’s initial inquiry, where did the MV June Aster fire begin?',options:['Cargo hold','Engine room','Passenger deck','Galley'],answer:'Cargo hold'},
+  {id:'q07',category:'Environment',type:'single_select',prompt:'What alert level remains in effect over Mayon Volcano after its recent ash emission?',options:['Alert Level 2','Alert Level 1','Alert Level 3','Alert Level 4'],answer:'Alert Level 2'},
+  {id:'q08',category:'Environment',type:'identification',prompt:'How wide is Mayon Volcano’s Permanent Danger Zone?',answer:'6 kilometers',aliases:['6 km','6km','six kilometers','6 kilometer']},
+  {id:'q09',category:'Environment',type:'single_select',prompt:'Which Negros volcano recently emitted ash while remaining under Alert Level 2?',options:['Kanlaon','Taal','Bulusan','Hibok-Hibok'],answer:'Kanlaon'},
+  {id:'q10',category:'Environment',type:'identification',prompt:'How wide is Kanlaon Volcano’s Permanent Danger Zone?',answer:'4 kilometers',aliases:['4 km','4km','four kilometers','4 kilometer']},
+  {id:'q11',category:'Energy',type:'single_select',prompt:'Which Philippine power grid was placed under both red and yellow alerts because of limited power supply?',options:['Visayas','Luzon','Palawan','Batanes'],answer:'Visayas'},
+  {id:'q12',category:'Environment',type:'single_select',prompt:'Smoke from forest fires in which Indonesian region contributed to haze over parts of the Philippines?',options:['Kalimantan','Java','Bali','Sulawesi'],answer:'Kalimantan'},
+  {id:'q13',category:'Environment',type:'true_false',prompt:'The Southwest Monsoon, or Habagat, helped transport smoke from Indonesian forest fires toward parts of the Philippines.',options:['True','False'],answer:'True'},
+  {id:'q14',category:'Technology',type:'identification',prompt:'Which technology company said it would send a technical team to study possible integration of the Philippine National ID system into its platforms?',answer:'Meta',aliases:['Meta Platforms','Facebook Meta']},
+  {id:'q15',category:'Science',type:'single_select',prompt:'Project PAGPAWI is developing emergency water-filtration materials using what kind of waste?',options:['Wood waste','Plastic waste','Glass waste','Textile waste'],answer:'Wood waste'},
+  {id:'q16',category:'Economy',type:'single_select',prompt:'The 2026 Luzon Economic Corridor Investment Forum was co-hosted by the Philippines together with which two countries?',options:['United States and Japan','China and South Korea','Australia and India','Singapore and Malaysia'],answer:'United States and Japan'},
+  {id:'q17',category:'Economy',type:'single_select',prompt:'How large is the U.S. Threshold Program grant signed to help strengthen Philippine eligibility for a future MCC Compact?',options:['$60 million','$20 million','$100 million','$250 million'],answer:'$60 million'},
+  {id:'q18',category:'Technology',type:'true_false',prompt:'The Philippines is pushing for stronger ASEAN-wide safeguards to protect young people online as digital technologies expand.',options:['True','False'],answer:'True'},
+  {id:'q19',category:'P-Pop',type:'identification',prompt:'Which two P-pop groups were the only idol groups in Billboard Philippines’ mid-year Top 10 Artists of 2026?',answer:'SB19 and BINI',aliases:['BINI and SB19','SB19 BINI','BINI SB19']},
+  {id:'q20',category:'P-Pop',type:'single_select',prompt:'What was SB19’s rank in Billboard Philippines’ mid-year Top 10 Artists of 2026?',options:['No. 6','No. 3','No. 9','No. 1'],answer:'No. 6',aliases:['6','number 6']},
+  {id:'q21',category:'P-Pop',type:'single_select',prompt:'What was BINI’s rank in Billboard Philippines’ mid-year Top 10 Artists of 2026?',options:['No. 9','No. 6','No. 4','No. 2'],answer:'No. 9',aliases:['9','number 9']},
+  {id:'q22',category:'P-Pop',type:'identification',prompt:'Which SB19 song became the first P-pop track to reach No. 1 on Billboard’s World Digital Song Sales chart?',answer:'DAM'},
+  {id:'q23',category:'P-Pop',type:'single_select',prompt:'Which release topped Billboard Philippines’ fan poll for favorite P-pop release of the first half of 2026?',options:['Wakas At Simula — SB19','Signals — BINI','TABI — XONARA','DARAMA — OONA.'],answer:'Wakas At Simula — SB19',aliases:['Wakas At Simula','SB19 Wakas At Simula']},
+  {id:'q24',category:'P-Pop',type:'identification',prompt:'Which rookie P-pop girl group placed second in that fan poll with the song “TABI”?',answer:'XONARA'},
+  {id:'q25',category:'P-Pop',type:'single_select',prompt:'Which P-pop girl group is set to represent the Philippines at the 2026 ROUND Music Festival in South Korea?',options:['KAIA','G22','BINI','YARA'],answer:'KAIA'},
+  {id:'q26',category:'P-Pop',type:'true_false',prompt:'HORI7ON said leaving MLD Entertainment and ABS-CBN meant the group was disbanding.',options:['True','False'],answer:'False'},
+  {id:'q27',category:'OPM',type:'single_select',prompt:'Which act received the most Grand Awards nominations at the 39th Awit Awards?',options:['IV OF SPADES','SB19','Cup of Joe','Maki'],answer:'IV OF SPADES'},
+  {id:'q28',category:'Sports',type:'single_select',prompt:'Which team did Gilas Pilipinas defeat, 109–78, for its first win at the 2026 Asian Games?',options:['Kazakhstan','Bahrain','Japan','Qatar'],answer:'Kazakhstan'},
+  {id:'q29',category:'Sports',type:'single_select',prompt:'Who were named the Philippines’ flag bearers for the 2026 Asian Games opening ceremony?',options:['Aira Villegas and Albert Ian delos Santos','EJ Obiena and Hidilyn Diaz','Carlos Yulo and Nesthy Petecio','June Mar Fajardo and Vanessa Sarno'],answer:'Aira Villegas and Albert Ian delos Santos'},
+  {id:'q30',category:'World Sports',type:'single_select',prompt:'Who defeated Aryna Sabalenka to win the 2026 US Open women’s singles title?',options:['Elena Rybakina','Iga Świątek','Coco Gauff','Naomi Osaka'],answer:'Elena Rybakina'}
 ];
 
 if(questions.length!==30)throw new Error('Read Between the Headlines requires exactly 30 questions.');
@@ -52,7 +52,7 @@ const nameInput=$('[data-rbt-player]');
 const emailInput=$('[data-rbt-email]');
 const entryError=$('[data-rbt-player-error]');
 const questionNo=$('[data-rbt-question-no]');
-const dayLabel=$('[data-rbt-day]');
+const categoryLabel=$('[data-rbt-category]');
 const typeLabel=$('[data-rbt-type]');
 const promptEl=$('[data-rbt-prompt]');
 const answerArea=$('[data-rbt-answer]');
@@ -68,9 +68,10 @@ const resultCorrect=$('[data-rbt-result-correct]');
 const resultLifetime=$('[data-rbt-result-lifetime]');
 const resultTime=$('[data-rbt-result-time]');
 
-const normalize=(value)=>String(value??'').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[₱,.'’“”\-–—]/g,' ').replace(/\s+/g,' ').trim().toLowerCase();
+const normalize=(value)=>String(value??'').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[₱$,.'’“”\-–—]/g,' ').replace(/\s+/g,' ').trim().toLowerCase();
 const validEmail=(value)=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value||'').trim());
 const makeId=()=>window.crypto?.randomUUID?.()||`player-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+const shuffle=(items)=>{const a=[...items];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
 
 function readJSON(key,fallback){try{return JSON.parse(localStorage.getItem(key)||JSON.stringify(fallback));}catch{return fallback;}}
 function writeJSON(key,value){try{localStorage.setItem(key,JSON.stringify(value));}catch{}}
@@ -87,6 +88,7 @@ function readProfile(){
 }
 
 let profile=readProfile();
+let activeQuestions=[];
 let index=0,score=0,correctCount=0,locked=false,answered=[];
 let activeRun=false,startedAt=0,timerId=null,finishing=false;
 
@@ -107,15 +109,15 @@ function saveActiveRun(status='active'){
 }
 
 function renderQuestion(){
-  const q=questions[index];
+  const q=activeQuestions[index];
   locked=false;
-  questionNo.textContent=`Question ${index+1} of ${questions.length}`;
-  dayLabel.textContent=q.day;
+  questionNo.textContent=`Question ${index+1} of ${activeQuestions.length}`;
+  categoryLabel.textContent=q.category;
   typeLabel.textContent=typeName(q.type);
   promptEl.textContent=q.prompt;
   scoreEl.textContent=score.toLocaleString('en-PH');
   lifetimeEl.textContent=profile.lifetimePoints.toLocaleString('en-PH');
-  progressFill.style.width=`${(index/questions.length)*100}%`;
+  progressFill.style.width=`${(index/activeQuestions.length)*100}%`;
   feedback.textContent='';feedback.dataset.state='';answerArea.innerHTML='';
   submitButton.hidden=q.type!=='identification';submitButton.disabled=false;skipButton.disabled=false;
   saveActiveRun();
@@ -127,14 +129,14 @@ function renderQuestion(){
     answerArea.append(input);setTimeout(()=>input.focus(),0);
   }else{
     const group=document.createElement('div');group.className='rbt-options';
-    q.options.forEach(option=>{const button=document.createElement('button');button.type='button';button.className='rbt-option';button.textContent=option;button.addEventListener('click',()=>grade(option,button));group.append(button);});
+    shuffle(q.options).forEach(option=>{const button=document.createElement('button');button.type='button';button.className='rbt-option';button.textContent=option;button.addEventListener('click',()=>grade(option,button));group.append(button);});
     answerArea.append(group);
   }
 }
 
 function grade(value,control){
   if(locked||!activeRun)return;
-  const q=questions[index];locked=true;
+  const q=activeQuestions[index];locked=true;
   const isCorrect=validAnswers(q).includes(normalize(value));
   if(isCorrect){score+=POINTS_PER_CORRECT;correctCount++;feedback.textContent=`Correct. +${POINTS_PER_CORRECT} points.`;feedback.dataset.state='correct';if(control)control.dataset.chosen='correct';}
   else{feedback.textContent='Not this one. The correct answer will not be revealed.';feedback.dataset.state='wrong';if(control)control.dataset.chosen='wrong';}
@@ -152,11 +154,11 @@ function submitIdentification(){
 
 function skipQuestion(){
   if(locked||!activeRun)return;
-  locked=true;answered.push({id:questions[index].id,correct:false,skipped:true});feedback.textContent='Skipped. The answer stays hidden.';feedback.dataset.state='neutral';
+  locked=true;answered.push({id:activeQuestions[index].id,correct:false,skipped:true});feedback.textContent='Skipped. The answer stays hidden.';feedback.dataset.state='neutral';
   answerArea.querySelectorAll('button,input').forEach(el=>el.disabled=true);submitButton.disabled=true;skipButton.disabled=true;saveActiveRun();setTimeout(nextQuestion,650);
 }
 
-function nextQuestion(){index++;if(index<questions.length){renderQuestion();return;}finishGame();}
+function nextQuestion(){index++;if(index<activeQuestions.length){renderQuestion();return;}finishGame();}
 
 function recordEdition(result){
   if(profile.completedEditions.includes(EDITION_ID))return false;
@@ -176,7 +178,7 @@ function showResult(result){
   if(resultTime)resultTime.textContent=formatTime(Number(result.elapsedSeconds||0));
   const note=resultView.querySelector('[data-rbt-result-note]');
   if(note)note.textContent=result.status==='forfeited'
-    ? 'Run forfeited. Leaving, hiding, refreshing, or closing the game page after the challenge starts makes the scored result 0.'
+    ? 'Run forfeited. Leaving, hiding, refreshing, or closing the game page after the challenge starts records 0 for this edition.'
     : 'Your scored run is complete. Answers remain hidden and this edition cannot be replayed for additional points.';
   startView.hidden=true;gameView.hidden=true;resultView.hidden=false;
   setTimeout(()=>{finishing=false;},0);
@@ -192,7 +194,8 @@ function forfeitRun(){
   if(!activeRun||finishing)return;
   const result={status:'forfeited',score:0,correctCount:0,elapsedSeconds:elapsedSeconds(),finishedAt:Date.now()};
   recordEdition(result);
-  activeRun=false;stopTimer();showResult(result);
+  activeRun=false;
+  showResult(result);
 }
 
 function startGame(){
@@ -201,8 +204,9 @@ function startGame(){
   if(!name||!validEmail(email)){entryError.textContent='Name and a valid email are required to enter the game.';(!name?nameInput:emailInput).focus();return;}
   if(profile.completedEditions.includes(EDITION_ID)){entryError.textContent='This edition already has a scored result on this device.';return;}
   profile.playerName=name;profile.email=email;persistProfile();
+  activeQuestions=shuffle(questions);
   index=0;score=0;correctCount=0;answered=[];locked=false;startedAt=Date.now();activeRun=true;
-  saveActiveRun();entryError.textContent='';startView.hidden=true;resultView.hidden=true;gameView.hidden=false;startTimer();renderQuestion();
+  entryError.textContent='';startView.hidden=true;resultView.hidden=true;gameView.hidden=false;saveActiveRun();startTimer();renderQuestion();
 }
 
 function recoverInterruptedRun(){
