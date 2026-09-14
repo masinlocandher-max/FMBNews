@@ -8,11 +8,11 @@
 
   function productForPath(){
     const p=location.pathname.replace(/\/+$/,'')||'/news';
-    if(p.startsWith('/news/world'))return{key:'world',label:'FMB Worldwide'};
-    if(p.startsWith('/news/explainer'))return{key:'explainer',label:'FMB Explainer'};
-    if(p.startsWith('/news/fact-check'))return{key:'fact',label:'FMB Fact Check'};
-    if(p.startsWith('/news/fmb-brief'))return{key:'brief',label:'FMB Daily Brief'};
-    return{key:'news',label:'FMB News'};
+    if(p.startsWith('/news/world'))return{key:'world',label:'World'};
+    if(p.startsWith('/news/sports'))return{key:'sports',label:'Sports'};
+    if(p.startsWith('/news/fact-check'))return{key:'fact',label:'Fact Check'};
+    if(p.startsWith('/news/fmb-brief'))return{key:'brief',label:'Briefing'};
+    return{key:'news',label:'Home'};
   }
 
   function svg(key){
@@ -20,8 +20,10 @@
       menu:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>',
       search:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg>',
       account:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.2"></circle><path d="M5.8 19c.8-3.4 3-5.2 6.2-5.2s5.4 1.8 6.2 5.2"></path></svg>',
-      news:'<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2"></rect><path d="M8 9h5M8 13h8M8 16h6M16 9h1"></path></svg>',
+      home:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V20h-6v-6h-4v6H4z"></path></svg>',
+      news:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V20h-6v-6h-4v6H4z"></path></svg>',
       world:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="M4 12h16M12 4c2.2 2.2 3.2 4.9 3.2 8s-1 5.8-3.2 8M12 4C9.8 6.2 8.8 8.9 8.8 12s1 5.8 3.2 8"></path></svg>',
+      sports:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h8v3c0 3-1.5 5-4 6-2.5-1-4-3-4-6zM12 13v4M8 20h8M6 6H4c0 3 1.3 5 4.2 5.7M18 6h2c0 3-1.3 5-4.2 5.7"></path></svg>',
       explainer:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6.5A3.5 3.5 0 0 1 8.5 3H12v16H8.5A3.5 3.5 0 0 0 5 22zM19 6.5A3.5 3.5 0 0 0 15.5 3H12v16h3.5A3.5 3.5 0 0 1 19 22z"></path></svg>',
       fact:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 19 6v5c0 4.6-2.6 8-7 10-4.4-2-7-5.4-7-10V6z"></path><path d="m9 12 2 2 4-4"></path></svg>',
       brief:'<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="16" rx="2"></rect><path d="M8 8h8M8 12h8M8 16h5"></path></svg>'
@@ -30,8 +32,13 @@
   }
 
   function productRail(active){
-    const items=[['news','/news/','FMB News'],['world','/news/world/','FMB Worldwide'],['explainer','/news/explainer/','FMB Explainer'],['fact','/news/fact-check/','FMB Fact Check'],['brief','/news/fmb-brief/','FMB Daily Brief']];
-    return `<nav class="fmb-mobile-product-rail" aria-label="FMB products">${items.map(([key,href,label])=>`<a href="${href}" data-product="${key}"${key===active?' aria-current="page"':''}>${svg(key)}<span>${label}</span></a>`).join('')}</nav>`;
+    const items=[['news','/news/','Home'],['world','/news/world/','World'],['sports','/news/sports/','Sports'],['brief','/news/fmb-brief/','Briefing'],['fact','/news/fact-check/','Fact Check']];
+    return `<nav class="fmb-mobile-product-rail" aria-label="FMB News sections">${items.map(([key,href,label])=>`<a href="${href}" data-product="${key}"${key===active?' aria-current="page"':''}>${svg(key)}<span>${label}</span></a>`).join('')}</nav>`;
+  }
+
+  function editorialDock(active){
+    const links=[['news','/news/','Home','home'],['world','/news/world/','World','world'],['sports','/news/sports/','Sports','sports'],['brief','/news/fmb-brief/','Briefing','brief']];
+    return `<nav class="fmb-editorial-mobile-dock" aria-label="FMB News quick navigation">${links.map(([key,href,label,icon])=>`<a href="${href}"${key===active?' aria-current="page"':''}>${svg(icon)}<span>${label}</span></a>`).join('')}<button type="button" data-fmb-dock-menu>${svg('menu')}<span>Menu</span></button></nav>`;
   }
 
   const focusableSelector='a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])';
@@ -72,7 +79,7 @@
     const accountItem=`<button type="button" data-fmb-open-account><span class="fmb-menu-item-main">${svg('account')}<span>Your FMB</span></span><span>›</span></button>`;
     const customizeItem='<button type="button" data-fmb-menu-customize><span>Customize your feed</span><span>›</span></button>';
     const installItem='<button type="button" data-fmb-install><span>Add to Home Screen</span><span>›</span></button>';
-    const sheet=openSheet('More from FMB News',`${accountItem}${customizeItem}${installItem}<a href="/news/world/">Worldwide <span>›</span></a><a href="/news/explainer/">Explainer <span>›</span></a><a href="/news/fact-check/">Fact Check <span>›</span></a><a href="/news/horoscope/">Horoscope <span>›</span></a><a href="/news/crossword/">Crossword Puzzle <span>›</span></a><a href="/news/about/">About FMB News <span>›</span></a><a href="/news/submit/">Submit a story <span>›</span></a>`,opener);
+    const sheet=openSheet('More from FMB News',`${accountItem}${customizeItem}${installItem}<a href="/news/archive/">News <span>›</span></a><a href="/news/world/">World <span>›</span></a><a href="/news/sports/">Sports <span>›</span></a><a href="/news/fmb-brief/">Daily Briefing <span>›</span></a><a href="/news/fact-check/">Fact Check <span>›</span></a><a href="/news/explainer/">Explainers <span>›</span></a><a href="/news/horoscope/">Horoscope <span>›</span></a><a href="/news/crossword/">Crossword <span>›</span></a><a href="/news/about/">About FMB News <span>›</span></a><a href="/news/submit/">Submit a story <span>›</span></a>`,opener);
     const openAccount=()=>{
       $('[data-close-sheet]',sheet)?.click();
       requestAnimationFrame(()=>document.querySelector('[data-fmb-account],.fmb-account-button,[data-account]')?.click());
@@ -87,17 +94,22 @@
   }
 
   function ensureShell(){
-    if($('.fmb-mobile-app-shell'))return $('.fmb-mobile-app-shell');
+    const existing=$('.fmb-mobile-app-shell');
+    if(existing)return existing;
     const product=productForPath();
     const isHome=location.pathname.replace(/\/+$/,'')==='/news';
     const shell=document.createElement('div');
     shell.className=`fmb-mobile-app-shell${isHome?' is-home':''}`;
-    const brand=`<a class="fmb-mobile-shell-brand" href="/news/" aria-label="FMB News — Filipino Media Bulletin"><img src="/news/assets/images/brand/fmb-bulletin-emblem.svg" alt=""><span class="fmb-mobile-shell-copy"><strong>FMB News</strong><small>Filipino Media Bulletin</small></span></a>`;
+    const brand='<a class="fmb-mobile-shell-brand" href="/news/" aria-label="FMB News — Filipino Media Bulletin"><span class="fmb-mobile-shell-copy"><strong>FMB NEWS<span class="fmb-mobile-brand-dot">.</span></strong><small>FILIPINO MEDIA BULLETIN</small></span></a>';
     shell.innerHTML=`<div class="fmb-mobile-shell-head"><div class="fmb-mobile-shell-actions fmb-mobile-shell-search"><a href="/news/search/" aria-label="Search FMB News">${svg('search')}</a></div>${brand}<button class="fmb-mobile-shell-menu" type="button" data-fmb-shell-menu aria-label="Open FMB News menu" aria-haspopup="dialog">${svg('menu')}</button></div>${productRail(product.key)}`;
     document.body.prepend(shell);
     if(isHome){
       const ticker=$('.fmb-app-top-ticker');
       if(ticker)shell.append(ticker);
+    }
+    if(!$('.fmb-editorial-mobile-dock')){
+      document.body.insertAdjacentHTML('beforeend',editorialDock(product.key));
+      $('[data-fmb-dock-menu]')?.addEventListener('click',e=>openMore(e.currentTarget));
     }
     $('[data-fmb-shell-menu]',shell)?.addEventListener('click',e=>openMore(e.currentTarget));
     return shell;

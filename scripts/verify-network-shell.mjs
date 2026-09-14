@@ -35,8 +35,6 @@ for (const signal of [
   must(renderer.includes(signal), `Canonical network renderer is missing ${signal}`);
 }
 
-// The authored mobile-home runtime, not a late dist mutation, owns local hero
-// greeting/date/time behavior. Keep Philippine Standard Time explicit in source.
 for (const signal of [
   "timeZone:'Asia/Manila'",
   "new Intl.DateTimeFormat('en-PH'",
@@ -63,7 +61,7 @@ for (const rel of [
 ]) {
   const html = await readFile(resolve(rel), 'utf8');
   const wordmarks = (html.match(/class="fmb-lux-wordmark"/g) || []).length;
-  must(wordmarks === 1, `${rel}: expected exactly one canonical FMB NEWS wordmark, found ${wordmarks}`);
+  must(wordmarks === 1, `${rel}: expected exactly one canonical shared FMB NEWS wordmark, found ${wordmarks}`);
   must(html.includes('class="headline-ticker"'), `${rel}: canonical headline ticker missing`);
   must((html.match(/<span data-pht-clock/g) || []).length === 1, `${rel}: expected exactly one canonical PHT clock`);
   must((html.match(/<script data-fmb-network-clock>/g) || []).length === 1, `${rel}: expected exactly one canonical PHT clock process`);
@@ -76,7 +74,10 @@ for (const rel of [
 const home = await readFile(resolve('dist/news/index.html'), 'utf8');
 must(home.includes('fmb-network-landing'), 'Homepage lost the publication landing body contract');
 must(home.includes('publication-mast'), 'Homepage lost its purpose-built publication mast');
-must((home.match(/class="fmb-lux-wordmark"/g) || []).length === 1, 'Homepage must expose exactly one visible FMB NEWS wordmark after the brand pass');
+must((home.match(/class="fmb-editorial-wordmark"/g) || []).length === 1, 'Homepage must expose exactly one FMB NEWS. editorial wordmark');
+must((home.match(/class="fmb-lux-wordmark"/g) || []).length === 0, 'Homepage must not be overwritten by the shared internal-route wordmark');
+must(home.includes('FMB NEWS<span class="dot">.</span>'), 'Homepage editorial masthead lost the red-period FMB NEWS. lockup');
+must(home.includes('fmb-editorial-subtitle">Filipino Media Bulletin'), 'Homepage editorial masthead lost the Filipino Media Bulletin subtitle');
 must((home.match(/<span data-pht-clock/g) || []).length === 1, 'Homepage must expose exactly one PHT ticker clock');
 
-console.log('Canonical FMB News network shell verification passed: one renderer owns shared publication chrome and the final PHT ticker/clock, Search/Submit recover through the same source, authored mobile-home PHT behavior is preserved, and superseded shell/ticker/compatibility hardfixes are absent from the build path.');
+console.log('Canonical FMB News network shell verification passed: shared internal routes retain one canonical shell, the homepage preserves its dedicated FMB NEWS. editorial masthead, one PHT ticker/clock process remains authoritative, and superseded shell/ticker/compatibility hardfixes are absent from the build path.');

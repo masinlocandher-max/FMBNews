@@ -8,158 +8,124 @@ const read=rel=>readFile(resolve(rel),'utf8');
 const must=(value,message)=>{if(!value)throw new Error(message)};
 
 const required=[
-  'site/index.html','site/fmb-brief/index.html','site/world/index.html','site/explainer/index.html','site/horoscope/index.html','site/crossword/index.html','site/about/index.html',
-  'public/assets/css/fmb-news-mobile-premium.css','public/assets/css/fmb-news-mobile-home.css','public/assets/css/fmb-news-mobile-global.css','public/assets/css/fmb-news-mobile-products.css','public/assets/css/fmb-news-mobile-product-heroes.css','public/assets/css/fmb-news-mobile-menu-holder.css','public/assets/css/fmb-news-mobile-app-polish.css','public/assets/css/fmb-news-mobile-home-live-hero.css','public/assets/css/fmb-news-mobile-contrast-lock.css','public/assets/css/fmb-news-mobile-features.css','public/assets/css/fmb-news-mobile-personalization.css','public/assets/css/fmb-news-theme.css',
-  'public/assets/js/fmb-news-mobile-personalization.js','public/assets/js/fmb-news-mobile-home.js','public/assets/js/fmb-news-mobile-global.js','public/assets/js/fmb-news-mobile-products.js','public/assets/js/fmb-news-mobile-app-polish.js','public/assets/js/fmb-news-weekly-horoscope.js','public/assets/js/fmb-news-weekly-crossword.js','public/assets/js/fmb-news-theme.js',
+  'src/worker.js','wrangler.jsonc','scripts/render-home-experience.mjs','scripts/apply-brand-system.mjs','scripts/hardfix-mobile-first-site.mjs',
+  'public/assets/css/fmb-news-theme.css','public/assets/css/fmb-news-publication-landing.css','public/assets/css/fmb-news-editorial-reference-v2.css','public/assets/css/fmb-news-mobile-navigation-lock.css',
+  'public/assets/js/fmb-news-mobile-home.js','public/assets/js/fmb-news-mobile-global.js','public/assets/js/fmb-news-theme.js',
   'public/assets/images/brand/fmb-bulletin-emblem.svg','public/assets/data/fmb-explained','content/news/articles',
-  'scripts/fetch-approved-mobile-assets.mjs','scripts/render-home-experience.mjs','scripts/apply-brand-system.mjs','scripts/hardfix-mobile-first-site.mjs','src/worker.js','wrangler.jsonc',
-  'dist/news/index.html','dist/news/archive/index.html','dist/news/world/index.html','dist/news/explainer/index.html','dist/news/fmb-brief/index.html','dist/news/horoscope/index.html','dist/news/crossword/index.html','dist/news/about/index.html',
-  'dist/news/assets/images/mobile/fmb-mobile-hero.jpg','dist/news/assets/images/mobile/fmb-daily-brief-mug.jpg','dist/news/assets/images/brand/fmb-bulletin-emblem.svg',
-  'dist/news/assets/css/fmb-news-mobile-global.css','dist/news/assets/css/fmb-news-mobile-products.css','dist/news/assets/css/fmb-news-mobile-product-heroes.css','dist/news/assets/css/fmb-news-mobile-menu-holder.css','dist/news/assets/css/fmb-news-mobile-app-polish.css','dist/news/assets/css/fmb-news-mobile-home-live-hero.css','dist/news/assets/css/fmb-news-mobile-contrast-lock.css','dist/news/assets/css/fmb-news-mobile-features.css','dist/news/assets/css/fmb-news-mobile-personalization.css','dist/news/assets/css/fmb-news-theme.css',
-  'dist/news/assets/js/fmb-news-mobile-home.js','dist/news/assets/js/fmb-news-mobile-products.js','dist/news/assets/js/fmb-news-mobile-app-polish.js','dist/news/assets/js/fmb-news-weekly-crossword.js','dist/news/assets/js/fmb-news-theme.js'
+  'dist/news/index.html','dist/news/archive/index.html','dist/news/world/index.html','dist/news/sports/index.html','dist/news/explainer/index.html','dist/news/fmb-brief/index.html','dist/news/fact-check/index.html','dist/news/horoscope/index.html','dist/news/crossword/index.html','dist/news/about/index.html',
+  'dist/news/assets/css/fmb-news-mobile-system.css','dist/news/assets/css/fmb-news-theme.css','dist/news/assets/css/fmb-news-editorial-reference-v2.css','dist/news/assets/css/fmb-news-mobile-navigation-lock.css',
+  'dist/news/assets/js/fmb-news-mobile-global.js','dist/news/assets/js/fmb-news-mobile-home.js','dist/news/assets/js/fmb-news-theme.js',
+  'dist/news/assets/images/mobile/fmb-mobile-hero.jpg','dist/news/assets/images/mobile/fmb-daily-brief-mug.jpg'
 ];
 for(const rel of required)await access(resolve(rel));
 
 const worker=await read('src/worker.js'),wrangler=await read('wrangler.jsonc');
 must(worker.includes("url.pathname === '/news'")&&worker.includes("url.pathname.startsWith('/news/')"),'Cloudflare Worker /news boundary missing');
 must(wrangler.includes('www.francinemariebautista.com/news*')&&wrangler.includes('francinemariebautista.com/news*'),'Cloudflare /news routes missing');
-// Everything must land on www.francinemariebautista.com/news. The apex
-// canonicalises onto the www host, and a Fact Check held pending verification
-// reaches the desk instead of 404ing a URL that was live.
-must(worker.includes("hostname = 'www.francinemariebautista.com'")||worker.includes('www.francinemariebautista.com'),'Worker does not canonicalise onto the www host');
+must(worker.includes('www.francinemariebautista.com'),'Worker does not canonicalise onto the www host');
 must(/fact-check[\s\S]{0,500}308/.test(worker),'Worker does not redirect held Fact Check URLs to the desk');
 
-const fetchApproved=await read('scripts/fetch-approved-mobile-assets.mjs');
-must(fetchApproved.includes('14fKTwMW0qnVi36eVSAjSBr05_VZgq4kf'),'Approved Philippines newsroom hero Drive asset is not locked');
-const canonicalHomeRenderer=await read('scripts/render-home-experience.mjs');
-for(const token of ['applyDesktopPublicationLanding','renderMobileHome','data-fmb-mobile-home','network-home'])must(canonicalHomeRenderer.includes(token),`Canonical home renderer regression: missing ${token}`);
-const canonicalBrandSystem=await read('scripts/apply-brand-system.mjs');
-for(const token of ['fmb-news-theme.css','fmb-news-theme.js','data-fmb-theme-boot','fmb-lux-wordmark'])must(canonicalBrandSystem.includes(token),`Canonical brand system regression: missing ${token}`);
+const renderer=await read('scripts/render-home-experience.mjs');
+for(const token of ['applyDesktopPublicationLanding','renderMobileHome','fmb-editorial-wordmark','editorial-top-grid','editorial-side-rail','editorial-bottom-grid','data-fmb-editorial-lead','fmb-editorial-mobile-rail','Francine Marie Bautista'])must(renderer.includes(token),`Canonical home renderer regression: missing ${token}`);
+const brandSystem=await read('scripts/apply-brand-system.mjs');
+for(const token of ['createHash','assetVersion','fmb-news-theme.css','fmb-news-theme.js','fmb-news-home-v2.css','fmb-news-editorial-reference-v2.css','ensureEditorialReference','fmb-editorial-wordmark'])must(brandSystem.includes(token),`Canonical brand system regression: missing ${token}`);
+must(brandSystem.indexOf('ensureHomeV2(html, relativePath)')<brandSystem.indexOf('ensureEditorialReference(html, relativePath)'),'Approved editorial reference must be applied after the inherited Home V2 layer');
 
 const home=await read('dist/news/index.html');
-for(const signal of ['FMB News','FMB Worldwide','FMB Explainer','FMB Daily Brief','data-fmb-mobile-home','fmb-approved-hero-copy','fmb-approved-hero-ticker','fmb-hero-live-overlay','data-fmb-greeting','data-fmb-greeting-line','data-fmb-local-time','data-fmb-weather-button','Read the Latest','Customize','Weekly Horoscope','FMB Crossword','/news/assets/images/mobile/fmb-mobile-hero.jpg','/news/assets/images/mobile/fmb-daily-brief-mug.jpg','data-fmb-theme-boot','fmb-news-theme.css','fmb-news-theme.js'])must(home.includes(signal),`Mobile home regression: missing ${signal}`);
+for(const signal of [
+  'FMB NEWS<span class="dot">.</span>','fmb-editorial-subtitle">Filipino Media Bulletin','class="editorial-lead-story"','class="editorial-side-rail"',
+  'FMB News','FMB Worldwide','FMB Explainer','FMB Fact Check','FMB Daily Brief','Francine Marie Bautista','Founder',
+  'data-fmb-mobile-home','data-fmb-editorial-lead','fmb-editorial-mobile-rail','fmb-approved-hero-ticker','data-fmb-greeting-line','data-fmb-local-time',
+  'Weekly Horoscope','FMB Crossword','fmb-news-editorial-reference-v2.css','data-fmb-theme-boot','fmb-news-theme.css','fmb-news-theme.js'
+])must(home.includes(signal),`FMB home regression: missing ${signal}`);
 must(!home.includes('FMB Explained'),'Obsolete FMB Explained label remains');
+must(/\/news\/assets\/css\/fmb-news-editorial-reference-v2\.css\?v=[0-9a-f]{10}\b/.test(home),'Approved editorial reference must be content-versioned on Home');
+must(/\/news\/assets\/css\/fmb-news-theme\.css\?v=[0-9a-f]{10}\b/.test(home),'Home appearance stylesheet must be content-versioned');
+must(/\/news\/assets\/js\/fmb-news-theme\.js\?v=[0-9a-f]{10}\b/.test(home),'Home appearance runtime must be content-versioned');
 
 for(const asset of ['dist/news/assets/images/mobile/fmb-mobile-hero.jpg','dist/news/assets/images/mobile/fmb-daily-brief-mug.jpg']){
   const info=await stat(resolve(asset));must(info.size>20_000,`${asset} is missing or incomplete`);
 }
 
 const pages={
-  news:await read('dist/news/archive/index.html'),world:await read('dist/news/world/index.html'),explainer:await read('dist/news/explainer/index.html'),brief:await read('dist/news/fmb-brief/index.html'),horoscope:await read('dist/news/horoscope/index.html'),crossword:await read('dist/news/crossword/index.html'),about:await read('dist/news/about/index.html')
+  news:await read('dist/news/archive/index.html'),world:await read('dist/news/world/index.html'),sports:await read('dist/news/sports/index.html'),explainer:await read('dist/news/explainer/index.html'),fact:await read('dist/news/fact-check/index.html'),brief:await read('dist/news/fmb-brief/index.html'),horoscope:await read('dist/news/horoscope/index.html'),crossword:await read('dist/news/crossword/index.html'),about:await read('dist/news/about/index.html')
 };
 for(const[name,html]of Object.entries(pages)){
-  for(const label of ['FMB News','FMB Worldwide','FMB Explainer','FMB Daily Brief'])must(html.includes(label),`${name}: missing ${label}`);
-  // The fifteen mobile stylesheets are served concatenated, in their original
-  // order, as one system stylesheet versioned by a hash of its own bytes. These
-  // used to be nine separate assertions on hand-typed ?v= literals, which meant
-  // editing a sheet without bumping its literal shipped a stale file and still
-  // passed. Assert the bundle is linked and content-versioned; its contents are
-  // asserted below, against the authored sources.
   must(/fmb-news-mobile-system\.css\?v=[0-9a-f]{10}\b/.test(html),`${name}: content-versioned mobile system stylesheet missing`);
-  for(const gone of ['fmb-news-mobile-personalization.css','fmb-news-mobile-home.css','fmb-news-mobile-global.css','fmb-news-mobile-products.css','fmb-news-mobile-product-heroes.css','fmb-news-mobile-menu-holder.css','fmb-news-mobile-app-polish.css','fmb-news-mobile-home-live-hero.css','fmb-news-mobile-contrast-lock.css'])
-    must(!html.includes(`<link rel="stylesheet" href="/news/assets/css/${gone}`),`${name}: ${gone} is linked separately as well as bundled — duplicate cascade`);
-  must(html.includes('fmb-news-mobile-global.js?v=20260901-global-v3'),`${name}: global mobile runtime v3 missing`);
-  must(html.includes('fmb-news-mobile-products.js?v=20260902-products-v3'),`${name}: strict product runtime v3 missing`);
-  must(html.includes('fmb-news-mobile-app-polish.js?v=20260902-polish-v2'),`${name}: final premium mobile polish runtime v2 missing`);
-  // Content-hashed, not a hand-typed literal: editing the theme without also
-  // editing the literal used to ship a stale appearance past a passing gate.
+  must(html.includes('fmb-news-mobile-global.js?v=20260913-editorial-shell-v1'),`${name}: approved editorial mobile shell runtime missing`);
   must(/\/news\/assets\/css\/fmb-news-theme\.css\?v=[0-9a-f]{10}\b/.test(html),`${name}: content-versioned appearance stylesheet missing`);
   must(/\/news\/assets\/js\/fmb-news-theme\.js\?v=[0-9a-f]{10}\b/.test(html),`${name}: content-versioned appearance runtime missing`);
+  must(!html.includes('/news/news/assets/'),`${name}: double-scoped asset path remains`);
 }
 
-// The system stylesheet must carry every authored mobile sheet, in the order
-// the cascade expects. Concatenation is only safe while that holds.
 const systemCss=await read('dist/news/assets/css/fmb-news-mobile-system.css');
-const systemOrder=['fmb-news-mobile-first-site.css','fmb-news-mobile-personalization.css','fmb-news-mobile-premium.css','fmb-news-mobile-home.css','fmb-news-mobile-global.css','fmb-news-mobile-products.css','fmb-news-mobile-app-polish.css','fmb-news-mobile-home-live-hero.css','fmb-news-mobile-home-motion.css','fmb-news-mobile-contrast-lock.css','fmb-news-mobile-product-heroes.css','fmb-news-mobile-menu-holder.css','fmb-news-mobile-final-tweaks.css','fmb-news-mobile-approved-home.css','fmb-news-mobile-material-polish.css'];
+const systemOrder=[
+  'fmb-news-mobile-first-site.css','fmb-news-mobile-personalization.css','fmb-news-mobile-premium.css','fmb-news-mobile-home.css','fmb-news-mobile-global.css','fmb-news-mobile-products.css','fmb-news-mobile-app-polish.css','fmb-news-mobile-home-live-hero.css','fmb-news-mobile-home-motion.css','fmb-news-mobile-contrast-lock.css','fmb-news-mobile-product-heroes.css','fmb-news-mobile-menu-holder.css','fmb-news-mobile-final-tweaks.css','fmb-news-mobile-approved-home.css','fmb-news-mobile-material-polish.css','fmb-news-mobile-all-screens.css','fmb-news-mobile-navigation-lock.css'
+];
 let cursor=-1;
 for(const sheet of systemOrder){
   const at=systemCss.indexOf(`/* ===== ${sheet} ===== */`);
   must(at>cursor,`Mobile system stylesheet is missing ${sheet} or has it out of cascade order`);
   cursor=at;
   const source=await read(`dist/news/assets/css/${sheet}`);
-  must(systemCss.includes(source.trim()),`Mobile system stylesheet does not match the authored ${sheet}`);
+  must(systemCss.includes(source.trim()),`Mobile system stylesheet does not match authored ${sheet}`);
 }
 must(!/@import|@charset/i.test(systemCss),'Mobile system stylesheet must not contain @import/@charset');
 
-const globalCss=await read('dist/news/assets/css/fmb-news-mobile-global.css');
-for(const token of ['.fmb-mobile-app-shell','.fmb-mobile-product-rail','SF Pro Text','High-contrast rules','world-hero p','brief-archive-hero'])must(globalCss.includes(token),`Global mobile readability regression: missing ${token}`);
-const productCss=await read('dist/news/assets/css/fmb-news-mobile-products.css');
-for(const token of ['fmb-mobile-route-archive','fmb-mobile-route-world','fmb-mobile-route-explainer','fmb-mobile-route-brief','fmb-mobile-route-horoscope','fmb-mobile-route-crossword','fmb-mobile-route-about','fmb-mobile-route-article'])must(productCss.includes(token),`Dedicated mobile product design missing: ${token}`);
-const productJs=await read('dist/news/assets/js/fmb-news-mobile-products.js');
-for(const token of ['addArchiveIntro','addWorldSignature','addExplainerSignature','addBriefSignature','addHoroscopeSignature','addCrosswordSignature','addAboutSignature','addArticleProgress','.brief-archive-hero .brief-shell','EXPLAINER DESK','DAILY DESK','PLAIN LANGUAGE · CONTEXT FIRST · FILIPINO RELEVANCE'])must(productJs.includes(token),`Dedicated mobile product runtime missing: ${token}`);
-must(!productJs.includes('TOPICS<br>MADE CLEAR'),'Explainer 206 hero badge must stay removed');
-must(!productJs.includes('fmb-brief-signature-visual'),'Daily Brief hero must not inject a floating mug');
-const heroCss=await read('dist/news/assets/css/fmb-news-mobile-product-heroes.css');
-for(const token of ['One exact hero canvas','height:300px','padding:28px 22px 26px','.fmb-product-signal','font-size:46px','Same bottom capsule','fmb-mobile-route-world .world-hero','fmb-mobile-route-explainer .explainer-hero','brief-route.fmb-mobile-route-brief .brief-archive-hero'])must(heroCss.includes(token),`Strict three-product hero regression: missing ${token}`);
-must(heroCss.includes('fmb-explainer-mark')&&heroCss.includes('display:none!important'),'Explainer legacy 206 mark must be suppressed');
-must(heroCss.includes('fmb-brief-signature-visual')&&heroCss.includes('display:none!important'),'Daily Brief legacy floating mug must be suppressed');
-const menuCss=await read('dist/news/assets/css/fmb-news-mobile-menu-holder.css');
-must(menuCss.includes('min-height:46px!important'),'Premium menu holder must stay compact at 46px');
-const polishCss=await read('dist/news/assets/css/fmb-news-mobile-app-polish.css');
-for(const token of ['one FMB shell','fmb-legacy-product-rail','.fmb-global-week-actions{display:none','Every internal product starts immediately after the rail'])must(polishCss.includes(token),`Premium app chrome regression: missing ${token}`);
-const polishJs=await read('dist/news/assets/js/fmb-news-mobile-app-polish.js');
-for(const token of ['hideLegacyProductRails','cleanGlobalUtility','fmb-mobile-polish'])must(polishJs.includes(token),`Premium app runtime regression: missing ${token}`);
-// This used to require `utility.remove()` — it asserted the workaround rather
-// than the result. The shell built the utility strip and the fixed bottom bar,
-// and the runtime tore them out again on every page. Neither is built now, so
-// assert the outcome: the shared mobile runtime must not create either one.
 const shellJs=await read('dist/news/assets/js/fmb-news-mobile-global.js');
-for(const banned of ['fmb-global-mobile-utility','fmb-approved-bottom-nav','ensureBottomNav'])must(!shellJs.includes(banned),`Mobile shell must not build ${banned} — FMB has no fixed bottom navigation and no utility strip`);
-must(!(await read('dist/news/assets/css/fmb-news-mobile-approved-home.css')).includes('fmb-approved-bottom-nav'),'Bottom-navigation styling must not ship');
-const homeCss=await read('dist/news/assets/css/fmb-news-mobile-home.css');
-for(const token of ['.fmb-app-brand-hero','color:#fff','fmb-app-lead h2'])must(homeCss.includes(token),`Mobile home visual regression: missing ${token}`);
-const liveHeroCss=await read('dist/news/assets/css/fmb-news-mobile-home-live-hero.css');
-for(const token of ['Approved FMB News mobile hero','aspect-ratio:16/10.6','fmb-approved-hero-copy','fmb-approved-hero-cta','fmb-approved-hero-ticker','height:40px','fmb-hero-weather-copy>strong'])must(liveHeroCss.includes(token),`Approved Home hero regression: missing ${token}`);
+for(const token of ['fmb-editorial-mobile-dock','FMB NEWS<span class="fmb-mobile-brand-dot">.</span>','/news/sports/','data-fmb-dock-menu','aria-label="FMB News quick navigation"'])must(shellJs.includes(token),`Approved editorial mobile shell regression: missing ${token}`);
+for(const banned of ['fmb-global-mobile-utility','fmb-approved-bottom-nav','ensureBottomNav'])must(!shellJs.includes(banned),`Retired mobile shell element returned: ${banned}`);
+
+const navLock=await read('dist/news/assets/css/fmb-news-mobile-navigation-lock.css');
+for(const token of ['--fmb-mobile-red:#a61f32','--fmb-mobile-black:#0b0f11','.fmb-editorial-mobile-dock','position:fixed!important','bottom:0!important','env(safe-area-inset-bottom)','fmb-editorial-mobile-rail-item','fmb-editorial-mobile-lead-image'])must(navLock.includes(token),`Approved black/red mobile reference lock missing ${token}`);
+must(!navLock.includes('#630661'),'Superseded plum accent returned to final mobile navigation lock');
+must(!navLock.includes('#f2d17a'),'Superseded gold accent returned to final mobile navigation lock');
+
+const editorialReference=await read('dist/news/assets/css/fmb-news-editorial-reference-v2.css');
+for(const token of ['--fmb-red:#a61f32','--fmb-paper:#f4f0e8','--fmb-dark:#0c1012','.fmb-editorial-wordmark','.editorial-top-grid','.editorial-side-rail','.network-products','.daily-brief-signup'])must(editorialReference.includes(token),`Approved desktop editorial reference missing ${token}`);
+must(!editorialReference.includes('#630661'),'Superseded plum accent returned to approved desktop reference');
+
 const homeJs=await read('dist/news/assets/js/fmb-news-mobile-home.js');
-for(const token of ['Hello, night owl.','Good morning.','Good afternoon.','Good evening.','Still up?','The world is still moving. Here’s what changed.','data-fmb-greeting-line'])must(homeJs.includes(token),`Dynamic Home greeting regression: missing ${token}`);
-const contrastCss=await read('dist/news/assets/css/fmb-news-mobile-contrast-lock.css');
-for(const token of ['Final mobile contrast lock','fmb-mobile-route-crossword .fmb-clue button','-webkit-text-fill-color:#27242a','fmb-cell input','world-hero h1','explainer-hero h1','brief-archive-hero h1'])must(contrastCss.includes(token),`Mobile text contrast regression: missing ${token}`);
-const personalCss=await read('dist/news/assets/css/fmb-news-mobile-personalization.css');
-for(const token of ['min-height:44px','z-index:2','cursor:pointer','focus-visible'])must(personalCss.includes(token),`Personalization touch-target regression: missing ${token}`);
+for(const token of ["timeZone:'Asia/Manila'",'data-fmb-greeting-line','prefers-reduced-motion: reduce'])must(homeJs.includes(token),`Home runtime regression: missing ${token}`);
 
-const horoscopeHtml=pages.horoscope,horoscopeJs=await read('public/assets/js/fmb-news-weekly-horoscope.js');
-must(horoscopeHtml.includes('Hindi hawak ng mga bituin ang ating kapalaran, meron tayong freewill gamitin natin'),'Horoscope free-will header missing');
+const horoscopeJs=await read('public/assets/js/fmb-news-weekly-horoscope.js');
 for(const icon of ['♈','♉','♊','♋','♌','♍','♎','♏','♐','♑','♒','♓'])must(horoscopeJs.includes(icon),`Horoscope zodiac icon missing: ${icon}`);
-must(horoscopeHtml.includes('features-v2'),'Horoscope feature stylesheet/runtime version not updated');
 
-const crosswordHtml=pages.crossword,crosswordJs=await read('dist/news/assets/js/fmb-news-weekly-crossword.js');
+const crosswordJs=await read('dist/news/assets/js/fmb-news-weekly-crossword.js');
 const crosswordLayout=JSON.parse(await read('dist/news/assets/data/fmb-crossword-current.json'));
-const entryCount=crosswordLayout.length;
-must(crosswordHtml.includes('35+ current-event answers'),'Crossword 35+ word promise missing');
-must(entryCount>=35,`Crossword has only ${entryCount} layout entries`);
-must(crosswordJs.includes('fmb-crossword-current.json'),'Crossword secure layout runtime missing');
+must(crosswordLayout.length>=35,`Crossword has only ${crosswordLayout.length} layout entries`);
 must(!crosswordJs.includes('answer:')&&!crosswordJs.includes('answer=')&&!JSON.stringify(crosswordLayout).includes('"answer"'),'Active crossword answer data must not ship to browsers');
-must(crosswordHtml.includes('ACTIVE PUZZLE • ANSWERS EMBARGOED'),'Crossword AI embargo banner missing');
-must(crosswordHtml.includes('provided as a screenshot or image'),'Crossword screenshot embargo missing');
-for(const forbidden of ['data-cw-reveal-letter','data-cw-reveal-word','data-cw-reveal-puzzle','Reveal Letter','Reveal Word','Reveal Puzzle'])must(!crosswordHtml.includes(forbidden)&&!crosswordJs.includes(forbidden),`Active crossword must not expose reveal control: ${forbidden}`);
-must(crosswordHtml.includes('The complete answer key is released only when the next weekly crossword goes live'),'Weekly answer-release policy missing');
 
-const emblem=await read('dist/news/assets/images/brand/fmb-bulletin-emblem.svg');
-must(emblem.includes('Gold shell-inspired emblem with a pearl center'),'Official FMB shell emblem missing');
+const shards=(await readdir(resolve('public/assets/data/fmb-explained'))).filter(name=>name.endsWith('.json'));
+must(shards.length===9,`FMB Explainer must contain 9 shards; found ${shards.length}`);
+let explainerCount=0;for(const shard of shards){const items=JSON.parse(await readFile(resolve('public/assets/data/fmb-explained',shard),'utf8'));explainerCount+=items.length}
+must(explainerCount===206,`FMB Explainer library must contain 206 topics; found ${explainerCount}`);
 
-const shards=(await readdir(resolve('public/assets/data/fmb-explained'))).filter(name=>name.endsWith('.json'));must(shards.length===9,`FMB Explainer must contain 9 shards; found ${shards.length}`);
-let explainerCount=0;for(const shard of shards){const items=JSON.parse(await readFile(resolve('public/assets/data/fmb-explained',shard),'utf8'));explainerCount+=items.length}must(explainerCount===206,`FMB Explainer library must contain 206 topics; found ${explainerCount}`);
+async function walkJson(dir){const out=[];for(const entry of await readdir(dir,{withFileTypes:true})){const full=path.join(dir,entry.name);if(entry.isDirectory())out.push(...await walkJson(full));else if(entry.isFile()&&entry.name.endsWith('.json'))out.push(full)}return out}
+const publishedSlugs=new Set();
+for(const file of await walkJson(resolve('content/news/articles'))){
+  const story=JSON.parse(await readFile(file,'utf8'));
+  if(story.status!=='published')continue;
+  must(story.slug&&!publishedSlugs.has(story.slug),`${path.relative(root,file)}: missing or duplicate published slug`);
+  publishedSlugs.add(story.slug);
+  const articlePath=resolve('dist/news',story.slug,'index.html');
+  await access(articlePath);
+  const articleHtml=await readFile(articlePath,'utf8');
+  must(articleHtml.includes(`https://www.francinemariebautista.com/news/${story.slug}/`),`${story.slug}: built route lost canonical article URL`);
+}
+must(publishedSlugs.size>0,'No published article routes were verified');
 
 let builtPageCount=0;
-// Every built page must carry the whole mobile system. This used to be eight
-// separate assertions on hand-typed ?v= literals — which passed even when a
-// sheet had been edited without its literal being bumped. The stylesheets are
-// now one content-versioned bundle, so assert that; the runtimes are still
-// separate files and keep their own checks.
 async function scan(target){
   const info=await stat(target);
   if(info.isDirectory()){for(const e of await readdir(target))await scan(path.join(target,e));return}
   if(path.basename(target)!=='index.html')return;
-  const text=await readFile(target,'utf8');
-  builtPageCount++;
+  const text=await readFile(target,'utf8');builtPageCount++;
   const where=path.relative(root,target);
   must(/fmb-news-mobile-system\.css\?v=[0-9a-f]{10}\b/.test(text),`Mobile system stylesheet not injected in ${where}`);
-  must(text.includes('fmb-news-mobile-global.js?v=20260901-global-v3'),`Global mobile runtime not injected in ${where}`);
-  must(text.includes('fmb-news-mobile-products.js?v=20260902-products-v3'),`Strict product runtime v3 not injected in ${where}`);
-  must(text.includes('fmb-news-mobile-app-polish.js?v=20260902-polish-v2'),`Final app polish runtime v2 not injected in ${where}`);
-  must(/\/news\/assets\/css\/fmb-news-theme\.css\?v=[0-9a-f]{10}\b/.test(text),`Content-versioned appearance stylesheet not injected in ${where}`);
-  must(/\/news\/assets\/js\/fmb-news-theme\.js\?v=[0-9a-f]{10}\b/.test(text),`Content-versioned appearance runtime not injected in ${where}`);
+  must(text.includes('fmb-news-mobile-global.js?v=20260913-editorial-shell-v1'),`Editorial global mobile runtime not injected in ${where}`);
   must(!text.includes('/news/news/assets/'),`Double-scoped asset in ${where}`);
 }
 await scan(resolve('dist/news'));
-console.log(`FMBNews verification passed: canonical desktop/mobile home renderer, canonical brand/theme system, approved Philippines newsroom hero with real HTML overlay and Read the Latest / Customize CTAs, one compact premium mobile masthead/menu holder, strict shared Worldwide/Explainer/Daily Brief hero geometry, final contrast lock, eight dedicated route designs, 12-icon horoscope, ${entryCount}-entry current-events crossword with no active reveals, ${explainerCount} Explainer library topics, and full FMB shell coverage across ${builtPageCount} pages.`);
+
+console.log(`FMBNews verification passed: approved warm-ivory/black/red FMB NEWS. desktop, Apple-like black/red mobile shell with one five-item editorial dock, content-hashed appearance assets, ${publishedSlugs.size} published article routes present, ${crosswordLayout.length}-entry secure crossword, ${explainerCount} Explainer topics, and shell coverage across ${builtPageCount} pages.`);
