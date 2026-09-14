@@ -1,15 +1,21 @@
 /* FMB News 2026 editorial reference layer: warm paper, newsroom black, signal red. */
 
 .fmb-ref.fmb-network-landing{
-  --fmb-red:#a61f32;
-  --fmb-red-deep:#861526;
-  --fmb-paper:#f4f0e8;
-  --fmb-paper-hi:#faf7f0;
-  --fmb-ink:#111416;
-  --fmb-muted:#62605c;
-  --fmb-rule:#cfc8bc;
-  --fmb-dark:#0c1012;
-  --fmb-dark-soft:#151a1d;
+  /* FMB News Brand Guidelines v1.0 on the desktop Home. FMB Red is the primary
+     accent, FMB White the main background, Editorial Black the ink, Steel Gray
+     supporting text. The paper step above the ground and the hairline are
+     derived from FMB White; --fmb-dark keeps the guidelines' two blacks. */
+  --fmb-red:#D71920;
+  --fmb-red-deep:#B20F16;
+  /* Red used as TEXT. Fills keep --fmb-red so white-on-red stays put. */
+  --fmb-red-ink:#D71920;
+  --fmb-paper:#F5F3EF;
+  --fmb-paper-hi:#FAF9F6;
+  --fmb-ink:#141414;
+  --fmb-muted:#6D7072;
+  --fmb-rule:#D8D6D1;
+  --fmb-dark:#0A0A0A;
+  --fmb-dark-soft:#141414;
   background:var(--fmb-theme-bg,var(--fmb-paper))!important;
   color:var(--fmb-theme-ink,var(--fmb-ink))!important;
 }
@@ -30,7 +36,7 @@
   width:min(1440px,calc(100% - 72px))!important;
   margin:0 auto!important;
   min-height:0!important;
-  padding:22px 0 0!important;
+  padding:13px 0 0!important;
   display:block!important;
 }
 .fmb-ref.fmb-network-landing .publication-brand-row{
@@ -39,7 +45,7 @@
   grid-template-columns:minmax(180px,1fr) auto minmax(180px,1fr);
   align-items:end;
   gap:24px;
-  padding:0 0 16px;
+  padding:0 0 9px;
   border-bottom:1px solid var(--fmb-rule);
 }
 .fmb-ref.fmb-network-landing .publication-date-block,
@@ -47,7 +53,7 @@
   align-self:end;
   padding-bottom:10px;
   color:var(--fmb-muted);
-  font:600 10px/1.45 Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font:600 10px/1.45 Inter,Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   letter-spacing:.02em;
 }
 .fmb-ref.fmb-network-landing .publication-purpose{text-align:right}
@@ -70,14 +76,14 @@
   letter-spacing:-.055em;
   white-space:nowrap;
 }
-.fmb-ref.fmb-network-landing .fmb-editorial-wordmark .dot{color:var(--fmb-red)}
+.fmb-ref.fmb-network-landing .fmb-editorial-wordmark .dot{color:var(--fmb-red-ink,var(--fmb-red))}
 .fmb-ref.fmb-network-landing .fmb-editorial-subtitle{
   width:100%;
   margin-top:13px;
   padding-top:10px;
   border-top:4px solid var(--fmb-red);
   color:var(--fmb-theme-ink,var(--fmb-ink));
-  font:700 clamp(9px,.88vw,13px)/1 Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font:700 clamp(9px,.88vw,13px)/1 Inter,Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   letter-spacing:.38em;
   text-align:center;
   text-transform:uppercase;
@@ -91,7 +97,7 @@
   justify-content:center!important;
   gap:clamp(18px,2vw,38px)!important;
   width:100%!important;
-  min-height:52px!important;
+  min-height:43px!important;
   padding:0!important;
   margin:0!important;
   border-bottom:1px solid var(--fmb-rule)!important;
@@ -109,7 +115,7 @@
   border:0!important;
   background:transparent!important;
   color:var(--fmb-theme-ink,var(--fmb-ink))!important;
-  font:760 10px/1 Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+  font:760 10px/1 Inter,Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
   letter-spacing:.035em!important;
   text-transform:uppercase!important;
   cursor:pointer;
@@ -139,7 +145,7 @@
   background:var(--fmb-theme-surface,var(--fmb-paper-hi))!important;
   box-shadow:0 16px 32px rgba(0,0,0,.12)!important;
 }
-.fmb-ref.fmb-network-landing .publication-menu-panel a{display:block!important;padding:11px 12px!important;color:var(--fmb-theme-ink,var(--fmb-ink))!important;text-decoration:none!important;font:700 11px/1.3 Manrope,sans-serif!important}
+.fmb-ref.fmb-network-landing .publication-menu-panel a{display:block!important;padding:11px 12px!important;color:var(--fmb-theme-ink,var(--fmb-ink))!important;text-decoration:none!important;font:700 11px/1.3 Inter,Manrope,sans-serif!important}
 
 .fmb-ref.fmb-network-landing .headline-ticker{
   min-height:34px!important;
@@ -153,7 +159,7 @@
 .fmb-ref.fmb-network-landing .ticker-label{min-width:108px!important;color:#fff!important;background:var(--fmb-red)!important;border-right:0!important;font-size:9px!important;letter-spacing:.1em!important}
 .fmb-ref.fmb-network-landing .ticker-pulse{background:#fff!important;box-shadow:none!important}
 .fmb-ref.fmb-network-landing .ticker-headline{color:#e9e6df!important;font-size:10px!important}
-.fmb-ref.fmb-network-landing .ticker-dot{color:var(--fmb-red)!important}
+.fmb-ref.fmb-network-landing .ticker-dot{color:var(--fmb-red-ink,var(--fmb-red))!important}
 .fmb-ref.fmb-network-landing .utility{display:none!important}
 
 .fmb-ref.fmb-network-landing .network-home{display:block!important;width:100%!important;margin:0!important;padding:0!important;background:var(--fmb-theme-bg,var(--fmb-paper))!important}
@@ -172,27 +178,27 @@
   border-bottom:1px solid var(--fmb-rule);
   background:color-mix(in srgb,var(--fmb-theme-surface,var(--fmb-paper-hi)) 88%,transparent);
 }
-.fmb-ref.fmb-network-landing .editorial-status-strip>a,.fmb-ref.fmb-network-landing .editorial-status-strip>span{min-width:0;color:var(--fmb-muted);font:650 10px/1.25 Manrope,sans-serif;text-decoration:none}
+.fmb-ref.fmb-network-landing .editorial-status-strip>a,.fmb-ref.fmb-network-landing .editorial-status-strip>span{min-width:0;color:var(--fmb-muted);font:650 10px/1.25 Inter,Manrope,sans-serif;text-decoration:none}
 .fmb-ref.fmb-network-landing .editorial-status-strip .status-dot{display:inline-block;width:7px;height:7px;margin-right:9px;border-radius:50%;background:var(--fmb-red)}
 .fmb-ref.fmb-network-landing .editorial-status-strip .editorial-desk{display:block!important;min-height:0!important;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important}
 .fmb-ref.fmb-network-landing .editorial-status-strip .editorial-desk-top{display:flex!important;align-items:center!important;gap:8px!important}
-.fmb-ref.fmb-network-landing .editorial-status-strip .editorial-desk-top strong{color:var(--fmb-theme-ink,var(--fmb-ink))!important;font:760 10px/1 Manrope,sans-serif!important}
-.fmb-ref.fmb-network-landing .editorial-status-strip .editorial-desk-top span{color:var(--fmb-muted)!important;font:600 9px/1 Manrope,sans-serif!important}
+.fmb-ref.fmb-network-landing .editorial-status-strip .editorial-desk-top strong{color:var(--fmb-theme-ink,var(--fmb-ink))!important;font:760 10px/1 Inter,Manrope,sans-serif!important}
+.fmb-ref.fmb-network-landing .editorial-status-strip .editorial-desk-top span{color:var(--fmb-muted)!important;font:600 9px/1 Inter,Manrope,sans-serif!important}
 .fmb-ref.fmb-network-landing .editorial-status-strip .editorial-desk>b,.fmb-ref.fmb-network-landing .editorial-status-strip .editorial-desk>p{display:none!important}
 
-.fmb-ref.fmb-network-landing .editorial-top-grid{display:grid;grid-template-columns:minmax(0,1.62fr) minmax(320px,.82fr);gap:22px;padding:22px 0 18px;border-bottom:1px solid var(--fmb-rule)}
+.fmb-ref.fmb-network-landing .editorial-top-grid{display:grid;grid-template-columns:minmax(0,1.62fr) minmax(320px,.82fr);gap:22px;padding:13px 0 18px;border-bottom:1px solid var(--fmb-rule)}
 .fmb-ref.fmb-network-landing .editorial-lead-story{display:block;color:inherit;text-decoration:none;min-width:0}
 .fmb-ref.fmb-network-landing .editorial-lead-image{display:block;width:100%;aspect-ratio:16/8.8;object-fit:cover;background:#d8d2c7}
-.fmb-ref.fmb-network-landing .editorial-kicker{display:block;margin:14px 0 7px;color:var(--fmb-red);font:800 10px/1 Manrope,sans-serif;letter-spacing:.04em;text-transform:uppercase}
-.fmb-ref.fmb-network-landing .editorial-lead-story h1{max-width:16ch;margin:0;color:var(--fmb-theme-ink,var(--fmb-ink))!important;font-family:var(--fmb-luxury-serif,Georgia,serif)!important;font-size:clamp(42px,4.45vw,72px)!important;font-weight:560!important;line-height:.94!important;letter-spacing:-.045em!important;text-wrap:balance}
-.fmb-ref.fmb-network-landing .editorial-lead-story p{max-width:760px;margin:9px 0 0;color:var(--fmb-muted)!important;font:500 14px/1.55 Manrope,sans-serif!important}
+.fmb-ref.fmb-network-landing .editorial-kicker{display:block;margin:14px 0 7px;color:var(--fmb-red-ink,var(--fmb-red));font:800 10px/1 Inter,Manrope,sans-serif;letter-spacing:.04em;text-transform:uppercase}
+.fmb-ref.fmb-network-landing .editorial-lead-story h1{max-width:23ch;margin:0;color:var(--fmb-theme-ink,var(--fmb-ink))!important;font-family:var(--fmb-luxury-serif,Georgia,serif)!important;font-size:clamp(42px,4.45vw,72px)!important;font-weight:560!important;line-height:.94!important;letter-spacing:-.045em!important;text-wrap:balance}
+.fmb-ref.fmb-network-landing .editorial-lead-story p{max-width:760px;margin:9px 0 0;color:var(--fmb-muted)!important;font:500 14px/1.55 Inter,Manrope,sans-serif!important}
 .fmb-ref.fmb-network-landing .editorial-side-rail{display:grid;align-content:start;border-left:1px solid var(--fmb-rule)}
 .fmb-ref.fmb-network-landing .editorial-side-rail>a{display:grid;grid-template-columns:118px minmax(0,1fr);gap:16px;min-height:132px;padding:0 0 16px 20px;margin:0 0 16px;border:0!important;border-bottom:1px solid var(--fmb-rule)!important;border-radius:0!important;background:transparent!important;color:inherit!important;text-decoration:none!important;box-shadow:none!important;transform:none!important}
 .fmb-ref.fmb-network-landing .editorial-side-rail>a:last-child{margin-bottom:0}
 .fmb-ref.fmb-network-landing .editorial-side-rail img{width:118px;height:94px;object-fit:cover;background:#d8d2c7}
 .fmb-ref.fmb-network-landing .editorial-side-copy{min-width:0}
 .fmb-ref.fmb-network-landing .editorial-side-rail .editorial-desk-top{display:flex!important;justify-content:space-between!important;gap:10px!important;margin:0 0 7px!important}
-.fmb-ref.fmb-network-landing .editorial-side-rail .editorial-desk-top strong,.fmb-ref.fmb-network-landing .editorial-feature .editorial-kicker{color:var(--fmb-red)!important;font:800 9px/1 Manrope,sans-serif!important;letter-spacing:.04em!important;text-transform:uppercase!important}
+.fmb-ref.fmb-network-landing .editorial-side-rail .editorial-desk-top strong,.fmb-ref.fmb-network-landing .editorial-feature .editorial-kicker{color:var(--fmb-red-ink,var(--fmb-red))!important;font:800 9px/1 Inter,Manrope,sans-serif!important;letter-spacing:.04em!important;text-transform:uppercase!important}
 .fmb-ref.fmb-network-landing .editorial-side-rail .editorial-desk-top span{display:none!important}
 .fmb-ref.fmb-network-landing .editorial-side-rail a>b,.fmb-ref.fmb-network-landing .editorial-side-rail .editorial-side-copy h3{display:block!important;margin:0!important;color:var(--fmb-theme-ink,var(--fmb-ink))!important;font-family:var(--fmb-luxury-serif,Georgia,serif)!important;font-size:clamp(21px,1.8vw,28px)!important;line-height:1!important;font-weight:560!important}
 .fmb-ref.fmb-network-landing .editorial-side-rail a>p{display:none!important}
@@ -206,61 +212,66 @@
 .fmb-ref.fmb-network-landing .network-product.brief,.fmb-ref.fmb-network-landing .network-product.fact-check,.fmb-ref.fmb-network-landing .network-product.explainer{grid-column:span 4!important}
 .fmb-ref.fmb-network-landing .network-product.explainer{border-right:0!important}
 .fmb-ref.fmb-network-landing .network-product-icon{display:none!important}
-.fmb-ref.fmb-network-landing .network-product h2{margin:0 0 12px!important;color:var(--fmb-red)!important;font-family:var(--fmb-luxury-serif,Georgia,serif)!important;font-size:clamp(24px,2.25vw,34px)!important;line-height:1!important;font-weight:620!important;letter-spacing:-.025em!important}
+.fmb-ref.fmb-network-landing .network-product h2{margin:0 0 12px!important;color:var(--fmb-theme-ink,var(--fmb-ink))!important;font-family:var(--fmb-luxury-serif,Georgia,serif)!important;font-size:clamp(24px,2.25vw,34px)!important;line-height:1!important;font-weight:620!important;letter-spacing:-.025em!important}
 .fmb-ref.fmb-network-landing .network-product .editorial-product-image{display:block;width:100%;aspect-ratio:16/7.4;margin:0 0 12px;object-fit:cover;background:#d8d2c7}
 .fmb-ref.fmb-network-landing .network-product .editorial-product-headline{margin:0 0 8px;color:var(--fmb-theme-ink,var(--fmb-ink));font-family:var(--fmb-luxury-serif,Georgia,serif);font-size:clamp(22px,2vw,31px);line-height:1;font-weight:560}
-.fmb-ref.fmb-network-landing .network-product p{margin:0 0 12px!important;color:var(--fmb-muted)!important;font:500 12px/1.5 Manrope,sans-serif!important}
+.fmb-ref.fmb-network-landing .network-product p{margin:0 0 12px!important;color:var(--fmb-muted)!important;font:500 12px/1.5 Inter,Manrope,sans-serif!important}
 .fmb-ref.fmb-network-landing .network-card-rule{display:none!important}
-.fmb-ref.fmb-network-landing .network-product .product-link{display:inline-flex!important;margin:0!important;padding:0!important;color:var(--fmb-red)!important;font:760 10px/1.2 Manrope,sans-serif!important;letter-spacing:.01em!important;text-transform:none!important}
+.fmb-ref.fmb-network-landing .network-product .product-link{display:inline-flex!important;margin:0!important;padding:0!important;color:var(--fmb-red-ink,var(--fmb-red))!important;font:760 10px/1.2 Inter,Manrope,sans-serif!important;letter-spacing:.01em!important;text-transform:none!important}
 .fmb-ref.fmb-network-landing .network-product.brief{counter-reset:briefItem}
 .fmb-ref.fmb-network-landing .network-product.brief .briefing-numbers{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:8px 0 16px}
 .fmb-ref.fmb-network-landing .briefing-number{padding-right:12px;border-right:1px solid var(--fmb-rule)}
 .fmb-ref.fmb-network-landing .briefing-number:last-child{border-right:0}
 .fmb-ref.fmb-network-landing .briefing-number b{display:block;color:var(--fmb-theme-ink,var(--fmb-ink));font-family:var(--fmb-luxury-serif,Georgia,serif);font-size:40px;font-weight:520;line-height:.9}
-.fmb-ref.fmb-network-landing .briefing-number span{display:block;margin-top:7px;color:var(--fmb-theme-ink,var(--fmb-ink));font:700 11px/1.25 Manrope,sans-serif}
+.fmb-ref.fmb-network-landing .briefing-number span{display:block;margin-top:7px;color:var(--fmb-theme-ink,var(--fmb-ink));font:700 11px/1.25 Inter,Manrope,sans-serif}
 
 .fmb-ref.fmb-network-landing .editorial-bottom-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(320px,.7fr);gap:0;border-bottom:1px solid var(--fmb-rule)}
 .fmb-ref.fmb-network-landing .editorial-entertainment,.fmb-ref.fmb-network-landing .editorial-about{padding:20px 20px 22px 4px}
 .fmb-ref.fmb-network-landing .editorial-about{padding-left:22px;border-left:1px solid var(--fmb-rule)}
-.fmb-ref.fmb-network-landing .editorial-section-title{margin:0 0 13px;color:var(--fmb-red);font-family:var(--fmb-luxury-serif,Georgia,serif);font-size:26px;line-height:1;font-weight:620}
+.fmb-ref.fmb-network-landing .editorial-section-title{margin:0 0 13px;padding-bottom:9px;border-bottom:2px solid var(--fmb-theme-ink,var(--fmb-ink));color:var(--fmb-theme-ink,var(--fmb-ink));font-family:var(--fmb-luxury-serif,Georgia,serif);font-size:26px;line-height:1;font-weight:620}
 .fmb-ref.fmb-network-landing .entertainment-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .fmb-ref.fmb-network-landing .entertainment-card{display:block;color:inherit;text-decoration:none}
 .fmb-ref.fmb-network-landing .entertainment-art{display:grid;place-items:center;aspect-ratio:16/7.5;margin-bottom:10px;border:1px solid var(--fmb-rule);background:linear-gradient(135deg,#1b2022,#0d1012);color:#ded8cf;font-family:var(--fmb-luxury-serif,Georgia,serif);font-size:34px}
 .fmb-ref.fmb-network-landing .entertainment-card h3{margin:0;color:var(--fmb-theme-ink,var(--fmb-ink));font-family:var(--fmb-luxury-serif,Georgia,serif);font-size:19px;font-weight:560}
-.fmb-ref.fmb-network-landing .entertainment-card p{margin:5px 0 0;color:var(--fmb-muted);font:500 11px/1.4 Manrope,sans-serif}
+.fmb-ref.fmb-network-landing .entertainment-card p{margin:5px 0 0;color:var(--fmb-muted);font:500 11px/1.4 Inter,Manrope,sans-serif}
 .fmb-ref.fmb-network-landing .founder-card{display:grid;grid-template-columns:122px minmax(0,1fr);gap:16px;align-items:center}
 .fmb-ref.fmb-network-landing .founder-portrait-placeholder{display:grid;place-items:center;width:122px;aspect-ratio:3/3.4;background:#d7d1c7;color:#111;font-family:var(--fmb-luxury-serif,Georgia,serif);font-size:34px;letter-spacing:-.04em}
 .fmb-ref.fmb-network-landing .founder-copy strong{display:block;color:var(--fmb-theme-ink,var(--fmb-ink));font-family:var(--fmb-luxury-serif,Georgia,serif);font-size:20px;font-weight:560;line-height:1.05}
-.fmb-ref.fmb-network-landing .founder-copy span{display:block;margin-top:4px;color:var(--fmb-muted);font:650 10px/1.3 Manrope,sans-serif}
-.fmb-ref.fmb-network-landing .founder-copy a{display:inline-block;margin-top:12px;color:var(--fmb-red);font:760 10px/1.2 Manrope,sans-serif;text-decoration:none}
+.fmb-ref.fmb-network-landing .founder-copy span{display:block;margin-top:4px;color:var(--fmb-muted);font:650 10px/1.3 Inter,Manrope,sans-serif}
+.fmb-ref.fmb-network-landing .founder-copy a{display:inline-block;margin-top:12px;color:var(--fmb-red-ink,var(--fmb-red));font:760 10px/1.2 Inter,Manrope,sans-serif;text-decoration:none}
 
 .fmb-ref.fmb-network-landing .daily-brief-signup{display:grid!important;grid-template-columns:minmax(260px,.8fr) minmax(420px,1.2fr)!important;align-items:center!important;gap:28px!important;margin:0!important;padding:18px 4px 20px!important;border:0!important;border-bottom:1px solid var(--fmb-rule)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
 .fmb-ref.fmb-network-landing .daily-brief-mark{display:none!important}
 .fmb-ref.fmb-network-landing .brief-copy h2{margin:0!important;color:var(--fmb-theme-ink,var(--fmb-ink))!important;font-family:var(--fmb-luxury-serif,Georgia,serif)!important;font-size:24px!important;font-weight:560!important}
-.fmb-ref.fmb-network-landing .brief-label{color:var(--fmb-red)!important;font-size:9px!important;letter-spacing:.04em!important;text-transform:uppercase!important}
+.fmb-ref.fmb-network-landing .brief-label{color:var(--fmb-red-ink,var(--fmb-red))!important;font-size:9px!important;letter-spacing:.04em!important;text-transform:uppercase!important}
 .fmb-ref.fmb-network-landing .brief-rule,.fmb-ref.fmb-network-landing .brief-promise{display:none!important}
 .fmb-ref.fmb-network-landing .daily-brief-signup form{display:block!important}
 .fmb-ref.fmb-network-landing .brief-form-row{display:grid!important;grid-template-columns:minmax(0,1fr) 126px!important;gap:0!important}
 .fmb-ref.fmb-network-landing .brief-form-row input{height:40px!important;padding:0 12px!important;border:1px solid var(--fmb-rule)!important;border-right:0!important;border-radius:0!important;background:var(--fmb-theme-surface,var(--fmb-paper-hi))!important;color:var(--fmb-theme-ink,var(--fmb-ink))!important}
-.fmb-ref.fmb-network-landing .brief-form-row button{height:40px!important;border:1px solid var(--fmb-red)!important;border-radius:0!important;background:var(--fmb-red)!important;color:#fff!important;font:750 10px/1 Manrope,sans-serif!important}
+.fmb-ref.fmb-network-landing .brief-form-row button{height:40px!important;border:1px solid var(--fmb-red)!important;border-radius:0!important;background:var(--fmb-red)!important;color:#fff!important;font:750 10px/1 Inter,Manrope,sans-serif!important}
 .fmb-ref.fmb-network-landing .daily-brief-signup .consent{margin-top:7px!important;color:var(--fmb-muted)!important;font-size:9px!important}
 
 .fmb-ref.fmb-network-landing .publication-footer{padding:22px 0 26px!important;background:transparent!important;border:0!important;color:var(--fmb-theme-ink,var(--fmb-ink))!important}
 .fmb-ref.fmb-network-landing .publication-footer-inner{width:min(1440px,calc(100% - 72px))!important;margin:0 auto!important;padding:0!important;display:flex!important;align-items:flex-end!important;justify-content:space-between!important;gap:24px!important}
 .fmb-ref.fmb-network-landing .publication-footer-emblem{display:none!important}
-.fmb-ref.fmb-network-landing .footer-publication-title{font-family:var(--fmb-luxury-serif,Georgia,serif)!important;font-size:26px!important;font-weight:560!important}
-.fmb-ref.fmb-network-landing .footer-publication-kicker{margin-top:4px!important;color:var(--fmb-muted)!important;font:600 9px/1.4 Manrope,sans-serif!important;letter-spacing:.03em!important}
+.fmb-ref.fmb-network-landing .footer-publication-title{font-family:var(--fmb-luxury-serif,Georgia,serif)!important;font-size:26px!important;font-weight:560!important;color:var(--fmb-ink,#111)!important}
+/* fmb-news-publication-landing.css still paints this #fff for the retired dark
+   violet footer. The editorial footer sits on ivory paper, so the wordmark was
+   white on white. The colour is claimed here, in the Home visual authority. */
+.fmb-ref.fmb-network-landing .footer-publication-kicker{margin-top:4px!important;color:var(--fmb-muted)!important;font:600 9px/1.4 Inter,Manrope,sans-serif!important;letter-spacing:.03em!important}
 
 html[data-fmb-theme="dark"] .fmb-ref.fmb-network-landing{
-  --fmb-rule:#34393c;
-  --fmb-muted:#aaa8a3;
-  --fmb-paper:#0b0f11;
-  --fmb-paper-hi:#121719;
-  --fmb-ink:#f1eee7;
-  --fmb-theme-bg:#0b0f11;
-  --fmb-theme-surface:#121719;
-  --fmb-theme-ink:#f1eee7;
-  --fmb-theme-muted:#aaa8a3;
+  /* The approved dark signal red. #D71920 measures 2.63:1 on #0b0f11. */
+  --fmb-red-ink:#EF1B24;
+  --fmb-rule:#2A2C2D;
+  --fmb-muted:#BFC1C2;
+  --fmb-paper:#0A0A0A;
+  --fmb-paper-hi:#141414;
+  --fmb-ink:#F5F3EF;
+  --fmb-theme-bg:#0A0A0A;
+  --fmb-theme-surface:#141414;
+  --fmb-theme-ink:#F5F3EF;
+  --fmb-theme-muted:#BFC1C2;
 }
 html[data-fmb-theme="dark"] .fmb-ref.fmb-network-landing .founder-portrait-placeholder{background:#24292c;color:#f1eee7}
 html[data-fmb-theme="dark"] .fmb-ref.fmb-network-landing .entertainment-art{border-color:#34393c}
@@ -277,3 +288,335 @@ html[data-fmb-theme="dark"] .fmb-ref.fmb-network-landing .entertainment-art{bord
   .fmb-ref.fmb-network-landing .network-home{display:none!important}
   .fmb-ref.fmb-network-landing .publication-mast{display:none!important}
 }
+
+
+/* ---------------------------------------------------------------------------
+   Entertainment marks
+   ---------------------------------------------------------------------------
+   Horoscope and Crossword have no photography and must not be given invented
+   imagery. Their tiles held a single glyph inside a tall dark slab, which read
+   as a broken image rather than a deliberate mark. Sized and centred as the
+   typographic marks they are, on the publication's own surface.
+   --------------------------------------------------------------------------- */
+.fmb-ref.fmb-network-landing .entertainment-art{
+  display:grid!important;
+  place-items:center!important;
+  aspect-ratio:16/7!important;
+  height:auto!important;
+  min-height:0!important;
+  margin-bottom:12px!important;
+  border:1px solid var(--fmb-line,#d5cfc5)!important;
+  background:var(--fmb-bg-secondary,#ebe6dc)!important;
+  color:var(--fmb-signal-red,#D71920)!important;
+  font-family:var(--fmb-luxury-serif,Georgia,serif)!important;
+  font-size:34px!important;
+  line-height:1!important;
+}
+
+
+/* ---------------------------------------------------------------------------
+   Newsroom update strip
+   ---------------------------------------------------------------------------
+   A single utility line, not a stack. Its three items were laying out at 68px,
+   13px and 13px tall against each other because the desk card inside it still
+   behaved like a card. Baseline-aligned, one line each, the headline truncating
+   rather than wrapping into the item beside it.
+   --------------------------------------------------------------------------- */
+.fmb-ref.fmb-network-landing .editorial-status-strip{
+  align-items:center!important;
+  min-height:0!important;
+}
+.fmb-ref.fmb-network-landing .editorial-status-strip>a,
+.fmb-ref.fmb-network-landing .editorial-status-strip>span{
+  display:flex!important;
+  align-items:center!important;
+  min-width:0!important;
+  line-height:1.25!important;
+}
+.fmb-ref.fmb-network-landing .editorial-status-strip .editorial-desk{
+  display:flex!important;
+  align-items:center!important;
+  gap:10px!important;
+  min-width:0!important;
+}
+.fmb-ref.fmb-network-landing .editorial-status-strip .editorial-side-copy{
+  display:flex!important;
+  align-items:center!important;
+  gap:10px!important;
+  min-width:0!important;
+}
+.fmb-ref.fmb-network-landing .editorial-status-strip .editorial-desk-top{flex:none!important}
+/* The strip carries the desk and the headline. The deck belongs to the story,
+   not to a utility row, and was what made this item double height. */
+.fmb-ref.fmb-network-landing .editorial-status-strip .editorial-desk p,
+.fmb-ref.fmb-network-landing .editorial-status-strip .editorial-side-copy>p{display:none!important}
+.fmb-ref.fmb-network-landing .editorial-status-strip .editorial-desk strong{
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+  white-space:nowrap!important;
+}
+
+/* The masthead dateline said the clock was "above" it, where the headline
+   ticker is. It states what it is. */
+.fmb-ref.fmb-network-landing .publication-time-label{font-style:normal}
+
+
+/* ---------------------------------------------------------------------------
+   Low-inventory modules
+   ---------------------------------------------------------------------------
+   Fact Check publishes only what its evidence gate clears, so its module is
+   often a single honest line while Daily Brief beside it carries two numbered
+   items. In an equal-height grid the short module inherited the tall one's
+   height and read as unfinished rather than as concise. Each module is now as
+   tall as what it actually has to say. No content is invented to fill it.
+   --------------------------------------------------------------------------- */
+.fmb-ref.fmb-network-landing .network-products{align-items:start!important}
+.fmb-ref.fmb-network-landing .editorial-bottom-grid{align-items:start!important}
+
+/* ---------------------------------------------------------------------------
+   Desktop ground convergence
+   ---------------------------------------------------------------------------
+   Measured on the built Home before this block: body painted #fbf9fc in light
+   and #0e0a12 in dark. Both are the retired plum system's neutrals -- each has
+   its blue channel highest -- declared as literals with !important in the
+   shared appearance system.
+
+   The consequence was not subtle once measured. This sheet already authors the
+   approved warm paper as --fmb-paper:#f4f0e8, but every surface here reads it
+   through var(--fmb-theme-bg, var(--fmb-paper)); --fmb-theme-bg is always
+   defined, so the fallback never fired and the approved ivory has never been
+   painted. In dark the split was visible: this sheet's own token override set
+   --fmb-theme-bg:#0b0f11, so the modules drew editorial near-black while the
+   body behind them stayed violet-black.
+
+   The ground is claimed here, in the Home visual authority, for both themes.
+   :root lifts these to (0,4,2) so they beat the appearance system's (0,3,2)
+   !important literals on specificity rather than on sheet order.
+
+   Scope is deliberate. Converging the shared appearance tokens for all 571
+   routes is a separate migration, recorded in the design contract.
+   -------------------------------------------------------------------------- */
+
+html[data-fmb-theme="light"]:root body.fmb-ref.fmb-network-landing{
+  --fmb-theme-bg:#F5F3EF;
+  --fmb-theme-surface:#FAF9F6;
+  --fmb-theme-surface-soft:#EFEDE8;
+  --fmb-theme-ink:#141414;
+  --fmb-theme-muted:#6D7072;
+  --fmb-theme-line:#D8D6D1;
+  background:#F5F3EF!important;
+  color:#141414!important;
+}
+html[data-fmb-theme="dark"]:root body.fmb-ref.fmb-network-landing{
+  --fmb-theme-line:#2A2C2D;
+  background:#0A0A0A!important;
+  color:#F5F3EF!important;
+}
+
+/* ---------------------------------------------------------------------------
+   Honest compact states for the modules that have no artwork
+   ---------------------------------------------------------------------------
+   Horoscope and Crossword are real destinations with no photography, so the
+   design correctly refuses to invent any: each shows a typographic mark on the
+   publication's own surface. But the mark was given a 16/7 field, about 188px
+   of near-empty tile per card at 1440. A large empty rectangle where a reader
+   expects a picture does not read as restraint; it reads as a picture that
+   failed to load. The same honest content, given a compact index entry, reads
+   as finished.
+
+   Nothing is added, removed, or invented. The mark is the same glyph on the
+   same surface at a size that matches what it actually carries.
+   -------------------------------------------------------------------------- */
+
+.fmb-ref.fmb-network-landing .entertainment-card{
+  display:grid!important;
+  grid-template-columns:58px minmax(0,1fr)!important;
+  grid-template-rows:auto auto!important;
+  column-gap:14px!important;
+  align-items:start!important;
+}
+.fmb-ref.fmb-network-landing .entertainment-card .entertainment-art{
+  grid-column:1!important;
+  grid-row:1/span 2!important;
+  aspect-ratio:1!important;
+  width:58px!important;
+  margin:2px 0 0!important;
+  font-size:24px!important;
+}
+.fmb-ref.fmb-network-landing .entertainment-card h3{grid-column:2!important;grid-row:1!important}
+.fmb-ref.fmb-network-landing .entertainment-card p{grid-column:2!important;grid-row:2!important}
+
+/* The About module's portrait placeholder is the same honest state and was
+   already compact. It keeps its size; only its temperature follows the ground. */
+
+/* ---------------------------------------------------------------------------
+   Columns stop stretching to the tallest desk
+   ---------------------------------------------------------------------------
+   The side rail is a grid child of .editorial-top-grid, which stretched it to
+   the full height of the lead column. Its last item therefore ended with a
+   divider and roughly 240px of empty column below it -- the module looked
+   truncated rather than complete. The rail now ends where its inventory ends,
+   and the trailing divider goes with it. Same for the bottom grid, whose two
+   sections carry very different amounts of content.
+   -------------------------------------------------------------------------- */
+.fmb-ref.fmb-network-landing .editorial-top-grid{align-items:start!important}
+.fmb-ref.fmb-network-landing .editorial-side-rail>a:last-child{
+  padding-bottom:0!important;
+  border-bottom:0!important;
+}
+
+/* ---------------------------------------------------------------------------
+   Editorial artwork sits inside the publication, not on top of it
+   ---------------------------------------------------------------------------
+   Every lead and module visual on this page is an FMB-owned generated graphic
+   built on the retired identity's plum-to-gold gradient -- including the exact
+   plum accent that scripts/verify.mjs forbids from appearing in this file, so
+   the hexes are named in docs/fmb-news-approved-editorial-design.md rather than
+   here, where quoting one would trip a guard that is doing its job.
+   Against warm ivory, near-black ink and a single signal red, they are by a
+   wide margin the loudest thing on the page, and they pull the composition
+   back toward a palette the design has retired.
+
+   The assets are editorial content. They are not rewritten, recoloured or
+   replaced here -- that is an asset-system phase, and the standard it needs is
+   written down in docs/fmb-news-approved-editorial-design.md. What this layer
+   can honestly do is treat them the way the mobile authority already treats
+   photography, with a restrained saturation so the artwork supports the
+   headline instead of competing with it. Nothing is hidden and no image loses
+   information.
+   -------------------------------------------------------------------------- */
+.fmb-ref.fmb-network-landing .editorial-lead-story img,
+.fmb-ref.fmb-network-landing .editorial-side-rail img,
+.fmb-ref.fmb-network-landing .network-product img,
+.fmb-ref.fmb-network-landing .editorial-feature img{
+  filter:saturate(.84)!important;
+}
+
+/* ---------------------------------------------------------------------------
+   The plum ribbon above the footer
+   ---------------------------------------------------------------------------
+   fmb-news-reference-final.css paints .fmb-ref .footer::before as a 3px
+   full-width gradient ribbon in the retired identity's plum and lilac. It runs
+   the entire width of the page directly above the footer, on warm ivory, and
+   it is UI rather than artwork -- the one piece of the retired palette still
+   drawn by a stylesheet on this page. Measured before this rule:
+   linear-gradient(90deg, rgb(75,19,87), rgb(187,138,196), rgb(106,40,117), ...)
+   at height 3px.
+
+   It becomes the publication's own hairline. Scoped to Home like the rest of
+   this pass; the same ribbon is still drawn on internal routes and goes with
+   the shared-appearance migration recorded in the design contract.
+   -------------------------------------------------------------------------- */
+.fmb-ref.fmb-network-landing .footer::before{
+  height:1px!important;
+  background:var(--fmb-theme-line,var(--fmb-rule))!important;
+  background-image:none!important;
+}
+
+/* The footer ribbon was not the only one. Two more plum gradients are drawn as
+   pseudo-elements on the masthead and the navigation row, measured on the built
+   page at 1440:
+
+     .publication-mast::after  linear-gradient(108deg, rgb(33,5,41), rgb(91,23,104),
+                               rgb(167,122,176), rgb(107,40,117) ...)  191px tall
+     .publication-nav::after   linear-gradient(90deg, transparent, rgb(139,91,147),
+                               rgb(58,13,69), rgb(139,91,147) ...)
+
+   The navigation one is a full-width lilac-to-plum band sitting directly under
+   the section links on warm ivory -- the most conspicuous piece of the retired
+   identity left anywhere in the interface. Both are retired on Home. Neither
+   carries information; they are decoration from the superseded concept. */
+.fmb-ref.fmb-network-landing .publication-mast::after,
+.fmb-ref.fmb-network-landing .publication-nav::after{
+  display:none!important;
+}
+
+/* ---------------------------------------------------------------------------
+   One fewer competing band above the lead
+   ---------------------------------------------------------------------------
+   Measured at 1440 before this rule: ticker 0-38, masthead 51-183, navigation
+   183-236, then the appearance control alone on its own full-width row
+   236-274, then the status strip at 292 and the lead at 319. A single 34px
+   control was claiming a whole horizontal band of the masthead, and the
+   masthead is meant to be dominant precisely because nothing else up there
+   competes with it.
+
+   The control moves up into the navigation row, right of the section links and
+   clear of the search button. Nothing is hidden, nothing moves in the DOM, and
+   the keyboard order is unchanged -- it is the same control in the same place
+   in the document, drawn on the row it belongs to.
+
+   Only above 1050px. Below that the navigation becomes a scrolling row and the
+   control keeps its own line, where there is room for it.
+   -------------------------------------------------------------------------- */
+@media(min-width:1051px){
+  .fmb-ref.fmb-network-landing .publication-header-inner>[data-fmb-theme-control]{
+    /* It ships as an inline-flex button on its own centred line, where neither
+       margin-left:auto nor a negative top margin does anything useful. Made a
+       block-level flex box of its own width, both work as intended. */
+    display:flex!important;
+    width:fit-content!important;
+    margin:-45px 46px 7px auto!important;
+    position:relative!important;
+    z-index:2!important;
+  }
+}
+
+/* ===========================================================================
+   Brand Guidelines section 06 -- editorial geometry
+   ===========================================================================
+   Measured on the built Home before this block, at 1440 / 1280 / 1024:
+
+     outer margin        36 / 36 / 18 px      target 70-90 on large desktop
+     headline to copy     9 px                target 20-28
+     kicker to headline   7 px                target 12-18 (metadata spacing)
+     section gaps         0 px                target 48-72
+     lead / rail split    66% / 34%           a 12-column 8/4 split is 67/33
+     photo area           41% / 40% / 31%     target 40-65
+     rules                1-2 px              in spec
+     headline lines       3                   in spec (2-4)
+
+   So four numbers were out, and the split, photography share and rules were
+   already right. Only the four move.
+
+   The margin scales rather than stepping: 72px is the guideline floor at large
+   desktop, and below 1200 it narrows proportionally instead of compressing the
+   columns, which is what the brief asks for at narrower widths. clamp() with a
+   vw term does that in one declaration and keeps the two inner wrappers and
+   the footer on exactly the same measure. */
+
+.fmb-ref.fmb-network-landing .publication-header-inner,
+.fmb-ref.fmb-network-landing .network-hero-inner,
+.fmb-ref.fmb-network-landing .publication-footer-inner{
+  /* clamp() here is the per-side margin, so it is subtracted twice. 5vw puts
+     72px a side at 1440 and 64px at 1280, and narrows proportionally below
+     that rather than compressing the columns. */
+  width:min(1440px,calc(100% - 2*clamp(36px,5vw,90px)))!important;
+}
+
+/* Headline to supporting copy, and the kicker above it. Both were set tight
+   enough that the lead read as one block instead of a headline with a deck. */
+.fmb-ref.fmb-network-landing .editorial-kicker{margin:14px 0 14px!important}
+.fmb-ref.fmb-network-landing .editorial-lead-story p{margin-top:22px!important}
+
+/* Major section spacing. The three bands sat flush, so the page read as one
+   continuous column with rules in it rather than as sections.
+
+   The 48-72px target is the gap between sections, so it is split across the
+   two adjacent paddings rather than applied to each -- 30 and 30 plus the 1px
+   rule gives 61px between content edges, mid-band. Applying 52 to each side
+   was a first attempt here and produced 105px, which is half again over the
+   top of the band. */
+.fmb-ref.fmb-network-landing .editorial-top-grid{padding-bottom:30px!important}
+.fmb-ref.fmb-network-landing .network-products{
+  padding-top:30px!important;
+  padding-bottom:30px!important;
+}
+.fmb-ref.fmb-network-landing .editorial-bottom-grid{padding-top:30px!important}
+
+/* Article reading geometry is NOT here. fmb-news-editorial-reference-v2.css is
+   injected on index.html only, so nothing in this file reaches an article
+   route -- a first attempt at the reading measure was written here and silently
+   did nothing. It lives in fmb-news-product-identity.css, which loads on every
+   page. */
+

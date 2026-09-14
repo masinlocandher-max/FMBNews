@@ -220,3 +220,46 @@ html[data-fmb-theme="dark"] body.fmb-sports-page .sports-story span{color:#F9AB6
   .fmb-ent-card{transition:none}
   .fmb-ent-card:is(:hover,:focus-visible){transform:none}
 }
+
+/* ------------------------------------------------------------- legal pages */
+/* /news/privacy/ and /news/terms/. Local semantic structure only: every value
+   here is an existing token, so these pages inherit the frozen institutional
+   geometry rather than introducing any of their own. The reading measure is
+   --fmbv2-read-measure, the same 68ch the articles and the founder page use. */
+
+.fmb-legal{margin-top:var(--fmbv2-space-8)}
+.fmb-legal section{margin:0 0 var(--fmbv2-space-8)}
+.fmb-legal h2{
+  margin:0 0 var(--fmbv2-space-3);max-width:var(--fmbv2-read-measure);
+  font-family:var(--fmbv2-font-display);font-size:var(--fmbv2-text-xl);
+  line-height:var(--fmbv2-leading-tight);color:var(--fmbv2-ink-1)
+}
+.fmb-legal p,
+.fmb-legal li{
+  margin:0 0 var(--fmbv2-space-3);max-width:var(--fmbv2-read-measure);
+  font:400 var(--fmbv2-text-base)/var(--fmbv2-leading-body) var(--fmbv2-font-sans);
+  color:var(--fmbv2-ink-2)
+}
+.fmb-legal ul{margin:0 0 var(--fmbv2-space-4);padding-left:var(--fmbv2-space-5)}
+.fmb-legal li{margin-bottom:var(--fmbv2-space-2)}
+.fmb-legal b{color:var(--fmbv2-ink-1)}
+.fmb-legal a{color:var(--fmb-brand-red,#D71920);text-underline-offset:2px}
+html[data-fmb-theme="dark"] .fmb-legal a{color:var(--fmb-brand-red-signal,#EF1B24)}
+
+/* Effective / last-updated dates. Institutional metadata typography -- the same
+   uppercase small caps the kicker and the founder meta line use -- deliberately
+   not a banner or a card. A legal page states its dates; it does not announce
+   them. Two lines on a phone, one on a wider screen. */
+/* Specificity note: .fmb-legal p above is (0,1,1) and would otherwise win over a
+   bare .fmb-legal-dates (0,1,0) whatever the source order. Qualified here so the
+   rule actually lands -- an inert declaration is the failure mode this file has
+   hit before. */
+.fmb-legal p.fmb-legal-dates{
+  display:flex;flex-wrap:wrap;gap:var(--fmbv2-space-1) var(--fmbv2-space-4);
+  margin:0 0 var(--fmbv2-space-6);padding:0 0 var(--fmbv2-space-4);
+  border-bottom:1px solid var(--fmbv2-line-1);
+  max-width:var(--fmbv2-read-measure);
+  font:500 var(--fmbv2-text-xs)/1.5 var(--fmbv2-font-sans);
+  letter-spacing:var(--fmbv2-tracking-kicker);text-transform:uppercase;
+  color:var(--fmbv2-ink-3)
+}

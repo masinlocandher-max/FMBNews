@@ -179,13 +179,24 @@ html[data-fmb-theme="dark"] body.fmb-matte-system.fmb-network-landing{
 
 /* Desktop appearance control. */
 .fmb-theme-toggle{
+  /* Authored for the retired dark violet masthead: #fff text on an 8%-white
+     pill. On the editorial paper masthead — and on the black mobile shell, where
+     the pill washes out against the chrome — that is a control the reader cannot
+     see. It now takes its colour from the appearance system it operates, so it
+     is legible in both themes on every route. */
   display:inline-flex;min-height:38px;align-items:center;justify-content:center;gap:7px;
-  padding:8px 11px;border:1px solid rgba(255,255,255,.20);border-radius:999px;
-  background:rgba(255,255,255,.08);color:#fff;font:700 10px/1.1 Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  letter-spacing:.07em;text-transform:uppercase;cursor:pointer;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)
+  padding:8px 12px;
+  border:1px solid var(--fmb-theme-line,var(--fmb-rule,rgba(17,20,22,.22)));
+  border-radius:999px;
+  background:var(--fmb-theme-surface,var(--fmb-paper-hi,#faf7f0));
+  color:var(--fmb-theme-ink,var(--fmb-ink,#111416));
+  font:700 10px/1.1 Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  letter-spacing:.07em;text-transform:uppercase;cursor:pointer;
+  transition:background .16s ease,border-color .16s ease,color .16s ease
 }
 .fmb-theme-toggle svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.fmb-theme-toggle:is(:hover,:focus-visible){background:rgba(255,255,255,.15);outline:none;box-shadow:0 0 0 3px rgba(249,171,96,.22)}
+.fmb-theme-toggle:hover{border-color:var(--fmb-theme-ink,var(--fmb-ink,#111416))}
+.fmb-theme-toggle:focus-visible{outline:2px solid var(--fmb-red,#a61f32);outline-offset:2px}
 .fmb-theme-toggle [data-fmb-theme-label]{white-space:nowrap}
 
 /* Keep navigation glass readable in both themes. */
@@ -235,6 +246,34 @@ html[data-fmb-theme="dark"] body.fmb-matte-system :is(.category,.article-kicker,
 .fmb-app-action-list [data-fmb-theme-menu] .fmb-theme-menu-main{display:inline-flex;align-items:center;gap:10px}
 .fmb-app-action-list [data-fmb-theme-menu] svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .fmb-app-action-list [data-fmb-theme-menu] [data-fmb-theme-label]{opacity:.72}
+
+/* Appearance switch. A track and a knob, sized off the row's own type -- no
+   card, no glow, no second theme system. The 44px minimum is the frozen
+   touch-target floor, applied to the whole row rather than to the knob, so the
+   target is the thing the reader is actually aiming at. */
+.fmb-app-action-list [data-fmb-theme-menu]{min-height:44px}
+.fmb-app-action-list [data-fmb-theme-menu] .fmb-theme-switch-group{
+  display:inline-flex;align-items:center;gap:10px
+}
+.fmb-app-action-list [data-fmb-theme-menu] .fmb-theme-switch{
+  position:relative;flex:0 0 auto;width:38px;height:22px;border-radius:999px;
+  background:currentColor;opacity:.3;
+  transition:opacity .16s ease
+}
+.fmb-app-action-list [data-fmb-theme-menu] .fmb-theme-switch i{
+  position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;
+  background:var(--fmb-theme-bg,#fff);
+  transition:transform .16s ease
+}
+.fmb-app-action-list [data-fmb-theme-menu][aria-checked="true"] .fmb-theme-switch{opacity:.92}
+.fmb-app-action-list [data-fmb-theme-menu][aria-checked="true"] .fmb-theme-switch i{transform:translateX(16px)}
+.fmb-app-action-list [data-fmb-theme-menu]:focus-visible{
+  outline:2px solid var(--fmb-brand-red,#D71920);outline-offset:2px
+}
+@media(prefers-reduced-motion:reduce){
+  .fmb-app-action-list [data-fmb-theme-menu] .fmb-theme-switch,
+  .fmb-app-action-list [data-fmb-theme-menu] .fmb-theme-switch i{transition:none}
+}
 
 /* About has legacy hardcoded white content surfaces; dark mode owns them here. */
 html[data-fmb-theme="dark"] body.fmb-matte-system.fmb-news-about,

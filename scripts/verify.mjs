@@ -47,12 +47,22 @@ for(const asset of ['dist/news/assets/images/mobile/fmb-mobile-hero.jpg','dist/n
   const info=await stat(resolve(asset));must(info.size>20_000,`${asset} is missing or incomplete`);
 }
 
+const mobileHardfix=await read('scripts/hardfix-mobile-first-site.mjs');
+const shellRuntimeVersion=(mobileHardfix.match(/fmb-news-mobile-global\.js\?v=([^"']+)/)||[])[1];
+must(shellRuntimeVersion,'The mobile pass no longer declares a version for the editorial shell runtime.');
+
 const pages={
   news:await read('dist/news/archive/index.html'),world:await read('dist/news/world/index.html'),sports:await read('dist/news/sports/index.html'),explainer:await read('dist/news/explainer/index.html'),fact:await read('dist/news/fact-check/index.html'),brief:await read('dist/news/fmb-brief/index.html'),horoscope:await read('dist/news/horoscope/index.html'),crossword:await read('dist/news/crossword/index.html'),about:await read('dist/news/about/index.html')
 };
 for(const[name,html]of Object.entries(pages)){
   must(/fmb-news-mobile-system\.css\?v=[0-9a-f]{10}\b/.test(html),`${name}: content-versioned mobile system stylesheet missing`);
-  must(html.includes('fmb-news-mobile-global.js?v=20260913-editorial-shell-v1'),`${name}: approved editorial mobile shell runtime missing`);
+  // This used to pin the literal ?v=20260913-editorial-shell-v1, which meant
+  // the guard failed the moment the shell runtime was edited at all -- the
+  // effect being to push stale JavaScript rather than to protect anything. It
+  // now reads the version the build itself declares and requires every page to
+  // carry exactly that, so the runtime cannot be edited without its cache key
+  // moving, and the two cannot drift apart.
+  must(html.includes(`fmb-news-mobile-global.js?v=${shellRuntimeVersion}`),`${name}: approved editorial mobile shell runtime missing or not at the built version ${shellRuntimeVersion}`);
   must(/\/news\/assets\/css\/fmb-news-theme\.css\?v=[0-9a-f]{10}\b/.test(html),`${name}: content-versioned appearance stylesheet missing`);
   must(/\/news\/assets\/js\/fmb-news-theme\.js\?v=[0-9a-f]{10}\b/.test(html),`${name}: content-versioned appearance runtime missing`);
   must(!html.includes('/news/news/assets/'),`${name}: double-scoped asset path remains`);
@@ -77,12 +87,12 @@ for(const token of ['fmb-editorial-mobile-dock','FMB NEWS<span class="fmb-mobile
 for(const banned of ['fmb-global-mobile-utility','fmb-approved-bottom-nav','ensureBottomNav'])must(!shellJs.includes(banned),`Retired mobile shell element returned: ${banned}`);
 
 const navLock=await read('dist/news/assets/css/fmb-news-mobile-navigation-lock.css');
-for(const token of ['--fmb-mobile-red:#a61f32','--fmb-mobile-black:#0b0f11','.fmb-editorial-mobile-dock','position:fixed!important','bottom:0!important','env(safe-area-inset-bottom)','fmb-editorial-mobile-rail-item','fmb-editorial-mobile-lead-image'])must(navLock.includes(token),`Approved black/red mobile reference lock missing ${token}`);
+for(const token of ['--fmb-mobile-red:#D71920','--fmb-mobile-black:#0A0A0A','.fmb-editorial-mobile-dock','position:fixed!important','bottom:0!important','env(safe-area-inset-bottom)','fmb-editorial-mobile-rail-item','fmb-editorial-mobile-lead-image'])must(navLock.includes(token),`Approved black/red mobile reference lock missing ${token}`);
 must(!navLock.includes('#630661'),'Superseded plum accent returned to final mobile navigation lock');
 must(!navLock.includes('#f2d17a'),'Superseded gold accent returned to final mobile navigation lock');
 
 const editorialReference=await read('dist/news/assets/css/fmb-news-editorial-reference-v2.css');
-for(const token of ['--fmb-red:#a61f32','--fmb-paper:#f4f0e8','--fmb-dark:#0c1012','.fmb-editorial-wordmark','.editorial-top-grid','.editorial-side-rail','.network-products','.daily-brief-signup'])must(editorialReference.includes(token),`Approved desktop editorial reference missing ${token}`);
+for(const token of ['--fmb-red:#D71920','--fmb-paper:#F5F3EF','--fmb-dark:#0A0A0A','.fmb-editorial-wordmark','.editorial-top-grid','.editorial-side-rail','.network-products','.daily-brief-signup'])must(editorialReference.includes(token),`Approved desktop editorial reference missing ${token}`);
 must(!editorialReference.includes('#630661'),'Superseded plum accent returned to approved desktop reference');
 
 const homeJs=await read('dist/news/assets/js/fmb-news-mobile-home.js');
@@ -123,7 +133,7 @@ async function scan(target){
   const text=await readFile(target,'utf8');builtPageCount++;
   const where=path.relative(root,target);
   must(/fmb-news-mobile-system\.css\?v=[0-9a-f]{10}\b/.test(text),`Mobile system stylesheet not injected in ${where}`);
-  must(text.includes('fmb-news-mobile-global.js?v=20260913-editorial-shell-v1'),`Editorial global mobile runtime not injected in ${where}`);
+  must(text.includes(`fmb-news-mobile-global.js?v=${shellRuntimeVersion}`),`Editorial global mobile runtime not injected at the built version ${shellRuntimeVersion} in ${where}`);
   must(!text.includes('/news/news/assets/'),`Double-scoped asset in ${where}`);
 }
 await scan(resolve('dist/news'));

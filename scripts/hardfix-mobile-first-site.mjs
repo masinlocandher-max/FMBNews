@@ -38,18 +38,29 @@ for(const name of MOBILE_SYSTEM_SHEETS){
 }
 const mobileSystemVersion=createHash('sha256').update(bundle).digest('hex').slice(0,10);
 await writeFile(path.join(cssDir,MOBILE_SYSTEM_FILE),bundle,'utf8');
+
+// Stamp the service worker's cache version from the same content hash that
+// versions the mobile bundle. sw.js shipped a hand-maintained literal that
+// never changed between builds, so its activate handler never purged anything
+// and the runtime cache kept serving hand-versioned legacy assets to returning
+// readers. Deriving it here means every build that changes the mobile system
+// rotates the caches exactly once, on activate, with no hand-editing.
+const swPath=path.join(newsRoot,'sw.js');
+const swSource=await readFile(swPath,'utf8');
+if(!swSource.includes('__FMB_BUILD_VERSION__'))throw new Error('site/sw.js no longer carries the __FMB_BUILD_VERSION__ stamp; the cache version would silently stop rotating.');
+await writeFile(swPath,swSource.replaceAll('__FMB_BUILD_VERSION__',mobileSystemVersion),'utf8');
 const mobileSystemCss=`<link rel="stylesheet" href="/assets/css/${MOBILE_SYSTEM_FILE}?v=${mobileSystemVersion}">`;
 
 const personalizationJs='<script src="/assets/js/fmb-news-mobile-personalization.js?v=20260901-personal-v2" defer></script>';
 const premiumJs='<script src="/assets/js/fmb-news-mobile-premium.js?v=20260901-premium-v2" defer></script>';
 const mobileHomeJs='<script src="/assets/js/fmb-news-mobile-home.js?v=20260902-approved-home-v4" defer></script>';
 const mobileLiveFeedJs='<script src="/assets/js/fmb-news-mobile-live-feed.js?v=20260902-live-feed-v2" defer></script>';
-const mobileGlobalJs='<script src="/assets/js/fmb-news-mobile-global.js?v=20260913-editorial-shell-v1" defer></script>';
+const mobileGlobalJs='<script src="/assets/js/fmb-news-mobile-global.js?v=20260914-editorial-shell-v4" defer></script>';
 const mobileProductsJs='<script src="/assets/js/fmb-news-mobile-products.js?v=20260902-products-v3" defer></script>';
 const mobilePolishJs='<script src="/assets/js/fmb-news-mobile-app-polish.js?v=20260902-polish-v2" defer></script>';
 const mobileFinalTweaksJs='<script src="/assets/js/fmb-news-mobile-final-tweaks.js?v=20260902-final-tweaks-v1" defer></script>';
 const pwaJs='<script src="/assets/js/fmb-news-pwa.js?v=20260902-pwa-v1&build=menu-install-v2" defer></script>';
-const pwaMeta='<link rel="manifest" href="/news/manifest.webmanifest"><link rel="apple-touch-icon" href="/news/assets/images/icon-transparent.png"><meta name="application-name" content="FMB News"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="FMB News"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0b0f11">';
+const pwaMeta='<link rel="manifest" href="/news/manifest.webmanifest"><link rel="apple-touch-icon" href="/news/assets/images/icon-transparent.png"><meta name="application-name" content="FMB News"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="FMB News"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0A0A0A">';
 
 function addBodyClass(html){if(/<body\b[^>]*class=["'][^"']*\bfmb-mobile-first\b/i.test(html))return html;if(/<body\b[^>]*class=["']/i.test(html))return html.replace(/<body\b([^>]*?)class=(["'])([^"']*)\2/i,(_m,b,q,c)=>`<body${b}class=${q}${c} fmb-mobile-first${q}`);return html.replace(/<body\b([^>]*)>/i,'<body$1 class="fmb-mobile-first">')}
 function removeBottomNav(html){return html.replace(/<nav\b[^>]*class=["'][^"']*\bnc-mobile-dock\b[^"']*["'][^>]*>[\s\S]*?<\/nav>\s*/gi,'').replace(/<nav\b[^>]*class=["'][^"']*\bfmb-app-dock\b[^"']*["'][^>]*>[\s\S]*?<\/nav>\s*/gi,'').replace(/<nav\b[^>]*aria-label=["']Mobile news navigation["'][^>]*>[\s\S]*?<\/nav>\s*/gi,'')}
@@ -74,8 +85,8 @@ function useMobileSystemStylesheet(html){
 }
 function upsertJs(html,pathName,asset,version){if(!html.includes(pathName))return html.replace('</body>',`${asset}</body>`);return html.replace(new RegExp(`${escapedAssetPath(pathName)}(?:\\?v=[^"']+)?`,'g'),`${pathName}?v=${version}`)}
 function normalizeThemeColor(html){
-  if(/<meta name="theme-color"/i.test(html))return html.replace(/<meta name="theme-color" content="[^"]*">/i,'<meta name="theme-color" content="#0b0f11">');
-  return html.replace('</head>','<meta name="theme-color" content="#0b0f11"></head>');
+  if(/<meta name="theme-color"/i.test(html))return html.replace(/<meta name="theme-color" content="[^"]*">/i,'<meta name="theme-color" content="#0A0A0A">');
+  return html.replace('</head>','<meta name="theme-color" content="#0A0A0A"></head>');
 }
 async function apply(target){
   const info=await stat(target);
@@ -89,7 +100,7 @@ async function apply(target){
   html=upsertJs(html,'/assets/js/fmb-news-mobile-premium.js',premiumJs,'20260901-premium-v2');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-home.js',mobileHomeJs,'20260902-approved-home-v4');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-live-feed.js',mobileLiveFeedJs,'20260902-live-feed-v2');
-  html=upsertJs(html,'/assets/js/fmb-news-mobile-global.js',mobileGlobalJs,'20260913-editorial-shell-v1');
+  html=upsertJs(html,'/assets/js/fmb-news-mobile-global.js',mobileGlobalJs,'20260914-editorial-shell-v4');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-products.js',mobileProductsJs,'20260902-products-v3');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-app-polish.js',mobilePolishJs,'20260902-polish-v2');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-final-tweaks.js',mobileFinalTweaksJs,'20260902-final-tweaks-v1');

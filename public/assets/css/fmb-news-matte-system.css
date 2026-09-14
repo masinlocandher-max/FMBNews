@@ -92,10 +92,12 @@ body.fmb-matte-system .fmb-app-brand-hero{
   background:radial-gradient(circle at 80% 20%,rgba(249,171,96,.12),transparent 30%),linear-gradient(138deg,#220D50 0%,#4a0b68 54%,#630661 100%)!important
 }
 body.fmb-matte-system .fmb-hero-readable-shade{display:block!important}
-/* Keep the live date/time panel and rotating slogan in separate columns on phone widths. */
-@media(max-width:699px){
-  html[data-fmb-global-mobile="true"] body.fmb-matte-system.fmb-mobile-route-home .fmb-approved-hero-copy{width:min(50%,194px)!important;max-width:194px!important}
-}
+/* The phone lead copy used to share the hero with a live date/time panel and a
+   rotating slogan, so it was clamped to half the viewport. That hero is retired:
+   the approved lead is a full-width block beneath the image, owned by
+   fmb-news-mobile-navigation-lock.css. The clamp survived the redesign and was
+   forcing the headline into a 194px column five lines deep, on top of artwork
+   that already carried the headline. Removed rather than overridden. */
 
 /* About page base structure and contrast repair. */
 body.fmb-matte-system.fmb-news-clean,body.fmb-matte-system.fmb-news-about{min-width:320px;background:#fff;color:#1b1420;font-family:Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}

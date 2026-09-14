@@ -1,13 +1,68 @@
 /* FMB News mobile editorial lock: newsroom black, paper white, signal red. */
 @media(max-width:699px){
+  /* FMB News Brand Guidelines v1.0. The shell was built on a cyan-tinted black
+     (#0b0f11 / #111619 / #171c1f) and a maroon red; the guidelines name the
+     neutrals exactly, so they are used as named rather than approximated.
+
+       FMB Black        #0A0A0A   primary background
+       Editorial Black  #141414   secondary surfaces
+       FMB White        #F5F3EF   light ink on dark
+       Metallic Silver  #BFC1C2   supporting text on dark
+       Signal Red       #EF1B24   the dark-ground accent
+
+     Two values are derived rather than quoted, because the guidelines give two
+     blacks and this shell has three depths and a hairline:
+       --fmb-mobile-black-soft  #101010  one step between the two named blacks
+       --fmb-mobile-rule        #2A2C2D  Metallic Silver at low luminance,
+                                         inside the 1-2px thin-rule rule */
   :root{
-    --fmb-mobile-black:#0b0f11;
-    --fmb-mobile-black-soft:#111619;
-    --fmb-mobile-black-raised:#171c1f;
-    --fmb-mobile-white:#f4f1ea;
-    --fmb-mobile-muted:#aaa7a1;
-    --fmb-mobile-rule:#2b3033;
-    --fmb-mobile-red:#a61f32;
+    --fmb-mobile-black:#0A0A0A;
+    --fmb-mobile-black-soft:#101010;
+    --fmb-mobile-black-raised:#141414;
+    --fmb-mobile-white:#F5F3EF;
+    --fmb-mobile-muted:#BFC1C2;
+    --fmb-mobile-rule:#2A2C2D;
+    /* FMB Red, because this token drives fills -- the HEADLINES chip, the rail
+       indicator, the brand dot -- and the guidelines name FMB Red the primary
+       accent with Signal Red reserved for highlights used sparingly. White on
+       #D71920 measures 5.19:1; on #EF1B24 it is 4.33:1. */
+    --fmb-mobile-red:#D71920;
+
+    /* SHELL ROLE TOKENS -- masthead, product rail and dock.
+       These exist so the app chrome follows the resolved appearance instead of
+       being permanently black. The defaults below ARE the current Dark values,
+       so Dark is unchanged by their introduction; the Light block that follows
+       is the only place the chrome changes.
+       The FMB identity in Light is carried by the FMB NEWS. wordmark, the red
+       period, the red active indicator, the type and the editorial rules --
+       not by forcing dark chrome onto a daylight page. */
+    --fmb-shell-surface:var(--fmb-mobile-black);
+    --fmb-shell-dock:rgba(10,14,16,.98);
+    --fmb-shell-ink:var(--fmb-mobile-white);
+    --fmb-shell-ink-soft:#ddd8d0;
+    --fmb-shell-muted:#c8c4bd;
+    --fmb-shell-dock-ink:#d0cbc3;
+    --fmb-shell-rule:var(--fmb-mobile-rule);
+    --fmb-shell-dock-rule:#303538;
+    --fmb-shell-active:#fff;
+    --fmb-shell-dock-active:#db4056;
+  }
+
+  /* Light appearance. Warm FMB White paper, Editorial Black ink, Steel Gray for
+     muted labels, and a neutral hairline -- every value is an approved brand
+     colour, none is new. FMB Red keeps the active state and the brand dot in
+     both appearances, which is what makes the two read as one publication. */
+  html[data-fmb-theme="light"]{
+    --fmb-shell-surface:var(--fmb-mobile-white);
+    --fmb-shell-dock:rgba(245,243,239,.98);
+    --fmb-shell-ink:#141414;
+    --fmb-shell-ink-soft:#3A3D3E;
+    --fmb-shell-muted:#6D7072;
+    --fmb-shell-dock-ink:#6D7072;
+    --fmb-shell-rule:rgba(20,20,20,.16);
+    --fmb-shell-dock-rule:rgba(20,20,20,.14);
+    --fmb-shell-active:#141414;
+    --fmb-shell-dock-active:var(--fmb-mobile-red);
   }
 
   html,body{overflow-x:clip!important}
@@ -22,8 +77,8 @@
     top:0!important;
     z-index:1700!important;
     width:100%!important;
-    background:var(--fmb-mobile-black)!important;
-    border-bottom:1px solid var(--fmb-mobile-rule)!important;
+    background:var(--fmb-shell-surface)!important;
+    border-bottom:1px solid var(--fmb-shell-rule)!important;
     box-shadow:none!important;
   }
   body.fmb-mobile-first .fmb-mobile-shell-head,
@@ -35,8 +90,8 @@
     min-height:62px!important;
     height:62px!important;
     padding:4px 8px!important;
-    background:var(--fmb-mobile-black)!important;
-    color:var(--fmb-mobile-white)!important;
+    background:var(--fmb-shell-surface)!important;
+    color:var(--fmb-shell-ink)!important;
   }
   body.fmb-mobile-first .fmb-mobile-shell-search{
     grid-column:3!important;
@@ -49,7 +104,7 @@
     place-items:center!important;
     width:44px!important;
     height:44px!important;
-    color:var(--fmb-mobile-white)!important;
+    color:var(--fmb-shell-ink)!important;
   }
   body.fmb-mobile-first .fmb-mobile-shell-search svg{width:22px!important;height:22px!important;stroke:currentColor!important;fill:none!important;stroke-width:1.55!important}
   body.fmb-mobile-first .fmb-mobile-shell-menu{
@@ -66,7 +121,7 @@
     border:0!important;
     border-radius:0!important;
     background:transparent!important;
-    color:var(--fmb-mobile-white)!important;
+    color:var(--fmb-shell-ink)!important;
   }
   body.fmb-mobile-first .fmb-mobile-shell-menu svg{width:24px!important;height:24px!important;stroke:currentColor!important;fill:none!important;stroke-width:1.5!important;stroke-linecap:round!important}
   body.fmb-mobile-first .fmb-mobile-shell-brand{
@@ -77,13 +132,13 @@
     width:max-content!important;
     max-width:calc(100% - 112px)!important;
     justify-content:center!important;
-    color:var(--fmb-mobile-white)!important;
+    color:var(--fmb-shell-ink)!important;
     text-decoration:none!important;
   }
   body.fmb-mobile-first .fmb-mobile-shell-copy{display:block!important;text-align:center!important;line-height:1!important}
   body.fmb-mobile-first .fmb-mobile-shell-copy strong{
     display:block!important;
-    color:var(--fmb-mobile-white)!important;
+    color:var(--fmb-shell-ink)!important;
     font-family:"Bodoni Moda","Cormorant Garamond","Playfair Display",Georgia,serif!important;
     font-size:28px!important;
     line-height:.86!important;
@@ -95,8 +150,8 @@
   body.fmb-mobile-first .fmb-mobile-shell-copy small{
     display:block!important;
     margin-top:7px!important;
-    color:#ddd8d0!important;
-    font:700 6.4px/1 Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+    color:var(--fmb-shell-ink-soft)!important;
+    font:700 6.4px/1 Inter,Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
     letter-spacing:.25em!important;
     text-transform:uppercase!important;
     white-space:nowrap!important;
@@ -117,9 +172,9 @@
     padding:0 6px!important;
     overflow-x:auto!important;
     overflow-y:hidden!important;
-    background:var(--fmb-mobile-black)!important;
+    background:var(--fmb-shell-surface)!important;
     border:0!important;
-    border-bottom:1px solid var(--fmb-mobile-rule)!important;
+    border-bottom:1px solid var(--fmb-shell-rule)!important;
     box-shadow:none!important;
     scrollbar-width:none!important;
   }
@@ -139,8 +194,8 @@
     border:0!important;
     border-radius:0!important;
     background:transparent!important;
-    color:#c8c4bd!important;
-    font:700 8.4px/1 Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+    color:var(--fmb-shell-muted)!important;
+    font:700 8.4px/1 Inter,Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
     letter-spacing:.02em!important;
     text-transform:uppercase!important;
     text-align:center!important;
@@ -154,7 +209,7 @@
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a[aria-current="page"],
   body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[aria-current="page"]{
     background:transparent!important;
-    color:#fff!important;
+    color:var(--fmb-shell-active)!important;
     font-weight:820!important;
   }
   body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[aria-current="page"]::before{display:none!important}
@@ -200,7 +255,7 @@
     padding:0 10px!important;
     background:var(--fmb-mobile-red)!important;
     color:#fff!important;
-    font:850 8px/1 Manrope,sans-serif!important;
+    font:850 8px/1 Inter,Manrope,sans-serif!important;
     letter-spacing:.055em!important;
   }
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-top-ticker>strong::before{content:""!important;width:5px!important;height:5px!important;margin-right:6px!important;border-radius:50%!important;background:#fff!important;box-shadow:none!important}
@@ -217,54 +272,67 @@
     background:var(--fmb-mobile-black)!important;
     color:var(--fmb-mobile-white)!important;
   }
+  /* The lead image is a frame, not a canvas for text. FMB's own editorial
+     graphics carry the headline inside the artwork, so a second headline
+     overlaid on top collided with it and was unreadable. The copy now sits
+     below the image (see .fmb-approved-hero-copy), which also frees the
+     headline from a 194px column and lets the first screen reach real
+     journalism instead of a near-square branding slab. */
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-brand-hero{
     position:relative!important;
     width:100%!important;
-    height:270px!important;
-    min-height:270px!important;
+    height:auto!important;
+    min-height:0!important;
     aspect-ratio:auto!important;
     margin:0!important;
     border:0!important;
     border-radius:0!important;
     background:#090d0f!important;
-    overflow:hidden!important;
+    overflow:visible!important;
     box-shadow:none!important;
   }
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-brand-hero>.fmb-editorial-mobile-lead-image{
     display:block!important;
-    position:absolute!important;
-    inset:0!important;
+    position:static!important;
+    inset:auto!important;
     width:100%!important;
-    height:100%!important;
+    height:208px!important;
     object-fit:cover!important;
     object-position:center!important;
     filter:saturate(.88) contrast(1.04)!important;
   }
   body.fmb-mobile-first.fmb-mobile-route-home [data-fmb-approved-hero],
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-legacy-hero-recovery{display:none!important}
+  /* Retired with the overlay: a readability scrim over an image that no longer
+     carries text only muddied the photograph. */
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-hero-readable-shade{
-    display:block!important;
+    display:none!important;
     position:absolute!important;
     inset:0!important;
     z-index:1!important;
-    background:linear-gradient(180deg,rgba(8,11,13,.05) 0%,rgba(8,11,13,.10) 36%,rgba(8,11,13,.72) 74%,rgba(8,11,13,.97) 100%)!important;
+    background:linear-gradient(180deg,rgba(8,11,13,0) 0%,rgba(8,11,13,0) 62%,rgba(8,11,13,.55) 88%,rgba(8,11,13,.92) 100%)!important;
     pointer-events:none!important;
   }
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-copy{
-    position:absolute!important;
-    left:18px!important;
-    right:34px!important;
-    bottom:22px!important;
-    z-index:3!important;
+    position:static!important;
+    left:auto!important;
+    right:auto!important;
+    bottom:auto!important;
+    z-index:auto!important;
+    display:block!important;
     width:auto!important;
-    color:#fff!important;
-    text-shadow:0 2px 18px rgba(0,0,0,.42)!important;
+    max-width:none!important;
+    margin:0!important;
+    padding:14px 18px 20px!important;
+    border-bottom:1px solid var(--fmb-mobile-line,#292a2d)!important;
+    color:var(--fmb-mobile-white,#f4f3ef)!important;
+    text-shadow:none!important;
   }
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-editorial-mobile-kicker{
     display:block!important;
     margin:0 0 7px!important;
     color:#db4056!important;
-    font:850 9px/1 Manrope,sans-serif!important;
+    font:850 9px/1 Inter,Manrope,sans-serif!important;
     letter-spacing:.08em!important;
     text-transform:uppercase!important;
   }
@@ -272,41 +340,49 @@
     margin:0!important;
     color:#fff!important;
     font-family:"Bodoni Moda","Cormorant Garamond","Playfair Display",Georgia,serif!important;
-    font-size:29px!important;
-    line-height:.96!important;
+    font-size:clamp(25px,7.2vw,31px)!important;
+    line-height:1.04!important;
     font-weight:560!important;
-    letter-spacing:-.04em!important;
+    letter-spacing:-.032em!important;
     text-wrap:balance!important;
   }
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-deck{
     display:block!important;
-    max-width:92%!important;
-    margin:7px 0 0!important;
-    color:#c7c2ba!important;
-    font:500 11px/1.35 Manrope,sans-serif!important;
+    max-width:none!important;
+    margin:8px 0 0!important;
+    color:var(--fmb-mobile-ink-muted,#8c8a86)!important;
+    font:450 13px/1.5 -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,Manrope,sans-serif!important;
   }
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-cta{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important}
+  /* The Philippine date/time used to float over the top-right of the lead
+     image, landing on top of the artwork's own headline. It is newsroom
+     utility, not a caption, so it sits on the ground above the image as a
+     quiet dateline — no blur, no scrim, nothing over the journalism. */
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-hero-live-overlay{
-    position:absolute!important;
-    top:12px!important;
-    right:12px!important;
+    position:static!important;
+    top:auto!important;
+    right:auto!important;
     left:auto!important;
     bottom:auto!important;
-    z-index:4!important;
+    z-index:auto!important;
     display:flex!important;
-    align-items:flex-end!important;
-    padding:6px 7px!important;
-    border:1px solid rgba(255,255,255,.12)!important;
+    align-items:baseline!important;
+    justify-content:space-between!important;
+    gap:10px!important;
+    width:auto!important;
+    padding:9px 18px 10px!important;
+    border:0!important;
+    border-bottom:1px solid var(--fmb-mobile-line,#292a2d)!important;
     border-radius:0!important;
-    background:rgba(8,11,13,.56)!important;
-    color:#fff!important;
+    background:transparent!important;
+    color:var(--fmb-mobile-ink-muted,#8c8a86)!important;
     box-shadow:none!important;
-    backdrop-filter:blur(6px)!important;
-    -webkit-backdrop-filter:blur(6px)!important;
+    backdrop-filter:none!important;
+    -webkit-backdrop-filter:none!important;
   }
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-hero-clock{display:flex!important;flex-direction:column!important;align-items:flex-end!important;gap:6px!important}
-  body.fmb-mobile-first.fmb-mobile-route-home .fmb-hero-clock strong{color:#c8c4bd!important;font:650 7px/1 Manrope,sans-serif!important;text-transform:uppercase!important}
-  body.fmb-mobile-first.fmb-mobile-route-home .fmb-hero-clock span{color:#fff!important;font:650 12px/1 Manrope,sans-serif!important;font-variant-numeric:tabular-nums!important}
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-hero-clock strong{color:#c8c4bd!important;font:650 7px/1 Inter,Manrope,sans-serif!important;text-transform:uppercase!important}
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-hero-clock span{color:#fff!important;font:650 12px/1 Inter,Manrope,sans-serif!important;font-variant-numeric:tabular-nums!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-hero-weather{display:none!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-lead{display:none!important}
 
@@ -329,7 +405,7 @@
     text-decoration:none!important;
   }
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-editorial-mobile-rail-item img{display:block!important;width:112px!important;height:72px!important;object-fit:cover!important;filter:saturate(.85)!important}
-  body.fmb-mobile-first.fmb-mobile-route-home .fmb-editorial-mobile-rail-item span{display:block!important;margin-bottom:5px!important;color:#db4056!important;font:850 8px/1 Manrope,sans-serif!important;letter-spacing:.06em!important;text-transform:uppercase!important}
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-editorial-mobile-rail-item span{display:block!important;margin-bottom:5px!important;color:#db4056!important;font:850 8px/1 Inter,Manrope,sans-serif!important;letter-spacing:.06em!important;text-transform:uppercase!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-editorial-mobile-rail-item h2{margin:0!important;color:#f0ece5!important;font-family:"Bodoni Moda","Cormorant Garamond","Playfair Display",Georgia,serif!important;font-size:18px!important;line-height:1!important;font-weight:560!important;letter-spacing:-.025em!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-editorial-mobile-rail-item>b{color:#ded9d1!important;font-size:19px!important;font-weight:400!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-editorial-newsroom-row{
@@ -341,7 +417,7 @@
     margin:0 12px!important;
     border-bottom:1px solid var(--fmb-mobile-rule)!important;
     color:#ded9d1!important;
-    font:620 10px/1 Manrope,sans-serif!important;
+    font:620 10px/1 Inter,Manrope,sans-serif!important;
     text-decoration:none!important;
   }
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-editorial-newsroom-row .status-dot{width:8px!important;height:8px!important;border-radius:50%!important;background:var(--fmb-mobile-red)!important}
@@ -357,7 +433,7 @@
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head{display:flex!important;align-items:center!important;justify-content:space-between!important;margin:0 0 8px!important;padding-bottom:8px!important;border-bottom:2px solid var(--fmb-mobile-red)!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head h2{margin:0!important;padding:0!important;color:#f2eee7!important;font-family:"Bodoni Moda","Cormorant Garamond","Playfair Display",Georgia,serif!important;font-size:23px!important;line-height:1!important;font-weight:590!important;letter-spacing:-.025em!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head h2::before{display:none!important}
-  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head a{color:#c6c1b9!important;font:650 9px/1 Manrope,sans-serif!important;text-decoration:none!important}
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head a{color:#c6c1b9!important;font:650 9px/1 Inter,Manrope,sans-serif!important;text-decoration:none!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-list{display:block!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-row{
     display:grid!important;
@@ -374,7 +450,7 @@
     box-shadow:none!important;
   }
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-row img{width:100px!important;height:70px!important;object-fit:cover!important;border-radius:0!important;filter:saturate(.86)!important}
-  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-meta{margin-bottom:5px!important;color:#b6b1aa!important;font:650 7.5px/1 Manrope,sans-serif!important;text-transform:uppercase!important;letter-spacing:.02em!important}
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-meta{margin-bottom:5px!important;color:#b6b1aa!important;font:650 7.5px/1 Inter,Manrope,sans-serif!important;text-transform:uppercase!important;letter-spacing:.02em!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-meta span:first-child{color:#d23a50!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-copy h3{margin:0!important;color:#f2eee7!important;font-family:"Bodoni Moda","Cormorant Garamond","Playfair Display",Georgia,serif!important;font-size:18px!important;line-height:1!important;font-weight:560!important;letter-spacing:-.02em!important}
 
@@ -382,9 +458,9 @@
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card{position:relative!important;min-height:150px!important;border:1px solid var(--fmb-mobile-rule)!important;border-radius:0!important;background:var(--fmb-mobile-black-soft)!important;color:#fff!important;overflow:hidden!important;box-shadow:none!important;text-decoration:none!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card img{display:block!important;width:100%!important;height:72px!important;object-fit:cover!important;filter:saturate(.75)!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card>div{position:relative!important;padding:10px!important}
-  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card>div>span{color:#d23a50!important;font:850 7.5px/1 Manrope,sans-serif!important;text-transform:uppercase!important}
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card>div>span{color:#d23a50!important;font:850 7.5px/1 Inter,Manrope,sans-serif!important;text-transform:uppercase!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card h2{margin:6px 0!important;color:#f2eee7!important;font-family:"Bodoni Moda","Cormorant Garamond","Playfair Display",Georgia,serif!important;font-size:16px!important;line-height:1!important;font-weight:560!important}
-  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card b{color:#bdb7af!important;font:650 8px/1.2 Manrope,sans-serif!important}
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card b{color:#bdb7af!important;font:650 8px/1.2 Inter,Manrope,sans-serif!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-world-grid{display:none!important}
 
   /* Persistent five-item dock from the new mobile reference. */
@@ -398,8 +474,8 @@
     grid-template-columns:repeat(5,minmax(0,1fr))!important;
     min-height:58px!important;
     padding:4px 4px env(safe-area-inset-bottom)!important;
-    border-top:1px solid #303538!important;
-    background:rgba(10,14,16,.98)!important;
+    border-top:1px solid var(--fmb-shell-dock-rule)!important;
+    background:var(--fmb-shell-dock)!important;
     box-shadow:0 -8px 24px rgba(0,0,0,.20)!important;
     backdrop-filter:blur(14px)!important;
     -webkit-backdrop-filter:blur(14px)!important;
@@ -417,20 +493,20 @@
     border:0!important;
     border-radius:0!important;
     background:transparent!important;
-    color:#d0cbc3!important;
-    font:700 7.5px/1 Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+    color:var(--fmb-shell-dock-ink)!important;
+    font:700 7.5px/1 Inter,Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
     text-decoration:none!important;
     text-transform:uppercase!important;
     letter-spacing:.015em!important;
   }
   body.fmb-mobile-first .fmb-editorial-mobile-dock svg{width:21px!important;height:21px!important;stroke:currentColor!important;fill:none!important;stroke-width:1.55!important;stroke-linecap:round!important;stroke-linejoin:round!important}
-  body.fmb-mobile-first .fmb-editorial-mobile-dock a[aria-current="page"]{color:#db4056!important}
+  body.fmb-mobile-first .fmb-editorial-mobile-dock a[aria-current="page"]{color:var(--fmb-shell-dock-active)!important}
   body.fmb-mobile-first .fmb-editorial-mobile-dock a[aria-current="page"]::before{content:""!important;position:absolute!important;top:-5px!important;left:25%!important;right:25%!important;height:2px!important;background:var(--fmb-mobile-red)!important}
 
   /* Menu / install surfaces remain accessible but lose the obsolete plum accent. */
   body.fmb-mobile-first .fmb-install-card{display:none!important}
   body.fmb-mobile-first .fmb-app-action-panel{background:#f6f2ea!important;color:#111416!important}
-  body.fmb-mobile-first .fmb-app-action-list button{display:flex!important;align-items:center!important;justify-content:space-between!important;width:100%!important;min-height:48px!important;padding:0!important;border:0!important;border-bottom:1px solid #ddd6cc!important;border-radius:0!important;background:transparent!important;color:#16191b!important;font:700 15px/1.2 Manrope,sans-serif!important;text-align:left!important}
+  body.fmb-mobile-first .fmb-app-action-list button{display:flex!important;align-items:center!important;justify-content:space-between!important;width:100%!important;min-height:48px!important;padding:0!important;border:0!important;border-bottom:1px solid #ddd6cc!important;border-radius:0!important;background:transparent!important;color:#16191b!important;font:700 15px/1.2 Inter,Manrope,sans-serif!important;text-align:left!important}
   body.fmb-mobile-first .fmb-app-action-list a{color:#16191b!important;border-color:#ddd6cc!important}
   body.fmb-mobile-first .fmb-menu-item-main{display:flex!important;align-items:center!important;gap:10px!important}
   body.fmb-mobile-first .fmb-menu-item-main>svg{width:20px!important;height:20px!important;stroke:var(--fmb-mobile-red)!important;fill:none!important;stroke-width:1.7!important}
@@ -446,8 +522,8 @@
     body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail,
     body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail{grid-template-columns:repeat(5,minmax(62px,1fr))!important}
     body.fmb-mobile-first .fmb-mobile-product-rail a{min-width:62px!important;font-size:7.8px!important;padding-inline:3px!important}
-    body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-brand-hero{height:260px!important;min-height:260px!important}
-    body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-copy>h1{font-size:27px!important}
+    body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-brand-hero>.fmb-editorial-mobile-lead-image{height:178px!important}
+    body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-copy>h1{font-size:24px!important}
     body.fmb-mobile-first.fmb-mobile-route-home .fmb-editorial-mobile-rail-item{grid-template-columns:100px minmax(0,1fr) 16px!important}
     body.fmb-mobile-first.fmb-mobile-route-home .fmb-editorial-mobile-rail-item img{width:100px!important;height:68px!important}
   }
@@ -457,4 +533,1282 @@
 @media(max-width:699px) and (prefers-reduced-motion:reduce){
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-top-ticker .fmb-approved-hero-ticker-track{animation:none!important;transform:none!important}
   body.fmb-mobile-first .fmb-editorial-mobile-dock{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+}
+
+/* ============================================================================
+   Final editorial polish — surfaces, swipe rail, touch feedback
+   ============================================================================
+   Three things, all inside the approved mobile authority and all CSS: no
+   library, no gesture engine, no animation framework, no new JavaScript.
+   ========================================================================== */
+
+@media (max-width:699px){
+
+  /* -- 1. Retired violet ---------------------------------------------------
+     The Daily Brief and Worldwide feature tiles and the Home app shell still
+     carried the plum/violet gradients of the superseded concept — #4b0d50 and
+     the old identity violet #220d50. The approved dark mode is newsroom black
+     with a signal-red accent and depth from luminance, not from colour.       */
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card,
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card.brief,
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card.worldwide{
+    background:var(--fmb-mobile-black-raised,#141414)!important;
+    background-image:none!important;
+    border:1px solid var(--fmb-mobile-line,#292a2d)!important;
+  }
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-feature-shade{
+    background-image:linear-gradient(90deg,rgba(9,10,11,.92),rgba(9,10,11,.55) 62%,rgba(9,10,11,.2))!important;
+  }
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-app-shell.is-home{
+    background-image:none!important;
+    background-color:var(--fmb-mobile-black,#090a0b)!important;
+  }
+
+  /* -- 2. Editorial swipe rail --------------------------------------------
+     The Daily Brief and Explainer features sat two-across, which at 320px left
+     each about 140px wide. They are a genuine editorial group, so they become a
+     horizontal rail: native scrolling, CSS scroll snap, one dominant item and a
+     visible peek of the next so swipeability is discovered by looking.
+
+     Native scrolling on purpose. There are no pointer handlers, no
+     preventDefault and no touch interception anywhere in this, so vertical
+     scrolling stays native and Safari's left-edge Back gesture is untouched.
+     overscroll-behavior-x:contain stops the rail chaining its scroll outward;
+     it does not affect the system edge gesture. Keyboard reaches every item
+     through the links themselves, which the browser scrolls into view.         */
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-grid{
+    display:flex!important;
+    grid-template-columns:none!important;
+    gap:12px!important;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+    scroll-snap-type:x mandatory!important;
+    scroll-padding-inline:18px!important;
+    overscroll-behavior-x:contain!important;
+    -webkit-overflow-scrolling:touch!important;
+    scrollbar-width:none!important;
+    padding-inline:18px!important;
+    margin-inline:0!important;
+  }
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-grid::-webkit-scrollbar{display:none!important}
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-grid>*{
+    /* One complete card plus a deliberate sliver of the next. The previous
+       clamp left 27% of the second card showing at 320 and 47% at 390, which
+       reads as a clipped module rather than a swipeable one. Subtracting the
+       leading gutter, the gap and a fixed 36px peek from the track holds the
+       preview at 10-14% across 320 to 430 while the first card stays whole. */
+    flex:0 0 calc(100% - 6px)!important;
+    scroll-snap-align:start!important;
+    scroll-snap-stop:always!important;
+  }
+
+  /* -- 3. Touch feedback ---------------------------------------------------
+     Immediate, quiet, transform and opacity only — nothing that triggers
+     layout. ~120ms on press, which is the band the interaction spec asks for. */
+  body.fmb-mobile-first .fmb-editorial-mobile-dock a,
+  body.fmb-mobile-first .fmb-editorial-mobile-rail-item,
+  body.fmb-mobile-first .fmb-app-story-row,
+  body.fmb-mobile-first .fmb-app-feature-card{
+    -webkit-tap-highlight-color:transparent;
+    transition:opacity .12s ease,transform .12s ease;
+  }
+  body.fmb-mobile-first .fmb-editorial-mobile-dock a:active,
+  body.fmb-mobile-first .fmb-editorial-mobile-rail-item:active,
+  body.fmb-mobile-first .fmb-app-story-row:active,
+  body.fmb-mobile-first .fmb-app-feature-card:active{
+    opacity:.72;
+    transform:scale(.985);
+  }
+}
+
+/* A reader who asked for less motion keeps every scroll-snap destination and
+   every link — only the movement goes. */
+@media (max-width:699px) and (prefers-reduced-motion:reduce){
+  body.fmb-mobile-first .fmb-editorial-mobile-dock a,
+  body.fmb-mobile-first .fmb-editorial-mobile-rail-item,
+  body.fmb-mobile-first .fmb-app-story-row,
+  body.fmb-mobile-first .fmb-app-feature-card{transition:none!important}
+  body.fmb-mobile-first .fmb-editorial-mobile-dock a:active,
+  body.fmb-mobile-first .fmb-editorial-mobile-rail-item:active,
+  body.fmb-mobile-first .fmb-app-story-row:active,
+  body.fmb-mobile-first .fmb-app-feature-card:active{transform:none!important}
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-grid{scroll-behavior:auto!important}
+}
+
+/* ============================================================================
+   Mobile light mode
+   ============================================================================
+   The mobile surface was authored entirely for dark: off-white ink on
+   newsroom black. In light mode the ground flips to paper but the ink did not,
+   so twelve components rendered off-white on white — every Latest News
+   headline at 1.16:1, the "Latest News" heading at 1.10:1, the feature
+   headings at 1.07:1, the desk chevrons and the newsroom row at 1.34:1. They
+   were not dim; they were invisible.
+
+   Light is art-directed here rather than inverted: editorial paper ink
+   (#111416), warm secondary and muted greys, and the light-mode signal red
+   from the approved palette. The sticky header stays newsroom black in both
+   themes, as the design contract specifies.
+   ========================================================================== */
+
+@media (max-width:699px){
+  html[data-fmb-theme="light"] body.fmb-mobile-first{
+    /* Light takes the guidelines' own assignments: Editorial Black as ink on
+       FMB White, Steel Gray as supporting text, FMB Red as the accent. The
+       hairline is derived from FMB White, one step down. */
+    --fmb-mobile-white:#141414;
+    --fmb-mobile-muted:#6D7072;
+    --fmb-mobile-rule:#D8D6D1;
+    --fmb-mobile-red:#D71920;
+  }
+
+  /* Editorial ink on every story surface. */
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-story-copy h3,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-story-row h2,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-section-head h2,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-editorial-mobile-rail-item h2,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-editorial-mobile-rail-item h3,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-feature-card h2,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-feature-card h3{
+    color:#111416!important;
+  }
+
+  /* Secondary editorial copy and the newsroom row. */
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-editorial-newsroom-row,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-editorial-newsroom-row span,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-feature-card p{
+    color:#4f4c47!important;
+  }
+
+  /* Metadata stays quieter than the headline but must still clear AA. */
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-story-meta,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-story-meta time,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-story-meta span,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-approved-hero-deck{
+    color:#77716a!important;
+  }
+
+  /* Affordances and links carry the light-mode signal red. */
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-section-head a,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-feature-card b,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-editorial-mobile-rail-item>b{
+    color:#D71920!important;
+  }
+
+  /* Paper surfaces for the feature rail; the dark tiles were a dark-mode idea. */
+  html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card{
+    background:#fffdf8!important;
+    border-color:#d5cfc5!important;
+  }
+  html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-mobile-route-home .fmb-feature-shade{
+    background-image:linear-gradient(90deg,rgba(255,253,248,.94),rgba(255,253,248,.6) 62%,rgba(255,253,248,.2))!important;
+  }
+
+  /* The lead copy sits on paper in light mode, not on the dark hero ground. */
+  html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-copy{
+    background:var(--fmb-paper,#f4f0e8)!important;
+    border-bottom-color:#d5cfc5!important;
+  }
+  html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-copy>h1{
+    color:#111416!important;
+  }
+  html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-mobile-route-home .fmb-hero-live-overlay{
+    color:#77716a!important;
+    border-bottom-color:#d5cfc5!important;
+  }
+}
+
+/* ============================================================================
+   Two contrast corrections
+   ============================================================================
+   1. The legacy "Read the Latest / Customize" control is hidden in the approved
+      design and was hidden with position:absolute + clip. Moving the lead copy
+      to position:static took its containing block away, so it reappeared — as
+      white text on paper, 1.14:1. A regression introduced by the lead fix. It
+      is hidden as intended again, by removal rather than by clipping, so no
+      containing-block change can bring it back.
+
+   2. Section labels used one red, #db4056, for both themes: 3.79:1 on paper and
+      4.47:1 on newsroom black, both under AA for 8px type. They now take the
+      per-theme signal red from the approved palette.
+   ========================================================================== */
+
+@media (max-width:699px){
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-cta{
+    display:none!important;
+  }
+
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-editorial-mobile-rail-item>div>span,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-story-meta span:first-child,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-editorial-mobile-kicker{
+    color:#D71920!important;
+  }
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-editorial-mobile-rail-item>div>span,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-app-story-meta span:first-child,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-editorial-mobile-kicker{
+    color:#EF1B24!important;
+  }
+}
+
+@media (max-width:699px){
+  /* The feature-tile kickers kept the light-mode red on the raised dark
+     surface: 3.65:1 at 8px. Dark takes the dark signal red. */
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-app-feature-card span,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-app-feature-card .fmb-app-week-kicker{
+    /* On the raised surface #EF1B24 reached only 4.39:1 at 7.5px. The approved
+       dark palette's lifted red clears AA, and 7.5px was below the size this
+       publication sets any label at. */
+    color:#F53A3F!important;
+    font-size:9px!important;
+    letter-spacing:.09em!important;
+  }
+}
+
+@media (max-width:699px){
+  /* The dock's active label measured 4.34:1 at 7.5px on the dock's dark chrome,
+     in both themes — the dock stays newsroom black, so one value serves both.
+     Same correction as the feature kickers: the approved lifted red at a size
+     this publication actually sets a label at. */
+  body.fmb-mobile-first .fmb-editorial-mobile-dock a[aria-current="page"] span,
+  body.fmb-mobile-first .fmb-editorial-mobile-dock a.is-active span{
+    color:#F53A3F!important;
+    font-size:9px!important;
+  }
+}
+
+/* ============================================================================
+   Palette convergence: retire the last of the violet ground
+   ============================================================================
+   Measured on the built mobile Home at 390 before this block:
+
+     surface            light            dark
+     page ground        #fbf9fc          #0e0a12     <- violet, from the theme
+     sticky shell       #0b0f11          #0b0f11        appearance system
+     story list card    rgba(255,255,255,.94), radius 18px,
+                        border rgba(68,39,79,.12), shadow rgba(44,18,54,.055)
+     story image well   #ece8ef          #ece8ef
+     footer top lift    rgba(255,255,255,.13) inset (a dark-mode device, on paper)
+
+   Two separate problems, one cause.
+
+   1. The page ground is still the retired plum system's near-white #fbf9fc and
+      violet-black #0e0a12, set as literals in the shared appearance system.
+      Every art-directed surface above it -- shell, dock, hero, modules -- is
+      already newsroom black or warm ivory, so the ground reads as a colder
+      sheet of paper showing at the edges of a warmer publication.
+
+   2. Mobile light was never given dark's tonal ladder. Dark separates ground,
+      row and raised tile by luminance. Light had a rounded white card with a
+      violet drop shadow inherited from the superseded concept, over a
+      near-white ground: no ladder, two colour temperatures, and card chrome the
+      editorial design explicitly does not use.
+
+   Both are corrected here, in the final mobile authority, on the approved
+   palette. No new stylesheet, no new shell, no markup change.
+
+   On specificity: the violet literals are declared !important in
+   fmb-news-theme.css at (0,3,2), and that sheet loads after the mobile bundle.
+   :root raises these selectors to (0,4,2) so the approved ground wins on
+   specificity rather than on load order. This is scoped to the mobile shell
+   deliberately -- converging the shared appearance tokens for all 571 routes is
+   a separate migration, recorded in the design contract.
+   ========================================================================== */
+
+@media (max-width:699px){
+  html[data-fmb-theme="light"]:root body.fmb-mobile-first.fmb-matte-system{
+    /* The approved editorial ground, and a ladder that steps the same way
+       dark's does: ground, then row, then raised tile. */
+    --fmb-mobile-paper-row:#fdfbf6;
+    --fmb-mobile-paper-raised:#fffdf8;
+    --fmb-mobile-rule:#D8D6D1;
+    background:#F5F3EF!important;
+    color:#141414!important;
+  }
+  html[data-fmb-theme="dark"]:root body.fmb-mobile-first.fmb-matte-system{
+    background:var(--fmb-mobile-black,#0A0A0A)!important;
+    color:var(--fmb-mobile-white,#F5F3EF)!important;
+  }
+
+  /* The story list is a sequence of rules and whitespace in this design, not a
+     floating card. The plum-era card chrome is retired in both themes; it was
+     painting at the edges of the dark Home too. */
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-list{
+    border:0!important;
+    border-radius:0!important;
+    background:transparent!important;
+    box-shadow:none!important;
+  }
+
+  /* Light gains the ladder: rows lift off the ivory ground the way dark's rows
+     lift off newsroom black, by luminance alone. */
+  html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-row{
+    background:var(--fmb-mobile-paper-row,#fdfbf6)!important;
+  }
+  html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card{
+    background:var(--fmb-mobile-paper-raised,#fffdf8)!important;
+  }
+
+  /* The image well shows while a photograph loads and behind any transparent
+     asset. It was the violet grey of the retired system in both themes. */
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-story-row img,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-editorial-mobile-rail-item img{
+    background:#EFEDE8!important;
+  }
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-app-story-row img,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-editorial-mobile-rail-item img{
+    background:#1A1A1A!important;
+  }
+
+  /* A white inset top highlight is how a dark surface catches light. On paper
+     it is invisible, and it is the wrong idea -- but it was also the footer's
+     only separator, because the footer's top border is zeroed higher up the
+     cascade. So light keeps the inset mechanism and changes what it draws: the
+     editorial hairline instead of a white lift. */
+  html[data-fmb-theme="light"] body.fmb-mobile-first footer{
+    box-shadow:inset 0 1px 0 var(--fmb-mobile-rule,#D8D6D1)!important;
+  }
+}
+
+/* ============================================================================
+   Two reds that were on the wrong ground
+   ============================================================================
+   The sticky shell is newsroom black in BOTH themes, by design. The masthead's
+   red period followed the page theme instead of the surface it sits on, so it
+   took the paper red: 2.92:1 in light and 2.63:1 in dark against #0b0f11 --
+   the only two contrast faults measured anywhere on the mobile Home. The
+   period is the brand's one mark of colour and it was the dimmest thing in the
+   masthead. It takes the dark-ground red in both themes, like the dock label
+   already does.
+
+   The section rule under every "Latest News" heading had the same inversion in
+   dark: the paper red #D71920 drawn on near-black.
+   ========================================================================== */
+
+@media (max-width:699px){
+  body.fmb-mobile-first .fmb-mobile-brand-dot{color:#EF1B24!important}
+  html[data-fmb-theme="dark"] body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head{
+    border-bottom-color:#EF1B24!important;
+  }
+}
+
+/* ============================================================================
+   The current-section indicator was still the retired identity
+   ============================================================================
+   Measured on the built mobile Home: the active item in the section rail is
+   underlined by a 2px pseudo-element painted
+   linear-gradient(90deg, transparent, rgb(155,106,173) 24%, rgb(242,209,122)
+   50%, ...) at 86% opacity -- the superseded plum-to-gold, and the second of
+   those two stops is the exact gold this file's own verifier forbids from
+   appearing here as a value. It is drawn from an earlier sheet in the bundle.
+
+   Six rules compete for this one 2px line across the bundle, four of them with
+   !important, and between them they propose three different violets, a
+   plum-to-gold gradient and -- from this file, already -- the signal red. The
+   red was losing: the winner is a Home-scoped selector at (0,4,3), and this
+   file's existing claim sits at (0,3,3). Matching its specificity is enough,
+   because this sheet is bundled last.
+
+   This is the single most meaningful mark in the rail: it tells the reader
+   which section they are in. In the approved design that job belongs to the
+   signal red. The rail is newsroom black in both themes, so it takes the
+   dark-ground red, the same value the dock's active label uses.
+   ========================================================================== */
+
+@media (max-width:699px){
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a[aria-current="page"]::after,
+  body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[aria-current="page"]::after{
+    left:8px!important;
+    right:8px!important;
+    height:2px!important;
+    border-radius:0!important;
+    background:#D71920!important;
+    background-image:none!important;
+    opacity:1!important;
+  }
+}
+
+/* ============================================================================
+   The metallic sheen on the masthead
+   ============================================================================
+   fmb-news-mobile-approved-home.css lays --fmb-metal-sheen across the whole
+   sticky head as a pseudo-element: a 135deg white-alpha gradient from 11% down
+   to 2%. It is a metallic/glass device from the superseded concept, and the
+   approved editorial direction has essentially no metallic or glass treatment
+   -- the masthead is flat newsroom black in both themes. Retired here rather
+   than left to catch light across the wordmark.
+   ========================================================================== */
+
+@media (max-width:699px){
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-shell-head::after{
+    display:none!important;
+  }
+}
+
+/* ============================================================================
+   The desktop publication footer does not belong on a phone
+   ============================================================================
+   Measured at 390 before this rule, on every route except Home:
+
+     /news/world/       footer.footer   801px   13 links
+     /news/fmb-brief/   footer.footer   801px   13 links
+     /news/about/       footer.footer   736px   13 links
+     an article         footer.footer   353px   13 links
+
+   Between 350 and 800px of desktop footer -- a four-column link grid, a social
+   row and a legal bottom bar -- stacked into a single 390px column below every
+   story. On World that is more footer than the article body above it.
+
+   Worse, it had become unreadable. The footer's copy is white because the
+   footer is designed to sit on the retired violet ground; once the approved
+   ivory ground was claimed for the mobile shell, all thirteen links rendered
+   white on ivory at 1.09:1. Hiding the footer here is both the requested
+   change and the correct fix for that.
+
+   One footer element exists per page: footer.footer, never inside <main> or
+   <article> on any of the thirteen routes checked. Article-end editorial
+   matter -- Sources, Related Stories, byline, corrections -- was verified to
+   sit outside it on three representative articles and is untouched.
+
+   Home already hid its own .publication-footer; this makes the behaviour one
+   rule for every route instead of a Home-only accident.
+
+   Strictly below 700px. At 700px and above the desktop and tablet footer is
+   exactly as it was -- this rule does not exist there.
+
+   The footer's secondary and legal destinations move into the mobile Menu,
+   which is where a phone reader looks for them. See fmb-news-mobile-global.js.
+   ========================================================================== */
+
+@media (max-width:699px){
+  body.fmb-mobile-first footer.footer{display:none!important}
+}
+
+/* ============================================================================
+   The approved Light/Dark shell, applied to every mobile route
+   ============================================================================
+   The shell was art-directed on Home and nowhere else. Measured at 390 in Dark
+   on every other route, the page ground had flipped to newsroom black and the
+   body copy had flipped to the dark-mode near-white, but the panels between
+   them had not: they still painted the light-mode surfaces hard-coded across
+   the older mobile sheets. The result was near-white text on white.
+
+   Worst measured ratios, Dark, 390:
+
+     .explained-title      1.17:1   206 Explainer cards, near-black on black
+     .country-card h3      1.01:1   /news/world/
+     .brief-issue h2       1.09:1   /news/fmb-brief/
+     .fmb-about-* copy     1.09:1   /news/about/ (43 failures on that route)
+     .fmb-horoscope-*      1.09:1   /news/horoscope/
+     .fmb-clue-group h2    1.09:1   /news/crossword/
+     .archive-card strong  1.89:1   plum on the retired violet card
+
+   These are not token-driven surfaces -- they are literal #fff / #f4f2f5 /
+   #f0ebf2 values spread across eight older mobile stylesheets with no dark
+   variant anywhere -- so there is no one token to flip. They are claimed here,
+   by name, in the sheet that exists to be the last mobile authority. Every
+   selector below corresponds to a surface that was measured painting light in
+   Dark mode; nothing was added speculatively.
+
+   Scoped strictly below 700px. Desktop and tablet are untouched.
+
+   Two things are deliberately left alone:
+
+   - The crossword board and its cells. A crossword reads as paper by design,
+     its text passes contrast in both themes, and its colours carry meaning
+     about the puzzle's state. Not the shell's business.
+   - The Fact Check verdict badges. Their green and amber are the verdicts
+     themselves. Two of them measure below AA on white and that is a real
+     issue, but recolouring a Fact Check rating is an editorial decision, not
+     a design one. Reported, not changed.
+   ========================================================================== */
+
+@media (max-width:699px){
+  /* The root element still painted #f5f5f7 in Dark, which shows through on
+     iOS rubber-band overscroll above and below the page. */
+  html[data-fmb-theme="dark"]:root{background:var(--fmb-mobile-black,#0A0A0A)!important}
+  html[data-fmb-theme="light"]:root{background:#F5F3EF!important}
+
+  /* Section grounds merge into the page ground instead of sitting on it as
+     pale slabs. */
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .world-feed,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .archive,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .brief-issues,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fc-empty,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first.fmb-news-clean main{
+    background:transparent!important;
+    background-image:none!important;
+  }
+
+  /* Panels and cards take the approved raised surface and the editorial rule,
+     the same ladder Home's Latest News rows use. */
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .brief-issue,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .brief-method,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .archive-panel,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .archive-card,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .country-card,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .world-note,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-about-mv,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-about-principles article,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-about-method-list li,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-about-hero,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-about-skip,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-horoscope-reading,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fc-rating-key,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .explained-tools,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .explainer-method-note,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-clue-group,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-clue,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-news-context,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-crossword-save-panel,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-crossword-persistence,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .sources{
+    background:var(--fmb-mobile-black-raised,#141414)!important;
+    background-image:none!important;
+    border-color:var(--fmb-mobile-rule,#2A2C2D)!important;
+    color:var(--fmb-mobile-white,#F5F3EF)!important;
+    box-shadow:none!important;
+  }
+
+  /* Controls sit one step below the panels, as they do on Home. */
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-zodiac-grid button,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-crossword-save-actions button,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-mobile-reader-actions button,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .audit-toolbar input,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fc-toolbar input{
+    background:var(--fmb-mobile-black-soft,#101010)!important;
+    border-color:var(--fmb-mobile-rule,#2A2C2D)!important;
+    color:var(--fmb-mobile-white,#F5F3EF)!important;
+  }
+
+  /* Image wells, on every route rather than only Home. */
+  html[data-fmb-theme="dark"] body.fmb-mobile-first img{background-color:#1A1A1A!important}
+  html[data-fmb-theme="light"] body.fmb-mobile-first img{background-color:#EFEDE8!important}
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .article-figure{background:#1A1A1A!important}
+}
+
+/* ============================================================================
+   The Explainer index, 206 cards, in both themes
+   ============================================================================
+   One component accounted for more failures than the whole rest of the site:
+   the Explainer card never received any dark-mode colour at all, and its
+   accents are the retired plum. Measured at 390:
+
+     Dark   .explained-title   #1d1d1f on the dark ground   1.17:1  x206
+            .explained-deck    #66666b                      3.43:1  x206
+            .explained-arrow   #6e3a8a plum                 2.46:1  x206
+     Light  .explained-meta    #8c6a9e plum on the ground   4.13:1  x206
+            .explained-number  #8c6a9e plum                 4.13:1  x206
+
+   1030 failures in Dark and 412 in Light, from five declarations. The card
+   takes the approved ink, muted and signal red in each theme.
+   ========================================================================== */
+
+@media (max-width:699px){
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .explained-title{color:var(--fmb-mobile-white,#F5F3EF)!important}
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .explained-deck,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .explained-meta,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .explained-number{color:var(--fmb-mobile-muted,#BFC1C2)!important}
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .explained-arrow{color:#EF1B24!important}
+
+  html[data-fmb-theme="light"] body.fmb-mobile-first .explained-meta,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .explained-number{color:#67625c!important}
+  html[data-fmb-theme="light"] body.fmb-mobile-first .explained-arrow{color:#D71920!important}
+}
+
+/* ============================================================================
+   The shared appearance tokens, for the mobile shell
+   ============================================================================
+   Several internal-route surfaces are not hard-coded at all -- they read
+   var(--fmb-theme-surface) and friends, which still resolve to the retired
+   plum system's values (#17101d raised, #f7f2f8 soft, #1b1420 ink). That is
+   why .archive-card kept painting #17101d after the panels above were claimed
+   by name.
+
+   Claiming the tokens for the mobile shell converges every token-driven
+   surface on every route at once, rather than chasing them class by class.
+   The values are the approved mobile ladder, so a token-driven panel and a
+   hand-claimed one now land on the same surface.
+
+   Below 700px only. The Home document claims the same tokens for itself in
+   fmb-news-editorial-reference-v2.css; converging them for all 571 routes at
+   every width remains the separate migration recorded in the design contract.
+   ========================================================================== */
+
+@media (max-width:699px){
+  html[data-fmb-theme="dark"]:root body.fmb-mobile-first{
+    --fmb-theme-bg:#0A0A0A;
+    --fmb-theme-surface:#141414;
+    --fmb-theme-surface-soft:#101010;
+    --fmb-theme-ink:#F5F3EF;
+    --fmb-theme-muted:#BFC1C2;
+    --fmb-theme-line:#2A2C2D;
+  }
+  html[data-fmb-theme="light"]:root body.fmb-mobile-first{
+    --fmb-theme-bg:#F5F3EF;
+    --fmb-theme-surface:#FAF9F6;
+    --fmb-theme-surface-soft:#EFEDE8;
+    --fmb-theme-ink:#141414;
+    --fmb-theme-muted:#6D7072;
+    --fmb-theme-line:#D8D6D1;
+  }
+}
+
+/* ============================================================================
+   Accent text that never had a dark value
+   ============================================================================
+   With the panels and tokens converged, everything still failing in Dark on an
+   internal route is one thing: small accent and metadata text left in the
+   retired plum, which had enough contrast on the old near-white ground and none
+   at all on newsroom black. Measured at 390:
+
+     .fmb-clue strong                     #5b276e   1.60:1   x36  crossword
+     .audit-result small                  #6e3a8a   2.42:1   x20  search
+     .brief-issue time                    #6e3a8a   2.16:1   x15  Daily Brief
+     .country-card small span             #705477   2.64:1   x10  World
+     .fmb-about-principles article span   the identity plum   1.41:1   x7
+     .fmb-about-method-list li span       the identity plum   1.41:1   x5
+     .archive-card strong                 #6f1f76   1.75:1   x3   World archive
+     .fmb-feature-hero small              #6f1f76   1.96:1   x1   Horoscope
+
+   The About marks are the exact retired identity plum that this file's own
+   verifier forbids from appearing here as a value -- still being painted on
+   that route by an older sheet, which is why the hex is described rather than
+   quoted. Each mark takes the role it actually plays: a kicker, clue number or
+   date marker takes the dark signal red; a credit, count or status line takes
+   the muted ink.
+   ========================================================================== */
+
+@media (max-width:699px){
+  html[data-fmb-theme="dark"] body.fmb-mobile-first :is(
+    .fmb-clue strong,
+    .brief-issue time,
+    .fmb-about-principles article span,
+    .fmb-about-method-list li span,
+    .fmb-about-hero-statement strong,
+    .archive-card strong,
+    .fmb-feature-hero small
+  ){color:#EF1B24!important}
+
+  html[data-fmb-theme="dark"] body.fmb-mobile-first :is(
+    .audit-result small,
+    .country-card small span,
+    .archive-credit,
+    .fmb-feature-week,
+    .fmb-crossword-status,
+    .fmb-about-method-list li a strong
+  ){color:var(--fmb-mobile-muted,#BFC1C2)!important}
+
+  /* About's <main> is painted #f6f5f7 by an older route sheet and is the last
+     light slab left on any mobile route in Dark. The founder section sits on
+     it, which is why its heading measured near-white on near-white. */
+  html[data-fmb-theme="dark"] body.fmb-mobile-first.fmb-news-about main,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first.fmb-matte-system.fmb-news-about main{
+    background:transparent!important;
+    background-image:none!important;
+    color:var(--fmb-mobile-white,#F5F3EF)!important;
+  }
+}
+
+/* ============================================================================
+   The last of it: one red, one ID, and About's white-on-white
+   ============================================================================
+   1. The dark signal red measures 4.39:1 at 7.5px on the raised surface
+      #171c1f -- 0.11 short of AA, on 69 marks across Home, Crossword, Daily
+      Brief and About. This file already carries a lifted red for exactly this
+      case (the feature kickers and the dock's active label sit on the same
+      surface). The raised-surface marks take it too, rather than each route
+      inventing its own value.
+
+   2. About's <main> resisted every class-based claim because the winner is an
+      ID rule: .fmb-mobile-route-about #aboutMain{background:#f6f5f7!important}.
+      An ID beats any number of classes, so the light slab survived the panel
+      pass, the token pass and the route pass. Claimed here with an ID of its
+      own. This was also why the founder block measured near-white on near-
+      white in Dark: it is transparent and was sitting on that slab.
+
+   3. About's Mission and Vision cards are white text on a white card in Light
+      -- 1.00:1, invisible, and not something this branch introduced. They were
+      authored for a dark plum card that the approved design retired. They take
+      the paper surface and editorial ink in Light, the raised surface and
+      off-white in Dark. Same for the section nav links and the founder
+      portrait placeholder, which were white on paper.
+   ========================================================================== */
+
+@media (max-width:699px){
+  html[data-fmb-theme="dark"] body.fmb-mobile-first :is(
+    .fmb-clue strong,
+    .brief-issue time,
+    .fmb-about-principles article span,
+    .fmb-about-method-list li span,
+    .fmb-about-hero-statement strong,
+    .archive-card strong,
+    .fmb-feature-hero small,
+    .fmb-app-story-meta span:first-child
+  ){color:#F53A3F!important}
+
+  html[data-fmb-theme="dark"] body.fmb-mobile-first :is(
+    .fmb-about-method-list li strong,
+    .fmb-about-principles article strong,
+    .fmb-about-purpose p strong,
+    .fmb-about-standards p strong
+  ){color:var(--fmb-mobile-white,#F5F3EF)!important}
+
+  /* An ID for an ID. */
+  html[data-fmb-theme="dark"] body.fmb-mobile-first #aboutMain{
+    background:var(--fmb-mobile-black,#0A0A0A)!important;
+    color:var(--fmb-mobile-white,#F5F3EF)!important;
+  }
+  html[data-fmb-theme="light"] body.fmb-mobile-first #aboutMain{
+    background:#F5F3EF!important;
+    color:#141414!important;
+  }
+
+  /* White-on-white in Light: cards, section nav and the portrait placeholder. */
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-about-mv{
+    background:#fffdf8!important;
+    border:1px solid #d9d3c7!important;
+  }
+  html[data-fmb-theme="light"] body.fmb-mobile-first :is(
+    .fmb-about-mv h2,
+    .fmb-about-mv p,
+    .fnc-shell nav a,
+    .fmb-founder-photo-placeholder span
+  ){color:#141414!important}
+  html[data-fmb-theme="light"] body.fmb-mobile-first :is(
+    .fmb-about-mv .fmb-about-label,
+    .fmb-founder-photo-placeholder small
+  ){color:#62605c!important}
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-founder-photo-placeholder{
+    background:#EFEDE8!important;
+    background-image:none!important;
+  }
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-founder-photo-placeholder{
+    background:#1A1A1A!important;
+    background-image:none!important;
+  }
+}
+
+/* ============================================================================
+   Back links, counts and credits
+   ============================================================================
+   The last family. Every remaining non-decorative failure in Dark is one of
+   three things, all of them route chrome rather than journalism:
+
+     a plum back/forward link   #6e3a8a / #6f1f76 / the identity plum
+     a heading that never flipped   #1d1d1f / #171217         1.02 - 1.04:1
+     a count or credit too dim on its surface  #756b79 / #6e6e73  3.2 - 4.3:1
+
+   Back links take the dark signal red, headings take the off-white, counts and
+   credits take the muted ink. The same counts and credits are lifted in Light
+   where they measured just under AA on paper.
+   ========================================================================== */
+
+@media (max-width:699px){
+  html[data-fmb-theme="dark"] body.fmb-mobile-first :is(
+    .edition-link,
+    .back,
+    .audit-back,
+    .archive-back,
+    .fmb-archive-kicker,
+    .fmb-about-name strong
+  ){color:#F53A3F!important}
+
+  html[data-fmb-theme="dark"] body.fmb-mobile-first :is(
+    .archive-title,
+    .fmb-archive-title,
+    .explained-standard,
+    .sources li,
+    .sources li a,
+    .source-list li,
+    .source-list li a
+  ){color:var(--fmb-mobile-white,#F5F3EF)!important}
+
+  html[data-fmb-theme="dark"] body.fmb-mobile-first :is(
+    .explained-count,
+    .fc-toolbar span,
+    .archive-credit,
+    .article-figure figcaption,
+    .fmb-image-credit
+  ){color:var(--fmb-mobile-muted,#BFC1C2)!important}
+
+  html[data-fmb-theme="light"] body.fmb-mobile-first :is(
+    .explained-count,
+    .fc-toolbar span,
+    .archive-credit,
+    .article-figure figcaption,
+    .fmb-image-credit
+  ){color:#5d5a55!important}
+}
+
+@media (max-width:699px){
+  /* The last three. The Archive's own section title never flipped (near-black
+     on newsroom black, 1.04:1) and its back link kept the plum; the Explainer's
+     method note keeps a near-black lead-in on the raised panel. */
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .section-title h2,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .explainer-method-note strong{
+    color:var(--fmb-mobile-white,#F5F3EF)!important;
+  }
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .section-title a{color:#F53A3F!important}
+}
+
+@media (max-width:699px){
+  /* The Archive route re-asserts its own title and link at (0,5,3) with
+     !important -- body.fmb-mobile-route-archive main.shell.section >
+     .section-title ... -- which outranks the shell rule above. Matched here
+     rather than escalated further, so the shell claim wins by being the later
+     sheet at equal weight. */
+  html[data-fmb-theme="dark"] body.fmb-mobile-first.fmb-mobile-route-archive main.shell.section>.section-title h2{
+    color:var(--fmb-mobile-white,#F5F3EF)!important;
+  }
+  html[data-fmb-theme="dark"] body.fmb-mobile-first.fmb-mobile-route-archive main.shell.section>.section-title a{
+    color:#F53A3F!important;
+  }
+}
+
+/* ============================================================================
+   About, in Light: white text on paper
+   ============================================================================
+   Verified by screenshot, not only by measurement. The Mission and Vision
+   cards, the founder block and the profile link were authored for a dark plum
+   panel the approved design retired. On the ivory ground their body copy is
+   rgba(255,255,255,.86) on #fffdf8 -- a whole paragraph of the publication's
+   mission statement, rendered invisible. The heading above it reads fine, so
+   nothing about the page looks broken; the copy is simply not there.
+
+   The card's large watermark numeral is decorative and stays a watermark; it
+   just picks up ink instead of white so it reads as one.
+
+   Specificity note: the losing rules sit at (0,5,2) with !important
+   (body.fmb-matte-system.fmb-news-about .fmb-about-mv > p and friends), so
+   these carry the extra body class needed to outrank them rather than an ID.
+   ========================================================================== */
+
+@media (max-width:699px){
+  html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-matte-system.fmb-news-about .fmb-about-mv>p,
+  html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-matte-system.fmb-news-about .fmb-about-founder h2,
+  html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-matte-system.fmb-news-about .fmb-founder-profile-link,
+  html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-matte-system.fmb-news-about .fmb-about-hero-statement{
+    color:#141414!important;
+  }
+  html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-matte-system.fmb-news-about .fmb-about-mv>span{
+    color:rgba(18,20,23,.14)!important;
+  }
+  html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-matte-system.fmb-news-about .fmb-about-label{
+    color:#62605c!important;
+  }
+  html[data-fmb-theme="dark"] body.fmb-mobile-first.fmb-matte-system.fmb-news-about .fmb-about-mv>span{
+    color:rgba(244,241,234,.16)!important;
+  }
+}
+
+@media (max-width:699px){
+  /* The closing section, same story: authored white for a dark panel, drawn on
+     ivory. "What happened. What the evidence shows..." is the publication's
+     closing statement and it was not visible in Light. */
+  html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-matte-system.fmb-news-about .fmb-about-closing :is(h2,p,a,strong){
+    color:#141414!important;
+  }
+  html[data-fmb-theme="dark"] body.fmb-mobile-first.fmb-matte-system.fmb-news-about .fmb-about-closing :is(h2,p,a,strong){
+    color:var(--fmb-mobile-white,#F5F3EF)!important;
+  }
+}
+
+/* ============================================================================
+   The Menu — one native list, and it works in Dark
+   ============================================================================
+   Two defects, both reproduced on this branch head at 390 before any change,
+   and both present on main as well, so neither is a regression from this PR.
+
+   1. THE BLANK ROWS. The four action rows (Appearance, Your FMB, Customize
+      your feed, Add to Home Screen) are not empty and are not missing. Their
+      text is there and their accessible names are correct. They are painted
+      colour #16191b -- near-black -- on the sheet, and the sheet is #171c1f in
+      Dark. Measured 1.03:1. The whole Menu action block was authored with
+      hard-coded light values and never given a dark variant, so on a phone in
+      Dark the reader sees four blank rows where four working controls are. In
+      Light the same rows measure 15.82:1, which is why this never showed up in
+      a light-mode screenshot.
+
+   2. THE WHITE PILL CARDS. The final mobile authority fully resets
+      .fmb-app-action-list button but only sets colour and border-colour on
+      .fmb-app-action-list a. So the navigation links keep the winning rule
+      from the retired plum layer, fmb-news-mobile-approved-home.css:112:
+
+        .fmb-app-action-list a,.fmb-app-action-list button{
+          min-height:50px; padding:0 14px;
+          border:1px solid rgba(93,49,105,.09);    -- a violet hairline
+          border-radius:14px; background:#fff;     -- a white pill
+          color:#302735;                           -- plum ink
+          font-size:14px; font-weight:760}
+
+      (Quoted with dashes rather than CSS comment markers on purpose: a nested
+      comment terminator inside a comment ends it early and the parser then
+      discards every rule that follows, which is exactly what happened the
+      first time this block was written.)
+
+      Fifteen white 14px-radius pill cards stacked on a dark sheet. That is the
+      "giant white rounded Menu navigation cards" in the screenshot, and it is
+      the same in both themes.
+
+   Both are fixed here, in the existing final mobile authority: links and
+   buttons are normalised to the same native list row, and the whole Menu takes
+   per-theme values from the brand system -- Editorial Black surfaces, Warm
+   White ink, Steel Gray secondary, Metallic Silver hairlines, Signal Red for
+   the one accent. No new stylesheet, no new Menu, no runtime change.
+   ========================================================================== */
+
+@media (max-width:699px){
+  body.fmb-mobile-first .fmb-app-action-sheet{
+    --fmb-menu-surface:#F5F3EF;
+    --fmb-menu-ink:#141414;
+    --fmb-menu-muted:#6D7072;
+    --fmb-menu-rule:#D9D6D0;
+    --fmb-menu-accent:#D71920;
+  }
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-app-action-sheet{
+    --fmb-menu-surface:#141414;
+    --fmb-menu-ink:#F5F3EF;
+    --fmb-menu-muted:#BFC1C2;
+    --fmb-menu-rule:#2A2C2D;
+    --fmb-menu-accent:#EF1B24;
+  }
+
+  body.fmb-mobile-first .fmb-app-action-panel{
+    background:var(--fmb-menu-surface)!important;
+    color:var(--fmb-menu-ink)!important;
+    border-top:1px solid var(--fmb-menu-rule)!important;
+    box-shadow:none!important;
+  }
+  body.fmb-mobile-first .fmb-app-action-panel>h2{
+    color:var(--fmb-menu-ink)!important;
+    font-family:"Bodoni Moda","Libre Bodoni","Cormorant Garamond",Georgia,serif!important;
+    font-weight:560!important;
+  }
+
+  /* One list, one row treatment, links and buttons alike. Rows are separated
+     by a hairline rather than being individual cards; the last one has none. */
+  body.fmb-mobile-first .fmb-app-action-list{
+    display:block!important;
+    gap:0!important;
+    background:transparent!important;
+  }
+  body.fmb-mobile-first .fmb-app-action-list>a,
+  body.fmb-mobile-first .fmb-app-action-list>button{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    gap:12px!important;
+    width:100%!important;
+    min-height:48px!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    border-bottom:1px solid var(--fmb-menu-rule)!important;
+    border-radius:0!important;
+    background:transparent!important;
+    background-image:none!important;
+    box-shadow:none!important;
+    color:var(--fmb-menu-ink)!important;
+    font:600 15px/1.25 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Manrope,sans-serif!important;
+    letter-spacing:-.01em!important;
+    text-align:left!important;
+    text-decoration:none!important;
+  }
+  body.fmb-mobile-first .fmb-app-action-list>:last-child{border-bottom:0!important}
+  body.fmb-mobile-first .fmb-app-action-list>a>span:last-child,
+  body.fmb-mobile-first .fmb-app-action-list>button>span:last-child{
+    color:var(--fmb-menu-muted)!important;
+    font-size:15px!important;
+    font-weight:400!important;
+  }
+  body.fmb-mobile-first .fmb-menu-item-main{color:var(--fmb-menu-ink)!important}
+  body.fmb-mobile-first .fmb-menu-item-main>svg{stroke:var(--fmb-menu-accent)!important}
+  body.fmb-mobile-first .fmb-app-action-list>a:active,
+  body.fmb-mobile-first .fmb-app-action-list>button:active{
+    background:color-mix(in srgb,var(--fmb-menu-ink) 7%,transparent)!important;
+  }
+
+  /* The close control still carried the retired identity's plum gradient. */
+  body.fmb-mobile-first .fmb-app-action-panel>[data-close-sheet]{
+    border:1px solid var(--fmb-menu-rule)!important;
+    border-radius:0!important;
+    background:transparent!important;
+    background-image:none!important;
+    color:var(--fmb-menu-ink)!important;
+    font:700 13px/1 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Manrope,sans-serif!important;
+    letter-spacing:.02em!important;
+  }
+}
+
+/* ============================================================================
+   The top inset, and the Fact Check verdicts
+   ============================================================================
+   1. SAFE AREA, TOP. The mobile system declares env(safe-area-inset-bottom)
+      twice -- on the dock and on the body -- and env(safe-area-inset-top) not
+      at all. The PWA ships
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">,
+      which in an installed standalone window puts the web view underneath the
+      status bar. With no top inset the sticky masthead renders under the
+      clock and carrier row.
+
+      The reported blank band above the masthead does NOT reproduce on this
+      branch head in a browser: the shell measures top=0 on all fourteen routes
+      checked, with no preceding element and no body padding, on this build and
+      on main alike. So this is not that bug's fix -- it is the one real
+      top-inset defect the investigation did find, and it is a no-op anywhere
+      the inset is 0, which is every non-standalone context.
+
+   2. FACT CHECK VERDICTS. Four failures, not the two previously reported:
+
+        Light   TRUE           #2FB344 on paper        2.74:1
+                MISLEADING     #EF9D00 on paper        2.21:1
+        Dark    VERIFIED FACT  #1677C8 on #171c1f      3.69:1
+                FALSE          #DF2F2F on #171c1f      3.75:1
+
+      Each verdict keeps its hue, because the hue is the verdict: green stays
+      green, amber stays amber, blue stays blue, red stays red. Only lightness
+      moves, per theme -- darker on paper, lifted on newsroom black. No verdict,
+      rating word, evidence or article text is touched.
+   ========================================================================== */
+
+@media (max-width:699px){
+  body.fmb-mobile-first .fmb-mobile-app-shell{
+    padding-top:env(safe-area-inset-top)!important;
+  }
+
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fc-badge.fc-true span{color:#177A2B!important}
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fc-badge.fc-misleading span{color:#8A5300!important}
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fc-badge.fc-fact span{color:#5BAEEE!important}
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fc-badge.fc-false span{color:#F4736C!important}
+}
+
+@media (max-width:699px){
+  /* The Menu sheet's own surface, claimed at the specificity the dark panel
+     convergence above uses, so the brand's Editorial Black wins rather than the
+     shell's raised grey. */
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-app-action-sheet .fmb-app-action-panel{
+    background:#141414!important;
+  }
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-action-sheet .fmb-app-action-panel{
+    background:#F5F3EF!important;
+  }
+}
+
+/* ============================================================================
+   Red, at the two sizes the guidelines do not separate
+   ============================================================================
+   The guidelines split red by role -- FMB Red #D71920 primary accent, Signal
+   Red #EF1B24 highlights used sparingly -- but not by size, and at small sizes
+   on FMB Black the split matters:
+
+     #EF1B24 as 8px label text on #0A0A0A          4.45:1   just under AA
+     #FFFFFF on an #EF1B24 fill                     4.33:1   just under AA
+     #EF1B24 as 8px label text on #141414          4.30:1   under AA
+
+   So red is assigned here by what it is doing rather than by which named red
+   it is. Fills take FMB Red, where white on it measures 5.19:1. Small red text
+   on a dark ground takes #F53A3F -- Signal Red lifted just enough to clear AA
+   at 4.94:1 on Editorial Black, still unmistakably the same red. Everything
+   larger, and every red on paper, keeps the named values.
+
+   This is the smallest departure from the sheet that keeps the sheet's own
+   colours legible. Recorded rather than silently applied.
+   ========================================================================== */
+
+@media (max-width:699px){
+  html[data-fmb-theme="dark"] body.fmb-mobile-first :is(
+    .fmb-editorial-mobile-kicker,
+    .fmb-app-story-meta span:first-child,
+    .fmb-editorial-mobile-rail-item>div>span,
+    .fmb-app-feature-card span,
+    .fmb-app-feature-card .fmb-app-week-kicker,
+    .explained-arrow,
+    .fmb-app-section-head a
+  ){color:#F53A3F!important}
+
+  body.fmb-mobile-first .fmb-editorial-mobile-dock a[aria-current="page"] span,
+  body.fmb-mobile-first .fmb-editorial-mobile-dock a.is-active span,
+  body.fmb-mobile-first .fmb-mobile-brand-dot{color:#F53A3F!important}
+}
+
+/* ============================================================================
+   Brand Guidelines section 06 -- mobile geometry
+   ============================================================================
+   Mobile deliberately does not take the 70-90px desktop margin. Measured on
+   the built Home at 320 / 390 / 430 before this block:
+
+     horizontal inset    12px on story rows, section heads and desk rows
+                         0px on the lead copy, which sits full-bleed and
+                         carries its own 18px padding instead -- so the text
+                         inset was 18 against 12 everywhere else
+     story row height    92px at every width           compact, in spec
+     touch targets       40px minimum                  target is 44px
+     dock / body pad     58px / 78px                   clears, in spec
+     horizontal overflow 0px                           in spec
+
+   Two things move. The section rail was the only control under 44px, and it is
+   the one a thumb reaches for most; it goes to 44 and the shell grows by the
+   same 4px. And the lead copy's text inset comes to 16px so every text edge on
+   the page lines up on one vertical, which is what makes a phone layout read
+   as designed rather than as a stack of independently padded blocks.
+
+   16px rather than 12: the row insets are 12 on the box, but their text starts
+   after a 100px thumbnail plus a 12px gap, so the only copy actually sitting on
+   the 12px edge is the section heads. Bringing the lead to 16 and the heads to
+   16 puts every left text edge on one line without touching row density.
+   ========================================================================== */
+
+@media (max-width:699px){
+  /* The page inset lives on the section wrappers, which carried 12px; every
+     row and heading inside them sits at 0 and inherits it. So the inset moves
+     once, on the wrappers, rather than being added to each child -- adding it
+     to children stacks it and pushes copy to 28px, which is what a first
+     attempt here did. */
+  body.fmb-mobile-first .fmb-app-section,
+  body.fmb-mobile-first .fmb-editorial-mobile-rail{
+    margin-inline:16px!important;
+  }
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-copy{
+    padding-inline:16px!important;
+  }
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-row,
+  body.fmb-mobile-first .fmb-editorial-mobile-rail-item,
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head,
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-editorial-newsroom-row{
+    padding-inline:0!important;
+    margin-inline:0!important;
+  }
+  /* The feature rail's inline padding is its gutter and sets the peek, which is
+     held at 10-14% of the next card. It moves to the same 16px as everything
+     else and the peek is re-measured against it. */
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-grid{
+    padding-inline:16px!important;
+    scroll-padding-inline:16px!important;
+  }
+
+  /* The section rail and the search control were the only targets under 44px. */
+  body.fmb-mobile-first .fmb-mobile-product-rail,
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail,
+  body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail{
+    height:44px!important;
+    min-height:44px!important;
+  }
+  body.fmb-mobile-first .fmb-mobile-product-rail a,
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a,
+  body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a{
+    height:44px!important;
+    min-height:44px!important;
+  }
+  body.fmb-mobile-first .fmb-mobile-shell-search a{
+    height:44px!important;
+    min-height:44px!important;
+  }
+}
+
+@media (max-width:699px){
+  /* Both of these are re-asserted by Home-scoped rules at (0,3,1) and (0,3,2):
+     .fmb-app-section by margin:20px 12px 0, and the search control by a 42px
+     height. Matched here rather than escalated, keeping the 20px section
+     rhythm and changing only the inline inset. */
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section{
+    margin:20px 16px 0!important;
+  }
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-editorial-mobile-rail{
+    margin-inline:16px!important;
+  }
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-shell-actions a,
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-shell-actions button{
+    height:44px!important;
+    min-height:44px!important;
+  }
+}
+
+@media (max-width:699px){
+  /* An explicit width:calc(100% - 24px) was left over from the 12px inset, so
+     with a 16px margin the box ran 8px short on the right -- 16 left, 8 right.
+     The margins define the box now, which is what makes the inset symmetrical
+     and keeps it symmetrical at any width. */
+  body.fmb-mobile-first .fmb-app-section,
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section,
+  body.fmb-mobile-first .fmb-editorial-mobile-rail,
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-editorial-mobile-rail,
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-list{
+    width:auto!important;
+  }
+  /* The rail gutter moved from 18px to 16px with everything else, which took
+     the peek down to 9% at 430. Four pixels back onto the peek holds it in the
+     10-15% band across 320 to 430 again. */
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-grid>*{
+    flex:0 0 calc(100% - 10px)!important;
+  }
+}
+
+/* ============================================================================
+   LIGHT APPEARANCE -- APP CHROME
+   ----------------------------------------------------------------------------
+   The role tokens at the top of this file flip the masthead, rail and dock
+   surfaces with the appearance. Four inks did not follow, because rules later
+   in the cascade re-assert white or a Home-only near-black:
+
+     .fmb-mobile-route-home .fmb-mobile-shell-copy strong   color:#fff
+     .fmb-mobile-route-home .fmb-mobile-shell-menu          color: metal gold
+     .fmb-mobile-route-home .fmb-mobile-app-shell.is-home   background: black
+     an unscoped rule painting the brand dot and the dock active label with the
+     dark-tuned red
+
+   and fmb-news-matte-system.css, which loads AFTER this bundle, carries
+       html[data-fmb-global-mobile] body.fmb-matte-system
+         .fmb-mobile-shell-head :is(a,button){color:#fff!important}
+   at specificity (0,3,3). Equal specificity would lose on source order, so the
+   selectors below open with html:root[data-fmb-theme="light"] for (0,4,3).
+   That is the reason for the :root -- not decoration.
+
+   Dark is untouched by everything in this block. */
+@media (max-width:699px){
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-mobile-app-shell,
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-app-shell,
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-app-shell.is-home{
+    background:var(--fmb-shell-surface)!important;
+    background-color:var(--fmb-shell-surface)!important;
+    border-bottom:1px solid var(--fmb-shell-rule)!important;
+  }
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-mobile-shell-head,
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-shell-head{
+    background:var(--fmb-shell-surface)!important;
+    color:var(--fmb-shell-ink)!important;
+  }
+  /* FMB NEWS. in Editorial Black, and the icons that flank it. */
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-mobile-shell-head :is(a,button),
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-mobile-shell-brand,
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-mobile-shell-copy strong,
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-shell-copy strong,
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-mobile-shell-menu,
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-shell-menu,
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-mobile-shell-search a{
+    color:var(--fmb-shell-ink)!important;
+  }
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-mobile-shell-copy small{
+    color:var(--fmb-shell-ink-soft)!important;
+  }
+  /* The red period stays red. FMB Red on FMB White measures 5.19:1, where the
+     dark-tuned Signal variant is a daylight liability. */
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-mobile-brand-dot{
+    color:var(--fmb-mobile-red)!important;
+  }
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-mobile-product-rail{
+    background:var(--fmb-shell-surface)!important;
+    border-bottom:1px solid var(--fmb-shell-rule)!important;
+  }
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-editorial-mobile-dock{
+    background:var(--fmb-shell-dock)!important;
+    border-top:1px solid var(--fmb-shell-dock-rule)!important;
+  }
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-editorial-mobile-dock :is(a,button){
+    color:var(--fmb-shell-dock-ink)!important;
+  }
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-editorial-mobile-dock a[aria-current="page"],
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-editorial-mobile-dock a[aria-current="page"] span,
+  html:root[data-fmb-theme="light"] body.fmb-mobile-first .fmb-editorial-mobile-dock a.is-active span{
+    color:var(--fmb-shell-dock-active)!important;
+  }
 }

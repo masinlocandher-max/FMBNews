@@ -79,7 +79,21 @@
     const accountItem=`<button type="button" data-fmb-open-account><span class="fmb-menu-item-main">${svg('account')}<span>Your FMB</span></span><span>›</span></button>`;
     const customizeItem='<button type="button" data-fmb-menu-customize><span>Customize your feed</span><span>›</span></button>';
     const installItem='<button type="button" data-fmb-install><span>Add to Home Screen</span><span>›</span></button>';
-    const sheet=openSheet('More from FMB News',`${accountItem}${customizeItem}${installItem}<a href="/news/archive/">News <span>›</span></a><a href="/news/world/">World <span>›</span></a><a href="/news/sports/">Sports <span>›</span></a><a href="/news/fmb-brief/">Daily Briefing <span>›</span></a><a href="/news/fact-check/">Fact Check <span>›</span></a><a href="/news/explainer/">Explainers <span>›</span></a><a href="/news/horoscope/">Horoscope <span>›</span></a><a href="/news/crossword/">Crossword <span>›</span></a><a href="/news/about/">About FMB News <span>›</span></a><a href="/news/submit/">Submit a story <span>›</span></a>`,opener);
+    // The desktop publication footer is hidden below 700px, so the Menu is the
+    // only place a phone reader can reach the publication's secondary and legal
+    // surfaces. Every destination the footer offered that resolves is carried
+    // here; the footer's own section links were already in this list.
+    // Editorial Standards and Corrections are real routes (/news/editorial-
+    // standards/, /news/corrections/), both served 200. The footer's
+    // "Corrections Policy" pointed at /news/about/#standards; the dedicated
+    // route is the better destination and both remain reachable from About.
+    //
+    // Privacy and Terms exist now, at /news/privacy/ and /news/terms/. They had
+    // been left out of this Menu because the only links to them pointed at the
+    // site root, which the worker does not serve -- so both 404'd on all 571
+    // pages and a dead link here would have been worse than the gap.
+    const secondaryItems='<a href="/news/editorial-standards/">Editorial Standards <span>›</span></a><a href="/news/corrections/">Corrections <span>›</span></a><a href="/news/privacy/">Privacy <span>›</span></a><a href="/news/terms/">Terms of Use <span>›</span></a><a href="mailto:withlovefmb@gmail.com">Contact FMB News <span>›</span></a>';
+    const sheet=openSheet('More from FMB News',`${accountItem}${customizeItem}${installItem}<a href="/news/archive/">News <span>›</span></a><a href="/news/world/">World <span>›</span></a><a href="/news/sports/">Sports <span>›</span></a><a href="/news/fmb-brief/">Daily Briefing <span>›</span></a><a href="/news/fact-check/">Fact Check <span>›</span></a><a href="/news/explainer/">Explainers <span>›</span></a><a href="/news/entertainment/">Entertainment <span>›</span></a><a href="/news/horoscope/">Horoscope <span>›</span></a><a href="/news/crossword/">Crossword <span>›</span></a><a href="/news/about/">About FMB News <span>›</span></a><a href="/news/founder/">Founder <span>›</span></a><a href="/news/submit/">Submit a story <span>›</span></a>${secondaryItems}`,opener);
     const openAccount=()=>{
       $('[data-close-sheet]',sheet)?.click();
       requestAnimationFrame(()=>document.querySelector('[data-fmb-account],.fmb-account-button,[data-account]')?.click());

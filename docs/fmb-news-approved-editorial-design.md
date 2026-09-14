@@ -65,6 +65,69 @@ Home story content must be selected from the published FMB News corpus. Every pu
 - Do not replace content-hashed asset versions with hand-maintained date strings.
 - Do not merge an old design branch wholesale into current main. Port only the required visual behavior onto the current architecture and re-run all gates.
 
+## Recorded for the next phase, not done here
+
+Two things were measured during the final convergence pass that cannot be fixed
+by interface work, and one deliberate scope limit. They are written down so the
+next phase starts from evidence rather than from rediscovery.
+
+### 1. The FMB News image standard
+
+Every lead and module visual on the Home is an FMB-owned generated editorial
+graphic under `public/assets/images/news/<date>/<slug>-16x9.svg`. 157 of these
+assets are built on the retired identity's gradient: `#220D50` → `#630661` →
+`#F9AB60`. `#630661` is the same hex `scripts/verify-product-identity.mjs`
+forbids from appearing in the final editorial CSS layer. The CSS no longer
+carries it; the artwork still does, so on a page of warm ivory, near-black ink
+and one signal red, the artwork is by a wide margin the loudest element and
+pulls the composition back toward a palette the design has retired.
+
+The interface layer applies a restrained saturation so the artwork supports the
+headline rather than competing with it. That is the honest limit of what
+presentation can do. The assets themselves are editorial content and were not
+recoloured, cropped or regenerated.
+
+A future asset-system phase should establish, before regenerating anything:
+
+- a palette for editorial graphics drawn from the approved editorial palette
+  (ivory / near-black / signal red), not from the retired plum and gold
+- what an FMB-owned generated visual may depict, and how it stays visibly
+  distinct from documentary photography
+- that the existing `FMB-owned editorial visual · Not a documentary photograph`
+  labelling is preserved, never removed to make a graphic look like a photo
+- legibility at the sizes the graphic is actually rendered: the side rail draws
+  these at 118px wide, where anything typographic inside them is unreadable
+- that valid attribution and any supplied-image labelling survive regeneration
+
+### 2. The hero-graphic rule
+
+The lead graphic, both product-module graphics and every Latest News thumbnail
+render the story's complete headline **inside the image**, while the same
+headline is also rendered in HTML immediately beside or below it. On the
+desktop Home that duplication is visible three times above the fold.
+
+The HTML headline is not the problem and must not be hidden. It is the
+accessible, indexable, selectable, translatable headline, and it is what the
+semantic document is built on. The redundancy is asset debt.
+
+The rule for the next asset phase: **a hero or module graphic must not contain
+the complete article headline when that headline is rendered in HTML adjacent
+to it.** A kicker, a desk name, a date line or a data point inside the artwork
+is fine; the headline itself belongs to the document.
+
+### 3. The shared appearance palette has not been migrated
+
+`fmb-news-theme.css` still declares the retired plum system's neutrals as the
+site-wide ground: `#fbf9fc` in light and `#0e0a12` in dark, both with their
+blue channel highest. The Home and the mobile shell now claim the approved
+editorial ground over those literals, in their own visual authorities, at a
+specificity that wins deliberately rather than by sheet order.
+
+Every other route still paints the violet ground. Converging the shared
+appearance tokens is a separate migration across 571 pages with its own QA,
+and it was intentionally not attempted in a convergence pass scoped to the Home
+and the mobile shell.
+
 ## Required quality gate
 
 Before any design change is merged or deployed:

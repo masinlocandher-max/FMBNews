@@ -123,7 +123,7 @@ function normalizeLandingClock(html, relativePath) {
   if (relativePath !== 'index.html') return html;
   return html.replace(
     /<div class="publication-date-block"><span data-pht-date>Philippine Standard Time<\/span><br><span data-pht-clock>--:--<\/span><\/div>/i,
-    '<div class="publication-date-block"><span>Philippine Standard Time</span><br><span class="publication-time-label">Live newsroom clock above</span></div>',
+    '<div class="publication-date-block"><span>Philippine Standard Time</span><br><span class="publication-time-label">Manila</span></div>',
   );
 }
 
