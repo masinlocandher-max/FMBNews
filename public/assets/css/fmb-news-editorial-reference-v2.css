@@ -1,17 +1,21 @@
 /* FMB News 2026 editorial reference layer: warm paper, newsroom black, signal red. */
 
 .fmb-ref.fmb-network-landing{
-  --fmb-red:#a61f32;
-  --fmb-red-deep:#861526;
+  /* FMB News Brand Guidelines v1.0 on the desktop Home. FMB Red is the primary
+     accent, FMB White the main background, Editorial Black the ink, Steel Gray
+     supporting text. The paper step above the ground and the hairline are
+     derived from FMB White; --fmb-dark keeps the guidelines' two blacks. */
+  --fmb-red:#D71920;
+  --fmb-red-deep:#B20F16;
   /* Red used as TEXT. Fills keep --fmb-red so white-on-red stays put. */
-  --fmb-red-ink:#a61f32;
-  --fmb-paper:#f4f0e8;
-  --fmb-paper-hi:#faf7f0;
-  --fmb-ink:#111416;
-  --fmb-muted:#62605c;
-  --fmb-rule:#cfc8bc;
-  --fmb-dark:#0c1012;
-  --fmb-dark-soft:#151a1d;
+  --fmb-red-ink:#D71920;
+  --fmb-paper:#F5F3EF;
+  --fmb-paper-hi:#FAF9F6;
+  --fmb-ink:#141414;
+  --fmb-muted:#6D7072;
+  --fmb-rule:#D8D6D1;
+  --fmb-dark:#0A0A0A;
+  --fmb-dark-soft:#141414;
   background:var(--fmb-theme-bg,var(--fmb-paper))!important;
   color:var(--fmb-theme-ink,var(--fmb-ink))!important;
 }
@@ -49,7 +53,7 @@
   align-self:end;
   padding-bottom:10px;
   color:var(--fmb-muted);
-  font:600 10px/1.45 Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font:600 10px/1.45 Inter,Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   letter-spacing:.02em;
 }
 .fmb-ref.fmb-network-landing .publication-purpose{text-align:right}
@@ -79,7 +83,7 @@
   padding-top:10px;
   border-top:4px solid var(--fmb-red);
   color:var(--fmb-theme-ink,var(--fmb-ink));
-  font:700 clamp(9px,.88vw,13px)/1 Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font:700 clamp(9px,.88vw,13px)/1 Inter,Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   letter-spacing:.38em;
   text-align:center;
   text-transform:uppercase;
@@ -111,7 +115,7 @@
   border:0!important;
   background:transparent!important;
   color:var(--fmb-theme-ink,var(--fmb-ink))!important;
-  font:760 10px/1 Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+  font:760 10px/1 Inter,Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
   letter-spacing:.035em!important;
   text-transform:uppercase!important;
   cursor:pointer;
@@ -141,7 +145,7 @@
   background:var(--fmb-theme-surface,var(--fmb-paper-hi))!important;
   box-shadow:0 16px 32px rgba(0,0,0,.12)!important;
 }
-.fmb-ref.fmb-network-landing .publication-menu-panel a{display:block!important;padding:11px 12px!important;color:var(--fmb-theme-ink,var(--fmb-ink))!important;text-decoration:none!important;font:700 11px/1.3 Manrope,sans-serif!important}
+.fmb-ref.fmb-network-landing .publication-menu-panel a{display:block!important;padding:11px 12px!important;color:var(--fmb-theme-ink,var(--fmb-ink))!important;text-decoration:none!important;font:700 11px/1.3 Inter,Manrope,sans-serif!important}
 
 .fmb-ref.fmb-network-landing .headline-ticker{
   min-height:34px!important;
@@ -174,27 +178,27 @@
   border-bottom:1px solid var(--fmb-rule);
   background:color-mix(in srgb,var(--fmb-theme-surface,var(--fmb-paper-hi)) 88%,transparent);
 }
-.fmb-ref.fmb-network-landing .editorial-status-strip>a,.fmb-ref.fmb-network-landing .editorial-status-strip>span{min-width:0;color:var(--fmb-muted);font:650 10px/1.25 Manrope,sans-serif;text-decoration:none}
+.fmb-ref.fmb-network-landing .editorial-status-strip>a,.fmb-ref.fmb-network-landing .editorial-status-strip>span{min-width:0;color:var(--fmb-muted);font:650 10px/1.25 Inter,Manrope,sans-serif;text-decoration:none}
 .fmb-ref.fmb-network-landing .editorial-status-strip .status-dot{display:inline-block;width:7px;height:7px;margin-right:9px;border-radius:50%;background:var(--fmb-red)}
 .fmb-ref.fmb-network-landing .editorial-status-strip .editorial-desk{display:block!important;min-height:0!important;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important}
 .fmb-ref.fmb-network-landing .editorial-status-strip .editorial-desk-top{display:flex!important;align-items:center!important;gap:8px!important}
-.fmb-ref.fmb-network-landing .editorial-status-strip .editorial-desk-top strong{color:var(--fmb-theme-ink,var(--fmb-ink))!important;font:760 10px/1 Manrope,sans-serif!important}
-.fmb-ref.fmb-network-landing .editorial-status-strip .editorial-desk-top span{color:var(--fmb-muted)!important;font:600 9px/1 Manrope,sans-serif!important}
+.fmb-ref.fmb-network-landing .editorial-status-strip .editorial-desk-top strong{color:var(--fmb-theme-ink,var(--fmb-ink))!important;font:760 10px/1 Inter,Manrope,sans-serif!important}
+.fmb-ref.fmb-network-landing .editorial-status-strip .editorial-desk-top span{color:var(--fmb-muted)!important;font:600 9px/1 Inter,Manrope,sans-serif!important}
 .fmb-ref.fmb-network-landing .editorial-status-strip .editorial-desk>b,.fmb-ref.fmb-network-landing .editorial-status-strip .editorial-desk>p{display:none!important}
 
 .fmb-ref.fmb-network-landing .editorial-top-grid{display:grid;grid-template-columns:minmax(0,1.62fr) minmax(320px,.82fr);gap:22px;padding:13px 0 18px;border-bottom:1px solid var(--fmb-rule)}
 .fmb-ref.fmb-network-landing .editorial-lead-story{display:block;color:inherit;text-decoration:none;min-width:0}
 .fmb-ref.fmb-network-landing .editorial-lead-image{display:block;width:100%;aspect-ratio:16/8.8;object-fit:cover;background:#d8d2c7}
-.fmb-ref.fmb-network-landing .editorial-kicker{display:block;margin:14px 0 7px;color:var(--fmb-red-ink,var(--fmb-red));font:800 10px/1 Manrope,sans-serif;letter-spacing:.04em;text-transform:uppercase}
+.fmb-ref.fmb-network-landing .editorial-kicker{display:block;margin:14px 0 7px;color:var(--fmb-red-ink,var(--fmb-red));font:800 10px/1 Inter,Manrope,sans-serif;letter-spacing:.04em;text-transform:uppercase}
 .fmb-ref.fmb-network-landing .editorial-lead-story h1{max-width:23ch;margin:0;color:var(--fmb-theme-ink,var(--fmb-ink))!important;font-family:var(--fmb-luxury-serif,Georgia,serif)!important;font-size:clamp(42px,4.45vw,72px)!important;font-weight:560!important;line-height:.94!important;letter-spacing:-.045em!important;text-wrap:balance}
-.fmb-ref.fmb-network-landing .editorial-lead-story p{max-width:760px;margin:9px 0 0;color:var(--fmb-muted)!important;font:500 14px/1.55 Manrope,sans-serif!important}
+.fmb-ref.fmb-network-landing .editorial-lead-story p{max-width:760px;margin:9px 0 0;color:var(--fmb-muted)!important;font:500 14px/1.55 Inter,Manrope,sans-serif!important}
 .fmb-ref.fmb-network-landing .editorial-side-rail{display:grid;align-content:start;border-left:1px solid var(--fmb-rule)}
 .fmb-ref.fmb-network-landing .editorial-side-rail>a{display:grid;grid-template-columns:118px minmax(0,1fr);gap:16px;min-height:132px;padding:0 0 16px 20px;margin:0 0 16px;border:0!important;border-bottom:1px solid var(--fmb-rule)!important;border-radius:0!important;background:transparent!important;color:inherit!important;text-decoration:none!important;box-shadow:none!important;transform:none!important}
 .fmb-ref.fmb-network-landing .editorial-side-rail>a:last-child{margin-bottom:0}
 .fmb-ref.fmb-network-landing .editorial-side-rail img{width:118px;height:94px;object-fit:cover;background:#d8d2c7}
 .fmb-ref.fmb-network-landing .editorial-side-copy{min-width:0}
 .fmb-ref.fmb-network-landing .editorial-side-rail .editorial-desk-top{display:flex!important;justify-content:space-between!important;gap:10px!important;margin:0 0 7px!important}
-.fmb-ref.fmb-network-landing .editorial-side-rail .editorial-desk-top strong,.fmb-ref.fmb-network-landing .editorial-feature .editorial-kicker{color:var(--fmb-red-ink,var(--fmb-red))!important;font:800 9px/1 Manrope,sans-serif!important;letter-spacing:.04em!important;text-transform:uppercase!important}
+.fmb-ref.fmb-network-landing .editorial-side-rail .editorial-desk-top strong,.fmb-ref.fmb-network-landing .editorial-feature .editorial-kicker{color:var(--fmb-red-ink,var(--fmb-red))!important;font:800 9px/1 Inter,Manrope,sans-serif!important;letter-spacing:.04em!important;text-transform:uppercase!important}
 .fmb-ref.fmb-network-landing .editorial-side-rail .editorial-desk-top span{display:none!important}
 .fmb-ref.fmb-network-landing .editorial-side-rail a>b,.fmb-ref.fmb-network-landing .editorial-side-rail .editorial-side-copy h3{display:block!important;margin:0!important;color:var(--fmb-theme-ink,var(--fmb-ink))!important;font-family:var(--fmb-luxury-serif,Georgia,serif)!important;font-size:clamp(21px,1.8vw,28px)!important;line-height:1!important;font-weight:560!important}
 .fmb-ref.fmb-network-landing .editorial-side-rail a>p{display:none!important}
@@ -211,15 +215,15 @@
 .fmb-ref.fmb-network-landing .network-product h2{margin:0 0 12px!important;color:var(--fmb-theme-ink,var(--fmb-ink))!important;font-family:var(--fmb-luxury-serif,Georgia,serif)!important;font-size:clamp(24px,2.25vw,34px)!important;line-height:1!important;font-weight:620!important;letter-spacing:-.025em!important}
 .fmb-ref.fmb-network-landing .network-product .editorial-product-image{display:block;width:100%;aspect-ratio:16/7.4;margin:0 0 12px;object-fit:cover;background:#d8d2c7}
 .fmb-ref.fmb-network-landing .network-product .editorial-product-headline{margin:0 0 8px;color:var(--fmb-theme-ink,var(--fmb-ink));font-family:var(--fmb-luxury-serif,Georgia,serif);font-size:clamp(22px,2vw,31px);line-height:1;font-weight:560}
-.fmb-ref.fmb-network-landing .network-product p{margin:0 0 12px!important;color:var(--fmb-muted)!important;font:500 12px/1.5 Manrope,sans-serif!important}
+.fmb-ref.fmb-network-landing .network-product p{margin:0 0 12px!important;color:var(--fmb-muted)!important;font:500 12px/1.5 Inter,Manrope,sans-serif!important}
 .fmb-ref.fmb-network-landing .network-card-rule{display:none!important}
-.fmb-ref.fmb-network-landing .network-product .product-link{display:inline-flex!important;margin:0!important;padding:0!important;color:var(--fmb-red-ink,var(--fmb-red))!important;font:760 10px/1.2 Manrope,sans-serif!important;letter-spacing:.01em!important;text-transform:none!important}
+.fmb-ref.fmb-network-landing .network-product .product-link{display:inline-flex!important;margin:0!important;padding:0!important;color:var(--fmb-red-ink,var(--fmb-red))!important;font:760 10px/1.2 Inter,Manrope,sans-serif!important;letter-spacing:.01em!important;text-transform:none!important}
 .fmb-ref.fmb-network-landing .network-product.brief{counter-reset:briefItem}
 .fmb-ref.fmb-network-landing .network-product.brief .briefing-numbers{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:8px 0 16px}
 .fmb-ref.fmb-network-landing .briefing-number{padding-right:12px;border-right:1px solid var(--fmb-rule)}
 .fmb-ref.fmb-network-landing .briefing-number:last-child{border-right:0}
 .fmb-ref.fmb-network-landing .briefing-number b{display:block;color:var(--fmb-theme-ink,var(--fmb-ink));font-family:var(--fmb-luxury-serif,Georgia,serif);font-size:40px;font-weight:520;line-height:.9}
-.fmb-ref.fmb-network-landing .briefing-number span{display:block;margin-top:7px;color:var(--fmb-theme-ink,var(--fmb-ink));font:700 11px/1.25 Manrope,sans-serif}
+.fmb-ref.fmb-network-landing .briefing-number span{display:block;margin-top:7px;color:var(--fmb-theme-ink,var(--fmb-ink));font:700 11px/1.25 Inter,Manrope,sans-serif}
 
 .fmb-ref.fmb-network-landing .editorial-bottom-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(320px,.7fr);gap:0;border-bottom:1px solid var(--fmb-rule)}
 .fmb-ref.fmb-network-landing .editorial-entertainment,.fmb-ref.fmb-network-landing .editorial-about{padding:20px 20px 22px 4px}
@@ -229,12 +233,12 @@
 .fmb-ref.fmb-network-landing .entertainment-card{display:block;color:inherit;text-decoration:none}
 .fmb-ref.fmb-network-landing .entertainment-art{display:grid;place-items:center;aspect-ratio:16/7.5;margin-bottom:10px;border:1px solid var(--fmb-rule);background:linear-gradient(135deg,#1b2022,#0d1012);color:#ded8cf;font-family:var(--fmb-luxury-serif,Georgia,serif);font-size:34px}
 .fmb-ref.fmb-network-landing .entertainment-card h3{margin:0;color:var(--fmb-theme-ink,var(--fmb-ink));font-family:var(--fmb-luxury-serif,Georgia,serif);font-size:19px;font-weight:560}
-.fmb-ref.fmb-network-landing .entertainment-card p{margin:5px 0 0;color:var(--fmb-muted);font:500 11px/1.4 Manrope,sans-serif}
+.fmb-ref.fmb-network-landing .entertainment-card p{margin:5px 0 0;color:var(--fmb-muted);font:500 11px/1.4 Inter,Manrope,sans-serif}
 .fmb-ref.fmb-network-landing .founder-card{display:grid;grid-template-columns:122px minmax(0,1fr);gap:16px;align-items:center}
 .fmb-ref.fmb-network-landing .founder-portrait-placeholder{display:grid;place-items:center;width:122px;aspect-ratio:3/3.4;background:#d7d1c7;color:#111;font-family:var(--fmb-luxury-serif,Georgia,serif);font-size:34px;letter-spacing:-.04em}
 .fmb-ref.fmb-network-landing .founder-copy strong{display:block;color:var(--fmb-theme-ink,var(--fmb-ink));font-family:var(--fmb-luxury-serif,Georgia,serif);font-size:20px;font-weight:560;line-height:1.05}
-.fmb-ref.fmb-network-landing .founder-copy span{display:block;margin-top:4px;color:var(--fmb-muted);font:650 10px/1.3 Manrope,sans-serif}
-.fmb-ref.fmb-network-landing .founder-copy a{display:inline-block;margin-top:12px;color:var(--fmb-red-ink,var(--fmb-red));font:760 10px/1.2 Manrope,sans-serif;text-decoration:none}
+.fmb-ref.fmb-network-landing .founder-copy span{display:block;margin-top:4px;color:var(--fmb-muted);font:650 10px/1.3 Inter,Manrope,sans-serif}
+.fmb-ref.fmb-network-landing .founder-copy a{display:inline-block;margin-top:12px;color:var(--fmb-red-ink,var(--fmb-red));font:760 10px/1.2 Inter,Manrope,sans-serif;text-decoration:none}
 
 .fmb-ref.fmb-network-landing .daily-brief-signup{display:grid!important;grid-template-columns:minmax(260px,.8fr) minmax(420px,1.2fr)!important;align-items:center!important;gap:28px!important;margin:0!important;padding:18px 4px 20px!important;border:0!important;border-bottom:1px solid var(--fmb-rule)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
 .fmb-ref.fmb-network-landing .daily-brief-mark{display:none!important}
@@ -244,7 +248,7 @@
 .fmb-ref.fmb-network-landing .daily-brief-signup form{display:block!important}
 .fmb-ref.fmb-network-landing .brief-form-row{display:grid!important;grid-template-columns:minmax(0,1fr) 126px!important;gap:0!important}
 .fmb-ref.fmb-network-landing .brief-form-row input{height:40px!important;padding:0 12px!important;border:1px solid var(--fmb-rule)!important;border-right:0!important;border-radius:0!important;background:var(--fmb-theme-surface,var(--fmb-paper-hi))!important;color:var(--fmb-theme-ink,var(--fmb-ink))!important}
-.fmb-ref.fmb-network-landing .brief-form-row button{height:40px!important;border:1px solid var(--fmb-red)!important;border-radius:0!important;background:var(--fmb-red)!important;color:#fff!important;font:750 10px/1 Manrope,sans-serif!important}
+.fmb-ref.fmb-network-landing .brief-form-row button{height:40px!important;border:1px solid var(--fmb-red)!important;border-radius:0!important;background:var(--fmb-red)!important;color:#fff!important;font:750 10px/1 Inter,Manrope,sans-serif!important}
 .fmb-ref.fmb-network-landing .daily-brief-signup .consent{margin-top:7px!important;color:var(--fmb-muted)!important;font-size:9px!important}
 
 .fmb-ref.fmb-network-landing .publication-footer{padding:22px 0 26px!important;background:transparent!important;border:0!important;color:var(--fmb-theme-ink,var(--fmb-ink))!important}
@@ -254,20 +258,20 @@
 /* fmb-news-publication-landing.css still paints this #fff for the retired dark
    violet footer. The editorial footer sits on ivory paper, so the wordmark was
    white on white. The colour is claimed here, in the Home visual authority. */
-.fmb-ref.fmb-network-landing .footer-publication-kicker{margin-top:4px!important;color:var(--fmb-muted)!important;font:600 9px/1.4 Manrope,sans-serif!important;letter-spacing:.03em!important}
+.fmb-ref.fmb-network-landing .footer-publication-kicker{margin-top:4px!important;color:var(--fmb-muted)!important;font:600 9px/1.4 Inter,Manrope,sans-serif!important;letter-spacing:.03em!important}
 
 html[data-fmb-theme="dark"] .fmb-ref.fmb-network-landing{
-  /* The approved dark signal red. #a61f32 measures 2.63:1 on #0b0f11. */
-  --fmb-red-ink:#e5484d;
-  --fmb-rule:#34393c;
-  --fmb-muted:#aaa8a3;
-  --fmb-paper:#0b0f11;
-  --fmb-paper-hi:#121719;
-  --fmb-ink:#f1eee7;
-  --fmb-theme-bg:#0b0f11;
-  --fmb-theme-surface:#121719;
-  --fmb-theme-ink:#f1eee7;
-  --fmb-theme-muted:#aaa8a3;
+  /* The approved dark signal red. #D71920 measures 2.63:1 on #0b0f11. */
+  --fmb-red-ink:#EF1B24;
+  --fmb-rule:#2A2C2D;
+  --fmb-muted:#BFC1C2;
+  --fmb-paper:#0A0A0A;
+  --fmb-paper-hi:#141414;
+  --fmb-ink:#F5F3EF;
+  --fmb-theme-bg:#0A0A0A;
+  --fmb-theme-surface:#141414;
+  --fmb-theme-ink:#F5F3EF;
+  --fmb-theme-muted:#BFC1C2;
 }
 html[data-fmb-theme="dark"] .fmb-ref.fmb-network-landing .founder-portrait-placeholder{background:#24292c;color:#f1eee7}
 html[data-fmb-theme="dark"] .fmb-ref.fmb-network-landing .entertainment-art{border-color:#34393c}
@@ -303,7 +307,7 @@ html[data-fmb-theme="dark"] .fmb-ref.fmb-network-landing .entertainment-art{bord
   margin-bottom:12px!important;
   border:1px solid var(--fmb-line,#d5cfc5)!important;
   background:var(--fmb-bg-secondary,#ebe6dc)!important;
-  color:var(--fmb-signal-red,#b51f24)!important;
+  color:var(--fmb-signal-red,#D71920)!important;
   font-family:var(--fmb-luxury-serif,Georgia,serif)!important;
   font-size:34px!important;
   line-height:1!important;
@@ -394,19 +398,19 @@ html[data-fmb-theme="dark"] .fmb-ref.fmb-network-landing .entertainment-art{bord
    -------------------------------------------------------------------------- */
 
 html[data-fmb-theme="light"]:root body.fmb-ref.fmb-network-landing{
-  --fmb-theme-bg:#f8f5ef;
-  --fmb-theme-surface:#faf7f0;
-  --fmb-theme-surface-soft:#f2eee5;
-  --fmb-theme-ink:#111416;
-  --fmb-theme-muted:#62605c;
-  --fmb-theme-line:#d9d3c7;
-  background:#f8f5ef!important;
-  color:#111416!important;
+  --fmb-theme-bg:#F5F3EF;
+  --fmb-theme-surface:#FAF9F6;
+  --fmb-theme-surface-soft:#EFEDE8;
+  --fmb-theme-ink:#141414;
+  --fmb-theme-muted:#6D7072;
+  --fmb-theme-line:#D8D6D1;
+  background:#F5F3EF!important;
+  color:#141414!important;
 }
 html[data-fmb-theme="dark"]:root body.fmb-ref.fmb-network-landing{
-  --fmb-theme-line:#34393c;
-  background:#0b0f11!important;
-  color:#f1eee7!important;
+  --fmb-theme-line:#2A2C2D;
+  background:#0A0A0A!important;
+  color:#F5F3EF!important;
 }
 
 /* ---------------------------------------------------------------------------

@@ -26,12 +26,12 @@ const iaCss=await readFile(resolve('dist/news/assets/css/fmb-news-editorial-ia.c
 const referenceCss=await readFile(resolve('dist/news/assets/css/fmb-news-editorial-reference-v2.css'),'utf8');
 const emblem=await readFile(resolve('dist/news/assets/images/brand/fmb-bulletin-emblem.svg'),'utf8');
 
-if(!productCss.includes('Bodoni Moda')||!productCss.includes('Manrope'))throw new Error('FMB typography regression: approved editorial display or UI font missing');
+if(!productCss.includes('Bodoni Moda')||!productCss.includes('Inter'))throw new Error('FMB typography regression: approved editorial display or UI font missing');
 if(!productCss.includes('--fmb-display')||!productCss.includes('--fmb-ui'))throw new Error('FMB typography regression: shared font variables missing');
 if(!emblem.includes('<svg')||!emblem.includes('Filipino Media Bulletin emblem')||!emblem.includes('fill-rule="evenodd"'))throw new Error('Bulletin emblem asset is invalid');
 for(const signal of ['.publication-mast','.publication-nav','.publication-footer'])if(!landingCss.includes(signal))throw new Error(`Landing chrome regression: missing ${signal}`);
 for(const signal of ['.publication-menu-panel','body.fmb-sports-page','.sports-empty','.sports-story-grid'])if(!iaCss.includes(signal))throw new Error(`Editorial IA stylesheet regression: missing ${signal}`);
-for(const signal of ['--fmb-red:#a61f32','.fmb-editorial-wordmark','.editorial-status-strip','.editorial-top-grid','.editorial-side-rail','.network-products','.editorial-bottom-grid','.founder-card','.daily-brief-signup'])if(!referenceCss.includes(signal))throw new Error(`Approved editorial reference regression: missing ${signal}`);
+for(const signal of ['--fmb-red:#D71920','.fmb-editorial-wordmark','.editorial-status-strip','.editorial-top-grid','.editorial-side-rail','.network-products','.editorial-bottom-grid','.founder-card','.daily-brief-signup'])if(!referenceCss.includes(signal))throw new Error(`Approved editorial reference regression: missing ${signal}`);
 if(referenceCss.includes('#630661')||referenceCss.includes('#f2d17a'))throw new Error('Superseded plum/gold accents returned to the final editorial reference layer');
 if(landingCss.includes('commons.wikimedia.org')||landingCss.includes('Special:Redirect'))throw new Error('Canonical publication landing must not depend on remote hero artwork');
 if(landingCss.includes('/news/news/assets/')||iaCss.includes('/news/news/assets/')||referenceCss.includes('/news/news/assets/'))throw new Error('Landing asset is double-scoped');

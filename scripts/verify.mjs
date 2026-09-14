@@ -87,12 +87,12 @@ for(const token of ['fmb-editorial-mobile-dock','FMB NEWS<span class="fmb-mobile
 for(const banned of ['fmb-global-mobile-utility','fmb-approved-bottom-nav','ensureBottomNav'])must(!shellJs.includes(banned),`Retired mobile shell element returned: ${banned}`);
 
 const navLock=await read('dist/news/assets/css/fmb-news-mobile-navigation-lock.css');
-for(const token of ['--fmb-mobile-red:#a61f32','--fmb-mobile-black:#0b0f11','.fmb-editorial-mobile-dock','position:fixed!important','bottom:0!important','env(safe-area-inset-bottom)','fmb-editorial-mobile-rail-item','fmb-editorial-mobile-lead-image'])must(navLock.includes(token),`Approved black/red mobile reference lock missing ${token}`);
+for(const token of ['--fmb-mobile-red:#D71920','--fmb-mobile-black:#0A0A0A','.fmb-editorial-mobile-dock','position:fixed!important','bottom:0!important','env(safe-area-inset-bottom)','fmb-editorial-mobile-rail-item','fmb-editorial-mobile-lead-image'])must(navLock.includes(token),`Approved black/red mobile reference lock missing ${token}`);
 must(!navLock.includes('#630661'),'Superseded plum accent returned to final mobile navigation lock');
 must(!navLock.includes('#f2d17a'),'Superseded gold accent returned to final mobile navigation lock');
 
 const editorialReference=await read('dist/news/assets/css/fmb-news-editorial-reference-v2.css');
-for(const token of ['--fmb-red:#a61f32','--fmb-paper:#f4f0e8','--fmb-dark:#0c1012','.fmb-editorial-wordmark','.editorial-top-grid','.editorial-side-rail','.network-products','.daily-brief-signup'])must(editorialReference.includes(token),`Approved desktop editorial reference missing ${token}`);
+for(const token of ['--fmb-red:#D71920','--fmb-paper:#F5F3EF','--fmb-dark:#0A0A0A','.fmb-editorial-wordmark','.editorial-top-grid','.editorial-side-rail','.network-products','.daily-brief-signup'])must(editorialReference.includes(token),`Approved desktop editorial reference missing ${token}`);
 must(!editorialReference.includes('#630661'),'Superseded plum accent returned to approved desktop reference');
 
 const homeJs=await read('dist/news/assets/js/fmb-news-mobile-home.js');

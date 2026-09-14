@@ -25,10 +25,10 @@ const builtHome=await read('dist/news/index.html');
 must(doc.includes('warm ivory editorial paper')&&doc.includes('fixed safe-area-aware dock'),'design contract no longer describes the approved desktop/mobile composition');
 must(claude.includes('docs/fmb-news-approved-editorial-design.md'),'future-agent takeover notes no longer point to the approved design contract');
 
-for(const token of ['--fmb-red:#a61f32','--fmb-paper:#f4f0e8','--fmb-dark:#0c1012','.fmb-editorial-wordmark','.editorial-top-grid','.editorial-side-rail','.network-products','.founder-card','.daily-brief-signup'])must(desktop.includes(token),`desktop reference lost ${token}`);
+for(const token of ['--fmb-red:#D71920','--fmb-paper:#F5F3EF','--fmb-dark:#0A0A0A','.fmb-editorial-wordmark','.editorial-top-grid','.editorial-side-rail','.network-products','.founder-card','.daily-brief-signup'])must(desktop.includes(token),`desktop reference lost ${token}`);
 for(const forbidden of ['#630661','#f2d17a'])must(!desktop.includes(forbidden),`desktop final authority contains superseded accent ${forbidden}`);
 
-for(const token of ['--fmb-mobile-black:#0b0f11','--fmb-mobile-red:#a61f32','.fmb-editorial-mobile-dock','env(safe-area-inset-bottom)','fmb-editorial-mobile-lead-image','fmb-editorial-mobile-rail-item'])must(mobile.includes(token),`mobile final authority lost ${token}`);
+for(const token of ['--fmb-mobile-black:#0A0A0A','--fmb-mobile-red:#D71920','.fmb-editorial-mobile-dock','env(safe-area-inset-bottom)','fmb-editorial-mobile-lead-image','fmb-editorial-mobile-rail-item'])must(mobile.includes(token),`mobile final authority lost ${token}`);
 for(const forbidden of ['#630661','#f2d17a'])must(!mobile.includes(forbidden),`mobile final authority contains superseded accent ${forbidden}`);
 
 for(const token of ['fmb-editorial-wordmark','FMB NEWS<span class="dot">.</span>','data-fmb-editorial-lead','fmb-editorial-mobile-rail','publishedStories()'])must(renderer.includes(token),`Home renderer lost ${token}`);

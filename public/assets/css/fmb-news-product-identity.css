@@ -1,12 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
 
-/* FMB publication type system
-   Editorial display: Bodoni Moda
-   Interface / navigation: Manrope */
+/* FMB publication type system, per the FMB News Brand Guidelines v1.0:
+   "serif for authority, sans serif for clarity".
+
+   Display  Bodoni Moda, with Libre Bodoni as the named alternate the
+            guidelines list alongside it. Wordmark, major headlines, feature
+            quotes.
+   UI       Inter. Subheads, body copy, labels, metadata, navigation, buttons,
+            the Menu, the dock, search and timestamps.
+
+   Manrope stays in the stack behind Inter rather than being removed: it is
+   what every interface surface has been rendering in until now, so keeping it
+   as the immediate fallback means a failed or slow Inter load degrades to the
+   metrics the layout was measured against instead of to Helvetica. */
 :root{
-  --fmb-display:"Bodoni Moda","Bodoni 72","Didot","Times New Roman",serif;
-  --fmb-ui:"Manrope","Helvetica Neue",Arial,sans-serif;
+  --fmb-display:"Bodoni Moda","Libre Bodoni","Bodoni 72","Didot","Times New Roman",serif;
+  --fmb-ui:"Inter","Manrope","Helvetica Neue",Arial,sans-serif;
   --fmb-gold:#c9952f;
+}
+
+/* FMB News Brand Guidelines v1.0 core colours, named once so every layer can
+   reference them instead of repeating literals. Roles are the guidelines' own:
+   FMB Black is the primary background, Editorial Black the secondary surface,
+   FMB Red the primary accent, Signal Red highlights used sparingly, FMB White
+   the main light background, Steel Gray supporting text, Metallic Silver
+   accents. Recommended ratio: 70% black, 20% white, 5-8% red, 2-5% silver. */
+:root{
+  --fmb-brand-black:#0A0A0A;
+  --fmb-brand-black-editorial:#141414;
+  --fmb-brand-red:#D71920;
+  --fmb-brand-red-signal:#EF1B24;
+  --fmb-brand-white:#F5F3EF;
+  --fmb-brand-steel:#6D7072;
+  --fmb-brand-silver:#BFC1C2;
 }
 
 body.fmb-ref{font-family:var(--fmb-ui)}

@@ -1,13 +1,32 @@
 /* FMB News mobile editorial lock: newsroom black, paper white, signal red. */
 @media(max-width:699px){
+  /* FMB News Brand Guidelines v1.0. The shell was built on a cyan-tinted black
+     (#0b0f11 / #111619 / #171c1f) and a maroon red; the guidelines name the
+     neutrals exactly, so they are used as named rather than approximated.
+
+       FMB Black        #0A0A0A   primary background
+       Editorial Black  #141414   secondary surfaces
+       FMB White        #F5F3EF   light ink on dark
+       Metallic Silver  #BFC1C2   supporting text on dark
+       Signal Red       #EF1B24   the dark-ground accent
+
+     Two values are derived rather than quoted, because the guidelines give two
+     blacks and this shell has three depths and a hairline:
+       --fmb-mobile-black-soft  #101010  one step between the two named blacks
+       --fmb-mobile-rule        #2A2C2D  Metallic Silver at low luminance,
+                                         inside the 1-2px thin-rule rule */
   :root{
-    --fmb-mobile-black:#0b0f11;
-    --fmb-mobile-black-soft:#111619;
-    --fmb-mobile-black-raised:#171c1f;
-    --fmb-mobile-white:#f4f1ea;
-    --fmb-mobile-muted:#aaa7a1;
-    --fmb-mobile-rule:#2b3033;
-    --fmb-mobile-red:#a61f32;
+    --fmb-mobile-black:#0A0A0A;
+    --fmb-mobile-black-soft:#101010;
+    --fmb-mobile-black-raised:#141414;
+    --fmb-mobile-white:#F5F3EF;
+    --fmb-mobile-muted:#BFC1C2;
+    --fmb-mobile-rule:#2A2C2D;
+    /* FMB Red, because this token drives fills -- the HEADLINES chip, the rail
+       indicator, the brand dot -- and the guidelines name FMB Red the primary
+       accent with Signal Red reserved for highlights used sparingly. White on
+       #D71920 measures 5.19:1; on #EF1B24 it is 4.33:1. */
+    --fmb-mobile-red:#D71920;
   }
 
   html,body{overflow-x:clip!important}
@@ -96,7 +115,7 @@
     display:block!important;
     margin-top:7px!important;
     color:#ddd8d0!important;
-    font:700 6.4px/1 Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+    font:700 6.4px/1 Inter,Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
     letter-spacing:.25em!important;
     text-transform:uppercase!important;
     white-space:nowrap!important;
@@ -140,7 +159,7 @@
     border-radius:0!important;
     background:transparent!important;
     color:#c8c4bd!important;
-    font:700 8.4px/1 Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+    font:700 8.4px/1 Inter,Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
     letter-spacing:.02em!important;
     text-transform:uppercase!important;
     text-align:center!important;
@@ -200,7 +219,7 @@
     padding:0 10px!important;
     background:var(--fmb-mobile-red)!important;
     color:#fff!important;
-    font:850 8px/1 Manrope,sans-serif!important;
+    font:850 8px/1 Inter,Manrope,sans-serif!important;
     letter-spacing:.055em!important;
   }
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-top-ticker>strong::before{content:""!important;width:5px!important;height:5px!important;margin-right:6px!important;border-radius:50%!important;background:#fff!important;box-shadow:none!important}
@@ -277,7 +296,7 @@
     display:block!important;
     margin:0 0 7px!important;
     color:#db4056!important;
-    font:850 9px/1 Manrope,sans-serif!important;
+    font:850 9px/1 Inter,Manrope,sans-serif!important;
     letter-spacing:.08em!important;
     text-transform:uppercase!important;
   }
@@ -296,7 +315,7 @@
     max-width:none!important;
     margin:8px 0 0!important;
     color:var(--fmb-mobile-ink-muted,#8c8a86)!important;
-    font:450 13px/1.5 -apple-system,BlinkMacSystemFont,"SF Pro Text",Manrope,sans-serif!important;
+    font:450 13px/1.5 -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,Manrope,sans-serif!important;
   }
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-approved-hero-cta{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important}
   /* The Philippine date/time used to float over the top-right of the lead
@@ -326,8 +345,8 @@
     -webkit-backdrop-filter:none!important;
   }
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-hero-clock{display:flex!important;flex-direction:column!important;align-items:flex-end!important;gap:6px!important}
-  body.fmb-mobile-first.fmb-mobile-route-home .fmb-hero-clock strong{color:#c8c4bd!important;font:650 7px/1 Manrope,sans-serif!important;text-transform:uppercase!important}
-  body.fmb-mobile-first.fmb-mobile-route-home .fmb-hero-clock span{color:#fff!important;font:650 12px/1 Manrope,sans-serif!important;font-variant-numeric:tabular-nums!important}
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-hero-clock strong{color:#c8c4bd!important;font:650 7px/1 Inter,Manrope,sans-serif!important;text-transform:uppercase!important}
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-hero-clock span{color:#fff!important;font:650 12px/1 Inter,Manrope,sans-serif!important;font-variant-numeric:tabular-nums!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-hero-weather{display:none!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-lead{display:none!important}
 
@@ -350,7 +369,7 @@
     text-decoration:none!important;
   }
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-editorial-mobile-rail-item img{display:block!important;width:112px!important;height:72px!important;object-fit:cover!important;filter:saturate(.85)!important}
-  body.fmb-mobile-first.fmb-mobile-route-home .fmb-editorial-mobile-rail-item span{display:block!important;margin-bottom:5px!important;color:#db4056!important;font:850 8px/1 Manrope,sans-serif!important;letter-spacing:.06em!important;text-transform:uppercase!important}
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-editorial-mobile-rail-item span{display:block!important;margin-bottom:5px!important;color:#db4056!important;font:850 8px/1 Inter,Manrope,sans-serif!important;letter-spacing:.06em!important;text-transform:uppercase!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-editorial-mobile-rail-item h2{margin:0!important;color:#f0ece5!important;font-family:"Bodoni Moda","Cormorant Garamond","Playfair Display",Georgia,serif!important;font-size:18px!important;line-height:1!important;font-weight:560!important;letter-spacing:-.025em!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-editorial-mobile-rail-item>b{color:#ded9d1!important;font-size:19px!important;font-weight:400!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-editorial-newsroom-row{
@@ -362,7 +381,7 @@
     margin:0 12px!important;
     border-bottom:1px solid var(--fmb-mobile-rule)!important;
     color:#ded9d1!important;
-    font:620 10px/1 Manrope,sans-serif!important;
+    font:620 10px/1 Inter,Manrope,sans-serif!important;
     text-decoration:none!important;
   }
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-editorial-newsroom-row .status-dot{width:8px!important;height:8px!important;border-radius:50%!important;background:var(--fmb-mobile-red)!important}
@@ -378,7 +397,7 @@
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head{display:flex!important;align-items:center!important;justify-content:space-between!important;margin:0 0 8px!important;padding-bottom:8px!important;border-bottom:2px solid var(--fmb-mobile-red)!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head h2{margin:0!important;padding:0!important;color:#f2eee7!important;font-family:"Bodoni Moda","Cormorant Garamond","Playfair Display",Georgia,serif!important;font-size:23px!important;line-height:1!important;font-weight:590!important;letter-spacing:-.025em!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head h2::before{display:none!important}
-  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head a{color:#c6c1b9!important;font:650 9px/1 Manrope,sans-serif!important;text-decoration:none!important}
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head a{color:#c6c1b9!important;font:650 9px/1 Inter,Manrope,sans-serif!important;text-decoration:none!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-list{display:block!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-row{
     display:grid!important;
@@ -395,7 +414,7 @@
     box-shadow:none!important;
   }
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-row img{width:100px!important;height:70px!important;object-fit:cover!important;border-radius:0!important;filter:saturate(.86)!important}
-  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-meta{margin-bottom:5px!important;color:#b6b1aa!important;font:650 7.5px/1 Manrope,sans-serif!important;text-transform:uppercase!important;letter-spacing:.02em!important}
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-meta{margin-bottom:5px!important;color:#b6b1aa!important;font:650 7.5px/1 Inter,Manrope,sans-serif!important;text-transform:uppercase!important;letter-spacing:.02em!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-meta span:first-child{color:#d23a50!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-copy h3{margin:0!important;color:#f2eee7!important;font-family:"Bodoni Moda","Cormorant Garamond","Playfair Display",Georgia,serif!important;font-size:18px!important;line-height:1!important;font-weight:560!important;letter-spacing:-.02em!important}
 
@@ -403,9 +422,9 @@
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card{position:relative!important;min-height:150px!important;border:1px solid var(--fmb-mobile-rule)!important;border-radius:0!important;background:var(--fmb-mobile-black-soft)!important;color:#fff!important;overflow:hidden!important;box-shadow:none!important;text-decoration:none!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card img{display:block!important;width:100%!important;height:72px!important;object-fit:cover!important;filter:saturate(.75)!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card>div{position:relative!important;padding:10px!important}
-  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card>div>span{color:#d23a50!important;font:850 7.5px/1 Manrope,sans-serif!important;text-transform:uppercase!important}
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card>div>span{color:#d23a50!important;font:850 7.5px/1 Inter,Manrope,sans-serif!important;text-transform:uppercase!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card h2{margin:6px 0!important;color:#f2eee7!important;font-family:"Bodoni Moda","Cormorant Garamond","Playfair Display",Georgia,serif!important;font-size:16px!important;line-height:1!important;font-weight:560!important}
-  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card b{color:#bdb7af!important;font:650 8px/1.2 Manrope,sans-serif!important}
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card b{color:#bdb7af!important;font:650 8px/1.2 Inter,Manrope,sans-serif!important}
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-world-grid{display:none!important}
 
   /* Persistent five-item dock from the new mobile reference. */
@@ -439,7 +458,7 @@
     border-radius:0!important;
     background:transparent!important;
     color:#d0cbc3!important;
-    font:700 7.5px/1 Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+    font:700 7.5px/1 Inter,Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
     text-decoration:none!important;
     text-transform:uppercase!important;
     letter-spacing:.015em!important;
@@ -451,7 +470,7 @@
   /* Menu / install surfaces remain accessible but lose the obsolete plum accent. */
   body.fmb-mobile-first .fmb-install-card{display:none!important}
   body.fmb-mobile-first .fmb-app-action-panel{background:#f6f2ea!important;color:#111416!important}
-  body.fmb-mobile-first .fmb-app-action-list button{display:flex!important;align-items:center!important;justify-content:space-between!important;width:100%!important;min-height:48px!important;padding:0!important;border:0!important;border-bottom:1px solid #ddd6cc!important;border-radius:0!important;background:transparent!important;color:#16191b!important;font:700 15px/1.2 Manrope,sans-serif!important;text-align:left!important}
+  body.fmb-mobile-first .fmb-app-action-list button{display:flex!important;align-items:center!important;justify-content:space-between!important;width:100%!important;min-height:48px!important;padding:0!important;border:0!important;border-bottom:1px solid #ddd6cc!important;border-radius:0!important;background:transparent!important;color:#16191b!important;font:700 15px/1.2 Inter,Manrope,sans-serif!important;text-align:left!important}
   body.fmb-mobile-first .fmb-app-action-list a{color:#16191b!important;border-color:#ddd6cc!important}
   body.fmb-mobile-first .fmb-menu-item-main{display:flex!important;align-items:center!important;gap:10px!important}
   body.fmb-mobile-first .fmb-menu-item-main>svg{width:20px!important;height:20px!important;stroke:var(--fmb-mobile-red)!important;fill:none!important;stroke-width:1.7!important}
@@ -497,7 +516,7 @@
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card,
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card.brief,
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card.worldwide{
-    background:var(--fmb-mobile-black-raised,#171c1f)!important;
+    background:var(--fmb-mobile-black-raised,#141414)!important;
     background-image:none!important;
     border:1px solid var(--fmb-mobile-line,#292a2d)!important;
   }
@@ -598,10 +617,13 @@
 
 @media (max-width:699px){
   html[data-fmb-theme="light"] body.fmb-mobile-first{
-    --fmb-mobile-white:#111416;
-    --fmb-mobile-muted:#77716a;
-    --fmb-mobile-rule:#d5cfc5;
-    --fmb-mobile-red:#b51f24;
+    /* Light takes the guidelines' own assignments: Editorial Black as ink on
+       FMB White, Steel Gray as supporting text, FMB Red as the accent. The
+       hairline is derived from FMB White, one step down. */
+    --fmb-mobile-white:#141414;
+    --fmb-mobile-muted:#6D7072;
+    --fmb-mobile-rule:#D8D6D1;
+    --fmb-mobile-red:#D71920;
   }
 
   /* Editorial ink on every story surface. */
@@ -634,7 +656,7 @@
   html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-section-head a,
   html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-feature-card b,
   html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-editorial-mobile-rail-item>b{
-    color:#b51f24!important;
+    color:#D71920!important;
   }
 
   /* Paper surfaces for the feature rail; the dark tiles were a dark-mode idea. */
@@ -683,12 +705,12 @@
   html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-editorial-mobile-rail-item>div>span,
   html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-story-meta span:first-child,
   html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-editorial-mobile-kicker{
-    color:#b51f24!important;
+    color:#D71920!important;
   }
   html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-editorial-mobile-rail-item>div>span,
   html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-app-story-meta span:first-child,
   html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-editorial-mobile-kicker{
-    color:#e5484d!important;
+    color:#EF1B24!important;
   }
 }
 
@@ -697,10 +719,10 @@
      surface: 3.65:1 at 8px. Dark takes the dark signal red. */
   html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-app-feature-card span,
   html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-app-feature-card .fmb-app-week-kicker{
-    /* On the raised surface #e5484d reached only 4.39:1 at 7.5px. The approved
+    /* On the raised surface #EF1B24 reached only 4.39:1 at 7.5px. The approved
        dark palette's lifted red clears AA, and 7.5px was below the size this
        publication sets any label at. */
-    color:#f05a5f!important;
+    color:#F53A3F!important;
     font-size:9px!important;
     letter-spacing:.09em!important;
   }
@@ -713,7 +735,7 @@
      this publication actually sets a label at. */
   body.fmb-mobile-first .fmb-editorial-mobile-dock a[aria-current="page"] span,
   body.fmb-mobile-first .fmb-editorial-mobile-dock a.is-active span{
-    color:#f05a5f!important;
+    color:#F53A3F!important;
     font-size:9px!important;
   }
 }
@@ -762,13 +784,13 @@
        dark's does: ground, then row, then raised tile. */
     --fmb-mobile-paper-row:#fdfbf6;
     --fmb-mobile-paper-raised:#fffdf8;
-    --fmb-mobile-rule:#d9d3c7;
-    background:#f8f5ef!important;
-    color:#121417!important;
+    --fmb-mobile-rule:#D8D6D1;
+    background:#F5F3EF!important;
+    color:#141414!important;
   }
   html[data-fmb-theme="dark"]:root body.fmb-mobile-first.fmb-matte-system{
-    background:var(--fmb-mobile-black,#0b0f11)!important;
-    color:var(--fmb-mobile-white,#f4f1ea)!important;
+    background:var(--fmb-mobile-black,#0A0A0A)!important;
+    color:var(--fmb-mobile-white,#F5F3EF)!important;
   }
 
   /* The story list is a sequence of rules and whitespace in this design, not a
@@ -794,11 +816,11 @@
      asset. It was the violet grey of the retired system in both themes. */
   html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-story-row img,
   html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-editorial-mobile-rail-item img{
-    background:#ece8e0!important;
+    background:#EFEDE8!important;
   }
   html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-app-story-row img,
   html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-editorial-mobile-rail-item img{
-    background:#1b2023!important;
+    background:#1A1A1A!important;
   }
 
   /* A white inset top highlight is how a dark surface catches light. On paper
@@ -807,7 +829,7 @@
      cascade. So light keeps the inset mechanism and changes what it draws: the
      editorial hairline instead of a white lift. */
   html[data-fmb-theme="light"] body.fmb-mobile-first footer{
-    box-shadow:inset 0 1px 0 var(--fmb-mobile-rule,#d9d3c7)!important;
+    box-shadow:inset 0 1px 0 var(--fmb-mobile-rule,#D8D6D1)!important;
   }
 }
 
@@ -823,13 +845,13 @@
    already does.
 
    The section rule under every "Latest News" heading had the same inversion in
-   dark: the paper red #a61f32 drawn on near-black.
+   dark: the paper red #D71920 drawn on near-black.
    ========================================================================== */
 
 @media (max-width:699px){
-  body.fmb-mobile-first .fmb-mobile-brand-dot{color:#e5484d!important}
+  body.fmb-mobile-first .fmb-mobile-brand-dot{color:#EF1B24!important}
   html[data-fmb-theme="dark"] body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head{
-    border-bottom-color:#d8394a!important;
+    border-bottom-color:#EF1B24!important;
   }
 }
 
@@ -863,7 +885,7 @@
     right:8px!important;
     height:2px!important;
     border-radius:0!important;
-    background:#e5484d!important;
+    background:#D71920!important;
     background-image:none!important;
     opacity:1!important;
   }
@@ -967,8 +989,8 @@
 @media (max-width:699px){
   /* The root element still painted #f5f5f7 in Dark, which shows through on
      iOS rubber-band overscroll above and below the page. */
-  html[data-fmb-theme="dark"]:root{background:var(--fmb-mobile-black,#0b0f11)!important}
-  html[data-fmb-theme="light"]:root{background:#f8f5ef!important}
+  html[data-fmb-theme="dark"]:root{background:var(--fmb-mobile-black,#0A0A0A)!important}
+  html[data-fmb-theme="light"]:root{background:#F5F3EF!important}
 
   /* Section grounds merge into the page ground instead of sitting on it as
      pale slabs. */
@@ -1004,10 +1026,10 @@
   html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-crossword-save-panel,
   html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-crossword-persistence,
   html[data-fmb-theme="dark"] body.fmb-mobile-first .sources{
-    background:var(--fmb-mobile-black-raised,#171c1f)!important;
+    background:var(--fmb-mobile-black-raised,#141414)!important;
     background-image:none!important;
-    border-color:var(--fmb-mobile-rule,#2b3033)!important;
-    color:var(--fmb-mobile-white,#f4f1ea)!important;
+    border-color:var(--fmb-mobile-rule,#2A2C2D)!important;
+    color:var(--fmb-mobile-white,#F5F3EF)!important;
     box-shadow:none!important;
   }
 
@@ -1017,15 +1039,15 @@
   html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-mobile-reader-actions button,
   html[data-fmb-theme="dark"] body.fmb-mobile-first .audit-toolbar input,
   html[data-fmb-theme="dark"] body.fmb-mobile-first .fc-toolbar input{
-    background:var(--fmb-mobile-black-soft,#111619)!important;
-    border-color:var(--fmb-mobile-rule,#2b3033)!important;
-    color:var(--fmb-mobile-white,#f4f1ea)!important;
+    background:var(--fmb-mobile-black-soft,#101010)!important;
+    border-color:var(--fmb-mobile-rule,#2A2C2D)!important;
+    color:var(--fmb-mobile-white,#F5F3EF)!important;
   }
 
   /* Image wells, on every route rather than only Home. */
-  html[data-fmb-theme="dark"] body.fmb-mobile-first img{background-color:#1b2023!important}
-  html[data-fmb-theme="light"] body.fmb-mobile-first img{background-color:#ece8e0!important}
-  html[data-fmb-theme="dark"] body.fmb-mobile-first .article-figure{background:#1b2023!important}
+  html[data-fmb-theme="dark"] body.fmb-mobile-first img{background-color:#1A1A1A!important}
+  html[data-fmb-theme="light"] body.fmb-mobile-first img{background-color:#EFEDE8!important}
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .article-figure{background:#1A1A1A!important}
 }
 
 /* ============================================================================
@@ -1046,15 +1068,15 @@
    ========================================================================== */
 
 @media (max-width:699px){
-  html[data-fmb-theme="dark"] body.fmb-mobile-first .explained-title{color:var(--fmb-mobile-white,#f4f1ea)!important}
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .explained-title{color:var(--fmb-mobile-white,#F5F3EF)!important}
   html[data-fmb-theme="dark"] body.fmb-mobile-first .explained-deck,
   html[data-fmb-theme="dark"] body.fmb-mobile-first .explained-meta,
-  html[data-fmb-theme="dark"] body.fmb-mobile-first .explained-number{color:var(--fmb-mobile-muted,#aaa7a1)!important}
-  html[data-fmb-theme="dark"] body.fmb-mobile-first .explained-arrow{color:#e5484d!important}
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .explained-number{color:var(--fmb-mobile-muted,#BFC1C2)!important}
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .explained-arrow{color:#EF1B24!important}
 
   html[data-fmb-theme="light"] body.fmb-mobile-first .explained-meta,
   html[data-fmb-theme="light"] body.fmb-mobile-first .explained-number{color:#67625c!important}
-  html[data-fmb-theme="light"] body.fmb-mobile-first .explained-arrow{color:#b51f24!important}
+  html[data-fmb-theme="light"] body.fmb-mobile-first .explained-arrow{color:#D71920!important}
 }
 
 /* ============================================================================
@@ -1078,20 +1100,20 @@
 
 @media (max-width:699px){
   html[data-fmb-theme="dark"]:root body.fmb-mobile-first{
-    --fmb-theme-bg:#0b0f11;
-    --fmb-theme-surface:#171c1f;
-    --fmb-theme-surface-soft:#111619;
-    --fmb-theme-ink:#f4f1ea;
-    --fmb-theme-muted:#aaa7a1;
-    --fmb-theme-line:#2b3033;
+    --fmb-theme-bg:#0A0A0A;
+    --fmb-theme-surface:#141414;
+    --fmb-theme-surface-soft:#101010;
+    --fmb-theme-ink:#F5F3EF;
+    --fmb-theme-muted:#BFC1C2;
+    --fmb-theme-line:#2A2C2D;
   }
   html[data-fmb-theme="light"]:root body.fmb-mobile-first{
-    --fmb-theme-bg:#f8f5ef;
-    --fmb-theme-surface:#fffdf8;
-    --fmb-theme-surface-soft:#f2eee5;
-    --fmb-theme-ink:#121417;
-    --fmb-theme-muted:#62605c;
-    --fmb-theme-line:#d9d3c7;
+    --fmb-theme-bg:#F5F3EF;
+    --fmb-theme-surface:#FAF9F6;
+    --fmb-theme-surface-soft:#EFEDE8;
+    --fmb-theme-ink:#141414;
+    --fmb-theme-muted:#6D7072;
+    --fmb-theme-line:#D8D6D1;
   }
 }
 
@@ -1129,7 +1151,7 @@
     .fmb-about-hero-statement strong,
     .archive-card strong,
     .fmb-feature-hero small
-  ){color:#e5484d!important}
+  ){color:#EF1B24!important}
 
   html[data-fmb-theme="dark"] body.fmb-mobile-first :is(
     .audit-result small,
@@ -1138,7 +1160,7 @@
     .fmb-feature-week,
     .fmb-crossword-status,
     .fmb-about-method-list li a strong
-  ){color:var(--fmb-mobile-muted,#aaa7a1)!important}
+  ){color:var(--fmb-mobile-muted,#BFC1C2)!important}
 
   /* About's <main> is painted #f6f5f7 by an older route sheet and is the last
      light slab left on any mobile route in Dark. The founder section sits on
@@ -1147,7 +1169,7 @@
   html[data-fmb-theme="dark"] body.fmb-mobile-first.fmb-matte-system.fmb-news-about main{
     background:transparent!important;
     background-image:none!important;
-    color:var(--fmb-mobile-white,#f4f1ea)!important;
+    color:var(--fmb-mobile-white,#F5F3EF)!important;
   }
 }
 
@@ -1186,23 +1208,23 @@
     .archive-card strong,
     .fmb-feature-hero small,
     .fmb-app-story-meta span:first-child
-  ){color:#f05a5f!important}
+  ){color:#F53A3F!important}
 
   html[data-fmb-theme="dark"] body.fmb-mobile-first :is(
     .fmb-about-method-list li strong,
     .fmb-about-principles article strong,
     .fmb-about-purpose p strong,
     .fmb-about-standards p strong
-  ){color:var(--fmb-mobile-white,#f4f1ea)!important}
+  ){color:var(--fmb-mobile-white,#F5F3EF)!important}
 
   /* An ID for an ID. */
   html[data-fmb-theme="dark"] body.fmb-mobile-first #aboutMain{
-    background:var(--fmb-mobile-black,#0b0f11)!important;
-    color:var(--fmb-mobile-white,#f4f1ea)!important;
+    background:var(--fmb-mobile-black,#0A0A0A)!important;
+    color:var(--fmb-mobile-white,#F5F3EF)!important;
   }
   html[data-fmb-theme="light"] body.fmb-mobile-first #aboutMain{
-    background:#f8f5ef!important;
-    color:#121417!important;
+    background:#F5F3EF!important;
+    color:#141414!important;
   }
 
   /* White-on-white in Light: cards, section nav and the portrait placeholder. */
@@ -1215,17 +1237,17 @@
     .fmb-about-mv p,
     .fnc-shell nav a,
     .fmb-founder-photo-placeholder span
-  ){color:#121417!important}
+  ){color:#141414!important}
   html[data-fmb-theme="light"] body.fmb-mobile-first :is(
     .fmb-about-mv .fmb-about-label,
     .fmb-founder-photo-placeholder small
   ){color:#62605c!important}
   html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-founder-photo-placeholder{
-    background:#ece8e0!important;
+    background:#EFEDE8!important;
     background-image:none!important;
   }
   html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-founder-photo-placeholder{
-    background:#1b2023!important;
+    background:#1A1A1A!important;
     background-image:none!important;
   }
 }
@@ -1253,7 +1275,7 @@
     .archive-back,
     .fmb-archive-kicker,
     .fmb-about-name strong
-  ){color:#f05a5f!important}
+  ){color:#F53A3F!important}
 
   html[data-fmb-theme="dark"] body.fmb-mobile-first :is(
     .archive-title,
@@ -1263,7 +1285,7 @@
     .sources li a,
     .source-list li,
     .source-list li a
-  ){color:var(--fmb-mobile-white,#f4f1ea)!important}
+  ){color:var(--fmb-mobile-white,#F5F3EF)!important}
 
   html[data-fmb-theme="dark"] body.fmb-mobile-first :is(
     .explained-count,
@@ -1271,7 +1293,7 @@
     .archive-credit,
     .article-figure figcaption,
     .fmb-image-credit
-  ){color:var(--fmb-mobile-muted,#aaa7a1)!important}
+  ){color:var(--fmb-mobile-muted,#BFC1C2)!important}
 
   html[data-fmb-theme="light"] body.fmb-mobile-first :is(
     .explained-count,
@@ -1288,9 +1310,9 @@
      method note keeps a near-black lead-in on the raised panel. */
   html[data-fmb-theme="dark"] body.fmb-mobile-first .section-title h2,
   html[data-fmb-theme="dark"] body.fmb-mobile-first .explainer-method-note strong{
-    color:var(--fmb-mobile-white,#f4f1ea)!important;
+    color:var(--fmb-mobile-white,#F5F3EF)!important;
   }
-  html[data-fmb-theme="dark"] body.fmb-mobile-first .section-title a{color:#f05a5f!important}
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .section-title a{color:#F53A3F!important}
 }
 
 @media (max-width:699px){
@@ -1300,10 +1322,10 @@
      rather than escalated further, so the shell claim wins by being the later
      sheet at equal weight. */
   html[data-fmb-theme="dark"] body.fmb-mobile-first.fmb-mobile-route-archive main.shell.section>.section-title h2{
-    color:var(--fmb-mobile-white,#f4f1ea)!important;
+    color:var(--fmb-mobile-white,#F5F3EF)!important;
   }
   html[data-fmb-theme="dark"] body.fmb-mobile-first.fmb-mobile-route-archive main.shell.section>.section-title a{
-    color:#f05a5f!important;
+    color:#F53A3F!important;
   }
 }
 
@@ -1330,7 +1352,7 @@
   html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-matte-system.fmb-news-about .fmb-about-founder h2,
   html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-matte-system.fmb-news-about .fmb-founder-profile-link,
   html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-matte-system.fmb-news-about .fmb-about-hero-statement{
-    color:#121417!important;
+    color:#141414!important;
   }
   html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-matte-system.fmb-news-about .fmb-about-mv>span{
     color:rgba(18,20,23,.14)!important;
@@ -1348,10 +1370,10 @@
      ivory. "What happened. What the evidence shows..." is the publication's
      closing statement and it was not visible in Light. */
   html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-matte-system.fmb-news-about .fmb-about-closing :is(h2,p,a,strong){
-    color:#121417!important;
+    color:#141414!important;
   }
   html[data-fmb-theme="dark"] body.fmb-mobile-first.fmb-matte-system.fmb-news-about .fmb-about-closing :is(h2,p,a,strong){
-    color:var(--fmb-mobile-white,#f4f1ea)!important;
+    color:var(--fmb-mobile-white,#F5F3EF)!important;
   }
 }
 
@@ -1451,7 +1473,7 @@
     background-image:none!important;
     box-shadow:none!important;
     color:var(--fmb-menu-ink)!important;
-    font:600 15px/1.25 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Manrope,sans-serif!important;
+    font:600 15px/1.25 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Manrope,sans-serif!important;
     letter-spacing:-.01em!important;
     text-align:left!important;
     text-decoration:none!important;
@@ -1477,7 +1499,7 @@
     background:transparent!important;
     background-image:none!important;
     color:var(--fmb-menu-ink)!important;
-    font:700 13px/1 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Manrope,sans-serif!important;
+    font:700 13px/1 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Manrope,sans-serif!important;
     letter-spacing:.02em!important;
   }
 }
@@ -1534,4 +1556,41 @@
   html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-action-sheet .fmb-app-action-panel{
     background:#F5F3EF!important;
   }
+}
+
+/* ============================================================================
+   Red, at the two sizes the guidelines do not separate
+   ============================================================================
+   The guidelines split red by role -- FMB Red #D71920 primary accent, Signal
+   Red #EF1B24 highlights used sparingly -- but not by size, and at small sizes
+   on FMB Black the split matters:
+
+     #EF1B24 as 8px label text on #0A0A0A          4.45:1   just under AA
+     #FFFFFF on an #EF1B24 fill                     4.33:1   just under AA
+     #EF1B24 as 8px label text on #141414          4.30:1   under AA
+
+   So red is assigned here by what it is doing rather than by which named red
+   it is. Fills take FMB Red, where white on it measures 5.19:1. Small red text
+   on a dark ground takes #F53A3F -- Signal Red lifted just enough to clear AA
+   at 4.94:1 on Editorial Black, still unmistakably the same red. Everything
+   larger, and every red on paper, keeps the named values.
+
+   This is the smallest departure from the sheet that keeps the sheet's own
+   colours legible. Recorded rather than silently applied.
+   ========================================================================== */
+
+@media (max-width:699px){
+  html[data-fmb-theme="dark"] body.fmb-mobile-first :is(
+    .fmb-editorial-mobile-kicker,
+    .fmb-app-story-meta span:first-child,
+    .fmb-editorial-mobile-rail-item>div>span,
+    .fmb-app-feature-card span,
+    .fmb-app-feature-card .fmb-app-week-kicker,
+    .explained-arrow,
+    .fmb-app-section-head a
+  ){color:#F53A3F!important}
+
+  body.fmb-mobile-first .fmb-editorial-mobile-dock a[aria-current="page"] span,
+  body.fmb-mobile-first .fmb-editorial-mobile-dock a.is-active span,
+  body.fmb-mobile-first .fmb-mobile-brand-dot{color:#F53A3F!important}
 }

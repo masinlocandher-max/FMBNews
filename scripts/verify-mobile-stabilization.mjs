@@ -58,7 +58,7 @@ must(materialCss.includes('--fmb-screen-gutter:16px'),'Internal routes must shar
 for(const token of [
   'position:sticky!important','grid-column:3!important','.fmb-mobile-app-shell>.fmb-app-top-ticker',
   'position:relative!important','top:auto!important','.fmb-install-card{display:none!important',
-  'grid-template-columns:repeat(5,minmax(64px,1fr))','--fmb-mobile-red:#a61f32',
+  'grid-template-columns:repeat(5,minmax(64px,1fr))','--fmb-mobile-red:#D71920',
   '.fmb-editorial-mobile-dock','position:fixed!important','bottom:0!important','fmb-mobile-brand-dot'
 ])must(navCss.includes(token),`Shared navigation/editorial lock missing: ${token}`);
 must(!navCss.includes('#f2d17a'),'Superseded gold mobile highlight returned in final navigation lock');
@@ -72,6 +72,6 @@ must(mobilePass.includes("const MOBILE_SYSTEM_FILE='fmb-news-mobile-system.css'"
 must(mobilePass.includes("createHash('sha256')"),'Mobile CSS system bundle must be content-versioned');
 must(mobilePass.includes('MOBILE_SYSTEM_SHEETS'),'Mobile CSS cascade order must remain explicit and verifiable');
 must(mobilePass.includes("'fmb-news-mobile-navigation-lock.css'"),'Shared navigation lock must remain bundled last');
-must(mobilePass.includes('content="#0b0f11"'),'PWA/browser chrome must use newsroom black');
+must(mobilePass.includes('content="#0A0A0A"'),'PWA/browser chrome must use newsroom black');
 
 console.log('Mobile stabilization contracts passed: one PHT runtime, FMB NEWS. masthead, black/red section rail, story-led Home, persistent five-item editorial dock, accessible menu sheets, reduced motion, and route-wide readability.');
