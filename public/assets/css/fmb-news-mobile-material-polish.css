@@ -121,12 +121,12 @@ body.fmb-mobile-route-brief .brief-method{margin:0 var(--fmb-screen-gutter) 48px
 
 /* Horoscope */
 body.fmb-mobile-route-horoscope .fmb-feature-shell{padding:16px var(--fmb-screen-gutter) 60px!important}
-body.fmb-mobile-route-horoscope .fmb-feature-hero{border-radius:16px!important;box-shadow:0 12px 32px rgba(43,18,53,.12)!important}
+body.fmb-mobile-route-horoscope .fmb-feature-hero{border-radius:16px!important;box-shadow:0 12px 32px rgba(20,20,20,.12)!important}
 body.fmb-mobile-route-horoscope .fmb-feature-hero p{font-size:13px!important;line-height:1.52!important}
 body.fmb-mobile-route-horoscope .fmb-zodiac-grid{gap:9px!important;margin:18px 0!important}
-body.fmb-mobile-route-horoscope .fmb-zodiac-grid button{min-height:78px!important;border:1px solid rgba(43,18,53,.045)!important;border-radius:var(--fmb-screen-radius)!important;box-shadow:none!important}
-body.fmb-mobile-route-horoscope .fmb-zodiac-grid button[aria-pressed="true"]{box-shadow:0 8px 20px rgba(43,18,53,.12)!important}
-body.fmb-mobile-route-horoscope .fmb-horoscope-reading{border-radius:16px!important;box-shadow:0 6px 22px rgba(43,18,53,.055)!important}
+body.fmb-mobile-route-horoscope .fmb-zodiac-grid button{min-height:78px!important;border:1px solid rgba(20,20,20,.045)!important;border-radius:var(--fmb-screen-radius)!important;box-shadow:none!important}
+body.fmb-mobile-route-horoscope .fmb-zodiac-grid button[aria-pressed="true"]{box-shadow:0 8px 20px rgba(20,20,20,.12)!important}
+body.fmb-mobile-route-horoscope .fmb-horoscope-reading{border-radius:16px!important;box-shadow:0 6px 22px rgba(20,20,20,.055)!important}
 body.fmb-mobile-route-horoscope .fmb-entertainment-note{padding:4px 2px 0!important;font-size:11px!important;line-height:1.5!important}
 
 /* Crossword */
@@ -135,7 +135,7 @@ body.fmb-mobile-route-crossword .fmb-feature-hero{border-radius:16px!important;b
 body.fmb-mobile-route-crossword .fmb-feature-hero p{font-size:13px!important;line-height:1.52!important}
 body.fmb-mobile-route-crossword .fmb-crossword-toolbar{margin:14px calc(var(--fmb-screen-gutter) * -1) 12px!important;padding:10px var(--fmb-screen-gutter)!important}
 body.fmb-mobile-route-crossword .fmb-crossword-toolbar button{min-height:44px!important;border:1px solid #e7e2e9!important;border-radius:10px!important;box-shadow:none!important}
-body.fmb-mobile-route-crossword .fmb-crossword-board{border-radius:14px!important;box-shadow:0 8px 24px rgba(43,18,53,.06)!important}
+body.fmb-mobile-route-crossword .fmb-crossword-board{border-radius:14px!important;box-shadow:0 8px 24px rgba(20,20,20,.06)!important}
 body.fmb-mobile-route-crossword .fmb-clue-group{border-radius:14px!important;box-shadow:none!important}
 body.fmb-mobile-route-crossword .fmb-news-context,body.fmb-mobile-route-crossword .fmb-answer-release{border-radius:14px!important}
 
