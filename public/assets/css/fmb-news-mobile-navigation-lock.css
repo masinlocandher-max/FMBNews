@@ -700,3 +700,15 @@
     letter-spacing:.09em!important;
   }
 }
+
+@media (max-width:699px){
+  /* The dock's active label measured 4.34:1 at 7.5px on the dock's dark chrome,
+     in both themes — the dock stays newsroom black, so one value serves both.
+     Same correction as the feature kickers: the approved lifted red at a size
+     this publication actually sets a label at. */
+  body.fmb-mobile-first .fmb-editorial-mobile-dock a[aria-current="page"] span,
+  body.fmb-mobile-first .fmb-editorial-mobile-dock a.is-active span{
+    color:#f05a5f!important;
+    font-size:9px!important;
+  }
+}
