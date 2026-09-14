@@ -54,6 +54,38 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: npx --yes wrangler@4 deploy
 
+      - name: Remove obsolete /fmbnews route aliases
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          zone='2e2210f55eba305e10b3f3f0f4a20261'
+          api="https://api.cloudflare.com/client/v4/zones/${zone}/workers/routes"
+          auth=(-H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}")
+
+          routes="$(curl -sS --fail "${auth[@]}" "$api")"
+          echo "$routes" | jq -e '.success == true' >/dev/null
+
+          mapfile -t stale_ids < <(
+            echo "$routes" | jq -r '.result[] | select(.pattern == "francinemariebautista.com/fmbnews*" or .pattern == "www.francinemariebautista.com/fmbnews*") | .id'
+          )
+
+          for route_id in "${stale_ids[@]}"; do
+            echo "Deleting obsolete FMB News route ${route_id}"
+            deleted="$(curl -sS --fail -X DELETE "${auth[@]}" "${api}/${route_id}")"
+            echo "$deleted" | jq -e '.success == true' >/dev/null
+          done
+
+          remaining="$(curl -sS --fail "${auth[@]}" "$api")"
+          echo "$remaining" | jq -e '.success == true' >/dev/null
+          stale_count="$(echo "$remaining" | jq '[.result[] | select(.pattern == "francinemariebautista.com/fmbnews*" or .pattern == "www.francinemariebautista.com/fmbnews*")] | length')"
+          test "$stale_count" = '0' || { echo '::error::Obsolete /fmbnews Worker routes still exist'; exit 1; }
+
+          canonical_count="$(echo "$remaining" | jq '[.result[] | select(.pattern == "francinemariebautista.com/news*" or .pattern == "www.francinemariebautista.com/news*") | select(.script == "fmb-news")] | length')"
+          test "$canonical_count" = '2' || { echo "::error::Expected two canonical /news routes bound to fmb-news; found ${canonical_count}"; exit 1; }
+          echo 'Legacy /fmbnews aliases removed; canonical /news routes are the only FMB News Worker routes.'
+
       - name: Verify public /news cutover
         shell: bash
         run: |
