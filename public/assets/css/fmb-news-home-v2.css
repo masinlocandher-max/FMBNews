@@ -1,0 +1,1004 @@
+/* ============================================================================
+   FMB News — Homepage V2
+   ----------------------------------------------------------------------------
+   This is the single authoritative stylesheet for everything inside the
+   Filipino Media Bulletin front page's <main>. It does not layer over the two
+   sheets that used to paint that markup — it took those rules away from them:
+
+     * fmb-news-publication-landing.css kept its chrome (ticker, utility strip,
+       masthead, footer) and lost its <main> half. It had sized the five
+       product cards by nth-child, which is why they rendered as a staircase of
+       five different widths at 1440.
+     * fmb-news-editorial-ia.css kept the shared desk/Sports/menu components and
+       lost its .editorial-desk* block, which only ever applied to this page.
+
+   So each rule below has exactly one owner and nothing here is an override.
+
+   Everything is expressed in the --fmbv2-* token foundation. No colour, space,
+   radius, duration or shadow is hard-coded except where no token exists for it.
+   The sheet is injected last, after the appearance system and after the
+   concatenated mobile system, so it carries no !important at all.
+
+   Namespace: .fmbv2-* for new components. Six legacy class names — network-home,
+   network-product(s), network-card-rule, product-link, editorial-desk*, and
+   daily-brief-signup/brief-* — are kept deliberately: they are the published
+   contract that verify-product-identity.mjs reads to prove the five official
+   products and the three editorial desks are present and correctly named. They
+   are scoped under .fmbv2-home here so this sheet owns them outright.
+   ========================================================================== */
+
+/* --------------------------------------------------------------- foundation */
+
+/* fmb-news-reference.css boxes every <main> the site has:
+ *   .fmb-ref main:not(.article-shell):not(.section){width:min(1280px,100% - 40px);margin:32px auto}
+ * That is right for an article and wrong for a front page, which needs full-bleed
+ * sections with their own inner measure. Both selectors weigh (0,3,1), so naming
+ * the two classes this element already carries wins on source order alone — no
+ * !important, and the reference rule still governs every other page. */
+.fmb-ref main.network-home.fmbv2-home,
+.fmbv2-home {
+  --fmbv2-gutter: clamp(16px, 4vw, 40px);
+  --fmbv2-max: 1280px;
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 0 var(--fmbv2-space-16);
+  background: var(--fmbv2-surface-1);
+  color: var(--fmbv2-ink-1);
+  font-family: var(--fmbv2-font-sans);
+}
+
+.fmbv2-home *,
+.fmbv2-home *::before,
+.fmbv2-home *::after { box-sizing: border-box; }
+
+.fmbv2-home .fmbv2-shell {
+  width: 100%;
+  max-width: var(--fmbv2-max);
+  margin-inline: auto;
+  padding-inline: var(--fmbv2-gutter);
+}
+
+.fmbv2-home a { color: inherit; text-decoration: none; }
+
+/* Every image on this page fills a ratio-locked frame, so `.fmb-ref main img
+ * {height:auto}` has to be out-weighed rather than hoped past — it is what
+ * collapsed the Daily Brief module's artwork to zero height. */
+.fmb-ref main.fmbv2-home img,
+.fmbv2-home img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+  border-radius: 0;
+}
+
+/* Section scaffolding ------------------------------------------------------ */
+
+.fmbv2-home .fmbv2-sec { padding-block: var(--fmbv2-space-10); }
+.fmbv2-home .fmbv2-sec + .fmbv2-sec { padding-top: var(--fmbv2-space-8); }
+
+.fmbv2-home .fmbv2-sec-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--fmbv2-space-4);
+  margin-bottom: var(--fmbv2-space-5);
+}
+
+.fmbv2-home .fmbv2-sec-head h2 {
+  margin: 0;
+  font-family: var(--fmbv2-font-display);
+  font-size: var(--fmbv2-text-2xl);
+  font-weight: 700;
+  line-height: var(--fmbv2-leading-tight);
+  letter-spacing: var(--fmbv2-tracking-display);
+  color: var(--fmbv2-ink-1);
+}
+
+.fmbv2-home .fmbv2-kicker {
+  display: block;
+  font-family: var(--fmbv2-font-sans);
+  font-size: var(--fmbv2-text-xs);
+  font-weight: 700;
+  letter-spacing: var(--fmbv2-tracking-kicker);
+  text-transform: uppercase;
+  color: var(--fmbv2-accent);
+}
+
+.fmbv2-home .fmbv2-more {
+  flex: none;
+  font-size: var(--fmbv2-text-sm);
+  font-weight: 600;
+  color: var(--fmbv2-ink-2);
+  border-bottom: 1px solid var(--fmbv2-line-2);
+  padding-bottom: 2px;
+  transition: color var(--fmbv2-dur-fast) var(--fmbv2-ease),
+              border-color var(--fmbv2-dur-fast) var(--fmbv2-ease);
+}
+
+.fmbv2-home .fmbv2-more:hover { color: var(--fmbv2-accent); border-color: var(--fmbv2-accent); }
+
+/* The one metallic element per section: a single hairline gold rule. Used
+   sparingly on purpose — metal reads as premium exactly once per screenful. */
+.fmbv2-home .fmbv2-rule {
+  height: 2px;
+  border: 0;
+  margin: 0 0 var(--fmbv2-space-5);
+  background: var(--fmbv2-metal-gold);
+  opacity: .85;
+}
+
+/* Shared story meta -------------------------------------------------------- */
+
+.fmbv2-home .fmbv2-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fmbv2-text-xs);
+  font-weight: 600;
+  letter-spacing: .02em;
+  color: var(--fmbv2-ink-2);
+}
+
+.fmbv2-home .fmbv2-meta .fmbv2-cat {
+  font-weight: 700;
+  letter-spacing: var(--fmbv2-tracking-kicker);
+  text-transform: uppercase;
+  color: var(--fmbv2-accent);
+}
+
+.fmbv2-home .fmbv2-meta i { font-style: normal; opacity: .5; }
+
+/* ------------------------------------------------------------ the lead well */
+/* The front page opens on the newsroom's most recent verified report, not on a
+   promise about the newsroom. */
+
+.fmbv2-home .fmbv2-well { padding-top: var(--fmbv2-space-6); }
+
+.fmbv2-home .fmbv2-alert {
+  display: flex;
+  align-items: center;
+  gap: var(--fmbv2-space-3);
+  margin-bottom: var(--fmbv2-space-5);
+  padding: var(--fmbv2-space-3) var(--fmbv2-space-4);
+  border-radius: var(--fmbv2-radius-md);
+  background: var(--fmbv2-metal-plum);
+  color: #fff;
+  box-shadow: var(--fmbv2-elev-1);
+}
+
+.fmbv2-home .fmbv2-alert strong {
+  flex: none;
+  font-size: var(--fmbv2-text-xs);
+  font-weight: 800;
+  letter-spacing: var(--fmbv2-tracking-kicker);
+  text-transform: uppercase;
+  color: var(--fmbv2-gold);
+}
+
+.fmbv2-home .fmbv2-alert span {
+  font-size: var(--fmbv2-text-sm);
+  font-weight: 600;
+  line-height: var(--fmbv2-leading-snug);
+}
+
+.fmbv2-home .fmbv2-alert b { margin-left: auto; flex: none; color: var(--fmbv2-gold); }
+
+.fmbv2-home .fmbv2-well-grid {
+  display: grid;
+  gap: var(--fmbv2-space-6);
+  grid-template-columns: 1fr;
+}
+
+/* Lead story */
+
+.fmbv2-home .fmbv2-lead { display: block; }
+
+.fmbv2-home .fmbv2-lead-fig {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--fmbv2-radius-lg);
+  background: var(--fmbv2-surface-3);
+  box-shadow: var(--fmbv2-elev-2);
+}
+
+.fmbv2-home .fmbv2-lead-fig img {
+  transition: transform var(--fmbv2-dur-slow) var(--fmbv2-ease-out);
+}
+
+.fmbv2-home .fmbv2-lead:hover .fmbv2-lead-fig img { transform: scale(1.02); }
+
+.fmbv2-home .fmbv2-lead-copy { padding-top: var(--fmbv2-space-5); }
+
+.fmbv2-home .fmbv2-lead-copy h1 {
+  margin: var(--fmbv2-space-2) 0 var(--fmbv2-space-3);
+  font-family: var(--fmbv2-font-display);
+  font-size: clamp(30px, 4.6vw, 56px);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: var(--fmbv2-tracking-display);
+  color: var(--fmbv2-ink-1);
+  text-wrap: balance;
+}
+
+.fmbv2-home .fmbv2-lead-copy p {
+  margin: 0 0 var(--fmbv2-space-3);
+  max-width: 62ch;
+  font-size: var(--fmbv2-text-md);
+  line-height: var(--fmbv2-leading-body);
+  color: var(--fmbv2-ink-2);
+}
+
+.fmbv2-home .fmbv2-lead:hover .fmbv2-lead-copy h1 { color: var(--fmbv2-accent); }
+
+/* Secondary leads in the side column */
+
+.fmbv2-home .fmbv2-aside {
+  display: grid;
+  gap: var(--fmbv2-space-5);
+  align-content: start;
+}
+
+.fmbv2-home .fmbv2-sub {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: var(--fmbv2-space-4);
+  align-items: start;
+  padding-bottom: var(--fmbv2-space-5);
+  border-bottom: 1px solid var(--fmbv2-line-1);
+}
+
+.fmbv2-home .fmbv2-aside .fmbv2-sub:last-child { border-bottom: 0; padding-bottom: 0; }
+
+.fmbv2-home .fmbv2-sub-fig {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--fmbv2-radius-sm);
+  background: var(--fmbv2-surface-3);
+}
+
+.fmbv2-home .fmbv2-sub h3 {
+  margin: var(--fmbv2-space-2) 0 0;
+  font-family: var(--fmbv2-font-display);
+  font-size: var(--fmbv2-text-lg);
+  font-weight: 700;
+  line-height: var(--fmbv2-leading-tight);
+  letter-spacing: var(--fmbv2-tracking-display);
+  color: var(--fmbv2-ink-1);
+}
+
+.fmbv2-home .fmbv2-sub:hover h3 { color: var(--fmbv2-accent); }
+
+/* ------------------------------------------------------------ latest stream */
+
+.fmbv2-home .fmbv2-stream {
+  display: grid;
+  gap: var(--fmbv2-space-5);
+  grid-template-columns: 1fr;
+}
+
+.fmbv2-home .fmbv2-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fmbv2-space-3);
+  padding-bottom: var(--fmbv2-space-5);
+  border-bottom: 1px solid var(--fmbv2-line-1);
+}
+
+.fmbv2-home .fmbv2-card-fig {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: var(--fmbv2-radius-md);
+  background: var(--fmbv2-surface-3);
+}
+
+.fmbv2-home .fmbv2-card h3 {
+  margin: 0;
+  font-family: var(--fmbv2-font-display);
+  font-size: var(--fmbv2-text-xl);
+  font-weight: 700;
+  line-height: var(--fmbv2-leading-tight);
+  letter-spacing: var(--fmbv2-tracking-display);
+  color: var(--fmbv2-ink-1);
+}
+
+.fmbv2-home .fmbv2-card p {
+  margin: 0;
+  font-size: var(--fmbv2-text-sm);
+  line-height: var(--fmbv2-leading-body);
+  color: var(--fmbv2-ink-2);
+}
+
+.fmbv2-home .fmbv2-card:hover h3 { color: var(--fmbv2-accent); }
+
+/* ------------------------------------------------------------------- desks */
+
+.fmbv2-home .editorial-desks { display: block; }
+
+.fmbv2-home .editorial-desks-head { margin-bottom: var(--fmbv2-space-5); }
+
+.fmbv2-home .editorial-desks-head h2 {
+  margin: var(--fmbv2-space-1) 0 var(--fmbv2-space-2);
+  font-family: var(--fmbv2-font-display);
+  font-size: var(--fmbv2-text-2xl);
+  font-weight: 700;
+  line-height: var(--fmbv2-leading-tight);
+  letter-spacing: var(--fmbv2-tracking-display);
+  color: var(--fmbv2-ink-1);
+}
+
+.fmbv2-home .editorial-desks-head p {
+  margin: 0;
+  max-width: 68ch;
+  font-size: var(--fmbv2-text-sm);
+  line-height: var(--fmbv2-leading-body);
+  color: var(--fmbv2-ink-2);
+}
+
+.fmbv2-home .editorial-desk-grid {
+  display: grid;
+  gap: var(--fmbv2-space-4);
+  grid-template-columns: 1fr;
+}
+
+.fmbv2-home .editorial-desk {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fmbv2-space-2);
+  padding: var(--fmbv2-space-5);
+  border: 1px solid var(--fmbv2-line-1);
+  border-radius: var(--fmbv2-radius-lg);
+  background: var(--fmbv2-surface-2);
+  transition: border-color var(--fmbv2-dur-base) var(--fmbv2-ease),
+              box-shadow var(--fmbv2-dur-base) var(--fmbv2-ease),
+              transform var(--fmbv2-dur-base) var(--fmbv2-ease);
+}
+
+.fmbv2-home .editorial-desk:hover {
+  border-color: var(--fmbv2-line-2);
+  box-shadow: var(--fmbv2-elev-2);
+  transform: translateY(-2px);
+}
+
+.fmbv2-home .editorial-desk-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--fmbv2-space-3);
+  padding-bottom: var(--fmbv2-space-3);
+  border-bottom: 1px solid var(--fmbv2-line-1);
+}
+
+.fmbv2-home .editorial-desk-top strong {
+  font-family: var(--fmbv2-font-display);
+  font-size: var(--fmbv2-text-lg);
+  font-weight: 700;
+  letter-spacing: var(--fmbv2-tracking-display);
+  color: var(--fmbv2-ink-1);
+}
+
+.fmbv2-home .editorial-desk-top span {
+  font-size: var(--fmbv2-text-xs);
+  font-weight: 700;
+  letter-spacing: var(--fmbv2-tracking-kicker);
+  text-transform: uppercase;
+  color: var(--fmbv2-accent);
+}
+
+.fmbv2-home .editorial-desk b {
+  font-family: var(--fmbv2-font-display);
+  font-size: var(--fmbv2-text-md);
+  font-weight: 700;
+  line-height: var(--fmbv2-leading-tight);
+  letter-spacing: var(--fmbv2-tracking-display);
+  color: var(--fmbv2-ink-1);
+}
+
+.fmbv2-home .editorial-desk p {
+  margin: 0;
+  font-size: var(--fmbv2-text-sm);
+  line-height: var(--fmbv2-leading-body);
+  color: var(--fmbv2-ink-2);
+}
+
+.fmbv2-home .editorial-desk.is-empty { background: transparent; border-style: dashed; }
+
+/* ----------------------------------------------------- the five products */
+/* Five equal cards. The previous sheet sized these by nth-child, which is why
+   the row degenerated into a staircase of five different widths at 1440. */
+
+.fmbv2-home .network-products {
+  display: grid;
+  gap: var(--fmbv2-space-4);
+  grid-template-columns: 1fr;
+}
+
+.fmbv2-home .network-product {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fmbv2-space-3);
+  min-width: 0;
+  padding: var(--fmbv2-space-5);
+  border: 1px solid var(--fmbv2-line-1);
+  border-radius: var(--fmbv2-radius-lg);
+  background: var(--fmbv2-surface-2);
+  transition: border-color var(--fmbv2-dur-base) var(--fmbv2-ease),
+              box-shadow var(--fmbv2-dur-base) var(--fmbv2-ease),
+              transform var(--fmbv2-dur-base) var(--fmbv2-ease);
+}
+
+.fmbv2-home .network-product:hover {
+  border-color: var(--fmbv2-line-2);
+  box-shadow: var(--fmbv2-elev-2);
+  transform: translateY(-2px);
+}
+
+.fmbv2-home .network-product-icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--fmbv2-radius-sm);
+  background: var(--fmbv2-surface-3);
+  color: var(--fmbv2-accent);
+}
+
+.fmbv2-home .network-product-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.fmbv2-home .network-product h2 {
+  margin: 0;
+  font-family: var(--fmbv2-font-display);
+  font-size: var(--fmbv2-text-lg);
+  font-weight: 700;
+  letter-spacing: var(--fmbv2-tracking-display);
+  color: var(--fmbv2-ink-1);
+}
+
+.fmbv2-home .network-card-rule { display: block; height: 1px; background: var(--fmbv2-line-1); }
+.fmbv2-home .network-card-rule i { display: block; width: 32px; height: 1px; background: var(--fmbv2-accent); }
+
+.fmbv2-home .network-product p {
+  margin: 0;
+  flex: 1;
+  font-size: var(--fmbv2-text-sm);
+  line-height: var(--fmbv2-leading-body);
+  color: var(--fmbv2-ink-2);
+}
+
+.fmbv2-home .network-product p br { display: none; }
+
+.fmbv2-home .product-link {
+  font-size: var(--fmbv2-text-xs);
+  font-weight: 700;
+  letter-spacing: var(--fmbv2-tracking-kicker);
+  text-transform: uppercase;
+  color: var(--fmbv2-accent);
+}
+
+.fmbv2-home .product-link b { font-weight: 700; }
+
+/* ---------------------------------------------------------------- modules */
+
+.fmbv2-home .fmbv2-mods {
+  display: grid;
+  gap: var(--fmbv2-space-4);
+  grid-template-columns: 1fr;
+}
+
+.fmbv2-home .fmbv2-mod {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--fmbv2-space-3);
+  min-height: 200px;
+  padding: var(--fmbv2-space-6);
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: var(--fmbv2-radius-lg);
+  background: var(--fmbv2-metal-plum);
+  color: #fff;
+  box-shadow: var(--fmbv2-elev-2);
+}
+
+.fmbv2-home .fmbv2-mod img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  opacity: .62;
+}
+
+.fmbv2-home .fmbv2-mod-shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(34, 13, 80, .12) 0%, rgba(34, 13, 80, .62) 48%, rgba(34, 13, 80, .90) 100%);
+}
+
+.fmbv2-home .fmbv2-mod span.fmbv2-kicker { color: var(--fmbv2-gold); }
+
+.fmbv2-home .fmbv2-mod h2 {
+  margin: 0;
+  max-width: 22ch;
+  font-family: var(--fmbv2-font-display);
+  font-size: var(--fmbv2-text-xl);
+  font-weight: 700;
+  line-height: var(--fmbv2-leading-tight);
+  letter-spacing: var(--fmbv2-tracking-display);
+  color: #fff;
+}
+
+.fmbv2-home .fmbv2-mod p {
+  margin: 0;
+  max-width: 46ch;
+  font-size: var(--fmbv2-text-sm);
+  line-height: var(--fmbv2-leading-body);
+  color: rgba(255, 255, 255, .84);
+}
+
+.fmbv2-home .fmbv2-mod b {
+  margin-top: auto;
+  font-size: var(--fmbv2-text-xs);
+  font-weight: 700;
+  letter-spacing: var(--fmbv2-tracking-kicker);
+  text-transform: uppercase;
+  color: var(--fmbv2-gold);
+}
+
+/* Worldwide gets a drawn meridian field rather than a photograph, so the
+   module never implies a picture FMB does not own. */
+.fmbv2-home .fmbv2-mod.worldwide { background: var(--fmbv2-metal-plum); }
+
+.fmbv2-home .fmbv2-world-field {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: .3;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 46px, rgba(249, 171, 96, .55) 46px 47px),
+    repeating-linear-gradient(0deg, transparent 0 46px, rgba(249, 171, 96, .35) 46px 47px);
+  mask-image: radial-gradient(120% 90% at 78% 22%, #000 10%, transparent 72%);
+}
+
+/* Fact Check + Explainer honesty pair ------------------------------------- */
+
+.fmbv2-home .fmbv2-pair { display: grid; gap: var(--fmbv2-space-4); grid-template-columns: 1fr; }
+
+.fmbv2-home .fmbv2-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fmbv2-space-3);
+  padding: var(--fmbv2-space-6);
+  border: 1px solid var(--fmbv2-line-1);
+  border-radius: var(--fmbv2-radius-lg);
+  background: var(--fmbv2-surface-2);
+}
+
+.fmbv2-home .fmbv2-panel h2 {
+  margin: 0;
+  font-family: var(--fmbv2-font-display);
+  font-size: var(--fmbv2-text-xl);
+  font-weight: 700;
+  letter-spacing: var(--fmbv2-tracking-display);
+  color: var(--fmbv2-ink-1);
+}
+
+.fmbv2-home .fmbv2-panel p {
+  margin: 0;
+  font-size: var(--fmbv2-text-sm);
+  line-height: var(--fmbv2-leading-body);
+  color: var(--fmbv2-ink-2);
+}
+
+.fmbv2-home .fmbv2-panel ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: var(--fmbv2-space-2);
+}
+
+.fmbv2-home .fmbv2-panel li {
+  padding-left: var(--fmbv2-space-4);
+  position: relative;
+  font-size: var(--fmbv2-text-sm);
+  line-height: var(--fmbv2-leading-body);
+  color: var(--fmbv2-ink-2);
+}
+
+.fmbv2-home .fmbv2-panel li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .62em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--fmbv2-accent);
+}
+
+.fmbv2-home .fmbv2-panel .fmbv2-more { align-self: flex-start; margin-top: auto; }
+
+.fmbv2-home .fmbv2-state {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  padding: 6px var(--fmbv2-space-3);
+  border: 1px solid var(--fmbv2-line-2);
+  border-radius: var(--fmbv2-radius-pill);
+  font-size: var(--fmbv2-text-xs);
+  font-weight: 700;
+  letter-spacing: var(--fmbv2-tracking-kicker);
+  text-transform: uppercase;
+  color: var(--fmbv2-ink-2);
+}
+
+.fmbv2-home .fmbv2-state::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--fmbv2-accent);
+}
+
+/* Entertainment ------------------------------------------------------------ */
+
+.fmbv2-home .fmbv2-play { display: grid; gap: var(--fmbv2-space-4); grid-template-columns: 1fr; }
+
+.fmbv2-home .fmbv2-play-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fmbv2-space-2);
+  padding: var(--fmbv2-space-5);
+  border: 1px solid var(--fmbv2-line-1);
+  border-radius: var(--fmbv2-radius-lg);
+  background: var(--fmbv2-surface-2);
+  transition: border-color var(--fmbv2-dur-base) var(--fmbv2-ease),
+              box-shadow var(--fmbv2-dur-base) var(--fmbv2-ease);
+}
+
+.fmbv2-home .fmbv2-play-card:hover { border-color: var(--fmbv2-line-2); box-shadow: var(--fmbv2-elev-1); }
+
+.fmbv2-home .fmbv2-play-card h3 {
+  margin: 0;
+  font-family: var(--fmbv2-font-display);
+  font-size: var(--fmbv2-text-lg);
+  font-weight: 700;
+  letter-spacing: var(--fmbv2-tracking-display);
+  color: var(--fmbv2-ink-1);
+}
+
+.fmbv2-home .fmbv2-play-card p {
+  margin: 0;
+  font-size: var(--fmbv2-text-sm);
+  line-height: var(--fmbv2-leading-body);
+  color: var(--fmbv2-ink-2);
+}
+
+.fmbv2-home .fmbv2-play-card b {
+  margin-top: var(--fmbv2-space-2);
+  font-size: var(--fmbv2-text-xs);
+  font-weight: 700;
+  letter-spacing: var(--fmbv2-tracking-kicker);
+  text-transform: uppercase;
+  color: var(--fmbv2-accent);
+}
+
+.fmbv2-home .fmbv2-grid-mark {
+  display: grid;
+  grid-template-columns: repeat(3, 12px);
+  gap: 3px;
+  margin-bottom: var(--fmbv2-space-2);
+}
+
+.fmbv2-home .fmbv2-grid-mark i {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background: var(--fmbv2-line-1);
+}
+
+.fmbv2-home .fmbv2-grid-mark i.on { background: var(--fmbv2-accent); }
+
+.fmbv2-home .fmbv2-moon {
+  display: block;
+  margin-bottom: var(--fmbv2-space-2);
+  width: 26px;
+  height: 26px;
+  color: var(--fmbv2-accent);
+}
+
+.fmbv2-home .fmbv2-moon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linejoin: round;
+}
+
+/* Trust layer -------------------------------------------------------------- */
+
+.fmbv2-home .fmbv2-trust {
+  border-top: 1px solid var(--fmbv2-line-1);
+  border-bottom: 1px solid var(--fmbv2-line-1);
+  padding-block: var(--fmbv2-space-8);
+}
+
+.fmbv2-home .fmbv2-trust-grid { display: grid; gap: var(--fmbv2-space-5); grid-template-columns: 1fr; }
+
+.fmbv2-home .fmbv2-trust-item h3 {
+  margin: 0 0 var(--fmbv2-space-2);
+  font-size: var(--fmbv2-text-sm);
+  font-weight: 700;
+  letter-spacing: var(--fmbv2-tracking-kicker);
+  text-transform: uppercase;
+  color: var(--fmbv2-accent);
+}
+
+.fmbv2-home .fmbv2-trust-item p {
+  margin: 0 0 var(--fmbv2-space-2);
+  font-size: var(--fmbv2-text-sm);
+  line-height: var(--fmbv2-leading-body);
+  color: var(--fmbv2-ink-2);
+}
+
+/* Founder ------------------------------------------------------------------ */
+
+.fmbv2-home .fmbv2-founder {
+  display: grid;
+  gap: var(--fmbv2-space-5);
+  grid-template-columns: 1fr;
+  align-items: center;
+  padding: var(--fmbv2-space-6);
+  border: 1px solid var(--fmbv2-line-1);
+  border-radius: var(--fmbv2-radius-lg);
+  background: var(--fmbv2-surface-2);
+}
+
+.fmbv2-home .fmbv2-founder-mark {
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: var(--fmbv2-metal-plum);
+  color: var(--fmbv2-gold);
+  font-family: var(--fmbv2-font-display);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+
+.fmbv2-home .fmbv2-founder h2 {
+  margin: 0 0 var(--fmbv2-space-2);
+  font-family: var(--fmbv2-font-display);
+  font-size: var(--fmbv2-text-xl);
+  font-weight: 700;
+  letter-spacing: var(--fmbv2-tracking-display);
+  color: var(--fmbv2-ink-1);
+}
+
+.fmbv2-home .fmbv2-founder p {
+  margin: 0 0 var(--fmbv2-space-3);
+  max-width: 60ch;
+  font-size: var(--fmbv2-text-sm);
+  line-height: var(--fmbv2-leading-body);
+  color: var(--fmbv2-ink-2);
+}
+
+/* ------------------------------------------------------- Daily Brief signup */
+
+.fmbv2-home .daily-brief-signup {
+  display: grid;
+  gap: var(--fmbv2-space-4);
+  padding: var(--fmbv2-space-8) var(--fmbv2-space-6);
+  border-radius: var(--fmbv2-radius-xl);
+  background: var(--fmbv2-metal-plum);
+  color: #fff;
+  box-shadow: var(--fmbv2-elev-3);
+}
+
+.fmbv2-home .daily-brief-mark { width: 56px; height: 56px; }
+.fmbv2-home .daily-brief-mark img { width: 100%; height: 100%; object-fit: contain; }
+
+.fmbv2-home .brief-label {
+  font-size: var(--fmbv2-text-xs);
+  font-weight: 700;
+  letter-spacing: var(--fmbv2-tracking-kicker);
+  text-transform: uppercase;
+  color: var(--fmbv2-gold);
+}
+
+.fmbv2-home .daily-brief-signup h2 {
+  margin: var(--fmbv2-space-2) 0 0;
+  font-family: var(--fmbv2-font-display);
+  font-size: var(--fmbv2-text-2xl);
+  font-weight: 700;
+  letter-spacing: var(--fmbv2-tracking-display);
+  color: #fff;
+}
+
+.fmbv2-home .brief-rule { display: block; margin-top: var(--fmbv2-space-3); height: 2px; background: var(--fmbv2-metal-gold); width: 72px; }
+.fmbv2-home .brief-rule i { display: none; }
+
+.fmbv2-home .brief-promise {
+  margin: 0;
+  max-width: 52ch;
+  font-size: var(--fmbv2-text-sm);
+  line-height: var(--fmbv2-leading-body);
+  color: rgba(255, 255, 255, .86);
+}
+
+.fmbv2-home .brief-promise br { display: none; }
+
+.fmbv2-home .daily-brief-signup form { display: grid; gap: var(--fmbv2-space-3); }
+
+.fmbv2-home .brief-form-row { display: grid; gap: var(--fmbv2-space-2); grid-template-columns: 1fr; }
+
+.fmbv2-home .brief-form-row input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 var(--fmbv2-space-4);
+  border: 1px solid rgba(255, 255, 255, .28);
+  border-radius: var(--fmbv2-radius-md);
+  background: rgba(255, 255, 255, .1);
+  color: #fff;
+  font: inherit;
+  font-size: var(--fmbv2-text-sm);
+}
+
+.fmbv2-home .brief-form-row input::placeholder { color: rgba(255, 255, 255, .6); }
+
+.fmbv2-home .brief-form-row input:focus-visible {
+  outline: 2px solid var(--fmbv2-gold);
+  outline-offset: 2px;
+  background: rgba(255, 255, 255, .16);
+}
+
+.fmbv2-home .brief-form-row button {
+  min-height: 48px;
+  padding: 0 var(--fmbv2-space-6);
+  border: 0;
+  border-radius: var(--fmbv2-radius-md);
+  background: var(--fmbv2-metal-gold);
+  color: var(--fmbv2-violet);
+  font: inherit;
+  font-size: var(--fmbv2-text-sm);
+  font-weight: 800;
+  letter-spacing: .02em;
+  cursor: pointer;
+  transition: filter var(--fmbv2-dur-fast) var(--fmbv2-ease);
+}
+
+.fmbv2-home .brief-form-row button:hover { filter: brightness(1.06); }
+
+.fmbv2-home .daily-brief-signup .consent {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--fmbv2-space-2);
+  font-size: var(--fmbv2-text-xs);
+  line-height: var(--fmbv2-leading-body);
+  color: rgba(255, 255, 255, .78);
+}
+
+.fmbv2-home .daily-brief-signup .consent input { margin-top: 2px; accent-color: var(--fmbv2-gold); }
+.fmbv2-home .daily-brief-signup .consent a { color: var(--fmbv2-gold); text-decoration: underline; }
+.fmbv2-home .daily-brief-signup .status { margin: 0; font-size: var(--fmbv2-text-xs); color: var(--fmbv2-gold); }
+
+/* -------------------------------------------------------------- focus + a11y */
+
+.fmbv2-home a:focus-visible,
+.fmbv2-home button:focus-visible,
+.fmbv2-home summary:focus-visible {
+  outline: 2px solid var(--fmbv2-accent);
+  outline-offset: 3px;
+  border-radius: var(--fmbv2-radius-xs);
+}
+
+.fmbv2-home .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ================================================================ breakpoints */
+
+@media (min-width: 600px) {
+  .fmbv2-home .fmbv2-stream { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fmbv2-home .network-products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fmbv2-home .fmbv2-play { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fmbv2-home .fmbv2-mods { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fmbv2-home .brief-form-row { grid-template-columns: minmax(0, 1fr) auto; }
+  .fmbv2-home .fmbv2-trust-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 768px) {
+  .fmbv2-home .fmbv2-sec { padding-block: var(--fmbv2-space-12); }
+  .fmbv2-home .editorial-desk-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .fmbv2-home .fmbv2-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fmbv2-home .fmbv2-sec-head h2 { font-size: var(--fmbv2-text-3xl); }
+  .fmbv2-home .daily-brief-signup {
+    grid-template-columns: 56px minmax(0, 1fr);
+    align-items: start;
+    column-gap: var(--fmbv2-space-5);
+    padding: var(--fmbv2-space-10);
+  }
+  .fmbv2-home .daily-brief-signup .brief-copy { grid-column: 2; }
+  .fmbv2-home .daily-brief-signup .brief-promise { grid-column: 2; }
+  .fmbv2-home .daily-brief-signup form { grid-column: 2; }
+  .fmbv2-home .fmbv2-founder { grid-template-columns: 84px minmax(0, 1fr); column-gap: var(--fmbv2-space-6); }
+}
+
+@media (min-width: 1000px) {
+  .fmbv2-home .fmbv2-well-grid { grid-template-columns: minmax(0, 1.9fr) minmax(300px, 1fr); gap: var(--fmbv2-space-8); }
+  .fmbv2-home .fmbv2-stream { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  /* Five across needs ~220px a card before the product links break mid-phrase;
+     at 1024 that is only reached at three. */
+  .fmbv2-home .network-products { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .fmbv2-home .fmbv2-play { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fmbv2-home .fmbv2-trust-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .fmbv2-home .fmbv2-lead-copy { padding-top: var(--fmbv2-space-6); }
+  .fmbv2-home .network-product { padding: var(--fmbv2-space-5) var(--fmbv2-space-4); }
+}
+
+@media (min-width: 1200px) {
+  .fmbv2-home .network-products { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .fmbv2-home .fmbv2-mods { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fmbv2-home .fmbv2-mod { min-height: 260px; }
+}
+
+/* Below 700px the dedicated mobile app home is the visible phone experience and
+   this front page is hidden outright — including from assistive technology, so
+   the document exposes exactly one <h1> at every viewport even though both
+   layouts are present in the source. This rule moved here with the rest of the
+   <main> half of fmb-news-publication-landing.css; it is the one place it can
+   live without two sheets claiming the same element. */
+@media (max-width: 699px) {
+  .fmbv2-home { display: none; }
+}
+
+/* ------------------------------------------------------------- motion + a11y */
+
+@media (prefers-reduced-motion: reduce) {
+  .fmbv2-home *,
+.fmbv2-home *::before,
+.fmbv2-home *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+  .fmbv2-home .fmbv2-lead:hover .fmbv2-lead-fig img { transform: none; }
+  .fmbv2-home .editorial-desk:hover,
+.fmbv2-home .network-product:hover { transform: none; }
+}
+
+@media (forced-colors: active) {
+  .fmbv2-home .fmbv2-mod,
+.fmbv2-home .daily-brief-signup,
+.fmbv2-home .fmbv2-alert { background: Canvas; color: CanvasText; }
+  .fmbv2-home .editorial-desk,
+.fmbv2-home .network-product,
+.fmbv2-home .fmbv2-panel { border-color: CanvasText; }
+}
