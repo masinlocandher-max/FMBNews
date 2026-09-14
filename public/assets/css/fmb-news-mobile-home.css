@@ -1,7 +1,7 @@
 /* FMB News dedicated mobile-app home. Desktop remains the publication landing. */
 .fmb-mobile-app-home{display:none}
 @media(max-width:699px){
-:root{--fmb-app-plum:#2b1235;--fmb-app-deep:#1a0b20;--fmb-app-violet:#6e3a8a;--fmb-app-lilac:#e9dff0;--fmb-app-bg:#f5f5f7;--fmb-app-white:#fff;--fmb-app-ink:#1d1d1f;--fmb-app-muted:#6e6e73;--fmb-app-line:#e2e2e7;--fmb-app-gold:#c9a84d}
+:root{--fmb-app-plum:#141414;--fmb-app-deep:#1a0b20;--fmb-app-violet:#D71920;--fmb-app-lilac:#e9dff0;--fmb-app-bg:#f5f5f7;--fmb-app-white:#fff;--fmb-app-ink:#1d1d1f;--fmb-app-muted:#6e6e73;--fmb-app-line:#e2e2e7;--fmb-app-gold:#c9a84d}
 body.fmb-mobile-first.fmb-network-landing .network-home,body.fmb-mobile-first.fmb-network-landing .publication-footer,body.fmb-mobile-first.fmb-network-landing .headline-ticker{display:none!important}
 .fmb-mobile-app-home{display:block;min-height:100svh;padding:0 14px 48px;background:var(--fmb-app-bg);color:var(--fmb-app-ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,Helvetica,Arial,sans-serif}
 .fmb-mobile-app-home *{box-sizing:border-box}.fmb-mobile-app-home a{color:inherit}.fmb-mobile-app-home button{font:inherit}

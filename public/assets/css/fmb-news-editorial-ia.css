@@ -14,14 +14,14 @@
     text-decoration:none!important;white-space:nowrap;cursor:pointer;list-style:none
   }
   body.fmb-network-landing .publication-nav>details>summary::-webkit-details-marker{display:none}
-  body.fmb-network-landing .publication-nav>details>summary::after{content:"+";margin-left:6px;color:#F9AB60;font-size:13px;font-weight:600}
+  body.fmb-network-landing .publication-nav>details>summary::after{content:"+";margin-left:6px;color:#D71920;font-size:13px;font-weight:600}
   body.fmb-network-landing .publication-nav>details[open]>summary::after{content:"−"}
   body.fmb-network-landing .publication-nav>a:is(:hover,:focus-visible),
   body.fmb-network-landing .publication-nav>details>summary:is(:hover,:focus-visible){color:#fff!important;outline:none}
   body.fmb-network-landing .publication-menu{position:relative}
   body.fmb-network-landing .publication-menu-panel{
     position:absolute;top:calc(100% + 10px);right:0;z-index:120;min-width:220px;padding:10px;
-    border:1px solid rgba(249,171,96,.22);border-radius:16px;background:rgba(22,8,45,.96);
+    border:1px solid rgba(191,193,194,.22);border-radius:16px;background:rgba(10,10,10,.96);
     box-shadow:0 22px 58px rgba(8,2,20,.36);-webkit-backdrop-filter:blur(22px) saturate(88%);backdrop-filter:blur(22px) saturate(88%)
   }
   body.fmb-network-landing .publication-menu-panel a{display:block;padding:11px 12px;border-radius:10px;color:#fff!important;font-size:12px;font-weight:700;text-decoration:none}
@@ -38,31 +38,33 @@ body.fmb-sports-page .sports-main{min-height:70vh;background:var(--fmb-theme-bg,
 
 body.fmb-sports-page .sports-shell{width:min(1180px,calc(100% - 48px));margin-inline:auto}
 
-body.fmb-sports-page .sports-hero{padding:74px 0 58px;color:#fff;background:radial-gradient(circle at 82% 12%,rgba(249,171,96,.13),transparent 30%),linear-gradient(135deg,#16082d,#220D50 55%,#630661)}
+/* Sports opens like a desk, not a product poster: paper ground, editorial
+   ink, one thin rule. The colour block and the gold arc are gone. */
+body.fmb-sports-page .sports-hero{padding:74px 0 58px;color:#141414;background:#F5F3EF;border-bottom:1px solid rgba(20,20,20,.16)}
 
-body.fmb-sports-page .sports-hero p:first-child{margin:0 0 10px;color:#F9AB60;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+body.fmb-sports-page .sports-hero p:first-child{margin:0 0 10px;color:#D71920;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
 
 body.fmb-sports-page .sports-hero h1{margin:0;font-family:var(--fmb-luxury-serif,Georgia,serif);font-size:clamp(56px,8vw,104px);font-weight:600;line-height:.9;letter-spacing:-.045em}
 
-body.fmb-sports-page .sports-hero span{display:block;width:72px;height:2px;margin:22px 0 17px;background:#F9AB60}
+body.fmb-sports-page .sports-hero span{display:block;width:72px;height:2px;margin:22px 0 17px;background:#D71920}
 
 body.fmb-sports-page .sports-hero p:last-child{max-width:660px;margin:0;color:rgba(255,255,255,.78);font-size:16px;line-height:1.65}
 
 body.fmb-sports-page .sports-content{padding:52px 0 76px}
 
-body.fmb-sports-page .sports-empty{max-width:760px;padding:34px;border:1px solid var(--fmb-theme-line,rgba(34,13,80,.14));border-radius:22px;background:var(--fmb-theme-surface,#fff);box-shadow:var(--fmb-theme-shadow,0 18px 50px rgba(34,13,80,.10))}
+body.fmb-sports-page .sports-empty{max-width:760px;padding:34px;border:1px solid var(--fmb-theme-line,rgba(10,10,10,.14));border-radius:22px;background:var(--fmb-theme-surface,#fff);box-shadow:var(--fmb-theme-shadow,0 18px 50px rgba(10,10,10,.10))}
 
-body.fmb-sports-page .sports-empty>span{color:#630661;font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+body.fmb-sports-page .sports-empty>span{color:#D71920;font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
 
 body.fmb-sports-page .sports-empty h2{margin:10px 0 12px;font-family:var(--fmb-luxury-serif,Georgia,serif);font-size:clamp(28px,4vw,46px);line-height:1.02}
 
 body.fmb-sports-page .sports-empty p{margin:0 0 22px;color:var(--fmb-theme-muted,#655b69);line-height:1.7}
 
-body.fmb-sports-page .sports-empty a{display:inline-flex;min-height:42px;align-items:center;padding:0 16px;border-radius:999px;background:#220D50;color:#fff;text-decoration:none;font-size:12px;font-weight:800}
+body.fmb-sports-page .sports-empty a{display:inline-flex;min-height:42px;align-items:center;padding:0 16px;border-radius:999px;background:#141414;color:#fff;text-decoration:none;font-size:12px;font-weight:800}
 
 body.fmb-sports-page .sports-story-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
 
-body.fmb-sports-page .sports-story{overflow:hidden;border:1px solid var(--fmb-theme-line,rgba(34,13,80,.14));border-radius:20px;background:var(--fmb-theme-surface,#fff);box-shadow:var(--fmb-theme-shadow,0 18px 50px rgba(34,13,80,.10))}
+body.fmb-sports-page .sports-story{overflow:hidden;border:1px solid var(--fmb-theme-line,rgba(10,10,10,.14));border-radius:20px;background:var(--fmb-theme-surface,#fff);box-shadow:var(--fmb-theme-shadow,0 18px 50px rgba(10,10,10,.10))}
 
 body.fmb-sports-page .sports-story>a{display:grid;grid-template-columns:42% minmax(0,1fr);height:100%;color:inherit;text-decoration:none}
 
@@ -70,7 +72,7 @@ body.fmb-sports-page .sports-story img{width:100%;height:100%;min-height:230px;o
 
 body.fmb-sports-page .sports-story>a>div{padding:24px;display:flex;flex-direction:column}
 
-body.fmb-sports-page .sports-story span{color:#630661;font-size:9px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
+body.fmb-sports-page .sports-story span{color:#D71920;font-size:9px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
 
 body.fmb-sports-page .sports-story h2{margin:8px 0 10px;font-family:var(--fmb-luxury-serif,Georgia,serif);font-size:clamp(23px,2.6vw,34px);line-height:1.02}
 
@@ -79,7 +81,7 @@ body.fmb-sports-page .sports-story p{margin:0 0 20px;color:var(--fmb-theme-muted
 body.fmb-sports-page .sports-story time{margin-top:auto;color:var(--fmb-theme-muted,#655b69);font-size:10px;font-weight:700}
 
 html[data-fmb-theme="dark"] body.fmb-sports-page .sports-empty>span,
-html[data-fmb-theme="dark"] body.fmb-sports-page .sports-story span{color:#F9AB60}
+html[data-fmb-theme="dark"] body.fmb-sports-page .sports-story span{color:#F53A3F}
 
 @media(max-width:699px){
   body.fmb-sports-page .sports-shell{width:min(100% - 30px,1180px)}

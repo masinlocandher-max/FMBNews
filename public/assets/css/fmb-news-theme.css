@@ -15,9 +15,9 @@
 
    Tokens are namespaced --fmbv2-* deliberately. Legacy sheets already define
    --fmb-plum, --fmb-violet and --fmb-gold at :root with different values
-   (fmb-news-apple-texture.css sets --fmb-plum:#2b1235). Because this sheet
+   (fmb-news-apple-texture.css sets --fmb-plum:#141414). Because this sheet
    loads last, an unprefixed name here silently repaints everything downstream
-   that consumes theirs: it moved an About-page link from #4B1057 to #630661
+   that consumes theirs: it moved an About-page link from #D71920 to #630661
    before the computed-style check caught it.
 
    Identity palette (unchanged): deep violet #220D50, rich plum #630661,
@@ -136,25 +136,25 @@ html[data-fmb-theme="dark"]{
 :root,
 html[data-fmb-theme="light"]{
   color-scheme:light;
-  --fmb-theme-bg:#fbf9fc;
+  --fmb-theme-bg:#F5F3EF;
   --fmb-theme-surface:#ffffff;
-  --fmb-theme-surface-soft:#f7f2f8;
-  --fmb-theme-ink:#1b1420;
-  --fmb-theme-muted:#655b69;
-  --fmb-theme-line:rgba(34,13,80,.14);
+  --fmb-theme-surface-soft:#EFEDE8;
+  --fmb-theme-ink:#141414;
+  --fmb-theme-muted:#6D7072;
+  --fmb-theme-line:rgba(20,20,20,.14);
   --fmb-theme-glass:rgba(255,255,255,.76);
-  --fmb-theme-shadow:0 18px 50px rgba(34,13,80,.10);
+  --fmb-theme-shadow:0 18px 50px rgba(10,10,10,.10);
 }
 
 html[data-fmb-theme="dark"]{
   color-scheme:dark;
-  --fmb-theme-bg:#0e0a12;
-  --fmb-theme-surface:#17101d;
-  --fmb-theme-surface-soft:#1d1424;
-  --fmb-theme-ink:#f8f4fb;
-  --fmb-theme-muted:#c8bdcc;
+  --fmb-theme-bg:#0A0A0A;
+  --fmb-theme-surface:#141414;
+  --fmb-theme-surface-soft:#1A1A1A;
+  --fmb-theme-ink:#F5F3EF;
+  --fmb-theme-muted:#BFC1C2;
   --fmb-theme-line:rgba(255,255,255,.12);
-  --fmb-theme-glass:rgba(23,16,29,.78);
+  --fmb-theme-glass:rgba(20,20,20,.78);
   --fmb-theme-shadow:0 22px 58px rgba(0,0,0,.34);
 }
 
@@ -169,7 +169,7 @@ body.fmb-matte-system{
 html[data-fmb-theme="light"] body.fmb-matte-system,
 html[data-fmb-theme="light"] body.fmb-matte-system.fmb-news-route,
 html[data-fmb-theme="light"] body.fmb-matte-system.fmb-network-landing{
-  background:#fbf9fc!important;color:#1b1420!important;
+  background:#F5F3EF!important;color:#141414!important;
 }
 html[data-fmb-theme="dark"] body.fmb-matte-system,
 html[data-fmb-theme="dark"] body.fmb-matte-system.fmb-news-route,
@@ -282,11 +282,187 @@ html[data-fmb-theme="dark"] body.fmb-matte-system.fmb-news-about main{background
 
 @media(max-width:699px){
   .fmb-theme-toggle{display:none!important}
-  html[data-fmb-theme="light"] body.fmb-matte-system .fmb-mobile-app-home{background:#fbf9fc!important;color:#1b1420!important}
+  html[data-fmb-theme="light"] body.fmb-matte-system .fmb-mobile-app-home{background:#F5F3EF!important;color:#141414!important}
   html[data-fmb-theme="dark"] body.fmb-matte-system .fmb-mobile-app-home{background:var(--fmb-theme-bg)!important;color:var(--fmb-theme-ink)!important}
   html[data-fmb-theme="dark"] body.fmb-matte-system .fmb-app-action-sheet{background:rgba(0,0,0,.55)!important}
 }
 
 @media(prefers-reduced-motion:reduce){
   body.fmb-matte-system{transition:none}
+}
+
+/* ============================================================================
+   DESK CONVERGENCE — /news/world/, /news/sports/, /news/fmb-brief/,
+   /news/fact-check/
+   ----------------------------------------------------------------------------
+   These four desks still carried the retired plum-and-gold product identity:
+   poster hero canvases, purple gradients, gold hairlines, lavender paper and
+   generic-sans desk titles. Home had already converged, so the publication read
+   as five mini-brands instead of one newsroom with five desks.
+
+   Scope: every selector below is qualified by one of the four desk body
+   classes. Home carries none of them, so Home cannot be reached by this block
+   at all -- that is deliberate, and it is what keeps the approved Home
+   composition frozen while the desks move to meet it.
+
+   This file loads after the mobile system and the matte system, so these rules
+   win over the legacy product sheets without needing a new stylesheet.
+
+   Not touched here: the Fact Check verdict colours (TRUE green, VERIFIED FACT
+   blue, MISLEADING amber, FALSE red). Those carry editorial meaning and are
+   explicitly preserved. */
+
+:root{
+  --fmb-desk-paper:#F5F3EF;
+  --fmb-desk-ink:#141414;
+  --fmb-desk-muted:#6D7072;
+  --fmb-desk-accent:#D71920;
+  --fmb-desk-rule:rgba(20,20,20,.16);
+  --fmb-desk-display:"Bodoni Moda","Libre Bodoni","Didot","Bodoni 72","Baskerville","Times New Roman",serif;
+  --fmb-desk-ui:Inter,-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;
+}
+html[data-fmb-theme="dark"]{
+  --fmb-desk-paper:#0A0A0A;
+  --fmb-desk-ink:#F5F3EF;
+  --fmb-desk-muted:#BFC1C2;
+  --fmb-desk-accent:#F53A3F;
+  --fmb-desk-rule:#2A2C2D;
+}
+
+/* --- the shared desk opener ------------------------------------------------
+   One system for all four: paper ground, thin rule, no poster canvas, no
+   decorative arc, no colour block. */
+body.fmb-worldwide-route .world-hero,
+body.fmb-sports-page .sports-hero,
+body.brief-route .brief-archive-hero,
+body.fmb-daily-brief-route .brief-archive-hero,
+body.fmb-fact-check-route .fc-hero{
+  background:var(--fmb-desk-paper)!important;
+  background-image:none!important;
+  color:var(--fmb-desk-ink)!important;
+  border-bottom:1px solid var(--fmb-desk-rule)!important;
+  box-shadow:none!important;
+}
+body.fmb-worldwide-route .world-hero::before,
+body.fmb-worldwide-route .world-hero::after,
+body.fmb-sports-page .sports-hero::before,
+body.fmb-sports-page .sports-hero::after,
+body.brief-route .brief-archive-hero::before,
+body.brief-route .brief-archive-hero::after,
+body.fmb-fact-check-route .fc-hero::before,
+body.fmb-fact-check-route .fc-hero::after{
+  background:none!important;background-image:none!important;
+  border-color:var(--fmb-desk-rule)!important;
+  box-shadow:none!important;
+  opacity:0!important;
+}
+
+/* Desk title: the editorial serif, at editorial weight, in editorial ink.
+   Replaces the giant low-contrast decorative display word. */
+body.fmb-worldwide-route .world-hero :is(h1,h2),
+body.fmb-sports-page .sports-hero :is(h1,h2),
+body.brief-route .brief-archive-hero :is(h1,h2),
+body.fmb-daily-brief-route .brief-archive-hero :is(h1,h2),
+body.fmb-fact-check-route .fc-hero :is(h1,h2){
+  font-family:var(--fmb-desk-display)!important;
+  color:var(--fmb-desk-ink)!important;
+  font-weight:600!important;
+  letter-spacing:-.02em!important;
+  text-shadow:none!important;
+  -webkit-text-fill-color:currentColor!important;
+}
+/* Deck under the title stays quiet and sans, per the metadata role. */
+body.fmb-worldwide-route .world-hero p,
+body.fmb-sports-page .sports-hero p,
+body.brief-route .brief-archive-hero p,
+body.fmb-daily-brief-route .brief-archive-hero p,
+body.fmb-fact-check-route .fc-hero p{
+  color:var(--fmb-desk-muted)!important;
+  font-family:var(--fmb-desk-ui)!important;
+}
+/* The desk kicker is the one red note in the opener. */
+body.fmb-worldwide-route .world-hero :is(.kicker,.eyebrow,small,.desk-label),
+body.fmb-sports-page .sports-hero :is(.kicker,.eyebrow,small,.desk-label),
+body.brief-route .brief-archive-hero :is(.kicker,.eyebrow,small,.desk-label),
+body.fmb-fact-check-route .fc-hero :is(.kicker,.eyebrow,small,.desk-label){
+  color:var(--fmb-desk-accent)!important;
+  font-family:var(--fmb-desk-ui)!important;
+  letter-spacing:.12em!important;
+  text-transform:uppercase!important;
+}
+
+/* --- desk body: paper, ink, red links, neutral rules ----------------------- */
+body.fmb-worldwide-route,
+body.fmb-sports-page,
+body.brief-route,
+body.fmb-daily-brief-route,
+body.fmb-fact-check-route{
+  background:var(--fmb-desk-paper)!important;
+  color:var(--fmb-desk-ink)!important;
+}
+/* Links and inline accents move off plum onto FMB Red. The Fact Check verdict
+   badges are excluded -- their colour is the verdict. */
+body.fmb-worldwide-route a:not([class*="fc-"]):not(.fmb-mobile-shell-brand),
+body.fmb-sports-page a:not([class*="fc-"]):not(.fmb-mobile-shell-brand),
+body.brief-route a:not([class*="fc-"]):not(.fmb-mobile-shell-brand),
+body.fmb-daily-brief-route a:not([class*="fc-"]):not(.fmb-mobile-shell-brand),
+body.fmb-fact-check-route a:not([class*="fc-"]):not(.fmb-mobile-shell-brand){
+  color:inherit;
+}
+body.fmb-worldwide-route .world-hero a,
+body.brief-route .brief-issue time,
+body.fmb-daily-brief-route .brief-issue time,
+body.brief-route .brief-section-label,
+body.fmb-sports-page .sports-story a[href]:not(.fmb-mobile-shell-brand){
+  color:var(--fmb-desk-accent)!important;
+}
+
+/* --- remove the product-poster chrome the desks still carried -------------- */
+body.fmb-worldwide-route :is(.world-hero,.world-intro,.world-feature),
+body.fmb-sports-page :is(.sports-story,.sports-card,.sports-feature),
+body.brief-route :is(.brief-feature,.brief-watch,.brief-side-card,.brief-angle),
+body.fmb-daily-brief-route :is(.brief-feature,.brief-watch,.brief-side-card,.brief-angle),
+body.fmb-fact-check-route :is(.fc-panel,.fc-legend,.fc-card){
+  background-image:none!important;
+  box-shadow:none!important;
+}
+body.brief-route :is(.brief-watch,.brief-feature),
+body.fmb-daily-brief-route :is(.brief-watch,.brief-feature){
+  background:var(--fmb-desk-paper)!important;
+  color:var(--fmb-desk-ink)!important;
+  border-top:1px solid var(--fmb-desk-rule)!important;
+  border-bottom:1px solid var(--fmb-desk-rule)!important;
+}
+body.brief-route .brief-watch :is(h2,p),
+body.fmb-daily-brief-route .brief-watch :is(h2,p){color:var(--fmb-desk-ink)!important}
+body.brief-route .brief-watch .label,
+body.fmb-daily-brief-route .brief-watch .label{color:var(--fmb-desk-accent)!important}
+/* The numbered story bullet was a plum disc. */
+body.brief-route .brief-section-label:before,
+body.fmb-daily-brief-route .brief-section-label:before{
+  background:var(--fmb-desk-accent)!important;color:#fff!important;
+}
+/* Brief headlines used Georgia; bring them onto the editorial stack. */
+body.brief-route :is(.brief-story h2,.brief-issue h2,.brief-intro h1,.brief-wordmark,.brief-side-card h3),
+body.fmb-daily-brief-route :is(.brief-story h2,.brief-issue h2,.brief-intro h1,.brief-wordmark,.brief-side-card h3){
+  font-family:var(--fmb-desk-display)!important;
+  color:var(--fmb-desk-ink)!important;
+}
+/* Gold/plum side stripes and rules become neutral hairlines. */
+body.fmb-worldwide-route [style*="border"],
+body.brief-route :is(.brief-angle,.brief-side-card,.brief-mast-top),
+body.fmb-daily-brief-route :is(.brief-angle,.brief-side-card,.brief-mast-top),
+body.fmb-fact-check-route :is(.fc-panel,.fc-card){
+  border-color:var(--fmb-desk-rule)!important;
+}
+/* Fact Check: an editorial key, not four app buttons. Verdict COLOUR stays. */
+body.fmb-fact-check-route .fc-badge{
+  border-radius:2px!important;
+  box-shadow:none!important;
+  background:transparent!important;
+  font-family:var(--fmb-desk-ui)!important;
+}
+body.fmb-fact-check-route :is(.fc-panel,.fc-card,.fc-legend){
+  border-radius:2px!important;
+  background:var(--fmb-desk-paper)!important;
 }

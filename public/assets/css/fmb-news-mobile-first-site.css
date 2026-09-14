@@ -8,8 +8,8 @@
   --fmb-mf-ink:#1d1d1f;
   --fmb-mf-muted:#5f5f66;
   --fmb-mf-line:#d9d9df;
-  --fmb-mf-plum:#2b1235;
-  --fmb-mf-violet:#6e3a8a;
+  --fmb-mf-plum:#141414;
+  --fmb-mf-violet:#D71920;
   --fmb-mf-lilac:#e9dff0;
   --fmb-mf-gutter:16px;
   --fmb-mf-radius:16px;
@@ -207,7 +207,7 @@ body.fmb-mobile-first .nc-footer-bottom{display:grid!important;grid-template-col
 body.fmb-mobile-first table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse}
 body.fmb-mobile-first pre,body.fmb-mobile-first code{max-width:100%;overflow-wrap:anywhere}
 body.fmb-mobile-first input[type=email],body.fmb-mobile-first input[type=text],body.fmb-mobile-first input[type=search]{font-size:16px}
-body.fmb-mobile-first :focus-visible{outline:3px solid rgba(110,58,138,.34);outline-offset:2px}
+body.fmb-mobile-first :focus-visible{outline:3px solid rgba(215,25,32,.34);outline-offset:2px}
 
 /* Tablet: only expand from the mobile base. */
 @media (min-width:700px){

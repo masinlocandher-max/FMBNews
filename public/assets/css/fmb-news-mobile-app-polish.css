@@ -1,6 +1,6 @@
 /* Final mobile app polish: one FMB shell, one product rail, immediate product content. */
 @media(max-width:699px){
-:root{--fmb-polish-plum:#2b1235;--fmb-polish-deep:#16081d;--fmb-polish-violet:#6e3a8a;--fmb-polish-gold:#c9a84d;--fmb-polish-bg:#f5f5f7;--fmb-polish-ink:#1d1d1f;--fmb-polish-muted:#6e6e73;--fmb-polish-line:#e4e2e7}
+:root{--fmb-polish-plum:#141414;--fmb-polish-deep:#16081d;--fmb-polish-violet:#D71920;--fmb-polish-gold:#c9a84d;--fmb-polish-bg:#f5f5f7;--fmb-polish-ink:#1d1d1f;--fmb-polish-muted:#6e6e73;--fmb-polish-line:#e4e2e7}
 
 /* One real app chrome. Everything legacy stays out of the phone UI. */
 body.fmb-mobile-first .fmb-legacy-product-rail,

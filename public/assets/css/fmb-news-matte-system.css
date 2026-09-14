@@ -1,19 +1,19 @@
 /* FMB News universal matte-glass brand system — 2026-09-11 */
 :root {
-  --fmb-brand-violet:#220D50;
-  --fmb-brand-plum:#630661;
-  --fmb-brand-peach:#F9AB60;
-  --fmb-news:#630661;
-  --fmb-news-deep:#220D50;
-  --fmb-ink-soft:#5d5364;
-  --fmb-line-strong:rgba(34,13,80,.24);
+  --fmb-brand-violet:#0A0A0A;
+  --fmb-brand-plum:#141414;
+  --fmb-brand-peach:#BFC1C2;
+  --fmb-news:#141414;
+  --fmb-news-deep:#0A0A0A;
+  --fmb-ink-soft:#6D7072;
+  --fmb-line-strong:rgba(10,10,10,.24);
   --fmb-scroll:0;
-  --fmb-matte-ink:#1b1420;
-  --fmb-matte-paper:#fbf9fc;
-  --fmb-matte-line:rgba(34,13,80,.14);
-  --fmb-matte-glass:rgba(34,13,80,.90);
-  --fmb-matte-glass-2:rgba(99,6,97,.82);
-  --fmb-luxury-serif:"Bodoni Moda","Cormorant Garamond","Playfair Display","Bodoni 72",Didot,Georgia,serif;
+  --fmb-matte-ink:#141414;
+  --fmb-matte-paper:#F5F3EF;
+  --fmb-matte-line:rgba(10,10,10,.14);
+  --fmb-matte-glass:rgba(10,10,10,.90);
+  --fmb-matte-glass-2:rgba(20,20,20,.82);
+  --fmb-luxury-serif:"Bodoni Moda","Libre Bodoni","Didot","Bodoni 72","Baskerville","Times New Roman",serif;
 }
 
 body.fmb-matte-system{margin:0;color:var(--fmb-matte-ink);background:var(--fmb-matte-paper);overflow-x:clip}
@@ -30,7 +30,7 @@ body.fmb-matte-system .fmb-lux-wordmark{
 /* Desktop / tablet publication shells. */
 body.fmb-matte-system :is(.mast,.masthead,.fnc-header,.nc-site-header,.brief-network){
   color:#fff!important;background:linear-gradient(118deg,var(--fmb-matte-glass),var(--fmb-matte-glass-2))!important;
-  border-bottom:1px solid rgba(249,171,96,.22)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.10),0 10px 30px rgba(34,13,80,.10)!important;
+  border-bottom:1px solid rgba(191,193,194,.22)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.10),0 10px 30px rgba(10,10,10,.10)!important;
   -webkit-backdrop-filter:blur(24px) saturate(78%);backdrop-filter:blur(24px) saturate(78%);isolation:isolate
 }
 body.fmb-matte-system .mast>.shell{min-height:74px;display:flex!important;align-items:center!important;justify-content:center!important;padding-block:12px!important}
@@ -52,18 +52,18 @@ body.fmb-matte-system :is(.icon-button,.menu-button,.nc-menu-toggle,.fnc-menu){c
 body.fmb-matte-system :is(.nc-menu-toggle,.fnc-menu) span{background:#fff!important}
 
 /* Existing nav/ticker overlays are retained and visually unified. */
-body.fmb-matte-system :is(.top-wire,.fnc-livebar,.nc-brandline){color:rgba(255,255,255,.92);background:#16082d!important;border-color:rgba(249,171,96,.16)!important}
+body.fmb-matte-system :is(.top-wire,.fnc-livebar,.nc-brandline){color:rgba(255,255,255,.92);background:#0A0A0A!important;border-color:rgba(191,193,194,.16)!important}
 body.fmb-matte-system :is(.nav,.section-rail,.brief-edition-bar,.nc-topic-rail){
   color:var(--fmb-brand-violet);background:rgba(250,247,251,.91)!important;border-color:var(--fmb-matte-line)!important;
   -webkit-backdrop-filter:blur(18px) saturate(84%);backdrop-filter:blur(18px) saturate(84%)
 }
 body.fmb-matte-system .nav>.shell{min-width:0}
-body.fmb-matte-system .mobile-nav[data-open],body.fmb-matte-system .nc-site-links.is-open{color:#fff!important;background:rgba(34,13,80,.98)!important;border-color:rgba(249,171,96,.18)!important}
+body.fmb-matte-system .mobile-nav[data-open],body.fmb-matte-system .nc-site-links.is-open{color:#fff!important;background:rgba(10,10,10,.98)!important;border-color:rgba(191,193,194,.18)!important}
 
 /* Mobile app shell: no shell emblem, no secondary lockup, just FMB NEWS. */
 html[data-fmb-global-mobile="true"] body.fmb-matte-system .fmb-mobile-app-shell{
-  background:linear-gradient(118deg,rgba(34,13,80,.94),rgba(99,6,97,.88))!important;
-  border-bottom:1px solid rgba(249,171,96,.20)!important;box-shadow:0 10px 26px rgba(34,13,80,.12)!important;
+  background:linear-gradient(118deg,rgba(10,10,10,.94),rgba(20,20,20,.88))!important;
+  border-bottom:1px solid rgba(191,193,194,.20)!important;box-shadow:0 10px 26px rgba(10,10,10,.12)!important;
   -webkit-backdrop-filter:blur(22px) saturate(78%);backdrop-filter:blur(22px) saturate(78%)
 }
 html[data-fmb-global-mobile="true"] body.fmb-matte-system .fmb-mobile-shell-brand img,
@@ -78,18 +78,18 @@ html[data-fmb-global-mobile="true"] body.fmb-matte-system .fmb-mobile-shell-head
 html[data-fmb-global-mobile="true"] body.fmb-matte-system .fmb-mobile-product-rail{border-color:rgba(255,255,255,.10)!important}
 
 /* No homepage hero image or cinematic art. Text, ticker, shade and live overlays remain. */
-body.fmb-matte-system .hero{background:radial-gradient(circle at 78% 18%,rgba(249,171,96,.13),transparent 30%),radial-gradient(circle at 20% 84%,rgba(255,255,255,.08),transparent 34%),linear-gradient(138deg,#220D50 0%,#430b66 48%,#630661 100%)!important}
+body.fmb-matte-system .hero{background:radial-gradient(circle at 78% 18%,rgba(191,193,194,.13),transparent 30%),radial-gradient(circle at 20% 84%,rgba(255,255,255,.08),transparent 34%),linear-gradient(138deg,#0A0A0A 0%,#141414 48%,#141414 100%)!important}
 body.fmb-matte-system .hero-image,
 body.fmb-matte-system .network-hero-art,
 body.fmb-matte-system [data-fmb-approved-hero]{display:none!important}
-body.fmb-matte-system .hero::after{background:linear-gradient(90deg,rgba(22,8,45,.70),rgba(34,13,80,.36) 58%,rgba(99,6,97,.18))!important}
+body.fmb-matte-system .hero::after{background:linear-gradient(90deg,rgba(10,10,10,.70),rgba(10,10,10,.36) 58%,rgba(20,20,20,.18))!important}
 body.fmb-matte-system .hero-copy h1{font-family:var(--fmb-luxury-serif);letter-spacing:-.035em}
 body.fmb-matte-system .hero-copy h1 span{color:#f7d7bd}
 body.fmb-matte-system .hero-cta .primary{color:var(--fmb-brand-violet);background:#fff8f1}
-body.fmb-matte-system .hero-cta .secondary{border-color:rgba(249,171,96,.46);background:rgba(34,13,80,.22)}
+body.fmb-matte-system .hero-cta .secondary{border-color:rgba(191,193,194,.46);background:rgba(10,10,10,.22)}
 body.fmb-matte-system .network-hero,
 body.fmb-matte-system .fmb-app-brand-hero{
-  background:radial-gradient(circle at 80% 20%,rgba(249,171,96,.12),transparent 30%),linear-gradient(138deg,#220D50 0%,#4a0b68 54%,#630661 100%)!important
+  background:radial-gradient(circle at 80% 20%,rgba(191,193,194,.12),transparent 30%),linear-gradient(138deg,#0A0A0A 0%,#141414 54%,#141414 100%)!important
 }
 body.fmb-matte-system .fmb-hero-readable-shade{display:block!important}
 /* The phone lead copy used to share the hero with a live date/time panel and a
@@ -100,7 +100,7 @@ body.fmb-matte-system .fmb-hero-readable-shade{display:block!important}
    that already carried the headline. Removed rather than overridden. */
 
 /* About page base structure and contrast repair. */
-body.fmb-matte-system.fmb-news-clean,body.fmb-matte-system.fmb-news-about{min-width:320px;background:#fff;color:#1b1420;font-family:Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+body.fmb-matte-system.fmb-news-clean,body.fmb-matte-system.fmb-news-about{min-width:320px;background:#fff;color:#141414;font-family:Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
 body.fmb-matte-system .fnc-shell{width:min(calc(100% - 48px),1380px);margin-inline:auto}
 body.fmb-matte-system .fnc-livebar{min-height:34px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;overflow:hidden}
 body.fmb-matte-system .fnc-live-label,body.fmb-matte-system .fnc-pht{display:flex;align-items:center;gap:8px;padding:0 16px;font-size:9px;font-weight:800;letter-spacing:.10em;text-transform:uppercase;white-space:nowrap}
@@ -113,22 +113,22 @@ body.fmb-matte-system .fnc-header-row{min-height:78px;display:grid;grid-template
 body.fmb-matte-system .fnc-brand{display:inline-flex;align-items:center;text-decoration:none}
 body.fmb-matte-system .fnc-brand img{display:none!important}
 body.fmb-matte-system .fnc-nav{display:flex;justify-content:center}
-body.fmb-matte-system .fnc-submit{display:inline-flex;min-height:40px;align-items:center;justify-content:center;padding:0 14px;border:1px solid rgba(249,171,96,.36);border-radius:999px;font-size:10px;font-weight:800;letter-spacing:.08em;text-decoration:none;text-transform:uppercase;white-space:nowrap}
+body.fmb-matte-system .fnc-submit{display:inline-flex;min-height:40px;align-items:center;justify-content:center;padding:0 14px;border:1px solid rgba(191,193,194,.36);border-radius:999px;font-size:10px;font-weight:800;letter-spacing:.08em;text-decoration:none;text-transform:uppercase;white-space:nowrap}
 body.fmb-matte-system .fnc-menu{display:none;width:44px;height:44px;border:0;background:transparent}
 body.fmb-matte-system .fnc-menu span{display:block;width:23px;height:1px;margin:6px auto}
-body.fmb-matte-system.fmb-news-about main{overflow:clip;color:#1b1420;background:#fff}
-body.fmb-matte-system :is(.fmb-about-hero,.fmb-about-purpose,.fmb-about-method,.fmb-about-name,.fmb-about-standards){color:#1b1420}
+body.fmb-matte-system.fmb-news-about main{overflow:clip;color:#141414;background:#fff}
+body.fmb-matte-system :is(.fmb-about-hero,.fmb-about-purpose,.fmb-about-method,.fmb-about-name,.fmb-about-standards){color:#141414}
 body.fmb-matte-system .fmb-about-hero-copy h1{max-width:12ch;font-size:clamp(54px,7.4vw,116px)!important;line-height:.93!important;letter-spacing:-.045em!important}
 body.fmb-matte-system :is(.fmb-about-hero-statement p,.fmb-about-purpose-copy p,.fmb-about-name-grid>div:last-child p,.fmb-about-method-list p,.fmb-about-principles p){color:#3f3546}
-body.fmb-matte-system .fmb-about-mission-vision{color:#fff!important;background:radial-gradient(circle at 12% 20%,rgba(249,171,96,.08),transparent 30%),linear-gradient(135deg,#16082d 0%,#220D50 56%,#4d0756 100%)!important}
+body.fmb-matte-system .fmb-about-mission-vision{color:#fff!important;background:radial-gradient(circle at 12% 20%,rgba(191,193,194,.08),transparent 30%),linear-gradient(135deg,#0A0A0A 0%,#0A0A0A 56%,#141414 100%)!important}
 body.fmb-matte-system .fmb-about-mv>p:last-child{color:rgba(255,255,255,.84)!important}
-body.fmb-matte-system .fmb-about-closing{color:#fff!important;background:radial-gradient(circle at 82% 24%,rgba(249,171,96,.10),transparent 28%),linear-gradient(135deg,#220D50 0%,#630661 100%)!important}
+body.fmb-matte-system .fmb-about-closing{color:#fff!important;background:radial-gradient(circle at 82% 24%,rgba(191,193,194,.10),transparent 28%),linear-gradient(135deg,#0A0A0A 0%,#141414 100%)!important}
 body.fmb-matte-system .fmb-about-closing h2,body.fmb-matte-system .fmb-about-closing nav a{color:#fff!important}
 body.fmb-matte-system :is(.fmb-about-label,.fmb-about-method-list li>span,.fmb-about-principles span,.fmb-about-name strong){color:var(--fmb-brand-plum)!important}
 body.fmb-matte-system .fmb-about-mv .fmb-about-label,body.fmb-matte-system .fmb-about-closing .fmb-about-label{color:#f4c6a1!important}
 
 /* Footer identity is text-first too. */
-body.fmb-matte-system .fnc-footer{padding:64px 0 30px;color:#fff;background:#120822!important;border-top:1px solid rgba(249,171,96,.16)}
+body.fmb-matte-system .fnc-footer{padding:64px 0 30px;color:#fff;background:#0A0A0A!important;border-top:1px solid rgba(191,193,194,.16)}
 body.fmb-matte-system .fnc-footer-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr) minmax(220px,.65fr);gap:clamp(34px,5vw,76px)}
 body.fmb-matte-system .fnc-footer-brand img,body.fmb-matte-system .footer-logo,body.fmb-matte-system .brief-footer [data-fmb-asset="logo"]{display:none!important}
 body.fmb-matte-system .fnc-footer-brand::before,body.fmb-matte-system .footer-grid>div:first-child::before,body.fmb-matte-system .brief-footer-row>div:first-child::before{

@@ -6,9 +6,9 @@
   display:flex;
   align-items:stretch;
   overflow:hidden;
-  background:linear-gradient(108deg,#1b0321 0%,#4d1059 23%,#84458d 44%,#5a1765 61%,#2d0736 82%,#17021c 100%)!important;
+  background:linear-gradient(108deg,#0A0A0A 0%,#141414 23%,#BFC1C2 44%,#141414 61%,#0F0F0F 82%,#0A0A0A 100%)!important;
   border-bottom:1px solid #18021d!important;
-  box-shadow:0 8px 24px rgba(37,6,45,.14),inset 0 1px rgba(255,255,255,.18)!important;
+  box-shadow:0 8px 24px rgba(20,20,20,.14),inset 0 1px rgba(255,255,255,.18)!important;
 }
 
 .fmb-ref .ticker-clock{
@@ -29,7 +29,7 @@
 }
 .fmb-ref .ticker-clock small{
   margin-left:6px;
-  color:#dec7e3;
+  color:#BFC1C2;
   font:800 8px/1 Arial,Helvetica,sans-serif;
   letter-spacing:.13em;
 }
@@ -52,8 +52,8 @@
   width:7px;
   height:7px;
   border-radius:50%;
-  background:#f1d8f4!important;
-  box-shadow:0 0 0 4px rgba(241,216,244,.12),0 0 12px rgba(241,216,244,.42)!important;
+  background:#BFC1C2!important;
+  box-shadow:0 0 0 4px rgba(191,193,194,.12),0 0 12px rgba(191,193,194,.42)!important;
 }
 
 .fmb-ref .ticker-window{min-width:0;overflow:hidden;flex:1}
@@ -91,7 +91,7 @@
   opacity:.78;
 }
 .fmb-ref .ticker-dot{
-  color:#e1c7e5!important;
+  color:#BFC1C2!important;
   opacity:.62!important;
   font-size:6px!important;
   transform:translateY(1px);
@@ -109,7 +109,7 @@
   font:700 10px/1 Arial,Helvetica,sans-serif!important;
   letter-spacing:.035em;
 }
-.fmb-ref .utility .utility-context{color:#4b1057;font-weight:800}
+.fmb-ref .utility .utility-context{color:#D71920;font-weight:800}
 
 @media(max-width:680px){
   .fmb-ref .headline-ticker{min-height:40px}

@@ -25,7 +25,7 @@ function ensureDirectArticleStyles(){
     .explained-meta{font-size:11px;font-weight:850;letter-spacing:.07em;text-transform:uppercase;color:#8c6a9e}
     .explained-title{font-size:19px;font-weight:780;line-height:1.28;color:#1d1d1f}
     .explained-deck{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;color:#66666b;font-size:14px;line-height:1.55}
-    .explained-arrow{font-size:24px;line-height:1;text-align:right;color:#6e3a8a;transition:transform .18s ease}
+    .explained-arrow{font-size:24px;line-height:1;text-align:right;color:#D71920;transition:transform .18s ease}
     .explainer-article-link:hover .explained-arrow{transform:translateX(3px)}
     @media(max-width:699px){.explained-item.explainer-article-link{grid-template-columns:38px minmax(0,1fr) 24px;gap:10px;padding:17px 16px}.explained-title{font-size:16px}.explained-deck{font-size:13px;-webkit-line-clamp:2}.explained-arrow{font-size:20px}}
   `;

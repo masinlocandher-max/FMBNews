@@ -13,8 +13,8 @@
   --fmb-app-text:#211c24;
   --fmb-app-muted:#746d78;
   --fmb-app-line:rgba(68,39,79,.12);
-  --fmb-metal-gradient:linear-gradient(118deg,#120519 0%,#220d50 27%,#630661 56%,#4b1b68 76%,#18071f 100%);
-  --fmb-metal-sheen:linear-gradient(135deg,rgba(255,255,255,.11) 0%,rgba(255,255,255,.025) 26%,rgba(183,114,211,.16) 49%,rgba(255,255,255,.03) 63%,rgba(0,0,0,.18) 100%);
+  --fmb-metal-gradient:linear-gradient(118deg,#0A0A0A 0%,#101010 27%,#141414 56%,#101010 76%,#0A0A0A 100%);
+  --fmb-metal-sheen:linear-gradient(135deg,rgba(255,255,255,.11) 0%,rgba(255,255,255,.025) 26%,rgba(191,193,194,.16) 49%,rgba(255,255,255,.03) 63%,rgba(0,0,0,.18) 100%);
 }
 
 body.fmb-mobile-first.fmb-mobile-route-home{padding-bottom:78px!important;background:var(--fmb-app-paper)!important}
@@ -73,7 +73,7 @@ body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-lead{display:none!important
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section{width:calc(100% - 24px)!important;margin:18px 12px 0!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head{display:flex!important;align-items:center!important;justify-content:space-between!important;margin:0 2px 10px!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head h2{position:relative;margin:0!important;padding-left:10px!important;color:#2c2330!important;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Inter,sans-serif!important;font-size:21px!important;line-height:1!important;font-weight:850!important;letter-spacing:-.035em!important}
-body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head h2::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:3px;background:linear-gradient(180deg,#9859aa,#5b1d70)!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head h2::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:3px;background:linear-gradient(180deg,#D71920,#8E1016)!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head a{color:#63266f!important;font-size:11px!important;font-weight:800!important;text-decoration:none!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-list{overflow:hidden!important;border:1px solid var(--fmb-app-line)!important;border-radius:18px!important;background:rgba(255,255,255,.94)!important;box-shadow:0 8px 24px rgba(44,18,54,.055)!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-row{display:grid!important;grid-template-columns:92px minmax(0,1fr)!important;grid-template-rows:1fr!important;gap:12px!important;align-items:center!important;min-height:102px!important;padding:11px!important;border-bottom:1px solid rgba(68,39,79,.09)!important;color:var(--fmb-app-text)!important;text-decoration:none!important}

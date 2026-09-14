@@ -68,8 +68,8 @@ body.fmb-mobile-route-explainer .explainer-hero p,
 body.fmb-mobile-route-crossword .fmb-feature-hero p{color:#4b4850!important}
 
 /* Crossword must remain high contrast in every interactive state. */
-body.fmb-mobile-route-crossword .fmb-crossword-toolbar button{color:#2b1235!important;background:#fff!important;border-color:#cfc8d3!important}
-body.fmb-mobile-route-crossword .fmb-crossword-toolbar button.primary{color:#fff!important;background:#2b1235!important;border-color:#2b1235!important}
+body.fmb-mobile-route-crossword .fmb-crossword-toolbar button{color:#141414!important;background:#fff!important;border-color:#cfc8d3!important}
+body.fmb-mobile-route-crossword .fmb-crossword-toolbar button.primary{color:#fff!important;background:#141414!important;border-color:#141414!important}
 body.fmb-mobile-route-crossword .fmb-crossword-status{color:#4f4b53!important;font-weight:650!important}
 body.fmb-mobile-route-crossword .fmb-crossword-board{background:#fff!important}
 body.fmb-mobile-route-crossword .fmb-cell:not(.block){background:#fff!important;color:#111!important}
@@ -88,7 +88,7 @@ body.fmb-mobile-route-crossword .fmb-answer-release p{color:#454149!important}
 
 /* Navigation and controls remain readable regardless of route CSS. */
 body.fmb-mobile-first .fmb-mobile-product-rail a{color:#67626b!important}
-body.fmb-mobile-first .fmb-mobile-product-rail a[aria-current="page"]{color:#2b1235!important}
+body.fmb-mobile-first .fmb-mobile-product-rail a[aria-current="page"]{color:#141414!important}
 body.fmb-mobile-first .fmb-mobile-shell-copy strong{color:#fff!important}
 body.fmb-mobile-first .fmb-mobile-shell-copy small{color:rgba(255,255,255,.72)!important}
 }
