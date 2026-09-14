@@ -1,1 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#160626"/><stop offset="0.55" stop-color="#3b0a57"/><stop offset="1" stop-color="#70207d"/></linearGradient></defs><rect width="1080" height="1080" fill="url(#bg)"/><rect x="70" y="70" width="940" height="940" rx="38" fill="none" stroke="#fff" stroke-opacity=".12" stroke-width="2"/><image href="/news/assets/images/icon-transparent.png" x="720" y="130" width="220" height="220" preserveAspectRatio="xMidYMid meet"/><text x="100" y="200" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700" fill="#d9b7ef" letter-spacing="4">FMB NEWS • ENERGY</text><text x="100" y="485" font-family="Arial,Helvetica,sans-serif" font-size="65" font-weight="800" fill="#fff">VISAYAS, MINDANAO</text><text x="100" y="565" font-family="Arial,Helvetica,sans-serif" font-size="65" font-weight="800" fill="#fff">ON RED ALERT</text><text x="100" y="670" font-family="Arial,Helvetica,sans-serif" font-size="29" fill="#eadcf0">Nine-hour alert windows as outages squeeze supply</text><text x="100" y="935" font-family="Arial,Helvetica,sans-serif" font-size="20" fill="#bfa7ca">FMB-owned editorial graphic • Not a documentary photograph</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080" role="img" aria-label="FMB News editorial plate">
+  <defs>
+    <linearGradient id="plate-ground" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F5F3EF"/><stop offset="1" stop-color="#FAF9F6"/>
+    </linearGradient>
+    <clipPath id="plate-clip"><rect width="1080" height="1080"/></clipPath>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#plate-ground)"/>
+  <g clip-path="url(#plate-clip)"><rect x="0" y="210" width="1080" height="711" fill="#141414" fill-opacity="0.92"/><rect x="0" y="921" width="1080" height="42" fill="#D71920" fill-opacity="0.92"/><rect x="193" y="452" width="227" height="227" fill="#F5F3EF"/></g>
+  <rect x="270" y="925" width="540" height="155" fill="#F5F3EF"/>
+  <text x="545" y="999" text-anchor="middle" fill="#141414" fill-opacity="0.78" font-family="Didot,'Bodoni 72',Baskerville,'Times New Roman',serif" font-size="59" letter-spacing="9">FMB NEWS</text>
+</svg>

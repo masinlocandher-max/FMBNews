@@ -1,1 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="t d"><title id="t">FMB News editorial visual on Japan's wildfire assistance mission in Indonesia</title><desc id="d">Non-documentary FMB News graphic on Japan's September 10, 2026 arrival in Indonesia with helicopters for wildfire response as regional haze remains a concern.</desc><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#220D50"/><stop offset=".55" stop-color="#630661"/><stop offset="1" stop-color="#F9AB60"/></linearGradient></defs><rect width="1600" height="900" fill="url(#g)"/><image href="/assets/images/icon-transparent.png" x="1215" y="90" width="255" height="255"/><text x="110" y="145" fill="#F9AB60" font-family="Arial" font-size="28" font-weight="700" letter-spacing="6">FMB NEWS · WORLDWIDE</text><text x="110" y="300" fill="white" font-family="Georgia" font-size="64" font-weight="700">Japan wildfire mission</text><text x="110" y="385" fill="white" font-family="Georgia" font-size="64" font-weight="700">reaches Indonesia</text><rect x="110" y="475" width="1160" height="185" rx="28" fill="#fff" opacity=".11"/><text x="150" y="545" fill="#F9AB60" font-family="Arial" font-size="27" font-weight="700">BORNEO · REGIONAL HAZE RESPONSE</text><text x="150" y="605" fill="white" font-family="Arial" font-size="28">Three CH-47 helicopters are set to support firefighting operations</text><text x="110" y="805" fill="#F6EAF8" font-family="Arial" font-size="21">FMB-owned editorial visual · Not a documentary photograph</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="FMB News editorial plate">
+  <defs>
+    <linearGradient id="plate-ground" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A0A0A"/><stop offset="1" stop-color="#141414"/>
+    </linearGradient>
+    <clipPath id="plate-clip"><rect width="1600" height="900"/></clipPath>
+  </defs>
+  <rect width="1600" height="900" fill="url(#plate-ground)"/>
+  <g clip-path="url(#plate-clip)"><path d="M 894 0 L 1600 0 L 1600 900 L 1025 900 Z" fill="#BFC1C2" fill-opacity="0.34"/><path d="M 803 0 L 856 0 L 987 900 L 934 900 Z" fill="#D71920" fill-opacity="0.92"/><circle cx="209" cy="415" r="202" fill="none" stroke="#BFC1C2" stroke-opacity="0.46" stroke-width="22"/></g>
+  <rect x="572" y="770" width="456" height="130" fill="#0A0A0A"/>
+  <text x="804" y="832" text-anchor="middle" fill="#F5F3EF" fill-opacity="0.78" font-family="Didot,'Bodoni 72',Baskerville,'Times New Roman',serif" font-size="50" letter-spacing="8">FMB NEWS</text>
+</svg>

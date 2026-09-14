@@ -1,1 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#220D50"/><stop offset=".58" stop-color="#630661"/><stop offset="1" stop-color="#F9AB60"/></linearGradient></defs><rect width="1080" height="1080" fill="url(#g)"/><image href="/assets/images/icon-transparent.png" x="780" y="70" width="200" height="200"/><text x="78" y="135" fill="#F9AB60" font-family="Arial" font-size="22" font-weight="700" letter-spacing="5">FMB NEWS · GOVERNMENT</text><text x="78" y="335" fill="white" font-family="Georgia" font-size="58" font-weight="700">Pacquiao joins</text><text x="78" y="410" fill="white" font-family="Georgia" font-size="58" font-weight="700">Marcos Cabinet</text><rect x="78" y="500" width="900" height="250" rx="28" fill="#fff" opacity=".11"/><text x="120" y="580" fill="#F9AB60" font-family="Arial" font-size="25" font-weight="700">NAPC</text><text x="120" y="645" fill="white" font-family="Arial" font-size="34">Secretary and lead convenor</text><text x="78" y="900" fill="#F6EAF8" font-family="Arial" font-size="24">Returns to government after leaving Senate in 2022</text><text x="78" y="1000" fill="#F6EAF8" font-family="Arial" font-size="18">FMB-owned editorial visual · Not a documentary photograph</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080" role="img" aria-label="FMB News editorial plate">
+  <defs>
+    <linearGradient id="plate-ground" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F5F3EF"/><stop offset="1" stop-color="#FAF9F6"/>
+    </linearGradient>
+    <clipPath id="plate-clip"><rect width="1080" height="1080"/></clipPath>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#plate-ground)"/>
+  <g clip-path="url(#plate-clip)"><circle cx="712" cy="481" r="697" fill="#141414" fill-opacity="0.92"/><circle cx="712" cy="481" r="428" fill="#F5F3EF"/><rect x="590" y="666" width="490" height="49" fill="#D71920"/></g>
+  <rect x="270" y="925" width="540" height="155" fill="#F5F3EF"/>
+  <text x="545" y="999" text-anchor="middle" fill="#141414" fill-opacity="0.78" font-family="Didot,'Bodoni 72',Baskerville,'Times New Roman',serif" font-size="59" letter-spacing="9">FMB NEWS</text>
+</svg>

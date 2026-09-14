@@ -1,1 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#160626"/><stop offset="0.55" stop-color="#3b0a57"/><stop offset="1" stop-color="#70207d"/></linearGradient><linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a56bd0"/><stop offset="0.5" stop-color="#f0d7ff"/><stop offset="1" stop-color="#7d3794"/></linearGradient></defs><rect width="1600" height="900" fill="url(#bg)"/><rect x="100" y="105" width="1400" height="690" rx="42" fill="none" stroke="#fff" stroke-opacity="0.12" stroke-width="2"/><image href="/assets/images/icon-transparent.png" x="1160" y="190" width="280" height="280" preserveAspectRatio="xMidYMid meet"/><path d="M1130 600h340M1180 550h240M1230 500h140" stroke="url(#gold)" stroke-width="7" stroke-linecap="round" opacity=".9"/><text x="145" y="250" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="700" fill="#d9b7ef" letter-spacing="5">FMB NEWS • NATIONAL</text><text x="145" y="385" font-family="Arial,Helvetica,sans-serif" font-size="72" font-weight="800" fill="#fff">SENATE PASSES</text><text x="145" y="470" font-family="Arial,Helvetica,sans-serif" font-size="72" font-weight="800" fill="#fff">KIN-CONTRACT BAN BILL</text><text x="145" y="575" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="600" fill="#eadcf0">15–0 vote sends procurement measure forward</text><text x="145" y="720" font-family="Arial,Helvetica,sans-serif" font-size="23" fill="#bfa7ca">FMB-owned editorial graphic • Not a documentary photograph</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="FMB News editorial plate">
+  <defs>
+    <linearGradient id="plate-ground" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F5F3EF"/><stop offset="1" stop-color="#FAF9F6"/>
+    </linearGradient>
+    <clipPath id="plate-clip"><rect width="1600" height="900"/></clipPath>
+  </defs>
+  <rect width="1600" height="900" fill="url(#plate-ground)"/>
+  <g clip-path="url(#plate-clip)"><rect x="318" y="0" width="955" height="900" fill="#141414" fill-opacity="0.92"/><rect x="1273" y="0" width="35" height="900" fill="#D71920" fill-opacity="0.92"/><rect x="559" y="373" width="474" height="474" fill="#F5F3EF"/></g>
+  <rect x="572" y="770" width="456" height="130" fill="#F5F3EF"/>
+  <text x="804" y="832" text-anchor="middle" fill="#141414" fill-opacity="0.78" font-family="Didot,'Bodoni 72',Baskerville,'Times New Roman',serif" font-size="50" letter-spacing="8">FMB NEWS</text>
+</svg>

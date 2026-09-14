@@ -1,1 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#220D50"/><stop offset=".58" stop-color="#630661"/><stop offset="1" stop-color="#F9AB60"/></linearGradient></defs><rect width="1600" height="900" fill="url(#g)"/><image href="/assets/images/icon-transparent.png" x="1210" y="90" width="260" height="260"/><text x="112" y="145" fill="#F9AB60" font-family="Arial" font-size="28" font-weight="700" letter-spacing="6">FMB NEWS · GOVERNMENT</text><text x="112" y="305" fill="white" font-family="Georgia" font-size="68" font-weight="700">Manny Pacquiao returns</text><text x="112" y="392" fill="white" font-family="Georgia" font-size="68" font-weight="700">to government</text><rect x="112" y="485" width="1160" height="190" rx="28" fill="#fff" opacity=".11"/><text x="155" y="555" fill="#F9AB60" font-family="Arial" font-size="27" font-weight="700">NATIONAL ANTI-POVERTY COMMISSION</text><text x="155" y="615" fill="white" font-family="Arial" font-size="31">Secretary and lead convenor · Cabinet rank</text><text x="112" y="805" fill="#F6EAF8" font-family="Arial" font-size="21">FMB-owned editorial visual · Based on official appointment reporting · Not a documentary photograph</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="FMB News editorial plate">
+  <defs>
+    <linearGradient id="plate-ground" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A0A0A"/><stop offset="1" stop-color="#141414"/>
+    </linearGradient>
+    <clipPath id="plate-clip"><rect width="1600" height="900"/></clipPath>
+  </defs>
+  <rect width="1600" height="900" fill="url(#plate-ground)"/>
+  <g clip-path="url(#plate-clip)"><rect x="0" y="57" width="1600" height="576" fill="#BFC1C2" fill-opacity="0.34"/><rect x="0" y="633" width="1600" height="35" fill="#D71920" fill-opacity="0.92"/><rect x="190" y="244" width="202" height="202" fill="#0A0A0A"/></g>
+  <rect x="572" y="770" width="456" height="130" fill="#0A0A0A"/>
+  <text x="804" y="832" text-anchor="middle" fill="#F5F3EF" fill-opacity="0.78" font-family="Didot,'Bodoni 72',Baskerville,'Times New Roman',serif" font-size="50" letter-spacing="8">FMB NEWS</text>
+</svg>

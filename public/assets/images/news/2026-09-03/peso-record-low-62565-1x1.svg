@@ -1,1 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#160626"/><stop offset="0.55" stop-color="#3b0a57"/><stop offset="1" stop-color="#70207d"/></linearGradient></defs><rect width="1080" height="1080" fill="url(#bg)"/><rect x="70" y="70" width="940" height="940" rx="38" fill="none" stroke="#fff" stroke-opacity=".12" stroke-width="2"/><image href="/news/assets/images/icon-transparent.png" x="720" y="130" width="220" height="220" preserveAspectRatio="xMidYMid meet"/><text x="100" y="200" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700" fill="#d9b7ef" letter-spacing="4">FMB NEWS • ECONOMY</text><text x="100" y="485" font-family="Arial,Helvetica,sans-serif" font-size="61" font-weight="800" fill="#fff">PESO CLOSES AT</text><text x="100" y="560" font-family="Arial,Helvetica,sans-serif" font-size="61" font-weight="800" fill="#fff">RECORD ₱62.565/$1</text><text x="100" y="665" font-family="Arial,Helvetica,sans-serif" font-size="29" fill="#eadcf0">Fourth straight record-low close amid oil and dollar pressure</text><text x="100" y="935" font-family="Arial,Helvetica,sans-serif" font-size="20" fill="#bfa7ca">FMB-owned editorial graphic • Not a documentary photograph</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080" role="img" aria-label="FMB News editorial plate">
+  <defs>
+    <linearGradient id="plate-ground" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A0A0A"/><stop offset="1" stop-color="#141414"/>
+    </linearGradient>
+    <clipPath id="plate-clip"><rect width="1080" height="1080"/></clipPath>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#plate-ground)"/>
+  <g clip-path="url(#plate-clip)"><rect x="31" y="0" width="144" height="1080" fill="#BFC1C2" fill-opacity="0.34"/><rect x="206" y="0" width="144" height="1080" fill="#BFC1C2" fill-opacity="0.34"/><rect x="381" y="0" width="144" height="1080" fill="#BFC1C2" fill-opacity="0.34"/><rect x="556" y="0" width="144" height="1080" fill="#BFC1C2" fill-opacity="0.34"/><rect x="731" y="0" width="144" height="1080" fill="#BFC1C2" fill-opacity="0.34"/><rect x="906" y="0" width="144" height="1080" fill="#D71920" fill-opacity="0.92"/></g>
+  <rect x="270" y="925" width="540" height="155" fill="#0A0A0A"/>
+  <text x="545" y="999" text-anchor="middle" fill="#F5F3EF" fill-opacity="0.78" font-family="Didot,'Bodoni 72',Baskerville,'Times New Roman',serif" font-size="59" letter-spacing="9">FMB NEWS</text>
+</svg>
