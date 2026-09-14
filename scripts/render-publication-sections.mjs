@@ -143,9 +143,130 @@ const entertainment = page({
   body: entertainmentBody,
 });
 
-for (const [slug, html] of [['founder', founder], ['entertainment', entertainment]]) {
+
+/* -------------------------------------------------------------- legal pages */
+// /privacy/ and /terms/ were linked from the footer of all 571 pages and both
+// 404'd: the links pointed at the site root, which the Cloudflare worker does
+// not serve -- it only answers /news/*. They are rendered here, under /news/,
+// and the footer links are repointed to match.
+//
+// Every factual statement below was taken from the codebase rather than from a
+// template. The audit behind it:
+//
+//   device storage   localStorage only, no cookies anywhere in the codebase:
+//                    fmbThemeModeV1, fmbNewsPrefsV1, fmbSavedStoriesV1,
+//                    fmbNewsEmailV1, fmbZodiacV1
+//   sent to FMB      fmb_news_subscribers (Daily Brief email),
+//                    auth/v1/otp (passwordless sign-in),
+//                    news_push_subscriptions (endpoint, keys, platform, and
+//                    the browser string truncated to 500 characters)
+//   third parties    Supabase, Cloudflare, Google Fonts, Open-Meteo
+//   location         navigator.geolocation, only on an explicit tap, with
+//                    enableHighAccuracy:false
+//   analytics        none -- no gtag, GTM, Meta pixel, Hotjar, Plausible,
+//                    Matomo, Segment or Mixpanel appears anywhere
+//
+// The paragraphs that carry legal effect rather than describing observable
+// behaviour are marked as pending the publisher's review, visibly on the page.
+// A drafted policy that has not been reviewed should not read as if it has.
+
+const LEGAL_REVIEW = `<p class="fmb-legal-status" role="note"><b>Status: draft pending review.</b> The technical descriptions on this page were taken directly from the FMB News codebase and are accurate as built. The clauses that carry legal effect have not yet been reviewed by the publisher or by counsel, and should be reviewed before this page is relied upon.</p>`;
+
+const legalPage = ({ slug, h1, kicker, title, description, lede, sections }) => page({
+  slug,
+  title,
+  description,
+  ld: {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: h1,
+    url: `${ORIGIN}/news/${slug}/`,
+    description,
+    inLanguage: 'en-PH',
+    isPartOf: { '@type': 'WebSite', name: 'FMB News', url: `${ORIGIN}/news/` },
+    publisher: { '@type': 'NewsMediaOrganization', name: 'FMB News', alternateName: 'Filipino Media Bulletin', url: `${ORIGIN}/news/` },
+  },
+  body: `
+    <div class="fmb-sec-shell">
+      <p class="fmb-sec-kicker">${esc(kicker)}</p>
+      <h1>${h1}</h1>
+      <div class="fmb-sec-rule" aria-hidden="true"></div>
+      <p class="fmb-sec-lede">${lede}</p>
+      <div class="fmb-legal">
+        ${LEGAL_REVIEW}
+        ${sections.map(([heading, ...paras]) => `<section aria-labelledby="${heading.toLowerCase().replace(/[^a-z0-9]+/g, '-')}"><h2 id="${heading.toLowerCase().replace(/[^a-z0-9]+/g, '-')}">${esc(heading)}</h2>${paras.join('')}</section>`).join('')}
+      </div>
+    </div>`,
+});
+
+const CONTACT = '<a href="mailto:withlovefmb@gmail.com">withlovefmb@gmail.com</a>';
+
+const privacy = legalPage({
+  slug: 'privacy',
+  kicker: 'FMB News · Filipino Media Bulletin',
+  h1: 'Privacy',
+  title: 'Privacy | FMB News · Filipino Media Bulletin',
+  description: 'What FMB News stores on your device, what you send us, which services we rely on, and what we deliberately do not do. FMB News sets no cookies and runs no analytics.',
+  lede: 'FMB News is a newsroom, not an advertising business. This page states plainly what is stored, what is sent, and who else is involved when you read the bulletin.',
+  sections: [
+    ['What we do not do',
+      '<p>FMB News sets <b>no cookies</b>. It runs <b>no analytics</b>, no advertising, no tracking pixels and no third-party measurement of any kind. There is no advertising network, no data broker and no sale or rental of reader information. These are not policy promises layered on top of the product &mdash; there is no such code in the site.</p>'],
+    ['What stays on your device',
+      '<p>Your reading preferences are kept in your own browser&rsquo;s local storage. They are never uploaded on their own, and clearing your browser data removes them permanently.</p>',
+      '<ul><li><b>Appearance</b> &mdash; whether you chose System, Light or Dark.</li><li><b>Feed preferences</b> &mdash; the desks and topics you asked to see more of.</li><li><b>Saved stories</b> &mdash; the reports you saved to read later.</li><li><b>Sign-in email</b> &mdash; only if you asked to stay signed in.</li><li><b>Horoscope sign</b> &mdash; only if you chose one.</li></ul>'],
+    ['What reaches FMB News',
+      '<p>Three things, each only when you start them:</p>',
+      '<ul><li><b>The Daily Brief.</b> If you subscribe, your email address is stored so the briefing can be sent to you.</li><li><b>Signing in.</b> FMB News uses passwordless sign-in: you give an email address, we send a one-time code, and there is no password to store or lose.</li><li><b>Story alerts.</b> If you turn on alerts, your browser&rsquo;s push address, its encryption keys, your platform and a shortened browser identification string are stored so a notification can reach that device. Turning alerts off deletes it.</li></ul>'],
+    ['Weather and location',
+      '<p>The weather panel is the only feature that can use your location, and only when you tap to allow it. FMB News requests <b>low-accuracy</b> location, uses it once to fetch the forecast, and does not store it. You can type a city instead and share nothing. The forecast itself comes from Open-Meteo.</p>'],
+    ['Services FMB News relies on',
+      '<ul><li><b>Supabase</b> &mdash; database, passwordless sign-in and alert delivery.</li><li><b>Cloudflare</b> &mdash; serving the site. Like any host, it processes the network request that delivers a page to you.</li><li><b>Google Fonts</b> &mdash; delivering the typefaces. Loading a font makes a request to Google, which sees the IP address that request comes from.</li><li><b>Open-Meteo</b> &mdash; the weather forecast, as described above.</li></ul>',
+      '<p>Image credits sometimes link to Wikimedia Commons. Following such a link takes you to that site, under its own terms.</p>'],
+    ['Your controls',
+      '<ul><li>Clear your browser data to remove everything stored on your device.</li><li>Unsubscribe from any Daily Brief email to stop the briefing.</li><li>Turn off alerts in the Menu to delete the push record for that device.</li><li>Write to us at ' + CONTACT + ' to ask what is held about you, or to ask for it to be deleted.</li></ul>'],
+    ['Children',
+      '<p>FMB News is a general news publication and is not directed at children.</p>'],
+    ['Changes',
+      '<p>If this page changes, the revised version is published here. Material changes will be noted on the page rather than made quietly.</p>'],
+    ['Contact',
+      '<p>Questions about this page, or about anything held about you, go to ' + CONTACT + '.</p>'],
+  ],
+});
+
+const terms = legalPage({
+  slug: 'terms',
+  kicker: 'FMB News · Filipino Media Bulletin',
+  h1: 'Terms of Use',
+  title: 'Terms of Use | FMB News · Filipino Media Bulletin',
+  description: 'The terms on which FMB News, the Filipino Media Bulletin, publishes: who publishes it, how the reporting may be used, what the reader features are, and how corrections work.',
+  lede: 'These terms cover reading FMB News and using its reader features. They sit alongside the editorial standards, which govern how the reporting itself is produced.',
+  sections: [
+    ['Who publishes this',
+      `<p>FMB News, the Filipino Media Bulletin, is published by Francine Marie Bautista. How the reporting is produced, sourced and corrected is set out in the <a href="/news/editorial-standards/">editorial standards</a> and the <a href="/news/corrections/">corrections policy</a>.</p>`],
+    ['Using the bulletin',
+      '<p>You are welcome to read, link to, quote and share FMB News reporting with attribution. Republishing whole articles, or reproducing FMB-owned visuals outside a link or short quotation, needs permission first.</p>'],
+    ['Accuracy and corrections',
+      `<p>FMB News reports what can be established and says plainly what is still open. When something is wrong, it is corrected on the record rather than edited away &mdash; see the <a href="/news/corrections/">corrections policy</a>. If you believe a report is inaccurate, write to ${CONTACT}.</p>`],
+    ['Images and credits',
+      '<p>Photographs and documents from third parties are credited to their source and used under their own licences, including Creative Commons licences where stated. Visuals produced by FMB News are labelled as FMB-owned editorial visuals and are not documentary photographs; that label appears on the image itself.</p>'],
+    ['Reader features',
+      '<p>The Weekly Horoscope and the FMB Crossword are entertainment features. The horoscope is reflective writing, not prediction, and nothing in it should be treated as advice &mdash; medical, financial, legal or otherwise. Crossword answers stay sealed until the following edition.</p>'],
+    ['Accounts, the Daily Brief and alerts',
+      '<p>Signing in, subscribing to the Daily Brief and enabling alerts are optional and can be undone at any time. What each one stores is set out on the <a href="/news/privacy/">privacy page</a>. Please do not use these features to impersonate someone else or to submit an address you do not control.</p>'],
+    ['Availability',
+      '<p>FMB News is published continuously but is not guaranteed to be uninterrupted. Features that depend on outside services &mdash; the weather panel, alert delivery, sign-in &mdash; can be unavailable when those services are.</p>'],
+    ['Governing law',
+      '<p>These terms are governed by the laws of the Republic of the Philippines.</p>'],
+    ['Changes',
+      '<p>If these terms change, the revised version is published here.</p>'],
+    ['Contact',
+      '<p>Questions about these terms go to ' + CONTACT + '.</p>'],
+  ],
+});
+
+for (const [slug, html] of [['founder', founder], ['entertainment', entertainment], ['privacy', privacy], ['terms', terms]]) {
   const dir = path.join(newsRoot, slug);
   await mkdir(dir, { recursive: true });
   await writeFile(path.join(dir, 'index.html'), html, 'utf8');
 }
-console.log('Rendered /news/founder/ (transparency, portrait slot held open) and /news/entertainment/ (Horoscope and Crossword as reader features, not products).');
+console.log('Rendered /news/founder/, /news/entertainment/, and the two legal routes /news/privacy/ and /news/terms/ that the footer linked on all 571 pages and that both 404d.');

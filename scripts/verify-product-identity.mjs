@@ -104,4 +104,29 @@ for(const file of pages){
   if(!html.includes('/news/fact-check/'))throw new Error(`${rel}: FMB Fact Check is missing from product navigation`);
   const footer=html.slice(html.indexOf('<footer class="footer"'));if(footer.includes('data-fmb-newsletter-form'))throw new Error(`${rel}: footer contains redundant newsletter form`);
 }
-console.log(`Product identity verification passed across ${checked} pages: approved FMB NEWS. editorial reference, News/Worldwide/Sports desk IA, five publication products, Entertainment grouping, founder identity, inventory-aware Sports, and non-redundant footer.`);
+
+// The two legal routes. /privacy/ and /terms/ were linked from the footer of
+// every page and both 404'd, because the links pointed at the site root which
+// the worker does not serve. This asserts the destinations exist, that nothing
+// links the dead root paths again, that they carry the metadata and structure a
+// legal page needs, and that they stay out of the news sitemap and the RSS feed
+// -- a privacy page is not a news story and must not be filed as one.
+for(const slug of ['privacy','terms']){
+  const legal=await readFile(resolve(`dist/news/${slug}/index.html`),'utf8');
+  for(const signal of [`<link rel="canonical" href="https://www.francinemariebautista.com/news/${slug}/">`,'application/ld+json','fmb-sec-shell','fmb-legal','lang="en-PH"'])
+    if(!legal.includes(signal))throw new Error(`/news/${slug}/ is missing ${signal}`);
+  if((legal.match(/<h1/g)||[]).length!==1)throw new Error(`/news/${slug}/ must expose exactly one h1`);
+  if(!/aria-labelledby="/.test(legal))throw new Error(`/news/${slug}/ sections must be labelled for assistive technology`);
+  if(legal.includes('--fmbv2-accent'))throw new Error(`/news/${slug}/ must not paint the retired accent`);
+}
+const newsSitemap=await readFile(resolve('dist/news/news-sitemap.xml'),'utf8');
+const rss=await readFile(resolve('dist/news/feed.xml'),'utf8');
+for(const slug of ['privacy','terms']){
+  if(newsSitemap.includes(`/news/${slug}/`))throw new Error(`/news/${slug}/ must not appear in the Google News sitemap`);
+  if(rss.includes(`/news/${slug}/`))throw new Error(`/news/${slug}/ must not appear in the RSS feed`);
+}
+const canonicalSitemap=await readFile(resolve('dist/news/sitemap.xml'),'utf8');
+for(const slug of ['privacy','terms'])
+  if(!canonicalSitemap.includes(`/news/${slug}/`))throw new Error(`/news/${slug}/ is missing from the canonical sitemap`);
+
+console.log(`Product identity verification passed across ${checked} pages: approved FMB NEWS. editorial reference, News/Worldwide/Sports desk IA, five publication products, Entertainment grouping, founder identity, inventory-aware Sports, and non-redundant footer; /news/privacy/ and /news/terms/ resolve, carry legal-page structure, and stay out of the news sitemap and RSS.`);

@@ -55,7 +55,7 @@ const personalizationJs='<script src="/assets/js/fmb-news-mobile-personalization
 const premiumJs='<script src="/assets/js/fmb-news-mobile-premium.js?v=20260901-premium-v2" defer></script>';
 const mobileHomeJs='<script src="/assets/js/fmb-news-mobile-home.js?v=20260902-approved-home-v4" defer></script>';
 const mobileLiveFeedJs='<script src="/assets/js/fmb-news-mobile-live-feed.js?v=20260902-live-feed-v2" defer></script>';
-const mobileGlobalJs='<script src="/assets/js/fmb-news-mobile-global.js?v=20260914-editorial-shell-v3" defer></script>';
+const mobileGlobalJs='<script src="/assets/js/fmb-news-mobile-global.js?v=20260914-editorial-shell-v4" defer></script>';
 const mobileProductsJs='<script src="/assets/js/fmb-news-mobile-products.js?v=20260902-products-v3" defer></script>';
 const mobilePolishJs='<script src="/assets/js/fmb-news-mobile-app-polish.js?v=20260902-polish-v2" defer></script>';
 const mobileFinalTweaksJs='<script src="/assets/js/fmb-news-mobile-final-tweaks.js?v=20260902-final-tweaks-v1" defer></script>';
@@ -100,7 +100,7 @@ async function apply(target){
   html=upsertJs(html,'/assets/js/fmb-news-mobile-premium.js',premiumJs,'20260901-premium-v2');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-home.js',mobileHomeJs,'20260902-approved-home-v4');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-live-feed.js',mobileLiveFeedJs,'20260902-live-feed-v2');
-  html=upsertJs(html,'/assets/js/fmb-news-mobile-global.js',mobileGlobalJs,'20260914-editorial-shell-v3');
+  html=upsertJs(html,'/assets/js/fmb-news-mobile-global.js',mobileGlobalJs,'20260914-editorial-shell-v4');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-products.js',mobileProductsJs,'20260902-products-v3');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-app-polish.js',mobilePolishJs,'20260902-polish-v2');
   html=upsertJs(html,'/assets/js/fmb-news-mobile-final-tweaks.js',mobileFinalTweaksJs,'20260902-final-tweaks-v1');
