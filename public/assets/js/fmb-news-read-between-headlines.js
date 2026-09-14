@@ -1,10 +1,11 @@
 (()=>{
 'use strict';
 
-const EDITION_ID='fmb-current-events-mix-v1';
+const EDITION_ID='fmb-current-events-mix-v2';
 const STORAGE_KEY='fmbReadBetweenHeadlinesV1';
 const RUN_KEY='fmbReadBetweenHeadlinesActiveRunV1';
 const POINTS_PER_CORRECT=10;
+const QUESTION_SECONDS=30;
 
 const questions=[
   {id:'q01',category:'Philippines',type:'single_select',prompt:'Which Philippine region is holding its first parliamentary election in 2026?',options:['BARMM','CAR','NCR','Region XII'],answer:'BARMM'},
@@ -72,6 +73,7 @@ const normalize=(value)=>String(value??'').normalize('NFKD').replace(/[\u0300-\u
 const validEmail=(value)=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value||'').trim());
 const makeId=()=>window.crypto?.randomUUID?.()||`player-${Date.now()}-${Math.random().toString(36).slice(2)}`;
 const shuffle=(items)=>{const a=[...items];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+const formatTime=(total)=>{const safe=Math.max(0,Math.floor(Number(total)||0));const m=Math.floor(safe/60),s=safe%60;return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;};
 
 function readJSON(key,fallback){try{return JSON.parse(localStorage.getItem(key)||JSON.stringify(fallback));}catch{return fallback;}}
 function writeJSON(key,value){try{localStorage.setItem(key,JSON.stringify(value));}catch{}}
@@ -90,7 +92,8 @@ function readProfile(){
 let profile=readProfile();
 let activeQuestions=[];
 let index=0,score=0,correctCount=0,locked=false,answered=[];
-let activeRun=false,startedAt=0,timerId=null,finishing=false;
+let activeRun=false,startedAt=0,finishing=false;
+let questionDeadline=0,questionTimerId=null,pendingForfeitResult=null;
 
 function persistProfile(){writeJSON(STORAGE_KEY,profile);}
 function readRun(){return readJSON(RUN_KEY,null);}
@@ -99,13 +102,49 @@ function clearRun(){try{localStorage.removeItem(RUN_KEY);}catch{}}
 function typeName(type){if(type==='single_select')return 'Multiple Choice';if(type==='true_false')return 'True or False';return 'Identification';}
 function validAnswers(q){return [q.answer,...(q.aliases||[])].map(normalize);}
 function elapsedSeconds(){return startedAt?Math.max(0,Math.floor((Date.now()-startedAt)/1000)):0;}
-function formatTime(total){const m=Math.floor(total/60),s=total%60;return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;}
-function updateTimer(){if(timerEl)timerEl.textContent=formatTime(elapsedSeconds());}
-function startTimer(){stopTimer();updateTimer();timerId=setInterval(updateTimer,1000);}
-function stopTimer(){if(timerId){clearInterval(timerId);timerId=null;}}
+
+function setNavigationLocked(isLocked){
+  document.body.classList.toggle('rbt-run-active',isLocked);
+  document.querySelectorAll('a').forEach((link)=>{
+    if(isLocked){
+      if(!link.hasAttribute('data-rbt-prev-tabindex'))link.setAttribute('data-rbt-prev-tabindex',link.getAttribute('tabindex')??'');
+      link.setAttribute('tabindex','-1');
+      link.setAttribute('aria-disabled','true');
+    }else{
+      const prev=link.getAttribute('data-rbt-prev-tabindex');
+      if(prev===null)return;
+      if(prev==='')link.removeAttribute('tabindex');else link.setAttribute('tabindex',prev);
+      link.removeAttribute('data-rbt-prev-tabindex');
+      link.removeAttribute('aria-disabled');
+    }
+  });
+}
+
+function stopQuestionTimer(){
+  if(questionTimerId){clearInterval(questionTimerId);questionTimerId=null;}
+  if(timerEl){timerEl.removeAttribute('data-warning');timerEl.removeAttribute('data-critical');}
+}
+
+function updateQuestionTimer(){
+  if(!activeRun||locked)return;
+  const remaining=Math.max(0,Math.ceil((questionDeadline-Date.now())/1000));
+  if(timerEl){
+    timerEl.textContent=formatTime(remaining);
+    timerEl.dataset.warning=remaining<=10?'true':'false';
+    timerEl.dataset.critical=remaining<=5?'true':'false';
+  }
+  if(remaining<=0){stopQuestionTimer();timeoutQuestion();}
+}
+
+function startQuestionTimer(){
+  stopQuestionTimer();
+  questionDeadline=Date.now()+QUESTION_SECONDS*1000;
+  updateQuestionTimer();
+  questionTimerId=setInterval(updateQuestionTimer,250);
+}
 
 function saveActiveRun(status='active'){
-  persistRun({editionId:EDITION_ID,status,startedAt,updatedAt:Date.now(),questionIndex:index,score,correctCount});
+  persistRun({editionId:EDITION_ID,status,startedAt,updatedAt:Date.now(),questionIndex:index,score,correctCount,questionDeadline});
 }
 
 function renderQuestion(){
@@ -120,7 +159,6 @@ function renderQuestion(){
   progressFill.style.width=`${(index/activeQuestions.length)*100}%`;
   feedback.textContent='';feedback.dataset.state='';answerArea.innerHTML='';
   submitButton.hidden=q.type!=='identification';submitButton.disabled=false;skipButton.disabled=false;
-  saveActiveRun();
 
   if(q.type==='identification'){
     const input=document.createElement('input');
@@ -129,20 +167,38 @@ function renderQuestion(){
     answerArea.append(input);setTimeout(()=>input.focus(),0);
   }else{
     const group=document.createElement('div');group.className='rbt-options';
-    shuffle(q.options).forEach(option=>{const button=document.createElement('button');button.type='button';button.className='rbt-option';button.textContent=option;button.addEventListener('click',()=>grade(option,button));group.append(button);});
+    shuffle(q.options).forEach((option)=>{
+      const button=document.createElement('button');button.type='button';button.className='rbt-option';button.textContent=option;
+      button.addEventListener('click',()=>grade(option,button));group.append(button);
+    });
     answerArea.append(group);
   }
+
+  startQuestionTimer();
+  saveActiveRun();
+}
+
+function disableQuestionControls(){
+  submitButton.disabled=true;skipButton.disabled=true;
+  answerArea.querySelectorAll('button,input').forEach((el)=>{el.disabled=true;});
 }
 
 function grade(value,control){
   if(locked||!activeRun)return;
-  const q=activeQuestions[index];locked=true;
+  const q=activeQuestions[index];
+  locked=true;stopQuestionTimer();
   const isCorrect=validAnswers(q).includes(normalize(value));
-  if(isCorrect){score+=POINTS_PER_CORRECT;correctCount++;feedback.textContent=`Correct. +${POINTS_PER_CORRECT} points.`;feedback.dataset.state='correct';if(control)control.dataset.chosen='correct';}
-  else{feedback.textContent='Not this one. The correct answer will not be revealed.';feedback.dataset.state='wrong';if(control)control.dataset.chosen='wrong';}
+  if(isCorrect){
+    score+=POINTS_PER_CORRECT;correctCount++;
+    feedback.textContent=`Correct. +${POINTS_PER_CORRECT} points.`;feedback.dataset.state='correct';
+    if(control)control.dataset.chosen='correct';
+  }else{
+    feedback.textContent='Not this one. The correct answer will not be revealed.';feedback.dataset.state='wrong';
+    if(control)control.dataset.chosen='wrong';
+  }
   answered.push({id:q.id,correct:isCorrect});
-  submitButton.disabled=true;skipButton.disabled=true;answerArea.querySelectorAll('button,input').forEach(el=>el.disabled=true);
-  saveActiveRun();setTimeout(nextQuestion,850);
+  scoreEl.textContent=score.toLocaleString('en-PH');
+  disableQuestionControls();saveActiveRun();setTimeout(nextQuestion,700);
 }
 
 function submitIdentification(){
@@ -154,11 +210,26 @@ function submitIdentification(){
 
 function skipQuestion(){
   if(locked||!activeRun)return;
-  locked=true;answered.push({id:activeQuestions[index].id,correct:false,skipped:true});feedback.textContent='Skipped. The answer stays hidden.';feedback.dataset.state='neutral';
-  answerArea.querySelectorAll('button,input').forEach(el=>el.disabled=true);submitButton.disabled=true;skipButton.disabled=true;saveActiveRun();setTimeout(nextQuestion,650);
+  locked=true;stopQuestionTimer();
+  answered.push({id:activeQuestions[index].id,correct:false,skipped:true});
+  feedback.textContent='Skipped. 0 points. The answer stays hidden.';feedback.dataset.state='neutral';
+  disableQuestionControls();saveActiveRun();setTimeout(nextQuestion,550);
 }
 
-function nextQuestion(){index++;if(index<activeQuestions.length){renderQuestion();return;}finishGame();}
+function timeoutQuestion(){
+  if(locked||!activeRun)return;
+  locked=true;
+  answered.push({id:activeQuestions[index].id,correct:false,timedOut:true});
+  feedback.textContent='Time. 0 points. The answer stays hidden.';feedback.dataset.state='wrong';
+  disableQuestionControls();saveActiveRun();setTimeout(nextQuestion,650);
+}
+
+function nextQuestion(){
+  if(!activeRun)return;
+  index++;
+  if(index<activeQuestions.length){renderQuestion();return;}
+  finishGame();
+}
 
 function recordEdition(result){
   if(profile.completedEditions.includes(EDITION_ID))return false;
@@ -170,7 +241,7 @@ function recordEdition(result){
 }
 
 function showResult(result){
-  activeRun=false;finishing=true;stopTimer();clearRun();
+  activeRun=false;finishing=true;stopQuestionTimer();setNavigationLocked(false);clearRun();
   if(progressFill)progressFill.style.width=result.status==='completed'?'100%':'0%';
   resultScore.textContent=Number(result.score||0).toLocaleString('en-PH');
   resultCorrect.textContent=`${Number(result.correctCount||0)} / ${questions.length}`;
@@ -178,53 +249,77 @@ function showResult(result){
   if(resultTime)resultTime.textContent=formatTime(Number(result.elapsedSeconds||0));
   const note=resultView.querySelector('[data-rbt-result-note]');
   if(note)note.textContent=result.status==='forfeited'
-    ? 'Run forfeited. Leaving, hiding, refreshing, or closing the game page after the challenge starts records 0 for this edition.'
-    : 'Your scored run is complete. Answers remain hidden and this edition cannot be replayed for additional points.';
+    ? 'Run forfeited. Leaving or hiding the game page after the challenge starts records 0 for the entire edition.'
+    : `Scored run complete. Each question had ${QUESTION_SECONDS} seconds. Answers remain hidden.`;
   startView.hidden=true;gameView.hidden=true;resultView.hidden=false;
+  pendingForfeitResult=null;
   setTimeout(()=>{finishing=false;},0);
 }
 
 function finishGame(){
   if(!activeRun)return;
-  const result={status:'completed',score,correctCount,elapsedSeconds:elapsedSeconds(),finishedAt:Date.now()};
+  const result={status:'completed',score,correctCount,elapsedSeconds:elapsedSeconds(),finishedAt:Date.now(),questionSeconds:QUESTION_SECONDS};
   recordEdition(result);showResult(result);
 }
 
-function forfeitRun(){
+function forfeitRun(reason='left_page'){
   if(!activeRun||finishing)return;
-  const result={status:'forfeited',score:0,correctCount:0,elapsedSeconds:elapsedSeconds(),finishedAt:Date.now()};
-  recordEdition(result);
-  activeRun=false;
-  showResult(result);
+  const result={status:'forfeited',score:0,correctCount:0,elapsedSeconds:elapsedSeconds(),finishedAt:Date.now(),reason,questionSeconds:QUESTION_SECONDS};
+  stopQuestionTimer();recordEdition(result);persistRun({editionId:EDITION_ID,status:'forfeited',...result});
+  activeRun=false;pendingForfeitResult=result;
+  if(document.visibilityState==='visible')showResult(result);
 }
 
 function startGame(){
   const name=(nameInput.value||'').trim().slice(0,60);
   const email=(emailInput.value||'').trim().slice(0,120);
-  if(!name||!validEmail(email)){entryError.textContent='Name and a valid email are required to enter the game.';(!name?nameInput:emailInput).focus();return;}
-  if(profile.completedEditions.includes(EDITION_ID)){entryError.textContent='This edition already has a scored result on this device.';return;}
+  if(!name||!validEmail(email)){
+    entryError.textContent='Name and a valid email are required to enter the game.';
+    (!name?nameInput:emailInput).focus();return;
+  }
+  if(profile.completedEditions.includes(EDITION_ID)){
+    entryError.textContent='This edition already has a scored result on this device.';return;
+  }
   profile.playerName=name;profile.email=email;persistProfile();
   activeQuestions=shuffle(questions);
   index=0;score=0;correctCount=0;answered=[];locked=false;startedAt=Date.now();activeRun=true;
-  entryError.textContent='';startView.hidden=true;resultView.hidden=true;gameView.hidden=false;saveActiveRun();startTimer();renderQuestion();
+  entryError.textContent='';startView.hidden=true;resultView.hidden=true;gameView.hidden=false;
+  setNavigationLocked(true);renderQuestion();
 }
 
 function recoverInterruptedRun(){
   const run=readRun();
-  if(!run||run.editionId!==EDITION_ID)return false;
+  if(!run)return false;
+  if(run.editionId!==EDITION_ID){clearRun();return false;}
   if(run.status==='active'){
-    const result={status:'forfeited',score:0,correctCount:0,elapsedSeconds:Math.max(0,Math.floor((Date.now()-Number(run.startedAt||Date.now()))/1000)),finishedAt:Date.now()};
-    recordEdition(result);showResult(result);return true;
+    const result={status:'forfeited',score:0,correctCount:0,elapsedSeconds:Math.max(0,Math.floor((Date.now()-Number(run.startedAt||Date.now()))/1000)),finishedAt:Date.now(),reason:'interrupted',questionSeconds:QUESTION_SECONDS};
+    recordEdition(result);persistRun({editionId:EDITION_ID,status:'forfeited',...result});showResult(result);return true;
+  }
+  if(run.status==='forfeited'){
+    const previous=profile.editionResults[EDITION_ID]||run;showResult(previous);return true;
   }
   return false;
 }
 
-nameInput.value=profile.playerName;emailInput.value=profile.email;lifetimeEl.textContent=profile.lifetimePoints.toLocaleString('en-PH');
-startButton.addEventListener('click',startGame);submitButton.addEventListener('click',submitIdentification);skipButton.addEventListener('click',skipQuestion);
+nameInput.value=profile.playerName;
+emailInput.value=profile.email;
+lifetimeEl.textContent=profile.lifetimePoints.toLocaleString('en-PH');
+if(timerEl)timerEl.textContent=formatTime(QUESTION_SECONDS);
+startButton.addEventListener('click',startGame);
+submitButton.addEventListener('click',submitIdentification);
+skipButton.addEventListener('click',skipQuestion);
 
-document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')forfeitRun();});
-window.addEventListener('pagehide',forfeitRun);
-window.addEventListener('beforeunload',forfeitRun);
+document.addEventListener('click',(event)=>{
+  if(!activeRun)return;
+  const link=event.target.closest('a');
+  if(link){event.preventDefault();event.stopPropagation();}
+},true);
+document.addEventListener('visibilitychange',()=>{
+  if(document.visibilityState==='hidden')forfeitRun('page_hidden');
+  else if(pendingForfeitResult)showResult(pendingForfeitResult);
+});
+window.addEventListener('pagehide',()=>forfeitRun('pagehide'));
+window.addEventListener('beforeunload',()=>forfeitRun('beforeunload'));
 
 if(!recoverInterruptedRun()&&profile.completedEditions.includes(EDITION_ID)){
   const previous=profile.editionResults[EDITION_ID];
