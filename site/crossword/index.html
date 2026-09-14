@@ -6,45 +6,64 @@
   <title>Read Between the Headlines | FMB News</title>
   <meta name="description" content="Play Read Between the Headlines, the weekly FMB News knowledge challenge. Thirty mixed current-events questions, timed play, cumulative points, and no visible answer key.">
   <link rel="canonical" href="https://www.francinemariebautista.com/news/crossword/">
-  <link rel="stylesheet" href="/assets/css/fmb-news-read-between-headlines.css?v=20260915-v2">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/fmb-news-read-between-headlines.css?v=20260915-v3">
   <script src="/assets/js/fmb-news-read-between-headlines.js?v=20260915-v4" defer></script>
 </head>
 <body class="rbt-page">
   <main class="rbt-shell" data-rbt-root>
     <header class="rbt-topbar">
-      <a class="rbt-brand" href="/news/" aria-label="FMB News home"><strong>FMB NEWS.</strong><span>Filipino Media Bulletin</span></a>
-      <a class="rbt-back" href="/news/">Back to FMB News</a>
+      <a class="rbt-brand" href="/news/" aria-label="FMB News home">
+        <strong>FMB NEWS<span class="rbt-brand-dot">.</span></strong>
+        <span>Filipino Media Bulletin</span>
+      </a>
+      <div class="rbt-topbar-right">
+        <span class="rbt-purpose">Information with Purpose.</span>
+        <a class="rbt-back" href="/news/">Back to FMB News</a>
+      </div>
     </header>
 
     <section class="rbt-hero">
-      <div class="rbt-kicker">Weekly Knowledge Challenge</div>
-      <h1 class="rbt-title">Read Between<br><em>the Headlines.</em></h1>
-      <p class="rbt-deck">Thirty questions. Across the stories FMB News follows.</p>
-      <p class="rbt-intro">Current affairs, Philippine public life, science, technology, P-pop, OPM, sports, and world stories appear in a different order every run. Know the headline, remember the context, and finish without leaving the page.</p>
-      <div class="rbt-meta" aria-label="Game rules">
-        <span class="rbt-chip">30 Questions</span>
-        <span class="rbt-chip">10 Points Each</span>
-        <span class="rbt-chip">Mixed Categories</span>
-        <span class="rbt-chip">Timed Run</span>
-        <span class="rbt-chip">Leave Page = 0</span>
-        <span class="rbt-chip">No Answer Reveal</span>
+      <div class="rbt-hero-main">
+        <div class="rbt-kicker">Weekly knowledge challenge</div>
+        <h1 class="rbt-title">Read Between<br><em>the Headlines.</em></h1>
+      </div>
+      <div class="rbt-hero-aside">
+        <p class="rbt-deck">Thirty questions across the stories FMB News follows.</p>
+        <p class="rbt-intro">Current affairs, Philippine public life, science, technology, P-pop, OPM, sports, and world stories appear in a different order every run. Know the headline. Remember the context. Finish the challenge without leaving the page.</p>
+        <div class="rbt-meta" aria-label="Game rules">
+          <span class="rbt-chip">30 questions</span>
+          <span class="rbt-chip">10 points each</span>
+          <span class="rbt-chip">Timed run</span>
+          <span class="rbt-chip">Leave page = 0</span>
+          <span class="rbt-chip">No answer reveal</span>
+        </div>
       </div>
     </section>
 
     <section class="rbt-stage">
-      <section class="rbt-card" data-rbt-start>
+      <div class="rbt-stage-label" aria-hidden="true"><span>FMB NEWS</span><span>THE FMB NEWS MIX</span></div>
+
+      <section class="rbt-card rbt-start" data-rbt-start>
         <div class="rbt-start-grid">
-          <div>
-            <div class="rbt-eyebrow">This Week's Challenge</div>
+          <div class="rbt-start-copy">
+            <div class="rbt-eyebrow">This week's challenge</div>
             <h2 class="rbt-topic">The FMB News Mix</h2>
-            <p class="rbt-copy">Thirty verified questions drawn from the stories, people, culture, technology, music, sports, and public issues making news. Categories and answer choices are mixed so the next question is never predictable.</p>
+            <p class="rbt-copy">Thirty verified questions drawn from the stories, people, culture, technology, music, sports, and public issues making news. Categories and answer choices are mixed, so the next question is never predictable.</p>
             <div class="rbt-rules">
-              <div class="rbt-rule"><strong>One scored run</strong><span>Each correct answer earns 10 points. Maximum score: 300.</span></div>
-              <div class="rbt-rule"><strong>Stay on this page</strong><span>Switching tabs or apps, refreshing, closing, or navigating away forfeits the run and records 0.</span></div>
-              <div class="rbt-rule"><strong>Answers stay hidden</strong><span>A wrong answer is marked, but the correct answer is never shown.</span></div>
+              <div class="rbt-rule"><span>01</span><div><strong>One scored run</strong><p>Each correct answer earns 10 points. Maximum score: 300.</p></div></div>
+              <div class="rbt-rule"><span>02</span><div><strong>Stay on this page</strong><p>Switching tabs or apps, refreshing, closing, or navigating away forfeits the run and records 0.</p></div></div>
+              <div class="rbt-rule"><span>03</span><div><strong>Answers stay hidden</strong><p>A wrong answer is marked, but the correct answer is never shown.</p></div></div>
             </div>
           </div>
-          <div>
+
+          <div class="rbt-entry-panel">
+            <div class="rbt-entry-heading">
+              <span>PLAYER ENTRY</span>
+              <strong>Enter to play.</strong>
+            </div>
             <div class="rbt-entry-fields">
               <div>
                 <label class="rbt-player-label" for="rbt-player">Name</label>
@@ -55,18 +74,18 @@
                 <input class="rbt-player" id="rbt-email" data-rbt-email type="email" maxlength="120" autocomplete="email" inputmode="email" placeholder="Enter your email" required>
               </div>
             </div>
-            <p class="rbt-player-note">Name and email are required to enter this edition. No game starts without both.</p>
-            <div class="rbt-integrity"><strong>Non-negotiable:</strong> once you press Start, leaving or hiding this page makes the scored result 0.</div>
+            <p class="rbt-player-note">Name and email are required. No details, no game.</p>
+            <div class="rbt-integrity"><strong>Non-negotiable.</strong> Once you press Start, leaving or hiding this page makes the scored result 0.</div>
             <div class="rbt-player-error" data-rbt-player-error role="status"></div>
             <button class="rbt-button rbt-button-primary" type="button" data-rbt-start-button>Start the Challenge</button>
           </div>
         </div>
       </section>
 
-      <section data-rbt-game hidden>
+      <section class="rbt-game" data-rbt-game hidden>
         <div class="rbt-game-head">
-          <div>
-            <div class="rbt-eyebrow">The FMB News Mix</div>
+          <div class="rbt-game-title">
+            <span>The FMB News Mix</span>
             <div class="rbt-question-no" data-rbt-question-no>Question 1 of 30</div>
           </div>
           <div class="rbt-stats" aria-label="Current game statistics">
@@ -78,7 +97,10 @@
         <div class="rbt-progress" aria-hidden="true"><span data-rbt-progress-fill></span></div>
 
         <article class="rbt-card rbt-question-card">
-          <div class="rbt-question-meta"><span class="rbt-day" data-rbt-category>Current Affairs</span><span class="rbt-type" data-rbt-type>Multiple Choice</span></div>
+          <div class="rbt-question-meta">
+            <span class="rbt-day" data-rbt-category>Current Affairs</span>
+            <span class="rbt-type" data-rbt-type>Multiple Choice</span>
+          </div>
           <h2 class="rbt-prompt" data-rbt-prompt></h2>
           <div class="rbt-answer" data-rbt-answer></div>
           <div class="rbt-feedback" data-rbt-feedback role="status" aria-live="polite"></div>
@@ -86,12 +108,12 @@
             <button class="rbt-button rbt-button-primary" type="button" data-rbt-submit>Check Answer</button>
             <button class="rbt-button rbt-button-secondary" type="button" data-rbt-skip>Skip</button>
           </div>
-          <div class="rbt-privacy">Correct answers are never revealed after a miss. Leaving or hiding this page during an active run records 0 for this edition.</div>
+          <div class="rbt-privacy"><span>GAME INTEGRITY</span> Correct answers are never revealed after a miss. Leaving or hiding this page during an active run records 0 for this edition.</div>
         </article>
       </section>
 
       <section class="rbt-card rbt-result" data-rbt-result hidden>
-        <div class="rbt-result-mark">Challenge Complete</div>
+        <div class="rbt-result-mark">Challenge complete</div>
         <h2>You read between<br>the headlines.</h2>
         <div class="rbt-result-grid">
           <div class="rbt-result-stat"><strong data-rbt-result-score>0</strong><span>Points earned</span></div>
@@ -103,6 +125,12 @@
         <p class="rbt-footnote"><strong>No answer key is shown.</strong> A completed or forfeited scored run cannot be replayed for additional points on this device.</p>
       </section>
     </section>
+
+    <footer class="rbt-footer">
+      <span>FMB NEWS<span class="rbt-brand-dot">.</span></span>
+      <span>Filipino Media Bulletin</span>
+      <span>Information with Purpose.</span>
+    </footer>
   </main>
 </body>
 </html>
