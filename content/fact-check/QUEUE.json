@@ -1,0 +1,33 @@
+{
+  "generatedAt": "2026-09-14",
+  "source": "content/fact-check/HELD.json",
+  "selection": "ALL_HELD_ITEMS",
+  "total": 123,
+  "published": 0,
+  "held": 123,
+  "publicationPolicy": "No item may publish from this queue until its exact claim source is recorded, primary evidence is checked, the rating is independently reached by FMB, final editorial review is complete, and scripts/verify-fact-check.mjs passes.",
+  "defaultStatus": "REQUIRES_EVIDENCE",
+  "defaultReleaseDecision": "DO_NOT_PUBLISH_YET",
+  "batches": [
+    { "batch": 1, "fromId": 1, "toId": 20, "count": 20, "status": "READY_FOR_VERIFICATION" },
+    { "batch": 2, "fromId": 21, "toId": 40, "count": 20, "status": "READY_FOR_VERIFICATION" },
+    { "batch": 3, "fromId": 41, "toId": 60, "count": 20, "status": "READY_FOR_VERIFICATION" },
+    { "batch": 4, "fromId": 61, "toId": 80, "count": 20, "status": "READY_FOR_VERIFICATION" },
+    { "batch": 5, "fromId": 81, "toId": 100, "count": 20, "status": "READY_FOR_VERIFICATION" },
+    { "batch": 6, "fromId": 101, "toId": 120, "count": 20, "status": "READY_FOR_VERIFICATION" },
+    { "batch": 7, "fromId": 121, "toId": 123, "count": 3, "status": "READY_FOR_VERIFICATION" }
+  ],
+  "requiredFieldsBeforeRelease": [
+    "claimSource.url",
+    "claimSource.capturedAt",
+    "claimSource.description",
+    "ratingReachedBy=FMB",
+    "at least one primary evidence URL",
+    "verified names/dates/figures/quotes",
+    "article reconciled with evidence",
+    "image provenance and rights checked",
+    "final editorial review",
+    "build passes",
+    "fact-check verifier passes"
+  ]
+}
