@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "tropical-depression-pilandok-forms-august-30-2026",
+  "headline": "PAGASA Says Low-Pressure Area Develops Into Tropical Depression Pilandok",
+  "seoTitle": "Tropical Depression Pilandok Forms August 30 | FMB News",
+  "seoDescription": "PAGASA said a low-pressure area developed into Tropical Depression Pilandok on August 30 while the southwest monsoon continued to affect Luzon.",
+  "keywords": ["Tropical Depression Pilandok August 30 2026", "PAGASA Pilandok", "Habagat Luzon"],
+  "category": "Environment",
+  "kicker": "Weather · Tropical Cyclone",
+  "deck": "Pilandok formed over the Philippine Sea while its circulation continued to reinforce monsoon rains over western Luzon.",
+  "publishedAt": "2026-08-30T13:00:00+08:00",
+  "updatedAt": "2026-09-04T18:11:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["PAGASA announced on August 30 that the monitored low-pressure area had developed into Tropical Depression Pilandok over the Philippine Sea.","The system remained offshore, but its circulation continued to enhance the southwest monsoon affecting parts of Luzon."]},
+    {"heading":"Public-safety impact","paragraphs":["The principal domestic concern was additional monsoon rainfall over already saturated areas rather than a direct mainland landfall."]},
+    {"heading":"Context","paragraphs":["Pilandok developed after several days of low-pressure-area monitoring and repeated rainfall warnings in Western and Central Luzon."]},
+    {"heading":"What to watch next","paragraphs":["PAGASA advised the public to monitor succeeding cyclone bulletins, rainfall warnings and marine advisories as Pilandok moved near the northern portion of the Philippine monitoring area."]}
+  ],
+  "sources": [
+    {"publisher":"GMA News Online","title":"Live updates: Habagat rains affect parts of PH on Sunday, Aug. 30, 2026","publishedAt":"2026-08-30T11:00:00+08:00","url":"https://www.gmanetwork.com/news/weather/content/1000377/live-updates-habagat-rains-affect-parts-of-ph-on-sunday-aug-30-2026/story/"},
+    {"publisher":"DOST-PAGASA","title":"Tropical cyclone bulletins","publishedAt":"2026-08-30T11:00:00+08:00","url":"https://www.pagasa.dost.gov.ph/tropical-cyclone/severe-weather-bulletin"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://www.gmanetwork.com/news/weather/content/1000377/live-updates-habagat-rains-affect-parts-of-ph-on-sunday-aug-30-2026/story/","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used for this recovered archive report because no stable rights-verified image file was ingested with the recovery package.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying this recovered report.","alt":"FMB News editorial visual for PAGASA Says Low-Pressure Area Develops Into Tropical Depression Pilandok","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-09-04T18:11:00+08:00","recoveredAt":"2026-09-04T18:11:00+08:00","recoveryStatus":"source-checked-backfill","notes":["Recovered from the August 30 1:00 PM brief.","Kept the article focused on the verified formation milestone and removed unsupported claims about future storm names or exact downstream intensification."]}
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "red-rainfall-warning-central-luzon-august-29-2026",
+  "headline": "Red Rainfall Warning Raised Over Zambales, Bataan, Pampanga and Parts of Luzon",
+  "seoTitle": "Red Rainfall Warning Over Central Luzon August 29 | FMB News",
+  "seoDescription": "PAGASA raised red rainfall warnings over Zambales, Bataan, Pampanga and other parts of Luzon on August 29 as Habagat rains intensified.",
+  "keywords": ["PAGASA red rainfall warning August 29 2026", "Zambales Bataan Pampanga rain", "Habagat flooding"],
+  "category": "Environment",
+  "kicker": "Weather · Flood Risk",
+  "deck": "Serious flooding was possible in areas under the highest rainfall warning as the southwest monsoon continued to affect Luzon.",
+  "publishedAt": "2026-08-29T13:00:00+08:00",
+  "updatedAt": "2026-09-04T18:11:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["PAGASA raised the red rainfall warning over Zambales, Bataan and Pampanga on Saturday, August 29, with portions of Bulacan and Batangas also included in morning red-warning bulletins.","Metro Manila and several nearby areas were placed under orange warning during parts of the morning, indicating that flooding remained threatening."]},
+    {"heading":"Context","paragraphs":["The warnings came after days of monsoon rain had already saturated river basins and low-lying communities across Central Luzon."]},
+    {"heading":"Why it matters","paragraphs":["Under a red rainfall warning, serious flooding is expected in flood-prone areas. Residents near rivers, drainage channels and unstable slopes need to act on local evacuation instructions."]},
+    {"heading":"What to watch next","paragraphs":["Warning coverage changed through the day, so residents were advised to rely on the latest PAGASA and local disaster-office bulletins rather than an earlier map."]}
+  ],
+  "sources": [
+    {"publisher":"GMA News Online","title":"RAINFALL ALERT: Red in Zambales, Bataan, Pampanga, Bulacan, Batangas, orange in NCR","publishedAt":"2026-08-29T08:51:00+08:00","url":"https://www.gmanetwork.com/news/weather/content/1000309/rainfall-alert-red-in-zambales-bataan-pampanga-bulacan-batangas-orange-in-ncr-saturday-8-a-m/story/"},
+    {"publisher":"Philstar.com","title":"Red rainfall warning up over Zambales, Bataan, Pampanga; NCR under orange alert","publishedAt":"2026-08-29T09:35:00+08:00","url":"https://www.philstar.com/headlines/weather/2026/08/29/2552619/red-rainfall-warning-over-zambales-bataan-pampanga-ncr-under-orange-alert"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://www.gmanetwork.com/news/weather/content/1000309/rainfall-alert-red-in-zambales-bataan-pampanga-bulacan-batangas-orange-in-ncr-saturday-8-a-m/story/","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used for this recovered archive report because no stable rights-verified image file was ingested with the recovery package.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying this recovered report.","alt":"FMB News editorial visual for Red Rainfall Warning Raised Over Zambales, Bataan, Pampanga and Parts of Luzon","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-09-04T18:11:00+08:00","recoveredAt":"2026-09-04T18:11:00+08:00","recoveryStatus":"source-checked-backfill","notes":["Recovered from multiple August 29 weather briefs.","Consolidated repeated 1 AM, 7 AM and 1 PM rainfall updates into one archive article to avoid duplicate weather pages."]}
+}

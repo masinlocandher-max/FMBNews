@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "paf-completes-32-black-hawk-acquisition-2026",
+  "headline": "Philippine Air Force Completes 32-Helicopter Black Hawk Acquisition",
+  "seoTitle": "PAF Completes 32 S-70i Black Hawk Acquisition | FMB News",
+  "seoDescription": "The Philippine Air Force completed delivery of 32 S-70i Black Hawk helicopters after accepting the final seven aircraft.",
+  "keywords": ["Philippine Air Force Black Hawk 32", "S-70i helicopters Philippines", "PAF modernization 2026"],
+  "category": "National",
+  "kicker": "Defense · Modernization",
+  "deck": "The final seven S-70i helicopters completed a 32-aircraft acquisition intended to expand transport, rescue and disaster-response capacity.",
+  "publishedAt": "2026-08-29T07:00:00+08:00",
+  "updatedAt": "2026-09-04T18:11:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["The Philippine Air Force completed delivery of its 32-aircraft S-70i Black Hawk acquisition after formally accepting the final seven helicopters at Villamor Air Base.","The aircraft were acquired under the Armed Forces modernization program."]},
+    {"heading":"What the fleet is for","paragraphs":["The Air Force said the helicopters support troop and cargo transport, humanitarian assistance and disaster response, search and rescue, and medical evacuation."]},
+    {"heading":"Context","paragraphs":["The final delivery strengthened an existing Black Hawk fleet and expanded the service's rotary-wing capacity for operations across the archipelago."]},
+    {"heading":"What to watch next","paragraphs":["The next phase is operational integration, crew training and assignment of the additional aircraft to missions and units."]}
+  ],
+  "sources": [
+    {"publisher":"Philippine News Agency","title":"PAF completes Black Hawk fleet acquisition with 7 new helicopters","publishedAt":"2026-08-25T15:35:00+08:00","url":"https://www.pna.gov.ph/articles/1282593"},
+    {"publisher":"GMA News Online","title":"PAF boosts air capabilities with new Black Hawk helicopters","publishedAt":"2026-08-27T08:06:00+08:00","url":"https://www.gmanetwork.com/news/topstories/nation/1000005/paf-boosts-air-capabilities-with-new-black-hawk-helicopters/story/"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://www.pna.gov.ph/articles/1282593","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used for this recovered archive report because no stable rights-verified image file was ingested with the recovery package.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying this recovered report.","alt":"FMB News editorial visual for Philippine Air Force Completes 32-Helicopter Black Hawk Acquisition","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-09-04T18:11:00+08:00","recoveredAt":"2026-09-04T18:11:00+08:00","recoveryStatus":"source-checked-backfill","notes":["Recovered from the August 29 7:00 AM brief.","Corrected the fleet context to the independently reported delivery and acquisition figures; avoided the brief's unsupported total-fleet calculation."]}
+}

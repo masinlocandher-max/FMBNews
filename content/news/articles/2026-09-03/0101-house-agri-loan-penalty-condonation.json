@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "house-agri-loan-restructuring-condonation-bill-september-3-2026",
+  "headline": "House Approves Bill to Condone Penalties and Restructure Agricultural Loans",
+  "seoTitle": "House Passes Agricultural Loan Condonation Bill | FMB News",
+  "seoDescription": "The House approved House Bill 10750, which would condone unpaid interest, penalties and surcharges and restructure eligible agricultural loans.",
+  "keywords": ["House Bill 10750", "agricultural loan condonation Philippines", "farmers fisherfolk agrarian reform loans"],
+  "category": "National",
+  "kicker": "Legislation · Agriculture",
+  "deck": "The measure covers eligible loans of farmers, fisherfolk, agrarian reform beneficiaries and their cooperatives and now moves to the Senate.",
+  "publishedAt": "2026-09-03T01:00:00+08:00",
+  "updatedAt": "2026-09-04T18:11:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["The House of Representatives approved House Bill No. 10750, the Agrarian and Agricultural Loan Restructuring and Condonation Act, on third and final reading with 256 affirmative votes and no negative votes or abstentions."]},
+    {"heading":"What the bill would do","paragraphs":["The measure would condone unpaid interest, penalties and surcharges and allow restructuring of eligible agricultural loans secured by farmers, fisherfolk, agrarian reform beneficiaries and their cooperatives.","Covered lending programs include those associated with the Department of Agrarian Reform, Department of Agriculture-Agricultural Credit Policy Council and other listed government credit institutions."]},
+    {"heading":"Why it matters","paragraphs":["The bill is designed to restore borrowers' access to formal credit and improve the financial position of producers who accumulated arrears and penalties."]},
+    {"heading":"What happens next","paragraphs":["House approval does not make the measure law. It must still complete the legislative process, including Senate action and presidential approval or other constitutional disposition."]}
+  ],
+  "sources": [
+    {"publisher":"INQUIRER.net","title":"House bill condoning agri loan penalties passed on final reading","publishedAt":"2026-09-02T21:37:00+08:00","url":"https://newsinfo.inquirer.net/2297917/house-bill-condoning-agri-loan-penalties-passed-on-final-reading"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://newsinfo.inquirer.net/2297917/house-bill-condoning-agri-loan-penalties-passed-on-final-reading","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because source photography was not ingested with independently verified reuse rights.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the agricultural loan bill report.","alt":"FMB News editorial visual for agricultural loan restructuring and condonation legislation","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-09-04T18:11:00+08:00","recoveredAt":"2026-09-04T18:11:00+08:00","recoveryStatus":"source-checked-backfill","notes":["Recovered from the September 3 1:00 AM brief.","Corrected the brief's bill number from HB 10842 to HB 10750 and avoided implying that principal balances are automatically erased."]}
+}

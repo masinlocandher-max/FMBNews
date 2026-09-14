@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "lpa-08i-habagat-class-suspensions-august-28-2026",
+  "headline": "LPA Inside PAR Enhances Habagat as Friday Class Suspensions Expand",
+  "seoTitle": "LPA Enhances Habagat; August 28 Class Suspensions | FMB News",
+  "seoDescription": "PAGASA monitored a low-pressure area east of Northern Luzon as the southwest monsoon brought heavy rain and class suspensions across parts of Luzon.",
+  "keywords": ["LPA August 28 2026", "Habagat class suspensions", "PAGASA Western Luzon"],
+  "category": "Environment",
+  "kicker": "Weather · Public Safety",
+  "deck": "A developing low-pressure area strengthened the southwest monsoon while local governments suspended in-person classes in rain-affected communities.",
+  "publishedAt": "2026-08-28T13:00:00+08:00",
+  "updatedAt": "2026-09-04T18:11:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["PAGASA monitored a low-pressure area east of Northern Luzon on August 28 as the southwest monsoon continued to bring heavy rain over western sections of Luzon.","Local governments announced class suspensions or shifts away from face-to-face instruction in rain-affected areas as flood and landslide risks increased."]},
+    {"heading":"Context","paragraphs":["The weather system later became part of a sequence of disturbances that strengthened the monsoon over the following days. The main public hazard on August 28 was persistent rainfall rather than a direct cyclone landfall."]},
+    {"heading":"Why it matters","paragraphs":["Repeated monsoon rain had already saturated catchments in Central and Western Luzon, increasing the risk that additional rainfall could cause rapid flooding, road disruption and slope failures."]},
+    {"heading":"What to watch next","paragraphs":["Residents were advised to follow PAGASA rainfall warnings and their own LGU or school announcements because suspension coverage and warning levels could change during the day."]}
+  ],
+  "sources": [
+    {"publisher":"Philippine News Agency","title":"Habagat, LPA to bring rains over Luzon, Visayas","publishedAt":"2026-08-28T06:39:00+08:00","url":"https://www.pna.gov.ph/articles/1282843"},
+    {"publisher":"ABS-CBN News","title":"Class suspensions for August 28, 2026 due to habagat rains","publishedAt":"2026-08-27T20:37:00+08:00","url":"https://www.abs-cbn.com/news/weather-traffic/2026/8/27/-walangpasok-class-suspensions-for-august-28-2026-due-to-habagat-rains-2037"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://www.pna.gov.ph/articles/1282843","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used for this recovered archive report because no stable rights-verified image file was ingested with the recovery package.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying this recovered report.","alt":"FMB News editorial visual for LPA Inside PAR Enhances Habagat as Friday Class Suspensions Expand","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-09-04T18:11:00+08:00","recoveredAt":"2026-09-04T18:11:00+08:00","recoveryStatus":"source-checked-backfill","notes":["Recovered from the August 28 1:00 PM FMB News brief.","Narrowed the original brief to verified weather and locality-specific suspension facts; removed unsupported quoted commentary and overbroad rainfall totals."]}
+}
