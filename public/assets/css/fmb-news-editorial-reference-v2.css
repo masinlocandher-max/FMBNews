@@ -324,7 +324,7 @@ html[data-fmb-theme="dark"] .fmb-ref.fmb-network-landing .entertainment-art{bord
    --------------------------------------------------------------------------- */
 .fmb-ref.fmb-network-landing .editorial-status-strip{
   align-items:center!important;
-  min-height:0!important;
+  min-height:36px!important;
 }
 .fmb-ref.fmb-network-landing .editorial-status-strip>a,
 .fmb-ref.fmb-network-landing .editorial-status-strip>span{

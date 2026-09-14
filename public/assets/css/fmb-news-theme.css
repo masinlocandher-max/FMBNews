@@ -1,29 +1,8 @@
-/* ===========================================================================
-   FMB News — design tokens
-   ===========================================================================
-   The repository carries several visual generations layered on top of one
-   another: 14 stylesheets, 2,554 rules and 4,369 !important declarations reach
-   the homepage, with 1,164 selector+property pairs set to conflicting values
-   across files. Consolidating that safely starts here, with one place to name
-   a colour, a radius, a shadow or a duration — so new work consumes a token
-   instead of minting another raw value, and the layers below can be retired
-   against a fixed reference rather than by guesswork.
-
-   Adding tokens changes no computed style on its own. Nothing below reassigns
-   an existing declaration; the eight --fmb-theme-* names the build already
-   consumes keep their exact values and are now derived from this scale.
-
-   Tokens are namespaced --fmbv2-* deliberately. Legacy sheets already define
-   --fmb-plum, --fmb-violet and --fmb-gold at :root with different values
-   (fmb-news-apple-texture.css sets --fmb-plum:#141414). Because this sheet
-   loads last, an unprefixed name here silently repaints everything downstream
-   that consumes theirs: it moved an About-page link from #D71920 to #D71920
-   before the computed-style check caught it.
-
-   Identity palette: newsroom black, warm white, FMB Red and metallic silver.
-   Legacy token names remain compatible; their values follow the approved brand. Editorial surfaces stay predominantly neutral so the
-   journalism, not the brand, carries the page.
-   =========================================================================== */
+/* FMB News shared appearance tokens.
+   Approved palette: black, warm white, controlled red and metallic silver.
+   Preserve legacy token names for existing components; their values now follow
+   the current design system. Spacing, radii, motion and layout remain compatible.
+   Appearance roles are shared by every route, including institutional pages. */
 
 :root{
   /* -- brand ------------------------------------------------------------- */

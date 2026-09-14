@@ -17,7 +17,12 @@ async function legacyGraphicSelectors(dir) {
     if (entry.isDirectory()) selectors.push(...await legacyGraphicSelectors(file));
     else if (entry.name.endsWith('.svg')) {
       const svg = await readFile(file, 'utf8');
-      if (!/#(?:220d50|630661|f9ab60)\b/i.test(svg)) continue;
+      const colors = [...svg.matchAll(/#([0-9a-f]{6})\b/gi)].map(match => match[1]);
+      const retired = colors.some(hex => {
+        const [r, g, b] = [0, 2, 4].map(offset => parseInt(hex.slice(offset, offset + 2), 16));
+        return /^(220d50|630661|f9ab60)$/i.test(hex) || (b > r && b > g + 18 && b > 40);
+      });
+      if (!retired || !/FMB[ -](?:News|owned)/i.test(svg)) continue;
       if (/verdict|fact.check|data.chart/i.test(svg)) continue;
       const url = '/' + path.relative(path.join(root, 'public', 'assets'), file).split(path.sep).join('/');
       selectors.push(`[src*=${JSON.stringify(url)}]`);
@@ -28,7 +33,7 @@ async function legacyGraphicSelectors(dir) {
 const graphicSelectors = await legacyGraphicSelectors(path.join(root, 'public', 'assets', 'images', 'news'));
 const themeSource = await readFile(path.join(root, 'public', 'assets', 'css', 'fmb-news-theme.css'), 'utf8');
 const graphicTreatment = graphicSelectors.length
-  ? `\n/* Source-classified legacy editorial graphics. Originals and credits preserved. */\nhtml:root body.fmb-matte-system img[src]:is(${graphicSelectors.join(',')}){filter:grayscale(1)!important;object-fit:contain!important;background:var(--fmb-theme-surface-soft,#141414)!important}\n`
+  ? `\n/* Source-classified legacy editorial graphics. Originals and credits preserved. */\nhtml:root body.fmb-matte-system img[src]:is(${graphicSelectors.join(',')}){filter:grayscale(1)!important;object-fit:contain!important;background:#141414!important}\n`
   : '';
 await writeFile(path.join(newsRoot, 'assets', 'css', 'fmb-news-theme.css'), themeSource + graphicTreatment);
 
@@ -38,6 +43,7 @@ const assetVersion = async relative => {
 };
 const iaVersion = await assetVersion('css/fmb-news-editorial-ia.css');
 const chromeVersion = await assetVersion('css/fmb-news-publication-landing.css');
+const typographyVersion = await assetVersion('css/fmb-news-product-identity.css');
 const matteVersion = await assetVersion('css/fmb-news-matte-system.css');
 const homeV2Version = await assetVersion('css/fmb-news-home-v2.css');
 const editorialReferenceVersion = await assetVersion('css/fmb-news-editorial-reference-v2.css');
@@ -99,7 +105,7 @@ function ensureBrandAssets(html) {
   else html = html.replace(/\/assets\/css\/fmb-news-theme\.css\?v=[^"']+/gi, themeStylesheetHref);
   if (!html.includes('fmb-news-theme.js')) html = html.replace(/<\/head>/i, `${themeRuntimeTag}</head>`);
   else html = html.replace(/\/assets\/js\/fmb-news-theme\.js\?v=[^"']+/gi, themeRuntimeHref);
-  for (const [name, version] of [['editorial-ia', iaVersion], ['publication-landing', chromeVersion]]) {
+  for (const [name, version] of [['editorial-ia', iaVersion], ['publication-landing', chromeVersion], ['product-identity', typographyVersion]]) {
     const asset = `/assets/css/fmb-news-${name}.css`;
     html = html.replace(new RegExp(asset.replaceAll('.', '\\.') + '(?:\\?v=[^\"\']+)?', 'g'), `${asset}?v=${version}`);
   }
