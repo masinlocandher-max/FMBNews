@@ -1,0 +1,5 @@
+.rbt-timer[data-warning="true"] strong{color:#d71920}
+.rbt-timer[data-critical="true"] strong{animation:rbt-timer-pulse .7s ease-in-out infinite}
+.rbt-run-active .rbt-topbar a{pointer-events:none;opacity:.42}
+@keyframes rbt-timer-pulse{0%,100%{opacity:1}50%{opacity:.45}}
+@media (prefers-reduced-motion:reduce){.rbt-timer[data-critical="true"] strong{animation:none}}
