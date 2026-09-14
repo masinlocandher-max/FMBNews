@@ -208,6 +208,10 @@ function streamCard(story) {
 }
 
 function applyDesktopPublicationLanding(html, stories, desk) {
+  // Retire the template's static wire and dead category rail. The canonical
+  // shell supplies the live ticker; V2 supplies the real desk navigation.
+  html = html.replace(/<div class="top-wire">[\s\S]*?<div class="wire-time"[^>]*>[\s\S]*?<\/div>\s*<\/div>/i, '');
+  html = html.replace(/<div class="section-rail">[\s\S]*?<\/div>\s*<\/div>/i, '');
   html = html.replace(/<title>[\s\S]*?<\/title>/i, '<title>Filipino Media Bulletin | News, Worldwide, Sports, Explainer, Fact Check and Daily Brief</title>');
   html = html.replace(/<meta name="description" content="[^"]*">/i, '<meta name="description" content="Filipino Media Bulletin brings together FMB News, FMB Worldwide, Sports, FMB Explainer, FMB Fact Check, and FMB Daily Brief.">');
   html = html.replace(/<meta property="og:site_name" content="[^"]*">/i, '<meta property="og:site_name" content="Filipino Media Bulletin">');

@@ -13,6 +13,8 @@ const routes=await read('scripts/render-news-routes.mjs');
 const homeRenderer=await read('scripts/render-home-experience.mjs');
 const home=await read('dist/news/index.html');
 const archive=await read('dist/news/archive/index.html');
+must(!home.includes('class="top-wire"'),'static template headlines must not accompany the canonical live ticker');
+must(!home.includes('href="#stories"'),'retired template links must not point at a missing stories anchor');
 
 must(build.includes("await import('./render-news-routes.mjs')"),'build does not use the focused archive/article renderer');
 must(build.includes("await import('./render-home-experience.mjs')"),'build does not invoke the canonical homepage renderer');
