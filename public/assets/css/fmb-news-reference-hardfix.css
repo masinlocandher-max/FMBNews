@@ -1,5 +1,5 @@
 /* FMB News hard visual lock. Loaded last after every newsroom renderer/polish layer. */
-.fmb-ref{--fmb-ink:#171217;--fmb-purple:#32103e;--fmb-violet:#6f1f76;--fmb-paper:#fff;--fmb-soft:#f8f5f8;--fmb-rule:#c7c0c8}
+.fmb-ref{--fmb-ink:#171217;--fmb-purple:#141414;--fmb-violet:#D71920;--fmb-paper:#fff;--fmb-soft:#f8f5f8;--fmb-rule:#c7c0c8}
 .fmb-ref .shell{width:min(1320px,calc(100% - 40px))}
 .fmb-ref .utility{background:#fff;border-bottom:1px solid #211921;color:#211921;font-size:11px}
 .fmb-ref .utility .shell{min-height:32px}

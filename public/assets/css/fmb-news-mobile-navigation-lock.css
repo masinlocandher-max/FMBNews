@@ -226,7 +226,13 @@
     box-shadow:none!important;
   }
   body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[aria-current="page"]>svg,
-  body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[aria-current="page"]>span{position:relative!important;z-index:1!important;color:#fff!important}
+  /* The active rail label lives in this span, not on the anchor. It was
+     pinned to #fff and exempted Home via :not(.fmb-mobile-route-home),
+     which is why Home read correctly while World, Sports, Briefing and
+     Fact Check showed a near-invisible white label on warm paper. It now
+     resolves through the shell token: Editorial Black in Light, white in
+     Dark. */
+body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[aria-current="page"]>span{position:relative!important;z-index:1!important;color:var(--fmb-shell-active)!important}
 
   /* Home headlines stays in the sticky shell. */
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-app-shell>.fmb-app-top-ticker{
@@ -1095,7 +1101,7 @@
 
      Dark   .explained-title   #1d1d1f on the dark ground   1.17:1  x206
             .explained-deck    #66666b                      3.43:1  x206
-            .explained-arrow   #6e3a8a plum                 2.46:1  x206
+            .explained-arrow   #D71920 plum                 2.46:1  x206
      Light  .explained-meta    #8c6a9e plum on the ground   4.13:1  x206
             .explained-number  #8c6a9e plum                 4.13:1  x206
 
@@ -1162,13 +1168,13 @@
    at all on newsroom black. Measured at 390:
 
      .fmb-clue strong                     #5b276e   1.60:1   x36  crossword
-     .audit-result small                  #6e3a8a   2.42:1   x20  search
-     .brief-issue time                    #6e3a8a   2.16:1   x15  Daily Brief
-     .country-card small span             #705477   2.64:1   x10  World
+     .audit-result small                  #D71920   2.42:1   x20  search
+     .brief-issue time                    #D71920   2.16:1   x15  Daily Brief
+     .country-card small span             #6D7072   2.64:1   x10  World
      .fmb-about-principles article span   the identity plum   1.41:1   x7
      .fmb-about-method-list li span       the identity plum   1.41:1   x5
-     .archive-card strong                 #6f1f76   1.75:1   x3   World archive
-     .fmb-feature-hero small              #6f1f76   1.96:1   x1   Horoscope
+     .archive-card strong                 #D71920   1.75:1   x3   World archive
+     .fmb-feature-hero small              #D71920   1.96:1   x1   Horoscope
 
    The About marks are the exact retired identity plum that this file's own
    verifier forbids from appearing here as a value -- still being painted on
@@ -1294,7 +1300,7 @@
    The last family. Every remaining non-decorative failure in Dark is one of
    three things, all of them route chrome rather than journalism:
 
-     a plum back/forward link   #6e3a8a / #6f1f76 / the identity plum
+     a plum back/forward link   #D71920 / #D71920 / the identity plum
      a heading that never flipped   #1d1d1f / #171217         1.02 - 1.04:1
      a count or credit too dim on its surface  #756b79 / #6e6e73  3.2 - 4.3:1
 

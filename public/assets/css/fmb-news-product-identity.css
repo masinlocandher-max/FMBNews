@@ -71,7 +71,7 @@ body.fmb-ref{font-family:var(--fmb-ui)}
   justify-content:center;
   gap:.1em;
   margin:0!important;
-  color:#24102b!important;
+  color:#141414!important;
   text-decoration:none!important;
   font-family:var(--fmb-display)!important;
   line-height:.84!important;
@@ -84,7 +84,7 @@ body.fmb-ref{font-family:var(--fmb-ui)}
 .fmb-ref.fmb-worldwide-route .mast .product-wordmark .product-name{font-size:clamp(52px,6.2vw,90px)}
 .fmb-ref .product-descriptor{
   margin-top:14px;
-  color:#4b1057;
+  color:#D71920;
   font:800 10px/1 var(--fmb-ui)!important;
   letter-spacing:.26em;
   text-transform:uppercase;

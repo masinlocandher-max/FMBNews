@@ -21,8 +21,8 @@ body.fmb-mobile-first .fmb-mobile-shell-actions [data-fmb-shell-account]{display
 /* Product navigation: five official products, visually subordinate to the masthead. */
 body.fmb-mobile-first .fmb-mobile-product-rail{min-height:48px!important;height:48px!important;gap:13px!important;padding:0 13px!important;border-radius:0!important;box-shadow:none!important}
 body.fmb-mobile-first .fmb-mobile-product-rail a{min-height:48px!important;height:48px!important;padding:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;text-shadow:none!important;transition:none!important}
-body.fmb-mobile-first .fmb-mobile-product-rail a[aria-current="page"]{background:#fff!important;color:#2b1235!important;font-weight:850!important;box-shadow:none!important}
-body.fmb-mobile-first .fmb-mobile-product-rail a[aria-current="page"]::after{display:block!important;left:0!important;right:0!important;bottom:0!important;height:2px!important;background:#6e3a8a!important;box-shadow:none!important}
+body.fmb-mobile-first .fmb-mobile-product-rail a[aria-current="page"]{background:#fff!important;color:#141414!important;font-weight:850!important;box-shadow:none!important}
+body.fmb-mobile-first .fmb-mobile-product-rail a[aria-current="page"]::after{display:block!important;left:0!important;right:0!important;bottom:0!important;height:2px!important;background:#D71920!important;box-shadow:none!important}
 
 /* Home product rail keeps the existing metallic-violet authority, but without pill/tile weight. */
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail{display:grid!important;grid-template-columns:repeat(5,minmax(68px,1fr))!important;gap:0!important;height:50px!important;min-height:50px!important;padding:0!important;background:linear-gradient(180deg,#18061f 0%,#100415 100%)!important;border-top:1px solid rgba(208,160,229,.08)!important;border-bottom:1px solid rgba(208,160,229,.12)!important}
@@ -60,7 +60,7 @@ body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-app-home{background:#fff
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section{margin-top:18px!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head{margin:0 1px 7px!important;align-items:center!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head h2{font-size:23px!important;line-height:1!important;font-weight:760!important;letter-spacing:-.035em!important}
-body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head a{display:flex!important;align-items:center!important;min-height:28px!important;color:#6e3a8a!important;font-size:10px!important;font-weight:730!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-section-head a{display:flex!important;align-items:center!important;min-height:28px!important;color:#D71920!important;font-size:10px!important;font-weight:730!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-list{overflow:visible!important;border:0!important;border-radius:0!important;background:transparent!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-row{grid-template-columns:minmax(0,1fr) 96px!important;gap:14px!important;min-height:102px!important;padding:12px 0!important;border-bottom:1px solid #e8e6ea!important;background:transparent!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-story-row img{width:96px!important;height:72px!important;border-radius:8px!important}

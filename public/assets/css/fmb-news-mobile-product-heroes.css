@@ -17,8 +17,8 @@ body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero{
   border-radius:0!important;
   background:
     radial-gradient(circle at 88% 8%,rgba(214,189,114,.18),transparent 22%),
-    radial-gradient(circle at 8% 100%,rgba(110,58,138,.36),transparent 40%),
-    linear-gradient(145deg,#16081d 0%,#2f123d 55%,#16081d 100%)!important;
+    radial-gradient(circle at 8% 100%,rgba(20,20,20,.36),transparent 40%),
+    linear-gradient(145deg,#0A0A0A 0%,#141414 55%,#0A0A0A 100%)!important;
   color:#fff!important;
 }
 body.fmb-mobile-route-world .world-hero::after,
@@ -77,7 +77,7 @@ body.fmb-mobile-route-world .world-kicker,
 body.fmb-mobile-route-explainer .explainer-kicker,
 body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-kicker{
   margin:24px 0 0!important;
-  color:#d8c2e4!important;
+  color:#BFC1C2!important;
   font-size:9px!important;
   line-height:1!important;
   font-weight:850!important;
@@ -92,7 +92,7 @@ body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero h1{
   max-width:330px!important;
   margin:8px 0 14px!important;
   color:#fff!important;
-  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Inter,Helvetica,Arial,sans-serif!important;
+  font-family:"Bodoni Moda","Libre Bodoni","Didot","Bodoni 72","Baskerville","Times New Roman",serif!important;
   font-size:46px!important;
   line-height:.90!important;
   font-weight:880!important;

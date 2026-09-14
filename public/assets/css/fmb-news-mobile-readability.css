@@ -61,7 +61,7 @@
 }
 
 @media (prefers-contrast:more) and (max-width:699px){
-  .fmb-app-top{background:#2b1235}
+  .fmb-app-top{background:#141414}
   .fmb-app-tab{color:#fff}
   .fmb-app-lead:after{background:linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.52) 48%,#080609 100%)}
   .fmb-app-lead p,.fmb-app-meta{color:#fff}
