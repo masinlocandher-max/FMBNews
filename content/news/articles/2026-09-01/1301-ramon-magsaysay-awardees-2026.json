@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "ramon-magsaysay-awardees-2026-runa-khan-tommy-koh-bo-kyi",
+  "headline": "Runa Khan, Tommy Koh and Bo Kyi Named 2026 Ramon Magsaysay Awardees",
+  "seoTitle": "2026 Ramon Magsaysay Awardees Announced | FMB News",
+  "seoDescription": "The Ramon Magsaysay Award Foundation named Runa Khan, Tommy Koh and Bo Kyi as the 2026 recipients of Asia's premier leadership award.",
+  "keywords": ["Ramon Magsaysay Award 2026", "Runa Khan Tommy Koh Bo Kyi", "Magsaysay awardees"],
+  "category": "National",
+  "kicker": "Asia · Leadership",
+  "deck": "The awardees were recognized for humanitarian service, diplomacy and the defense of political prisoners and human dignity.",
+  "publishedAt": "2026-09-01T13:00:00+08:00",
+  "updatedAt": "2026-09-04T18:11:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["The Ramon Magsaysay Award Foundation announced Runa Khan of Bangladesh, Tommy Koh of Singapore and Bo Kyi of Myanmar as its 2026 awardees."]},
+    {"heading":"Why they were recognized","paragraphs":["Khan was honored for building humanitarian services for remote communities in Bangladesh. Koh was recognized for decades of diplomacy, international law and public service. Bo Kyi was honored for documenting abuses and defending political prisoners and human dignity in Myanmar."]},
+    {"heading":"Context","paragraphs":["Established in 1957, the Ramon Magsaysay Award recognizes transformative leadership and public service in Asia."]},
+    {"heading":"Why it matters","paragraphs":["The 2026 recipients represent three different forms of public leadership: direct humanitarian service, institution-building through diplomacy, and sustained human-rights advocacy."]}
+  ],
+  "sources": [
+    {"publisher":"Ramon Magsaysay Award Foundation","title":"The 2026 Ramon Magsaysay Awardees","publishedAt":"2026-08-31T00:00:00+08:00","url":"https://rmaward.asia/"},
+    {"publisher":"Ramon Magsaysay Award Foundation","title":"Khan, Runa","publishedAt":"2026-08-31T00:00:00+08:00","url":"https://rmaward.asia/rmawardees/khan-runa/"},
+    {"publisher":"Ramon Magsaysay Award Foundation","title":"Koh, Tommy","publishedAt":"2026-08-31T00:00:00+08:00","url":"https://rmaward.asia/rmawardees/koh-tommy/"},
+    {"publisher":"Ramon Magsaysay Award Foundation","title":"Bo Kyi","publishedAt":"2026-08-31T00:00:00+08:00","url":"https://rmaward.asia/rmawardees/bo-kyi/"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://rmaward.asia/","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because award photography was not ingested with independently verified reuse rights.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the 2026 Ramon Magsaysay Award announcement.","alt":"FMB News editorial visual for the 2026 Ramon Magsaysay Awardees","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-09-04T18:11:00+08:00","recoveredAt":"2026-09-04T18:11:00+08:00","recoveryStatus":"source-checked-backfill","notes":["Recovered from the September 1 1:00 PM brief.","Verified all three awardee names and citations against the Ramon Magsaysay Award Foundation."]}
+}

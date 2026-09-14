@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "sara-duterte-impeachment-whole-day-october-schedule-2026",
+  "headline": "Senate Impeachment Court Eyes Whole-Day October Sessions Before Budget Work",
+  "seoTitle": "Impeachment Court Eyes Whole-Day October Sessions | FMB News",
+  "seoDescription": "The Senate impeachment court is considering longer whole-day sessions in October to hear more witnesses before intensive 2027 budget deliberations.",
+  "keywords": ["Sara Duterte impeachment October schedule", "whole day impeachment trial", "Senate 2027 budget"],
+  "category": "National",
+  "kicker": "Impeachment · Schedule",
+  "deck": "The tentative calendar would expand hearing hours on selected October dates, pause during intensive budget work and resume in November.",
+  "publishedAt": "2026-09-03T19:00:00+08:00",
+  "updatedAt": "2026-09-04T18:11:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["The Senate impeachment court is considering whole-day trial sessions beginning at 10 a.m. on selected October dates to allow more witnesses to be heard before the chamber's intensive work on the 2027 national budget."]},
+    {"heading":"Tentative calendar","paragraphs":["Presiding Officer Francis Escudero outlined possible whole-day sessions on Oct. 1 and 2, Oct. 5 to 9, and Oct. 12 to 15. No hearings would be held from Oct. 16 to Nov. 8 under the tentative plan, with limited sessions resuming in November."]},
+    {"heading":"Not final yet","paragraphs":["Escudero said the calendar remained tentative and would be finalized after senators agree on how to balance the impeachment trial with budget responsibilities."]},
+    {"heading":"Why it matters","paragraphs":["Longer hearing days could allow two or three witnesses to be heard in a day and reduce the overall number of trial dates without displacing the Senate's budget timetable."]}
+  ],
+  "sources": [
+    {"publisher":"Philippine News Agency","title":"House backs longer impeachment trial days to hasten proceedings","publishedAt":"2026-09-02T18:50:00+08:00","url":"https://www.pna.gov.ph/articles/1283198"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://www.pna.gov.ph/articles/1283198","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because Senate photography was not ingested with independently verified reuse rights.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the impeachment scheduling report.","alt":"FMB News editorial visual for Senate impeachment court scheduling","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-09-04T18:11:00+08:00","recoveredAt":"2026-09-04T18:11:00+08:00","recoveryStatus":"source-checked-backfill","notes":["Recovered from the September 3 7:00 PM brief.","Clearly labels the October schedule as tentative rather than final."]}
+}

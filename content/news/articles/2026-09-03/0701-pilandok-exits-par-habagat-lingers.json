@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "pilandok-exits-par-habagat-lingers-september-3-2026",
+  "headline": "Pilandok Exits PAR as Habagat Continues to Affect Western Luzon",
+  "seoTitle": "Pilandok Exits PAR September 3, 2026 | FMB News",
+  "seoDescription": "Tropical Storm Pilandok exited the Philippine Area of Responsibility early September 3 while southwest monsoon rains continued over parts of western Luzon.",
+  "keywords": ["Pilandok exits PAR September 3 2026", "PAGASA Pilandok", "Habagat Western Luzon"],
+  "category": "Environment",
+  "kicker": "Weather · Tropical Cyclone",
+  "deck": "The storm moved out of the Philippine monitoring area without a direct landfall threat, but monsoon rainfall remained a concern.",
+  "publishedAt": "2026-09-03T07:00:00+08:00",
+  "updatedAt": "2026-09-04T18:11:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["Tropical Storm Pilandok, internationally named Krovanh, exited the Philippine Area of Responsibility at about 4:30 a.m. on September 3, PAGASA said.","At 4 a.m., the storm was estimated about 1,030 kilometers east-northeast of Extreme Northern Luzon and was moving northwestward."]},
+    {"heading":"What the exit means","paragraphs":["Pilandok was not expected to directly affect the country, and its exit ended the domestic cyclone-monitoring phase for the system."]},
+    {"heading":"Habagat remains","paragraphs":["The southwest monsoon continued to bring rain to western parts of Luzon even after Pilandok moved outside PAR, so flood and landslide risks did not end with the storm's departure."]},
+    {"heading":"Why it matters","paragraphs":["Cyclone exit and local weather risk are different things. Communities in saturated areas still needed to follow rainfall, river and marine advisories after Pilandok left PAR."]}
+  ],
+  "sources": [
+    {"publisher":"INQUIRER.net","title":"Pilandok exits PAR early Thursday morning","publishedAt":"2026-09-03T06:35:00+08:00","url":"https://newsinfo.inquirer.net/2298094/pilandok-exits-par-early-thursday-morning"},
+    {"publisher":"Philippine News Agency","title":"Pilandok accelerates as it heads outside PAR","publishedAt":"2026-09-03T06:41:00+08:00","url":"https://www.pna.gov.ph/articles/1283209"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://newsinfo.inquirer.net/2298094/pilandok-exits-par-early-thursday-morning","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because weather graphics were not ingested with independently verified reuse rights.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the Pilandok exit report.","alt":"FMB News editorial visual for Tropical Storm Pilandok leaving PAR","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-09-04T18:11:00+08:00","recoveredAt":"2026-09-04T18:11:00+08:00","recoveryStatus":"source-checked-backfill","notes":["Consolidates and supersedes the repeated Pilandok tracking updates from September 1 to 3.","Published the final PAR-exit milestone rather than multiple stale six-hour position reports."]}
+}

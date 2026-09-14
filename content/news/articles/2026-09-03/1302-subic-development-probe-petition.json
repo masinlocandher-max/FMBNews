@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "subic-freeport-development-probe-petition-september-2026",
+  "headline": "Coalition Seeks Independent Probe and Wider Review of Subic Freeport Development",
+  "seoTitle": "Coalition Seeks Probe of Subic Freeport Development | FMB News",
+  "seoDescription": "The Save Subic Bay Coalition petitioned national authorities for an independent investigation into the Tipo Eco Park landslide and a broader review of developments near sensitive areas in the Subic Freeport.",
+  "keywords": ["Subic Freeport development petition", "Save Subic Bay Coalition", "Tipo High-Tech Eco Park landslide"],
+  "category": "Environment",
+  "kicker": "Subic Bay · Development Review",
+  "deck": "The petition asks government to examine engineering, drainage, environmental clearances and cumulative effects on flooding, slopes, forests and mangroves.",
+  "publishedAt": "2026-09-03T13:00:00+08:00",
+  "updatedAt": "2026-09-04T18:11:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["The Save Subic Bay Coalition, which includes residents, Ayta communities, business groups and civil society organizations, submitted a petition to the President, Senate and House seeking an independent investigation into the fatal landslide at the Tipo High-Tech Eco Park and a broader review of major development projects within the Subic Bay Freeport."]},
+    {"heading":"What the coalition wants reviewed","paragraphs":["The petition asks authorities to examine engineering design, slope stability, drainage, environmental permits, inspections and the cumulative effects of development near waterways, forests, slopes and mangroves.","It also seeks public access to relevant technical and environmental documents, subject to lawful confidentiality limits."]},
+    {"heading":"Claims remain to be investigated","paragraphs":["The coalition raised questions about whether development contributed to landslide and flooding risks, but it explicitly said responsibility should be determined through an independent investigation rather than presumed.","The Subic Bay Metropolitan Authority said it supports an independent review, while the Tipo development's management said it would cooperate and attributed the incident to prolonged heavy rainfall."]},
+    {"heading":"Why it matters","paragraphs":["The dispute tests whether economic development in the Freeport is being matched by transparent, current engineering and environmental safeguards in a region exposed to extreme rainfall and slope hazards."]}
+  ],
+  "sources": [
+    {"publisher":"INQUIRER.net","title":"Groups file petition for probe, review of Subic Freeport development","publishedAt":"2026-09-03T00:00:00+08:00","url":"https://newsinfo.inquirer.net/2298098/groups-file-petition-for-probe-review-of-subic-freeport-development"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://newsinfo.inquirer.net/2298098/groups-file-petition-for-probe-review-of-subic-freeport-development","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because source satellite imagery was not ingested with independently verified reuse rights.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the Subic development-review petition report.","alt":"FMB News editorial visual for Subic Freeport development review","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-09-04T18:11:00+08:00","recoveredAt":"2026-09-04T18:11:00+08:00","recoveryStatus":"source-checked-backfill","notes":["Recovered from the September 3 1:00 PM brief.","Corrected the brief's overstatement that development-caused watershed loss was established fact; the article now attributes concerns to the petition and records the responses of SBMA and the developer."]}
+}

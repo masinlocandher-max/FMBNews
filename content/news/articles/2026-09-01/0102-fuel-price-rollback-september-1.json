@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "fuel-price-rollback-september-1-2026",
+  "headline": "Diesel and Kerosene Prices Drop by Nearly ₱4 per Liter as September Begins",
+  "seoTitle": "Fuel Price Rollback September 1, 2026 | FMB News",
+  "seoDescription": "Oil firms cut diesel and kerosene by nearly ₱4 per liter and gasoline by up to ₱0.40 per liter effective September 1.",
+  "keywords": ["oil price rollback September 1 2026", "diesel price Philippines", "gasoline price rollback"],
+  "category": "Business",
+  "kicker": "Energy · Consumer Prices",
+  "deck": "The September 1 rollback provided motorists relief after two consecutive weeks of fuel-price increases.",
+  "publishedAt": "2026-09-01T01:00:00+08:00",
+  "updatedAt": "2026-09-04T18:11:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["Fuel retailers implemented price cuts effective 6 a.m. on September 1, with the largest reductions applied to diesel and kerosene.","Seaoil announced cuts of ₱0.32 per liter for gasoline, ₱3.83 for diesel and ₱3.84 for kerosene, while Petron and Shell cut gasoline by ₱0.30 and diesel and kerosene by ₱3.80. Unioil announced gasoline and diesel reductions of ₱0.40 and ₱3.90, respectively."]},
+    {"heading":"Context","paragraphs":["The rollback followed two straight weeks of increases and reflected easing international oil-market pressure even as geopolitical risks remained."]},
+    {"heading":"Why it matters","paragraphs":["Fuel-price movements affect household transport costs, logistics expenses and inflation-sensitive goods and services."]},
+    {"heading":"Correction to the brief","paragraphs":["The original newsroom brief described a rollback of up to ₱1.00 per liter. Independently verified retailer advisories showed much larger diesel and kerosene cuts, reaching about ₱3.90 per liter."]}
+  ],
+  "sources": [
+    {"publisher":"Philippine News Agency","title":"Oil price cut set this week","publishedAt":"2026-08-31T17:41:00+08:00","url":"https://www.pna.gov.ph/articles/1283007"},
+    {"publisher":"GMA News Online","title":"Pump price rollback set Tuesday, September 1, 2026","publishedAt":"2026-08-31T12:55:00+08:00","url":"https://www.gmanetwork.com/news/money/economy/1000521/pump-price-rollback-set-tuesday-september-1-2026/story/"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://www.pna.gov.ph/articles/1283007","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used for this recovered archive report because no stable rights-verified image file was ingested with the recovery package.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying this recovered report.","alt":"FMB News editorial visual for Diesel and Kerosene Prices Drop by Nearly ₱4 per Liter as September Begins","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-09-04T18:11:00+08:00","recoveredAt":"2026-09-04T18:11:00+08:00","recoveryStatus":"source-checked-backfill","notes":["Recovered from the September 1 1:00 AM brief.","Corrected the email brief's inaccurate 'up to ₱1.00' rollback claim using retailer and PNA/GMA figures."]}
+}

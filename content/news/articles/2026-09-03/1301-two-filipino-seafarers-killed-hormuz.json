@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "two-filipino-seafarers-killed-strait-of-hormuz-september-2026",
+  "headline": "Two Filipino Seafarers Killed in Strait of Hormuz Tanker Attack",
+  "seoTitle": "2 Filipino Seafarers Killed in Hormuz Attack | FMB News",
+  "seoDescription": "The DMW confirmed two Filipino seafarers died after the Saudi-flagged tanker SIDR was attacked in the Strait of Hormuz; government agencies are assisting their families.",
+  "keywords": ["Filipino seafarers Strait of Hormuz", "SIDR tanker attack", "DMW seafarers September 2026"],
+  "category": "World",
+  "kicker": "Migrant Workers · Maritime Security",
+  "deck": "The deaths renewed calls for strict enforcement of Filipino seafarers' right to refuse voyages through designated high-risk areas.",
+  "publishedAt": "2026-09-03T13:00:00+08:00",
+  "updatedAt": "2026-09-04T18:11:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["The Department of Migrant Workers confirmed that two Filipino seafarers were killed after the Saudi-flagged crude oil tanker SIDR was attacked while transiting the Strait of Hormuz.","The Philippine government said the victims were from Cabuyao, Laguna, and Daanbantayan, Cebu, and ordered agencies to provide their families with applicable benefits, compensation and insurance assistance."]},
+    {"heading":"Right to refuse dangerous voyages","paragraphs":["Senator Raffy Tulfo called on the DMW to ensure that manning agencies and shipping companies respect Filipino seafarers' right to refuse sailing through designated high-risk areas without losing benefits."]},
+    {"heading":"Why it matters","paragraphs":["The attack highlights the direct exposure of Filipino maritime workers to geopolitical conflict along major global shipping routes."]},
+    {"heading":"What to watch next","paragraphs":["Families and surviving crew members will be watching the delivery of compensation, insurance, repatriation support and enforcement of high-risk-area protections."]}
+  ],
+  "sources": [
+    {"publisher":"Philippine News Agency","title":"DMW: 2 Filipino seafarers killed in Strait of Hormuz attack","publishedAt":"2026-09-03T04:00:00+08:00","url":"https://www.pna.gov.ph/articles/1283212"},
+    {"publisher":"Philippine News Agency","title":"Enforce seafarers’ right to refuse Hormuz voyages – Tulfo","publishedAt":"2026-09-03T11:21:00+08:00","url":"https://www.pna.gov.ph/articles/1283216"},
+    {"publisher":"Philippine News Agency","title":"PBBM orders aid for families of 2 Filipino seafarers killed in Hormuz","publishedAt":"2026-09-03T15:21:00+08:00","url":"https://www.pna.gov.ph/articles/1283234"}
+  ],
+  "image":{"kind":"editorial-fallback","url":"/assets/images/news/fmb-news-editorial-fallback.svg","sourceUrl":"https://www.pna.gov.ph/articles/1283234","creator":"FMB News","license":"FMB-owned editorial visual","licenseUrl":"https://www.francinemariebautista.com/news/","usageStatus":"FMB-owned editorial visual used because source vessel photography was not ingested with independently verified reuse rights.","credit":"FMB News editorial visual","caption":"FMB News editorial visual accompanying the Hormuz seafarer report.","alt":"FMB News editorial visual for Filipino seafarers killed in the Strait of Hormuz","width":1200,"height":675,"focusX":50,"focusY":50},
+  "audit":{"sourceCheckedAt":"2026-09-04T18:11:00+08:00","recoveredAt":"2026-09-04T18:11:00+08:00","recoveryStatus":"source-checked-backfill","notes":["Recovered from the September 3 1:00 PM brief.","Removed speculative claims about the type or origin of the projectile and retained only confirmed casualty and worker-protection information."]}
+}
