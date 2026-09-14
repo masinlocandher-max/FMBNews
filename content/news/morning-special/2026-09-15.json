@@ -11,10 +11,10 @@
     "note": "Prepared from fresh September 15 verification sources."
   },
   "hero": {
-    "src": "/assets/images/news/2026-09-14/barmm-first-parliamentary-election-16x9.svg",
-    "alt": "FMB News graphic stating that voting is underway in the first regular BARMM parliamentary election",
-    "caption": "FMB News editorial graphic marking the start of voting in the first regular BARMM parliamentary election on September 14, 2026. This is not a documentary photograph.",
-    "credit": "Graphic: FMB News",
+    "src": "/assets/images/mobile/fmb-daily-brief-coffee.webp",
+    "alt": "FMB Daily Brief coffee visual with the FMB shell emblem",
+    "caption": "Approved FMB Daily Brief photographic visual used when a recovered edition has no suitable rights-cleared documentary photograph.",
+    "credit": "FMB News",
     "sourceUrl": ""
   },
   "stories": [
@@ -62,7 +62,7 @@
       "sources": [
         {
           "label": "BusinessMirror — Big-time pump price hikes: Gas at P5.68, diesel at P4.31",
-          "url": "https://businessmirror.com.ph/"
+          "url": "https://businessmirror.com.ph/2026/09/14/big-time-pump-price-hikes-gas-at-%E2%82%B15-68-diesel-at-%E2%82%B14-31/"
         },
         {
           "label": "GMA News — Oil price hike expected for September 15",
