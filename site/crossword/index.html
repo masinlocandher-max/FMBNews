@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>Read Between the Headlines | FMB News</title>
-  <meta name="description" content="Play Read Between the Headlines, the weekly FMB News knowledge challenge. Thirty questions, one topic, no visible answer key.">
+  <meta name="description" content="Play Read Between the Headlines, the weekly FMB News knowledge challenge. Thirty questions, timed play, cumulative points, and no visible answer key.">
   <link rel="canonical" href="https://www.francinemariebautista.com/news/crossword/">
-  <link rel="stylesheet" href="/assets/css/fmb-news-read-between-headlines.css?v=20260915-v1">
-  <script src="/assets/js/fmb-news-read-between-headlines.js?v=20260915-v2" defer></script>
+  <link rel="stylesheet" href="/assets/css/fmb-news-read-between-headlines.css?v=20260915-v2">
+  <script src="/assets/js/fmb-news-read-between-headlines.js?v=20260915-v3" defer></script>
 </head>
 <body class="rbt-page">
   <main class="rbt-shell" data-rbt-root>
@@ -23,9 +23,10 @@
       <p class="rbt-intro">A weekly FMB News game built to test what you remember, what you noticed, and what happened beyond the headline. Questions may be multiple choice, identification, true or false, and other formats.</p>
       <div class="rbt-meta" aria-label="Game rules">
         <span class="rbt-chip">30 Questions</span>
-        <span class="rbt-chip">100 Points Each</span>
+        <span class="rbt-chip">10 Points Each</span>
+        <span class="rbt-chip">Timed Run</span>
+        <span class="rbt-chip">Leave Page = 0</span>
         <span class="rbt-chip">No Answer Reveal</span>
-        <span class="rbt-chip">No Email Required</span>
       </div>
     </section>
 
@@ -37,15 +38,24 @@
             <h2 class="rbt-topic">Impeachment Refresher</h2>
             <p class="rbt-copy">Go back to Day 1 of Vice President Sara Duterte's Senate impeachment trial and test how closely you followed the proceedings through the latest completed trial day covered by this edition.</p>
             <div class="rbt-rules">
-              <div class="rbt-rule"><strong>One attempt</strong><span>Your first answer determines the score for that question.</span></div>
-              <div class="rbt-rule"><strong>Answers stay hidden</strong><span>A wrong response is marked, but the correct answer is not displayed.</span></div>
-              <div class="rbt-rule"><strong>Points accumulate</strong><span>Your first completed run adds to your anonymous lifetime total.</span></div>
+              <div class="rbt-rule"><strong>One scored run</strong><span>Each correct answer earns 10 points. Maximum score: 300.</span></div>
+              <div class="rbt-rule"><strong>Stay on this page</strong><span>Switching tabs or apps, refreshing, closing, or navigating away forfeits the run and records 0.</span></div>
+              <div class="rbt-rule"><strong>Answers stay hidden</strong><span>A wrong answer is marked, but the correct answer is never shown.</span></div>
             </div>
           </div>
           <div>
-            <label class="rbt-player-label" for="rbt-player">Player name</label>
-            <input class="rbt-player" id="rbt-player" data-rbt-player maxlength="24" autocomplete="nickname" placeholder="Choose a player name">
-            <p class="rbt-player-note">No email, phone number, or account is required. Your player identity stays on this device for now.</p>
+            <div class="rbt-entry-fields">
+              <div>
+                <label class="rbt-player-label" for="rbt-player">Name</label>
+                <input class="rbt-player" id="rbt-player" data-rbt-player maxlength="60" autocomplete="name" placeholder="Enter your name" required>
+              </div>
+              <div>
+                <label class="rbt-player-label" for="rbt-email">Email</label>
+                <input class="rbt-player" id="rbt-email" data-rbt-email type="email" maxlength="120" autocomplete="email" inputmode="email" placeholder="Enter your email" required>
+              </div>
+            </div>
+            <p class="rbt-player-note">Name and email are required to enter this edition. No game starts without both.</p>
+            <div class="rbt-integrity"><strong>Non-negotiable:</strong> once you press Start, leaving or hiding this page makes the scored result 0.</div>
             <div class="rbt-player-error" data-rbt-player-error role="status"></div>
             <button class="rbt-button rbt-button-primary" type="button" data-rbt-start-button>Start the Refresher</button>
           </div>
@@ -58,9 +68,10 @@
             <div class="rbt-eyebrow">Impeachment Refresher</div>
             <div class="rbt-question-no" data-rbt-question-no>Question 1 of 30</div>
           </div>
-          <div class="rbt-stats" aria-label="Current score">
+          <div class="rbt-stats" aria-label="Current game statistics">
             <div class="rbt-stat"><strong data-rbt-score>0</strong><span>This run</span></div>
             <div class="rbt-stat"><strong data-rbt-lifetime>0</strong><span>Lifetime</span></div>
+            <div class="rbt-stat rbt-timer"><strong data-rbt-timer>00:00</strong><span>Time</span></div>
           </div>
         </div>
         <div class="rbt-progress" aria-hidden="true"><span data-rbt-progress-fill></span></div>
@@ -74,7 +85,7 @@
             <button class="rbt-button rbt-button-primary" type="button" data-rbt-submit>Check Answer</button>
             <button class="rbt-button rbt-button-secondary" type="button" data-rbt-skip>Skip</button>
           </div>
-          <div class="rbt-privacy">FMB News does not display the correct answer after a miss. Keep reading, keep following the trial, and try again when the next challenge arrives.</div>
+          <div class="rbt-privacy">Correct answers are never revealed after a miss. Leaving or hiding this page during an active run records 0 for this edition.</div>
         </article>
       </section>
 
@@ -84,11 +95,11 @@
         <div class="rbt-result-grid">
           <div class="rbt-result-stat"><strong data-rbt-result-score>0</strong><span>Points earned</span></div>
           <div class="rbt-result-stat"><strong data-rbt-result-correct>0 / 30</strong><span>Correct</span></div>
+          <div class="rbt-result-stat"><strong data-rbt-result-time>00:00</strong><span>Time</span></div>
           <div class="rbt-result-stat"><strong data-rbt-result-lifetime>0</strong><span>Lifetime points</span></div>
         </div>
         <p class="rbt-result-note" data-rbt-result-note></p>
-        <button class="rbt-button rbt-button-secondary" type="button" data-rbt-replay>Practice Again</button>
-        <p class="rbt-footnote"><strong>No answer key is shown.</strong> A practice replay can help you test what you remember, but only the first scored completion counts toward the lifetime total on this device.</p>
+        <p class="rbt-footnote"><strong>No answer key is shown.</strong> A completed or forfeited scored run cannot be replayed for additional points on this device.</p>
       </section>
     </section>
   </main>
