@@ -4,6 +4,31 @@ import { chromium, devices } from 'playwright';
 const base=process.env.FMB_QA_BASE_URL||'http://127.0.0.1:4173';
 const browser=await chromium.launch({headless:true});
 
+// This suite used to assert that Light mode painted exactly rgb(251,249,252)
+// and that Dark painted anything other than that one value. Both were pinned to
+// the retired plum system's near-white, so the check passed for any colour at
+// all in Dark, and it would have failed the approved warm-ivory ground purely
+// for not being the old hex. The property the suite is actually protecting is
+// that the two appearances paint grounds of the right polarity and that they
+// are clearly distinct. That is asserted directly here, by relative luminance,
+// so it holds for the approved palette and for any future one.
+const groundLuminance=async target=>target.evaluate(()=>{
+  const parts=getComputedStyle(document.body).backgroundColor.match(/[\d.]+/g);
+  if(!parts)return null;
+  const channel=value=>{const v=Number(value)/255;return v<=.03928?v/12.92:((v+.055)/1.055)**2.4};
+  return .2126*channel(parts[0])+.7152*channel(parts[1])+.0722*channel(parts[2]);
+});
+const assertLightGround=async(target,label)=>{
+  const luminance=await groundLuminance(target.locator('body'));
+  assert(luminance!==null&&luminance>.6,`${label} must paint a light page ground (relative luminance ${luminance}).`);
+  return luminance;
+};
+const assertDarkGround=async(target,label)=>{
+  const luminance=await groundLuminance(target.locator('body'));
+  assert(luminance!==null&&luminance<.06,`${label} must paint a dark page ground (relative luminance ${luminance}).`);
+  return luminance;
+};
+
 const desktop=await browser.newContext({viewport:{width:1366,height:900},serviceWorkers:'block',colorScheme:'light'});
 const page=await desktop.newPage();
 await page.route('https://**/*',route=>route.abort());
@@ -15,6 +40,7 @@ await toggle.waitFor({state:'visible'});
 assert.equal(await page.locator('html').getAttribute('data-fmb-theme-mode'),'system','Default appearance mode must be System.');
 assert.equal(await page.locator('html').getAttribute('data-fmb-theme'),'light','System mode should resolve to the desktop context light preference.');
 assert.equal((await toggle.locator('[data-fmb-theme-label]').textContent())?.trim(),'System','Desktop control must expose System label.');
+const lightLuminance=await assertLightGround(page,'System mode resolved to Light');
 
 await toggle.click();
 assert.equal(await page.locator('html').getAttribute('data-fmb-theme-mode'),'light','First appearance cycle must select Light.');
@@ -24,15 +50,15 @@ await toggle.click();
 assert.equal(await page.locator('html').getAttribute('data-fmb-theme-mode'),'dark','Second appearance cycle must select Dark.');
 assert.equal(await page.locator('html').getAttribute('data-fmb-theme'),'dark','Dark mode must resolve immediately.');
 assert.equal(await page.evaluate(()=>localStorage.getItem('fmbThemeModeV1')),'dark','Dark mode must persist.');
-await page.waitForFunction(()=>getComputedStyle(document.body).backgroundColor!=='rgb(251, 249, 252)',null,{timeout:1500});
-const darkBackground=await page.locator('body').evaluate(el=>getComputedStyle(el).backgroundColor);
-assert.notEqual(darkBackground,'rgb(251, 249, 252)','Dark mode must change the painted page background after the theme transition.');
+await page.waitForFunction(()=>{const p=getComputedStyle(document.body).backgroundColor.match(/[\d.]+/g);if(!p)return false;const c=v=>{const n=Number(v)/255;return n<=.03928?n/12.92:((n+.055)/1.055)**2.4};return .2126*c(p[0])+.7152*c(p[1])+.0722*c(p[2])<.06},null,{timeout:1500});
+const darkLuminance=await assertDarkGround(page,'Dark mode');
+assert(lightLuminance-darkLuminance>.5,`Light and Dark must paint clearly distinct grounds (${lightLuminance} vs ${darkLuminance}).`);
 
 await page.reload({waitUntil:'domcontentloaded'});
 await page.locator('[data-fmb-theme-control]').waitFor({state:'visible'});
 assert.equal(await page.locator('html').getAttribute('data-fmb-theme-mode'),'dark','Persisted Dark mode must survive reload.');
 assert.equal((await page.locator('[data-fmb-theme-label]').first().textContent())?.trim(),'Dark','Reloaded desktop control must reflect Dark mode.');
-await page.waitForFunction(()=>getComputedStyle(document.body).backgroundColor!=='rgb(251, 249, 252)',null,{timeout:1500});
+await assertDarkGround(page,'Persisted Dark mode after reload');
 await desktop.close();
 
 const mobile=await browser.newContext({...devices['iPhone 13'],serviceWorkers:'block',colorScheme:'dark'});
@@ -42,7 +68,7 @@ response=await mobilePage.goto(`${base}/news/`,{waitUntil:'domcontentloaded'});
 assert(response?.ok(),`Mobile Home returned ${response?.status()}`);
 assert.equal(await mobilePage.locator('html').getAttribute('data-fmb-theme-mode'),'system','Fresh mobile context must default to System.');
 assert.equal(await mobilePage.locator('html').getAttribute('data-fmb-theme'),'dark','System mode should resolve to the mobile context dark preference.');
-await mobilePage.waitForFunction(()=>getComputedStyle(document.body).backgroundColor!=='rgb(251, 249, 252)',null,{timeout:1500});
+await assertDarkGround(mobilePage,'Mobile System mode resolved to Dark');
 
 await mobilePage.locator('[data-fmb-shell-menu]').click();
 const appearance=mobilePage.locator('[data-fmb-theme-menu]');
@@ -51,7 +77,8 @@ assert.equal((await appearance.locator('[data-fmb-theme-label]').textContent())?
 await appearance.click();
 assert.equal(await mobilePage.locator('html').getAttribute('data-fmb-theme-mode'),'light','Mobile Appearance row must cycle to Light.');
 assert.equal((await appearance.locator('[data-fmb-theme-label]').textContent())?.trim(),'Light','Mobile Appearance row must update its label after cycling.');
-await mobilePage.waitForFunction(()=>getComputedStyle(document.body).backgroundColor==='rgb(251, 249, 252)',null,{timeout:1500});
+await mobilePage.waitForFunction(()=>{const p=getComputedStyle(document.body).backgroundColor.match(/[\d.]+/g);if(!p)return false;const c=v=>{const n=Number(v)/255;return n<=.03928?n/12.92:((n+.055)/1.055)**2.4};return .2126*c(p[0])+.7152*c(p[1])+.0722*c(p[2])>.6},null,{timeout:1500});
+await assertLightGround(mobilePage,'Mobile Light mode');
 await mobile.close();
 
 await browser.close();

@@ -156,7 +156,13 @@ function renderMobileHome(stories) {
     ['Entertainment', '/news/horoscope/', entertainment],
   ].map(([label, href, story]) => `<a class="fmb-editorial-mobile-rail-item ${label.toLowerCase()}" href="${href}"><img src="${esc(imageFor(story))}" alt="${esc(story?.image?.alt || story?.headline || label)}" loading="lazy"><div><span>${label}</span><h2>${esc(story?.headline || (label === 'Sports' ? 'Stories beyond the game' : label === 'World' ? 'Global perspectives on a changing world' : 'People, culture and creative life'))}</h2></div><b aria-hidden="true">›</b></a>`).join('');
 
-  return `<div class="fmb-mobile-app-home fmb-editorial-mobile-home" data-fmb-mobile-home>
+  // Below 700px the desktop <main> is display:none and this block is the page's
+  // primary content, so without a role the mobile Home exposed no main landmark
+  // at all. Measured: 0 visible <main> at 320, 390 and 430. The role is on the
+  // container rather than a second <main> element because exactly one of the two
+  // is ever rendered to assistive technology; the served document keeps one
+  // <main>, and the mobile breakpoint now has a main landmark.
+  return `<div class="fmb-mobile-app-home fmb-editorial-mobile-home" role="main" data-fmb-mobile-home>
   <a class="fmb-approved-hero-ticker fmb-app-top-ticker" href="${tickerHref}" aria-label="${tickerLabel}">
     <strong>${tickerLabel}</strong>
     <span class="fmb-approved-hero-ticker-window"><span class="fmb-approved-hero-ticker-track"><span class="fmb-approved-hero-ticker-group">${tickerGroup}</span><span class="fmb-approved-hero-ticker-group" aria-hidden="true">${tickerGroup}</span></span></span>

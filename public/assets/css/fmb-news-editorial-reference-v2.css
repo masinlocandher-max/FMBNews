@@ -32,7 +32,7 @@
   width:min(1440px,calc(100% - 72px))!important;
   margin:0 auto!important;
   min-height:0!important;
-  padding:22px 0 0!important;
+  padding:13px 0 0!important;
   display:block!important;
 }
 .fmb-ref.fmb-network-landing .publication-brand-row{
@@ -41,7 +41,7 @@
   grid-template-columns:minmax(180px,1fr) auto minmax(180px,1fr);
   align-items:end;
   gap:24px;
-  padding:0 0 16px;
+  padding:0 0 9px;
   border-bottom:1px solid var(--fmb-rule);
 }
 .fmb-ref.fmb-network-landing .publication-date-block,
@@ -93,7 +93,7 @@
   justify-content:center!important;
   gap:clamp(18px,2vw,38px)!important;
   width:100%!important;
-  min-height:52px!important;
+  min-height:43px!important;
   padding:0!important;
   margin:0!important;
   border-bottom:1px solid var(--fmb-rule)!important;
@@ -182,7 +182,7 @@
 .fmb-ref.fmb-network-landing .editorial-status-strip .editorial-desk-top span{color:var(--fmb-muted)!important;font:600 9px/1 Manrope,sans-serif!important}
 .fmb-ref.fmb-network-landing .editorial-status-strip .editorial-desk>b,.fmb-ref.fmb-network-landing .editorial-status-strip .editorial-desk>p{display:none!important}
 
-.fmb-ref.fmb-network-landing .editorial-top-grid{display:grid;grid-template-columns:minmax(0,1.62fr) minmax(320px,.82fr);gap:22px;padding:22px 0 18px;border-bottom:1px solid var(--fmb-rule)}
+.fmb-ref.fmb-network-landing .editorial-top-grid{display:grid;grid-template-columns:minmax(0,1.62fr) minmax(320px,.82fr);gap:22px;padding:13px 0 18px;border-bottom:1px solid var(--fmb-rule)}
 .fmb-ref.fmb-network-landing .editorial-lead-story{display:block;color:inherit;text-decoration:none;min-width:0}
 .fmb-ref.fmb-network-landing .editorial-lead-image{display:block;width:100%;aspect-ratio:16/8.8;object-fit:cover;background:#d8d2c7}
 .fmb-ref.fmb-network-landing .editorial-kicker{display:block;margin:14px 0 7px;color:var(--fmb-red-ink,var(--fmb-red));font:800 10px/1 Manrope,sans-serif;letter-spacing:.04em;text-transform:uppercase}
@@ -355,3 +355,135 @@ html[data-fmb-theme="dark"] .fmb-ref.fmb-network-landing .entertainment-art{bord
 /* The masthead dateline said the clock was "above" it, where the headline
    ticker is. It states what it is. */
 .fmb-ref.fmb-network-landing .publication-time-label{font-style:normal}
+
+
+/* ---------------------------------------------------------------------------
+   Low-inventory modules
+   ---------------------------------------------------------------------------
+   Fact Check publishes only what its evidence gate clears, so its module is
+   often a single honest line while Daily Brief beside it carries two numbered
+   items. In an equal-height grid the short module inherited the tall one's
+   height and read as unfinished rather than as concise. Each module is now as
+   tall as what it actually has to say. No content is invented to fill it.
+   --------------------------------------------------------------------------- */
+.fmb-ref.fmb-network-landing .network-products{align-items:start!important}
+.fmb-ref.fmb-network-landing .editorial-bottom-grid{align-items:start!important}
+
+/* ---------------------------------------------------------------------------
+   Desktop ground convergence
+   ---------------------------------------------------------------------------
+   Measured on the built Home before this block: body painted #fbf9fc in light
+   and #0e0a12 in dark. Both are the retired plum system's neutrals -- each has
+   its blue channel highest -- declared as literals with !important in the
+   shared appearance system.
+
+   The consequence was not subtle once measured. This sheet already authors the
+   approved warm paper as --fmb-paper:#f4f0e8, but every surface here reads it
+   through var(--fmb-theme-bg, var(--fmb-paper)); --fmb-theme-bg is always
+   defined, so the fallback never fired and the approved ivory has never been
+   painted. In dark the split was visible: this sheet's own token override set
+   --fmb-theme-bg:#0b0f11, so the modules drew editorial near-black while the
+   body behind them stayed violet-black.
+
+   The ground is claimed here, in the Home visual authority, for both themes.
+   :root lifts these to (0,4,2) so they beat the appearance system's (0,3,2)
+   !important literals on specificity rather than on sheet order.
+
+   Scope is deliberate. Converging the shared appearance tokens for all 571
+   routes is a separate migration, recorded in the design contract.
+   -------------------------------------------------------------------------- */
+
+html[data-fmb-theme="light"]:root body.fmb-ref.fmb-network-landing{
+  --fmb-theme-bg:#f8f5ef;
+  --fmb-theme-surface:#faf7f0;
+  --fmb-theme-surface-soft:#f2eee5;
+  --fmb-theme-ink:#111416;
+  --fmb-theme-muted:#62605c;
+  --fmb-theme-line:#d9d3c7;
+  background:#f8f5ef!important;
+  color:#111416!important;
+}
+html[data-fmb-theme="dark"]:root body.fmb-ref.fmb-network-landing{
+  --fmb-theme-line:#34393c;
+  background:#0b0f11!important;
+  color:#f1eee7!important;
+}
+
+/* ---------------------------------------------------------------------------
+   Honest compact states for the modules that have no artwork
+   ---------------------------------------------------------------------------
+   Horoscope and Crossword are real destinations with no photography, so the
+   design correctly refuses to invent any: each shows a typographic mark on the
+   publication's own surface. But the mark was given a 16/7 field, about 188px
+   of near-empty tile per card at 1440. A large empty rectangle where a reader
+   expects a picture does not read as restraint; it reads as a picture that
+   failed to load. The same honest content, given a compact index entry, reads
+   as finished.
+
+   Nothing is added, removed, or invented. The mark is the same glyph on the
+   same surface at a size that matches what it actually carries.
+   -------------------------------------------------------------------------- */
+
+.fmb-ref.fmb-network-landing .entertainment-card{
+  display:grid!important;
+  grid-template-columns:58px minmax(0,1fr)!important;
+  grid-template-rows:auto auto!important;
+  column-gap:14px!important;
+  align-items:start!important;
+}
+.fmb-ref.fmb-network-landing .entertainment-card .entertainment-art{
+  grid-column:1!important;
+  grid-row:1/span 2!important;
+  aspect-ratio:1!important;
+  width:58px!important;
+  margin:2px 0 0!important;
+  font-size:24px!important;
+}
+.fmb-ref.fmb-network-landing .entertainment-card h3{grid-column:2!important;grid-row:1!important}
+.fmb-ref.fmb-network-landing .entertainment-card p{grid-column:2!important;grid-row:2!important}
+
+/* The About module's portrait placeholder is the same honest state and was
+   already compact. It keeps its size; only its temperature follows the ground. */
+
+/* ---------------------------------------------------------------------------
+   Columns stop stretching to the tallest desk
+   ---------------------------------------------------------------------------
+   The side rail is a grid child of .editorial-top-grid, which stretched it to
+   the full height of the lead column. Its last item therefore ended with a
+   divider and roughly 240px of empty column below it -- the module looked
+   truncated rather than complete. The rail now ends where its inventory ends,
+   and the trailing divider goes with it. Same for the bottom grid, whose two
+   sections carry very different amounts of content.
+   -------------------------------------------------------------------------- */
+.fmb-ref.fmb-network-landing .editorial-top-grid{align-items:start!important}
+.fmb-ref.fmb-network-landing .editorial-side-rail>a:last-child{
+  padding-bottom:0!important;
+  border-bottom:0!important;
+}
+
+/* ---------------------------------------------------------------------------
+   Editorial artwork sits inside the publication, not on top of it
+   ---------------------------------------------------------------------------
+   Every lead and module visual on this page is an FMB-owned generated graphic
+   built on the retired identity's plum-to-gold gradient -- including the exact
+   plum accent that scripts/verify.mjs forbids from appearing in this file, so
+   the hexes are named in docs/fmb-news-approved-editorial-design.md rather than
+   here, where quoting one would trip a guard that is doing its job.
+   Against warm ivory, near-black ink and a single signal red, they are by a
+   wide margin the loudest thing on the page, and they pull the composition
+   back toward a palette the design has retired.
+
+   The assets are editorial content. They are not rewritten, recoloured or
+   replaced here -- that is an asset-system phase, and the standard it needs is
+   written down in docs/fmb-news-approved-editorial-design.md. What this layer
+   can honestly do is treat them the way the mobile authority already treats
+   photography, with a restrained saturation so the artwork supports the
+   headline instead of competing with it. Nothing is hidden and no image loses
+   information.
+   -------------------------------------------------------------------------- */
+.fmb-ref.fmb-network-landing .editorial-lead-story img,
+.fmb-ref.fmb-network-landing .editorial-side-rail img,
+.fmb-ref.fmb-network-landing .network-product img,
+.fmb-ref.fmb-network-landing .editorial-feature img{
+  filter:saturate(.84)!important;
+}
