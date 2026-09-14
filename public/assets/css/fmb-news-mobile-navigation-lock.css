@@ -479,3 +479,98 @@
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-top-ticker .fmb-approved-hero-ticker-track{animation:none!important;transform:none!important}
   body.fmb-mobile-first .fmb-editorial-mobile-dock{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
 }
+
+/* ============================================================================
+   Final editorial polish — surfaces, swipe rail, touch feedback
+   ============================================================================
+   Three things, all inside the approved mobile authority and all CSS: no
+   library, no gesture engine, no animation framework, no new JavaScript.
+   ========================================================================== */
+
+@media (max-width:699px){
+
+  /* -- 1. Retired violet ---------------------------------------------------
+     The Daily Brief and Worldwide feature tiles and the Home app shell still
+     carried the plum/violet gradients of the superseded concept — #4b0d50 and
+     the old identity violet #220d50. The approved dark mode is newsroom black
+     with a signal-red accent and depth from luminance, not from colour.       */
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card,
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card.brief,
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card.worldwide{
+    background:var(--fmb-mobile-surface,#131416)!important;
+    background-image:none!important;
+    border:1px solid var(--fmb-mobile-line,#292a2d)!important;
+  }
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-feature-shade{
+    background-image:linear-gradient(90deg,rgba(9,10,11,.92),rgba(9,10,11,.55) 62%,rgba(9,10,11,.2))!important;
+  }
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-app-shell.is-home{
+    background-image:none!important;
+    background-color:var(--fmb-mobile-black,#090a0b)!important;
+  }
+
+  /* -- 2. Editorial swipe rail --------------------------------------------
+     The Daily Brief and Explainer features sat two-across, which at 320px left
+     each about 140px wide. They are a genuine editorial group, so they become a
+     horizontal rail: native scrolling, CSS scroll snap, one dominant item and a
+     visible peek of the next so swipeability is discovered by looking.
+
+     Native scrolling on purpose. There are no pointer handlers, no
+     preventDefault and no touch interception anywhere in this, so vertical
+     scrolling stays native and Safari's left-edge Back gesture is untouched.
+     overscroll-behavior-x:contain stops the rail chaining its scroll outward;
+     it does not affect the system edge gesture. Keyboard reaches every item
+     through the links themselves, which the browser scrolls into view.         */
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-grid{
+    display:flex!important;
+    grid-template-columns:none!important;
+    gap:12px!important;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+    scroll-snap-type:x mandatory!important;
+    scroll-padding-inline:18px!important;
+    overscroll-behavior-x:contain!important;
+    -webkit-overflow-scrolling:touch!important;
+    scrollbar-width:none!important;
+    padding-inline:18px!important;
+    margin-inline:0!important;
+  }
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-grid::-webkit-scrollbar{display:none!important}
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-grid>*{
+    flex:0 0 clamp(228px,74%,300px)!important;
+    scroll-snap-align:start!important;
+    scroll-snap-stop:always!important;
+  }
+
+  /* -- 3. Touch feedback ---------------------------------------------------
+     Immediate, quiet, transform and opacity only — nothing that triggers
+     layout. ~120ms on press, which is the band the interaction spec asks for. */
+  body.fmb-mobile-first .fmb-editorial-mobile-dock a,
+  body.fmb-mobile-first .fmb-editorial-mobile-rail-item,
+  body.fmb-mobile-first .fmb-app-story-row,
+  body.fmb-mobile-first .fmb-app-feature-card{
+    -webkit-tap-highlight-color:transparent;
+    transition:opacity .12s ease,transform .12s ease;
+  }
+  body.fmb-mobile-first .fmb-editorial-mobile-dock a:active,
+  body.fmb-mobile-first .fmb-editorial-mobile-rail-item:active,
+  body.fmb-mobile-first .fmb-app-story-row:active,
+  body.fmb-mobile-first .fmb-app-feature-card:active{
+    opacity:.72;
+    transform:scale(.985);
+  }
+}
+
+/* A reader who asked for less motion keeps every scroll-snap destination and
+   every link — only the movement goes. */
+@media (max-width:699px) and (prefers-reduced-motion:reduce){
+  body.fmb-mobile-first .fmb-editorial-mobile-dock a,
+  body.fmb-mobile-first .fmb-editorial-mobile-rail-item,
+  body.fmb-mobile-first .fmb-app-story-row,
+  body.fmb-mobile-first .fmb-app-feature-card{transition:none!important}
+  body.fmb-mobile-first .fmb-editorial-mobile-dock a:active,
+  body.fmb-mobile-first .fmb-editorial-mobile-rail-item:active,
+  body.fmb-mobile-first .fmb-app-story-row:active,
+  body.fmb-mobile-first .fmb-app-feature-card:active{transform:none!important}
+  body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-grid{scroll-behavior:auto!important}
+}
