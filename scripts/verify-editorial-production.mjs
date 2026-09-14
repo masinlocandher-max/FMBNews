@@ -6,6 +6,7 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const contentRoot=path.join(root,'content','news','articles');
 const newsRoot=path.join(root,'dist','news');
 const MODERN_CUTOFF=Date.parse('2026-09-01T00:00:00+08:00');
+const RECOVERY_ARCHIVE_CUTOFF=Date.parse('2026-09-05T00:00:00+08:00');
 const must=(value,message)=>{if(!value)throw new Error(message)};
 
 async function walk(dir){
@@ -29,8 +30,31 @@ const normalizedImagePath=u=>{
   return path.join(newsRoot,rel.slice(1));
 };
 
+async function validateSourcesAndImage(story,label,minSources,minExternal){
+  must(Array.isArray(story.sources)&&story.sources.length>=minSources,`${label}: report requires at least ${minSources} source record(s)`);
+  const sourceUrls=new Set();let externalSources=0;
+  for(const src of story.sources){
+    must(typeof src.publisher==='string'&&src.publisher.trim(),`${label}: source publisher is missing`);
+    must(typeof src.title==='string'&&src.title.trim(),`${label}: source title is missing`);
+    const url=String(src.url||'');
+    const external=/^https:\/\//i.test(url),internal=/^\/news\//i.test(url);
+    must(external||internal,`${label}: source URL must be HTTPS or an internal /news/ continuity link`);
+    if(external)externalSources++;
+    must(!sourceUrls.has(url),`${label}: duplicate source URL ${url}`);sourceUrls.add(url);
+  }
+  must(externalSources>=minExternal,`${label}: report requires at least ${minExternal} external HTTPS source(s)`);
+  must(story.image&&typeof story.image.url==='string'&&story.image.url.trim(),`${label}: content image URL is missing`);
+  must(typeof story.image.alt==='string'&&story.image.alt.trim(),`${label}: image alt text is missing`);
+  must(typeof story.image.caption==='string'&&story.image.caption.trim(),`${label}: image caption is required`);
+  must(typeof story.image.credit==='string'&&story.image.credit.trim(),`${label}: image credit is required`);
+  must(Number(story.image.width)>0&&Number(story.image.height)>0,`${label}: image dimensions are required`);
+  const localImage=normalizedImagePath(story.image.url);
+  if(localImage){await access(localImage);const info=await stat(localImage);must(info.size>100,`${label}: local content image is empty`)}
+  must(story.audit&&validIso(story.audit.sourceCheckedAt),`${label}: audit.sourceCheckedAt is required`);
+}
+
 const seen=new Set();
-let published=0,modern=0,legacy=0,updated=0;
+let published=0,modern=0,legacy=0,recovered=0,updated=0;
 for(const file of await walk(contentRoot)){
   let story;
   try{story=JSON.parse(await readFile(file,'utf8'))}catch(e){throw new Error(`${path.relative(root,file)} is invalid JSON: ${e.message}`)}
@@ -66,8 +90,27 @@ for(const file of await walk(contentRoot)){
 
   // The pre-September archive predates the current source schema. Preserve it
   // as the historical record while still requiring stable routes and normalized
-  // production metadata above. New reporting must satisfy the full standard.
+  // production metadata above.
   if(publishedMs<MODERN_CUTOFF){legacy++;continue}
+
+  const recoveredBackfill=story.audit?.recoveryStatus==='source-checked-backfill'&&
+    publishedMs<RECOVERY_ARCHIVE_CUTOFF&&validIso(story.audit?.recoveredAt);
+  if(recoveredBackfill){
+    recovered++;
+    must(typeof story.seoTitle==='string'&&story.seoTitle.trim().length>=20&&story.seoTitle.length<=85,`${label}: recovery SEO title must be 20-85 characters`);
+    must(typeof story.seoDescription==='string'&&story.seoDescription.trim().length>=60&&story.seoDescription.length<=190,`${label}: recovery SEO description must be 60-190 characters`);
+    must(validIso(story.updatedAt||story.publishedAt),`${label}: recovery updatedAt is invalid`);
+    must(Date.parse(story.updatedAt||story.publishedAt)>=publishedMs,`${label}: recovery updatedAt predates publishedAt`);
+    must(['NewsArticle','Article'].includes(story.articleType),`${label}: recovery articleType must be NewsArticle or Article`);
+    must(typeof story.deck==='string'&&story.deck.trim().length>=55&&story.deck.length<=280,`${label}: recovery deck must be 55-280 characters`);
+    must(Date.parse(story.audit.recoveredAt)>=publishedMs,`${label}: recovery timestamp predates publication`);
+    await validateSourcesAndImage(story,label,1,1);
+    continue;
+  }
+
+  // New reporting from September onward must satisfy the complete editorial
+  // production standard. The bounded recovery exception above cannot be used
+  // by future stories because it is locked to the historical recovery window.
   modern++;
   must(typeof story.seoTitle==='string'&&story.seoTitle.trim().length>=20&&story.seoTitle.length<=85,`${label}: SEO title must be 20-85 characters`);
   must(typeof story.seoDescription==='string'&&story.seoDescription.trim().length>=60&&story.seoDescription.length<=190,`${label}: SEO description must be 60-190 characters`);
@@ -82,28 +125,9 @@ for(const file of await walk(contentRoot)){
   must(headings.some(h=>h==='context'),`${label}: modern report needs Context`);
   must(headings.some(h=>/^(why this matters|why it matters)/.test(h)),`${label}: modern report needs Why this matters or Why it matters`);
   must(headings.some(h=>h==='what to watch next'),`${label}: modern report needs What to watch next`);
-  must(Array.isArray(story.sources)&&story.sources.length>=2,`${label}: modern report requires source records`);
-  const sourceUrls=new Set();let externalSources=0;
-  for(const src of story.sources){
-    must(typeof src.publisher==='string'&&src.publisher.trim(),`${label}: source publisher is missing`);
-    must(typeof src.title==='string'&&src.title.trim(),`${label}: source title is missing`);
-    const url=String(src.url||'');
-    const external=/^https:\/\//i.test(url),internal=/^\/news\//i.test(url);
-    must(external||internal,`${label}: source URL must be HTTPS or an internal /news/ continuity link`);
-    if(external)externalSources++;
-    must(!sourceUrls.has(url),`${label}: duplicate source URL ${url}`);sourceUrls.add(url);
-  }
-  must(externalSources>=2,`${label}: modern report requires at least two external HTTPS sources`);
-  must(story.image&&typeof story.image.url==='string'&&story.image.url.trim(),`${label}: content image URL is missing`);
-  must(typeof story.image.alt==='string'&&story.image.alt.trim(),`${label}: image alt text is missing`);
-  must(typeof story.image.caption==='string'&&story.image.caption.trim(),`${label}: image caption is required`);
-  must(typeof story.image.credit==='string'&&story.image.credit.trim(),`${label}: image credit is required`);
-  must(Number(story.image.width)>0&&Number(story.image.height)>0,`${label}: image dimensions are required`);
-  const localImage=normalizedImagePath(story.image.url);
-  if(localImage){await access(localImage);const info=await stat(localImage);must(info.size>100,`${label}: local content image is empty`)}
-  must(story.audit&&validIso(story.audit.sourceCheckedAt),`${label}: audit.sourceCheckedAt is required`);
+  await validateSourcesAndImage(story,label,2,2);
 }
 
 must(published>0,'No published FMB News stories were audited');
 must(modern>0,'No modern September-era stories were audited');
-console.log(`Editorial production verification passed: ${published} published FMB News stories audited (${modern} modern standard, ${legacy} preserved legacy); ${updated} materially updated stories expose reader-visible update timestamps.`);
+console.log(`Editorial production verification passed: ${published} published FMB News stories audited (${modern} modern standard, ${recovered} bounded source-checked recovery, ${legacy} preserved legacy); ${updated} materially updated stories expose reader-visible update timestamps.`);
