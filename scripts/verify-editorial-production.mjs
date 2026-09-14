@@ -80,7 +80,7 @@ for(const file of await walk(contentRoot)){
   const headings=(story.sections||[]).map(s=>String(s.heading||'').trim().toLowerCase());
   must(headings.some(h=>/^(what happened|what changed|verified facts|latest national toll|sunday forecast)/.test(h)),`${label}: modern report needs a clear opening facts/change section`);
   must(headings.some(h=>h==='context'),`${label}: modern report needs Context`);
-  must(headings.some(h=>h.startsWith('why this matters')),`${label}: modern report needs Why this matters`);
+  must(headings.some(h=>/^(why this matters|why it matters)/.test(h)),`${label}: modern report needs Why this matters or Why it matters`);
   must(headings.some(h=>h==='what to watch next'),`${label}: modern report needs What to watch next`);
   must(Array.isArray(story.sources)&&story.sources.length>=2,`${label}: modern report requires source records`);
   const sourceUrls=new Set();let externalSources=0;
