@@ -1354,3 +1354,184 @@
     color:var(--fmb-mobile-white,#f4f1ea)!important;
   }
 }
+
+/* ============================================================================
+   The Menu — one native list, and it works in Dark
+   ============================================================================
+   Two defects, both reproduced on this branch head at 390 before any change,
+   and both present on main as well, so neither is a regression from this PR.
+
+   1. THE BLANK ROWS. The four action rows (Appearance, Your FMB, Customize
+      your feed, Add to Home Screen) are not empty and are not missing. Their
+      text is there and their accessible names are correct. They are painted
+      colour #16191b -- near-black -- on the sheet, and the sheet is #171c1f in
+      Dark. Measured 1.03:1. The whole Menu action block was authored with
+      hard-coded light values and never given a dark variant, so on a phone in
+      Dark the reader sees four blank rows where four working controls are. In
+      Light the same rows measure 15.82:1, which is why this never showed up in
+      a light-mode screenshot.
+
+   2. THE WHITE PILL CARDS. The final mobile authority fully resets
+      .fmb-app-action-list button but only sets colour and border-colour on
+      .fmb-app-action-list a. So the navigation links keep the winning rule
+      from the retired plum layer, fmb-news-mobile-approved-home.css:112:
+
+        .fmb-app-action-list a,.fmb-app-action-list button{
+          min-height:50px; padding:0 14px;
+          border:1px solid rgba(93,49,105,.09);    -- a violet hairline
+          border-radius:14px; background:#fff;     -- a white pill
+          color:#302735;                           -- plum ink
+          font-size:14px; font-weight:760}
+
+      (Quoted with dashes rather than CSS comment markers on purpose: a nested
+      comment terminator inside a comment ends it early and the parser then
+      discards every rule that follows, which is exactly what happened the
+      first time this block was written.)
+
+      Fifteen white 14px-radius pill cards stacked on a dark sheet. That is the
+      "giant white rounded Menu navigation cards" in the screenshot, and it is
+      the same in both themes.
+
+   Both are fixed here, in the existing final mobile authority: links and
+   buttons are normalised to the same native list row, and the whole Menu takes
+   per-theme values from the brand system -- Editorial Black surfaces, Warm
+   White ink, Steel Gray secondary, Metallic Silver hairlines, Signal Red for
+   the one accent. No new stylesheet, no new Menu, no runtime change.
+   ========================================================================== */
+
+@media (max-width:699px){
+  body.fmb-mobile-first .fmb-app-action-sheet{
+    --fmb-menu-surface:#F5F3EF;
+    --fmb-menu-ink:#141414;
+    --fmb-menu-muted:#6D7072;
+    --fmb-menu-rule:#D9D6D0;
+    --fmb-menu-accent:#D71920;
+  }
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-app-action-sheet{
+    --fmb-menu-surface:#141414;
+    --fmb-menu-ink:#F5F3EF;
+    --fmb-menu-muted:#BFC1C2;
+    --fmb-menu-rule:#2A2C2D;
+    --fmb-menu-accent:#EF1B24;
+  }
+
+  body.fmb-mobile-first .fmb-app-action-panel{
+    background:var(--fmb-menu-surface)!important;
+    color:var(--fmb-menu-ink)!important;
+    border-top:1px solid var(--fmb-menu-rule)!important;
+    box-shadow:none!important;
+  }
+  body.fmb-mobile-first .fmb-app-action-panel>h2{
+    color:var(--fmb-menu-ink)!important;
+    font-family:"Bodoni Moda","Libre Bodoni","Cormorant Garamond",Georgia,serif!important;
+    font-weight:560!important;
+  }
+
+  /* One list, one row treatment, links and buttons alike. Rows are separated
+     by a hairline rather than being individual cards; the last one has none. */
+  body.fmb-mobile-first .fmb-app-action-list{
+    display:block!important;
+    gap:0!important;
+    background:transparent!important;
+  }
+  body.fmb-mobile-first .fmb-app-action-list>a,
+  body.fmb-mobile-first .fmb-app-action-list>button{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    gap:12px!important;
+    width:100%!important;
+    min-height:48px!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    border-bottom:1px solid var(--fmb-menu-rule)!important;
+    border-radius:0!important;
+    background:transparent!important;
+    background-image:none!important;
+    box-shadow:none!important;
+    color:var(--fmb-menu-ink)!important;
+    font:600 15px/1.25 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Manrope,sans-serif!important;
+    letter-spacing:-.01em!important;
+    text-align:left!important;
+    text-decoration:none!important;
+  }
+  body.fmb-mobile-first .fmb-app-action-list>:last-child{border-bottom:0!important}
+  body.fmb-mobile-first .fmb-app-action-list>a>span:last-child,
+  body.fmb-mobile-first .fmb-app-action-list>button>span:last-child{
+    color:var(--fmb-menu-muted)!important;
+    font-size:15px!important;
+    font-weight:400!important;
+  }
+  body.fmb-mobile-first .fmb-menu-item-main{color:var(--fmb-menu-ink)!important}
+  body.fmb-mobile-first .fmb-menu-item-main>svg{stroke:var(--fmb-menu-accent)!important}
+  body.fmb-mobile-first .fmb-app-action-list>a:active,
+  body.fmb-mobile-first .fmb-app-action-list>button:active{
+    background:color-mix(in srgb,var(--fmb-menu-ink) 7%,transparent)!important;
+  }
+
+  /* The close control still carried the retired identity's plum gradient. */
+  body.fmb-mobile-first .fmb-app-action-panel>[data-close-sheet]{
+    border:1px solid var(--fmb-menu-rule)!important;
+    border-radius:0!important;
+    background:transparent!important;
+    background-image:none!important;
+    color:var(--fmb-menu-ink)!important;
+    font:700 13px/1 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Manrope,sans-serif!important;
+    letter-spacing:.02em!important;
+  }
+}
+
+/* ============================================================================
+   The top inset, and the Fact Check verdicts
+   ============================================================================
+   1. SAFE AREA, TOP. The mobile system declares env(safe-area-inset-bottom)
+      twice -- on the dock and on the body -- and env(safe-area-inset-top) not
+      at all. The PWA ships
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">,
+      which in an installed standalone window puts the web view underneath the
+      status bar. With no top inset the sticky masthead renders under the
+      clock and carrier row.
+
+      The reported blank band above the masthead does NOT reproduce on this
+      branch head in a browser: the shell measures top=0 on all fourteen routes
+      checked, with no preceding element and no body padding, on this build and
+      on main alike. So this is not that bug's fix -- it is the one real
+      top-inset defect the investigation did find, and it is a no-op anywhere
+      the inset is 0, which is every non-standalone context.
+
+   2. FACT CHECK VERDICTS. Four failures, not the two previously reported:
+
+        Light   TRUE           #2FB344 on paper        2.74:1
+                MISLEADING     #EF9D00 on paper        2.21:1
+        Dark    VERIFIED FACT  #1677C8 on #171c1f      3.69:1
+                FALSE          #DF2F2F on #171c1f      3.75:1
+
+      Each verdict keeps its hue, because the hue is the verdict: green stays
+      green, amber stays amber, blue stays blue, red stays red. Only lightness
+      moves, per theme -- darker on paper, lifted on newsroom black. No verdict,
+      rating word, evidence or article text is touched.
+   ========================================================================== */
+
+@media (max-width:699px){
+  body.fmb-mobile-first .fmb-mobile-app-shell{
+    padding-top:env(safe-area-inset-top)!important;
+  }
+
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fc-badge.fc-true span{color:#177A2B!important}
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fc-badge.fc-misleading span{color:#8A5300!important}
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fc-badge.fc-fact span{color:#5BAEEE!important}
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fc-badge.fc-false span{color:#F4736C!important}
+}
+
+@media (max-width:699px){
+  /* The Menu sheet's own surface, claimed at the specificity the dark panel
+     convergence above uses, so the brand's Editorial Black wins rather than the
+     shell's raised grey. */
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-app-action-sheet .fmb-app-action-panel{
+    background:#141414!important;
+  }
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-app-action-sheet .fmb-app-action-panel{
+    background:#F5F3EF!important;
+  }
+}

@@ -38,6 +38,17 @@ for(const name of MOBILE_SYSTEM_SHEETS){
 }
 const mobileSystemVersion=createHash('sha256').update(bundle).digest('hex').slice(0,10);
 await writeFile(path.join(cssDir,MOBILE_SYSTEM_FILE),bundle,'utf8');
+
+// Stamp the service worker's cache version from the same content hash that
+// versions the mobile bundle. sw.js shipped a hand-maintained literal that
+// never changed between builds, so its activate handler never purged anything
+// and the runtime cache kept serving hand-versioned legacy assets to returning
+// readers. Deriving it here means every build that changes the mobile system
+// rotates the caches exactly once, on activate, with no hand-editing.
+const swPath=path.join(newsRoot,'sw.js');
+const swSource=await readFile(swPath,'utf8');
+if(!swSource.includes('__FMB_BUILD_VERSION__'))throw new Error('site/sw.js no longer carries the __FMB_BUILD_VERSION__ stamp; the cache version would silently stop rotating.');
+await writeFile(swPath,swSource.replaceAll('__FMB_BUILD_VERSION__',mobileSystemVersion),'utf8');
 const mobileSystemCss=`<link rel="stylesheet" href="/assets/css/${MOBILE_SYSTEM_FILE}?v=${mobileSystemVersion}">`;
 
 const personalizationJs='<script src="/assets/js/fmb-news-mobile-personalization.js?v=20260901-personal-v2" defer></script>';

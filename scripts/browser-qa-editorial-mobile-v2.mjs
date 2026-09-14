@@ -102,6 +102,63 @@ for(const href of ['/news/entertainment/','/news/founder/','/news/editorial-stan
 }
 // One Menu, not two. The footer's removal must not grow a second navigation.
 assert.equal(await page.locator('.fmb-app-action-panel[role="dialog"]').count(),1,'Exactly one mobile Menu dialog may be open.');
+// ---------------------------------------------------------------------------
+// The Menu itself, in both appearances
+// ---------------------------------------------------------------------------
+// A real-device screenshot showed the four action rows blank and the fifteen
+// navigation rows as large white pill cards. Neither was a missing element:
+// the actions were near-black ink (#16191b) on the dark sheet at 1.03:1, and
+// the links kept a white 14px-radius pill from the retired plum layer that the
+// final authority reset for `button` but not for `a`. The old QA asserted the
+// links existed, which both of those defects passed.
+const menuState=async appearance=>{
+  const ctx=await browser.newContext({...devices['iPhone 13'],serviceWorkers:'block',timezoneId:'Asia/Manila',colorScheme:appearance});
+  const menuPage=await ctx.newPage();
+  await menuPage.route('https://**/*',route=>route.abort());
+  await menuPage.addInitScript(mode=>{try{localStorage.setItem('fmbThemeModeV1',mode)}catch{}},appearance);
+  await menuPage.goto(`${base}/news/world/`,{waitUntil:'domcontentloaded'});
+  await menuPage.locator('[data-fmb-shell-menu]').click();
+  await menuPage.locator('.fmb-app-action-panel[role="dialog"]').waitFor({state:'visible'});
+  const rows=await menuPage.evaluate(()=>{
+    const canvas=document.createElement('canvas');canvas.width=canvas.height=1;
+    const ctx2=canvas.getContext('2d',{willReadFrequently:true});
+    const flatten=(layers,base2)=>{ctx2.clearRect(0,0,1,1);ctx2.fillStyle=base2;ctx2.fillRect(0,0,1,1);for(const layer of layers){ctx2.fillStyle=layer;ctx2.fillRect(0,0,1,1)}const d=ctx2.getImageData(0,0,1,1).data;return [d[0],d[1],d[2]]};
+    const luminance=([r,g,b2])=>{const channel=v=>{v/=255;return v<=.03928?v/12.92:((v+.055)/1.055)**2.4};return .2126*channel(r)+.7152*channel(g)+.0722*channel(b2)};
+    const stack=el=>{const layers=[];let n=el;while(n&&n.nodeType===1){layers.unshift(getComputedStyle(n).backgroundColor);n=n.parentElement}return layers};
+    return [...document.querySelectorAll('.fmb-app-action-list > *')].map(el=>{
+      const cs=getComputedStyle(el);const box=el.getBoundingClientRect();const layers=stack(el);
+      const bg=flatten(layers,'#ffffff'),fg=flatten([...layers,cs.color],'#ffffff');
+      const a=luminance(fg),b2=luminance(bg);
+      return {
+        tag:el.tagName,
+        label:(el.textContent||'').trim(),
+        name:(el.getAttribute('aria-label')||el.textContent||'').trim(),
+        height:Math.round(box.height),
+        radius:parseFloat(cs.borderTopLeftRadius)||0,
+        ratio:(Math.max(a,b2)+.05)/(Math.min(a,b2)+.05),
+        overflows:box.width>document.documentElement.clientWidth+1,
+      };
+    });
+  });
+  await ctx.close();
+  return rows;
+};
+
+for(const appearance of ['light','dark']){
+  const rows=await menuState(appearance);
+  assert(rows.length>=15,`Mobile Menu (${appearance}) rendered only ${rows.length} rows.`);
+  for(const row of rows){
+    // No blank reserved rows: a rendered row must carry an accessible name.
+    assert(row.name.length>0,`Mobile Menu (${appearance}): a ${row.tag} row renders with no accessible name — an empty interactive row.`);
+    // Readable, in both appearances. This is the assertion the blank rows failed.
+    assert(row.ratio>=4.5,`Mobile Menu (${appearance}): "${row.label.slice(0,24)}" measures ${row.ratio.toFixed(2)}:1 against its own sheet.`);
+    // A list row, not a card.
+    assert(row.height>=44&&row.height<=64,`Mobile Menu (${appearance}): "${row.label.slice(0,24)}" row is ${row.height}px; expected a 44-64px list row.`);
+    assert(row.radius<=4,`Mobile Menu (${appearance}): "${row.label.slice(0,24)}" has ${row.radius}px corner radius — a pill card, not a list row.`);
+    assert(!row.overflows,`Mobile Menu (${appearance}): "${row.label.slice(0,24)}" overflows the viewport.`);
+  }
+}
+
 await page.keyboard.press('Escape');
 await dialog.waitFor({state:'detached'});
 
@@ -148,6 +205,7 @@ const footerVisibility=async(target,path)=>{
       dockHeight:(()=>{const d=document.querySelector('.fmb-editorial-mobile-dock');return d?Math.round(d.getBoundingClientRect().height):0})(),
       bodyPadBottom:parseFloat(getComputedStyle(document.body).paddingBottom)||0,
       overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,
+      shellTop:(()=>{const s2=document.querySelector('.fmb-mobile-app-shell');return s2?Math.round(s2.getBoundingClientRect().top+scrollY):0})(),
     };
   });
 };
@@ -178,6 +236,8 @@ for(const width of [320,430])for(const appearance of ['light','dark']){
     assert.equal(state.docks,1,`${path} at ${width}px (${appearance}): exactly one bottom dock.`);
     assert(state.bodyPadBottom>=state.dockHeight,`${path} at ${width}px (${appearance}): content sits under the dock (${state.bodyPadBottom}px clearance for a ${state.dockHeight}px dock).`);
     assert(state.overflow<=1,`${path} at ${width}px (${appearance}): ${state.overflow}px horizontal overflow.`);
+    // The shell is prepended to <body>; nothing may reserve a band above it.
+    assert(state.shellTop<=100,`${path} at ${width}px (${appearance}): ${state.shellTop}px of blank space above the mobile masthead.`);
   }
   await phone.close();
 }

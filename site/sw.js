@@ -1,4 +1,14 @@
-const VERSION='fmb-news-pwa-v2';
+// Build-stamped by scripts/hardfix-mobile-first-site.mjs. It used to be the
+// hand-maintained literal 'fmb-news-pwa-v2', which never changed between
+// builds, so the activate handler's cache purge never ran: the runtime cache
+// accumulated every asset ever fetched and was never rotated. Content-hashed
+// assets self-bust through their own URLs, but the hand-versioned legacy
+// assets in that cache (fmb-news-final.css?v=20260807,
+// fmb-news-approved.js?v=20260903a and others -- 37 entries were observed in
+// one session) only change when a human edits a date string, so a returning
+// reader could hold them indefinitely. Stamping the version per build makes
+// every deploy purge the previous caches exactly once.
+const VERSION='fmb-news-pwa-__FMB_BUILD_VERSION__';
 const SHELL_CACHE=`${VERSION}-shell`;
 const RUNTIME_CACHE=`${VERSION}-runtime`;
 const IMAGE_CACHE=`${VERSION}-images`;
