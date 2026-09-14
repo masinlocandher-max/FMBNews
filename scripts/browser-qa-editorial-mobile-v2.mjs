@@ -97,9 +97,11 @@ for(const href of ['/news/archive/','/news/world/','/news/sports/','/news/fmb-br
 // legal destinations have to be reachable from the Menu instead. These are the
 // footer links that resolve; /privacy/ is deliberately absent because it 404s
 // in this build and a dead link in the Menu is worse than none.
-for(const href of ['/news/editorial-standards/','/news/corrections/','mailto:withlovefmb@gmail.com']){
+for(const href of ['/news/entertainment/','/news/founder/','/news/editorial-standards/','/news/corrections/','mailto:withlovefmb@gmail.com']){
   assert.equal(await dialog.locator(`a[href="${href}"]`).count(),1,`Mobile Menu is missing the secondary/legal destination ${href}.`);
 }
+// One Menu, not two. The footer's removal must not grow a second navigation.
+assert.equal(await page.locator('.fmb-app-action-panel[role="dialog"]').count(),1,'Exactly one mobile Menu dialog may be open.');
 await page.keyboard.press('Escape');
 await dialog.waitFor({state:'detached'});
 
@@ -136,40 +138,74 @@ const footerVisibility=async(target,path)=>{
       })(),
       visibleArticleMatter:[...document.querySelectorAll('.sources,[class*="related"],[class*="byline"]')]
         .filter(el=>el.getBoundingClientRect().height>0).length,
+      visibleCaptions:[...document.querySelectorAll('figcaption')].filter(el=>el.getBoundingClientRect().height>0).length,
+      // Desktop institutional chrome: the large wordmark, the link groups, the
+      // newsletter treatment and the copyright band.
+      footerChrome:[...document.querySelectorAll('.footer-publication-title,.footer-grid,.footer-socials,.footer-bottom,footer.footer form,footer.footer [data-fmb-newsletter-form]')]
+        .filter(shown).length,
+      headers:[...document.querySelectorAll('.fmb-mobile-app-shell')].filter(shown).length,
+      docks:[...document.querySelectorAll('.fmb-editorial-mobile-dock')].filter(shown).length,
+      dockHeight:(()=>{const d=document.querySelector('.fmb-editorial-mobile-dock');return d?Math.round(d.getBoundingClientRect().height):0})(),
+      bodyPadBottom:parseFloat(getComputedStyle(document.body).paddingBottom)||0,
+      overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,
     };
   });
 };
 
-const article='/news/barmm-first-parliamentary-election-voting-underway-september-14-2026/';
+const shellRoutes=[
+  '/news/','/news/world/','/news/sports/','/news/fmb-brief/','/news/fact-check/','/news/explainer/',
+  '/news/search/','/news/entertainment/','/news/horoscope/','/news/crossword/','/news/about/',
+  '/news/founder/','/news/archive/',
+  '/news/barmm-first-parliamentary-election-voting-underway-september-14-2026/',
+  '/news/alex-eala-us-open-third-round-september-4-2026/',
+  '/news/bsp-raises-policy-rate-5-percent-august-2026/',
+];
+const article=shellRoutes[13];
 
-const homePhone=await footerVisibility(page,'/news/');
-assert.equal(homePhone.publicationFooter,false,'Home: .publication-footer must be hidden below 700px.');
-assert.equal(homePhone.anyFooter,false,'Home: the desktop publication footer must be hidden below 700px.');
-
-for(const path of ['/news/world/','/news/about/',article]){
-  const phone=await footerVisibility(page,path);
-  assert.equal(phone.anyFooter,false,`${path}: the desktop publication footer must be hidden below 700px.`);
+// Every route, at the narrowest and widest phone this publication supports, in
+// both appearances. 320 is where the four-column footer was worst.
+for(const width of [320,430])for(const appearance of ['light','dark']){
+  const phone=await browser.newContext({viewport:{width,height:844},isMobile:true,hasTouch:true,serviceWorkers:'block',timezoneId:'Asia/Manila'});
+  const phonePage=await phone.newPage();
+  await phonePage.route('https://**/*',route=>route.abort());
+  await phonePage.addInitScript(mode=>{try{localStorage.setItem('fmbThemeModeV1',mode)}catch{}},appearance);
+  for(const path of shellRoutes){
+    const state=await footerVisibility(phonePage,path);
+    assert.equal(state.anyFooter,false,`${path} at ${width}px (${appearance}): the desktop publication footer must be hidden below 700px.`);
+    assert.notEqual(state.publicationFooter,true,`${path} at ${width}px (${appearance}): .publication-footer must be hidden below 700px.`);
+    assert.equal(state.footerChrome,0,`${path} at ${width}px (${appearance}): desktop footer chrome (wordmark, link groups, newsletter, copyright band) must not render on a phone.`);
+    assert.equal(state.headers,1,`${path} at ${width}px (${appearance}): exactly one mobile header.`);
+    assert.equal(state.docks,1,`${path} at ${width}px (${appearance}): exactly one bottom dock.`);
+    assert(state.bodyPadBottom>=state.dockHeight,`${path} at ${width}px (${appearance}): content sits under the dock (${state.bodyPadBottom}px clearance for a ${state.dockHeight}px dock).`);
+    assert(state.overflow<=1,`${path} at ${width}px (${appearance}): ${state.overflow}px horizontal overflow.`);
+  }
+  await phone.close();
 }
 
-// Article-end editorial matter is not part of the footer and must survive it.
-const articlePhone=await footerVisibility(page,article);
-assert.equal(articlePhone.articleMatterOutsideFooter,true,'Article-end editorial matter must sit outside footer.footer.');
-assert(articlePhone.visibleArticleMatter>0,'Article-end editorial matter (Sources / Related / byline) must remain visible on a phone.');
-
-// At 700px and above the footer is exactly as it was. 700 is the first width
-// at which the mobile rule no longer applies, so it is the one that matters.
-const wide=await browser.newContext({viewport:{width:700,height:900},serviceWorkers:'block',timezoneId:'Asia/Manila'});
-const widePage=await wide.newPage();
-await widePage.route('https://**/*',route=>route.abort());
-
-const homeWide=await footerVisibility(widePage,'/news/');
-assert.equal(homeWide.publicationFooter,true,'Home: .publication-footer must be visible at 700px and above.');
-for(const path of ['/news/world/','/news/about/',article]){
-  const desk=await footerVisibility(widePage,path);
-  assert.equal(desk.anyFooter,true,`${path}: the desktop publication footer must be visible at 700px and above.`);
+// Article-end editorial matter is not part of the footer and must survive it,
+// on every representative article rather than one.
+for(const path of shellRoutes.slice(13)){
+  const state=await footerVisibility(page,path);
+  assert.equal(state.articleMatterOutsideFooter,true,`${path}: article-end editorial matter must sit outside footer.footer.`);
+  assert(state.visibleArticleMatter>0,`${path}: article-end editorial matter (Sources / Related / byline) must remain visible on a phone.`);
+  assert(state.visibleCaptions>0,`${path}: captions and photo credits must remain visible on a phone.`);
 }
-await wide.close();
+
+// The breakpoint itself. 699 is the last width the mobile rule applies to and
+// 700 the first it does not, so both sides are asserted rather than assumed.
+for(const [width,expected] of [[699,false],[700,true]]){
+  const wide=await browser.newContext({viewport:{width,height:900},serviceWorkers:'block',timezoneId:'Asia/Manila'});
+  const widePage=await wide.newPage();
+  await widePage.route('https://**/*',route=>route.abort());
+  for(const path of shellRoutes){
+    const state=await footerVisibility(widePage,path);
+    assert.equal(state.anyFooter,expected,`${path} at ${width}px: the desktop publication footer must be ${expected?'visible':'hidden'}.`);
+  }
+  const home=await footerVisibility(widePage,'/news/');
+  assert.equal(home.publicationFooter,expected,`Home at ${width}px: .publication-footer must be ${expected?'visible':'hidden'}.`);
+  await wide.close();
+}
 
 await context.close();
 await browser.close();
-console.log('Editorial mobile browser QA passed: FMB NEWS. masthead, text section rail, real story hero, World/Sports/Entertainment rows, persistent five-item dock, broad route coverage, complete Menu navigation including the secondary/legal destinations, the desktop publication footer hidden below 700px and present at 700px and above, and article-end editorial matter preserved.');
+console.log('Editorial mobile browser QA passed: FMB NEWS. masthead, text section rail, real story hero, World/Sports/Entertainment rows, persistent five-item dock, broad route coverage, complete Menu navigation including the secondary/legal destinations, the desktop publication footer hidden below 700px across 16 routes at 320 and 430 in both appearances and present again at 700px, no desktop footer chrome on a phone, and article-end editorial matter preserved.');
