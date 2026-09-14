@@ -17,6 +17,8 @@ const assetVersion = async relative => {
   const bytes = await readFile(path.join(newsRoot, 'assets', relative));
   return createHash('sha256').update(bytes).digest('hex').slice(0, 10);
 };
+const iaVersion = await assetVersion('css/fmb-news-editorial-ia.css');
+const chromeVersion = await assetVersion('css/fmb-news-publication-landing.css');
 const matteVersion = await assetVersion('css/fmb-news-matte-system.css');
 const homeV2Version = await assetVersion('css/fmb-news-home-v2.css');
 const themeCssVersion = await assetVersion('css/fmb-news-theme.css');
@@ -69,6 +71,12 @@ function ensureBrandAssets(html) {
   else html = html.replace(/\/assets\/css\/fmb-news-theme\.css\?v=[^"']+/gi, themeStylesheetHref);
   if (!html.includes('fmb-news-theme.js')) html = html.replace(/<\/head>/i, `${themeRuntimeTag}</head>`);
   else html = html.replace(/\/assets\/js\/fmb-news-theme\.js\?v=[^"']+/gi, themeRuntimeHref);
+  // Every consumer gets the same current IA/chrome version, including Home
+  // and Sports, which previously kept fixed versions after these files changed.
+  for (const [name, version] of [['editorial-ia', iaVersion], ['publication-landing', chromeVersion]]) {
+    const asset = `/assets/css/fmb-news-${name}.css`;
+    html = html.replace(new RegExp(asset.replaceAll('.', '\\.') + '(?:\\?v=[^\"\']+)?', 'g'), `${asset}?v=${version}`);
+  }
   return html;
 }
 

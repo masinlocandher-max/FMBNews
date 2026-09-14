@@ -19,6 +19,8 @@ must(build.includes("await import('./render-home-experience.mjs')"),'build does 
 must(!build.includes('render-metallic-reference.mjs'),'legacy all-in-one renderer returned to the build pipeline');
 must(build.indexOf("render-news-routes.mjs")<build.indexOf("render-home-experience.mjs"),'route renderer must run before the canonical homepage renderer');
 
+must(build.indexOf("await import('./render-fmb-fact-check.mjs')")<build.indexOf("await import('./render-home-experience.mjs')"),'current Fact Check ledger must be generated before the homepage reads it');
+
 for(const token of ['async function article','async function archive','/news/archive/','structured article routes'])must(routes.includes(token),`focused route renderer missing ${token}`);
 for(const banned of ['async function home(','writeRoute(\'/news/\'','heroPhoto=','heroSource=','briefPhoto='])must(!routes.includes(banned),`focused route renderer contains homepage-only code: ${banned}`);
 

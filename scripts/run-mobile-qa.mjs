@@ -20,6 +20,8 @@ const tests=[
   'scripts/browser-qa-theme.mjs',
   'scripts/browser-qa-editorial-ia.mjs',
   'scripts/browser-qa-founder-about.mjs',
+  'scripts/browser-qa-home-v2.mjs',
+  'scripts/browser-qa-feature-routes.mjs',
 ];
 try{
   await waitForServer();

@@ -26,6 +26,14 @@ jobs:
       - name: Verify standalone newsroom
         run: npm run verify
 
+      - name: Install browser QA runtime
+        run: |
+          npm install --no-save --no-audit --no-fund playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Gate deployment on complete browser QA
+        run: npm run test:mobile:browser
+
       - name: Resolve Cloudflare account from canonical zone
         shell: bash
         env:
@@ -106,39 +114,3 @@ jobs:
           fi
 
           echo 'Public FMB News deployment and canonical www newsroom verified.'
-
-  mobile-browser-qa:
-    name: Mobile browser QA (non-blocking)
-    needs: deploy
-    continue-on-error: true
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
-        with:
-          node-version: 22
-
-      - name: Build newsroom for browser QA
-        run: npm run build
-
-      - name: Install mobile browser QA runtime
-        run: |
-          npm install --no-save playwright@1.55.0
-          npx playwright install --with-deps chromium
-
-      - name: Run mobile browser QA
-        shell: bash
-        run: |
-          set -euo pipefail
-          python3 -m http.server 4173 --directory dist >/tmp/fmb-news-qa-server.log 2>&1 &
-          server_pid=$!
-          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
-          for attempt in 1 2 3 4 5; do
-            if curl --fail --silent 'http://127.0.0.1:4173/news/' >/dev/null; then break; fi
-            if [ "$attempt" -eq 5 ]; then cat /tmp/fmb-news-qa-server.log; exit 1; fi
-            sleep 1
-          done
-          FMB_QA_BASE_URL='http://127.0.0.1:4173' node scripts/browser-qa.mjs
-          FMB_QA_BASE_URL='http://127.0.0.1:4173' node scripts/browser-qa-crossword-ux.mjs
-          FMB_QA_BASE_URL='http://127.0.0.1:4173' node scripts/browser-qa-home-motion.mjs
-          FMB_QA_BASE_URL='http://127.0.0.1:4173' node scripts/browser-qa-feature-routes.mjs

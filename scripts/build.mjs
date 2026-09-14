@@ -43,11 +43,6 @@ await import('./hardfix-all-article-images.mjs');
 await import('./hardfix-newsroom-audit.mjs');
 await import('./hardfix-late-newsroom-shell.mjs');
 
-// The canonical homepage renderer is the sole owner of /news/index.html. It
-// runs after the generic audit so News/Worldwide/Sports and Entertainment are
-// source-owned decisions rather than late hardfix output.
-await import('./render-home-experience.mjs');
-
 // Sports is an editorial desk, not a sixth product. Generate a real category
 // destination from published Sports-tagged inventory. When inventory is empty,
 // the route states that explicitly instead of borrowing unrelated stories.
@@ -63,6 +58,12 @@ await import('./render-publication-sections.mjs');
 // receive the same shared newsroom runtime, accessibility and QA contract.
 await import('./render-fmb-fact-check.mjs');
 await import('./hardfix-fact-check-qa.mjs');
+
+// The canonical homepage renderer is the sole owner of /news/index.html. It
+// runs after the generic audit so News/Worldwide/Sports and Entertainment are
+// source-owned decisions rather than late hardfix output.
+await import('./render-home-experience.mjs');
+
 
 // Re-run the same canonical shell after every route exists. The renderer is
 // idempotent and preserves the purpose-built publication landing mast/footer.
