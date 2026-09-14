@@ -58,7 +58,7 @@ body.fmb-ref{background:linear-gradient(180deg,#fff 0%,#fff 72%,#fbf8fc 100%)}
 /* Article network treatment. */
 .fmb-ref .article-shell{padding-top:42px}
 .fmb-ref .article-kicker,.fmb-ref .back,.fmb-ref .lens h2{color:var(--fmb-plum)}
-.fmb-ref .article-figure{padding:10px;background:linear-gradient(145deg,#fff,#f2e8f4);border:1px solid #e1d1e4;box-shadow:0 16px 36px rgba(46,9,54,.09)}
+.fmb-ref .article-figure{padding:10px;background:var(--fmb-theme-surface-soft,#EFEDE8);border:1px solid var(--fmb-theme-line,rgba(20,20,20,.14));box-shadow:0 16px 36px rgba(10,10,10,.09)}
 .fmb-ref .lens{margin:10px 0;padding:18px 18px;background:linear-gradient(100deg,#FAF9F6,#f2e8f5 70%,#fff);border-top:0;border-left:3px solid #D71920}
 .fmb-ref .lens-icon{border-color:#D71920;color:#D71920;background:#fff}
 .fmb-ref .sources{margin-top:12px;padding:20px;background:#FAF9F6;border:1px solid #eadfec}
