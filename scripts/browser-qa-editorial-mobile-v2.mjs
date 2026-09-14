@@ -92,9 +92,84 @@ await dialog.waitFor({state:'visible'});
 for(const href of ['/news/archive/','/news/world/','/news/sports/','/news/fmb-brief/','/news/fact-check/','/news/explainer/','/news/horoscope/','/news/crossword/','/news/about/']){
   assert.equal(await dialog.locator(`a[href="${href}"]`).count(),1,`Mobile Menu is missing ${href}.`);
 }
+
+// The desktop publication footer is hidden below 700px, so its secondary and
+// legal destinations have to be reachable from the Menu instead. These are the
+// footer links that resolve; /privacy/ is deliberately absent because it 404s
+// in this build and a dead link in the Menu is worse than none.
+for(const href of ['/news/editorial-standards/','/news/corrections/','mailto:withlovefmb@gmail.com']){
+  assert.equal(await dialog.locator(`a[href="${href}"]`).count(),1,`Mobile Menu is missing the secondary/legal destination ${href}.`);
+}
 await page.keyboard.press('Escape');
 await dialog.waitFor({state:'detached'});
 
+// ---------------------------------------------------------------------------
+// The desktop publication footer is a phone-only removal
+// ---------------------------------------------------------------------------
+// Measured before the change: 736-801px of four-column desktop footer stacked
+// into a single 390px column under every internal route, with its 13 links
+// rendering white on the approved ivory ground at 1.09:1.
+//
+// This asserts both halves of the contract, because the two footers are
+// different elements in this codebase: Home carries
+// <footer class="footer publication-footer"> while every internal route
+// carries <footer class="footer"> with no publication-footer class. Hiding one
+// and not the other would look correct on Home and change nothing anywhere
+// else, so both are checked, at both sides of the breakpoint.
+const footerVisibility=async(target,path)=>{
+  const response=await target.goto(`${base}${path}`,{waitUntil:'domcontentloaded'});
+  assert(response?.ok(),`${path} returned ${response?.status()}`);
+  return target.evaluate(()=>{
+    const shown=el=>{
+      if(!el)return null;
+      let n=el;
+      while(n&&n.nodeType===1){const s=getComputedStyle(n);if(s.display==='none'||s.visibility==='hidden')return false;n=n.parentElement}
+      return el.getBoundingClientRect().height>0;
+    };
+    return {
+      publicationFooter:shown(document.querySelector('.publication-footer')),
+      anyFooter:shown(document.querySelector('footer.footer')),
+      articleMatterOutsideFooter:(()=>{
+        const f=document.querySelector('footer.footer');
+        const matter=[...document.querySelectorAll('.sources,[class*="related"],[class*="byline"]')];
+        return matter.length ? matter.every(el=>!f||!f.contains(el)) : null;
+      })(),
+      visibleArticleMatter:[...document.querySelectorAll('.sources,[class*="related"],[class*="byline"]')]
+        .filter(el=>el.getBoundingClientRect().height>0).length,
+    };
+  });
+};
+
+const article='/news/barmm-first-parliamentary-election-voting-underway-september-14-2026/';
+
+const homePhone=await footerVisibility(page,'/news/');
+assert.equal(homePhone.publicationFooter,false,'Home: .publication-footer must be hidden below 700px.');
+assert.equal(homePhone.anyFooter,false,'Home: the desktop publication footer must be hidden below 700px.');
+
+for(const path of ['/news/world/','/news/about/',article]){
+  const phone=await footerVisibility(page,path);
+  assert.equal(phone.anyFooter,false,`${path}: the desktop publication footer must be hidden below 700px.`);
+}
+
+// Article-end editorial matter is not part of the footer and must survive it.
+const articlePhone=await footerVisibility(page,article);
+assert.equal(articlePhone.articleMatterOutsideFooter,true,'Article-end editorial matter must sit outside footer.footer.');
+assert(articlePhone.visibleArticleMatter>0,'Article-end editorial matter (Sources / Related / byline) must remain visible on a phone.');
+
+// At 700px and above the footer is exactly as it was. 700 is the first width
+// at which the mobile rule no longer applies, so it is the one that matters.
+const wide=await browser.newContext({viewport:{width:700,height:900},serviceWorkers:'block',timezoneId:'Asia/Manila'});
+const widePage=await wide.newPage();
+await widePage.route('https://**/*',route=>route.abort());
+
+const homeWide=await footerVisibility(widePage,'/news/');
+assert.equal(homeWide.publicationFooter,true,'Home: .publication-footer must be visible at 700px and above.');
+for(const path of ['/news/world/','/news/about/',article]){
+  const desk=await footerVisibility(widePage,path);
+  assert.equal(desk.anyFooter,true,`${path}: the desktop publication footer must be visible at 700px and above.`);
+}
+await wide.close();
+
 await context.close();
 await browser.close();
-console.log('Editorial mobile browser QA passed: FMB NEWS. masthead, text section rail, real story hero, World/Sports/Entertainment rows, persistent five-item dock, broad route coverage, and complete Menu navigation.');
+console.log('Editorial mobile browser QA passed: FMB NEWS. masthead, text section rail, real story hero, World/Sports/Entertainment rows, persistent five-item dock, broad route coverage, complete Menu navigation including the secondary/legal destinations, the desktop publication footer hidden below 700px and present at 700px and above, and article-end editorial matter preserved.');

@@ -885,3 +885,472 @@
     display:none!important;
   }
 }
+
+/* ============================================================================
+   The desktop publication footer does not belong on a phone
+   ============================================================================
+   Measured at 390 before this rule, on every route except Home:
+
+     /news/world/       footer.footer   801px   13 links
+     /news/fmb-brief/   footer.footer   801px   13 links
+     /news/about/       footer.footer   736px   13 links
+     an article         footer.footer   353px   13 links
+
+   Between 350 and 800px of desktop footer -- a four-column link grid, a social
+   row and a legal bottom bar -- stacked into a single 390px column below every
+   story. On World that is more footer than the article body above it.
+
+   Worse, it had become unreadable. The footer's copy is white because the
+   footer is designed to sit on the retired violet ground; once the approved
+   ivory ground was claimed for the mobile shell, all thirteen links rendered
+   white on ivory at 1.09:1. Hiding the footer here is both the requested
+   change and the correct fix for that.
+
+   One footer element exists per page: footer.footer, never inside <main> or
+   <article> on any of the thirteen routes checked. Article-end editorial
+   matter -- Sources, Related Stories, byline, corrections -- was verified to
+   sit outside it on three representative articles and is untouched.
+
+   Home already hid its own .publication-footer; this makes the behaviour one
+   rule for every route instead of a Home-only accident.
+
+   Strictly below 700px. At 700px and above the desktop and tablet footer is
+   exactly as it was -- this rule does not exist there.
+
+   The footer's secondary and legal destinations move into the mobile Menu,
+   which is where a phone reader looks for them. See fmb-news-mobile-global.js.
+   ========================================================================== */
+
+@media (max-width:699px){
+  body.fmb-mobile-first footer.footer{display:none!important}
+}
+
+/* ============================================================================
+   The approved Light/Dark shell, applied to every mobile route
+   ============================================================================
+   The shell was art-directed on Home and nowhere else. Measured at 390 in Dark
+   on every other route, the page ground had flipped to newsroom black and the
+   body copy had flipped to the dark-mode near-white, but the panels between
+   them had not: they still painted the light-mode surfaces hard-coded across
+   the older mobile sheets. The result was near-white text on white.
+
+   Worst measured ratios, Dark, 390:
+
+     .explained-title      1.17:1   206 Explainer cards, near-black on black
+     .country-card h3      1.01:1   /news/world/
+     .brief-issue h2       1.09:1   /news/fmb-brief/
+     .fmb-about-* copy     1.09:1   /news/about/ (43 failures on that route)
+     .fmb-horoscope-*      1.09:1   /news/horoscope/
+     .fmb-clue-group h2    1.09:1   /news/crossword/
+     .archive-card strong  1.89:1   plum on the retired violet card
+
+   These are not token-driven surfaces -- they are literal #fff / #f4f2f5 /
+   #f0ebf2 values spread across eight older mobile stylesheets with no dark
+   variant anywhere -- so there is no one token to flip. They are claimed here,
+   by name, in the sheet that exists to be the last mobile authority. Every
+   selector below corresponds to a surface that was measured painting light in
+   Dark mode; nothing was added speculatively.
+
+   Scoped strictly below 700px. Desktop and tablet are untouched.
+
+   Two things are deliberately left alone:
+
+   - The crossword board and its cells. A crossword reads as paper by design,
+     its text passes contrast in both themes, and its colours carry meaning
+     about the puzzle's state. Not the shell's business.
+   - The Fact Check verdict badges. Their green and amber are the verdicts
+     themselves. Two of them measure below AA on white and that is a real
+     issue, but recolouring a Fact Check rating is an editorial decision, not
+     a design one. Reported, not changed.
+   ========================================================================== */
+
+@media (max-width:699px){
+  /* The root element still painted #f5f5f7 in Dark, which shows through on
+     iOS rubber-band overscroll above and below the page. */
+  html[data-fmb-theme="dark"]:root{background:var(--fmb-mobile-black,#0b0f11)!important}
+  html[data-fmb-theme="light"]:root{background:#f8f5ef!important}
+
+  /* Section grounds merge into the page ground instead of sitting on it as
+     pale slabs. */
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .world-feed,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .archive,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .brief-issues,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fc-empty,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first.fmb-news-clean main{
+    background:transparent!important;
+    background-image:none!important;
+  }
+
+  /* Panels and cards take the approved raised surface and the editorial rule,
+     the same ladder Home's Latest News rows use. */
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .brief-issue,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .brief-method,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .archive-panel,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .archive-card,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .country-card,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .world-note,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-about-mv,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-about-principles article,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-about-method-list li,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-about-hero,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-about-skip,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-horoscope-reading,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fc-rating-key,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .explained-tools,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .explainer-method-note,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-clue-group,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-clue,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-news-context,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-crossword-save-panel,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-crossword-persistence,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .sources{
+    background:var(--fmb-mobile-black-raised,#171c1f)!important;
+    background-image:none!important;
+    border-color:var(--fmb-mobile-rule,#2b3033)!important;
+    color:var(--fmb-mobile-white,#f4f1ea)!important;
+    box-shadow:none!important;
+  }
+
+  /* Controls sit one step below the panels, as they do on Home. */
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-zodiac-grid button,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-crossword-save-actions button,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-mobile-reader-actions button,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .audit-toolbar input,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fc-toolbar input{
+    background:var(--fmb-mobile-black-soft,#111619)!important;
+    border-color:var(--fmb-mobile-rule,#2b3033)!important;
+    color:var(--fmb-mobile-white,#f4f1ea)!important;
+  }
+
+  /* Image wells, on every route rather than only Home. */
+  html[data-fmb-theme="dark"] body.fmb-mobile-first img{background-color:#1b2023!important}
+  html[data-fmb-theme="light"] body.fmb-mobile-first img{background-color:#ece8e0!important}
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .article-figure{background:#1b2023!important}
+}
+
+/* ============================================================================
+   The Explainer index, 206 cards, in both themes
+   ============================================================================
+   One component accounted for more failures than the whole rest of the site:
+   the Explainer card never received any dark-mode colour at all, and its
+   accents are the retired plum. Measured at 390:
+
+     Dark   .explained-title   #1d1d1f on the dark ground   1.17:1  x206
+            .explained-deck    #66666b                      3.43:1  x206
+            .explained-arrow   #6e3a8a plum                 2.46:1  x206
+     Light  .explained-meta    #8c6a9e plum on the ground   4.13:1  x206
+            .explained-number  #8c6a9e plum                 4.13:1  x206
+
+   1030 failures in Dark and 412 in Light, from five declarations. The card
+   takes the approved ink, muted and signal red in each theme.
+   ========================================================================== */
+
+@media (max-width:699px){
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .explained-title{color:var(--fmb-mobile-white,#f4f1ea)!important}
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .explained-deck,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .explained-meta,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .explained-number{color:var(--fmb-mobile-muted,#aaa7a1)!important}
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .explained-arrow{color:#e5484d!important}
+
+  html[data-fmb-theme="light"] body.fmb-mobile-first .explained-meta,
+  html[data-fmb-theme="light"] body.fmb-mobile-first .explained-number{color:#67625c!important}
+  html[data-fmb-theme="light"] body.fmb-mobile-first .explained-arrow{color:#b51f24!important}
+}
+
+/* ============================================================================
+   The shared appearance tokens, for the mobile shell
+   ============================================================================
+   Several internal-route surfaces are not hard-coded at all -- they read
+   var(--fmb-theme-surface) and friends, which still resolve to the retired
+   plum system's values (#17101d raised, #f7f2f8 soft, #1b1420 ink). That is
+   why .archive-card kept painting #17101d after the panels above were claimed
+   by name.
+
+   Claiming the tokens for the mobile shell converges every token-driven
+   surface on every route at once, rather than chasing them class by class.
+   The values are the approved mobile ladder, so a token-driven panel and a
+   hand-claimed one now land on the same surface.
+
+   Below 700px only. The Home document claims the same tokens for itself in
+   fmb-news-editorial-reference-v2.css; converging them for all 571 routes at
+   every width remains the separate migration recorded in the design contract.
+   ========================================================================== */
+
+@media (max-width:699px){
+  html[data-fmb-theme="dark"]:root body.fmb-mobile-first{
+    --fmb-theme-bg:#0b0f11;
+    --fmb-theme-surface:#171c1f;
+    --fmb-theme-surface-soft:#111619;
+    --fmb-theme-ink:#f4f1ea;
+    --fmb-theme-muted:#aaa7a1;
+    --fmb-theme-line:#2b3033;
+  }
+  html[data-fmb-theme="light"]:root body.fmb-mobile-first{
+    --fmb-theme-bg:#f8f5ef;
+    --fmb-theme-surface:#fffdf8;
+    --fmb-theme-surface-soft:#f2eee5;
+    --fmb-theme-ink:#121417;
+    --fmb-theme-muted:#62605c;
+    --fmb-theme-line:#d9d3c7;
+  }
+}
+
+/* ============================================================================
+   Accent text that never had a dark value
+   ============================================================================
+   With the panels and tokens converged, everything still failing in Dark on an
+   internal route is one thing: small accent and metadata text left in the
+   retired plum, which had enough contrast on the old near-white ground and none
+   at all on newsroom black. Measured at 390:
+
+     .fmb-clue strong                     #5b276e   1.60:1   x36  crossword
+     .audit-result small                  #6e3a8a   2.42:1   x20  search
+     .brief-issue time                    #6e3a8a   2.16:1   x15  Daily Brief
+     .country-card small span             #705477   2.64:1   x10  World
+     .fmb-about-principles article span   the identity plum   1.41:1   x7
+     .fmb-about-method-list li span       the identity plum   1.41:1   x5
+     .archive-card strong                 #6f1f76   1.75:1   x3   World archive
+     .fmb-feature-hero small              #6f1f76   1.96:1   x1   Horoscope
+
+   The About marks are the exact retired identity plum that this file's own
+   verifier forbids from appearing here as a value -- still being painted on
+   that route by an older sheet, which is why the hex is described rather than
+   quoted. Each mark takes the role it actually plays: a kicker, clue number or
+   date marker takes the dark signal red; a credit, count or status line takes
+   the muted ink.
+   ========================================================================== */
+
+@media (max-width:699px){
+  html[data-fmb-theme="dark"] body.fmb-mobile-first :is(
+    .fmb-clue strong,
+    .brief-issue time,
+    .fmb-about-principles article span,
+    .fmb-about-method-list li span,
+    .fmb-about-hero-statement strong,
+    .archive-card strong,
+    .fmb-feature-hero small
+  ){color:#e5484d!important}
+
+  html[data-fmb-theme="dark"] body.fmb-mobile-first :is(
+    .audit-result small,
+    .country-card small span,
+    .archive-credit,
+    .fmb-feature-week,
+    .fmb-crossword-status,
+    .fmb-about-method-list li a strong
+  ){color:var(--fmb-mobile-muted,#aaa7a1)!important}
+
+  /* About's <main> is painted #f6f5f7 by an older route sheet and is the last
+     light slab left on any mobile route in Dark. The founder section sits on
+     it, which is why its heading measured near-white on near-white. */
+  html[data-fmb-theme="dark"] body.fmb-mobile-first.fmb-news-about main,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first.fmb-matte-system.fmb-news-about main{
+    background:transparent!important;
+    background-image:none!important;
+    color:var(--fmb-mobile-white,#f4f1ea)!important;
+  }
+}
+
+/* ============================================================================
+   The last of it: one red, one ID, and About's white-on-white
+   ============================================================================
+   1. The dark signal red measures 4.39:1 at 7.5px on the raised surface
+      #171c1f -- 0.11 short of AA, on 69 marks across Home, Crossword, Daily
+      Brief and About. This file already carries a lifted red for exactly this
+      case (the feature kickers and the dock's active label sit on the same
+      surface). The raised-surface marks take it too, rather than each route
+      inventing its own value.
+
+   2. About's <main> resisted every class-based claim because the winner is an
+      ID rule: .fmb-mobile-route-about #aboutMain{background:#f6f5f7!important}.
+      An ID beats any number of classes, so the light slab survived the panel
+      pass, the token pass and the route pass. Claimed here with an ID of its
+      own. This was also why the founder block measured near-white on near-
+      white in Dark: it is transparent and was sitting on that slab.
+
+   3. About's Mission and Vision cards are white text on a white card in Light
+      -- 1.00:1, invisible, and not something this branch introduced. They were
+      authored for a dark plum card that the approved design retired. They take
+      the paper surface and editorial ink in Light, the raised surface and
+      off-white in Dark. Same for the section nav links and the founder
+      portrait placeholder, which were white on paper.
+   ========================================================================== */
+
+@media (max-width:699px){
+  html[data-fmb-theme="dark"] body.fmb-mobile-first :is(
+    .fmb-clue strong,
+    .brief-issue time,
+    .fmb-about-principles article span,
+    .fmb-about-method-list li span,
+    .fmb-about-hero-statement strong,
+    .archive-card strong,
+    .fmb-feature-hero small,
+    .fmb-app-story-meta span:first-child
+  ){color:#f05a5f!important}
+
+  html[data-fmb-theme="dark"] body.fmb-mobile-first :is(
+    .fmb-about-method-list li strong,
+    .fmb-about-principles article strong,
+    .fmb-about-purpose p strong,
+    .fmb-about-standards p strong
+  ){color:var(--fmb-mobile-white,#f4f1ea)!important}
+
+  /* An ID for an ID. */
+  html[data-fmb-theme="dark"] body.fmb-mobile-first #aboutMain{
+    background:var(--fmb-mobile-black,#0b0f11)!important;
+    color:var(--fmb-mobile-white,#f4f1ea)!important;
+  }
+  html[data-fmb-theme="light"] body.fmb-mobile-first #aboutMain{
+    background:#f8f5ef!important;
+    color:#121417!important;
+  }
+
+  /* White-on-white in Light: cards, section nav and the portrait placeholder. */
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-about-mv{
+    background:#fffdf8!important;
+    border:1px solid #d9d3c7!important;
+  }
+  html[data-fmb-theme="light"] body.fmb-mobile-first :is(
+    .fmb-about-mv h2,
+    .fmb-about-mv p,
+    .fnc-shell nav a,
+    .fmb-founder-photo-placeholder span
+  ){color:#121417!important}
+  html[data-fmb-theme="light"] body.fmb-mobile-first :is(
+    .fmb-about-mv .fmb-about-label,
+    .fmb-founder-photo-placeholder small
+  ){color:#62605c!important}
+  html[data-fmb-theme="light"] body.fmb-mobile-first .fmb-founder-photo-placeholder{
+    background:#ece8e0!important;
+    background-image:none!important;
+  }
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .fmb-founder-photo-placeholder{
+    background:#1b2023!important;
+    background-image:none!important;
+  }
+}
+
+/* ============================================================================
+   Back links, counts and credits
+   ============================================================================
+   The last family. Every remaining non-decorative failure in Dark is one of
+   three things, all of them route chrome rather than journalism:
+
+     a plum back/forward link   #6e3a8a / #6f1f76 / the identity plum
+     a heading that never flipped   #1d1d1f / #171217         1.02 - 1.04:1
+     a count or credit too dim on its surface  #756b79 / #6e6e73  3.2 - 4.3:1
+
+   Back links take the dark signal red, headings take the off-white, counts and
+   credits take the muted ink. The same counts and credits are lifted in Light
+   where they measured just under AA on paper.
+   ========================================================================== */
+
+@media (max-width:699px){
+  html[data-fmb-theme="dark"] body.fmb-mobile-first :is(
+    .edition-link,
+    .back,
+    .audit-back,
+    .archive-back,
+    .fmb-archive-kicker,
+    .fmb-about-name strong
+  ){color:#f05a5f!important}
+
+  html[data-fmb-theme="dark"] body.fmb-mobile-first :is(
+    .archive-title,
+    .fmb-archive-title,
+    .explained-standard,
+    .sources li,
+    .sources li a,
+    .source-list li,
+    .source-list li a
+  ){color:var(--fmb-mobile-white,#f4f1ea)!important}
+
+  html[data-fmb-theme="dark"] body.fmb-mobile-first :is(
+    .explained-count,
+    .fc-toolbar span,
+    .archive-credit,
+    .article-figure figcaption,
+    .fmb-image-credit
+  ){color:var(--fmb-mobile-muted,#aaa7a1)!important}
+
+  html[data-fmb-theme="light"] body.fmb-mobile-first :is(
+    .explained-count,
+    .fc-toolbar span,
+    .archive-credit,
+    .article-figure figcaption,
+    .fmb-image-credit
+  ){color:#5d5a55!important}
+}
+
+@media (max-width:699px){
+  /* The last three. The Archive's own section title never flipped (near-black
+     on newsroom black, 1.04:1) and its back link kept the plum; the Explainer's
+     method note keeps a near-black lead-in on the raised panel. */
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .section-title h2,
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .explainer-method-note strong{
+    color:var(--fmb-mobile-white,#f4f1ea)!important;
+  }
+  html[data-fmb-theme="dark"] body.fmb-mobile-first .section-title a{color:#f05a5f!important}
+}
+
+@media (max-width:699px){
+  /* The Archive route re-asserts its own title and link at (0,5,3) with
+     !important -- body.fmb-mobile-route-archive main.shell.section >
+     .section-title ... -- which outranks the shell rule above. Matched here
+     rather than escalated further, so the shell claim wins by being the later
+     sheet at equal weight. */
+  html[data-fmb-theme="dark"] body.fmb-mobile-first.fmb-mobile-route-archive main.shell.section>.section-title h2{
+    color:var(--fmb-mobile-white,#f4f1ea)!important;
+  }
+  html[data-fmb-theme="dark"] body.fmb-mobile-first.fmb-mobile-route-archive main.shell.section>.section-title a{
+    color:#f05a5f!important;
+  }
+}
+
+/* ============================================================================
+   About, in Light: white text on paper
+   ============================================================================
+   Verified by screenshot, not only by measurement. The Mission and Vision
+   cards, the founder block and the profile link were authored for a dark plum
+   panel the approved design retired. On the ivory ground their body copy is
+   rgba(255,255,255,.86) on #fffdf8 -- a whole paragraph of the publication's
+   mission statement, rendered invisible. The heading above it reads fine, so
+   nothing about the page looks broken; the copy is simply not there.
+
+   The card's large watermark numeral is decorative and stays a watermark; it
+   just picks up ink instead of white so it reads as one.
+
+   Specificity note: the losing rules sit at (0,5,2) with !important
+   (body.fmb-matte-system.fmb-news-about .fmb-about-mv > p and friends), so
+   these carry the extra body class needed to outrank them rather than an ID.
+   ========================================================================== */
+
+@media (max-width:699px){
+  html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-matte-system.fmb-news-about .fmb-about-mv>p,
+  html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-matte-system.fmb-news-about .fmb-about-founder h2,
+  html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-matte-system.fmb-news-about .fmb-founder-profile-link,
+  html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-matte-system.fmb-news-about .fmb-about-hero-statement{
+    color:#121417!important;
+  }
+  html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-matte-system.fmb-news-about .fmb-about-mv>span{
+    color:rgba(18,20,23,.14)!important;
+  }
+  html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-matte-system.fmb-news-about .fmb-about-label{
+    color:#62605c!important;
+  }
+  html[data-fmb-theme="dark"] body.fmb-mobile-first.fmb-matte-system.fmb-news-about .fmb-about-mv>span{
+    color:rgba(244,241,234,.16)!important;
+  }
+}
+
+@media (max-width:699px){
+  /* The closing section, same story: authored white for a dark panel, drawn on
+     ivory. "What happened. What the evidence shows..." is the publication's
+     closing statement and it was not visible in Light. */
+  html[data-fmb-theme="light"] body.fmb-mobile-first.fmb-matte-system.fmb-news-about .fmb-about-closing :is(h2,p,a,strong){
+    color:#121417!important;
+  }
+  html[data-fmb-theme="dark"] body.fmb-mobile-first.fmb-matte-system.fmb-news-about .fmb-about-closing :is(h2,p,a,strong){
+    color:var(--fmb-mobile-white,#f4f1ea)!important;
+  }
+}
