@@ -756,3 +756,221 @@ html[data-fmb-theme="dark"] .fmb-ref.fmb-network-landing .brief-form-row{
     transform:none!important;
   }
 }
+
+/* ===========================================================================
+   Metallic + frosted pass — silver edge light and selective glass
+   ===========================================================================
+   Requested refinement: increase metallic and frosted-transparent character
+   without changing the publication palette or turning the Home into a generic
+   glass dashboard. Silver is used as reflected light, not as a new brand hue;
+   frost is limited to navigation, utility and functional raised surfaces. */
+
+.fmb-ref.fmb-network-landing{
+  --fmb-frost:rgba(250,249,246,.70);
+  --fmb-frost-strong:rgba(250,249,246,.84);
+  --fmb-metal-edge:linear-gradient(90deg,rgba(255,255,255,.10),rgba(191,193,194,.82) 18%,rgba(255,255,255,.96) 50%,rgba(150,154,156,.68) 82%,rgba(255,255,255,.08));
+  --fmb-metal-soft:linear-gradient(112deg,rgba(255,255,255,.48),rgba(191,193,194,.10) 24%,rgba(255,255,255,.05) 52%,rgba(191,193,194,.20) 78%,rgba(255,255,255,.40));
+  --fmb-metal-border:rgba(111,116,119,.30);
+}
+html[data-fmb-theme="dark"] .fmb-ref.fmb-network-landing{
+  --fmb-frost:rgba(20,20,20,.64);
+  --fmb-frost-strong:rgba(20,20,20,.78);
+  --fmb-metal-edge:linear-gradient(90deg,rgba(255,255,255,.04),rgba(191,193,194,.34) 18%,rgba(245,243,239,.66) 50%,rgba(109,112,114,.28) 82%,rgba(255,255,255,.03));
+  --fmb-metal-soft:linear-gradient(112deg,rgba(255,255,255,.08),rgba(191,193,194,.025) 28%,rgba(255,255,255,0) 52%,rgba(191,193,194,.055) 78%,rgba(255,255,255,.06));
+  --fmb-metal-border:rgba(191,193,194,.22);
+}
+
+/* Frost the publication chrome just enough that it catches the page beneath it.
+   The masthead stays legible and editorial; the blur only changes materiality. */
+.fmb-ref.fmb-network-landing .publication-mast{
+  background:color-mix(in srgb,var(--fmb-theme-bg,var(--fmb-paper)) 88%,transparent)!important;
+  backdrop-filter:blur(18px) saturate(1.08)!important;
+  -webkit-backdrop-filter:blur(18px) saturate(1.08)!important;
+  box-shadow:0 14px 38px rgba(20,20,20,.065),inset 0 -1px 0 rgba(255,255,255,.34)!important;
+}
+html[data-fmb-theme="dark"] .fmb-ref.fmb-network-landing .publication-mast{
+  box-shadow:0 16px 42px rgba(0,0,0,.34),inset 0 -1px 0 rgba(255,255,255,.07)!important;
+}
+.fmb-ref.fmb-network-landing .publication-brand-row::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:-1px;
+  height:1px;
+  background:var(--fmb-metal-edge);
+  pointer-events:none;
+}
+.fmb-ref.fmb-network-landing .publication-nav{
+  background:var(--fmb-frost)!important;
+  border-bottom-color:var(--fmb-metal-border)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.34),0 8px 22px rgba(20,20,20,.035)!important;
+  backdrop-filter:blur(16px) saturate(1.12)!important;
+  -webkit-backdrop-filter:blur(16px) saturate(1.12)!important;
+}
+html[data-fmb-theme="dark"] .fmb-ref.fmb-network-landing .publication-nav{
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.055),0 10px 28px rgba(0,0,0,.20)!important;
+}
+
+/* Controls get machined silver edges rather than extra colour. */
+.fmb-ref.fmb-network-landing .publication-search{
+  position:relative;
+  border-color:var(--fmb-metal-border)!important;
+  background:var(--fmb-frost)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.62),inset 0 -1px 0 rgba(111,116,119,.16),0 8px 20px rgba(20,20,20,.055)!important;
+  backdrop-filter:blur(14px) saturate(1.12)!important;
+  -webkit-backdrop-filter:blur(14px) saturate(1.12)!important;
+}
+html[data-fmb-theme="dark"] .fmb-ref.fmb-network-landing .publication-search{
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.13),inset 0 -1px 0 rgba(0,0,0,.48),0 10px 22px rgba(0,0,0,.26)!important;
+}
+.fmb-ref.fmb-network-landing .publication-menu-panel{
+  border-color:var(--fmb-metal-border)!important;
+  background:var(--fmb-frost-strong)!important;
+  box-shadow:0 24px 60px rgba(20,20,20,.14),inset 0 1px 0 rgba(255,255,255,.62)!important;
+  backdrop-filter:blur(24px) saturate(1.12)!important;
+  -webkit-backdrop-filter:blur(24px) saturate(1.12)!important;
+}
+html[data-fmb-theme="dark"] .fmb-ref.fmb-network-landing .publication-menu-panel{
+  box-shadow:0 28px 68px rgba(0,0,0,.54),inset 0 1px 0 rgba(255,255,255,.10)!important;
+}
+
+/* The ticker reads like blackened metal rather than a plain black rectangle. */
+.fmb-ref.fmb-network-landing .headline-ticker{
+  background:linear-gradient(180deg,#151515 0%,#090909 52%,#111 100%)!important;
+  border-bottom-color:rgba(191,193,194,.26)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),inset 0 -1px 0 rgba(0,0,0,.72)!important;
+}
+
+/* Newsroom strip is the clearest frosted element: thin silver perimeter,
+   translucent fill and a controlled reflection at the top edge. */
+.fmb-ref.fmb-network-landing .editorial-status-strip{
+  overflow:hidden;
+  border-color:var(--fmb-metal-border)!important;
+  background:var(--fmb-frost)!important;
+  box-shadow:var(--fmb-depth-1),inset 0 1px 0 rgba(255,255,255,.58)!important;
+  backdrop-filter:blur(18px) saturate(1.12)!important;
+  -webkit-backdrop-filter:blur(18px) saturate(1.12)!important;
+}
+.fmb-ref.fmb-network-landing .editorial-status-strip::after{
+  content:"";
+  position:absolute;
+  inset:0 0 auto;
+  height:1px;
+  background:var(--fmb-metal-edge);
+  opacity:.72;
+  pointer-events:none;
+}
+
+/* Image wells get a polished silver lip, not a decorative frame. */
+.fmb-ref.fmb-network-landing .editorial-lead-image,
+.fmb-ref.fmb-network-landing .editorial-side-rail img,
+.fmb-ref.fmb-network-landing .network-product .editorial-product-image{
+  border-color:var(--fmb-metal-border)!important;
+  outline:1px solid color-mix(in srgb,#BFC1C2 22%,transparent);
+  outline-offset:-2px;
+}
+
+/* Product wells become translucent sheets separated by metallic hairlines. */
+.fmb-ref.fmb-network-landing .network-products{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(180deg,color-mix(in srgb,var(--fmb-frost) 82%,transparent),color-mix(in srgb,var(--fmb-depth-soft) 68%,transparent))!important;
+  border-top:1px solid var(--fmb-metal-border)!important;
+  border-bottom:1px solid var(--fmb-metal-border)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.46),inset 0 -1px 0 rgba(111,116,119,.12)!important;
+  backdrop-filter:blur(12px) saturate(1.06)!important;
+  -webkit-backdrop-filter:blur(12px) saturate(1.06)!important;
+}
+.fmb-ref.fmb-network-landing .network-products::before{
+  content:"";
+  position:absolute;
+  left:0;right:0;top:0;
+  height:1px;
+  background:var(--fmb-metal-edge);
+  opacity:.72;
+  pointer-events:none;
+}
+.fmb-ref.fmb-network-landing .network-product{
+  overflow:hidden;
+  border-right-color:var(--fmb-metal-border)!important;
+  background:color-mix(in srgb,var(--fmb-frost) 62%,transparent)!important;
+  backdrop-filter:blur(12px) saturate(1.06)!important;
+  -webkit-backdrop-filter:blur(12px) saturate(1.06)!important;
+}
+.fmb-ref.fmb-network-landing .network-product::before{
+  content:""!important;
+  display:block!important;
+  position:absolute!important;
+  inset:0 0 auto 0!important;
+  height:36%!important;
+  background:var(--fmb-metal-soft)!important;
+  opacity:.46!important;
+  pointer-events:none!important;
+}
+.fmb-ref.fmb-network-landing .network-product>*{position:relative;z-index:1}
+.fmb-ref.fmb-network-landing .network-product:is(:hover,:focus-visible){
+  background:var(--fmb-frost-strong)!important;
+  box-shadow:0 26px 62px rgba(20,20,20,.13),inset 0 1px 0 rgba(255,255,255,.72)!important;
+}
+html[data-fmb-theme="dark"] .fmb-ref.fmb-network-landing .network-product:is(:hover,:focus-visible){
+  box-shadow:0 30px 70px rgba(0,0,0,.50),inset 0 1px 0 rgba(255,255,255,.11)!important;
+}
+
+/* Entertainment/About stays lighter, with metallic details in the small marks. */
+.fmb-ref.fmb-network-landing .editorial-bottom-grid{
+  border-top:1px solid color-mix(in srgb,#BFC1C2 30%,transparent);
+  background:linear-gradient(180deg,color-mix(in srgb,var(--fmb-frost) 38%,transparent),color-mix(in srgb,var(--fmb-depth-soft) 54%,transparent));
+}
+.fmb-ref.fmb-network-landing .entertainment-art,
+.fmb-ref.fmb-network-landing .founder-portrait-placeholder{
+  border:1px solid var(--fmb-metal-border)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.45),var(--fmb-depth-1)!important;
+}
+
+/* Daily Brief is the premium frosted callout. It receives the strongest blur,
+   a silver top reflection, and a translucent input without adding rounded UI. */
+.fmb-ref.fmb-network-landing .daily-brief-signup{
+  position:relative;
+  overflow:hidden;
+  border-color:var(--fmb-metal-border)!important;
+  background:var(--fmb-frost-strong)!important;
+  box-shadow:0 18px 46px rgba(20,20,20,.09),inset 0 1px 0 rgba(255,255,255,.70)!important;
+  backdrop-filter:blur(24px) saturate(1.14)!important;
+  -webkit-backdrop-filter:blur(24px) saturate(1.14)!important;
+}
+.fmb-ref.fmb-network-landing .daily-brief-signup::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto;
+  height:1px;
+  background:var(--fmb-metal-edge);
+  opacity:.9;
+  pointer-events:none;
+}
+html[data-fmb-theme="dark"] .fmb-ref.fmb-network-landing .daily-brief-signup{
+  box-shadow:0 22px 56px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.12)!important;
+}
+.fmb-ref.fmb-network-landing .brief-form-row input{
+  border-color:var(--fmb-metal-border)!important;
+  background:color-mix(in srgb,var(--fmb-frost) 76%,transparent)!important;
+  backdrop-filter:blur(14px)!important;
+  -webkit-backdrop-filter:blur(14px)!important;
+}
+.fmb-ref.fmb-network-landing .brief-form-row button{
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 7px 18px rgba(215,25,32,.16)!important;
+}
+
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .fmb-ref.fmb-network-landing .publication-mast,
+  .fmb-ref.fmb-network-landing .publication-nav,
+  .fmb-ref.fmb-network-landing .publication-menu-panel,
+  .fmb-ref.fmb-network-landing .editorial-status-strip,
+  .fmb-ref.fmb-network-landing .network-products,
+  .fmb-ref.fmb-network-landing .network-product,
+  .fmb-ref.fmb-network-landing .daily-brief-signup{
+    background:var(--fmb-theme-surface,var(--fmb-paper-hi))!important;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .fmb-ref.fmb-network-landing .network-product::before{opacity:.30!important}
+}
