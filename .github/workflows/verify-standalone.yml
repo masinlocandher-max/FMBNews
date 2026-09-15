@@ -63,7 +63,7 @@ jobs:
             grep -q 'FMB Explainer' "$file"
             grep -q 'FMB Daily Brief' "$file"
             grep -E -q 'fmb-news-mobile-system\.css\?v=[0-9a-f]{10}' "$file"
-            grep -q 'fmb-news-mobile-products.js?v=20260902-products-v3' "$file"
+            grep -E -q 'fmb-news-mobile-products\.js\?v=[0-9a-f]{10}' "$file"
             ! grep -E -q '<link[^>]+fmb-news-mobile-(personalization|home|global|products|app-polish|home-live-hero|contrast-lock|product-heroes|menu-holder)\.css' "$file"
           done
 
@@ -114,7 +114,7 @@ jobs:
 
           total_pages="$(find dist/news -type f -name index.html | wc -l | tr -d ' ')"
           system_pages="$(grep -rl -E 'fmb-news-mobile-system\.css\?v=[0-9a-f]{10}' dist/news --include='index.html' | wc -l | tr -d ' ')"
-          product_js_pages="$(grep -rl 'fmb-news-mobile-products.js?v=20260902-products-v3' dist/news --include='index.html' | wc -l | tr -d ' ')"
+          product_js_pages="$(grep -rl -E 'fmb-news-mobile-products\.js\?v=[0-9a-f]{10}' dist/news --include='index.html' | wc -l | tr -d ' ')"
           echo "coverage total=$total_pages system=$system_pages product_js=$product_js_pages"
           test "$total_pages" -eq "$system_pages"
           test "$total_pages" -eq "$product_js_pages"
