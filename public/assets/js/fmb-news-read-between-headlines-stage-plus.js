@@ -90,7 +90,7 @@ function syncKeyboardLabels(){
 function showMilestone(completed){
   if(![5,10,15,20,25].includes(completed))return;
   clearTimeout(milestoneTimer);
-  milestoneFlash.innerHTML=`<strong>${completed} cleared.</strong>${30-completed} questions to go`;
+  milestoneFlash.innerHTML=`<strong>${completed} questions cleared.</strong>${30-completed} to go`;
   milestoneFlash.dataset.visible='true';
   milestoneTimer=setTimeout(()=>{milestoneFlash.dataset.visible='false';},1050);
 }
