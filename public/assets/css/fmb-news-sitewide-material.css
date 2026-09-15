@@ -18,7 +18,14 @@
   --fmb-finish-silver:#BFC1C2;
   --fmb-finish-steel:#6D7072;
   --fmb-finish-line:rgba(20,20,20,.16);
-  --fmb-finish-display:"Bodoni Moda","Libre Bodoni","Didot","Bodoni 72","Baskerville","Times New Roman",serif;
+  /* Newsreader first. This token arrived with the sitewide material pass and
+     led with Bodoni Moda, which put Bodoni back on the desk titles at phone
+     width and on the article headline at 1440 -- so the publication was
+     setting headlines in two display faces depending on the route and the
+     viewport. Bodoni is kept as the fallback; the reason it is not first is
+     that its thins go to a hairline by design, which is why the masthead and
+     the desk lockups were illegible in it at display size. */
+  --fmb-finish-display:"Newsreader","Bodoni Moda","Libre Bodoni",Georgia,"Times New Roman",serif;
   --fmb-finish-ui:Inter,-apple-system,BlinkMacSystemFont,"SF Pro Text",Manrope,"Segoe UI",Arial,sans-serif;
   --fmb-finish-metal:linear-gradient(112deg,#070707 0%,#141515 28%,#2B2E30 48%,#111212 67%,#070707 100%);
   --fmb-finish-sheen:linear-gradient(105deg,transparent 0 36%,rgba(255,255,255,.07) 47%,rgba(191,193,194,.11) 52%,transparent 68%);
