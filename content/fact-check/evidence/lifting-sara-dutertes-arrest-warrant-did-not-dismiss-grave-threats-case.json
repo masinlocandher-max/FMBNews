@@ -1,0 +1,41 @@
+{
+  "slug": "lifting-sara-dutertes-arrest-warrant-did-not-dismiss-grave-threats-case",
+  "claimSource": {
+    "url": "https://pressone.ph/fact-check-court-lifted-sara-duterte-arrest-warrant-after-bail-but-grave-threats-case-continues/",
+    "capturedAt": "2026-09-16",
+    "description": "PressOnePH documented the circulating Facebook post implying that the lifted arrest warrant meant Vice President Sara Duterte had been cleared. FMB independently checked the governing bail rule and current case reporting."
+  },
+  "rating": "MISLEADING",
+  "ratingReachedBy": "FMB",
+  "evidence": [
+    {
+      "kind": "primary",
+      "title": "Revised Rules of Criminal Procedure, Rule 114 — Bail",
+      "publisher": "Supreme Court E-Library",
+      "url": "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/11/369",
+      "checkedOn": "2026-09-16",
+      "supports": "Defines bail as security for release from custody and requires the accused to appear before the court; the bail undertaking remains effective through the stages of the case until promulgation of judgment unless cancelled."
+    },
+    {
+      "kind": "secondary",
+      "title": "LOOK: Court order lifting arrest warrant vs VP Sara Duterte",
+      "publisher": "GMA News Online",
+      "url": "https://www.gmanetwork.com/news/topstories/nation/1001255/look-court-order-lifting-arrest-warrant-vs-vp-sara-duterte/story/",
+      "checkedOn": "2026-09-16",
+      "supports": "Reports and reproduces the September 5 court order lifting the warrant after Duterte posted ₱120,000 bail for each of three grave threats counts."
+    },
+    {
+      "kind": "secondary",
+      "title": "QC court postpones Sara Duterte's arraignment on grave threats",
+      "publisher": "GMA News Online",
+      "url": "https://www.gmanetwork.com/news/topstories/nation/1001996/qc-court-postpones-sara-duterte-s-arraignment-on-grave-threats/story/",
+      "checkedOn": "2026-09-16",
+      "supports": "Confirms the criminal proceedings continued after bail: the September 11 arraignment was postponed while the defense pursued motions."
+    }
+  ],
+  "derivedFrom": {
+    "publisher": "PressOnePH",
+    "url": "https://pressone.ph/fact-check-court-lifted-sara-duterte-arrest-warrant-after-bail-but-grave-threats-case-continues/",
+    "note": "PressOnePH documented the circulating claim. FMB independently checked Rule 114 and current case reporting before assigning its own MISLEADING rating."
+  }
+}
