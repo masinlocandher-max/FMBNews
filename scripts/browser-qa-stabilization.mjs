@@ -28,19 +28,21 @@ async function assertPersistentShell(page,path){
       shellPosition:shell?getComputedStyle(shell).position:'',shellTop:shell?getComputedStyle(shell).top:'',
       searchCenter:sr?sr.left+sr.width/2:-999,brandCenter:br?br.left+br.width/2:999,
       viewport:innerWidth,
-      // The app bar used to carry a hamburger on the left and a section rail
-      // below. Both duplicated the dock, so both are gone; what is asserted now
-      // is that they have not come back and that the wordmark still centres
-      // without the left-hand control that used to balance it.
+      // The app bar carries the wordmark and search. The hamburger that used to
+      // sit on its left is gone -- it opened the same panel as the dock's Menu --
+      // so the wordmark has to centre without the control that once balanced it.
+      // The section rail below the bar is a separate navigation and is checked.
       appBarControls:[...document.querySelectorAll('.fmb-mobile-shell-head a,.fmb-mobile-shell-head button')].length,
-      retiredNav:document.querySelectorAll('.fmb-mobile-product-rail,.fmb-approved-bottom-nav,[data-fmb-shell-menu]').length,
+      retiredNav:document.querySelectorAll('.fmb-approved-bottom-nav,[data-fmb-shell-menu]').length,
+      railItems:[...document.querySelectorAll('.fmb-mobile-product-rail>a')].map(a=>(a.textContent||'').trim()),
       dockPosition:dock?getComputedStyle(dock).position:'',dockBottom:dr?Math.abs(innerHeight-dr.bottom):999,dockItems:dock?.children.length||0
     };
   });
   assert.equal(geometry.shellPosition,'sticky',`${path} FMB shell must stay sticky.`);
   assert.equal(geometry.shellTop,'0px',`${path} FMB shell must pin to the top.`);
   assert.equal(geometry.appBarControls,2,`${path} app bar must carry exactly the wordmark and search; found ${geometry.appBarControls} controls.`);
-  assert.equal(geometry.retiredNav,0,`${path} must not restore the section rail, the retired dock or the app-bar hamburger.`);
+  assert.equal(geometry.retiredNav,0,`${path} must not restore the retired dock or the app-bar hamburger.`);
+  assert.deepEqual(geometry.railItems,['Home','World','Sports','Briefing','Fact Check'],`${path} section rail drifted.`);
   assert(Math.abs(geometry.brandCenter-geometry.viewport/2)<=12,`${path} FMB NEWS. wordmark is not centered.`);
   assert(geometry.searchCenter>geometry.viewport*.75,`${path} search must stay on the right.`);
   assert.equal(geometry.dockPosition,'fixed',`${path} editorial bottom dock must be fixed.`);
@@ -170,4 +172,4 @@ async function assertPersistentShell(page,path){
 }
 
 await browser.close();
-console.log('Mobile stabilization browser QA passed: sticky FMB NEWS. shell, a wordmark-and-search app bar with no hamburger or section rail duplicating it, the persistent five-item editorial dock as the single primary navigation, PHT authority, accessible menu focus, and reduced motion.');
+console.log('Mobile stabilization browser QA passed: sticky FMB NEWS. shell, a wordmark-and-search app bar with no hamburger duplicating the dock Menu, the named section rail, the persistent five-item editorial dock, PHT authority, accessible menu focus, and reduced motion.');

@@ -119,6 +119,14 @@ const shellPaint=async(page)=>page.evaluate(()=>{
     menuSheet:bg('.fmb-app-action-panel'),
     wordmarkInk:ink('.fmb-mobile-shell-copy strong'),
     dockMenuInk:ink('[data-fmb-dock-menu]'),
+    rail:bg('.fmb-mobile-product-rail'),
+    railMutedInk:ink('.fmb-mobile-product-rail a:not([aria-current])'),
+    railActiveInk:ink('.fmb-mobile-product-rail a[aria-current="page"]'),
+    // The current section is marked by a red rule under the label, not by
+    // colouring the label red. That indicator is the thing to check.
+    railIndicator:(()=>{const el=document.querySelector('.fmb-mobile-product-rail a[aria-current="page"]');
+      if(!el)return null;const a=getComputedStyle(el,'::after');
+      return `${a.backgroundColor} ${a.backgroundImage}`;})(),
     dockInactiveInk:ink('.fmb-editorial-mobile-dock a:not([aria-current])'),
     dockActiveRaw:raw('.fmb-editorial-mobile-dock a[aria-current="page"]','color'),
     dotRaw:raw('.fmb-mobile-brand-dot','color'),
@@ -126,19 +134,32 @@ const shellPaint=async(page)=>page.evaluate(()=>{
 });
 const isRed=(v)=>{const p=String(v).match(/[\d.]+/g);return !!p&&Number(p[0])>150&&Number(p[0])-Number(p[1])>80&&Number(p[0])-Number(p[2])>80};
 
-// The section rail and the app-bar hamburger used to be measured here too.
-// Both are gone -- they duplicated the dock -- and because every check in this
-// file is guarded with `!== null`, leaving them listed would have turned four
-// paint assertions into silent no-ops rather than failures. They are replaced by
-// the controls that actually ship: the dock, and the dock's Menu button.
+// Every check in this file is guarded with `!== null`, so measuring an element
+// that does not exist turns an assertion into a silent pass rather than a
+// failure. That is why the presence of each measured surface is asserted first,
+// and why the app-bar hamburger -- which is retired -- is asserted absent
+// rather than left in the paint list where its absence would read as success.
 const lit=await shellPaint(mobilePage);
-assert.equal(await mobilePage.locator('.fmb-mobile-product-rail,[data-fmb-shell-menu]').count(),0,'The retired section rail and app-bar hamburger must stay removed.');
-for(const part of ['header','dock','body','wordmarkInk','dockMenuInk','dockInactiveInk'])
+assert.equal(await mobilePage.locator('[data-fmb-shell-menu]').count(),0,'The retired app-bar hamburger must stay removed; the dock Menu opens the same panel.');
+assert.equal(await mobilePage.locator('.fmb-mobile-product-rail').count(),1,'The section rail must be present.');
+for(const part of ['header','rail','dock','body','wordmarkInk','dockMenuInk','dockInactiveInk','railMutedInk'])
   assert(lit[part]!==null,`Light appearance could not measure ${part}; the selector matched nothing, so its assertion would have been skipped.`);
-for(const part of ['header','dock','body','section','row'])
+for(const part of ['header','rail','dock','body','section','row'])
   if(lit[part]!==null)assert(lit[part]>.5,`Light appearance must paint the ${part} light; it measured ${lit[part]}.`);
-for(const part of ['wordmarkInk','dockMenuInk','dockInactiveInk'])
+for(const part of ['wordmarkInk','dockMenuInk','dockInactiveInk','railMutedInk'])
   if(lit[part]!==null)assert(lit[part]<.3,`Light appearance needs dark ink on ${part}; it measured ${lit[part]}.`);
+// The Light rail active label was once #fff on warm paper -- invisible. The
+// section you are reading is marked two ways and both are checked: the label is
+// darker ink than its neighbours, and a signal-red rule sits under it. I first
+// asserted the label itself was red; it is not, and never was. The design marks
+// the state with the rule and the ink weight, which is the quieter and better
+// choice, so the assertion follows the design rather than the other way round.
+if(lit.railActiveInk!==null&&lit.railMutedInk!==null){
+  assert(lit.railActiveInk<lit.railMutedInk,
+    `Light rail active section must be darker than the inactive ones (${lit.railActiveInk} vs ${lit.railMutedInk}).`);
+}
+assert(lit.railIndicator&&/rgb/.test(lit.railIndicator),'Light rail must mark the current section with a visible rule.');
+assert(isRed(lit.railIndicator),`Light rail current-section rule must be FMB red, got ${lit.railIndicator}.`);
 assert(isRed(lit.dockActiveRaw),`Light dock active state must be FMB red, got ${lit.dockActiveRaw}.`);
 assert(isRed(lit.dotRaw),`The FMB NEWS. period must stay red in Light, got ${lit.dotRaw}.`);
 
@@ -155,9 +176,9 @@ assert.equal(await mobilePage.locator('html').getAttribute('data-fmb-theme'),'da
 // Dark keeps the newsroom-black chrome. This is the other half of the contract:
 // Light must go light, and Dark must not drift light with it.
 const drk=await shellPaint(mobilePage);
-for(const part of ['header','dock','body'])
+for(const part of ['header','rail','dock','body'])
   if(drk[part]!==null)assert(drk[part]<.1,`Dark appearance must keep the ${part} newsroom-black; it measured ${drk[part]}.`);
-for(const part of ['wordmarkInk','dockMenuInk','dockInactiveInk'])
+for(const part of ['wordmarkInk','dockMenuInk','dockInactiveInk','railMutedInk'])
   if(drk[part]!==null)assert(drk[part]>.4,`Dark appearance needs light ink on ${part}; it measured ${drk[part]}.`);
 assert(isRed(drk.dotRaw),`The FMB NEWS. period must stay red in Dark, got ${drk.dotRaw}.`);
 
@@ -165,7 +186,7 @@ assert(isRed(drk.dotRaw),`The FMB NEWS. period must stay red in Dark, got ${drk.
 // chrome and moves nothing.
 const geom=async(page)=>page.evaluate(()=>{
   const box=(sel)=>{const el=document.querySelector(sel);if(!el)return null;const r=el.getBoundingClientRect();return [Math.round(r.x),Math.round(r.width),Math.round(r.height)].join('/')};
-  return {header:box('.fmb-mobile-shell-head'),dock:box('.fmb-editorial-mobile-dock'),doc:Math.round(document.documentElement.scrollHeight),
+  return {header:box('.fmb-mobile-shell-head'),rail:box('.fmb-mobile-product-rail'),dock:box('.fmb-editorial-mobile-dock'),doc:Math.round(document.documentElement.scrollHeight),
     overflow:Math.max(0,document.documentElement.scrollWidth-window.innerWidth)};
 });
 // Both sides are measured the same way, after the same settle. Measuring one
@@ -177,7 +198,7 @@ await mobilePage.evaluate(()=>{try{localStorage.setItem('fmbThemeModeV1','light'
 await mobilePage.reload({waitUntil:'load'});
 await settle();
 const lightGeom=await geom(mobilePage);
-for(const k of ['header','dock','doc'])
+for(const k of ['header','rail','dock','doc'])
   assert.equal(lightGeom[k],darkGeom[k],`${k} geometry must be identical in Light and Dark (${lightGeom[k]} vs ${darkGeom[k]}).`);
 assert.equal(lightGeom.overflow,0,`Light appearance must not overflow horizontally (${lightGeom.overflow}px).`);
 assert.equal(darkGeom.overflow,0,`Dark appearance must not overflow horizontally (${darkGeom.overflow}px).`);

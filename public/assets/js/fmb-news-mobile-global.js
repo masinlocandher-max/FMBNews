@@ -31,11 +31,22 @@
     return icons[key]||'';
   }
 
-  // productRail() used to build a second section strip under the app bar. It is
-  // gone: it repeated Home / World / Sports / Briefing, four of the dock's five
-  // items, on every mobile page. The dock below is the single primary
-  // navigation. The .fmb-mobile-product-rail rules still sitting in the mobile
-  // stylesheets no longer match anything.
+  // The section rail: the publication's desks, named, directly under the
+  // wordmark. It carries no icons -- the labels are the navigation -- and it
+  // marks the desk you are reading.
+  //
+  // It briefly did not exist. It was removed alongside the app-bar hamburger
+  // when the dock became the primary navigation, on the reasoning that it
+  // repeated four of the dock's five items. The hamburger was the duplicate
+  // worth removing: it opened the same panel as the dock's Menu, the same
+  // element with the same links. The rail is not that. It names Fact Check,
+  // which the dock has no room for, and it shows where you are at the top of
+  // the page where a reader looks for it rather than at the bottom.
+  function productRail(active){
+    const items=[['news','/news/','Home'],['world','/news/world/','World'],['sports','/news/sports/','Sports'],['brief','/news/fmb-brief/','Briefing'],['fact','/news/fact-check/','Fact Check']];
+    return `<nav class="fmb-mobile-product-rail" aria-label="FMB News sections">${items.map(([key,href,label])=>`<a href="${href}" data-product="${key}"${key===active?' aria-current="page"':''}><span>${label}</span></a>`).join('')}</nav>`;
+  }
+
   function editorialDock(active){
     const links=[['news','/news/','Home','home'],['world','/news/world/','World','world'],['sports','/news/sports/','Sports','sports'],['brief','/news/fmb-brief/','Briefing','brief']];
     return `<nav class="fmb-editorial-mobile-dock" aria-label="FMB News quick navigation">${links.map(([key,href,label,icon])=>`<a href="${href}"${key===active?' aria-current="page"':''}>${svg(icon)}<span>${label}</span></a>`).join('')}<button type="button" data-fmb-dock-menu aria-haspopup="dialog" aria-expanded="false">${svg('menu')}<span>Menu</span></button></nav>`;
@@ -121,15 +132,13 @@
     const shell=document.createElement('div');
     shell.className=`fmb-mobile-app-shell${isHome?' is-home':''}`;
     const brand='<a class="fmb-mobile-shell-brand" href="/news/" aria-label="FMB News — Filipino Media Bulletin"><span class="fmb-mobile-shell-copy"><strong>FMB NEWS<span class="fmb-mobile-brand-dot">.</span></strong><small>FILIPINO MEDIA BULLETIN</small></span></a>';
-    // The app bar carries the wordmark and search, nothing else.
+    // The app bar itself carries the wordmark and search, nothing else. The
+    // hamburger that used to sit on its left is gone for good: it opened the
+    // same panel as the dock's Menu button, so a phone reader was offered the
+    // identical forty links from two controls on the same screen.
     //
-    // It used to carry a hamburger as well, and a section rail underneath it.
-    // Both duplicated the dock: the hamburger opened the same panel as the
-    // dock's Menu -- literally the same element, same forty links -- and the
-    // rail repeated Home / World / Sports / Briefing, four of the dock's five
-    // items, on every mobile page. The dock is the single primary navigation
-    // now, so the duplicates are gone rather than restyled.
-    shell.innerHTML=`<div class="fmb-mobile-shell-head">${brand}<div class="fmb-mobile-shell-actions fmb-mobile-shell-search"><a href="/news/search/" aria-label="Search FMB News">${svg('search')}</a></div></div>`;
+    // The section rail below it is not that duplicate and is built here.
+    shell.innerHTML=`<div class="fmb-mobile-shell-head">${brand}<div class="fmb-mobile-shell-actions fmb-mobile-shell-search"><a href="/news/search/" aria-label="Search FMB News">${svg('search')}</a></div></div>${productRail(product.key)}`;
     document.body.prepend(shell);
     if(isHome){
       const ticker=$('.fmb-app-top-ticker');

@@ -8,29 +8,30 @@ const page=await context.newPage();
 await page.route('https://**/*',route=>route.abort());
 
 // ---------------------------------------------------------------------------
-// One primary mobile navigation
+// Mobile navigation: a named section rail, a dock, and no third thing
 // ---------------------------------------------------------------------------
-// This file used to assert a five-item text rail under the app bar as well as
-// the five-item dock. Both were real, and that was the problem: the rail
-// repeated Home / World / Sports / Briefing -- four of the dock's five items --
-// on every mobile page, and the app bar's hamburger opened the same element as
-// the dock's Menu button, the same forty links. A phone reader was offered the
-// same destinations three times.
+// A phone reader was once offered the same destinations three times: the rail,
+// the dock, and an app-bar hamburger that opened the SAME element as the dock's
+// Menu -- the same forty links from two controls on one screen. The hamburger
+// was the real duplicate and it is gone for good. The rail is not: it names the
+// desks at the top of the page where a reader looks for them, and it carries
+// Fact Check, which the five-item dock has no room for.
 //
-// The old assertions could not catch that, because each one looked at a single
-// control in isolation: the rail carried the right five labels, the dock carried
-// the right five labels, both passed. Duplication is a property of the page as a
-// whole, so it is now asserted as one: the set of navigations is enumerated and
-// pinned, the app bar's controls are enumerated and pinned, and the Menu panel
-// is required to have exactly one opener. Those hold whatever any single control
-// is labelled, and they fail if a second navigation returns under any name.
+// The assertions here are written page-wide rather than control-by-control,
+// because that is the only way duplication is visible. Checking each control in
+// isolation is what let the three-way duplication pass in the first place: the
+// rail had the right labels, the dock had the right labels, both passed. So the
+// set of navigations is enumerated and pinned, the app bar's controls are
+// enumerated and pinned, and the Menu panel must have exactly one opener.
 const expectedDock=['Home','World','Sports','Briefing','Menu'];
 // What the app bar is allowed to contain, by accessible name, in order.
 const expectedAppBar=['FMB News — Filipino Media Bulletin','Search FMB News'];
 // Retired navigations. Each was shipped at some point and each must stay gone.
-const RETIRED_NAV='.fmb-mobile-product-rail,.fmb-approved-bottom-nav,[data-fmb-shell-menu]';
+const RETIRED_NAV='.fmb-approved-bottom-nav,[data-fmb-shell-menu]';
+// The rail names the desks including Fact Check, which the dock cannot fit.
+const expectedRail=['Home','World','Sports','Briefing','Fact Check'];
 
-async function open(path,dockActive){
+async function open(path,dockActive,railActive=dockActive||'Fact Check'){
   const response=await page.goto(`${base}${path}`,{waitUntil:'domcontentloaded'});
   assert(response?.ok(),`${path} returned ${response?.status()}`);
   await page.locator('.fmb-mobile-app-shell').waitFor({state:'visible'});
@@ -53,13 +54,15 @@ async function open(path,dockActive){
       shell:getComputedStyle(document.querySelector('.fmb-mobile-app-shell')).position,
       brand:(document.querySelector('.fmb-mobile-shell-copy strong')?.textContent||'').trim(),
       navs,
+      rail:[...document.querySelectorAll('.fmb-mobile-product-rail>a')].map(a=>(a.textContent||'').trim()),
+      railActive:(document.querySelector('.fmb-mobile-product-rail a[aria-current="page"]')?.textContent||'').trim(),
+      railIcons:[...document.querySelectorAll('.fmb-mobile-product-rail svg')].filter(shown).length,
       appBar:[...document.querySelectorAll('.fmb-mobile-shell-head a,.fmb-mobile-shell-head button')]
         .filter(shown)
         .map(el=>(el.getAttribute('aria-label')||el.textContent||'').trim()),
       dock:[...dock.children].map(el=>(el.textContent||'').trim()),
       dockActive:(dock.querySelector('[aria-current="page"]')?.textContent||'').trim(),
-      // The dock is the only navigation now, so it has to be a real navigation:
-      // exposed to assistive technology, and hittable.
+      // A navigation has to be exposed to assistive technology, and hittable.
       dockHidden:dock.hidden||dock.getAttribute('aria-hidden')==='true',
       dockTargets:[...dock.children].map(el=>Math.round(el.getBoundingClientRect().height)),
       dockPosition:getComputedStyle(dock).position,
@@ -71,10 +74,13 @@ async function open(path,dockActive){
   assert.equal(state.shell,'sticky',`${path} mobile masthead must remain sticky.`);
   assert.equal(state.brand,'FMB NEWS.',`${path} mobile masthead must use FMB NEWS.`);
 
-  // The whole-page duplication assertion: one visible navigation, and it is the
-  // dock. A restored rail, a second dock, or a re-added hamburger fails here.
-  assert.deepEqual(state.navs,['FMB News quick navigation'],
-    `${path} must expose exactly one primary mobile navigation; found ${state.navs.length}: ${state.navs.join(' | ')}.`);
+  // Two navigations, and exactly these two: the named section rail under the
+  // wordmark, and the dock. A third would mean the duplication is back.
+  assert.deepEqual(state.navs,['FMB News sections','FMB News quick navigation'],
+    `${path} mobile navigation drifted; found ${state.navs.length}: ${state.navs.join(' | ')}.`);
+  assert.deepEqual(state.rail,expectedRail,`${path} section rail drifted.`);
+  assert.equal(state.railActive,railActive,`${path} rail should mark "${railActive}" as the current section; it marked "${state.railActive}".`);
+  assert.equal(state.railIcons,0,`${path} section rail must be text-only; ${state.railIcons} icon(s) rendered.`);
   assert.deepEqual(state.appBar,expectedAppBar,
     `${path} app bar must carry the wordmark and search and nothing else; found ${state.appBar.join(' | ')}.`);
   assert.equal(state.menuOpeners,1,
@@ -85,11 +91,10 @@ async function open(path,dockActive){
   assert.deepEqual(state.dock,expectedDock,`${path} bottom dock drifted.`);
   assert.equal(state.dockActive,dockActive,
     `${path} dock should mark ${dockActive?`"${dockActive}"`:'no item'} as the current page; it marked ${state.dockActive?`"${state.dockActive}"`:'none'}.`);
-  // Regression guard for a defect the rail used to mask: the dock was tagged
-  // hidden and aria-hidden="true" by the legacy-rail sweep and rendered anyway,
-  // because its display is !important. It drew correctly and was invisible to a
-  // screen reader. With the rail gone that left a phone reader no navigation at
-  // all, so presence in the accessibility tree is asserted, not just pixels.
+  // The dock was once tagged hidden and aria-hidden="true" by the legacy-rail
+  // sweep and rendered anyway, because its display is !important: it drew
+  // correctly and was invisible to a screen reader. Presence in the
+  // accessibility tree is asserted, not just pixels.
   assert.equal(state.dockHidden,false,
     `${path} bottom dock is marked hidden/aria-hidden while still rendering — invisible to assistive technology.`);
   for(const [i,height] of state.dockTargets.entries()){
@@ -332,4 +337,4 @@ for(const [width,expected] of [[699,false],[700,true]]){
 
 await context.close();
 await browser.close();
-console.log('Editorial mobile browser QA passed: FMB NEWS. masthead over a wordmark-and-search app bar, exactly one primary mobile navigation (the five-item dock, exposed to assistive technology with 44px targets and no retired rail, retired dock or hamburger anywhere), one Menu opener, real story hero, World/Sports/Entertainment rows, broad route coverage, complete Menu navigation including the secondary/legal destinations, the desktop publication footer hidden below 700px across 16 routes at 320 and 430 in both appearances and present again at 700px, no desktop footer chrome on a phone, and article-end editorial matter preserved.');
+console.log('Editorial mobile browser QA passed: FMB NEWS. masthead over a wordmark-and-search app bar, a text-only section rail naming the five desks including Fact Check, the five-item dock exposed to assistive technology with 44px targets, no retired dock or hamburger anywhere, one Menu opener, real story hero, World/Sports/Entertainment rows, broad route coverage, complete Menu navigation including the secondary/legal destinations, the desktop publication footer hidden below 700px across 16 routes at 320 and 430 in both appearances and present again at 700px, no desktop footer chrome on a phone, and article-end editorial matter preserved.');

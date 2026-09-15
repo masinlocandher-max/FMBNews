@@ -106,7 +106,7 @@ for (const [name, url] of DESKS) {
         dockActiveLabel: activeSpan ? (activeSpan.textContent || '').trim() : null,
         dockActiveRatio: flattenedRatio(activeSpan),
         dockPresent: Boolean(document.querySelector('.fmb-editorial-mobile-dock')),
-        retiredNav: document.querySelectorAll('.fmb-mobile-product-rail,.fmb-approved-bottom-nav,[data-fmb-shell-menu]').length,
+        retiredNav: document.querySelectorAll('.fmb-approved-bottom-nav,[data-fmb-shell-menu]').length,
         heroFont: hero ? getComputedStyle(hero).fontFamily.split(',')[0].replace(/["']/g, '') : null,
         // Whether the declared display face actually ARRIVED. A name check on
         // the CSS stack reads identically whether the webfont loaded or 404'd,
@@ -127,7 +127,7 @@ for (const [name, url] of DESKS) {
     // here means the selector found nothing and the check silently passed.
     if (w < 700) {
       if (!result.dockPresent) failures.push(`${tag}: no bottom dock -- the single primary mobile navigation is missing`);
-      if (result.retiredNav) failures.push(`${tag}: ${result.retiredNav} retired navigation element(s) restored (section rail / retired dock / app-bar hamburger)`);
+      if (result.retiredNav) failures.push(`${tag}: ${result.retiredNav} retired navigation element(s) restored (retired dock / app-bar hamburger)`);
       // Fact Check is a desk but not a dock item -- it lives in the Menu -- so
       // the dock correctly marks nothing current there. Every desk the dock does
       // carry must mark itself, or the measurement below would be skipped.
