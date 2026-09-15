@@ -248,3 +248,37 @@ html:root[data-fmb-theme="dark"] body.fmb-matte-system .mast .product-wordmark{
     background-image:url(../images/fmb-news-masthead-dark.webp)!important;
   }
 }
+
+/* ============================================================================
+   MOBILE APP BAR — the wordmark, from the same lockup
+   ============================================================================
+   The app bar kept live "FMB NEWS." type while Home and the desks carried the
+   newsroom's artwork, so the brand changed shape between a phone and a desktop.
+   It uses the artwork now too.
+
+   A wordmark-only crop, not the full lockup: the lockup's red rule and
+   FILIPINO MEDIA BULLETIN line cannot be read at app-bar size, and the rule
+   would sit a few pixels above the bar's own bottom hairline -- two parallel
+   lines that read as a mistake. Rendered at 22, 30 and 34px before choosing.
+
+   Image replacement rather than a bare background: the text stays in the DOM
+   and in the accessibility tree, pushed out of view by text-indent, so the
+   shell still announces "FMB NEWS." and the mobile verifiers still read it.
+   ============================================================================ */
+html[data-fmb-global-mobile="true"] body.fmb-matte-system .fmb-mobile-shell-copy strong{
+  display:block!important;
+  width:168px!important;
+  height:28px!important;
+  background:url(../images/fmb-news-wordmark-light.webp) center/contain no-repeat!important;
+  overflow:hidden!important;
+  text-indent:-100em!important;
+  white-space:nowrap!important;
+}
+html:root[data-fmb-theme="dark"][data-fmb-global-mobile="true"] body.fmb-matte-system .fmb-mobile-shell-copy strong{
+  background-image:url(../images/fmb-news-wordmark-dark.webp)!important;
+}
+@media (prefers-color-scheme:dark){
+  html:root:not([data-fmb-theme="light"])[data-fmb-global-mobile="true"] body.fmb-matte-system .fmb-mobile-shell-copy strong{
+    background-image:url(../images/fmb-news-wordmark-dark.webp)!important;
+  }
+}

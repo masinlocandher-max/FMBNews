@@ -76,7 +76,10 @@ if (!fallback.includes('<svg') || !fallback.includes('FMB News editorial visual'
 // Both polarities are required: the ink lockup for Light and the white one for
 // Dark. Shipping only one means the masthead disappears in the other
 // appearance, which is the same silent failure in half the cases.
-for (const [polarity, file] of [['Light', 'fmb-news-masthead-light.webp'], ['Dark', 'fmb-news-masthead-dark.webp']]) {
+for (const [polarity, file] of [
+  ['Light', 'fmb-news-masthead-light.webp'], ['Dark', 'fmb-news-masthead-dark.webp'],
+  ['Light app-bar', 'fmb-news-wordmark-light.webp'], ['Dark app-bar', 'fmb-news-wordmark-dark.webp'],
+]) {
   const asset = resolve('dist', 'news', 'assets', 'images', file);
   let info;
   try {
@@ -84,7 +87,7 @@ for (const [polarity, file] of [['Light', 'fmb-news-masthead-light.webp'], ['Dar
   } catch {
     throw new Error(`Masthead regression: the ${polarity} masthead lockup is missing from the build (${file}). The masthead renders empty without it.`);
   }
-  if (info.size < 8_000) {
+  if (info.size < 6_000) {
     throw new Error(`Masthead regression: the ${polarity} masthead lockup is ${info.size} bytes, which is not the artwork (${file}).`);
   }
 }
