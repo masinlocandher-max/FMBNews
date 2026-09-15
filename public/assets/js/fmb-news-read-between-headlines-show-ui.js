@@ -5,6 +5,7 @@ const root=document.querySelector('[data-rbt-root]');
 if(!root)return;
 
 const timerText=root.querySelector('[data-rbt-timer]');
+const timerDisplay=root.querySelector('[data-rbt-timer-display]');
 const timerOrb=root.querySelector('[data-rbt-timer-orb]');
 const questionNo=root.querySelector('[data-rbt-question-no]');
 const scoreEl=root.querySelector('[data-rbt-score]');
@@ -13,8 +14,8 @@ const answerArea=root.querySelector('[data-rbt-answer]');
 const nameInput=root.querySelector('[data-rbt-player]');
 const playerDisplay=root.querySelector('[data-rbt-player-display]');
 const ladderItems=[...root.querySelectorAll('[data-rbt-ladder-item]')];
-const runScoreMirror=root.querySelector('[data-rbt-run-score-mirror]');
-const lifetimeMirror=root.querySelector('[data-rbt-lifetime-mirror]');
+const mobileQuestion=root.querySelector('[data-rbt-mobile-question]');
+const mobileScore=root.querySelector('[data-rbt-mobile-score]');
 
 function parseSeconds(text){
   const match=String(text||'').match(/(\d+):(\d+)/);
@@ -28,6 +29,7 @@ function syncTimer(){
   timerOrb.style.setProperty('--timer-angle',`${(remaining/30)*360}deg`);
   timerOrb.dataset.warning=timerText.dataset.warning||'false';
   timerOrb.dataset.critical=timerText.dataset.critical||'false';
+  if(timerDisplay)timerDisplay.textContent=String(remaining);
 }
 
 function currentQuestion(){
@@ -42,6 +44,7 @@ function syncLadder(){
     item.classList.toggle('is-current',q===current);
     item.classList.toggle('is-past',q<current);
   });
+  if(mobileQuestion)mobileQuestion.textContent=`Q ${String(current).padStart(2,'0')} / 30`;
 }
 
 function syncOptions(){
@@ -57,8 +60,7 @@ function syncPlayer(){
 }
 
 function syncMirrors(){
-  if(runScoreMirror&&scoreEl)runScoreMirror.textContent=scoreEl.textContent||'0';
-  if(lifetimeMirror&&lifetimeEl)lifetimeMirror.textContent=lifetimeEl.textContent||'0';
+  if(mobileScore&&scoreEl)mobileScore.textContent=scoreEl.textContent||'0';
 }
 
 const observer=new MutationObserver(()=>{
