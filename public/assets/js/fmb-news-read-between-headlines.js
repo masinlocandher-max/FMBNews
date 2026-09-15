@@ -1,7 +1,7 @@
 (()=>{
 'use strict';
 
-const EDITION_ID='fmb-current-events-mix-v4';
+const EDITION_ID='fmb-current-events-mix-v5';
 const PREVIOUS_EDITION_ID=null;
 const STORAGE_KEY='fmbReadBetweenHeadlinesV1';
 const RUN_KEY='fmbReadBetweenHeadlinesActiveRunV1';
@@ -28,13 +28,13 @@ const questions=[
   {id:'q15',category:'Science',type:'single_select',prompt:'Project PAGPAWI is developing emergency water-filtration materials using what kind of waste?',options:['Wood waste','Plastic waste','Glass waste','Textile waste'],answer:'Wood waste'},
   {id:'q16',category:'Economy',type:'single_select',prompt:'The 2026 Luzon Economic Corridor Investment Forum was co-hosted by the Philippines together with which two countries?',options:['United States and Japan','China and South Korea','Australia and India','Singapore and Malaysia'],answer:'United States and Japan'},
   {id:'q17',category:'Economy',type:'single_select',prompt:'How large is the U.S. Threshold Program grant signed to help strengthen Philippine eligibility for a future MCC Compact?',options:['$60 million','$20 million','$100 million','$250 million'],answer:'$60 million'},
-  {id:'q18',category:'Technology',type:'true_false',prompt:'The Philippines is pushing for stronger ASEAN-wide safeguards to protect young people online as digital technologies expand.',options:['True','False'],answer:'True'},
-  {id:'q19',category:'P-Pop',type:'identification',prompt:'Which two P-pop groups were the only idol groups in Billboard Philippines’ mid-year Top 10 Artists of 2026?',answer:'SB19 and BINI',aliases:['BINI and SB19','SB19 BINI','BINI SB19']},
-  {id:'q20',category:'P-Pop',type:'single_select',prompt:'What was SB19’s rank in Billboard Philippines’ mid-year Top 10 Artists of 2026?',options:['No. 6','No. 3','No. 9','No. 1'],answer:'No. 6',aliases:['6','number 6']},
-  {id:'q21',category:'P-Pop',type:'single_select',prompt:'What was BINI’s rank in Billboard Philippines’ mid-year Top 10 Artists of 2026?',options:['No. 9','No. 6','No. 4','No. 2'],answer:'No. 9',aliases:['9','number 9']},
-  {id:'q22',category:'P-Pop',type:'identification',prompt:'Which SB19 song became the first P-pop track to reach No. 1 on Billboard’s World Digital Song Sales chart?',answer:'DAM'},
-  {id:'q23',category:'P-Pop',type:'single_select',prompt:'Which release topped Billboard Philippines’ fan poll for favorite P-pop release of the first half of 2026?',options:['Wakas At Simula — SB19','Signals — BINI','TABI — XONARA','DARAMA — OONA.'],answer:'Wakas At Simula — SB19',aliases:['Wakas At Simula','SB19 Wakas At Simula']},
-  {id:'q24',category:'P-Pop',type:'identification',prompt:'Which rookie P-pop girl group placed second in that fan poll with the song “TABI”?',answer:'XONARA'},
+  {id:'q18',category:'Climate',type:'single_select',prompt:'In the Philippines’ updated 2026 climate pledge, what unconditional emissions-reduction target did the country set?',options:['7%','2.1%','68%','75%'],answer:'7%'},
+  {id:'q19',category:'P-Pop',type:'identification',prompt:'Which P-pop girl group released the “Unang Tingin” music video on September 12, 2026?',answer:'OONA.',aliases:['OONA','OONA.']},
+  {id:'q20',category:'OPM',type:'single_select',prompt:'Which iconic Filipino girl group released the “MAMA MAMA” music video in September 2026?',options:['SexBomb Girls','Viva Hot Babes','BINI','G22'],answer:'SexBomb Girls'},
+  {id:'q21',category:'OPM',type:'identification',prompt:'What is the title of Ben&Ben’s anthology album announced in September 2026 to celebrate their first nine years together?',answer:'Nine'},
+  {id:'q22',category:'Music Charts',type:'single_select',prompt:'At what position did RAPROJECT SIX’s “Alabang” debut on the Billboard Philippines Hot 100 dated September 12, 2026?',options:['No. 33','No. 12','No. 6','No. 90'],answer:'No. 33',aliases:['33','number 33']},
+  {id:'q23',category:'OPM',type:'identification',prompt:'Which previously unreleased IV OF SPADES track, first previewed on SoundCloud in 2015, was officially released in September 2026?',answer:'Isang Pag-Ibig',aliases:['Isang Pag Ibig']},
+  {id:'q24',category:'OPM',type:'single_select',prompt:'Yeng Constantino added a third “Biyaheng Bente” show at Smart Araneta Coliseum. On what date is Day 3 scheduled?',options:['November 17, 2026','September 20, 2026','October 2, 2026','December 4, 2026'],answer:'November 17, 2026'},
   {id:'q25',category:'P-Pop',type:'single_select',prompt:'Which P-pop girl group is set to represent the Philippines at the 2026 ROUND Music Festival in South Korea?',options:['KAIA','G22','BINI','YARA'],answer:'KAIA'},
   {id:'q26',category:'P-Pop',type:'true_false',prompt:'HORI7ON said leaving MLD Entertainment and ABS-CBN meant the group was disbanding.',options:['True','False'],answer:'False'},
   {id:'q27',category:'OPM',type:'single_select',prompt:'Which act received the most Grand Awards nominations at the 39th Awit Awards?',options:['IV OF SPADES','SB19','Cup of Joe','Maki'],answer:'IV OF SPADES'},
