@@ -1,6 +1,15 @@
 (()=>{
 'use strict';
 
+const CHOICE_STYLESHEET='/assets/css/fmb-news-read-between-headlines-choices.css?v=20260915-v1';
+if(!document.querySelector('link[data-rbt-choice-style]')){
+  const styleLink=document.createElement('link');
+  styleLink.rel='stylesheet';
+  styleLink.href=CHOICE_STYLESHEET;
+  styleLink.dataset.rbtChoiceStyle='true';
+  document.head.append(styleLink);
+}
+
 const root=document.querySelector('[data-rbt-root]');
 if(!root)return;
 
@@ -51,7 +60,9 @@ function syncOptions(){
   if(!answerArea)return;
   const labels=['A','B','C','D'];
   [...answerArea.querySelectorAll('.rbt-option')].forEach((button,index)=>{
-    button.dataset.optionLabel=labels[index]||String(index+1);
+    const label=labels[index]||String(index+1);
+    button.dataset.optionLabel=label;
+    button.setAttribute('aria-label',`Answer ${label}: ${button.textContent.trim()}`);
   });
 }
 
