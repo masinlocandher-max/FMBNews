@@ -109,9 +109,17 @@ function gameIsActive(){
 }
 
 document.addEventListener('keydown',(event)=>{
-  if(!gameIsActive()||event.defaultPrevented||event.metaKey||event.ctrlKey||event.altKey)return;
+  if(!gameIsActive()||event.defaultPrevented||event.metaKey||event.ctrlKey||event.altKey||event.repeat)return;
   const active=document.activeElement;
   if(active?.classList?.contains('rbt-identification'))return;
+
+  if(event.key==='Enter'&&submitButton&&!submitButton.disabled&&
+    (!active||active===document.body||active===root||active.classList?.contains('rbt-option'))){
+    event.preventDefault();
+    event.stopPropagation();
+    submitButton.click();
+    return;
+  }
 
   const options=[...(answerArea?.querySelectorAll('.rbt-option:not(:disabled)')||[])];
   if(!options.length)return;
@@ -124,13 +132,6 @@ document.addEventListener('keydown',(event)=>{
     event.preventDefault();
     option.focus({preventScroll:true});
     option.click();
-    return;
-  }
-
-  if(event.key==='Enter'&&submitButton&&!submitButton.disabled&&
-    (!active||active===document.body||active===root||active.classList?.contains('rbt-option'))){
-    event.preventDefault();
-    submitButton.click();
   }
 });
 
