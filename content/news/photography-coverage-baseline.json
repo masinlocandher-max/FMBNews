@@ -1,0 +1,8 @@
+{
+  "_comment": "Committed ceiling on published articles carrying NO photograph, per product. scripts/verify-article-photography.mjs fails the build when a measured count rises above its ceiling, so a new article cannot ship without a photograph. These numbers may only be lowered, and only alongside the cleared photographs that earned the reduction. Never raise one to make a build pass.",
+  "_measured": "2026-09-15, against 537 built article routes",
+  "news": 301,
+  "explainer": 206,
+  "brief": 11,
+  "fact-check": 0
+}

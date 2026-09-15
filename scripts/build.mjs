@@ -15,6 +15,11 @@ await cp(path.join(root, 'public', 'assets'), path.join(newsRoot, 'assets'), { r
 // production pages reference local /news/assets files instead of Drive URLs.
 await import('./fetch-approved-mobile-assets.mjs');
 
+// The newsroom's rights-cleared photograph ledger, copied local for the same
+// reason: production pages must serve the publication's own files, never a
+// third-party host.
+await import('./fetch-rights-cleared-photography.mjs');
+
 // Archive and structured news articles are rendered independently from the
 // publication homepage. The canonical home is authored later by exactly one
 // renderer, so no legacy homepage is generated and then overwritten.
@@ -31,6 +36,11 @@ await renderNetworkShell();
 // no photo use only the approved Explainer fallback; generated generic art is
 // not allowed to substitute for it.
 await import('./hardfix-designated-fallbacks.mjs');
+
+// A story that the newsroom cleared a photograph for gets that photograph,
+// with its caption, creator and licence. This runs first so the guaranteed-image
+// rule below only ever falls back where no cleared photograph exists.
+await import('./apply-rights-cleared-photography.mjs');
 
 // Editorial publication rule: every Article/NewsArticle route gets an actual
 // content image plus social-image metadata before the page can be published.
