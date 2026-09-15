@@ -1,7 +1,7 @@
 (()=>{
 'use strict';
 
-const CHOICE_STYLESHEET='/assets/css/fmb-news-read-between-headlines-choices.css?v=20260915-v2';
+const CHOICE_STYLESHEET='/assets/css/fmb-news-read-between-headlines-choices.css?v=20260915-v3';
 if(!document.querySelector('link[data-rbt-choice-style]')){
   const styleLink=document.createElement('link');
   styleLink.rel='stylesheet';
