@@ -1,11 +1,14 @@
 (()=>{
 'use strict';
 
-const EDITION_ID='fmb-current-events-mix-v3';
+const EDITION_ID='fmb-current-events-mix-v4';
+const PREVIOUS_EDITION_ID=null;
 const STORAGE_KEY='fmbReadBetweenHeadlinesV1';
 const RUN_KEY='fmbReadBetweenHeadlinesActiveRunV1';
 const POINTS_PER_CORRECT=10;
 const QUESTION_SECONDS=30;
+const PASS_CORRECT=21;
+const RETRY_COOLDOWN_MS=24*60*60*1000;
 
 const questions=[
   {id:'q01',category:'Philippines',type:'single_select',prompt:'Which Philippine region is holding its first parliamentary election in 2026?',options:['BARMM','CAR','NCR','Region XII'],answer:'BARMM'},
@@ -52,6 +55,7 @@ const startButton=$('[data-rbt-start-button]');
 const nameInput=$('[data-rbt-player]');
 const emailInput=$('[data-rbt-email]');
 const entryError=$('[data-rbt-player-error]');
+const entryNote=$('[data-rbt-player-note]');
 const questionNo=$('[data-rbt-question-no]');
 const categoryLabel=$('[data-rbt-category]');
 const typeLabel=$('[data-rbt-type]');
@@ -68,12 +72,14 @@ const resultScore=$('[data-rbt-result-score]');
 const resultCorrect=$('[data-rbt-result-correct]');
 const resultLifetime=$('[data-rbt-result-lifetime]');
 const resultTime=$('[data-rbt-result-time]');
+const resultMark=$('[data-rbt-result-mark]');
 
 const normalize=(value)=>String(value??'').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[₱$,.'’“”\-–—]/g,' ').replace(/\s+/g,' ').trim().toLowerCase();
 const validEmail=(value)=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value||'').trim());
 const makeId=()=>window.crypto?.randomUUID?.()||`player-${Date.now()}-${Math.random().toString(36).slice(2)}`;
 const shuffle=(items)=>{const a=[...items];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
 const formatTime=(total)=>{const safe=Math.max(0,Math.floor(Number(total)||0));const m=Math.floor(safe/60),s=safe%60;return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;};
+const formatCooldown=(ms)=>{const mins=Math.max(1,Math.ceil(ms/60000));const h=Math.floor(mins/60),m=mins%60;return h?`${h}h ${m}m`:`${m}m`;};
 
 function readJSON(key,fallback){try{return JSON.parse(localStorage.getItem(key)||JSON.stringify(fallback));}catch{return fallback;}}
 function writeJSON(key,value){try{localStorage.setItem(key,JSON.stringify(value));}catch{}}
@@ -83,8 +89,10 @@ function readProfile(){
     playerId:parsed.playerId||makeId(),
     playerName:parsed.playerName||'',
     email:parsed.email||'',
+    joinedEditionId:parsed.joinedEditionId||'',
     lifetimePoints:Number(parsed.lifetimePoints||0),
     completedEditions:Array.isArray(parsed.completedEditions)?parsed.completedEditions:[],
+    passedEditions:Array.isArray(parsed.passedEditions)?parsed.passedEditions:[],
     editionResults:parsed.editionResults&&typeof parsed.editionResults==='object'?parsed.editionResults:{}
   };
 }
@@ -95,6 +103,7 @@ let index=0,score=0,correctCount=0,locked=false,answered=[];
 let activeRun=false,startedAt=0,finishing=false;
 let questionDeadline=0,questionTimerId=null,pendingForfeitResult=null;
 let selectedAnswerValue=null,selectedAnswerControl=null;
+let attemptMode='scored';
 
 function persistProfile(){writeJSON(STORAGE_KEY,profile);}
 function readRun(){return readJSON(RUN_KEY,null);}
@@ -103,6 +112,57 @@ function clearRun(){try{localStorage.removeItem(RUN_KEY);}catch{}}
 function typeName(type){if(type==='single_select')return 'Multiple Choice';if(type==='true_false')return 'True or False';return 'Identification';}
 function validAnswers(q){return [q.answer,...(q.aliases||[])].map(normalize);}
 function elapsedSeconds(){return startedAt?Math.max(0,Math.floor((Date.now()-startedAt)/1000)):0;}
+function emptyEditionRecord(){return {attempts:[],passed:false,passedAt:0,lastAttemptAt:0,nextRetryAt:0,scoredPoints:0,bestCorrect:0,bestScore:0};}
+function editionRecord(id=EDITION_ID){
+  const raw=profile.editionResults[id];
+  if(!raw||typeof raw!=='object')return emptyEditionRecord();
+  if(Array.isArray(raw.attempts))return {...emptyEditionRecord(),...raw,attempts:raw.attempts};
+  if(raw.status){
+    const passed=raw.status==='completed'&&Number(raw.correctCount||0)>=PASS_CORRECT;
+    return {...emptyEditionRecord(),attempts:[{...raw,passed,scoredAttempt:true,attemptNumber:1}],passed,passedAt:passed?Number(raw.finishedAt||0):0,lastAttemptAt:Number(raw.finishedAt||0),nextRetryAt:passed?0:Number(raw.finishedAt||0)+RETRY_COOLDOWN_MS,scoredPoints:Number(raw.score||0),bestCorrect:Number(raw.correctCount||0),bestScore:Number(raw.score||0)};
+  }
+  return {...emptyEditionRecord(),...raw};
+}
+function lastAttempt(record){return record.attempts.length?record.attempts[record.attempts.length-1]:null;}
+function hasPassedEdition(id){return !id||profile.passedEditions.includes(id)||editionRecord(id).passed;}
+function remainingCooldown(record){return Math.max(0,Number(record.nextRetryAt||0)-Date.now());}
+function accessState(){
+  const record=editionRecord();
+  if(record.passed)return {allowed:false,reason:'passed',record};
+  if(profile.joinedEditionId&&PREVIOUS_EDITION_ID&&!hasPassedEdition(PREVIOUS_EDITION_ID))return {allowed:false,reason:'previous',record};
+  if(record.attempts.length===0)return {allowed:true,mode:'scored',record};
+  const wait=remainingCooldown(record);
+  if(wait>0)return {allowed:false,reason:'cooldown',wait,record};
+  return {allowed:true,mode:'qualification',record};
+}
+
+function refreshEntryState(){
+  const state=accessState();
+  if(!startButton)return;
+  startButton.disabled=!state.allowed;
+  if(state.reason==='passed'){
+    startButton.textContent='Edition Passed';
+    if(entryNote)entryNote.textContent='You passed this edition. The next weekly challenge unlocks when it is released.';
+    return;
+  }
+  if(state.reason==='previous'){
+    startButton.textContent='Edition Locked';
+    if(entryNote)entryNote.textContent='Pass your previous required edition before opening this one.';
+    return;
+  }
+  if(state.reason==='cooldown'){
+    startButton.textContent='Retry Locked';
+    if(entryNote)entryNote.textContent=`Qualification retry opens in ${formatCooldown(state.wait)}. Use the time to review the week.`;
+    return;
+  }
+  if(state.mode==='qualification'){
+    startButton.textContent='Start Qualification Retry';
+    if(entryNote)entryNote.textContent=`Pass ${PASS_CORRECT}/30 to progress. Retry points do not add to lifetime points.`;
+    return;
+  }
+  startButton.textContent='Start the Challenge';
+  if(entryNote)entryNote.textContent=`Your first run is the only scored attempt. Pass ${PASS_CORRECT}/30 to progress.`;
+}
 
 function setNavigationLocked(isLocked){
   document.body.classList.toggle('rbt-run-active',isLocked);
@@ -145,7 +205,7 @@ function startQuestionTimer(){
 }
 
 function saveActiveRun(status='active'){
-  persistRun({editionId:EDITION_ID,status,startedAt,updatedAt:Date.now(),questionIndex:index,score,correctCount,questionDeadline});
+  persistRun({editionId:EDITION_ID,status,attemptMode,startedAt,updatedAt:Date.now(),questionIndex:index,score,correctCount,questionDeadline});
 }
 
 function clearSelection(){
@@ -269,25 +329,46 @@ function nextQuestion(){
 }
 
 function recordEdition(result){
-  if(profile.completedEditions.includes(EDITION_ID))return false;
-  profile.completedEditions.push(EDITION_ID);
-  profile.editionResults[EDITION_ID]=result;
-  if(result.status==='completed')profile.lifetimePoints+=Number(result.score||0);
+  const record=editionRecord();
+  const isFirst=record.attempts.length===0;
+  const passed=result.status==='completed'&&Number(result.correctCount||0)>=PASS_CORRECT;
+  const saved={...result,passed,scoredAttempt:isFirst,attemptNumber:record.attempts.length+1};
+  record.attempts.push(saved);
+  record.lastAttemptAt=Number(saved.finishedAt||Date.now());
+  record.bestCorrect=Math.max(Number(record.bestCorrect||0),Number(saved.correctCount||0));
+  record.bestScore=Math.max(Number(record.bestScore||0),Number(saved.score||0));
+  if(isFirst){
+    record.scoredPoints=Number(saved.score||0);
+    profile.lifetimePoints+=record.scoredPoints;
+  }
+  if(passed){
+    record.passed=true;record.passedAt=record.lastAttemptAt;record.nextRetryAt=0;
+    if(!profile.passedEditions.includes(EDITION_ID))profile.passedEditions.push(EDITION_ID);
+    if(!profile.completedEditions.includes(EDITION_ID))profile.completedEditions.push(EDITION_ID);
+  }else{
+    record.nextRetryAt=record.lastAttemptAt+RETRY_COOLDOWN_MS;
+  }
+  profile.editionResults[EDITION_ID]=record;
   persistProfile();
-  return true;
+  return saved;
 }
 
 function showResult(result){
   activeRun=false;finishing=true;stopQuestionTimer();setNavigationLocked(false);clearRun();
+  const passed=Boolean(result.passed??(result.status==='completed'&&Number(result.correctCount||0)>=PASS_CORRECT));
   if(progressFill)progressFill.style.width=result.status==='completed'?'100%':'0%';
   resultScore.textContent=Number(result.score||0).toLocaleString('en-PH');
   resultCorrect.textContent=`${Number(result.correctCount||0)} / ${questions.length}`;
   resultLifetime.textContent=profile.lifetimePoints.toLocaleString('en-PH');
   if(resultTime)resultTime.textContent=formatTime(Number(result.elapsedSeconds||0));
+  if(resultMark)resultMark.textContent=result.status==='forfeited'?'Run forfeited':passed?'Edition passed':'Keep learning';
   const note=resultView.querySelector('[data-rbt-result-note]');
-  if(note)note.textContent=result.status==='forfeited'
-    ? 'Run forfeited. Leaving or hiding the game page after the challenge starts records 0 for the entire edition.'
-    : `Scored run complete. Each question had ${QUESTION_SECONDS} seconds. Answers remain hidden.`;
+  if(note){
+    if(result.status==='forfeited')note.textContent='This run was forfeited and records 0 for the attempt. A qualification retry opens after the 24-hour learning cooldown.';
+    else if(passed)note.textContent=`Passed with ${Number(result.correctCount||0)}/30. This edition is complete. Your next required weekly edition can unlock when it is released.`;
+    else if(result.scoredAttempt)note.textContent=`You need ${PASS_CORRECT}/30 to progress. This first run is the only points-earning attempt. Review the week, then return after 24 hours for a qualification retry.`;
+    else note.textContent=`You need ${PASS_CORRECT}/30 to progress. Review the week and try again after 24 hours. Qualification retries do not add lifetime points.`;
+  }
   startView.hidden=true;gameView.hidden=true;resultView.hidden=false;
   pendingForfeitResult=null;
   setTimeout(()=>{finishing=false;},0);
@@ -295,16 +376,17 @@ function showResult(result){
 
 function finishGame(){
   if(!activeRun)return;
-  const result={status:'completed',score,correctCount,elapsedSeconds:elapsedSeconds(),finishedAt:Date.now(),questionSeconds:QUESTION_SECONDS};
-  recordEdition(result);showResult(result);
+  const result={status:'completed',score,correctCount,elapsedSeconds:elapsedSeconds(),finishedAt:Date.now(),questionSeconds:QUESTION_SECONDS,attemptMode};
+  const saved=recordEdition(result);showResult(saved);
 }
 
 function forfeitRun(reason='left_page'){
   if(!activeRun||finishing)return;
-  const result={status:'forfeited',score:0,correctCount:0,elapsedSeconds:elapsedSeconds(),finishedAt:Date.now(),reason,questionSeconds:QUESTION_SECONDS};
-  stopQuestionTimer();recordEdition(result);persistRun({editionId:EDITION_ID,status:'forfeited',...result});
-  activeRun=false;pendingForfeitResult=result;
-  if(document.visibilityState==='visible')showResult(result);
+  const result={status:'forfeited',score:0,correctCount:0,elapsedSeconds:elapsedSeconds(),finishedAt:Date.now(),reason,questionSeconds:QUESTION_SECONDS,attemptMode};
+  stopQuestionTimer();
+  const saved=recordEdition(result);persistRun({editionId:EDITION_ID,status:'forfeited',...saved});
+  activeRun=false;pendingForfeitResult=saved;
+  if(document.visibilityState==='visible')showResult(saved);
 }
 
 function startGame(){
@@ -314,10 +396,17 @@ function startGame(){
     entryError.textContent='Name and a valid email are required to enter the game.';
     (!name?nameInput:emailInput).focus();return;
   }
-  if(profile.completedEditions.includes(EDITION_ID)){
-    entryError.textContent='This edition already has a scored result on this device.';return;
+  const access=accessState();
+  if(!access.allowed){
+    if(access.reason==='passed')entryError.textContent='You already passed this edition. The next weekly challenge will unlock when released.';
+    else if(access.reason==='previous')entryError.textContent='This edition is locked until your previous required edition is passed.';
+    else entryError.textContent=`Qualification retry opens in ${formatCooldown(access.wait)}.`;
+    refreshEntryState();return;
   }
-  profile.playerName=name;profile.email=email;persistProfile();
+  profile.playerName=name;profile.email=email;
+  if(!profile.joinedEditionId)profile.joinedEditionId=EDITION_ID;
+  persistProfile();
+  attemptMode=access.mode;
   activeQuestions=shuffle(questions);
   index=0;score=0;correctCount=0;answered=[];locked=false;startedAt=Date.now();activeRun=true;
   entryError.textContent='';startView.hidden=true;resultView.hidden=true;gameView.hidden=false;
@@ -329,11 +418,12 @@ function recoverInterruptedRun(){
   if(!run)return false;
   if(run.editionId!==EDITION_ID){clearRun();return false;}
   if(run.status==='active'){
-    const result={status:'forfeited',score:0,correctCount:0,elapsedSeconds:Math.max(0,Math.floor((Date.now()-Number(run.startedAt||Date.now()))/1000)),finishedAt:Date.now(),reason:'interrupted',questionSeconds:QUESTION_SECONDS};
-    recordEdition(result);persistRun({editionId:EDITION_ID,status:'forfeited',...result});showResult(result);return true;
+    attemptMode=run.attemptMode||accessState().mode||'scored';
+    const result={status:'forfeited',score:0,correctCount:0,elapsedSeconds:Math.max(0,Math.floor((Date.now()-Number(run.startedAt||Date.now()))/1000)),finishedAt:Date.now(),reason:'interrupted',questionSeconds:QUESTION_SECONDS,attemptMode};
+    const saved=recordEdition(result);persistRun({editionId:EDITION_ID,status:'forfeited',...saved});showResult(saved);return true;
   }
   if(run.status==='forfeited'){
-    const previous=profile.editionResults[EDITION_ID]||run;showResult(previous);return true;
+    const record=editionRecord();const previous=lastAttempt(record)||run;showResult(previous);return true;
   }
   return false;
 }
@@ -342,6 +432,7 @@ nameInput.value=profile.playerName;
 emailInput.value=profile.email;
 lifetimeEl.textContent=profile.lifetimePoints.toLocaleString('en-PH');
 if(timerEl)timerEl.textContent=formatTime(QUESTION_SECONDS);
+refreshEntryState();
 startButton.addEventListener('click',startGame);
 submitButton.addEventListener('click',lockCurrentAnswer);
 skipButton.addEventListener('click',skipQuestion);
@@ -358,8 +449,9 @@ document.addEventListener('visibilitychange',()=>{
 window.addEventListener('pagehide',()=>forfeitRun('pagehide'));
 window.addEventListener('beforeunload',()=>forfeitRun('beforeunload'));
 
-if(!recoverInterruptedRun()&&profile.completedEditions.includes(EDITION_ID)){
-  const previous=profile.editionResults[EDITION_ID];
-  if(previous)showResult(previous);
+if(!recoverInterruptedRun()){
+  const record=editionRecord();const previous=lastAttempt(record);
+  if(previous&&(record.passed||remainingCooldown(record)>0))showResult(previous);
+  else refreshEntryState();
 }
 })();
