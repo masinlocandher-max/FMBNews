@@ -1,75 +1,102 @@
 :root{
-  --choice-edge:rgba(191,193,194,.64);
-  --choice-edge-soft:rgba(191,193,194,.22);
-  --choice-fill:rgba(255,255,255,.72);
-  --choice-fill-deep:rgba(245,243,239,.94);
-  --choice-shadow:0 16px 32px rgba(10,10,10,.10);
+  --choice-glass:rgba(255,255,255,.46);
+  --choice-glass-hover:rgba(255,255,255,.62);
+  --choice-glass-selected:rgba(255,255,255,.58);
+  --choice-edge:rgba(109,112,114,.34);
+  --choice-edge-bright:rgba(191,193,194,.78);
+  --choice-shadow:0 18px 42px rgba(10,10,10,.11);
+  --metal-red-1:#5b070c;
+  --metal-red-2:#a80e15;
+  --metal-red-3:#ef1b24;
+  --metal-red-4:#ff666c;
+  --metal-red-5:#7b090f;
 }
+
 @media(prefers-color-scheme:dark){
   :root{
-    --choice-edge:rgba(191,193,194,.54);
-    --choice-edge-soft:rgba(191,193,194,.16);
-    --choice-fill:rgba(18,18,18,.96);
-    --choice-fill-deep:rgba(10,10,10,.98);
-    --choice-shadow:0 18px 38px rgba(0,0,0,.42);
+    --choice-glass:rgba(18,18,18,.34);
+    --choice-glass-hover:rgba(26,26,26,.50);
+    --choice-glass-selected:rgba(28,28,28,.54);
+    --choice-edge:rgba(191,193,194,.24);
+    --choice-edge-bright:rgba(245,243,239,.58);
+    --choice-shadow:0 20px 46px rgba(0,0,0,.42);
   }
 }
 
-/* Finished game-answer system. Deliberately avoids generic button/card styling. */
+/* Transparent frosted game choices with metallic-red hardware. */
 .rbt-answer{position:relative}
-.rbt-options{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 18px;padding:10px 0 4px}
-.rbt-options:before{content:"";position:absolute;left:50%;top:4px;bottom:0;width:1px;background:linear-gradient(180deg,transparent,var(--choice-edge-soft) 14%,var(--choice-edge-soft) 86%,transparent);transform:translateX(-50%);pointer-events:none}
+.rbt-options{
+  position:relative;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px 18px;
+  padding:10px 0 4px;
+}
+.rbt-options:before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:6px;
+  bottom:2px;
+  width:1px;
+  transform:translateX(-50%);
+  background:linear-gradient(180deg,transparent,rgba(215,25,32,.18) 25%,rgba(191,193,194,.24) 50%,rgba(215,25,32,.18) 75%,transparent);
+  pointer-events:none;
+}
 
 .rbt-option{
   position:relative;
   isolation:isolate;
-  min-height:76px;
+  min-height:74px;
   display:flex;
   align-items:center;
-  border:1px solid transparent!important;
-  border-radius:0;
-  clip-path:polygon(24px 0,calc(100% - 24px) 0,100% 50%,calc(100% - 24px) 100%,24px 100%,0 50%);
-  padding:16px 34px 16px 84px!important;
   overflow:hidden;
+  padding:15px 30px 15px 82px!important;
+  border:1px solid var(--choice-edge)!important;
+  border-radius:0;
+  clip-path:polygon(18px 0,calc(100% - 18px) 0,100% 50%,calc(100% - 18px) 100%,18px 100%,0 50%);
   color:var(--text);
   background:
-    linear-gradient(180deg,color-mix(in srgb,var(--choice-fill) 96%,transparent),color-mix(in srgb,var(--choice-fill-deep) 96%,transparent)) padding-box,
-    linear-gradient(115deg,transparent 0 8%,var(--choice-edge) 24%,var(--choice-edge-soft) 50%,var(--choice-edge) 76%,transparent 92%) border-box!important;
+    linear-gradient(118deg,rgba(255,255,255,.16),transparent 27%,transparent 72%,rgba(255,255,255,.08)),
+    var(--choice-glass)!important;
+  -webkit-backdrop-filter:blur(18px) saturate(138%);
+  backdrop-filter:blur(18px) saturate(138%);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.08),
-    inset 0 -1px 0 rgba(0,0,0,.12),
+    inset 0 1px 0 rgba(255,255,255,.34),
+    inset 0 -1px 0 rgba(10,10,10,.12),
     var(--choice-shadow)!important;
   filter:none!important;
   font-size:15px!important;
   font-weight:650!important;
-  line-height:1.32;
-  letter-spacing:-.01em;
+  line-height:1.34;
+  letter-spacing:-.012em;
   text-align:left;
   text-wrap:balance;
   transform:none;
-  transition:transform .16s ease,box-shadow .18s ease,background .18s ease,color .18s ease;
+  transition:transform .18s ease,border-color .18s ease,background .18s ease,box-shadow .18s ease;
 }
 
-/* Inner metallic rails make the choice feel like part of the stage hardware. */
+/* Metallic red blade across the inner rail. */
 .rbt-option:after{
   content:"";
   position:absolute;
   z-index:-1;
   left:67px;
-  right:22px;
-  top:10px;
-  bottom:10px;
-  border-left:1px solid var(--choice-edge-soft);
+  right:18px;
+  top:9px;
+  bottom:9px;
+  border-left:1px solid rgba(215,25,32,.30);
   background:
-    linear-gradient(90deg,rgba(255,255,255,.025),transparent 18%),
-    linear-gradient(180deg,rgba(255,255,255,.035),transparent 34%);
+    linear-gradient(90deg,rgba(215,25,32,.08),transparent 18%),
+    linear-gradient(180deg,rgba(255,255,255,.08),transparent 36%);
   pointer-events:none;
 }
 
+/* A/B/C/D marker: polished metallic red, not a generic badge. */
 .rbt-option:before{
   content:attr(data-option-label)!important;
   position:absolute!important;
-  left:26px!important;
+  left:24px!important;
   top:50%!important;
   width:38px!important;
   height:38px!important;
@@ -77,109 +104,174 @@
   place-items:center!important;
   transform:translateY(-50%)!important;
   clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)!important;
-  background:linear-gradient(135deg,#2a2a2a,#080808)!important;
+  background:
+    linear-gradient(145deg,var(--metal-red-5) 0%,var(--metal-red-2) 28%,var(--metal-red-4) 49%,var(--metal-red-3) 54%,var(--metal-red-1) 100%)!important;
   border:0!important;
-  box-shadow:0 0 0 1px rgba(191,193,194,.55),0 6px 18px rgba(0,0,0,.28)!important;
-  color:#f5f3ef!important;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.26),
+    inset 7px 5px 12px rgba(255,255,255,.13),
+    inset -7px -7px 14px rgba(56,0,4,.40),
+    0 8px 20px rgba(95,5,11,.28)!important;
+  color:#fff!important;
   font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;
   font-size:12px!important;
   font-weight:800!important;
   line-height:1!important;
-  letter-spacing:.04em;
-  transition:background .18s ease,color .18s ease,box-shadow .18s ease,transform .18s ease!important;
+  letter-spacing:.05em;
+  transition:transform .18s ease,box-shadow .18s ease,filter .18s ease!important;
 }
 
 .rbt-option:hover,.rbt-option:focus-visible{
   outline:none;
   transform:translateY(-2px)!important;
+  border-color:rgba(215,25,32,.58)!important;
   background:
-    linear-gradient(180deg,color-mix(in srgb,var(--choice-fill) 90%,var(--red) 10%),color-mix(in srgb,var(--choice-fill-deep) 94%,var(--red) 6%)) padding-box,
-    linear-gradient(115deg,var(--red),var(--choice-edge),var(--red)) border-box!important;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 18px 36px rgba(0,0,0,.16),0 0 0 1px rgba(215,25,32,.12)!important;
+    linear-gradient(118deg,rgba(255,255,255,.22),transparent 29%,transparent 69%,rgba(239,27,36,.08)),
+    var(--choice-glass-hover)!important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.40),
+    inset 0 -1px 0 rgba(215,25,32,.16),
+    0 18px 40px rgba(0,0,0,.13),
+    0 0 24px rgba(215,25,32,.08)!important;
 }
 .rbt-option:hover:before,.rbt-option:focus-visible:before{
-  background:linear-gradient(135deg,#3a3a3a,#0b0b0b)!important;
-  box-shadow:0 0 0 1px var(--red),0 0 18px rgba(215,25,32,.22)!important;
+  transform:translateY(-50%) scale(1.05)!important;
+  filter:saturate(1.08) brightness(1.05);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.42),
+    inset 7px 5px 12px rgba(255,255,255,.16),
+    inset -7px -7px 14px rgba(56,0,4,.42),
+    0 0 24px rgba(215,25,32,.30)!important;
 }
 
-/* Selected = armed, not yet graded. */
+/* Selected = armed. Glass remains transparent; the metal edge becomes more active. */
 .rbt-option[data-selected="true"]{
-  transform:translateY(-2px) scale(1.006)!important;
-  color:var(--text)!important;
+  transform:translateY(-2px) scale(1.004)!important;
+  border-color:rgba(239,27,36,.82)!important;
   background:
-    linear-gradient(90deg,color-mix(in srgb,var(--red) 15%,var(--choice-fill)),color-mix(in srgb,var(--choice-fill-deep) 94%,transparent)) padding-box,
-    linear-gradient(115deg,var(--red),#ff555b,var(--red)) border-box!important;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.10),0 18px 38px rgba(0,0,0,.17),0 0 30px rgba(215,25,32,.16)!important;
+    linear-gradient(100deg,rgba(215,25,32,.10),rgba(255,255,255,.10) 42%,transparent 72%),
+    var(--choice-glass-selected)!important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.42),
+    inset 0 -1px 0 rgba(215,25,32,.22),
+    0 18px 42px rgba(0,0,0,.15),
+    0 0 0 1px rgba(215,25,32,.12),
+    0 0 30px rgba(215,25,32,.14)!important;
 }
 .rbt-option[data-selected="true"]:before{
-  background:linear-gradient(135deg,var(--signal),#a70d14)!important;
-  color:#fff!important;
-  box-shadow:0 0 0 1px rgba(255,255,255,.6),0 0 24px rgba(215,25,32,.30)!important;
-  transform:translateY(-50%) scale(1.06)!important;
+  transform:translateY(-50%) scale(1.08)!important;
+  filter:saturate(1.15) brightness(1.08);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.58),
+    inset 7px 5px 12px rgba(255,255,255,.18),
+    inset -7px -7px 14px rgba(56,0,4,.44),
+    0 0 30px rgba(239,27,36,.36)!important;
 }
-.rbt-option[data-selected="true"]:after{border-left-color:rgba(215,25,32,.42)}
+.rbt-option[data-selected="true"]:after{
+  border-left-color:rgba(239,27,36,.64);
+  background:linear-gradient(90deg,rgba(215,25,32,.13),transparent 24%);
+}
 
-/* Locked = committed and waiting for resolution. */
+/* Locked = glass console with a metallic-red pulse, never a solid red slab. */
 .rbt-option[data-chosen="locked"]{
-  color:#fff!important;
+  color:var(--text)!important;
+  border-color:rgba(239,27,36,.95)!important;
   background:
-    linear-gradient(90deg,#8e0b11,#d71920 52%,#8e0b11) padding-box,
-    linear-gradient(115deg,#f5f3ef,#ef1b24,#f5f3ef) border-box!important;
-  box-shadow:0 0 0 1px rgba(215,25,32,.24),0 0 42px rgba(215,25,32,.32)!important;
+    linear-gradient(112deg,rgba(215,25,32,.16),rgba(255,255,255,.08) 36%,transparent 62%,rgba(239,27,36,.10)),
+    var(--choice-glass-selected)!important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.44),
+    inset 0 -1px 0 rgba(239,27,36,.30),
+    0 0 0 1px rgba(215,25,32,.18),
+    0 0 38px rgba(215,25,32,.24)!important;
   animation:rbt-choice-lock .42s cubic-bezier(.2,.8,.25,1) both!important;
 }
 .rbt-option[data-chosen="locked"]:before{
-  background:#f5f3ef!important;
-  color:#d71920!important;
-  box-shadow:0 0 0 1px #fff,0 0 22px rgba(255,255,255,.24)!important;
+  filter:saturate(1.25) brightness(1.13);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.70),
+    inset 7px 5px 12px rgba(255,255,255,.20),
+    inset -7px -7px 14px rgba(56,0,4,.45),
+    0 0 34px rgba(239,27,36,.42)!important;
 }
-.rbt-option[data-chosen="locked"]:after{border-left-color:rgba(255,255,255,.35);background:linear-gradient(90deg,rgba(255,255,255,.08),transparent 28%)}
+.rbt-option[data-chosen="locked"]:after{
+  border-left-color:rgba(239,27,36,.72);
+  background:linear-gradient(90deg,rgba(239,27,36,.18),transparent 30%);
+}
 
-/* Resolution never exposes an unchosen correct answer. Only the committed choice changes. */
+/* Resolution only alters the committed answer. No hidden correct answer is exposed. */
 .rbt-option[data-chosen="correct"]{
-  color:#fff!important;
+  color:var(--text)!important;
+  border-color:rgba(70,145,96,.78)!important;
   background:
-    linear-gradient(90deg,#205538,#2e704a 52%,#205538) padding-box,
-    linear-gradient(115deg,#d9f6e4,#5ab47d,#d9f6e4) border-box!important;
-  box-shadow:0 0 34px color-mix(in srgb,var(--good) 28%,transparent)!important;
+    linear-gradient(112deg,rgba(70,145,96,.13),rgba(255,255,255,.07) 42%,transparent 72%),
+    var(--choice-glass-selected)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.42),0 0 30px rgba(70,145,96,.18)!important;
 }
-.rbt-option[data-chosen="correct"]:before{background:#f5f3ef!important;color:#2e704a!important;box-shadow:0 0 0 1px rgba(255,255,255,.78),0 0 20px rgba(90,180,125,.24)!important}
+.rbt-option[data-chosen="correct"]:before{
+  background:linear-gradient(145deg,#183f29,#2e704a 44%,#72c28f 51%,#2e704a 58%,#173e28)!important;
+  box-shadow:0 0 0 1px rgba(255,255,255,.54),inset 6px 5px 10px rgba(255,255,255,.12),0 0 22px rgba(70,145,96,.25)!important;
+}
 .rbt-option[data-chosen="wrong"]{
-  color:#fff!important;
+  color:var(--text)!important;
+  border-color:rgba(239,27,36,.82)!important;
   background:
-    linear-gradient(90deg,#70080d,#a80e15 52%,#70080d) padding-box,
-    linear-gradient(115deg,#ff8f93,#d71920,#ff8f93) border-box!important;
-  box-shadow:0 0 30px rgba(215,25,32,.22)!important;
+    linear-gradient(112deg,rgba(215,25,32,.13),rgba(255,255,255,.06) 42%,transparent 72%),
+    var(--choice-glass-selected)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.40),0 0 28px rgba(215,25,32,.18)!important;
 }
-.rbt-option[data-chosen="wrong"]:before{background:#f5f3ef!important;color:#d71920!important;box-shadow:0 0 0 1px rgba(255,255,255,.72),0 0 18px rgba(215,25,32,.20)!important}
-
+.rbt-option[data-chosen="wrong"]:before{
+  filter:saturate(1.15) brightness(.93);
+  box-shadow:0 0 0 1px rgba(255,255,255,.44),inset 7px 5px 12px rgba(255,255,255,.13),0 0 22px rgba(215,25,32,.24)!important;
+}
 .rbt-option:disabled{cursor:default;opacity:1}
 
-/* Identification gets the same console quality as multiple-choice. */
+/* Identification follows the same frosted material language. */
 .rbt-identification{
   width:min(820px,100%)!important;
   min-height:70px!important;
   border:1px solid var(--choice-edge)!important;
-  clip-path:polygon(22px 0,calc(100% - 22px) 0,100% 50%,calc(100% - 22px) 100%,22px 100%,0 50%)!important;
-  background:linear-gradient(180deg,var(--choice-fill),var(--choice-fill-deep))!important;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),var(--choice-shadow)!important;
+  clip-path:polygon(18px 0,calc(100% - 18px) 0,100% 50%,calc(100% - 18px) 100%,18px 100%,0 50%)!important;
+  background:linear-gradient(118deg,rgba(255,255,255,.14),transparent 30%),var(--choice-glass)!important;
+  -webkit-backdrop-filter:blur(18px) saturate(138%);
+  backdrop-filter:blur(18px) saturate(138%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.32),var(--choice-shadow)!important;
   padding:16px 34px!important;
+  color:var(--text)!important;
   font-size:17px!important;
   font-weight:600;
   letter-spacing:.01em;
 }
-.rbt-identification:focus{border-color:var(--red)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 0 0 1px var(--red),0 0 30px rgba(215,25,32,.12)!important}
+.rbt-identification:focus{
+  border-color:rgba(239,27,36,.78)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.36),0 0 0 1px rgba(215,25,32,.10),0 0 30px rgba(215,25,32,.14)!important;
+}
 
-@keyframes rbt-choice-lock{0%{transform:scale(1)}45%{transform:scale(1.018)}100%{transform:scale(1)}}
+@keyframes rbt-choice-lock{0%{transform:scale(1)}45%{transform:scale(1.012)}100%{transform:scale(1)}}
 
 @media(max-width:720px){
   .rbt-options{grid-template-columns:1fr;gap:10px;padding-top:4px}
   .rbt-options:before{display:none}
-  .rbt-option{min-height:64px;padding:13px 20px 13px 72px!important;clip-path:polygon(18px 0,calc(100% - 18px) 0,100% 50%,calc(100% - 18px) 100%,18px 100%,0 50%);font-size:13px!important}
-  .rbt-option:before{left:23px!important;width:32px!important;height:32px!important;font-size:11px!important}
-  .rbt-option:after{left:59px;right:17px;top:9px;bottom:9px}
+  .rbt-option{
+    min-height:64px;
+    padding:13px 18px 13px 70px!important;
+    clip-path:polygon(14px 0,calc(100% - 14px) 0,100% 50%,calc(100% - 14px) 100%,14px 100%,0 50%);
+    font-size:13px!important;
+    -webkit-backdrop-filter:blur(15px) saturate(132%);
+    backdrop-filter:blur(15px) saturate(132%);
+  }
+  .rbt-option:before{left:22px!important;width:32px!important;height:32px!important;font-size:11px!important}
+  .rbt-option:after{left:58px;right:15px;top:8px;bottom:8px}
   .rbt-option[data-selected="true"]{transform:none!important}
-  .rbt-identification{min-height:62px!important;clip-path:polygon(16px 0,calc(100% - 16px) 0,100% 50%,calc(100% - 16px) 100%,16px 100%,0 50%)!important;padding:14px 22px!important;font-size:15px!important}
+  .rbt-identification{
+    min-height:62px!important;
+    clip-path:polygon(14px 0,calc(100% - 14px) 0,100% 50%,calc(100% - 14px) 100%,14px 100%,0 50%)!important;
+    padding:14px 22px!important;
+    font-size:15px!important;
+  }
 }
 
-@media(prefers-reduced-motion:reduce){.rbt-option,.rbt-option:before{transition:none!important}.rbt-option[data-chosen="locked"]{animation:none!important}}
+@media(prefers-reduced-motion:reduce){
+  .rbt-option,.rbt-option:before{transition:none!important}
+  .rbt-option[data-chosen="locked"]{animation:none!important}
+}
