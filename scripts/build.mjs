@@ -100,6 +100,11 @@ await renderNetworkShell();
 // publisher/author structured data.
 await import('./hardfix-ai-discovery.mjs');
 
+// FMB Worldwide archive SEO. This adds truthful restoration dates, edition
+// coverage, archive/stories ItemLists, breadcrumbs and social-card metadata
+// without pretending the September 5-14 backfills were published historically.
+await import('./hardfix-worldwide-seo.mjs');
+
 // Final visual authority: restrained matte-glass FMB News identity, shared
 // contrast, About-page readability, and persistent System/Light/Dark appearance.
 await import('./apply-brand-system.mjs');
