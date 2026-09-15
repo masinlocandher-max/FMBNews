@@ -69,16 +69,23 @@
 .fmb-ref.fmb-network-landing .fmb-editorial-wordmark{
   display:block;
   color:var(--fmb-theme-ink,var(--fmb-ink));
-  font-family:var(--fmb-luxury-serif,"Newsreader","Bodoni Moda","Cormorant Garamond","Playfair Display",Georgia,serif);
+  /* Matched to the FMB NEWS. logo: a heavy, condensed, high-contrast Didone.
+     Rendered side by side against the supplied lockup, Newsreader is too light
+     and too wide, and Bodoni Moda -- though a Didone -- is far wider still and
+     keeps its thins hairline-fine. Playfair at 900 carries the same weight,
+     contrast and proportion, so the masthead and the logo read as one brand.
+
+     The headline face stays Newsreader: Playfair's contrast is right at 88px
+     and wrong at the 20px of a story row, which is the failure Bodoni had.
+
+     -.02em, not the -.055em this rule used to carry. That tracking existed to
+     close the gaps Bodoni's hairlines opened, and at 88px it collided the
+     letters -- the M crashed into the F and the W cut into the E. */
+  font-family:var(--fmb-masthead-serif,"Playfair Display","Newsreader",Georgia,serif);
   font-size:clamp(48px,6.1vw,92px);
-  line-height:.86;
-  /* Retuned for Newsreader. Bodoni Moda wanted 570 and -.055em to close the
-     gaps its hairline serifs opened; Newsreader has real serifs, so the same
-     tracking collided them -- at 88px the M crashed into the F and the W cut
-     into the E, which is what made the masthead look broken rather than tight.
-     600 at -.01em sets the lockup with its counters open. */
-  font-weight:600;
-  letter-spacing:-.01em;
+  line-height:.9;
+  font-weight:900;
+  letter-spacing:-.02em;
   white-space:nowrap;
 }
 .fmb-ref.fmb-network-landing .fmb-editorial-wordmark .dot{color:var(--fmb-red-ink,var(--fmb-red))}
