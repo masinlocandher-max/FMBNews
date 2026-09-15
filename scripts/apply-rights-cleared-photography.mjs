@@ -39,7 +39,7 @@ for (const [slug, entry] of Object.entries(ledger)) {
   if (!await exists(page)) { missingRoute.push(slug); continue; }
 
   let file = '';
-  for (const ext of ['jpg', 'png', 'webp']) {
+  for (const ext of ['jpg', 'png', 'webp', 'svg', 'gif', 'avif', 'tiff']) {
     if (await exists(path.join(localDir, `${slug}.${ext}`))) { file = `${slug}.${ext}`; break; }
   }
   if (!file) { notLocalized.push(slug); continue; }

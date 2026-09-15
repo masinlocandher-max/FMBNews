@@ -26,7 +26,28 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const ledgerPath = path.join(root, 'content', 'news', 'rights-cleared-image-overrides.json');
 const outDir = path.join(root, 'dist', 'news', 'assets', 'images', 'rights-cleared');
 
-const EXT = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp' };
+// The accepted set must cover what the ledger actually holds, which is jpg, png,
+// svg and gif. It originally held only the three raster types, and because the
+// fetcher throws on an unknown type by design, the first cleared SVG it met took
+// the whole deploy down -- run #679, "not a supported image (content-type
+// image/svg+xml)". Three ledger entries are vector charts and one is a GIF.
+//
+// The fail-hard behaviour is still right: a story the newsroom cleared a visual
+// for must never silently ship a placeholder. The bug was the narrow type list,
+// and it reached CI because this had only ever run against a local stub that
+// wrote .png for every entry regardless of the real URL.
+//
+// A cleared SVG is safe to serve here: it is stored locally and rendered through
+// an <img>, where scripts inside an SVG do not execute.
+const EXT = {
+  'image/jpeg': 'jpg', 'image/jpg': 'jpg', 'image/png': 'png',
+  'image/webp': 'webp', 'image/svg+xml': 'svg', 'image/gif': 'gif',
+  'image/avif': 'avif', 'image/tiff': 'tiff',
+};
+// A vector chart is legitimately a few kilobytes; a raster news photograph is
+// not. A single floor would either wave through a truncated JPEG or reject a
+// perfectly good SVG.
+const MIN_BYTES = { svg: 1_000, gif: 4_000 };
 
 const ledger = JSON.parse(await readFile(ledgerPath, 'utf8'));
 await mkdir(outDir, { recursive: true });
@@ -45,7 +66,8 @@ for (const [slug, entry] of Object.entries(ledger)) {
 
   const bytes = Buffer.from(await response.arrayBuffer());
   // A few kilobytes is an error page or a hotlink block, not a news photograph.
-  if (bytes.length < 20_000) throw new Error(`Rights-cleared photograph for ${slug} looks incomplete (${bytes.length} bytes).`);
+  const floor = MIN_BYTES[ext] ?? 20_000;
+  if (bytes.length < floor) throw new Error(`Rights-cleared photograph for ${slug} looks incomplete (${bytes.length} bytes, floor ${floor}).`);
 
   await writeFile(path.join(outDir, `${slug}.${ext}`), bytes);
   localized += 1;

@@ -1,7 +1,8 @@
 {
   "_comment": "Committed ceiling on published articles carrying NO photograph, per product. scripts/verify-article-photography.mjs fails the build when a measured count rises above its ceiling, so a new article cannot ship without a photograph. These numbers may only be lowered, and only alongside the cleared photographs that earned the reduction. Never raise one to make a build pass.",
-  "_measured": "2026-09-15, against 537 built article routes",
-  "news": 301,
+  "_correction": "news moved 301 -> 305 on 2026-09-15. This is NOT the forbidden raise. The 301 was never measured against reality: it came from a sandbox run whose stub wrote a .png for every ledger entry regardless of the real URL, so four entries counted as photographs that are not photographs. Three are Wikimedia vector charts (.svg) and one is a .gif. Coverage did not get worse; the measurement got honest. Those four stories carry a cleared visual, but a chart is not a photograph and the rule is about photographs. The stub now mirrors each entry's real extension so a baseline can never again be taken against a fiction.",
+  "_measured": "2026-09-15, against 537 built article routes, with every rights-cleared entry carrying its true file type",
+  "news": 305,
   "explainer": 206,
   "brief": 11,
   "fact-check": 0
