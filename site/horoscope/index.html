@@ -48,7 +48,30 @@
         <div class="fmb-hz-orbit fmb-hz-orbit-two"></div>
         <div class="fmb-hz-star fmb-hz-star-one">✦</div>
         <div class="fmb-hz-star fmb-hz-star-two">✧</div>
-        <div class="fmb-horoscope-hero-art" data-horoscope-hero-art></div>
+        <div class="fmb-hz-sun-wrap">
+          <svg class="fmb-hz-sun" viewBox="0 0 360 360" role="presentation">
+            <defs>
+              <line id="hz-ray-long" x1="180" y1="22" x2="180" y2="84"></line>
+              <line id="hz-ray-short" x1="180" y1="43" x2="180" y2="91"></line>
+            </defs>
+            <circle class="hz-orbit-line" cx="180" cy="180" r="151"></circle>
+            <circle class="hz-orbit-line hz-orbit-dashed" cx="180" cy="180" r="132"></circle>
+            <g class="hz-rays hz-rays-long">
+              <use href="#hz-ray-long" transform="rotate(0 180 180)"></use><use href="#hz-ray-long" transform="rotate(45 180 180)"></use><use href="#hz-ray-long" transform="rotate(90 180 180)"></use><use href="#hz-ray-long" transform="rotate(135 180 180)"></use><use href="#hz-ray-long" transform="rotate(180 180 180)"></use><use href="#hz-ray-long" transform="rotate(225 180 180)"></use><use href="#hz-ray-long" transform="rotate(270 180 180)"></use><use href="#hz-ray-long" transform="rotate(315 180 180)"></use>
+            </g>
+            <g class="hz-rays hz-rays-short">
+              <use href="#hz-ray-short" transform="rotate(22.5 180 180)"></use><use href="#hz-ray-short" transform="rotate(67.5 180 180)"></use><use href="#hz-ray-short" transform="rotate(112.5 180 180)"></use><use href="#hz-ray-short" transform="rotate(157.5 180 180)"></use><use href="#hz-ray-short" transform="rotate(202.5 180 180)"></use><use href="#hz-ray-short" transform="rotate(247.5 180 180)"></use><use href="#hz-ray-short" transform="rotate(292.5 180 180)"></use><use href="#hz-ray-short" transform="rotate(337.5 180 180)"></use>
+            </g>
+            <circle class="hz-sun-disc" cx="180" cy="180" r="72"></circle>
+            <circle class="hz-sun-inner" cx="180" cy="180" r="62"></circle>
+            <path class="hz-face-line" d="M143 166c9-8 19-8 28 0M189 166c9-8 19-8 28 0"></path>
+            <path class="hz-face-line" d="M158 170c4 4 8 4 12 0M192 170c4 4 8 4 12 0"></path>
+            <path class="hz-face-line" d="M180 168c-2 14-4 23-10 30 6 3 12 3 18 0"></path>
+            <path class="hz-face-line" d="M157 210c15 12 31 12 46 0M164 207c11-4 21-4 32 0"></path>
+            <path class="hz-brow-line" d="M142 155c12-7 23-7 34-1M184 154c12-6 23-5 34 2"></path>
+            <circle class="hz-sun-dot" cx="76" cy="91" r="3"></circle><circle class="hz-sun-dot" cx="281" cy="112" r="2.5"></circle><circle class="hz-sun-dot" cx="292" cy="248" r="3"></circle><circle class="hz-sun-dot" cx="93" cy="267" r="2.5"></circle>
+          </svg>
+        </div>
         <p>Same skies<br>A brighter you</p>
       </div>
     </section>
