@@ -22,7 +22,7 @@
 
   /* -- type scale -------------------------------------------------------- */
   --fmbv2-font-sans:Inter,-apple-system,BlinkMacSystemFont,"SF Pro Text",Manrope,"Segoe UI",system-ui,sans-serif;
-  --fmbv2-font-display:"Bodoni Moda","Libre Bodoni","Didot","Bodoni 72","Baskerville","Times New Roman",serif;
+  --fmbv2-font-display:"Newsreader","Bodoni Moda","Libre Bodoni","Didot","Bodoni 72","Baskerville","Times New Roman",serif;
   --fmbv2-text-xs:12px;   --fmbv2-text-sm:13px;  --fmbv2-text-base:15px;
   --fmbv2-text-md:17px;   --fmbv2-text-lg:19px;  --fmbv2-text-xl:22px;
   --fmbv2-text-2xl:27px;  --fmbv2-text-3xl:34px; --fmbv2-text-4xl:44px;
@@ -297,7 +297,7 @@ html[data-fmb-theme="dark"] body.fmb-matte-system.fmb-news-about main{background
   --fmb-desk-muted:#6D7072;
   --fmb-desk-accent:#D71920;
   --fmb-desk-rule:rgba(20,20,20,.16);
-  --fmb-desk-display:"Bodoni Moda","Libre Bodoni","Didot","Bodoni 72","Baskerville","Times New Roman",serif;
+  --fmb-desk-display:"Newsreader","Bodoni Moda","Libre Bodoni","Didot","Bodoni 72","Baskerville","Times New Roman",serif;
   --fmb-desk-ui:Inter,-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;
 }
 html[data-fmb-theme="dark"]{
@@ -484,7 +484,7 @@ body.fmb-fact-check-route :is(.fc-panel,.fc-card,.fc-legend){
   /* Feature titles take the editorial display face, like every desk title. */
   html:root body.fmb-mobile-route-crossword .fmb-feature-hero :is(h1,h2),
   html:root body.fmb-mobile-route-horoscope .fmb-feature-hero :is(h1,h2){
-    font-family:"Bodoni Moda","Libre Bodoni","Didot","Bodoni 72","Baskerville","Times New Roman",serif!important;
+    font-family:"Newsreader","Bodoni Moda","Libre Bodoni","Didot","Bodoni 72","Baskerville","Times New Roman",serif!important;
     color:var(--fmb-shell-ink,#141414)!important;
     font-weight:600!important;
     -webkit-text-fill-color:currentColor!important;
@@ -624,7 +624,7 @@ body.fmb-fact-check-route :is(.fc-panel,.fc-card,.fc-legend){
     border-radius:0!important;
     background:transparent!important;
     color:var(--fmb-shell-ink,#141414)!important;
-    font-family:"Bodoni Moda","Libre Bodoni","Didot","Bodoni 72",Baskerville,"Times New Roman",serif!important;
+    font-family:"Newsreader","Bodoni Moda","Libre Bodoni","Didot","Bodoni 72",Baskerville,"Times New Roman",serif!important;
     font-size:26px!important;
     line-height:1!important;
     font-weight:800!important;
@@ -692,7 +692,7 @@ body.fmb-fact-check-route :is(.fc-panel,.fc-card,.fc-legend){
   html:root body.fmb-mobile-first .brief-issue h2{
     margin:6px 0 0!important;
     color:var(--fmb-shell-ink,#141414)!important;
-    font-family:"Bodoni Moda","Libre Bodoni","Didot","Bodoni 72",Baskerville,"Times New Roman",serif!important;
+    font-family:"Newsreader","Bodoni Moda","Libre Bodoni","Didot","Bodoni 72",Baskerville,"Times New Roman",serif!important;
     font-size:21px!important;
     line-height:1.14!important;
     font-weight:800!important;

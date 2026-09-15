@@ -88,7 +88,7 @@
 
 .fmb-ref.fmb-network-landing .publication-lockup .fmb-lux-wordmark{
   display:inline-block!important;color:#fff!important;
-  font-family:var(--fmb-luxury-serif,"Bodoni Moda","Cormorant Garamond","Playfair Display",Georgia,serif)!important;
+  font-family:var(--fmb-luxury-serif,"Newsreader","Bodoni Moda","Cormorant Garamond","Playfair Display",Georgia,serif)!important;
   font-size:clamp(25px,2.25vw,36px)!important;font-weight:600!important;line-height:.94!important;letter-spacing:.15em!important
 }
 

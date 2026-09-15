@@ -88,7 +88,7 @@ body.fmb-mobile-first .related,body.fmb-mobile-first aside{max-width:100%!import
 
 /* FMB Worldwide / Explainer / Daily Brief inherit app surfaces. */
 body.fmb-mobile-first .world-hero,body.fmb-mobile-first .brief-archive-hero{padding:28px 0 22px!important;background:linear-gradient(145deg,var(--app-plum) 0%,var(--app-plum-deep) 100%)!important;color:#fff!important}
-body.fmb-mobile-first .world-hero h1,body.fmb-mobile-first .brief-archive-hero h1{font-family:"Bodoni Moda","Libre Bodoni","Didot","Bodoni 72","Baskerville","Times New Roman",serif!important;font-size:40px!important;line-height:1!important;font-weight:800!important;letter-spacing:-.045em!important}
+body.fmb-mobile-first .world-hero h1,body.fmb-mobile-first .brief-archive-hero h1{font-family:"Newsreader","Bodoni Moda","Libre Bodoni","Didot","Bodoni 72","Baskerville","Times New Roman",serif!important;font-size:40px!important;line-height:1!important;font-weight:800!important;letter-spacing:-.045em!important}
 body.fmb-mobile-first .country-grid{display:grid!important;grid-template-columns:1fr!important;gap:10px!important}
 body.fmb-mobile-first .country-card,body.fmb-mobile-first .archive-card,body.fmb-mobile-first .brief-issue,body.fmb-mobile-first .explainer-card{border:0!important;border-radius:18px!important;background:#fff!important;box-shadow:none!important}
 body.fmb-mobile-first .country-card{padding:18px!important}

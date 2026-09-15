@@ -69,11 +69,16 @@
 .fmb-ref.fmb-network-landing .fmb-editorial-wordmark{
   display:block;
   color:var(--fmb-theme-ink,var(--fmb-ink));
-  font-family:var(--fmb-luxury-serif,"Bodoni Moda","Cormorant Garamond","Playfair Display",Georgia,serif);
+  font-family:var(--fmb-luxury-serif,"Newsreader","Bodoni Moda","Cormorant Garamond","Playfair Display",Georgia,serif);
   font-size:clamp(48px,6.1vw,92px);
-  line-height:.82;
-  font-weight:570;
-  letter-spacing:-.055em;
+  line-height:.86;
+  /* Retuned for Newsreader. Bodoni Moda wanted 570 and -.055em to close the
+     gaps its hairline serifs opened; Newsreader has real serifs, so the same
+     tracking collided them -- at 88px the M crashed into the F and the W cut
+     into the E, which is what made the masthead look broken rather than tight.
+     600 at -.01em sets the lockup with its counters open. */
+  font-weight:600;
+  letter-spacing:-.01em;
   white-space:nowrap;
 }
 .fmb-ref.fmb-network-landing .fmb-editorial-wordmark .dot{color:var(--fmb-red-ink,var(--fmb-red))}

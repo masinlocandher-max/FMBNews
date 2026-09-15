@@ -118,11 +118,13 @@ body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero h1{
   max-width:none!important;
   margin:10px 0 16px!important;
   color:var(--fmb-shell-ink,#141414)!important;
-  font-family:"Bodoni Moda","Libre Bodoni","Didot","Bodoni 72","Baskerville","Times New Roman",serif!important;
+  font-family:"Newsreader","Bodoni Moda","Libre Bodoni","Didot","Bodoni 72","Baskerville","Times New Roman",serif!important;
   font-size:46px!important;
-  line-height:.90!important;
-  font-weight:880!important;
-  letter-spacing:-.06em!important;
+  line-height:.94!important;
+  /* Newsreader's axis tops out at 800, so the old 880 clamped silently; and
+     -.06em was Bodoni tracking, which collides real serifs. */
+  font-weight:700!important;
+  letter-spacing:-.02em!important;
   /* No text-shadow. A 20px black blur under display type is how you lift a
      headline off a photographic poster; under Bodoni on warm ivory it just
      smears the serifs and reads as a printing fault -- it was visibly hazing

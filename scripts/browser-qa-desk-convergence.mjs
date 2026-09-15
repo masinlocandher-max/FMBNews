@@ -85,6 +85,11 @@ for (const [name, url] of DESKS) {
         railActiveLum: activeSpan ? lum(getComputedStyle(activeSpan).color) : null,
         railLum: rail ? lum(getComputedStyle(rail).backgroundColor) : null,
         heroFont: hero ? getComputedStyle(hero).fontFamily.split(',')[0].replace(/["']/g, '') : null,
+        // Whether the declared display face actually ARRIVED. A name check on
+        // the CSS stack reads identically whether the webfont loaded or 404'd,
+        // so it cannot see the failure that actually matters.
+        heroFontLoaded: hero ? document.fonts.check(`${getComputedStyle(hero).fontWeight} 40px "${getComputedStyle(hero).fontFamily.split(',')[0].replace(/["']/g, '')}"`) : null,
+        heroWeight: hero ? getComputedStyle(hero).fontWeight : null,
         bodyLum: lum(getComputedStyle(document.body).backgroundColor),
         overflow: Math.max(0, document.documentElement.scrollWidth - window.innerWidth),
       };
@@ -105,9 +110,26 @@ for (const [name, url] of DESKS) {
     // One publication: same paper, same ink direction.
     if (theme === 'light' && result.bodyLum < 0.5) failures.push(`${tag}: Light paper too dark (${result.bodyLum.toFixed(3)})`);
     if (theme === 'dark' && result.bodyLum > 0.1) failures.push(`${tag}: Dark ground too light (${result.bodyLum.toFixed(3)})`);
-    // Desk titles carry the editorial display face.
-    if (result.heroFont && !/Bodoni|Libre Bodoni|Didot|Baskerville|Times/.test(result.heroFont)) {
-      failures.push(`${tag}: desk hero title is "${result.heroFont}", not the editorial display stack`);
+    // Desk titles carry the editorial display face, and it actually loaded.
+    //
+    // This used to match the family NAME against /Bodoni|Didot|Baskerville|Times/.
+    // That assertion was weak in the way that matters: the computed font-family
+    // string is whatever the stylesheet declared, so it reads exactly the same
+    // whether the webfont arrived or 404'd and the page silently fell back to a
+    // system serif. It would have passed a masthead rendering in Times New
+    // Roman. It also hard-coded one typeface by name, so it failed the moment
+    // the publication deliberately changed its display face -- flagging an
+    // intended change while staying blind to a broken one.
+    //
+    // What replaces it is the observable thing: the resolved family must be one
+    // the publication actually ships, AND document.fonts.check must confirm a
+    // face at that family and weight is loaded and usable. A missing or failed
+    // font file now fails here instead of shipping.
+    const DISPLAY_FAMILIES = /^(Newsreader|Bodoni Moda|Libre Bodoni)$/;
+    if (result.heroFont && !DISPLAY_FAMILIES.test(result.heroFont)) {
+      failures.push(`${tag}: desk hero title resolved to "${result.heroFont}", which is not a display face this publication ships`);
+    } else if (result.heroFont && result.heroFontLoaded === false) {
+      failures.push(`${tag}: desk hero title declares "${result.heroFont}" at weight ${result.heroWeight} but no such face is loaded -- the page is rendering a fallback`);
     }
     await ctx.close();
   }

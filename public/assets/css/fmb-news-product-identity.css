@@ -1,4 +1,35 @@
 /* Locally served approved fonts. SIL Open Font License files accompany them. */
+
+/* Newsreader (Production Type, SIL OFL 1.1) is the publication's display face.
+   It replaces Bodoni Moda at the masthead and on headlines.
+
+   Bodoni Moda is a Didone: its thins go to a hairline by design, which is what
+   a fashion masthead wants and what a newspaper masthead cannot use. At the
+   masthead's 88px the horizontal serifs rendered about a pixel tall, so
+   "FMB NEWS." read as fragile rather than authoritative, and the desk lockup
+   under it ("FMB Worldwide") collapsed almost entirely. Newsreader was drawn
+   for news: moderate contrast, sturdy serifs, and it holds its colour at both
+   masthead and subhead size. Bodoni Moda stays in the stack as the fallback.
+
+   The wght-only subset is used rather than the standard one -- 56KB against
+   128KB -- because every weight here is set deliberately, so the optical-size
+   axis has nothing to decide. */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url(../fonts/newsreader-latin-ext-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url(../fonts/newsreader-latin-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
 @font-face {
   font-family: 'Bodoni Moda';
   font-style: normal;
@@ -46,7 +77,7 @@
    as the immediate fallback means a failed or slow Inter load degrades to the
    metrics the layout was measured against instead of to Helvetica. */
 :root{
-  --fmb-display:"Bodoni Moda","Libre Bodoni","Bodoni 72","Didot","Times New Roman",serif;
+  --fmb-display:"Newsreader","Bodoni Moda","Libre Bodoni","Bodoni 72","Didot","Times New Roman",serif;
   --fmb-ui:"Inter","Manrope","Helvetica Neue",Arial,sans-serif;
   --fmb-gold:#c9952f;
 }
