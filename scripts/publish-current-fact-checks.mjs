@@ -62,8 +62,8 @@ function articlePage(article, record) {
     '@type': 'Article',
     headline: article.title,
     description: desc,
-    datePublished: `${article.period}T08:00:00+08:00`,
-    dateModified: `${article.period}T08:00:00+08:00`,
+    datePublished: article.publishedAt,
+    dateModified: article.publishedAt,
     mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
     articleSection: 'FMB Fact Check',
     genre: 'Fact Check',
@@ -84,7 +84,7 @@ if (!Array.isArray(current) || !current.length) throw new Error('Current Fact Ch
 
 const seen = new Set();
 for (const article of current) {
-  if (!article.id || !article.slug || !article.title || !article.claim || !article.period || !ratingMeta[article.rating]) {
+  if (!article.id || !article.slug || !article.title || !article.claim || !article.period || !Number.isFinite(Date.parse(article.publishedAt)) || !ratingMeta[article.rating]) {
     throw new Error(`Current Fact Check item is incomplete: ${article.slug || article.title || article.id || 'unknown'}`);
   }
   if (seen.has(article.slug)) throw new Error(`Duplicate current Fact Check slug: ${article.slug}`);
@@ -112,7 +112,8 @@ const currentIndex = current.map(article => ({
   title: article.title,
   rating: article.rating,
   period: article.period,
-  sortKey: article.period,
+  publishedAt: article.publishedAt,
+  sortKey: article.publishedAt,
   slug: article.slug,
   url: `/news/fact-check/${article.slug}/`
 }));
