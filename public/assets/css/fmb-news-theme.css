@@ -786,3 +786,31 @@ body.fmb-fact-check-route :is(.fc-panel,.fc-card,.fc-legend){
     margin:0!important;
   }
 }
+
+/* ============================================================================
+   DUPLICATE CONTROLS
+   ============================================================================
+   Found by auditing every visible link, button and landmark across twelve
+   routes at 390 and 1440, rather than by reading markup.
+   ============================================================================ */
+
+/* Two back controls on a story, 72px apart, mobile only.
+   fmb-news-mobile-global.js prepends a reader toolbar -- "Back | Save | Share"
+   -- to the article, while the page already server-renders <a class="back">
+   above it. Both go back; the reader has to choose between identical twins.
+   The toolbar one stays because it returns the reader where they came from and
+   falls back to /news/ on a direct landing (history.length > 1 ? back() :
+   assign('/news/')), so nothing is lost. Desktop never gets the toolbar, so the
+   anchor is left alone there -- this is scoped to phone width only. */
+@media (max-width:699px){
+  html:root body.fmb-mobile-first .article-shell > a.back,
+  html:root body.fmb-mobile-first [data-fmb-explainer-article] > a.back{
+    display:none!important;
+  }
+}
+
+/* Two site headers on the horoscope. The route carries its own .fmb-hz-header
+   AND the canonical network shell's .mast, stacked -- 67px of one masthead
+   directly above 179px of another. CLAUDE.md keeps one canonical shell, and
+   that is .mast, so the route's private header goes. */
+html:root body .fmb-hz-header{display:none!important}
