@@ -16,7 +16,12 @@
   /* The masthead face, matched to the FMB NEWS. logo. Separate from the
      headline face on purpose -- see the @font-face note in
      fmb-news-product-identity.css. */
-  --fmb-masthead-serif:"Playfair Display","Newsreader","Bodoni Moda",Georgia,serif;
+  /* The masthead is the newsroom's own artwork now, so this stack dresses only
+     the visually-hidden wordmark that carries the accessible name. Playfair was
+     added here to imitate the logo's letterforms and was removed again once the
+     real lockup shipped -- 38KB of webfont downloading on every page to set
+     text nobody can see. */
+  --fmb-masthead-serif:"Newsreader","Bodoni Moda",Georgia,serif;
   --fmb-luxury-serif:"Newsreader","Bodoni Moda","Libre Bodoni","Didot","Bodoni 72","Baskerville","Times New Roman",serif;
 }
 
@@ -210,3 +215,36 @@ body.fmb-matte-system :is(.product-wordmark,.publication-lockup,.brand,.fnc-bran
 }
 
 @media(prefers-reduced-motion:reduce){body.fmb-matte-system *,body.fmb-matte-system *::before,body.fmb-matte-system *::after{scroll-behavior:auto!important}}
+/* ============================================================================
+   DESK MASTHEAD — the same lockup Home carries
+   ============================================================================
+   Home and the desks now show the newsroom's actual artwork rather than type
+   imitating it. Smaller here than on the landing route, because a desk page
+   leads with its own desk title.
+
+   The red rule added with the shared masthead composition is dropped: the
+   lockup draws its own, and two would stack.
+   ============================================================================ */
+body.fmb-matte-system :is(.mast,.masthead) > .shell{border-bottom:0!important}
+body.fmb-matte-system .mast .product-wordmark{
+  display:block!important;
+  position:relative!important;
+  width:min(430px,34vw)!important;
+  aspect-ratio:1400/347!important;
+  background:url(../images/fmb-news-masthead-light.webp) center/contain no-repeat!important;
+}
+body.fmb-matte-system .mast .product-wordmark .fmb-lux-wordmark{
+  position:absolute!important;
+  width:1px!important;height:1px!important;
+  overflow:hidden!important;
+  clip-path:inset(50%)!important;
+  white-space:nowrap!important;
+}
+html:root[data-fmb-theme="dark"] body.fmb-matte-system .mast .product-wordmark{
+  background-image:url(../images/fmb-news-masthead-dark.webp)!important;
+}
+@media (prefers-color-scheme:dark){
+  html:root:not([data-fmb-theme="light"]) body.fmb-matte-system .mast .product-wordmark{
+    background-image:url(../images/fmb-news-masthead-dark.webp)!important;
+  }
+}

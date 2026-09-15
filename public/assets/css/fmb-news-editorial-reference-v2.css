@@ -69,19 +69,15 @@
 .fmb-ref.fmb-network-landing .fmb-editorial-wordmark{
   display:block;
   color:var(--fmb-theme-ink,var(--fmb-ink));
-  /* Matched to the FMB NEWS. logo: a heavy, condensed, high-contrast Didone.
-     Rendered side by side against the supplied lockup, Newsreader is too light
-     and too wide, and Bodoni Moda -- though a Didone -- is far wider still and
-     keeps its thins hairline-fine. Playfair at 900 carries the same weight,
-     contrast and proportion, so the masthead and the logo read as one brand.
+  /* These declarations no longer paint anything. The masthead is the
+     newsroom's own lockup -- see the HOME MASTHEAD block at the end of this
+     file -- and this span is clipped to 1x1 there, kept only as the accessible
+     name and as what the masthead verifiers read.
 
-     The headline face stays Newsreader: Playfair's contrast is right at 88px
-     and wrong at the 20px of a story row, which is the failure Bodoni had.
-
-     -.02em, not the -.055em this rule used to carry. That tracking existed to
-     close the gaps Bodoni's hairlines opened, and at 88px it collided the
-     letters -- the M crashed into the F and the W cut into the E. */
-  font-family:var(--fmb-masthead-serif,"Playfair Display","Newsreader",Georgia,serif);
+     Left in place rather than deleted because the lockup can be swapped back
+     for live type by removing that one block, and this is the setting it would
+     return to. */
+  font-family:var(--fmb-masthead-serif,"Newsreader",Georgia,serif);
   font-size:clamp(48px,6.1vw,92px);
   line-height:.9;
   font-weight:900;
@@ -618,3 +614,52 @@ html[data-fmb-theme="dark"]:root body.fmb-ref.fmb-network-landing{
    route -- a first attempt at the reading measure was written here and silently
    did nothing. It lives in fmb-news-product-identity.css, which loads on every
    page. */
+
+/* ============================================================================
+   HOME MASTHEAD — the newsroom's own lockup
+   ============================================================================
+   The masthead was live type set to imitate the FMB NEWS. logo. The newsroom
+   supplied the artwork in both polarities -- ink-on-transparent and
+   white-on-transparent -- so the imitation is no longer needed: the real
+   lockup is used, and it carries its own red rule and FILIPINO MEDIA BULLETIN
+   line, so the separate subtitle element would duplicate them.
+
+   Both files are transparent PNGs re-encoded to WebP at 1400px, which is a
+   little over 2x for the 660px the masthead occupies. The URL pill was cropped
+   off: inside the site it links to, "www.francinemariebautista.com/news" is
+   telling the reader where they already are.
+
+   Polarity follows the appearance system rather than being baked in, so Dark
+   gets the white artwork instead of ink that would vanish on black.
+
+   The wordmark text stays in the DOM, visually hidden. It is the accessible
+   name a screen reader announces, and removing it would also quietly delete
+   what the masthead verifiers read.
+   ============================================================================ */
+.fmb-ref.fmb-network-landing .publication-lockup{
+  display:block!important;
+  position:relative!important;
+  width:min(660px,52vw)!important;
+  aspect-ratio:1400/347!important;
+  margin:0 auto!important;
+  background:url(../images/fmb-news-masthead-light.webp) center/contain no-repeat!important;
+  text-decoration:none!important;
+}
+.fmb-ref.fmb-network-landing .publication-lockup .fmb-editorial-wordmark{
+  position:absolute!important;
+  width:1px!important;height:1px!important;
+  margin:0!important;padding:0!important;
+  overflow:hidden!important;
+  clip-path:inset(50%)!important;
+  white-space:nowrap!important;
+}
+.fmb-ref.fmb-network-landing .fmb-editorial-subtitle{display:none!important}
+
+html:root[data-fmb-theme="dark"] .fmb-ref.fmb-network-landing .publication-lockup{
+  background-image:url(../images/fmb-news-masthead-dark.webp)!important;
+}
+@media (prefers-color-scheme:dark){
+  html:root:not([data-fmb-theme="light"]) .fmb-ref.fmb-network-landing .publication-lockup{
+    background-image:url(../images/fmb-news-masthead-dark.webp)!important;
+  }
+}

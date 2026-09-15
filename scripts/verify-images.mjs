@@ -65,6 +65,30 @@ if (!fallback.includes('<svg') || !fallback.includes('FMB News editorial visual'
   throw new Error('Image hard-fix regression: fallback visual is invalid');
 }
 
+// The masthead is the newsroom's supplied lockup, drawn as a CSS background on
+// a span whose text is clipped to 1x1 for assistive tech. That is the right
+// shape for accessibility and the wrong shape for failure: if either artwork
+// file goes missing, the background simply does not paint and the masthead
+// renders EMPTY -- no broken-image icon, no fallback text, nothing. Every page
+// on the site would ship without a masthead and no existing check would notice,
+// because the HTML and the CSS would both still be perfectly valid.
+//
+// Both polarities are required: the ink lockup for Light and the white one for
+// Dark. Shipping only one means the masthead disappears in the other
+// appearance, which is the same silent failure in half the cases.
+for (const [polarity, file] of [['Light', 'fmb-news-masthead-light.webp'], ['Dark', 'fmb-news-masthead-dark.webp']]) {
+  const asset = resolve('dist', 'news', 'assets', 'images', file);
+  let info;
+  try {
+    info = await stat(asset);
+  } catch {
+    throw new Error(`Masthead regression: the ${polarity} masthead lockup is missing from the build (${file}). The masthead renders empty without it.`);
+  }
+  if (info.size < 8_000) {
+    throw new Error(`Masthead regression: the ${polarity} masthead lockup is ${info.size} bytes, which is not the artwork (${file}).`);
+  }
+}
+
 const isArticle=html=>html.includes('class="article-grid"')||/property=["']og:type["'][^>]*content=["']article["']/i.test(html)||/content=["']article["'][^>]*property=["']og:type["']/i.test(html)||/["']@type["']\s*:\s*["'](?:NewsArticle|Article)["']/i.test(html);
 const hasArticleImage=html=>/class=["'][^"']*(?:article-figure|cms-article-image|explainer-article-image|article-hero-image|brief-hero)[^"']*["'][\s\S]*?<img\s+[^>]*src=["'][^"']+/i.test(html)||/<article\b[\s\S]*?<img\s+[^>]*src=["'][^"']+/i.test(html);
 
