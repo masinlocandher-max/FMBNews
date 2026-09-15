@@ -1,7 +1,7 @@
 (()=>{
 'use strict';
 
-const EDITION_ID='fmb-current-events-mix-v2';
+const EDITION_ID='fmb-current-events-mix-v3';
 const STORAGE_KEY='fmbReadBetweenHeadlinesV1';
 const RUN_KEY='fmbReadBetweenHeadlinesActiveRunV1';
 const POINTS_PER_CORRECT=10;
@@ -94,6 +94,7 @@ let activeQuestions=[];
 let index=0,score=0,correctCount=0,locked=false,answered=[];
 let activeRun=false,startedAt=0,finishing=false;
 let questionDeadline=0,questionTimerId=null,pendingForfeitResult=null;
+let selectedAnswerValue=null,selectedAnswerControl=null;
 
 function persistProfile(){writeJSON(STORAGE_KEY,profile);}
 function readRun(){return readJSON(RUN_KEY,null);}
@@ -147,9 +148,27 @@ function saveActiveRun(status='active'){
   persistRun({editionId:EDITION_ID,status,startedAt,updatedAt:Date.now(),questionIndex:index,score,correctCount,questionDeadline});
 }
 
+function clearSelection(){
+  selectedAnswerValue=null;selectedAnswerControl=null;
+  answerArea.querySelectorAll('.rbt-option').forEach((button)=>{
+    button.removeAttribute('data-selected');button.setAttribute('aria-pressed','false');
+  });
+}
+
+function selectOption(value,button){
+  if(locked||!activeRun)return;
+  clearSelection();
+  selectedAnswerValue=value;selectedAnswerControl=button;
+  button.dataset.selected='true';button.setAttribute('aria-pressed','true');
+  submitButton.disabled=false;
+  feedback.textContent='Answer selected. Lock it in before time runs out.';feedback.dataset.state='neutral';
+}
+
 function renderQuestion(){
   const q=activeQuestions[index];
-  locked=false;
+  locked=false;selectedAnswerValue=null;selectedAnswerControl=null;
+  root.classList.remove('rbt-answer-locked','rbt-answer-resolved');
+  root.classList.add('rbt-question-entering');setTimeout(()=>root.classList.remove('rbt-question-entering'),460);
   questionNo.textContent=`Question ${index+1} of ${activeQuestions.length}`;
   categoryLabel.textContent=q.category;
   typeLabel.textContent=typeName(q.type);
@@ -158,18 +177,19 @@ function renderQuestion(){
   lifetimeEl.textContent=profile.lifetimePoints.toLocaleString('en-PH');
   progressFill.style.width=`${(index/activeQuestions.length)*100}%`;
   feedback.textContent='';feedback.dataset.state='';answerArea.innerHTML='';
-  submitButton.hidden=q.type!=='identification';submitButton.disabled=false;skipButton.disabled=false;
+  submitButton.hidden=false;submitButton.textContent='Lock Answer';submitButton.disabled=q.type!=='identification';skipButton.disabled=false;
 
   if(q.type==='identification'){
     const input=document.createElement('input');
     input.className='rbt-identification';input.type='text';input.autocomplete='off';input.spellcheck=false;input.placeholder='Type your answer';input.setAttribute('aria-label','Your answer');
-    input.addEventListener('keydown',(event)=>{if(event.key==='Enter')submitIdentification();});
-    answerArea.append(input);setTimeout(()=>input.focus(),0);
+    input.addEventListener('input',()=>{submitButton.disabled=!input.value.trim();});
+    input.addEventListener('keydown',(event)=>{if(event.key==='Enter'&&input.value.trim()){event.preventDefault();lockCurrentAnswer();}});
+    answerArea.append(input);setTimeout(()=>input.focus(),0);submitButton.disabled=true;
   }else{
     const group=document.createElement('div');group.className='rbt-options';
     shuffle(q.options).forEach((option)=>{
-      const button=document.createElement('button');button.type='button';button.className='rbt-option';button.textContent=option;
-      button.addEventListener('click',()=>grade(option,button));group.append(button);
+      const button=document.createElement('button');button.type='button';button.className='rbt-option';button.textContent=option;button.setAttribute('aria-pressed','false');
+      button.addEventListener('click',()=>selectOption(option,button));group.append(button);
     });
     answerArea.append(group);
   }
@@ -183,45 +203,62 @@ function disableQuestionControls(){
   answerArea.querySelectorAll('button,input').forEach((el)=>{el.disabled=true;});
 }
 
-function grade(value,control){
-  if(locked||!activeRun)return;
+function resolveAnswer(value,control){
+  if(!activeRun)return;
   const q=activeQuestions[index];
-  locked=true;stopQuestionTimer();
   const isCorrect=validAnswers(q).includes(normalize(value));
+  root.classList.remove('rbt-answer-locked');root.classList.add('rbt-answer-resolved');
   if(isCorrect){
     score+=POINTS_PER_CORRECT;correctCount++;
     feedback.textContent=`Correct. +${POINTS_PER_CORRECT} points.`;feedback.dataset.state='correct';
     if(control)control.dataset.chosen='correct';
   }else{
-    feedback.textContent='Not this one. The correct answer will not be revealed.';feedback.dataset.state='wrong';
+    feedback.textContent='Not this one. The correct answer stays hidden.';feedback.dataset.state='wrong';
     if(control)control.dataset.chosen='wrong';
   }
   answered.push({id:q.id,correct:isCorrect});
-  scoreEl.textContent=score.toLocaleString('en-PH');
-  disableQuestionControls();saveActiveRun();setTimeout(nextQuestion,700);
+  scoreEl.textContent=score.toLocaleString('en-PH');saveActiveRun();setTimeout(nextQuestion,900);
 }
 
-function submitIdentification(){
+function commitAnswer(value,control){
   if(locked||!activeRun)return;
-  const input=answerArea.querySelector('input');if(!input)return;
-  if(!input.value.trim()){feedback.textContent='Enter an answer first, or skip this question.';feedback.dataset.state='neutral';input.focus();return;}
-  grade(input.value,input);
+  locked=true;stopQuestionTimer();disableQuestionControls();
+  root.classList.add('rbt-answer-locked');
+  if(control)control.dataset.chosen='locked';
+  feedback.textContent='Answer locked.';feedback.dataset.state='neutral';
+  setTimeout(()=>resolveAnswer(value,control),430);
+}
+
+function lockCurrentAnswer(){
+  if(locked||!activeRun)return;
+  const q=activeQuestions[index];
+  if(q.type==='identification'){
+    const input=answerArea.querySelector('input');
+    if(!input||!input.value.trim()){
+      feedback.textContent='Enter an answer first, or skip this question.';feedback.dataset.state='neutral';input?.focus();return;
+    }
+    commitAnswer(input.value,input);return;
+  }
+  if(selectedAnswerValue===null||!selectedAnswerControl){
+    feedback.textContent='Choose an answer before locking it in.';feedback.dataset.state='neutral';return;
+  }
+  commitAnswer(selectedAnswerValue,selectedAnswerControl);
 }
 
 function skipQuestion(){
   if(locked||!activeRun)return;
-  locked=true;stopQuestionTimer();
+  locked=true;stopQuestionTimer();root.classList.remove('rbt-answer-locked');
   answered.push({id:activeQuestions[index].id,correct:false,skipped:true});
   feedback.textContent='Skipped. 0 points. The answer stays hidden.';feedback.dataset.state='neutral';
-  disableQuestionControls();saveActiveRun();setTimeout(nextQuestion,550);
+  disableQuestionControls();saveActiveRun();setTimeout(nextQuestion,600);
 }
 
 function timeoutQuestion(){
   if(locked||!activeRun)return;
-  locked=true;
+  locked=true;root.classList.add('rbt-time-expired');
   answered.push({id:activeQuestions[index].id,correct:false,timedOut:true});
   feedback.textContent='Time. 0 points. The answer stays hidden.';feedback.dataset.state='wrong';
-  disableQuestionControls();saveActiveRun();setTimeout(nextQuestion,650);
+  disableQuestionControls();saveActiveRun();setTimeout(()=>{root.classList.remove('rbt-time-expired');nextQuestion();},760);
 }
 
 function nextQuestion(){
@@ -306,7 +343,7 @@ emailInput.value=profile.email;
 lifetimeEl.textContent=profile.lifetimePoints.toLocaleString('en-PH');
 if(timerEl)timerEl.textContent=formatTime(QUESTION_SECONDS);
 startButton.addEventListener('click',startGame);
-submitButton.addEventListener('click',submitIdentification);
+submitButton.addEventListener('click',lockCurrentAnswer);
 skipButton.addEventListener('click',skipQuestion);
 
 document.addEventListener('click',(event)=>{
