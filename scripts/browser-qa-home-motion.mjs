@@ -16,7 +16,7 @@ await page.locator('.fmb-app-top-ticker .fmb-approved-hero-ticker-track').waitFo
 assert.equal(await page.locator('.fmb-mobile-shell-head [data-fmb-shell-account]').count(),0,'Home shell must not build the retired account control.');
 const inlinePresentation=await page.evaluate(()=>({
   head:document.querySelector('.fmb-mobile-shell-head')?.getAttribute('style')||'',
-  active:document.querySelector('.fmb-mobile-product-rail a[aria-current="page"]')?.getAttribute('style')||'',
+  active:document.querySelector('.fmb-editorial-mobile-dock a[aria-current="page"]')?.getAttribute('style')||'',
   ticker:document.querySelector('.fmb-app-top-ticker .fmb-approved-hero-ticker-track')?.getAttribute('style')||''
 }));
 for(const[key,value]of Object.entries(inlinePresentation))assert.equal(value,'',`${key} must not carry inline presentation styles: ${value}`);
@@ -70,7 +70,7 @@ const movedX=await page.locator('.fmb-app-top-ticker .fmb-approved-hero-ticker-t
 });
 assert(Math.abs(movedX-geometry.x)>=2,`Ticker is visually static (${geometry.x.toFixed(2)} → ${movedX.toFixed(2)})`);
 
-const menu=page.locator('[data-fmb-shell-menu]');
+const menu=page.locator('[data-fmb-dock-menu]');
 await menu.focus();await menu.click();
 const dialog=page.locator('.fmb-app-action-panel[role="dialog"]');
 await dialog.waitFor({state:'visible'});

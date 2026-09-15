@@ -13,6 +13,9 @@ const DESKS = [
   ['Home', '/news/'], ['World', '/news/world/'], ['Sports', '/news/sports/'],
   ['Briefing', '/news/fmb-brief/'], ['Fact Check', '/news/fact-check/'],
 ];
+// The desks the bottom dock carries as items. Fact Check is reached from the
+// dock's Menu instead, so the dock marks no current section on that route.
+const DOCK_DESKS = new Set(['Home', 'World', 'Sports', 'Briefing']);
 
 // Retired plum/violet. Deliberately excludes the Fact Check verdict palette:
 // VERIFIED FACT blue (#1677C8) would trip any blue-ish test, and its colour is
@@ -70,11 +73,29 @@ for (const [name, url] of DESKS) {
           }
         }
       }
-      // The visible active rail label is the inner span, not the anchor.
-      const activeSpan = document.querySelector('.fmb-mobile-product-rail a[aria-current="page"]>span')
-        || document.querySelector('.fmb-mobile-product-rail a[aria-current="page"]');
-      const rail = document.querySelector('.fmb-mobile-product-rail');
+      // The current section used to be shown in .fmb-mobile-product-rail. That
+      // rail duplicated four of the dock's five items and is no longer built, so
+      // the dock's active item is what carries it now, and what is measured.
+      //
+      // The old check compared the label's luminance against two fixed
+      // thresholds -- pale in Light, dark in Dark. That encoded an assumption
+      // about hue rather than the property that matters: FMB red reads correctly
+      // on warm paper and would have tripped the Dark threshold on sight. So it
+      // is a contrast ratio against the label's own flattened ground instead,
+      // which is hue-agnostic and is the thing a reader actually experiences.
+      const activeSpan = document.querySelector('.fmb-editorial-mobile-dock a[aria-current="page"]>span')
+        || document.querySelector('.fmb-editorial-mobile-dock a[aria-current="page"]');
       const lum = (v) => { const p = String(v).match(/[\d.]+/g); if (!p) return null; const c = x => { const n = Number(x) / 255; return n <= .03928 ? n / 12.92 : ((n + .055) / 1.055) ** 2.4; }; return .2126 * c(p[0]) + .7152 * c(p[1]) + .0722 * c(p[2]); };
+      const flattenedRatio = (el) => {
+        if (!el) return null;
+        const canvas = document.createElement('canvas'); canvas.width = canvas.height = 1;
+        const ctx = canvas.getContext('2d', { willReadFrequently: true });
+        const flat = (layers) => { ctx.clearRect(0, 0, 1, 1); ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, 1, 1); for (const l of layers) { ctx.fillStyle = l; ctx.fillRect(0, 0, 1, 1); } const d = ctx.getImageData(0, 0, 1, 1).data; return `rgb(${d[0]},${d[1]},${d[2]})`; };
+        const layers = []; let n = el;
+        while (n && n.nodeType === 1) { layers.unshift(getComputedStyle(n).backgroundColor); n = n.parentElement; }
+        const bg = lum(flat(layers)), fg = lum(flat([...layers, getComputedStyle(el).color]));
+        return (Math.max(fg, bg) + 0.05) / (Math.min(fg, bg) + 0.05);
+      };
       let hero = null, size = 0;
       for (const h of document.querySelectorAll('h1,h2')) {
         const fs = parseFloat(getComputedStyle(h).fontSize) || 0;
@@ -82,8 +103,10 @@ for (const [name, url] of DESKS) {
       }
       return {
         retired: [...new Set(seen)],
-        railActiveLum: activeSpan ? lum(getComputedStyle(activeSpan).color) : null,
-        railLum: rail ? lum(getComputedStyle(rail).backgroundColor) : null,
+        dockActiveLabel: activeSpan ? (activeSpan.textContent || '').trim() : null,
+        dockActiveRatio: flattenedRatio(activeSpan),
+        dockPresent: Boolean(document.querySelector('.fmb-editorial-mobile-dock')),
+        retiredNav: document.querySelectorAll('.fmb-mobile-product-rail,.fmb-approved-bottom-nav,[data-fmb-shell-menu]').length,
         heroFont: hero ? getComputedStyle(hero).fontFamily.split(',')[0].replace(/["']/g, '') : null,
         // Whether the declared display face actually ARRIVED. A name check on
         // the CSS stack reads identically whether the webfont loaded or 404'd,
@@ -98,13 +121,20 @@ for (const [name, url] of DESKS) {
     if (result.retired.length) failures.push(`${tag}: retired identity chrome -> ${result.retired.slice(0, 3).join(' | ')}`);
     if (result.overflow > 0) failures.push(`${tag}: horizontal overflow ${result.overflow}px`);
 
-    // Light rail: the active label must be dark ink on the warm rail, never white.
-    if (w < 700 && result.railActiveLum !== null && result.railLum !== null) {
-      if (theme === 'light' && result.railActiveLum > 0.35) {
-        failures.push(`${tag}: Light rail active label too pale (${result.railActiveLum.toFixed(3)}) on a rail at ${result.railLum.toFixed(3)}`);
-      }
-      if (theme === 'dark' && result.railActiveLum < 0.4) {
-        failures.push(`${tag}: Dark rail active label too dark (${result.railActiveLum.toFixed(3)})`);
+    // The dock's current-section label has to be readable against its own
+    // ground in both appearances. Asserted as a ratio so it holds for any ink
+    // the design chooses, and asserted to have been measurable at all -- a null
+    // here means the selector found nothing and the check silently passed.
+    if (w < 700) {
+      if (!result.dockPresent) failures.push(`${tag}: no bottom dock -- the single primary mobile navigation is missing`);
+      if (result.retiredNav) failures.push(`${tag}: ${result.retiredNav} retired navigation element(s) restored (section rail / retired dock / app-bar hamburger)`);
+      // Fact Check is a desk but not a dock item -- it lives in the Menu -- so
+      // the dock correctly marks nothing current there. Every desk the dock does
+      // carry must mark itself, or the measurement below would be skipped.
+      if (DOCK_DESKS.has(name) && result.dockActiveRatio === null) {
+        failures.push(`${tag}: the dock marks no current section, so its readability could not be measured`);
+      } else if (result.dockActiveRatio !== null && result.dockActiveRatio < 4.5) {
+        failures.push(`${tag}: dock current-section label "${result.dockActiveLabel}" measures ${result.dockActiveRatio.toFixed(2)}:1 against its own ground`);
       }
     }
     // One publication: same paper, same ink direction.
@@ -139,4 +169,4 @@ await browser.close();
 if (failures.length) {
   throw new Error(`Desk convergence failures (${failures.length}):\n  ${failures.join('\n  ')}`);
 }
-console.log(`Desk convergence browser QA passed: Home, World, Sports, Briefing and Fact Check across 390/430/1440 in both appearances -- no retired plum/violet chrome, Light rail active labels readable on warm paper, shared paper and ink, editorial display type on every desk title, no overflow. Fact Check verdict colours preserved.`);
+console.log(`Desk convergence browser QA passed: Home, World, Sports, Briefing and Fact Check across 390/430/1440 in both appearances -- no retired plum/violet chrome, one primary navigation per desk with a readable current-section label in both appearances, shared paper and ink, editorial display type on every desk title, no overflow. Fact Check verdict colours preserved.`);

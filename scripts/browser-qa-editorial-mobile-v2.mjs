@@ -7,37 +7,97 @@ const context=await browser.newContext({...devices['iPhone 13'],serviceWorkers:'
 const page=await context.newPage();
 await page.route('https://**/*',route=>route.abort());
 
-const expectedTop=['Home','World','Sports','Briefing','Fact Check'];
+// ---------------------------------------------------------------------------
+// One primary mobile navigation
+// ---------------------------------------------------------------------------
+// This file used to assert a five-item text rail under the app bar as well as
+// the five-item dock. Both were real, and that was the problem: the rail
+// repeated Home / World / Sports / Briefing -- four of the dock's five items --
+// on every mobile page, and the app bar's hamburger opened the same element as
+// the dock's Menu button, the same forty links. A phone reader was offered the
+// same destinations three times.
+//
+// The old assertions could not catch that, because each one looked at a single
+// control in isolation: the rail carried the right five labels, the dock carried
+// the right five labels, both passed. Duplication is a property of the page as a
+// whole, so it is now asserted as one: the set of navigations is enumerated and
+// pinned, the app bar's controls are enumerated and pinned, and the Menu panel
+// is required to have exactly one opener. Those hold whatever any single control
+// is labelled, and they fail if a second navigation returns under any name.
 const expectedDock=['Home','World','Sports','Briefing','Menu'];
+// What the app bar is allowed to contain, by accessible name, in order.
+const expectedAppBar=['FMB News — Filipino Media Bulletin','Search FMB News'];
+// Retired navigations. Each was shipped at some point and each must stay gone.
+const RETIRED_NAV='.fmb-mobile-product-rail,.fmb-approved-bottom-nav,[data-fmb-shell-menu]';
 
-async function open(path,active){
+async function open(path,dockActive){
   const response=await page.goto(`${base}${path}`,{waitUntil:'domcontentloaded'});
   assert(response?.ok(),`${path} returned ${response?.status()}`);
   await page.locator('.fmb-mobile-app-shell').waitFor({state:'visible'});
   await page.locator('.fmb-editorial-mobile-dock').waitFor({state:'visible'});
 
-  const state=await page.evaluate(()=>({
-    overflow:document.documentElement.scrollWidth-innerWidth,
-    shell:getComputedStyle(document.querySelector('.fmb-mobile-app-shell')).position,
-    brand:(document.querySelector('.fmb-mobile-shell-copy strong')?.textContent||'').trim(),
-    top:[...document.querySelectorAll('.fmb-mobile-product-rail>a')].map(a=>(a.textContent||'').trim()),
-    dock:[...document.querySelectorAll('.fmb-editorial-mobile-dock>*')].map(a=>(a.textContent||'').trim()),
-    active:(document.querySelector('.fmb-mobile-product-rail a[aria-current="page"]')?.textContent||'').trim(),
-    visibleTopIcons:[...document.querySelectorAll('.fmb-mobile-product-rail svg')].filter(el=>getComputedStyle(el).display!=='none').length,
-    dockPosition:getComputedStyle(document.querySelector('.fmb-editorial-mobile-dock')).position,
-    dockBottom:Math.abs(innerHeight-document.querySelector('.fmb-editorial-mobile-dock').getBoundingClientRect().bottom),
-  }));
+  const state=await page.evaluate(()=>{
+    const dock=document.querySelector('.fmb-editorial-mobile-dock');
+    const shown=el=>{
+      let n=el;
+      while(n&&n.nodeType===1){const s=getComputedStyle(n);if(s.display==='none'||s.visibility==='hidden')return false;n=n.parentElement}
+      return el.getBoundingClientRect().height>0;
+    };
+    // Every navigation a reader can actually see and use, by aria-label. A
+    // second primary navigation under any class name shows up here.
+    const navs=[...document.querySelectorAll('nav')].filter(shown)
+      .filter(n=>[...n.querySelectorAll('a[href^="/news/"],button')].length>=3)
+      .map(n=>(n.getAttribute('aria-label')||n.className||'unlabelled nav').trim());
+    return {
+      overflow:document.documentElement.scrollWidth-innerWidth,
+      shell:getComputedStyle(document.querySelector('.fmb-mobile-app-shell')).position,
+      brand:(document.querySelector('.fmb-mobile-shell-copy strong')?.textContent||'').trim(),
+      navs,
+      appBar:[...document.querySelectorAll('.fmb-mobile-shell-head a,.fmb-mobile-shell-head button')]
+        .filter(shown)
+        .map(el=>(el.getAttribute('aria-label')||el.textContent||'').trim()),
+      dock:[...dock.children].map(el=>(el.textContent||'').trim()),
+      dockActive:(dock.querySelector('[aria-current="page"]')?.textContent||'').trim(),
+      // The dock is the only navigation now, so it has to be a real navigation:
+      // exposed to assistive technology, and hittable.
+      dockHidden:dock.hidden||dock.getAttribute('aria-hidden')==='true',
+      dockTargets:[...dock.children].map(el=>Math.round(el.getBoundingClientRect().height)),
+      dockPosition:getComputedStyle(dock).position,
+      dockBottom:Math.abs(innerHeight-dock.getBoundingClientRect().bottom),
+      menuOpeners:document.querySelectorAll('[data-fmb-dock-menu],[data-fmb-shell-menu]').length,
+    };
+  });
   assert(state.overflow<=1,`${path} has ${state.overflow}px horizontal overflow.`);
   assert.equal(state.shell,'sticky',`${path} mobile masthead must remain sticky.`);
   assert.equal(state.brand,'FMB NEWS.',`${path} mobile masthead must use FMB NEWS.`);
-  assert.deepEqual(state.top,expectedTop,`${path} top section rail drifted.`);
+
+  // The whole-page duplication assertion: one visible navigation, and it is the
+  // dock. A restored rail, a second dock, or a re-added hamburger fails here.
+  assert.deepEqual(state.navs,['FMB News quick navigation'],
+    `${path} must expose exactly one primary mobile navigation; found ${state.navs.length}: ${state.navs.join(' | ')}.`);
+  assert.deepEqual(state.appBar,expectedAppBar,
+    `${path} app bar must carry the wordmark and search and nothing else; found ${state.appBar.join(' | ')}.`);
+  assert.equal(state.menuOpeners,1,
+    `${path} must have exactly one control that opens the Menu panel; found ${state.menuOpeners}.`);
+  assert.equal(await page.locator(RETIRED_NAV).count(),0,
+    `${path} must not restore a retired navigation (section rail, retired dock, or app-bar hamburger).`);
+
   assert.deepEqual(state.dock,expectedDock,`${path} bottom dock drifted.`);
-  assert.equal(state.active,active,`${path} active top section should be ${active}.`);
-  assert.equal(state.visibleTopIcons,0,`${path} top section rail must be text-only.`);
+  assert.equal(state.dockActive,dockActive,
+    `${path} dock should mark ${dockActive?`"${dockActive}"`:'no item'} as the current page; it marked ${state.dockActive?`"${state.dockActive}"`:'none'}.`);
+  // Regression guard for a defect the rail used to mask: the dock was tagged
+  // hidden and aria-hidden="true" by the legacy-rail sweep and rendered anyway,
+  // because its display is !important. It drew correctly and was invisible to a
+  // screen reader. With the rail gone that left a phone reader no navigation at
+  // all, so presence in the accessibility tree is asserted, not just pixels.
+  assert.equal(state.dockHidden,false,
+    `${path} bottom dock is marked hidden/aria-hidden while still rendering — invisible to assistive technology.`);
+  for(const [i,height] of state.dockTargets.entries()){
+    assert(height>=44,`${path} dock item ${expectedDock[i]} is ${height}px tall; a touch target is at least 44px.`);
+  }
   assert.equal(state.dockPosition,'fixed',`${path} bottom dock must be fixed.`);
   assert(state.dockBottom<=2,`${path} bottom dock must stay flush to the viewport.`);
   assert.equal(await page.locator('.fmb-editorial-mobile-dock').count(),1,`${path} must build exactly one editorial dock.`);
-  assert.equal(await page.locator('.fmb-approved-bottom-nav').count(),0,`${path} must not restore the retired dock.`);
 }
 
 await open('/news/','Home');
@@ -71,17 +131,21 @@ const viewportHeight=page.viewportSize().height;
 assert(firstStory&&firstStory.y<viewportHeight,`Real journalism must start within the first screen (first story row at ${Math.round(firstStory?.y)}px of ${viewportHeight}px).`);
 assert((await page.locator('[data-fmb-greeting-line]').textContent()||'').trim().length>10,'Mobile lead headline is missing.');
 
-for(const [path,active] of [
+// Fact Check is the one route whose section is not a dock item -- it lives in
+// the Menu -- so the dock marks nothing current there. That is the honest
+// answer for a page the dock does not represent, and it is asserted as such
+// rather than left unchecked.
+for(const [path,dockActive] of [
   ['/news/world/','World'],
   ['/news/sports/','Sports'],
   ['/news/fmb-brief/','Briefing'],
-  ['/news/fact-check/','Fact Check'],
+  ['/news/fact-check/',''],
   ['/news/archive/','Home'],
   ['/news/explainer/','Home'],
   ['/news/about/','Home'],
   ['/news/horoscope/','Home'],
   ['/news/crossword/','Home'],
-])await open(path,active);
+])await open(path,dockActive);
 
 // Crossword intentionally owns a save-gate dialog. Validate the global Menu
 // from a clean Home route so the QA does not click through another modal.
@@ -117,7 +181,7 @@ const menuState=async appearance=>{
   await menuPage.route('https://**/*',route=>route.abort());
   await menuPage.addInitScript(mode=>{try{localStorage.setItem('fmbThemeModeV1',mode)}catch{}},appearance);
   await menuPage.goto(`${base}/news/world/`,{waitUntil:'domcontentloaded'});
-  await menuPage.locator('[data-fmb-shell-menu]').click();
+  await menuPage.locator('[data-fmb-dock-menu]').click();
   await menuPage.locator('.fmb-app-action-panel[role="dialog"]').waitFor({state:'visible'});
   const rows=await menuPage.evaluate(()=>{
     const canvas=document.createElement('canvas');canvas.width=canvas.height=1;
@@ -268,4 +332,4 @@ for(const [width,expected] of [[699,false],[700,true]]){
 
 await context.close();
 await browser.close();
-console.log('Editorial mobile browser QA passed: FMB NEWS. masthead, text section rail, real story hero, World/Sports/Entertainment rows, persistent five-item dock, broad route coverage, complete Menu navigation including the secondary/legal destinations, the desktop publication footer hidden below 700px across 16 routes at 320 and 430 in both appearances and present again at 700px, no desktop footer chrome on a phone, and article-end editorial matter preserved.');
+console.log('Editorial mobile browser QA passed: FMB NEWS. masthead over a wordmark-and-search app bar, exactly one primary mobile navigation (the five-item dock, exposed to assistive technology with 44px targets and no retired rail, retired dock or hamburger anywhere), one Menu opener, real story hero, World/Sports/Entertainment rows, broad route coverage, complete Menu navigation including the secondary/legal destinations, the desktop publication footer hidden below 700px across 16 routes at 320 and 430 in both appearances and present again at 700px, no desktop footer chrome on a phone, and article-end editorial matter preserved.');

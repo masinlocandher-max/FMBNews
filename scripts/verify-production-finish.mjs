@@ -17,7 +17,10 @@ for(const token of ["url.pathname === '/news'","url.pathname.startsWith('/news/'
 for(const route of ['www.francinemariebautista.com/news*','francinemariebautista.com/news*'])must(wrangler.includes(route),`Canonical news route is not owned by FMBNews: ${route}`);
 must(!wrangler.includes('/fmbnews'),'Legacy /fmbnews route must not be registered; FMBNews is public at /news only.');
 for(const token of ['fmbNewsPrefsV1','fmbNewsInterestV1','rankFeed','news_reader_profiles','news_push_subscriptions'])must(personalization.includes(token),`Personalization regression: missing ${token}`);
-for(const token of ['fmb-mobile-app-shell','fmb-mobile-product-rail','fmbSavedStoriesV1'])must(globalMobile.includes(token),`Global mobile runtime regression: missing ${token}`);
+// fmb-mobile-product-rail used to be in this list. The rail is no longer built
+// -- it duplicated four of the dock's five items on every phone page -- so the
+// dock is what the runtime must still produce.
+for(const token of ['fmb-mobile-app-shell','fmb-editorial-mobile-dock','fmbSavedStoriesV1'])must(globalMobile.includes(token),`Global mobile runtime regression: missing ${token}`);
 must(!globalMobile.includes('open-meteo.com'),'Weather must not be duplicated in the global mobile runtime');
 for(const token of ['open-meteo.com',"timeZone:'Asia/Manila'",'WEATHER_KEY'])must(homeMobile.includes(token),`Home mobile runtime regression: missing ${token}`);
 

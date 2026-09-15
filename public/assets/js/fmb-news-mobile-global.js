@@ -31,14 +31,14 @@
     return icons[key]||'';
   }
 
-  function productRail(active){
-    const items=[['news','/news/','Home'],['world','/news/world/','World'],['sports','/news/sports/','Sports'],['brief','/news/fmb-brief/','Briefing'],['fact','/news/fact-check/','Fact Check']];
-    return `<nav class="fmb-mobile-product-rail" aria-label="FMB News sections">${items.map(([key,href,label])=>`<a href="${href}" data-product="${key}"${key===active?' aria-current="page"':''}>${svg(key)}<span>${label}</span></a>`).join('')}</nav>`;
-  }
-
+  // productRail() used to build a second section strip under the app bar. It is
+  // gone: it repeated Home / World / Sports / Briefing, four of the dock's five
+  // items, on every mobile page. The dock below is the single primary
+  // navigation. The .fmb-mobile-product-rail rules still sitting in the mobile
+  // stylesheets no longer match anything.
   function editorialDock(active){
     const links=[['news','/news/','Home','home'],['world','/news/world/','World','world'],['sports','/news/sports/','Sports','sports'],['brief','/news/fmb-brief/','Briefing','brief']];
-    return `<nav class="fmb-editorial-mobile-dock" aria-label="FMB News quick navigation">${links.map(([key,href,label,icon])=>`<a href="${href}"${key===active?' aria-current="page"':''}>${svg(icon)}<span>${label}</span></a>`).join('')}<button type="button" data-fmb-dock-menu>${svg('menu')}<span>Menu</span></button></nav>`;
+    return `<nav class="fmb-editorial-mobile-dock" aria-label="FMB News quick navigation">${links.map(([key,href,label,icon])=>`<a href="${href}"${key===active?' aria-current="page"':''}>${svg(icon)}<span>${label}</span></a>`).join('')}<button type="button" data-fmb-dock-menu aria-haspopup="dialog" aria-expanded="false">${svg('menu')}<span>Menu</span></button></nav>`;
   }
 
   const focusableSelector='a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])';
@@ -53,8 +53,14 @@
     const close=()=>{
       if(!sheet.isConnected)return;
       sheet.remove();
-      if(opener instanceof HTMLElement&&opener.isConnected)opener.focus({preventScroll:true});
+      if(opener instanceof HTMLElement&&opener.isConnected){
+        if(opener.hasAttribute('aria-expanded'))opener.setAttribute('aria-expanded','false');
+        opener.focus({preventScroll:true});
+      }
     };
+    // The Menu button is the only route to the publication's full navigation on
+    // a phone, so it declares what it opens and whether it is open.
+    if(opener instanceof HTMLElement&&opener.hasAttribute('aria-expanded'))opener.setAttribute('aria-expanded','true');
     $('[data-close-sheet]',sheet).addEventListener('click',close);
     sheet.addEventListener('click',e=>{if(e.target===sheet)close()});
     sheet.addEventListener('keydown',e=>{
@@ -115,7 +121,15 @@
     const shell=document.createElement('div');
     shell.className=`fmb-mobile-app-shell${isHome?' is-home':''}`;
     const brand='<a class="fmb-mobile-shell-brand" href="/news/" aria-label="FMB News — Filipino Media Bulletin"><span class="fmb-mobile-shell-copy"><strong>FMB NEWS<span class="fmb-mobile-brand-dot">.</span></strong><small>FILIPINO MEDIA BULLETIN</small></span></a>';
-    shell.innerHTML=`<div class="fmb-mobile-shell-head"><div class="fmb-mobile-shell-actions fmb-mobile-shell-search"><a href="/news/search/" aria-label="Search FMB News">${svg('search')}</a></div>${brand}<button class="fmb-mobile-shell-menu" type="button" data-fmb-shell-menu aria-label="Open FMB News menu" aria-haspopup="dialog">${svg('menu')}</button></div>${productRail(product.key)}`;
+    // The app bar carries the wordmark and search, nothing else.
+    //
+    // It used to carry a hamburger as well, and a section rail underneath it.
+    // Both duplicated the dock: the hamburger opened the same panel as the
+    // dock's Menu -- literally the same element, same forty links -- and the
+    // rail repeated Home / World / Sports / Briefing, four of the dock's five
+    // items, on every mobile page. The dock is the single primary navigation
+    // now, so the duplicates are gone rather than restyled.
+    shell.innerHTML=`<div class="fmb-mobile-shell-head">${brand}<div class="fmb-mobile-shell-actions fmb-mobile-shell-search"><a href="/news/search/" aria-label="Search FMB News">${svg('search')}</a></div></div>`;
     document.body.prepend(shell);
     if(isHome){
       const ticker=$('.fmb-app-top-ticker');
@@ -125,7 +139,6 @@
       document.body.insertAdjacentHTML('beforeend',editorialDock(product.key));
       $('[data-fmb-dock-menu]')?.addEventListener('click',e=>openMore(e.currentTarget));
     }
-    $('[data-fmb-shell-menu]',shell)?.addEventListener('click',e=>openMore(e.currentTarget));
     return shell;
   }
 

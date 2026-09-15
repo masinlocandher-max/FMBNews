@@ -6,14 +6,9 @@
     /* The final visual system owns hero geometry in CSS. Keep JavaScript limited
        to behavior so runtime inline styles cannot override responsive layout. */
 
-    /* The shared runtime used to force a heavier selected-product tile inline.
-       Clear only those old presentation properties so the final minimal metallic CSS is authoritative. */
-    const active=document.querySelector('.fmb-mobile-product-rail a[aria-current="page"]');
-    if(active){
-      active.style.removeProperty('color');
-      active.style.removeProperty('background');
-      active.style.removeProperty('text-shadow');
-    }
+    /* This used to clear inline presentation the shared runtime forced onto the
+       selected item of .fmb-mobile-product-rail. That rail is no longer built,
+       so there is no inline presentation left to clear. */
   }
 
   if(path.startsWith('/news/crossword')){

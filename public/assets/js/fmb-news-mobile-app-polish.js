@@ -3,22 +3,37 @@
   const $=(q,s=document)=>s.querySelector(q),$$=(q,s=document)=>[...s.querySelectorAll(q)];
   document.documentElement.setAttribute('data-fmb-mobile-polish','true');
 
-  function dedupeProductRails(){
-    for(const nav of $$('.fmb-mobile-product-rail')){
-      const seen=new Set();
-      for(const link of $$('a[href]',nav)){
-        const href=(link.getAttribute('href')||'').replace(/[?#].*$/,'').replace(/\/+$/,'/')||'/';
-        const key=href==='/news/'?'news':href.startsWith('/news/world/')?'world':href.startsWith('/news/explainer/')?'explainer':href.startsWith('/news/fact-check/')?'fact':href.startsWith('/news/fmb-brief/')?'brief':null;
-        if(!key)continue;
-        if(seen.has(key)){link.remove();continue}
-        seen.add(key);
-      }
-    }
-  }
+  // dedupeProductRails() used to de-duplicate links inside
+  // .fmb-mobile-product-rail. That rail is no longer built -- the bottom dock is
+  // the single primary mobile navigation -- so the function matched nothing and
+  // has been removed rather than left as a no-op.
 
+  // Retired section strips from older markup get suppressed here, matched by
+  // shape: a <nav> carrying three or more of Home / World / Explainer / Brief.
+  //
+  // The approved dock matches that shape, and used to be caught by it. It had
+  // Home, World and Briefing, so every phone page shipped its primary navigation
+  // with hidden and aria-hidden="true" on it. That was invisible on screen only
+  // because .fmb-editorial-mobile-dock sets display with !important, which beats
+  // the user-agent [hidden] rule -- so the dock drew normally while being absent
+  // from the accessibility tree and from find-in-page. A screen-reader user had
+  // the top section rail to fall back on; now that the rail is gone, the dock is
+  // the only navigation there is, and suppressing it leaves none at all.
+  //
+  // So the approved navigation is exempt by class, and any dock a previous run
+  // already tagged is repaired rather than left marked.
+  const APPROVED=['fmb-editorial-mobile-dock','fmb-mobile-app-shell'];
   function hideLegacyProductRails(){
     for(const nav of $$('nav')){
-      if(nav.classList.contains('fmb-mobile-product-rail')||nav.closest('footer'))continue;
+      if(nav.closest('footer'))continue;
+      if(APPROVED.some(cls=>nav.classList.contains(cls)||nav.closest(`.${cls}`))){
+        if(nav.classList.contains('fmb-legacy-product-rail')){
+          nav.classList.remove('fmb-legacy-product-rail');
+          nav.hidden=false;
+          nav.removeAttribute('aria-hidden');
+        }
+        continue;
+      }
       const hrefs=$$('a[href]',nav).map(a=>a.getAttribute('href')||'');
       const hits=[
         hrefs.some(h=>/^\/news\/?(?:$|[?#])/.test(h)),
@@ -46,7 +61,7 @@
     if(button)button.setAttribute('aria-label','Set local weather');
   }
 
-  function clean(){dedupeProductRails();hideLegacyProductRails();cleanGlobalUtility()}
+  function clean(){hideLegacyProductRails();cleanGlobalUtility()}
   clean();
   addEventListener('DOMContentLoaded',clean,{once:true});
   addEventListener('load',clean,{once:true});

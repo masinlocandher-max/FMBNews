@@ -22,22 +22,27 @@ async function assertPersistentShell(page,path){
     const shell=document.querySelector('.fmb-mobile-app-shell');
     const search=document.querySelector('.fmb-mobile-shell-search');
     const brand=document.querySelector('.fmb-mobile-shell-brand');
-    const menu=document.querySelector('[data-fmb-shell-menu]');
     const dock=document.querySelector('.fmb-editorial-mobile-dock');
-    const sr=search?.getBoundingClientRect(),br=brand?.getBoundingClientRect(),mr=menu?.getBoundingClientRect(),dr=dock?.getBoundingClientRect();
+    const sr=search?.getBoundingClientRect(),br=brand?.getBoundingClientRect(),dr=dock?.getBoundingClientRect();
     return{
       shellPosition:shell?getComputedStyle(shell).position:'',shellTop:shell?getComputedStyle(shell).top:'',
-      searchCenter:sr?sr.left+sr.width/2:-999,brandCenter:br?br.left+br.width/2:999,menuCenter:mr?mr.left+mr.width/2:999,
-      viewport:innerWidth,railIcons:[...document.querySelectorAll('.fmb-mobile-product-rail svg')].filter(el=>getComputedStyle(el).display!=='none').length,
+      searchCenter:sr?sr.left+sr.width/2:-999,brandCenter:br?br.left+br.width/2:999,
+      viewport:innerWidth,
+      // The app bar used to carry a hamburger on the left and a section rail
+      // below. Both duplicated the dock, so both are gone; what is asserted now
+      // is that they have not come back and that the wordmark still centres
+      // without the left-hand control that used to balance it.
+      appBarControls:[...document.querySelectorAll('.fmb-mobile-shell-head a,.fmb-mobile-shell-head button')].length,
+      retiredNav:document.querySelectorAll('.fmb-mobile-product-rail,.fmb-approved-bottom-nav,[data-fmb-shell-menu]').length,
       dockPosition:dock?getComputedStyle(dock).position:'',dockBottom:dr?Math.abs(innerHeight-dr.bottom):999,dockItems:dock?.children.length||0
     };
   });
   assert.equal(geometry.shellPosition,'sticky',`${path} FMB shell must stay sticky.`);
   assert.equal(geometry.shellTop,'0px',`${path} FMB shell must pin to the top.`);
-  assert(geometry.menuCenter<geometry.viewport*.25,`${path} hamburger must stay on the left in the new editorial masthead.`);
+  assert.equal(geometry.appBarControls,2,`${path} app bar must carry exactly the wordmark and search; found ${geometry.appBarControls} controls.`);
+  assert.equal(geometry.retiredNav,0,`${path} must not restore the section rail, the retired dock or the app-bar hamburger.`);
   assert(Math.abs(geometry.brandCenter-geometry.viewport/2)<=12,`${path} FMB NEWS. wordmark is not centered.`);
   assert(geometry.searchCenter>geometry.viewport*.75,`${path} search must stay on the right.`);
-  assert.equal(geometry.railIcons,0,`${path} top editorial section rail must be text-only.`);
   assert.equal(geometry.dockPosition,'fixed',`${path} editorial bottom dock must be fixed.`);
   assert(geometry.dockBottom<=2,`${path} editorial bottom dock must touch the viewport bottom.`);
   assert.equal(geometry.dockItems,5,`${path} editorial bottom dock must expose Home, World, Sports, Briefing and Menu.`);
@@ -70,7 +75,7 @@ async function assertPersistentShell(page,path){
 
   const inlinePresentation=await page.evaluate(()=>({
     head:document.querySelector('.fmb-mobile-shell-head')?.getAttribute('style')||'',
-    active:document.querySelector('.fmb-mobile-product-rail a[aria-current="page"]')?.getAttribute('style')||'',
+    active:document.querySelector('.fmb-editorial-mobile-dock a[aria-current="page"]')?.getAttribute('style')||'',
     ticker:document.querySelector('.fmb-app-top-ticker .fmb-approved-hero-ticker-track')?.getAttribute('style')||''
   }));
   for(const[key,value]of Object.entries(inlinePresentation))assert.equal(value,'',`${key} must not carry inline presentation styles: ${value}`);
@@ -99,7 +104,7 @@ async function assertPersistentShell(page,path){
   assert(Math.abs(tickerGeometry.tickerBottom-tickerGeometry.shellBottom)<=1,'Home Headlines must end at the bottom of the sticky FMB shell.');
   assert(tickerGeometry.tickerBottom<=tickerGeometry.heroTop+1,`Home Headlines must not overlap the story hero (${(tickerGeometry.tickerBottom-tickerGeometry.heroTop).toFixed(1)}px overlap).`);
 
-  const menu=page.locator('[data-fmb-shell-menu]');
+  const menu=page.locator('[data-fmb-dock-menu]');
   await menu.focus();
   await menu.click();
   const dialog=page.locator('.fmb-app-action-panel[role="dialog"]');
@@ -137,4 +142,4 @@ async function assertPersistentShell(page,path){
 }
 
 await browser.close();
-console.log('Mobile stabilization browser QA passed: sticky FMB NEWS. shell, menu-left/search-right geometry, text section rail, persistent five-item editorial dock, PHT authority, accessible menu focus, and reduced motion.');
+console.log('Mobile stabilization browser QA passed: sticky FMB NEWS. shell, a wordmark-and-search app bar with no hamburger or section rail duplicating it, the persistent five-item editorial dock as the single primary navigation, PHT authority, accessible menu focus, and reduced motion.');

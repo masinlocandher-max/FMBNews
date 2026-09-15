@@ -51,15 +51,36 @@ if(!swSource.includes('__FMB_BUILD_VERSION__'))throw new Error('site/sw.js no lo
 await writeFile(swPath,swSource.replaceAll('__FMB_BUILD_VERSION__',mobileSystemVersion),'utf8');
 const mobileSystemCss=`<link rel="stylesheet" href="/assets/css/${MOBILE_SYSTEM_FILE}?v=${mobileSystemVersion}">`;
 
-const personalizationJs='<script src="/assets/js/fmb-news-mobile-personalization.js?v=20260901-personal-v2" defer></script>';
-const premiumJs='<script src="/assets/js/fmb-news-mobile-premium.js?v=20260901-premium-v2" defer></script>';
-const mobileHomeJs='<script src="/assets/js/fmb-news-mobile-home.js?v=20260902-approved-home-v4" defer></script>';
-const mobileLiveFeedJs='<script src="/assets/js/fmb-news-mobile-live-feed.js?v=20260902-live-feed-v2" defer></script>';
-const mobileGlobalJs='<script src="/assets/js/fmb-news-mobile-global.js?v=20260914-editorial-shell-v4" defer></script>';
-const mobileProductsJs='<script src="/assets/js/fmb-news-mobile-products.js?v=20260902-products-v3" defer></script>';
-const mobilePolishJs='<script src="/assets/js/fmb-news-mobile-app-polish.js?v=20260902-polish-v2" defer></script>';
-const mobileFinalTweaksJs='<script src="/assets/js/fmb-news-mobile-final-tweaks.js?v=20260902-final-tweaks-v1" defer></script>';
-const pwaJs='<script src="/assets/js/fmb-news-pwa.js?v=20260902-pwa-v1&build=menu-install-v2" defer></script>';
+// The mobile runtime scripts are content-versioned from the files themselves,
+// the way the CSS bundle above already is.
+//
+// They used to carry hand-maintained literals -- '20260914-editorial-shell-v4'
+// and friends. That is the same defect this file already documents for sw.js:
+// the token only changes when somebody remembers to change it, so an edit to
+// the shell runtime ships to the CDN under a URL returning readers have already
+// cached, and they keep running the old script. Removing the app-bar hamburger
+// and the duplicated section rail is exactly such an edit, and it would have
+// gone out invisible to every reader who had visited before.
+//
+// Hashing the file means the URL changes when, and only when, the file does.
+const jsDir=path.join(newsRoot,'assets','js');
+const jsVersions=new Map();
+async function versionedJs(name,extra=''){
+  const hash=createHash('sha256').update(await readFile(path.join(jsDir,name))).digest('hex').slice(0,10);
+  const version=`${hash}${extra}`;
+  jsVersions.set(`/assets/js/${name}`,version);
+  return `<script src="/assets/js/${name}?v=${version}" defer></script>`;
+}
+const personalizationJs=await versionedJs('fmb-news-mobile-personalization.js');
+const premiumJs=await versionedJs('fmb-news-mobile-premium.js');
+const mobileHomeJs=await versionedJs('fmb-news-mobile-home.js');
+const mobileLiveFeedJs=await versionedJs('fmb-news-mobile-live-feed.js');
+const mobileGlobalJs=await versionedJs('fmb-news-mobile-global.js');
+const mobileProductsJs=await versionedJs('fmb-news-mobile-products.js');
+const mobilePolishJs=await versionedJs('fmb-news-mobile-app-polish.js');
+const mobileFinalTweaksJs=await versionedJs('fmb-news-mobile-final-tweaks.js');
+// The PWA script keeps its extra build key; only the version half is hashed.
+const pwaJs=await versionedJs('fmb-news-pwa.js','&build=menu-install-v2');
 const pwaMeta='<link rel="manifest" href="/news/manifest.webmanifest"><link rel="apple-touch-icon" href="/news/assets/images/icon-transparent.png"><meta name="application-name" content="FMB News"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="FMB News"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0A0A0A">';
 
 function addBodyClass(html){if(/<body\b[^>]*class=["'][^"']*\bfmb-mobile-first\b/i.test(html))return html;if(/<body\b[^>]*class=["']/i.test(html))return html.replace(/<body\b([^>]*?)class=(["'])([^"']*)\2/i,(_m,b,q,c)=>`<body${b}class=${q}${c} fmb-mobile-first${q}`);return html.replace(/<body\b([^>]*)>/i,'<body$1 class="fmb-mobile-first">')}
@@ -96,15 +117,19 @@ async function apply(target){
   html=removeBottomNav(html);html=addBodyClass(html);html=normalizeProductNavigation(html);html=normalizeThemeColor(html);
   html=useMobileSystemStylesheet(html);
   if(!html.includes('/news/manifest.webmanifest'))html=html.replace('</head>',`${pwaMeta}</head>`);else if(!html.includes('apple-touch-icon'))html=html.replace('</head>',`<link rel="apple-touch-icon" href="/news/assets/images/icon-transparent.png"></head>`);
-  html=upsertJs(html,'/assets/js/fmb-news-mobile-personalization.js',personalizationJs,'20260901-personal-v2');
-  html=upsertJs(html,'/assets/js/fmb-news-mobile-premium.js',premiumJs,'20260901-premium-v2');
-  html=upsertJs(html,'/assets/js/fmb-news-mobile-home.js',mobileHomeJs,'20260902-approved-home-v4');
-  html=upsertJs(html,'/assets/js/fmb-news-mobile-live-feed.js',mobileLiveFeedJs,'20260902-live-feed-v2');
-  html=upsertJs(html,'/assets/js/fmb-news-mobile-global.js',mobileGlobalJs,'20260914-editorial-shell-v4');
-  html=upsertJs(html,'/assets/js/fmb-news-mobile-products.js',mobileProductsJs,'20260902-products-v3');
-  html=upsertJs(html,'/assets/js/fmb-news-mobile-app-polish.js',mobilePolishJs,'20260902-polish-v2');
-  html=upsertJs(html,'/assets/js/fmb-news-mobile-final-tweaks.js',mobileFinalTweaksJs,'20260902-final-tweaks-v1');
-  html=upsertJs(html,'/assets/js/fmb-news-pwa.js',pwaJs,'20260902-pwa-v1&build=menu-install-v2');
+  // Each version comes from the hash computed above, so an existing tag is
+  // rewritten to the current file's URL and a stale one cannot survive a build.
+  for(const [pathName,asset] of [
+    ['/assets/js/fmb-news-mobile-personalization.js',personalizationJs],
+    ['/assets/js/fmb-news-mobile-premium.js',premiumJs],
+    ['/assets/js/fmb-news-mobile-home.js',mobileHomeJs],
+    ['/assets/js/fmb-news-mobile-live-feed.js',mobileLiveFeedJs],
+    ['/assets/js/fmb-news-mobile-global.js',mobileGlobalJs],
+    ['/assets/js/fmb-news-mobile-products.js',mobileProductsJs],
+    ['/assets/js/fmb-news-mobile-app-polish.js',mobilePolishJs],
+    ['/assets/js/fmb-news-mobile-final-tweaks.js',mobileFinalTweaksJs],
+    ['/assets/js/fmb-news-pwa.js',pwaJs],
+  ])html=upsertJs(html,pathName,asset,jsVersions.get(pathName));
   await writeFile(target,html,'utf8');
 }
 await apply(newsRoot);

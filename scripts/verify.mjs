@@ -47,9 +47,17 @@ for(const asset of ['dist/news/assets/images/mobile/fmb-mobile-hero.jpg','dist/n
   const info=await stat(resolve(asset));must(info.size>20_000,`${asset} is missing or incomplete`);
 }
 
-const mobileHardfix=await read('scripts/hardfix-mobile-first-site.mjs');
-const shellRuntimeVersion=(mobileHardfix.match(/fmb-news-mobile-global\.js\?v=([^"']+)/)||[])[1];
-must(shellRuntimeVersion,'The mobile pass no longer declares a version for the editorial shell runtime.');
+// The mobile runtime scripts are content-versioned by the build, so the version
+// is derived from the shipped file rather than scraped out of the build script.
+//
+// This used to read a literal out of scripts/hardfix-mobile-first-site.mjs. That
+// only ever proved the pages agreed with whatever string was hand-typed there --
+// including a stale one. Hashing the shipped file proves the URL readers request
+// corresponds to the bytes actually served, which is the property that keeps an
+// edited runtime from being cached away behind an unchanged URL.
+const { createHash }=await import('node:crypto');
+const hashOf=async(rel)=>createHash('sha256').update(await readFile(resolve(rel))).digest('hex').slice(0,10);
+const shellRuntimeVersion=await hashOf('dist/news/assets/js/fmb-news-mobile-global.js');
 
 const pages={
   news:await read('dist/news/archive/index.html'),world:await read('dist/news/world/index.html'),sports:await read('dist/news/sports/index.html'),explainer:await read('dist/news/explainer/index.html'),fact:await read('dist/news/fact-check/index.html'),brief:await read('dist/news/fmb-brief/index.html'),horoscope:await read('dist/news/horoscope/index.html'),crossword:await read('dist/news/crossword/index.html'),about:await read('dist/news/about/index.html')
@@ -62,7 +70,7 @@ for(const[name,html]of Object.entries(pages)){
   // now reads the version the build itself declares and requires every page to
   // carry exactly that, so the runtime cannot be edited without its cache key
   // moving, and the two cannot drift apart.
-  must(html.includes(`fmb-news-mobile-global.js?v=${shellRuntimeVersion}`),`${name}: approved editorial mobile shell runtime missing or not at the built version ${shellRuntimeVersion}`);
+  must(html.includes(`fmb-news-mobile-global.js?v=${shellRuntimeVersion}`),`${name}: approved editorial mobile shell runtime missing or not at the shipped file's content version ${shellRuntimeVersion}`);
   must(/\/news\/assets\/css\/fmb-news-theme\.css\?v=[0-9a-f]{10}\b/.test(html),`${name}: content-versioned appearance stylesheet missing`);
   must(/\/news\/assets\/js\/fmb-news-theme\.js\?v=[0-9a-f]{10}\b/.test(html),`${name}: content-versioned appearance runtime missing`);
   must(!html.includes('/news/news/assets/'),`${name}: double-scoped asset path remains`);
