@@ -712,3 +712,67 @@ body.fmb-fact-check-route :is(.fc-panel,.fc-card,.fc-legend){
     border-radius:0!important;
   }
 }
+
+/* ============================================================================
+   EDITORIAL DEPTH LAYER — DESKTOP DESKS (>=700px)
+   ============================================================================
+
+   The mobile desks were brought onto one editorial system; desktop had not
+   been touched, and it was the wider break of the two. Home rendered the
+   approved newspaper composition while every desk rendered a dark matte-glass
+   masthead over rounded white cards -- so opening FMB Worldwide from Home
+   changed the masthead, the wordmark, the typeface, the ground and the
+   navigation at once. The masthead is fixed at its source in
+   fmb-news-matte-system.css; what remains here is the furniture under it.
+   ============================================================================ */
+@media(min-width:700px){
+
+  /* The desk's standing promise line was a black pill with a 20px drop shadow
+     -- a button shape, holding text nobody can press, directly under the
+     standfirst. It carries the same weight as its mobile counterpart now: type
+     over a rule. */
+  html:root body.fmb-ref :is(.world-rule,.explainer-rule,.brief-rule){
+    display:block!important;
+    max-width:none!important;
+    margin:22px 0 0!important;
+    padding:10px 0 0!important;
+    border:0!important;
+    border-top:1px solid var(--fmb-theme-line,rgba(20,20,20,.16))!important;
+    border-radius:0!important;
+    background:none!important;
+    box-shadow:none!important;
+    color:var(--fmb-theme-ink-soft,#4B4850)!important;
+    font-size:11px!important;
+    font-weight:700!important;
+    letter-spacing:.14em!important;
+    text-transform:uppercase!important;
+  }
+
+  /* Desk story cards. 16px radii with 28px shadows, holding 14px-rounded
+     thumbnails -- the same floating-card system the mobile desks used, at
+     desktop scale. Print separates stories with rules and space. */
+  html:root body.fmb-ref :is(.country-card,.world-card,.desk-card,.edition-card){
+    border-radius:0!important;
+    box-shadow:none!important;
+    background:transparent!important;
+    border:0!important;
+    border-top:1px solid var(--fmb-theme-line,rgba(20,20,20,.14))!important;
+    padding:20px 0 24px!important;
+  }
+  html:root body.fmb-ref :is(.country-card,.world-card,.desk-card,.edition-card) img{
+    border-radius:0!important;
+    box-shadow:none!important;
+  }
+
+  /* The appearance toggle is a child of the masthead's centred flex shell, so
+     it landed directly under the wordmark, splitting the masthead in two. It
+     belongs at the edge of the row, not inside the lockup. */
+  html:root body.fmb-matte-system :is(.mast,.masthead)>.shell{position:relative!important}
+  html:root body.fmb-matte-system :is(.mast,.masthead)>.shell>.fmb-theme-toggle{
+    position:absolute!important;
+    right:0!important;
+    top:50%!important;
+    transform:translateY(-50%)!important;
+    margin:0!important;
+  }
+}
