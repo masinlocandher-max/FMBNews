@@ -1,29 +1,54 @@
 :root{
-  --choice-glass:rgba(255,255,255,.46);
-  --choice-glass-hover:rgba(255,255,255,.62);
-  --choice-glass-selected:rgba(255,255,255,.58);
+  --choice-glass:rgba(255,255,255,.44);
+  --choice-glass-hover:rgba(255,255,255,.60);
+  --choice-glass-selected:rgba(255,255,255,.56);
   --choice-edge:rgba(109,112,114,.34);
-  --choice-edge-bright:rgba(191,193,194,.78);
-  --choice-shadow:0 18px 42px rgba(10,10,10,.11);
+  --choice-edge-bright:rgba(191,193,194,.74);
+  --choice-shadow:0 18px 42px rgba(10,10,10,.10);
+  --question-glass:rgba(255,255,255,.48);
   --metal-red-1:#5b070c;
-  --metal-red-2:#a80e15;
-  --metal-red-3:#ef1b24;
-  --metal-red-4:#ff666c;
-  --metal-red-5:#7b090f;
+  --metal-red-2:#9f0d14;
+  --metal-red-3:#d71920;
+  --metal-red-4:#f04b52;
+  --metal-red-5:#73090e;
 }
 
 @media(prefers-color-scheme:dark){
   :root{
     --choice-glass:rgba(18,18,18,.34);
-    --choice-glass-hover:rgba(26,26,26,.50);
-    --choice-glass-selected:rgba(28,28,28,.54);
+    --choice-glass-hover:rgba(28,28,28,.50);
+    --choice-glass-selected:rgba(30,30,30,.54);
     --choice-edge:rgba(191,193,194,.24);
-    --choice-edge-bright:rgba(245,243,239,.58);
+    --choice-edge-bright:rgba(245,243,239,.52);
     --choice-shadow:0 20px 46px rgba(0,0,0,.42);
+    --question-glass:rgba(18,18,18,.40);
   }
 }
 
-/* Transparent frosted game choices with metallic-red hardware. */
+/* Rounded frosted question panel. No clipped or pointed geometry. */
+.rbt-question-chamber{
+  width:min(920px,95%)!important;
+  margin:0 auto!important;
+  padding:26px clamp(24px,4vw,48px)!important;
+  border:1px solid var(--choice-edge)!important;
+  border-radius:26px!important;
+  clip-path:none!important;
+  overflow:hidden;
+  background:
+    linear-gradient(118deg,rgba(255,255,255,.14),transparent 32%,transparent 68%,rgba(215,25,32,.045)),
+    var(--question-glass)!important;
+  -webkit-backdrop-filter:blur(22px) saturate(136%);
+  backdrop-filter:blur(22px) saturate(136%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.30),
+    inset 0 -1px 0 rgba(10,10,10,.10),
+    0 20px 46px rgba(0,0,0,.10)!important;
+}
+.rbt-question-chamber:before,.rbt-question-chamber:after{
+  display:none!important;
+}
+
+/* Rounded frosted answer panels with circular metallic-red letter markers. */
 .rbt-answer{position:relative}
 .rbt-options{
   position:relative;
@@ -36,11 +61,11 @@
   content:"";
   position:absolute;
   left:50%;
-  top:6px;
-  bottom:2px;
+  top:10px;
+  bottom:6px;
   width:1px;
   transform:translateX(-50%);
-  background:linear-gradient(180deg,transparent,rgba(215,25,32,.18) 25%,rgba(191,193,194,.24) 50%,rgba(215,25,32,.18) 75%,transparent);
+  background:linear-gradient(180deg,transparent,rgba(215,25,32,.16) 28%,rgba(191,193,194,.20) 50%,rgba(215,25,32,.16) 72%,transparent);
   pointer-events:none;
 }
 
@@ -53,17 +78,17 @@
   overflow:hidden;
   padding:15px 30px 15px 82px!important;
   border:1px solid var(--choice-edge)!important;
-  border-radius:0;
-  clip-path:polygon(18px 0,calc(100% - 18px) 0,100% 50%,calc(100% - 18px) 100%,18px 100%,0 50%);
+  border-radius:22px!important;
+  clip-path:none!important;
   color:var(--text);
   background:
-    linear-gradient(118deg,rgba(255,255,255,.16),transparent 27%,transparent 72%,rgba(255,255,255,.08)),
+    linear-gradient(118deg,rgba(255,255,255,.15),transparent 27%,transparent 72%,rgba(255,255,255,.07)),
     var(--choice-glass)!important;
   -webkit-backdrop-filter:blur(18px) saturate(138%);
   backdrop-filter:blur(18px) saturate(138%);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.34),
-    inset 0 -1px 0 rgba(10,10,10,.12),
+    inset 0 1px 0 rgba(255,255,255,.32),
+    inset 0 -1px 0 rgba(10,10,10,.10),
     var(--choice-shadow)!important;
   filter:none!important;
   font-size:15px!important;
@@ -76,23 +101,22 @@
   transition:transform .18s ease,border-color .18s ease,background .18s ease,box-shadow .18s ease;
 }
 
-/* Metallic red blade across the inner rail. */
 .rbt-option:after{
   content:"";
   position:absolute;
   z-index:-1;
-  left:67px;
-  right:18px;
-  top:9px;
-  bottom:9px;
-  border-left:1px solid rgba(215,25,32,.30);
+  left:68px;
+  right:20px;
+  top:11px;
+  bottom:11px;
+  border-left:1px solid rgba(215,25,32,.28);
+  border-radius:0 16px 16px 0;
   background:
-    linear-gradient(90deg,rgba(215,25,32,.08),transparent 18%),
-    linear-gradient(180deg,rgba(255,255,255,.08),transparent 36%);
+    linear-gradient(90deg,rgba(215,25,32,.07),transparent 18%),
+    linear-gradient(180deg,rgba(255,255,255,.07),transparent 36%);
   pointer-events:none;
 }
 
-/* A/B/C/D marker: polished metallic red, not a generic badge. */
 .rbt-option:before{
   content:attr(data-option-label)!important;
   position:absolute!important;
@@ -103,34 +127,34 @@
   display:grid!important;
   place-items:center!important;
   transform:translateY(-50%)!important;
-  clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)!important;
+  border-radius:50%!important;
+  clip-path:none!important;
   background:
-    linear-gradient(145deg,var(--metal-red-5) 0%,var(--metal-red-2) 28%,var(--metal-red-4) 49%,var(--metal-red-3) 54%,var(--metal-red-1) 100%)!important;
-  border:0!important;
+    linear-gradient(145deg,var(--metal-red-5) 0%,var(--metal-red-2) 30%,var(--metal-red-4) 48%,var(--metal-red-3) 54%,var(--metal-red-1) 100%)!important;
+  border:1px solid rgba(255,255,255,.25)!important;
   box-shadow:
-    0 0 0 1px rgba(255,255,255,.26),
-    inset 7px 5px 12px rgba(255,255,255,.13),
+    inset 7px 5px 12px rgba(255,255,255,.14),
     inset -7px -7px 14px rgba(56,0,4,.40),
-    0 8px 20px rgba(95,5,11,.28)!important;
+    0 8px 20px rgba(95,5,11,.26)!important;
   color:#fff!important;
   font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;
   font-size:12px!important;
   font-weight:800!important;
   line-height:1!important;
-  letter-spacing:.05em;
+  letter-spacing:.04em;
   transition:transform .18s ease,box-shadow .18s ease,filter .18s ease!important;
 }
 
 .rbt-option:hover,.rbt-option:focus-visible{
   outline:none;
   transform:translateY(-2px)!important;
-  border-color:rgba(215,25,32,.58)!important;
+  border-color:rgba(215,25,32,.56)!important;
   background:
-    linear-gradient(118deg,rgba(255,255,255,.22),transparent 29%,transparent 69%,rgba(239,27,36,.08)),
+    linear-gradient(118deg,rgba(255,255,255,.20),transparent 29%,transparent 69%,rgba(239,27,36,.07)),
     var(--choice-glass-hover)!important;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.40),
-    inset 0 -1px 0 rgba(215,25,32,.16),
+    inset 0 1px 0 rgba(255,255,255,.38),
+    inset 0 -1px 0 rgba(215,25,32,.15),
     0 18px 40px rgba(0,0,0,.13),
     0 0 24px rgba(215,25,32,.08)!important;
 }
@@ -138,137 +162,131 @@
   transform:translateY(-50%) scale(1.05)!important;
   filter:saturate(1.08) brightness(1.05);
   box-shadow:
-    0 0 0 1px rgba(255,255,255,.42),
     inset 7px 5px 12px rgba(255,255,255,.16),
     inset -7px -7px 14px rgba(56,0,4,.42),
-    0 0 24px rgba(215,25,32,.30)!important;
+    0 0 0 1px rgba(215,25,32,.22),
+    0 0 24px rgba(215,25,32,.28)!important;
 }
 
-/* Selected = armed. Glass remains transparent; the metal edge becomes more active. */
 .rbt-option[data-selected="true"]{
   transform:translateY(-2px) scale(1.004)!important;
-  border-color:rgba(239,27,36,.82)!important;
+  border-color:rgba(239,27,36,.80)!important;
   background:
-    linear-gradient(100deg,rgba(215,25,32,.10),rgba(255,255,255,.10) 42%,transparent 72%),
+    linear-gradient(100deg,rgba(215,25,32,.09),rgba(255,255,255,.09) 42%,transparent 72%),
     var(--choice-glass-selected)!important;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.42),
-    inset 0 -1px 0 rgba(215,25,32,.22),
+    inset 0 1px 0 rgba(255,255,255,.40),
+    inset 0 -1px 0 rgba(215,25,32,.20),
     0 18px 42px rgba(0,0,0,.15),
-    0 0 0 1px rgba(215,25,32,.12),
-    0 0 30px rgba(215,25,32,.14)!important;
+    0 0 0 1px rgba(215,25,32,.10),
+    0 0 28px rgba(215,25,32,.13)!important;
 }
 .rbt-option[data-selected="true"]:before{
   transform:translateY(-50%) scale(1.08)!important;
   filter:saturate(1.15) brightness(1.08);
   box-shadow:
-    0 0 0 1px rgba(255,255,255,.58),
     inset 7px 5px 12px rgba(255,255,255,.18),
     inset -7px -7px 14px rgba(56,0,4,.44),
-    0 0 30px rgba(239,27,36,.36)!important;
+    0 0 0 1px rgba(255,255,255,.42),
+    0 0 30px rgba(239,27,36,.34)!important;
 }
 .rbt-option[data-selected="true"]:after{
-  border-left-color:rgba(239,27,36,.64);
-  background:linear-gradient(90deg,rgba(215,25,32,.13),transparent 24%);
+  border-left-color:rgba(239,27,36,.58);
+  background:linear-gradient(90deg,rgba(215,25,32,.12),transparent 24%);
 }
 
-/* Locked = glass console with a metallic-red pulse, never a solid red slab. */
 .rbt-option[data-chosen="locked"]{
   color:var(--text)!important;
-  border-color:rgba(239,27,36,.95)!important;
+  border-color:rgba(239,27,36,.92)!important;
   background:
-    linear-gradient(112deg,rgba(215,25,32,.16),rgba(255,255,255,.08) 36%,transparent 62%,rgba(239,27,36,.10)),
+    linear-gradient(112deg,rgba(215,25,32,.15),rgba(255,255,255,.08) 36%,transparent 62%,rgba(239,27,36,.09)),
     var(--choice-glass-selected)!important;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.44),
-    inset 0 -1px 0 rgba(239,27,36,.30),
-    0 0 0 1px rgba(215,25,32,.18),
-    0 0 38px rgba(215,25,32,.24)!important;
+    inset 0 1px 0 rgba(255,255,255,.42),
+    inset 0 -1px 0 rgba(239,27,36,.28),
+    0 0 0 1px rgba(215,25,32,.16),
+    0 0 36px rgba(215,25,32,.23)!important;
   animation:rbt-choice-lock .42s cubic-bezier(.2,.8,.25,1) both!important;
 }
 .rbt-option[data-chosen="locked"]:before{
-  filter:saturate(1.25) brightness(1.13);
+  filter:saturate(1.22) brightness(1.12);
   box-shadow:
-    0 0 0 1px rgba(255,255,255,.70),
     inset 7px 5px 12px rgba(255,255,255,.20),
     inset -7px -7px 14px rgba(56,0,4,.45),
-    0 0 34px rgba(239,27,36,.42)!important;
+    0 0 0 1px rgba(255,255,255,.48),
+    0 0 32px rgba(239,27,36,.40)!important;
 }
 .rbt-option[data-chosen="locked"]:after{
-  border-left-color:rgba(239,27,36,.72);
-  background:linear-gradient(90deg,rgba(239,27,36,.18),transparent 30%);
+  border-left-color:rgba(239,27,36,.68);
+  background:linear-gradient(90deg,rgba(239,27,36,.17),transparent 30%);
 }
 
-/* Resolution only alters the committed answer. No hidden correct answer is exposed. */
 .rbt-option[data-chosen="correct"]{
   color:var(--text)!important;
-  border-color:rgba(70,145,96,.78)!important;
+  border-color:rgba(70,145,96,.74)!important;
   background:
-    linear-gradient(112deg,rgba(70,145,96,.13),rgba(255,255,255,.07) 42%,transparent 72%),
+    linear-gradient(112deg,rgba(70,145,96,.12),rgba(255,255,255,.07) 42%,transparent 72%),
     var(--choice-glass-selected)!important;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.42),0 0 30px rgba(70,145,96,.18)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.40),0 0 28px rgba(70,145,96,.17)!important;
 }
 .rbt-option[data-chosen="correct"]:before{
   background:linear-gradient(145deg,#183f29,#2e704a 44%,#72c28f 51%,#2e704a 58%,#173e28)!important;
-  box-shadow:0 0 0 1px rgba(255,255,255,.54),inset 6px 5px 10px rgba(255,255,255,.12),0 0 22px rgba(70,145,96,.25)!important;
+  box-shadow:inset 6px 5px 10px rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.38),0 0 22px rgba(70,145,96,.24)!important;
 }
 .rbt-option[data-chosen="wrong"]{
   color:var(--text)!important;
-  border-color:rgba(239,27,36,.82)!important;
+  border-color:rgba(239,27,36,.78)!important;
   background:
-    linear-gradient(112deg,rgba(215,25,32,.13),rgba(255,255,255,.06) 42%,transparent 72%),
+    linear-gradient(112deg,rgba(215,25,32,.12),rgba(255,255,255,.06) 42%,transparent 72%),
     var(--choice-glass-selected)!important;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.40),0 0 28px rgba(215,25,32,.18)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.38),0 0 26px rgba(215,25,32,.17)!important;
 }
 .rbt-option[data-chosen="wrong"]:before{
-  filter:saturate(1.15) brightness(.93);
-  box-shadow:0 0 0 1px rgba(255,255,255,.44),inset 7px 5px 12px rgba(255,255,255,.13),0 0 22px rgba(215,25,32,.24)!important;
+  filter:saturate(1.14) brightness(.94);
+  box-shadow:inset 7px 5px 12px rgba(255,255,255,.13),0 0 0 1px rgba(255,255,255,.34),0 0 22px rgba(215,25,32,.22)!important;
 }
 .rbt-option:disabled{cursor:default;opacity:1}
 
-/* Identification follows the same frosted material language. */
+/* Identification uses the same rounded frosted language. */
 .rbt-identification{
   width:min(820px,100%)!important;
   min-height:70px!important;
   border:1px solid var(--choice-edge)!important;
-  clip-path:polygon(18px 0,calc(100% - 18px) 0,100% 50%,calc(100% - 18px) 100%,18px 100%,0 50%)!important;
-  background:linear-gradient(118deg,rgba(255,255,255,.14),transparent 30%),var(--choice-glass)!important;
+  border-radius:22px!important;
+  clip-path:none!important;
+  background:linear-gradient(118deg,rgba(255,255,255,.13),transparent 30%),var(--choice-glass)!important;
   -webkit-backdrop-filter:blur(18px) saturate(138%);
   backdrop-filter:blur(18px) saturate(138%);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.32),var(--choice-shadow)!important;
-  padding:16px 34px!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.30),var(--choice-shadow)!important;
+  padding:16px 24px!important;
   color:var(--text)!important;
   font-size:17px!important;
   font-weight:600;
   letter-spacing:.01em;
 }
 .rbt-identification:focus{
-  border-color:rgba(239,27,36,.78)!important;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.36),0 0 0 1px rgba(215,25,32,.10),0 0 30px rgba(215,25,32,.14)!important;
+  border-color:rgba(239,27,36,.76)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.34),0 0 0 1px rgba(215,25,32,.10),0 0 28px rgba(215,25,32,.13)!important;
 }
 
 @keyframes rbt-choice-lock{0%{transform:scale(1)}45%{transform:scale(1.012)}100%{transform:scale(1)}}
 
 @media(max-width:720px){
+  .rbt-question-chamber{width:100%!important;border-radius:20px!important;padding:20px 18px!important}
   .rbt-options{grid-template-columns:1fr;gap:10px;padding-top:4px}
   .rbt-options:before{display:none}
   .rbt-option{
     min-height:64px;
     padding:13px 18px 13px 70px!important;
-    clip-path:polygon(14px 0,calc(100% - 14px) 0,100% 50%,calc(100% - 14px) 100%,14px 100%,0 50%);
+    border-radius:18px!important;
     font-size:13px!important;
     -webkit-backdrop-filter:blur(15px) saturate(132%);
     backdrop-filter:blur(15px) saturate(132%);
   }
   .rbt-option:before{left:22px!important;width:32px!important;height:32px!important;font-size:11px!important}
-  .rbt-option:after{left:58px;right:15px;top:8px;bottom:8px}
+  .rbt-option:after{left:58px;right:16px;top:9px;bottom:9px;border-radius:0 12px 12px 0}
   .rbt-option[data-selected="true"]{transform:none!important}
-  .rbt-identification{
-    min-height:62px!important;
-    clip-path:polygon(14px 0,calc(100% - 14px) 0,100% 50%,calc(100% - 14px) 100%,14px 100%,0 50%)!important;
-    padding:14px 22px!important;
-    font-size:15px!important;
-  }
+  .rbt-identification{min-height:62px!important;border-radius:18px!important;padding:14px 18px!important;font-size:15px!important}
 }
 
 @media(prefers-reduced-motion:reduce){
