@@ -70,14 +70,16 @@ try{
 
   const label=await firstOption.getAttribute('data-option-label');
   assert(['A','B','C','D'].includes(label),'Answer choice must have a visible A/B/C/D marker label.');
+  assert.equal(await firstOption.getAttribute('aria-keyshortcuts'),'A','First answer choice must expose the A keyboard shortcut.');
 
   const lockButton=page.locator('[data-rbt-submit]');
   assert.equal(await lockButton.isDisabled(),true,'Lock Answer must stay disabled until a choice is selected.');
-  await firstOption.click();
-  assert.equal(await firstOption.getAttribute('data-selected'),'true','Tapped answer must enter the selected/armed state.');
+  await page.keyboard.press('a');
+  assert.equal(await firstOption.getAttribute('data-selected'),'true','Keyboard A must select/arm the first answer choice.');
   assert.equal(await lockButton.isDisabled(),false,'Selecting an answer must enable Lock Answer.');
+  assert.equal(await lockButton.getAttribute('aria-keyshortcuts'),'Enter','Lock Answer must expose Enter as its keyboard shortcut.');
 
-  await lockButton.click();
+  await page.keyboard.press('Enter');
   const resolved=page.locator('.rbt-option[data-chosen="correct"],.rbt-option[data-chosen="wrong"]');
   await resolved.first().waitFor({state:'visible',timeout:1200});
   assert.equal(await resolved.count(),1,'Only the committed answer may receive a resolved state; unchosen answers must not reveal correctness.');
@@ -99,7 +101,14 @@ try{
     "Name and a valid email are required",
   ]) assert(source.includes(token),`Game runtime missing required integrity contract: ${token}`);
 
-  console.log('Read Between the Headlines QA passed: player gate, 30-second countdown, rounded frosted UI, circular metallic answer markers, select-then-lock interaction, mobile fit, and hidden-answer integrity are intact.');
+  const stagePlus=await page.request.get(`${base}/news/assets/js/fmb-news-read-between-headlines-stage-plus.js`);
+  assert(stagePlus.ok(),'Built game-stage polish runtime is missing.');
+  const stageSource=await stagePlus.text();
+  for(const token of ['aria-keyshortcuts','rbtTension','rbt-score-bump']){
+    assert(stageSource.includes(token),`Game-stage polish runtime missing ${token}.`);
+  }
+
+  console.log('Read Between the Headlines QA passed: player gate, 30-second countdown, rounded frosted UI, circular metallic answer markers, keyboard and pointer select-then-lock interaction, mobile fit, stage tension, and hidden-answer integrity are intact.');
 }finally{
   await browser.close();
 }
