@@ -92,8 +92,8 @@ try{
   await page.evaluate(()=>{document.querySelector('[data-rbt-question-no]').textContent='Question 6 of 30';});
   await milestone.waitFor({state:'visible',timeout:700});
   const milestoneText=(await milestone.innerText()).replace(/\s+/g,' ').trim();
-  assert(milestoneText.includes('5 cleared.'),'Five-question milestone must acknowledge completed progress.');
-  assert(milestoneText.includes('25 questions to go'),'Five-question milestone must show the remaining question count.');
+  assert(milestoneText.includes('5 questions cleared.'),'Five-question milestone must acknowledge completed progress.');
+  assert(milestoneText.includes('25 to go'),'Five-question milestone must show the remaining question count.');
   const milestonePointerEvents=await milestone.evaluate((el)=>getComputedStyle(el).pointerEvents);
   assert.equal(milestonePointerEvents,'none','Milestone flash must never block answer interaction or steal timer time.');
 
@@ -114,7 +114,7 @@ try{
   const stagePlus=await page.request.get(`${base}/news/assets/js/fmb-news-read-between-headlines-stage-plus.js`);
   assert(stagePlus.ok(),'Built game-stage polish runtime is missing.');
   const stageSource=await stagePlus.text();
-  for(const token of ['aria-keyshortcuts','rbtTension','rbt-score-bump','rbt-question-arrive','rbt-milestone-flash','QUESTIONS CLEARED','showMilestone']){
+  for(const token of ['aria-keyshortcuts','rbtTension','rbt-score-bump','rbt-question-arrive','rbt-milestone-flash','questions cleared','showMilestone']){
     assert(stageSource.includes(token),`Game-stage polish runtime missing ${token}.`);
   }
 
