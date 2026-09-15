@@ -9,6 +9,7 @@
     "test:mobile:browser": "node scripts/run-mobile-qa.mjs",
     "test:mobile": "npm run build && npm run verify && npm run test:mobile:browser",
     "deploy:cloudflare": "npm run build && npm run verify && npx wrangler deploy",
-    "photo:worklist": "node scripts/report-photography-worklist.mjs"
+    "photo:worklist": "node scripts/report-photography-worklist.mjs",
+    "photos:vendor": "node scripts/fetch-rights-cleared-photography.mjs --vendor"
   }
 }
