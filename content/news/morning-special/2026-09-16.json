@@ -1,0 +1,96 @@
+{
+  "date": "2026-09-16",
+  "publishedAt": "2026-09-16T07:00:00+08:00",
+  "editionLabel": "Daily Brief",
+  "title": "FMB Daily Brief — September 16, 2026",
+  "deck": "The impeachment trial returns to Vice President Sara Duterte’s asset declarations, the peso approaches ₱63 to the dollar, ABS-CBN prepares another workforce reduction, Russia and Ukraine continue energy strikes, and global debate over AI governance intensifies.",
+  "hero": {
+    "src": "",
+    "alt": "FMB Daily Brief for September 16, 2026",
+    "caption": "Morning edition. No documentary image is used where reuse rights have not been established.",
+    "credit": "FMB News",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260916-001",
+      "kicker": "Philippines · Impeachment",
+      "headline": "Sara Duterte impeachment trial stays focused on SALNs and business interests",
+      "deck": "Day 25 testimony examined the Vice President’s asset declarations, including years in which cash or stock shares were not declared, while the Senate impeachment court ordered an SEC official to testify on records of business interests.",
+      "body": [
+        "The Senate impeachment trial of Vice President Sara Duterte remains centered on her Statements of Assets, Liabilities and Net Worth and declared business interests. GMA News and ABS-CBN News separately reported testimony on September 15 concerning years in which her SALNs did not list cash or stock shares.",
+        "GMA News also reported that the impeachment court issued a modified order directing an Securities and Exchange Commission official to testify on records connected with Duterte’s business interests.",
+        "The evidence matters because the impeachment case includes allegations concerning unexplained wealth. Testimony about a disclosure is not by itself proof that an allegation has been established, and the defense retains the opportunity to challenge the prosecution’s evidence.",
+        "What to watch: the next testimony on business records, how the defense answers the SALN evidence, and the court’s handling of unresolved procedural questions."
+      ],
+      "sources": [
+        {"label": "GMA News — Sara Duterte impeachment trial Day 25: SALNs show no cash or stock shares in multiple years", "url": "https://www.gmanetwork.com/news/topstories/nation/1002510/sara-duterte-impeachment-trial-day-25-salns-show-no-cash-or-stock-shares-in-multiple-years/story/"},
+        {"label": "ABS-CBN News — Lack of cash declaration in Sara Duterte SALNs brought up again in impeachment hearing", "url": "https://www.abs-cbn.com/news/nation/2026/9/15/lack-of-cash-declaration-in-sara-duterte-salns-brought-up-again-in-impeach-hearing-1313"}
+      ]
+    },
+    {
+      "id": "FMB-DB-20260916-002",
+      "kicker": "Economy · Peso",
+      "headline": "Peso moves closer to ₱63 per dollar as US yields support the greenback",
+      "deck": "The peso weakened past ₱62.9 to the dollar on Tuesday as higher US Treasury yields strengthened the dollar.",
+      "body": [
+        "The Philippine peso weakened beyond ₱62.9 per US dollar on September 15, with Inquirer reporting that rising US Treasury yields strengthened the dollar. The currency is now close to the psychologically significant ₱63 level.",
+        "A weaker peso can raise the local-currency cost of imported fuel, food, equipment and dollar-denominated obligations, although exporters and recipients of dollar remittances may receive more pesos for foreign-currency earnings.",
+        "The move should be read in the context of global dollar strength rather than as a single-day verdict on the Philippine economy.",
+        "What to watch: whether the peso crosses ₱63, movements in US yields and the dollar, and any response from Philippine monetary authorities."
+      ],
+      "sources": [
+        {"label": "Philippine Daily Inquirer — Peso weakens past 62.9-per-dollar as US yields climb", "url": "https://business.inquirer.net/611132/peso-weakens-past-62-9-per-dollar-as-us-yields-climb"},
+        {"label": "Philippine Daily Inquirer — Peso closes in on 63:1$", "url": "https://business.inquirer.net/611204/peso-closes-in-on-631"}
+      ]
+    },
+    {
+      "id": "FMB-DB-20260916-003",
+      "kicker": "Business · Media",
+      "headline": "ABS-CBN to retrench about 200 employees amid weak advertising environment",
+      "deck": "The company says roughly 200 positions, about 7% of its workforce, will be affected as it seeks to protect its financial position during a difficult year for the content industry.",
+      "body": [
+        "ABS-CBN announced another retrenchment program affecting about 200 employees. GMA News, BusinessWorld, Inquirer and Philstar independently reported the planned reduction, which represents roughly 7% of the company’s workforce.",
+        "The reports point to weak advertising demand and broader pressure on the content business as factors behind the restructuring.",
+        "The development matters beyond one company because ABS-CBN remains a major Philippine content producer. Continued restructuring illustrates how legacy media businesses are being forced to align costs with fragmented audiences, digital distribution and changing advertising economics.",
+        "What to watch: implementation of the retrenchment, the company’s advertising and content performance, and whether further restructuring follows."
+      ],
+      "sources": [
+        {"label": "GMA News — ABS-CBN to retrench 200 workers amid difficult year for industry", "url": "https://www.gmanetwork.com/news/money/companies/1002464/abs-cbn-to-retrench-200-workers-amid-difficult-year-for-industry/story/"},
+        {"label": "BusinessWorld — ABS-CBN to retrench about 200 workers amid weak ad demand", "url": "https://bworldonline.com/corporate/2026/09/16/777539/abs-cbn-to-retrench-about-200-workers-amid-weak-ad-demand/"},
+        {"label": "Philstar — ABS-CBN cuts 200 jobs as recovery remains elusive", "url": "https://www.philstar.com/business/2026/09/15/2556476/abs-cbn-cuts-200-jobs-recovery-remains-elusive"}
+      ]
+    },
+    {
+      "id": "FMB-DB-20260916-004",
+      "kicker": "Worldwide · Ukraine",
+      "headline": "Russia and Ukraine continue energy strikes",
+      "deck": "Russia hit petrol stations in Kyiv while Ukraine struck a Russian oil refinery, according to Reuters, extending attacks on energy-related infrastructure.",
+      "body": [
+        "Russia and Ukraine carried out new strikes on energy-related targets on September 15. Reuters reported Russian attacks on petrol stations in Kyiv and a Ukrainian strike on a Russian oil refinery.",
+        "Energy infrastructure remains strategically important because attacks can affect fuel supply, logistics, economic activity and civilian life while increasing pressure on both sides away from the front line.",
+        "The continued strikes show that the conflict remains active despite international diplomatic pressure.",
+        "What to watch: damage assessments, retaliatory strikes, changes in fuel supply and any concrete movement in diplomatic efforts."
+      ],
+      "sources": [
+        {"label": "Reuters — Russia and Ukraine press on with energy strikes", "url": "https://www.reuters.com/world/europe/russia-hits-petrol-station-warehouse-facilities-kyiv-mayor-says-2026-09-15/"}
+      ]
+    },
+    {
+      "id": "FMB-DB-20260916-005",
+      "kicker": "Technology · AI",
+      "headline": "AI governance debate sharpens as Ressa and Gates warn governments are behind",
+      "deck": "Maria Ressa called for stronger limits on AI while Bill Gates separately warned that governments worldwide are unprepared for the technology’s social consequences.",
+      "body": [
+        "Two prominent voices issued separate warnings about the speed of artificial intelligence development. Reuters reported Nobel laureate Maria Ressa arguing for stronger limits to protect human agency, while Bill Gates said governments worldwide are far behind in preparing for AI-driven social change.",
+        "Their prescriptions are not identical, but both interventions point to the same policy gap: deployment is moving faster than institutions are adapting to risks involving employment, information integrity, cybersecurity and human behavior.",
+        "For the Philippines, the question is increasingly practical: how to capture productivity and public-service gains from AI while building safeguards, skills and accountability quickly enough to manage the downside.",
+        "What to watch: concrete regulatory proposals, workforce policies and whether governments move from broad AI principles to enforceable rules."
+      ],
+      "sources": [
+        {"label": "Reuters — Limit AI now or humanity will lose its agency, says Nobel laureate Ressa", "url": "https://www.reuters.com/legal/litigation/limit-ai-now-or-humanity-will-lose-its-agency-says-nobel-laureate-ressa-2026-09-15/"},
+        {"label": "Reuters — Governments worldwide are way behind on AI, says Bill Gates", "url": "https://www.reuters.com/world/asia-pacific/governments-worldwide-are-way-behind-ai-says-bill-gates-2026-09-15/"}
+      ]
+    }
+  ]
+}
