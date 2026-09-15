@@ -20,6 +20,7 @@
 .fmb-horoscope-page *{box-sizing:border-box}
 .fmb-horoscope-page a{color:inherit}
 .fmb-horoscope-page .fmb-feature-shell{width:min(1180px,calc(100% - 56px));max-width:none!important;margin:0 auto!important;padding:0 0 62px!important;color:var(--hz-ink)}
+.fmb-horoscope-page .fmb-hz-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
 
 /* Masthead */
 .fmb-hz-header{width:100%;border-bottom:1px solid var(--hz-rule);background:rgba(250,249,246,.96);backdrop-filter:saturate(120%) blur(12px);-webkit-backdrop-filter:saturate(120%) blur(12px)}
