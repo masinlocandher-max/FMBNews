@@ -51,7 +51,30 @@ function injectFigure(html,title,fallback){
   if(article.test(html))return html.replace(article,match=>`${match}${figure}`);
   return html.replace(/<body\b[^>]*>/i,match=>`${match}${figure}`);
 }
+// og:image and twitter:image must be ABSOLUTE URLs. The Open Graph spec
+// requires it and every consumer enforces it: Facebook, X, LinkedIn, Slack and
+// iMessage all refuse a relative one.
+//
+// 528 of 573 pages were emitting a site-relative path here, so nearly every
+// share of an FMB News article rendered as a link preview with no picture. It
+// is invisible from inside the site -- the page itself looks perfect -- and it
+// costs the publication on exactly the surface where a story travels.
+//
+// The scoping is done explicitly rather than by leaning on the later
+// /assets/ -> /news/assets/ rewrite, so the value does not depend on the order
+// two passes happen to run in.
+const SITE='https://www.francinemariebautista.com';
+function absoluteSocialUrl(image){
+  const value=String(image||'').trim();
+  if(!value)return '';
+  if(/^https?:\/\//i.test(value))return value;
+  if(value.startsWith('/news/'))return `${SITE}${value}`;
+  if(value.startsWith('/'))return `${SITE}/news${value}`;
+  return `${SITE}/news/${value}`;
+}
 function upsertSocialImage(html,image){
+  image=absoluteSocialUrl(image);
+  if(!image)return html;
   if(/<meta\b[^>]*property=["']og:image["']/i.test(html)){
     html=html.replace(/<meta\b([^>]*property=["']og:image["'][^>]*)>/i,tag=>/content=["'][^"']*["']/i.test(tag)?tag.replace(/content=["'][^"']*["']/i,`content="${image}"`):tag.replace(/>$/,` content="${image}">`));
   }else html=html.replace('</head>',`<meta property="og:image" content="${image}"></head>`);

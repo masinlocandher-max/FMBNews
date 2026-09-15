@@ -10,6 +10,7 @@
     "test:mobile": "npm run build && npm run verify && npm run test:mobile:browser",
     "deploy:cloudflare": "npm run build && npm run verify && npx wrangler deploy",
     "photo:worklist": "node scripts/report-photography-worklist.mjs",
-    "photos:vendor": "node scripts/fetch-rights-cleared-photography.mjs --vendor"
+    "photos:vendor": "node scripts/fetch-rights-cleared-photography.mjs --vendor",
+    "photos:vendor-articles": "node scripts/build.mjs && node scripts/localize-article-photography.mjs --vendor"
   }
 }

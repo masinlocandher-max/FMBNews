@@ -105,6 +105,15 @@ await import('./hardfix-mobile-first-site.mjs');
 // footer without mutating authored mobile-home JavaScript at build time.
 await renderNetworkShell();
 
+// Bring every remaining third-party photograph onto FMB News's own domain. The
+// rights-cleared ledger is already localized above; this catches photographs
+// that live in the article record instead, which were still being hotlinked
+// from Wikimedia on 66 published pages. It runs before the discovery pass so
+// og:image and structured data pick up the local URL, and it is fail-soft: an
+// unreachable photograph keeps the URL it has today rather than failing a
+// build and blocking the newsroom from publishing.
+await import('./localize-article-photography.mjs');
+
 // Public-web discovery pass. It leaves presentation untouched while exposing
 // canonical identity, trust policies, snippet/image directives, and normalized
 // publisher/author structured data.

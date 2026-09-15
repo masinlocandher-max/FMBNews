@@ -88,6 +88,24 @@ for(const file of await walk(contentRoot)){
   const modifiedMs=Date.parse(story.updatedAt||story.publishedAt);
   if(modifiedMs-publishedMs>=5*60*1000){updated++;must(html.includes('data-fmb-article-updated'),`${label}: materially updated story must expose an Updated timestamp to readers`)}
 
+  // A citation must point at the publisher's real site, not a staging or QA
+  // host. Nine did -- six at staging.pagasa.dost.gov.ph, three at
+  // qa.philstar.com. Those are internal pre-production servers: they can be
+  // access-restricted, they 404 without notice, and what they serve is not the
+  // published record. Citing one tells a reader "here is the evidence" and
+  // points at something that was never published.
+  //
+  // This runs BEFORE the legacy skip below, and deliberately so. Six of the
+  // nine were in pre-September articles, which the skip means the source checks
+  // never see -- so the archive was the one place a bad citation could sit
+  // permanently unexamined. Age is a reason to forgive an old schema, not to
+  // forgive pointing readers at a staging server.
+  for(const src of (Array.isArray(story.sources)?story.sources:[])){
+    const host=(String(src?.url||'').match(/^https:\/\/([^/]+)/i)||[])[1]||'';
+    must(!/^(qa|staging|stage|dev|test|uat|preview|beta)\./i.test(host),
+      `${label}: source cites the non-production host "${host}". Cite the publisher's live site.`);
+  }
+
   // The pre-September archive predates the current source schema. Preserve it
   // as the historical record while still requiring stable routes and normalized
   // production metadata above.
