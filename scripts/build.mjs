@@ -77,6 +77,11 @@ await import('./publish-current-fact-checks.mjs');
 // Fact Checks are rendered after the general photo pass, so their licensed
 // contextual photography is localized and inserted here before Fact Check QA.
 await import('./apply-current-fact-check-photography.mjs');
+
+// Search-intent metadata is authored separately from editorial copy. This pass
+// enriches current Fact Checks and the archive with canonical SEO titles,
+// descriptions, social cards, NewsArticle/ClaimReview data and breadcrumbs.
+await import('./hardfix-fact-check-seo.mjs');
 await import('./hardfix-fact-check-qa.mjs');
 
 // The canonical homepage renderer is the sole owner of /news/index.html. It
