@@ -48,8 +48,11 @@
         <div class="fmb-hz-orbit fmb-hz-orbit-two"></div>
         <div class="fmb-hz-star fmb-hz-star-one">✦</div>
         <div class="fmb-hz-star fmb-hz-star-two">✧</div>
-        <div class="fmb-hz-sun-wrap">
-          <svg class="fmb-hz-sun" viewBox="0 0 360 360" role="presentation">
+        <div class="fmb-hz-sun-wrap" style="position:relative;z-index:3;width:320px;max-width:82%;aspect-ratio:1">
+          <svg class="fmb-hz-sun" viewBox="0 0 360 360" role="presentation" style="display:block;width:100%;height:100%;overflow:visible">
+            <style>
+              .hz-orbit-line{fill:none;stroke:#141414;stroke-width:1;opacity:.25}.hz-orbit-dashed{stroke-dasharray:3 8;opacity:.35}.hz-rays line{fill:none;stroke:#141414;stroke-linecap:round}.hz-rays-long line{stroke-width:1.55}.hz-rays-short line{stroke-width:1}.hz-sun-disc{fill:#FAF9F6;stroke:#141414;stroke-width:1.6}.hz-sun-inner{fill:none;stroke:#141414;stroke-width:.85;opacity:.55}.hz-face-line,.hz-brow-line{fill:none;stroke:#141414;stroke-linecap:round;stroke-linejoin:round}.hz-face-line{stroke-width:1.7}.hz-brow-line{stroke-width:2}.hz-sun-dot{fill:#D71920}
+            </style>
             <defs>
               <line id="hz-ray-long" x1="180" y1="22" x2="180" y2="84"></line>
               <line id="hz-ray-short" x1="180" y1="43" x2="180" y2="91"></line>
@@ -64,11 +67,11 @@
             </g>
             <circle class="hz-sun-disc" cx="180" cy="180" r="72"></circle>
             <circle class="hz-sun-inner" cx="180" cy="180" r="62"></circle>
+            <path class="hz-brow-line" d="M142 155c12-7 23-7 34-1M184 154c12-6 23-5 34 2"></path>
             <path class="hz-face-line" d="M143 166c9-8 19-8 28 0M189 166c9-8 19-8 28 0"></path>
             <path class="hz-face-line" d="M158 170c4 4 8 4 12 0M192 170c4 4 8 4 12 0"></path>
             <path class="hz-face-line" d="M180 168c-2 14-4 23-10 30 6 3 12 3 18 0"></path>
             <path class="hz-face-line" d="M157 210c15 12 31 12 46 0M164 207c11-4 21-4 32 0"></path>
-            <path class="hz-brow-line" d="M142 155c12-7 23-7 34-1M184 154c12-6 23-5 34 2"></path>
             <circle class="hz-sun-dot" cx="76" cy="91" r="3"></circle><circle class="hz-sun-dot" cx="281" cy="112" r="2.5"></circle><circle class="hz-sun-dot" cx="292" cy="248" r="3"></circle><circle class="hz-sun-dot" cx="93" cy="267" r="2.5"></circle>
           </svg>
         </div>
