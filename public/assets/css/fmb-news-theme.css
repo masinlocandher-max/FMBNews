@@ -528,3 +528,187 @@ body.fmb-fact-check-route :is(.fc-panel,.fc-card,.fc-legend){
     border-color:var(--fmb-shell-rule,rgba(20,20,20,.16))!important;
   }
 }
+
+/* ============================================================================
+   EDITORIAL DEPTH LAYER — World, Sports, Briefing, Explainer, Fact Check
+   ============================================================================
+
+   Every desk below Home was built out of the same component: a white card, a
+   9-18px corner radius, and a panel ground a shade cooler than the masthead
+   above it. Four of those cards in a column is a settings screen. It is the
+   single reason these desks read as a competent app rather than as a
+   publication, and no amount of type polish above it changes that.
+
+   Two specific faults, both measured rather than assumed:
+
+   * Two whites. The desk openers sit on warm ivory (#F5F3EF, the approved
+     FMB White). Every panel under them sat on #F7F6F8 -- a COOL off-white.
+     Sampling the World render found the seam running the full width of the
+     page. Two near-identical whites that disagree on temperature is the
+     cheapest-looking thing a page can do, because it reads as two stylesheets
+     that never met rather than as a decision.
+
+   * Depth was being asked of corner radius, and radius cannot carry it. Print
+     gets depth from tone and rule weight: a panel is a slightly deeper stock,
+     divided by hairlines, with one heavy rule where a section begins. That is
+     what is used here -- no shadows, no radius, no floating.
+
+   The verdict colours on Fact Check are untouched and load-bearing: TRUE green,
+   VERIFIED FACT blue, MISLEADING amber, FALSE red. They move from a coloured
+   icon inside a white card to a heavy rule and label in the same colour, which
+   keeps the semantic signal and drops the app chrome.
+   ============================================================================ */
+@media(max-width:699px){
+
+  /* One ground, one temperature.
+
+     The seam was not in any desk's own stylesheet. <main> carries #F5F5F7 --
+     Apple's cool system grey -- while <body> and every desk opener carry
+     #F5F3EF, the approved warm FMB White. So every route on the site drew a
+     warm masthead onto a cool page and met it at a line across the full width.
+     Patching each panel would have chased the symptom on five desks; one
+     declaration on <main> removes it everywhere, including routes not in this
+     brief. */
+  html:root body.fmb-mobile-first main{
+    background:var(--fmb-shell-surface,#F5F3EF)!important;
+    background-image:none!important;
+  }
+  html:root body.fmb-mobile-first :is(
+    .explainer-principles, .explainer-grid,
+    .fc-ratings, .fc-rating-grid, .fc-controls, .fc-toolbar, .fc-results, .fc-list, .fc-empty,
+    .brief-archive, .brief-list, .brief-grid, .brief-issues,
+    .world-feed, .sports-feed, .archive-list
+  ){
+    background:var(--fmb-shell-surface,#F5F3EF)!important;
+    background-image:none!important;
+  }
+  /* The verdict key is a two-column grid that centred its cells, which put each
+     label adrift from the rule that carries its colour. */
+  html:root body.fmb-mobile-first .fc-ratings{justify-items:start!important}
+
+  /* Panels are printed onto the page, not floated above it. */
+  html:root body.fmb-mobile-first :is(
+    .explainer-card, .fc-rating-key, .brief-issue, .fc-empty
+  ){
+    background:transparent!important;
+    border:0!important;
+    border-top:1px solid var(--fmb-shell-rule,rgba(20,20,20,.14))!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    padding:22px 0 24px!important;
+    margin:0!important;
+  }
+
+  /* Story and issue thumbnails are pictures, not app tiles. A 12px radius on a
+     100x70 plate rounds off the composition's own corners. */
+  html:root body.fmb-mobile-first :is(.brief-issue, .explainer-card, .fc-list) img{
+    border-radius:0!important;
+    box-shadow:none!important;
+  }
+
+  /* The Explainer method list. The numeral was a red 11px label on a
+     #F0E8F4 lilac pill -- retired identity, and pale enough to slip under a
+     saturation-based retired-hue scan. It is a printed numeral now: Bodoni,
+     ink, over the red rule that opens each entry. */
+  html:root body.fmb-mobile-first .explainer-card{
+    display:grid!important;
+    grid-template-columns:44px 1fr!important;
+    column-gap:16px!important;
+    align-items:start!important;
+  }
+  html:root body.fmb-mobile-first .explainer-card>small{
+    display:block!important;
+    padding:10px 0 0!important;
+    border:0!important;
+    border-top:2px solid var(--fmb-mobile-red,#D71920)!important;
+    border-radius:0!important;
+    background:transparent!important;
+    color:var(--fmb-shell-ink,#141414)!important;
+    font-family:"Bodoni Moda","Libre Bodoni","Didot","Bodoni 72",Baskerville,"Times New Roman",serif!important;
+    font-size:26px!important;
+    line-height:1!important;
+    font-weight:800!important;
+    letter-spacing:0!important;
+  }
+  html:root body.fmb-mobile-first .explainer-card>:not(small):first-of-type{grid-column:2!important}
+  html:root body.fmb-mobile-first .explainer-card h3{
+    margin:2px 0 6px!important;
+    color:var(--fmb-shell-ink,#141414)!important;
+    font-size:19px!important;
+    line-height:1.2!important;
+    font-weight:750!important;
+    letter-spacing:-.01em!important;
+  }
+  html:root body.fmb-mobile-first .explainer-card p{
+    margin:0!important;
+    color:var(--fmb-shell-ink-soft,#4B4850)!important;
+    font-size:15px!important;
+    line-height:1.58!important;
+  }
+
+  /* The Fact Check verdict key. Four white cards each holding a filled colour
+     icon is the Material palette, not an editorial one. The verdict colour
+     moves to a heavy left rule and the label, so the semantic signal is louder
+     than it was and the card is gone. */
+  html:root body.fmb-mobile-first .fc-rating-key{
+    padding:12px 0 12px 14px!important;
+    border-top:0!important;
+    border-left:4px solid var(--fmb-shell-rule,rgba(20,20,20,.14))!important;
+  }
+  html:root body.fmb-mobile-first .fc-rating-key:has(.fc-true){border-left-color:#1B7F3B!important}
+  html:root body.fmb-mobile-first .fc-rating-key:has(.fc-fact){border-left-color:#1677C8!important}
+  html:root body.fmb-mobile-first .fc-rating-key:has(.fc-misleading){border-left-color:#B4740A!important}
+  html:root body.fmb-mobile-first .fc-rating-key:has(.fc-false){border-left-color:#D71920!important}
+  html:root body.fmb-mobile-first .fc-rating-key{text-align:left!important}
+  html:root body.fmb-mobile-first .fc-rating-key .fc-badge svg{display:none!important}
+  html:root body.fmb-mobile-first .fc-rating-key .fc-badge{
+    display:block!important;
+    padding:0!important;
+    background:transparent!important;
+    border:0!important;
+    font-size:11px!important;
+    font-weight:850!important;
+    letter-spacing:.14em!important;
+    text-transform:uppercase!important;
+  }
+
+  /* The Daily Brief issue list.
+
+     .brief-issue carries an absolutely-positioned 4px metal bar at left:0 and a
+     hover lift with a 36px shadow -- both written for the card this used to be.
+     With the card's padding gone the bar sat on top of the text and clipped the
+     first character of every date and headline ("LIVE" read "IVE"). The
+     hairline between entries already separates them; the bar and the lift go. */
+  html:root body.fmb-mobile-first .brief-issue::before{content:none!important;display:none!important}
+  html:root body.fmb-mobile-first .brief-issue:hover{transform:none!important;box-shadow:none!important}
+  /* The Daily Brief issue list. */
+  html:root body.fmb-mobile-first .brief-issue{
+    display:grid!important;
+    grid-template-columns:1fr 104px!important;
+    column-gap:14px!important;
+    align-items:start!important;
+  }
+  html:root body.fmb-mobile-first .brief-issue h3,
+  html:root body.fmb-mobile-first .brief-issue h2{
+    margin:6px 0 0!important;
+    color:var(--fmb-shell-ink,#141414)!important;
+    font-family:"Bodoni Moda","Libre Bodoni","Didot","Bodoni 72",Baskerville,"Times New Roman",serif!important;
+    font-size:21px!important;
+    line-height:1.14!important;
+    font-weight:800!important;
+    letter-spacing:-.02em!important;
+  }
+  html:root body.fmb-mobile-first .brief-issue img{
+    width:104px!important;
+    height:74px!important;
+    object-fit:cover!important;
+  }
+
+  /* The desk's standing promise line sat in a filled grey box that read as a
+     disabled form field. It is a rule with type under it. */
+  html:root body.fmb-mobile-first :is(.world-rule,.explainer-rule,.brief-rule){
+    background:transparent!important;
+    box-shadow:none!important;
+    border-radius:0!important;
+  }
+}

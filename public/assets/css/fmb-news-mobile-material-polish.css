@@ -1,13 +1,23 @@
 /* Final material polish for the minimal FMB News mobile system. Loaded last on purpose. */
 @media(max-width:699px){
-/* Keep the shell quiet, but make the existing violet/plum palette read as polished metal rather than a flat gradient. */
+/* The app bar. This block was written for the retired plum shell: a
+   #351042 -> #130419 gradient with two violet sheen passes over it, an orchid
+   hairline under it, and a violet glow on the masthead.
+
+   The shell ground is overridden to paper by a later layer, so the gradient and
+   the sheen have not been visible for some time -- but the hairline and the
+   glow were never overridden, and they were still painting retired identity on
+   the app bar of every route. The widened desk-convergence scan caught the
+   hairline (rgba(211,157,229,.08)) on all five desks, in both appearances.
+
+   Neutralised at the source rather than covered by another layer: the app bar
+   takes the shell's own tokens, so it follows Light and Dark like everything
+   else, and the masthead carries no glow. */
 body.fmb-mobile-first .fmb-mobile-shell-head{
-  background:
-    linear-gradient(108deg,transparent 0 30%,rgba(213,161,231,.08) 43%,rgba(255,255,255,.07) 49%,rgba(186,122,211,.10) 54%,transparent 67%),
-    linear-gradient(180deg,#351042 0%,#210829 44%,#130419 100%)!important;
-  border-bottom:1px solid rgba(211,157,229,.08)!important;
+  background:var(--fmb-shell-surface,#F5F3EF)!important;
+  border-bottom:1px solid var(--fmb-shell-rule,rgba(20,20,20,.14))!important;
 }
-body.fmb-mobile-first .fmb-mobile-shell-brand img{filter:drop-shadow(0 0 5px rgba(192,132,215,.16))!important}
+body.fmb-mobile-first .fmb-mobile-shell-brand img{filter:none!important}
 body.fmb-mobile-first .fmb-mobile-shell-menu,
 body.fmb-mobile-first .fmb-mobile-shell-actions a{color:rgba(255,255,255,.88)!important}
 body.fmb-mobile-first .fmb-mobile-shell-menu,

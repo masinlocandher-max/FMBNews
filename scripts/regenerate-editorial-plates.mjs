@@ -86,8 +86,18 @@ for (const file of files) {
   // Only FMB-owned vectors.
   if (!/FMB[\s-](?:News|NEWS|owned)/i.test(svg)) { skipped.notFmbOwned += 1; continue; }
 
+  // Two things mark a graphic as belonging to the retired standard: the plum
+  // palette, and headline/metadata text baked into the artwork in Arial.
+  //
+  // Palette alone was the original test, and it let a set through -- the Daily
+  // Brief's "todays-headlines-*" graphics are already on red and black, so they
+  // passed as clean while still setting "FMB NEWS CENTER" and
+  // "DAILY BRIEFING - 27 JULY 2026" in Arial across the picture. That is the
+  // same fault the plate exists to fix: the words are already in the HTML, and
+  // Arial is not a face this publication sets anything in.
   const hexes = [...svg.matchAll(/#([0-9a-f]{6})\b/gi)].map((m) => m[1]);
-  if (!hexes.some(isRetiredHex)) { skipped.alreadyClean += 1; continue; }
+  const bakesAlienType = /<text[\s\S]*?font-family="[^"]*(?:Arial|Helvetica)/i.test(svg);
+  if (!hexes.some(isRetiredHex) && !bakesAlienType) { skipped.alreadyClean += 1; continue; }
 
   const [w, h] = sizeOf(svg, file);
   const slug = path.basename(file).replace(/\.svg$/, '');

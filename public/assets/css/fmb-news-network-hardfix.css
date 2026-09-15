@@ -3,6 +3,12 @@
    CMS live/read surfaces, About and dated editions. */
 
 :root{
+  /* The section rule. This was a plum-to-lilac fade -- the retired identity,
+     and applied through border-image-source, which is why neither a stylesheet
+     grep for the retired hues nor a computed background/border-color scan ever
+     found it. A section rule in a newspaper is a red lead-in and an ink
+     hairline: it marks where a section starts without inventing a colour. */
+  --fmb-section-rule:linear-gradient(90deg,#D71920 0 64px,rgba(20,20,20,.22) 64px);
   --fmb-network-metal:linear-gradient(108deg,#0A0A0A 0%,#141414 22%,#BFC1C2 42%,#141414 54%,#0F0F0F 72%,#0A0A0A 100%);
   --fmb-network-soft:linear-gradient(135deg,#fbf8fc 0%,#f0e4f3 52%,#fff 100%);
   --fmb-network-paper:#fff;
@@ -64,7 +70,7 @@ body.fmb-ref>.nav a{white-space:nowrap}
 .fmb-ref .edition-hero .back,.fmb-ref .cms-live-hero a{color:var(--fmb-network-plum)!important}
 
 .fmb-ref .world-feed,.fmb-ref .edition-body{background:#fff!important}
-.fmb-ref .world-feed-head,.fmb-ref .archive-head{border-bottom:2px solid transparent;border-image:linear-gradient(90deg,#3b0c46,#a779af 35%,#e1cfe5 74%,transparent) 1;padding-bottom:14px}
+.fmb-ref .world-feed-head,.fmb-ref .archive-head{border-bottom:2px solid transparent;border-image:var(--fmb-section-rule,linear-gradient(90deg,#D71920 0 64px,rgba(20,20,20,.22) 64px)) 1;padding-bottom:14px}
 .fmb-ref .world-feed-head h2,.fmb-ref .archive-head h2{font-family:"Bodoni 72","Didot","Bodoni MT","Times New Roman",serif;font-weight:700;letter-spacing:-.03em}
 .fmb-ref .edition-link{border:1px solid #BFC1C2!important;color:var(--fmb-network-plum)!important;background:#fff;box-shadow:0 7px 18px rgba(20,20,20,.05)}
 

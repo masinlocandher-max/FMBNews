@@ -1,1 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><rect width="1600" height="900" fill="#f7f4ee"/><rect width="1600" height="28" fill="#d71920"/><text x="92" y="105" font-family="Arial,sans-serif" font-weight="700" font-size="34" fill="#d71920">FMB NEWS</text><text x="92" y="225" font-family="Georgia,serif" font-weight="700" font-size="78" fill="#111">21.7% VACCINATED</text><text x="92" y="315" font-family="Georgia,serif" font-weight="700" font-size="72" fill="#111">IN CENTRAL VISAYAS</text><text x="96" y="392" font-family="Arial,sans-serif" font-size="31" fill="#555">More than 493,000 targeted children remained unreached as of Aug. 29</text><circle cx="1290" cy="445" r="210" fill="none" stroke="#ddd6cc" stroke-width="44"/><path d="M1290 235a210 210 0 0 1 205 165" fill="none" stroke="#d71920" stroke-width="44" stroke-linecap="round"/><path d="M1260 360h60v70h70v60h-70v70h-60v-70h-70v-60h70z" fill="#111"/><text x="96" y="800" font-family="Arial,sans-serif" font-size="28" fill="#6f6b66">Health · Central Visayas · August 31, 2026</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="FMB News editorial plate">
+  <defs>
+    <linearGradient id="plate-ground" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F5F3EF"/><stop offset="1" stop-color="#FAF9F6"/>
+    </linearGradient>
+    <clipPath id="plate-clip"><rect width="1600" height="900"/></clipPath>
+  </defs>
+  <rect width="1600" height="900" fill="url(#plate-ground)"/>
+  <g clip-path="url(#plate-clip)"><circle cx="688" cy="484" r="752" fill="#141414" fill-opacity="0.92"/><circle cx="688" cy="484" r="387" fill="#F5F3EF"/><rect x="716" y="516" width="884" height="42" fill="#D71920"/></g>
+  <rect x="572" y="770" width="456" height="130" fill="#F5F3EF"/>
+  <text x="804" y="832" text-anchor="middle" fill="#141414" fill-opacity="0.78" font-family="Didot,'Bodoni 72',Baskerville,'Times New Roman',serif" font-size="50" letter-spacing="8">FMB NEWS</text>
+</svg>

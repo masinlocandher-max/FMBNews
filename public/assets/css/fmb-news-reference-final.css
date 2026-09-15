@@ -46,7 +46,7 @@ body.fmb-ref{background:linear-gradient(180deg,#fff 0%,#fff 72%,#fbf8fc 100%)}
 
 /* Light-purple section architecture. */
 .fmb-ref .section{position:relative;margin-top:24px;padding:30px 26px;background:linear-gradient(180deg,rgba(248,243,250,.96) 0%,rgba(255,255,255,.98) 46%,#fff 100%);border:1px solid #eadfec;box-shadow:0 12px 32px rgba(49,13,57,.055)}
-.fmb-ref .section-title{border-bottom:2px solid transparent;border-image:linear-gradient(90deg,#3b0c46,#a779af 35%,#e1cfe5 74%,transparent) 1}
+.fmb-ref .section-title{border-bottom:2px solid transparent;border-image:var(--fmb-section-rule,linear-gradient(90deg,#D71920 0 64px,rgba(20,20,20,.22) 64px)) 1}
 .fmb-ref .section-title h2{letter-spacing:.025em}
 .fmb-ref .section-title a{color:var(--fmb-plum)}
 .fmb-ref .lead-story .media,.fmb-ref .support-item img,.fmb-ref .more-item img{box-shadow:0 8px 20px rgba(37,9,43,.11)}
@@ -63,7 +63,7 @@ body.fmb-ref{background:linear-gradient(180deg,#fff 0%,#fff 72%,#fbf8fc 100%)}
 .fmb-ref .lens-icon{border-color:#D71920;color:#D71920;background:#fff}
 .fmb-ref .sources{margin-top:12px;padding:20px;background:#FAF9F6;border:1px solid #eadfec}
 .fmb-ref .related{padding:20px;background:linear-gradient(180deg,#FAF9F6,#fff);border:1px solid #e7dbe9;box-shadow:0 12px 30px rgba(20,20,20,.055)}
-.fmb-ref .related h2{border-bottom:2px solid transparent;border-image:linear-gradient(90deg,#3e0e49,#a77caf,transparent) 1}
+.fmb-ref .related h2{border-bottom:2px solid transparent;border-image:var(--fmb-section-rule,linear-gradient(90deg,#D71920 0 64px,rgba(20,20,20,.22) 64px)) 1}
 
 /* Footer: same wordmark, richer network finish. */
 .fmb-ref .footer{position:relative;margin-top:42px;background:linear-gradient(115deg,#0A0A0A 0%,#141414 55%,#0A0A0A 100%);box-shadow:inset 0 1px rgba(255,255,255,.13)}

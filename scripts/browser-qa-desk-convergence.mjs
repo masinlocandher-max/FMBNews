@@ -50,7 +50,18 @@ for (const [name, url] of DESKS) {
         if (rect.width < 2 || rect.height < 2) continue;
         for (const pseudo of [null, '::before', '::after']) {
           const cs = getComputedStyle(el, pseudo);
-          for (const prop of ['backgroundColor', 'color', 'backgroundImage', 'borderTopColor', 'borderLeftColor', 'boxShadow']) {
+          // borderImageSource and outlineColor are on this list because leaving
+          // them off let a retired plum section rule survive every guard the
+          // project had. `.world-feed-head` and `.section-title` painted
+          // linear-gradient(90deg,#3b0c46,#a779af,#e1cfe5,transparent) through
+          // border-image, which is invisible to a stylesheet grep for the
+          // retired hex values (they were there, but so were dozens of
+          // documented ones) AND to a scan of background/border *colour*
+          // properties, because a border-image is neither. It shipped in plain
+          // sight under the World desk headline.
+          for (const prop of ['backgroundColor', 'color', 'backgroundImage', 'borderImageSource',
+            'borderTopColor', 'borderRightColor', 'borderBottomColor', 'borderLeftColor',
+            'outlineColor', 'boxShadow', 'fill', 'stroke']) {
             const v = cs[prop];
             if (!v || v === 'none') continue;
             for (const c of String(v).match(/rgba?\([^)]*\)/g) || []) {

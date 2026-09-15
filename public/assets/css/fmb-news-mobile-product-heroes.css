@@ -10,6 +10,7 @@
    by its own content. */
 body.fmb-mobile-route-world .world-hero,
 body.fmb-mobile-route-explainer .explainer-hero,
+body.fmb-mobile-first .fc-hero,
 body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero{
   position:relative!important;
   overflow:visible!important;
@@ -45,6 +46,7 @@ body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero::af
    its own content and reads from the top. */
 body.fmb-mobile-route-world .world-hero .shell,
 body.fmb-mobile-route-explainer .explainer-hero .shell,
+body.fmb-mobile-first .fc-hero .fc-shell,
 body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero .brief-shell,
 body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero .shell{
   position:relative!important;
@@ -64,12 +66,23 @@ body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero .sh
 .fmb-product-signal>div{min-width:0!important}
 .fmb-product-signal strong{display:block!important;color:var(--fmb-desk-accent,#D71920)!important;font-size:10px!important;line-height:1!important;font-weight:900!important;letter-spacing:.16em!important}
 .fmb-product-signal small{display:block!important;margin-top:4px!important;color:var(--fmb-shell-muted,#6D7072)!important;font-size:9px!important;line-height:1.2!important;font-weight:650!important}
-.fmb-product-symbol{position:relative!important;display:block!important;width:34px!important;height:34px!important;flex:0 0 34px!important;border:1px solid rgba(235,216,164,.70)!important;border-radius:50%!important}
-.fmb-world-symbol::before,.fmb-world-symbol::after{content:"";position:absolute;left:50%;top:50%;border:1px solid rgba(235,216,164,.45);border-radius:50%;transform:translate(-50%,-50%)}
-.fmb-world-symbol::before{width:14px;height:30px}.fmb-world-symbol::after{width:30px;height:12px}
-.fmb-explainer-symbol::before{content:"";position:absolute;left:9px;right:9px;top:9px;height:2px;background:#eadcae;box-shadow:0 7px 0 #eadcae,0 14px 0 #eadcae}
-.fmb-brief-symbol::before{content:"";position:absolute;left:8px;right:8px;top:8px;bottom:8px;border:1px solid #eadcae;border-radius:4px}
-.fmb-brief-symbol::after{content:"";position:absolute;left:12px;right:12px;top:13px;height:1px;background:#eadcae;box-shadow:0 5px 0 #eadcae}
+/* The desk mark. Every stroke here was #EBD8A4 / #EADCAE -- the retired gold --
+   which on warm ivory came out as a barely-there tan ring that read as a
+   rendering artefact rather than a mark. The desk marks are drawn in editorial
+   ink now, square rather than round: a circle at 34px is a UI avatar, a ruled
+   square is a printer's mark, and the difference is most of why one looks like
+   an app and the other looks like a newspaper. */
+.fmb-product-symbol{position:relative!important;display:block!important;width:34px!important;height:34px!important;flex:0 0 34px!important;border:1.5px solid var(--fmb-shell-ink,#141414)!important;border-radius:0!important}
+.fmb-world-symbol::before,.fmb-world-symbol::after{content:"";position:absolute;left:50%;top:50%;border:1px solid var(--fmb-shell-ink,#141414);border-radius:50%;transform:translate(-50%,-50%)}
+.fmb-world-symbol::before{width:13px;height:24px}.fmb-world-symbol::after{width:24px;height:24px}
+.fmb-explainer-symbol::before{content:"";position:absolute;left:8px;right:8px;top:9px;height:2px;background:var(--fmb-shell-ink,#141414);box-shadow:0 6px 0 var(--fmb-shell-ink,#141414),0 12px 0 var(--fmb-desk-accent,#D71920)}
+.fmb-brief-symbol::before{content:"";position:absolute;left:8px;right:8px;top:9px;height:2px;background:var(--fmb-shell-ink,#141414);box-shadow:0 5px 0 var(--fmb-shell-ink,#141414),0 10px 0 var(--fmb-shell-ink,#141414)}
+.fmb-brief-symbol::after{content:"";position:absolute;left:8px;width:10px;top:24px;height:2px;background:var(--fmb-desk-accent,#D71920)}
+/* The Fact Check mark had no glyph at all -- productSignal() builds the symbol
+   span for every desk, but only world/explainer/brief ever had rules drawn
+   inside it, so Fact Check rendered an empty box. A check mark, ruled. */
+.fmb-factcheck-symbol::before{content:"";position:absolute;left:8px;top:16px;width:8px;height:2px;background:var(--fmb-shell-ink,#141414);transform:rotate(45deg);transform-origin:left center}
+.fmb-factcheck-symbol::after{content:"";position:absolute;left:13px;top:19px;width:15px;height:2px;background:var(--fmb-desk-accent,#D71920);transform:rotate(-52deg);transform-origin:left center}
 
 /* Remove old product-specific floating marks. */
 body.fmb-mobile-route-explainer .fmb-explainer-mark,
@@ -81,45 +94,74 @@ body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero .sh
 /* Same kicker. */
 body.fmb-mobile-route-world .world-kicker,
 body.fmb-mobile-route-explainer .explainer-kicker,
+body.fmb-mobile-first .fc-hero .fc-kicker,
 body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-kicker{
-  margin:24px 0 0!important;
-  color:#BFC1C2!important;
-  font-size:9px!important;
+  margin:26px 0 0!important;
+  /* Was #BFC1C2 -- Metallic Silver, which is a dark-ground colour. On warm
+     ivory it sits near 1.7:1 and the desk eyebrow all but vanished. Steel is
+     the paper-ground equivalent in the same palette. */
+  color:var(--fmb-shell-muted,#6D7072)!important;
+  font-size:10px!important;
   line-height:1!important;
-  font-weight:850!important;
-  letter-spacing:.16em!important;
+  font-weight:800!important;
+  letter-spacing:.18em!important;
   text-transform:uppercase!important;
 }
 
 /* Same title. */
 body.fmb-mobile-route-world .world-hero h1,
 body.fmb-mobile-route-explainer .explainer-hero h1,
+body.fmb-mobile-first .fc-hero h1,
 body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero h1{
-  max-width:330px!important;
-  margin:8px 0 14px!important;
+  /* 330px was the poster canvas measure and it broke "FMB Worldwide" onto two
+     lines with one word stranded. The opener runs to the shell inset. */
+  max-width:none!important;
+  margin:10px 0 16px!important;
   color:var(--fmb-shell-ink,#141414)!important;
   font-family:"Bodoni Moda","Libre Bodoni","Didot","Bodoni 72","Baskerville","Times New Roman",serif!important;
   font-size:46px!important;
   line-height:.90!important;
   font-weight:880!important;
   letter-spacing:-.06em!important;
-  text-shadow:0 3px 20px rgba(0,0,0,.28)!important;
+  /* No text-shadow. A 20px black blur under display type is how you lift a
+     headline off a photographic poster; under Bodoni on warm ivory it just
+     smears the serifs and reads as a printing fault -- it was visibly hazing
+     "FMB Daily Brief". Weight and scale carry the headline on paper. */
+  text-shadow:none!important;
 }
 
-/* Same supporting copy footprint. */
+/* Same supporting copy footprint.
+
+   This block carried three faults from the poster it replaced, all of them
+   invisible to a source read and obvious in a render:
+
+   1. colour:rgba(255,255,255,.82) -- white deck copy. The ground above was
+      converted to paper and the type was not converted with it, so on World,
+      Explainer and the Daily Brief the standfirst was near-white on warm ivory.
+      It measured about 1.2:1 against the ground: legally invisible, and the
+      reason those three desks looked like they had failed to load.
+   2. -webkit-line-clamp:3 -- the standfirst was cut mid-sentence with an
+      ellipsis ("filtered for significance and... "). A desk's standfirst is
+      written to be read; clamping it truncates the newsroom's own words to fit
+      a box that no longer has a fixed height.
+   3. max-width:330px -- a measure inherited from the 300px poster canvas, which
+      forced the clamp. The opener is sized by its content now, so the standfirst
+      runs to the shell's own inset.
+
+   Editorial ink-soft on paper, unclamped, at a real reading measure. */
 body.fmb-mobile-route-world .world-hero p,
 body.fmb-mobile-route-explainer .explainer-hero p,
+body.fmb-mobile-first .fc-hero>.fc-shell>p,
 body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero p{
-  display:-webkit-box!important;
-  overflow:hidden!important;
-  max-width:330px!important;
+  display:block!important;
+  overflow:visible!important;
+  max-width:34ch!important;
   margin:0!important;
-  color:rgba(255,255,255,.82)!important;
-  font-size:14px!important;
-  line-height:1.56!important;
+  color:var(--fmb-shell-ink-soft,#4B4850)!important;
+  font-size:15px!important;
+  line-height:1.58!important;
   text-shadow:none!important;
-  -webkit-box-orient:vertical!important;
-  -webkit-line-clamp:3!important;
+  -webkit-line-clamp:none!important;
 }
 
 /* Same bottom capsule footprint, visually flattened into an editorial rule. */
@@ -133,35 +175,39 @@ body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-rule{
   margin-top:18px!important;
   padding:9px 0!important;
   border:0!important;
-  border-top:1px solid rgba(255,255,255,.16)!important;
+  /* Was a white hairline and #f0e9f4 type at 8px -- a retired-lilac line on a
+     white rule, both of them invisible on warm ivory, and below the size at
+     which letterspaced caps can be read at all. It is the desk's standing
+     promise line ("PLAIN LANGUAGE - CONTEXT FIRST - FILIPINO RELEVANCE"), so it
+     is set to be read: steel caps over an ink hairline. */
+  border-top:1px solid var(--fmb-shell-rule,rgba(20,20,20,.16))!important;
   border-radius:0!important;
   background:transparent!important;
-  color:#f0e9f4!important;
-  font-size:8px!important;
-  line-height:1.45!important;
-  font-weight:800!important;
-  letter-spacing:.08em!important;
+  color:var(--fmb-shell-muted,#6D7072)!important;
+  font-size:10px!important;
+  line-height:1.5!important;
+  font-weight:700!important;
+  letter-spacing:.14em!important;
   text-transform:uppercase!important;
   white-space:normal!important;
   overflow-wrap:anywhere!important;
 }
 
 @media(max-width:380px){
-  body.fmb-mobile-route-world .world-hero,
-  body.fmb-mobile-route-explainer .explainer-hero,
-  body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero{height:282px!important;min-height:282px!important}
-  body.fmb-mobile-route-world .world-hero .shell,
-  body.fmb-mobile-route-explainer .explainer-hero .shell,
-  body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero .brief-shell,
-  body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero .shell{height:282px!important;min-height:282px!important;padding:24px 18px 23px!important}
+  /* Narrow phones. This block used to re-pin height:282px on the opener and its
+     shell -- the exact fixed poster canvas the rest of this file exists to
+     remove -- and re-apply the 3-line clamp and a 7.2px rule. All of that came
+     back at 375px, so an iPhone SE still got the truncated, cramped poster. An
+     opener sized by its content does not need a height at any width; it needs
+     slightly smaller type. */
   body.fmb-mobile-route-world .world-hero h1,
   body.fmb-mobile-route-explainer .explainer-hero h1,
-  body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero h1{font-size:42px!important}
+  body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero h1{font-size:40px!important}
   body.fmb-mobile-route-world .world-hero p,
   body.fmb-mobile-route-explainer .explainer-hero p,
-  body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero p{font-size:13px!important;-webkit-line-clamp:3!important}
+  body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-archive-hero p{font-size:14px!important}
   body.fmb-mobile-route-world .world-rule,
   body.fmb-mobile-route-explainer .explainer-rule,
-  body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-rule{font-size:7.2px!important;letter-spacing:.06em!important}
+  body.fmb-mobile-first.brief-route.fmb-mobile-route-brief .brief-rule{font-size:9.5px!important;letter-spacing:.11em!important}
 }
 }
