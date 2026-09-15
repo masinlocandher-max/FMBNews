@@ -1,0 +1,41 @@
+{
+  "slug": "icc-judges-have-not-moved-to-end-rodrigo-dutertes-case",
+  "claimSource": {
+    "url": "https://verafiles.org/articles/fact-check-no-move-from-icc-judges-to-end-rodrigo-dutertes-trial",
+    "capturedAt": "2026-09-16",
+    "description": "VERA Files documented the circulating September 10 graphic claiming that ICC judges rejected the evidence and moved to end Rodrigo Duterte's trial. FMB independently checked the ICC's current case record."
+  },
+  "rating": "FALSE",
+  "ratingReachedBy": "FMB",
+  "evidence": [
+    {
+      "kind": "primary",
+      "title": "Rodrigo Roa Duterte — ICC case page",
+      "publisher": "International Criminal Court",
+      "url": "https://icccpi-web.icccpi-prod.uniccloud.org/philippines/duterte",
+      "checkedOn": "2026-09-16",
+      "supports": "States that Pre-Trial Chamber I unanimously confirmed all three charges on April 23, 2026, committed Duterte to trial, and that the opening of trial is scheduled for November 30, 2026."
+    },
+    {
+      "kind": "primary",
+      "title": "ICC Pre-Trial Chamber I confirms all charges against Rodrigo Roa Duterte and commits him to trial",
+      "publisher": "International Criminal Court",
+      "url": "https://www.icc-cpi.int/news/icc-pre-trial-chamber-i-confirms-all-charges-against-rodrigo-roa-duterte-and-commits-him-trial",
+      "checkedOn": "2026-09-16",
+      "supports": "The April 23, 2026 ICC release says the chamber unanimously confirmed three counts of crimes against humanity and committed Duterte to trial."
+    },
+    {
+      "kind": "secondary",
+      "title": "FACT CHECK: NO move from ICC judges to end Rodrigo Duterte’s trial",
+      "publisher": "VERA Files",
+      "url": "https://verafiles.org/articles/fact-check-no-move-from-icc-judges-to-end-rodrigo-dutertes-trial",
+      "checkedOn": "2026-09-16",
+      "supports": "Documents the circulating graphic and reports the ICC Public Affairs Unit's confirmation that the trial remains scheduled for November 30."
+    }
+  ],
+  "derivedFrom": {
+    "publisher": "VERA Files",
+    "url": "https://verafiles.org/articles/fact-check-no-move-from-icc-judges-to-end-rodrigo-dutertes-trial",
+    "note": "VERA Files supplied the documented research lead for the circulating claim. FMB independently checked the ICC's primary case record before assigning its rating."
+  }
+}

@@ -67,6 +67,16 @@ await import('./render-publication-sections.mjs');
 // Generate Fact Check before the universal mobile/PWA passes so all new pages
 // receive the same shared newsroom runtime, accessibility and QA contract.
 await import('./render-fmb-fact-check.mjs');
+
+// Publish the independently verified current Fact Checks without rewriting the
+// sealed 123-item historical draft corpus. Each current item still has to pass
+// the same evidence contract before a public page is generated.
+await import('./publish-current-fact-checks.mjs');
+
+// Every published article must carry a real, rights-cleared photograph. Current
+// Fact Checks are rendered after the general photo pass, so their licensed
+// contextual photography is localized and inserted here before Fact Check QA.
+await import('./apply-current-fact-check-photography.mjs');
 await import('./hardfix-fact-check-qa.mjs');
 
 // The canonical homepage renderer is the sole owner of /news/index.html. It

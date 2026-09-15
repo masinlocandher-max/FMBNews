@@ -1,0 +1,41 @@
+{
+  "slug": "davao-city-did-not-receive-zero-national-funding-under-marcos",
+  "claimSource": {
+    "url": "https://pressone.ph/fact-check-davao-city-receives-yearly-funding-from-natl-govt/",
+    "capturedAt": "2026-09-16",
+    "description": "PressOnePH documented the circulating AI-generated Facebook graphic claiming that Davao City received no national funding for four years. FMB used that documented claim as the research lead and independently checked official budget records."
+  },
+  "rating": "FALSE",
+  "ratingReachedBy": "FMB",
+  "evidence": [
+    {
+      "kind": "primary",
+      "title": "FY 2026 General Appropriations Act, Volume I-C",
+      "publisher": "Department of Budget and Management",
+      "url": "https://www.dbm.gov.ph/wp-content/uploads/GAA/GAA2026/DBM-OFFICIAL-GAZETTE-FY-2026_VOLUME-1-C.pdf",
+      "checkedOn": "2026-09-16",
+      "supports": "Lists multiple nationally appropriated road projects located in Davao City, including appropriations of ₱164.727 million, ₱144.186 million, ₱144.186 million and ₱96.124 million."
+    },
+    {
+      "kind": "primary",
+      "title": "PBBM pushes P46.22B release for 1,743 infra projects nationwide to drive growth, connect communities",
+      "publisher": "Department of Budget and Management",
+      "url": "https://www.dbm.gov.ph/index.php/management-2/3952-pbbm-pushes-p46-22b-release-for-1-743-infra-projects-nationwide-to-drive-growth-connect-communities",
+      "checkedOn": "2026-09-16",
+      "supports": "Identifies a ₱288.371 million approved allocation for the Davao City Bypass Construction Project in 2026."
+    },
+    {
+      "kind": "secondary",
+      "title": "Pulong Duterte insists Davao City got no congressional district budget",
+      "publisher": "GMA News Online",
+      "url": "https://www.gmanetwork.com/news/topstories/nation/1001308/pulong-duterte-insists-davao-city-got-no-congressional-district-budget/story/",
+      "checkedOn": "2026-09-16",
+      "supports": "Records Paolo Duterte's later clarification that he was referring to congressional-district allocations, not the city's National Tax Allotment."
+    }
+  ],
+  "derivedFrom": {
+    "publisher": "PressOnePH",
+    "url": "https://pressone.ph/fact-check-davao-city-receives-yearly-funding-from-natl-govt/",
+    "note": "PressOnePH documented the circulating claim. FMB independently reviewed the cited official DBM records and states its own verdict while crediting the research lead."
+  }
+}
