@@ -155,6 +155,48 @@ for (const [label, rel] of [
   }
 }
 
+// ---------------------------------------------------------------------------
+// No asset may exceed what the platform will deploy
+// ---------------------------------------------------------------------------
+// Cloudflare Workers refuses any single static asset over 25 MiB. It refuses
+// the WHOLE deploy, not the file -- so an oversized asset does not degrade the
+// site, it stops the newsroom publishing at all.
+//
+// That is exactly what happened: a build pass fetched a 28.9 MiB Wikimedia
+// original, every verifier passed, all eight browser suites passed, and then
+// wrangler rejected the upload. The gates said the build was good and the
+// build could not ship. A check that green-lights an undeployable artifact is
+// the gap worth closing, so the platform ceiling is asserted here.
+//
+// The warning threshold is far below the hard limit because a multi-megabyte
+// photograph is a performance defect long before it is a deploy blocker.
+const DEPLOY_LIMIT = 25 * 1024 * 1024;
+const HEAVY = 3 * 1024 * 1024;
+const oversized = [];
+const heavy = [];
+async function weigh(dir) {
+  for (const entry of await readdir(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) { await weigh(full); continue; }
+    const info = await stat(full);
+    const rel = path.relative(resolve('dist'), full);
+    if (info.size >= DEPLOY_LIMIT) oversized.push(`${rel} is ${(info.size / 1048576).toFixed(1)} MiB`);
+    else if (info.size >= HEAVY) heavy.push(`${rel} is ${(info.size / 1048576).toFixed(1)} MiB`);
+  }
+}
+await weigh(resolve('dist'));
+if (oversized.length) {
+  throw new Error(
+    `${oversized.length} asset(s) are at or above Cloudflare's 25 MiB per-asset limit and would fail the deploy:\n  `
+    + oversized.join('\n  ')
+    + '\n  Serve a web-sized rendition instead of a camera original.'
+  );
+}
+if (heavy.length) {
+  console.warn(`  Note: ${heavy.length} asset(s) over 3 MiB — slow for phone readers:`);
+  for (const line of heavy.slice(0, 5)) console.warn(`    ${line}`);
+}
+
 const isArticle=html=>html.includes('class="article-grid"')||/property=["']og:type["'][^>]*content=["']article["']/i.test(html)||/content=["']article["'][^>]*property=["']og:type["']/i.test(html)||/["']@type["']\s*:\s*["'](?:NewsArticle|Article)["']/i.test(html);
 const hasArticleImage=html=>/class=["'][^"']*(?:article-figure|cms-article-image|explainer-article-image|article-hero-image|brief-hero)[^"']*["'][\s\S]*?<img\s+[^>]*src=["'][^"']+/i.test(html)||/<article\b[\s\S]*?<img\s+[^>]*src=["'][^"']+/i.test(html);
 

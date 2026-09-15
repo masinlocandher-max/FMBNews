@@ -51,6 +51,30 @@ const EXT = {
 const exists = async (f) => { try { await access(f); return true; } catch { return false; } };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// Cloudflare Workers refuses any single asset over 25 MiB, so an oversized
+// download does not degrade the site -- it blocks the deploy outright. The
+// first run of this pass fetched a 28.9 MiB Wikimedia original and did exactly
+// that. 6 MiB is far above any sane web photograph and still leaves enormous
+// headroom under the platform limit.
+const MAX_BYTES = 6 * 1024 * 1024;
+
+// Ask Wikimedia for a web-sized rendition instead of the camera original.
+// Those originals run to 4608x3456 and tens of megabytes; serving one to a
+// phone reader is indefensible even when it fits. Both of Wikimedia's public
+// URL shapes support a width-limited form, and this uses the documented one for
+// each. Anything else is left exactly as it is.
+const WEB_WIDTH = 1600;
+function webSizedUrl(url) {
+  if (/commons\.wikimedia\.org\/wiki\/Special:Redirect\/file\//i.test(url)) {
+    return url.includes('?') ? url : `${url}?width=${WEB_WIDTH}`;
+  }
+  const m = url.match(/^(https:\/\/upload\.wikimedia\.org\/wikipedia\/[^/]+)\/([0-9a-f])\/([0-9a-f]{2})\/([^/?#]+)$/i);
+  if (m && !/\.svg$/i.test(m[4])) {
+    return `${m[1]}/thumb/${m[2]}/${m[3]}/${m[4]}/${WEB_WIDTH}px-${m[4]}`;
+  }
+  return url;
+}
+
 // A stable, collision-resistant name derived from the source URL. Two articles
 // citing the same photograph resolve to the same file.
 const keyFor = (url) => createHash('sha256').update(url).digest('hex').slice(0, 16);
@@ -145,8 +169,16 @@ if (!urls.size) {
     try {
       if (requests) await sleep(350);
       requests += 1;
-      const { bytes, ext } = await download(url);
+      // Try the web-sized rendition first; fall back to the URL as given.
+      const sized = webSizedUrl(url);
+      let got;
+      try { got = await download(sized); }
+      catch (err) { if (sized === url) throw err; got = await download(url); }
+      const { bytes, ext } = got;
       if (bytes.length < 1000) throw new Error(`suspiciously small (${bytes.length} bytes)`);
+      if (bytes.length > MAX_BYTES) {
+        throw new Error(`${(bytes.length / 1048576).toFixed(1)} MiB exceeds the ${MAX_BYTES / 1048576} MiB ceiling`);
+      }
       const file = `${key}.${ext}`;
       await writeFile(path.join(outDir, file), bytes);
       if (VENDOR_MODE) await writeFile(path.join(vendorDir, file), bytes);
