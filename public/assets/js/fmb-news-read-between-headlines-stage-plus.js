@@ -108,15 +108,15 @@ function gameIsActive(){
   return !!gameView&&!gameView.hidden;
 }
 
-document.addEventListener('keydown',(event)=>{
-  if(!gameIsActive()||event.defaultPrevented||event.metaKey||event.ctrlKey||event.altKey||event.repeat)return;
+function handleGameKeydown(event){
+  if(!gameIsActive()||event.metaKey||event.ctrlKey||event.altKey||event.repeat)return;
   const active=document.activeElement;
   if(active?.classList?.contains('rbt-identification'))return;
+  if(active&&['INPUT','TEXTAREA','SELECT'].includes(active.tagName))return;
 
-  if(event.key==='Enter'&&submitButton&&!submitButton.disabled&&
-    (!active||active===document.body||active===root||active.classList?.contains('rbt-option'))){
+  if(event.key==='Enter'&&submitButton&&!submitButton.disabled){
     event.preventDefault();
-    event.stopPropagation();
+    event.stopImmediatePropagation();
     submitButton.click();
     return;
   }
@@ -126,14 +126,17 @@ document.addEventListener('keydown',(event)=>{
 
   const map={a:0,b:1,c:2,d:3,'1':0,'2':1,'3':2,'4':3};
   const key=String(event.key||'').toLowerCase();
-  if(Object.prototype.hasOwnProperty.call(map,key)){
-    const option=options[map[key]];
-    if(!option)return;
-    event.preventDefault();
-    option.focus({preventScroll:true});
-    option.click();
-  }
-});
+  if(!Object.prototype.hasOwnProperty.call(map,key))return;
+  const option=options[map[key]];
+  if(!option)return;
+
+  event.preventDefault();
+  event.stopImmediatePropagation();
+  option.click();
+  submitButton?.focus({preventScroll:true});
+}
+
+document.addEventListener('keydown',handleGameKeydown,true);
 
 const observer=new MutationObserver(()=>{
   syncTension();
