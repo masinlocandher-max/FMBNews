@@ -1,0 +1,410 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-15T03:30:00+08:00",
+  "branchPurpose": "Recover missing FMB Daily Brief editions without changing main.",
+  "range": {
+    "start": "2026-08-18",
+    "end": "2026-09-15"
+  },
+  "editorialRule": "Historical editions are reconstructed from FMB News published article records and explicitly marked as archive recovery. Every edition is required to carry a photographic hero. September 15 uses a separately verified current-news seed.",
+  "editions": [
+    {
+      "date": "2026-08-18",
+      "file": "content/news/morning-special/2026-08-18.json",
+      "storyCount": 6,
+      "status": "archive-recovered",
+      "photographicHero": true,
+      "sourceArticles": [
+        "content/news/articles/2026-08-18/0100-senate-impeachment-court-cancels-august-18-session.json",
+        "content/news/articles/2026-08-18/0100-house-begins-scrutiny-7-2-trillion-2027-national-budget-dbcc-briefing-august-2026.json",
+        "content/news/articles/2026-08-18/1300-dbm-deped-976-billion-6587-classrooms.json",
+        "content/news/articles/2026-08-18/0100-ncr-14-provinces-classes-government-work-suspended-august-18.json",
+        "content/news/articles/2026-08-18/1900-zamboanga-shooting-customs-issued-firearm.json",
+        "content/news/articles/2026-08-18/1300-disaster-toll-26-5-1-million-affected-red-rainfall.json"
+      ]
+    },
+    {
+      "date": "2026-08-19",
+      "file": "content/news/morning-special/2026-08-19.json",
+      "storyCount": 6,
+      "status": "archive-recovered",
+      "photographicHero": true,
+      "sourceArticles": [
+        "content/news/articles/2026-08-19/1300-impeachment-trial-postponed-second-day.json",
+        "content/news/articles/2026-08-19/1300-9142-schools-distance-learning-neneng-habagat.json",
+        "content/news/articles/2026-08-19/0100-neneng-tracks-batanes-cyclone-trio.json",
+        "content/news/articles/2026-08-19/1900-palace-alternative-work-august-20-ncr-17-provinces.json",
+        "content/news/articles/2026-08-19/0700-impeachment-day-17-cash-advance-custodians.json",
+        "content/news/articles/2026-08-19/0100-palace-ncr-17-provinces-suspensions-august-19.json"
+      ]
+    },
+    {
+      "date": "2026-08-20",
+      "file": "content/news/morning-special/2026-08-20.json",
+      "storyCount": 6,
+      "status": "archive-recovered",
+      "photographicHero": true,
+      "sourceArticles": [
+        "content/news/articles/2026-08-20/1300-cicc-streaming-messaging-regulation-zamboanga.json",
+        "content/news/articles/2026-08-20/0100-mc131-classes-government-work-ncr-17-provinces.json",
+        "content/news/articles/2026-08-20/0100-peso-61-815-near-record-low.json",
+        "content/news/articles/2026-08-20/1300-romualdez-counter-affidavit-25-statements.json",
+        "content/news/articles/2026-08-20/1300-marcos-13-pumping-stations-state-of-calamity.json",
+        "content/news/articles/2026-08-20/1900-teodoro-chinese-embassy-illegal-acts.json"
+      ]
+    },
+    {
+      "date": "2026-08-21",
+      "file": "content/news/morning-special/2026-08-21.json",
+      "storyCount": 6,
+      "status": "archive-recovered",
+      "photographicHero": true,
+      "sourceArticles": [
+        "content/news/articles/2026-08-21/0700-deped-strengthens-school-safety-drills-security-coordination.json",
+        "content/news/articles/2026-08-21/1300-bir-hongsheng-pogo-tax-evasion-complaint.json",
+        "content/news/articles/2026-08-21/1300-pagasa-northern-luzon-flood-advisories.json",
+        "content/news/articles/2026-08-21/1900-senate-gun-storage-checks-ra10591.json",
+        "content/news/articles/2026-08-21/0700-palace-180-million-regional-evacuation-center-fund.json",
+        "content/news/articles/2026-08-21/1900-bataan-zambales-state-of-calamity.json"
+      ]
+    },
+    {
+      "date": "2026-08-22",
+      "file": "content/news/morning-special/2026-08-22.json",
+      "storyCount": 6,
+      "status": "archive-recovered",
+      "photographicHero": true,
+      "sourceArticles": [
+        "content/news/articles/2026-08-22/0100-disaster-aid-52k-displaced-saudel-readiness.json",
+        "content/news/articles/2026-08-22/0700-senate-firearms-random-drug-testing-psych-reviews.json",
+        "content/news/articles/2026-08-22/1900-dswd-relief-surpasses-1-09-billion.json",
+        "content/news/articles/2026-08-22/1900-pagasa-tracks-typhoon-saudel-gaerani.json",
+        "content/news/articles/2026-08-22/0700-dpwh-western-visayas-flood-control-2027-budget.json",
+        "content/news/articles/2026-08-22/0100-pnp-tightens-service-firearm-accountability.json"
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "file": "content/news/morning-special/2026-08-23.json",
+      "storyCount": 6,
+      "status": "archive-recovered",
+      "photographicHero": true,
+      "sourceArticles": [
+        "content/news/articles/2026-08-23/1300-afp-brp-sierra-madre-ayungin-sovereign-rights.json",
+        "content/news/articles/2026-08-23/0100-typhoon-saudel-nears-par-obet-habagat.json",
+        "content/news/articles/2026-08-23/1900-congress-social-media-age-restrictions-children.json",
+        "content/news/articles/2026-08-23/0100-senate-impeachment-trial-afternoon-schedule.json",
+        "content/news/articles/2026-08-23/1900-pcg-two-us-marine-protector-patrol-vessels.json",
+        "content/news/articles/2026-08-23/1300-typhoon-saudel-165-kmh-nears-par-obet.json"
+      ]
+    },
+    {
+      "date": "2026-08-24",
+      "file": "content/news/morning-special/2026-08-24.json",
+      "storyCount": 6,
+      "status": "archive-recovered",
+      "photographicHero": true,
+      "sourceArticles": [
+        "content/news/articles/2026-08-24/1300-dilg-deped-school-security-modernization-plan.json",
+        "content/news/articles/2026-08-24/1900-senate-agrees-move-sara-duterte-impeachment-trial-afternoons.json",
+        "content/news/articles/2026-08-24/1900-39-filipino-seafarers-safe-black-sea-drone-attacks.json",
+        "content/news/articles/2026-08-24/1300-typhoon-saudel-175-kmh-nears-par-as-obet.json",
+        "content/news/articles/2026-08-24/0100-pagasa-advisory-3-typhoon-saudel-par-entry.json",
+        "content/news/articles/2026-08-24/0700-five-fishermen-rescued-oriental-mindoro.json"
+      ]
+    },
+    {
+      "date": "2026-08-25",
+      "file": "content/news/morning-special/2026-08-25.json",
+      "storyCount": 6,
+      "status": "archive-recovered",
+      "photographicHero": true,
+      "sourceArticles": [
+        "content/news/articles/2026-08-25/1300-visayas-grid-red-yellow-alerts.json",
+        "content/news/articles/2026-08-25/0700-deped-9500-classrooms-disaster-recovery.json",
+        "content/news/articles/2026-08-25/0700-dbm-ai-flood-forecasting-river-basins.json",
+        "content/news/articles/2026-08-25/0700-typhoon-obet-exits-par-habagat-rains.json",
+        "content/news/articles/2026-08-25/1900-impeachment-ortonio-hostile-witness.json",
+        "content/news/articles/2026-08-25/1900-boc-bir-cigarette-smuggling-funding-gaps.json"
+      ]
+    },
+    {
+      "date": "2026-08-26",
+      "file": "content/news/morning-special/2026-08-26.json",
+      "storyCount": 6,
+      "status": "archive-recovered",
+      "photographicHero": true,
+      "sourceArticles": [
+        "content/news/articles/2026-08-26/1900-palace-vigilance-foreign-influence-west-philippine-sea.json",
+        "content/news/articles/2026-08-26/0700-habagat-class-suspensions-western-luzon.json",
+        "content/news/articles/2026-08-26/0100-philhealth-st-lukes-no-copayment-pact.json",
+        "content/news/articles/2026-08-26/0700-coa-seeks-2-2-billion-pre-audit-infrastructure.json",
+        "content/news/articles/2026-08-26/1300-afp-19th-mmca-us-australia-west-philippine-sea.json",
+        "content/news/articles/2026-08-26/1900-pagasa-five-seven-cyclones-el-nino-outlook.json"
+      ]
+    },
+    {
+      "date": "2026-08-27",
+      "file": "content/news/morning-special/2026-08-27.json",
+      "storyCount": 6,
+      "status": "archive-recovered",
+      "photographicHero": true,
+      "sourceArticles": [
+        "content/news/articles/2026-08-27/0700-senate-panel-backs-social-media-age-16-bill.json",
+        "content/news/articles/2026-08-27/0100-ocd-7-7-million-storm-affected-relief-1-42-billion.json",
+        "content/news/articles/2026-08-27/0100-lgus-1-32-trillion-national-tax-allotment-2027.json",
+        "content/news/articles/2026-08-27/1900-philippine-peso-record-low-61-888-bsp-rate-hike.json",
+        "content/news/articles/2026-08-27/1300-gsis-4-4-billion-emergency-loans-166789-members.json",
+        "content/news/articles/2026-08-27/1300-dar-57-76-billion-agrarian-debt-condonation.json"
+      ]
+    },
+    {
+      "date": "2026-08-28",
+      "file": "content/news/morning-special/2026-08-28.json",
+      "storyCount": 4,
+      "status": "archive-recovered",
+      "photographicHero": true,
+      "sourceArticles": [
+        "content/news/articles/2026-08-28/1300-dbm-45-67-billion-disaster-fund-2027.json",
+        "content/news/articles/2026-08-28/1901-visayas-grid-red-yellow-alerts.json",
+        "content/news/articles/2026-08-28/1900-mapanuepe-lake-zambales-boat-capsize.json",
+        "content/news/articles/2026-08-28/1301-lpa-08i-habagat-class-suspensions.json"
+      ]
+    },
+    {
+      "date": "2026-08-29",
+      "file": "content/news/morning-special/2026-08-29.json",
+      "storyCount": 6,
+      "status": "archive-recovered",
+      "photographicHero": true,
+      "sourceArticles": [
+        "content/news/articles/2026-08-29/1301-red-rainfall-warning-central-luzon.json",
+        "content/news/articles/2026-08-29/1900-leptospirosis-hospital-surge-august-29-2026.json",
+        "content/news/articles/2026-08-29/1900-olongapo-1395-evacuated-habagat-floods.json",
+        "content/news/articles/2026-08-29/0702-bsp-raises-policy-rate-5-percent.json",
+        "content/news/articles/2026-08-29/0100-psa-12-8-percent-multidimensional-poverty.json",
+        "content/news/articles/2026-08-29/1300-phivolcs-pinatubo-taal-lahar-warning.json"
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "file": "content/news/morning-special/2026-08-30.json",
+      "storyCount": 6,
+      "status": "archive-recovered",
+      "photographicHero": true,
+      "sourceArticles": [
+        "content/news/articles/2026-08-30/0100-ocd-8-million-affected-32-dead-habagat-cyclones.json",
+        "content/news/articles/2026-08-30/2156-zambales-flood-control-damage-569-million.json",
+        "content/news/articles/2026-08-30/1300-jenny-barzaga-wins-cavite-4th-district-special-election.json",
+        "content/news/articles/2026-08-30/1300-ipo-bustos-dams-spilling-level-bulacan.json",
+        "content/news/articles/2026-08-30/1301-tropical-depression-pilandok-forms.json",
+        "content/news/articles/2026-08-30/2155-nearly-10000-classrooms-damaged-habagat-cyclones.json"
+      ]
+    },
+    {
+      "date": "2026-08-31",
+      "file": "content/news/morning-special/2026-08-31.json",
+      "storyCount": 6,
+      "status": "archive-recovered",
+      "photographicHero": true,
+      "sourceArticles": [
+        "content/news/articles/2026-08-31/113309-dpwh-maintenance-chief-relieved-calamity-response.json",
+        "content/news/articles/2026-08-31/221401-us-iran-fire-resumes-oil-rises.json",
+        "content/news/articles/2026-08-31/113304-nlex-libtong-san-simon-flooding.json",
+        "content/news/articles/2026-08-31/113306-ambuklao-binga-ipo-dams-release-water.json",
+        "content/news/articles/2026-08-31/221402-nepal-bhote-koshi-flood-rescue.json",
+        "content/news/articles/2026-08-31/113303-pampanga-17300-evacuation-centers-flooding.json"
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "file": "content/news/morning-special/2026-09-01.json",
+      "storyCount": 6,
+      "status": "archive-recovered",
+      "photographicHero": true,
+      "sourceArticles": [
+        "content/news/articles/2026-09-01/1302-senate-no-new-flood-control-projects-2027.json",
+        "content/news/articles/2026-09-01/232803-doh-5835-leptospirosis.json",
+        "content/news/articles/2026-09-01/0701-noah-1941-flood-control-master-plan.json",
+        "content/news/articles/2026-09-01/0102-fuel-price-rollback-september-1.json",
+        "content/news/articles/2026-09-01/1901-boransing-no-deped-funds-army-youth-summits.json",
+        "content/news/articles/2026-09-01/0101-mc133-alternative-work-15-provinces.json"
+      ]
+    },
+    {
+      "date": "2026-09-02",
+      "file": "content/news/morning-special/2026-09-02.json",
+      "storyCount": 6,
+      "status": "archive-recovered",
+      "photographicHero": true,
+      "sourceArticles": [
+        "content/news/articles/2026-09-02/0701-ramon-ang-nlex-flooding-debris.json",
+        "content/news/articles/2026-09-02/1902-indonesia-haze-metro-manila-air-quality.json",
+        "content/news/articles/2026-09-02/232000-senate-kin-government-contracts-bill.json",
+        "content/news/articles/2026-09-02/1901-michael-poa-no-deped-secret-funds-youth-summits.json",
+        "content/news/articles/2026-09-02/033900-marcos-flood-response-assistance.json",
+        "content/news/articles/2026-09-02/0101-laguna-de-bay-fish-kill-20000kg.json"
+      ]
+    },
+    {
+      "date": "2026-09-03",
+      "file": "content/news/morning-special/2026-09-03.json",
+      "storyCount": 6,
+      "status": "archive-recovered",
+      "photographicHero": true,
+      "sourceArticles": [
+        "content/news/articles/2026-09-03/1903-impeachment-whole-day-october-schedule.json",
+        "content/news/articles/2026-09-03/1901-visayas-mindanao-grid-red-alerts.json",
+        "content/news/articles/2026-09-03/1303-deped-7-7b-school-repairs.json",
+        "content/news/articles/2026-09-03/231900-ombudsman-dismisses-former-bfp-chief-ambulance-procurement.json",
+        "content/news/articles/2026-09-03/1301-two-filipino-seafarers-killed-hormuz.json",
+        "content/news/articles/2026-09-03/0702-nlex-pulilan-san-fernando-toll-waiver.json"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "file": "content/news/morning-special/2026-09-04.json",
+      "storyCount": 6,
+      "status": "archive-recovered",
+      "photographicHero": true,
+      "sourceArticles": [
+        "content/news/articles/2026-09-04/153900-sara-duterte-arrest-warrant-grave-threats.json",
+        "content/news/articles/2026-09-04/0101-marcos-197-3b-rail-budget.json",
+        "content/news/articles/2026-09-04/231600-ra-12325-expands-tertiary-education-aid.json",
+        "content/news/articles/2026-09-04/111700-wmo-el-nino-very-strong-early-2027.json",
+        "content/news/articles/2026-09-04/0701-mc134-alternative-learning-ncr-15-provinces.json",
+        "content/news/articles/2026-09-04/051500-alex-eala-us-open-third-round.json"
+      ]
+    },
+    {
+      "date": "2026-09-05",
+      "file": "content/news/morning-special/2026-09-05.json",
+      "storyCount": 3,
+      "status": "archive-recovered",
+      "photographicHero": true,
+      "sourceArticles": [
+        "content/news/articles/2026-09-05/171700-doh-6253-leptospirosis-continuation.json",
+        "content/news/articles/2026-09-05/051500-august-inflation-6-1-bottom-30-8-2.json",
+        "content/news/articles/2026-09-05/111500-lea-salonga-hollywood-walk-of-fame.json"
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "file": "content/news/morning-special/2026-09-06.json",
+      "storyCount": 1,
+      "status": "archive-recovered",
+      "photographicHero": true,
+      "sourceArticles": [
+        "content/news/articles/2026-09-06/171631-anak-krakatau-jakarta-airport-developing.json"
+      ]
+    },
+    {
+      "date": "2026-09-07",
+      "file": "content/news/morning-special/2026-09-07.json",
+      "storyCount": 4,
+      "status": "archive-recovered",
+      "photographicHero": true,
+      "sourceArticles": [
+        "content/news/articles/2026-09-07/231727-romualdez-arrested-plunder-continuation.json",
+        "content/news/articles/2026-09-07/171634-ombudsman-files-plunder-case-romualdez.json",
+        "content/news/articles/2026-09-07/171635-fuel-price-hike-september-8.json",
+        "content/news/articles/2026-09-07/171636-anak-krakatau-airport-disruption-continuation.json"
+      ]
+    },
+    {
+      "date": "2026-09-08",
+      "file": "content/news/morning-special/2026-09-08.json",
+      "storyCount": 5,
+      "status": "archive-recovered",
+      "photographicHero": true,
+      "sourceArticles": [
+        "content/news/articles/2026-09-08/171757-manny-pacquiao-napc-appointment.json",
+        "content/news/articles/2026-09-08/051926-sara-duterte-impeachment-psa-confidential-funds.json",
+        "content/news/articles/2026-09-08/231853-peso-record-low-62-625.json",
+        "content/news/articles/2026-09-08/171757-pisa-2025-philippines-results.json",
+        "content/news/articles/2026-09-08/111738-anak-krakatau-airports-reopen-continuation.json"
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "file": "content/news/morning-special/2026-09-09.json",
+      "storyCount": 2,
+      "status": "archive-recovered",
+      "photographicHero": true,
+      "sourceArticles": [
+        "content/news/articles/2026-09-09/051455-bajo-masinloc-chinese-fighter-intercept.json",
+        "content/news/articles/2026-09-09/052000-arkia-tel-aviv-manila-nonstop-route.json"
+      ]
+    },
+    {
+      "date": "2026-09-10",
+      "file": "content/news/morning-special/2026-09-10.json",
+      "storyCount": 2,
+      "status": "archive-recovered",
+      "photographicHero": true,
+      "sourceArticles": [
+        "content/news/articles/2026-09-10/171800-japan-indonesia-wildfire-haze-response.json",
+        "content/news/articles/2026-09-10/111400-mv-june-aster-ferry-fire-coron.json"
+      ]
+    },
+    {
+      "date": "2026-09-11",
+      "file": "content/news/morning-special/2026-09-11.json",
+      "storyCount": 4,
+      "status": "archive-recovered",
+      "photographicHero": true,
+      "sourceArticles": [
+        "content/news/articles/2026-09-11/111900-pla-flares-pcg-aircraft-kalayaan.json",
+        "content/news/articles/2026-09-11/231500-mv-june-aster-death-toll-35-continuation.json",
+        "content/news/articles/2026-09-11/171500-eu-spain-join-luzon-economic-corridor.json",
+        "content/news/articles/2026-09-11/051800-romualdez-commitment-order-continuation.json"
+      ]
+    },
+    {
+      "date": "2026-09-12",
+      "file": "content/news/morning-special/2026-09-12.json",
+      "storyCount": 3,
+      "status": "archive-recovered",
+      "photographicHero": true,
+      "sourceArticles": [
+        "content/news/articles/2026-09-12/232000-mv-june-aster-death-toll-76-continuation.json",
+        "content/news/articles/2026-09-12/111900-saudi-east-west-pipeline-shutdown-continuation.json",
+        "content/news/articles/2026-09-12/051400-houthis-perim-bab-el-mandeb-continuation.json"
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "file": "content/news/morning-special/2026-09-13.json",
+      "storyCount": 5,
+      "status": "archive-recovered",
+      "photographicHero": true,
+      "sourceArticles": [
+        "content/news/articles/2026-09-13/232200-indonesia-virgo-transport-8-ferry-capsize-java-sea.json",
+        "content/news/articles/2026-09-13/051900-romualdez-pgh-assessment-continuation.json",
+        "content/news/articles/2026-09-13/171432-ncr-wage-order-28-p60-effective-september-26.json",
+        "content/news/articles/2026-09-13/111740-hormuz-vessel-projectile-strike-continuation.json",
+        "content/news/articles/2026-09-13/052400-brics-new-delhi-declaration-marcos-asean-chair.json"
+      ]
+    },
+    {
+      "date": "2026-09-14",
+      "file": "content/news/morning-special/2026-09-14.json",
+      "storyCount": 3,
+      "status": "archive-recovered",
+      "photographicHero": true,
+      "sourceArticles": [
+        "content/news/articles/2026-09-14/111839-philippines-suspends-fresh-ube-exports.json",
+        "content/news/articles/2026-09-14/051704-barmm-first-parliamentary-election-voting-underway.json",
+        "content/news/articles/2026-09-14/051704-ison-75m-philippines-expansion-2000-jobs.json"
+      ]
+    },
+    {
+      "date": "2026-09-15",
+      "file": "content/news/morning-special/2026-09-15.json",
+      "storyCount": 5,
+      "status": "current-prepared",
+      "photographicHero": true,
+      "sourceArticles": []
+    }
+  ]
+}

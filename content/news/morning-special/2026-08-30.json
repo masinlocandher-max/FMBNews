@@ -1,0 +1,198 @@
+{
+  "date": "2026-08-30",
+  "publishedAt": "2026-08-30T07:00:00+08:00",
+  "editionLabel": "FMB Daily Brief · Archive Recovery",
+  "title": "The Stories That Defined the Day",
+  "deck": "Recovered FMB Daily Brief for 2026-08-30, reconstructed from FMB News' verified article archive. Key coverage includes 8.4 Million Filipinos Affected by Habagat and Recent Cyclones; 32 Deaths Confirmed; Zambales Flood-Control Damage Hits ₱569.27 Million After Heavy Rains; Jenny Barzaga Wins Cavite 4th District Special Election with 201,893 Votes.",
+  "timezone": "Asia/Manila",
+  "recovery": {
+    "reconstructed": true,
+    "reconstructedAt": "2026-09-15T03:30:00+08:00",
+    "note": "Historical recovery edition. It was reconstructed after the original publication date and must not be represented as having been published contemporaneously."
+  },
+  "hero": {
+    "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Quiapo,_Manila_Floods_Habagat-Carina_2024-1.jpg",
+    "alt": "Archival photograph of Habagat flooding in Quiapo, Manila, taken July 24, 2024",
+    "caption": "Archival photo: flooding in Quiapo, Manila during Habagat on July 24, 2024. This image illustrates monsoon flood risk and does not depict the August 30, 2026 flooding.",
+    "credit": "Michael Peronce / Wikimedia Commons, CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Quiapo,_Manila_Floods_Habagat-Carina_2024-1.jpg"
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260830-001",
+      "kicker": "Disaster · Climate · Public safety",
+      "headline": "8.4 Million Filipinos Affected by Habagat and Recent Cyclones; 32 Deaths Confirmed",
+      "deck": "The 6 p.m. disaster tally shows about 122,500 people in evacuation centers and 117 areas under a state of calamity, while Tropical Depression Pilandok remains offshore but keeps monsoon-rain risk elevated.",
+      "body": [
+        "Around 8.4 million people, equivalent to about 2.4 million families, have now been affected by the Southwest Monsoon and the recent sequence of tropical cyclones Luis, Maymay and Neneng, according to the government's latest disaster update as of 6 p.m. Sunday.",
+        "The danger is cumulative. Repeated rainfall can leave slopes saturated, rivers high and drainage systems overwhelmed even after one weather system moves away. That means communities can remain exposed to flooding and landslides without a direct tropical cyclone landfall.",
+        "The increase from roughly 8 million people affected in the earlier disaster tally to 8.4 million in the latest update shows that the impact is still expanding even as individual storms weaken or move away.",
+        "Watch for updated NDRRMC and OCD casualty validation, evacuation-center counts, rainfall and flood advisories, river and dam conditions, and additional local evacuation orders as Habagat conditions continue."
+      ],
+      "sources": [
+        {
+          "label": "GMA News Online — Flooding affects 2.4 million families in 10 regions —OCD",
+          "url": "https://www.gmanetwork.com/news/topstories/nation/1000460/flooding-affects-2-4-million-families-in-10-regions-ocd/story/"
+        },
+        {
+          "label": "INQUIRER.net — NDRRMC: 8.4 million people affected by monsoon, cyclones",
+          "url": "https://newsinfo.inquirer.net/2295332/8-4-million-individuals-affected-by-habagat-tcs-luis-maymay-neneng"
+        },
+        {
+          "label": "GMA News Online / PAGASA — Pilandok maintains strength, not expected to make landfall over PH",
+          "url": "https://www.gmanetwork.com/news/weather/content/1000449/pilandok-maintains-strength-not-expected-to-make-landfall-over-ph/story/"
+        },
+        {
+          "label": "DOST-PAGASA — Official weather information",
+          "url": "https://pagasa.dost.gov.ph/weather"
+        }
+      ],
+      "image": {
+        "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Quiapo,_Manila_Floods_Habagat-Carina_2024-1.jpg",
+        "alt": "Archival photograph of Habagat flooding in Quiapo, Manila, taken July 24, 2024",
+        "caption": "Archival photo: flooding in Quiapo, Manila during Habagat on July 24, 2024. This image illustrates monsoon flood risk and does not depict the August 30, 2026 flooding.",
+        "credit": "Michael Peronce / Wikimedia Commons, CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Quiapo,_Manila_Floods_Habagat-Carina_2024-1.jpg"
+      },
+      "sourceArticle": "content/news/articles/2026-08-30/0100-ocd-8-million-affected-32-dead-habagat-cyclones.json"
+    },
+    {
+      "id": "FMB-DB-20260830-002",
+      "kicker": "Zambales · Infrastructure · Public safety",
+      "headline": "Zambales Flood-Control Damage Hits ₱569.27 Million After Heavy Rains",
+      "deck": "DPWH assessments put damage to dikes, revetments and slope-protection works at ₱569.27 million, while recovery, rehabilitation and reconstruction are estimated at about ₱1.28 billion.",
+      "body": [
+        "Flood-control structures across Zambales sustained an estimated ₱569.27 million in damage after prolonged heavy rains and flooding, based on the latest combined assessment of the Department of Public Works and Highways' 1st and 2nd district engineering offices reported on Sunday.",
+        "The infrastructure assessment comes as Zambales continues to recover from widespread flooding. The latest provincial figures cited in the report said 294 houses had been damaged or destroyed as of August 29, while more than 14,000 residents had left flooded homes for evacuation centers or other safer locations.",
+        "Dikes, revetments and slope-protection structures are intended to reduce erosion and flood risk around rivers and exposed communities. Damage on this scale creates an immediate engineering and financing problem while heavy-rain threats remain active.",
+        "Watch for final DPWH validation of damaged sites, emergency stabilization work, the funding source and timetable for the estimated ₱1.28 billion recovery requirement, and any engineering findings on why individual structures failed."
+      ],
+      "sources": [
+        {
+          "label": "INQUIRER.net — P569-M flood-control structures in Zambales damaged amid heavy rains",
+          "url": "https://newsinfo.inquirer.net/2295078/p569-m-flood-control-structures-in-zambales-damaged-amid-heavy-rains"
+        }
+      ],
+      "image": {
+        "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/BarangaysTaliptip-Perez_BulaKan_July_7_2026_Bulacan_03.jpg",
+        "alt": "Illustrative file photograph of flood-control structures beside waterways in Bulakan, Bulacan",
+        "caption": "Illustrative file photo: flood-control structures in Bulakan, Bulacan, photographed in July 2026. This image does not show the damaged Zambales sites covered in this report.",
+        "credit": "P1898 / Wikimedia Commons, CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:BarangaysTaliptip-Perez_BulaKan_July_7_2026_Bulacan_03.jpg"
+      },
+      "sourceArticle": "content/news/articles/2026-08-30/2156-zambales-flood-control-damage-569-million.json"
+    },
+    {
+      "id": "FMB-DB-20260830-003",
+      "kicker": "Elections · Cavite",
+      "headline": "Jenny Barzaga Wins Cavite 4th District Special Election with 201,893 Votes",
+      "deck": "The Dasmariñas mayor defeated four other candidates in the special poll, with Comelec reporting a 57.75% voter turnout.",
+      "body": [
+        "Dasmariñas City Mayor Jennifer 'Jenny' Barzaga won the special election for Cavite's 4th Legislative District with 201,893 votes, according to the Certificate of Canvass reported by SunStar and other news organizations.",
+        "The special election was called after Francisco 'Kiko' Barzaga Jr. was expelled from the House of Representatives in June for disorderly behavior, conduct unbecoming of a member and violations of the House Code of Conduct. Jenny Barzaga is his mother.",
+        "The result fills Cavite's 4th District vacancy and restores representation for the district in the House. The election also tested turnout and election administration during severe weather affecting parts of Luzon.",
+        "Watch for Barzaga's assumption of office, House committee assignments and the resulting transition in Dasmariñas City leadership."
+      ],
+      "sources": [
+        {
+          "label": "SunStar Philippines — Cavite 4th District elects Barzaga as new lawmaker",
+          "url": "https://www.sunstar.com.ph/manila/cavite-4th-district-elects-barzaga-as-new-lawmaker"
+        },
+        {
+          "label": "DZRH News — Jennifer Barzaga wins Cavite 4th District seat in landslide special election",
+          "url": "https://www.dzrh.com.ph/post/jennifer-barzaga-wins-cavite-4th-district-seat-in-landslide-special-election"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Jenny Barzaga's Cavite 4th District special election victory",
+        "caption": "FMB News editorial visual accompanying the Cavite 4th District special-election result; it does not depict the proclamation.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-30/1300-jenny-barzaga-wins-cavite-4th-district-special-election.json"
+    },
+    {
+      "id": "FMB-DB-20260830-004",
+      "kicker": "Disaster · Central Luzon",
+      "headline": "Ipo and Bustos Dams Release Water After Breaching Spilling Levels in Bulacan",
+      "deck": "Authorities warned downstream communities to remain alert as water releases added to already swollen river systems after days of monsoon rain.",
+      "body": [
+        "Continuous rains from the Southwest Monsoon pushed Ipo and Bustos dams in Bulacan beyond their spilling levels, prompting operators to release excess water into downstream river systems.",
+        "The releases come after prolonged Habagat rains saturated Central Luzon. Dam releases can compound river and drainage pressures already elevated by runoff and local rainfall, although downstream impacts depend on discharge rates, tides, tributary flows and continuing rainfall.",
+        "Communities downstream of controlled releases need timely information because river levels can change quickly. Official dam, PAGASA and local disaster advisories should take precedence over social-media estimates or old discharge figures.",
+        "Watch for updated Ipo and Bustos reservoir elevations, gate operations, downstream river levels and evacuation advisories from PAGASA, dam operators and Bulacan disaster authorities."
+      ],
+      "sources": [
+        {
+          "label": "The Philippine Star — 2 Bulacan dams breach spilling level",
+          "url": "https://www.philstar.com/nation/2026/08/30/2552681/2-bulacan-dams-breach-spilling-level"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Ipo and Bustos dam water releases in Bulacan",
+        "caption": "FMB News editorial visual accompanying the Bulacan dam-release update; it does not depict current conditions.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-30/1300-ipo-bustos-dams-spilling-level-bulacan.json"
+    },
+    {
+      "id": "FMB-DB-20260830-005",
+      "kicker": "Weather · Tropical Cyclone",
+      "headline": "PAGASA Says Low-Pressure Area Develops Into Tropical Depression Pilandok",
+      "deck": "Pilandok formed over the Philippine Sea while its circulation continued to reinforce monsoon rains over western Luzon.",
+      "body": [
+        "PAGASA announced on August 30 that the monitored low-pressure area had developed into Tropical Depression Pilandok over the Philippine Sea.",
+        "Pilandok developed after several days of low-pressure-area monitoring and repeated rainfall warnings in Western and Central Luzon.",
+        "PAGASA advised the public to monitor succeeding cyclone bulletins, rainfall warnings and marine advisories as Pilandok moved near the northern portion of the Philippine monitoring area.",
+        "The system remained offshore, but its circulation continued to enhance the southwest monsoon affecting parts of Luzon."
+      ],
+      "sources": [
+        {
+          "label": "GMA News Online — Live updates: Habagat rains affect parts of PH on Sunday, Aug. 30, 2026",
+          "url": "https://www.gmanetwork.com/news/weather/content/1000377/live-updates-habagat-rains-affect-parts-of-ph-on-sunday-aug-30-2026/story/"
+        },
+        {
+          "label": "DOST-PAGASA — Tropical cyclone bulletins",
+          "url": "https://www.pagasa.dost.gov.ph/tropical-cyclone/severe-weather-bulletin"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for PAGASA Says Low-Pressure Area Develops Into Tropical Depression Pilandok",
+        "caption": "FMB News editorial visual accompanying this recovered report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.gmanetwork.com/news/weather/content/1000377/live-updates-habagat-rains-affect-parts-of-ph-on-sunday-aug-30-2026/story/"
+      },
+      "sourceArticle": "content/news/articles/2026-08-30/1301-tropical-depression-pilandok-forms.json"
+    },
+    {
+      "id": "FMB-DB-20260830-006",
+      "kicker": "Education · Public safety · School recovery",
+      "headline": "Nearly 10,000 Classrooms Damaged by Habagat and Recent Cyclones, DepEd Says",
+      "deck": "DepEd counted 9,869 damaged classrooms as of Sunday morning, including 2,083 that were totally damaged, while estimated repair and reconstruction needs total about ₱6.48 billion.",
+      "body": [
+        "The Department of Education reported 9,869 damaged classrooms following the prolonged Southwest Monsoon and recent tropical cyclones Luis, Maymay, Neneng and Obet, according to its latest situation report cited on Sunday.",
+        "Schools are serving two roles during the continuing weather emergency. DepEd said 348 schools, involving 1,309 classrooms, were being used as evacuation centers for 11,320 families.",
+        "Nearly 10,000 damaged classrooms represent more than a construction bill. Major and total damage can reduce usable classroom capacity for months, disrupt class schedules and increase pressure on schools that are simultaneously housing evacuees.",
+        "Watch for updated DepEd validation as field inspections continue, the release and allocation of repair funds, timelines for rebuilding totally damaged classrooms and guidance on class resumption in heavily affected areas."
+      ],
+      "sources": [
+        {
+          "label": "INQUIRER.net — DepEd: Over 9,800 classrooms damaged by ‘habagat,’ enhanced by cyclones",
+          "url": "https://newsinfo.inquirer.net/2295061/over-9800-classrooms-damaged-by-habagat-enhanced-by-cyclones"
+        }
+      ],
+      "image": {
+        "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/DepEd_Basey_Division_Office.JPG",
+        "alt": "Illustrative file photograph of a Philippine public-school building in Basey, Samar",
+        "caption": "Illustrative file photo: the former Basey I Elementary School building serving as a DepEd division office in Basey, Samar. This image does not depict the classrooms damaged in the August 2026 weather emergency.",
+        "credit": "Lawrence Ruiz / Wikimedia Commons, CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:DepEd_Basey_Division_Office.JPG"
+      },
+      "sourceArticle": "content/news/articles/2026-08-30/2155-nearly-10000-classrooms-damaged-habagat-cyclones.json"
+    }
+  ]
+}

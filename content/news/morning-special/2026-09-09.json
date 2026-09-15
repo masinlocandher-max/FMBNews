@@ -1,0 +1,82 @@
+{
+  "date": "2026-09-09",
+  "publishedAt": "2026-09-09T07:00:00+08:00",
+  "editionLabel": "FMB Daily Brief · Archive Recovery",
+  "title": "The Stories That Defined the Day",
+  "deck": "Recovered FMB Daily Brief for 2026-09-09, reconstructed from FMB News' verified article archive. Key coverage includes AFP Confirms Chinese J-10 Intercepted Philippine Patrol Aircraft Over Bajo de Masinloc; Arkia Announces Weekly Nonstop Tel Aviv–Manila Flights Starting January 2027.",
+  "timezone": "Asia/Manila",
+  "recovery": {
+    "reconstructed": true,
+    "reconstructedAt": "2026-09-15T03:30:00+08:00",
+    "note": "Historical recovery edition. It was reconstructed after the original publication date and must not be represented as having been published contemporaneously."
+  },
+  "hero": {
+    "src": "/assets/images/mobile/fmb-daily-brief-coffee.webp",
+    "alt": "FMB Daily Brief coffee visual with the FMB shell emblem",
+    "caption": "Approved FMB Daily Brief photographic visual used when a recovered edition has no suitable rights-cleared documentary photograph.",
+    "credit": "FMB News",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260909-001",
+      "kicker": "NATION · WEST PHILIPPINE SEA",
+      "headline": "AFP Confirms Chinese J-10 Intercepted Philippine Patrol Aircraft Over Bajo de Masinloc",
+      "deck": "The Armed Forces of the Philippines says a Chinese J-10 fighter intercepted a Philippine government aircraft during a maritime patrol over Bajo de Masinloc on September 2, with the encounter publicly confirmed on September 8.",
+      "body": [
+        "The Armed Forces of the Philippines confirmed on September 8 that a Chinese J-10 fighter aircraft intercepted a Philippine government aircraft conducting a regular maritime domain awareness patrol over Bajo de Masinloc, also known as Scarborough Shoal, on September 2.",
+        "Bajo de Masinloc lies about 124 nautical miles west of Zambales and is within the Philippines' 200-nautical-mile exclusive economic zone. China also claims the shoal and maintains a persistent maritime presence around it.",
+        "The incident matters because it involved military aircraft operating above one of the most sensitive areas in the West Philippine Sea. Encounters in the air can compress decision time and raise the risk that miscalculation, unsafe maneuvering or miscommunication could escalate a confrontation.",
+        "The next important questions are whether the AFP releases additional operational details, whether China issues a formal account of the September 2 encounter, and whether similar interceptions recur during Philippine patrols."
+      ],
+      "sources": [
+        {
+          "label": "GMA News — AFP: Chinese fighter jet intercepted PH patrol aircraft over Bajo de Masinloc",
+          "url": "https://www.gmanetwork.com/news/topstories/nation/1001596/afp-chinese-fighter-jet-intercepted-ph-patrol-aircraft-over-bajo-de-masinloc/story/"
+        },
+        {
+          "label": "Philippine STAR — Chinese fighter jets intercept Philippine patrol aircraft",
+          "url": "https://www.philstar.com/headlines/2026/09/09/2554991/chinese-fighter-jets-intercept-philippine-patrol-aircraft"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-09/bajo-masinloc-chinese-fighter-intercept-16x9.svg",
+        "alt": "FMB News graphic reporting that the AFP confirmed a Chinese J-10 intercepted a Philippine patrol aircraft over Bajo de Masinloc",
+        "caption": "FMB News editorial graphic on the AFP-confirmed September 2, 2026 interception of a Philippine patrol aircraft by a Chinese J-10 over Bajo de Masinloc. This is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-09/051455-bajo-masinloc-chinese-fighter-intercept.json"
+    },
+    {
+      "id": "FMB-DB-20260909-002",
+      "kicker": "TRAVEL · CONNECTIVITY",
+      "headline": "Arkia Announces Weekly Nonstop Tel Aviv–Manila Flights Starting January 2027",
+      "deck": "Israeli airline Arkia says it will begin weekly nonstop service between Tel Aviv and Manila on January 3, 2027, giving travelers a direct option on a route that currently requires a connection.",
+      "body": [
+        "Israeli airline Arkia announced on September 8 that it plans to launch weekly nonstop flights between Tel Aviv and Manila beginning January 3, 2027.",
+        "Travel between the Philippines and Israel currently generally requires at least one connection, often through Gulf or Asian hubs. A nonstop service would reduce itinerary complexity for tourists, business travelers, pilgrims and Filipino workers and their families traveling between the two countries.",
+        "A direct Manila–Tel Aviv link could shorten total travel time and reduce the need for transit visas, long layovers or missed-connection risk for passengers traveling between the Philippines and Israel.",
+        "The next practical milestones are regulatory clearances, confirmed airport slots, the publication of a stable timetable and the start of ticket sales across Arkia's regular booking channels."
+      ],
+      "sources": [
+        {
+          "label": "Reuters — Philippines hopes new Tel Aviv-Manila route will lead to free trade deal with Israel",
+          "url": "https://www.reuters.com/world/middle-east/philippines-hopes-new-tel-aviv-manila-route-will-lead-free-trade-deal-with-2026-09-08/"
+        },
+        {
+          "label": "The Jerusalem Post — Arkia announces first direct flight to Manila, Philippines, opening January 2027",
+          "url": "https://www.jpost.com/israel-news/article-907986"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-09/arkia-tel-aviv-manila-16x9.svg",
+        "alt": "FMB News graphic reporting Arkia's announced weekly nonstop Tel Aviv to Manila flights starting January 3 2027",
+        "caption": "FMB News editorial graphic on Arkia's announced weekly nonstop Tel Aviv–Manila service beginning January 3, 2027. This is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-09/052000-arkia-tel-aviv-manila-nonstop-route.json"
+    }
+  ]
+}

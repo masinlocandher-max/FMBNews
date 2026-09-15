@@ -1,0 +1,166 @@
+{
+  "date": "2026-09-07",
+  "publishedAt": "2026-09-07T07:00:00+08:00",
+  "editionLabel": "FMB Daily Brief · Archive Recovery",
+  "title": "The Stories That Defined the Day",
+  "deck": "Recovered FMB Daily Brief for 2026-09-07, reconstructed from FMB News' verified article archive. Key coverage includes Romualdez Served Arrest Warrant in ₱7.44-Billion Plunder Case; Ombudsman Files Plunder Case Against Martin Romualdez Over Alleged Flood-Control Kickback Scheme; Fuel Prices Rise September 8: Gasoline +₱4.69, Diesel +₱5.18, Kerosene +₱5.58 per Liter.",
+  "timezone": "Asia/Manila",
+  "recovery": {
+    "reconstructed": true,
+    "reconstructedAt": "2026-09-15T03:30:00+08:00",
+    "note": "Historical recovery edition. It was reconstructed after the original publication date and must not be represented as having been published contemporaneously."
+  },
+  "hero": {
+    "src": "/assets/images/mobile/fmb-daily-brief-coffee.webp",
+    "alt": "FMB Daily Brief coffee visual with the FMB shell emblem",
+    "caption": "Approved FMB Daily Brief photographic visual used when a recovered edition has no suitable rights-cleared documentary photograph.",
+    "credit": "FMB News",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260907-001",
+      "kicker": "NATION · ACCOUNTABILITY",
+      "headline": "Romualdez Served Arrest Warrant in ₱7.44-Billion Plunder Case",
+      "deck": "Police served former House Speaker Martin Romualdez an arrest warrant and completed booking procedures while he was confined at Cardinal Santos Medical Center. The Sandiganbayan’s probable-cause finding permits the criminal case to proceed; it is not a finding of guilt.",
+      "body": [
+        "Former House Speaker and Leyte 1st District Representative Martin Romualdez was served an arrest warrant on September 7 while confined at Cardinal Santos Medical Center in San Juan City, according to Interior Secretary Jonvic Remulla and multiple news organizations covering the case.",
+        "Earlier on September 7, the Office of the Ombudsman filed a plunder case alleging that Romualdez and his co-accused received at least ₱7.44 billion in commissions, kickbacks and other benefits tied to flood-control, infrastructure and other government projects funded from 2022 to 2025.",
+        "The case concerns alleged misuse of public funds intended for infrastructure and flood-control projects, which directly affect public safety, disaster resilience and confidence in government spending.",
+        "The next material developments include Romualdez’s presentation before the Sandiganbayan, any court ruling on the conditions of his custody while hospitalized, subsequent pleadings by the defense and prosecution, and further action involving his co-accused."
+      ],
+      "sources": [
+        {
+          "label": "GMA News — Martin Romualdez arrested over plunder charges, says DILG chief",
+          "url": "https://www.gmanetwork.com/news/topstories/nation/1001505/martin-romualdez-arrested-over-plunder-charges-says-dilg-chief/story/"
+        },
+        {
+          "label": "Philippine News Agency — ‘Ailing’ Romualdez served warrant at hospital",
+          "url": "https://www.pna.gov.ph/articles/1283516"
+        },
+        {
+          "label": "Philstar.com — Romualdez arrested in P7.44-B flood-control plunder case",
+          "url": "https://www.philstar.com/headlines/2026/09/07/2554656/romualdez-arrested-p744-b-flood-control-plunder-case"
+        },
+        {
+          "label": "Reuters — Philippine court orders arrest of president's cousin over alleged kickbacks of $118 million",
+          "url": "https://www.reuters.com/world/asia-pacific/philippine-court-orders-arrest-presidents-cousin-over-alleged-kickbacks-118-2026-09-07/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-07/romualdez-arrested-16x9.svg",
+        "alt": "FMB News graphic stating that Martin Romualdez was served an arrest warrant in a ₱7.44-billion plunder case",
+        "caption": "FMB News editorial graphic reporting that Martin Romualdez was served an arrest warrant on September 7, 2026 in the pending plunder case. The allegations remain unproven. This is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-07/231727-romualdez-arrested-plunder-continuation.json"
+    },
+    {
+      "id": "FMB-DB-20260907-002",
+      "kicker": "NATION · ACCOUNTABILITY",
+      "headline": "Ombudsman Files Plunder Case Against Martin Romualdez Over Alleged Flood-Control Kickback Scheme",
+      "deck": "The Ombudsman filed a plunder case against Martin Romualdez and three others over an alleged ₱7.4-billion flood-control kickback scheme. Romualdez has denied wrongdoing, and the accusations remain unproven.",
+      "body": [
+        "The Office of the Ombudsman filed a plunder case at the Sandiganbayan on September 7 against former House Speaker and incumbent Leyte 1st District Representative Martin Romualdez and three other respondents over an alleged kickback scheme involving flood-control projects.",
+        "The filing moves the controversy from an Ombudsman investigation into a criminal case before the anti-graft court. Earlier Ombudsman proceedings examined allegations involving public funds and infrastructure projects, while Romualdez’s legal team submitted counter-affidavits and witness statements disputing the accusations.",
+        "Flood-control spending affects public safety, disaster resilience and the use of billions of pesos in taxpayer funds. A criminal case involving a former House Speaker and allegations tied to infrastructure appropriations therefore has consequences beyond the individual defendants: it tests whether institutions can examine alleged misuse of public funds through a transparent judicial process.",
+        "The next material developments are the Sandiganbayan Third Division’s review of probable cause, any warrants or court orders it may issue, and the formal responses of Romualdez and the other respondents to the filed charge."
+      ],
+      "sources": [
+        {
+          "label": "GMA News — Ombudsman files plunder charges vs Martin Romualdez over flood control projects",
+          "url": "https://www.gmanetwork.com/news/topstories/nation/1001410/ombudsman-files-plunder-charges-vs-martin-romualdez-over-flood-control-projects/story/"
+        },
+        {
+          "label": "Philippine News Agency — Palace respects Ombudsman's plunder case vs Romualdez",
+          "url": "https://www.pna.gov.ph/articles/1283455"
+        },
+        {
+          "label": "DZRH — Plunder case vs. Romualdez, Co raffled off to Sandiganbayan 3rd Division",
+          "url": "https://www.dzrh.com.ph/post/plunder-case-vs-romualdez-co-raffled-off-to-sandiganbayan-3rd-division"
+        },
+        {
+          "label": "Philstar.com — Ombudsman filed plunder case vs Romualdez over flood-control scandal",
+          "url": "https://qa.philstar.com/headlines/2026/09/07/2554626/ombudsman-filed-lunder-case-vs-romualdez-over-flood-control-scandal"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-07/romualdez-plunder-case-16x9.svg",
+        "alt": "FMB News graphic reporting that the Ombudsman filed a plunder case against former House Speaker Martin Romualdez over an alleged flood-control kickback scheme",
+        "caption": "FMB News editorial graphic reporting the Ombudsman’s September 7, 2026 filing of a plunder case against Martin Romualdez. The allegations remain unproven. This is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-07/171634-ombudsman-files-plunder-case-romualdez.json"
+    },
+    {
+      "id": "FMB-DB-20260907-003",
+      "kicker": "MONEY · CONSUMER",
+      "headline": "Fuel Prices Rise September 8: Gasoline +₱4.69, Diesel +₱5.18, Kerosene +₱5.58 per Liter",
+      "deck": "The Department of Energy confirmed substantial pump-price increases effective September 8: ₱4.69 per liter for gasoline, ₱5.18 for diesel and ₱5.58 for kerosene.",
+      "body": [
+        "The Department of Energy confirmed that Philippine pump prices will rise on Tuesday, September 8, following last week’s rollback.",
+        "The confirmed increases follow renewed pressure in international oil markets. Earlier industry estimates cited heightened Middle East tensions and risks to energy flows through the Strait of Hormuz, alongside tight diesel inventories and refinery disruptions, as factors pushing regional product prices higher.",
+        "The increases directly raise fuel costs for households, motorists, public-transport operators and businesses that depend on road freight. Diesel is particularly important to logistics and transport, so a large increase can also add cost pressure beyond the fuel station if sustained.",
+        "Watch pump implementation beginning September 8 and any company-specific effective times or station-level differences. The next weekly adjustment will depend on subsequent international product prices and foreign-exchange movements."
+      ],
+      "sources": [
+        {
+          "label": "GMA News — Fuel price hike set on Tuesday, September 8",
+          "url": "https://www.gmanetwork.com/news/money/companies/1001438/fuel-price-hike-set-on-tuesday-september-8/story/"
+        },
+        {
+          "label": "Philippine News Agency — PRICE HIKE",
+          "url": "https://www.pna.gov.ph/photos/84749"
+        },
+        {
+          "label": "Philippine News Agency — P4 to P5/liter price hike possible next week",
+          "url": "https://www.pna.gov.ph/articles/1283336"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-07/fuel-price-hike-september-8-16x9.svg",
+        "alt": "FMB News graphic showing gasoline up 4.69 pesos per liter, diesel up 5.18 pesos and kerosene up 5.58 pesos effective September 8, 2026",
+        "caption": "FMB News editorial graphic showing confirmed Philippine fuel-price increases effective September 8, 2026. This is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-07/171635-fuel-price-hike-september-8.json"
+    },
+    {
+      "id": "FMB-DB-20260907-004",
+      "kicker": "DEVELOPING · CONTINUATION",
+      "headline": "Seven Indonesian Airports Remain Shut as Anak Krakatau Disruption Hits 270,000 Travelers",
+      "deck": "The aviation disruption from Anak Krakatau has widened sharply: Reuters reports seven Indonesian airports remained closed, about 2,300 flights were affected and more than 270,000 travelers were impacted.",
+      "body": [
+        "Seven Indonesian airports remained closed on September 7 because of volcanic ash from Anak Krakatau, extending a major aviation disruption that began over the weekend.",
+        "Anak Krakatau lies in the Sunda Strait between Java and Sumatra. Its current eruption sequence has sent ash high enough to disrupt aviation around western Indonesia, while schools in affected areas have shifted to remote learning and authorities continue monitoring public-health and transport impacts.",
+        "Indonesia and Jakarta are major regional travel and business links for Filipinos. A disruption involving thousands of flights can affect direct travelers as well as passengers connecting through Singapore, Kuala Lumpur and other hubs when aircraft and crews are displaced across airline networks.",
+        "Watch for Indonesian aviation notices on airport reopening, further Anak Krakatau eruptions, changes in ash-plume direction and updated airline schedules."
+      ],
+      "sources": [
+        {
+          "label": "Reuters — Seven Indonesian airports remain shut due to volcanic ash from Anak Krakatau",
+          "url": "https://www.reuters.com/business/environment/eight-indonesian-airports-remain-shut-due-to-volcanic-ash-anak-krakatau-2026-09-07/"
+        },
+        {
+          "label": "Reuters — Indonesia's Anak Krakatau eruption halts flights, schools, fishing",
+          "url": "https://www.reuters.com/business/environment/indonesias-jakarta-airport-suspends-flights-due-ash-mount-anak-krakatau-2026-09-06/"
+        },
+        {
+          "label": "FMB News — Anak Krakatau Eruption Disrupts Hundreds of Flights at Jakarta’s Main Airport",
+          "url": "https://www.francinemariebautista.com/news/anak-krakatau-eruption-jakarta-airport-flights-september-6-2026/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-07/anak-krakatau-airports-270k-16x9.svg",
+        "alt": "FMB News graphic reporting seven Indonesian airports closed, about 2,300 flights affected and more than 270,000 travelers impacted by Anak Krakatau ash",
+        "caption": "FMB News editorial graphic showing the expanded Anak Krakatau aviation disruption on September 7, 2026. This is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-07/171636-anak-krakatau-airport-disruption-continuation.json"
+    }
+  ]
+}

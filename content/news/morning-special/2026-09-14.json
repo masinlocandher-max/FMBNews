@@ -1,0 +1,136 @@
+{
+  "date": "2026-09-14",
+  "publishedAt": "2026-09-14T07:00:00+08:00",
+  "editionLabel": "FMB Daily Brief · Archive Recovery",
+  "title": "The Stories That Defined the Day",
+  "deck": "Recovered FMB Daily Brief for 2026-09-14, reconstructed from FMB News' verified article archive. Key coverage includes Philippines Suspends Fresh Ube Exports to Protect Planting Stocks; Voting Begins in First Regular BARMM Parliamentary Election; iSON Commits $75 Million to Expand Philippine Operations, Palace Says.",
+  "timezone": "Asia/Manila",
+  "recovery": {
+    "reconstructed": true,
+    "reconstructedAt": "2026-09-15T03:30:00+08:00",
+    "note": "Historical recovery edition. It was reconstructed after the original publication date and must not be represented as having been published contemporaneously."
+  },
+  "hero": {
+    "src": "/assets/images/mobile/fmb-daily-brief-coffee.webp",
+    "alt": "FMB Daily Brief coffee visual with the FMB shell emblem",
+    "caption": "Approved FMB Daily Brief photographic visual used when a recovered edition has no suitable rights-cleared documentary photograph.",
+    "credit": "FMB News",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260914-001",
+      "kicker": "BUSINESS · AGRICULTURE",
+      "headline": "Philippines Suspends Fresh Ube Exports to Protect Planting Stocks",
+      "deck": "The Bureau of Plant Industry halted outbound shipments of fresh purple yam and propagative planting materials until further notice as the government moves to preserve scarce planting stocks and expand domestic production.",
+      "body": [
+        "The Philippine government has suspended exports of fresh ube, or purple yam, and its propagative planting materials until further notice, according to the Department of Agriculture and the Bureau of Plant Industry as reported by multiple Philippine news organizations.",
+        "Demand for Philippine ube has been rising in domestic and overseas markets, while government officials say the supply of planting material has not kept pace. The government is supporting tissue culture, community nurseries and other propagation methods to increase available planting stocks.",
+        "The restriction is designed to protect the country’s ability to expand ube production instead of allowing scarce planting material to leave the Philippines during a period of strong global demand.",
+        "Watch for the BPI’s final regulatory framework, any exemptions or clarifications, updated rules on phytosanitary certification and evidence that domestic planting-material supply is increasing."
+      ],
+      "sources": [
+        {
+          "label": "Department of Agriculture / Bureau of Plant Industry — Government suspension of fresh ube and propagative planting-material exports, as cited by Philippine newsrooms",
+          "url": "https://www.da.gov.ph/"
+        },
+        {
+          "label": "GMA News — DA suspends raw ube exports as it aims to boost production",
+          "url": "https://www.gmanetwork.com/news/money/economy/1002238/da-suspends-raw-ube-exports-as-it-aims-to-boost-production/story/"
+        },
+        {
+          "label": "The Philippine Star — Government suspends shipments of raw ube",
+          "url": "https://www.philstar.com/business/2026/09/14/2556025/government-suspends-shipments-raw-ube"
+        },
+        {
+          "label": "BusinessMirror — PHL bans exports of purple yam as global demand soars",
+          "url": "https://businessmirror.com.ph/2026/09/11/phl-bans-exports-of-purple-yam-as-global-demand-soars/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-14/ube-export-suspension-16x9.svg",
+        "alt": "FMB News graphic stating that the Philippines suspended fresh ube exports until further notice to protect planting stocks",
+        "caption": "FMB News editorial graphic on the Philippine suspension of fresh ube and propagative planting-material exports. This is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-14/111839-philippines-suspends-fresh-ube-exports.json"
+    },
+    {
+      "id": "FMB-DB-20260914-002",
+      "kicker": "DEVELOPING · POLITICS",
+      "headline": "Voting Begins in First Regular BARMM Parliamentary Election",
+      "deck": "Priority voting opened at 5 a.m. for seniors, persons with disabilities and pregnant voters as the Bangsamoro region begins its first regular parliamentary election.",
+      "body": [
+        "Voting has begun in the first regular parliamentary election of the Bangsamoro Autonomous Region in Muslim Mindanao on Monday, September 14, 2026.",
+        "The election is a major step in the transition from the interim Bangsamoro Transition Authority to a parliament chosen directly through the region's electoral system.",
+        "The election is not only a regional political contest. It is tied directly to the Bangsamoro peace process and to the shift from an appointed transitional authority toward an elected parliamentary government.",
+        "Watch for Comelec advisories during the voting period, verified reports of any election-related incidents, the close of polls, canvassing and the first reliable seat projections or official results."
+      ],
+      "sources": [
+        {
+          "label": "Commission on Elections / Bangsamoro Parliament — COMELEC confident on Sept. 14 BARMM polls, cites clear and inclusive electoral system",
+          "url": "https://parliament.bangsamoro.gov.ph/2026/08/04/comelec-confident-on-sept-14-barmm-polls-cites-clear-and-inclusive-electoral-system/"
+        },
+        {
+          "label": "Philippine News Agency — Comelec chief says Bangsamoro poll preps on track",
+          "url": "https://www.pna.gov.ph/articles/1283567"
+        },
+        {
+          "label": "GMA News — BARMM 2026 elections: Frequently Asked Questions",
+          "url": "https://www.gmanetwork.com/news/topstories/nation/1001842/barmm-2026-elections-frequently-asked-questions/story/"
+        },
+        {
+          "label": "Inquirer.net — BARMM polls now open for seniors, PWDs, pregnant moms",
+          "url": "https://www.inquirer.net/488709/barmm-polls-now-open-for-seniors-pwds-pregnant-moms/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-14/barmm-first-parliamentary-election-16x9.svg",
+        "alt": "FMB News graphic stating that voting is underway in the first regular BARMM parliamentary election",
+        "caption": "FMB News editorial graphic marking the start of voting in the first regular BARMM parliamentary election on September 14, 2026. This is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-14/051704-barmm-first-parliamentary-election-voting-underway.json"
+    },
+    {
+      "id": "FMB-DB-20260914-003",
+      "kicker": "BUSINESS · INVESTMENT",
+      "headline": "iSON Commits $75 Million to Expand Philippine Operations, Palace Says",
+      "deck": "The India-based group committed $75 million in new and scaled-up Philippine investments expected to support around 2,000 jobs, while several individual projects remain subject to implementation plans.",
+      "body": [
+        "India-based iSON Group committed $75 million in new and scaled-up investments in the Philippines during business meetings with President Ferdinand Marcos Jr. in New Delhi, according to the Presidential Communications Office as reported by multiple Philippine news organizations.",
+        "The meetings took place in New Delhi as Marcos attended the BRICS Summit in his capacity as ASEAN chair. The visit also included discussions with other Indian companies on airports, digital payments, artificial intelligence, telecommunications and technology-driven industries.",
+        "If executed as announced, the expansion could add employment and investment in sectors tied to digital services, health access, telecommunications and agricultural technology. The projected 2,000 jobs are an expected outcome cited by the Palace, not a count of positions already created.",
+        "Watch for company-level announcements, Department of Trade and Industry or other government documentation, project locations, investment schedules, hiring details and regulatory approvals that convert the commitment into operating projects."
+      ],
+      "sources": [
+        {
+          "label": "Presidential Communications Office — Palace statement on Marcos meetings with Indian business groups, as cited by Philippine newsrooms",
+          "url": "https://pco.gov.ph/news-releases/"
+        },
+        {
+          "label": "The Philippine Star — Palace: Indian firms to expand in Philippines",
+          "url": "https://www.philstar.com/headlines/2026/09/14/2556067/palace-indian-firms-expand-philippines"
+        },
+        {
+          "label": "Philippine Daily Inquirer — India-based iSON Group commits fresh $75-M outlay for PH expansion, more jobs",
+          "url": "https://globalnation.inquirer.net/337951/india-based-ison-group-commits-fresh-75-m-outlay-for-ph-expansion-more-jobs"
+        },
+        {
+          "label": "ABS-CBN News — Marcos Jr. talks airport development, digital payments with Indian conglomerates",
+          "url": "https://news.abs-cbn.com/news/business/2026/9/13/marcos-jr-talks-airport-development-digital-payments-with-indian-congolomerates-0916"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-14/ison-philippines-investment-16x9.svg",
+        "alt": "FMB News graphic stating that iSON committed 75 million dollars for Philippine expansion with around 2,000 projected jobs",
+        "caption": "FMB News editorial graphic on iSON Group's $75-million Philippine expansion commitment announced during President Marcos' India visit. This is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-14/051704-ison-75m-philippines-expansion-2000-jobs.json"
+    }
+  ]
+}

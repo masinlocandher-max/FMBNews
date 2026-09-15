@@ -1,0 +1,202 @@
+{
+  "date": "2026-09-03",
+  "publishedAt": "2026-09-03T07:00:00+08:00",
+  "editionLabel": "FMB Daily Brief · Archive Recovery",
+  "title": "The Stories That Defined the Day",
+  "deck": "Recovered FMB Daily Brief for 2026-09-03, reconstructed from FMB News' verified article archive. Key coverage includes Senate Impeachment Court Eyes Whole-Day October Sessions Before Budget Work; Visayas and Mindanao Grids Placed Under Extended Red Alerts; DepEd Estimates ₱7.783 Billion Needed to Repair Schools Hit by Habagat and Cyclones.",
+  "timezone": "Asia/Manila",
+  "recovery": {
+    "reconstructed": true,
+    "reconstructedAt": "2026-09-15T03:30:00+08:00",
+    "note": "Historical recovery edition. It was reconstructed after the original publication date and must not be represented as having been published contemporaneously."
+  },
+  "hero": {
+    "src": "/assets/images/mobile/fmb-daily-brief-coffee.webp",
+    "alt": "FMB Daily Brief coffee visual with the FMB shell emblem",
+    "caption": "Approved FMB Daily Brief photographic visual used when a recovered edition has no suitable rights-cleared documentary photograph.",
+    "credit": "FMB News",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260903-001",
+      "kicker": "Impeachment · Schedule",
+      "headline": "Senate Impeachment Court Eyes Whole-Day October Sessions Before Budget Work",
+      "deck": "The tentative calendar would expand hearing hours on selected October dates, pause during intensive budget work and resume in November.",
+      "body": [
+        "The Senate impeachment court is considering whole-day trial sessions beginning at 10 a.m. on selected October dates to allow more witnesses to be heard before the chamber's intensive work on the 2027 national budget.",
+        "Presiding Officer Francis Escudero outlined possible whole-day sessions on Oct. 1 and 2, Oct. 5 to 9, and Oct. 12 to 15. No hearings would be held from Oct. 16 to Nov. 8 under the tentative plan, with limited sessions resuming in November.",
+        "Escudero said the calendar remained tentative and would be finalized after senators agree on how to balance the impeachment trial with budget responsibilities.",
+        "Longer hearing days could allow two or three witnesses to be heard in a day and reduce the overall number of trial dates without displacing the Senate's budget timetable."
+      ],
+      "sources": [
+        {
+          "label": "Philippine News Agency — House backs longer impeachment trial days to hasten proceedings",
+          "url": "https://www.pna.gov.ph/articles/1283198"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Senate impeachment court scheduling",
+        "caption": "FMB News editorial visual accompanying the impeachment scheduling report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.pna.gov.ph/articles/1283198"
+      },
+      "sourceArticle": "content/news/articles/2026-09-03/1903-impeachment-whole-day-october-schedule.json"
+    },
+    {
+      "id": "FMB-DB-20260903-002",
+      "kicker": "Energy · Grid Supply",
+      "headline": "Visayas and Mindanao Grids Placed Under Extended Red Alerts",
+      "deck": "The Visayas grid faced a nine-hour red alert while Mindanao was also under red alert for much of the day as available capacity remained tight.",
+      "body": [
+        "NGCP placed both the Visayas and Mindanao grids under red alert on September 3 because available capacity and operating reserves were insufficient for demand and contingency requirements.",
+        "Consumers and businesses should monitor NGCP and local distribution-utility advisories for changes in alert periods and supply restoration.",
+        "The Visayas red alert was scheduled from 1 p.m. to 10 p.m., while Mindanao was under red alert from noon to 9 p.m.",
+        "Available capacity in the Visayas was about 2,187 MW against projected peak demand of 2,575 MW. NGCP cited forced outages, long-term unavailable units and derated plants, with total capacity losses reported at about 792 MW."
+      ],
+      "sources": [
+        {
+          "label": "Philippine News Agency — Visayas, Mindanao grids remain under red alert Thursday",
+          "url": "https://www.pna.gov.ph/articles/1283214"
+        },
+        {
+          "label": "GMA News Online — Visayas, Mindanao grids placed on red alert on September 3, 2026",
+          "url": "https://www.gmanetwork.com/news/money/economy/1000958/visayas-mindanao-grids-placed-on-red-alert-on-september-3-2026/story/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Visayas and Mindanao red alerts",
+        "caption": "FMB News editorial visual accompanying the power-grid alert report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.pna.gov.ph/articles/1283214"
+      },
+      "sourceArticle": "content/news/articles/2026-09-03/1901-visayas-mindanao-grid-red-alerts.json"
+    },
+    {
+      "id": "FMB-DB-20260903-003",
+      "kicker": "Education · Disaster Recovery",
+      "headline": "DepEd Estimates ₱7.783 Billion Needed to Repair Schools Hit by Habagat and Cyclones",
+      "deck": "The estimate covers immediate cleanup, minor and major repairs, and reconstruction of heavily damaged school sites.",
+      "body": [
+        "The Department of Education estimated that rehabilitation of schools damaged by floods, the southwest monsoon and recent tropical cyclones would require about ₱7.783 billion.",
+        "The final pace of repairs will depend on funding releases, damage validation, procurement and the ability to keep learning going while facilities are restored.",
+        "More than 11,000 classrooms were affected nationwide.",
+        "DepEd's estimate included about ₱65.036 million for cleanup and clearing at 2,243 schools, ₱319.97 million for minor repairs at 1,487 schools, ₱1.194 billion for major repairs at 669 schools and about ₱5.62 billion to reconstruct 490 heavily damaged school sites."
+      ],
+      "sources": [
+        {
+          "label": "Philippine Daily Inquirer — P7.7B needed to fix schools hit by ‘habagat,’ cyclones",
+          "url": "https://newsinfo.inquirer.net/2297988/p7-7b-needed-to-fix-schools-hit-by-habagat-cyclones"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for school disaster repairs",
+        "caption": "FMB News editorial visual accompanying the school-repair estimate.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://newsinfo.inquirer.net/2297988/p7-7b-needed-to-fix-schools-hit-by-habagat-cyclones"
+      },
+      "sourceArticle": "content/news/articles/2026-09-03/1303-deped-7-7b-school-repairs.json"
+    },
+    {
+      "id": "FMB-DB-20260903-004",
+      "kicker": "Accountability · Government procurement",
+      "headline": "Ombudsman Dismisses Former BFP Chief, Files Bribery and Graft Charges Over ₱485M Ambulance Deal",
+      "deck": "The anti-graft office said its investigation found grounds to administratively dismiss Jesus Fernandez and bring criminal charges tied to the procurement of 132 ambulances. The criminal allegations remain for the courts to determine.",
+      "body": [
+        "The Office of the Ombudsman has dismissed former Bureau of Fire Protection chief Jesus Fernandez from government service and filed criminal charges against him before the Sandiganbayan over an ambulance procurement worth about ₱485 million.",
+        "The case grew out of a complaint filed by the Department of the Interior and Local Government after a fact-finding investigation into the procurement of 132 Type 1 Basic Life Support ambulances.",
+        "The case concerns procurement for emergency medical vehicles funded through government spending, making the integrity of the bidding and purchasing process a direct public-interest issue.",
+        "The next material developments include the Sandiganbayan’s handling of the criminal cases, any plea or defense filed by Fernandez and Sangga, and whether either party challenges the Ombudsman’s administrative ruling through available legal remedies."
+      ],
+      "sources": [
+        {
+          "label": "Philippine News Agency — Ombudsman files raps vs ex-BFP chief over P485-M ambulance deal",
+          "url": "https://www.pna.gov.ph/articles/1283290"
+        },
+        {
+          "label": "GMA News — Ombudsman sacks BFP chief, files graft charges over P485M ambulance purchase",
+          "url": "https://www.gmanetwork.com/news/topstories/nation/1001049/ombudsman-sacks-bfp-chief-files-graft-charges-over-p485m-ambulance-purchase/story/"
+        },
+        {
+          "label": "INQUIRER.net — BFP chief sacked, faces graft, bribery case in Sandiganbayan — Ombudsman",
+          "url": "https://newsinfo.inquirer.net/2298432/bfp-chief-sacked-faces-graft-bribery-case-in-sandiganbayan-ombudsman"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-03/bfp-ombudsman-ambulance-16x9.svg",
+        "alt": "FMB News purple-violet editorial graphic about the Ombudsman action involving the former BFP chief and ambulance procurement",
+        "caption": "FMB News editorial graphic on the Ombudsman’s September 3, 2026 action involving former BFP chief Jesus Fernandez and the ambulance procurement case.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-03/231900-ombudsman-dismisses-former-bfp-chief-ambulance-procurement.json"
+    },
+    {
+      "id": "FMB-DB-20260903-005",
+      "kicker": "Migrant Workers · Maritime Security",
+      "headline": "Two Filipino Seafarers Killed in Strait of Hormuz Tanker Attack",
+      "deck": "The deaths renewed calls for strict enforcement of Filipino seafarers' right to refuse voyages through designated high-risk areas.",
+      "body": [
+        "The Department of Migrant Workers confirmed that two Filipino seafarers were killed after the Saudi-flagged crude oil tanker SIDR was attacked while transiting the Strait of Hormuz.",
+        "Families and surviving crew members will be watching the delivery of compensation, insurance, repatriation support and enforcement of high-risk-area protections.",
+        "The Philippine government said the victims were from Cabuyao, Laguna, and Daanbantayan, Cebu, and ordered agencies to provide their families with applicable benefits, compensation and insurance assistance.",
+        "Senator Raffy Tulfo called on the DMW to ensure that manning agencies and shipping companies respect Filipino seafarers' right to refuse sailing through designated high-risk areas without losing benefits."
+      ],
+      "sources": [
+        {
+          "label": "Philippine News Agency — DMW: 2 Filipino seafarers killed in Strait of Hormuz attack",
+          "url": "https://www.pna.gov.ph/articles/1283212"
+        },
+        {
+          "label": "Philippine News Agency — Enforce seafarers’ right to refuse Hormuz voyages – Tulfo",
+          "url": "https://www.pna.gov.ph/articles/1283216"
+        },
+        {
+          "label": "Philippine News Agency — PBBM orders aid for families of 2 Filipino seafarers killed in Hormuz",
+          "url": "https://www.pna.gov.ph/articles/1283234"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Filipino seafarers killed in the Strait of Hormuz",
+        "caption": "FMB News editorial visual accompanying the Hormuz seafarer report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.pna.gov.ph/articles/1283234"
+      },
+      "sourceArticle": "content/news/articles/2026-09-03/1301-two-filipino-seafarers-killed-hormuz.json"
+    },
+    {
+      "id": "FMB-DB-20260903-006",
+      "kicker": "Transport · Motorist Relief",
+      "headline": "Free Toll Implemented Between Pulilan and San Fernando; RFID Users to Get Refunds",
+      "deck": "The waiver was introduced as flooding near Tulaoc Bridge in San Simon caused severe traffic disruption along the expressway.",
+      "body": [
+        "The Department of Transportation secured a toll waiver for all vehicle classes traveling between Pulilan, Bulacan, and San Fernando, Pampanga, and vice versa, as flooding near the Tulaoc Bridge disrupted NLEX traffic.",
+        "Motorists should monitor NLEX and TRB advisories for the duration of the waiver, account adjustments and changes in road conditions around San Simon.",
+        "The Toll Regulatory Board said motorists using RFID could initially see normal charges posted to their accounts, but the toll operator would perform backroom adjustments to return charges covered by the waiver.",
+        "The toll relief reduced the financial burden on motorists already facing unusually long delays caused by flood-related traffic conditions."
+      ],
+      "sources": [
+        {
+          "label": "Philippine News Agency — Free toll set on Pulilan-San Fernando route amid NLEX flood traffic",
+          "url": "https://www.pna.gov.ph/articles/1283168"
+        },
+        {
+          "label": "Philippine News Agency — TRB assures refunds for RFID users during NLEX toll waiver",
+          "url": "https://www.pna.gov.ph/articles/1283293"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for NLEX free toll and RFID refunds",
+        "caption": "FMB News editorial visual accompanying the NLEX toll-waiver report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.pna.gov.ph/articles/1283293"
+      },
+      "sourceArticle": "content/news/articles/2026-09-03/0702-nlex-pulilan-san-fernando-toll-waiver.json"
+    }
+  ]
+}

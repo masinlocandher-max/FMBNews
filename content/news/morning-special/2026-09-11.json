@@ -1,0 +1,154 @@
+{
+  "date": "2026-09-11",
+  "publishedAt": "2026-09-11T07:00:00+08:00",
+  "editionLabel": "FMB Daily Brief · Archive Recovery",
+  "title": "The Stories That Defined the Day",
+  "deck": "Recovered FMB Daily Brief for 2026-09-11, reconstructed from FMB News' verified article archive. Key coverage includes PCG Says PLA Fired Flares Toward Unarmed Philippine Aircraft Over Kalayaan Island Group; MV June Aster Death Toll Rises to 35 After Rescuers Enter Burned Ferry; EU and Spain Join Luzon Economic Corridor as Partnership Expands to 13 Members.",
+  "timezone": "Asia/Manila",
+  "recovery": {
+    "reconstructed": true,
+    "reconstructedAt": "2026-09-15T03:30:00+08:00",
+    "note": "Historical recovery edition. It was reconstructed after the original publication date and must not be represented as having been published contemporaneously."
+  },
+  "hero": {
+    "src": "/assets/images/mobile/fmb-daily-brief-coffee.webp",
+    "alt": "FMB Daily Brief coffee visual with the FMB shell emblem",
+    "caption": "Approved FMB Daily Brief photographic visual used when a recovered edition has no suitable rights-cleared documentary photograph.",
+    "credit": "FMB News",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260911-001",
+      "kicker": "NATION · WEST PHILIPPINE SEA",
+      "headline": "PCG Says PLA Fired Flares Toward Unarmed Philippine Aircraft Over Kalayaan Island Group",
+      "deck": "The Philippine Coast Guard says Chinese forces discharged multiple flares toward an unarmed PCG aircraft during a September 7 maritime patrol near Zamora and Panganiban Reefs.",
+      "body": [
+        "The Philippine Coast Guard said forces of China's People's Liberation Army discharged multiple flares toward an unarmed PCG aircraft conducting a maritime domain awareness flight over the Kalayaan Island Group on September 7, 2026.",
+        "The PCG said its aircraft was conducting a routine maritime domain awareness mission and was preparing to land on Pag-asa Island. The aircrew also reported seeing a considerable number of Chinese maritime militia vessels inside the lagoons of Zamora and Panganiban Reefs.",
+        "The incident concerns the safety of Philippine government personnel conducting patrols in the West Philippine Sea and the country's ability to document maritime activity around features it considers part of its lawful maritime entitlements.",
+        "Watch for any formal response from Beijing, a diplomatic protest or other action from Manila, and whether the PCG releases additional flight data, imagery or operational details from the September 7 mission."
+      ],
+      "sources": [
+        {
+          "label": "Philippine Information Agency / Philippine Coast Guard — PLA fires flares at unarmed PCG aircraft during maritime domain awareness flight over Kalayaan Island Group",
+          "url": "https://pia.gov.ph/news/pla-fires-flares-at-unarmed-pcg-aircraft-during-maritime-domain-awareness-flight-over-kalayaan-island-group/"
+        },
+        {
+          "label": "Philippine News Agency — China’s PLA fires flares at PCG aircraft over Kalayaan Island Group",
+          "url": "https://www.pna.gov.ph/articles/1283778"
+        },
+        {
+          "label": "GMA News — China fires flares at unarmed PH aircraft over Kalayaan Island Group",
+          "url": "https://www.gmanetwork.com/news/topstories/nation/1001865/china-fires-flares-at-unarmed-ph-aircraft-over-kalayaan-island-group/story/"
+        },
+        {
+          "label": "ABS-CBN News — China fires flares at Philippine Coast Guard aircraft",
+          "url": "https://www.abs-cbn.com/news/nation/2026/9/10/china-fires-flares-at-philippine-coast-guard-aircraft-1141"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-11/pla-flares-pcg-aircraft-kalayaan-16x9.svg",
+        "alt": "FMB News graphic reading PLA Flares Fired Toward PCG Aircraft over the Kalayaan Island Group",
+        "caption": "FMB News editorial graphic on the Philippine Coast Guard's report that PLA forces fired flares toward an unarmed PCG aircraft during a September 7, 2026 patrol over the Kalayaan Island Group. It is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-11/111900-pla-flares-pcg-aircraft-kalayaan.json"
+    },
+    {
+      "id": "FMB-DB-20260911-002",
+      "kicker": "NATION · DEVELOPING",
+      "headline": "MV June Aster Death Toll Rises to 35 After Rescuers Enter Burned Ferry",
+      "deck": "Rescuers recovered 30 bodies after gaining access to the burned MV June Aster, raising the confirmed death toll to 35 as search and identification work continues off Coron, Palawan.",
+      "body": [
+        "Rescuers recovered 30 bodies from the burned passenger ferry MV June Aster on Friday, September 11, after responders were able to enter the vessel, raising the confirmed death toll from five to 35.",
+        "The ferry's original manifest listed 117 passengers and 17 crew members. Authorities later determined that two people on the manifest had not actually boarded, underscoring why official survivor, fatality and missing-person totals have required repeated reconciliation.",
+        "The jump in confirmed fatalities makes the June Aster fire one of the country's most serious recent passenger-vessel disasters and intensifies scrutiny of shipboard fire safety, emergency evacuation, passenger manifests, vessel inspection and maritime regulation.",
+        "Watch for official identification of the recovered victims, a reconciled passenger and crew accounting, Philippine Coast Guard and MARINA findings on the fire's origin, and any regulatory or enforcement action involving the vessel or its operator."
+      ],
+      "sources": [
+        {
+          "label": "Reuters — Philippine ferry fire death toll jumps to 35",
+          "url": "https://www.reuters.com/world/asia-pacific/philippine-rescuers-resume-search-survivors-palawan-ferry-fire-2026-09-11/"
+        },
+        {
+          "label": "Associated Press — Death toll in Philippine ferry fire rises to 35 as more bodies are recovered",
+          "url": "https://apnews.com/article/53da1f785c386cfbd189ef1dd3017c03"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-11/mv-june-aster-death-toll-35-16x9.svg",
+        "alt": "FMB News developing-story graphic reporting that the MV June Aster ferry fire death toll rose to 35 after 30 additional bodies were recovered",
+        "caption": "FMB News editorial graphic on the September 11, 2026 recovery of 30 additional bodies from MV June Aster, raising the confirmed death toll to 35. This is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-11/231500-mv-june-aster-death-toll-35-continuation.json"
+    },
+    {
+      "id": "FMB-DB-20260911-003",
+      "kicker": "ECONOMY · INFRASTRUCTURE",
+      "headline": "EU and Spain Join Luzon Economic Corridor as Partnership Expands to 13 Members",
+      "deck": "The European Union and Spain formally joined the Luzon Economic Corridor, widening the partnership behind a pipeline of transport, energy, digital and manufacturing projects across Luzon.",
+      "body": [
+        "The European Union and Spain have formally joined the Luzon Economic Corridor partnership, expanding the international coalition behind the infrastructure and investment initiative to 13 members.",
+        "The Luzon Economic Corridor was launched in 2024 by the Philippines, the United States and Japan to accelerate strategic infrastructure investment and improve connectivity and supply chains linking major growth centers including Subic, Clark, Manila and Batangas.",
+        "The corridor is intended to channel capital, technology and technical expertise into infrastructure and industrial projects that could affect jobs, logistics, energy reliability, digital connectivity and the competitiveness of Philippine manufacturing.",
+        "Watch for specific financing commitments, signed project agreements, procurement milestones and final investment decisions tied to the 38-project pipeline."
+      ],
+      "sources": [
+        {
+          "label": "Philippine News Agency — EU, Spain join Luzon Economic Corridor to hasten infra investments",
+          "url": "https://www.pna.gov.ph/articles/1283781"
+        },
+        {
+          "label": "The Philippine STAR — Spain, EU join Luzon Economic Corridor",
+          "url": "https://www.philstar.com/business/2026/09/11/2555369/spain-eu-join-luzon-economic-corridor"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-11/eu-spain-luzon-economic-corridor-16x9.svg",
+        "alt": "FMB News graphic reading EU and Spain Join Luzon Economic Corridor",
+        "caption": "FMB News editorial graphic on the European Union and Spain formally joining the Luzon Economic Corridor partnership in September 2026. It is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-11/171500-eu-spain-join-luzon-economic-corridor.json"
+    },
+    {
+      "id": "FMB-DB-20260911-004",
+      "kicker": "NATION · ACCOUNTABILITY",
+      "headline": "Sandiganbayan Commits Romualdez to Quezon City Jail Custody as Hospital Request Remains Pending",
+      "deck": "The Sandiganbayan issued a commitment order designating New Quezon City Jail for former House Speaker Martin Romualdez, while the court continues to consider his request to remain confined at a private hospital.",
+      "body": [
+        "The Sandiganbayan Third Division issued a commitment order on September 10 directing that former House Speaker and Leyte 1st District Representative Martin Romualdez be committed for detention at the New Quezon City Jail in Payatas, Quezon City, in connection with the pending ₱7.44-billion plunder case.",
+        "The Office of the Ombudsman accuses Romualdez and three co-accused of receiving at least ₱7.44 billion in alleged commissions, kickbacks and other benefits connected to flood-control, infrastructure and other government projects funded from 2022 to 2025.",
+        "The case concerns allegations involving billions of pesos and government infrastructure spending, including flood-control projects that directly affect public safety and disaster resilience. Court decisions on custody are therefore part of a closely watched test of whether high-profile defendants are subjected to the same judicial process and detention rules as other accused persons.",
+        "The immediate question is how the Sandiganbayan will rule on Romualdez's request for continued hospital confinement and when, if medically and legally cleared, he will be physically transferred to the detention facility designated by the court."
+      ],
+      "sources": [
+        {
+          "label": "GMA News — Sandiganbayan issues commitment order for Martin Romualdez to New Quezon City Jail",
+          "url": "https://www.gmanetwork.com/news/topstories/nation/1001854/sandiganbayan-issues-commitment-order-for-martin-romualdez-to-new-quezon-city-jail/story/"
+        },
+        {
+          "label": "Philstar.com — Sandiganbayan orders Romualdez detained at New Quezon City Jail",
+          "url": "https://www.philstar.com/headlines/2026/09/10/2555320/sandiganbayan-orders-romualdez-detained-new-quezon-city-jail"
+        },
+        {
+          "label": "Philippine News Agency — 'Ailing' Romualdez served warrant at hospital",
+          "url": "https://www.pna.gov.ph/articles/1283516"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-11/romualdez-commitment-order-16x9.svg",
+        "alt": "FMB News graphic reporting the Sandiganbayan commitment order designating New Quezon City Jail for Martin Romualdez while his hospital-confinement request remains pending",
+        "caption": "FMB News editorial graphic reporting the Sandiganbayan's September 10, 2026 commitment order designating New Quezon City Jail for Martin Romualdez. This is not a documentary photograph. The criminal allegations remain unproven.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-11/051800-romualdez-commitment-order-continuation.json"
+    }
+  ]
+}

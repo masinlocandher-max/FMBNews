@@ -1,0 +1,210 @@
+{
+  "date": "2026-08-23",
+  "publishedAt": "2026-08-23T07:00:00+08:00",
+  "editionLabel": "FMB Daily Brief · Archive Recovery",
+  "title": "The Stories That Defined the Day",
+  "deck": "Recovered FMB Daily Brief for 2026-08-23, reconstructed from FMB News' verified article archive. Key coverage includes AFP Rejects Chinese Claims, Says Philippines Will Not Abandon BRP Sierra Madre; Typhoon Saudel Nears PAR as PAGASA Warns of Renewed Habagat Rains; Congress Weighs Stricter Social Media Age Limits for Children.",
+  "timezone": "Asia/Manila",
+  "recovery": {
+    "reconstructed": true,
+    "reconstructedAt": "2026-09-15T03:30:00+08:00",
+    "note": "Historical recovery edition. It was reconstructed after the original publication date and must not be represented as having been published contemporaneously."
+  },
+  "hero": {
+    "src": "/assets/images/mobile/fmb-daily-brief-coffee.webp",
+    "alt": "FMB Daily Brief coffee visual with the FMB shell emblem",
+    "caption": "Approved FMB Daily Brief photographic visual used when a recovered edition has no suitable rights-cleared documentary photograph.",
+    "credit": "FMB News",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260823-001",
+      "kicker": "West Philippine Sea · National Security",
+      "headline": "AFP Rejects Chinese Claims, Says Philippines Will Not Abandon BRP Sierra Madre",
+      "deck": "The military rejected the Chinese Embassy's latest claims and said the Philippines has no plan to abandon the grounded Navy vessel that serves as its outpost at Ayungin Shoal.",
+      "body": [
+        "The Armed Forces of the Philippines on Sunday rejected claims from the Chinese Embassy concerning the BRP Sierra Madre and said the Philippines has no plan to abandon the grounded Navy vessel at Ayungin Shoal.",
+        "The BRP Sierra Madre has served as a Philippine military outpost at Ayungin Shoal since 1999. Rotation and resupply missions to the vessel have repeatedly become flashpoints in the broader Philippines-China dispute in the West Philippine Sea.",
+        "The condition and continued operation of the Sierra Madre are central to the Philippines' physical presence at Ayungin Shoal. Statements about its maintenance, resupply or possible removal therefore carry immediate security and diplomatic significance.",
+        "Attention will remain on future rotation and resupply missions, diplomatic exchanges between Manila and Beijing, and whether the provisional understanding governing those missions continues to reduce confrontation at sea."
+      ],
+      "sources": [
+        {
+          "label": "Armed Forces of the Philippines / Philippine News Agency reporting — AFP says Philippines will never abandon BRP Sierra Madre",
+          "url": "https://www.pna.gov.ph/"
+        },
+        {
+          "label": "FMB News approved newsroom brief — AFP response on Ayungin Shoal",
+          "url": "https://mail.google.com/mail/#all/1a02d2d3d891a6b5"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for BRP Sierra Madre and Ayungin Shoal report",
+        "caption": "FMB News editorial visual accompanying the August 23 report on the BRP Sierra Madre at Ayungin Shoal.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.pna.gov.ph/"
+      },
+      "sourceArticle": "content/news/articles/2026-08-23/1300-afp-brp-sierra-madre-ayungin-sovereign-rights.json"
+    },
+    {
+      "id": "FMB-DB-20260823-002",
+      "kicker": "Weather · Public Safety",
+      "headline": "Typhoon Saudel Nears PAR as PAGASA Warns of Renewed Habagat Rains",
+      "deck": "The approved newsroom brief says Saudel is approaching the Philippine monitoring boundary, while PAGASA forecasts unsettled weather over parts of Luzon as the southwest monsoon persists.",
+      "body": [
+        "PAGASA is monitoring Typhoon Saudel east of the Philippines as the cyclone moves closer to the Philippine Area of Responsibility, according to the approved FMB News overnight brief.",
+        "PAGASA's current public outlook already shows cloudy or unsettled conditions across several northern and western locations for Sunday, with the southwest monsoon continuing to influence Luzon.",
+        "Many communities in Luzon are still recovering from recent monsoon flooding. Additional rain over saturated ground can renew localized flooding and landslide risks even when a tropical cyclone remains offshore.",
+        "Watch PAGASA's succeeding tropical cyclone advisories for Saudel's position, intensity, PAR-entry timing and any rainfall or wind warnings issued for Philippine areas."
+      ],
+      "sources": [
+        {
+          "label": "DOST-PAGASA — Weather and tropical cyclone monitoring",
+          "url": "https://staging.pagasa.dost.gov.ph/"
+        },
+        {
+          "label": "FMB News approved newsroom brief — Typhoon Saudel Nears PAR Entry as Obet",
+          "url": "https://mail.google.com/mail/#all/1a02a9d0aae70e10"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Typhoon Saudel weather monitoring",
+        "caption": "FMB News editorial visual accompanying the August 23 Typhoon Saudel weather update.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://staging.pagasa.dost.gov.ph/"
+      },
+      "sourceArticle": "content/news/articles/2026-08-23/0100-typhoon-saudel-nears-par-obet-habagat.json"
+    },
+    {
+      "id": "FMB-DB-20260823-003",
+      "kicker": "Congress · Child Protection",
+      "headline": "Congress Weighs Stricter Social Media Age Limits for Children",
+      "deck": "Lawmakers are considering tighter age-based restrictions and platform safeguards as Congress works through competing proposals on minors' social media access.",
+      "body": [
+        "Philippine lawmakers are pushing tighter restrictions on children's access to social media, including proposals that would bar younger children from maintaining accounts and require stronger safeguards for teenagers.",
+        "The approved FMB News brief described a Sunday push for an under-13 ban and additional controls for users aged 14 to 17. Independent House records confirm that Congress is actively considering multiple child online-safety measures, but they do not support treating one threshold as enacted law.",
+        "Age-assurance rules can affect millions of families and raise questions about privacy, parental consent, platform liability and enforcement. The proposals remain legislative measures and are not yet law.",
+        "Congress will have to reconcile competing age thresholds and define how age assurance, parental consent and platform duties would work before a final measure can advance."
+      ],
+      "sources": [
+        {
+          "label": "House of Representatives — Pending measures on minimum age and social media use",
+          "url": "https://www.congress.gov.ph/"
+        },
+        {
+          "label": "Reuters — After Philippines school shooting, debate shifts to social media, gun safety",
+          "url": "https://www.reuters.com/world/asia-pacific/after-philippines-school-shooting-debate-shifts-social-media-gun-safety-2026-08-19/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Philippine child online safety legislation",
+        "caption": "FMB News editorial visual accompanying coverage of proposed social-media age restrictions for minors.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.congress.gov.ph/"
+      },
+      "sourceArticle": "content/news/articles/2026-08-23/1900-congress-social-media-age-restrictions-children.json"
+    },
+    {
+      "id": "FMB-DB-20260823-004",
+      "kicker": "Politics · Constitutional Accountability",
+      "headline": "Senate Weighs Afternoon Impeachment Schedule as Reports Differ on Start Time",
+      "deck": "The Senate is considering a shift to afternoon impeachment proceedings so mornings can remain available for legislative work, but the exact implementation date remains unsettled in current reporting.",
+      "body": [
+        "Senators are moving toward an afternoon schedule for the Vice President's impeachment trial as the chamber tries to balance impeachment proceedings with its regular legislative calendar.",
+        "The Senate is simultaneously handling ordinary legislative work, including budget-related business, and its constitutional role as an impeachment court. Moving hearings later in the day is intended to preserve morning hours for plenary and committee work.",
+        "The timetable affects both the pace of the impeachment case and the Senate's ability to process legislation. A confirmed afternoon schedule could create longer or more predictable hearing windows without displacing morning legislative work.",
+        "Watch for an official Senate or presiding-officer calendar confirming the start time, implementation date and any additional hearing days. That official notice should control over preliminary political statements or conflicting media reports."
+      ],
+      "sources": [
+        {
+          "label": "News5 — Senate sets afternoon schedule for Duterte impeachment trial",
+          "url": "https://news.tv5.com.ph/breaking/read/senate-sets-afternoon-schedule-for-duterte-impeachment-trial"
+        },
+        {
+          "label": "Journal News Online — Lacson: Senate majority favors afternoon impeachment trial; schedule not final",
+          "url": "https://journalnews.com.ph/lacson-senate-majority-favors-afternoon-impeachment-trial-schedule-not-final/"
+        },
+        {
+          "label": "Bombo Radyo — Senado magpupulong para sa bagong iskedyul ng impeachment trial ni VP Sara",
+          "url": "https://www.bomboradyo.com/senado-magpupulong-para-sa-bagong-iskedyul-ng-impeachment-trial-ni-vp-sara"
+        },
+        {
+          "label": "FMB News approved newsroom brief — Senate Impeachment Court Formally Convenes at 3:00 PM Today",
+          "url": "https://mail.google.com/mail/#all/1a02fc00ebc85587"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for the Senate impeachment trial schedule",
+        "caption": "FMB News editorial visual accompanying the Senate impeachment scheduling update.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://news.tv5.com.ph/breaking/read/senate-sets-afternoon-schedule-for-duterte-impeachment-trial"
+      },
+      "sourceArticle": "content/news/articles/2026-08-23/0100-senate-impeachment-trial-afternoon-schedule.json"
+    },
+    {
+      "id": "FMB-DB-20260823-005",
+      "kicker": "Maritime · Security",
+      "headline": "Philippine Coast Guard Receives Two Marine Protector-Class Patrol Vessels from US",
+      "deck": "The two 27-meter vessels will enter Coast Guard service as BRP Pag-asa and BRP Patag after their expected arrival in Manila in October.",
+      "body": [
+        "The Philippine Coast Guard has received two 27-meter Marine Protector-class patrol vessels from the United States, expanding its search-and-rescue, marine environmental protection and maritime-domain-awareness capabilities.",
+        "Twenty-four PCG crew members completed specialized operations and maintenance training for the vessels in Baltimore, Maryland, on August 20.",
+        "Additional patrol vessels increase the Coast Guard's capacity to respond across the country's extensive maritime jurisdiction, where search-and-rescue, law enforcement and environmental missions often compete for limited assets.",
+        "The next milestone is the vessels' expected Manila arrival in October and their formal commissioning into the Coast Guard fleet."
+      ],
+      "sources": [
+        {
+          "label": "Philippine Coast Guard / approved FMB News brief — PCG receives two 27-meter Marine Protector-class patrol vessels from the United States",
+          "url": "https://www.facebook.com/PhilippineCoastGuardOfficial/"
+        },
+        {
+          "label": "Manila Bulletin - Balita — PCG, nakatanggap ng 2 marine patrol vessels mula sa US",
+          "url": "https://balita.mb.com.ph/2026/08/23/pcg-nakatanggap-ng-2-marine-patrol-vessels-mula-sa-us/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Philippine Coast Guard patrol vessels",
+        "caption": "FMB News editorial visual accompanying coverage of the Coast Guard's two Marine Protector-class patrol vessels.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.facebook.com/PhilippineCoastGuardOfficial/"
+      },
+      "sourceArticle": "content/news/articles/2026-08-23/1900-pcg-two-us-marine-protector-patrol-vessels.json"
+    },
+    {
+      "id": "FMB-DB-20260823-006",
+      "kicker": "Weather · Public Safety",
+      "headline": "Typhoon Saudel Packs 165 km/h Winds as It Nears PAR",
+      "deck": "Saudel remained outside the Philippine Area of Responsibility Sunday afternoon, with PAGASA monitoring its possible entry and its potential to strengthen the southwest monsoon.",
+      "body": [
+        "Typhoon Saudel remained a powerful cyclone east of the Philippines on Sunday, August 23, with PAGASA reporting maximum sustained winds of 165 km/h and gusts of up to 205 km/h in its afternoon monitoring.",
+        "PAGASA was monitoring three tropical cyclones outside PAR on Sunday. The southwest monsoon was already bringing rain to parts of Luzon, including Metro Manila, Central Luzon and nearby provinces.",
+        "Even without a direct Philippine landfall, a large offshore typhoon can strengthen the southwest monsoon and increase rainfall over communities still recovering from recent flooding.",
+        "PAGASA's succeeding bulletins will determine Saudel's PAR-entry timing, intensity and the extent of any enhanced Habagat rainfall. Residents should follow official rainfall and flood advisories rather than rely on forecast tracks alone."
+      ],
+      "sources": [
+        {
+          "label": "DOST-PAGASA / approved FMB News brief — Typhoon Saudel monitoring, August 23",
+          "url": "https://staging.pagasa.dost.gov.ph/"
+        },
+        {
+          "label": "National Weather Service Guam — Typhoon Saudel Advisory Number 19",
+          "url": "https://forecast.weather.gov/product.php?issuedby=PQ1&product=TCP"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Typhoon Saudel weather monitoring",
+        "caption": "FMB News editorial visual accompanying the August 23 Typhoon Saudel update.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://staging.pagasa.dost.gov.ph/"
+      },
+      "sourceArticle": "content/news/articles/2026-08-23/1300-typhoon-saudel-165-kmh-nears-par-obet.json"
+    }
+  ]
+}

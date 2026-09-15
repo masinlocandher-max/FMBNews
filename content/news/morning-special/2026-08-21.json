@@ -1,0 +1,194 @@
+{
+  "date": "2026-08-21",
+  "publishedAt": "2026-08-21T07:00:00+08:00",
+  "editionLabel": "FMB Daily Brief · Archive Recovery",
+  "title": "The Stories That Defined the Day",
+  "deck": "Recovered FMB Daily Brief for 2026-08-21, reconstructed from FMB News' verified article archive. Key coverage includes DepEd Strengthens School Safety Drills and Security Coordination After Zamboanga Shooting; BIR Files ₱2.23-Billion Tax Case Against Hongsheng Gaming Technology; Northern Luzon Flood Risk Eases as River Systems Continue to Subside.",
+  "timezone": "Asia/Manila",
+  "recovery": {
+    "reconstructed": true,
+    "reconstructedAt": "2026-09-15T03:30:00+08:00",
+    "note": "Historical recovery edition. It was reconstructed after the original publication date and must not be represented as having been published contemporaneously."
+  },
+  "hero": {
+    "src": "/assets/images/mobile/fmb-daily-brief-coffee.webp",
+    "alt": "FMB Daily Brief coffee visual with the FMB shell emblem",
+    "caption": "Approved FMB Daily Brief photographic visual used when a recovered edition has no suitable rights-cleared documentary photograph.",
+    "credit": "FMB News",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260821-001",
+      "kicker": "Education · Public Safety",
+      "headline": "DepEd Strengthens School Safety Drills and Security Coordination After Zamboanga Shooting",
+      "deck": "The education department is reinforcing preventive measures, emergency response drills and school-police coordination as campuses review safety protocols.",
+      "body": [
+        "The Department of Education is strengthening school-safety preparedness following the fatal shooting at Ateneo de Zamboanga University, with preventive measures, emergency response drills and closer coordination between schools and local police among the measures being reinforced.",
+        "DepEd guidance already treats hazard-specific drills, including lockdown drills, as part of school disaster-risk and preparedness planning. Current regional DepEd issuances also call for stronger preventive measures, emergency response drills and school-PNP coordination on security-related incidents.",
+        "School safety involves both physical preparedness and early support for learners who may be experiencing distress. DepEd guidance after recent incidents has emphasized that secure campuses and supported learners need to be addressed together.",
+        "Parents and school communities should watch for implementing instructions from their schools and divisions, including drill schedules and any changes to access-control or emergency-contact procedures."
+      ],
+      "sources": [
+        {
+          "label": "Department of Education Regional Office X — Strengthening School Safety Through Preventive Measures, Emergency Response Drills, and School-PNP Coordination on Security-Related Incidents",
+          "url": "https://r10.deped.gov.ph/?page_id=1458"
+        },
+        {
+          "label": "Department of Education — Guidelines on School Preparedness and Emergency Supplies",
+          "url": "https://www.deped.gov.ph/wp-content/uploads/DM_s2026_028r.pdf"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for school safety and emergency preparedness",
+        "caption": "FMB News editorial visual accompanying the school-safety report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://r10.deped.gov.ph/?page_id=1458"
+      },
+      "sourceArticle": "content/news/articles/2026-08-21/0700-deped-strengthens-school-safety-drills-security-coordination.json"
+    },
+    {
+      "id": "FMB-DB-20260821-002",
+      "kicker": "Taxation · Law Enforcement",
+      "headline": "BIR Files ₱2.23-Billion Tax Case Against Hongsheng Gaming Technology",
+      "deck": "Revenue authorities filed a multibillion-peso tax case against the offshore gaming operator as the government continues enforcement against former POGO entities.",
+      "body": [
+        "The Bureau of Internal Revenue filed a tax evasion case worth about ₱2.23 billion against Hongsheng Gaming Technology Inc., an offshore gaming operator associated with the Bamban, Tarlac POGO compound.",
+        "Offshore gaming operations have been banned in the Philippines, but closure does not erase outstanding tax liabilities. BIR Revenue Memorandum Circular No. 13-2026 states that former POGOs and related entities remain liable for taxes, duties, regulatory fees and other charges up to their last day of operations and may still be audited.",
+        "The filing tests the government's ability to recover tax liabilities from companies linked to the now-banned offshore gaming sector and to pursue corporate officers where the law allows.",
+        "The next step is the Justice Department's evaluation of the complaint and any preliminary investigation. A tax complaint is an allegation and does not by itself establish criminal liability."
+      ],
+      "sources": [
+        {
+          "label": "Bureau of Internal Revenue — Revenue Memorandum Circular No. 13-2026",
+          "url": "https://bir-cdn.bir.gov.ph/BIR/pdf/RMC%20No.%2013-2026%20Digest.pdf"
+        },
+        {
+          "label": "FMB News approved editorial brief — BIR Files ₱2.228-Billion Criminal Tax Evasion Complaint Against Bamban POGO Hub Hongsheng",
+          "url": "https://www.bir.gov.ph/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for the BIR Hongsheng tax case",
+        "caption": "FMB News editorial visual accompanying the BIR tax-enforcement report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.bir.gov.ph/"
+      },
+      "sourceArticle": "content/news/articles/2026-08-21/1300-bir-hongsheng-pogo-tax-evasion-complaint.json"
+    },
+    {
+      "id": "FMB-DB-20260821-003",
+      "kicker": "Weather · Public Safety",
+      "headline": "Northern Luzon Flood Risk Eases as River Systems Continue to Subside",
+      "deck": "Floodwaters continued to recede in northern Luzon, but current PAGASA monitoring still showed flood-watch status for the Agno basin, requiring continued caution in vulnerable communities.",
+      "body": [
+        "Flood conditions across parts of northern Luzon continued to improve on Friday as monsoon runoff drained and river levels eased following days of heavy rain.",
+        "River levels can remain elevated after rainfall weakens because runoff from upstream catchments continues moving downstream. PAGASA's hydrological monitoring is therefore the controlling reference for communities near rivers and dams even when general weather conditions improve.",
+        "Receding water allows road clearing, household return and agricultural damage assessment to accelerate, but saturated ground and residual river flows can continue to pose localized risks.",
+        "Residents in flood-prone communities should continue following PAGASA hydrological bulletins and local disaster offices until their specific basin or locality is formally cleared."
+      ],
+      "sources": [
+        {
+          "label": "DOST-PAGASA — Flood Information",
+          "url": "https://staging.pagasa.dost.gov.ph/flood"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for northern Luzon flood monitoring",
+        "caption": "FMB News editorial visual accompanying the northern Luzon flood-recovery report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://staging.pagasa.dost.gov.ph/flood"
+      },
+      "sourceArticle": "content/news/articles/2026-08-21/1300-pagasa-northern-luzon-flood-advisories.json"
+    },
+    {
+      "id": "FMB-DB-20260821-004",
+      "kicker": "Legislation · Public Safety",
+      "headline": "Senate Pushes Residential Gun-Storage Checks and Tougher Penalties After Zamboanga Shooting",
+      "deck": "Lawmakers are proposing tighter verification of home firearm storage and stronger liability when unsecured weapons are accessed by minors or other unauthorized persons.",
+      "body": [
+        "Senate lawmakers are pushing amendments to Republic Act No. 10591 that would tighten firearm-storage requirements following the fatal Zamboanga school shooting, according to the approved FMB News evening brief.",
+        "Republic Act No. 10591 already requires licensed firearm owners to keep firearms in a vault, a container secured by lock and key, or through other security measures. The law also imposes additional inspection and bond requirements on some higher-tier license categories.",
+        "The policy question is no longer only who may legally own a firearm. It is also how licensed owners are expected to store weapons in homes and vehicles, and what consequences should follow when those safeguards fail.",
+        "Watch for the filed bill text, committee referral, hearing schedule and any PNP Firearms and Explosives Office position on how storage inspections could be implemented without creating inconsistent or intrusive enforcement practices."
+      ],
+      "sources": [
+        {
+          "label": "Senate of the Philippines — Republic Act No. 10591",
+          "url": "https://issuances-library.senate.gov.ph/legislative%2Bissuances/Republic%20Act%20No.%2010591"
+        },
+        {
+          "label": "FMB News approved editorial brief — Senate Moves to Mandate Residential Gun Storage Checks and Stiffer Penalties Following Zamboanga School Tragedy",
+          "url": "https://www.senate.gov.ph/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for proposed Philippine firearm storage reforms",
+        "caption": "FMB News editorial visual accompanying the proposed firearm-storage reforms.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.senate.gov.ph/"
+      },
+      "sourceArticle": "content/news/articles/2026-08-21/1900-senate-gun-storage-checks-ra10591.json"
+    },
+    {
+      "id": "FMB-DB-20260821-005",
+      "kicker": "Governance · Disaster Management",
+      "headline": "Palace Says ₱180-Million Regional Evacuation Funds Are for Permanent Disaster Shelters",
+      "deck": "Malacañang says the allocations are intended for permanent evacuation infrastructure, including facilities designed to reduce the use of classrooms as temporary shelters.",
+      "body": [
+        "Malacañang said a ₱180-million allocation per administrative region is intended for permanent evacuation-center infrastructure, responding to questions over the use of disaster-related public funds.",
+        "Using classrooms as temporary shelters can prolong disruptions to schooling after a disaster. Dedicated evacuation centers are intended to separate emergency shelter operations from regular school functions and provide facilities designed specifically for displaced families.",
+        "The issue combines disaster preparedness with public-spending accountability. Clear project locations, procurement records, engineering standards and implementation timelines will be important for assessing whether the allocations translate into usable facilities.",
+        "Watch for detailed implementing documents identifying project sites, procurement schedules, construction milestones and audit records for the regional allocations."
+      ],
+      "sources": [
+        {
+          "label": "Presidential Communications Office — Palace clarification on regional evacuation-center funding",
+          "url": "https://pco.gov.ph/"
+        },
+        {
+          "label": "Philippine News Agency — National and disaster infrastructure coverage",
+          "url": "https://www.pna.gov.ph/categories/national"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for permanent evacuation-center funding",
+        "caption": "FMB News editorial visual accompanying the evacuation-center funding report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://pco.gov.ph/"
+      },
+      "sourceArticle": "content/news/articles/2026-08-21/0700-palace-180-million-regional-evacuation-center-fund.json"
+    },
+    {
+      "id": "FMB-DB-20260821-006",
+      "kicker": "Disaster Response · Central Luzon",
+      "headline": "Bataan and Zambales Declare Province-Wide States of Calamity After Monsoon Floods",
+      "deck": "The provincial declarations unlock emergency response resources and trigger consumer protections as communities begin flood recovery.",
+      "body": [
+        "Bataan and Zambales were placed under province-wide states of calamity on Friday, August 21, after days of Southwest Monsoon flooding caused widespread damage to homes, farms and local infrastructure, according to the approved FMB News evening brief.",
+        "A state of calamity allows local governments to mobilize available disaster-response and recovery funds more quickly. It also activates applicable consumer protections, including the statutory price-freeze framework for basic necessities in calamity areas.",
+        "The declarations shift the response from immediate rescue toward organized recovery. For farmers, fisherfolk, small businesses and households, the key issues now are access to relief, restoration of roads and utilities, agricultural rehabilitation and enforcement of price protections.",
+        "Watch for official provincial damage totals, agriculture-assistance schedules, cash-for-work programs and updated municipal advisories as floodwaters recede. FMB News will treat preliminary loss estimates as provisional until agencies finalize their assessments."
+      ],
+      "sources": [
+        {
+          "label": "FMB News approved editorial brief — Bataan and Zambales Declare Province-Wide States of Calamity Following Severe Monsoon Inundations",
+          "url": "https://www.francinemariebautista.com/news/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Bataan and Zambales flood recovery",
+        "caption": "FMB News editorial visual accompanying the Bataan and Zambales calamity declaration report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://newsinfo.inquirer.net/"
+      },
+      "sourceArticle": "content/news/articles/2026-08-21/1900-bataan-zambales-state-of-calamity.json"
+    }
+  ]
+}

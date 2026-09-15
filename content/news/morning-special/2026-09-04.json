@@ -1,0 +1,218 @@
+{
+  "date": "2026-09-04",
+  "publishedAt": "2026-09-04T07:00:00+08:00",
+  "editionLabel": "FMB Daily Brief · Archive Recovery",
+  "title": "The Stories That Defined the Day",
+  "deck": "Recovered FMB Daily Brief for 2026-09-04, reconstructed from FMB News' verified article archive. Key coverage includes QC Court Issues Arrest Warrant Against VP Sara Duterte in Grave Threats Case; Marcos Administration Proposes ₱197.3 Billion for Rail Transport in 2027; Marcos Signs Law Expanding Tertiary Education Aid for Poorer Students.",
+  "timezone": "Asia/Manila",
+  "recovery": {
+    "reconstructed": true,
+    "reconstructedAt": "2026-09-15T03:30:00+08:00",
+    "note": "Historical recovery edition. It was reconstructed after the original publication date and must not be represented as having been published contemporaneously."
+  },
+  "hero": {
+    "src": "/assets/images/mobile/fmb-daily-brief-coffee.webp",
+    "alt": "FMB Daily Brief coffee visual with the FMB shell emblem",
+    "caption": "Approved FMB Daily Brief photographic visual used when a recovered edition has no suitable rights-cleared documentary photograph.",
+    "credit": "FMB News",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260904-001",
+      "kicker": "BREAKING · PHILIPPINES",
+      "headline": "QC Court Issues Arrest Warrant Against VP Sara Duterte in Grave Threats Case",
+      "deck": "Vice President Sara Duterte’s lawyer confirmed that a Quezon City court issued a warrant of arrest in the grave threats case. A DOJ source separately confirmed the issuance to GMA News.",
+      "body": [
+        "A Quezon City court has issued a warrant of arrest against Vice President Sara Duterte in connection with the grave threats case filed against her, according to her lawyer Paul Lawrence Lim on Friday, September 4.",
+        "The Department of Justice filed three counts of grave threats in August over Duterte’s November 2024 remarks involving President Ferdinand Marcos Jr., First Lady Liza Araneta Marcos and then-House Speaker Martin Romualdez.",
+        "The warrant adds a separate criminal proceeding to the vice president’s already consequential legal and political situation while her impeachment trial continues before the Senate.",
+        "Watch for the warrant’s service, any posting of bail, and further orders from the Quezon City court on Duterte’s pending jurisdictional challenge and motion to quash."
+      ],
+      "sources": [
+        {
+          "label": "GMA News — QC court issues arrest warrant vs. Sara Duterte",
+          "url": "https://www.gmanetwork.com/news/topstories/nation/1001139/qc-court-issues-arrest-warrant-vs-sara-duterte-lawyer/story/"
+        },
+        {
+          "label": "INQUIRER.net — QC court issues arrest warrant vs Sara Duterte for grave threats case, says lawyer",
+          "url": "https://newsinfo.inquirer.net/2299030/qc-court-issues-arrest-warrant-vs-sara-duterte-for-grave-threats-case-says-lawyer"
+        },
+        {
+          "label": "Philstar.com — Warrant out: Sara Duterte facing arrest in grave threats case",
+          "url": "https://www.philstar.com/headlines/2026/09/04/2554030/warrant-out-sara-duterte-facing-arrest-grave-threats-case"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-04/sara-duterte-arrest-warrant-16x9.svg",
+        "alt": "FMB News breaking news graphic reading Arrest Warrant Issued in the Sara Duterte grave threats case",
+        "caption": "FMB News breaking-news editorial graphic on the September 4, 2026 arrest warrant issued against Vice President Sara Duterte. It is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-04/153900-sara-duterte-arrest-warrant-grave-threats.json"
+    },
+    {
+      "id": "FMB-DB-20260904-002",
+      "kicker": "Infrastructure · Budget",
+      "headline": "Marcos Administration Proposes ₱197.3 Billion for Rail Transport in 2027",
+      "deck": "The proposal would more than triple 2026 rail funding and concentrate most of the allocation on the North-South Commuter Railway and Metro Manila Subway.",
+      "body": [
+        "The Marcos administration proposed ₱197.3 billion for the rail transport program under the 2027 National Expenditure Program, more than triple the amount provided under the 2026 General Appropriations Act.",
+        "About ₱191.28 billion, nearly 97 percent of the proposed rail budget, is earmarked for two flagship projects: ₱123.84 billion for the North-South Commuter Railway and ₱67.44 billion for Phase I of the Metro Manila Subway.",
+        "The proposal also includes funding for the LRT-1 Cavite Extension, MRT-3 rehabilitation and interim operations related to the common-station connection among major rail lines.",
+        "The amount is an executive budget proposal and remains subject to congressional scrutiny, amendment and approval."
+      ],
+      "sources": [
+        {
+          "label": "Philippine News Agency — Marcos admin proposes P197.3-B rail budget for 2027",
+          "url": "https://www.pna.gov.ph/articles/1283303"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for the proposed rail transport budget",
+        "caption": "FMB News editorial visual accompanying the 2027 rail-budget proposal.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.pna.gov.ph/articles/1283303"
+      },
+      "sourceArticle": "content/news/articles/2026-09-04/0101-marcos-197-3b-rail-budget.json"
+    },
+    {
+      "id": "FMB-DB-20260904-003",
+      "kicker": "PHILIPPINES · EDUCATION",
+      "headline": "Marcos Signs Law Expanding Tertiary Education Aid for Poorer Students",
+      "deck": "Republic Act No. 12325 strengthens the country’s free tertiary education framework by giving poor and disadvantaged learners greater priority in government assistance and expanding support pathways for eligible college and technical-vocational students.",
+      "body": [
+        "President Ferdinand Marcos Jr. signed Republic Act No. 12325 at Malacañang on Friday, September 4, amending the Universal Access to Quality Tertiary Education Act of 2017.",
+        "Republic Act No. 10931 established free tuition and other school-fee benefits in state universities and colleges, local universities and colleges, and state-run technical-vocational institutions, alongside student-aid programs such as the Tertiary Education Subsidy.",
+        "For low-income families, the cost of tertiary education goes beyond tuition. Books, transport, housing, connectivity, equipment and other study-related expenses can still prevent students from completing a degree or technical-vocational program even when tuition is free.",
+        "Watch for the implementing rules, program guidelines and budget allocations that will determine how RA 12325 is applied across higher-education and technical-vocational institutions."
+      ],
+      "sources": [
+        {
+          "label": "Philippine Information Agency / Presidential Communications Office — President Marcos signs Amendments to the Universal Access to Quality Tertiary Education Act",
+          "url": "https://pia.gov.ph/news/president-marcos-signs-amendments-to-the-universal-access-to-quality-tertiary-education-act/"
+        },
+        {
+          "label": "House of Representatives of the Philippines — Acidre: RA 12325 makes free higher education more equitable, responsive to students most in need",
+          "url": "https://congress.gov.ph/index.php/media/press-releases/10131"
+        },
+        {
+          "label": "GMA News — Marcos signs law amending Universal Access to Quality Tertiary Education Act",
+          "url": "https://www.gmanetwork.com/news/topstories/nation/1001118/marcos-signs-law-amending-universal-access-to-quality-tertiary-education-act/story/"
+        },
+        {
+          "label": "Philippine News Agency — PBBM inks law expanding access to free tertiary education",
+          "url": "https://www.pna.gov.ph/articles/1283313"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-04/ra-12325-tertiary-education-16x9.svg",
+        "alt": "FMB News graphic about Republic Act 12325 expanding tertiary education assistance for poor and disadvantaged students",
+        "caption": "FMB News editorial graphic on Republic Act No. 12325, signed September 4, 2026, expanding and reprioritizing tertiary-education assistance. It is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-04/231600-ra-12325-expands-tertiary-education-aid.json"
+    },
+    {
+      "id": "FMB-DB-20260904-004",
+      "kicker": "CLIMATE · EL NIÑO",
+      "headline": "WMO Says El Niño Will Become Very Strong, Persisting Into Early 2027",
+      "deck": "The global weather agency now sees near-certain persistence through February 2027, strengthening the case for Philippine preparation for drought, heat and water stress even while Habagat can still bring destructive rain.",
+      "body": [
+        "The World Meteorological Organization said El Niño is firmly established and is expected to intensify into a very strong event in the coming months, with a nearly 100% likelihood of persisting through February 2027.",
+        "PAGASA declared El Niño conditions present in the tropical Pacific on June 9 and said the pattern generally increases the likelihood of below-normal rainfall, dry spells and drought across much of the Philippines. It also stressed that western parts of the country can still receive above-normal rainfall during the Southwest Monsoon, especially when tropical cyclones enhance Habagat.",
+        "For the Philippines, a stronger and longer-lasting El Niño can increase pressure on agriculture, irrigation, water supply, hydropower and heat-sensitive communities. The risk does not mean every part of the country will be dry at the same time, and it does not remove the threat of intense monsoon or cyclone rainfall.",
+        "Watch PAGASA's next ENSO and seasonal climate updates for Philippine-specific rainfall, temperature, dry-spell and drought projections. WMO's global outlook does not replace local forecasts, and impacts will vary by region and month."
+      ],
+      "sources": [
+        {
+          "label": "World Meteorological Organization — El Niño set to become very strong, raising risks of extreme weather into 2027",
+          "url": "https://wmo.int/news/media-centre/el-nino-set-become-very-strong-raising-risks-extreme-weather-2027"
+        },
+        {
+          "label": "Reuters — 'Supersized' El Niño may become strongest ever recorded, UN says",
+          "url": "https://www.reuters.com/business/environment/el-nio-likely-strengthen-further-persist-into-2027-wmo-says-2026-09-03/"
+        },
+        {
+          "label": "DOST-PAGASA — El Nino Advisory",
+          "url": "https://pagasa.dost.gov.ph/press-release/216"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-04/wmo-el-nino-very-strong-16x9.svg",
+        "alt": "FMB News metallic purple-violet editorial graphic stating that WMO expects El Niño to become very strong and persist into early 2027",
+        "caption": "FMB News editorial graphic illustrating WMO’s September 2026 El Niño outlook. It is not a forecast map or documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-04/111700-wmo-el-nino-very-strong-early-2027.json"
+    },
+    {
+      "id": "FMB-DB-20260904-005",
+      "kicker": "Education · Public Safety",
+      "headline": "Palace Orders Alternative Learning in NCR and 15 Provinces Amid Habagat and Haze",
+      "deck": "The directive covers public and private educational institutions and took effect immediately, while local executives retained authority over localized class suspensions.",
+      "body": [
+        "Malacañang ordered all public and private educational institutions in Metro Manila and 15 provinces to implement alternative learning modes and learning-continuity measures on September 4.",
+        "The directive was contained in Memorandum Circular No. 134 signed by Executive Secretary Ralph Recto upon the recommendation of the National Disaster Risk Reduction and Management Council.",
+        "The order covers Metro Manila, Ilocos Norte, Ilocos Sur, La Union, Pangasinan, Abra, Benguet, Zambales, Bataan, Bulacan, Tarlac, Pampanga, Cavite, Laguna, Batangas and Occidental Mindoro.",
+        "The Palace cited anticipated continued heavy rainfall associated with the enhanced southwest monsoon and poor air quality in Metro Manila due to haze from severe forest and peatland fires in Kalimantan and Sumatra, Indonesia."
+      ],
+      "sources": [
+        {
+          "label": "Philippine News Agency — Palace orders NCR, 15 provinces to adopt alternative learning modes",
+          "url": "https://www.pna.gov.ph/articles/1283306"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for MC 134 and alternative learning",
+        "caption": "FMB News editorial visual accompanying the alternative-learning directive.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.pna.gov.ph/articles/1283306"
+      },
+      "sourceArticle": "content/news/articles/2026-09-04/0701-mc134-alternative-learning-ncr-15-provinces.json"
+    },
+    {
+      "id": "FMB-DB-20260904-006",
+      "kicker": "Tennis · US Open",
+      "headline": "Alex Eala Powers Into US Open Third Round With Straight-Sets Win",
+      "deck": "The Filipina No. 17 seed defeated Ukraine’s Oleksandra Oliynykova 6-1, 6-4 in New York, booking her first US Open third-round appearance.",
+      "body": [
+        "Alexandra Eala advanced to the third round of the 2026 US Open after defeating Ukraine’s Oleksandra Oliynykova 6-1, 6-4 in the women’s singles second round in New York on Thursday, September 3, or early Friday, September 4 in the Philippines.",
+        "Eala and Oliynykova had met once previously in 2026, with the Ukrainian winning their Strasbourg Open encounter in three sets. The US Open rematch reversed that result.",
+        "Eala’s progress gives Philippine tennis another high-profile Grand Slam result and extends a season in which she has broken several national milestones on the WTA Tour.",
+        "Eala will next play in the US Open third round. Her next opponent and match schedule should be confirmed through the official tournament draw and schedule."
+      ],
+      "sources": [
+        {
+          "label": "Reuters — US Open day five",
+          "url": "https://www.reuters.com/sports/tennis/us-open-day-five-2026-09-03/"
+        },
+        {
+          "label": "GMA News — Alex Eala beats Oleksandra Oliynykova to reach US Open third round",
+          "url": "https://www.gmanetwork.com/news/sports/othersports/1001097/alex-eala-beats-oleksandra-oliynykova-to-reach-us-open-third-round/story/"
+        },
+        {
+          "label": "ABS-CBN News — Tennis: Alex Eala through to 3rd round of US Open after beating Oliynykova",
+          "url": "https://www.abs-cbn.com/sports/othersports/2026/9/4/tennis-us-open-alex-eala-oleksandra-oliynykova-result-0355"
+        },
+        {
+          "label": "Olympics.com — US Open 2026: Alexandra Eala reaches the third round for the first time",
+          "url": "https://www.olympics.com/en/news/us-open-2026-alexandra-eala-third-round-first-time"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-04/eala-us-open-third-round-16x9.svg",
+        "alt": "FMB News purple-violet editorial graphic announcing Alex Eala reaching the US Open third round",
+        "caption": "FMB News editorial graphic marking Alex Eala’s September 4, 2026 Philippine-time qualification for the US Open third round.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-04/051500-alex-eala-us-open-third-round.json"
+    }
+  ]
+}

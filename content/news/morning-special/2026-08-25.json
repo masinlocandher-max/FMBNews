@@ -1,0 +1,202 @@
+{
+  "date": "2026-08-25",
+  "publishedAt": "2026-08-25T07:00:00+08:00",
+  "editionLabel": "FMB Daily Brief · Archive Recovery",
+  "title": "The Stories That Defined the Day",
+  "deck": "Recovered FMB Daily Brief for 2026-08-25, reconstructed from FMB News' verified article archive. Key coverage includes Visayas Grid Faces Red Alert as Available Capacity Trails Peak Demand; DepEd Flags ₱2.15-Billion Recovery Need for More Than 9,500 Damaged Classrooms; DBM Releases ₱1 Billion for AI-Powered Flood Forecasting Across Major River Basins.",
+  "timezone": "Asia/Manila",
+  "recovery": {
+    "reconstructed": true,
+    "reconstructedAt": "2026-09-15T03:30:00+08:00",
+    "note": "Historical recovery edition. It was reconstructed after the original publication date and must not be represented as having been published contemporaneously."
+  },
+  "hero": {
+    "src": "/assets/images/mobile/fmb-daily-brief-coffee.webp",
+    "alt": "FMB Daily Brief coffee visual with the FMB shell emblem",
+    "caption": "Approved FMB Daily Brief photographic visual used when a recovered edition has no suitable rights-cleared documentary photograph.",
+    "credit": "FMB News",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260825-001",
+      "kicker": "Energy · Grid Reliability",
+      "headline": "Visayas Grid Faces Red Alert as Available Capacity Trails Peak Demand",
+      "deck": "Available capacity was estimated at 2,307 MW against projected peak demand of 2,402 MW, with major coal units unavailable and imports from Mindanao constrained.",
+      "body": [
+        "The National Grid Corporation of the Philippines placed the Visayas grid under red and yellow alerts on Friday, August 28, as available generation remained insufficient during peak periods.",
+        "Major coal-fired units including Therma Visayas Inc. Units 1 and 2 and KEPCO SPC Power Corp. Unit 1 remained unavailable, while imports from the Mindanao grid were limited.",
+        "A red alert raises the risk of controlled interruptions but does not mean every customer will automatically lose power. Households and businesses should follow their distribution utility and NGCP for local advisories.",
+        "Alert windows can change as generating units return or trip and as demand shifts. Watch for revised NGCP notices and confirmation that unavailable units have returned to service."
+      ],
+      "sources": [
+        {
+          "label": "Philippine News Agency — Visayas grid on red alert anew due to limited supply",
+          "url": "https://www.pna.gov.ph/articles/1282891"
+        },
+        {
+          "label": "ABS-CBN News — Visayas grid still on Red, Yellow Alerts on August 28",
+          "url": "https://www.abs-cbn.com/news/business/2026/8/28/visayas-grid-still-on-red-yellow-alerts-on-august-28-1028"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for the Visayas power grid alert",
+        "caption": "FMB News editorial visual accompanying the August 26 Visayas grid update; it does not depict actual grid facilities.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-25/1300-visayas-grid-red-yellow-alerts.json"
+    },
+    {
+      "id": "FMB-DB-20260825-002",
+      "kicker": "Education · Disaster Recovery",
+      "headline": "DepEd Flags ₱2.15-Billion Recovery Need for More Than 9,500 Damaged Classrooms",
+      "deck": "DepEd's consolidated assessment in the approved newsroom brief puts the damaged-classroom count above 9,500 and the recovery requirement at ₱2.15 billion.",
+      "body": [
+        "The approved FMB News morning brief reports that the Department of Education identified 9,540 public-school classrooms damaged by recent monsoon flooding and severe weather, with an estimated ₱2.15 billion needed for emergency rehabilitation.",
+        "Flood and storm damage can affect classrooms well beyond the period of class suspension through electrical, structural, sanitation and furnishing damage. Temporary learning arrangements are used when buildings cannot safely reopen immediately.",
+        "The scale of the reported damage affects both education continuity and local reconstruction capacity, particularly in communities repeatedly exposed to flooding.",
+        "Watch DepEd and its Disaster Risk Reduction and Management Service for the final validated damage inventory, regional breakdown, repair schedule and funding releases."
+      ],
+      "sources": [
+        {
+          "label": "Department of Education / FMB News approved brief — Post-disaster classroom damage assessment",
+          "url": "https://www.deped.gov.ph/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for damaged classroom recovery",
+        "caption": "FMB News editorial visual accompanying the school disaster-recovery report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-25/0700-deped-9500-classrooms-disaster-recovery.json"
+    },
+    {
+      "id": "FMB-DB-20260825-003",
+      "kicker": "Climate Technology · Disaster Risk Reduction",
+      "headline": "DBM Releases ₱1 Billion for AI-Powered Flood Forecasting Across Major River Basins",
+      "deck": "The approved newsroom brief says the funding will support AI hydrological modeling and real-time telemetry across 18 major river basins.",
+      "body": [
+        "The approved FMB News morning brief reports that the Department of Budget and Management released ₱1 billion for an AI-assisted flood forecasting and telemetry modernization program involving DOST and PAGASA.",
+        "The program is presented as a digital complement to structural flood-control measures, designed to give downstream communities earlier and more localized warning of possible inundation.",
+        "Earlier, location-specific flood forecasts can give local governments more time to warn residents, move vulnerable people and assets, and prepare evacuation and traffic measures before rivers overtop.",
+        "Watch DBM, DOST and PAGASA for the formal release documents, implementation timetable, procurement details and basin-by-basin deployment schedule."
+      ],
+      "sources": [
+        {
+          "label": "DBM / DOST-PAGASA / FMB News approved brief — ₱1-billion AI flood forecasting allocation",
+          "url": "https://www.dbm.gov.ph/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for AI-assisted flood forecasting",
+        "caption": "FMB News editorial visual accompanying the flood forecasting technology report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-25/0700-dbm-ai-flood-forecasting-river-basins.json"
+    },
+    {
+      "id": "FMB-DB-20260825-004",
+      "kicker": "Weather · Public Safety",
+      "headline": "PAGASA Ends NCR Rainfall Warning as Habagat Risk Persists in Western Luzon",
+      "deck": "The final NCR warning reported light to moderate rain before termination, while PAGASA continued to flag monsoon hazards in parts of western and northern Luzon.",
+      "body": [
+        "PAGASA's National Capital Region regional office terminated its heavy-rainfall warning late Tuesday, August 25, after light to moderate rain was observed over parts of its forecast area.",
+        "Typhoon Obet had already moved outside the Philippine Area of Responsibility, but the southwest monsoon remained the main rain-producing system over Luzon. A cyclone leaving PAR does not automatically end monsoon, marine or localized flood hazards.",
+        "Ending one regional warning cycle can signal improving conditions, but communities west of Metro Manila may still face flooding or landslide risk from the same monsoon system. Current local warnings remain more useful than a previous bulletin's status.",
+        "Rainfall warnings can change within hours. Residents should rely on the latest PAGASA regional advisories and local disaster-office instructions, especially in communities with saturated ground, waterways or landslide exposure."
+      ],
+      "sources": [
+        {
+          "label": "DOST-PAGASA NCR-PRSD — National Capital Region rainfall warning status",
+          "url": "https://www.pagasa.dost.gov.ph/regional-forecast/ncrprsd"
+        },
+        {
+          "label": "DOST-PAGASA — Weather Advisory No. 12 for the Southwest Monsoon",
+          "url": "https://pubfiles.pagasa.dost.gov.ph/tamss/weather/advisory.pdf"
+        },
+        {
+          "label": "GMA News — PAGASA: 2 cyclones monitored outside PAR",
+          "url": "https://www.gmanetwork.com/news/weather/content/999732/pagasa-2-cyclones-monitored-outside-par/story/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for the August 26 Habagat weather update",
+        "caption": "FMB News editorial visual accompanying the August 26 Habagat update; it does not depict actual road or weather conditions.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-25/0700-typhoon-obet-exits-par-habagat-rains.json"
+    },
+    {
+      "id": "FMB-DB-20260825-005",
+      "kicker": "Impeachment · Governance",
+      "headline": "Impeachment Day 18: Ortonio Says VP Sara Knew, Authorized and Supervised Confidential Funds",
+      "deck": "The hostile witness testified that the Vice President knew about, authorized and supervised confidential-fund handling from request through liquidation; the defense retains the right to challenge the evidence.",
+      "body": [
+        "Day 18 of Vice President Sara Duterte's impeachment trial put Office of the Vice President confidential-fund procedures under sustained scrutiny as Assistant Secretary and Assistant Chief of Staff Lemuel Ortonio testified as a hostile witness.",
+        "The testimony followed the court's decision earlier on August 25 to declare Ortonio a hostile witness, allowing prosecutors to use leading questions. The proceeding concerns allegations over the handling of confidential funds at the OVP and Department of Education.",
+        "The testimony goes directly to the prosecution's effort to establish who knew about and controlled the use of confidential public funds. The impeachment court must still weigh the testimony, documentary record and defense response before reaching any finding.",
+        "The impeachment court is expected to continue examining testimony and documentary evidence. The defense retains the opportunity to challenge the prosecution's interpretation of the records and present its own evidence under the court's rules."
+      ],
+      "sources": [
+        {
+          "label": "Philippine News Agency — Ortonio: VP Sara knew, approved, supervised handling of secret funds",
+          "url": "https://www.pna.gov.ph/articles/1282623"
+        },
+        {
+          "label": "GMA News — Live updates: Sara Duterte impeachment trial, August 25, 2026",
+          "url": "https://www.gmanetwork.com/news/topstories/nation/999701/live-updates-sara-duterte-impeachment-trial-august-25-2026/story/"
+        },
+        {
+          "label": "House of Representatives — Luistro: Ortonio testimony ‘very material,’ bolsters confidential fund irregularities",
+          "url": "https://www.congress.gov.ph/media/press-releases/10079"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Day 18 of the Senate impeachment trial",
+        "caption": "FMB News editorial visual accompanying Day 18 impeachment-trial coverage; it does not depict the actual proceedings.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-25/1900-impeachment-ortonio-hostile-witness.json"
+    },
+    {
+      "id": "FMB-DB-20260825-006",
+      "kicker": "Revenue · Enforcement",
+      "headline": "BOC, BIR Flag Funding Gaps in Fight Against Cigarette Smuggling",
+      "deck": "Finance officials told a House hearing that Customs needs more resources for maritime assets, compulsory acquisition and legal support as illicit tobacco enforcement intensifies.",
+      "body": [
+        "The Bureau of Customs and Bureau of Internal Revenue have flagged resource shortages affecting the government's campaign against cigarette smuggling, according to the Department of Finance during a House Ways and Means Committee hearing on August 25.",
+        "In June, a joint BOC, NBI, BIR and Philippine Coast Guard operation intercepted 23 containers of illicit cigarettes valued at about P1.7 billion. Customs has also ordered stronger security and accountability measures for confiscated cigarettes held at ports nationwide.",
+        "Illicit cigarette trade can reduce tax collections, undercut lawful businesses and expose enforcement personnel to well-funded smuggling networks. Budget support matters only if it produces accountable equipment, stronger case preparation and measurable enforcement results.",
+        "Lawmakers are expected to weigh the agencies' operational requirements during budget deliberations. The key question is whether additional 2027 appropriations translate into more maritime enforcement capacity, testing capability and legal support for frontline personnel."
+      ],
+      "sources": [
+        {
+          "label": "INQUIRER.net — BOC, BIR flag lack of funds in fight vs cigarette smuggling, says DOF",
+          "url": "https://newsinfo.inquirer.net/2291975/boc-bir-flag-lack-of-funds-in-fight-vs-cigarette-smuggling-says-dof"
+        },
+        {
+          "label": "Bureau of Customs — BOC, NBI, BIR, PCG Intercept P1.7 Billion Worth of Smuggled Cigarettes Linked to Private Wharf Shipments",
+          "url": "https://customs.gov.ph/boc-nbi-bir-pcg-intercept-p1-7-billion-worth-of-smuggled-cigarettes-linked-to-private-wharf-shipments/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for anti-smuggling enforcement",
+        "caption": "FMB News editorial visual accompanying the anti-smuggling funding report; it does not depict an actual enforcement operation.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-25/1900-boc-bir-cigarette-smuggling-funding-gaps.json"
+    }
+  ]
+}
