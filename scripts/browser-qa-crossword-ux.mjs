@@ -78,6 +78,7 @@ try{
   assert.equal(await firstOption.getAttribute('data-selected'),'true','Keyboard A must select/arm the first answer choice.');
   assert.equal(await lockButton.isDisabled(),false,'Selecting an answer must enable Lock Answer.');
   assert.equal(await lockButton.getAttribute('aria-keyshortcuts'),'Enter','Lock Answer must expose Enter as its keyboard shortcut.');
+  assert.equal(await lockButton.evaluate((el)=>document.activeElement===el),true,'Keyboard answer selection must hand focus to Lock Answer for deterministic Enter-to-lock behavior.');
 
   await page.keyboard.press('Enter');
   const resolved=page.locator('.rbt-option[data-chosen="correct"],.rbt-option[data-chosen="wrong"]');
@@ -114,11 +115,11 @@ try{
   const stagePlus=await page.request.get(`${base}/news/assets/js/fmb-news-read-between-headlines-stage-plus.js`);
   assert(stagePlus.ok(),'Built game-stage polish runtime is missing.');
   const stageSource=await stagePlus.text();
-  for(const token of ['aria-keyshortcuts','rbtTension','rbt-score-bump','rbt-question-arrive','rbt-milestone-flash','questions cleared','showMilestone']){
+  for(const token of ['aria-keyshortcuts','rbtTension','rbt-score-bump','rbt-question-arrive','rbt-milestone-flash','questions cleared','showMilestone','stopImmediatePropagation']){
     assert(stageSource.includes(token),`Game-stage polish runtime missing ${token}.`);
   }
 
-  console.log('Read Between the Headlines QA passed: player gate, 30-second countdown, rounded frosted UI, circular metallic answer markers, keyboard and pointer select-then-lock interaction, mobile fit, stage tension, non-blocking milestone progression, question transitions, and hidden-answer integrity are intact.');
+  console.log('Read Between the Headlines QA passed: player gate, 30-second countdown, rounded frosted UI, circular metallic answer markers, deterministic keyboard and pointer select-then-lock interaction, mobile fit, stage tension, non-blocking milestone progression, question transitions, and hidden-answer integrity are intact.');
 }finally{
   await browser.close();
 }
