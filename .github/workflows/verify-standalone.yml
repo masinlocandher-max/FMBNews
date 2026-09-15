@@ -104,9 +104,20 @@ jobs:
           ! grep -q 'height:300px' dist/news/assets/css/fmb-news-mobile-product-heroes.css
 
           grep -q 'Hindi hawak ng mga bituin ang ating kapalaran, meron tayong freewill gamitin natin' dist/news/horoscope/index.html
-          grep -q '35+ current-event answers' dist/news/crossword/index.html
-          ! grep -E -q 'Reveal Letter|Reveal Word|Reveal Puzzle|data-cw-reveal' dist/news/crossword/index.html
-          ! grep -E -q 'Reveal Letter|Reveal Word|Reveal Puzzle|data-cw-reveal' dist/news/assets/js/fmb-news-weekly-crossword.js
+
+          # Read Between the Headlines replaced the retired weekly crossword.
+          # Gate the actual game contract instead of preserving obsolete crossword copy.
+          grep -q 'Read Between the Headlines' dist/news/crossword/index.html
+          grep -q 'Thirty questions. Thirty seconds each.' dist/news/crossword/index.html
+          grep -q 'data-rbt-start-button' dist/news/crossword/index.html
+          grep -q 'data-rbt-submit' dist/news/crossword/index.html
+          test -f dist/news/assets/js/fmb-news-read-between-headlines.js
+          test -f dist/news/assets/js/fmb-news-read-between-headlines-show-ui.js
+          test -f dist/news/assets/css/fmb-news-read-between-headlines-choices.css
+          grep -q 'POINTS_PER_CORRECT=10' dist/news/assets/js/fmb-news-read-between-headlines.js
+          grep -q 'QUESTION_SECONDS=30' dist/news/assets/js/fmb-news-read-between-headlines.js
+          grep -q 'questions.length!==30' dist/news/assets/js/fmb-news-read-between-headlines.js
+          grep -q 'The correct answer stays hidden.' dist/news/assets/js/fmb-news-read-between-headlines.js
 
           ! grep -R -E '>FMB Explained<' dist/news --include='*.html'
           ! grep -R -E 'nc-mobile-dock|fmb-app-dock|Mobile news navigation' dist/news --include='*.html'
