@@ -764,6 +764,16 @@ body.fmb-fact-check-route :is(.fc-panel,.fc-card,.fc-legend){
     box-shadow:none!important;
   }
 
+  /* Desk titles at desktop width. The Explainer opener's h1 set no font-family
+     of its own and simply inherited the body sans, so "FMB Explainer" rendered
+     at 82px in -apple-system while World, Sports, Briefing and Fact Check all
+     carried the editorial serif. Only visible above 699px, because the mobile
+     hero layer sets the face explicitly. */
+  html:root body.fmb-ref :is(.explainer-hero,.world-hero,.fc-hero,.brief-archive-hero,.sports-hero) h1{
+    font-family:"Newsreader","Bodoni Moda","Libre Bodoni",Georgia,"Times New Roman",serif!important;
+    letter-spacing:-.025em!important;
+  }
+
   /* The appearance toggle is a child of the masthead's centred flex shell, so
      it landed directly under the wordmark, splitting the masthead in two. It
      belongs at the edge of the row, not inside the lockup. */

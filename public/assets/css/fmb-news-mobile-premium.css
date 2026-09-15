@@ -76,7 +76,12 @@ body.fmb-mobile-first .article-shell{width:100%!important;margin:0!important;pad
 body.fmb-mobile-first .article-grid{display:block!important}
 body.fmb-mobile-first .article{padding:20px 16px 32px!important;border:0!important;border-radius:22px!important;background:#fff!important;box-shadow:none!important}
 body.fmb-mobile-first .back{display:inline-flex!important;min-height:38px!important;align-items:center!important;margin:0 0 10px 4px!important;color:var(--app-violet)!important;font-size:13px!important;font-weight:700!important;text-decoration:none!important}
-body.fmb-mobile-first .article h1{margin:9px 0 12px!important;color:var(--app-ink)!important;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif!important;font-size:clamp(32px,9.5vw,43px)!important;line-height:1.02!important;font-weight:800!important;letter-spacing:-.045em!important}
+/* The article headline on a phone. It was system sans while the SAME story
+   set in the Home feed above it, and the same headline on desktop, were
+   both the editorial serif -- so the most-read element on the site changed
+   typeface between the list and the story. Weight and tracking retuned for
+   a serif: 800/-.045em was sans tuning and closes serif letterfits. */
+body.fmb-mobile-first .article h1{margin:9px 0 12px!important;color:var(--app-ink)!important;font-family:"Newsreader","Bodoni Moda","Libre Bodoni",Georgia,"Times New Roman",serif!important;font-size:clamp(32px,9.5vw,43px)!important;line-height:1.08!important;font-weight:700!important;letter-spacing:-.02em!important}
 body.fmb-mobile-first .article-deck{margin:0 0 18px!important;color:#4f4f55!important;font-size:17px!important;line-height:1.52!important}
 body.fmb-mobile-first .byline{padding:14px 0!important;border-top:1px solid var(--app-line)!important;border-bottom:1px solid var(--app-line)!important}
 body.fmb-mobile-first .article-figure{margin:20px -16px 22px!important}
