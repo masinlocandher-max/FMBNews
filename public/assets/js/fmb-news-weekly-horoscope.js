@@ -1,8 +1,17 @@
 (()=>{
 const signs=[
-{name:'Aries',icon:'♈'}, {name:'Taurus',icon:'♉'}, {name:'Gemini',icon:'♊'}, {name:'Cancer',icon:'♋'},
-{name:'Leo',icon:'♌'}, {name:'Virgo',icon:'♍'}, {name:'Libra',icon:'♎'}, {name:'Scorpio',icon:'♏'},
-{name:'Sagittarius',icon:'♐'}, {name:'Capricorn',icon:'♑'}, {name:'Aquarius',icon:'♒'}, {name:'Pisces',icon:'♓'}
+{name:'Aries',icon:'♈',range:'Mar 21 – Apr 19'},
+{name:'Taurus',icon:'♉',range:'Apr 20 – May 20'},
+{name:'Gemini',icon:'♊',range:'May 21 – Jun 20'},
+{name:'Cancer',icon:'♋',range:'Jun 21 – Jul 22'},
+{name:'Leo',icon:'♌',range:'Jul 23 – Aug 22'},
+{name:'Virgo',icon:'♍',range:'Aug 23 – Sep 22'},
+{name:'Libra',icon:'♎',range:'Sep 23 – Oct 22'},
+{name:'Scorpio',icon:'♏',range:'Oct 23 – Nov 21'},
+{name:'Sagittarius',icon:'♐',range:'Nov 22 – Dec 21'},
+{name:'Capricorn',icon:'♑',range:'Dec 22 – Jan 19'},
+{name:'Aquarius',icon:'♒',range:'Jan 20 – Feb 18'},
+{name:'Pisces',icon:'♓',range:'Feb 19 – Mar 20'}
 ];
 const readings={
 Aries:['Move with urgency, but do not confuse speed with clarity. One decision benefits from a second look.','Directness helps, but listening matters just as much.','Finish the highest-impact task first and avoid scattering your attention.','Strong energy. Pace yourself so momentum lasts.','Tuesday','What deserves action, and what only feels urgent?'],
@@ -17,9 +26,62 @@ Sagittarius:['The week favors learning, movement, and perspective, but not carel
 Capricorn:['Long-term thinking pays off when paired with a realistic next step. Progress may look quieter than expected.','Make time, not just plans. Consistency will say more than elaborate promises.','Protect the foundation before expanding. Stability is an advantage this week.','Consistency over intensity. Your pace should be repeatable.','Thursday','What is the next durable move?'],
 Aquarius:['A different perspective can unlock a stuck problem. Keep the originality, but make the idea usable.','Explain the thought behind the distance instead of assuming others understand it.','Translate vision into a simple system people can actually follow.','Alternate solitude and collaboration instead of forcing one mode all week.','Wednesday','How can the unusual become practical?'],
 Pisces:['Sensitivity is useful information, but it still needs boundaries. Put intuition beside evidence before deciding.','Name what you need without overexplaining or shrinking the request.','Separate inspiration from obligation. Not every possibility has to become a commitment.','Protect sleep, quiet time, and the spaces where your mind can settle.','Monday','What feels true, and what can you verify?']};
-const grid=document.querySelector('[data-zodiac-grid]'),reading=document.querySelector('[data-horoscope-reading]'),week=document.querySelector('[data-horoscope-week]');if(!grid||!reading)return;
-function weekRange(){const n=new Date(),day=(n.getDay()+6)%7,start=new Date(n);start.setHours(0,0,0,0);start.setDate(n.getDate()-day);const end=new Date(start);end.setDate(start.getDate()+6);const a=new Intl.DateTimeFormat(undefined,{month:'short',day:'numeric'}).format(start),b=new Intl.DateTimeFormat(undefined,{month:'short',day:'numeric',year:'numeric'}).format(end);return `${a}–${b}`}
+const icons={
+overview:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.55 5.17 5.7.83-4.12 4.02.97 5.68L12 15.81 6.9 18.5l.97-5.68L3.75 8.8l5.7-.83L12 2.8Z"/></svg>',
+love:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.2 4.8 13C1.4 9.6 3.84 4 8.5 4c1.54 0 2.93.71 3.5 1.83A4.01 4.01 0 0 1 15.5 4c4.66 0 7.1 5.6 3.7 9L12 20.2Z"/></svg>',
+career:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5V3.8C9 2.8 9.8 2 10.8 2h2.4c1 0 1.8.8 1.8 1.8V5h4.2A2.8 2.8 0 0 1 22 7.8v10.4a2.8 2.8 0 0 1-2.8 2.8H4.8A2.8 2.8 0 0 1 2 18.2V7.8A2.8 2.8 0 0 1 4.8 5H9Zm2 0h2V4h-2v1Zm-7 6.1V18c0 .55.45 1 1 1h14c.55 0 1-.45 1-1v-6.9c-2.3 1.12-4.97 1.75-8 1.75s-5.7-.63-8-1.75Zm8 .75c2.92 0 5.6-.66 8-1.91V8c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1v1.94c2.4 1.25 5.08 1.91 8 1.91Z"/></svg>',
+energy:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.25 1.8 5.9 13h5.16l-.72 9.2L18.1 10.6h-5.22l.37-8.8Z"/></svg>'
+};
+const grid=document.querySelector('[data-zodiac-grid]');
+const reading=document.querySelector('[data-horoscope-reading]');
+const week=document.querySelector('[data-horoscope-week]');
+if(!grid||!reading)return;
+function weekRange(){
+  const n=new Date();
+  const day=(n.getDay()+6)%7;
+  const start=new Date(n);
+  start.setHours(0,0,0,0);
+  start.setDate(n.getDate()-day);
+  const end=new Date(start);
+  end.setDate(start.getDate()+6);
+  const a=new Intl.DateTimeFormat(undefined,{month:'short',day:'numeric'}).format(start);
+  const b=new Intl.DateTimeFormat(undefined,{month:'short',day:'numeric',year:'numeric'}).format(end);
+  return `${a} – ${b}`;
+}
 if(week)week.textContent=weekRange();
-function render(sign){localStorage.setItem('fmbZodiacV1',sign);[...grid.querySelectorAll('button')].forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.sign===sign)));const r=readings[sign],meta=signs.find(s=>s.name===sign);reading.innerHTML=`<div class="fmb-horoscope-title"><span class="fmb-reading-zodiac-icon" aria-hidden="true">${meta.icon}</span><div><h2>${sign}</h2><p>${weekRange()}</p></div></div><div class="fmb-horoscope-section"><h3>Weekly Overview</h3><p>${r[0]}</p></div><div class="fmb-horoscope-section"><h3>Love</h3><p>${r[1]}</p></div><div class="fmb-horoscope-section"><h3>Work / Money</h3><p>${r[2]}</p></div><div class="fmb-horoscope-section"><h3>Energy / Well-being</h3><p>${r[3]}</p></div><div class="fmb-horoscope-section"><h3>Key Day</h3><p>${r[4]}</p></div><div class="fmb-horoscope-section"><h3>Reflection Prompt</h3><p>${r[5]}</p></div>`}
-grid.innerHTML=signs.map(s=>`<button type="button" data-sign="${s.name}" aria-pressed="false"><span class="fmb-zodiac-icon" aria-hidden="true">${s.icon}</span><span>${s.name}</span></button>`).join('');grid.addEventListener('click',e=>{const b=e.target.closest('button[data-sign]');if(b)render(b.dataset.sign)});render(localStorage.getItem('fmbZodiacV1')||'Aries');
+function section(icon,title,body){
+  return `<section class="fmb-horoscope-section"><span class="fmb-horoscope-section-icon">${icons[icon]}</span><div><h3>${title}</h3><p>${body}</p></div></section>`;
+}
+function render(sign){
+  localStorage.setItem('fmbZodiacV1',sign);
+  [...grid.querySelectorAll('button')].forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.sign===sign)));
+  const r=readings[sign];
+  const meta=signs.find(s=>s.name===sign);
+  reading.innerHTML=`
+    <header class="fmb-horoscope-title">
+      <div class="fmb-horoscope-title-copy">
+        <span class="fmb-reading-kicker">This week</span>
+        <h2>${sign}</h2>
+        <p class="fmb-sign-range">${meta.range}</p>
+        <p class="fmb-reading-intro">${r[0]}</p>
+      </div>
+      <div class="fmb-reading-art-wrap"><span class="fmb-reading-zodiac-icon" aria-hidden="true">${meta.icon}</span></div>
+    </header>
+    <div class="fmb-horoscope-sections">
+      ${section('overview','General Outlook',r[0])}
+      ${section('love','Love',r[1])}
+      ${section('career','Career / Money',r[2])}
+      ${section('energy','Energy / Well-being',r[3])}
+    </div>
+    <div class="fmb-reading-details">
+      <div><span>Key day</span><strong>${r[4]}</strong></div>
+      <blockquote><span>Reflection prompt</span><p>${r[5]}</p></blockquote>
+    </div>`;
+}
+grid.innerHTML=signs.map(s=>`<button type="button" data-sign="${s.name}" aria-pressed="false"><span class="fmb-zodiac-icon" aria-hidden="true">${s.icon}</span><span class="fmb-zodiac-name">${s.name}</span><span class="fmb-zodiac-range">${s.range}</span></button>`).join('');
+grid.addEventListener('click',e=>{
+  const b=e.target.closest('button[data-sign]');
+  if(b)render(b.dataset.sign);
+});
+render(localStorage.getItem('fmbZodiacV1')||'Aries');
 })();
