@@ -19,6 +19,7 @@ Critical locked rules:
 - The retired bottom-navigation implementations remain forbidden. The approved `.fmb-editorial-mobile-dock` is intentional and must not be removed because of superseded notes.
 - Production headlines, images, times and alerts must come from real FMB News data. Mockup copy is never factual source material.
 - Every visible Latest News item on mobile must retain a real image or the newsroom's explicit fallback when no legitimate asset exists.
+- A published article carries a real photograph. See `docs/fmb-news-article-photography.md`. Photographs are cleared through `content/news/rights-cleared-image-overrides.json` with creator, licence, source page, caption and alt text, and `scripts/verify-article-photography.mjs` gates the build. An image-search Creative Commons filter finds candidates; it is never the clearance — cite the host where the licence lives with the file. Never raise a number in `content/news/photography-coverage-baseline.json` to make a build pass.
 - Do not rebuild the product from scratch. Use the current canonical architecture and the working improvements already merged into main.
 - Do not add another homepage override stylesheet or late compatibility hardfix. `render-home-experience.mjs` owns Home markup; `fmb-news-editorial-reference-v2.css` is the final desktop Home visual authority; `fmb-news-mobile-navigation-lock.css` is the last mobile visual authority.
 - Keep content-hashed design/theme assets. Do not return to hand-maintained cache-busting versions for visual authority files.

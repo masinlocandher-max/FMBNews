@@ -57,6 +57,31 @@ const ledger = JSON.parse(await readFile(ledgerPath, 'utf8'));
 const baseline = JSON.parse(await readFile(baselinePath, 'utf8'));
 
 // --- 1. ledger completeness ------------------------------------------------
+// Hosts that actually carry per-file licence terms a person can open and read.
+// This is an allowlist, and an unknown host fails, because the usual way a photo
+// gets cleared is a Google Images search with the Creative Commons usage-rights
+// filter -- and that filter reports what the *hosting page* claims, not what the
+// licence is. A news agency photo reposted on a blog under a "CC" banner is
+// still an agency photo. So the ledger may only cite a host where the licence
+// lives with the file itself.
+//
+// Adding a host here is a deliberate act: check that the host publishes a
+// per-file licence, not a site-wide terms page, before you add it.
+const LICENCE_BEARING_HOSTS = [
+  'commons.wikimedia.org', 'upload.wikimedia.org', 'wikimedia.org', 'wikipedia.org',
+  'flickr.com', 'live.staticflickr.com',
+  'openverse.org', 'api.openverse.org',
+  'unsplash.com', 'images.unsplash.com',
+  'pexels.com', 'images.pexels.com',
+  'pixabay.com', 'cdn.pixabay.com',
+  'picryl.com', 'loc.gov', 'archives.gov', 'nasa.gov', 'state.gov', 'defense.gov',
+  'europa.eu', 'un.org', 'who.int',
+  'gov.ph', 'pia.gov.ph', 'pna.gov.ph'
+];
+
+const hostOf = (url) => { try { return new URL(url).hostname.toLowerCase(); } catch { return ''; } };
+const isLicenceBearing = (host) => LICENCE_BEARING_HOSTS.some((h) => host === h || host.endsWith(`.${h}`));
+
 const REQUIRED = ['url', 'sourceUrl', 'credit', 'caption', 'alt'];
 for (const [slug, entry] of Object.entries(ledger)) {
   for (const field of REQUIRED) {
@@ -71,6 +96,17 @@ for (const [slug, entry] of Object.entries(ledger)) {
   // "public-domain" is spelled both ways across the ledger, so match either.
   if (!/(CC[ -]|public[ -]domain|CC0|government work)/i.test(entry.credit)) {
     throw new Error(`Rights-cleared ledger entry "${slug}" credit does not name a licence: ${entry.credit}`);
+  }
+  for (const field of ['url', 'sourceUrl']) {
+    const host = hostOf(entry[field]);
+    if (!isLicenceBearing(host)) {
+      throw new Error(
+        `Rights-cleared ledger entry "${slug}" cites ${field} on "${host || 'an unreadable URL'}", which is not a licence-bearing host.\n`
+        + '  A Creative Commons filter in image search reports what the hosting page claims, not what the licence is.\n'
+        + '  Cite the file where its licence lives (Wikimedia Commons, Flickr, Openverse, a government archive),\n'
+        + `  or add the host to LICENCE_BEARING_HOSTS in ${path.relative(root, fileURLToPath(import.meta.url))} once you have confirmed it publishes per-file terms.`
+      );
+    }
   }
 }
 
