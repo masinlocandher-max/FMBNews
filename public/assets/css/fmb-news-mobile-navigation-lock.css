@@ -1857,3 +1857,21 @@ body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[ari
     color:var(--fmb-shell-ink,#141414)!important;white-space:nowrap!important;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Desk headers are a band, not a screen
+   ---------------------------------------------------------------------------
+   The band's own type and padding are set in fmb-news-sitewide-material.css,
+   which loads after this bundle and therefore wins; putting them here as well
+   would only leave dead rules behind. What belongs here are the two things that
+   sheet does not cover.
+   -------------------------------------------------------------------------- */
+@media(max-width:699px){
+  /* The decorative orbit ring is sized off the viewport (40vw wide, offset
+     -45% vertically) and only ever added height to a band that is now
+     deliberately short. */
+  html:root body.fmb-mobile-first:not(.fmb-mobile-route-home) :is(.world-hero,.sports-hero,.brief-archive-hero,.fc-hero,.explainer-hero,.archive-hero)::after{
+    display:none!important;
+  }
+  html:root body.fmb-mobile-first .world-rule{margin-top:12px!important;padding:8px 11px!important;font-size:11.5px!important}
+}

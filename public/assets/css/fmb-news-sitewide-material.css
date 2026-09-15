@@ -98,8 +98,14 @@ body.fmb-matte-system{text-rendering:optimizeLegibility}
 
   /* Strong, unmistakable opener shared by the desks. */
   body.fmb-matte-system:not(.fmb-network-landing) :is(.world-hero,.sports-hero,.brief-archive-hero,.fc-hero,.explainer-hero,.archive-hero){
-    position:relative!important;overflow:hidden!important;min-height:340px!important;
-    padding:clamp(68px,7vw,108px) 0 56px!important;
+    /* A desk header, not a splash screen. This was min-height:340px with up to
+       108px of top padding, and with the display size below it pushed the first
+       story to 1.18 screens on World and 1.43 on Explainer -- a reader who asked
+       for world news scrolled past a full screen of the publication describing
+       itself first. The band still carries the desk identity; it no longer
+       occupies the space the journalism should. */
+    position:relative!important;overflow:hidden!important;min-height:184px!important;
+    padding:clamp(34px,3.2vw,52px) 0 30px!important;
     background:var(--fmb-finish-black)!important;background-image:var(--fmb-finish-sheen)!important;
     color:#F5F3EF!important;border:0!important;border-bottom:4px solid var(--fmb-finish-red)!important;
     box-shadow:0 20px 54px rgba(0,0,0,.16)!important
@@ -111,17 +117,23 @@ body.fmb-matte-system{text-rendering:optimizeLegibility}
   body.fmb-matte-system:not(.fmb-network-landing) :is(.world-hero,.sports-hero,.brief-archive-hero,.fc-hero,.explainer-hero,.archive-hero)>.shell,
   body.fmb-matte-system:not(.fmb-network-landing) .brief-archive-hero>.brief-shell{position:relative!important;z-index:1!important}
   body.fmb-matte-system:not(.fmb-network-landing) :is(.world-hero,.sports-hero,.brief-archive-hero,.fc-hero,.explainer-hero,.archive-hero) :is(h1,h2){
-    max-width:11ch!important;margin:12px 0 22px!important;color:#F5F3EF!important;
-    font-family:var(--fmb-finish-display)!important;font-size:clamp(62px,7.8vw,112px)!important;font-weight:560!important;line-height:.83!important;letter-spacing:-.055em!important;text-wrap:balance!important
+    max-width:14ch!important;margin:8px 0 12px!important;color:#F5F3EF!important;
+    font-family:var(--fmb-finish-display)!important;font-size:clamp(38px,4.2vw,60px)!important;font-weight:560!important;line-height:.9!important;letter-spacing:-.045em!important;text-wrap:balance!important
   }
   body.fmb-matte-system:not(.fmb-network-landing) :is(.world-hero,.sports-hero,.brief-archive-hero,.fc-hero,.explainer-hero,.archive-hero) p{
-    max-width:68ch!important;color:#C8C4BD!important;font:500 clamp(16px,1.3vw,20px)/1.58 var(--fmb-finish-ui)!important
+    max-width:62ch!important;color:#C8C4BD!important;font:500 clamp(14.5px,1.02vw,16.5px)/1.5 var(--fmb-finish-ui)!important
   }
   body.fmb-matte-system:not(.fmb-network-landing) :is(.world-kicker,.explainer-kicker,.sports-kicker,.fc-kicker,.brief-kicker,[class*="hero"] [class*="kicker"]){
     color:var(--fmb-finish-red-light)!important;font:800 11px/1 var(--fmb-finish-ui)!important;letter-spacing:.16em!important;text-transform:uppercase!important
   }
+  /* The Explainer's statement of method is worth keeping where a reader sees
+     it -- it is trust signalling on a desk whose whole claim is clarity -- so
+     it is compressed rather than moved. Ordering it after 206 explainers put
+     it at 41,000px, which is not "later", it is gone. */
+  body.fmb-matte-system:not(.fmb-network-landing) .explainer-principles{padding:16px 0 14px!important}
+  body.fmb-matte-system:not(.fmb-network-landing) .explainer-grid{gap:12px!important}
   body.fmb-matte-system:not(.fmb-network-landing) :is(.world-rule,.edition-link){border-radius:0!important}
-  body.fmb-matte-system:not(.fmb-network-landing) .world-rule{margin-top:28px!important;padding:11px 14px!important;border:1px solid rgba(191,193,194,.32)!important;color:#DAD6CF!important;background:rgba(255,255,255,.035)!important}
+  body.fmb-matte-system:not(.fmb-network-landing) .world-rule{margin-top:16px!important;padding:11px 14px!important;border:1px solid rgba(191,193,194,.32)!important;color:#DAD6CF!important;background:rgba(255,255,255,.035)!important}
 
   /* Internal publication footer is now a definite black/red end state. */
   body.fmb-matte-system:not(.fmb-network-landing) .footer{
@@ -338,7 +350,9 @@ body.fmb-matte-system{text-rendering:optimizeLegibility}
   /* Explainer: editorial reference library rather than rounded app cards. */
   body.fmb-explainer-route .explainer-principles{padding:0!important;background:var(--fmb-finish-black)!important}
   body.fmb-explainer-route .explainer-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:1px!important;background:rgba(191,193,194,.18)!important}
-  body.fmb-explainer-route .explainer-card{min-height:220px!important;padding:34px!important;border:0!important;border-radius:0!important;background:var(--fmb-finish-black-2)!important;color:#F5F3EF!important;box-shadow:none!important}
+  body.fmb-explainer-route .explainer-card h2{font-size:16px!important;margin:2px 0 5px!important;line-height:1.15!important}
+  body.fmb-explainer-route .explainer-card p{font-size:13px!important;line-height:1.45!important;margin:0!important}
+  body.fmb-explainer-route .explainer-card{min-height:0!important;padding:16px 18px!important;border:0!important;border-radius:0!important;background:var(--fmb-finish-black-2)!important;color:#F5F3EF!important;box-shadow:none!important}
   body.fmb-explainer-route .explainer-card small{color:var(--fmb-finish-red-light)!important;font:850 12px/1 var(--fmb-finish-ui)!important}
   body.fmb-explainer-route .explainer-card h2{margin:30px 0 12px!important;color:#F5F3EF!important;font-family:var(--fmb-finish-display)!important;font-size:34px!important;font-weight:560!important;line-height:.95!important}
   body.fmb-explainer-route .explainer-card p{color:#C8C4BD!important;line-height:1.6!important}
@@ -423,16 +437,28 @@ body.fmb-matte-system{text-rendering:optimizeLegibility}
 /* ========================================================================== */
 @media(max-width:699px){
   /* Internal desk openers get stronger editorial identity, but the shell is
-     left to the locked mobile authority. */
+     left to the locked mobile authority.
+     The band is sized to introduce the desk, not to fill the screen. Measured
+     before: World 692px to the first story, Briefing 540px, Explainer 1250px --
+     a reader who tapped a desk scrolled past the publication describing itself
+     before reading any of it. */
   html:root body.fmb-mobile-first:not(.fmb-mobile-route-home) :is(.world-hero,.brief-archive-hero,.explainer-hero,.fc-hero,.sports-hero,.archive-hero){
-    min-height:0!important;padding:40px 16px 30px!important;background:var(--fmb-finish-black)!important;background-image:var(--fmb-finish-sheen)!important;
+    min-height:0!important;padding:18px 16px 16px!important;background:var(--fmb-finish-black)!important;background-image:var(--fmb-finish-sheen)!important;
     color:#F5F3EF!important;border:0!important;border-bottom:4px solid var(--fmb-finish-red)!important;box-shadow:0 14px 34px rgba(0,0,0,.18)!important
   }
   html:root body.fmb-mobile-first:not(.fmb-mobile-route-home) :is(.world-hero,.brief-archive-hero,.explainer-hero,.fc-hero,.sports-hero,.archive-hero) :is(h1,h2){
-    margin:10px 0 15px!important;color:#F5F3EF!important;font-family:var(--fmb-finish-display)!important;font-size:clamp(42px,13vw,58px)!important;font-weight:560!important;line-height:.87!important;letter-spacing:-.05em!important
+    margin:6px 0 8px!important;color:#F5F3EF!important;font-family:var(--fmb-finish-display)!important;font-size:clamp(28px,7.6vw,36px)!important;font-weight:560!important;line-height:.95!important;letter-spacing:-.035em!important
   }
-  html:root body.fmb-mobile-first:not(.fmb-mobile-route-home) :is(.world-hero,.brief-archive-hero,.explainer-hero,.fc-hero,.sports-hero,.archive-hero) p{color:#C8C4BD!important;font-size:14px!important;line-height:1.52!important}
+  html:root body.fmb-mobile-first:not(.fmb-mobile-route-home) :is(.world-hero,.brief-archive-hero,.explainer-hero,.fc-hero,.sports-hero,.archive-hero) p{color:#C8C4BD!important;font-size:13px!important;line-height:1.45!important;margin:0 0 4px!important}
   html:root body.fmb-mobile-first:not(.fmb-mobile-route-home) :is(.world-kicker,.explainer-kicker,[class*="hero"] [class*="kicker"]){color:var(--fmb-finish-red-light)!important}
+
+  /* The Explainer principles block -- "01 Made clear", "02 ...", the desk's own
+     statement of method -- accounted for 479px of the 1250px a phone reader
+     scrolled before the first explainer. It is compressed, not moved: it is
+     trust signalling on a desk whose whole claim is clarity, and ordering it
+     after 206 explainers would put it at 41,000px, which is not "later". */
+  html:root body.fmb-mobile-first .explainer-principles{padding:12px 0 10px!important}
+  html:root body.fmb-mobile-first .explainer-grid{gap:8px!important}
 
   /* Home hero becomes a deliberate black editorial object while preserving
      the tested image range (165-220px) and first-screen journalism contract. */
@@ -503,7 +529,9 @@ body.fmb-matte-system{text-rendering:optimizeLegibility}
   /* Explainer: dark principles band plus open reference list. */
   html:root body.fmb-mobile-first.fmb-mobile-route-explainer .explainer-principles{padding:0!important;background:var(--fmb-finish-black)!important}
   html:root body.fmb-mobile-first.fmb-mobile-route-explainer .explainer-grid{gap:1px!important;background:rgba(191,193,194,.16)!important}
-  html:root body.fmb-mobile-first.fmb-mobile-route-explainer .explainer-card{padding:21px!important;border:0!important;border-radius:0!important;background:#141414!important;color:#F5F3EF!important;box-shadow:none!important}
+  html:root body.fmb-mobile-first.fmb-mobile-route-explainer .explainer-card h2{font-size:14px!important;margin:1px 0 3px!important;line-height:1.15!important}
+  html:root body.fmb-mobile-first.fmb-mobile-route-explainer .explainer-card p{font-size:12px!important;line-height:1.4!important;margin:0!important}
+  html:root body.fmb-mobile-first.fmb-mobile-route-explainer .explainer-card{padding:12px 14px!important;border:0!important;border-radius:0!important;background:#141414!important;color:#F5F3EF!important;box-shadow:none!important}
   html:root body.fmb-mobile-first.fmb-mobile-route-explainer .explainer-card small{color:var(--fmb-finish-red-light)!important}
   html:root body.fmb-mobile-first.fmb-mobile-route-explainer .explainer-card h2{color:#F5F3EF!important;font-family:var(--fmb-finish-display)!important;font-size:25px!important}
   html:root body.fmb-mobile-first.fmb-mobile-route-explainer .explainer-card p{color:#BFC1C2!important}
