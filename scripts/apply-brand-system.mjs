@@ -48,6 +48,7 @@ const matteVersion = await assetVersion('css/fmb-news-matte-system.css');
 const homeV2Version = await assetVersion('css/fmb-news-home-v2.css');
 const editorialReferenceVersion = await assetVersion('css/fmb-news-editorial-reference-v2.css');
 const themeCssVersion = await assetVersion('css/fmb-news-theme.css');
+const sitewideMaterialVersion = await assetVersion('css/fmb-news-sitewide-material.css');
 const themeJsVersion = await assetVersion('js/fmb-news-theme.js');
 const imageGuardVersion = await assetVersion('js/fmb-news-image-hardfix.js');
 const newsletterPath = path.join(newsRoot, 'assets', 'js', 'fmb-news-newsletter.js');
@@ -60,6 +61,8 @@ const stylesheetHref = `/assets/css/fmb-news-matte-system.css?v=${matteVersion}`
 const stylesheetTag = `<link rel="stylesheet" href="${stylesheetHref}">`;
 const themeStylesheetHref = `/assets/css/fmb-news-theme.css?v=${themeCssVersion}`;
 const themeStylesheetTag = `<link rel="stylesheet" href="${themeStylesheetHref}">`;
+const sitewideMaterialHref = `/assets/css/fmb-news-sitewide-material.css?v=${sitewideMaterialVersion}`;
+const sitewideMaterialTag = `<link rel="stylesheet" href="${sitewideMaterialHref}">`;
 const themeRuntimeHref = `/assets/js/fmb-news-theme.js?v=${themeJsVersion}`;
 const themeRuntimeTag = `<script src="${themeRuntimeHref}" defer></script>`;
 const themeBootTag = `<script data-fmb-theme-boot>(()=>{try{let m=localStorage.getItem('fmbThemeModeV1')||'system';if(!['system','light','dark'].includes(m))m='system';const r=m==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):m;document.documentElement.setAttribute('data-fmb-theme-mode',m);document.documentElement.setAttribute('data-fmb-theme',r)}catch{}})();</script>`;
@@ -103,6 +106,8 @@ function ensureBrandAssets(html) {
   else html = html.replace(/\/assets\/css\/fmb-news-matte-system\.css\?v=[^"']+/i, stylesheetHref);
   if (!html.includes('fmb-news-theme.css')) html = html.replace(/<\/head>/i, `${themeStylesheetTag}</head>`);
   else html = html.replace(/\/assets\/css\/fmb-news-theme\.css\?v=[^"']+/gi, themeStylesheetHref);
+  if (!html.includes('fmb-news-sitewide-material.css')) html = html.replace(/<\/head>/i, `${sitewideMaterialTag}</head>`);
+  else html = html.replace(/\/assets\/css\/fmb-news-sitewide-material\.css\?v=[^"']+/gi, sitewideMaterialHref);
   if (!html.includes('fmb-news-theme.js')) html = html.replace(/<\/head>/i, `${themeRuntimeTag}</head>`);
   else html = html.replace(/\/assets\/js\/fmb-news-theme\.js\?v=[^"']+/gi, themeRuntimeHref);
   for (const [name, version] of [['editorial-ia', iaVersion], ['publication-landing', chromeVersion], ['product-identity', typographyVersion]]) {
@@ -206,4 +211,4 @@ for (const file of files) {
   }
 }
 
-console.log(`Applied canonical FMB News brand system to ${changed}/${files.length} HTML pages; preserved the approved FMB NEWS. editorial landing masthead; kept content-hashed appearance assets; installed the approved editorial reference last on Home; removed retired template Home scaffolding; normalized shared mastheads on ${headersNormalized} pages; kept one authoritative PHT clock/process; About readability preserved.`);
+console.log(`Applied canonical FMB News brand system to ${changed}/${files.length} HTML pages; preserved the approved FMB NEWS. editorial landing masthead; kept content-hashed appearance assets; installed the sitewide material system plus the approved editorial reference last on Home; removed retired template Home scaffolding; normalized shared mastheads on ${headersNormalized} pages; kept one authoritative PHT clock/process; About readability preserved.`);
