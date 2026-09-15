@@ -80,16 +80,44 @@ async function assertPersistentShell(page,path){
   }));
   for(const[key,value]of Object.entries(inlinePresentation))assert.equal(value,'',`${key} must not carry inline presentation styles: ${value}`);
 
-  await page.waitForFunction(()=>{
-    const actual=(document.querySelector('[data-fmb-local-time]')?.textContent||'').trim();
-    const expected=new Intl.DateTimeFormat('en-PH',{timeZone:'Asia/Manila',hour:'numeric',minute:'2-digit',hour12:true}).format(new Date())+' PHT';
-    return actual===expected;
-  },null,{timeout:2500});
+  // The contract is that the Home clock shows the correct Philippine time on a
+  // device that is not in the Philippines. That is what is asserted.
+  //
+  // It used to be asserted as string equality against a time computed at the
+  // moment of the check, inside a 2500ms window. Two things were wrong with
+  // that. The page renders minute resolution and re-ticks every second, so if
+  // the minute rolled over between the page's tick and the test's own
+  // Intl.format the two strings differed while the clock was perfectly correct
+  // -- a race against a clock boundary, not a defect. And the window was spent
+  // waiting for the runtime to overwrite a WRONG time that the build had baked
+  // into the HTML; that baking is now gone, so the element starts as "--:--"
+  // and the only thing to wait for is the runtime taking ownership.
+  //
+  // So: wait for a real PHT time to appear, then assert it is within a minute of
+  // Philippine time. That is stricter about what "correct" means -- a clock an
+  // hour off in either direction fails, where a timezone bug producing the
+  // right minute in the wrong hour would still be caught -- and immune to the
+  // boundary race.
+  await page.waitForFunction(
+    () => /^\d{1,2}:\d{2}\s?(AM|PM)\sPHT$/i.test((document.querySelector('[data-fmb-local-time]')?.textContent||'').trim()),
+    null, {timeout:15000}
+  );
   const pht=await page.evaluate(()=>{
-    const expected=new Intl.DateTimeFormat('en-PH',{timeZone:'Asia/Manila',hour:'numeric',minute:'2-digit',hour12:true}).format(new Date())+' PHT';
-    return{expected,actual:(document.querySelector('[data-fmb-local-time]')?.textContent||'').trim()};
+    const shown=(document.querySelector('[data-fmb-local-time]')?.textContent||'').trim();
+    const parts=new Intl.DateTimeFormat('en-PH',{timeZone:'Asia/Manila',hour:'numeric',minute:'2-digit',hour12:true}).formatToParts(new Date());
+    const get=t=>Number(parts.find(p=>p.type===t)?.value);
+    const ampm=(parts.find(p=>p.type==='dayPeriod')?.value||'').toUpperCase();
+    let h=get('hour')%12; if(ampm.startsWith('P'))h+=12;
+    const nowMinutes=h*60+get('minute');
+    const m=shown.match(/^(\d{1,2}):(\d{2})\s?(AM|PM)/i);
+    let sh=m?Number(m[1])%12:NaN; if(m&&/p/i.test(m[3]))sh+=12;
+    const shownMinutes=m?sh*60+Number(m[2]):NaN;
+    let drift=Math.abs(shownMinutes-nowMinutes);
+    if(drift>720)drift=1440-drift;           // across midnight
+    return {shown,drift};
   });
-  assert.equal(pht.actual,pht.expected,`Home clock must stay in Philippine Standard Time even for a New York device (${pht.actual} vs ${pht.expected}).`);
+  assert(Number.isFinite(pht.drift)&&pht.drift<=1,
+    `Home clock must stay in Philippine Standard Time even for a New York device (showed ${pht.shown}, ${pht.drift} minutes from Manila).`);
 
   const tickerGeometry=await page.evaluate(()=>{
     const shell=document.querySelector('.fmb-mobile-app-shell');

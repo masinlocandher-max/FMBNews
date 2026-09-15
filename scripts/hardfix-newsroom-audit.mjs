@@ -22,10 +22,31 @@ function newsroomNav(html){
   return html;
 }
 
+// The DATE is baked; the CLOCK TIME deliberately is not.
+//
+// This used to bake both. The renderers emit "--:--" placeholders and this pass
+// overwrote them with the time the build happened to run, which was wrong for
+// every reader by the time the page reached them -- by minutes on a fresh
+// deploy, by hours on a cached one. On a publication whose masthead says
+// "Philippine Standard Time" and whose whole claim is that the PHT clock is
+// authoritative, shipping a stale time in the HTML is a small lie told on every
+// page.
+//
+// It also made the build non-deterministic. Two builds of identical content
+// differed in exactly one place, this clock, so every rebuild produced a
+// different homepage and no build could be reproduced or diffed cleanly.
+//
+// And it made the clock QA race: the assertion had to wait for the runtime to
+// correct a known-wrong value inside a fixed window, which is why it failed on
+// a slow CI runner while passing locally.
+//
+// The date stays baked because it is right for the whole publication day, gives
+// a reader without JavaScript something true, and the runtime corrects it on
+// its first tick anyway. A minute-resolution time has no such defence.
 function clockFallbacks(html){
   const now=phtNow();
-  html=html.replace(/<span data-pht-date>[^<]*<\/span>/gi,`<span data-pht-date>${esc(now.date)}</span>`).replace(/<span data-pht-clock>[^<]*<\/span>/gi,`<span data-pht-clock>${esc(now.time)}</span>`);
-  html=html.replace(/<strong data-fmb-local-date>[^<]*<\/strong>\s*<span data-fmb-local-time>[^<]*<\/span>/gi,`<strong data-fmb-local-date>${esc(now.short)}</strong><span data-fmb-local-time>${esc(now.time)}</span>`);
+  html=html.replace(/<span data-pht-date>[^<]*<\/span>/gi,`<span data-pht-date>${esc(now.date)}</span>`);
+  html=html.replace(/<strong data-fmb-local-date>[^<]*<\/strong>(\s*)<span data-fmb-local-time>[^<]*<\/span>/gi,`<strong data-fmb-local-date>${esc(now.short)}</strong>$1<span data-fmb-local-time>--:--</span>`);
   return html;
 }
 
