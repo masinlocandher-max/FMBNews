@@ -4,7 +4,12 @@ import { fileURLToPath } from 'node:url';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const newsRoot=path.join(root,'dist','news');
-const genericFallback='/assets/images/news/fmb-news-editorial-fallback.svg';
+import { pickEditorialFallback, FALLBACK_DIR } from './lib/editorial-fallback-pool.mjs';
+
+// FMB News stories with no photograph of their own draw from the branded plate
+// pool, keyed on the route so the pick is arbitrary across the corpus and fixed
+// for any one story. Explainer and Daily Brief keep their own designated
+// product assets, which CLAUDE.md locks.
 const explainerFallback='/assets/images/mobile/fmb-explainer-fallback.jpg';
 const dailyBriefFallback='/assets/images/mobile/fmb-daily-brief-mug.jpg';
 
@@ -21,7 +26,9 @@ function fallbackFor(target,html){
   const rel=path.relative(newsRoot,target).replaceAll('\\','/').toLowerCase();
   if(rel.startsWith('explainer/')||/\bfmb-explainer-route\b|data-fmb-explainer-article|FMB Explainer/i.test(html))return {url:explainerFallback,caption:'FMB Explainer fallback visual'};
   if(rel.startsWith('fmb-brief')||/\bbrief-route\b|FMB Daily Brief|FMB Brief/i.test(html))return {url:dailyBriefFallback,caption:'FMB Daily Brief fallback visual'};
-  return {url:genericFallback,caption:'FMB News editorial visual'};
+  // The route is the seed, so the same story gets the same plate on every build.
+  const plate=pickEditorialFallback(rel);
+  return {url:`${FALLBACK_DIR}${plate.file}`,alt:plate.alt,caption:'FMB News editorial visual'};
 }
 function firstContentImage(html){
   const patterns=[
@@ -32,7 +39,12 @@ function firstContentImage(html){
   return '';
 }
 function injectFigure(html,title,fallback){
-  const figure=`<figure class="article-figure fmb-guaranteed-article-figure"><img src="${fallback.url}" alt="${esc(title)}" loading="eager" decoding="async"><figcaption>${esc(fallback.caption)}</figcaption></figure>`;
+  // The alt text describes the plate, not the story. It used to be the headline,
+  // which told a screen-reader user that a picture of the reported event was on
+  // the page when what is there is publication artwork. A plate that carries its
+  // own description uses it; anything without one falls back to the headline.
+  const alt=fallback.alt||title;
+  const figure=`<figure class="article-figure fmb-guaranteed-article-figure"><img src="${fallback.url}" alt="${esc(alt)}" loading="eager" decoding="async"><figcaption>${esc(fallback.caption)}</figcaption></figure>`;
   const h1=/<h1\b[^>]*>[\s\S]*?<\/h1>/i;
   if(h1.test(html))return html.replace(h1,match=>`${match}${figure}`);
   const article=/<article\b[^>]*>/i;

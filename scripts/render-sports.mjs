@@ -5,7 +5,8 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const contentRoot = path.join(root, 'content', 'news', 'articles');
 const outputDir = path.join(root, 'dist', 'news', 'sports');
-const fallback = '/assets/images/news/fmb-news-editorial-fallback.svg';
+import { editorialFallbackUrl } from './lib/editorial-fallback-pool.mjs';
+// Same branded plate pool as Home, seeded per story.
 
 const esc = (value = '') => String(value)
   .replaceAll('&', '&amp;')
@@ -45,7 +46,8 @@ async function sportsStories() {
 
 function imageFor(story) {
   const url = String(story?.image?.url || '').trim();
-  return /^https?:\/\//i.test(url) || url.startsWith('/') ? url : fallback;
+  if (/^https?:\/\//i.test(url) || url.startsWith('/')) return url;
+  return editorialFallbackUrl(story?.slug || story?.headline || '');
 }
 
 function storyCard(story) {

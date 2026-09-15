@@ -5,7 +5,9 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const page = path.join(root, 'dist', 'news', 'index.html');
 const contentRoot = path.join(root, 'content', 'news', 'articles');
-const fallback = '/assets/images/news/fmb-news-editorial-fallback.svg';
+import { editorialFallbackUrl } from './lib/editorial-fallback-pool.mjs';
+// A story with no photograph of its own draws a branded plate from the pool,
+// keyed on its slug: arbitrary across the front page, identical on every build.
 const approvedHero = '/assets/images/mobile/fmb-mobile-hero.jpg';
 const approvedMug = '/assets/images/mobile/fmb-daily-brief-mug.jpg';
 
@@ -68,7 +70,8 @@ async function publishedStories() {
 
 function imageFor(story) {
   const url = String(story?.image?.url || '').trim();
-  return /^https?:\/\//i.test(url) || url.startsWith('/') ? url : fallback;
+  if (/^https?:\/\//i.test(url) || url.startsWith('/')) return url;
+  return editorialFallbackUrl(story?.slug || story?.headline || '');
 }
 
 function hrefFor(story) {

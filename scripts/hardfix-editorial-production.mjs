@@ -1,6 +1,7 @@
 import { access, readFile, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { editorialFallbackUrl } from './lib/editorial-fallback-pool.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const contentRoot=path.join(root,'content','news','articles');
@@ -36,7 +37,7 @@ function upsertMeta(html,kind,key,value){
 
 function normalizeLd(html,story){
   const canonical=`${SITE}/news/${story.slug}/`;
-  const image=story.image?.url?absolute(story.image.url):`${SITE}/news/assets/images/news/fmb-news-editorial-fallback.svg`;
+  const image=story.image?.url?absolute(story.image.url):absolute(editorialFallbackUrl(story?.slug||story?.headline||''));
   const schema={
     '@context':'https://schema.org',
     '@type':story.articleType||'NewsArticle',

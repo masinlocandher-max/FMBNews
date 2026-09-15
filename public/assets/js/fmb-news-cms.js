@@ -4,7 +4,12 @@
   const SUPABASE_URL = 'https://wjnavdpppnhxbuydkrkd.supabase.co';
   const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_bpdFntTHbHmxsG4L0PtcCw_5dJ8gpr8';
   const API = `${SUPABASE_URL}/rest/v1`;
-  const FALLBACK_IMAGE = '/news/assets/images/news/fmb-news-editorial-fallback.svg';
+  // FMB News editorial fallback plates. A deliberate second copy of
+  // scripts/lib/editorial-fallback-pool.mjs; verify-images.mjs fails the build
+  // if the two lists ever differ.
+  const FALLBACK_PLATES=['fmb-news-fallback-archipelago.jpg','fmb-news-fallback-skyline.jpg','fmb-news-fallback-global.jpg'];
+  const plateSeed=(value='')=>{let hash=0x811c9dc5;const text=String(value);for(let i=0;i<text.length;i+=1){hash^=text.charCodeAt(i);hash=Math.imul(hash,0x01000193)>>>0}return hash};
+  const plateFor=(seed='')=>`/news/assets/images/news/${FALLBACK_PLATES[plateSeed(seed)%FALLBACK_PLATES.length]}`;
 
   const headers = { apikey: SUPABASE_PUBLISHABLE_KEY, Accept: 'application/json' };
   const text = (value) => value == null ? '' : String(value);
@@ -37,7 +42,10 @@
 
   function makeImage(src, alt, className = '') {
     const img = document.createElement('img');
-    img.src = src || FALLBACK_IMAGE;
+    // Seeded on the alt text, which carries the headline here, so each card in a
+    // list of imageless stories gets its own plate instead of the same one.
+    const plate = plateFor(alt || src || '');
+    img.src = src || plate;
     img.alt = alt || 'FMB News';
     if (className) img.className = className;
     img.loading = 'lazy';
@@ -45,7 +53,7 @@
     img.addEventListener('error', () => {
       if (img.dataset.fmbFallback === 'true') return;
       img.dataset.fmbFallback = 'true';
-      img.src = FALLBACK_IMAGE;
+      img.src = plate;
     }, { once: true });
     return img;
   }
