@@ -1,81 +1,19 @@
 (()=>{
 const sprite='/assets/images/horoscope/zodiac-production-light-dark.webp?v=20260916-production-v1';
-const positions={
-Aries:['0%','0%','66.667%'],Taurus:['20%','0%','66.667%'],Gemini:['40%','0%','66.667%'],Cancer:['60%','0%','66.667%'],Leo:['80%','0%','66.667%'],Virgo:['100%','0%','66.667%'],
-Libra:['0%','33.333%','100%'],Scorpio:['20%','33.333%','100%'],Sagittarius:['40%','33.333%','100%'],Capricorn:['60%','33.333%','100%'],Aquarius:['80%','33.333%','100%'],Pisces:['100%','33.333%','100%']
-};
+const positions={Aries:['0%','0%'],Taurus:['20%','0%'],Gemini:['40%','0%'],Cancer:['60%','0%'],Leo:['80%','0%'],Virgo:['100%','0%'],Libra:['0%','33.333%'],Scorpio:['20%','33.333%'],Sagittarius:['40%','33.333%'],Capricorn:['60%','33.333%'],Aquarius:['80%','33.333%'],Pisces:['100%','33.333%']};
+const leads={Aries:'Momentum is available, but your best move comes from directing it rather than rushing it.',Taurus:'A quieter week rewards practical choices, cleaner routines, and fewer unnecessary complications.',Gemini:'The useful advantage this week is discernment: knowing what deserves your attention and what does not.',Cancer:'Care matters, but so does the boundary that keeps care from becoming exhaustion.',Leo:'You can be seen without performing every part of the process in public.',Virgo:'Small corrections carry unusual leverage this week, especially in systems you repeat.',Libra:'The most balanced choice may be the one that makes your limits unmistakably clear.',Scorpio:'Insight arrives when you trade suspicion for evidence and reaction for strategy.',Sagittarius:'Expansion is useful now when curiosity is paired with enough discipline to test what you discover.',Capricorn:'The week favors durable progress, the kind built from one realistic decision followed through well.',Aquarius:'Original thinking works best when someone besides you can understand, use, and repeat it.',Pisces:'Sensitivity can guide you this week, provided you give evidence and boundaries equal weight.'};
+const edition={key:'2026-09-14',start:'2026-09-14',end:'2026-09-20'};
 const style=document.createElement('style');
-style.textContent=`
-body.fmb-horoscope-page .fmb-zodiac-grid .fmb-zodiac-art,
-body.fmb-horoscope-page .fmb-reading-zodiac-art{
-  display:block!important;
-  border:0!important;
-  border-radius:0!important;
-  background-image:url("${sprite}")!important;
-  background-repeat:no-repeat!important;
-  background-size:600% 400%!important;
-  background-position:var(--hz-x) var(--hz-y-light)!important;
-  background-color:#FAF9F6!important;
-  box-shadow:none!important;
-  filter:none!important;
-}
-body.fmb-horoscope-page .fmb-zodiac-grid .fmb-zodiac-art{
-  width:64px!important;
-  height:64px!important;
-  flex:0 0 64px!important;
-}
-body.fmb-horoscope-page .fmb-reading-zodiac-art{
-  width:250px!important;
-  height:250px!important;
-  flex:0 0 250px!important;
-}
-html[data-fmb-theme="dark"] body.fmb-horoscope-page .fmb-zodiac-grid .fmb-zodiac-art,
-html[data-fmb-theme="dark"] body.fmb-horoscope-page .fmb-reading-zodiac-art{
-  background-position:var(--hz-x) var(--hz-y-dark)!important;
-  background-color:#0A0A0A!important;
-}
-@media(prefers-color-scheme:dark){
-  html:not([data-fmb-theme]) body.fmb-horoscope-page .fmb-zodiac-grid .fmb-zodiac-art,
-  html:not([data-fmb-theme]) body.fmb-horoscope-page .fmb-reading-zodiac-art,
-  html[data-fmb-theme="system"] body.fmb-horoscope-page .fmb-zodiac-grid .fmb-zodiac-art,
-  html[data-fmb-theme="system"] body.fmb-horoscope-page .fmb-reading-zodiac-art{
-    background-position:var(--hz-x) var(--hz-y-dark)!important;
-    background-color:#0A0A0A!important;
-  }
-}
-body.fmb-horoscope-page .fmb-zodiac-grid button[aria-pressed="true"] .fmb-zodiac-art{
-  box-shadow:none!important;
-  filter:none!important;
-}
-`;
+style.textContent=`body.fmb-horoscope-page .fmb-zodiac-grid .fmb-zodiac-art,body.fmb-horoscope-page .fmb-reading-zodiac-art{display:block!important;border:0!important;border-radius:0!important;background-image:url("${sprite}")!important;background-repeat:no-repeat!important;background-size:600% 400%!important;background-position:var(--hz-x) var(--hz-y)!important;background-color:#FAF9F6!important;box-shadow:none!important;filter:none!important}body.fmb-horoscope-page .fmb-zodiac-grid button[aria-pressed="true"] .fmb-zodiac-art{box-shadow:none!important;filter:none!important}`;
 document.head.appendChild(style);
-function art(sign,cls){
-  const p=positions[sign];
-  if(!p)return null;
-  const el=document.createElement('span');
-  el.className=cls;
-  el.setAttribute('aria-hidden','true');
-  el.style.setProperty('--hz-x',p[0]);
-  el.style.setProperty('--hz-y-light',p[1]);
-  el.style.setProperty('--hz-y-dark',p[2]);
-  return el;
-}
-function decorate(){
-  document.querySelectorAll('[data-zodiac-grid] button[data-sign]').forEach(btn=>{
-    const old=btn.querySelector('.fmb-zodiac-icon');
-    const node=art(btn.dataset.sign,'fmb-zodiac-art');
-    if(old&&node)old.replaceWith(node);
-  });
-  const reading=document.querySelector('[data-horoscope-reading]');
-  const sign=reading?.querySelector('.fmb-horoscope-title h2')?.textContent?.trim();
-  const old=reading?.querySelector('.fmb-reading-zodiac-icon');
-  const node=sign?art(sign,'fmb-reading-zodiac-art'):null;
-  if(old&&node)old.replaceWith(node);
-}
-decorate();
-const observer=new MutationObserver(decorate);
-const grid=document.querySelector('[data-zodiac-grid]');
-const reading=document.querySelector('[data-horoscope-reading]');
-if(grid)observer.observe(grid,{childList:true,subtree:true,attributes:true,attributeFilter:['aria-pressed']});
-if(reading)observer.observe(reading,{childList:true,subtree:true});
+function art(sign,cls){const position=positions[sign];if(!position)return null;const element=document.createElement('span');element.className=cls;element.setAttribute('aria-hidden','true');element.style.setProperty('--hz-x',position[0]);element.style.setProperty('--hz-y',position[1]);return element;}
+function decorateGrid(){document.querySelectorAll('[data-zodiac-grid] button[data-sign]').forEach(button=>{const old=button.querySelector('.fmb-zodiac-icon');const node=art(button.dataset.sign,'fmb-zodiac-art');if(old&&node)old.replaceWith(node);});}
+function decorateReading(){const reading=document.querySelector('[data-horoscope-reading]');const sign=reading?.querySelector('.fmb-horoscope-title h2')?.textContent?.trim();const old=reading?.querySelector('.fmb-reading-zodiac-icon');const node=sign?art(sign,'fmb-reading-zodiac-art'):null;if(old&&node)old.replaceWith(node);const intro=reading?.querySelector('.fmb-reading-intro');if(intro&&sign&&leads[sign]&&intro.textContent.trim()!==leads[sign])intro.textContent=leads[sign];}
+function recoverInvalidSavedSign(){const reading=document.querySelector('[data-horoscope-reading]');if(reading?.querySelector('.fmb-horoscope-title h2'))return;try{localStorage.removeItem('fmbZodiacV1');}catch{}document.querySelector('[data-zodiac-grid] button[data-sign="Aries"]')?.click();}
+const pad=value=>String(value).padStart(2,'0');
+function currentManilaWeekKey(){const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Manila',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());const values=Object.fromEntries(parts.filter(part=>part.type!=='literal').map(part=>[part.type,Number(part.value)]));const stamp=new Date(Date.UTC(values.year,values.month-1,values.day));stamp.setUTCDate(stamp.getUTCDate()-((stamp.getUTCDay()+6)%7));return `${stamp.getUTCFullYear()}-${pad(stamp.getUTCMonth()+1)}-${pad(stamp.getUTCDate())}`;}
+function editionLabel(){const start=new Date(`${edition.start}T12:00:00Z`);const end=new Date(`${edition.end}T12:00:00Z`);const first=new Intl.DateTimeFormat('en-PH',{timeZone:'UTC',month:'short',day:'numeric'}).format(start);const last=new Intl.DateTimeFormat('en-PH',{timeZone:'UTC',month:'short',day:'numeric',year:'numeric'}).format(end);return `${edition.key===currentManilaWeekKey()?'':'Latest edition · '}${first} – ${last}`;}
+const week=document.querySelector('[data-horoscope-week]');if(week)week.textContent=editionLabel();
+recoverInvalidSavedSign();decorateGrid();decorateReading();
+const reading=document.querySelector('[data-horoscope-reading]');if(reading){const observer=new MutationObserver(decorateReading);observer.observe(reading,{childList:true,subtree:true});}
 })();

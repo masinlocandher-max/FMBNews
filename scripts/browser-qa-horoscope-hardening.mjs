@@ -1,0 +1,45 @@
+import assert from 'node:assert/strict';
+import { chromium, devices } from 'playwright';
+
+const base=process.env.FMB_QA_BASE_URL||'http://127.0.0.1:4173';
+const browser=await chromium.launch({headless:true});
+for(const [label,opts] of [['phone',{...devices['iPhone 13']}],['desktop',{viewport:{width:1280,height:900}}]]){
+  const context=await browser.newContext({...opts,serviceWorkers:'block'});
+  const page=await context.newPage();
+  const errors=[];
+  page.on('pageerror',error=>errors.push(error.message));
+  await page.route('https://**/*',route=>route.abort());
+  const response=await page.goto(`${base}/news/horoscope/`,{waitUntil:'domcontentloaded'});
+  assert(response?.ok(),`${label} horoscope returned ${response?.status()}`);
+  await page.waitForTimeout(700);
+  assert.equal(errors.length,0,`${label} horoscope runtime error: ${errors.join(' | ')}`);
+  assert.equal(await page.locator('.fmb-hz-header').count(),0,`${label} duplicate Horoscope header survived`);
+  assert.equal(await page.locator('header.mast').count(),1,`${label} must have one FMB News masthead`);
+  assert.equal(await page.locator('nav.nav').count(),1,`${label} must have one FMB News navigation`);
+  assert.equal(await page.locator('[data-zodiac-grid] button[data-sign]').count(),12,`${label} must render 12 zodiac signs`);
+  const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-window.innerWidth);
+  assert(overflow<=1,`${label} horoscope has ${overflow}px horizontal overflow`);
+  const edition=(await page.locator('[data-horoscope-week]').textContent())?.trim()||'';
+  assert(edition&&!/undefined|Invalid Date/i.test(edition),`${label} invalid Horoscope edition label: ${edition}`);
+  await page.locator('[data-zodiac-grid] button[data-sign="Taurus"]').click();
+  await page.waitForTimeout(150);
+  assert.equal((await page.locator('[data-horoscope-reading] h2').textContent())?.trim(),'Taurus',`${label} Taurus selection failed`);
+  assert.equal(await page.locator('[data-zodiac-grid] button[data-sign="Taurus"]').getAttribute('aria-pressed'),'true',`${label} Taurus selection state is not accessible`);
+  const state=await page.evaluate(()=>{const art=document.querySelector('.fmb-reading-zodiac-art');const rect=art?.getBoundingClientRect();return {width:rect?.width||0,right:rect?.right||0,viewport:window.innerWidth,intro:document.querySelector('.fmb-reading-intro')?.textContent?.trim()||'',overview:document.querySelector('.fmb-horoscope-section p')?.textContent?.trim()||'',artBg:art?getComputedStyle(art).backgroundColor:''};});
+  assert(state.width>0,`${label} selected-sign artwork is missing`);
+  assert(state.right<=state.viewport+1,`${label} selected-sign artwork escapes the viewport`);
+  assert(state.width<=(label==='phone'?120:260),`${label} selected-sign artwork is ${state.width}px wide`);
+  assert(state.intro&&state.overview&&state.intro!==state.overview,`${label} intro duplicates General Outlook`);
+  assert.equal(state.artBg,'rgb(250, 249, 246)',`${label} zodiac art must stay on the approved ivory surface`);
+  await page.reload({waitUntil:'domcontentloaded'});
+  await page.waitForTimeout(250);
+  assert.equal((await page.locator('[data-horoscope-reading] h2').textContent())?.trim(),'Taurus',`${label} valid saved sign was not preserved`);
+  await page.evaluate(()=>localStorage.setItem('fmbZodiacV1','NotASign'));
+  await page.reload({waitUntil:'domcontentloaded'});
+  await page.waitForTimeout(250);
+  assert.equal((await page.locator('[data-horoscope-reading] h2').textContent())?.trim(),'Aries',`${label} invalid saved sign did not recover to Aries`);
+  assert.equal(errors.length,0,`${label} Horoscope interaction produced runtime errors: ${errors.join(' | ')}`);
+  await context.close();
+}
+await browser.close();
+console.log('Horoscope hardening QA passed at phone and desktop widths.');
