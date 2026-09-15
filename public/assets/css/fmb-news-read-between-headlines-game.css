@@ -1,0 +1,114 @@
+:root{
+  --game-gold:#d5b46a;
+  --game-gold-soft:rgba(213,180,106,.25);
+  --game-red-glow:rgba(215,25,32,.32);
+  --game-stage-line:rgba(191,193,194,.26);
+}
+
+/* Make the whole surface read as a game stage, not a content page. */
+body.rbt-page{background:
+  radial-gradient(circle at 50% 24%,rgba(215,25,32,.07),transparent 24%),
+  radial-gradient(circle at 50% 72%,rgba(191,193,194,.05),transparent 32%),
+  var(--bg);
+}
+@media(prefers-color-scheme:dark){
+  body.rbt-page{background:
+    radial-gradient(circle at 50% 24%,rgba(215,25,32,.16),transparent 25%),
+    radial-gradient(circle at 50% 72%,rgba(191,193,194,.06),transparent 34%),
+    linear-gradient(180deg,#050505 0%,#0a0a0a 44%,#060606 100%)}
+}
+
+.rbt-topbar{position:relative;z-index:20;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.rbt-show-name{text-transform:none}
+
+/* Title screen */
+.rbt-start-stage{isolation:isolate;border-color:color-mix(in srgb,var(--silver) 52%,transparent);box-shadow:0 32px 90px rgba(0,0,0,.18),0 0 70px rgba(215,25,32,.08)}
+.rbt-start-stage:after{content:"";position:absolute;inset:-30% -15%;z-index:0;pointer-events:none;background:
+  linear-gradient(112deg,transparent 34%,rgba(255,255,255,.035) 45%,transparent 55%),
+  repeating-conic-gradient(from -8deg at 50% 20%,transparent 0 13deg,rgba(215,25,32,.04) 13deg 14deg,transparent 14deg 28deg);animation:rbt-stage-breathe 8s ease-in-out infinite alternate}
+.rbt-start-copy,.rbt-entry-panel{position:relative;z-index:2}
+.rbt-title{text-shadow:0 10px 34px rgba(0,0,0,.08)}
+@media(prefers-color-scheme:dark){.rbt-title{text-shadow:0 14px 42px rgba(0,0,0,.55),0 0 32px rgba(215,25,32,.08)}}
+.rbt-entry-panel{border-color:color-mix(in srgb,var(--silver) 48%,transparent);box-shadow:inset 0 1px 0 rgba(255,255,255,.10),0 18px 44px rgba(0,0,0,.16)}
+.rbt-button-primary{box-shadow:0 10px 24px rgba(215,25,32,.18)}
+
+/* Arena */
+.rbt-game-layout{perspective:1500px}
+.rbt-arena{isolation:isolate;border-color:color-mix(in srgb,var(--silver) 52%,transparent);box-shadow:0 32px 100px rgba(0,0,0,.24),0 0 80px rgba(215,25,32,.07)}
+.rbt-arena:before{opacity:.18!important;animation:rbt-ring-drift 18s linear infinite}
+.rbt-arena:after{opacity:.62!important;box-shadow:0 0 42px rgba(215,25,32,.08)}
+.rbt-arena>.rbt-game-head:after{content:"LIVE CHALLENGE";position:absolute;left:50%;bottom:-28px;transform:translateX(-50%);padding:0 10px;color:var(--muted);background:var(--surface-solid);font-size:6px;font-weight:800;letter-spacing:.22em;text-transform:uppercase}
+
+.rbt-game-title>span{letter-spacing:-.025em}
+.rbt-player-display strong{color:var(--text)}
+
+/* Timer */
+.rbt-timer-orb{position:relative;overflow:visible;box-shadow:0 0 0 1px var(--line),0 0 32px rgba(215,25,32,.18),inset 0 0 26px rgba(215,25,32,.04)}
+.rbt-timer-orb:after{content:"";position:absolute;inset:-8px;border-radius:50%;border:1px solid rgba(215,25,32,.18);opacity:.7}
+.rbt-timer-orb[data-warning="true"]{box-shadow:0 0 0 1px rgba(215,25,32,.62),0 0 44px rgba(215,25,32,.36),inset 0 0 24px rgba(215,25,32,.08)}
+.rbt-timer-orb[data-critical="true"]:after{animation:rbt-danger-ring .72s ease-out infinite}
+
+/* Question reveal */
+.rbt-question-card{transform-origin:50% 40%}
+.rbt-question-entering .rbt-question-card{animation:rbt-question-in .44s cubic-bezier(.2,.85,.25,1) both}
+.rbt-question-entering .rbt-option{animation:rbt-answer-in .34s ease both}
+.rbt-question-entering .rbt-option:nth-child(2){animation-delay:.04s}
+.rbt-question-entering .rbt-option:nth-child(3){animation-delay:.08s}
+.rbt-question-entering .rbt-option:nth-child(4){animation-delay:.12s}
+
+.rbt-question-chamber{position:relative;border-top-color:color-mix(in srgb,var(--silver) 72%,transparent)!important;border-bottom-color:color-mix(in srgb,var(--silver) 56%,transparent)!important;box-shadow:0 18px 50px rgba(0,0,0,.10),inset 0 1px 0 rgba(255,255,255,.06)!important}
+.rbt-question-chamber:after{content:"";position:absolute!important;inset:0!important;width:auto!important;max-width:none!important;height:auto!important;left:0!important;right:0!important;top:0!important;transform:none!important;background:linear-gradient(110deg,transparent 38%,rgba(255,255,255,.08) 49%,transparent 60%)!important;opacity:.45!important;pointer-events:none}
+
+/* Answer states: choose, lock, resolve. */
+.rbt-option{transform-origin:center;will-change:transform,filter,background}
+.rbt-option[data-selected="true"]{background:color-mix(in srgb,var(--red) 10%,var(--answer-bg));box-shadow:inset 0 1px 0 var(--red),inset 0 -1px 0 var(--red),0 0 0 1px rgba(215,25,32,.18),0 12px 28px rgba(215,25,32,.12);transform:translateY(-2px) scale(1.008);filter:drop-shadow(0 0 12px rgba(215,25,32,.12))}
+.rbt-option[data-selected="true"]:before{background:#fff;color:var(--red);box-shadow:0 0 0 2px var(--red),0 0 18px rgba(215,25,32,.2)}
+.rbt-option[data-chosen="locked"]{background:color-mix(in srgb,var(--red) 17%,var(--answer-bg));box-shadow:inset 0 1px 0 var(--red),inset 0 -1px 0 var(--red),0 0 32px rgba(215,25,32,.24);animation:rbt-lock-pulse .42s ease-in-out both}
+.rbt-option[data-chosen="locked"]:before{background:var(--red);color:#fff;box-shadow:0 0 22px rgba(215,25,32,.38)}
+.rbt-answer-locked .rbt-question-chamber{box-shadow:0 18px 50px rgba(0,0,0,.10),0 0 38px rgba(215,25,32,.09)!important}
+.rbt-answer-resolved .rbt-question-card{animation:rbt-resolve-settle .36s ease both}
+.rbt-time-expired .rbt-timer-orb{animation:rbt-timeout .24s linear 2}
+
+.rbt-feedback{min-height:24px;display:grid;place-items:center;letter-spacing:.08em}
+.rbt-feedback[data-state="correct"]{text-shadow:0 0 18px color-mix(in srgb,var(--good) 26%,transparent)}
+
+/* Make Lock Answer feel like the main game action. */
+.rbt-actions{align-items:center}
+.rbt-actions .rbt-button-primary{position:relative;overflow:hidden;min-width:190px}
+.rbt-actions .rbt-button-primary:not(:disabled):before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 20%,rgba(255,255,255,.16) 46%,transparent 70%);transform:translateX(-120%);animation:rbt-button-sweep 2.4s ease-in-out infinite}
+.rbt-actions .rbt-button-primary:disabled{box-shadow:none}
+
+/* Ladder */
+.rbt-ladder{border-color:color-mix(in srgb,var(--silver) 46%,transparent);box-shadow:0 26px 70px rgba(0,0,0,.18)}
+.rbt-ladder-list li[data-milestone="true"] strong:after{content:"";display:inline-block;width:4px;height:4px;margin-left:5px;border-radius:50%;background:var(--red);vertical-align:middle}
+.rbt-ladder-list li.is-current{background:linear-gradient(90deg,var(--red),#a90e15);box-shadow:0 8px 24px rgba(215,25,32,.28),inset 0 1px 0 rgba(255,255,255,.18)}
+.rbt-ladder-stat strong{font-variant-numeric:tabular-nums}
+
+/* Mobile game HUD */
+.rbt-mobile-hud{box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 8px 20px rgba(0,0,0,.05)}
+@media(max-width:720px){
+  body.rbt-page{background:var(--bg)}
+  .rbt-topbar{position:sticky;top:0}
+  .rbt-arena{box-shadow:0 20px 60px rgba(0,0,0,.20)}
+  .rbt-game{padding-top:10px}
+  .rbt-question-card{justify-content:start}
+  .rbt-question-chamber{box-shadow:0 10px 28px rgba(0,0,0,.10)!important}
+  .rbt-option[data-selected="true"]{transform:none}
+  .rbt-actions{position:sticky;bottom:8px;z-index:15;padding:8px;background:color-mix(in srgb,var(--bg) 84%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line)}
+  .rbt-actions .rbt-button{min-height:46px}
+}
+
+@keyframes rbt-question-in{0%{opacity:0;transform:translateY(16px) scale(.985);filter:blur(5px)}100%{opacity:1;transform:none;filter:none}}
+@keyframes rbt-answer-in{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:none}}
+@keyframes rbt-lock-pulse{0%{transform:scale(1)}48%{transform:scale(1.018)}100%{transform:scale(1)}}
+@keyframes rbt-resolve-settle{0%{transform:scale(1)}50%{transform:scale(.996)}100%{transform:scale(1)}}
+@keyframes rbt-timeout{0%,100%{transform:translateX(0)}50%{transform:translateX(3px)}}
+@keyframes rbt-danger-ring{0%{transform:scale(.92);opacity:.9}100%{transform:scale(1.16);opacity:0}}
+@keyframes rbt-button-sweep{0%,58%{transform:translateX(-130%)}82%,100%{transform:translateX(130%)}}
+@keyframes rbt-ring-drift{to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes rbt-stage-breathe{from{opacity:.7;transform:scale(1)}to{opacity:1;transform:scale(1.025)}}
+
+@media(prefers-reduced-motion:reduce){
+  .rbt-start-stage:after,.rbt-arena:before,.rbt-timer-orb[data-critical="true"]:after,.rbt-actions .rbt-button-primary:not(:disabled):before{animation:none!important}
+  .rbt-question-entering .rbt-question-card,.rbt-question-entering .rbt-option,.rbt-option[data-chosen="locked"],.rbt-answer-resolved .rbt-question-card,.rbt-time-expired .rbt-timer-orb{animation:none!important}
+}
