@@ -43,7 +43,16 @@ const baselinePath = path.join(root, 'content', 'news', 'photography-coverage-ba
 // Shared placeholders and brand marks. These are legitimate as a last resort --
 // the newsroom's explicit fallback when no cleared asset exists -- but none of
 // them is a photograph OF the story, so none counts as coverage.
-const PLACEHOLDER = /fmb-explainer-fallback|fmb-daily-brief-mug|fmb-news-editorial-fallback|newsroom-editorial-fallback|fmb-news-official|fmbandco-primary|fmb-news-(?:primary|outline|white)|logo/i;
+//
+// fmb-news-fallback-* is the rotating editorial plate pool, and it leads this
+// list because it is the entry most likely to be got wrong. The plates are real
+// JPEGs of real scenery, so the extension test below would happily accept one as
+// a photograph. It is not: it is publication artwork that depicts no event and
+// is chosen by a hash of the slug. Had this line been missed, adding the pool
+// would have moved 305 uncovered articles into "covered" in a single build and
+// invited the baseline to be lowered on that fiction -- which is precisely the
+// move CLAUDE.md forbids.
+const PLACEHOLDER = /fmb-news-fallback-|fmb-explainer-fallback|fmb-daily-brief-mug|fmb-news-editorial-fallback|newsroom-editorial-fallback|fmb-news-official|fmbandco-primary|fmb-news-(?:primary|outline|white)|logo/i;
 
 const isArticle = (html) => html.includes('class="article-grid"')
   || /["']@type["']\s*:\s*["'](?:NewsArticle|Article)["']/i.test(html);

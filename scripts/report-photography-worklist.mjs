@@ -36,7 +36,7 @@ const arg = (name, fallback) => {
 const limit = Number(arg('limit', 40));
 const onlyBucket = arg('bucket', '');
 
-const PLACEHOLDER = /fmb-explainer-fallback|fmb-daily-brief-mug|fmb-news-editorial-fallback|newsroom-editorial-fallback|fmb-news-official|fmbandco-primary|fmb-news-(?:primary|outline|white)|logo/i;
+const PLACEHOLDER = /fmb-news-fallback-|fmb-explainer-fallback|fmb-daily-brief-mug|fmb-news-editorial-fallback|newsroom-editorial-fallback|fmb-news-official|fmbandco-primary|fmb-news-(?:primary|outline|white)|logo/i;
 const isArticle = (html) => html.includes('class="article-grid"')
   || /["']@type["']\s*:\s*["'](?:NewsArticle|Article)["']/i.test(html);
 const strip = (v = '') => String(v).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();

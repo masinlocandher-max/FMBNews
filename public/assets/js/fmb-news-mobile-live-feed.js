@@ -7,7 +7,12 @@
 
   const SUPABASE_URL='https://wjnavdpppnhxbuydkrkd.supabase.co';
   const SUPABASE_PUBLISHABLE_KEY='sb_publishable_bpdFntTHbHmxsG4L0PtcCw_5dJ8gpr8';
-  const FALLBACK_IMAGE='/news/assets/images/news/fmb-news-editorial-fallback.svg';
+  // FMB News editorial fallback plates. A deliberate second copy of
+  // scripts/lib/editorial-fallback-pool.mjs; verify-images.mjs fails the build
+  // if the two lists ever differ.
+  const FALLBACK_PLATES=['fmb-news-fallback-archipelago.jpg','fmb-news-fallback-skyline.jpg','fmb-news-fallback-global.jpg'];
+  const plateSeed=(value='')=>{let hash=0x811c9dc5;const text=String(value);for(let i=0;i<text.length;i+=1){hash^=text.charCodeAt(i);hash=Math.imul(hash,0x01000193)>>>0}return hash};
+  const plateFor=(seed='')=>`/news/assets/images/news/${FALLBACK_PLATES[plateSeed(seed)%FALLBACK_PLATES.length]}`;
   const API=`${SUPABASE_URL}/rest/v1/news_articles`;
 
   const fmtTime=value=>{
@@ -17,7 +22,7 @@
     return new Intl.DateTimeFormat('en-PH',{timeZone:'Asia/Manila',hour:'numeric',minute:'2-digit',hour12:true}).format(d)+' PHT';
   };
   const storyHref=story=>story.canonical_path||`/news/read/${encodeURIComponent(story.slug)}/`;
-  const imageFor=story=>String(story.image_url||'').trim()||FALLBACK_IMAGE;
+  const imageFor=story=>String(story.image_url||'').trim()||plateFor(story.slug||story.id||story.title||'');
   const isMaterialUpdate=story=>{
     const p=Date.parse(story.published_at||''),u=Date.parse(story.updated_at||'');
     return Number.isFinite(p)&&Number.isFinite(u)&&u-p>10*60*1000;
@@ -28,7 +33,7 @@
     const words=sections.flatMap(section=>Array.isArray(section.paragraphs)?section.paragraphs:[]).join(' ').trim().split(/\s+/).filter(Boolean).length;
     return Math.max(1,Math.ceil((words||220)/220));
   };
-  function safeImage(img,story){img.src=imageFor(story);img.alt=story.image_metadata?.alt||story.title||'FMB News';img.addEventListener('error',()=>{if(img.dataset.fmbFallback==='true')return;img.dataset.fmbFallback='true';img.src=FALLBACK_IMAGE},{once:true})}
+  function safeImage(img,story){img.src=imageFor(story);img.alt=story.image_metadata?.alt||story.title||'FMB News';img.addEventListener('error',()=>{if(img.dataset.fmbFallback==='true')return;img.dataset.fmbFallback='true';img.src=plateFor(story.slug||story.id||story.title||'')},{once:true})}
   function metaNode(story){
     const meta=document.createElement('div');meta.className='fmb-app-story-meta';
     const category=document.createElement('span');category.textContent=story.region||story.category||story.kicker||'News';

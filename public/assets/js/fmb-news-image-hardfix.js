@@ -1,7 +1,30 @@
 (() => {
   'use strict';
 
-  const FALLBACK = '/assets/images/news/fmb-news-editorial-fallback.svg';
+  // FMB News editorial fallback plates.
+  //
+  // This list is a deliberate second copy of scripts/lib/editorial-fallback-pool.mjs.
+  // The build cannot reach into this runtime, and giving the page a fourth
+  // script tag purely to share three filenames costs a request on 574 pages for
+  // very little. verify-images.mjs asserts that this list and the module's list
+  // are identical, so the copies cannot drift apart silently.
+  const FALLBACK_PLATES = [
+    'fmb-news-fallback-archipelago.jpg',
+    'fmb-news-fallback-skyline.jpg',
+    'fmb-news-fallback-global.jpg',
+  ];
+  // FNV-1a, matching the module. Same seed in, same plate out, so the image a
+  // reader sees after a failed load is the one the build would have chosen.
+  const plateSeed = (value = '') => {
+    let hash = 0x811c9dc5;
+    const text = String(value);
+    for (let i = 0; i < text.length; i += 1) {
+      hash ^= text.charCodeAt(i);
+      hash = Math.imul(hash, 0x01000193) >>> 0;
+    }
+    return hash;
+  };
+  const plateFor = (seed = '') => `/assets/images/news/${FALLBACK_PLATES[plateSeed(seed) % FALLBACK_PLATES.length]}`;
   const STYLE_ID = 'fmb-news-image-hardfix-style';
   const AUTO_CLASS = 'fmb-auto-visual';
   const AUTO_FIGURE_CLASS = 'fmb-auto-figure';
@@ -38,7 +61,9 @@
     img.dataset.fmbImageFallback = 'true';
     img.removeAttribute('srcset');
     img.removeAttribute('sizes');
-    img.src = FALLBACK;
+    // Seeded on the story this image belongs to, so a page of failed loads
+    // shows the publication's plates rather than one image repeated down it.
+    img.src = plateFor(headlineFor(container) || img.getAttribute('src') || '');
     if (!img.alt || /^image$/i.test(img.alt.trim())) img.alt = fallbackAlt(container);
   }
 
@@ -60,7 +85,7 @@
   function makeImage(container) {
     const img = document.createElement('img');
     img.className = AUTO_CLASS;
-    img.src = FALLBACK;
+    img.src = plateFor(headlineFor(container));
     img.alt = fallbackAlt(container);
     img.loading = 'lazy';
     img.decoding = 'async';

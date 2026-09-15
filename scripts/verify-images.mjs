@@ -1,6 +1,7 @@
 import { access, readFile, readdir, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { EDITORIAL_FALLBACK_POOL, FALLBACK_FILES } from './lib/editorial-fallback-pool.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const resolve = (...parts) => path.join(root, ...parts);
@@ -28,7 +29,6 @@ const builtNewsletter = await readFile(resolve('dist/news/assets/js/fmb-news-new
 const fallback = await readFile(resolve('public/assets/images/news/fmb-news-editorial-fallback.svg'), 'utf8');
 
 for (const signal of [
-  '/assets/images/news/fmb-news-editorial-fallback.svg',
   'MutationObserver',
   "addEventListener('error'",
   '.cms-article',
@@ -52,8 +52,15 @@ for(const signal of ['fmb-explainer-fallback.jpg','generatedExplainerArt','Real 
 if (!sourceNewsletter.includes('/assets/js/fmb-news-image-hardfix.js')) {
   throw new Error('Image hard-fix regression: source loader is not wired through the shared newsletter script');
 }
-if (!builtGuard.includes('/news/assets/images/news/fmb-news-editorial-fallback.svg')) {
-  throw new Error('Image hard-fix regression: built guard does not point to the scoped fallback asset');
+// The plate URL is assembled at runtime from the pool list, so the filename
+// never appears literally in the built file -- only the scoped directory does.
+// This checks the part the build is actually responsible for: that the asset
+// path was rescoped to /news/assets/ and the plate names survived the rewrite.
+if (!builtGuard.includes('/news/assets/images/news/')) {
+  throw new Error('Image hard-fix regression: built guard does not point to the scoped fallback asset directory');
+}
+if (!FALLBACK_FILES.every((file) => builtGuard.includes(file))) {
+  throw new Error('Image hard-fix regression: the built guard is missing one or more editorial fallback plates');
 }
 if (!builtNewsletter.includes('/news/assets/js/fmb-news-image-hardfix.js')) {
   throw new Error('Image hard-fix regression: built loader does not point to the scoped image guard');
@@ -89,6 +96,62 @@ for (const [polarity, file] of [
   }
   if (info.size < 6_000) {
     throw new Error(`Masthead regression: the ${polarity} masthead lockup is ${info.size} bytes, which is not the artwork (${file}).`);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// The editorial fallback plate pool
+// ---------------------------------------------------------------------------
+// A story with no photograph of its own gets one of the publication's branded
+// plates, picked by a hash of its slug. Two things can silently break that.
+//
+// 1. A plate file goes missing. The build would still emit <img src> pointing
+//    at it, so every affected story would show a broken image instead of a
+//    placeholder -- the failure the placeholder exists to prevent. Each plate is
+//    therefore required in the build and required to be real artwork, not a
+//    0-byte file or a stub, the same check the masthead lockups get above.
+//
+// 2. The runtime copies of the list drift from the module's. The build picks
+//    plates from scripts/lib/editorial-fallback-pool.mjs; three client scripts
+//    carry their own copy so a failed image can be replaced without another
+//    request. If a plate were renamed in the module alone, those scripts would
+//    keep swapping in a URL that no longer exists, and only readers whose images
+//    failed would ever see it. So the lists are compared, exactly, in order.
+if (EDITORIAL_FALLBACK_POOL.length < 2) {
+  throw new Error('The editorial fallback pool holds fewer than two plates; there is nothing to rotate and every imageless story would look identical.');
+}
+for (const plate of EDITORIAL_FALLBACK_POOL) {
+  if (!plate.alt || plate.alt.length < 20) {
+    throw new Error(`Editorial fallback plate ${plate.file} has no usable alt text. A reader on a screen reader gets this instead of the picture.`);
+  }
+  const asset = resolve('dist', 'news', 'assets', 'images', 'news', plate.file);
+  let info;
+  try {
+    info = await stat(asset);
+  } catch {
+    throw new Error(`Editorial fallback plate ${plate.file} is missing from the build. Stories seeded to it would ship a broken image where the placeholder should be.`);
+  }
+  if (info.size < 20_000) {
+    throw new Error(`Editorial fallback plate ${plate.file} is ${info.size} bytes, which is not the artwork.`);
+  }
+}
+for (const [label, rel] of [
+  ['image recovery', 'public/assets/js/fmb-news-image-hardfix.js'],
+  ['CMS reader', 'public/assets/js/fmb-news-cms.js'],
+  ['mobile live feed', 'public/assets/js/fmb-news-mobile-live-feed.js'],
+]) {
+  const source = await readFile(resolve(rel), 'utf8');
+  const listed = [...source.matchAll(/'(fmb-news-fallback-[a-z0-9-]+\.jpg)'/g)].map((m) => m[1]);
+  if (listed.join('|') !== FALLBACK_FILES.join('|')) {
+    throw new Error(
+      `The ${label} runtime's fallback plate list has drifted from scripts/lib/editorial-fallback-pool.mjs.\n`
+      + `  ${rel} lists: ${listed.join(', ') || '(none)'}\n`
+      + `  the module lists: ${FALLBACK_FILES.join(', ')}\n`
+      + '  Update both, in the same order.'
+    );
+  }
+  if (!/Math\.imul\(\s*hash\s*,\s*0x01000193\s*\)/.test(source)) {
+    throw new Error(`The ${label} runtime no longer uses the module's FNV-1a seed, so it would pick a different plate than the build did for the same story.`);
   }
 }
 
