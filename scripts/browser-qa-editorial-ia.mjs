@@ -45,7 +45,7 @@ const entertainment=page.locator('.publication-menu');
 assert.equal(await entertainment.count(),1,'Entertainment must be one grouped desktop menu.');
 await entertainment.locator('summary').click();
 assert(await entertainment.evaluate(node=>node.hasAttribute('open')),'Entertainment menu did not open.');
-for(const [label,href] of [['Weekly Horoscope','/news/horoscope/'],['FMB Crossword','/news/crossword/']]){
+for(const [label,href] of [['Weekly Horoscope','/news/horoscope/'],['Read Between the Headlines','/news/crossword/']]){
   const link=entertainment.locator(`a[href="${href}"]`);
   assert.equal(await link.count(),1,`Entertainment must contain ${label}.`);
   assert(await link.isVisible(),`${label} must be visible when Entertainment is open.`);

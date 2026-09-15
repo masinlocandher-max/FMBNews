@@ -36,7 +36,7 @@ for(const signal of [
   'FMB NEWS<span class="dot">.</span>','fmb-editorial-subtitle">Filipino Media Bulletin','class="editorial-lead-story"','class="editorial-side-rail"',
   'FMB News','FMB Worldwide','FMB Explainer','FMB Fact Check','FMB Daily Brief','Francine Marie Bautista','Founder',
   'data-fmb-mobile-home','data-fmb-editorial-lead','fmb-editorial-mobile-rail','fmb-approved-hero-ticker','data-fmb-greeting-line','data-fmb-local-time',
-  'Weekly Horoscope','FMB Crossword','fmb-news-editorial-reference-v2.css','data-fmb-theme-boot','fmb-news-theme.css','fmb-news-theme.js'
+  'Weekly Horoscope','Read Between the Headlines','fmb-news-editorial-reference-v2.css','data-fmb-theme-boot','fmb-news-theme.css','fmb-news-theme.js'
 ])must(home.includes(signal),`FMB home regression: missing ${signal}`);
 must(!home.includes('FMB Explained'),'Obsolete FMB Explained label remains');
 must(/\/news\/assets\/css\/fmb-news-editorial-reference-v2\.css\?v=[0-9a-f]{10}\b/.test(home),'Approved editorial reference must be content-versioned on Home');

@@ -6,7 +6,11 @@
   <meta name="color-scheme" content="light dark">
   <title>Read Between the Headlines | FMB News</title>
   <meta name="description" content="Play Read Between the Headlines, the weekly FMB News knowledge challenge. Thirty mixed current-events questions, 30 seconds per question, cumulative points, and no visible answer key.">
-  <link rel="canonical" href="https://www.francinemariebautista.com/news/read-between-the-headlines/">
+  <!-- The game is served at /news/crossword/, which the worker special-cases for
+     answer protection and cache headers. This alias exists because the product
+     was renamed; it points its canonical at the served route so one game is not
+     indexed at two URLs competing with each other. -->
+<link rel="canonical" href="https://www.francinemariebautista.com/news/crossword/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">

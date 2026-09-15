@@ -32,9 +32,12 @@ const geometry=await page.evaluate(()=>{
   const hero=document.querySelector('.fmb-app-brand-hero');
   const copy=document.querySelector('.fmb-approved-hero-copy');
   const ticker=document.querySelector('.fmb-app-top-ticker');
-  const utility=document.querySelector('.fmb-hero-live-overlay');
+  const utility=document.querySelector('.fmb-mobile-live-strip');
   const track=document.querySelector('.fmb-app-top-ticker .fmb-approved-hero-ticker-track');
-  if(!hero||!copy||!ticker||!utility||!track)throw new Error('Approved home motion structure missing');
+  if(!hero||!copy||!ticker||!track)throw new Error('Approved home motion structure missing');
+  if(!utility)throw new Error('The Philippine Standard Time strip is missing from Home.');
+  // The clock must not have crept back inside the hero.
+  const clockInsideHero=!!hero.querySelector('[data-fmb-local-time],.fmb-hero-live-overlay,.fmb-hero-clock');
   const h=hero.getBoundingClientRect(),c=copy.getBoundingClientRect(),t=ticker.getBoundingClientRect(),u=utility.getBoundingClientRect();
   const style=getComputedStyle(track),utilityStyle=getComputedStyle(utility);
   const matrix=new DOMMatrixReadOnly(style.transform==='none'?'matrix(1,0,0,1,0,0)':style.transform);
@@ -44,6 +47,8 @@ const geometry=await page.evaluate(()=>{
     tickerTop:t.top,tickerBottom:t.bottom,
     utilityLeft:u.left,utilityRight:u.right,utilityTop:u.top,utilityBottom:u.bottom,
     utilityGap:parseFloat(utilityStyle.columnGap||utilityStyle.gap||'0'),
+    clockInsideHero,
+    viewport:document.documentElement.clientWidth,
     animationName:style.animationName,
     animationDuration:style.animationDuration,
     x:matrix.m41,
@@ -53,12 +58,28 @@ const geometry=await page.evaluate(()=>{
 });
 
 assert(geometry.tickerBottom<=geometry.heroTop+1,`Approved ticker must remain above the cinematic hero (${(geometry.tickerBottom-geometry.heroTop).toFixed(1)}px overlap)`);
-assert(geometry.heroTop-geometry.tickerBottom<=14,`Approved ticker is detached from the hero (${(geometry.heroTop-geometry.tickerBottom).toFixed(1)}px gap)`);
-assert(geometry.utilityTop>=geometry.heroTop&&geometry.utilityBottom<=geometry.heroBottom,'Date/time overlay escaped the cinematic hero.');
-const verticalOverlap=Math.min(geometry.copyBottom,geometry.utilityBottom)-Math.max(geometry.copyTop,geometry.utilityTop);
-// Permit a 3px subpixel edge tolerance so font/browser rounding does not block
-// an otherwise clean mobile build; larger collisions still fail immediately.
-if(verticalOverlap>0)assert(geometry.copyRight<=geometry.utilityLeft+3,`Hero slogan and date/time overlap by ${(geometry.copyRight-geometry.utilityLeft).toFixed(1)}px`);
+// Nothing may float loose between the app bar and the first story. The chain is
+// ticker -> PHT strip -> hero; this used to measure ticker -> hero directly,
+// because nothing sat between them. The strip does now, deliberately, so the
+// same contract is checked link by link instead of end to end.
+assert(geometry.utilityTop-geometry.tickerBottom<=14,`Ticker is detached from the PHT strip (${(geometry.utilityTop-geometry.tickerBottom).toFixed(1)}px gap)`);
+assert(geometry.heroTop-geometry.utilityBottom<=14,`PHT strip is detached from the story hero (${(geometry.heroTop-geometry.utilityBottom).toFixed(1)}px gap)`);
+// Philippine Standard Time sits ABOVE the journalism now.
+//
+// These three assertions used to police the clock while it lived inside the
+// hero: that it had not "escaped the cinematic hero", and that it did not
+// collide with the headline beside it. Both were guarding a layout that should
+// not have existed. A date and a time rendered directly under a headline reads
+// as that story's dateline to any reader, so the front page appeared to stamp
+// its lead story with a time that was actually the live site clock.
+//
+// The contract is now the opposite one, and it is the one worth holding: the
+// clock is above the hero, it cannot collide with the lead story because it is
+// not in it, and it must never drift back inside.
+assert.equal(geometry.clockInsideHero,false,'The PHT clock is inside the story hero again — it reads as the lead story dateline.');
+assert(geometry.utilityBottom<=geometry.heroTop+1,`PHT strip must sit above the story hero (${(geometry.utilityBottom-geometry.heroTop).toFixed(1)}px into it)`);
+assert(geometry.utilityTop>=0,`PHT strip is above the viewport (${geometry.utilityTop.toFixed(1)}px)`);
+assert(geometry.utilityRight<=geometry.viewport+1,`PHT strip overflows the viewport (${geometry.utilityRight.toFixed(1)}px of ${geometry.viewport}px)`);
 assert(geometry.utilityGap>=6,`Date/time internal spacing is too tight (${geometry.utilityGap}px)`);
 assert(geometry.trackWidth>geometry.windowWidth,`Ticker track is not wide enough to crawl (${geometry.trackWidth}px vs ${geometry.windowWidth}px)`);
 assert.equal(geometry.animationName,'fmbTickerCrawl',`Ticker crawl animation is not active (${geometry.animationName})`);

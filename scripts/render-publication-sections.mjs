@@ -113,7 +113,7 @@ const founder = page({
 /* ------------------------------------------------------------ entertainment */
 const features = [
   { href: '/news/horoscope/', kicker: 'Weekly · Every Sunday', title: 'Weekly Horoscope', copy: 'All twelve signs, read for the week ahead, with free will kept firmly in the reader\u2019s hands.', go: 'Read this week' },
-  { href: '/news/crossword/', kicker: 'Weekly · Current events', title: 'FMB Crossword', copy: 'A current-affairs puzzle built from the week\u2019s reporting. The answer key stays sealed until the next edition goes live.', go: 'Play the puzzle' },
+  { href: '/news/crossword/', kicker: 'Weekly · Current events', title: 'Read Between the Headlines', copy: 'A knowledge challenge built from the week\u2019s verified reporting: thirty questions, thirty seconds each, pass to progress. Answers stay protected until the next edition goes live.', go: 'Play this week\u2019s round' },
 ];
 const entertainmentBody = `
     <div class="fmb-sec-shell">
@@ -129,13 +129,13 @@ const entertainmentBody = `
 const entertainment = page({
   slug: 'entertainment',
   title: 'Entertainment | FMB News · Filipino Media Bulletin',
-  description: 'Reader features from FMB News: the Weekly Horoscope published every Sunday, and the FMB Crossword built from the week\u2019s current-affairs reporting.',
+  description: 'Reader features from FMB News: the Weekly Horoscope published every Sunday, and Read Between the Headlines, a knowledge challenge built from the week\u2019s verified reporting.',
   ld: {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: 'Entertainment | FMB News',
     url: `${ORIGIN}/news/entertainment/`,
-    description: 'Reader features from FMB News: Weekly Horoscope and the FMB Crossword.',
+    description: 'Reader features from FMB News: Weekly Horoscope and Read Between the Headlines.',
     inLanguage: 'en-PH',
     isPartOf: { '@type': 'WebSite', name: 'FMB News', url: `${ORIGIN}/news/` },
     hasPart: features.map(f => ({ '@type': 'WebPage', name: f.title, url: `${ORIGIN}${f.href}` })),
@@ -266,7 +266,7 @@ const terms = legalPage({
     ['Images and credits',
       '<p>Photographs and documents from third parties are credited to their source and used under their own licences, including Creative Commons licences where stated. Where an FMB-owned visual is illustrative rather than documentary photography, FMB News should identify it accordingly.</p>'],
     ['Reader features',
-      '<p>The Weekly Horoscope and the FMB Crossword are entertainment features. The horoscope is reflective writing, not prediction, and nothing in it should be treated as professional advice &mdash; medical, financial, legal or otherwise.</p>'],
+      '<p>The Weekly Horoscope and Read Between the Headlines are entertainment features. The horoscope is reflective writing, not prediction, and nothing in it should be treated as professional advice &mdash; medical, financial, legal or otherwise.</p>'],
     ['Accounts, the Daily Brief and alerts',
       '<p>Signing in, subscribing to the Daily Brief and enabling alerts are optional and can be undone at any time. What each one stores is set out on the <a href="/news/privacy/">privacy page</a>. Please do not use these features to impersonate someone else or to submit an address you do not control.</p>'],
     ['Availability',

@@ -1818,3 +1818,42 @@ body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[ari
     color:var(--fmb-shell-dock-active)!important;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Philippine Standard Time, above the journalism
+   ---------------------------------------------------------------------------
+   The Home clock used to sit in .fmb-hero-live-overlay, in a band between the
+   lead headline and the next story. Two things were wrong with that. It read as
+   the lead story's dateline -- a date and a time directly under a headline is
+   a timestamp to any reader -- when it is actually the live site clock, so the
+   front page appeared to stamp its top story with the wrong time. And it broke
+   the run between the lead and the rest of the front page with a grey bar.
+
+   It now sits in a thin strip directly under the app bar, which is where the
+   desktop masthead has always carried it (.ticker-clock), so the two agree.
+   Date left, time right: newspaper furniture, read as furniture.
+
+   This is a passive line of type, not a control. The app bar above it still
+   carries the wordmark and search and nothing else.
+   -------------------------------------------------------------------------- */
+@media(max-width:699px){
+  body.fmb-mobile-first .fmb-mobile-live-strip{
+    display:flex!important;align-items:center!important;justify-content:space-between!important;
+    gap:12px!important;padding:6px 16px!important;min-height:26px!important;
+    background:var(--fmb-shell-bg,transparent)!important;
+    border-bottom:1px solid var(--fmb-shell-line,rgba(20,20,20,.12))!important;
+  }
+  body.fmb-mobile-first .fmb-mobile-live-clock{
+    display:flex!important;align-items:baseline!important;justify-content:space-between!important;
+    width:100%!important;gap:12px!important;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,Helvetica,Arial,sans-serif!important;
+  }
+  body.fmb-mobile-first .fmb-mobile-live-clock [data-fmb-local-date]{
+    font-size:9.5px!important;font-weight:700!important;letter-spacing:.09em!important;
+    text-transform:uppercase!important;color:var(--fmb-shell-muted,#6D7072)!important;
+  }
+  body.fmb-mobile-first .fmb-mobile-live-clock [data-fmb-local-time]{
+    font-size:10.5px!important;font-weight:800!important;letter-spacing:.04em!important;
+    color:var(--fmb-shell-ink,#141414)!important;white-space:nowrap!important;
+  }
+}

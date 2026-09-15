@@ -66,7 +66,7 @@ for(const file of pages){
       'href="/news/sports/">Sports</a>',
       '<summary>Entertainment</summary>',
       'href="/news/horoscope/">Weekly Horoscope</a>',
-      'href="/news/crossword/">FMB Crossword</a>',
+      'href="/news/crossword/">Read Between the Headlines</a>',
       '<h2>FMB News</h2>',
       '<h2>FMB Worldwide</h2>',
       '<h2>FMB Daily Brief</h2>',
