@@ -78,6 +78,7 @@ try{
   assert.equal(await firstOption.getAttribute('data-selected'),'true','Keyboard A must select/arm the first answer choice.');
   assert.equal(await lockButton.isDisabled(),false,'Selecting an answer must enable Lock Answer.');
   assert.equal(await lockButton.getAttribute('aria-keyshortcuts'),'Enter','Lock Answer must expose Enter as its keyboard shortcut.');
+  assert.equal(await lockButton.evaluate((el)=>document.activeElement===el),true,'Keyboard answer selection must hand focus to Lock Answer for deterministic Enter-to-lock behavior.');
 
   await page.keyboard.press('Enter');
   const resolved=page.locator('.rbt-option[data-chosen="correct"],.rbt-option[data-chosen="wrong"]');
@@ -86,6 +87,16 @@ try{
 
   const viewport=await page.evaluate(()=>({scrollWidth:document.documentElement.scrollWidth,clientWidth:document.documentElement.clientWidth}));
   assert(viewport.scrollWidth<=viewport.clientWidth+2,`Game must not overflow horizontally on iPhone 13 (${viewport.scrollWidth}px > ${viewport.clientWidth}px).`);
+
+  const milestone=page.locator('[data-rbt-milestone-flash]');
+  await milestone.waitFor({state:'attached'});
+  await page.evaluate(()=>{document.querySelector('[data-rbt-question-no]').textContent='Question 6 of 30';});
+  await milestone.waitFor({state:'visible',timeout:700});
+  const milestoneText=(await milestone.innerText()).replace(/\s+/g,' ').trim();
+  assert(milestoneText.includes('5 questions cleared.'),'Five-question milestone must acknowledge completed progress.');
+  assert(milestoneText.includes('25 to go'),'Five-question milestone must show the remaining question count.');
+  const milestonePointerEvents=await milestone.evaluate((el)=>getComputedStyle(el).pointerEvents);
+  assert.equal(milestonePointerEvents,'none','Milestone flash must never block answer interaction or steal timer time.');
 
   const js=await page.request.get(`${base}/news/assets/js/fmb-news-read-between-headlines.js`);
   assert(js.ok(),'Built Read Between the Headlines runtime is missing.');
@@ -104,11 +115,11 @@ try{
   const stagePlus=await page.request.get(`${base}/news/assets/js/fmb-news-read-between-headlines-stage-plus.js`);
   assert(stagePlus.ok(),'Built game-stage polish runtime is missing.');
   const stageSource=await stagePlus.text();
-  for(const token of ['aria-keyshortcuts','rbtTension','rbt-score-bump']){
+  for(const token of ['aria-keyshortcuts','rbtTension','rbt-score-bump','rbt-question-arrive','rbt-milestone-flash','questions cleared','showMilestone','stopImmediatePropagation']){
     assert(stageSource.includes(token),`Game-stage polish runtime missing ${token}.`);
   }
 
-  console.log('Read Between the Headlines QA passed: player gate, 30-second countdown, rounded frosted UI, circular metallic answer markers, keyboard and pointer select-then-lock interaction, mobile fit, stage tension, and hidden-answer integrity are intact.');
+  console.log('Read Between the Headlines QA passed: player gate, 30-second countdown, rounded frosted UI, circular metallic answer markers, deterministic keyboard and pointer select-then-lock interaction, mobile fit, stage tension, non-blocking milestone progression, question transitions, and hidden-answer integrity are intact.');
 }finally{
   await browser.close();
 }
