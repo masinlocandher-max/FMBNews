@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="color-scheme" content="light dark">
   <title>Read Between the Headlines | FMB News</title>
-  <meta name="description" content="Play Read Between the Headlines, the weekly FMB News knowledge challenge. Thirty mixed current-events questions, 30 seconds per question, cumulative points, and no visible answer key.">
+  <meta name="description" content="Play Read Between the Headlines, the weekly FMB News knowledge challenge built around recently verified stories. Thirty questions, 30 seconds per question, pass-to-progress rules, and protected answers.">
   <link rel="canonical" href="https://www.francinemariebautista.com/news/crossword/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,8 +13,8 @@
   <link rel="stylesheet" href="/assets/css/fmb-news-read-between-headlines-show.css?v=20260915-v1">
   <link rel="stylesheet" href="/assets/css/fmb-news-read-between-headlines-show-polish.css?v=20260915-v1">
   <link rel="stylesheet" href="/assets/css/fmb-news-read-between-headlines-game.css?v=20260915-v1">
-  <script src="/assets/js/fmb-news-read-between-headlines.js?v=20260915-v6" defer></script>
-  <script src="/assets/js/fmb-news-read-between-headlines-show-ui.js?v=20260915-v2" defer></script>
+  <script src="/assets/js/fmb-news-read-between-headlines.js?v=20260916-v8" defer></script>
+  <script src="/assets/js/fmb-news-read-between-headlines-show-ui.js?v=20260916-v3" defer></script>
   <script src="/assets/js/fmb-news-read-between-headlines-stage-plus.js?v=20260916-v1" defer></script>
 </head>
 <body class="rbt-page">
@@ -33,13 +33,13 @@
         <div class="rbt-start-copy">
           <div class="rbt-kicker">FMB News Weekly Challenge</div>
           <h1 class="rbt-title">Read Between<br><em>the Headlines.</em></h1>
-          <p class="rbt-deck">Thirty questions. Thirty seconds each. One uninterrupted run.</p>
-          <p class="rbt-intro">Current affairs, Philippine public life, science, technology, P-pop, OPM, sports, and world stories appear in a different order every run. Know the headline. Remember the context. Stay in the game.</p>
+          <p class="rbt-deck">Thirty questions from recently verified stories. Thirty seconds each. One uninterrupted run.</p>
+          <p class="rbt-intro">This is not archive trivia and it is not a points farm. Follow the week, remember the context, test what you understood, then come back for the next edition.</p>
 
           <div class="rbt-rules">
-            <div class="rbt-rule"><span>01</span><strong>30 seconds each</strong><p>Every question has its own countdown. Time out means 0 for that question.</p></div>
-            <div class="rbt-rule"><span>02</span><strong>Stay on this page</strong><p>Switching tabs or apps, refreshing, closing, or navigating away records 0 for the entire run.</p></div>
-            <div class="rbt-rule"><span>03</span><strong>Lock your answer</strong><p>Select first, then lock it in. Wrong, skipped, and timed-out questions never reveal the correct answer.</p></div>
+            <div class="rbt-rule"><span>01</span><strong>Fresh every edition</strong><p>Most questions come from the previous 7 days. Older context is used only when it helps explain a current story.</p></div>
+            <div class="rbt-rule"><span>02</span><strong>Pass to progress</strong><p>Score at least 21 out of 30 to clear the edition and unlock the next required weekly challenge.</p></div>
+            <div class="rbt-rule"><span>03</span><strong>One scored run</strong><p>Your first run is the only points-earning attempt. If you do not pass, a qualification retry opens after 24 hours and adds no lifetime points.</p></div>
           </div>
         </div>
 
@@ -58,8 +58,8 @@
               <input class="rbt-player" id="rbt-email" data-rbt-email type="email" maxlength="120" autocomplete="email" inputmode="email" placeholder="Enter your email" required>
             </div>
           </div>
-          <p class="rbt-player-note">Name and email are required. No details, no game.</p>
-          <div class="rbt-integrity"><strong>Game integrity is strict.</strong> The scored run begins the moment you press Start. Leaving or hiding this page makes the result 0.</div>
+          <p class="rbt-player-note" data-rbt-player-note>Your first run is the only scored attempt. Pass 21/30 to progress.</p>
+          <div class="rbt-integrity"><strong>Game integrity is strict.</strong> Once a run begins, switching tabs or apps, refreshing, closing, or navigating away forfeits that attempt. Wrong answers stay protected.</div>
           <div class="rbt-player-error" data-rbt-player-error role="status"></div>
           <button class="rbt-button rbt-button-primary" type="button" data-rbt-start-button>Start the Challenge</button>
         </div>
@@ -112,14 +112,14 @@
               <button class="rbt-button rbt-button-secondary" type="button" data-rbt-skip>Skip</button>
             </div>
 
-            <div class="rbt-privacy"><span>GAME INTEGRITY</span> 30 seconds per question. Timeout earns 0 for that item. Leaving or hiding the page records 0 for the entire run. Correct answers are never revealed after a miss.</div>
+            <div class="rbt-privacy"><span>GAME INTEGRITY</span> 30 seconds per question. Timeout earns 0 for that item. Leaving or hiding the page forfeits the run. Correct answers are never revealed after a miss.</div>
           </article>
         </section>
 
         <aside class="rbt-ladder" aria-label="Question ladder">
           <div class="rbt-ladder-head">
             <span>Challenge ladder</span>
-            <strong>Maximum possible: 300 points</strong>
+            <strong>Pass: 210 points · Maximum: 300</strong>
           </div>
           <ol class="rbt-ladder-list">
             <li data-rbt-ladder-item data-q="1"><span>01</span><strong>10</strong></li>
@@ -163,7 +163,7 @@
 
     <section class="rbt-result" data-rbt-result hidden>
       <div class="rbt-result-stage">
-        <div class="rbt-result-mark">Challenge complete</div>
+        <div class="rbt-result-mark" data-rbt-result-mark>Challenge complete</div>
         <h2>You read between<br>the headlines.</h2>
         <div class="rbt-result-grid">
           <div class="rbt-result-stat"><strong data-rbt-result-score>0</strong><span>Points earned</span></div>
@@ -172,7 +172,7 @@
           <div class="rbt-result-stat"><strong data-rbt-result-lifetime>0</strong><span>Lifetime points</span></div>
         </div>
         <p class="rbt-result-note" data-rbt-result-note></p>
-        <p class="rbt-footnote"><strong>No answer key is shown.</strong> A completed or forfeited scored run cannot be replayed for additional points on this device.</p>
+        <p class="rbt-footnote"><strong>Pass mark: 21/30.</strong> Only the first run can add lifetime points. Qualification retries are for learning and progression only, and the answer key remains protected.</p>
       </div>
     </section>
   </main>
