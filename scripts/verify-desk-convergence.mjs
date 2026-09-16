@@ -43,15 +43,29 @@ if (heroSans.length) {
 // The Light active section label was #fff on warm paper before this convergence
 // -- invisible. It must resolve through a shell token, never to white.
 //
-// This used to be checked on .fmb-mobile-product-rail. That rail is no longer
-// built, so a guard on it can only ever pass. The same bug is now possible on
-// the dock, which is the element that carries the current section, so the guard
-// moved there rather than being deleted -- and it is asserted to match
-// something, because a regex that silently matches nothing is not a guard.
+// This is checked on BOTH navigations, because mobile has two and each marks
+// the current desk in its own way: the section rail under the wordmark, and the
+// dock at the bottom.
+//
+// It briefly checked only the dock, during the window when the rail had been
+// removed along with the app-bar hamburger. Removing the rail was a mistake --
+// the hamburger was the duplicate, because it opened the same panel as the
+// dock's Menu, while the rail names the desks and carries Fact Check, which the
+// five-item dock has no room for. The rail came back; this guard had to come
+// back with it, or the regression it exists to catch would have been invisible
+// on the element where it originally happened.
+//
+// Both are asserted to MATCH something. A regex that silently matches nothing
+// is not a guard, and that is exactly how this check went quiet the first time.
 const lock = await readFile(path.join(cssDir, 'fmb-news-mobile-navigation-lock.css'), 'utf8');
-if (/\.fmb-mobile-product-rail/.test(lock) && !/no longer built/i.test(lock)) {
-  // Not fatal on its own -- the rules are inert -- but worth saying once.
-  console.warn('  Note: fmb-news-mobile-navigation-lock.css still carries .fmb-mobile-product-rail rules for an element that is no longer built.');
+const railRules = lock.match(/\.fmb-mobile-product-rail a\[aria-current="page"\][^{]*\{[^}]*\}/g) || [];
+if (!railRules.length) {
+  throw new Error('No .fmb-mobile-product-rail a[aria-current="page"] rule found; the section rail is built but its current-desk marking is unstyled.');
+}
+for (const rule of railRules) {
+  if (/color\s*:\s*(#fff(f{3})?\b|white\b)/i.test(rule)) {
+    throw new Error(`The section rail marks the current desk in white, which is invisible on warm paper:\n  ${rule}`);
+  }
 }
 const dockRules = lock.match(/\.fmb-editorial-mobile-dock a\[aria-current="page"\][^{]*\{[^}]*\}/g) || [];
 if (!dockRules.length) {
@@ -71,4 +85,4 @@ if (!home.includes('fmb-news-editorial-reference-v2.css')) {
   throw new Error('Home lost its approved editorial reference stylesheet.');
 }
 
-console.log(`Desk convergence verified across ${files.length} stylesheets: no retired plum/violet/gold UI chrome, desk hero titles on the editorial display stack, Light dock active label token-driven and never white, Home reference layer intact.`);
+console.log(`Desk convergence verified across ${files.length} stylesheets: no retired plum/violet/gold UI chrome, desk hero titles on the editorial display stack, Light dock active label token-driven and never white, ${railRules.length} section-rail current-desk rule(s) styled and never white, Home reference layer intact.`);

@@ -203,6 +203,7 @@ const hasArticleImage=html=>/class=["'][^"']*(?:article-figure|cms-article-image
 let htmlPages = 0;
 let articlePages = 0;
 let generatedArticles = 0;
+const remoteImages = new Map();   // url -> first page that cites it
 
 async function scan(target) {
   const info = await stat(target);
@@ -219,6 +220,10 @@ async function scan(target) {
   }
   if (html.includes('/news/news/assets/')) {
     throw new Error(`Double-scoped image asset path found in ${path.relative(root, target)}`);
+  }
+
+  for (const match of html.matchAll(/(?:src|content)="(https:\/\/(?:commons|upload)\.wikimedia\.org\/[^"]+)"/g)) {
+    if (!remoteImages.has(match[1])) remoteImages.set(match[1], path.relative(root, target));
   }
 
   if (html.includes('class="article-grid"') && html.includes('class="article-figure"')) {
@@ -238,8 +243,59 @@ async function scan(target) {
 }
 
 await scan(resolve('dist/news'));
+
+// ---------------------------------------------------------------------------
+// Remote photographs must be bounded, and cited once.
+// ---------------------------------------------------------------------------
+//
+// Localization is deliberately fail-soft: a photograph that cannot be fetched
+// keeps its third-party URL rather than blocking the newsroom from publishing.
+// That is the right trade, but it leaves a hole this closes, because the two
+// ways a surviving remote reference goes wrong are both invisible to every
+// other gate in the build.
+//
+// A camera original costs the READER, not our bucket, so the 25 MiB deploy
+// ceiling above never sees it. Wikimedia originals run to 4608x3456 and tens of
+// megabytes, and the worst offender here was the lead figure on 69 pages.
+//
+// And the same photograph spelled two ways -- a bare URL beside its ?width=
+// form, or a comma written once as "," and once as "%2C" -- is fetched and
+// cached twice by every reader who meets both pages.
+//
+// Written against the built output rather than by calling the localization
+// pass's own helpers, so it measures the result instead of agreeing with the
+// implementation.
+const unbounded = [];
+const byFile = new Map();
+for (const [url, page] of remoteImages) {
+  const redirect = url.match(/\/Special:Redirect\/file\/([^?#]+)/);
+  const thumb = url.match(/\/thumb\/[0-9a-f]\/[0-9a-f]{2}\/([^/?#]+)\/(\d+)px-/);
+  const original = url.match(/\/wikipedia\/commons\/[0-9a-f]\/[0-9a-f]{2}\/([^/?#]+)$/);
+  const width = Number(url.match(/[?&]width=(\d+)/)?.[1] ?? thumb?.[2] ?? 0);
+  if (!width || width > 1600) unbounded.push(`${page}  ${url}`);
+  const name = redirect?.[1] || thumb?.[1] || original?.[1];
+  if (!name) continue;
+  let decoded = name; try { decoded = decodeURIComponent(name); } catch { /* its own identity */ }
+  if (!byFile.has(decoded)) byFile.set(decoded, new Set());
+  byFile.get(decoded).add(url);
+}
+if (unbounded.length) {
+  throw new Error(
+    `${unbounded.length} remote photograph(s) ship without a width limit, so readers download the camera original:\n  `
+    + unbounded.slice(0, 6).join('\n  ')
+    + '\n  Bound them in scripts/localize-article-photography.mjs; never by raising this ceiling.'
+  );
+}
+const duplicated = [...byFile].filter(([, set]) => set.size > 1);
+if (duplicated.length) {
+  throw new Error(
+    `${duplicated.length} photograph(s) are cited under more than one URL, so each is fetched and cached twice:\n  `
+    + duplicated.slice(0, 4).map(([name, set]) => `${name}\n    ${[...set].join('\n    ')}`).join('\n  ')
+  );
+}
+
 if (generatedArticles === 0) throw new Error('Image hard-fix regression: no generated article pages were inspected');
 if (articlePages === 0) throw new Error('Article image regression: no article routes were inspected');
 if (articlePages < generatedArticles) throw new Error(`Article image regression: only ${articlePages} article routes inspected vs ${generatedArticles} generated articles`);
 
-console.log(`FMB News image verification passed: all ${articlePages} article routes have visible content images and og:image metadata; ${generatedArticles} generated articles have figure images; designated Explainer and Daily Brief fallback assets are present; ${htmlPages} built HTML pages load broken/missing-image recovery.`);
+console.log(`FMB News image verification passed: all ${articlePages} article routes have visible content images and og:image metadata; ${generatedArticles} generated articles have figure images; designated Explainer and Daily Brief fallback assets are present; ${htmlPages} built HTML pages load broken/missing-image recovery; ${remoteImages.size} surviving remote photograph(s) are width-bounded and each cited under exactly one URL.`);

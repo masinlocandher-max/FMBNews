@@ -58,21 +58,116 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 // headroom under the platform limit.
 const MAX_BYTES = 6 * 1024 * 1024;
 
-// Ask Wikimedia for a web-sized rendition instead of the camera original.
-// Those originals run to 4608x3456 and tens of megabytes; serving one to a
-// phone reader is indefensible even when it fits. Both of Wikimedia's public
-// URL shapes support a width-limited form, and this uses the documented one for
-// each. Anything else is left exactly as it is.
+// --- canonical remote URL ----------------------------------------------------
+//
+// This runs whether or not a download succeeds, and it is the half of this pass
+// that does not need the network. Two measured defects in the built site, both
+// invisible to every existing gate:
+//
+//   1. 29 of the 56 distinct remote references carry NO width limit. They are
+//      camera originals -- Wikimedia's run to 4608x3456 and tens of megabytes --
+//      and one of them is the lead figure on 69 pages. A phone reader on mobile
+//      data pays for all of it. This is not the deploy-size problem that killed
+//      deploy #699; the bytes never touch our bucket. It is worse, because it is
+//      billed to the reader instead and no build gate can see it.
+//   2. Three photographs are each referenced under TWO URL shapes, so the same
+//      file is fetched and cached twice: Aerial_view_kyiv with and without a
+//      width, Quiapo_..._Habagat-Carina with its comma spelt "," once and "%2C"
+//      the other, and Wikimedia_Servers-0051_19 through both the redirect
+//      endpoint and a direct upload URL.
+//
+// The width-limited Special:Redirect form is what fixes both, and it is chosen
+// because it is already proven in this corpus rather than because it looks
+// right: 27 of the URLs the newsroom publishes today are exactly that shape.
+// MediaWiki's SpecialRedirect passes the width to File::createThumb(), which
+// does not upscale -- ask for 1600 on a 900px original and you get the 900px
+// original, not a 404. That forgiveness is the whole reason to prefer it over a
+// hand-built upload.wikimedia thumbnail path, which has to be right about the
+// hash prefix AND about what the server does when the requested width exceeds
+// the source.
+//
+// DELIBERATELY NOT DONE: converting Special:Redirect to a direct
+// upload.wikimedia.org/thumb/ path. The prefix is computable from an MD5 of the
+// filename, which would save a redirect hop on 49 references. It is left alone
+// because it cannot be tested from here, and an MD5 or an upscale assumption
+// that is wrong breaks 230 references at once with no way to notice before
+// production. A redirect hop is a cost; a broken photograph is a defect.
 const WEB_WIDTH = 1600;
-function webSizedUrl(url) {
-  if (/commons\.wikimedia\.org\/wiki\/Special:Redirect\/file\//i.test(url)) {
-    return url.includes('?') ? url : `${url}?width=${WEB_WIDTH}`;
+
+const REDIRECT_URL = /^(https:\/\/commons\.wikimedia\.org\/wiki\/Special:Redirect\/file\/)([^?#]+)(?:\?([^#]*))?$/i;
+const UPLOAD_ORIGINAL = /^https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\/[0-9a-f]\/[0-9a-f]{2}\/([^/?#]+)$/i;
+const UPLOAD_THUMB = /^(https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\/thumb\/[0-9a-f]\/[0-9a-f]{2}\/([^/?#]+)\/)(\d+)(px-[^/?#]+)$/i;
+
+// Percent-decoding is only ever used to decide whether two URLs name the same
+// file. It never produces a URL we ship, so a filename that will not decode is
+// simply its own identity rather than an error.
+const decode = (name) => { try { return decodeURIComponent(name); } catch { return name; } };
+
+// The file a URL points at, for grouping. null means "not a Wikimedia file
+// reference", which is never grouped or rewritten.
+function wikimediaFile(url) {
+  const redirect = url.match(REDIRECT_URL);
+  if (redirect) return decode(redirect[2]);
+  const original = url.match(UPLOAD_ORIGINAL);
+  if (original) return decode(original[1]);
+  const thumb = url.match(UPLOAD_THUMB);
+  if (thumb) return decode(thumb[2]);
+  return null;
+}
+
+// Bound a single URL to WEB_WIDTH without changing which server serves it, and
+// without ever raising a width the newsroom set deliberately: Bank of Japan is
+// published at 1486 and Putin at 1200, both under the ceiling, and both stay.
+function boundedUrl(url) {
+  const redirect = url.match(REDIRECT_URL);
+  if (redirect) {
+    const [, endpoint, name, query = ''] = redirect;
+    const params = new URLSearchParams(query);
+    const declared = Number(params.get('width'));
+    params.set('width', String(Number.isFinite(declared) && declared > 0 ? Math.min(declared, WEB_WIDTH) : WEB_WIDTH));
+    return `${endpoint}${name}?${params.toString()}`;
   }
-  const m = url.match(/^(https:\/\/upload\.wikimedia\.org\/wikipedia\/[^/]+)\/([0-9a-f])\/([0-9a-f]{2})\/([^/?#]+)$/i);
-  if (m && !/\.svg$/i.test(m[4])) {
-    return `${m[1]}/thumb/${m[2]}/${m[3]}/${m[4]}/${WEB_WIDTH}px-${m[4]}`;
+  // A camera original. SVGs are excluded: they are resolution-independent, so a
+  // width limit buys nothing and rasterizing one would be a downgrade.
+  const original = url.match(UPLOAD_ORIGINAL);
+  if (original && !/\.svg$/i.test(original[1])) {
+    return `https://commons.wikimedia.org/wiki/Special:Redirect/file/${original[1]}?width=${WEB_WIDTH}`;
   }
+  // Already a width-limited thumbnail on the direct host: the best shape there
+  // is. Only touched if the baked-in width is above the ceiling.
+  const thumb = url.match(UPLOAD_THUMB);
+  if (thumb && Number(thumb[3]) > WEB_WIDTH) return `${thumb[1]}${WEB_WIDTH}${thumb[4]}`;
   return url;
+}
+
+// A direct thumbnail beats the redirect endpoint when both are available for
+// the same file: same bytes, one fewer round trip, and the URL is one the
+// corpus already publishes rather than one this pass invented.
+const isDirectThumb = (url) => UPLOAD_THUMB.test(url);
+
+// Collapse every URL naming the same file onto one string, so it is fetched and
+// cached once. Sorted rather than left in page-walk order: this build is
+// byte-reproducible and a Map iteration order that depends on readdir would
+// quietly end that.
+function canonicalMap(allUrls) {
+  const groups = new Map();
+  for (const url of [...allUrls.keys()].sort()) {
+    const file = wikimediaFile(url);
+    if (!file) continue;
+    if (!groups.has(file)) groups.set(file, []);
+    groups.get(file).push(url);
+  }
+  const canonical = new Map();
+  for (const [, members] of groups) {
+    const candidates = [...new Set(members.map(boundedUrl))].sort((a, b) => {
+      if (isDirectThumb(a) !== isDirectThumb(b)) return isDirectThumb(a) ? -1 : 1;
+      const refs = (u) => members.filter((m) => boundedUrl(m) === u).reduce((n, m) => n + allUrls.get(m).size, 0);
+      return refs(b) - refs(a) || a.localeCompare(b);
+    });
+    const winner = candidates[0];
+    for (const url of members) if (url !== winner) canonical.set(url, winner);
+  }
+  return canonical;
 }
 
 // A stable, collision-resistant name derived from the source URL. Two articles
@@ -147,11 +242,24 @@ if (!urls.size) {
   await mkdir(outDir, { recursive: true });
   if (VENDOR_MODE) await mkdir(vendorDir, { recursive: true });
 
-  const local = new Map();        // url -> "/assets/images/article-photos/<file>"
+  // Bound and dedupe first. This needs no network, so it is the part that still
+  // improves the site on a build machine that cannot reach Wikimedia at all --
+  // which is the situation this pass has to survive, not an edge case.
+  const canonical = canonicalMap(urls);
+  const target = (url) => canonical.get(url) || url;
+  const wanted = new Map();       // canonical url -> Set(page)
+  for (const [url, onPages] of urls) {
+    const key = target(url);
+    if (!wanted.has(key)) wanted.set(key, new Set());
+    for (const page of onPages) wanted.get(key).add(page);
+  }
+
+  const local = new Map();        // canonical url -> "/assets/images/article-photos/<file>"
   let vendored = 0; let fetched = 0; let requests = 0;
   const failures = [];
+  const shapeFallbacks = [];
 
-  for (const url of urls.keys()) {
+  for (const url of wanted.keys()) {
     const key = keyFor(url);
     // A vendored copy wins outright -- no network call at all.
     let hit = '';
@@ -169,11 +277,23 @@ if (!urls.size) {
     try {
       if (requests) await sleep(350);
       requests += 1;
-      // Try the web-sized rendition first; fall back to the URL as given.
-      const sized = webSizedUrl(url);
+      // The canonical, width-limited URL first. If that specific rendition is
+      // unavailable, every other URL the corpus already cites for the same file
+      // is tried before giving up -- those are known to work, since the site is
+      // serving them today. Only then is this photograph a failure.
+      const alternates = [...new Set([...urls.keys()].filter((u) => u !== url && target(u) === url))];
       let got;
-      try { got = await download(sized); }
-      catch (err) { if (sized === url) throw err; got = await download(url); }
+      try { got = await download(url); }
+      catch (err) {
+        if (!alternates.length) throw err;
+        let last = err;
+        for (const alternate of alternates) {
+          try { got = await download(alternate); last = null; break; }
+          catch (alternateError) { last = alternateError; }
+        }
+        if (last) throw last;
+        shapeFallbacks.push(url);
+      }
       const { bytes, ext } = got;
       if (bytes.length < 1000) throw new Error(`suspiciously small (${bytes.length} bytes)`);
       if (bytes.length > MAX_BYTES) {
@@ -191,26 +311,57 @@ if (!urls.size) {
   }
 
   // --- rewrite the pages ------------------------------------------------------
-  let rewritten = 0; let references = 0;
+  //
+  // Every reference gets its best available destination: the local copy when
+  // there is one, and the bounded canonical URL when there is not. The second
+  // case is the one that matters on a build machine with no network, and it is
+  // why this loop walks `urls` rather than `local`.
+  //
+  // Anchored on the closing quote, and that is load-bearing rather than tidy.
+  // The bare Aerial_view_kyiv URL is a strict PREFIX of its own ?width=1600
+  // form, so an unanchored replace would find it inside the very URL it is
+  // rewriting to and produce "...jpg?width=1600?width=1600". All 433 remote
+  // references in the built site are quote-terminated -- none sits in a srcset
+  // with a trailing descriptor -- so the quote is a safe anchor.
+  const destination = new Map();
+  for (const url of urls.keys()) {
+    const localPath = local.get(target(url));
+    const to = localPath || target(url);
+    if (to !== url || localPath) destination.set(url, { to, isLocal: Boolean(localPath) });
+  }
+
+  let rewritten = 0; let references = 0; let bounded = 0;
   for (const page of pages) {
     let html = await readFile(page, 'utf8');
     const before = html;
-    for (const [url, localPath] of local) {
-      if (!html.includes(url)) continue;
-      const count = html.split(url).length - 1;
+    for (const [url, { to, isLocal }] of destination) {
+      if (!html.includes(`${url}"`)) continue;
+      references += html.split(`${url}"`).length - 1;
       // Absolute for metadata (social cards resolve nothing relative),
       // site-relative everywhere else so the later asset-scoping pass owns it.
-      html = html.split(`content="${url}"`).join(`content="${SITE}/news${localPath}"`);
-      html = html.split(url).join(localPath);
-      references += count;
+      // A canonical remote URL is already absolute and needs neither.
+      if (isLocal) html = html.split(`content="${url}"`).join(`content="${SITE}/news${to}"`);
+      html = html.split(`${url}"`).join(`${to}"`);
     }
     if (html !== before) { await writeFile(page, html, 'utf8'); rewritten += 1; }
   }
+  for (const url of urls.keys()) if (!local.get(target(url)) && target(url) !== url) bounded += 1;
 
   console.log(
-    `Article photography localized: ${local.size}/${urls.size} distinct photographs now served from FMB News `
+    `Article photography localized: ${local.size}/${wanted.size} distinct photographs now served from FMB News `
     + `(${vendored} vendored in-repo, ${fetched} fetched); ${references} reference(s) rewritten across ${rewritten} page(s).`
   );
+  if (urls.size !== wanted.size || bounded) {
+    console.log(
+      `  Remote references canonicalized without the network: ${urls.size} distinct URL(s) collapsed to ${wanted.size} `
+      + `(${urls.size - wanted.size} duplicate spelling(s) of a photograph already cited), `
+      + `${bounded} still-remote reference(s) bounded to ${WEB_WIDTH}px instead of serving a camera original.`
+    );
+  }
+  if (shapeFallbacks.length) {
+    console.warn(`  ${shapeFallbacks.length} photograph(s) had no ${WEB_WIDTH}px rendition and were fetched at their published URL:`);
+    for (const line of shapeFallbacks.slice(0, 5)) console.warn(`    ${line.slice(0, 120)}`);
+  }
   if (failures.length) {
     console.warn(`  ${failures.length} photograph(s) could not be localized and keep their third-party URL:`);
     for (const line of failures.slice(0, 8)) console.warn(`    ${line}`);
