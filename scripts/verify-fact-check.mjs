@@ -39,6 +39,42 @@ for (const label of RATINGS) must(archive.includes(label), `Fact Check archive m
 const advertised = archive.match(/id="fcCount">(\d+) fact checks/);
 must(advertised && Number(advertised[1]) === index.length, `Archive advertises ${advertised?.[1]} checks but publishes ${index.length}`);
 if (!index.length) must(/No fact checks are published yet/.test(archive), 'An empty Fact Check archive must say so plainly');
+
+// The held queue must be disclosed to readers whenever it exists -- not only
+// when nothing is published.
+//
+// This is the regression it exists to catch, and it had already happened. The
+// disclosure was written as an EMPTY STATE, rendered only when zero checks were
+// published, and publish-current-fact-checks.mjs then stripped it outright when
+// it added the current checks. The moment the desk published its first three,
+// the page stopped mentioning the 123 drafted checks waiting on verification.
+// Nothing failed. The archive still said "3 fact checks", the ledger still said
+// 123 held, and a reader had no way to learn the queue existed.
+//
+// The count is asserted against the ledger, not merely present, because a note
+// that survives while quietly going stale would be worse than none: it would be
+// the desk publishing a number it no longer believes.
+const disclosed = archive.match(/<div class="fc-held-note" data-fmb-held="(\d+)"/);
+if (held.held > 0) {
+  must(disclosed, `${held.held} Fact Check(s) are held, but the archive discloses no held queue to readers.`);
+  must(
+    Number(disclosed[1]) === held.held,
+    `Fact Check archive discloses ${disclosed[1]} held check(s) but the ledger records ${held.held}.`
+  );
+  // Tested against the note's VISIBLE TEXT, with the opening tag and every
+  // other tag removed first. An earlier draft of this check ran the regex over
+  // the whole element, which `data-fmb-held="123"` satisfied all by itself -- so
+  // it passed a note whose prose had been scrubbed of the number entirely. The
+  // attribute is for machines; this asserts the reader is told.
+  const noteProse = archive.match(/<div class="fc-held-note"[\s\S]*?<\/div>/)[0]
+    .replace(/<[^>]*>/g, ' ');
+  must(
+    new RegExp(`\\b${held.held}\\b`).test(noteProse),
+    `The held-queue disclosure carries ${held.held} as data but never shows the number to the reader.`
+  );
+} else {
+  must(!disclosed, 'The archive discloses a held queue while the ledger records none held.');
+}
 must(!/does not reproduce or link the source publication/i.test(archive), 'Fact Check must not publish a note admitting it withholds its source');
 
 const seenClaims = new Map();
@@ -88,5 +124,5 @@ for (const item of index) {
 
 console.log(
   `FMB Fact Check gate passed: ${held.total} items in the corpus, ${index.length} published with primary evidence ` +
-  `attached and FMB-reached ratings, ${held.held} held pending verification.`
+  `attached and FMB-reached ratings, ${held.held} held pending verification and disclosed as held on the archive.`
 );

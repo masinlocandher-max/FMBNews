@@ -1,6 +1,7 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { heldNote, HELD_NOTE_PATTERN } from './lib/fact-check-held-note.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const newsRoot = path.join(root, 'dist', 'news');
@@ -127,6 +128,25 @@ let archive = await readFile(archivePath, 'utf8');
 const newCards = current.map(card).join('');
 archive = archive.replace('<div class="fc-list">', `<div class="fc-list">${newCards}`);
 archive = archive.replace(/<div class="fc-empty">[\s\S]*?<\/div>/i, '');
+
+// Rewrite the held-queue disclosure for the counts this page now shows; do NOT
+// delete it. This line used to strip it, which is how the desk stopped telling
+// readers that 123 drafted checks were waiting on verification the moment the
+// first three published. The held queue is a standing editorial fact about this
+// desk, not an empty state, and it is what makes the promise in the hero --
+// "A check publishes only once FMB has attached the primary records it rests
+// on" -- something a reader can see rather than take on trust.
+const heldCount = Number(JSON.parse(await readFile(ledgerPath, 'utf8')).held || 0);
+const note = heldNote(merged.length, heldCount);
+if (HELD_NOTE_PATTERN.test(archive)) {
+  archive = archive.replace(HELD_NOTE_PATTERN, note);
+} else if (note) {
+  // The renderer always emits the note while anything is held, so arriving here
+  // means the markup moved. Fail rather than publish a page that quietly drops
+  // the disclosure -- that silent drop is the entire defect this replaces.
+  throw new Error('Fact Check archive is missing the held-queue disclosure; render-fmb-fact-check.mjs must emit it before this pass.');
+}
+
 archive = archive.replace(/id="fcCount">\d+ fact checks/i, `id="fcCount">${merged.length} fact checks`);
 const counts = Object.fromEntries(Object.keys(ratingMeta).map(rating => [rating, merged.filter(item => item.rating === rating).length]));
 archive = archive.replace(/<p class="fc-counts">[\s\S]*?<\/p>/i, `<p class="fc-counts">${counts.TRUE} TRUE · ${counts['VERIFIED FACT']} VERIFIED FACT · ${counts.MISLEADING} MISLEADING · ${counts.FALSE} FALSE</p>`);
