@@ -1,4 +1,4 @@
-import { access, readFile } from 'node:fs/promises';
+import { access, readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -80,4 +80,43 @@ must(home.includes('FMB NEWS<span class="dot">.</span>'), 'Homepage editorial ma
 must(home.includes('fmb-editorial-subtitle">Filipino Media Bulletin'), 'Homepage editorial masthead lost the Filipino Media Bulletin subtitle');
 must((home.match(/<span data-pht-clock/g) || []).length === 1, 'Homepage must expose exactly one PHT ticker clock');
 
-console.log('Canonical FMB News network shell verification passed: shared internal routes retain one canonical shell, the homepage preserves its dedicated FMB NEWS. editorial masthead, one PHT ticker/clock process remains authoritative, and superseded shell/ticker/compatibility hardfixes are absent from the build path.');
+// The retired "approved" loader must not come back.
+//
+// fmb-news-approved.js reached 38 pages, including the landing page, and every
+// element it targeted had been gone for some time: 0 [data-fmb-asset], 0
+// #phtClock, 0 [data-mobile-nav], 0 matches for the image its inline hardfix
+// rewrote. What it still did was fetch nine base64 .txt blobs -- 196 KiB
+// encoding ~147 KiB of PNG, declared as image/webp -- to set .src on nothing,
+// and then append fmb-news-cms.css, fmb-news-apple-texture.css and
+// fmb-news-cms.js to <head> at runtime with hand-maintained ?v= strings, which
+// is the stale-cache failure mode content hashing exists to end. It also
+// carried a runtime hotlink to a Wikimedia URL, invisible to the build pass that
+// exists to localize exactly that.
+//
+// Those three assets are ordinary content-hashed tags in the source pages now.
+// Removing the loader moved first contentful paint on the landing page from
+// 848ms to 220ms with zero computed-style change across 2,399 element
+// fingerprints on four routes at two widths.
+//
+// Both halves are asserted: the loader itself, and the base64 blob directory it
+// existed to fetch, because leaving that shipping would be 196 KiB of dead
+// weight in the bucket with nothing pointing at it.
+const distNews = resolve('dist', 'news');
+const approvedLoader = [];
+const walkHtml = async (dir) => {
+  for (const entry of await readdir(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) await walkHtml(full);
+    else if (entry.name.endsWith('.html')) {
+      if ((await readFile(full, 'utf8')).includes('fmb-news-approved.js')) approvedLoader.push(path.relative(root, full));
+    }
+  }
+};
+await walkHtml(distNews);
+must(approvedLoader.length === 0,
+  `${approvedLoader.length} page(s) restored the retired fmb-news-approved.js loader, e.g. ${approvedLoader[0]}. Its targets no longer exist; the CMS assets it injected are content-hashed tags in the source pages.`);
+let blobsShipped = false;
+try { await access(resolve('dist', 'news', 'assets', 'data', 'fmb-news-approved')); blobsShipped = true; } catch {}
+must(!blobsShipped, 'The retired base64 asset blobs under assets/data/fmb-news-approved/ are shipping again; nothing references them.');
+
+console.log('Canonical FMB News network shell verification passed: shared internal routes retain one canonical shell, the homepage preserves its dedicated FMB NEWS. editorial masthead, one PHT ticker/clock process remains authoritative, and superseded shell/ticker/compatibility hardfixes and the retired approved-asset loader are absent from the build path.');

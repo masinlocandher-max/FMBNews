@@ -57,6 +57,14 @@ await writeFile(newsletterPath, (await readFile(newsletterPath, 'utf8')).replace
   `fmb-news-image-hardfix.js?v=${imageGuardVersion}`,
 ));
 const newsletterVersion = await assetVersion('js/fmb-news-newsletter.js');
+// The CMS reader and its two stylesheets. These used to reach 38 pages only by
+// being appended to <head> at runtime by fmb-news-approved.js, with
+// hand-maintained ?v= strings baked into that file -- exactly the stale-cache
+// failure mode content hashing exists to end. They are ordinary tags in the
+// source pages now, so they hash here like every other visual authority.
+const cmsReaderVersion = await assetVersion('js/fmb-news-cms.js');
+const cmsStyleVersion = await assetVersion('css/fmb-news-cms.css');
+const appleTextureVersion = await assetVersion('css/fmb-news-apple-texture.css');
 const stylesheetHref = `/assets/css/fmb-news-matte-system.css?v=${matteVersion}`;
 const stylesheetTag = `<link rel="stylesheet" href="${stylesheetHref}">`;
 const themeStylesheetHref = `/assets/css/fmb-news-theme.css?v=${themeCssVersion}`;
@@ -98,7 +106,7 @@ function addBodyClass(html) {
 }
 
 function ensureBrandAssets(html) {
-  for (const [name, version] of [['newsletter', newsletterVersion], ['image-hardfix', imageGuardVersion]]) {
+  for (const [name, version] of [['newsletter', newsletterVersion], ['image-hardfix', imageGuardVersion], ['cms', cmsReaderVersion]]) {
     html = html.replace(new RegExp(`/assets/js/fmb-news-${name}\\.js(?:\\?v=[^"']+)?`, 'g'), `/assets/js/fmb-news-${name}.js?v=${version}`);
   }
   if (!html.includes('data-fmb-theme-boot')) html = html.replace(/<head>/i, `<head>${themeBootTag}`);
@@ -110,7 +118,7 @@ function ensureBrandAssets(html) {
   else html = html.replace(/\/assets\/css\/fmb-news-sitewide-material\.css\?v=[^"']+/gi, sitewideMaterialHref);
   if (!html.includes('fmb-news-theme.js')) html = html.replace(/<\/head>/i, `${themeRuntimeTag}</head>`);
   else html = html.replace(/\/assets\/js\/fmb-news-theme\.js\?v=[^"']+/gi, themeRuntimeHref);
-  for (const [name, version] of [['editorial-ia', iaVersion], ['publication-landing', chromeVersion], ['product-identity', typographyVersion]]) {
+  for (const [name, version] of [['editorial-ia', iaVersion], ['publication-landing', chromeVersion], ['product-identity', typographyVersion], ['cms', cmsStyleVersion], ['apple-texture', appleTextureVersion]]) {
     const asset = `/assets/css/fmb-news-${name}.css`;
     html = html.replace(new RegExp(asset.replaceAll('.', '\\.') + '(?:\\?v=[^\"\']+)?', 'g'), `${asset}?v=${version}`);
   }
