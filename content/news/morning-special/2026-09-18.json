@@ -1,0 +1,95 @@
+{
+  "date": "2026-09-18",
+  "publishedAt": "2026-09-18T07:00:00+08:00",
+  "editionLabel": "Daily Brief",
+  "title": "FMB Daily Brief — September 18, 2026",
+  "deck": "Duterte’s fitness for trial remains contested at the ICC, the NBI flags possible irregularities in Davao flood-control projects, the World Bank sees Philippine growth improving in the second half, and 4Ps rules are clarified for families beyond the former seven-year limit.",
+  "hero": {
+    "src": "",
+    "alt": "FMB Daily Brief for September 18, 2026",
+    "caption": "Morning edition. No documentary image is used where reuse rights have not been established.",
+    "credit": "FMB News",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260918-001",
+      "kicker": "Philippines · ICC",
+      "headline": "Duterte fitness question remains contested as victims’ lawyers urge ICC to proceed",
+      "deck": "Lawyers representing drug-war victims have asked the International Criminal Court to find former President Rodrigo Duterte fit for trial, while his defense has argued that significant memory impairment prevents meaningful participation.",
+      "body": [
+        "GMA News reported early Friday that the common legal representatives of victims asked the ICC to declare former President Rodrigo Duterte fit for trial, arguing that the legal criteria for fitness are satisfied.",
+        "The position remains contested. AFP previously reported that Duterte’s defense says he has significant memory impairment that prevents him from retaining recent information and properly instructing counsel. Reuters reported that Duterte appeared in court on September 16 as judges considered his health and ability to stand trial.",
+        "Why it matters: the fitness ruling determines whether the crimes-against-humanity case can proceed toward the scheduled trial. A finding on fitness is procedural and does not determine guilt or innocence.",
+        "What to watch: the Trial Chamber’s ruling on fitness, any accommodations ordered for Duterte’s participation, and whether the November trial timetable changes."
+      ],
+      "sources": [
+        {"label": "GMA News — Victims' counsels to ICC: Declare former President Duterte fit for trial", "url": "https://www.gmanetwork.com/news/topstories/nation/1002786/victims-counsels-to-icc-declare-former-president-duterte-fit-for-trial/story/"},
+        {"label": "Reuters — Former Philippines leader Duterte appears in ICC courtroom", "url": "https://www.reuters.com/world/asia-pacific/former-philippines-leader-duterte-appears-icc-courtroom-2026-09-16/"},
+        {"label": "AFP — Duterte suffering 'significant memory impairment': defence", "url": "https://www.afp.com/de/node/3840012"}
+      ]
+    },
+    {
+      "id": "FMB-DB-20260918-002",
+      "kicker": "Philippines · Public Works",
+      "headline": "NBI flags 47 Davao flood-control projects for further scrutiny",
+      "deck": "The National Bureau of Investigation says documents raised red flags over 47 of 100 projects in one Davao City district, while stressing that only six were clearly problematic at this stage.",
+      "body": [
+        "GMA News reported that NBI Director Melvin Matibag said documents from the Department of Public Works and Highways raised concerns over 47 flood-control projects in Davao City’s first district. Matibag later stressed that six of the 47 were clearly problematic, citing possible ghost or substandard projects and multiple budgets tied to the same coordinates.",
+        "Inquirer reporting on the same disclosure said investigators are preparing subpoenas for contractors and public-works officials connected with the projects.",
+        "Why it matters: flood-control spending is a public-safety issue as well as a procurement issue. Red flags are grounds for investigation, not proof that criminal wrongdoing has occurred.",
+        "What to watch: subpoena responses, engineering and audit findings, identification of specific projects with confirmed defects, and whether investigators recommend charges."
+      ],
+      "sources": [
+        {"label": "GMA News — NBI flags 47 flood control projects in Davao City", "url": "https://www.gmanetwork.com/news/topstories/regions/1002748/nbi-flags-47-flood-control-projects-in-davao-city/story/"},
+        {"label": "Philippine Daily Inquirer — Red flags seen in 47 flood control projects in Paolo Duterte’s district", "url": "https://newsinfo.inquirer.net/"}
+      ]
+    },
+    {
+      "id": "FMB-DB-20260918-003",
+      "kicker": "Economy · Growth",
+      "headline": "World Bank sees Philippine growth picking up in second half",
+      "deck": "BusinessWorld reports that the World Bank expects economic momentum to improve as public infrastructure spending strengthens, while external risks remain important.",
+      "body": [
+        "BusinessWorld reported Friday that the World Bank sees Philippine economic growth improving in the second half of 2026, supported in part by stronger public infrastructure spending.",
+        "The outlook matters because faster execution of productive infrastructure can support demand now while improving logistics and capacity over time. The quality and integrity of spending remain as important as the headline amount.",
+        "The peso also edged stronger on Thursday as oil prices eased, according to BusinessWorld, offering some near-term relief after recent currency weakness.",
+        "What to watch: actual third-quarter growth data, infrastructure disbursement, inflation and oil prices, the peso, and any revisions to full-year forecasts."
+      ],
+      "sources": [
+        {"label": "BusinessWorld — Philippine growth seen picking up in second half — World Bank", "url": "https://bworldonline.com/top-stories/2026/09/18/778297/philippine-growth-seen-picking-up-in-second-half-world-bank/"},
+        {"label": "BusinessWorld — Peso inches up as oil prices ease", "url": "https://bworldonline.com/banking-finance/2026/09/18/778201/peso-inches-up-as-oil-prices-ease/"}
+      ]
+    },
+    {
+      "id": "FMB-DB-20260918-004",
+      "kicker": "Public Service · 4Ps",
+      "headline": "DSWD clarifies who can stay in 4Ps beyond the former seven-year limit",
+      "deck": "Families assessed at Survival or Subsistence levels may remain eligible beyond seven years, but continuation is not automatic and requires annual reassessment.",
+      "body": [
+        "GMA News reported that the Department of Social Welfare and Development says the extension beyond the former seven-year maximum applies to beneficiary households classified as Level 1, or Survival, and Level 2, or Subsistence.",
+        "DSWD said 1,381,625 families currently qualify for the extension. Families must continue meeting program conditions and will be reassessed annually using the Social Welfare and Development Indicator. Households that reach Level 3, or Self-Sufficient, move toward transition rather than continued extension.",
+        "Why it matters: the clarification affects more than a million low-income households and shifts the exit rule toward assessed need rather than a simple time limit.",
+        "What to watch: implementation of annual reassessments, how many families transition out of the program, and whether budget allocations keep pace with eligible households."
+      ],
+      "sources": [
+        {"label": "GMA News — Who may continue receiving 4Ps aid beyond 7 years?", "url": "https://www.gmanetwork.com/news/topstories/nation/1002782/who-may-continue-receiving-4ps-aid-beyond-7-years/story/"}
+      ]
+    },
+    {
+      "id": "FMB-DB-20260918-005",
+      "kicker": "Worldwide · Public Health",
+      "headline": "Fiji declares national HIV emergency as infections surge",
+      "deck": "Fiji has declared a national HIV emergency after new diagnoses rose sharply, with the government expanding testing, prevention and treatment measures.",
+      "body": [
+        "Agence France-Presse reported that Fiji declared a national HIV emergency after recording 2,016 new diagnoses in 2025, 16 times the 2019 level. Authorities estimate about one in 60 adults in the Pacific nation is living with HIV.",
+        "The government said it is expanding free testing, prevention services, harm-reduction measures and treatment. UNAIDS welcomed plans for a needle-and-syringe program as injecting drug use contributes substantially to transmission alongside sexual transmission.",
+        "Why it matters: Fiji’s outbreak is a regional public-health warning about how quickly HIV can accelerate when prevention, testing and harm reduction fail to keep pace with changing transmission patterns.",
+        "What to watch: implementation of the emergency response, testing and treatment coverage, harm-reduction legislation and whether new infections begin to decline."
+      ],
+      "sources": [
+        {"label": "AFP via GMA News — Fiji declares national HIV crisis", "url": "https://www.gmanetwork.com/news/topstories/world/1002783/fiji-declares-national-hiv-crisis/story/"}
+      ]
+    }
+  ]
+}
