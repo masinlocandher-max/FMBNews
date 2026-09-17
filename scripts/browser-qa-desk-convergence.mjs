@@ -18,14 +18,21 @@ const DESKS = [
 const DOCK_DESKS = new Set(['Home', 'World', 'Sports', 'Briefing']);
 
 // Retired plum/violet. Deliberately excludes the Fact Check verdict palette:
-// VERIFIED FACT blue (#1677C8) would trip any blue-ish test, and its colour is
+// VERIFIED FACT blue (#1570BC) would trip any blue-ish test, and its colour is
 // the verdict.
+//
+// The excluded value tracks the verdict palette and must be updated with it.
+// It was #1677C8 until that measured 4.20:1 against the badge's warm-paper
+// ground -- below AA at 11px -- and was darkened to the nearest hue-preserving
+// value that passes. Leaving the old hex here would not have been conservative:
+// the new blue is not on the list, so the guard would have reported the desk's
+// own verdict colour as retired plum chrome.
 const isRetired = (v) => {
   const p = String(v).match(/[\d.]+/g);
   if (!p) return false;
   if (p[3] !== undefined && Number(p[3]) === 0) return false;
   const [r, g, b] = p.map(Number);
-  if (r === 22 && g === 119 && b === 200) return false;   // VERIFIED FACT blue
+  if (r === 21 && g === 112 && b === 188) return false;   // VERIFIED FACT blue
   if (r === 91 && g === 174 && b === 238) return false;   // its dark variant
   if (b > 150 && g > 120 && r < 120) return false;        // remaining verdict blues
   return b > r && b > g + 8 && (b - g) > 18 && b > 40;

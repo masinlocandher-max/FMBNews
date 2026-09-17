@@ -109,4 +109,23 @@ for(let i=0;i<items.length;i++){
   if(i>0)must(Date.parse(items[i-1].pubDate)>=Date.parse(item.pubDate),'RSS items are not newest-first');
 }
 
-console.log(`News distribution verification passed: ${sitemapUrls.length} exact canonical sitemap URLs, ${newsUrls.length} truthful Google News entries from the last 48 hours, ${items.length} newest-first RSS reports, and RSS autodiscovery across ${indexablePages} indexable newsroom pages.`);
+// The custom 404. wrangler.jsonc sets "not_found_handling": "404-page", so
+// Cloudflare serves dist/404.html for every address ASSETS cannot match. That
+// file did not exist, and every mistyped or expired /news/ URL got Cloudflare's
+// default plain 404 -- no masthead, no navigation, no way back in.
+//
+// Asserted to be SELF-CONTAINED as well as present. It sits outside dist/news,
+// so the passes that rewrite content-hashed asset paths never walk it; a
+// stylesheet <link> written here would go stale the first time that file's hash
+// changed and leave an unstyled error page nobody notices until a reader lands
+// on one. Inline styling is the property that keeps it working, so it is the
+// property that is gated.
+const notFound = await readFile(path.join(root,'dist','404.html'),'utf8');
+must(/<meta[^>]+name=["\']robots["\'][^>]*noindex/i.test(notFound), 'The 404 page must declare noindex; an error page does not belong in search.');
+must(/<style>/i.test(notFound), 'The 404 page must carry its styling inline.');
+must(!/<link[^>]+rel=["\']stylesheet/i.test(notFound), 'The 404 page must not depend on a content-hashed stylesheet it cannot keep in sync.');
+must(!/<script/i.test(notFound), 'The 404 page must not depend on JavaScript to render.');
+const recovery = (notFound.match(/href="\/news\/[^"]*"/g) || []).length;
+must(recovery >= 5, `The 404 page offers only ${recovery} way(s) back into FMB News; it must offer the desks and the archive.`);
+
+console.log(`News distribution verification passed: ${sitemapUrls.length} exact canonical sitemap URLs, ${newsUrls.length} truthful Google News entries from the last 48 hours, ${items.length} newest-first RSS reports, RSS autodiscovery across ${indexablePages} indexable newsroom pages, and a self-contained custom 404 with ${recovery} routes back in.`);

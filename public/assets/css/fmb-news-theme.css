@@ -656,7 +656,7 @@ body.fmb-fact-check-route :is(.fc-panel,.fc-card,.fc-legend){
     border-left:4px solid var(--fmb-shell-rule,rgba(20,20,20,.14))!important;
   }
   html:root body.fmb-mobile-first .fc-rating-key:has(.fc-true){border-left-color:#1B7F3B!important}
-  html:root body.fmb-mobile-first .fc-rating-key:has(.fc-fact){border-left-color:#1677C8!important}
+  html:root body.fmb-mobile-first .fc-rating-key:has(.fc-fact){border-left-color:#1570BC!important}
   html:root body.fmb-mobile-first .fc-rating-key:has(.fc-misleading){border-left-color:#B4740A!important}
   html:root body.fmb-mobile-first .fc-rating-key:has(.fc-false){border-left-color:#D71920!important}
   html:root body.fmb-mobile-first .fc-rating-key{text-align:left!important}

@@ -46,6 +46,15 @@
     --fmb-shell-dock-rule:#303538;
     --fmb-shell-active:#fff;
     --fmb-shell-dock-active:#db4056;
+    /* Legacy aliases. fmb-news-mobile-global.css declares --fmb-shell-bg and
+       --fmb-shell-line once on :root, with LIGHT values, and never flips them
+       for Dark. They read like part of this maintained set and are not, so a
+       rule reaching for them paints a daylight panel on a night page -- which
+       is exactly what happened to the Home PHT strip. Pointing them at the
+       tokens this file actually maintains closes that trap for every consumer
+       at once rather than one rule at a time. */
+    --fmb-shell-bg:var(--fmb-shell-surface);
+    --fmb-shell-line:var(--fmb-shell-rule);
   }
 
   /* Light appearance. Warm FMB White paper, Editorial Black ink, Steel Gray for
@@ -63,6 +72,8 @@
     --fmb-shell-dock-rule:rgba(20,20,20,.14);
     --fmb-shell-active:#141414;
     --fmb-shell-dock-active:var(--fmb-mobile-red);
+    --fmb-shell-bg:var(--fmb-shell-surface);
+    --fmb-shell-line:var(--fmb-shell-rule);
   }
 
   html,body{overflow-x:clip!important}
@@ -1571,6 +1582,19 @@ body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[ari
         Dark    VERIFIED FACT  #1677C8 on #171c1f      3.69:1
                 FALSE          #DF2F2F on #171c1f      3.75:1
 
+      Two more were found later, in LIGHT, which this block does not cover
+      because it is scoped to max-width:699px while the base palette also
+      serves desktop:
+
+        Light   VERIFIED FACT  #1677C8 on warm paper   4.20:1
+                FALSE          #DF2F2F on warm paper   4.13:1
+
+      Those two were corrected at the BASE value instead -- #1570BC and #CF2C2C,
+      the nearest hue-preserving values that reach AA -- so the fix reaches
+      desktop too. The rating-key border and the QA hardfix's copy of the
+      palette moved with them; the desk-convergence guard excludes the verdict
+      blue by exact hex and caught the border when it did not.
+
       Each verdict keeps its hue, because the hue is the verdict: green stays
       green, amber stays amber, blue stays blue, red stays red. Only lightness
       moves, per theme -- darker on paper, lifted on newsroom black. No verdict,
@@ -1840,8 +1864,14 @@ body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[ari
   body.fmb-mobile-first .fmb-mobile-live-strip{
     display:flex!important;align-items:center!important;justify-content:space-between!important;
     gap:12px!important;padding:6px 16px!important;min-height:26px!important;
-    background:var(--fmb-shell-bg,transparent)!important;
-    border-bottom:1px solid var(--fmb-shell-line,rgba(20,20,20,.12))!important;
+    /* --fmb-shell-surface and --fmb-shell-rule, NOT --fmb-shell-bg/-line.
+       The first pair is redefined per appearance at the top of this file; the
+       second pair is declared once on :root in fmb-news-mobile-global.css with
+       light values and is never flipped. Painting this strip with the second
+       pair put a #f5f5f7 panel under Dark mode's near-white ink and measured
+       1.02:1 -- the PHT clock was there, correctly positioned, and invisible. */
+    background:var(--fmb-shell-surface,transparent)!important;
+    border-bottom:1px solid var(--fmb-shell-rule,rgba(20,20,20,.12))!important;
   }
   body.fmb-mobile-first .fmb-mobile-live-clock{
     display:flex!important;align-items:baseline!important;justify-content:space-between!important;

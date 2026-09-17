@@ -10,9 +10,9 @@ const imageRoot=path.join(newsRoot,'assets','images','fact-check');
 
 const ratingVisuals={
   true:{label:'TRUE',color:'#2fb344',shape:'<circle cx="32" cy="32" r="25"/><path d="m19 32 9 9 18-20"/>'},
-  fact:{label:'VERIFIED FACT',color:'#1677c8',shape:'<path d="M32 6 52 15v14c0 14-8 23-20 29C20 52 12 43 12 29V15z"/><path d="m21 32 8 8 15-17"/>'},
+  fact:{label:'VERIFIED FACT',color:'#1570bc',shape:'<path d="M32 6 52 15v14c0 14-8 23-20 29C20 52 12 43 12 29V15z"/><path d="m21 32 8 8 15-17"/>'},
   misleading:{label:'MISLEADING',color:'#ef9d00',shape:'<path d="M32 7 57 54H7z"/><path d="M32 20v18"/><circle cx="32" cy="46" r="2"/>'},
-  false:{label:'FALSE',color:'#df2f2f',shape:'<circle cx="32" cy="32" r="25"/><path d="m22 22 20 20M42 22 22 42"/>'}
+  false:{label:'FALSE',color:'#cf2c2c',shape:'<circle cx="32" cy="32" r="25"/><path d="m22 22 20 20M42 22 22 42"/>'}
 };
 
 function svgFor({label,color,shape}){

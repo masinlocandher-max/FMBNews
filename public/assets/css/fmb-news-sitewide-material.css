@@ -577,3 +577,43 @@ body.fmb-matte-system{text-rendering:optimizeLegibility}
   body.fmb-news-route :is(.archive-row,.fmb-search-result)::before{transition:none!important}
   html:root body.fmb-ref.fmb-network-landing .network-product:is(:hover,:focus-visible){transform:none!important}
 }
+
+/* ---------------------------------------------------------------------------
+   Contrast corrections, measured
+   ---------------------------------------------------------------------------
+   Three elements rendered below WCAG AA and are corrected to the nearest
+   hue-preserving value that passes. Every number here came from sampling the
+   flattened ground behind the real element in a real browser, not from reading
+   the stylesheet -- each of these sits on a panel whose colour no declaration
+   on the element mentions.
+
+   1. The desk signal line. --fmb-desk-accent is #D71920 in Light, and that is
+      correct FMB red for ink on warm paper. The desk hero it is painted on is
+      near-black in BOTH appearances, so at 9px it measured 3.82:1. Dark already
+      uses a lifted #F53A3F here and passes; Light was using the paper value on
+      a night panel. Lifted to the same degree, for the same reason.
+
+   2. The Home feature-card label, 4.21:1 at 8px on the same near-black card.
+
+   3. The article photo credit in Dark, 3.88:1 at 12px.
+
+   The FMB red itself is unchanged. What changed is which red is used for small
+   type on a dark ground, which the palette already accepted in Dark.
+   -------------------------------------------------------------------------- */
+/* Three class names deep, deliberately. The rule being corrected is
+   `body.<route> .<desk>-hero :is(.kicker,.eyebrow,small,.desk-label)` in
+   fmb-news-theme.css, and :is() takes the specificity of its MOST specific
+   argument -- the classes -- so it scores (0,3,1) even when it matches the bare
+   `small`. Both declarations are !important, so specificity alone decides, and
+   a shorter selector here loses however late this sheet loads. It was written
+   short first and measured unchanged at 3.82:1, which is how that was found. */
+body.fmb-worldwide-route .world-hero .fmb-product-signal small,
+body.fmb-sports-route .sports-hero .fmb-product-signal small,
+body.fmb-fact-check-route .fc-hero .fmb-product-signal small,
+body.fmb-explainer-route .explainer-hero .fmb-product-signal small,
+body.fmb-daily-brief-route .brief-hero .fmb-product-signal small{color:#de4046!important}
+
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card>div>span{color:#d5485c!important}
+
+html[data-fmb-theme="dark"] figcaption.credit,
+html[data-fmb-theme="dark"] .article-figure figcaption{color:#817883!important}

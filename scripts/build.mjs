@@ -153,4 +153,10 @@ await rewriteAssetPaths(newsRoot);
 // routes, canonical URLs, article metadata and scoped asset paths have settled.
 await import('./generate-news-distribution.mjs');
 
+// Last, and outside dist/news on purpose. Cloudflare serves dist/404.html for
+// any address ASSETS cannot match; it is self-contained so the passes that walk
+// dist/news and rewrite hashed asset paths cannot leave it pointing at a
+// stylesheet that no longer exists.
+await import('./render-404.mjs');
+
 console.log('Built Filipino Media Bulletin with one canonical homepage renderer; five official editorial products: FMB News, FMB Worldwide, FMB Explainer, FMB Fact Check, and FMB Daily Brief; News/Worldwide/Sports editorial desks; localized visual assets; product-designated fallback imagery; guaranteed article imagery; personalization/PWA support; live utilities; newsroom search and intake; canonical sitemap and RSS distribution; a sealed active crossword runtime; explicit editorial trust surfaces; normalized search/AI discovery metadata; one PHT ticker/clock shell; a matte-glass System/Light/Dark brand system; readable trust pages; and no duplicate legacy homepage generation.');
