@@ -37,7 +37,7 @@
   }
 
   function storyHref(article) {
-    return article.canonical_path || `/news/read/${encodeURIComponent(article.slug)}/`;
+    return article.canonical_path || `/news/${encodeURIComponent(article.slug)}/`;
   }
 
   function makeImage(src, alt, className = '') {
@@ -64,6 +64,98 @@
       if (typeof source === 'string') return { url: source, publisher: 'Source' };
       return source && typeof source === 'object' ? source : null;
     }).filter(Boolean);
+  }
+
+  async function hydratePublicationHomepage() {
+    const desktop = document.querySelector('.network-home');
+    const mobile = document.querySelector('[data-fmb-mobile-home]');
+    if (!desktop && !mobile) return;
+
+    const fields = ['slug','canonical_path','title','summary','deck','category','region','image_url','image_credit','published_at'].join(',');
+    const articles = await get('news_articles', `select=${fields}&status=eq.published&order=published_at.desc&limit=8`);
+    if (!Array.isArray(articles) || !articles.length) return;
+
+    const lead = articles[0];
+    const leadHref = storyHref(lead);
+    const leadDeck = lead.deck || lead.summary || 'Verified reporting with context and what to watch next.';
+    const leadCategory = lead.region || lead.category || 'FMB News';
+
+    const desktopLead = desktop?.querySelector('.editorial-lead-story');
+    if (desktopLead) {
+      desktopLead.href = leadHref;
+      const image = desktopLead.querySelector('.editorial-lead-image');
+      if (image) {
+        image.src = lead.image_url || plateFor(lead.slug || lead.title);
+        image.alt = lead.title || 'FMB News';
+      }
+      const kicker = desktopLead.querySelector('.editorial-kicker');
+      if (kicker) kicker.textContent = leadCategory;
+      const title = desktopLead.querySelector('h1');
+      if (title) title.textContent = lead.title || '';
+      const deck = desktopLead.querySelector('p');
+      if (deck) deck.textContent = leadDeck;
+    }
+
+    const desktopStatus = desktop?.querySelector('.editorial-status-desk');
+    if (desktopStatus) {
+      desktopStatus.href = leadHref;
+      const headline = desktopStatus.querySelector('b');
+      if (headline) headline.textContent = lead.title || 'Latest verified report';
+      const detail = desktopStatus.querySelector('p');
+      if (detail) detail.textContent = leadDeck;
+    }
+
+    const mobileLead = mobile?.querySelector('.fmb-app-brand-hero');
+    if (mobileLead) {
+      const image = mobileLead.querySelector('.fmb-editorial-mobile-lead-image');
+      if (image) {
+        image.src = lead.image_url || plateFor(lead.slug || lead.title);
+        image.alt = lead.title || 'FMB News';
+      }
+      const kicker = mobileLead.querySelector('.fmb-editorial-mobile-kicker');
+      if (kicker) kicker.textContent = leadCategory;
+      const title = mobileLead.querySelector('[data-fmb-greeting-line]');
+      if (title) title.textContent = lead.title || '';
+      const deck = mobileLead.querySelector('.fmb-approved-hero-deck');
+      if (deck) deck.textContent = leadDeck;
+    }
+
+    const mobileList = mobile?.querySelector('.fmb-app-story-list');
+    if (mobileList) {
+      const fragment = document.createDocumentFragment();
+      for (const article of articles.slice(1, 6)) {
+        const link = el('a', 'fmb-app-story-row');
+        link.href = storyHref(article);
+        link.appendChild(makeImage(article.image_url, article.title || 'FMB News'));
+
+        const copy = el('div', 'fmb-app-story-copy');
+        const meta = el('div', 'fmb-app-story-meta');
+        meta.appendChild(el('span', '', article.region || article.category || 'FMB News'));
+        meta.appendChild(el('span', '', '·'));
+        const time = document.createElement('time');
+        time.dateTime = article.published_at || '';
+        time.textContent = formatDate(article.published_at, { month: 'short', day: 'numeric' });
+        meta.appendChild(time);
+        copy.appendChild(meta);
+        copy.appendChild(el('h3', '', article.title || 'Latest verified report'));
+        link.appendChild(copy);
+        fragment.appendChild(link);
+      }
+      mobileList.replaceChildren(fragment);
+    }
+
+    const tickerGroups = mobile?.querySelectorAll('.fmb-approved-hero-ticker-group');
+    if (tickerGroups?.length) {
+      for (const group of tickerGroups) {
+        const fragment = document.createDocumentFragment();
+        for (const article of articles.slice(0, 5)) fragment.appendChild(el('i', '', article.title));
+        group.replaceChildren(fragment);
+      }
+      const ticker = mobile.querySelector('.fmb-approved-hero-ticker');
+      if (ticker) ticker.href = leadHref;
+    }
+
+    document.documentElement.dataset.fmbCmsHome = 'live';
   }
 
   async function hydrateHomepageStories() {
@@ -170,7 +262,10 @@
     const mount = document.querySelector('[data-cms-article]');
     if (!mount) return;
     const pathMatch = location.pathname.match(/\/news\/read\/([^/]+)\/?$/i);
-    const slug = pathMatch?.[1] ? decodeURIComponent(pathMatch[1]) : new URLSearchParams(location.search).get('slug');
+    const prettyMatch = location.pathname.match(/^\/news\/([^/]+)\/?$/i);
+    const querySlug = new URLSearchParams(location.search).get('slug');
+    const slugValue = pathMatch?.[1] || querySlug || prettyMatch?.[1] || '';
+    const slug = slugValue ? decodeURIComponent(slugValue) : '';
     if (!slug) { mount.replaceChildren(el('p', 'cms-error', 'No article was specified.')); return; }
 
     const fields = ['slug','title','kicker','deck','summary','body','category','region','author_line','image_url','image_credit','published_at','updated_at','seo_title','seo_description','content_json','sources_json','image_metadata','canonical_path'].join(',');
@@ -279,7 +374,7 @@
 
   async function boot() {
     await Promise.allSettled([
-      hydrateHomepageStories(), hydrateWorldwideLanding(), hydrateBriefFeature(),
+      hydratePublicationHomepage(), hydrateHomepageStories(), hydrateWorldwideLanding(), hydrateBriefFeature(),
       renderArticleReader(), renderEdition('worldwide'), renderEdition('brief')
     ]);
   }
