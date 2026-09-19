@@ -46,6 +46,25 @@ function isCrosswordAnswerAsset(pathname) {
   return pathname === '/news/assets/js/fmb-news-weekly-crossword.js';
 }
 
+const RESERVED_NEWS_SLUGS = new Set([
+  'about', 'archive', 'assets', 'crossword', 'explainer', 'fact-check',
+  'fmb-brief', 'horoscope', 'privacy', 'read', 'search', 'sports',
+  'submit', 'terms', 'world'
+]);
+
+function prettyArticleSlug(pathname) {
+  const match = pathname.match(/^\/news\/([^/]+)\/?$/i);
+  if (!match) return null;
+  let slug;
+  try {
+    slug = decodeURIComponent(match[1]);
+  } catch {
+    return null;
+  }
+  if (!slug || RESERVED_NEWS_SLUGS.has(slug.toLowerCase())) return null;
+  return slug;
+}
+
 function crosswordFairPlayPage() {
   const html = `<!doctype html>
 <html lang="en-PH">
@@ -302,7 +321,17 @@ export default {
           'X-Robots-Tag': 'noindex, follow',
         });
       }
-      return serveCmsReader(request, env, slug, url.searchParams);
+      const canonical = new URL(url);
+      canonical.pathname = `/news/${encodeURIComponent(slug)}/`;
+      canonical.search = '';
+      return withWorkerMarker(Response.redirect(canonical.toString(), 308));
+    }
+
+    const cmsPrettySlug = prettyArticleSlug(url.pathname);
+    if (cmsPrettySlug) {
+      const staticArticle = await serveAsset(request, env, url.pathname, url.searchParams);
+      if (staticArticle.status !== 404) return staticArticle;
+      return serveCmsReader(request, env, cmsPrettySlug, url.searchParams);
     }
 
     if (/^\/news\/fact-check\/[^/]+\/?$/.test(url.pathname)) {
