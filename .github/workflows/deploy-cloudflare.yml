@@ -116,13 +116,16 @@ jobs:
           fetch_with_retry 'https://www.francinemariebautista.com/news/sitemap.xml' /tmp/news-sitemap.xml /tmp/news-sitemap.headers 'FMB News sitemap'
           grep -q 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"' /tmp/news-sitemap.xml
           grep -q 'https://www.francinemariebautista.com/news/' /tmp/news-sitemap.xml
+          grep -q 'https://www.francinemariebautista.com/news/philippines-womens-soft-tennis-first-asian-games-medal-september-19-2026/' /tmp/news-sitemap.xml
 
           fetch_with_retry 'https://www.francinemariebautista.com/news/news-sitemap.xml' /tmp/google-news-sitemap.xml /tmp/google-news-sitemap.headers 'Google News sitemap'
           grep -q 'xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"' /tmp/google-news-sitemap.xml
+          grep -q 'Generated from live FMB News CMS' /tmp/google-news-sitemap.xml
 
           fetch_with_retry 'https://www.francinemariebautista.com/news/feed.xml' /tmp/news-feed.xml /tmp/news-feed.headers 'FMB News RSS feed'
           grep -q '<rss version="2.0"' /tmp/news-feed.xml
           grep -q '<title>FMB News</title>' /tmp/news-feed.xml
+          grep -q '<generator>FMB News live CMS</generator>' /tmp/news-feed.xml
 
           fetch_with_retry 'https://www.francinemariebautista.com/news/world/' /tmp/news-world.html /tmp/news-world.headers 'FMB Worldwide'
           grep -qi 'FMB Worldwide' /tmp/news-world.html
