@@ -133,6 +133,34 @@ jobs:
           fetch_with_retry 'https://www.francinemariebautista.com/news/explainer/' /tmp/news-explainer.html /tmp/news-explainer.headers 'FMB Explainer'
           grep -qi 'FMB Explainer' /tmp/news-explainer.html
 
+          fetch_with_retry 'https://www.francinemariebautista.com/news/philippines-womens-soft-tennis-first-asian-games-medal-september-19-2026/' /tmp/news-cms-article.html /tmp/news-cms-article.headers 'FMB News live CMS canonical article'
+          grep -Fqi 'PH Women’s Soft Tennis Secures Historic First Asian Games Medal' /tmp/news-cms-article.html
+
+          legacy_headers="$(curl --silent --show-error --head --connect-timeout 10 --max-time 30 \
+            -H 'Cache-Control: no-cache' -H 'Pragma: no-cache' \
+            'https://www.francinemariebautista.com/news/read/philippines-womens-soft-tennis-first-asian-games-medal-september-19-2026/' | tr -d '\r' || true)"
+          if echo "$legacy_headers" | grep -Eq '^HTTP/[^ ]+ 308' && \
+             echo "$legacy_headers" | grep -Eqi '^location: https://www\.francinemariebautista\.com/news/philippines-womens-soft-tennis-first-asian-games-medal-september-19-2026/?          # This repository owns /news only. The parent site's homepage is an
+          # independent deployment and must never make a healthy FMB News release fail.
+          apex_headers="$(curl --silent --show-error --head --connect-timeout 10 --max-time 30 \
+            -H 'Cache-Control: no-cache' -H 'Pragma: no-cache' \
+            "https://francinemariebautista.com/news/?cutover=${GITHUB_SHA}" | tr -d '\r' || true)"
+          if echo "$apex_headers" | grep -Eq '^HTTP/[^ ]+ 308' && \
+             echo "$apex_headers" | grep -Eqi '^location: https://www\.francinemariebautista\.com/news/?'; then
+            echo 'Apex /news canonical redirect verified.'
+          else
+            echo '::warning::Apex /news did not return the expected redirect; canonical www newsroom remains healthy.'
+          fi
+
+          echo 'Public FMB News deployment and canonical www newsroom verified.'
+; then
+            echo 'Legacy /news/read article redirect verified.'
+          else
+            echo '::error::Legacy /news/read article did not redirect to the canonical CMS article route.'
+            echo "$legacy_headers"
+            exit 1
+          fi
+
           # This repository owns /news only. The parent site's homepage is an
           # independent deployment and must never make a healthy FMB News release fail.
           apex_headers="$(curl --silent --show-error --head --connect-timeout 10 --max-time 30 \
