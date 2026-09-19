@@ -265,7 +265,7 @@ async function serveMergedCmsSitemap(request, env, searchParams) {
   if (!staticResponse.ok) return staticResponse;
   try {
     const [body, rows] = await Promise.all([
-      staticResponse.text(),
+      staticResponse.clone().text(),
       listPublishedArticles({ limit: 1000 }),
     ]);
     const additions = rows
