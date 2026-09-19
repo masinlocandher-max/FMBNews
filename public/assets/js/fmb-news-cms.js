@@ -158,6 +158,42 @@
     document.documentElement.dataset.fmbCmsHome = 'live';
   }
 
+  async function hydrateArchive() {
+    if (!location.pathname.replace(/\/+$/, '/').endsWith('/news/archive/')) return;
+    const grid = document.querySelector('.archive-grid');
+    if (!grid) return;
+
+    const fields = ['slug','canonical_path','title','summary','deck','category','region','image_url','image_credit','published_at'].join(',');
+    const articles = await get('news_articles', `select=${fields}&status=eq.published&order=published_at.desc&limit=1000`);
+    if (!Array.isArray(articles) || !articles.length) return;
+
+    const fragment = document.createDocumentFragment();
+    for (const article of articles) {
+      const link = el('a', 'archive-row');
+      link.href = storyHref(article);
+      link.appendChild(makeImage(article.image_url, article.title || 'FMB News'));
+
+      const copy = document.createElement('div');
+      const meta = el('div', 'meta');
+      meta.appendChild(el('span', 'category', article.region || article.category || 'FMB News'));
+      meta.appendChild(el('span', '', '·'));
+      meta.appendChild(el('span', '', formatDate(article.published_at, { month: 'short', day: 'numeric', year: undefined })));
+      copy.appendChild(meta);
+      copy.appendChild(el('h2', '', article.title || 'FMB News report'));
+      copy.appendChild(el('p', '', article.deck || article.summary || 'Verified reporting with context.'));
+      link.appendChild(copy);
+
+      const time = document.createElement('time');
+      time.dateTime = article.published_at || '';
+      time.textContent = formatDate(article.published_at);
+      link.appendChild(time);
+      fragment.appendChild(link);
+    }
+
+    grid.replaceChildren(fragment);
+    grid.dataset.cmsArchive = 'live';
+  }
+
   async function hydrateHomepageStories() {
     const section = document.getElementById('stories');
     const grid = section?.querySelector('.story-grid');
@@ -374,7 +410,7 @@
 
   async function boot() {
     await Promise.allSettled([
-      hydratePublicationHomepage(), hydrateHomepageStories(), hydrateWorldwideLanding(), hydrateBriefFeature(),
+      hydratePublicationHomepage(), hydrateHomepageStories(), hydrateArchive(), hydrateWorldwideLanding(), hydrateBriefFeature(),
       renderArticleReader(), renderEdition('worldwide'), renderEdition('brief')
     ]);
   }
