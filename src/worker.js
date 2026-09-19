@@ -158,6 +158,135 @@ function absoluteMediaUrl(value, fallbackPath) {
   return `${CANONICAL_ORIGIN}${fallbackPath}`;
 }
 
+function escapeXml(value = '') {
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&apos;');
+}
+
+function articlePublicUrl(article) {
+  return canonicalArticleUrl(article?.canonical_path, `/news/${encodeURIComponent(article?.slug || '')}/`);
+}
+
+async function listPublishedArticles({ limit = 1000, since = '' } = {}) {
+  const endpoint = new URL(`${CMS_URL}/rest/v1/news_articles`);
+  endpoint.searchParams.set('select', 'slug,title,seo_description,deck,summary,published_at,updated_at,canonical_path,category');
+  endpoint.searchParams.set('status', 'eq.published');
+  endpoint.searchParams.set('order', 'published_at.desc');
+  endpoint.searchParams.set('limit', String(limit));
+  if (since) endpoint.searchParams.set('published_at', `gte.${since}`);
+  const response = await fetch(endpoint, {
+    headers: {
+      apikey: CMS_PUBLISHABLE_KEY,
+      Accept: 'application/json',
+    },
+    cf: { cacheTtl: 120, cacheEverything: true },
+  });
+  if (!response.ok) throw new Error(`FMB CMS article list failed (${response.status})`);
+  const rows = await response.json();
+  return Array.isArray(rows) ? rows : [];
+}
+
+async function serveCmsFeed(request, env) {
+  try {
+    const rows = await listPublishedArticles({ limit: 50 });
+    const latest = rows[0];
+    const lastBuildDate = latest?.updated_at || latest?.published_at || new Date().toISOString();
+    const items = rows.map((article) => {
+      const url = articlePublicUrl(article);
+      const description = article.seo_description || article.deck || article.summary || '';
+      return `    <item>
+      <title>${escapeXml(article.title)}</title>
+      <link>${escapeXml(url)}</link>
+      <guid isPermaLink="true">${escapeXml(url)}</guid>
+      <pubDate>${escapeXml(new Date(article.published_at).toUTCString())}</pubDate>
+      <description>${escapeXml(description)}</description>${article.category ? `
+      <category>${escapeXml(article.category)}</category>` : ''}
+    </item>`;
+    }).join('\n');
+    const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FMB News</title>
+    <link>${CANONICAL_ORIGIN}/news/</link>
+    <description>Filipino Media Bulletin. Verified facts, visible sources, meaningful context, clear explanations.</description>
+    <language>en-PH</language>
+    <generator>FMB News live CMS</generator>
+    <lastBuildDate>${escapeXml(new Date(lastBuildDate).toUTCString())}</lastBuildDate>
+    <atom:link href="${CANONICAL_ORIGIN}/news/feed.xml" rel="self" type="application/rss+xml"/>
+${items}
+  </channel>
+</rss>
+`;
+    return withWorkerMarker(new Response(xml, {
+      status: 200,
+      headers: { 'Content-Type': 'application/rss+xml; charset=utf-8' },
+    }), { 'Cache-Control': 'public, max-age=120, stale-while-revalidate=600' });
+  } catch {
+    return serveAsset(request, env, '/news/feed.xml', new URLSearchParams());
+  }
+}
+
+async function serveCmsNewsSitemap(request, env) {
+  try {
+    const since = new Date(Date.now() - 48 * 60 * 60 * 1000).toISOString();
+    const rows = await listPublishedArticles({ limit: 1000, since });
+    const urls = rows.map((article) => `  <url>
+    <loc>${escapeXml(articlePublicUrl(article))}</loc>
+    <news:news>
+      <news:publication>
+        <news:name>FMB News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>${escapeXml(new Date(article.published_at).toISOString())}</news:publication_date>
+      <news:title>${escapeXml(article.title)}</news:title>
+    </news:news>
+  </url>`).join('\n');
+    const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated from live FMB News CMS -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+${urls}
+</urlset>
+`;
+    return withWorkerMarker(new Response(xml, {
+      status: 200,
+      headers: { 'Content-Type': 'application/xml; charset=utf-8' },
+    }), { 'Cache-Control': 'public, max-age=120, stale-while-revalidate=600' });
+  } catch {
+    return serveAsset(request, env, '/news/news-sitemap.xml', new URLSearchParams());
+  }
+}
+
+async function serveMergedCmsSitemap(request, env, searchParams) {
+  const staticResponse = await serveAsset(request, env, '/news/sitemap.xml', searchParams);
+  if (!staticResponse.ok) return staticResponse;
+  try {
+    const [body, rows] = await Promise.all([
+      staticResponse.text(),
+      listPublishedArticles({ limit: 1000 }),
+    ]);
+    const additions = rows
+      .filter((article) => !body.includes(`<loc>${articlePublicUrl(article)}</loc>`))
+      .map((article) => {
+        const modified = article.updated_at || article.published_at;
+        return `  <url><loc>${escapeXml(articlePublicUrl(article))}</loc>${modified ? `<lastmod>${escapeXml(new Date(modified).toISOString())}</lastmod>` : ''}</url>`;
+      })
+      .join('\n');
+    const merged = additions
+      ? body.replace('</urlset>', `<!-- Live CMS article routes -->\n${additions}\n</urlset>`)
+      : body;
+    return withWorkerMarker(new Response(merged, {
+      status: 200,
+      headers: { 'Content-Type': 'application/xml; charset=utf-8' },
+    }), { 'Cache-Control': 'public, max-age=120, stale-while-revalidate=600' });
+  } catch {
+    return staticResponse;
+  }
+}
+
 async function lookupPublishedArticle(slug) {
   const endpoint = new URL(`${CMS_URL}/rest/v1/news_articles`);
   endpoint.searchParams.set('select', 'slug,title,seo_title,seo_description,deck,summary,image_url,published_at,updated_at,canonical_path,author_line,category,region');
@@ -177,8 +306,8 @@ async function lookupPublishedArticle(slug) {
 }
 
 function injectArticleMetadata(html, article, slug) {
-  const readerPath = `/news/read/${encodeURIComponent(slug)}/`;
-  const canonical = canonicalArticleUrl(article.canonical_path, readerPath);
+  const articlePath = `/news/${encodeURIComponent(slug)}/`;
+  const canonical = canonicalArticleUrl(article.canonical_path, articlePath);
   const title = String(article.seo_title || `${article.title} | FMB News`).trim();
   const description = String(article.seo_description || article.deck || article.summary || 'Verified reporting and context from FMB News.').trim();
   const image = article.image_url ? absoluteMediaUrl(article.image_url, '/news/assets/images/news/fmb-news-editorial-fallback.svg') : `${CANONICAL_ORIGIN}/news/assets/images/news/fmb-news-editorial-fallback.svg`;
@@ -309,6 +438,16 @@ export default {
     if (url.pathname === '/news') {
       url.pathname = '/news/';
       return withWorkerMarker(Response.redirect(url.toString(), 308));
+    }
+
+    if (url.pathname === '/news/feed.xml') {
+      return serveCmsFeed(request, env);
+    }
+    if (url.pathname === '/news/news-sitemap.xml') {
+      return serveCmsNewsSitemap(request, env);
+    }
+    if (url.pathname === '/news/sitemap.xml') {
+      return serveMergedCmsSitemap(request, env, url.searchParams);
     }
 
     const readerMatch = url.pathname.match(/^\/news\/read\/([^/]+)\/?$/);
