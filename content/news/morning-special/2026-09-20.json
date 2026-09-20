@@ -1,0 +1,80 @@
+{
+  "date": "2026-09-20",
+  "publishedAt": "2026-09-20T07:00:00+08:00",
+  "editionLabel": "Daily Brief",
+  "title": "FMB Daily Brief — September 20, 2026",
+  "deck": "Manila suspends in-person classes for Monday's Martial Law anniversary activities, the Philippines earns its first Aichi-Nagoya Asian Games medal, Gilas Women reach the quarterfinals, and Habagat affects western Luzon.",
+  "hero": {
+    "src": "",
+    "alt": "FMB Daily Brief for September 20, 2026",
+    "caption": "Sunday morning edition. No documentary image is used where reuse rights have not been established.",
+    "credit": "FMB News",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260920-001",
+      "kicker": "Philippines · Public Service",
+      "headline": "Manila suspends in-person classes Sept. 21 amid Martial Law anniversary activities",
+      "deck": "Face-to-face classes in public and private schools at all levels in Manila are suspended Monday as authorities prepare for expected demonstrations and traffic disruption.",
+      "body": [
+        "Philstar and the Philippine Daily Inquirer reported Sunday that Manila suspended in-person classes at all levels for Monday, September 21, as the city prepares for activities marking the 54th anniversary of the declaration of Martial Law.",
+        "The suspension is a local public-service measure tied to anticipated demonstrations and traffic conditions. Students and families should follow their schools for instructions on any alternative learning arrangements.",
+        "Why it matters: the order directly affects Monday travel and school operations in the capital and may coincide with road closures or congestion around demonstration areas.",
+        "What to watch: school-specific advisories, traffic rerouting and any additional local government announcements before Monday morning."
+      ],
+      "sources": [
+        {"label": "Philstar — Manila suspends in-person classes for Martial Law anniversary", "url": "https://www.philstar.com/headlines/2026/09/20/2557643/manila-suspends-person-classes-martial-law-anniversary"},
+        {"label": "Philippine Daily Inquirer — Manila suspends in-person classes Sept. 21 amid Martial Law anniversary rally", "url": "https://newsinfo.inquirer.net/2308312/manila-suspends-in-person-classes-sept-21-amid-martial-law-anniv-rally"}
+      ]
+    },
+    {
+      "id": "FMB-DB-20260920-002",
+      "kicker": "Sports · Asian Games",
+      "headline": "Philippines earns first Aichi-Nagoya Asian Games medal in women's soft tennis",
+      "deck": "The Philippine women's soft tennis team secured bronze, delivering the country's first medal of the 2026 Asian Games in Japan.",
+      "body": [
+        "GMA News and Philstar reported Sunday that the Philippine women's soft tennis team delivered the country's first medal of the Aichi-Nagoya Asian Games, taking bronze after its campaign concluded.",
+        "The result puts Team Philippines on the medal table at the start of its full competition program in Japan.",
+        "Why it matters: an early medal gives the Philippine delegation an immediate result as athletes begin competition across multiple sports.",
+        "What to watch: the rest of Team Philippines' medal events and whether the delegation can build on the opening bronze."
+      ],
+      "sources": [
+        {"label": "GMA News — Philippines gets first 2026 Asian Games medal as Women's Soft Tennis Team takes bronze", "url": "https://www.gmanetwork.com/news/sports/othersports/1002993/philippines-gets-first-2026-asian-games-medal-as-women-s-soft-tennis-team-takes-bronze/story/"},
+        {"label": "Philstar — Soft tennis' Catindig, Manalac deliver Philippines' first Nagoya Asian Games medal", "url": "https://www.philstar.com/sports/2026/09/20/2557615/soft-tennis-catindig-manalac-deliver-philippines-first-nagoya-asian-games-medal"}
+      ]
+    },
+    {
+      "id": "FMB-DB-20260920-003",
+      "kicker": "Sports · Basketball",
+      "headline": "Gilas Pilipinas Women book Asian Games quarterfinal berth",
+      "deck": "The Philippine women's basketball team defeated Hong Kong, 90-73, to advance to the quarterfinals in Aichi-Nagoya.",
+      "body": [
+        "GMA News and ABS-CBN News reported that Gilas Pilipinas Women defeated Hong Kong 90-73 on Sunday and secured a place in the Asian Games quarterfinals.",
+        "The victory advances the Philippines into the knockout phase and keeps the women's basketball medal campaign alive.",
+        "Why it matters: reaching the quarterfinals moves Gilas Women within the decisive stage of the continental tournament.",
+        "What to watch: the quarterfinal matchup, rotation and health of the Philippine roster, and the path toward the medal rounds."
+      ],
+      "sources": [
+        {"label": "GMA News — Gilas Pilipinas Women book Asian Games quarterfinals spot with rout of Hong Kong", "url": "https://www.gmanetwork.com/news/sports/basketball/1003003/gilas-pilipinas-women-near-asian-games-quarterfinals-after-rout-of-hong-kong/story/"},
+        {"label": "ABS-CBN News — Asiad: Gilas Women book quarterfinals spot, dominate Hong Kong", "url": "https://www.abs-cbnnews.com/sports/basketball/2026/9/20/asiad-gilas-women-book-quarterfinals-spot-dominate-hong-kong-1115"}
+      ]
+    },
+    {
+      "id": "FMB-DB-20260920-004",
+      "kicker": "Weather · Service",
+      "headline": "Habagat affects western Luzon while much of the country sees generally fair Sunday weather",
+      "deck": "The southwest monsoon is affecting western Luzon, with rain possible in affected areas even as much of the Philippines experiences generally fair conditions.",
+      "body": [
+        "The Philippine Daily Inquirer and Philstar reported Sunday that the southwest monsoon, or Habagat, is affecting western portions of Luzon.",
+        "Conditions can still change locally, particularly where monsoon rain and thunderstorms develop. Readers should rely on updated PAGASA and local disaster-office advisories for immediate weather decisions.",
+        "Why it matters: localized rain can affect travel, outdoor activities and flood-prone communities even when broader conditions are generally fair.",
+        "What to watch: updated rainfall advisories, thunderstorm warnings and any changes in the monsoon pattern overnight into Monday."
+      ],
+      "sources": [
+        {"label": "Philippine Daily Inquirer — Fair Sunday weather in most parts of PH; Habagat to affect S. Luzon", "url": "https://newsinfo.inquirer.net/2308231/fair-sunday-weather-in-most-parts-of-ph-habagat-to-affect-s-luzon"},
+        {"label": "Philstar — PAGASA: Habagat to bring rains over western Luzon", "url": "https://www.philstar.com/headlines/weather/2026/09/20/2557619/pagasa-habagat-bring-rains-over-western-luzon"}
+      ]
+    }
+  ]
+}
