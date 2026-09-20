@@ -1,0 +1,95 @@
+{
+  "date": "2026-09-21",
+  "publishedAt": "2026-09-21T07:00:00+08:00",
+  "editionLabel": "Daily Brief",
+  "title": "FMB Daily Brief — September 21, 2026",
+  "deck": "Security tightens around Martial Law anniversary demonstrations, Manila shifts students away from face-to-face classes, Habagat affects Southern Luzon, North Korea launches two short-range ballistic missiles, and a major Ukrainian drone attack hits the Moscow region.",
+  "hero": {
+    "src": "",
+    "alt": "FMB Daily Brief for September 21, 2026",
+    "caption": "Monday morning edition. No documentary image is used where reuse rights have not been established.",
+    "credit": "FMB News",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260921-001",
+      "kicker": "Philippines · Public Safety",
+      "headline": "Metro Manila tightens security for September 21 demonstrations",
+      "deck": "More than 17,000 police personnel are being deployed as demonstrations mark the 54th anniversary of the declaration of Martial Law, with barricades and traffic controls in parts of Manila.",
+      "body": [
+        "GMA News reported early Monday that police had installed barricades around expected protest areas, while the NCRPO said more than 17,000 personnel would be deployed across Metro Manila. Philstar separately reported heightened alert measures and road closures around Mendiola, Liwasang Bonifacio and Ayala Bridge.",
+        "Authorities have said police should exercise maximum tolerance while protecting public safety and the right to peaceful assembly. Organizers and motorists should expect congestion and route changes around major demonstration areas.",
+        "Why it matters: the anniversary is expected to bring large public gatherings into central Metro Manila, directly affecting mobility, policing and public access to key roads and government districts.",
+        "What to watch: crowd conditions, traffic advisories, any changes to road closures, and whether demonstrations remain peaceful throughout the day."
+      ],
+      "sources": [
+        {"label": "GMA News — PNP set up barricades, deploy personnel on 54th Martial Law commemoration", "url": "https://www.gmanetwork.com/news/topstories/metro/1003076/pnp-set-up-barricades-deploy-personnel-on-54th-martial-law-commemoration/story/"},
+        {"label": "Philstar — NCRPO on full alert for September 21 protests", "url": "https://www.philstar.com/nation/2026/09/18/2557017/ncrpo-full-alert-september-21-protests"}
+      ]
+    },
+    {
+      "id": "FMB-DB-20260921-002",
+      "kicker": "Philippines · Education · Service",
+      "headline": "Manila suspends face-to-face classes as September 21 activities begin",
+      "deck": "In-person classes at all levels in public and private schools in Manila are suspended Monday, with schools advised to use alternative learning arrangements.",
+      "body": [
+        "GMA News and ABS-CBN News both listed Manila among areas with class suspensions for Monday, September 21. Manila's order applies to face-to-face classes at all levels in public and private schools as the city prepares for demonstrations, traffic disruption and security concerns tied to the Martial Law anniversary.",
+        "The suspension does not automatically mean learning stops; schools may shift to alternative delivery modes and issue their own instructions.",
+        "Why it matters: families, students and commuters in the capital need to adjust Monday schedules while demonstrations and traffic restrictions are in effect.",
+        "What to watch: school-specific instructions and any additional local suspension or transport advisories during the morning."
+      ],
+      "sources": [
+        {"label": "GMA News — WALANG PASOK: Class suspensions for Monday, September 21, 2026", "url": "https://www.gmanetwork.com/news/serbisyopubliko/walangpasok/1003023/walang-pasok-class-suspensions-for-monday-september-21-2026/story/"},
+        {"label": "ABS-CBN News — Class suspensions for September 21 due to Martial Law protest, haze", "url": "https://www.abs-cbn.com/news/nation/2026/9/20/-walangpasok-class-suspensions-for-september-21-monday-2208"}
+      ]
+    },
+    {
+      "id": "FMB-DB-20260921-003",
+      "kicker": "Weather · Service",
+      "headline": "Habagat affects Southern Luzon; LPA remains outside PAR",
+      "deck": "Palawan and Mindoro face monsoon-influenced rain chances while PAGASA monitors a low-pressure area far east of Eastern Visayas with a low chance of developing within 24 hours.",
+      "body": [
+        "GMA News reported PAGASA's early-Monday forecast that the southwest monsoon is affecting the western section of Southern Luzon. Palawan, Occidental Mindoro and Oriental Mindoro may see isolated rain showers or thunderstorms, while localized thunderstorms remain possible over Metro Manila and the rest of the country.",
+        "PAGASA is also monitoring a low-pressure area about 2,090 kilometers east of Eastern Visayas and outside the Philippine Area of Responsibility. The system was assessed as having a low chance of becoming a tropical depression within the next 24 hours.",
+        "Why it matters: severe thunderstorms can still produce localized flash floods or landslides even without a tropical cyclone affecting the country.",
+        "What to watch: updated PAGASA bulletins, thunderstorm advisories and any change in the low-pressure area's development probability."
+      ],
+      "sources": [
+        {"label": "GMA News — PAGASA: Habagat to bring cloudy skies, rains over Southern Luzon; monitoring LPA outside PAR", "url": "https://www.gmanetwork.com/news/weather/content/1003078/pagasa-habagat-to-bring-cloudy-skies-rains-over-southern-luzon-monitoring-lpa-outside-par/story/"}
+      ]
+    },
+    {
+      "id": "FMB-DB-20260921-004",
+      "kicker": "Worldwide · Korean Peninsula",
+      "headline": "North Korea launches two short-range ballistic missiles toward the sea",
+      "deck": "South Korea and Japan detected two launches from North Korea's east coast on Sunday, the second missile-testing episode in a week.",
+      "body": [
+        "Reuters and the Associated Press independently reported that North Korea launched two short-range ballistic missiles from the Wonsan area toward waters off its east coast on Sunday. South Korean and Japanese authorities tracked the launches; Japan said the projectiles landed outside its exclusive economic zone.",
+        "The launches came amid renewed regional military tensions and follow another North Korean missile test earlier in the week.",
+        "Why it matters: repeated ballistic-missile launches raise security pressure on South Korea and Japan and complicate efforts to restart diplomacy over North Korea's nuclear and missile programs.",
+        "What to watch: responses from Seoul, Tokyo and Washington, additional North Korean launches, and any movement toward or away from diplomatic engagement."
+      ],
+      "sources": [
+        {"label": "Reuters — North Korea fires two suspected ballistic missiles off east coast within three hours", "url": "https://www.reuters.com/world/asia-pacific/north-korea-fires-missile-off-east-coast-yonhap-says-2026-09-20/"},
+        {"label": "Associated Press — North Korea launches 2 ballistic missiles toward the sea and dials up pressure on the US", "url": "https://apnews.com/article/ad020d996b61dedd358cc689db614fdb"}
+      ]
+    },
+    {
+      "id": "FMB-DB-20260921-005",
+      "kicker": "Worldwide · Russia-Ukraine War",
+      "headline": "Large Ukrainian drone attack hits Moscow region during Russian election",
+      "deck": "Russian authorities reported deaths and damage, including at a Moscow oil refinery, during a large Ukrainian drone attack as parliamentary voting concluded.",
+      "body": [
+        "Reuters and the Associated Press reported a large Ukrainian drone attack on Russian territory Sunday, including the Moscow region. Russian authorities reported fatalities and damage to infrastructure, while AP described the operation as Ukraine's largest drone attack on Moscow to date.",
+        "The strikes coincided with the final day of Russia's parliamentary election and form part of Ukraine's continuing campaign against Russian energy and logistics infrastructure. Claims from the belligerents remain subject to the limitations of wartime reporting.",
+        "Why it matters: attacks reaching the Russian capital increase pressure on critical infrastructure and underscore the war's expanding reach even as political and diplomatic activity continues.",
+        "What to watch: verified casualty updates, refinery operations, Russian retaliation, election results and any diplomatic developments around the United Nations General Assembly."
+      ],
+      "sources": [
+        {"label": "Reuters — Three dead in Moscow region, drones hit oil refinery in Russian capital", "url": "https://www.reuters.com/world/europe/two-dead-moscow-region-drones-hit-oil-refinery-russian-capital-2026-09-20/"},
+        {"label": "Associated Press — Ukraine fires over 1,000 drones at Russia, including largest ever attack on Moscow", "url": "https://apnews.com/article/5f7889d027c0247ca2c2c64425b9ffa9"}
+      ]
+    }
+  ]
+}
