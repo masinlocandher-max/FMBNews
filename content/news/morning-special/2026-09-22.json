@@ -1,0 +1,63 @@
+{
+  "date": "2026-09-22",
+  "publishedAt": "2026-09-22T07:00:00+08:00",
+  "editionLabel": "Daily Brief",
+  "title": "FMB Daily Brief — September 22, 2026",
+  "deck": "Filipinos wake to the aftermath of Martial Law anniversary demonstrations, another active Asian Games day for Team Philippines, and renewed Russian strikes after Ukraine's massive weekend drone offensive.",
+  "hero": {
+    "src": "",
+    "alt": "FMB Daily Brief for September 22, 2026",
+    "caption": "Tuesday morning edition. No documentary image is used where reuse rights have not been established.",
+    "credit": "FMB News",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260922-001",
+      "kicker": "Philippines · Public Affairs",
+      "headline": "Martial Law anniversary demonstrations put corruption and accountability back in focus",
+      "deck": "Protesters gathered in Metro Manila on September 21 to mark the 54th anniversary of the declaration of Martial Law, with groups raising concerns over corruption and abuse of power.",
+      "body": [
+        "Reuters, carried by ABS-CBN News early Tuesday, reported on demonstrations marking the Martial Law anniversary and protesters' calls against corruption and abuse of power. GMA News separately reported that demonstrations in Manila were generally peaceful during the day, although tension briefly rose at one protest site.",
+        "ABS-CBN News later reported that Manila police arrested two protesters in connection with spray-painting during a rally. That specific incident should be treated separately from the broader demonstrations and does not establish misconduct by other participants.",
+        "Why it matters: the anniversary remains a major point of public debate over historical memory, civil liberties, corruption and government accountability, while policing of demonstrations is itself closely scrutinized.",
+        "What to watch: official post-event assessments, any complaints or cases arising from the demonstrations, and whether the issues raised by participating groups move into congressional or executive action."
+      ],
+      "sources": [
+        {"label": "ABS-CBN News / Reuters — Protesters rally on martial law anniversary against corruption, abuse of power in PH", "url": "https://www.abs-cbn.com/news/nation/2026/9/22/protesters-rally-on-martial-law-anniversary-against-corruption-abuse-of-power-in-ph-0054"},
+        {"label": "GMA News — Tension rises during September 21 rally in Manila", "url": "https://www.gmanetwork.com/news/topstories/metro/1003123/tension-rises-during-september-21-rally-in-manila/story/"},
+        {"label": "ABS-CBN News — Manila police arrest 2 protesters over spray-painting during Martial Law anniversary rally", "url": "https://www.abs-cbn.com/news/nation/2026/9/21/manila-police-arrest-2-protesters-over-spray-painting-during-martial-law-anniversary-rally-1847"}
+      ]
+    },
+    {
+      "id": "FMB-DB-20260922-002",
+      "kicker": "Sports · Asian Games",
+      "headline": "Team Philippines enters another medal day at the Asian Games",
+      "deck": "MMA fighter Jean Claude Saclag is assured of at least silver ahead of the men's traditional -65kg final, while Filipino athletes compete across sepak takraw, basketball 3x3, football and other events Tuesday.",
+      "body": [
+        "GMA News' September 22 Asian Games schedule says Jean Claude Saclag will fight in the men's traditional -65kg MMA final. Reaching the final assures him of at least a silver medal and would bring the Philippines' medal count to three, following bronzes in women's soft tennis and from MMA fighter Carlos Alvarez.",
+        "The Philippine program also includes men's sepak takraw against Japan, Gilas Pilipinas Women in 3x3 basketball, the Philippine men's under-23 football team and competitors in several other sports.",
+        "Why it matters: Saclag gives the delegation a guaranteed podium result while multiple Philippine teams and athletes have opportunities to advance deeper into their events.",
+        "What to watch: Saclag's gold-medal bout, advancement results across the Tuesday schedule and any additional medals secured by Team Philippines."
+      ],
+      "sources": [
+        {"label": "GMA News — Team Philippines at 2026 Asian Games: September 22 schedule", "url": "https://www.gmanetwork.com/news/sports/othersports/1003207/team-philippines-at-2026-asian-games-september-22-schedule-jean-claude-saclag-gilas-pilipinas-women-3/story/"}
+      ]
+    },
+    {
+      "id": "FMB-DB-20260922-003",
+      "kicker": "Worldwide · Russia-Ukraine War",
+      "headline": "Russia strikes Zaporizhzhia after Ukraine's massive weekend drone barrage",
+      "deck": "Russian attacks hit Zaporizhzhia and other Ukrainian regions after Ukraine launched more than 1,000 drones at Russia over the weekend, extending a sharp escalation in long-range attacks.",
+      "body": [
+        "The Associated Press reported that Russian forces struck the southern Ukrainian city of Zaporizhzhia, damaging residential buildings, a university and a shopping mall and wounding civilians. Additional Russian strikes were reported in several other Ukrainian regions.",
+        "The attacks followed a weekend Ukrainian offensive in which more than 1,000 drones were launched at Russia. The prior day's FMB Daily Brief covered the major attack on the Moscow region; today's development is the subsequent Russian response and widening cycle of strikes.",
+        "Why it matters: the expanding exchange of long-range attacks increases risks to civilians and infrastructure and complicates diplomatic efforts as leaders gather around the United Nations General Assembly.",
+        "What to watch: casualty and damage updates, further Russian or Ukrainian long-range strikes, regional airspace incidents and any diplomatic movement around meetings in New York."
+      ],
+      "sources": [
+        {"label": "Associated Press — Russia targets Zaporizhzhia after Ukraine launches 1,000-drone weekend barrage", "url": "https://apnews.com/article/445b619fc9b2d002df1edaac8b320d09"}
+      ]
+    }
+  ]
+}
