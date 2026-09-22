@@ -1,1 +1,110 @@
-{"schemaVersion":1,"status":"published","slug":"philippines-eu-substantial-free-trade-agreement-september-22-2026","headline":"Philippines, EU Reach ‘Substantial Agreement’ on Free Trade Deal","seoTitle":"Philippines, EU Reach Substantial Agreement on FTA | FMB News","seoDescription":"The Philippines and European Union have reached substantial agreement on a free trade deal, putting negotiations on a path toward formal conclusion while final legal work remains unfinished.","keywords":["Philippines EU FTA","European Union","free trade agreement","Cristina Roque","Maros Sefcovic","Ursula von der Leyen","Ferdinand Marcos Jr"],"category":"Business","kicker":"BUSINESS · TRADE","deck":"Trade Secretary Ma. Cristina Roque and EU Trade Commissioner Maroš Šefčovič say negotiators have been instructed to finish the remaining work as soon as possible. The milestone is not yet a signed or ratified treaty.","publishedAt":"2026-09-22T15:51:58+08:00","updatedAt":"2026-09-22T15:51:58+08:00","author":"FMB News Desk","articleType":"NewsArticle","sections":[{"heading":"What happened","paragraphs":["The Philippines and the European Union announced Tuesday that they have reached a substantial agreement in negotiations for a bilateral free trade agreement, a major political breakthrough after talks were relaunched in 2024.","Philippine Trade Secretary Ma. Cristina Roque and European Commissioner for Trade and Economic Security Maroš Šefčovič announced the milestone in a joint statement following a video call and instructed their negotiating teams to finalize the remaining work as soon as possible."]},{"heading":"What is confirmed","paragraphs":["European Commission President Ursula von der Leyen separately said she had spoken with Philippine President Ferdinand Marcos Jr. and announced that the two sides had agreed on a trade deal. Reuters, GMA News and other independent outlets reported the joint announcement.","The two sides say the planned agreement is intended to expand opportunities for businesses, including MSMEs, farmers and manufacturers, diversify supply chains and provide more predictable trade rules."]},{"heading":"What is not finished","paragraphs":["A substantial agreement is not the same as a treaty already in force. The negotiating teams still have to complete the remaining legal and technical work before formal conclusion, signature and the applicable ratification and approval processes.","FMB News is therefore not reporting that tariff changes or other negotiated market-access commitments have already taken effect. Detailed final obligations should be assessed from the completed legal text when it is released."]},{"heading":"Context","paragraphs":["EU-Philippines FTA negotiations were originally launched in 2015, later paused, and formally resumed in March 2024. The European Commission’s current trade-agreement tracker lists the Philippines among agreements under negotiation."]},{"heading":"Why it matters","paragraphs":["The EU is a major Philippine trade and investment partner. A completed FTA could alter market access and commercial rules across goods, services, investment and other negotiated areas, while giving Philippine exporters a more durable bilateral framework than unilateral trade preferences alone."]},{"heading":"What to watch next","paragraphs":["Watch for formal conclusion of negotiations, publication of the final legal text, a signing timetable and the approval or ratification steps required before the agreement can enter into force."]}],"sources":[{"publisher":"Philippine Department of Trade and Industry / European Commission","title":"Joint statement of Trade Secretary Ma. Cristina Roque and EU Trade Commissioner Maroš Šefčovič announcing substantial agreement on the Philippines-EU FTA","publishedAt":"2026-09-22T00:00:00+08:00","url":"https://www.gmanetwork.com/news/money/economy/1003233/ph-eu-reach-substantial-agreement-on-free-trade-deal/story/","role":"primary joint government statement reproduced by independent broadcaster"},{"publisher":"European Commission — Trade and Economic Security","title":"EU trade agreements: Philippines free trade agreement under negotiation","url":"https://policy.trade.ec.europa.eu/eu-trade-relationships-country-and-region/negotiations-and-agreements_en","role":"primary official EU status source"},{"publisher":"Reuters","title":"EU and Philippines reach 'substantial agreement' on free-trade deal","publishedAt":"2026-09-22T09:35:00+08:00","url":"https://www.reuters.com/world/asia-pacific/eu-philippines-agree-free-trade-deal-2026-09-22/","role":"credible independent corroboration"},{"publisher":"GMA News Online","title":"PH, EU reach 'substantial agreement' on free trade deal","publishedAt":"2026-09-22T11:05:00+08:00","url":"https://www.gmanetwork.com/news/money/economy/1003233/ph-eu-reach-substantial-agreement-on-free-trade-deal/story/","role":"credible independent Philippine corroboration"}],"image":{"kind":"rights-cleared-contextual-diplomatic-photo","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Bongbong_Marcos,_Charles_Michel_and_Ursula_von_der_Leyen.jpg","source":"Wikimedia Commons / Office of the Press Secretary","creator":"Office of the Press Secretary, Philippines","license":"Public domain — Philippine government work","credit":"Photo: Office of the Press Secretary, Philippines, via Wikimedia Commons; public domain","caption":"File photograph of Philippine President Ferdinand Marcos Jr. with then-European Council President Charles Michel and European Commission President Ursula von der Leyen at the ASEAN-EU Commemorative Summit in Brussels on December 15, 2022. It is contextual and does not depict the September 22, 2026 FTA announcement.","alt":"Ferdinand Marcos Jr., Charles Michel and Ursula von der Leyen at the 2022 ASEAN-EU Commemorative Summit","sourceUrl":"https://commons.wikimedia.org/wiki/File:Bongbong_Marcos,_Charles_Michel_and_Ursula_von_der_Leyen.jpg"},"audit":{"sourceCheckedAt":"2026-09-22T15:51:58+08:00","verificationNotes":["The announcement is attributed to a joint statement by Philippine Trade Secretary Ma. Cristina Roque and EU Trade Commissioner Maroš Šefčovič, independently reproduced by GMA News and Reuters.","European Commission President Ursula von der Leyen separately announced the agreement after speaking with President Ferdinand Marcos Jr.","The European Commission’s official trade-agreement tracker confirms that the Philippines FTA is in the negotiated-agreement pipeline; the article does not claim the agreement is already in force.","The story explicitly distinguishes substantial political agreement from formal conclusion, signature, ratification and entry into force.","The contextual diplomatic photograph is a Philippine government work identified by Wikimedia Commons as public domain and is explicitly labeled as a 2022 file photograph."]}}
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "philippines-eu-substantial-free-trade-agreement-september-22-2026",
+  "headline": "Philippines, EU Reach ‘Substantial Agreement’ on Free Trade Deal",
+  "seoTitle": "Philippines, EU Reach Substantial Agreement on FTA | FMB News",
+  "seoDescription": "The Philippines and European Union have reached substantial agreement on a free trade deal, putting negotiations on a path toward formal conclusion while final legal work remains unfinished.",
+  "keywords": [
+    "Philippines EU FTA",
+    "European Union",
+    "free trade agreement",
+    "Cristina Roque",
+    "Maros Sefcovic",
+    "Ursula von der Leyen",
+    "Ferdinand Marcos Jr"
+  ],
+  "category": "Business",
+  "kicker": "BUSINESS · TRADE",
+  "deck": "Trade Secretary Ma. Cristina Roque and EU Trade Commissioner Maroš Šefčovič say negotiators have been instructed to finish the remaining work as soon as possible. The milestone is not yet a signed or ratified treaty.",
+  "publishedAt": "2026-09-22T15:51:58+08:00",
+  "updatedAt": "2026-09-22T15:51:58+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Philippines and the European Union announced Tuesday that they have reached a substantial agreement in negotiations for a bilateral free trade agreement, a major political breakthrough after talks were relaunched in 2024.",
+        "Philippine Trade Secretary Ma. Cristina Roque and European Commissioner for Trade and Economic Security Maroš Šefčovič announced the milestone in a joint statement following a video call and instructed their negotiating teams to finalize the remaining work as soon as possible."
+      ]
+    },
+    {
+      "heading": "What is confirmed",
+      "paragraphs": [
+        "European Commission President Ursula von der Leyen separately said she had spoken with Philippine President Ferdinand Marcos Jr. and announced that the two sides had agreed on a trade deal. Reuters, GMA News and other independent outlets reported the joint announcement.",
+        "The two sides say the planned agreement is intended to expand opportunities for businesses, including MSMEs, farmers and manufacturers, diversify supply chains and provide more predictable trade rules."
+      ]
+    },
+    {
+      "heading": "What is not finished",
+      "paragraphs": [
+        "A substantial agreement is not the same as a treaty already in force. The negotiating teams still have to complete the remaining legal and technical work before formal conclusion, signature and the applicable ratification and approval processes.",
+        "FMB News is therefore not reporting that tariff changes or other negotiated market-access commitments have already taken effect. Detailed final obligations should be assessed from the completed legal text when it is released."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "EU-Philippines FTA negotiations were originally launched in 2015, later paused, and formally resumed in March 2024. The European Commission’s current trade-agreement tracker lists the Philippines among agreements under negotiation."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "The EU is a major Philippine trade and investment partner. A completed FTA could alter market access and commercial rules across goods, services, investment and other negotiated areas, while giving Philippine exporters a more durable bilateral framework than unilateral trade preferences alone."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for formal conclusion of negotiations, publication of the final legal text, a signing timetable and the approval or ratification steps required before the agreement can enter into force."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "European Commission — Trade and Economic Security",
+      "title": "EU trade agreements: Philippines free trade agreement under negotiation",
+      "url": "https://policy.trade.ec.europa.eu/eu-trade-relationships-country-and-region/negotiations-and-agreements_en",
+      "role": "primary official EU status source"
+    },
+    {
+      "publisher": "Reuters",
+      "title": "EU and Philippines reach 'substantial agreement' on free-trade deal",
+      "publishedAt": "2026-09-22T09:35:00+08:00",
+      "url": "https://www.reuters.com/world/asia-pacific/eu-philippines-agree-free-trade-deal-2026-09-22/",
+      "role": "credible independent corroboration"
+    },
+    {
+      "publisher": "GMA News Online",
+      "title": "PH, EU reach 'substantial agreement' on free trade deal",
+      "publishedAt": "2026-09-22T11:05:00+08:00",
+      "url": "https://www.gmanetwork.com/news/money/economy/1003233/ph-eu-reach-substantial-agreement-on-free-trade-deal/story/",
+      "role": "credible independent Philippine corroboration"
+    }
+  ],
+  "image": {
+    "kind": "rights-cleared-contextual-diplomatic-photo",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Bongbong_Marcos,_Charles_Michel_and_Ursula_von_der_Leyen.jpg",
+    "source": "Wikimedia Commons / Office of the Press Secretary",
+    "creator": "Office of the Press Secretary, Philippines",
+    "license": "Public domain — Philippine government work",
+    "credit": "Photo: Office of the Press Secretary, Philippines, via Wikimedia Commons; public domain",
+    "caption": "File photograph of Philippine President Ferdinand Marcos Jr. with then-European Council President Charles Michel and European Commission President Ursula von der Leyen at the ASEAN-EU Commemorative Summit in Brussels on December 15, 2022. It is contextual and does not depict the September 22, 2026 FTA announcement.",
+    "alt": "Ferdinand Marcos Jr., Charles Michel and Ursula von der Leyen at the 2022 ASEAN-EU Commemorative Summit",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bongbong_Marcos,_Charles_Michel_and_Ursula_von_der_Leyen.jpg",
+    "width": 1600,
+    "height": 1009
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-09-22T15:51:58+08:00",
+    "verificationNotes": [
+      "The announcement is attributed to a joint statement by Philippine Trade Secretary Ma. Cristina Roque and EU Trade Commissioner Maroš Šefčovič, independently reproduced by GMA News and Reuters.",
+      "European Commission President Ursula von der Leyen separately announced the agreement after speaking with President Ferdinand Marcos Jr.",
+      "The European Commission’s official trade-agreement tracker confirms that the Philippines FTA is in the negotiated-agreement pipeline; the article does not claim the agreement is already in force.",
+      "The story explicitly distinguishes substantial political agreement from formal conclusion, signature, ratification and entry into force.",
+      "The contextual diplomatic photograph is a Philippine government work identified by Wikimedia Commons as public domain and is explicitly labeled as a 2022 file photograph."
+    ]
+  }
+}
