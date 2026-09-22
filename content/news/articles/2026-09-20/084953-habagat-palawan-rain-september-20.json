@@ -1,1 +1,94 @@
-{"schemaVersion":1,"status":"published","slug":"habagat-palawan-rain-september-20-2026","headline":"Habagat to Bring Scattered Rain Over Palawan; PAGASA Sees No LPA Near PAR","seoTitle":"Habagat Brings Rain to Palawan; No LPA Monitored | FMB News","seoDescription":"PAGASA's 4 a.m. September 20 forecast says the southwest monsoon will bring scattered rain and thunderstorms over Palawan, with possible flash floods or landslides during moderate to heavy rain.","keywords":["Habagat September 20 2026","Palawan weather","PAGASA forecast","southwest monsoon","Philippines weather"],"category":"Philippines","kicker":"PHILIPPINES · WEATHER","deck":"PAGASA says Palawan may see moderate to at times heavy rain under the southwest monsoon, while no low-pressure area was being monitored for tropical cyclone formation as of 2 a.m. Sunday.","publishedAt":"2026-09-20T08:49:53+08:00","updatedAt":"2026-09-20T08:49:53+08:00","author":"FMB News Desk","articleType":"NewsArticle","sections":[{"heading":"What happened","paragraphs":["The southwest monsoon, or habagat, will continue to affect the western section of Southern Luzon on Sunday, September 20, according to PAGASA's 4 a.m. weather bulletin reported by the Philippine News Agency.","Palawan is forecast to have cloudy skies with scattered rain showers and thunderstorms. PAGASA warned that moderate to at times heavy rain may trigger flash floods or landslides in susceptible areas."]},{"heading":"What is confirmed","paragraphs":["Occidental Mindoro and Oriental Mindoro are expected to have partly cloudy to cloudy skies with isolated rain showers or thunderstorms. Metro Manila and the rest of the country may also see isolated rain showers or thunderstorms due to localized thunderstorms.","As of 2 a.m., PAGASA said it was not monitoring any low-pressure area for tropical cyclone formation."]},{"heading":"Context","paragraphs":["The forecast is a weather-risk advisory, not a report that flooding or landslides have already occurred. Conditions can vary locally, especially during thunderstorms."]},{"heading":"Why it matters","paragraphs":["Residents and travelers in Palawan should account for the possibility of heavier bursts of rain and rapidly changing local conditions, particularly in flood- and landslide-prone areas."]},{"heading":"What to watch next","paragraphs":["Watch PAGASA's succeeding forecasts and local government advisories for any change in rainfall intensity, flood or landslide warnings, or the development of a new weather disturbance."]}],"sources":[{"publisher":"Philippine Atmospheric, Geophysical and Astronomical Services Administration","title":"4 a.m. public weather forecast, September 20, 2026","publishedAt":"2026-09-20T04:00:00+08:00","url":"https://www.pagasa.dost.gov.ph/","role":"primary official weather authority"},{"publisher":"Philippine News Agency","title":"‘Habagat’ to bring rains over western section of Southern Luzon","publishedAt":"2026-09-20T06:05:00+08:00","url":"https://www.pna.gov.ph/articles/1284423","role":"government news service report quoting PAGASA's 4 a.m. bulletin"}],"image":{"kind":"rights-cleared-contextual-location-photo","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Palawan_Island%2C_Dirt_road%2C_Philippines.jpg","source":"Wikimedia Commons","creator":"Vyacheslav Argenberg","license":"CC BY 4.0","credit":"Photo: Vyacheslav Argenberg / Wikimedia Commons, CC BY 4.0","caption":"File photograph of a road in northern Palawan, taken in March 2009. The photographer's description notes that parts of the route can become dangerous after storms or heavy rain. The image does not depict conditions on September 20, 2026.","alt":"File photograph of a dirt road in northern Palawan, Philippines","sourceUrl":"https://commons.wikimedia.org/wiki/File:Palawan_Island,_Dirt_road,_Philippines.jpg"},"audit":{"sourceCheckedAt":"2026-09-20T08:49:53+08:00","verificationNotes":["PNA's September 20 report directly attributes the forecast to PAGASA's 4 a.m. bulletin and states that Palawan faces scattered rain and thunderstorms with possible flash floods or landslides during moderate to at times heavy rain.","PNA also reports PAGASA's 2 a.m. assessment that no low-pressure areas were being monitored for tropical cyclone formation.","The article distinguishes forecast hazards from confirmed impacts and does not claim that flooding or landslides have occurred.","The hero is Vyacheslav Argenberg's own 2009 Palawan photograph on Wikimedia Commons, licensed CC BY 4.0. It is explicitly labeled as a contextual file photograph and not as an image of current weather conditions."]}}
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "habagat-palawan-rain-september-20-2026",
+  "headline": "Habagat to Bring Scattered Rain Over Palawan; PAGASA Sees No LPA Near PAR",
+  "seoTitle": "Habagat Brings Rain to Palawan; No LPA Monitored | FMB News",
+  "seoDescription": "PAGASA says the southwest monsoon will bring scattered rain and thunderstorms over Palawan on September 20, with possible flash floods or landslides during heavier rain.",
+  "keywords": [
+    "Habagat September 20 2026",
+    "Palawan weather",
+    "PAGASA forecast",
+    "southwest monsoon",
+    "Philippines weather"
+  ],
+  "category": "Philippines",
+  "kicker": "PHILIPPINES · WEATHER",
+  "deck": "PAGASA says Palawan may see moderate to at times heavy rain under the southwest monsoon, while no low-pressure area was being monitored for tropical cyclone formation as of 2 a.m. Sunday.",
+  "publishedAt": "2026-09-20T08:49:53+08:00",
+  "updatedAt": "2026-09-20T08:49:53+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The southwest monsoon, or habagat, will continue to affect the western section of Southern Luzon on Sunday, September 20, according to PAGASA's 4 a.m. weather bulletin reported by the Philippine News Agency.",
+        "Palawan is forecast to have cloudy skies with scattered rain showers and thunderstorms. PAGASA warned that moderate to at times heavy rain may trigger flash floods or landslides in susceptible areas."
+      ]
+    },
+    {
+      "heading": "What is confirmed",
+      "paragraphs": [
+        "Occidental Mindoro and Oriental Mindoro are expected to have partly cloudy to cloudy skies with isolated rain showers or thunderstorms. Metro Manila and the rest of the country may also see isolated rain showers or thunderstorms due to localized thunderstorms.",
+        "As of 2 a.m., PAGASA said it was not monitoring any low-pressure area for tropical cyclone formation."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The forecast is a weather-risk advisory, not a report that flooding or landslides have already occurred. Conditions can vary locally, especially during thunderstorms."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "Residents and travelers in Palawan should account for the possibility of heavier bursts of rain and rapidly changing local conditions, particularly in flood- and landslide-prone areas."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch PAGASA's succeeding forecasts and local government advisories for any change in rainfall intensity, flood or landslide warnings, or the development of a new weather disturbance."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Philippine Atmospheric, Geophysical and Astronomical Services Administration",
+      "title": "4 a.m. public weather forecast, September 20, 2026",
+      "publishedAt": "2026-09-20T04:00:00+08:00",
+      "url": "https://www.pagasa.dost.gov.ph/",
+      "role": "primary official weather authority"
+    },
+    {
+      "publisher": "Philippine News Agency",
+      "title": "‘Habagat’ to bring rains over western section of Southern Luzon",
+      "publishedAt": "2026-09-20T06:05:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1284423",
+      "role": "government news service report quoting PAGASA's 4 a.m. bulletin"
+    }
+  ],
+  "image": {
+    "kind": "rights-cleared-contextual-location-photo",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Palawan_Island%2C_Dirt_road%2C_Philippines.jpg",
+    "source": "Wikimedia Commons",
+    "creator": "Vyacheslav Argenberg",
+    "license": "CC BY 4.0",
+    "credit": "Photo: Vyacheslav Argenberg / Wikimedia Commons, CC BY 4.0",
+    "caption": "File photograph of a road in northern Palawan, taken in March 2009. The photographer's description notes that parts of the route can become dangerous after storms or heavy rain. The image does not depict conditions on September 20, 2026.",
+    "alt": "File photograph of a dirt road in northern Palawan, Philippines",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Palawan_Island,_Dirt_road,_Philippines.jpg",
+    "width": 4000,
+    "height": 2667
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-09-20T08:49:53+08:00",
+    "verificationNotes": [
+      "PNA's September 20 report directly attributes the forecast to PAGASA's 4 a.m. bulletin and states that Palawan faces scattered rain and thunderstorms with possible flash floods or landslides during moderate to at times heavy rain.",
+      "PNA also reports PAGASA's 2 a.m. assessment that no low-pressure areas were being monitored for tropical cyclone formation.",
+      "The article distinguishes forecast hazards from confirmed impacts and does not claim that flooding or landslides have occurred.",
+      "The hero is Vyacheslav Argenberg's own 2009 Palawan photograph on Wikimedia Commons, licensed CC BY 4.0. It is explicitly labeled as a contextual file photograph and not as an image of current weather conditions."
+    ]
+  }
+}
