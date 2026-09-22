@@ -76,17 +76,17 @@
     }
   ],
   "image": {
-    "kind": "fmb-editorial-fallback",
-    "url": "/news/fmb-editorial-sports.svg",
-    "source": "FMB News",
-    "creator": "FMB News Editorial",
-    "license": "FMB News original editorial graphic",
-    "credit": "FMB News editorial graphic",
-    "caption": "FMB News editorial sports visual used because no event-specific photograph with sufficiently clear republication rights was verified during this publishing cycle. It does not depict the September 22 kata competition.",
-    "alt": "FMB News editorial sports graphic for the Philippine women's team kata Asian Games bronze report",
-    "sourceUrl": "/news/fmb-editorial-sports.svg",
-    "width": 1600,
-    "height": 900
+    "kind": "rights-cleared-contextual-venue-photo",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Toyohashi_City_General_Gymnasium_1.jpg",
+    "source": "Wikimedia Commons",
+    "creator": "Lombroso",
+    "license": "Public domain (PD-self)",
+    "credit": "Photo: Lombroso / Wikimedia Commons, public domain",
+    "caption": "File photograph of Toyohashi City General Gymnasium, a 2026 Asian Games venue, taken in April 2007. It is contextual and does not depict the September 22, 2026 women’s team kata competition.",
+    "alt": "File photograph of Toyohashi City General Gymnasium in Toyohashi, Aichi, Japan",
+    "width": 2272,
+    "height": 1704,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Toyohashi_City_General_Gymnasium_1.jpg"
   },
   "audit": {
     "sourceCheckedAt": "2026-09-22T20:51:24+08:00",
