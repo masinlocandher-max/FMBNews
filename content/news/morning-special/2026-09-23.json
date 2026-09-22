@@ -1,0 +1,94 @@
+{
+  "date": "2026-09-23",
+  "publishedAt": "2026-09-23T07:00:00+08:00",
+  "editionLabel": "Daily Brief",
+  "title": "FMB Daily Brief — September 23, 2026",
+  "deck": "Filipinos start Wednesday with a new weather disturbance being monitored east of Luzon, continued strain on the Visayas power grid, fresh Asian Games medals and events, and major diplomatic and security developments abroad.",
+  "hero": {
+    "src": "",
+    "alt": "FMB Daily Brief for September 23, 2026",
+    "caption": "Wednesday morning edition. No documentary image is used where reuse rights have not been established.",
+    "credit": "FMB News",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260923-001",
+      "kicker": "Philippines · Weather",
+      "headline": "New tropical depression develops east of the Philippines",
+      "deck": "A tropical depression has formed outside the Philippine area of responsibility and is being monitored as parts of the country face rain from other weather systems.",
+      "body": [
+        "The Philippine Star reported, citing PAGASA, that the tropical depression was about 1,885 kilometers east of southeastern Luzon as of 4 p.m. Tuesday, carrying maximum sustained winds of 45 km/h and gusts up to 55 km/h while moving northward at 15 km/h.",
+        "If the system enters the Philippine area of responsibility, PAGASA will assign the local name Queenie. Separately, the trough of a low-pressure area was forecast to bring scattered rain and thunderstorms to Eastern Visayas, Caraga, Bohol and Davao Oriental, while localized thunderstorms remain possible elsewhere.",
+        "Why it matters: even before a cyclone enters PAR, changing weather systems can affect travel, agriculture and flood risk, particularly in areas already receiving rain.",
+        "What to watch: PAGASA track and intensity updates, whether the depression enters PAR, and local rainfall or thunderstorm advisories through Wednesday."
+      ],
+      "sources": [
+        {"label": "The Philippine Star — Cyclone develops outside PAR", "url": "https://www.philstar.com/headlines/2026/09/23/2558341/cyclone-develops-outside-par"}
+      ]
+    },
+    {
+      "id": "FMB-DB-20260923-002",
+      "kicker": "Philippines · Energy",
+      "headline": "Visayas power supply remains tight as major generating units undergo restoration",
+      "deck": "The Department of Energy says outages at major Visayas plants continue to squeeze reserves after repeated grid alerts.",
+      "body": [
+        "GMA News reported that Therma Visayas Unit 1 in Cebu and Panay Energy Development Corp. Unit 3 in Iloilo were undergoing restoration, with Energy Secretary Sharon Garin describing supply in the Visayas as tight. The Philippine Star's Cebu reporting separately said the Visayas remained a major concern because of repeated or prolonged plant outages.",
+        "NGCP placed the Visayas grid under yellow alert on Tuesday, with 928.4 MW unavailable because of outages and derated generating capacity. DOE is looking to battery storage and temporary generation as buffers while longer-term capacity is developed.",
+        "Why it matters: thin reserves increase the risk of power interruptions and can raise costs for households and businesses across the Visayas.",
+        "What to watch: Wednesday grid advisories, restoration of affected units, rotational interruption notices from local utilities and progress on planned battery-storage capacity."
+      ],
+      "sources": [
+        {"label": "GMA News — Visayas power plants down, electricity supply thinning — DOE", "url": "https://www.gmanetwork.com/news/topstories/regions/1003290/visayas-power-plants-down-electricity-supply-thinning-doe/story/"},
+        {"label": "The Philippine Star / The Freeman — Power interruption schedule depends on grid condition", "url": "https://www.philstar.com/the-freeman/cebu-news/2026/09/23/2558346/power-interruption-schedule-depends-grid-condition"}
+      ]
+    },
+    {
+      "id": "FMB-DB-20260923-003",
+      "kicker": "Sports · Asian Games",
+      "headline": "Philippines reaches four medals as Carlos Yulo and national teams take the stage Wednesday",
+      "deck": "Jean Claude Saclag delivered the Philippines' first silver and the women's kata team added bronze, taking the delegation to four medals before another full day of competition.",
+      "body": [
+        "GMA News and ABS-CBN News reported that Jean Claude Saclag won silver in the men's traditional -65kg mixed martial arts event after finishing runner-up to Tajikistan's Otabek Rajabov. The Philippine women's kata team also won bronze, bringing the delegation's total to one silver and three bronze medals through Tuesday.",
+        "Wednesday's program includes Carlos Yulo and the Philippine artistic gymnastics teams, Sam Catantan in women's foil, 3x3 basketball, rowing, weightlifting, squash, baseball, beach volleyball and sepak takraw.",
+        "Why it matters: the Philippines has begun converting medal opportunities into podium finishes while several of its highest-profile athletes are only now entering competition.",
+        "What to watch: the gymnastics team finals, Catantan's fencing campaign, 3x3 group-stage qualification and any additions to the medal tally."
+      ],
+      "sources": [
+        {"label": "GMA News — Jean Claude Saclag bags PH's first silver, Women's kata team gets bronze", "url": "https://www.gmanetwork.com/news/sports/othersports/1003357/jean-claude-saclag-bags-ph-s-first-silver-women-s-kata-team-gets-bronze-in-asian-games/story/"},
+        {"label": "ABS-CBN News — Saclag falls in final, claims PH's first silver in 2026 Asiad", "url": "https://www.abs-cbn.com/sports/othersports/2026/9/22/saclag-falls-in-final-claims-ph-s-first-silver-in-2026-asiad-1601"},
+        {"label": "GMA News — Team Philippines at 2026 Asian Games: September 23 schedule", "url": "https://www.gmanetwork.com/news/sports/othersports/1003360/team-philippines-at-2026-asian-games-september-23-schedule-carlos-yulo-and-ph-gymnastics-gilas-pilipi/story/"}
+      ]
+    },
+    {
+      "id": "FMB-DB-20260923-004",
+      "kicker": "Worldwide · East Asia",
+      "headline": "Xi begins US visit as Washington and Beijing enter another high-stakes round of talks",
+      "deck": "Chinese President Xi Jinping is scheduled to visit the United States from September 23 to 25 for talks with US President Donald Trump.",
+      "body": [
+        "Reuters reported that Xi's state visit begins Wednesday at Trump's invitation, with Beijing saying the leaders are expected to discuss China-US relations and major international issues.",
+        "The visit comes amid disputes spanning trade, technology, Taiwan and regional security, making the leaders' meetings consequential beyond the bilateral relationship.",
+        "Why it matters: US-China decisions affect global trade, semiconductor supply chains, investment and Indo-Pacific security, all of which have direct implications for the Philippines and Southeast Asia.",
+        "What to watch: concrete trade or technology agreements, language on Taiwan and regional security, and whether the two governments establish mechanisms to manage future disputes."
+      ],
+      "sources": [
+        {"label": "Reuters — China's Xi to visit the US from September 23-25", "url": "https://www.reuters.com/world/china/chinas-xi-visit-us-september-23-25-2026-09-21/"}
+      ]
+    },
+    {
+      "id": "FMB-DB-20260923-005",
+      "kicker": "Worldwide · Extreme Weather",
+      "headline": "Typhoon Dujuan leaves deaths, missing people and outages along Japan's Pacific coast",
+      "deck": "Heavy rain and landslides from Typhoon Dujuan have caused fatalities and widespread disruption in Japan.",
+      "body": [
+        "Reuters reported, citing Japanese broadcaster NHK, that torrential rain and landslides linked to Typhoon Dujuan killed four people and left six missing. About 45,000 households lost power according to Tokyo Electric Power Co.",
+        "Search and recovery operations were continuing in affected areas including Kanagawa and Chiba prefectures.",
+        "Why it matters: Japan is a major destination for Filipino travelers and workers, and severe weather can disrupt transport, power and local services with little notice.",
+        "What to watch: official casualty updates, transport and airport disruption, restoration of electricity and any Philippine consular advisories for Filipinos in affected areas."
+      ],
+      "sources": [
+        {"label": "Reuters — Torrential rains brought by Japan typhoon kill four, NHK says", "url": "https://www.reuters.com/business/environment/torrential-rains-brought-by-japan-typhoon-kill-two-nhk-says-2026-09-22/"}
+      ]
+    }
+  ]
+}
