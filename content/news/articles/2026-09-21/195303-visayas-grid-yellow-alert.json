@@ -1,1 +1,103 @@
-{"schemaVersion":1,"status":"published","slug":"visayas-grid-yellow-alert-september-21-2026","headline":"Visayas Grid Placed on Yellow Alert as 859.8 MW Becomes Unavailable","seoTitle":"Visayas Grid Under Yellow Alert September 21 | FMB News","seoDescription":"NGCP placed the Visayas grid under yellow alert from 4 p.m. to 8 p.m. on September 21 as outages, derated plants, higher demand and reduced Mindanao imports tightened reserves.","keywords":["Visayas grid","yellow alert","NGCP","power supply","PEDC","Therma Visayas","September 21 2026"],"category":"Philippines","kicker":"PHILIPPINES · ENERGY","deck":"NGCP says the Visayas grid has 2,500 MW of available capacity against forecast peak demand of 2,426 MW, leaving reserves below the contingency requirement.","publishedAt":"2026-09-21T19:53:03+08:00","updatedAt":"2026-09-21T19:53:03+08:00","author":"FMB News Desk","articleType":"NewsArticle","sections":[{"heading":"What happened","paragraphs":["The National Grid Corporation of the Philippines placed the Visayas grid under yellow alert from 4 p.m. to 8 p.m. Monday, September 21, after available reserves fell below the grid's contingency requirement.","NGCP reported about 2,500 megawatts of available capacity against forecast peak demand of 2,426 MW."]},{"heading":"What is confirmed","paragraphs":["NGCP attributed the tight supply to the 1:34 p.m. tripping of Panay Energy Development Corporation Unit 2, the unavailability of PEDC Unit 3 and Therma Visayas Inc. Unit 1, higher forecast demand in the Visayas, and reduced power imports from Mindanao.","The grid operator said 859.8 MW of generation capacity was unavailable. Eleven plants were on forced outage in September, other units had remained unavailable from earlier periods, and 17 plants were operating at derated capacity."]},{"heading":"What the alert means","paragraphs":["A yellow alert means the operating margin is insufficient to meet the transmission grid's contingency requirement. It signals thin reserves; it does not by itself mean that rotating brownouts are occurring."]},{"heading":"Why it matters","paragraphs":["The alert shows that the Visayas power system had little reserve headroom during the evening demand period. Additional generation losses or stronger-than-forecast demand could increase pressure on the grid."]},{"heading":"What to watch next","paragraphs":["Watch for NGCP updates on restoration of unavailable generating units, changes in available capacity and demand, and whether the yellow alert is lifted, extended or escalated. FMB News will not characterize service interruptions as confirmed unless grid operators or affected utilities report them."]}],"sources":[{"publisher":"National Grid Corporation of the Philippines","title":"Visayas grid yellow alert advisory, September 21, 2026, 2:15 p.m.","publishedAt":"2026-09-21T14:15:00+08:00","url":"https://www.ngcp.ph/","role":"primary grid-operator advisory as quoted and reproduced by accredited news organizations"},{"publisher":"Philippine News Agency","title":"Yellow alert raised for Visayas grid Sept. 21","publishedAt":"2026-09-21T16:34:00+08:00","url":"https://www.pna.gov.ph/articles/1284479","role":"official-state news report carrying NGCP figures and causes"},{"publisher":"GMA News Online","title":"NGCP: Visayas grid under yellow alert on September 21, 2026","publishedAt":"2026-09-21T14:56:00+08:00","url":"https://www.gmanetwork.com/news/topstories/regions/1003127/ngcp-visayas-grid-under-yellow-alert-on-september-21-2026/story/","role":"credible independent corroboration"}],"image":{"kind":"rights-cleared-contextual-grid-photo","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/FvfNPC0200_11.JPG","source":"Wikimedia Commons","creator":"Judgefloro","license":"Public domain (PD-self)","credit":"Photo: Judgefloro / Wikimedia Commons, public domain","caption":"File photograph of National Grid Corporation of the Philippines and transmission facilities in Quezon City, taken April 1, 2014. It is contextual infrastructure imagery and does not depict the September 21, 2026 Visayas grid conditions.","alt":"File photograph of National Grid Corporation of the Philippines transmission facilities used as contextual imagery for a Visayas grid yellow alert","sourceUrl":"https://commons.wikimedia.org/wiki/File:FvfNPC0200_11.JPG"},"audit":{"sourceCheckedAt":"2026-09-21T19:53:03+08:00","verificationNotes":["NGCP's 2:15 p.m. advisory is independently reproduced by GMA News and reported by the Philippine News Agency with matching alert window, available-capacity and peak-demand figures.","The article distinguishes a yellow alert from confirmed rotating brownouts and does not claim service interruptions without utility or grid-operator confirmation.","The 859.8 MW unavailable-generation figure and cited plant conditions are attributed to NGCP.","The contextual NGCP infrastructure photograph is Judgefloro's own work and is explicitly released into the public domain on Wikimedia Commons; it is clearly labeled as a 2014 file photograph outside the Visayas."]}}
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "visayas-grid-yellow-alert-september-21-2026",
+  "headline": "Visayas Grid Placed on Yellow Alert as 859.8 MW Becomes Unavailable",
+  "seoTitle": "Visayas Grid Under Yellow Alert September 21 | FMB News",
+  "seoDescription": "NGCP placed the Visayas grid under yellow alert from 4 p.m. to 8 p.m. on September 21 as outages, derated plants, higher demand and reduced Mindanao imports tightened reserves.",
+  "keywords": [
+    "Visayas grid",
+    "yellow alert",
+    "NGCP",
+    "power supply",
+    "PEDC",
+    "Therma Visayas",
+    "September 21 2026"
+  ],
+  "category": "Philippines",
+  "kicker": "PHILIPPINES · ENERGY",
+  "deck": "NGCP says the Visayas grid has 2,500 MW of available capacity against forecast peak demand of 2,426 MW, leaving reserves below the contingency requirement.",
+  "publishedAt": "2026-09-21T19:53:03+08:00",
+  "updatedAt": "2026-09-21T19:53:03+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The National Grid Corporation of the Philippines placed the Visayas grid under yellow alert from 4 p.m. to 8 p.m. Monday, September 21, after available reserves fell below the grid's contingency requirement.",
+        "NGCP reported about 2,500 megawatts of available capacity against forecast peak demand of 2,426 MW."
+      ]
+    },
+    {
+      "heading": "What is confirmed",
+      "paragraphs": [
+        "NGCP attributed the tight supply to the 1:34 p.m. tripping of Panay Energy Development Corporation Unit 2, the unavailability of PEDC Unit 3 and Therma Visayas Inc. Unit 1, higher forecast demand in the Visayas, and reduced power imports from Mindanao.",
+        "The grid operator said 859.8 MW of generation capacity was unavailable. Eleven plants were on forced outage in September, other units had remained unavailable from earlier periods, and 17 plants were operating at derated capacity."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "A yellow alert means the operating margin is insufficient to meet the transmission grid's contingency requirement. It signals thin reserves; it does not by itself mean that rotating brownouts are occurring."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "The alert shows that the Visayas power system had little reserve headroom during the evening demand period. Additional generation losses or stronger-than-forecast demand could increase pressure on the grid."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for NGCP updates on restoration of unavailable generating units, changes in available capacity and demand, and whether the yellow alert is lifted, extended or escalated. FMB News will not characterize service interruptions as confirmed unless grid operators or affected utilities report them."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "National Grid Corporation of the Philippines",
+      "title": "Visayas grid yellow alert advisory, September 21, 2026, 2:15 p.m.",
+      "publishedAt": "2026-09-21T14:15:00+08:00",
+      "url": "https://www.ngcp.ph/",
+      "role": "primary grid-operator advisory as quoted and reproduced by accredited news organizations"
+    },
+    {
+      "publisher": "Philippine News Agency",
+      "title": "Yellow alert raised for Visayas grid Sept. 21",
+      "publishedAt": "2026-09-21T16:34:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1284479",
+      "role": "official-state news report carrying NGCP figures and causes"
+    },
+    {
+      "publisher": "GMA News Online",
+      "title": "NGCP: Visayas grid under yellow alert on September 21, 2026",
+      "publishedAt": "2026-09-21T14:56:00+08:00",
+      "url": "https://www.gmanetwork.com/news/topstories/regions/1003127/ngcp-visayas-grid-under-yellow-alert-on-september-21-2026/story/",
+      "role": "credible independent corroboration"
+    }
+  ],
+  "image": {
+    "kind": "rights-cleared-contextual-grid-photo",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/FvfNPC0200_11.JPG",
+    "source": "Wikimedia Commons",
+    "creator": "Judgefloro",
+    "license": "Public domain (PD-self)",
+    "credit": "Photo: Judgefloro / Wikimedia Commons, public domain",
+    "caption": "File photograph of National Grid Corporation of the Philippines and transmission facilities in Quezon City, taken April 1, 2014. It is contextual infrastructure imagery and does not depict the September 21, 2026 Visayas grid conditions.",
+    "alt": "File photograph of National Grid Corporation of the Philippines transmission facilities used as contextual imagery for a Visayas grid yellow alert",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:FvfNPC0200_11.JPG",
+    "width": 4608,
+    "height": 3456
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-09-21T19:53:03+08:00",
+    "verificationNotes": [
+      "NGCP's 2:15 p.m. advisory is independently reproduced by GMA News and reported by the Philippine News Agency with matching alert window, available-capacity and peak-demand figures.",
+      "The article distinguishes a yellow alert from confirmed rotating brownouts and does not claim service interruptions without utility or grid-operator confirmation.",
+      "The 859.8 MW unavailable-generation figure and cited plant conditions are attributed to NGCP.",
+      "The contextual NGCP infrastructure photograph is Judgefloro's own work and is explicitly released into the public domain on Wikimedia Commons; it is clearly labeled as a 2014 file photograph outside the Visayas."
+    ]
+  }
+}
