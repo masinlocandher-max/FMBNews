@@ -1,1 +1,96 @@
-{"schemaVersion":1,"status":"published","slug":"eumir-marcial-withdraws-2026-asian-games","headline":"Eumir Marcial Withdraws From 2026 Asian Games After U.S. Pro Fight","seoTitle":"Eumir Marcial Withdraws From 2026 Asian Games | FMB News","seoDescription":"Olympic boxing medalist Eumir Marcial will miss the 2026 Asian Games after he and ABAP president Marcus Manalo agreed the short recovery and travel window following his U.S. professional fight posed too much risk.","keywords":["Eumir Marcial","2026 Asian Games","Aichi Nagoya Asian Games","Philippine boxing","ABAP","Team Philippines"],"category":"Sports","kicker":"SPORTS · ASIAN GAMES","deck":"ABAP president Marcus Manalo says Marcial and the federation agreed he should skip Aichi-Nagoya because the immediate transition from a professional fight in California to another elite boxing competition would leave inadequate recovery time.","publishedAt":"2026-09-20T18:53:08+08:00","updatedAt":"2026-09-20T18:53:08+08:00","author":"FMB News Desk","articleType":"NewsArticle","sections":[{"heading":"What happened","paragraphs":["Filipino Olympic boxing medalist Eumir Marcial will not compete at the 2026 Asian Games in Aichi-Nagoya, Japan, after he and Association of Boxing Alliances in the Philippines president Marcus Manalo agreed that the turnaround from Marcial's latest professional bout was too tight for a safe transition back to international amateur-style competition.","The decision was announced Sunday after Marcial scored a third-round knockout of Omar Ulises Huerta at Pechanga Arena in San Diego, California. GMA News reported the withdrawal at 2:05 p.m. Manila time, citing a statement released through Philippine Olympic Committee media; Philstar independently reported the same decision at 2:23 p.m." ]},{"heading":"What is confirmed","paragraphs":["Manalo said the long-distance travel to Nagoya, the time difference and the limited recovery period following Marcial's professional fight were central to the decision. He said adequate rest is important in a physically demanding and inherently risky sport and that the federation did not want to compromise Marcial's health and safety.","Marcial previously won Asian Games silver in the light-heavyweight division at Hangzhou and bronze in the middleweight division at Jakarta-Palembang." ]},{"heading":"Context","paragraphs":["Marcial's Asian Games participation had been uncertain earlier in 2026 because of his professional schedule. Sunday's announcement is the current confirmation from ABAP leadership following his completed U.S. bout and establishes that he will not make the immediate trip to compete in Aichi-Nagoya." ]},{"heading":"Why it matters","paragraphs":["Marcial is one of the Philippines' most accomplished active boxers and an Olympic bronze medalist. His withdrawal removes a proven Asian Games medalist from the Philippine boxing campaign and underscores the scheduling and athlete-safety challenges involved when elite boxers move between professional and national-team competition." ]},{"heading":"What to watch next","paragraphs":["Watch for the Philippine boxing delegation's finalized Asian Games lineup and for Marcial's next national-team or professional assignment. GMA reported that he is expected to compete at the Asian Indoor and Martial Arts Games in December." ]}],"sources":[{"publisher":"Philippine Olympic Committee Media / Association of Boxing Alliances in the Philippines","title":"Statement of ABAP president Marcus Manalo on Eumir Marcial's 2026 Asian Games withdrawal, distributed to POC media and reproduced by accredited news organizations","publishedAt":"2026-09-20T14:05:00+08:00","url":"https://www.gmanetwork.com/news/sports/boxing/1003019/eumir-marcial-to-skip-2026-asian-games-after-ko-win-in-pro-bout/story/","role":"primary-source statement reproduced by independent broadcaster"},{"publisher":"GMA News Online","title":"Eumir Marcial to skip 2026 Asian Games after KO win in pro bout","publishedAt":"2026-09-20T14:05:00+08:00","url":"https://www.gmanetwork.com/news/sports/boxing/1003019/eumir-marcial-to-skip-2026-asian-games-after-ko-win-in-pro-bout/story/","role":"credible independent reporting carrying the POC-media statement"},{"publisher":"Philstar.com","title":"Marcial skips Asian Games after triumphant US pro fight","publishedAt":"2026-09-20T14:23:00+08:00","url":"https://www.philstar.com/sports/2026/09/20/2557634/marcial-skips-asian-games-after-triumphant-us-pro-fight","role":"independent corroboration"}],"image":{"kind":"rights-cleared-contextual-athlete-photo","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Eumir%20felix%20marcial%20KL%202017.jpg","source":"Wikimedia Commons / Philippine News Agency","creator":"Primo Agatep for the Philippine News Agency","license":"Public domain","credit":"Photo: Primo Agatep / Philippine News Agency, via Wikimedia Commons; public domain","caption":"File photograph of Eumir Marcial at the 2017 Southeast Asian Games. The image is contextual and does not depict his September 20, 2026 professional bout or the 2026 Asian Games.","alt":"File photograph of Filipino boxer Eumir Marcial at the 2017 Southeast Asian Games","sourceUrl":"https://commons.wikimedia.org/wiki/File:Eumir_felix_marcial_KL_2017.jpg"},"audit":{"sourceCheckedAt":"2026-09-20T18:53:08+08:00","verificationNotes":["GMA News published the current withdrawal at 2:05 p.m. Manila time and reproduced ABAP president Marcus Manalo's statement released through Philippine Olympic Committee media.","Philstar independently corroborated the withdrawal at 2:23 p.m. and attributed the decision to Manalo.","Earlier 2026 reporting had already raised the possibility that Marcial would skip the Games because of professional commitments; this article is framed specifically around the current post-fight confirmation and does not present the earlier scheduling issue as newly discovered.","No claim is made that Marcial was injured. The stated reason is insufficient recovery and transition time and the associated health-and-safety risk identified by ABAP leadership.","The hero image is a 2017 Philippine News Agency photograph of Marcial identified on Wikimedia Commons as public domain. It is explicitly labeled as a contextual file photograph rather than an image of Sunday's fight or the current Games."]}}
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "eumir-marcial-withdraws-2026-asian-games",
+  "headline": "Eumir Marcial Withdraws From 2026 Asian Games After U.S. Pro Fight",
+  "seoTitle": "Eumir Marcial Withdraws From 2026 Asian Games | FMB News",
+  "seoDescription": "Eumir Marcial will miss the 2026 Asian Games after he and ABAP agreed the recovery and travel window following his U.S. professional fight was too tight.",
+  "keywords": [
+    "Eumir Marcial",
+    "2026 Asian Games",
+    "Aichi Nagoya Asian Games",
+    "Philippine boxing",
+    "ABAP",
+    "Team Philippines"
+  ],
+  "category": "Sports",
+  "kicker": "SPORTS · ASIAN GAMES",
+  "deck": "ABAP president Marcus Manalo says Marcial and the federation agreed he should skip Aichi-Nagoya because the immediate transition from a professional fight in California to another elite boxing competition would leave inadequate recovery time.",
+  "publishedAt": "2026-09-20T18:53:08+08:00",
+  "updatedAt": "2026-09-20T18:53:08+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Filipino Olympic boxing medalist Eumir Marcial will not compete at the 2026 Asian Games in Aichi-Nagoya, Japan, after he and Association of Boxing Alliances in the Philippines president Marcus Manalo agreed that the turnaround from Marcial's latest professional bout was too tight for a safe transition back to international amateur-style competition.",
+        "The decision was announced Sunday after Marcial scored a third-round knockout of Omar Ulises Huerta at Pechanga Arena in San Diego, California. GMA News reported the withdrawal at 2:05 p.m. Manila time, citing a statement released through Philippine Olympic Committee media; Philstar independently reported the same decision at 2:23 p.m."
+      ]
+    },
+    {
+      "heading": "What is confirmed",
+      "paragraphs": [
+        "Manalo said the long-distance travel to Nagoya, the time difference and the limited recovery period following Marcial's professional fight were central to the decision. He said adequate rest is important in a physically demanding and inherently risky sport and that the federation did not want to compromise Marcial's health and safety.",
+        "Marcial previously won Asian Games silver in the light-heavyweight division at Hangzhou and bronze in the middleweight division at Jakarta-Palembang."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "Marcial's Asian Games participation had been uncertain earlier in 2026 because of his professional schedule. Sunday's announcement is the current confirmation from ABAP leadership following his completed U.S. bout and establishes that he will not make the immediate trip to compete in Aichi-Nagoya."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "Marcial is one of the Philippines' most accomplished active boxers and an Olympic bronze medalist. His withdrawal removes a proven Asian Games medalist from the Philippine boxing campaign and underscores the scheduling and athlete-safety challenges involved when elite boxers move between professional and national-team competition."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for the Philippine boxing delegation's finalized Asian Games lineup and for Marcial's next national-team or professional assignment. GMA reported that he is expected to compete at the Asian Indoor and Martial Arts Games in December."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Philippine Olympic Committee Media / Association of Boxing Alliances in the Philippines",
+      "title": "Statement of ABAP president Marcus Manalo on Eumir Marcial's 2026 Asian Games withdrawal, distributed to POC media and reproduced by accredited news organizations",
+      "publishedAt": "2026-09-20T14:05:00+08:00",
+      "url": "https://www.gmanetwork.com/news/sports/boxing/1003019/eumir-marcial-to-skip-2026-asian-games-after-ko-win-in-pro-bout/story/",
+      "role": "primary-source statement reproduced by independent broadcaster"
+    },
+    {
+      "publisher": "Philstar.com",
+      "title": "Marcial skips Asian Games after triumphant US pro fight",
+      "publishedAt": "2026-09-20T14:23:00+08:00",
+      "url": "https://www.philstar.com/sports/2026/09/20/2557634/marcial-skips-asian-games-after-triumphant-us-pro-fight",
+      "role": "independent corroboration"
+    }
+  ],
+  "image": {
+    "kind": "rights-cleared-contextual-athlete-photo",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Eumir%20felix%20marcial%20KL%202017.jpg",
+    "source": "Wikimedia Commons / Philippine News Agency",
+    "creator": "Primo Agatep for the Philippine News Agency",
+    "license": "Public domain",
+    "credit": "Photo: Primo Agatep / Philippine News Agency, via Wikimedia Commons; public domain",
+    "caption": "File photograph of Eumir Marcial at the 2017 Southeast Asian Games. The image is contextual and does not depict his September 20, 2026 professional bout or the 2026 Asian Games.",
+    "alt": "File photograph of Filipino boxer Eumir Marcial at the 2017 Southeast Asian Games",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eumir_felix_marcial_KL_2017.jpg",
+    "width": 1332,
+    "height": 1742
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-09-20T18:53:08+08:00",
+    "verificationNotes": [
+      "GMA News published the current withdrawal at 2:05 p.m. Manila time and reproduced ABAP president Marcus Manalo's statement released through Philippine Olympic Committee media.",
+      "Philstar independently corroborated the withdrawal at 2:23 p.m. and attributed the decision to Manalo.",
+      "Earlier 2026 reporting had already raised the possibility that Marcial would skip the Games because of professional commitments; this article is framed specifically around the current post-fight confirmation and does not present the earlier scheduling issue as newly discovered.",
+      "No claim is made that Marcial was injured. The stated reason is insufficient recovery and transition time and the associated health-and-safety risk identified by ABAP leadership.",
+      "The hero image is a 2017 Philippine News Agency photograph of Marcial identified on Wikimedia Commons as public domain. It is explicitly labeled as a contextual file photograph rather than an image of Sunday's fight or the current Games."
+    ]
+  }
+}
