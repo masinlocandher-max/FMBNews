@@ -1,1 +1,118 @@
-{"schemaVersion":1,"status":"published","slug":"cebu-haze-class-suspensions-september-22-2026","headline":"Cebu LGUs Suspend Face-to-Face Classes Again as Indonesian Haze Keeps Air Unhealthy","seoTitle":"Cebu Suspends In-Person Classes Again Amid Indonesian Haze | FMB News","seoDescription":"Cebu City and other Cebu LGUs suspended face-to-face classes on September 22 as transboundary haze from Indonesian fires continued to keep PM2.5 air quality unhealthy.","keywords":["Cebu haze","Cebu class suspension","air quality","PM2.5","DENR EMB 7","Indonesia fires","Cebu City"],"category":"Philippines","kicker":"PHILIPPINES · CEBU · PUBLIC HEALTH","deck":"Cebu City and several neighboring LGUs shifted students away from in-person classes Tuesday as DENR-EMB 7 warned that transboundary haze could continue to raise fine-particle concentrations while Indonesian fires and southwest winds persist.","publishedAt":"2026-09-22T10:49:19+08:00","updatedAt":"2026-09-22T10:49:19+08:00","author":"FMB News Desk","articleType":"NewsArticle","sections":[{"heading":"What happened","paragraphs":["Cebu City suspended face-to-face classes at all levels in public and private schools on Tuesday, September 22, with schools shifting to modular, online or asynchronous learning as unhealthy air conditions persisted.","Independent local and national reports also identify additional Cebu local governments, including Mandaue and other Metro Cebu areas, that suspended in-person classes or shifted to alternative delivery modes. Coverage varies by locality and school type, so FMB News is not treating every LGU as having an identical suspension order."]},{"heading":"What the air-quality authority says","paragraphs":["DENR-Environmental Management Bureau Region 7 air-quality specialist Arthur Niño Calupig said transboundary haze can continue to raise PM2.5 concentrations in Central Visayas while fires persist in Indonesia and prevailing winds transport pollutants toward the region.","The Freeman reported that the Metro Cebu monitoring station in Talisay City recorded a PM2.5 air quality index of 189 at 11 a.m. Monday, classified as very unhealthy, after even worse readings over the weekend. EMB-7 cautioned that temporary improvement does not mean the air is already safe."]},{"heading":"What is confirmed","paragraphs":["GMA News' September 22 suspension list confirms Cebu City's all-level face-to-face suspension. Bombo Radyo Cebu independently reported the Cebu City suspension and additional affected LGUs, citing DENR-EMB 7 air-quality information.","The continuing haze risk is independently corroborated by The Freeman's direct interview with EMB-7's air-quality specialist."]},{"heading":"What remains variable","paragraphs":["Air quality can change by hour and monitoring location. The exact suspension coverage also differs among LGUs and may be updated during the day. Residents should therefore follow their LGU and DENR-EMB 7 advisories rather than assume a province-wide uniform order."]},{"heading":"Why it matters","paragraphs":["PM2.5 consists of fine particles capable of penetrating deep into the respiratory system. EMB-7 has repeatedly advised people to limit outdoor exertion during unhealthy conditions, with children, older adults and people with heart or respiratory conditions among those needing greater caution."]},{"heading":"What to watch next","paragraphs":["Watch DENR-EMB 7's succeeding PM2.5 readings and LGU announcements on whether face-to-face classes can safely resume. EMB-7 says rainfall may temporarily help remove particles, but conditions remain dependent on fires and wind direction."]}],"sources":[{"publisher":"DENR-Environmental Management Bureau Region 7","title":"Air-quality monitoring and public guidance carried in direct EMB-7 briefing/interview reporting","publishedAt":"2026-09-21T11:00:00+08:00","url":"https://r7.emb.gov.ph/","role":"primary official air-quality authority"},{"publisher":"GMA News Online","title":"WALANG PASOK: Class suspensions for Tuesday, September 22, 2026","publishedAt":"2026-09-21T20:13:00+08:00","url":"https://www.gmanetwork.com/news/serbisyopubliko/walangpasok/1003170/walang-pasok-class-suspensions-for-monday-september-22-2026/story/","role":"credible independent reporting of LGU suspension announcements"},{"publisher":"The Freeman / Philstar.com","title":"EMB-7: Haze may persist","publishedAt":"2026-09-22T00:00:00+08:00","url":"https://www.philstar.com/the-freeman/cebu-news/2026/09/22/2558021/emb-7-haze-may-persist/amp/","role":"independent reporting with direct EMB-7 specialist interview and PM2.5 readings"},{"publisher":"Bombo Radyo Cebu","title":"Mga klase sa mga Dakbayan, Kanselado gumikan sa padayung bati nga kalidad sa hangin","publishedAt":"2026-09-22T01:36:00+08:00","url":"https://cebu.bomboradyo.com/mga-klase-sa-mga-dakbayan-kanselado-gumikan-sa-padayung-bati-nga-kalidad-sa-hangin/","role":"independent local corroboration"}],"image":{"kind":"rights-cleared-contextual-city-photo","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Cebu_city_skyline_2025.jpg","source":"Wikimedia Commons","creator":"DisRaptor18","license":"CC0 1.0","credit":"Photo: DisRaptor18 / Wikimedia Commons, CC0 1.0","caption":"File photograph of the Cebu City skyline taken on April 14, 2025. It is a contextual location image and does not depict the September 2026 haze or current air quality.","alt":"File photograph of the Cebu City skyline used as contextual imagery for the September 2026 haze report","sourceUrl":"https://commons.wikimedia.org/wiki/File:Cebu_city_skyline_2025.jpg"},"audit":{"sourceCheckedAt":"2026-09-22T10:49:19+08:00","verificationNotes":["GMA News confirms Cebu City's September 22 all-level face-to-face class suspension due to air quality.","The Freeman directly quotes DENR-EMB 7 specialist Arthur Niño Calupig on continuing transboundary haze risk and reports the agency's PM2.5 monitoring values.","Bombo Radyo Cebu independently corroborates the suspension and cites DENR-EMB 7 air-quality information.","The article avoids presenting a single AQI reading as current for all of Cebu and notes that both air quality and suspension coverage vary by place and time.","Wikimedia Commons identifies the Cebu skyline photograph as DisRaptor18's own work dedicated under CC0 1.0; the caption explicitly states that it does not depict the current haze."]}}
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "cebu-haze-class-suspensions-september-22-2026",
+  "headline": "Cebu LGUs Suspend Face-to-Face Classes Again as Indonesian Haze Keeps Air Unhealthy",
+  "seoTitle": "Cebu Suspends In-Person Classes Again Amid Indonesian Haze | FMB News",
+  "seoDescription": "Cebu City and other Cebu LGUs suspended face-to-face classes on September 22 as transboundary haze from Indonesian fires continued to keep PM2.5 air quality unhealthy.",
+  "keywords": [
+    "Cebu haze",
+    "Cebu class suspension",
+    "air quality",
+    "PM2.5",
+    "DENR EMB 7",
+    "Indonesia fires",
+    "Cebu City"
+  ],
+  "category": "Philippines",
+  "kicker": "PHILIPPINES · CEBU · PUBLIC HEALTH",
+  "deck": "Cebu City and several neighboring LGUs shifted students away from in-person classes Tuesday as DENR-EMB 7 warned that transboundary haze could continue to raise fine-particle concentrations while Indonesian fires and southwest winds persist.",
+  "publishedAt": "2026-09-22T10:49:19+08:00",
+  "updatedAt": "2026-09-22T10:49:19+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Cebu City suspended face-to-face classes at all levels in public and private schools on Tuesday, September 22, with schools shifting to modular, online or asynchronous learning as unhealthy air conditions persisted.",
+        "Independent local and national reports also identify additional Cebu local governments, including Mandaue and other Metro Cebu areas, that suspended in-person classes or shifted to alternative delivery modes. Coverage varies by locality and school type, so FMB News is not treating every LGU as having an identical suspension order."
+      ]
+    },
+    {
+      "heading": "What the air-quality authority says",
+      "paragraphs": [
+        "DENR-Environmental Management Bureau Region 7 air-quality specialist Arthur Niño Calupig said transboundary haze can continue to raise PM2.5 concentrations in Central Visayas while fires persist in Indonesia and prevailing winds transport pollutants toward the region.",
+        "The Freeman reported that the Metro Cebu monitoring station in Talisay City recorded a PM2.5 air quality index of 189 at 11 a.m. Monday, classified as very unhealthy, after even worse readings over the weekend. EMB-7 cautioned that temporary improvement does not mean the air is already safe."
+      ]
+    },
+    {
+      "heading": "What is confirmed",
+      "paragraphs": [
+        "GMA News' September 22 suspension list confirms Cebu City's all-level face-to-face suspension. Bombo Radyo Cebu independently reported the Cebu City suspension and additional affected LGUs, citing DENR-EMB 7 air-quality information.",
+        "The continuing haze risk is independently corroborated by The Freeman's direct interview with EMB-7's air-quality specialist."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "Air quality can change by hour and monitoring location. The exact suspension coverage also differs among LGUs and may be updated during the day. Residents should therefore follow their LGU and DENR-EMB 7 advisories rather than assume a province-wide uniform order."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "PM2.5 consists of fine particles capable of penetrating deep into the respiratory system. EMB-7 has repeatedly advised people to limit outdoor exertion during unhealthy conditions, with children, older adults and people with heart or respiratory conditions among those needing greater caution."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch DENR-EMB 7's succeeding PM2.5 readings and LGU announcements on whether face-to-face classes can safely resume. EMB-7 says rainfall may temporarily help remove particles, but conditions remain dependent on fires and wind direction."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "DENR-Environmental Management Bureau Region 7",
+      "title": "Air-quality monitoring and public guidance carried in direct EMB-7 briefing/interview reporting",
+      "publishedAt": "2026-09-21T11:00:00+08:00",
+      "url": "https://r7.emb.gov.ph/",
+      "role": "primary official air-quality authority"
+    },
+    {
+      "publisher": "GMA News Online",
+      "title": "WALANG PASOK: Class suspensions for Tuesday, September 22, 2026",
+      "publishedAt": "2026-09-21T20:13:00+08:00",
+      "url": "https://www.gmanetwork.com/news/serbisyopubliko/walangpasok/1003170/walang-pasok-class-suspensions-for-monday-september-22-2026/story/",
+      "role": "credible independent reporting of LGU suspension announcements"
+    },
+    {
+      "publisher": "The Freeman / Philstar.com",
+      "title": "EMB-7: Haze may persist",
+      "publishedAt": "2026-09-22T00:00:00+08:00",
+      "url": "https://www.philstar.com/the-freeman/cebu-news/2026/09/22/2558021/emb-7-haze-may-persist/amp/",
+      "role": "independent reporting with direct EMB-7 specialist interview and PM2.5 readings"
+    },
+    {
+      "publisher": "Bombo Radyo Cebu",
+      "title": "Mga klase sa mga Dakbayan, Kanselado gumikan sa padayung bati nga kalidad sa hangin",
+      "publishedAt": "2026-09-22T01:36:00+08:00",
+      "url": "https://cebu.bomboradyo.com/mga-klase-sa-mga-dakbayan-kanselado-gumikan-sa-padayung-bati-nga-kalidad-sa-hangin/",
+      "role": "independent local corroboration"
+    }
+  ],
+  "image": {
+    "kind": "rights-cleared-contextual-city-photo",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Cebu_city_skyline_2025.jpg",
+    "source": "Wikimedia Commons",
+    "creator": "DisRaptor18",
+    "license": "CC0 1.0",
+    "credit": "Photo: DisRaptor18 / Wikimedia Commons, CC0 1.0",
+    "caption": "File photograph of the Cebu City skyline taken on April 14, 2025. It is a contextual location image and does not depict the September 2026 haze or current air quality.",
+    "alt": "File photograph of the Cebu City skyline used as contextual imagery for the September 2026 haze report",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cebu_city_skyline_2025.jpg",
+    "width": 4080,
+    "height": 3060
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-09-22T10:49:19+08:00",
+    "verificationNotes": [
+      "GMA News confirms Cebu City's September 22 all-level face-to-face class suspension due to air quality.",
+      "The Freeman directly quotes DENR-EMB 7 specialist Arthur Niño Calupig on continuing transboundary haze risk and reports the agency's PM2.5 monitoring values.",
+      "Bombo Radyo Cebu independently corroborates the suspension and cites DENR-EMB 7 air-quality information.",
+      "The article avoids presenting a single AQI reading as current for all of Cebu and notes that both air quality and suspension coverage vary by place and time.",
+      "Wikimedia Commons identifies the Cebu skyline photograph as DisRaptor18's own work dedicated under CC0 1.0; the caption explicitly states that it does not depict the current haze."
+    ]
+  }
+}
