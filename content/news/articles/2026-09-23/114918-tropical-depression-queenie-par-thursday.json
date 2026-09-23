@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "tropical-depression-queenie-par-thursday-september-23-2026",
+  "headline": "Former LPA Develops Into Tropical Depression, May Enter PAR Thursday as ‘Queenie’",
+  "seoTitle": "Tropical Depression May Enter PAR Thursday as Queenie | FMB News",
+  "seoDescription": "PAGASA says the system previously monitored as an LPA has developed into a tropical depression outside PAR and may enter the Philippine Area of Responsibility Thursday, when it will be named Queenie.",
+  "keywords": ["PAGASA", "Queenie", "tropical depression", "PAR", "Eastern Visayas", "Caraga", "Davao Oriental", "Philippine weather"],
+  "category": "Weather",
+  "kicker": "WEATHER · DEVELOPING",
+  "deck": "The system previously tracked as a low pressure area is now a tropical depression outside PAR. PAGASA says it may enter the Philippine Area of Responsibility on Thursday and could intensify further, while its trough is already bringing rain to parts of the Visayas and Mindanao.",
+  "publishedAt": "2026-09-23T11:49:18+08:00",
+  "updatedAt": "2026-09-23T11:49:18+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "relatedArticles": [
+    {
+      "relationship": "continuation-of",
+      "slug": "lpa-east-eastern-visayas-may-enter-par-september-21-2026",
+      "path": "/news/lpa-east-eastern-visayas-may-enter-par-september-21-2026"
+    },
+    {
+      "relationship": "continuation-of",
+      "slug": "lpa-medium-development-rain-eastern-visayas-september-22-2026",
+      "path": "/news/lpa-medium-development-rain-eastern-visayas-september-22-2026"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "What changed",
+      "paragraphs": [
+        "The weather system FMB News previously reported as a low pressure area east of the Philippines has developed into a tropical depression outside the Philippine Area of Responsibility, according to PAGASA reporting carried Wednesday morning.",
+        "As of 3 a.m. Wednesday, the tropical depression was about 1,920 kilometers east of southeastern Luzon, moving northwestward at 25 kilometers per hour with maximum sustained winds of 55 km/h near the center."
+      ]
+    },
+    {
+      "heading": "PAR entry and possible intensification",
+      "paragraphs": [
+        "PAGASA says the tropical depression may enter PAR on Thursday morning or afternoon. It will be assigned the Philippine name Queenie if it enters the monitoring area.",
+        "The system could intensify into a tropical storm. Current forecasts indicate it is expected to turn north before getting close to Extreme Northern Luzon, but that track remains a forecast rather than a completed event."
+      ]
+    },
+    {
+      "heading": "Rain is already affecting parts of the country",
+      "paragraphs": [
+        "The tropical depression's trough is bringing cloudy skies with scattered rains and thunderstorms over Eastern Visayas, Caraga, Davao Oriental, Misamis Oriental and Camiguin. PAGASA warns that moderate to heavy rain can trigger flash floods or landslides in vulnerable areas.",
+        "Metro Manila and the rest of the country are forecast to have partly cloudy to cloudy skies with isolated rain showers or thunderstorms due to localized thunderstorms."
+      ]
+    },
+    {
+      "heading": "What is confirmed",
+      "paragraphs": [
+        "The system is now a tropical depression, remains outside PAR as of the Wednesday morning reports reviewed by FMB News, and has not yet been named Queenie. PNA, GMA News and Inquirer independently report the new classification and PAGASA forecast."
+      ]
+    },
+    {
+      "heading": "What remains unresolved",
+      "paragraphs": [
+        "PAR entry, the exact future track, peak intensity and any later direct effects on the Philippine landmass remain forecast questions. FMB News is not treating projected entry or intensification as having already occurred."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "Development from an LPA into a tropical depression is an independently newsworthy escalation from FMB News' September 21 and 22 reports. The system now has a defined tropical-cyclone circulation and its trough is already producing a rainfall hazard over parts of the country."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch PAGASA for the first tropical cyclone bulletin if the system enters PAR, any change in track or intensity, rainfall advisories, and whether the cyclone begins to enhance the southwest monsoon."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "DOST-PAGASA",
+      "title": "Daily Weather Forecast and tropical cyclone monitoring, September 23, 2026",
+      "publishedAt": "2026-09-23T04:00:00+08:00",
+      "url": "https://bagong.pagasa.dost.gov.ph/",
+      "role": "primary official weather authority"
+    },
+    {
+      "publisher": "Philippine News Agency",
+      "title": "Trough of TD outside PAR to bring rains over parts of PH on Wednesday",
+      "publishedAt": "2026-09-23T06:58:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1284636",
+      "role": "official-state reporting of PAGASA forecast"
+    },
+    {
+      "publisher": "GMA News Online",
+      "title": "Tropical depression may enter PAR Thursday, to be named Queenie",
+      "publishedAt": "2026-09-23T07:45:00+08:00",
+      "url": "https://www.gmanetwork.com/news/weather/content/1003371/tropical-depression-may-enter-par-thursday-to-be-named-queenie/story/",
+      "role": "credible independent corroboration"
+    },
+    {
+      "publisher": "Inquirer.net",
+      "title": "Tropical depression to enter PAR Thursday; may enhance habagat",
+      "publishedAt": "2026-09-23T00:00:00+08:00",
+      "url": "https://newsinfo.inquirer.net/2310030/tropical-depression-to-enter-par-thursday-may-enhance-habagat",
+      "role": "credible independent corroboration and later-morning forecast context"
+    }
+  ],
+  "image": {
+    "kind": "rights-cleared-contextual-satellite-image",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Podul_Crosses_the_Philippine_Sea_(CIRA_2025-08-12_-_labels).gif",
+    "source": "Wikimedia Commons / CSU-CIRA / JMA-JAXA",
+    "creator": "Himawari imagery: CSU/CIRA & JMA/JAXA",
+    "license": "Public Data License 1.0 / CC BY 4.0-compatible",
+    "credit": "Himawari imagery: CSU/CIRA & JMA/JAXA, via Wikimedia Commons; Public Data License 1.0 / CC BY 4.0-compatible",
+    "caption": "Contextual Himawari-9 satellite imagery over the Philippine Sea from August 2025. It does not depict the September 23, 2026 tropical depression and is used only to illustrate tropical-cyclone satellite monitoring in the region.",
+    "alt": "Contextual Himawari-9 satellite imagery of a tropical cyclone over the Philippine Sea, not the September 23, 2026 tropical depression",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Podul_Crosses_the_Philippine_Sea_(CIRA_2025-08-12_-_labels).gif",
+    "width": 1920,
+    "height": 1080
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-09-23T11:49:18+08:00",
+    "verificationNotes": [
+      "PAGASA is the primary authority for Philippine tropical cyclone monitoring and forecast status.",
+      "PNA reported PAGASA's 3 a.m. position, tropical-depression classification, rainfall areas and expected PAR entry this week; GMA independently reported the Thursday entry forecast, Queenie naming rule, wind strength and movement; Inquirer independently corroborated the tropical-depression status and Thursday forecast.",
+      "This is a continuation rather than a duplicate because the system has materially changed classification from an LPA to a tropical depression since FMB News' September 22 report.",
+      "The article distinguishes current facts from forecasts: the cyclone remains outside PAR and has not yet been named Queenie as of the source check.",
+      "The contextual satellite image is a previously verified Himawari-9 Philippine Sea file visual. Wikimedia Commons identifies the imagery as CSU/CIRA and JMA/JAXA and the JMA material as Public Data License 1.0 / CC BY 4.0-compatible. It is explicitly labeled archival and does not purport to show the current cyclone."
+    ]
+  }
+}
