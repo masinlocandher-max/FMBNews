@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "palinpinon-1-geothermal-modernization-126mw-september-24-2026",
+  "headline": "Palinpinon-1 Geothermal Upgrade to Raise Capacity to 126 MW",
+  "seoTitle": "Palinpinon-1 Geothermal Upgrade to Raise Capacity to 126 MW | FMB News",
+  "seoDescription": "First Gen's EDC is modernizing the Palinpinon-1 geothermal plant in Negros Oriental, replacing three 37.5-MW units with 42-MW units and targeting 126 MW of installed capacity.",
+  "keywords": ["Palinpinon-1", "geothermal", "Negros Oriental", "First Gen", "Energy Development Corporation", "renewable energy", "Visayas power"],
+  "category": "Business",
+  "kicker": "ENERGY · VISAYAS",
+  "deck": "The modernization will replace Palinpinon-1's three 37.5-MW turbine-generator units with three 42-MW units, adding 13.5 MW of installed capacity without additional geothermal steam extraction, according to EDC.",
+  "publishedAt": "2026-09-24T02:50:06+08:00",
+  "updatedAt": "2026-09-24T02:50:06+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "relatedArticles": [],
+  "sections": [
+    {"heading":"What happened","paragraphs":["First Gen Corporation, through its renewable-energy subsidiary Energy Development Corporation, is undertaking a modernization of the Palinpinon-1 geothermal power plant in Valencia, Negros Oriental that is intended to raise installed capacity from 112.5 megawatts to 126 MW.","EDC said the project will replace the plant's three 37.5-MW turbine-generator units with three modern 42-MW units. Work is expected to be implemented in phases, with completion targeted by the end of 2027."]},
+    {"heading":"What is confirmed","paragraphs":["EDC's current corporate information identifies Palinpinon I as a 112.5-MW facility. The Philippine News Agency reported the new modernization plan on September 23 based on an EDC statement, including the planned 126-MW capacity, 13.5-MW increase and turbine replacements. SunStar Cebu independently reported the same project specifications.","The company says the additional output is designed to use the same volume of geothermal steam, rather than requiring additional steam extraction."]},
+    {"heading":"Context","paragraphs":["Palinpinon-1 was commissioned in 1983 and has supplied geothermal electricity to the Visayas for more than four decades. The announcement comes while the Visayas grid has experienced repeated reserve alerts, including a yellow alert on September 23 as multiple generating units remained unavailable or derated."]},
+    {"heading":"Why it matters","paragraphs":["The planned 13.5-MW increase is modest relative to total Visayas demand, so it should not be presented as a stand-alone solution to the region's power-supply constraints. It is nevertheless additional firm renewable capacity from an existing geothermal resource and is intended to extend the operating life and efficiency of a long-running plant."]},
+    {"heading":"What to watch next","paragraphs":["The modernization is expected to begin in phases and target completion by the end of 2027. FMB News will watch for the actual construction schedule, unit commissioning, regulatory approvals where applicable, final dependable capacity and whether the additional output materially improves reserve conditions in the Visayas grid."]}
+  ],
+  "sources": [
+    {"publisher":"Energy Development Corporation","title":"Green Core Geothermal, Inc. — company profile and Palinpinon plant information","publishedAt":null,"url":"https://energy.com.ph/gcgi/","role":"primary corporate source; existing Palinpinon I configuration and capacity"},
+    {"publisher":"Philippine News Agency","title":"Power producer upgrades NegOr plant's geothermal capacity to 126 MW","publishedAt":"2026-09-23T14:24:00+08:00","url":"https://www.pna.gov.ph/articles/1284656","role":"current report quoting EDC statement; project specifications and completion target"},
+    {"publisher":"SunStar Cebu","title":"Geothermal upgrade to add 13.5 MW in Visayas","publishedAt":"2026-09-23T16:39:00+08:00","url":"https://www.sunstar.com.ph/cebu/geothermal-upgrade-to-add-135-mw-in-visayas","role":"independent corroboration"}
+  ],
+  "image": {
+    "kind":"rights-cleared-contextual-file-photo",
+    "url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Puhagan_geothermal_plant.jpg",
+    "source":"Wikimedia Commons",
+    "creator":"Mike Gonzalez (TheCoffee)",
+    "license":"CC BY-SA 3.0 / GFDL; Commons file page also identifies the depicted ordinary Philippine structure as public-domain subject matter",
+    "credit":"Photo: Mike Gonzalez (TheCoffee) / Wikimedia Commons, CC BY-SA 3.0",
+    "caption":"Palinpinon geothermal facilities in Puhagan, Valencia, Negros Oriental, photographed in 2006. This is an archival contextual photograph and does not depict the 2026 modernization work.",
+    "alt":"Archival view of geothermal power facilities and steam infrastructure at Palinpinon in Valencia, Negros Oriental",
+    "width":2592,
+    "height":1944,
+    "sourceUrl":"https://commons.wikimedia.org/wiki/File:Puhagan_geothermal_plant.jpg"
+  },
+  "audit": {
+    "sourceCheckedAt":"2026-09-24T02:50:06+08:00",
+    "verificationNotes":[
+      "EDC's official corporate page independently establishes Palinpinon I's existing three-unit 112.5-MW configuration and ownership context.",
+      "PNA's September 23 report attributes the modernization details to an EDC statement and specifies three replacement 42-MW units, 126-MW target capacity, 13.5-MW incremental capacity and end-2027 completion target.",
+      "SunStar Cebu independently corroborates the project specifications and timing.",
+      "The article does not claim the 13.5-MW increase will by itself resolve Visayas grid reserve constraints.",
+      "The Wikimedia Commons image is an archival photograph of the actual Palinpinon geothermal facility by Mike Gonzalez (TheCoffee), with reusable CC BY-SA 3.0/GFDL licensing. Its caption explicitly states that it does not depict the 2026 work."
+    ]
+  }
+}
