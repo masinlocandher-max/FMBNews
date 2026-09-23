@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "marie-june-adriano-asian-games-karate-bronze-september-23-2026",
+  "headline": "Marie June Adriano Wins Asian Games Karate Bronze for Philippines",
+  "seoTitle": "Marie June Adriano Wins Asian Games Karate Bronze | FMB News",
+  "seoDescription": "Marie June Adriano defeated Chinese Taipei’s Ya-chi Chung 10-3 to win bronze in the women’s kumite -50kg at the 2026 Asian Games in Toyohashi, Japan.",
+  "keywords": ["Marie June Adriano", "Asian Games 2026", "karate", "kumite", "Team Philippines", "Toyohashi"],
+  "category": "Sports",
+  "kicker": "ASIAN GAMES · KARATE",
+  "deck": "The 22-year-old first-time Asian Games competitor defeated Chinese Taipei’s Ya-chi Chung 10-3 in the women’s kumite -50kg bronze-medal bout, delivering the Philippines’ fifth medal of the Games and second in karate.",
+  "publishedAt": "2026-09-23T16:54:31+08:00",
+  "updatedAt": "2026-09-23T16:54:31+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "relatedArticles": [{"relationship":"related-karate-medal","slug":"philippines-womens-kata-team-asian-games-bronze-september-22-2026","path":"/news/philippines-womens-kata-team-asian-games-bronze-september-22-2026"}],
+  "sections": [
+    {"heading":"What happened","paragraphs":["Marie June Adriano won bronze in the women’s kumite -50kg at the 2026 Asian Games on Wednesday, defeating Chinese Taipei’s Ya-chi Chung 10-3 at Toyohashi City General Gymnasium in Japan.","Adriano opened with a 4-3 win over Cambodia’s Srey Phea Chonn, beat South Korea’s Yang Yewon 4-0 in the quarterfinals, then lost 5-4 to Hong Kong’s Tsang Yee Ting in the semifinal before winning the bronze-medal bout."]},
+    {"heading":"What is confirmed","paragraphs":["GMA News, Philstar, Inquirer and Spin independently report Adriano’s 10-3 bronze-medal victory and the preceding results. Reuters’ event photo record independently places Adriano against Chung in the women’s -50kg bronze-medal bout at Toyohashi City General Gymnasium on September 23.","The result gave the Philippines its fifth overall medal of the Games and its second karate bronze, following the women’s team kata medal won a day earlier."]},
+    {"heading":"Context","paragraphs":["Adriano, 22, was competing in her first Asian Games. Philstar reported that the bronze was her first Asian Games medal. This is a separate medal event from FMB News’ September 22 report on Rebecca Cyril Torres, Samantha Emmanuelle Veguillas and Ysabielle Arrogante winning bronze in women’s team kata."]},
+    {"heading":"Why it matters","paragraphs":["The medal extends the Philippines’ early Asian Games medal tally and gives the national karate delegation a second podium finish in two days."]},
+    {"heading":"What to watch next","paragraphs":["Team Philippines continues its Asian Games campaign across multiple sports. FMB News will treat later medal results as separate developments only after the events are completed and independently verified."]}
+  ],
+  "sources": [
+    {"publisher":"GMA News Online","title":"Asian Games: Karateka Marie June Adriano clinches bronze medal in women's individual kumite","publishedAt":"2026-09-23T13:09:00+08:00","url":"https://www.gmanetwork.com/news/sports/othersports/1003399/asian-games-karateka-marie-june-adriano-clinches-bronze-medal-in-women-s-individual-kumite/story/","role":"independent result report"},
+    {"publisher":"Philstar.com","title":"Adriano dominates Taiwanese foe to bag Asian Games karate bronze","publishedAt":"2026-09-23T15:43:00+08:00","url":"https://www.philstar.com/sports/2026/09/23/2558398/adriano-dominates-taiwanese-foe-bag-asian-games-karate-bronze","role":"independent result and bout-by-bout corroboration"},
+    {"publisher":"Inquirer.net","title":"Asian Games: Marie June Adriano adds karate bronze for Philippines","publishedAt":"2026-09-23T00:00:00+08:00","url":"https://sports.inquirer.net/697162/asian-games-marie-june-adriano-adds-karate-bronze-for-philippines","role":"independent Philippine corroboration"},
+    {"publisher":"Reuters Connect","title":"Asian Games - Aichi-Nagoya 2026 — Women's Kumite -50kg Bronze Medal Bout","publishedAt":"2026-09-23T00:00:00+09:00","url":"https://www.reutersconnect.com/item/asian-games-aichi-nagoya-2026/dGFnOnJldXRlcnMuY29tLDIwMjY6bmV3c21sX1VQMUVNOU4wQzdCVTM","role":"independent contemporaneous event-photo record; not republished as FMB hero"}
+  ],
+  "image": {
+    "kind":"rights-cleared-contextual-venue-photo",
+    "url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Toyohashi_Sogo_Taiikukan.jpg",
+    "source":"Wikimedia Commons",
+    "creator":"Darklanlan",
+    "license":"CC0 1.0 Universal Public Domain Dedication",
+    "credit":"Photo: Darklanlan via Wikimedia Commons, CC0 1.0",
+    "caption":"File photograph of Toyohashi City General Gymnasium, the venue for the 2026 Asian Games karate competition, taken December 8, 2007. It does not depict Adriano’s September 23 bout.",
+    "alt":"Exterior file photograph of Toyohashi City General Gymnasium in Toyohashi, Aichi, Japan, venue of the Asian Games karate competition",
+    "width":1024,"height":768,
+    "sourceUrl":"https://commons.wikimedia.org/wiki/File:Toyohashi_Sogo_Taiikukan.jpg"
+  },
+  "audit": {"sourceCheckedAt":"2026-09-23T16:54:31+08:00","verificationNotes":["GMA, Philstar, Inquirer and Spin independently corroborate Adriano’s bronze-medal result; reported bout scores are consistent across the principal reports checked.","Reuters’ contemporaneous event-photo record identifies Adriano versus Chung in the -50kg bronze-medal bout at Toyohashi City General Gymnasium on September 23.","The Reuters/POC event photographs are not reused because clear republication rights were not established for FMB News.","The hero instead uses a genuinely relevant photograph of the actual competition venue released by its creator under CC0 1.0, with an explicit archival/contextual caption.","The article distinguishes this individual kumite medal from the already-published women’s team kata bronze to avoid duplication."]}
+}
