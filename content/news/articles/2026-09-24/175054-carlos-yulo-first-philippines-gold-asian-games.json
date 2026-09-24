@@ -5,7 +5,14 @@
   "headline": "Carlos Yulo Wins Philippines’ First Gold of 2026 Asian Games",
   "seoTitle": "Carlos Yulo Wins Asian Games Floor Gold | FMB News",
   "seoDescription": "Carlos Yulo won the men's floor exercise final with 14.666 points on September 24, delivering the Philippines' first gold medal of the 2026 Asian Games.",
-  "keywords": ["Carlos Yulo", "Asian Games", "Aichi-Nagoya 2026", "gymnastics", "floor exercise", "Team Philippines"],
+  "keywords": [
+    "Carlos Yulo",
+    "Asian Games",
+    "Aichi-Nagoya 2026",
+    "gymnastics",
+    "floor exercise",
+    "Team Philippines"
+  ],
   "category": "Sports",
   "kicker": "ASIAN GAMES · GOLD",
   "deck": "The two-time Olympic champion scored 14.666 in the men’s floor exercise final, edging Kazakhstan’s Milad Karimi and giving Team Philippines its first gold medal in Aichi-Nagoya.",
@@ -14,32 +21,79 @@
   "author": "FMB News Desk",
   "articleType": "NewsArticle",
   "sections": [
-    {"heading":"What happened","paragraphs":["Carlos Yulo won the men's floor exercise final at the 2026 Asian Games in Nagoya on Thursday, September 24, scoring 14.666 points to secure the Philippines' first gold medal of the Games.","Kazakhstan's Milad Karimi took silver with 14.600, while Japan's Shoma Tsukiyama won bronze with 14.566. Yulo's younger brother Karl Eldrew Yulo finished seventh with 12.233."]},
-    {"heading":"What is confirmed","paragraphs":["Olympics.com's official Asian Games artistic gymnastics results coverage lists the event among the September 24 apparatus finals. Philippine reporting from The Philippine Star and GMA News' live Asian Games coverage independently corroborates Yulo's victory and the 14.666 winning score.","This is Yulo's first Asian Games gold medal and the Philippines' first gold medal of the 2026 Aichi-Nagoya Games."]},
-    {"heading":"Why it matters","paragraphs":["Yulo entered the final as the top qualifier in floor exercise, the apparatus in which he also won Olympic gold at Paris 2024. The victory converts that favored position into the Philippines' first gold of the current Asian Games campaign.","Yulo still has additional apparatus finals scheduled, so this result does not represent the end of his 2026 Asian Games campaign."]},
-    {"heading":"What to watch next","paragraphs":["Yulo is scheduled to compete in the vault and parallel bars finals on Friday, September 25. FMB News will treat those as separate results only when the finals are completed and officially verifiable."]}
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Carlos Yulo won the men's floor exercise final at the 2026 Asian Games in Nagoya on Thursday, September 24, scoring 14.666 points to secure the Philippines' first gold medal of the Games.",
+        "Kazakhstan's Milad Karimi took silver with 14.600, while Japan's Shoma Tsukiyama won bronze with 14.566. Yulo's younger brother Karl Eldrew Yulo finished seventh with 12.233."
+      ]
+    },
+    {
+      "heading": "What is confirmed",
+      "paragraphs": [
+        "Olympics.com's official Asian Games artistic gymnastics results coverage lists the event among the September 24 apparatus finals. Philippine reporting from The Philippine Star and GMA News' live Asian Games coverage independently corroborates Yulo's victory and the 14.666 winning score.",
+        "This is Yulo's first Asian Games gold medal and the Philippines' first gold medal of the 2026 Aichi-Nagoya Games."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "Yulo entered the Asian Games as a two-time Olympic champion after winning floor exercise and vault gold at Paris 2024. He qualified first for the 2026 Asian Games floor final before winning the title with 14.666 points."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "Yulo entered the final as the top qualifier in floor exercise, the apparatus in which he also won Olympic gold at Paris 2024. The victory converts that favored position into the Philippines' first gold of the current Asian Games campaign.",
+        "Yulo still has additional apparatus finals scheduled, so this result does not represent the end of his 2026 Asian Games campaign."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Yulo is scheduled to compete in the vault and parallel bars finals on Friday, September 25. FMB News will treat those as separate results only when the finals are completed and officially verifiable."
+      ]
+    }
   ],
   "sources": [
-    {"publisher":"Olympics.com","title":"Asian Games Aichi-Nagoya 2026: All artistic gymnastics results and medallists live","publishedAt":"2026-09-24T00:00:00+09:00","url":"https://www.olympics.com/en/news/artistic-gymnastics-asian-games-2026-all-results-medallists","role":"official Olympic movement results coverage for Asian Games artistic gymnastics"},
-    {"publisher":"The Philippine Star","title":"Carlos Yulo asserts floor exercise supremacy to deliver Philippines’ first Asian Games gold in Nagoya","publishedAt":"2026-09-24T16:51:00+08:00","url":"https://www.philstar.com/sports/2026/09/24/2558651/carlos-yulo-asserts-floor-exercise-supremacy-deliver-philippines-first-asian-games-gold-nagoya","role":"independent corroboration of final result, score and medal order"},
-    {"publisher":"GMA News Online","title":"LIVE UPDATES: Team Philippines at 2026 Asian Games: September 24","publishedAt":"2026-09-24T09:45:00+08:00","url":"https://www.gmanetwork.com/news/sports/othersports/1003508/live-updates-team-philippines-at-2026-asian-games-september-24-carlos-yulo-karl-eldrew-yulo-gilas-pil/story/","role":"independent contemporaneous Team Philippines coverage"}
+    {
+      "publisher": "Olympics.com",
+      "title": "Asian Games Aichi-Nagoya 2026: All artistic gymnastics results and medallists live",
+      "publishedAt": "2026-09-24T00:00:00+09:00",
+      "url": "https://www.olympics.com/en/news/artistic-gymnastics-asian-games-2026-all-results-medallists",
+      "role": "official Olympic movement results coverage for Asian Games artistic gymnastics"
+    },
+    {
+      "publisher": "The Philippine Star",
+      "title": "Carlos Yulo asserts floor exercise supremacy to deliver Philippines’ first Asian Games gold in Nagoya",
+      "publishedAt": "2026-09-24T16:51:00+08:00",
+      "url": "https://www.philstar.com/sports/2026/09/24/2558651/carlos-yulo-asserts-floor-exercise-supremacy-deliver-philippines-first-asian-games-gold-nagoya",
+      "role": "independent corroboration of final result, score and medal order"
+    },
+    {
+      "publisher": "GMA News Online",
+      "title": "LIVE UPDATES: Team Philippines at 2026 Asian Games: September 24",
+      "publishedAt": "2026-09-24T09:45:00+08:00",
+      "url": "https://www.gmanetwork.com/news/sports/othersports/1003508/live-updates-team-philippines-at-2026-asian-games-september-24-carlos-yulo-karl-eldrew-yulo-gilas-pil/story/",
+      "role": "independent contemporaneous Team Philippines coverage"
+    }
   ],
   "image": {
-    "kind":"rights-cleared-archival-athlete-photograph",
-    "url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/FIG_AGWC_2025_-_Carlos_Yulo.jpg",
-    "source":"Wikimedia Commons",
-    "creator":"Griff88",
-    "license":"CC BY-SA 4.0",
-    "credit":"Griff88 / Wikimedia Commons, CC BY-SA 4.0",
-    "caption":"Carlos Yulo competes at the 2025 FIG World Championships in Jakarta. This archival photograph predates his September 24, 2026 Asian Games floor exercise victory and is used for identification and context.",
-    "alt":"Filipino gymnast Carlos Yulo competing at the 2025 FIG World Championships in Jakarta",
-    "sourceUrl":"https://commons.wikimedia.org/wiki/File:FIG_AGWC_2025_-_Carlos_Yulo.jpg",
-    "width":1930,
-    "height":2075
+    "kind": "rights-cleared-archival-athlete-photograph",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/FIG_AGWC_2025_-_Carlos_Yulo.jpg",
+    "source": "Wikimedia Commons",
+    "creator": "Griff88",
+    "license": "CC BY-SA 4.0",
+    "credit": "Griff88 / Wikimedia Commons, CC BY-SA 4.0",
+    "caption": "Carlos Yulo competes at the 2025 FIG World Championships in Jakarta. This archival photograph predates his September 24, 2026 Asian Games floor exercise victory and is used for identification and context.",
+    "alt": "Filipino gymnast Carlos Yulo competing at the 2025 FIG World Championships in Jakarta",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:FIG_AGWC_2025_-_Carlos_Yulo.jpg",
+    "width": 1930,
+    "height": 2075
   },
   "audit": {
-    "sourceCheckedAt":"2026-09-24T17:50:54+08:00",
-    "verificationNotes":[
+    "sourceCheckedAt": "2026-09-24T17:50:54+08:00",
+    "verificationNotes": [
       "Olympics.com provides official Olympic movement results coverage for the Aichi-Nagoya artistic gymnastics competition.",
       "The Philippine Star independently reports Yulo's 14.666 winning score, Karimi's 14.600 silver score and Tsukiyama's 14.566 bronze score.",
       "GMA News maintained contemporaneous live coverage of Team Philippines on September 24.",
