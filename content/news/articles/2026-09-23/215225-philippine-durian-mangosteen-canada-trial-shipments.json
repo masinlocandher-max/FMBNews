@@ -4,8 +4,15 @@
   "slug": "philippine-durian-mangosteen-canada-trial-shipments-september-23-2026",
   "headline": "Philippines Sends Trial Durian, Mangosteen Shipments to Canada",
   "seoTitle": "Philippines Sends Durian, Mangosteen to Canada | FMB News",
-  "seoDescription": "The Philippines sent fresh durian and mangosteen to Vancouver on September 23, with a second trial shipment scheduled for Toronto on September 24 as the government expands farm export markets.",
-  "keywords": ["Philippine agriculture", "durian", "mangosteen", "Canada", "agricultural exports", "Department of Agriculture"],
+  "seoDescription": "The Philippines sent trial shipments of fresh durian and mangosteen to Canada as the government tests new export markets for high-value crops.",
+  "keywords": [
+    "Philippine agriculture",
+    "durian",
+    "mangosteen",
+    "Canada",
+    "agricultural exports",
+    "Department of Agriculture"
+  ],
   "category": "Business",
   "kicker": "AGRICULTURE · TRADE",
   "deck": "A 420-kilogram trial shipment of fresh durian and mangosteen was bound for Vancouver on Wednesday, while another 500 kilograms is scheduled for Toronto on Thursday as the Philippines tests another market for high-value tropical fruit.",
@@ -15,34 +22,85 @@
   "articleType": "NewsArticle",
   "relatedArticles": [],
   "sections": [
-    {"heading":"What happened","paragraphs":["The Department of Agriculture said the Philippines is sending trial shipments of fresh durian and mangosteen to Canada as part of a push to develop additional markets for high-value farm products.","The Vancouver shipment scheduled for September 23 consists of 300 kilograms of durian and 120 kilograms of mangosteen for Canadian buyer Fresh Makers Ltd. A second shipment scheduled for September 24 consists of 300 kilograms of durian and 200 kilograms of mangosteen bound for Toronto. The fruit is being transported by Philippine Airlines."]},
-    {"heading":"What is confirmed","paragraphs":["The Department of Agriculture, the primary government source, published the shipment quantities, destinations, buyer and schedule on September 23. GMA News independently reported the same figures and destinations later Wednesday, while BusinessWorld and the Philippine News Agency also reported the export move.","The DA says the Canada shipments follow three completed air-cargo shipments of fresh Philippine durian to France. The department also reported that the country's agricultural trade deficit has exceeded US$11 billion annually since 2022."]},
-    {"heading":"Context","paragraphs":["The shipments are trials, not evidence that Canada has already become a large or established commercial market for Philippine durian and mangosteen. Earlier in September, the Philippines also made its first commercial shipment of fresh Carabao mangoes to Canada, according to the DA and GMA News."]},
-    {"heading":"Why it matters","paragraphs":["Additional export channels could diversify demand for Philippine high-value crops and create new opportunities for growers and exporters. The economic impact, however, will depend on whether trial shipments lead to sustained orders and whether producers can meet requirements for supply, logistics and consistent quality."]},
-    {"heading":"What to watch next","paragraphs":["The second trial shipment is scheduled to depart for Toronto on September 24. FMB News will watch for confirmed repeat orders, larger commercial volumes, additional Canadian buyers and official trade data showing whether the market develops beyond the trial stage."]}
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Department of Agriculture said the Philippines is sending trial shipments of fresh durian and mangosteen to Canada as part of a push to develop additional markets for high-value farm products.",
+        "The Vancouver shipment scheduled for September 23 consists of 300 kilograms of durian and 120 kilograms of mangosteen for Canadian buyer Fresh Makers Ltd. A second shipment scheduled for September 24 consists of 300 kilograms of durian and 200 kilograms of mangosteen bound for Toronto. The fruit is being transported by Philippine Airlines."
+      ]
+    },
+    {
+      "heading": "What is confirmed",
+      "paragraphs": [
+        "The Department of Agriculture, the primary government source, published the shipment quantities, destinations, buyer and schedule on September 23. GMA News independently reported the same figures and destinations later Wednesday, while BusinessWorld and the Philippine News Agency also reported the export move.",
+        "The DA says the Canada shipments follow three completed air-cargo shipments of fresh Philippine durian to France. The department also reported that the country's agricultural trade deficit has exceeded US$11 billion annually since 2022."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The shipments are trials, not evidence that Canada has already become a large or established commercial market for Philippine durian and mangosteen. Earlier in September, the Philippines also made its first commercial shipment of fresh Carabao mangoes to Canada, according to the DA and GMA News."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "Additional export channels could diversify demand for Philippine high-value crops and create new opportunities for growers and exporters. The economic impact, however, will depend on whether trial shipments lead to sustained orders and whether producers can meet requirements for supply, logistics and consistent quality."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "The second trial shipment is scheduled to depart for Toronto on September 24. FMB News will watch for confirmed repeat orders, larger commercial volumes, additional Canadian buyers and official trade data showing whether the market develops beyond the trial stage."
+      ]
+    }
   ],
   "sources": [
-    {"publisher":"Department of Agriculture","title":"Philippine durian, mangosteen make fresh push into Canada","publishedAt":"2026-09-23T00:00:00+08:00","url":"https://www.da.gov.ph/philippine-durian-mangosteen-make-fresh-push-into-canada/","role":"primary official source; shipment quantities, destinations, schedule and export-policy context"},
-    {"publisher":"GMA News Online","title":"PH ships durian, mangosteen to Canada","publishedAt":"2026-09-23T19:28:00+08:00","url":"https://www.gmanetwork.com/news/money/economy/1003461/ph-ships-durian-mangosteen-to-canada/story/","role":"independent corroboration"},
-    {"publisher":"BusinessWorld","title":"Philippines ships durian, mangosteen to Vancouver","publishedAt":"2026-09-23T00:00:00+08:00","url":"https://bworldonline.com/economy/2026/09/23/780856/philippines-ships-durian-mangosteen-to-vancouver/","role":"independent business-reporting corroboration"},
-    {"publisher":"Philippine News Agency","title":"PH durian, mangosteen head to Canada amid export expansion","publishedAt":"2026-09-23T00:00:00+08:00","url":"https://www.pna.gov.ph/articles/1284714","role":"government news-service corroboration"}
+    {
+      "publisher": "Department of Agriculture",
+      "title": "Philippine durian, mangosteen make fresh push into Canada",
+      "publishedAt": "2026-09-23T00:00:00+08:00",
+      "url": "https://www.da.gov.ph/philippine-durian-mangosteen-make-fresh-push-into-canada/",
+      "role": "primary official source; shipment quantities, destinations, schedule and export-policy context"
+    },
+    {
+      "publisher": "GMA News Online",
+      "title": "PH ships durian, mangosteen to Canada",
+      "publishedAt": "2026-09-23T19:28:00+08:00",
+      "url": "https://www.gmanetwork.com/news/money/economy/1003461/ph-ships-durian-mangosteen-to-canada/story/",
+      "role": "independent corroboration"
+    },
+    {
+      "publisher": "BusinessWorld",
+      "title": "Philippines ships durian, mangosteen to Vancouver",
+      "publishedAt": "2026-09-23T00:00:00+08:00",
+      "url": "https://bworldonline.com/economy/2026/09/23/780856/philippines-ships-durian-mangosteen-to-vancouver/",
+      "role": "independent business-reporting corroboration"
+    },
+    {
+      "publisher": "Philippine News Agency",
+      "title": "PH durian, mangosteen head to Canada amid export expansion",
+      "publishedAt": "2026-09-23T00:00:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1284714",
+      "role": "government news-service corroboration"
+    }
   ],
   "image": {
-    "kind":"rights-cleared-current-government-photo",
-    "url":"https://www.da.gov.ph/wp-content/uploads/2026/09/Philippine-durian-mangosteen-make-fresh-push-into-Canada.jpg",
-    "source":"Department of Agriculture",
-    "creator":"Ian Leaño, Agriculture and Fisheries Information Division (AFID)",
-    "license":"Public domain — Philippine government work; DA states all site content is public domain unless otherwise stated",
-    "credit":"Photo: Ian Leaño, DA-AFID / Department of Agriculture",
-    "caption":"Department of Agriculture officials and representatives at the send-off for fresh Philippine durian and mangosteen bound for Canada. The DA credits the photograph to Ian Leaño of AFID.",
-    "alt":"Philippine agriculture officials and representatives pose with boxes of fresh durian and mangosteen during a Department of Agriculture send-off ceremony for shipments to Canada",
-    "width":1000,
-    "height":667,
-    "sourceUrl":"https://www.da.gov.ph/philippine-durian-mangosteen-make-fresh-push-into-canada/"
+    "kind": "rights-cleared-current-government-photo",
+    "url": "https://www.da.gov.ph/wp-content/uploads/2026/09/Philippine-durian-mangosteen-make-fresh-push-into-Canada.jpg",
+    "source": "Department of Agriculture",
+    "creator": "Ian Leaño, Agriculture and Fisheries Information Division (AFID)",
+    "license": "Public domain — Philippine government work; DA states all site content is public domain unless otherwise stated",
+    "credit": "Photo: Ian Leaño, DA-AFID / Department of Agriculture",
+    "caption": "Department of Agriculture officials and representatives at the send-off for fresh Philippine durian and mangosteen bound for Canada. The DA credits the photograph to Ian Leaño of AFID.",
+    "alt": "Philippine agriculture officials and representatives pose with boxes of fresh durian and mangosteen during a Department of Agriculture send-off ceremony for shipments to Canada",
+    "width": 1000,
+    "height": 667,
+    "sourceUrl": "https://www.da.gov.ph/philippine-durian-mangosteen-make-fresh-push-into-canada/"
   },
   "audit": {
-    "sourceCheckedAt":"2026-09-23T21:52:25+08:00",
-    "verificationNotes":[
+    "sourceCheckedAt": "2026-09-23T21:52:25+08:00",
+    "verificationNotes": [
       "The Department of Agriculture is the primary source and confirms the Vancouver and Toronto shipment quantities, dates, buyer and Philippine Airlines transport.",
       "GMA News independently corroborates the quantities, destinations and trial-shipment framing in a report published at 7:28 p.m. Philippine time on September 23; BusinessWorld provides additional independent business coverage.",
       "The article deliberately describes the shipments as trial shipments and does not claim that Canada is already an established large-scale market for Philippine durian or mangosteen.",
