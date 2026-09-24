@@ -4,8 +4,18 @@
   "slug": "tropical-storm-queenie-enters-par-september-24-2026",
   "headline": "Tropical Storm Queenie Enters PAR; PAGASA Sees Possible Typhoon Strength by Sunday",
   "seoTitle": "Tropical Storm Queenie Enters PAR | FMB News",
-  "seoDescription": "Tropical Storm Surigae entered the Philippine Area of Responsibility at 7 a.m. September 24 and was named Queenie. PAGASA says it may reach typhoon strength by Sunday, while no wind signal is currently in effect.",
-  "keywords": ["Queenie", "Surigae", "PAGASA", "tropical storm", "PAR", "Batanes", "Babuyan Islands", "Ilocos Norte", "Philippine weather"],
+  "seoDescription": "Tropical Storm Surigae entered PAR on September 24 and was named Queenie. PAGASA says it may reach typhoon strength by Sunday.",
+  "keywords": [
+    "Queenie",
+    "Surigae",
+    "PAGASA",
+    "tropical storm",
+    "PAR",
+    "Batanes",
+    "Babuyan Islands",
+    "Ilocos Norte",
+    "Philippine weather"
+  ],
   "category": "Weather",
   "kicker": "WEATHER · DEVELOPING",
   "deck": "The cyclone previously tracked east of the Philippines entered PAR Thursday morning and is now officially Queenie. PAGASA says it may intensify further, but no Philippine landfall is established in the current forecast.",
@@ -14,38 +24,105 @@
   "author": "FMB News Desk",
   "articleType": "NewsArticle",
   "relatedArticles": [
-    {"relationship":"continuation-of","slug":"lpa-east-eastern-visayas-may-enter-par-september-21-2026","path":"/news/lpa-east-eastern-visayas-may-enter-par-september-21-2026"},
-    {"relationship":"continuation-of","slug":"tropical-depression-queenie-par-thursday-september-23-2026","path":"/news/tropical-depression-queenie-par-thursday-september-23-2026"}
+    {
+      "relationship": "continuation-of",
+      "slug": "lpa-east-eastern-visayas-may-enter-par-september-21-2026",
+      "path": "/news/lpa-east-eastern-visayas-may-enter-par-september-21-2026"
+    },
+    {
+      "relationship": "continuation-of",
+      "slug": "tropical-depression-queenie-par-thursday-september-23-2026",
+      "path": "/news/tropical-depression-queenie-par-thursday-september-23-2026"
+    }
   ],
   "sections": [
-    {"heading":"What changed","paragraphs":["Tropical Storm Surigae entered the Philippine Area of Responsibility at 7 a.m. Thursday, September 24, according to PAGASA, and was assigned the domestic name Queenie. This confirms the PAR entry that remained only a forecast in FMB News' September 23 report.","PAGASA's first tropical cyclone bulletin for Queenie, issued at 11 a.m., placed the center about 1,310 kilometers east of Northern Luzon. Queenie had maximum sustained winds of 75 km/h near the center, gusts up to 90 km/h, and was moving west-northwest at 35 km/h."]},
-    {"heading":"What is confirmed","paragraphs":["Queenie is now inside PAR as a tropical storm. PAGASA says its periphery and trough can bring strong to gale-force gusts Thursday over Batanes, the Babuyan Islands and Ilocos Norte. No Tropical Cyclone Wind Signal is in effect in the 11 a.m. bulletin, and forecast coastal wave heights for the next 24 hours remain below 2 meters.","GMA News, ABS-CBN News, Inquirer and The Philippine Star independently reported Queenie's entry into PAR and its naming, citing PAGASA."]},
-    {"heading":"What remains forecast","paragraphs":["PAGASA forecasts Queenie to move generally west-northwest through Friday before turning north-northeast by Monday and exiting PAR by Tuesday morning. The agency says the cyclone may reach typhoon category by Sunday.","Those track and intensity projections are forecasts, not completed events. PAGASA explicitly warns that the track can still shift within the forecast confidence cone. FMB News is not reporting a Philippine landfall as established because the current official forecast does not establish one."]},
-    {"heading":"Why it matters","paragraphs":["PAR entry triggers regular PAGASA tropical cyclone bulletins and gives the system its Philippine name. The development is independently newsworthy because the system has progressed from an LPA to a tropical depression, then Tropical Storm Surigae, and has now crossed into the country's monitoring area as Queenie.","Even without a current landfall forecast, Queenie's circulation and trough can produce hazardous gusts and rain away from the cyclone center, particularly in exposed coastal and upland areas."]},
-    {"heading":"What to watch next","paragraphs":["PAGASA's next bulletin is scheduled for 5 p.m. Thursday. FMB News will track any change in intensity, forecast track, wind signals, rainfall hazards, coastal conditions and whether the projected turn away from the Philippine landmass remains intact."]}
+    {
+      "heading": "What changed",
+      "paragraphs": [
+        "Tropical Storm Surigae entered the Philippine Area of Responsibility at 7 a.m. Thursday, September 24, according to PAGASA, and was assigned the domestic name Queenie. This confirms the PAR entry that remained only a forecast in FMB News' September 23 report.",
+        "PAGASA's first tropical cyclone bulletin for Queenie, issued at 11 a.m., placed the center about 1,310 kilometers east of Northern Luzon. Queenie had maximum sustained winds of 75 km/h near the center, gusts up to 90 km/h, and was moving west-northwest at 35 km/h."
+      ]
+    },
+    {
+      "heading": "What is confirmed",
+      "paragraphs": [
+        "Queenie is now inside PAR as a tropical storm. PAGASA says its periphery and trough can bring strong to gale-force gusts Thursday over Batanes, the Babuyan Islands and Ilocos Norte. No Tropical Cyclone Wind Signal is in effect in the 11 a.m. bulletin, and forecast coastal wave heights for the next 24 hours remain below 2 meters.",
+        "GMA News, ABS-CBN News, Inquirer and The Philippine Star independently reported Queenie's entry into PAR and its naming, citing PAGASA."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "Queenie is the same weather system earlier monitored east of the Philippines as an LPA, then a tropical depression and Tropical Storm Surigae. Its September 24 PAR entry activated the Philippine domestic name Queenie."
+      ]
+    },
+    {
+      "heading": "What remains forecast",
+      "paragraphs": [
+        "PAGASA forecasts Queenie to move generally west-northwest through Friday before turning north-northeast by Monday and exiting PAR by Tuesday morning. The agency says the cyclone may reach typhoon category by Sunday.",
+        "Those track and intensity projections are forecasts, not completed events. PAGASA explicitly warns that the track can still shift within the forecast confidence cone. FMB News is not reporting a Philippine landfall as established because the current official forecast does not establish one."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "PAR entry triggers regular PAGASA tropical cyclone bulletins and gives the system its Philippine name. The development is independently newsworthy because the system has progressed from an LPA to a tropical depression, then Tropical Storm Surigae, and has now crossed into the country's monitoring area as Queenie.",
+        "Even without a current landfall forecast, Queenie's circulation and trough can produce hazardous gusts and rain away from the cyclone center, particularly in exposed coastal and upland areas."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "PAGASA's next bulletin is scheduled for 5 p.m. Thursday. FMB News will track any change in intensity, forecast track, wind signals, rainfall hazards, coastal conditions and whether the projected turn away from the Philippine landmass remains intact."
+      ]
+    }
   ],
   "sources": [
-    {"publisher":"DOST-PAGASA","title":"Tropical Cyclone Bulletin #1 — Tropical Storm Queenie","publishedAt":"2026-09-24T11:00:00+08:00","url":"https://bagong.pagasa.dost.gov.ph/tropical-cyclone/severe-weather-bulletin/6","role":"primary official weather authority; current position, intensity, hazards and forecast"},
-    {"publisher":"GMA News Online","title":"Tropical storm enters PAR, now called 'Queenie'","publishedAt":"2026-09-24T08:51:00+08:00","url":"https://www.gmanetwork.com/news/weather/content/1003505/tropical-storm-enters-par-now-called-queenie/story/","role":"independent corroboration of PAR entry and naming"},
-    {"publisher":"ABS-CBN News","title":"Queenie enters PAR, may strengthen into typhoon","publishedAt":"2026-09-24T11:42:00+08:00","url":"https://www.abs-cbn.com/news/weather-traffic/2026/9/24/queenie-enters-par-may-strengthen-into-typhoon-1142","role":"independent corroboration and current forecast context"},
-    {"publisher":"Inquirer.net","title":"Cyclone east of N. Luzon enters PAR; now called Queenie – Pagasa","publishedAt":"2026-09-24T00:00:00+08:00","url":"https://newsinfo.inquirer.net/2310845/cyclone-east-of-n-luzon-enters-par-now-called-queenie-pagasa","role":"independent corroboration"}
+    {
+      "publisher": "DOST-PAGASA",
+      "title": "Tropical Cyclone Bulletin #1 — Tropical Storm Queenie",
+      "publishedAt": "2026-09-24T11:00:00+08:00",
+      "url": "https://bagong.pagasa.dost.gov.ph/tropical-cyclone/severe-weather-bulletin/6",
+      "role": "primary official weather authority; current position, intensity, hazards and forecast"
+    },
+    {
+      "publisher": "GMA News Online",
+      "title": "Tropical storm enters PAR, now called 'Queenie'",
+      "publishedAt": "2026-09-24T08:51:00+08:00",
+      "url": "https://www.gmanetwork.com/news/weather/content/1003505/tropical-storm-enters-par-now-called-queenie/story/",
+      "role": "independent corroboration of PAR entry and naming"
+    },
+    {
+      "publisher": "ABS-CBN News",
+      "title": "Queenie enters PAR, may strengthen into typhoon",
+      "publishedAt": "2026-09-24T11:42:00+08:00",
+      "url": "https://www.abs-cbn.com/news/weather-traffic/2026/9/24/queenie-enters-par-may-strengthen-into-typhoon-1142",
+      "role": "independent corroboration and current forecast context"
+    },
+    {
+      "publisher": "Inquirer.net",
+      "title": "Cyclone east of N. Luzon enters PAR; now called Queenie – Pagasa",
+      "publishedAt": "2026-09-24T00:00:00+08:00",
+      "url": "https://newsinfo.inquirer.net/2310845/cyclone-east-of-n-luzon-enters-par-now-called-queenie-pagasa",
+      "role": "independent corroboration"
+    }
   ],
   "image": {
-    "kind":"rights-cleared-current-satellite-image",
-    "url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Surigae_2026-09-23_1645Z.jpg",
-    "source":"Wikimedia Commons / NASA EOSDIS Worldview / NOAA Suomi-NPP",
-    "creator":"Nighttime VIIRS imagery from NOAA's Suomi-NPP satellite; NASA EOSDIS Worldview",
-    "license":"Public domain — U.S. Government / NASA and NOAA material",
-    "credit":"Nighttime VIIRS imagery: NOAA Suomi-NPP / NASA EOSDIS Worldview, via Wikimedia Commons; public domain",
-    "caption":"Tropical Storm Surigae, now locally named Queenie, seen by the NOAA Suomi-NPP satellite early September 23, 2026, before its September 24 entry into the Philippine Area of Responsibility.",
-    "alt":"Nighttime satellite image of Tropical Storm Surigae, later named Queenie in the Philippines, over the western Pacific on September 23, 2026",
-    "sourceUrl":"https://commons.wikimedia.org/wiki/File:Surigae_2026-09-23_1645Z.jpg",
-    "width":3500,
-    "height":4500
+    "kind": "rights-cleared-current-satellite-image",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Surigae_2026-09-23_1645Z.jpg",
+    "source": "Wikimedia Commons / NASA EOSDIS Worldview / NOAA Suomi-NPP",
+    "creator": "Nighttime VIIRS imagery from NOAA's Suomi-NPP satellite; NASA EOSDIS Worldview",
+    "license": "Public domain — U.S. Government / NASA and NOAA material",
+    "credit": "Nighttime VIIRS imagery: NOAA Suomi-NPP / NASA EOSDIS Worldview, via Wikimedia Commons; public domain",
+    "caption": "Tropical Storm Surigae, now locally named Queenie, seen by the NOAA Suomi-NPP satellite early September 23, 2026, before its September 24 entry into the Philippine Area of Responsibility.",
+    "alt": "Nighttime satellite image of Tropical Storm Surigae, later named Queenie in the Philippines, over the western Pacific on September 23, 2026",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Surigae_2026-09-23_1645Z.jpg",
+    "width": 3500,
+    "height": 4500
   },
   "audit": {
-    "sourceCheckedAt":"2026-09-24T12:52:45+08:00",
-    "verificationNotes":[
+    "sourceCheckedAt": "2026-09-24T12:52:45+08:00",
+    "verificationNotes": [
       "PAGASA Tropical Cyclone Bulletin #1 issued at 11:00 a.m. September 24 directly confirms PAR entry, the Queenie domestic name, current intensity and movement, hazards and forecast outlook.",
       "GMA News, ABS-CBN News and Inquirer independently corroborate the PAR entry and naming.",
       "The article distinguishes confirmed PAR entry and present intensity from forecast typhoon intensification, future track and possible impacts.",
