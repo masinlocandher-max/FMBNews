@@ -4,44 +4,128 @@
   "slug": "sara-duterte-impeachment-conviction-threshold-ruling-september-23-2026",
   "headline": "Senate Impeachment Court Drops Fixed 16-Vote Threshold in Sara Duterte Trial",
   "seoTitle": "Senate Court Drops Fixed 16-Vote Threshold in Duterte Trial | FMB News",
-  "seoDescription": "The Senate impeachment court ruled that the two-thirds conviction threshold in Vice President Sara Duterte’s trial will be calculated from senators legally and factually capable of participating when judgment is rendered.",
-  "keywords": ["Sara Duterte impeachment", "Senate impeachment court", "conviction threshold", "Francis Escudero", "Erwin Tulfo", "Philippines"],
+  "seoDescription": "The Senate impeachment court dropped a fixed 16-vote threshold in Sara Duterte’s trial, tying the denominator to senators able to vote at judgment.",
+  "keywords": [
+    "Sara Duterte impeachment",
+    "Senate impeachment court",
+    "conviction threshold",
+    "Francis Escudero",
+    "Erwin Tulfo",
+    "Philippines"
+  ],
   "category": "Philippines",
   "kicker": "ACCOUNTABILITY · IMPEACHMENT",
-  "deck": "By a 13-1 vote, with six senator-judges not participating, the impeachment court overturned its earlier fixed 16-vote interpretation. The ruling does not itself establish a new fixed number: the denominator will depend on who is legally and factually capable of voting when judgment is rendered.",
+  "deck": "By a 13-1 vote, with six senator-judges not participating, the impeachment court overturned its earlier fixed 16-vote interpretation. The final threshold will depend on who is legally and factually capable of voting when judgment is rendered.",
   "publishedAt": "2026-09-23T16:54:30+08:00",
   "updatedAt": "2026-09-23T16:54:30+08:00",
   "author": "FMB News Desk",
   "articleType": "NewsArticle",
   "relatedArticles": [
-    {"relationship":"continuation-of","slug":"sara-duterte-impeachment-saln-day-25-september-15-2026","path":"/news/sara-duterte-impeachment-saln-day-25-september-15-2026"},
-    {"relationship":"previous-update","slug":"sara-duterte-gencorp-philgeps-contracts-day-28-september-22-2026","path":"/news/sara-duterte-gencorp-philgeps-contracts-day-28-september-22-2026"}
+    {
+      "relationship": "continuation-of",
+      "slug": "sara-duterte-impeachment-saln-day-25-september-15-2026",
+      "path": "/news/sara-duterte-impeachment-saln-day-25-september-15-2026"
+    },
+    {
+      "relationship": "previous-update",
+      "slug": "sara-duterte-gencorp-philgeps-contracts-day-28-september-22-2026",
+      "path": "/news/sara-duterte-gencorp-philgeps-contracts-day-28-september-22-2026"
+    }
   ],
   "sections": [
-    {"heading":"What happened","paragraphs":["The Senate, sitting as an impeachment court, overturned its earlier interpretation that 16 votes would always be required to convict Vice President Sara Duterte. The court voted 13-1 to adopt a formula based on senator-judges who remain legally and factually capable of participating when judgment is rendered; six senator-judges did not participate in the threshold vote.","The ruling means senators who are detained or suspended or otherwise legally restrained, sought by authorities with unknown whereabouts, physically or medically incapacitated, beyond the Senate’s coercive processes, or similarly situated may be excluded from the denominator if supported by competent and sufficient evidence."]},
-    {"heading":"What is confirmed","paragraphs":["The Philippine News Agency reported the court’s completed ruling and vote. Reuters independently reported that the Senate impeachment court lowered the number of votes prosecutors may need to secure a conviction. Inquirer and GMA News independently covered the threshold proceedings.","The court also ruled that fractional two-thirds results must be rounded upward. For example, a 20-member denominator would require 14 votes, because 13 would be below two-thirds."]},
-    {"heading":"What is not yet decided","paragraphs":["The September 23 ruling does not automatically set a single new numerical conviction threshold. The actual denominator must be determined from the senator-judges legally and factually capable of participating when the final judgment vote occurs.","The ruling is pro hac vice, meaning it governs this proceeding and is not a formal amendment of the Senate impeachment rules. Any future judicial challenge and its outcome remain unresolved."]},
-    {"heading":"Context","paragraphs":["The threshold dispute arose because several senator-judges have been unable to participate in the trial. Presiding officer Francis Escudero had ruled on July 6 that the Constitution’s requirement of two-thirds of all Senate members meant 16 votes in a 24-member chamber. Senator-Judge Erwin Tulfo challenged that interpretation on September 8.","This is a procedural continuation of FMB News’ ongoing coverage of Duterte’s impeachment trial. Earliest relevant FMB News report: /news/sara-duterte-impeachment-saln-day-25-september-15-2026."]},
-    {"heading":"Why it matters","paragraphs":["The ruling changes the mathematical framework that will govern any eventual verdict. Depending on how many senator-judges qualify to participate at judgment, prosecutors could need fewer than the previously fixed 16 votes, while the constitutional two-thirds requirement itself remains in force."]},
-    {"heading":"What to watch next","paragraphs":["Watch for the court’s eventual determination of which senator-judges belong in the voting denominator, any Supreme Court challenge, and the continuation of evidence and arguments on the articles of impeachment. The ruling is procedural and is not a finding that Duterte is guilty or not guilty of any impeachment charge."]}
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Senate, sitting as an impeachment court, overturned its earlier interpretation that 16 votes would always be required to convict Vice President Sara Duterte. The court voted 13-1 to adopt a formula based on senator-judges who remain legally and factually capable of participating when judgment is rendered; six senator-judges did not participate in the threshold vote.",
+        "The ruling means senators who are detained or suspended or otherwise legally restrained, sought by authorities with unknown whereabouts, physically or medically incapacitated, beyond the Senate’s coercive processes, or similarly situated may be excluded from the denominator if supported by competent and sufficient evidence."
+      ]
+    },
+    {
+      "heading": "What is confirmed",
+      "paragraphs": [
+        "The Philippine News Agency reported the court’s completed ruling and vote. Reuters independently reported that the Senate impeachment court lowered the number of votes prosecutors may need to secure a conviction. Inquirer and GMA News independently covered the threshold proceedings.",
+        "The court also ruled that fractional two-thirds results must be rounded upward. For example, a 20-member denominator would require 14 votes, because 13 would be below two-thirds."
+      ]
+    },
+    {
+      "heading": "What is not yet decided",
+      "paragraphs": [
+        "The September 23 ruling does not automatically set a single new numerical conviction threshold. The actual denominator must be determined from the senator-judges legally and factually capable of participating when the final judgment vote occurs.",
+        "The ruling is pro hac vice, meaning it governs this proceeding and is not a formal amendment of the Senate impeachment rules. Any future judicial challenge and its outcome remain unresolved."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The threshold dispute arose because several senator-judges have been unable to participate in the trial. Presiding officer Francis Escudero had ruled on July 6 that the Constitution’s requirement of two-thirds of all Senate members meant 16 votes in a 24-member chamber. Senator-Judge Erwin Tulfo challenged that interpretation on September 8.",
+        "This is a procedural continuation of FMB News’ ongoing coverage of Duterte’s impeachment trial. Earliest relevant FMB News report: /news/sara-duterte-impeachment-saln-day-25-september-15-2026."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "The ruling changes the mathematical framework that will govern any eventual verdict. Depending on how many senator-judges qualify to participate at judgment, prosecutors could need fewer than the previously fixed 16 votes, while the constitutional two-thirds requirement itself remains in force."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for the court’s eventual determination of which senator-judges belong in the voting denominator, any Supreme Court challenge, and the continuation of evidence and arguments on the articles of impeachment. The ruling is procedural and is not a finding that Duterte is guilty or not guilty of any impeachment charge."
+      ]
+    }
   ],
   "sources": [
-    {"publisher":"Philippine News Agency","title":"Senate court drops fixed 16-vote threshold in VP trial","publishedAt":"2026-09-23T15:02:00+08:00","url":"https://www.pna.gov.ph/articles/1284670","role":"official state news-agency account of the completed court ruling"},
-    {"publisher":"Reuters","title":"Philippine Senate lowers threshold for conviction in VP Duterte's impeachment trial","publishedAt":"2026-09-23T00:00:00+08:00","url":"https://www.reuters.com/world/asia-pacific/philippine-senate-lowers-number-votes-needed-convict-vp-sara-duterte-2026-09-23/","role":"independent international corroboration"},
-    {"publisher":"Inquirer.net","title":"Senate impeach court lowers threshold to convict Sara Duterte","publishedAt":"2026-09-23T00:00:00+08:00","url":"https://newsinfo.inquirer.net/2310048/senate-impeachment-court-reduces-conviction-threshold","role":"independent Philippine corroboration"},
-    {"publisher":"GMA News Online","title":"LIVE UPDATES: Sara Duterte Impeachment Trial (September 23, 2026)","publishedAt":"2026-09-23T00:00:00+08:00","url":"https://www.gmanetwork.com/news/topstories/nation/1003369/live-updates-sara-duterte-impeachment-trial-september-23-2026/story/","role":"independent live reporting of proceedings"}
+    {
+      "publisher": "Philippine News Agency",
+      "title": "Senate court drops fixed 16-vote threshold in VP trial",
+      "publishedAt": "2026-09-23T15:02:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1284670",
+      "role": "official state news-agency account of the completed court ruling"
+    },
+    {
+      "publisher": "Reuters",
+      "title": "Philippine Senate lowers threshold for conviction in VP Duterte's impeachment trial",
+      "publishedAt": "2026-09-23T00:00:00+08:00",
+      "url": "https://www.reuters.com/world/asia-pacific/philippine-senate-lowers-number-votes-needed-convict-vp-sara-duterte-2026-09-23/",
+      "role": "independent international corroboration"
+    },
+    {
+      "publisher": "Inquirer.net",
+      "title": "Senate impeach court lowers threshold to convict Sara Duterte",
+      "publishedAt": "2026-09-23T00:00:00+08:00",
+      "url": "https://newsinfo.inquirer.net/2310048/senate-impeachment-court-reduces-conviction-threshold",
+      "role": "independent Philippine corroboration"
+    },
+    {
+      "publisher": "GMA News Online",
+      "title": "LIVE UPDATES: Sara Duterte Impeachment Trial (September 23, 2026)",
+      "publishedAt": "2026-09-23T00:00:00+08:00",
+      "url": "https://www.gmanetwork.com/news/topstories/nation/1003369/live-updates-sara-duterte-impeachment-trial-september-23-2026/story/",
+      "role": "independent live reporting of proceedings"
+    }
   ],
   "image": {
-    "kind":"rights-cleared-contextual-senate-photo",
-    "url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Philippine_Senate_Session_Hall.jpg",
-    "source":"Wikimedia Commons / Philippine News Agency",
-    "creator":"Avito Dalan / Philippine News Agency",
-    "license":"Public domain — Philippine government work",
-    "credit":"Photo: Avito Dalan / Philippine News Agency via Wikimedia Commons, public domain (Philippine government work)",
-    "caption":"File photograph of the Philippine Senate session hall taken on May 29, 2025. It is contextual and does not depict the September 23, 2026 threshold vote.",
-    "alt":"File photograph of the Philippine Senate session hall used as contextual imagery for the Sara Duterte impeachment trial",
-    "width":6720,"height":4480,
-    "sourceUrl":"https://commons.wikimedia.org/wiki/File:Philippine_Senate_Session_Hall.jpg"
+    "kind": "rights-cleared-contextual-senate-photo",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Philippine_Senate_Session_Hall.jpg",
+    "source": "Wikimedia Commons / Philippine News Agency",
+    "creator": "Avito Dalan / Philippine News Agency",
+    "license": "Public domain — Philippine government work",
+    "credit": "Photo: Avito Dalan / Philippine News Agency via Wikimedia Commons, public domain (Philippine government work)",
+    "caption": "File photograph of the Philippine Senate session hall taken on May 29, 2025. It is contextual and does not depict the September 23, 2026 threshold vote.",
+    "alt": "File photograph of the Philippine Senate session hall used as contextual imagery for the Sara Duterte impeachment trial",
+    "width": 6720,
+    "height": 4480,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Philippine_Senate_Session_Hall.jpg"
   },
-  "audit": {"sourceCheckedAt":"2026-09-23T16:54:30+08:00","verificationNotes":["PNA documents the completed 13-1 ruling, six non-participating senator-judges, the exclusion categories and upward rounding rule.","Reuters independently corroborates the consequential change to the conviction-vote framework; Inquirer and GMA independently cover the proceedings.","The article does not falsely state that a new fixed threshold has already been set; the denominator remains dependent on eligibility at judgment.","The procedural ruling is explicitly separated from the merits of the impeachment charges.","The story links to the earliest relevant FMB News impeachment report and the latest evidentiary continuation.","The hero is a public-domain Philippine government file photograph and is explicitly labeled contextual."]}
+  "audit": {
+    "sourceCheckedAt": "2026-09-23T16:54:30+08:00",
+    "verificationNotes": [
+      "PNA documents the completed 13-1 ruling, six non-participating senator-judges, the exclusion categories and upward rounding rule.",
+      "Reuters independently corroborates the consequential change to the conviction-vote framework; Inquirer and GMA independently cover the proceedings.",
+      "The article does not falsely state that a new fixed threshold has already been set; the denominator remains dependent on eligibility at judgment.",
+      "The procedural ruling is explicitly separated from the merits of the impeachment charges.",
+      "The story links to the earliest relevant FMB News impeachment report and the latest evidentiary continuation.",
+      "The hero is a public-domain Philippine government file photograph and is explicitly labeled contextual."
+    ]
+  }
 }
