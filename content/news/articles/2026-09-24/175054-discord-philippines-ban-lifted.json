@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "discord-philippines-ban-lifted-september-24-2026",
+  "headline": "Philippines Lifts Discord Ban After Talks With Platform",
+  "seoTitle": "Philippines Lifts Discord Ban After Talks | FMB News",
+  "seoDescription": "The DICT and CICC lifted the Philippine ban on Discord on September 24 after talks with the platform and commitments on online safety and government coordination.",
+  "keywords": ["Discord", "DICT", "CICC", "Philippines", "online safety", "platform regulation"],
+  "category": "Technology",
+  "kicker": "TECHNOLOGY · POLICY",
+  "deck": "The restriction imposed Wednesday evening was lifted Thursday after government officials met Discord representatives. Authorities say the platform made commitments on child protection and coordination, while the precise implementation of those commitments remains to be monitored.",
+  "publishedAt": "2026-09-24T17:50:54+08:00",
+  "updatedAt": "2026-09-24T17:50:54+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What changed","paragraphs":["The Department of Information and Communications Technology and its Cybercrime Investigation and Coordinating Center ordered the lifting of the Philippine ban on Discord on Thursday, September 24, less than a day after the restriction took effect.","CICC Executive Director Renato 'Aboy' Paraiso directly confirmed the lifting to GMA News after a meeting with Discord management. DICT Secretary Henry Aguda separately said the government was removing the ban following what he described as successful negotiations with the platform."]},
+    {"heading":"What is confirmed","paragraphs":["The CICC had earlier demanded that Discord and Reddit establish local representation as authorities sought faster coordination over online threats and child-safety concerns. Philippine News Agency documented that government action on September 22.","According to Aguda, Discord committed to immediate measures intended to strengthen protection of young users. The lifting itself is confirmed; the effectiveness and detailed implementation of those commitments have not yet been independently demonstrated."]},
+    {"heading":"What remains unresolved","paragraphs":["FMB News is not treating the government's characterization of online threats as proof that Discord caused any specific offline crime. Nor does the lifting settle legal criticism of the original blocking order. Former DICT official Jeffrey Ian Dy publicly argued that platform blocking without a court order was unconstitutional, citing the Supreme Court's Disini decision; that is a legal position, not a new court ruling on this particular Discord action.","It also remains to be seen what permanent Philippine representation Discord will establish and what concrete response timelines or safety mechanisms will follow from the talks."]},
+    {"heading":"Why it matters","paragraphs":["The rapid imposition and reversal directly affected access to a major communications platform and raises broader questions about how Philippine authorities will regulate global online services while balancing public safety, due process and internet access."]},
+    {"heading":"What to watch next","paragraphs":["FMB News will watch for written DICT or CICC terms, Discord's own public statement, any formal local-representation arrangement, and whether the government takes comparable action involving Reddit or other platforms."]}
+  ],
+  "sources": [
+    {"publisher":"Philippine News Agency","title":"CICC, NPC crack down on social media platforms over child safety","publishedAt":"2026-09-22T19:29:00+08:00","url":"https://www.pna.gov.ph/articles/1284598","role":"official government newswire record of CICC's demand and stated rationale"},
+    {"publisher":"GMA News Online","title":"Discord ban lifted —CICC","publishedAt":"2026-09-24T14:23:00+08:00","url":"https://www.gmanetwork.com/news/topstories/nation/1003532/discord-ban-lifted-cicc/story/","role":"independent reporting with direct confirmation from CICC Executive Director Renato Paraiso"},
+    {"publisher":"The Philippine Star","title":"Cybersecurity body lifts ban on Discord","publishedAt":"2026-09-24T15:25:00+08:00","url":"https://www.philstar.com/headlines/2026/09/24/2558634/cybersecurity-body-lifts-ban-discord","role":"independent corroboration with DICT Secretary Henry Aguda's announcement and description of Discord commitments"},
+    {"publisher":"GMA News Online","title":"Ex-DICT exec hits blocking of Discord, says it's unconstitutional","publishedAt":"2026-09-24T14:02:00+08:00","url":"https://www.gmanetwork.com/news/topstories/nation/1003528/ex-dict-exec-hits-blocking-of-discord-says-it-s-unconstitutional/story/","role":"documents legal criticism; treated as attributed opinion rather than adjudicated fact"}
+  ],
+  "image": {
+    "kind":"rights-cleared-archival-brand-photograph",
+    "url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Discord_booth_(43507601795).jpg",
+    "source":"Wikimedia Commons / Flickr",
+    "creator":"Gage Skidmore",
+    "license":"CC BY-SA 2.0",
+    "credit":"Gage Skidmore / Wikimedia Commons, CC BY-SA 2.0",
+    "caption":"A Discord booth at PAX West in Seattle in August 2018. This archival photograph is used to identify the platform and does not depict the September 2026 Philippine government talks.",
+    "alt":"Discord exhibition booth at PAX West in Seattle in 2018",
+    "sourceUrl":"https://commons.wikimedia.org/wiki/File:Discord_booth_(43507601795).jpg",
+    "width":5760,
+    "height":3840
+  },
+  "audit": {
+    "sourceCheckedAt":"2026-09-24T17:50:54+08:00",
+    "verificationNotes":[
+      "GMA News obtained direct confirmation from CICC Executive Director Renato Paraiso that the ban was being lifted after talks with Discord.",
+      "The Philippine Star independently reports DICT Secretary Henry Aguda announcing the lifting and Discord's stated commitments.",
+      "PNA's September 22 report documents the government's earlier demand and stated child-safety rationale.",
+      "The article distinguishes confirmed government action from legal criticism, alleged platform-related harms and unresolved implementation details.",
+      "The hero is a genuine archival photograph of a Discord booth by Gage Skidmore, whose Flickr-origin file was license-reviewed by Wikimedia Commons and confirmed under CC BY-SA 2.0."
+    ]
+  }
+}
