@@ -4,8 +4,16 @@
   "slug": "adb-cuts-philippines-2026-growth-forecast-3-3-september-24-2026",
   "headline": "ADB Cuts Philippine 2026 Growth Forecast to 3.3%",
   "seoTitle": "ADB Cuts Philippine 2026 Growth Forecast to 3.3% | FMB News",
-  "seoDescription": "The Asian Development Bank lowered its 2026 Philippine GDP growth forecast to 3.3% from 3.8% and trimmed its 2027 forecast to 5.1%, citing weaker investment, Middle East-related energy pressures and El Niño risks.",
-  "keywords": ["Philippines economy", "ADB", "GDP", "growth forecast", "Asian Development Outlook", "inflation", "El Niño"],
+  "seoDescription": "ADB cut its 2026 Philippine growth forecast to 3.3% and its 2027 outlook to 5.1%, citing weaker investment, energy pressures and El Niño risks.",
+  "keywords": [
+    "Philippines economy",
+    "ADB",
+    "GDP",
+    "growth forecast",
+    "Asian Development Outlook",
+    "inflation",
+    "El Niño"
+  ],
   "category": "Business",
   "kicker": "ECONOMY · OUTLOOK",
   "deck": "ADB now expects Philippine GDP to expand 3.3% in 2026, below its 3.8% July projection, before growth improves to 5.1% in 2027.",
@@ -15,34 +23,87 @@
   "articleType": "NewsArticle",
   "relatedArticles": [],
   "sections": [
-    {"heading":"What happened","paragraphs":["The Asian Development Bank has lowered its forecast for Philippine economic growth in 2026 to 3.3%, from 3.8% in its July outlook. It also trimmed its 2027 forecast to 5.1% from 5.3%.","The new forecast is an outlook, not a reported GDP result. Actual 2026 growth remains unresolved until official national accounts for the year are completed."]},
-    {"heading":"What is confirmed","paragraphs":["ADB officials said the revision reflects a heavier-than-expected impact from the prolonged Middle East conflict, weaker investment in the first half, higher costs for imported fuel and other essential commodities, and risks associated with El Niño. ADB expects inflation to average 5.9% in 2026 and ease to 4.4% in 2027.","Philippine News Agency, GMA News, BusinessWorld, Inquirer and The Philippine Star independently reported the 3.3% and 5.1% forecasts and the downward revisions from ADB's July outlook."]},
-    {"heading":"Context","paragraphs":["ADB's July 2026 outlook had already cut the Philippines' growth projection to 3.8% from 4.4% in April. The September revision therefore marks another downgrade as external energy pressures and weak investment continue to weigh on the economy.","ADB nevertheless expects activity to strengthen in 2027, supported by services, manufacturing and a pickup in public construction and critical infrastructure spending."]},
-    {"heading":"Why it matters","paragraphs":["A weaker growth outlook implies less economic momentum for incomes, investment and government revenues than previously expected. The downgrade also comes while households and businesses face elevated inflation and financing costs.","Forecasts are conditional assessments rather than guarantees. Changes in energy markets, government investment, weather conditions, inflation and global demand could move actual growth above or below ADB's projection."]},
-    {"heading":"What to watch next","paragraphs":["Key indicators include third- and fourth-quarter GDP, infrastructure disbursement, inflation, El Niño's effect on agriculture, energy prices and any change in Bangko Sentral ng Pilipinas policy. FMB News will also track subsequent official government and multilateral revisions."]}
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Asian Development Bank has lowered its forecast for Philippine economic growth in 2026 to 3.3%, from 3.8% in its July outlook. It also trimmed its 2027 forecast to 5.1% from 5.3%.",
+        "The new forecast is an outlook, not a reported GDP result. Actual 2026 growth remains unresolved until official national accounts for the year are completed."
+      ]
+    },
+    {
+      "heading": "What is confirmed",
+      "paragraphs": [
+        "ADB officials said the revision reflects a heavier-than-expected impact from the prolonged Middle East conflict, weaker investment in the first half, higher costs for imported fuel and other essential commodities, and risks associated with El Niño. ADB expects inflation to average 5.9% in 2026 and ease to 4.4% in 2027.",
+        "Philippine News Agency, GMA News, BusinessWorld, Inquirer and The Philippine Star independently reported the 3.3% and 5.1% forecasts and the downward revisions from ADB's July outlook."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "ADB's July 2026 outlook had already cut the Philippines' growth projection to 3.8% from 4.4% in April. The September revision therefore marks another downgrade as external energy pressures and weak investment continue to weigh on the economy.",
+        "ADB nevertheless expects activity to strengthen in 2027, supported by services, manufacturing and a pickup in public construction and critical infrastructure spending."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "A weaker growth outlook implies less economic momentum for incomes, investment and government revenues than previously expected. The downgrade also comes while households and businesses face elevated inflation and financing costs.",
+        "Forecasts are conditional assessments rather than guarantees. Changes in energy markets, government investment, weather conditions, inflation and global demand could move actual growth above or below ADB's projection."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Key indicators include third- and fourth-quarter GDP, infrastructure disbursement, inflation, El Niño's effect on agriculture, energy prices and any change in Bangko Sentral ng Pilipinas policy. FMB News will also track subsequent official government and multilateral revisions."
+      ]
+    }
   ],
   "sources": [
-    {"publisher":"Asian Development Bank","title":"Asian Development Outlook September 2026 — Philippine growth outlook","publishedAt":"2026-09-23T00:00:00+08:00","url":"https://www.adb.org/","role":"primary institution; September 2026 economic outlook and forecast"},
-    {"publisher":"Philippine News Agency","title":"ADB expects PH economic growth to regain momentum in 2027","publishedAt":"2026-09-23T14:57:00+08:00","url":"https://www.pna.gov.ph/articles/1284661","role":"current report from ADB briefing; forecast figures, inflation outlook and drivers"},
-    {"publisher":"GMA News","title":"ADB projects slower PH growth in 2026, 2027","publishedAt":"2026-09-23T11:16:00+08:00","url":"https://www.gmanetwork.com/news/money/economy/1003383/adb-projects-slower-ph-growth-in-2026-2027/story/","role":"independent corroboration"},
-    {"publisher":"BusinessWorld","title":"ADB cuts 2026 Philippine growth forecast anew","publishedAt":"2026-09-23T00:00:00+08:00","url":"https://bworldonline.com/top-stories/2026/09/23/780790/adb-cuts-2026-philippine-growth-forecast-anew/","role":"independent corroboration"}
+    {
+      "publisher": "Asian Development Bank",
+      "title": "Asian Development Outlook September 2026 — Philippine growth outlook",
+      "publishedAt": "2026-09-23T00:00:00+08:00",
+      "url": "https://www.adb.org/",
+      "role": "primary institution; September 2026 economic outlook and forecast"
+    },
+    {
+      "publisher": "Philippine News Agency",
+      "title": "ADB expects PH economic growth to regain momentum in 2027",
+      "publishedAt": "2026-09-23T14:57:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1284661",
+      "role": "current report from ADB briefing; forecast figures, inflation outlook and drivers"
+    },
+    {
+      "publisher": "GMA News",
+      "title": "ADB projects slower PH growth in 2026, 2027",
+      "publishedAt": "2026-09-23T11:16:00+08:00",
+      "url": "https://www.gmanetwork.com/news/money/economy/1003383/adb-projects-slower-ph-growth-in-2026-2027/story/",
+      "role": "independent corroboration"
+    },
+    {
+      "publisher": "BusinessWorld",
+      "title": "ADB cuts 2026 Philippine growth forecast anew",
+      "publishedAt": "2026-09-23T00:00:00+08:00",
+      "url": "https://bworldonline.com/top-stories/2026/09/23/780790/adb-cuts-2026-philippine-growth-forecast-anew/",
+      "role": "independent corroboration"
+    }
   ],
   "image": {
-    "kind":"rights-cleared-contextual-file-photo",
-    "url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Asian_Development_Bank_headquarters.jpg",
-    "source":"Wikimedia Commons",
-    "creator":"Eugene Alvin Villar (Seav)",
-    "license":"CC BY-SA 4.0 (also available under earlier CC BY-SA versions and GFDL)",
-    "credit":"Photo: Eugene Alvin Villar / Wikimedia Commons, CC BY-SA 4.0",
-    "caption":"The Asian Development Bank headquarters in Mandaluyong, photographed in 2007. This is an archival contextual photograph and does not depict the September 2026 economic briefing.",
-    "alt":"Archival exterior view of the Asian Development Bank headquarters in Mandaluyong City",
-    "width":2272,
-    "height":1704,
-    "sourceUrl":"https://commons.wikimedia.org/wiki/File:Asian_Development_Bank_headquarters.jpg"
+    "kind": "rights-cleared-contextual-file-photo",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Asian_Development_Bank_headquarters.jpg",
+    "source": "Wikimedia Commons",
+    "creator": "Eugene Alvin Villar (Seav)",
+    "license": "CC BY-SA 4.0 (also available under earlier CC BY-SA versions and GFDL)",
+    "credit": "Photo: Eugene Alvin Villar / Wikimedia Commons, CC BY-SA 4.0",
+    "caption": "The Asian Development Bank headquarters in Mandaluyong, photographed in 2007. This is an archival contextual photograph and does not depict the September 2026 economic briefing.",
+    "alt": "Archival exterior view of the Asian Development Bank headquarters in Mandaluyong City",
+    "width": 2272,
+    "height": 1704,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Asian_Development_Bank_headquarters.jpg"
   },
   "audit": {
-    "sourceCheckedAt":"2026-09-24T07:50:32+08:00",
-    "verificationNotes":[
+    "sourceCheckedAt": "2026-09-24T07:50:32+08:00",
+    "verificationNotes": [
       "ADB's September outlook was verified against contemporaneous reporting from the ADB briefing and multiple independent Philippine outlets.",
       "PNA reports ADB's 2026 forecast at 3.3% and 2027 forecast at 5.1%, down from 3.8% and 5.3% respectively in the July outlook.",
       "GMA News and BusinessWorld independently corroborate the downgrade and its principal drivers.",
