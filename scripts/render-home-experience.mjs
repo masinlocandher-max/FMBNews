@@ -181,7 +181,7 @@ function renderMobileHome(stories) {
     <div class="fmb-approved-hero-copy">
       <span class="fmb-editorial-mobile-kicker">${categoryFor(lead)}</span>
       <span data-fmb-greeting class="sr-only">FMB News update</span>
-      <h1 data-fmb-greeting-line data-fmb-rotating-slogan>${esc(lead.headline)}</h1>
+      <h1 data-fmb-greeting-line>${esc(lead.headline)}</h1>
       <p class="fmb-approved-hero-deck">${deckFor(lead)}</p>
       <div class="fmb-approved-hero-cta" aria-hidden="true"><a href="#fmb-app-latest-title">Read the Latest</a><button type="button" data-fmb-customize>Customize</button></div>
     </div>
