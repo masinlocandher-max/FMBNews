@@ -74,6 +74,7 @@ async function versionedJs(name,extra=''){
 const personalizationJs=await versionedJs('fmb-news-mobile-personalization.js');
 const premiumJs=await versionedJs('fmb-news-mobile-premium.js');
 const mobileHomeJs=await versionedJs('fmb-news-mobile-home.js');
+const cmsJs=await versionedJs('fmb-news-cms.js');
 const mobileLiveFeedJs=await versionedJs('fmb-news-mobile-live-feed.js');
 const mobileGlobalJs=await versionedJs('fmb-news-mobile-global.js');
 const mobileProductsJs=await versionedJs('fmb-news-mobile-products.js');
@@ -123,6 +124,7 @@ async function apply(target){
     ['/assets/js/fmb-news-mobile-personalization.js',personalizationJs],
     ['/assets/js/fmb-news-mobile-premium.js',premiumJs],
     ['/assets/js/fmb-news-mobile-home.js',mobileHomeJs],
+    ['/assets/js/fmb-news-cms.js',cmsJs],
     ['/assets/js/fmb-news-mobile-live-feed.js',mobileLiveFeedJs],
     ['/assets/js/fmb-news-mobile-global.js',mobileGlobalJs],
     ['/assets/js/fmb-news-mobile-products.js',mobileProductsJs],
