@@ -34,7 +34,7 @@
   tick();
   setInterval(tick,30000);
 
-  const slogan=$('[data-fmb-rotating-slogan],[data-fmb-greeting-line]',root);
+  const slogan=$('[data-fmb-rotating-slogan]',root);
   let sloganTimer=0,swapTimer=0;
   function configureSloganMotion(){
     clearInterval(sloganTimer);clearTimeout(swapTimer);
