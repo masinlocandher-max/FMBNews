@@ -115,9 +115,9 @@
       if (detail) detail.textContent = article.deck || article.summary || 'Verified reporting with context and what to watch next.';
     };
 
-    const isWorld = (article) => /(^|\\b)(world|international|global)(\\b|$)/i.test(`${article.category || ''} ${article.region || ''}`);
-    const isSports = (article) => /(^|\\b)sports?(\\b|$)/i.test(`${article.category || ''} ${article.region || ''}`);
-    const isEntertainment = (article) => /entertainment|culture|lifestyle|film|music|pageant|celebrity|arts?\\b/i.test(`${article.category || ''} ${article.region || ''} ${article.title || ''}`);
+    const isWorld = (article) => /(^|\b)(world|international|global)(\b|$)/i.test(`${article.category || ''} ${article.region || ''}`);
+    const isSports = (article) => /(^|\b)sports?(\b|$)/i.test(`${article.category || ''} ${article.region || ''}`);
+    const isEntertainment = (article) => /entertainment|culture|lifestyle|film|music|pageant|celebrity|arts?\b/i.test(`${article.category || ''} ${article.region || ''} ${article.title || ''}`);
     const world = articles.find(isWorld);
     const sports = articles.find(isSports);
     const entertainment = articles.find(isEntertainment);
