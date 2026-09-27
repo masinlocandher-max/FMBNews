@@ -24,7 +24,7 @@
   };
 
   async function get(table, query) {
-    const response = await fetch(`${API}/${table}?${query}`, { headers });
+    const response = await fetch(`${API}/${table}?${query}`, { headers, cache: 'no-store' });
     if (!response.ok) throw new Error(`FMB CMS request failed (${response.status})`);
     return response.json();
   }
@@ -96,6 +96,36 @@
       if (deck) deck.textContent = leadDeck;
     }
 
+    const updateCard = (node, article, fallbackLabel = 'FMB News') => {
+      if (!node || !article) return;
+      node.href = storyHref(article);
+      const image = node.querySelector('img');
+      if (image) {
+        image.src = article.image_url || plateFor(article.slug || article.title);
+        image.alt = article.title || fallbackLabel;
+      }
+      const headline = node.querySelector('h2, h3, b, .editorial-product-headline');
+      if (headline && !headline.closest('.editorial-desk-top')) headline.textContent = article.title || fallbackLabel;
+      const productHeadline = node.querySelector('.editorial-product-headline');
+      if (productHeadline) productHeadline.textContent = article.title || fallbackLabel;
+      const detail = node.querySelector('p');
+      if (detail) detail.textContent = article.deck || article.summary || 'Verified reporting with context and what to watch next.';
+    };
+
+    const isWorld = (article) => /(^|\\b)(world|international|global)(\\b|$)/i.test(`${article.category || ''} ${article.region || ''}`);
+    const isSports = (article) => /(^|\\b)sports?(\\b|$)/i.test(`${article.category || ''} ${article.region || ''}`);
+    const isEntertainment = (article) => /entertainment|culture|lifestyle|film|music|pageant|celebrity|arts?\\b/i.test(`${article.category || ''} ${article.region || ''} ${article.title || ''}`);
+    const world = articles.find(isWorld);
+    const sports = articles.find(isSports);
+    const entertainment = articles.find(isEntertainment);
+    const secondary = articles.find((article) => article.slug !== lead.slug) || articles[1];
+
+    updateCard(desktop?.querySelector('.editorial-desk.worldwide'), world, 'FMB Worldwide');
+    updateCard(desktop?.querySelector('.editorial-desk.sports'), sports, 'Sports');
+    updateCard(desktop?.querySelector('.editorial-feature.entertainment'), entertainment, 'Entertainment');
+    updateCard(desktop?.querySelector('.network-product.news'), secondary, 'FMB News');
+    updateCard(desktop?.querySelector('.network-product.world'), world, 'FMB Worldwide');
+
     const desktopStatus = desktop?.querySelector('.editorial-status-desk');
     if (desktopStatus) {
       desktopStatus.href = leadHref;
@@ -156,6 +186,7 @@
     }
 
     document.documentElement.dataset.fmbCmsHome = 'live';
+    document.documentElement.dataset.fmbCmsHomeUpdatedAt = new Date().toISOString();
   }
 
   async function hydrateArchive() {
@@ -413,6 +444,13 @@
       hydratePublicationHomepage(), hydrateHomepageStories(), hydrateArchive(), hydrateWorldwideLanding(), hydrateBriefFeature(),
       renderArticleReader(), renderEdition('worldwide'), renderEdition('brief')
     ]);
+
+    const isHome = Boolean(document.querySelector('.network-home') || document.querySelector('[data-fmb-mobile-home]'));
+    if (isHome) {
+      window.setInterval(() => {
+        Promise.allSettled([hydratePublicationHomepage(), hydrateHomepageStories(), hydrateBriefFeature()]);
+      }, 5 * 60 * 1000);
+    }
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot, { once: true });
