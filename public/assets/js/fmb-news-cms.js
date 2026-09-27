@@ -72,7 +72,7 @@
     if (!desktop && !mobile) return;
 
     const fields = ['slug','canonical_path','title','summary','deck','category','region','image_url','image_credit','published_at'].join(',');
-    const articles = await get('news_articles', `select=${fields}&status=eq.published&order=published_at.desc&limit=8`);
+    const articles = await get('news_articles', `select=${fields}&status=eq.published&order=published_at.desc&limit=30`);
     if (!Array.isArray(articles) || !articles.length) return;
 
     const lead = articles[0];
@@ -104,10 +104,13 @@
         image.src = article.image_url || plateFor(article.slug || article.title);
         image.alt = article.title || fallbackLabel;
       }
-      const headline = node.querySelector('h2, h3, b, .editorial-product-headline');
-      if (headline && !headline.closest('.editorial-desk-top')) headline.textContent = article.title || fallbackLabel;
       const productHeadline = node.querySelector('.editorial-product-headline');
-      if (productHeadline) productHeadline.textContent = article.title || fallbackLabel;
+      if (productHeadline) {
+        productHeadline.textContent = article.title || fallbackLabel;
+      } else {
+        const headline = node.querySelector('.editorial-side-copy h3, .editorial-side-copy b');
+        if (headline) headline.textContent = article.title || fallbackLabel;
+      }
       const detail = node.querySelector('p');
       if (detail) detail.textContent = article.deck || article.summary || 'Verified reporting with context and what to watch next.';
     };
