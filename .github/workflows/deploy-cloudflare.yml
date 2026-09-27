@@ -168,3 +168,57 @@ jobs:
           fi
 
           echo 'Public FMB News deployment and canonical www newsroom verified.'
+
+      - name: Verify live landing matches newest CMS article
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import { chromium } from 'playwright';
+
+          const supabaseUrl = 'https://wjnavdpppnhxbuydkrkd.supabase.co';
+          const publishableKey = 'sb_publishable_bpdFntTHbHmxsG4L0PtcCw_5dJ8gpr8';
+          const query = new URL('/rest/v1/news_articles', supabaseUrl);
+          query.searchParams.set('select', 'title,slug,canonical_path,published_at');
+          query.searchParams.set('status', 'eq.published');
+          query.searchParams.set('order', 'published_at.desc');
+          query.searchParams.set('limit', '1');
+
+          const response = await fetch(query, {
+            headers: { apikey: publishableKey, Accept: 'application/json' },
+            cache: 'no-store',
+          });
+          if (!response.ok) throw new Error(`Could not read newest CMS article: ${response.status}`);
+          const [latest] = await response.json();
+          if (!latest?.title) throw new Error('No published CMS article was returned for landing-page verification.');
+
+          const normalize = (value = '') => String(value).replace(/\\s+/g, ' ').trim();
+          const browser = await chromium.launch({ headless: true });
+          try {
+            const cases = [
+              { name: 'desktop', viewport: { width: 1440, height: 1000 }, selector: '.network-home .editorial-lead-story h1' },
+              { name: 'mobile', viewport: { width: 390, height: 844 }, selector: '[data-fmb-mobile-home] [data-fmb-greeting-line]' },
+            ];
+
+            for (const test of cases) {
+              const page = await browser.newPage({ viewport: test.viewport });
+              await page.goto(`https://www.francinemariebautista.com/news/?freshness=${process.env.GITHUB_SHA}-${test.name}`, {
+                waitUntil: 'networkidle',
+                timeout: 60000,
+              });
+              await page.waitForFunction(
+                () => document.documentElement.dataset.fmbCmsHome === 'live',
+                null,
+                { timeout: 30000 },
+              );
+              const visibleTitle = normalize(await page.locator(test.selector).first().textContent());
+              if (visibleTitle !== normalize(latest.title)) {
+                throw new Error(`${test.name} landing is stale. Expected "${latest.title}" but found "${visibleTitle}".`);
+              }
+              console.log(`${test.name} landing verified with newest CMS headline: ${visibleTitle}`);
+              await page.close();
+            }
+          } finally {
+            await browser.close();
+          }
+          NODE
