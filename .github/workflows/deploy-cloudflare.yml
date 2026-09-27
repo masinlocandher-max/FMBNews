@@ -192,7 +192,7 @@ jobs:
           const [latest] = await response.json();
           if (!latest?.title) throw new Error('No published CMS article was returned for landing-page verification.');
 
-          const normalize = (value = '') => String(value).replace(/\\s+/g, ' ').trim();
+          const normalize = (value = '') => String(value).replace(/\s+/g, ' ').trim();
           const browser = await chromium.launch({ headless: true });
           try {
             const cases = [
