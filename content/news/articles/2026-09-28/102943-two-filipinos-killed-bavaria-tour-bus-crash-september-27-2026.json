@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "two-filipinos-killed-bavaria-tour-bus-crash-september-27-2026",
+  "headline": "Two Filipinos Killed as Tour Bus Overturns in Bavaria",
+  "seoTitle": "Two Filipinos Killed in Bavaria Tour-Bus Crash | FMB News",
+  "seoDescription": "Two Filipinos died after a tour bus carrying a Filipino group overturned on Germany’s A96 near Buchloe; consular assistance and the investigation continue.",
+  "keywords": [
+    "Filipinos in Germany",
+    "Bavaria bus crash",
+    "Buchloe",
+    "A96",
+    "Philippine Consulate Frankfurt",
+    "Oktoberfest",
+    "Filipinos abroad"
+  ],
+  "category": "World",
+  "kicker": "GERMANY · FILIPINOS ABROAD",
+  "deck": "The Philippine Consulate in Frankfurt confirmed two deaths among a Filipino group traveling from Milan to Munich; injured passengers are receiving treatment and the crash cause remains under investigation.",
+  "publishedAt": "2026-09-28T10:29:43+08:00",
+  "updatedAt": "2026-09-28T10:29:43+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "relatedArticles": [],
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Two Filipinos died after a tour bus carrying a Filipino group overturned on the A96 motorway near Buchloe, west of Munich in Bavaria, on September 27, the Philippine Consulate General in Frankfurt confirmed.",
+        "The consulate said the group comprised a reported 33 Filipinos traveling from Milan to Munich. A number of passengers were taken to hospitals in Bavaria, while the others were safe in the care of the German Red Cross."
+      ]
+    },
+    {
+      "heading": "Confirmed information and unresolved points",
+      "paragraphs": [
+        "AFP, citing police, reported that the crash occurred at about 6 a.m. local time and that eight people were seriously injured. It described a larger group of around 50 Filipino tourists. FMB News is retaining the consulate’s reported figure of 33 as the official Philippine count while noting that early police and media totals differ.",
+        "Initial reporting said the coach left the road and overturned. Authorities have not publicly established the cause, and the identities of the people who died were not released in the official material reviewed."
+      ]
+    },
+    {
+      "heading": "Consular response",
+      "paragraphs": [
+        "The Philippine Consulate General in Frankfurt and the Philippine Honorary Consulate in Munich are coordinating with German authorities and the Philippine Migrant Workers Office. The honorary consulate has visited some of the affected passengers, while officials continue working to establish the condition and whereabouts of everyone involved.",
+        "Families seeking official assistance may use the Frankfurt consulate’s published 24-hour emergency hotline. FMB News is not reproducing victim names or unverified personal details."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "The crash caused multiple Filipino casualties abroad and requires cross-border hospital, family-notification and consular coordination. Early discrepancies in passenger totals also make continued official confirmation important."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "German authorities’ investigation may clarify why the bus left the motorway. Further consular updates may also establish a final passenger count, the conditions of those hospitalized and arrangements for the families of the deceased."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Philippine Consulate General in Frankfurt",
+      "title": "Update: Bus Accident in Bavaria involving Filipino nationals",
+      "publishedAt": "2026-09-27T19:05:00+02:00",
+      "url": "https://frankfurtpcg.de/news/advisory/update-bus-accident-in-bavaria-involving-filipino-nationals/",
+      "role": "primary official confirmation and consular-response update"
+    },
+    {
+      "publisher": "Agence France-Presse",
+      "title": "Two Philippine tourists killed in German bus crash",
+      "publishedAt": "2026-09-27T12:19:00+02:00",
+      "url": "https://www.afp.com/en/two-philippine-tourists-killed-german-bus-crash",
+      "role": "independent reporting citing German police"
+    },
+    {
+      "publisher": "GMA News",
+      "title": "PH Consulate General in Milan, Frankfurt coordinating with Filipino bus passengers and their relatives",
+      "publishedAt": "2026-09-28T02:57:00+08:00",
+      "url": "https://www.gmanetwork.com/news/pinoyabroad/dispatch/1003925/ph-consulate-general-in-milan-frankfurt-coordinating-with-filipino-bus-passengers-and-their-relativ/story/",
+      "role": "independent Philippine corroboration and follow-up"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying a verified report about the September 27 bus crash in Bavaria. It is not a photograph and does not depict the accident.",
+    "alt": "FMB News editorial graphic for a report on the Bavaria tour-bus crash involving Filipino travelers",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-09-28T10:29:43+08:00",
+    "verificationNotes": [
+      "The Philippine Consulate General in Frankfurt officially confirmed two deaths, a reported group of 33 Filipinos, hospital treatment for several passengers and continuing assistance.",
+      "AFP independently reported two deaths and eight serious injuries based on German police information, but cited a larger approximate passenger total; the article explicitly preserves this discrepancy.",
+      "GMA News independently corroborated the consulate’s official update and ongoing coordination.",
+      "The cause remains under investigation and no victim identities are published.",
+      "Restricted Reuters, AFP and dpa event imagery was not reused. The article uses FMB News’s 1200-by-675 editorial fallback and clearly states that it does not depict the accident."
+    ]
+  }
+}
