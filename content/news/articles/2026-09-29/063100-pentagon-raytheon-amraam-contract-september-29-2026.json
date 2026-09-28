@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "pentagon-raytheon-amraam-contract-september-29-2026",
+  "headline": "Pentagon Awards Raytheon Provisional $20.7 Billion AMRAAM Contract",
+  "seoTitle": "Pentagon Awards Raytheon $20.7B AMRAAM Contract | FMB News",
+  "seoDescription": "The Pentagon awarded Raytheon a provisional multiyear AMRAAM contract worth up to $20.7 billion, with full funding still dependent on Congress.",
+  "keywords": [
+    "Pentagon",
+    "Raytheon",
+    "RTX",
+    "AMRAAM",
+    "missile production",
+    "defense contract",
+    "September 29 2026"
+  ],
+  "category": "World",
+  "kicker": "DEFENSE · MISSILE PRODUCTION",
+  "deck": "The provisional multiyear deal is designed to raise annual AMRAAM output to at least 1,900 missiles, but the full commitment still depends on congressional appropriations.",
+  "publishedAt": "2026-09-29T06:31:00+08:00",
+  "updatedAt": "2026-09-29T06:31:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Pentagon awarded RTX’s Raytheon business a provisional multiyear contract worth up to $20.7 billion to expand production of Advanced Medium Range Air-to-Air Missiles, or AMRAAMs, Reuters reported Monday.",
+        "RTX says the agreement covers five years with two option years and is intended to increase annual AMRAAM output to at least 1,900 missiles."
+      ]
+    },
+    {
+      "heading": "What is confirmed — and unresolved",
+      "paragraphs": [
+        "The contract ceiling, planned production target and multiyear structure are confirmed by RTX’s primary material and Reuters’ independent report. AMRAAM is used as an air-to-air weapon and in the ground-launched National Advanced Surface-to-Air Missile System.",
+        "The full $20.7 billion is not guaranteed or immediately obligated spending. Reuters reports that Congress has not yet appropriated money for the full multiyear commitment, so the final funded value and order schedule remain unresolved."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "The agreement is designed to rebuild and expand United States and allied missile inventories amid demand linked to wars in Ukraine and the Middle East. RTX says AMRAAM is integrated on 14 platforms and fielded by 44 countries.",
+        "The immediate effect on Filipino households is limited. Any Philippine impact would be indirect, through regional security, allied air-defense availability and wider competition for defense-production capacity; no Philippine procurement under this contract was established."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Key next steps are congressional appropriations, the Pentagon’s funded order quantities, Raytheon’s production investments and delivery schedules, and any official allocation to allied customers.",
+        "The $20.7 billion figure should continue to be treated as a maximum potential contract value, not as a completed payment or guaranteed expenditure."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Reuters",
+      "title": "Pentagon awards RTX's Raytheon $20.7 billion contract for AMRAAM missiles amid stockpile concerns",
+      "publishedAt": "2026-09-29T05:30:00+08:00",
+      "url": "https://www.reuters.com/business/aerospace-defense/pentagon-awards-rtxs-raytheon-207-billion-contract-amraam-missiles-amid-2026-09-28/",
+      "role": "independent reporting on the award, funding status and production target"
+    },
+    {
+      "publisher": "RTX",
+      "title": "Fast track: Critical munitions",
+      "publishedAt": "2026-02-04T00:00:00-05:00",
+      "url": "https://www.rtx.com/news/2026/02/04/munitions-agreements",
+      "role": "primary corporate material confirming the five-year structure, two option years, contract ceiling and production target"
+    },
+    {
+      "publisher": "RTX",
+      "title": "RTX's Raytheon partners with Department of War on five landmark agreements to expand production capacity",
+      "publishedAt": "2026-02-04T00:00:00-05:00",
+      "url": "https://www.rtx.com/news/news-center/2026/02/04/rtxs-raytheon-partners-with-department-of-war-on-five-landmark-agreements-to-exp",
+      "role": "primary announcement establishing the earlier production framework and annual AMRAAM target"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying a verified report on a United States AMRAAM missile-production contract. It is not a photograph and does not depict the Pentagon, Raytheon facilities, missiles or military operations.",
+    "alt": "FMB News editorial graphic for the Pentagon’s AMRAAM production contract",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-09-29T06:30:00+08:00",
+    "verificationNotes": [
+      "Reuters reported at 5:30 a.m. Philippine time on September 29 that the Pentagon awarded Raytheon a provisional multiyear AMRAAM contract with a maximum value of $20.7 billion.",
+      "RTX primary material states that the agreement spans five years with two option years, has a value of up to $20.7 billion and targets annual production of at least 1,900 AMRAAMs.",
+      "Reuters reports that Congress has not appropriated the money needed for the full multiyear commitment; the article labels the contract provisional and does not present the ceiling as guaranteed spending.",
+      "No current official Pentagon contract release was retrievable during this cycle; the primary corporate material from the awardee corroborates the core contract terms.",
+      "The Reuters event photograph is commercially licensed and was not treated as reusable. FMB’s owned editorial fallback is used and is explicitly labeled non-documentary."
+    ]
+  }
+}
