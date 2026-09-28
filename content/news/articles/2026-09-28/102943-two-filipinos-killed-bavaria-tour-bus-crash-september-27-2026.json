@@ -18,7 +18,7 @@
   "kicker": "GERMANY · FILIPINOS ABROAD",
   "deck": "The Philippine Consulate in Frankfurt confirmed two deaths among a Filipino group traveling from Milan to Munich; injured passengers are receiving treatment and the crash cause remains under investigation.",
   "publishedAt": "2026-09-28T10:29:43+08:00",
-  "updatedAt": "2026-09-28T10:29:43+08:00",
+  "updatedAt": "2026-09-28T10:33:30+08:00",
   "author": "FMB News Desk",
   "articleType": "NewsArticle",
   "relatedArticles": [],
@@ -31,8 +31,9 @@
       ]
     },
     {
-      "heading": "Confirmed information and unresolved points",
+      "heading": "Context",
       "paragraphs": [
+        "The bus was bound for Munich during the Oktoberfest period after departing Milan. Buchloe lies west of Munich along the A96 motorway in Bavaria.",
         "AFP, citing police, reported that the crash occurred at about 6 a.m. local time and that eight people were seriously injured. It described a larger group of around 50 Filipino tourists. FMB News is retaining the consulate’s reported figure of 33 as the official Philippine count while noting that early police and media totals differ.",
         "Initial reporting said the coach left the road and overturned. Authorities have not publicly established the cause, and the identities of the people who died were not released in the official material reviewed."
       ]
@@ -100,7 +101,8 @@
       "AFP independently reported two deaths and eight serious injuries based on German police information, but cited a larger approximate passenger total; the article explicitly preserves this discrepancy.",
       "GMA News independently corroborated the consulate’s official update and ongoing coordination.",
       "The cause remains under investigation and no victim identities are published.",
-      "Restricted Reuters, AFP and dpa event imagery was not reused. The article uses FMB News’s 1200-by-675 editorial fallback and clearly states that it does not depict the accident."
+      "Restricted Reuters, AFP and dpa event imagery was not reused. The article uses FMB News’s 1200-by-675 editorial fallback and clearly states that it does not depict the accident.",
+      "A dedicated Context section identifies the route and location without speculating about the crash cause."
     ]
   }
 }
