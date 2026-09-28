@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "alex-eala-asian-games-quarterfinals-september-28-2026",
+  "headline": "Alex Eala Cruises Into Asian Games Quarterfinals",
+  "seoTitle": "Alex Eala Reaches 2026 Asian Games Quarterfinals | FMB News",
+  "seoDescription": "Top seed Alex Eala beat Thailand's Patcharin Cheapchandej 6-1, 6-0 in 55 minutes to reach the 2026 Asian Games women's singles quarterfinals.",
+  "keywords": [
+    "Alex Eala",
+    "Asian Games 2026",
+    "tennis",
+    "Team Philippines",
+    "Patcharin Cheapchandej"
+  ],
+  "category": "Sports",
+  "kicker": "ASIAN GAMES · TENNIS",
+  "deck": "The top-seeded Filipina defeated Thailand's Patcharin Cheapchandej 6-1, 6-0 in 55 minutes and will face Joanna Garland in the quarterfinals.",
+  "publishedAt": "2026-09-28T19:18:30+08:00",
+  "updatedAt": "2026-09-28T19:18:30+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "relatedArticles": [
+    "/news/alex-eala-wta-exemption-asian-games/"
+  ],
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Alex Eala advanced to the women's singles quarterfinals of the 2026 Asian Games after defeating Thailand's Patcharin Cheapchandej 6-1, 6-0 on Monday at Higashiyama Park Tennis Center in Nagoya, Japan.",
+        "GMA News recorded the completed score in its live coverage. Gulf News independently reported the same score and a match duration of 55 minutes."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "Eala entered the women's singles draw as the top seed and received a first-round bye. The match was delayed by rain and moved to an indoor court before play began.",
+        "This is a quarterfinal qualification, not a medal result. Eala previously won bronze in women's singles at the 2022 Asian Games, staged in 2023."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "The victory keeps the Philippines' leading women's tennis player in contention for a second straight Asian Games singles medal and a place in the semifinals."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Eala is scheduled to face Chinese Taipei's Joanna Garland in the quarterfinals on September 30.",
+        "She is also entered in women's doubles with Shaira Hope Rivera."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "GMA News",
+      "title": "LIVE UPDATES: Alex Eala vs. Patcharin Cheapchandej at the 2026 Asian Games Round of 16",
+      "publishedAt": "2026-09-28T18:00:00+08:00",
+      "url": "https://www.gmanetwork.com/news/sports/othersports/1003962/live-updates-alex-eala-vs-patcharin-cheapchandej-at-the-2026-asian-games-round-of-16/story/",
+      "role": "independent current report"
+    },
+    {
+      "publisher": "Gulf News",
+      "title": "After delay, Alex Eala wins first match at Asian Games 2026 in 55 minutes",
+      "publishedAt": "2026-09-28T17:10:00+08:00",
+      "url": "https://gulfnews.com/sport/after-delay-alex-eala-wins-first-match-at-asian-games-2026-in-55-minutes-1.500690461",
+      "role": "independent corroboration"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying a verified report on Alex Eala's Asian Games quarterfinal qualification. It is not a photograph and does not depict the match.",
+    "alt": "FMB News editorial graphic for Alex Eala's Asian Games quarterfinal qualification",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-09-28T19:18:30+08:00",
+    "verificationNotes": [
+      "GMA News reported Eala's completed 6-1, 6-0 Round of 16 victory and quarterfinal qualification.",
+      "Gulf News independently reported the same score, 55-minute match duration and Joanna Garland as the next opponent.",
+      "The article explicitly identifies the result as quarterfinal qualification, not a secured or final medal.",
+      "The earlier FMB News report on Eala's Asian Games participation is linked as the earliest relevant coverage.",
+      "No publisher-owned event photograph was reused. The 1200-by-675 FMB-owned editorial fallback is explicitly labeled non-documentary."
+    ]
+  }
+}
