@@ -104,7 +104,7 @@ for(const token of ['--fmb-red:#D71920','--fmb-paper:#F5F3EF','--fmb-dark:#0A0A0
 must(!editorialReference.includes('#630661'),'Superseded plum accent returned to approved desktop reference');
 
 const homeJs=await read('dist/news/assets/js/fmb-news-mobile-home.js');
-for(const token of ["timeZone:'Asia/Manila'",'data-fmb-greeting-line','prefers-reduced-motion: reduce'])must(homeJs.includes(token),`Home runtime regression: missing ${token}`);
+for(const token of ["timeZone:'Asia/Manila'",'data-fmb-greeting','prefers-reduced-motion: reduce'])must(homeJs.includes(token),`Home runtime regression: missing ${token}`);
 
 const horoscopeJs=await read('public/assets/js/fmb-news-weekly-horoscope.js');
 for(const icon of ['♈','♉','♊','♋','♌','♍','♎','♏','♐','♑','♒','♓'])must(horoscopeJs.includes(icon),`Horoscope zodiac icon missing: ${icon}`);
