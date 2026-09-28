@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "cab-level-17-fuel-surcharge-october-1-15-2026",
+  "headline": "CAB Sets Level 17 Fuel Surcharge for October 1–15",
+  "seoTitle": "CAB Sets Level 17 Fuel Surcharge for October 1–15 | FMB News",
+  "seoDescription": "The Civil Aeronautics Board set a Level 17 fuel-surcharge ceiling for domestic and international flights from October 1 to 15, 2026.",
+  "keywords": [
+    "Civil Aeronautics Board",
+    "fuel surcharge",
+    "airfares",
+    "October 2026",
+    "Philippine aviation"
+  ],
+  "category": "Business",
+  "kicker": "AVIATION · CONSUMER COSTS",
+  "deck": "Airlines may apply to collect up to Level 17 from October 1 to 15, raising the passenger surcharge ceiling to ₱559–₱1,635 on domestic routes and ₱1,846.10–₱13,726.58 internationally.",
+  "publishedAt": "2026-09-28T21:31:00+08:00",
+  "updatedAt": "2026-09-28T21:31:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "relatedArticles": [],
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Civil Aeronautics Board set Level 17 as the maximum passenger and cargo fuel surcharge airlines may collect for flights from October 1 to 15, 2026, up from Level 14 in the second half of September.",
+        "At Level 17, the passenger surcharge ranges from ₱559 to ₱1,635 for one-way domestic flights and from ₱1,846.10 to ₱13,726.58 for international flights, depending on distance."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The CAB advisory dated September 28 says airlines that want to impose the surcharge must apply with the Office of the Executive Director on or before the effectivity period. Level 17 is a ceiling, not an automatic charge on every ticket.",
+        "Independent transport publication PortCalls reported cargo caps of ₱2.87 to ₱8.40 per kilogram on one-way domestic flights and ₱9.49 to ₱70.57 per kilogram on one-way international flights originating in the Philippines. The CAB set the conversion rate at ₱62.71 per US dollar."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "Travelers booking flights for the first half of October could face higher all-in fares if their airline applies for and collects the surcharge. Shippers may also see higher air-cargo costs, which can feed into logistics expenses."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Passengers should compare the full ticket price, not only the base fare, and check the carrier's fee breakdown before paying. The next 15-day CAB advisory will determine whether the ceiling changes after October 15."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Civil Aeronautics Board",
+      "title": "Interim Passenger and Cargo Fuel Surcharge for Domestic and International Flights",
+      "publishedAt": "2026-09-28T00:00:00+08:00",
+      "url": "https://cab.gov.ph/announcements?args%5B0%5D=4c074629ca6f3a8be4573940bc561f0b&element=f85c494b-2b32-4109-b8c1-083cca2b7db6&format=raw&item_id=3941&method=download&task=callelement",
+      "role": "primary official advisory"
+    },
+    {
+      "publisher": "PortCalls Asia",
+      "title": "Airfare, cargo rates to rise as fuel surcharge jumps 3 levels",
+      "publishedAt": "2026-09-28T00:00:00+08:00",
+      "url": "https://portcalls.com/airfare-cargo-rates-to-rise-as-fuel-surcharge-jumps-3-levels/",
+      "role": "independent transport-industry report"
+    },
+    {
+      "publisher": "Philippine News Agency",
+      "title": "Fuel surcharge up 3 notches to Level 17 for Oct. 1-15",
+      "publishedAt": "2026-09-28T19:41:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1285018",
+      "role": "secondary report"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying a verified report on the October 1–15, 2026 fuel-surcharge ceiling. It is not a photograph and does not depict an aircraft, airport, or specific flight.",
+    "alt": "FMB News editorial graphic for the October 2026 airline fuel-surcharge advisory",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-09-28T21:29:00+08:00",
+    "verificationNotes": [
+      "The CAB advisory was opened directly and confirms Level 17 for October 1–15, the application requirement, the ₱62.71 exchange rate, and the September 28 issue date.",
+      "PortCalls independently reported the Level 17 passenger and cargo ranges and the increase from Level 14.",
+      "PNA independently matched the passenger ranges and the CAB application requirement.",
+      "The article distinguishes the regulatory ceiling from an automatic charge: airlines must apply and may charge no more than Level 17.",
+      "The available publisher-owned airport photograph did not include reusable-rights documentation; FMB's owned editorial fallback is used and clearly labeled non-documentary."
+    ]
+  }
+}
