@@ -1,0 +1,210 @@
+{
+  "date": "2026-09-29",
+  "publishedAt": "2026-09-29T07:00:00+08:00",
+  "editionLabel": "FMB Daily Brief",
+  "title": "FMB Daily Brief — September 29, 2026",
+  "deck": "Filipinos start Tuesday with a steep diesel rollback, a higher airline fuel-surcharge ceiling ahead, a Supreme Court language shift for sexual-violence cases, two assured Asian Games medals still awaiting their final color, and a major U.S. missile-production contract whose full funding remains unresolved.",
+  "hero": {
+    "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "alt": "FMB News editorial graphic for the September 29, 2026 Daily Brief",
+    "caption": "FMB News editorial visual for the September 29, 2026 Daily Brief. It is not a photograph and does not depict any event, person, institution, aircraft, missile or sporting competition in the edition.",
+    "credit": "FMB News editorial visual",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "sourceUrl": "https://www.francinemariebautista.com/news/assets/images/news/fmb-news-editorial-fallback.svg",
+    "width": 1200,
+    "height": 675,
+    "kind": "editorial-graphic"
+  },
+  "stories": [
+    {
+      "id": "fuel-rollback",
+      "kicker": "Philippines · Energy",
+      "headline": "Diesel falls ₱7.60 per liter as September closes",
+      "deck": "Petron and Jetti announced pump-price cuts effective September 29: ₱7.60 per liter for diesel and ₱0.30 for gasoline; Petron also cut kerosene by ₱5.80.",
+      "body": [
+        "Confirmed: The company announcements set the rollback at ₱7.60 per liter for diesel and ₱0.30 for gasoline, effective September 29. Petron's kerosene price falls ₱5.80 per liter. The figures are company-announced changes, not a government-mandated uniform price.",
+        "Why it matters to Filipinos: The unusually large diesel cut can ease near-term transport and logistics costs, although the pass-through to fares and retail prices is neither immediate nor guaranteed.",
+        "What to watch: Other oil firms' final advisories, station-level implementation, and whether public-transport and freight operators reflect the lower diesel cost."
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial graphic accompanying a report on Philippine fuel-price changes",
+        "caption": "FMB News editorial graphic used as a non-documentary visual for the September 29 fuel-price update.",
+        "credit": "FMB News editorial visual",
+        "creator": "FMB News",
+        "license": "FMB-owned editorial asset",
+        "sourceUrl": "https://www.francinemariebautista.com/news/assets/images/news/fmb-news-editorial-fallback.svg",
+        "width": 1200,
+        "height": 675,
+        "kind": "editorial-graphic"
+      },
+      "sources": [
+        {
+          "label": "Philippine News Agency — oil price rollback (September 28, 2026)",
+          "url": "https://www.pna.gov.ph/articles/1285023"
+        },
+        {
+          "label": "ABS-CBN News — company price announcements (September 28, 2026)",
+          "url": "https://www.abs-cbn.com/news/business/2026/9/28/oil-prices-falling-as-september-ends-1054"
+        },
+        {
+          "label": "Earlier FMB News report",
+          "url": "https://www.francinemariebautista.com/news/petron-jetti-diesel-rollback-september-29-2026/"
+        }
+      ]
+    },
+    {
+      "id": "airline-fuel-surcharge",
+      "kicker": "Philippines · Transport",
+      "headline": "Airline fuel-surcharge ceiling rises to Level 17 for October 1–15",
+      "deck": "The Civil Aeronautics Board set a higher ceiling for the first half of October: ₱559–₱1,635 on domestic routes and ₱1,846.10–₱13,726.58 on international routes.",
+      "body": [
+        "Confirmed: CAB's matrix places the passenger fuel-surcharge ceiling at Level 17 from October 1 to 15. The published bands run from ₱559 to ₱1,635 for domestic routes and ₱1,846.10 to ₱13,726.58 for international routes.",
+        "Why it matters to Filipinos: Travelers may face higher total ticket prices during the period, particularly on long-haul itineraries. A ceiling is not an automatic charge: airlines must apply to impose it and may charge less.",
+        "What to watch: Airline-specific filings and fare displays, including whether advertised prices clearly separate base fare, taxes and the approved surcharge."
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial graphic accompanying a report on airline fuel surcharges",
+        "caption": "FMB News editorial graphic used as a non-documentary visual for the October airline fuel-surcharge update.",
+        "credit": "FMB News editorial visual",
+        "creator": "FMB News",
+        "license": "FMB-owned editorial asset",
+        "sourceUrl": "https://www.francinemariebautista.com/news/assets/images/news/fmb-news-editorial-fallback.svg",
+        "width": 1200,
+        "height": 675,
+        "kind": "editorial-graphic"
+      },
+      "sources": [
+        {
+          "label": "Civil Aeronautics Board — Level 17 advisory",
+          "url": "https://cab.gov.ph/announcements?args%5B0%5D=4c074629ca6f3a8be4573940bc561f0b&element=f85c494b-2b32-4109-b8c1-083cca2b7db6&format=raw&item_id=3941&method=download&task=callelement"
+        },
+        {
+          "label": "Philippine News Agency — surcharge report (September 28, 2026)",
+          "url": "https://www.pna.gov.ph/articles/1285018"
+        },
+        {
+          "label": "Earlier FMB News report",
+          "url": "https://www.francinemariebautista.com/news/cab-level-17-fuel-surcharge-october-1-15-2026/"
+        }
+      ]
+    },
+    {
+      "id": "victim-survivor-terminology",
+      "kicker": "Philippines · Judiciary",
+      "headline": "Supreme Court adopts “victim-survivor” terminology in sexual-violence cases",
+      "deck": "The Court's Third Division said the paired term recognizes both the harm suffered and the dignity and agency of people who live through sexual violence.",
+      "body": [
+        "Confirmed: In G.R. No. 271812, promulgated February 24 and made public in September, the Supreme Court's Third Division used and explained the term “victim-survivor” in discussing sexual violence. The ruling's legal holdings remain case-specific.",
+        "Why it matters to Filipinos: Court language shapes how institutions describe complainants and people harmed by sexual violence. The change aims to acknowledge injury without erasing agency or resilience.",
+        "What to watch: Whether the terminology is applied consistently in later Supreme Court rulings, lower-court decisions, prosecution practice and government guidance."
+      ],
+      "image": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Supreme_Court_of_the_Philippines.jpg",
+        "alt": "Facade of the Supreme Court of the Philippines building in Manila",
+        "caption": "The Supreme Court of the Philippines in Manila. Licensed archival photograph; it does not depict the proceedings or parties in G.R. No. 271812.",
+        "credit": "Mike Gonzalez (TheCoffee) / Wikimedia Commons, CC BY-SA 3.0 and GFDL",
+        "creator": "Mike Gonzalez (TheCoffee)",
+        "license": "CC BY-SA 3.0 and GFDL",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Supreme_Court_of_the_Philippines.jpg",
+        "width": 3072,
+        "height": 2304,
+        "kind": "licensed-archival-photograph"
+      },
+      "sources": [
+        {
+          "label": "Supreme Court E-Library — G.R. No. 271812",
+          "url": "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/1/70439"
+        },
+        {
+          "label": "GMA News — terminology report (September 2026)",
+          "url": "https://www.gmanetwork.com/news/topstories/nation/1004006/sc-adopts-term-victim-survivor-in-sexual-violence-cases/story/"
+        },
+        {
+          "label": "Earlier FMB News report",
+          "url": "https://www.francinemariebautista.com/news/supreme-court-adopts-victim-survivor-term-sexual-violence-cases-september-28-2026/"
+        }
+      ]
+    },
+    {
+      "id": "asian-games-medal-watch",
+      "kicker": "Sports · Asian Games",
+      "headline": "Paalam and women’s sepak takraw secure medals; final colors still undecided",
+      "deck": "Carlo Paalam reached the 55-kilogram boxing semifinals and is assured at least bronze; the women’s doubles sepak takraw team reached the final and is assured at least silver.",
+      "body": [
+        "Confirmed: Paalam beat China's Zhang Jiamao by 3–2 split decision to reach the men's 55kg semifinals. The Philippine women's doubles sepak takraw team beat Laos 2–0 to advance to the final against Vietnam.",
+        "Why it matters to Filipinos: Both results guarantee podium finishes under the competition formats, but they are assured medals—not yet final medal colors. Paalam has at least bronze; the sepak takraw team has at least silver.",
+        "What to watch: The women's doubles final against Vietnam at 8:00 a.m. Philippine time on September 29, and Paalam's semifinal. Results should be treated as developing until official competition records post final outcomes."
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial graphic accompanying an Asian Games medal update",
+        "caption": "FMB News editorial graphic used as a non-documentary visual for the Asian Games medal watch.",
+        "credit": "FMB News editorial visual",
+        "creator": "FMB News",
+        "license": "FMB-owned editorial asset",
+        "sourceUrl": "https://www.francinemariebautista.com/news/assets/images/news/fmb-news-editorial-fallback.svg",
+        "width": 1200,
+        "height": 675,
+        "kind": "editorial-graphic"
+      },
+      "sources": [
+        {
+          "label": "Aichi-Nagoya 2026 official results",
+          "url": "https://results.asiangames2026.org/"
+        },
+        {
+          "label": "The Game — Team Philippines live guide (updated September 28, 2026)",
+          "url": "https://thegame.ph/philippine-teams/asian-games/team-philippines-at-the-aichi-nagoya-asian-games-2026-schedules-results-and-news/"
+        },
+        {
+          "label": "Earlier FMB News report — women's sepak takraw",
+          "url": "https://www.francinemariebautista.com/news/philippines-womens-sepak-takraw-doubles-final-assured-silver-september-28-2026/"
+        },
+        {
+          "label": "Earlier FMB News report — Carlo Paalam",
+          "url": "https://www.francinemariebautista.com/news/carlo-paalam-asian-games-semifinal-assured-bronze-september-28-2026/"
+        }
+      ]
+    },
+    {
+      "id": "amraam-production-contract",
+      "kicker": "World · Defense",
+      "headline": "Pentagon gives Raytheon provisional path to a $20.7-billion AMRAAM contract",
+      "deck": "The framework covers five years plus two option years and targets production of at least 1,900 missiles annually; the full amount still depends on congressional funding.",
+      "body": [
+        "Confirmed: The U.S. Department of Defense awarded Raytheon a provisional contract framework valued at up to $20.7 billion for AIM-120 AMRAAM production. RTX says it covers five years with two option years and targets at least 1,900 missiles annually.",
+        "Unresolved: The ceiling is not the same as money already spent. Reuters reported that full funding remains subject to U.S. congressional appropriations and future orders.",
+        "Why it matters to Filipinos: The program affects the supply of a widely used air-to-air missile among U.S. allies and partners, with indirect implications for regional deterrence and defense-industrial capacity. What to watch: appropriations, actual order quantities, delivery schedules and named recipient countries."
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial graphic accompanying a report on a United States missile-production contract",
+        "caption": "FMB News editorial graphic used as a non-documentary visual for the AMRAAM contract report; it does not depict a missile, aircraft or military operation.",
+        "credit": "FMB News editorial visual",
+        "creator": "FMB News",
+        "license": "FMB-owned editorial asset",
+        "sourceUrl": "https://www.francinemariebautista.com/news/assets/images/news/fmb-news-editorial-fallback.svg",
+        "width": 1200,
+        "height": 675,
+        "kind": "editorial-graphic"
+      },
+      "sources": [
+        {
+          "label": "RTX — munitions framework announcement (February 4, 2026)",
+          "url": "https://www.rtx.com/news/2026/02/04/munitions-agreements"
+        },
+        {
+          "label": "Reuters — Pentagon contract report (September 28, 2026)",
+          "url": "https://www.reuters.com/business/aerospace-defense/pentagon-awards-rtxs-raytheon-207-billion-contract-amraam-missiles-amid-2026-09-28/"
+        },
+        {
+          "label": "Earlier FMB News report",
+          "url": "https://www.francinemariebautista.com/news/pentagon-raytheon-amraam-contract-september-29-2026/"
+        }
+      ]
+    }
+  ]
+}
