@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "john-cabang-tolentino-asian-games-110m-hurdles-bronze-september-27-2026",
+  "headline": "John Cabang Tolentino Wins Asian Games Bronze in 110m Hurdles",
+  "seoTitle": "John Cabang Tolentino Wins Asian Games 110m Hurdles Bronze | FMB News",
+  "seoDescription": "John Cabang Tolentino won bronze in the 2026 Asian Games men's 110m hurdles with a season-best 13.48 seconds in Nagoya, Japan.",
+  "keywords": [
+    "John Cabang Tolentino",
+    "Asian Games 2026",
+    "110m hurdles",
+    "Team Philippines",
+    "athletics",
+    "Nagoya"
+  ],
+  "category": "Sports",
+  "kicker": "ASIAN GAMES · ATHLETICS",
+  "deck": "The Paris Olympian clocked a season-best 13.48 seconds for third place in Nagoya, behind China's Chen Yuanjiang and Japan's Rachid Muratake.",
+  "publishedAt": "2026-09-28T03:54:31.505572+08:00",
+  "updatedAt": "2026-09-28T03:54:31.505572+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "relatedArticles": [],
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "John Cabang Tolentino won bronze in the men's 110-meter hurdles final at the 2026 Asian Games in Nagoya, Japan.",
+        "He clocked 13.48 seconds, behind China's Chen Yuanjiang at 13.15 and Japan's Rachid Muratake at 13.29."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "GMA News reported that 13.48 seconds was Tolentino's season best and improved on his previous 13.63 mark.",
+        "He had finished fourth in the same event at the previous Asian Games."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "The bronze was the Philippines' first athletics medal of the 2026 Asian Games."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Additional Philippine athletics events remain on the Asian Games program, and the overall medal count may change as competitions conclude."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "GMA News",
+      "title": "Asian Games: John Cabang Tolentino clinches bronze in men's 110m hurdles",
+      "publishedAt": "2026-09-27T19:20:00+08:00",
+      "url": "https://www.gmanetwork.com/news/sports/othersports/1003898/asian-games-john-cabang-tolentino-clinches-bronze-in-men-s-110m-hurdles/story/",
+      "role": "independent current report"
+    },
+    {
+      "publisher": "Philippine News Agency",
+      "title": "Cabang Tolentino bags 110m hurdles bronze in Asian Games",
+      "publishedAt": null,
+      "url": "https://www.pna.gov.ph/index.php/articles/1284939",
+      "role": "independent corroboration"
+    }
+  ],
+  "image": {
+    "kind": "rights-cleared-contextual-file-photo",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Mizuho%20athletic%20stadium130824-2.jpg",
+    "source": "Wikimedia Commons",
+    "creator": "Kanko3131",
+    "license": "CC BY-SA 3.0",
+    "credit": "Photo: Kanko3131 / Wikimedia Commons, CC BY-SA 3.0",
+    "caption": "Archival panoramic view of Mizuho Park Athletic Stadium in Nagoya, Japan. File photograph from 2013; it does not depict Tolentino's September 27, 2026 race.",
+    "alt": "Archival panoramic view of Mizuho Park Athletic Stadium in Nagoya, Japan",
+    "width": 6991,
+    "height": 1983,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mizuho_athletic_stadium130824-2.jpg"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-09-28T03:54:31.505572+08:00",
+    "verificationNotes": [
+      "GMA News reported Tolentino third in 13.48 seconds, Chen Yuanjiang first in 13.15, and Rachid Muratake second in 13.29.",
+      "Philippine News Agency independently reported the same podium order and times.",
+      "Wikimedia Commons identifies the venue photograph as Kanko3131's own work licensed CC BY-SA 3.0, 6991 by 1983 pixels.",
+      "The photograph is explicitly labeled as archival venue context and not as an image of the race."
+    ]
+  }
+}
