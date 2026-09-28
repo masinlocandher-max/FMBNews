@@ -203,7 +203,7 @@ jobs:
             for (const test of cases) {
               const page = await browser.newPage({ viewport: test.viewport });
               await page.goto(`https://www.francinemariebautista.com/news/?freshness=${process.env.GITHUB_SHA}-${test.name}`, {
-                waitUntil: 'networkidle',
+                waitUntil: 'domcontentloaded',
                 timeout: 60000,
               });
               await page.waitForFunction(
