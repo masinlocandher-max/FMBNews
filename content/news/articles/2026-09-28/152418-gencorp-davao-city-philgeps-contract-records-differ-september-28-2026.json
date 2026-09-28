@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "gencorp-davao-city-philgeps-contract-records-differ-september-28-2026",
+  "headline": "PhilGEPS, Davao City Records Differ on GenCorp Contracts",
+  "seoTitle": "PhilGEPS, Davao City Records Differ on GenCorp Contracts | FMB News",
+  "seoDescription": "PhilGEPS and Davao City records differ on the number and value of GenCorp transactions examined in Vice President Sara Duterte's impeachment trial.",
+  "keywords": [
+    "Sara Duterte impeachment",
+    "GenCorp Industries",
+    "Davao City",
+    "PhilGEPS",
+    "Sebastian Duterte",
+    "government procurement",
+    "Senate impeachment court"
+  ],
+  "category": "National",
+  "kicker": "DUTERTE IMPEACHMENT · PROCUREMENT RECORDS",
+  "deck": "Both accounts identify four publicly bid contracts, but they differ on the total number and value of transactions; the PhilGEPS witness made no finding that procurement law was violated.",
+  "publishedAt": "2026-09-28T15:24:18+08:00",
+  "updatedAt": "2026-09-28T15:24:18+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "relatedArticles": [
+    {
+      "relationship": "continuation-of",
+      "slug": "house-prosecutors-september-9-confidential-fund-evidence-duterte-trial-2026",
+      "path": "/news/house-prosecutors-september-9-confidential-fund-evidence-duterte-trial-2026"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Records presented by Philippine Government Electronic Procurement System Division Chief Rendell Sopeña and figures earlier released by the Davao City government differ on the number and total value of the city's transactions with GenCorp Industries Inc., testimony in Vice President Sara Duterte's impeachment trial showed Monday.",
+        "Sopeña said the PhilGEPS records before him covered 15 Davao City contracts with GenCorp worth ₱34.216 million. Four went through public bidding and 11 used negotiated small-value procurement."
+      ]
+    },
+    {
+      "heading": "What the records say",
+      "paragraphs": [
+        "Davao City Mayor Sebastian Duterte earlier said the city had 19 transactions with GenCorp worth more than ₱33.2 million. His account also identified four contracts awarded through competitive public bidding, while 15 used small-value procurement. He maintained that all 19 transactions were processed, reported and published through PhilGEPS.",
+        "The two accounts therefore differ by four small-value procurement transactions and by about ₱960,000 in total value. The discrepancy remains unresolved in the public record reviewed by FMB News."
+      ]
+    },
+    {
+      "heading": "What is alleged and what is not established",
+      "paragraphs": [
+        "Prosecutors are examining the contracts under an impeachment article involving the Vice President's declared business and financial interests. Duterte listed GenCorp among her business interests in her 2024 and 2025 Statements of Assets, Liabilities and Net Worth, while earlier Securities and Exchange Commission testimony said her name did not appear as an incorporator or director in the company's corporate records.",
+        "No violation of procurement law is established by Monday's testimony. Sopeña said PhilGEPS depends on information entered by procuring entities and declined to make a legal determination when asked whether the transactions presented a prohibited conflict of interest."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The development continues FMB News' earlier coverage of the impeachment trial, including the prosecution's decision to reduce its remaining Article I witness list while the Senate kept the charges open.",
+        "PhilGEPS records previously presented in the trial showed 49 government contracts awarded to GenCorp from July 21, 2022 to June 23, 2026, including transactions involving Davao City, PhilHealth's Davao regional office and the Overseas Workers Welfare Administration's Region 11 office."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "The impeachment court granted Mayor Duterte until Tuesday to complete and authenticate subpoenaed Davao City records. Prosecutors said they intend to present him as a witness and question him about the city's dealings with GenCorp.",
+        "The authenticated city records and any defense response will be important in determining whether the numerical discrepancy can be reconciled. The Senate impeachment court, not the witnesses or news organizations, will assess the evidence and its legal weight."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Philippine News Agency",
+      "title": "Davao City, PhilGEPS figures differ on GenCorp deals",
+      "publishedAt": "2026-09-28T14:35:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1284963",
+      "role": "government newswire report from the Senate impeachment proceeding; figures, testimony and Davao City response"
+    },
+    {
+      "publisher": "Philippine News Agency",
+      "title": "Mayor Duterte gets extra day to authenticate records for VP trial",
+      "publishedAt": "2026-09-28T14:40:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1284970",
+      "role": "current court schedule and unresolved authentication status"
+    },
+    {
+      "publisher": "GMA News",
+      "title": "Davao City awarded P7M-P8M in GenCorp contracts without public bidding — witness",
+      "publishedAt": "2026-09-28T12:58:00+08:00",
+      "url": "https://www.gmanetwork.com/news/topstories/nation/1003958/davao-city-awarded-p7m-p8m-in-gencorp-contracts-without-public-bidding-witness/story/",
+      "role": "independent corroboration of Sopeña's testimony and prosecution framing"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying a verified report on differing GenCorp procurement figures presented in the Sara Duterte impeachment trial. It is not a photograph and does not depict the hearing or any person named in the report.",
+    "alt": "FMB News editorial graphic for a report on differing GenCorp procurement records in the Sara Duterte impeachment trial",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-09-28T15:24:18+08:00",
+    "verificationNotes": [
+      "The Philippine News Agency reports from the September 28 Senate impeachment proceeding and gives the PhilGEPS figures, the Davao City figures and Sopeña's refusal to make a legal determination.",
+      "GMA News independently corroborates that the PhilGEPS witness identified 15 Davao City contracts, four publicly bid and 11 not publicly bid.",
+      "PNA specifies that the 11 contracts used negotiated small-value procurement. The article therefore does not characterize the procurement method itself as unlawful or as proof that bidding rules were bypassed.",
+      "The article preserves Davao City's position that all 19 transactions were processed, reported and published through PhilGEPS.",
+      "The discrepancy is labeled unresolved pending authenticated city records and additional testimony expected September 29.",
+      "No event photograph is reused because publication rights for available hearing imagery were not independently verified. The FMB-owned editorial fallback is used and explicitly labeled non-documentary."
+    ]
+  }
+}
