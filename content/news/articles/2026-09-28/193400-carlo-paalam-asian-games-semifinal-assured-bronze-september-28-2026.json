@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "carlo-paalam-asian-games-semifinal-assured-bronze-september-28-2026",
+  "headline": "Carlo Paalam Reaches Asian Games Semifinals, Assures Bronze",
+  "seoTitle": "Carlo Paalam Reaches Asian Games Semifinals, Assures Bronze | FMB News",
+  "seoDescription": "Carlo Paalam beat China's Zhang Jiamao 3-2 to reach the Asian Games men's 55kg semifinals and assure the Philippines of at least bronze.",
+  "keywords": [
+    "Carlo Paalam",
+    "Asian Games 2026",
+    "boxing",
+    "Team Philippines",
+    "assured bronze"
+  ],
+  "category": "Sports",
+  "kicker": "ASIAN GAMES · BOXING",
+  "deck": "Paalam defeated China’s Zhang Jiamao by 3-2 split decision to reach the men’s 55kg semifinals, guaranteeing at least a bronze medal.",
+  "publishedAt": "2026-09-28T19:34:00+08:00",
+  "updatedAt": "2026-09-28T19:34:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "relatedArticles": [],
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Carlo Paalam defeated China's Zhang Jiamao by split decision, 3-2, in the men's 55kg quarterfinals of the 2026 Asian Games on Monday at Nishio Gymnasium in Japan.",
+        "The victory sends Paalam to the semifinals and assures the Philippines of at least a bronze medal because both losing semifinalists receive bronze."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "Paalam had reached the quarterfinals after a 3-0 points victory over India's Jadumani Singh Mandengbam in the Round of 16.",
+        "An assured bronze is not yet a final medal color. Paalam can still advance to the gold-medal bout with a semifinal victory."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "The result adds another guaranteed podium finish to the Philippine campaign and gives the Tokyo Olympic silver medalist another chance to improve on his previous Asian Games bronze."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Paalam's semifinal opponent and bout schedule should be confirmed through the official results service. His final medal color remains unresolved until that bout is completed."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Aichi-Nagoya 2026 Official Results",
+      "title": "Aichi-Nagoya 2026 official results service",
+      "publishedAt": null,
+      "url": "https://results.asiangames2026.org/",
+      "role": "official competition results index"
+    },
+    {
+      "publisher": "The Game",
+      "title": "Team Philippines at the Aichi-Nagoya Asian Games 2026: Schedules, Results, and News",
+      "publishedAt": "2026-09-28T19:02:00+08:00",
+      "url": "https://thegame.ph/philippine-teams/asian-games/team-philippines-at-the-aichi-nagoya-asian-games-2026-schedules-results-and-news/",
+      "role": "independent live results coverage"
+    },
+    {
+      "publisher": "One Sports",
+      "title": "Carlo Paalam defeats China’s Jiamao Zhang in the men’s 55kg quarterfinal",
+      "publishedAt": "2026-09-28T19:00:00+08:00",
+      "url": "https://www.facebook.com/OneSportsPHL/posts/1691012072388361/",
+      "role": "independent broadcaster report"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying a verified report on Carlo Paalam's Asian Games semifinal qualification. It is not a photograph and does not depict the bout.",
+    "alt": "FMB News editorial graphic for Carlo Paalam's Asian Games semifinal qualification",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-09-28T19:32:00+08:00",
+    "verificationNotes": [
+      "The Game recorded Paalam's 3-2 split-decision quarterfinal win over Zhang Jiamao and semifinal qualification.",
+      "One Sports independently reported Paalam's quarterfinal victory.",
+      "The official Aichi-Nagoya results index was opened; its event tables require JavaScript and did not expose a text scorecard in this verification environment.",
+      "The article says assured bronze, not final bronze, because Paalam remains in contention.",
+      "No publisher-owned photograph was reused; the FMB-owned editorial fallback is explicitly non-documentary."
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "philippines-womens-sepak-takraw-doubles-final-assured-silver-september-28-2026",
+  "headline": "PH Women’s Sepak-Takraw Doubles Reaches Final, Assures Silver",
+  "seoTitle": "PH Women’s Sepak-Takraw Doubles Reaches Asian Games Final | FMB News",
+  "seoDescription": "The Philippine women's doubles sepak-takraw team beat Laos 2-0 to reach the Asian Games final and assure at least silver.",
+  "keywords": [
+    "sepak takraw",
+    "Asian Games 2026",
+    "women's doubles",
+    "Team Philippines",
+    "assured silver"
+  ],
+  "category": "Sports",
+  "kicker": "ASIAN GAMES · SEPAK TAKRAW",
+  "deck": "The Philippines beat Laos 2-0 in the women’s doubles semifinal and will face Vietnam for gold on September 29.",
+  "publishedAt": "2026-09-28T19:36:00+08:00",
+  "updatedAt": "2026-09-28T19:36:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "relatedArticles": [],
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Philippine women's doubles sepak-takraw team defeated Laos 2-0 in the 2026 Asian Games semifinals on Monday to advance to the final.",
+        "By reaching the championship match, the Philippines is assured of at least a silver medal."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The team will play Vietnam in the final scheduled for September 29 at 8 a.m. Philippine time.",
+        "The medal is assured, but its final color is not yet decided. Calling it gold or final silver before the championship match would be premature."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "The result guarantees another Philippine medal and gives the team a direct chance to win Asian Games gold."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "The final against Vietnam will determine whether the Philippines finishes with gold or silver."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Aichi-Nagoya 2026 Official Results",
+      "title": "Aichi-Nagoya 2026 official results service",
+      "publishedAt": null,
+      "url": "https://results.asiangames2026.org/",
+      "role": "official competition results index"
+    },
+    {
+      "publisher": "The Game",
+      "title": "Team Philippines at the Aichi-Nagoya Asian Games 2026: Schedules, Results, and News",
+      "publishedAt": "2026-09-28T19:02:00+08:00",
+      "url": "https://thegame.ph/philippine-teams/asian-games/team-philippines-at-the-aichi-nagoya-asian-games-2026-schedules-results-and-news/",
+      "role": "independent live results coverage"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying a verified report on the Philippine women's doubles sepak-takraw team's Asian Games final qualification. It is not a photograph and does not depict the semifinal.",
+    "alt": "FMB News editorial graphic for the Philippine women's doubles sepak-takraw final qualification",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-09-28T19:32:00+08:00",
+    "verificationNotes": [
+      "The Game recorded the Philippines' 2-0 semifinal victory over Laos and September 29 final against Vietnam.",
+      "The official Aichi-Nagoya results index was opened; its event tables require JavaScript and did not expose a text scorecard here.",
+      "The article states assured silver rather than a final medal color.",
+      "The FMB-owned editorial fallback is used and clearly labeled non-documentary."
+    ]
+  }
+}

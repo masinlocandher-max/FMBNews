@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "nesthy-petecio-asian-games-quarterfinal-exit-september-28-2026",
+  "headline": "Nesthy Petecio Exits Asian Games in Women’s 60kg Quarterfinals",
+  "seoTitle": "Nesthy Petecio Exits Asian Games in 60kg Quarterfinals | FMB News",
+  "seoDescription": "Nesthy Petecio lost by unanimous decision to China's Yang Chengyu in the 2026 Asian Games women's 60kg quarterfinals.",
+  "keywords": [
+    "Nesthy Petecio",
+    "Asian Games 2026",
+    "boxing",
+    "Team Philippines",
+    "Yang Chengyu"
+  ],
+  "category": "Sports",
+  "kicker": "ASIAN GAMES · BOXING",
+  "deck": "Petecio lost by unanimous decision to China’s Yang Chengyu, ending her women’s 60kg campaign before the medal rounds.",
+  "publishedAt": "2026-09-28T19:37:00+08:00",
+  "updatedAt": "2026-09-28T19:37:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "relatedArticles": [],
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Nesthy Petecio's 2026 Asian Games campaign ended in the women's 60kg quarterfinals after a unanimous-decision loss to China's Yang Chengyu on Monday.",
+        "Because the loss came before the semifinals, Petecio did not secure a medal in the event."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "Petecio reached the quarterfinals after stopping Jordan's Mays Alreem Abukhadijah in the second round of their opening bout on September 26.",
+        "A quarterfinal appearance is not an assured medal in Asian Games boxing; the podium places begin with the semifinalists."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "The result ends the two-time Olympic medalist's bid for an Asian Games podium finish in Aichi-Nagoya."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Philippine boxing remains in medal contention through other athletes, including Carlo Paalam, who reached the men's 55kg semifinals."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Aichi-Nagoya 2026 Official Results",
+      "title": "Aichi-Nagoya 2026 official results service",
+      "publishedAt": null,
+      "url": "https://results.asiangames2026.org/",
+      "role": "official competition results index"
+    },
+    {
+      "publisher": "The Game",
+      "title": "Team Philippines at the Aichi-Nagoya Asian Games 2026: Schedules, Results, and News",
+      "publishedAt": "2026-09-28T19:02:00+08:00",
+      "url": "https://thegame.ph/philippine-teams/asian-games/team-philippines-at-the-aichi-nagoya-asian-games-2026-schedules-results-and-news/",
+      "role": "independent live results coverage"
+    },
+    {
+      "publisher": "GMA Sports",
+      "title": "Nesthy Petecio falls to Chinese foe, exits Asian Games",
+      "publishedAt": "2026-09-28T18:00:00+08:00",
+      "url": "https://www.facebook.com/gmasportsph/posts/1747659360701663/",
+      "role": "independent newsroom report"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying a verified report on Nesthy Petecio's Asian Games quarterfinal exit. It is not a photograph and does not depict the bout.",
+    "alt": "FMB News editorial graphic for Nesthy Petecio's Asian Games quarterfinal exit",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-09-28T19:32:00+08:00",
+    "verificationNotes": [
+      "The Game recorded Petecio's unanimous-decision quarterfinal loss to Yang Chengyu.",
+      "GMA Sports independently reported that Petecio lost to her Chinese opponent and exited the Games.",
+      "The article explicitly states that no medal was secured because the loss came before the semifinals.",
+      "No publisher-owned event photograph was reused; the FMB-owned editorial fallback is non-documentary."
+    ]
+  }
+}

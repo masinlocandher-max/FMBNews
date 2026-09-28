@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "philippines-mens-regu-sepak-takraw-asian-games-bronze-september-28-2026",
+  "headline": "Philippines Wins Asian Games Men’s Regu Sepak-Takraw Bronze",
+  "seoTitle": "Philippines Wins Asian Games Men’s Regu Sepak-Takraw Bronze | FMB News",
+  "seoDescription": "The Philippines won men’s regu sepak-takraw bronze at the 2026 Asian Games after a 1-2 semifinal loss to Malaysia.",
+  "keywords": [
+    "sepak takraw",
+    "Asian Games 2026",
+    "men's regu",
+    "Team Philippines",
+    "bronze"
+  ],
+  "category": "Sports",
+  "kicker": "ASIAN GAMES · SEPAK TAKRAW",
+  "deck": "The men’s regu team finished with bronze after a 1-2 semifinal loss to Malaysia.",
+  "publishedAt": "2026-09-28T19:35:00+08:00",
+  "updatedAt": "2026-09-28T19:35:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "relatedArticles": [],
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Philippines won bronze in the men's regu sepak-takraw event at the 2026 Asian Games after losing 1-2 to Malaysia in Monday's semifinal.",
+        "The completed semifinal ended the Philippine team's run and fixed its final medal as bronze."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "This is a final bronze medal, not merely an assured podium finish. The Philippines had advanced from the preliminary stage before meeting Malaysia in the semifinal."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "The medal adds to the Philippines' Asian Games total and continues the country's long competitive presence in sepak takraw."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "The men's regu event is complete for the Philippines. Other Philippine sepak-takraw entries remain active, including the women's doubles team."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Aichi-Nagoya 2026 Official Results",
+      "title": "Aichi-Nagoya 2026 official results service",
+      "publishedAt": null,
+      "url": "https://results.asiangames2026.org/",
+      "role": "official competition results index"
+    },
+    {
+      "publisher": "The Game",
+      "title": "Team Philippines at the Aichi-Nagoya Asian Games 2026: Schedules, Results, and News",
+      "publishedAt": "2026-09-28T19:02:00+08:00",
+      "url": "https://thegame.ph/philippine-teams/asian-games/team-philippines-at-the-aichi-nagoya-asian-games-2026-schedules-results-and-news/",
+      "role": "independent live results coverage"
+    },
+    {
+      "publisher": "One Sports",
+      "title": "Team Philippines men’s regu sepak-takraw squad secures bronze",
+      "publishedAt": "2026-09-28T18:30:00+08:00",
+      "url": "https://www.facebook.com/OneSportsPHL/posts/1690932335729668/",
+      "role": "independent broadcaster report"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying a verified report on the Philippine men's regu sepak-takraw bronze. It is not a photograph and does not depict the semifinal.",
+    "alt": "FMB News editorial graphic for the Philippine men's regu sepak-takraw bronze",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-09-28T19:32:00+08:00",
+    "verificationNotes": [
+      "The Game recorded the Philippines' 1-2 semifinal loss to Malaysia and bronze medal.",
+      "One Sports independently reported the men's regu bronze and semifinal scorecard.",
+      "The article identifies this as a completed final bronze medal.",
+      "No event photograph with independently established reuse rights was used; the FMB-owned editorial fallback is non-documentary."
+    ]
+  }
+}
