@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "sibol-asian-games-honor-of-kings-bronze-september-28-2026",
+  "headline": "Sibol Wins Asian Games Honor of Kings Bronze After Loss to China",
+  "seoTitle": "Sibol Wins Asian Games Honor of Kings Bronze | FMB News",
+  "seoDescription": "The Philippines won bronze in Honor of Kings at the 2026 Asian Games after an official 0–2 semifinal loss to China at Aichi Sky Expo.",
+  "keywords": [
+    "Sibol",
+    "Honor of Kings",
+    "Asian Games 2026",
+    "Team Philippines",
+    "esports",
+    "Aichi-Nagoya"
+  ],
+  "category": "Sports",
+  "kicker": "ASIAN GAMES · ESPORTS",
+  "deck": "The Philippine team fell 0–2 to China in the official semifinal scorecard, ending its Honor of Kings campaign with bronze.",
+  "publishedAt": "2026-09-28T12:27:44+08:00",
+  "updatedAt": "2026-09-28T12:27:44+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "relatedArticles": [],
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Philippines won bronze in the Honor of Kings event at the 2026 Asian Games after losing 0–2 to China in the semifinal at Aichi Sky Expo Hall D on Monday.",
+        "The official Aichi-Nagoya results service marked the September 28 semifinal result as official. China won both sets and advanced to the gold-medal match."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "Sibol reached the semifinals after sweeping South Korea 2–0 in the quarterfinals on September 27, a result that had already assured the team of at least a bronze medal.",
+        "GMA News reported the completed semifinal result and the bronze medal. The official scorecard identifies the competing entries as the Philippines and the People's Republic of China and records a 0–2 final score."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "The result adds another medal to the Philippines' Asian Games campaign and another podium finish for the national esports program.",
+        "It follows the Philippines' bronze in Pokémon UNITE, extending the country's medal presence across more than one esports title at the Games."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "China advanced to face Malaysia in the Honor of Kings gold-medal match. The Philippine team's event is complete.",
+        "The overall Philippine medal tally may continue to change as other events on the September 28 program conclude."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Aichi-Nagoya 2026 Official Results",
+      "title": "MOBA [Honor of Kings] — Semi-finals, Match 2: Philippines vs People's Republic of China",
+      "publishedAt": "2026-09-28T11:00:00+09:00",
+      "url": "https://results.asiangames2026.org/#/discipline/ELS/results/O.HOK---------------.SFNL.000200--",
+      "role": "primary official result"
+    },
+    {
+      "publisher": "GMA News",
+      "title": "Asian Games: Sibol bags Honor of Kings bronze, falls to powerhouse China in semis",
+      "publishedAt": null,
+      "url": "https://www.gmanetwork.com/news/sports/othersports/1003948/asian-games-sibol-bags-honor-of-kings-bronze-falls-to-powerhouse-china-in-semis/story/",
+      "role": "independent current report"
+    },
+    {
+      "publisher": "Philstar.com",
+      "title": "Sibol guaranteed of Asiad bronze in Honor of Kings",
+      "publishedAt": "2026-09-27T20:32:00+08:00",
+      "url": "https://www.philstar.com/sports/2026/09/27/2559315/sibol-guaranteed-asiad-bronze-honor-kings",
+      "role": "independent quarterfinal context and medal qualification"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying a verified report on the Philippines' Honor of Kings bronze at the 2026 Asian Games. It is not a photograph and does not depict the semifinal.",
+    "alt": "FMB News editorial graphic for a report on the Philippine Honor of Kings team's Asian Games bronze",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-09-28T12:27:44+08:00",
+    "verificationNotes": [
+      "The official Aichi-Nagoya 2026 results service records the Philippines losing 0–2 to China in the September 28 Honor of Kings semifinal and marks the result official.",
+      "GMA News independently reports that the semifinal loss left Sibol with the bronze medal.",
+      "Philstar.com independently reported the Philippines' 2–0 quarterfinal win over South Korea and that the victory guaranteed at least bronze before the semifinal.",
+      "The article does not reuse event imagery whose publication rights are not independently verified.",
+      "The 1200-by-675 FMB News editorial fallback is used and is explicitly identified as a non-documentary visual that does not depict the match.",
+      "A dedicated Context section separates the completed official scorecard from the earlier quarterfinal qualification."
+    ]
+  }
+}
