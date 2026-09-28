@@ -18,7 +18,7 @@
   "kicker": "DUTERTE IMPEACHMENT · PROCUREMENT RECORDS",
   "deck": "Both accounts identify four publicly bid contracts, but they differ on the total number and value of transactions; the PhilGEPS witness made no finding that procurement law was violated.",
   "publishedAt": "2026-09-28T15:24:18+08:00",
-  "updatedAt": "2026-09-28T15:29:17+08:00",
+  "updatedAt": "2026-09-28T15:32:32+08:00",
   "author": "FMB News Desk",
   "articleType": "NewsArticle",
   "relatedArticles": [
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "heading": "What is alleged and what is not established",
+      "heading": "Context",
       "paragraphs": [
         "Prosecutors are examining the contracts under an impeachment article involving the Vice President's declared business and financial interests. Duterte listed GenCorp among her business interests in her 2024 and 2025 Statements of Assets, Liabilities and Net Worth, while earlier Securities and Exchange Commission testimony said her name did not appear as an incorporator or director in the company's corporate records.",
         "No violation of procurement law is established by Monday's testimony. Sopeña said PhilGEPS depends on information entered by procuring entities and declined to make a legal determination when asked whether the transactions presented a prohibited conflict of interest."
@@ -110,7 +110,8 @@
       "The article preserves Davao City's position that all 19 transactions were processed, reported and published through PhilGEPS.",
       "The discrepancy is labeled unresolved pending authenticated city records and additional testimony expected September 29.",
       "No event photograph is reused because publication rights for available hearing imagery were not independently verified. The FMB-owned editorial fallback is used and explicitly labeled non-documentary.",
-      "Production metadata gate repaired before public deployment: the impact section now uses the required “Why this matters” label."
+      "Production metadata gate repaired before public deployment: the impact section now uses the required “Why this matters” label.",
+      "Production schema repaired before public deployment: the allegations and non-established-points section is now labeled “Context,” while the report retains a separate “Why this matters” section."
     ]
   }
 }
