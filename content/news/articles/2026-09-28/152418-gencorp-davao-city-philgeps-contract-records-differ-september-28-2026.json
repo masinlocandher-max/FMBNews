@@ -18,7 +18,7 @@
   "kicker": "DUTERTE IMPEACHMENT · PROCUREMENT RECORDS",
   "deck": "Both accounts identify four publicly bid contracts, but they differ on the total number and value of transactions; the PhilGEPS witness made no finding that procurement law was violated.",
   "publishedAt": "2026-09-28T15:24:18+08:00",
-  "updatedAt": "2026-09-28T15:24:18+08:00",
+  "updatedAt": "2026-09-28T15:29:17+08:00",
   "author": "FMB News Desk",
   "articleType": "NewsArticle",
   "relatedArticles": [
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "heading": "Context",
+      "heading": "Why this matters",
       "paragraphs": [
         "The development continues FMB News' earlier coverage of the impeachment trial, including the prosecution's decision to reduce its remaining Article I witness list while the Senate kept the charges open.",
         "PhilGEPS records previously presented in the trial showed 49 government contracts awarded to GenCorp from July 21, 2022 to June 23, 2026, including transactions involving Davao City, PhilHealth's Davao regional office and the Overseas Workers Welfare Administration's Region 11 office."
@@ -109,7 +109,8 @@
       "PNA specifies that the 11 contracts used negotiated small-value procurement. The article therefore does not characterize the procurement method itself as unlawful or as proof that bidding rules were bypassed.",
       "The article preserves Davao City's position that all 19 transactions were processed, reported and published through PhilGEPS.",
       "The discrepancy is labeled unresolved pending authenticated city records and additional testimony expected September 29.",
-      "No event photograph is reused because publication rights for available hearing imagery were not independently verified. The FMB-owned editorial fallback is used and explicitly labeled non-documentary."
+      "No event photograph is reused because publication rights for available hearing imagery were not independently verified. The FMB-owned editorial fallback is used and explicitly labeled non-documentary.",
+      "Production metadata gate repaired before public deployment: the impact section now uses the required “Why this matters” label."
     ]
   }
 }
