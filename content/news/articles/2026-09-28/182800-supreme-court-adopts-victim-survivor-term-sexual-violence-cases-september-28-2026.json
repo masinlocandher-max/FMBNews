@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "supreme-court-adopts-victim-survivor-term-sexual-violence-cases-september-28-2026",
+  "headline": "Supreme Court Adopts ‘Victim-Survivor’ in Sexual-Violence Cases",
+  "seoTitle": "Supreme Court Adopts ‘Victim-Survivor’ Term | FMB News",
+  "seoDescription": "The Philippine Supreme Court has adopted “victim-survivor” for people who have endured sexual violence, emphasizing both harm and continuing dignity.",
+  "keywords": [
+    "Supreme Court Philippines",
+    "victim-survivor",
+    "sexual violence",
+    "rape jurisprudence",
+    "G.R. No. 271812",
+    "rape crisis center"
+  ],
+  "category": "National",
+  "kicker": "SUPREME COURT · SEXUAL-VIOLENCE CASES",
+  "deck": "The Court said the terminology recognizes the harm suffered while affirming the agency, resilience and continuing dignity of people who survive sexual violence.",
+  "publishedAt": "2026-09-28T18:28:00+08:00",
+  "updatedAt": "2026-09-28T18:28:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Supreme Court has adopted the term “victim-survivor” when referring to people who have endured sexual violence, explaining that the wording recognizes both the harm inflicted and the continuing agency, resilience and dignity of survivors.",
+        "The Third Division made the clarification in G.R. No. 271812, a decision promulgated on February 24, 2026 and made public in September. The ruling affirmed a man’s conviction for raping a minor who was the daughter of his common-law partner."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The Court upheld the conviction for rape through force or intimidation and imposed reclusion perpetua. It ordered the accused to pay ₱150,000 each in civil indemnity, moral damages and exemplary damages, for a total of ₱450,000, with legal interest from the finality of the decision.",
+        "The ruling deleted the phrase “without eligibility for parole” from the penalty. Although the evidence established the survivor’s minority and the accused’s parental relationship, the Court said both circumstances could not be used together to qualify the offense because only minority was alleged in the charging information."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "The terminology signals how the judiciary intends to describe people subjected to sexual violence in its decisions. It acknowledges victimization without defining a person only by the violence committed against them.",
+        "The judgment also reiterates that a credible survivor’s testimony may be sufficient for conviction and that delayed disclosure does not by itself undermine credibility, particularly when threats, fear or the offender’s moral ascendancy are present."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "The Court directed the Department of Social Welfare and Development, through the trial court, to refer the victim-survivor to an appropriate rape crisis center. Available assistance may include psychological counseling, medical and medico-legal services, privacy and safety measures, family support and recovery programs.",
+        "Future Supreme Court decisions will show how consistently the terminology is applied across sexual-violence cases and whether lower courts and justice agencies adopt the same wording in their own records and public communications."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Supreme Court E-Library",
+      "title": "People of the Philippines v. XXX271812, G.R. No. 271812",
+      "publishedAt": "2026-02-24T00:00:00+08:00",
+      "url": "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/1/70439",
+      "role": "primary decision establishing the terminology, affirming the conviction, modifying the penalty and ordering survivor assistance"
+    },
+    {
+      "publisher": "GMA News",
+      "title": "SC adopts term 'victim-survivor' in sexual violence cases",
+      "publishedAt": "2026-09-28T17:35:00+08:00",
+      "url": "https://www.gmanetwork.com/news/topstories/nation/1004006/sc-adopts-term-victim-survivor-in-sexual-violence-cases/story/",
+      "role": "independent reporting corroborating the terminology, disposition and publication timing"
+    },
+    {
+      "publisher": "Republika News",
+      "title": "SC: Sexual violence survivors are ‘victim-survivors,’ not simply victims",
+      "publishedAt": "2026-09-28T00:00:00+08:00",
+      "url": "https://republikanews.org/2026/09/28/sc-sexual-violence-survivors-are-victim-survivors-not-simply-victims/",
+      "role": "additional independent corroboration of the Court’s terminology and case disposition"
+    }
+  ],
+  "image": {
+    "kind": "licensed-photo",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Supreme_Court_of_the_Philippines.jpg",
+    "source": "Wikimedia Commons",
+    "creator": "Mike Gonzalez (TheCoffee)",
+    "license": "CC BY-SA 3.0 / GFDL",
+    "usageStatus": "Creative Commons Attribution-ShareAlike 3.0 Unported; original architecture identified as public domain under applicable Philippine copyright rules",
+    "credit": "Photo: Mike Gonzalez (TheCoffee) / Wikimedia Commons, CC BY-SA 3.0",
+    "caption": "The Supreme Court of the Philippines building in Manila, photographed in April 2010. This archival image provides institutional context and does not depict the proceedings in G.R. No. 271812.",
+    "alt": "Front facade and columns of the Supreme Court of the Philippines building in Manila",
+    "width": 3072,
+    "height": 2304,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Supreme_Court_of_the_Philippines.jpg"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-09-28T18:28:00+08:00",
+    "verificationNotes": [
+      "The Supreme Court E-Library decision directly states that “victim-survivor” will replace the conventional term “victim” for people who have endured sexual violence.",
+      "The decision confirms the February 24, 2026 promulgation date, the conviction, reclusion perpetua, ₱450,000 total damages and the DSWD referral directive.",
+      "GMA News independently corroborates the terminology and disposition and reports that the decision was made public in September 2026.",
+      "The report withholds all names and identifying circumstances protected by the Court and does not reproduce unnecessary graphic details.",
+      "The photograph is an archival institutional image, not a documentary image of the case. Wikimedia Commons identifies Mike Gonzalez as the creator and CC BY-SA 3.0/GFDL as the available licenses."
+    ]
+  }
+}
