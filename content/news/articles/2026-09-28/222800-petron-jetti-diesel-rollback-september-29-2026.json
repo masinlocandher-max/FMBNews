@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "petron-jetti-diesel-rollback-september-29-2026",
+  "headline": "Petron, Jetti Cut Diesel by ₱7.60 per Liter on September 29",
+  "seoTitle": "Petron, Jetti Cut Diesel by ₱7.60/L on September 29 | FMB News",
+  "seoDescription": "Petron and Jetti announced a ₱7.60-per-liter diesel rollback and a ₱0.30 gasoline cut effective Tuesday, September 29, 2026.",
+  "keywords": [
+    "fuel prices",
+    "diesel rollback",
+    "gasoline rollback",
+    "Petron",
+    "Jetti Petroleum",
+    "September 29 2026"
+  ],
+  "category": "Business",
+  "kicker": "FUEL PRICES · HOUSEHOLD COSTS",
+  "deck": "Petron and Jetti announced a ₱7.60-per-liter diesel rollback and a ₱0.30 gasoline cut effective Tuesday, slightly beyond the Energy Department’s earlier estimates.",
+  "publishedAt": "2026-09-28T22:28:00+08:00",
+  "updatedAt": "2026-09-28T22:28:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "relatedArticles": [
+    "/news/fuel-price-rollback-september-1-2026/"
+  ],
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Petron Corporation and Jetti Petroleum announced Monday night that they will reduce diesel prices by ₱7.60 per liter and gasoline prices by ₱0.30 per liter effective Tuesday, September 29, according to the Philippine News Agency.",
+        "The company-announced figures are final advertised adjustments for those two firms. They are slightly larger than the Department of Energy’s earlier projections of a ₱7.57-per-liter diesel decrease and a ₱0.24 gasoline decrease, as reported by ABS-CBN News."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The Energy Department also projected a ₱5.85-per-liter decline in kerosene. That figure was an estimate issued before the companies’ final advisories; pump-price changes can vary by company and product.",
+        "This is a separate weekly adjustment from the Civil Aeronautics Board’s Level 17 airline fuel-surcharge ceiling for October 1–15. A pump-price rollback does not automatically change the aviation surcharge already set for that period."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "The diesel cut is substantial for jeepney and bus operators, delivery fleets, farmers using diesel equipment, and households exposed to transport and logistics costs. The smaller gasoline reduction offers more limited relief to motorists."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Consumers should check the posted adjustment of their chosen fuel brand because final gasoline, diesel and kerosene reductions may differ slightly across companies. Other firms may issue or implement their own advisories on Tuesday.",
+        "Related FMB report: https://www.francinemariebautista.com/news/fuel-price-rollback-september-1-2026/"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Philippine News Agency",
+      "title": "Fuel prices to drop by over P7/liter Tuesday",
+      "publishedAt": "2026-09-28T21:11:00+08:00",
+      "url": "https://www.pna.gov.ph/articles/1285023",
+      "role": "official government newswire report based on company advisories"
+    },
+    {
+      "publisher": "ABS-CBN News",
+      "title": "Big diesel rollback seen on Sept. 29",
+      "publishedAt": "2026-09-28T10:54:00+08:00",
+      "url": "https://www.abs-cbn.com/news/business/2026/9/28/oil-prices-falling-as-september-ends-1054",
+      "role": "independent report of DOE estimates; updated 5:31 p.m. PHT"
+    },
+    {
+      "publisher": "FMB News",
+      "title": "Fuel Prices Roll Back Sept. 1, With Diesel and Kerosene Cuts Near ₱3.80 per Liter",
+      "publishedAt": "2026-08-31T23:28:04+08:00",
+      "url": "https://www.francinemariebautista.com/news/fuel-price-rollback-september-1-2026/",
+      "role": "earliest relevant FMB report"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying a verified report on fuel-price reductions effective September 29, 2026. It is not a photograph and does not depict a fuel station, pump, price board or named company.",
+    "alt": "FMB News editorial graphic for the September 29, 2026 fuel-price rollback",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-09-28T22:27:00+08:00",
+    "verificationNotes": [
+      "PNA's September 28 latest-news listing and official social post identify the late company-announced rollback and name Jetti Petroleum and Petron Corporation.",
+      "PNA reports final advertised cuts of ₱7.60 per liter for diesel and ₱0.30 per liter for gasoline for the two named firms, effective Tuesday.",
+      "ABS-CBN independently reports the DOE's earlier estimates of ₱7.57 for diesel, ₱0.24 for gasoline and ₱5.85 for kerosene; the article labels these as projections and does not present them as final company figures.",
+      "Kerosene and other companies' final advertised rates were not uniformly confirmed in the reviewed late advisories and are left unresolved.",
+      "The available event-specific press imagery did not carry sufficiently clear reusable-rights documentation; FMB's owned editorial fallback is used and explicitly labeled non-documentary."
+    ]
+  }
+}
