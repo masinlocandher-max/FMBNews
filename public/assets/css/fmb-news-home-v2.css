@@ -567,8 +567,8 @@
   z-index: -1;
   opacity: .3;
   background:
-    repeating-linear-gradient(90deg, transparent 0 46px, rgba(249, 171, 96, .55) 46px 47px),
-    repeating-linear-gradient(0deg, transparent 0 46px, rgba(249, 171, 96, .35) 46px 47px);
+    repeating-linear-gradient(90deg, transparent 0 46px, rgba(215, 25, 32, .55) 46px 47px),
+    repeating-linear-gradient(0deg, transparent 0 46px, rgba(215, 25, 32, .35) 46px 47px);
   mask-image: radial-gradient(120% 90% at 78% 22%, #000 10%, transparent 72%);
 }
 

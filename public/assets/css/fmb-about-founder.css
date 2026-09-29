@@ -1,8 +1,8 @@
 /* FMB News founder identity — source-level About section, 2026-09-12 */
 .fmb-about-founder{
   position:relative;overflow:hidden;padding:clamp(84px,9vw,142px) 0;color:#fff;
-  background:radial-gradient(circle at 80% 14%,rgba(249,171,96,.11),transparent 30%),linear-gradient(135deg,#0A0A0A 0%,#0A0A0A 54%,#630661 100%);
-  border-bottom:1px solid rgba(249,171,96,.18)
+  background:radial-gradient(circle at 80% 14%,rgba(215, 25, 32,.11),transparent 30%),linear-gradient(135deg,#0A0A0A 0%,#0A0A0A 54%,#630661 100%);
+  border-bottom:1px solid rgba(215, 25, 32,.18)
 }
 .fmb-about-founder::before{
   content:"";position:absolute;right:-18vw;bottom:-36vw;width:70vw;height:70vw;border:1px solid rgba(255,255,255,.10);border-radius:50%;box-shadow:0 0 0 7vw rgba(255,255,255,.018);pointer-events:none
@@ -11,7 +11,7 @@
 .fmb-founder-portrait{margin:0}
 .fmb-founder-photo-placeholder{
   aspect-ratio:4/5;max-width:430px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:8px;padding:28px;
-  border:1px solid rgba(249,171,96,.34);border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.035));
+  border:1px solid rgba(215, 25, 32,.34);border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.035));
   box-shadow:inset 0 1px rgba(255,255,255,.12),0 30px 80px rgba(7,2,18,.24);-webkit-backdrop-filter:blur(24px) saturate(80%);backdrop-filter:blur(24px) saturate(80%)
 }
 .fmb-founder-photo-placeholder::before{
@@ -25,8 +25,8 @@
 .fmb-founder-role{margin:0 0 34px;color:#f4c7a0;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
 .fmb-founder-statement{max-width:660px;margin:0 0 20px;color:rgba(255,255,255,.84);font-family:Georgia,"Times New Roman",serif;font-size:clamp(19px,1.45vw,23px);line-height:1.72}
 .fmb-founder-transparency{max-width:660px;margin:0 0 30px;color:rgba(255,255,255,.66);font-size:15px;line-height:1.72}
-.fmb-founder-profile-link{display:inline-flex;min-height:44px;align-items:center;padding:0 17px;border:1px solid rgba(249,171,96,.36);border-radius:999px;color:#fff!important;background:rgba(255,255,255,.06);font-size:10px;font-weight:800;letter-spacing:.10em;text-decoration:none;text-transform:uppercase}
-.fmb-founder-profile-link:is(:hover,:focus-visible){background:rgba(255,255,255,.12);border-color:rgba(249,171,96,.62);outline:none;box-shadow:0 0 0 3px rgba(249,171,96,.16)}
+.fmb-founder-profile-link{display:inline-flex;min-height:44px;align-items:center;padding:0 17px;border:1px solid rgba(215, 25, 32,.36);border-radius:999px;color:#fff!important;background:rgba(255,255,255,.06);font-size:10px;font-weight:800;letter-spacing:.10em;text-decoration:none;text-transform:uppercase}
+.fmb-founder-profile-link:is(:hover,:focus-visible){background:rgba(255,255,255,.12);border-color:rgba(215, 25, 32,.62);outline:none;box-shadow:0 0 0 3px rgba(215, 25, 32,.16)}
 
 @media(max-width:900px){
   .fmb-about-founder-grid{grid-template-columns:1fr;gap:38px}

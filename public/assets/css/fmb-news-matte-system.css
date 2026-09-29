@@ -174,7 +174,7 @@ body.fmb-matte-system .fmb-about-mv>p:last-child{color:rgba(255,255,255,.84)!imp
 body.fmb-matte-system .fmb-about-closing{color:#fff!important;background:radial-gradient(circle at 82% 24%,rgba(191,193,194,.10),transparent 28%),linear-gradient(135deg,#0A0A0A 0%,#141414 100%)!important}
 body.fmb-matte-system .fmb-about-closing h2,body.fmb-matte-system .fmb-about-closing nav a{color:#fff!important}
 body.fmb-matte-system :is(.fmb-about-label,.fmb-about-method-list li>span,.fmb-about-principles span,.fmb-about-name strong){color:var(--fmb-brand-plum)!important}
-body.fmb-matte-system .fmb-about-mv .fmb-about-label,body.fmb-matte-system .fmb-about-closing .fmb-about-label{color:#f4c6a1!important}
+body.fmb-matte-system .fmb-about-mv .fmb-about-label,body.fmb-matte-system .fmb-about-closing .fmb-about-label{color:#D71920!important}
 
 /* Footer identity is text-first too. */
 body.fmb-matte-system .fnc-footer{padding:64px 0 30px;color:#fff;background:#0A0A0A!important;border-top:1px solid rgba(191,193,194,.16)}

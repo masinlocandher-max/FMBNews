@@ -30,7 +30,7 @@ body.fmb-matte-system.fmb-news-about .fmb-about-hero{
   min-height:auto!important;
   padding:clamp(88px,9vw,138px) 0 clamp(78px,8vw,124px)!important;
   background:
-    radial-gradient(circle at 82% 14%,rgba(99,6,97,.055),transparent 34%),
+    radial-gradient(circle at 82% 14%,rgba(215, 25, 32,.055),transparent 34%),
     linear-gradient(90deg,transparent calc(18% - .5px),rgba(20,20,20,.055) 18%,transparent calc(18% + .5px)),
     #fbfafc!important;
 }

@@ -679,3 +679,57 @@ body.fmb-mobile-route-about .fmb-about-fmb-mark span,
 .fmb-about-fmb-mark span{color:var(--fmb-shell-muted,#6D7072)!important}
 
 
+
+/* ===========================================================================
+   Audit pass: defects found by measuring 24 routes x 5 viewports
+   =========================================================================== */
+
+/* 1. HIGH — the Fact Check article figure broke out of its own column on
+   mobile: 350px inside 318px at 390, 320 inside 288 at 360. An image wider
+   than the text column it belongs to reads as a broken layout, and it was the
+   only page-level containment failure left in the corpus. */
+.fmb-rights-cleared-figure,
+.article-figure{max-width:100%!important;box-sizing:border-box!important}
+.fmb-rights-cleared-figure img,
+.article-figure img{max-width:100%!important;height:auto!important}
+
+/* 2. HIGH — page titles rendered in the OS UI font. This publication is a
+   serif masthead product: 17 of 22 routes set their h1 in Newsreader, while
+   FactCheckItem, Search and Submit resolved to -apple-system at 1440 even
+   though their own mobile rules already used the serif. The desk-convergence
+   guard only watches desk routes, so none of the three was ever looked at.
+   Selectors below are the ones the DOM actually uses -- a first pass guessed
+   `body.fmb-search-route` and matched nothing; the real container is
+   `main.audit-page`, which Search and Submit share. */
+body.fmb-fact-check-route .fc-article h1,
+main.audit-page h1{
+  font-family:"Newsreader","Bodoni Moda","Libre Bodoni","Didot",Georgia,serif!important;
+}
+
+/* 3. MEDIUM — five body faces shipped: -apple-system (12 routes), Inter (8),
+   Georgia (2), Newsreader (1) and Manrope (1). Georgia and Manrope are not in
+   the publication's stack at all. The two routes carrying them are brought
+   onto the shared reading face; routes already on Inter or the system stack
+   are left alone rather than churned for uniformity's own sake. */
+.fmb-about-purpose-copy p,
+.fmb-about-method-list li p{
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif!important;
+}
+
+/* 4. MEDIUM — measured line length ran 39ch to 141ch across the corpus.
+   Comfortable reading is roughly 45-80. The worst offender was mine: the Fact
+   Check held-queue note I added sits directly in .fc-shell and inherited its
+   full 1124px, giving a 141-character measure. Capped on the prose columns
+   only, at the widths where the overrun was measured -- headings, media, cards
+   and the grid itself keep the full shell. */
+@media (min-width:900px){
+  .fc-held-note p,
+  .fc-empty p,
+  .fc-article p,
+  .article-body p,
+  .article-body li,
+  .article-context-note,
+  article.story p,
+  .explained-item p,
+  main.audit-page p{max-width:72ch}
+}

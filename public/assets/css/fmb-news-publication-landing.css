@@ -33,8 +33,8 @@
   min-height:42px!important;
   display:flex!important;
   align-items:stretch!important;
-  background:linear-gradient(112deg,rgba(20,8,43,.98),rgba(34,13,80,.96) 52%,rgba(99,6,97,.90))!important;
-  border-bottom:1px solid rgba(249,171,96,.20)!important;
+  background:linear-gradient(112deg,rgba(20,8,43,.98),rgba(34,13,80,.96) 52%,rgba(215, 25, 32,.90))!important;
+  border-bottom:1px solid rgba(215, 25, 32,.20)!important;
   box-shadow:inset 0 1px rgba(255,255,255,.05)!important;
 }
 
@@ -43,7 +43,7 @@
   background:rgba(10,5,20,.24)!important;color:#fff!important
 }
 
-.fmb-ref.fmb-network-landing .ticker-clock small{color:rgba(249,171,96,.92)!important}
+.fmb-ref.fmb-network-landing .ticker-clock small{color:rgba(215, 25, 32,.92)!important}
 
 .fmb-ref.fmb-network-landing .ticker-label{
   order:2;min-width:112px;justify-content:center;padding-inline:18px;
@@ -52,7 +52,7 @@
   letter-spacing:.12em!important;text-transform:uppercase!important
 }
 
-.fmb-ref.fmb-network-landing .ticker-pulse{width:6px;height:6px;background:#F9AB60!important;box-shadow:0 0 13px rgba(249,171,96,.58)!important}
+.fmb-ref.fmb-network-landing .ticker-pulse{width:6px;height:6px;background:#F9AB60!important;box-shadow:0 0 13px rgba(215, 25, 32,.58)!important}
 
 .fmb-ref.fmb-network-landing .ticker-window{order:3;min-width:0}
 
@@ -71,8 +71,8 @@
 
 .fmb-ref.fmb-network-landing .publication-mast{
   position:sticky;top:0;z-index:90;padding:0!important;
-  background:linear-gradient(116deg,rgba(34,13,80,.94),rgba(72,9,91,.91) 58%,rgba(99,6,97,.88))!important;
-  border-bottom:1px solid rgba(249,171,96,.20)!important;
+  background:linear-gradient(116deg,rgba(34,13,80,.94),rgba(72,9,91,.91) 58%,rgba(215, 25, 32,.88))!important;
+  border-bottom:1px solid rgba(215, 25, 32,.20)!important;
   box-shadow:0 16px 42px rgba(34,13,80,.13),inset 0 1px rgba(255,255,255,.08)!important;
   -webkit-backdrop-filter:blur(28px) saturate(88%);backdrop-filter:blur(28px) saturate(88%)
 }
@@ -124,7 +124,7 @@
 /* Landing footer remains text-first and minimal. */
 
 .fmb-ref.fmb-network-landing .publication-footer{
-  padding:30px 0 34px!important;background:#120822!important;border-top:1px solid rgba(249,171,96,.18)!important;color:#fff!important
+  padding:30px 0 34px!important;background:#120822!important;border-top:1px solid rgba(215, 25, 32,.18)!important;color:#fff!important
 }
 
 .fmb-ref.fmb-network-landing .publication-footer-inner{width:min(1380px,calc(100% - 64px));margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}

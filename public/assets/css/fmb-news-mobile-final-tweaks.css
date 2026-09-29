@@ -28,7 +28,7 @@ body.fmb-mobile-first .fmb-mobile-product-rail a[aria-current="page"]::after{dis
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail{display:grid!important;grid-template-columns:repeat(5,minmax(68px,1fr))!important;gap:0!important;height:50px!important;min-height:50px!important;padding:0!important;background:linear-gradient(180deg,#18061f 0%,#100415 100%)!important;border-top:1px solid rgba(208,160,229,.08)!important;border-bottom:1px solid rgba(208,160,229,.12)!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a{min-width:68px!important;height:50px!important;min-height:50px!important;gap:3px!important;padding:4px 4px 3px!important;color:rgba(255,255,255,.68)!important;font-size:7.8px!important;line-height:1!important;font-weight:720!important;letter-spacing:-.005em!important;border-right:1px solid rgba(255,255,255,.035)!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a svg{width:18px!important;height:18px!important;stroke-width:1.55!important}
-body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a[aria-current="page"]{background:linear-gradient(180deg,rgba(99,6,97,.07),rgba(99,6,97,.17))!important;color:#f2d17a!important;font-weight:820!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a[aria-current="page"]{background:linear-gradient(180deg,rgba(215, 25, 32,.07),rgba(215, 25, 32,.17))!important;color:#f2d17a!important;font-weight:820!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a[aria-current="page"]::after{display:block!important;left:18px!important;right:18px!important;bottom:0!important;height:1.5px!important;background:linear-gradient(90deg,#86509d,#f2d17a,#86509d)!important;box-shadow:0 0 8px rgba(213,174,85,.18)!important}
 
 /* One slim ticker, visually attached to the hero instead of floating as another card. */
@@ -104,7 +104,7 @@ body.fmb-mobile-first .fmb-mobile-shell-copy small{font-size:7.6px!important;let
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail{height:46px!important;min-height:46px!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a{height:46px!important;min-height:46px!important;gap:2px!important;padding-top:3px!important;padding-bottom:2px!important;font-size:8.4px!important;font-weight:680!important;color:rgba(255,255,255,.70)!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a svg{width:17px!important;height:17px!important;stroke-width:1.5!important}
-body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a[aria-current="page"]{font-weight:780!important;background:linear-gradient(180deg,rgba(99,6,97,.04),rgba(99,6,97,.11))!important}
+body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a[aria-current="page"]{font-weight:780!important;background:linear-gradient(180deg,rgba(215, 25, 32,.04),rgba(215, 25, 32,.11))!important}
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail a[aria-current="page"]::after{left:20px!important;right:20px!important;height:1px!important;box-shadow:none!important}
 
 body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-top-ticker{height:28px!important}
