@@ -186,7 +186,11 @@ html[data-fmb-theme="dark"] body.fmb-sports-page .sports-story span{color:#F53A3
 
 /* ------------------------------------------------------------ entertainment */
 
-.fmb-ent-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--fmbv2-space-5)}
+/* min(280px,100%), not a bare 280px floor. auto-fit still gives one column
+   per 280px where the container has the room, but a floor larger than the
+   container itself cannot be honoured, and the track overflows instead:
+   at a 320px viewport these cards measured 280px inside a 248px column. */
+.fmb-ent-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:var(--fmbv2-space-5)}
 
 .fmb-ent-card{
   display:flex;flex-direction:column;gap:var(--fmbv2-space-3);

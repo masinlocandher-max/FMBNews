@@ -1,3 +1,8 @@
+/* Retired plum rgba(62,23,109) mapped to Editorial Black rgba(20,20,20) at
+   the same five opacities -- hairlines and washes keep their weight, only
+   the hue moves. This sheet was the last place the About hero's plum
+   survived, and it surfaced only once /news/about/ was added to the
+   desk-convergence route list. */
 .fmb-news-about {
   --about-rail: rgba(11, 12, 16, 0.08);
 }
@@ -40,7 +45,7 @@
   border-bottom: 1px solid var(--fmb-line);
   background:
     linear-gradient(90deg, transparent calc(18% - 0.5px), var(--about-rail) 18%, transparent calc(18% + 0.5px)),
-    linear-gradient(90deg, transparent calc(72% - 0.5px), rgba(62, 23, 109, 0.08) 72%, transparent calc(72% + 0.5px)),
+    linear-gradient(90deg, transparent calc(72% - 0.5px), rgba(20, 20, 20, 0.08) 72%, transparent calc(72% + 0.5px)),
     #fff;
 }
 
@@ -50,10 +55,10 @@
   right: -20vw;
   width: 82vw;
   height: 82vw;
-  border: 1px solid rgba(62, 23, 109, 0.17);
+  border: 1px solid rgba(20, 20, 20, 0.17);
   border-radius: 50%;
   box-shadow:
-    0 0 0 7vw rgba(62, 23, 109, 0.024),
+    0 0 0 7vw rgba(20, 20, 20, 0.024),
     0 0 0 15vw rgba(11, 12, 16, 0.018);
   content: "";
 }
@@ -248,7 +253,7 @@
   bottom: -29vw;
   width: 58vw;
   height: 58vw;
-  border: 1px solid rgba(62, 23, 109, 0.12);
+  border: 1px solid rgba(20, 20, 20, 0.12);
   border-radius: 50%;
   content: "";
 }
@@ -312,7 +317,7 @@
 
 .fmb-about-name {
   background:
-    radial-gradient(circle at 12% 18%, rgba(62, 23, 109, 0.06), transparent 36%),
+    radial-gradient(circle at 12% 18%, rgba(20, 20, 20, 0.06), transparent 36%),
     #f7f8f9;
 }
 

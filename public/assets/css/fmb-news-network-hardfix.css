@@ -56,7 +56,7 @@ body.fmb-ref>.nav a{white-space:nowrap}
 .fmb-ref .world-hero h1,.fmb-ref .edition-hero h1,.fmb-ref .cms-edition-header h1{
   margin:.16em 0 .22em!important;
   color:#141414!important;
-  font-family:"Bodoni 72","Didot","Bodoni MT","Times New Roman",serif!important;
+  font-family:"Newsreader","Bodoni Moda","Libre Bodoni","Bodoni 72","Didot","Bodoni MT","Times New Roman",serif!important;
   font-weight:700!important;
   letter-spacing:-.045em!important;
   line-height:.96!important;
@@ -71,7 +71,7 @@ body.fmb-ref>.nav a{white-space:nowrap}
 
 .fmb-ref .world-feed,.fmb-ref .edition-body{background:#fff!important}
 .fmb-ref .world-feed-head,.fmb-ref .archive-head{border-bottom:2px solid transparent;border-image:var(--fmb-section-rule,linear-gradient(90deg,#D71920 0 64px,rgba(20,20,20,.22) 64px)) 1;padding-bottom:14px}
-.fmb-ref .world-feed-head h2,.fmb-ref .archive-head h2{font-family:"Bodoni 72","Didot","Bodoni MT","Times New Roman",serif;font-weight:700;letter-spacing:-.03em}
+.fmb-ref .world-feed-head h2,.fmb-ref .archive-head h2{font-family:"Newsreader","Bodoni Moda","Libre Bodoni","Bodoni 72","Didot","Bodoni MT","Times New Roman",serif;font-weight:700;letter-spacing:-.03em}
 .fmb-ref .edition-link{border:1px solid #BFC1C2!important;color:var(--fmb-network-plum)!important;background:#fff;box-shadow:0 7px 18px rgba(20,20,20,.05)}
 
 .fmb-ref .country-grid{gap:20px!important}
@@ -88,7 +88,7 @@ body.fmb-ref>.nav a{white-space:nowrap}
 }
 .fmb-ref .country-card:hover,.fmb-ref .archive-card:hover{transform:translateY(-3px)!important;box-shadow:0 18px 38px rgba(20,20,20,.10)!important}
 .fmb-ref .country-card small{color:#6D7072!important}
-.fmb-ref .country-card h3,.fmb-ref .country-entry h2,.fmb-ref .cms-edition-entry h2{font-family:"Bodoni 72","Didot","Bodoni MT","Times New Roman",serif;letter-spacing:-.025em}
+.fmb-ref .country-card h3,.fmb-ref .country-entry h2,.fmb-ref .cms-edition-entry h2{font-family:"Newsreader","Bodoni Moda","Libre Bodoni","Bodoni 72","Didot","Bodoni MT","Times New Roman",serif;letter-spacing:-.025em}
 .fmb-ref .country-card p,.fmb-ref .country-entry p,.fmb-ref .cms-edition-entry p{color:#574f5a!important}
 .fmb-ref .analysis,.fmb-ref .cms-analysis,.fmb-ref .cms-entry-analysis{
   background:linear-gradient(100deg,#FAF9F6,#f1e6f4 72%,#fff)!important;
@@ -112,7 +112,7 @@ body.fmb-ref>.nav a{white-space:nowrap}
 .fmb-ref .cms-edition-entry{padding:24px!important}
 .fmb-ref .cms-article{max-width:1120px;margin:28px auto;padding:0}
 .fmb-ref .cms-article header,.fmb-ref .cms-article-content{max-width:780px}
-.fmb-ref .cms-article h1{font-family:"Bodoni 72","Didot","Bodoni MT","Times New Roman",serif;font-size:clamp(2.4rem,6vw,4.9rem);line-height:.98;letter-spacing:-.04em}
+.fmb-ref .cms-article h1{font-family:"Newsreader","Bodoni Moda","Libre Bodoni","Bodoni 72","Didot","Bodoni MT","Times New Roman",serif;font-size:clamp(2.4rem,6vw,4.9rem);line-height:.98;letter-spacing:-.04em}
 .fmb-ref .cms-article figure{margin:28px 0;padding:10px;background:var(--fmb-theme-surface-soft,#EFEDE8);border:1px solid var(--fmb-theme-line,rgba(20,20,20,.14));box-shadow:var(--fmb-network-shadow)}
 
 /* FMB Brief: same newsroom identity, distinct product treatment. */
@@ -122,7 +122,7 @@ body.fmb-ref>.nav a{white-space:nowrap}
   position:relative;padding:48px 0 38px!important;background:linear-gradient(118deg,#fff 0%,#fbf7fc 58%,#efe3f2 100%)!important;border-bottom:1px solid var(--fmb-network-line)
 }
 .fmb-ref .brief-archive-hero::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--fmb-network-metal)}
-.fmb-ref .brief-archive-hero h1{font-family:"Bodoni 72","Didot","Bodoni MT","Times New Roman",serif!important;font-size:clamp(3rem,8vw,6rem)!important;letter-spacing:-.05em!important;line-height:.9!important;color:#141414!important}
+.fmb-ref .brief-archive-hero h1{font-family:"Newsreader","Bodoni Moda","Libre Bodoni","Bodoni 72","Didot","Bodoni MT","Times New Roman",serif!important;font-size:clamp(3rem,8vw,6rem)!important;letter-spacing:-.05em!important;line-height:.9!important;color:#141414!important}
 .fmb-ref .brief-archive-hero p{color:#574e5a!important;max-width:860px!important}
 .fmb-ref .brief-issues{background:#fff!important;padding:36px 0 54px!important}
 .fmb-ref .brief-issue{
@@ -131,7 +131,7 @@ body.fmb-ref>.nav a{white-space:nowrap}
 .fmb-ref .brief-issue::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--fmb-network-metal)}
 .fmb-ref .brief-issue:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(20,20,20,.09)!important}
 .fmb-ref .brief-issue time{color:var(--fmb-network-plum)!important;font-weight:800!important}
-.fmb-ref .brief-issue h2{font-family:"Bodoni 72","Didot","Bodoni MT","Times New Roman",serif!important;letter-spacing:-.025em!important}
+.fmb-ref .brief-issue h2{font-family:"Newsreader","Bodoni Moda","Libre Bodoni","Bodoni 72","Didot","Bodoni MT","Times New Roman",serif!important;letter-spacing:-.025em!important}
 .fmb-ref .brief-method{background:linear-gradient(180deg,#FAF9F6,#fff)!important;border-top:1px solid var(--fmb-network-line)!important}
 .fmb-ref .brief-method-grid>div{border-top:3px solid transparent;border-image:var(--fmb-network-metal) 1;padding-top:18px}
 
@@ -139,7 +139,7 @@ body.fmb-ref>.nav a{white-space:nowrap}
 .fmb-ref.fmb-news-about .fmb-about-hero,.fmb-ref .fmb-about-hero{background:linear-gradient(118deg,#fff,#fbf7fc 58%,#efe3f2)!important;border-bottom:1px solid var(--fmb-network-line)!important}
 .fmb-ref .fmb-about-label{color:var(--fmb-network-plum)!important;font-weight:800!important;letter-spacing:.14em!important;text-transform:uppercase}
 .fmb-ref .fmb-about-hero h1,.fmb-ref .fmb-about-purpose h2,.fmb-ref .fmb-about-mv h2,.fmb-ref .fmb-about-method h2,.fmb-ref .fmb-about-name h2,.fmb-ref .fmb-about-standards h2,.fmb-ref .fmb-about-closing h2{
-  font-family:"Bodoni 72","Didot","Bodoni MT","Times New Roman",serif!important;letter-spacing:-.035em!important;color:#141414!important
+  font-family:"Newsreader","Bodoni Moda","Libre Bodoni","Bodoni 72","Didot","Bodoni MT","Times New Roman",serif!important;letter-spacing:-.035em!important;color:#141414!important
 }
 .fmb-ref .fmb-about-purpose,.fmb-ref .fmb-about-method,.fmb-ref .fmb-about-name,.fmb-ref .fmb-about-standards{background:#fff!important}
 .fmb-ref .fmb-about-mission-vision,.fmb-ref .fmb-about-closing{background:linear-gradient(180deg,#FAF9F6,#fff)!important}

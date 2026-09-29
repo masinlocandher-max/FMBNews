@@ -12,6 +12,14 @@ const base = process.env.FMB_QA_BASE || 'http://127.0.0.1:4173';
 const DESKS = [
   ['Home', '/news/'], ['World', '/news/world/'], ['Sports', '/news/sports/'],
   ['Briefing', '/news/fmb-brief/'], ['Fact Check', '/news/fact-check/'],
+  // About is not a desk, and it is scanned anyway. It was outside this list, so
+  // nothing here ever looked at it -- and it was still painting the retired
+  // identity: a plum #1c0b24 -> #32123f hero gradient with #e8d9ee lilac for the
+  // FILIPINO / MEDIA / BULLETIN mark. A later sheet had corrected the ground and
+  // left the ink, so the mark measured 1.29:1 on warm paper: present, weight
+  // 900, unreadable. A guard that only watches the desks cannot see the routes
+  // where retired chrome actually survived.
+  ['About', '/news/about/'],
 ];
 // The desks the bottom dock carries as items. Fact Check is reached from the
 // dock's Menu instead, so the dock marks no current section on that route.
@@ -176,4 +184,4 @@ await browser.close();
 if (failures.length) {
   throw new Error(`Desk convergence failures (${failures.length}):\n  ${failures.join('\n  ')}`);
 }
-console.log(`Desk convergence browser QA passed: Home, World, Sports, Briefing and Fact Check across 390/430/1440 in both appearances -- no retired plum/violet chrome, one primary navigation per desk with a readable current-section label in both appearances, shared paper and ink, editorial display type on every desk title, no overflow. Fact Check verdict colours preserved.`);
+console.log(`Desk convergence browser QA passed: Home, World, Sports, Briefing, Fact Check and About across 390/430/1440 in both appearances -- no retired plum/violet chrome, one primary navigation per desk with a readable current-section label in both appearances, shared paper and ink, editorial display type on every desk title, no overflow. Fact Check verdict colours preserved.`);

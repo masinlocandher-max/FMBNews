@@ -1,7 +1,7 @@
 /* FMB News founder identity — source-level About section, 2026-09-12 */
 .fmb-about-founder{
   position:relative;overflow:hidden;padding:clamp(84px,9vw,142px) 0;color:#fff;
-  background:radial-gradient(circle at 80% 14%,rgba(249,171,96,.11),transparent 30%),linear-gradient(135deg,#16082d 0%,#220D50 54%,#630661 100%);
+  background:radial-gradient(circle at 80% 14%,rgba(249,171,96,.11),transparent 30%),linear-gradient(135deg,#0A0A0A 0%,#0A0A0A 54%,#630661 100%);
   border-bottom:1px solid rgba(249,171,96,.18)
 }
 .fmb-about-founder::before{

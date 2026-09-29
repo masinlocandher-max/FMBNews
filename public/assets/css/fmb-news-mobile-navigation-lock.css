@@ -544,6 +544,30 @@ body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[ari
     body.fmb-mobile-first.fmb-mobile-route-home .fmb-editorial-mobile-rail-item{grid-template-columns:100px minmax(0,1fr) 16px!important}
     body.fmb-mobile-first.fmb-mobile-route-home .fmb-editorial-mobile-rail-item img{width:100px!important;height:68px!important}
   }
+
+  /* ------------------------------------------------------------------------
+     320px. The narrowest width the publication actually meets.
+     ------------------------------------------------------------------------
+     The rule above pins the rail to repeat(5, minmax(62px, 1fr)). Five 62px
+     floors plus the rail's own 6px+6px padding is 322px, which does not fit a
+     320px viewport -- so on every route the rail became a scroller and
+     "Fact Check" sat 7px from the edge. It was tuned at 390px, where 5x62 has
+     68px to spare, and 320 was never in the QA matrix (390 / 430 / 1440).
+     320px is not hypothetical: it is the iPhone SE generation, small Androids,
+     and any device where the reader has turned text size up.
+     A 56px floor fits five items in 292px with room for the gutter, and
+     "Fact Check" at 7.8px needs about 45px of that.
+     ------------------------------------------------------------------------ */
+  @media(max-width:360px){
+    body.fmb-mobile-first .fmb-mobile-product-rail,
+    body.fmb-mobile-first.fmb-mobile-route-home .fmb-mobile-product-rail,
+    body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail{
+      grid-template-columns:repeat(5,minmax(0,1fr))!important;
+    }
+    body.fmb-mobile-first .fmb-mobile-product-rail a{
+      min-width:0!important;font-size:7.4px!important;padding-inline:2px!important;
+    }
+  }
 }
 
 /* This file is bundled last, so reduced motion must also be finalized here. */
@@ -564,7 +588,7 @@ body.fmb-mobile-first:not(.fmb-mobile-route-home) .fmb-mobile-product-rail a[ari
   /* -- 1. Retired violet ---------------------------------------------------
      The Daily Brief and Worldwide feature tiles and the Home app shell still
      carried the plum/violet gradients of the superseded concept — #4b0d50 and
-     the old identity violet #220d50. The approved dark mode is newsroom black
+     the old identity violet #0A0A0A. The approved dark mode is newsroom black
      with a signal-red accent and depth from luminance, not from colour.       */
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card,
   body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card.brief,

@@ -1,10 +1,18 @@
+/* The retired plum/gold identity was still the whole basis of this sheet:
+   #0A0A0A and #630661 -- the second is the hex verify-product-identity.mjs
+   forbids outright -- plus rgba(34,13,80) rules and an rgba(249,171,96)
+   peach glow. Mapped onto the approved palette at the SAME opacities, so
+   the composition's weight is unchanged and only the hue moves:
+   plum ink -> Editorial Black #141414, peach glow -> FMB Red #D71920.
+   Found by adding /news/about/ to the desk-convergence route list, which
+   had never scanned it. */
 /* FMB About readability lock — 2026-09-11
    Keeps the matte FMB News system while making the trust/editorial page readable. */
 body.fmb-matte-system.fmb-news-about{
   --about-readable-ink:#211925;
   --about-readable-copy:#44394a;
   --about-readable-muted:#655a69;
-  --about-readable-line:rgba(34,13,80,.14);
+  --about-readable-line:rgba(20,20,20,.14);
   color:var(--about-readable-ink)!important;
   background:#fbfafc!important;
 }
@@ -23,7 +31,7 @@ body.fmb-matte-system.fmb-news-about .fmb-about-hero{
   padding:clamp(88px,9vw,138px) 0 clamp(78px,8vw,124px)!important;
   background:
     radial-gradient(circle at 82% 14%,rgba(99,6,97,.055),transparent 34%),
-    linear-gradient(90deg,transparent calc(18% - .5px),rgba(34,13,80,.055) 18%,transparent calc(18% + .5px)),
+    linear-gradient(90deg,transparent calc(18% - .5px),rgba(20,20,20,.055) 18%,transparent calc(18% + .5px)),
     #fbfafc!important;
 }
 
@@ -46,7 +54,7 @@ body.fmb-matte-system.fmb-news-about .fmb-about-hero-copy h1{
 body.fmb-matte-system.fmb-news-about .fmb-about-hero-statement{
   max-width:620px!important;
   padding-top:24px!important;
-  border-color:rgba(34,13,80,.22)!important;
+  border-color:rgba(20,20,20,.22)!important;
 }
 
 body.fmb-matte-system.fmb-news-about .fmb-about-hero-statement p{
@@ -58,7 +66,7 @@ body.fmb-matte-system.fmb-news-about .fmb-about-hero-statement p{
 
 body.fmb-matte-system.fmb-news-about .fmb-about-hero-statement strong{
   margin-top:26px!important;
-  color:#630661!important;
+  color:#D71920!important;
   font-size:10px!important;
   line-height:1.65!important;
 }
@@ -100,7 +108,7 @@ body.fmb-matte-system.fmb-news-about :is(.fmb-about-purpose-copy p:first-child,.
 
 body.fmb-matte-system.fmb-news-about .fmb-about-mission-vision{
   color:#fff!important;
-  background:radial-gradient(circle at 14% 18%,rgba(249,171,96,.08),transparent 30%),linear-gradient(135deg,#16082d 0%,#220D50 58%,#4d0756 100%)!important;
+  background:radial-gradient(circle at 14% 18%,rgba(215,25,32,.08),transparent 30%),linear-gradient(135deg,#0A0A0A 0%,#141414 58%,#141414 100%)!important;
 }
 
 body.fmb-matte-system.fmb-news-about .fmb-about-mv{
@@ -175,7 +183,7 @@ body.fmb-matte-system.fmb-news-about .fmb-about-principles p{
 body.fmb-matte-system.fmb-news-about .fmb-about-closing{
   padding:clamp(82px,8vw,126px) 0!important;
   color:#fff!important;
-  background:radial-gradient(circle at 82% 22%,rgba(249,171,96,.10),transparent 28%),linear-gradient(135deg,#220D50 0%,#630661 100%)!important;
+  background:radial-gradient(circle at 82% 22%,rgba(215,25,32,.10),transparent 28%),linear-gradient(135deg,#141414 0%,#D71920 100%)!important;
 }
 
 body.fmb-matte-system.fmb-news-about .fmb-about-closing-grid{

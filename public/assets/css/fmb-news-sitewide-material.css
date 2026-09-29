@@ -617,3 +617,65 @@ body.fmb-mobile-first.fmb-mobile-route-home .fmb-app-feature-card>div>span{color
 
 html[data-fmb-theme="dark"] figcaption.credit,
 html[data-fmb-theme="dark"] .article-figure figcaption{color:#817883!important}
+
+/* ---------------------------------------------------------------------------
+   Narrow-viewport containment
+   ---------------------------------------------------------------------------
+   Two blocks spilled out of their own boxes at 320 and 360: the About hero by
+   64px and every Explainer card's copy column by up to 82px. Both are the same
+   bug, and it is the most common one in CSS grid and flexbox: a grid or flex
+   ITEM defaults to min-width:auto, which is its min-content width, so it
+   refuses to shrink below its longest unbreakable run no matter how small the
+   container gets. The container does not overflow the page -- the page-level
+   overflow guard stayed green throughout -- the content overflows the
+   container, which is why nothing caught it.
+
+   .explained-card-copy is a grid whose single column resolved to 188px inside a
+   106px box, so the kicker and headline ran under the neighbouring column.
+   .fmb-about-hero is a nowrap flex row that could not break onto a second line.
+
+   Measured at 320 and 360, on the elements themselves, not inferred from the
+   stylesheet. Nothing here changes 390 and above: the declarations are scoped
+   to widths where the overflow was measured.
+   -------------------------------------------------------------------------- */
+@media (max-width:480px){
+  .explained-card-copy{grid-template-columns:minmax(0,1fr)!important;min-width:0!important}
+  .explained-card-copy>*{min-width:0!important;overflow-wrap:anywhere}
+  .fmb-about-hero{flex-wrap:wrap!important}
+  .fmb-about-hero>*{min-width:0!important;max-width:100%!important}
+  .fmb-about-mv{min-width:0!important;max-width:100%!important}
+  .fmb-about-mv>*{min-width:0!important;max-width:100%!important;overflow-wrap:anywhere}
+  .fmb-about-mv-grid{grid-template-columns:minmax(0,1fr)!important}
+  .fmb-about-method{min-width:0!important}
+  .fmb-about-method>*{min-width:0!important;overflow-wrap:anywhere}
+  /* The Explainer toolbar is a sticky grid whose two columns summed to 252px
+     inside a 220px shell -- the count and the search field each claimed their
+     content width. Letting both columns shrink keeps them on one row where
+     there is room and lets the grid reflow where there is not. */
+  .explained-tools{grid-template-columns:minmax(0,1fr)!important;min-width:0!important;max-width:100%!important}
+  .explained-tools>*{min-width:0!important;max-width:100%!important}
+}
+
+/* ---------------------------------------------------------------------------
+   About: the retired plum ink the ground left behind
+   ---------------------------------------------------------------------------
+   fmb-news-mobile-products.css still paints this hero on the retired identity:
+   a linear-gradient(145deg,#1c0b24,#32123f) plum ground with #e8d9ee lilac for
+   the stacked FILIPINO / MEDIA / BULLETIN mark. A later sheet had already
+   corrected the GROUND to the approved palette and left the INK behind, which
+   is the whole defect: pale lilac chosen for a near-black plum panel, now
+   sitting on warm paper. Measured 1.29:1 -- the mark is on the page, at weight
+   900, and cannot be read.
+
+   This is the third instance of the same shape this week (the Home PHT strip,
+   the Fact Check held note, and now this), and each one was invisible to the
+   guards because About is not in the desk-convergence route list. It is added
+   there in the same change.
+
+   The mark is a muted label, so it takes the shell's muted token and follows
+   the appearance rather than being pinned to one ground.
+   -------------------------------------------------------------------------- */
+body.fmb-mobile-route-about .fmb-about-fmb-mark span,
+.fmb-about-fmb-mark span{color:var(--fmb-shell-muted,#6D7072)!important}
+
+
