@@ -733,3 +733,119 @@ main.audit-page h1{
   .explained-item p,
   main.audit-page p{max-width:72ch}
 }
+
+/* ---------------------------------------------------------------------------
+   Explainer index: the dark appearance stopped at the mobile breakpoint
+   ---------------------------------------------------------------------------
+   Measured at 1440 in Dark, across 206 cards:
+
+     .explained-number  #D71920 on #0A0A0A   3.82:1
+     .explained-count   #6E6E73 on #090909   3.93:1
+     .explained-meta    #8C6A9E on #0A0A0A   4.40:1
+
+   The corrections for all three already exist -- and measure 10.96:1 -- but
+   they live inside @media(max-width:699px), so they simply stop at 700px and
+   the base values show through for every desktop reader. 619 measurements.
+
+   #8C6A9E is also retired-identity mauve, and it is the one that fails in BOTH
+   appearances: 4.06:1 on warm paper as well. So it is corrected per appearance
+   rather than only in Dark -- Steel Gray on paper, Metallic Silver on black,
+   both already in the approved palette.
+
+   Specificity is three classes deep on purpose: the winning declaration is
+   `body.fmb-explainer-route .explained-number` at (0,2,1) with !important.
+   -------------------------------------------------------------------------- */
+html[data-fmb-theme="light"] body.fmb-explainer-route .explained-meta,
+html[data-fmb-theme="light"] body.fmb-explainer-route .explained-number{color:#6D7072!important}
+html[data-fmb-theme="light"] body.fmb-explainer-route .explained-number{color:#B3151B!important}
+
+html[data-fmb-theme="dark"] body.fmb-explainer-route .explained-number{color:#F53A3F!important}
+html[data-fmb-theme="dark"] body.fmb-explainer-route .explained-count,
+html[data-fmb-theme="dark"] body.fmb-explainer-route .explained-meta{color:#BFC1C2!important}
+
+/* ---------------------------------------------------------------------------
+   Daily Brief issue dates, Dark appearance
+   ---------------------------------------------------------------------------
+   Measured at 1440, 16 issue rows:
+
+     Light   15 rows  #D71920 on warm paper #F5F3EF   4.68:1  pass
+             1 row    #F53A3F on near-black           5.24:1  pass
+     Dark    15 rows  #D71920 on near-black #0A0A0A   3.82:1  FAIL
+             1 row    #F53A3F on near-black           5.24:1  pass
+
+   In Dark the panel ground flips to near-black for every row, but only the
+   current row's ink flips with it; the other fifteen keep the paper red.
+
+   A previous attempt at this scoped the correction to the LIGHT appearance --
+   the one that was already passing -- and lightened ink that sits on paper,
+   taking the site-wide failure count from 40 to 70. It was reverted. No single
+   red can serve both grounds: 4.5:1 on near-black needs luminance >= 0.189 and
+   4.5:1 on warm paper needs <= 0.161, so the correction has to be per
+   appearance, which is what this is. #F53A3F is not a new colour -- it is what
+   the sixteenth row already uses, on the identical ground, at 5.24:1.
+   -------------------------------------------------------------------------- */
+html[data-fmb-theme="dark"] body.fmb-mobile-first.fmb-mobile-route-brief .brief-issue time,
+html[data-fmb-theme="dark"] body.brief-route .brief-issue time,
+html[data-fmb-theme="dark"] .brief-issue time{color:#F53A3F!important}
+
+/* ---------------------------------------------------------------------------
+   Archive and Explainer: paper-tuned ink on a night ground
+   ---------------------------------------------------------------------------
+   The same shape as the Daily Brief dates, on two more surfaces, and measured
+   the same way at 1440:
+
+                          light            dark
+     .archive-row time    4.57 (#746C76)   3.91   FAIL
+     .section-title a     4.68 (#D71920)   3.82   FAIL
+     .explained-deck      5.15 (#66666B)   3.47   FAIL
+
+   In every case Light is correct and Dark is not: the ground flips to
+   near-black and the ink, chosen for warm paper, stays where it is. 516 of the
+   remaining failures were these three selectors repeated across 310 archive
+   rows and 206 explainer cards.
+
+   Both replacements are values this palette already uses on this exact ground:
+   Metallic Silver #BFC1C2 measures 10.96:1 and the lifted red #F53A3F 5.24:1.
+
+   #746C76 is also mauve rather than a neutral, so it moves to Steel Gray in
+   Light too -- not for contrast, which it passes, but because it is the last
+   off-palette ink on the archive row.
+   -------------------------------------------------------------------------- */
+html[data-fmb-theme="light"] .archive-row time{color:#6D7072!important}
+
+html[data-fmb-theme="dark"] .archive-row time,
+html[data-fmb-theme="dark"] .explained-deck,
+html[data-fmb-theme="dark"] body.fmb-explainer-route .explained-deck{color:#BFC1C2!important}
+
+html[data-fmb-theme="dark"] main.shell .section-title a,
+html[data-fmb-theme="dark"] .archive-row a,
+html[data-fmb-theme="dark"] .section-title a{color:#F53A3F!important}
+
+/* ---------------------------------------------------------------------------
+   Last three: panels that keep a light ground while their ink flips
+   ---------------------------------------------------------------------------
+   1. .brief-method is a warm-grey panel (#ECE9E3) in BOTH appearances, but in
+      Dark its heading and body flip to near-white #F5F3EF and measure 1.09:1
+      and 1.49:1 -- text that is on the page and cannot be read. The panel is
+      light by design, so the ink goes back to Editorial Black on it (15.20:1)
+      rather than the panel being darkened.
+
+   2. The FALSE verdict badge sits on the .fc-rating-key card, which IS
+      near-black in Dark. #CF2C2C was tuned for warm paper and measures 3.55:1
+      there; lifted to #D85252 it measures 4.60:1. The verdict stays red -- the
+      hue is the verdict -- and only its lightness moves, which is the rule this
+      palette already follows for TRUE, VERIFIED FACT and MISLEADING.
+   -------------------------------------------------------------------------- */
+/* .brief-method is NOT a uniform panel, and that is why it is left alone.
+   Its section ground is warm grey #ECE9E3 while some of its headings sit on
+   the dark ground instead. Forcing Editorial Black across it fixed the two
+   readings on the light part and broke three on the dark part -- 6 failures
+   became 9 -- so it was reverted rather than shipped. It needs the panel's own
+   structure resolved, not another blanket ink override; the same trap as the
+   Daily Brief dates, which cost 40->70 before it was understood. */
+
+/* Every FALSE badge, not only the one in the ratings key. The first attempt
+   scoped to .fc-rating-key, won there, and left the badges on the cards -- the
+   ones the sweep was actually reporting -- untouched. */
+html[data-fmb-theme="dark"] .fc-badge.fc-false,
+html[data-fmb-theme="dark"] .fc-badge.fc-false span{color:#D85252!important}
