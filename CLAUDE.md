@@ -28,6 +28,17 @@ Critical locked rules:
 - Do not rebuild the product from scratch. Use the current canonical architecture and the working improvements already merged into main.
 - Do not add another homepage override stylesheet or late compatibility hardfix. `render-home-experience.mjs` owns Home markup; `fmb-news-editorial-reference-v2.css` is the final desktop Home visual authority; `fmb-news-mobile-navigation-lock.css` is the last mobile visual authority.
 - Keep content-hashed design/theme assets. Do not return to hand-maintained cache-busting versions for visual authority files.
+- A desk that has stopped publishing is a defect, and it is gated.
+  `scripts/verify-desk-freshness.mjs` fails the build when FMB Worldwide, FMB
+  Daily Brief or FMB News has nothing newer than the cadence declared in
+  `content/news/desk-freshness-policy.json`, and `.github/workflows/desk-freshness.yml`
+  runs the same check daily at 09:00 PHT and opens an issue. This exists because
+  FMB Worldwide published daily to September 4 2026, stopped for eleven days,
+  and was backfilled in one batch on September 16 -- with every gate in this
+  repository green throughout, because a site can be perfectly well-formed and
+  completely out of date. NEVER raise `maxAgeDays` to clear a red build, for the
+  same reason the photography baseline may not be raised: it converts a newsroom
+  that has gone quiet into a build that reports it has not. The fix is to publish.
 - Run `npm run build`, `npm run verify`, and `npm run test:mobile:browser`, then perform rendered phone and desktop regression QA before declaring completion.
 
 Primary visual/architecture files:

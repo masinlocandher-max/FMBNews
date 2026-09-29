@@ -1,0 +1,9 @@
+{
+  "_": "The publishing cadence each FMB desk intends to keep, in days. scripts/verify-desk-freshness.mjs fails the build when a desk's newest item is older than its number. RAISING A NUMBER HERE TO CLEAR A RED BUILD IS FORBIDDEN, for the same reason CLAUDE.md forbids raising content/news/photography-coverage-baseline.json: it converts a newsroom that has stopped publishing into a build that reports it has not. The fix for a failure is to publish the missing editions.",
+  "_history": "FMB Worldwide published daily from September 1 to September 4 2026, then stopped for eleven days; Septembers 5 to 15 were committed in one batch of backfills on September 16. Every gate in the repository was green throughout. It stalled again immediately afterwards. This file exists because of that.",
+  "maxAgeDays": {
+    "worldwide": 3,
+    "daily-brief": 3,
+    "news": 2
+  }
+}
