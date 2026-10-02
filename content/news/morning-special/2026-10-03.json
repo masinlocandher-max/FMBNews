@@ -1,0 +1,217 @@
+{
+  "date": "2026-10-03",
+  "publishedAt": "2026-10-03T07:00:00+08:00",
+  "editionLabel": "FMB Daily Brief",
+  "title": "FMB Daily Brief — October 3, 2026",
+  "deck": "Filipinos begin Saturday with a stronger El Niño warning, a contested maritime encounter off Batanes, a ride-hailing fare dispute, a landmark Asian Games gold and a global emergency-fuel release.",
+  "hero": {
+    "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "alt": "FMB News editorial graphic for the October 3, 2026 Daily Brief",
+    "caption": "FMB News editorial visual for the October 3, 2026 Daily Brief. It is not a photograph and does not depict any event, person, vessel, athlete or institution in the edition.",
+    "credit": "FMB News editorial visual",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "sourceUrl": "https://www.francinemariebautista.com/news/assets/images/news/fmb-news-editorial-fallback.svg",
+    "width": 1200,
+    "height": 675,
+    "kind": "editorial-graphic"
+  },
+  "stories": [
+    {
+      "id": "very-strong-el-nino-preparedness",
+      "kicker": "Philippines · Climate",
+      "section": "Philippines",
+      "category": "Climate",
+      "headline": "PAGASA confirms strong El Niño; CCC official raises possible 45°C heat risk",
+      "deck": "The state weather bureau expects the active El Niño to intensify and persist into the first half of 2027; a CCC commissioner separately projected that some areas could reach about 45°C or higher.",
+      "body": [
+        "Confirmed: PAGASA said on September 23 that a Strong El Niño is active and is expected to intensify into a Very Strong El Niño between September and December 2026, persisting through the first half of 2027. The agency warns of below-normal rainfall, dry spells and drought, while noting that localized heavy rain can still occur.",
+        "Developing projection: Climate Change Commissioner Albert Dela Cruz told GMA News that some Philippine areas could reach about 45°C or higher in 2027. That temperature is his projection, not a PAGASA site-specific forecast, and actual local heat will depend on evolving atmospheric and ground conditions.",
+        "Why it matters to Filipinos: Water, food, electricity supply and public health can all be strained at once. The practical signal is to conserve water, review farm and school heat plans, and follow PAGASA's locality-specific advisories rather than treat a single national number as certain.",
+        "What to watch: Updated PAGASA rainfall and drought outlooks, reservoir allocations, agricultural losses, heat-index forecasts, and whether national agencies issue enforceable workplace or class-schedule protections."
+      ],
+      "sources": [
+        {
+          "label": "DOST-PAGASA — Climate Advisory for Very Strong El Niño (September 23, 2026)",
+          "url": "https://www.pagasa.dost.gov.ph/press-release/36"
+        },
+        {
+          "label": "Climate Change Commission — predictive governance call (October 1, 2026)",
+          "url": "https://www.climate.gov.ph/news/1157"
+        },
+        {
+          "label": "GMA News — Dela Cruz 45°C projection and preparedness proposals (October 3, 2026)",
+          "url": "https://www.gmanetwork.com/news/balitambayan/balita/1004598/super-el-ni-o-sa-2027-init-posibleng-pumalo-sa-45degc-o-higit-pa/story/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial graphic accompanying the climate item in the October 3, 2026 Daily Brief",
+        "caption": "FMB News non-documentary editorial graphic accompanying the October 3 climate brief item. It does not depict the reported event.",
+        "credit": "FMB News editorial visual",
+        "creator": "FMB News",
+        "license": "FMB-owned editorial asset",
+        "sourceUrl": "https://www.francinemariebautista.com/news/assets/images/news/fmb-news-editorial-fallback.svg",
+        "width": 1200,
+        "height": 675,
+        "kind": "editorial-graphic"
+      }
+    },
+    {
+      "id": "batanes-research-vessel",
+      "kicker": "Philippines · Maritime security",
+      "section": "Philippines",
+      "category": "Security",
+      "headline": "PCG says patrol forced Chinese research ship from its Batanes loitering position",
+      "deck": "BRP Teresa Magbanua and a PCG aircraft challenged JIA HAI KE 7 after the Coast Guard said it detected the vessel about 37 nautical miles northwest of Itbayat.",
+      "body": [
+        "Confirmed by the Philippine Coast Guard: PCG said JIA HAI KE 7 had been loitering inside the Philippine exclusive economic zone and broadcasting a physically impossible AIS trail. On October 1, Reuters reported that BRP Teresa Magbanua and a PCG aircraft challenged the ship and compelled it to leave its loitering position while monitoring continued.",
+        "Disputed: PCG described the activity as unauthorized marine scientific research and assessed the AIS track as deliberate spoofing. The Chinese Embassy said the ship was conducting normal operations in waters under China's jurisdiction and accused the Philippines of harassment. The vessel's precise mission and any data collected remain unresolved publicly.",
+        "Why it matters to Filipinos: The area sits near Luzon Strait submarine-cable corridors and demonstrates that maritime-domain awareness north of Luzon carries communications, security and sovereignty consequences beyond the West Philippine Sea.",
+        "What to watch: Whether the vessel exits the Philippine EEZ, any diplomatic protest or technical evidence released, and subsequent movements of the Chinese coast guard ship that arrived during the encounter."
+      ],
+      "sources": [
+        {
+          "label": "Philippine Coast Guard via PIA — detection, AIS assessment and radio challenges (September 28, 2026)",
+          "url": "https://pia.gov.ph/news/pcg-challenges-ais-spoofing-chinese-research-vessel-loitering-off-batanes-no-response-to-radio-challenges/"
+        },
+        {
+          "label": "Reuters — PCG operation and Chinese Embassy response (October 1, 2026)",
+          "url": "https://www.reuters.com/world/china/philippines-sends-largest-ship-aircraft-drive-away-chinese-vessel-waters-near-2026-10-01/"
+        },
+        {
+          "label": "GMA News — competing Philippine and Chinese claims (September 30, 2026)",
+          "url": "https://www.gmanetwork.com/news/topstories/nation/1004196/philippine-coast-guard-challenges-china-s-claim-over-batanes-waters/story/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial graphic accompanying the security item in the October 3, 2026 Daily Brief",
+        "caption": "FMB News non-documentary editorial graphic accompanying the October 3 security brief item. It does not depict the reported event.",
+        "credit": "FMB News editorial visual",
+        "creator": "FMB News",
+        "license": "FMB-owned editorial asset",
+        "sourceUrl": "https://www.francinemariebautista.com/news/assets/images/news/fmb-news-editorial-fallback.svg",
+        "width": 1200,
+        "height": 675,
+        "kind": "editorial-graphic"
+      }
+    },
+    {
+      "id": "ltfrb-tnc-show-cause",
+      "kicker": "Philippines · Transport",
+      "section": "Philippines",
+      "category": "Transport",
+      "headline": "LTFRB orders 19 ride-hailing companies to answer fare-hike complaints",
+      "deck": "The regulator issued show-cause orders after drivers alleged that platforms kept using the old fare structure after revised rates took effect September 28.",
+      "body": [
+        "Confirmed action, unresolved allegation: LTFRB issued show-cause orders to 19 transport network companies and set an October 7 hearing. The regulator said drivers complained that some platforms had not implemented the new fare structure; no final liability finding has been made.",
+        "The approved base fares cited by reports are ₱65 for sedans, ₱75 for AUVs, ₱55 for hatchbacks and ₱165 for premium vehicles. The orders require the companies to explain their implementation and warn that operating authority could be affected after due process.",
+        "Why it matters to Filipinos: Any mismatch changes what passengers pay and what drivers receive, while inconsistent platform implementation makes it harder to compare fares or assess whether the regulatory adjustment is reaching its intended beneficiaries.",
+        "What to watch: Company answers, the October 7 hearing, app fare displays, and any LTFRB finding or penalty. Until then, non-compliance remains an allegation."
+      ],
+      "sources": [
+        {
+          "label": "Daily Tribune — show-cause orders, fare figures and October 7 hearing (October 1, 2026)",
+          "url": "https://tribune.net.ph/2026/10/01/ltfrb-summons-19-ride-hailing-firms-over-unimplemented-fare-hike"
+        },
+        {
+          "label": "ABS-CBN News — LTFRB summons report (October 2, 2026)",
+          "url": "https://www.abs-cbn.com/news/business/2026/10/2/ltfrb-summons-transport-network-companies-for-allegedly-not-implementing-fare-hikes-1340"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial graphic accompanying the transport item in the October 3, 2026 Daily Brief",
+        "caption": "FMB News non-documentary editorial graphic accompanying the October 3 transport brief item. It does not depict the reported event.",
+        "credit": "FMB News editorial visual",
+        "creator": "FMB News",
+        "license": "FMB-owned editorial asset",
+        "sourceUrl": "https://www.francinemariebautista.com/news/assets/images/news/fmb-news-editorial-fallback.svg",
+        "width": 1200,
+        "height": 675,
+        "kind": "editorial-graphic"
+      }
+    },
+    {
+      "id": "asian-games-yape-medal-rush",
+      "kicker": "Sports · Asian Games",
+      "section": "Sports",
+      "category": "Asian Games",
+      "headline": "Jeus Yape wins virtual-taekwondo gold as Philippine medal total reaches 28",
+      "deck": "Yape defeated Vietnam's Chau Ngoc Tuyet Sang 2–0 for the Philippines' fourth gold; later Friday results brought the delegation to four golds, eight silvers and 16 bronzes.",
+      "body": [
+        "Final medal: The Olympic Council of Asia recorded Jeus Gabriel Derick Yape as the first Asian Games mixed individual virtual-taekwondo champion after a 2–0 final win, 500–0 and 620–0 by round, over Vietnam's Chau Ngoc Tuyet Sang. Yape had won poomsae bronze a day earlier.",
+        "Final, not merely assured: GMA's end-of-day roundup reported silvers for Carlo Paalam, Tachiana Mangin and Kurt Barbosa, plus bronzes for Annie Ramirez and the Khylem Progella–Sofiah Pagara beach-volleyball pair. The resulting Philippine tally was four golds, eight silvers and 16 bronzes.",
+        "Why it matters to Filipinos: Four golds already match the country's gold output from each of the previous two Asian Games, while 28 total medals are the best Philippine total since 1966, according to the cited tally.",
+        "What to watch: Official final results in the remaining events through Sunday's close; preliminary schedules and assured podium places should not be counted as final medals until competition concludes."
+      ],
+      "sources": [
+        {
+          "label": "Olympic Council of Asia — Yape's official gold-medal report (October 2, 2026)",
+          "url": "https://oca.asia/news/8141-philippines-poomsae-star-wins-first-virtual-taekwondo-title-of-asian-games.html"
+        },
+        {
+          "label": "GMA News — October 2 final Philippine medal roundup",
+          "url": "https://www.gmanetwork.com/news/sports/othersports/1004578/asian-games-2026-jeus-yape-wins-philippines-4th-gold-as-taekwondo-leads-medal-rush/story/"
+        },
+        {
+          "label": "Aichi-Nagoya 2026 — official results portal",
+          "url": "https://results.asiangames2026.org/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial graphic accompanying the asian games item in the October 3, 2026 Daily Brief",
+        "caption": "FMB News non-documentary editorial graphic accompanying the October 3 asian games brief item. It does not depict the reported event.",
+        "credit": "FMB News editorial visual",
+        "creator": "FMB News",
+        "license": "FMB-owned editorial asset",
+        "sourceUrl": "https://www.francinemariebautista.com/news/assets/images/news/fmb-news-editorial-fallback.svg",
+        "width": 1200,
+        "height": 675,
+        "kind": "editorial-graphic"
+      }
+    },
+    {
+      "id": "g7-energy-reserve-release",
+      "kicker": "World · Energy",
+      "section": "Worldwide",
+      "category": "Energy",
+      "headline": "G7 orders a 100-million-barrel emergency fuel release led by diesel",
+      "deck": "The coordinated IEA action starts immediately, with a substantial diesel release in the first 20 days and the full program spread over four months.",
+      "body": [
+        "Confirmed: G7 leaders asked the International Energy Agency to coordinate a 100-million-barrel release of diesel and other emergency reserves. The joint statement says implementation begins immediately over four months, front-loading a substantial diesel release within the first 20 days.",
+        "Context: The IEA said refined-product flows remain severely constrained even as Middle East crude exports have recovered. Reuters reported the action is intended to stabilize energy markets; allocation details were still to be finalized.",
+        "Why it matters to Filipinos: The Philippines imports most of its petroleum requirements, so lower international diesel and crude prices can ease pressure on pump prices, transport costs and inflation. It is not a guarantee of immediate local price cuts because exchange rates, inventories, taxes and supplier timing still matter.",
+        "What to watch: The IEA allocation, actual barrels released, Asian refined-fuel benchmarks, Philippine oil-company advisories and whether the intervention produces a sustained rather than temporary price decline."
+      ],
+      "sources": [
+        {
+          "label": "International Energy Agency — G7 leaders' energy-security meeting (October 2, 2026)",
+          "url": "https://www.iea.org/news/executive-director-participates-in-g7-leaders-meeting-on-energy-security-and-markets"
+        },
+        {
+          "label": "Reuters — 100-million-barrel coordinated release (October 2, 2026)",
+          "url": "https://www.reuters.com/business/energy/g7-release-100-million-barrels-diesel-other-reserves-through-iea-2026-10-02/"
+        },
+        {
+          "label": "Associated Press — reserve release and market context (October 2, 2026)",
+          "url": "https://apnews.com/article/774a360d1646d9ce8aba764fdd9959d2"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial graphic accompanying the energy item in the October 3, 2026 Daily Brief",
+        "caption": "FMB News non-documentary editorial graphic accompanying the October 3 energy brief item. It does not depict the reported event.",
+        "credit": "FMB News editorial visual",
+        "creator": "FMB News",
+        "license": "FMB-owned editorial asset",
+        "sourceUrl": "https://www.francinemariebautista.com/news/assets/images/news/fmb-news-editorial-fallback.svg",
+        "width": 1200,
+        "height": 675,
+        "kind": "editorial-graphic"
+      }
+    }
+  ]
+}
