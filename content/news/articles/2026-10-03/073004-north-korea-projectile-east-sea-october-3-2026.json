@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "north-korea-projectile-east-sea-october-3-2026",
+  "headline": "Developing: North Korea Fires Projectile Toward Eastern Waters",
+  "seoTitle": "North Korea Fires Projectile Toward Eastern Waters | FMB News",
+  "seoDescription": "South Korea’s military says North Korea fired at least one projectile toward its eastern waters; the weapon type and flight details remain unresolved.",
+  "keywords": [
+    "North Korea",
+    "South Korea",
+    "projectile launch",
+    "East Sea",
+    "Korean Peninsula",
+    "developing story"
+  ],
+  "category": "World",
+  "kicker": "DEVELOPING · KOREAN PENINSULA",
+  "deck": "South Korea’s Joint Chiefs of Staff confirmed at least one launch; the weapon type, distance, altitude and impact point were not yet disclosed.",
+  "publishedAt": "2026-10-03T07:30:04.665+08:00",
+  "updatedAt": "2026-10-03T07:30:04.665+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What is confirmed",
+      "paragraphs": [
+        "South Korea’s Joint Chiefs of Staff said North Korea fired at least one projectile toward its eastern waters early Saturday, according to the Associated Press.",
+        "The launch occurred amid heightened inter-Korean tensions following border land-mine blasts in September that injured three South Korean soldiers."
+      ]
+    },
+    {
+      "heading": "What remains unresolved",
+      "paragraphs": [
+        "At publication, South Korea’s military had not said whether the weapon was a ballistic missile or another system. The launch location, flight distance, altitude and impact point had not been officially disclosed in the report.",
+        "Early reports can change as South Korea, Japan and the United States complete tracking assessments. FMB News is therefore treating this as a developing report and is not assigning a missile type."
+      ]
+    },
+    {
+      "heading": "Why it matters to Filipinos",
+      "paragraphs": [
+        "A weapons test on the Korean Peninsula can affect regional security, aviation or maritime warnings and the safety outlook for Filipinos living and working in South Korea and Japan.",
+        "No immediate threat to the Philippines or disruption to Filipino communities was reported."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for a detailed Joint Chiefs of Staff assessment, Japan’s defense-ministry tracking data, a North Korean state-media claim and any aviation or maritime safety notice.",
+        "Until those details are released, social-media claims about the weapon type, range or target should be treated as unverified."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Associated Press",
+      "title": "South Korea’s military says North Korea fired projectile toward its eastern waters",
+      "publishedAt": "2026-10-03T06:01:00+08:00",
+      "url": "https://apnews.com/article/south-north-korea-projectile-fired-0b5b69e919f9c9a2358f3cd3346649e7",
+      "role": "independent breaking report directly citing South Korea’s Joint Chiefs of Staff"
+    },
+    {
+      "publisher": "Republic of Korea Joint Chiefs of Staff",
+      "title": "Official English-language portal",
+      "publishedAt": null,
+      "url": "https://www.jcs.mil.kr/mbshome/mbs/jcs2_eng/",
+      "role": "official issuing authority; the launch statement was carried by AP, while no event-specific English item was available at publication"
+    },
+    {
+      "publisher": "Reuters",
+      "title": "North Korea rejects South's accusation over DMZ mine blast, KCNA says",
+      "publishedAt": "2026-10-02T00:00:00+08:00",
+      "url": "https://www.reuters.com/world/asia-pacific/north-korea-rejects-souths-accusation-over-dmz-mine-blast-kcna-says-2026-10-02/",
+      "role": "independent context on the preceding border-mine dispute and competing claims"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying a verified report on the developing North Korean projectile launch. It is not a photograph and does not depict the reported event, people, vessels, weapons or locations.",
+    "alt": "FMB News editorial graphic for a developing North Korean projectile report",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-03T07:30:04.665+08:00",
+    "verificationNotes": [
+      "AP directly attributes confirmation of at least one projectile launch to South Korea’s Joint Chiefs of Staff.",
+      "At publication, the official report had not established the weapon type, flight path, distance, altitude or impact point.",
+      "The article does not repeat later uncorroborated descriptions of the projectile as a ballistic missile and labels the report developing.",
+      "Reuters provides independent context on the immediate inter-Korean dispute but does not independently confirm this new launch.",
+      "No documentary launch image with verified reusable rights was available; FMB’s owned fallback is clearly labeled non-documentary."
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "raytheon-sm6-24-4-billion-contract-october-1-2026",
+  "headline": "U.S. Navy Awards Raytheon $24.4 Billion SM-6 Contract",
+  "seoTitle": "U.S. Navy Awards Raytheon $24.4B SM-6 Contract | FMB News",
+  "seoDescription": "The U.S. Navy awarded Raytheon an SM-6 contract worth up to $24.4 billion, but full production funding still depends on Congress.",
+  "keywords": [
+    "U.S. Navy",
+    "Raytheon",
+    "RTX",
+    "SM-6",
+    "missile defense",
+    "defense contract",
+    "October 1 2026"
+  ],
+  "category": "World",
+  "kicker": "DEFENSE · MISSILE PRODUCTION",
+  "deck": "The five-year deal includes two option years and carries a ceiling of $24.4 billion; congressional appropriations remain a key unresolved condition.",
+  "publishedAt": "2026-10-03T07:29:59.665+08:00",
+  "updatedAt": "2026-10-03T07:29:59.665+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The U.S. Navy awarded RTX’s Raytheon business a multiyear contract worth up to $24.4 billion to produce Standard Missile-6 interceptors, Reuters reported on October 2 in Philippine time. Raytheon’s primary announcement says the contract runs for five years with two additional option years.",
+        "SM-6 is designed for both offensive strike and missile-defense missions. The award follows the Pentagon’s provisional $20.7 billion AMRAAM production agreement with the same company, which FMB News reported on September 29."
+      ]
+    },
+    {
+      "heading": "What is confirmed — and unresolved",
+      "paragraphs": [
+        "RTX confirms the contract ceiling, term and SM-6 purpose, while Reuters independently confirms the Navy award. The $24.4 billion figure is a maximum potential value, not cash already paid.",
+        "Reuters reports that Congress has not yet appropriated funding for the wider set of large munitions agreements. The funded quantities, annual order schedule and timing of capacity investments therefore remain unresolved."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "The agreement is part of a U.S. effort to rebuild missile stocks after heavy demand linked to Middle East conflicts. Its direct effect on Filipino households is limited, but it can affect allied missile-defense availability and the broader Indo-Pacific security environment.",
+        "No Philippine purchase, allocation or delivery under this contract was established."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for congressional appropriations, Navy order quantities, factory-capacity commitments and any disclosed foreign-military-sales allocations.",
+        "Related FMB News coverage: /news/pentagon-raytheon-amraam-contract-september-29-2026/."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "RTX",
+      "title": "RTX's Raytheon awarded $24.4 billion multi-year contract for SM-6 interceptors",
+      "publishedAt": "2026-10-01T00:00:00-04:00",
+      "url": "https://www.rtx.com/news/news-center/2026/10/01/rtxs-raytheon-awarded-24-4-billion-multi-year-contract-for-sm-6-interceptors",
+      "role": "primary corporate announcement confirming the contract ceiling, term and system"
+    },
+    {
+      "publisher": "Reuters",
+      "title": "US Navy awards RTX's Raytheon $24.4 billion contract for Standard Missile-6 amid stockpile concerns",
+      "publishedAt": "2026-10-02T05:15:00+08:00",
+      "url": "https://www.reuters.com/business/aerospace-defense/us-navy-awards-rtxs-raytheon-244-billion-contract-standard-missile-6-amid-2026-10-01/",
+      "role": "independent reporting confirming the Navy award and unresolved congressional funding"
+    },
+    {
+      "publisher": "FMB News",
+      "title": "Pentagon Awards Raytheon Provisional $20.7 Billion AMRAAM Contract",
+      "publishedAt": "2026-09-29T06:31:00+08:00",
+      "url": "https://www.francinemariebautista.com/news/pentagon-raytheon-amraam-contract-september-29-2026/",
+      "role": "earliest relevant FMB News report on the linked U.S. munitions-production agreements"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying a verified report on the U.S. Navy’s SM-6 production contract. It is not a photograph and does not depict the reported event, people, vessels, weapons or locations.",
+    "alt": "FMB News editorial graphic for the U.S. Navy SM-6 contract",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-03T07:30:04.665+08:00",
+    "verificationNotes": [
+      "RTX’s October 1 primary release confirms a five-year contract with two option years valued up to $24.4 billion for SM-6 interceptors.",
+      "Reuters independently confirms the Navy award and reports that Congress has not yet appropriated funding for the broader production agreements.",
+      "The article treats $24.4 billion as a ceiling and does not present it as obligated or paid spending.",
+      "The Reuters image is commercially licensed and was not reused; FMB’s owned fallback is clearly labeled non-documentary."
+    ]
+  }
+}

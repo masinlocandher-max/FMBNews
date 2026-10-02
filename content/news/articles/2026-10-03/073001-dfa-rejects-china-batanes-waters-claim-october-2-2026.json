@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "dfa-rejects-china-batanes-waters-claim-october-2-2026",
+  "headline": "DFA Rejects China Claim After PCG Drives Survey Ship From Batanes Position",
+  "seoTitle": "DFA Rejects China Claim Over Batanes Waters | FMB News",
+  "seoDescription": "The DFA rejected China’s jurisdiction claim after the Philippine Coast Guard drove a Chinese survey ship from its position off Batanes.",
+  "keywords": [
+    "Batanes",
+    "DFA",
+    "Philippine Coast Guard",
+    "JIA HAI KE 7",
+    "China Coast Guard",
+    "Itbayat",
+    "Luzon Strait"
+  ],
+  "category": "National",
+  "kicker": "MARITIME SECURITY · BATANES",
+  "deck": "The Philippine side says the survey vessel operated about 37 nautical miles northwest of Itbayat without consent; China says the activity was lawful in waters under its jurisdiction.",
+  "publishedAt": "2026-10-03T07:30:01.665+08:00",
+  "updatedAt": "2026-10-03T07:30:01.665+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Department of Foreign Affairs firmly rejected the Chinese Embassy’s assertion that China has sovereign rights and jurisdiction in waters off Batanes. The DFA said JIA HAI KE 7 was operating about 37 nautical miles northwest of Itbayat, inside the Philippine exclusive economic zone, without Manila’s consent.",
+        "A day earlier, the Philippine Coast Guard deployed BRP Teresa Magbanua and an aircraft, closed on the Chinese survey vessel and said it compelled the ship to leave the position it had held since September 28. A China Coast Guard ship attempted to shield the privately owned research vessel, according to the PCG."
+      ]
+    },
+    {
+      "heading": "Competing claims and confirmed facts",
+      "paragraphs": [
+        "The ship’s position, the Philippine deployment and the close encounter are confirmed by PCG’s account and independently reported by Reuters. The DFA says foreign marine scientific research in the Philippine EEZ requires Philippine consent under UNCLOS and domestic law.",
+        "The Chinese Embassy said the ship was conducting normal operations in waters under China’s jurisdiction and accused the Philippines of harassment. That jurisdiction claim is disputed by Manila. The vessel’s precise research objective and any data already collected remain unresolved."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "Waters around Batanes and the Luzon Strait contain undersea cable corridors linking the Philippines with Northeast Asia. Unauthorized surveying in the area raises questions about communications resilience, maritime law enforcement and regional security near Taiwan.",
+        "The encounter also tests how the Philippines manages foreign research activity without allowing a close ship-to-ship confrontation to escalate."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch whether PCG confirms that JIA HAI KE 7 fully exits the Philippine EEZ, whether Manila files a diplomatic protest, and whether China releases evidence for its jurisdiction claim.",
+        "Further official reporting is also needed on the vessel’s mission, the role of the China Coast Guard escort and any impact on undersea infrastructure."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Jay Tarriela / Philippine Coast Guard",
+      "title": "PCG disrupts and drives away Chinese research vessel JIA HAI KE 7",
+      "publishedAt": "2026-10-01T11:42:00+08:00",
+      "url": "https://www.linkedin.com/posts/jay-tarriela-326a39114_pcg-disrupts-and-drives-away-chinese-research-activity-7511356787128741890-gR_0",
+      "role": "primary official account of the PCG operation and legal basis"
+    },
+    {
+      "publisher": "Reuters",
+      "title": "Philippines sends largest ship, aircraft to drive away Chinese vessel in waters near Taiwan",
+      "publishedAt": "2026-10-01T13:48:00+08:00",
+      "url": "https://www.reuters.com/world/china/philippines-sends-largest-ship-aircraft-drive-away-chinese-vessel-waters-near-2026-10-01/",
+      "role": "independent reporting on the encounter and both Philippine and Chinese positions"
+    },
+    {
+      "publisher": "GMA News Online",
+      "title": "DFA strongly rejects China's claim over Batanes waters",
+      "publishedAt": "2026-10-02T12:15:00+08:00",
+      "url": "https://www.gmanetwork.com/news/topstories/nation/1004519/dfa-strongly-rejects-china-s-claim-over-batanes-waters/story/",
+      "role": "independent report carrying the DFA’s October 2 statement"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying a verified report on the maritime confrontation off Batanes. It is not a photograph and does not depict the reported event, people, vessels, weapons or locations.",
+    "alt": "FMB News editorial graphic for the Batanes maritime confrontation",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-03T07:30:04.665+08:00",
+    "verificationNotes": [
+      "PCG spokesperson Jay Tarriela’s primary account states that JIA HAI KE 7 left its loitering position after sustained pressure from BRP Teresa Magbanua and a PCG aircraft.",
+      "Reuters independently confirms the deployment, vessel position, close approach, China Coast Guard presence and Chinese Embassy response.",
+      "GMA reports the DFA’s October 2 rejection of China’s jurisdiction claim and Manila’s position that no research consent was given.",
+      "The story labels China’s jurisdiction assertion as a disputed claim and leaves the vessel’s precise mission unresolved.",
+      "Available event images were government or commercially licensed press material and were not assumed reusable; FMB’s owned fallback is clearly labeled non-documentary."
+    ]
+  }
+}

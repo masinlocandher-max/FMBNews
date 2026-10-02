@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "jeus-yape-asian-games-gold-medal-rush-october-2-2026",
+  "headline": "Yape Wins Historic Virtual Taekwondo Gold as PH Haul Reaches 28 Medals",
+  "seoTitle": "Yape Wins Historic Asian Games Gold; PH Reaches 28 Medals | FMB News",
+  "seoDescription": "Jeus Yape won the first Asian Games mixed virtual taekwondo title as the Philippines reached four golds and 28 total medals.",
+  "keywords": [
+    "Jeus Yape",
+    "Asian Games",
+    "virtual taekwondo",
+    "Team Philippines",
+    "Carlo Paalam",
+    "Aichi-Nagoya 2026"
+  ],
+  "category": "Sports",
+  "kicker": "ASIAN GAMES · FINAL MEDALS",
+  "deck": "Yape delivered the Philippines’ fourth gold; later results lifted the delegation to 4 golds, 8 silvers and 16 bronzes with competition still continuing.",
+  "publishedAt": "2026-10-03T07:30:03.665+08:00",
+  "updatedAt": "2026-10-03T07:30:03.665+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Jeus Gabriel Derick Yape won the first Asian Games mixed individual virtual taekwondo title in Toyohashi, giving the Philippines its fourth gold of the Aichi-Nagoya Games. The Olympic Council of Asia says Yape defeated Vietnam’s Chau Ngoc Tuyet Sang 2-0, winning the two rounds by Remaining HP scores of 500-0 and 620-0.",
+        "By late Friday, the Philippine tally had risen to four golds, eight silvers and 16 bronzes, or 28 medals. GMA News reported that total as the country’s best Asian Games output since 1966, although events were still in progress."
+      ]
+    },
+    {
+      "heading": "Final medals, not assurances",
+      "paragraphs": [
+        "Yape’s gold is a final medal result. Tachiana Mangin and Kurt Barbosa won taekwondo silvers, Carlo Paalam finished with boxing silver, Annie Ramirez took jiu-jitsu bronze and the women’s beach-volleyball team added bronze.",
+        "Paalam had earlier been assured at least bronze after reaching the semifinal. His October 2 final upgraded that guaranteed medal to silver after a 2-3 split-decision loss to Japan’s Rui Yamaguchi."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "Yape’s title is the first gold awarded in the Asian Games’ mixed individual virtual taekwondo event and pushed the Philippines beyond its Hangzhou overall medal count.",
+        "The broader medal surge shows gains across taekwondo, boxing, jiu-jitsu and beach volleyball, while keeping the distinction clear between qualification, an assured medal and a completed final result."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "The 28-medal count was current late October 2, not the final delegation total. Padel, softball, rhythmic gymnastics, golf and other events could still change it.",
+        "Earlier FMB News coverage of Paalam’s assured bronze: /news/carlo-paalam-asian-games-semifinal-assured-bronze-september-28-2026/."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Olympic Council of Asia",
+      "title": "Philippines’ poomsae star wins first virtual taekwondo title of Asian Games",
+      "publishedAt": "2026-10-02T00:00:00+09:00",
+      "url": "https://oca.asia/news/8141-philippines-poomsae-star-wins-first-virtual-taekwondo-title-of-asian-games.html",
+      "role": "official competition report confirming Yape’s gold, opponent and round scores"
+    },
+    {
+      "publisher": "GMA News Online",
+      "title": "Asian Games 2026: Jeus Yape wins Philippines' 4th gold as taekwondo leads medal rush",
+      "publishedAt": "2026-10-02T21:45:00+08:00",
+      "url": "https://www.gmanetwork.com/news/sports/othersports/1004578/asian-games-2026-jeus-yape-wins-philippines-4th-gold-as-taekwondo-leads-medal-rush/story/",
+      "role": "independent report on the medal rush and late-October 2 Philippine tally"
+    },
+    {
+      "publisher": "GMA News Online",
+      "title": "Carlo Paalam takes home silver in Asian Games boxing",
+      "publishedAt": "2026-10-02T13:16:00+08:00",
+      "url": "https://www.gmanetwork.com/news/sports/boxing/1004525/carlo-paalam-takes-home-silver-in-asian-games-boxing/story/",
+      "role": "independent report confirming Paalam’s final silver and scorecards"
+    },
+    {
+      "publisher": "FMB News",
+      "title": "Carlo Paalam Reaches Asian Games Semifinals, Assures Bronze",
+      "publishedAt": "2026-09-28T19:34:00+08:00",
+      "url": "https://www.francinemariebautista.com/news/carlo-paalam-asian-games-semifinal-assured-bronze-september-28-2026/",
+      "role": "earliest relevant FMB News report, linked as the assured-medal stage before the final"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying a verified report on the Philippines’ October 2 Asian Games medal results. It is not a photograph and does not depict the reported event, people, vessels, weapons or locations.",
+    "alt": "FMB News editorial graphic for the Philippine Asian Games medal rush",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-03T07:30:04.665+08:00",
+    "verificationNotes": [
+      "The Olympic Council of Asia’s official report confirms Yape’s inaugural mixed individual virtual taekwondo gold, his opponent and the 2-0 result.",
+      "GMA’s late-October 2 roundup reports a 4-8-16 Philippine tally, 28 medals in total, with events still continuing.",
+      "GMA separately confirms Paalam’s silver after a 2-3 split decision; the article clearly distinguishes his earlier assured bronze from the final medal.",
+      "Commercial event photographs were not reused; FMB’s owned fallback is clearly labeled non-documentary."
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "very-strong-el-nino-45c-heat-projection-october-3-2026",
+  "headline": "CCC Official Says 2027 Heat Could Reach 45°C as Very Strong El Niño Looms",
+  "seoTitle": "CCC Official Projects 45°C Heat Under Very Strong El Niño | FMB News",
+  "seoDescription": "A Climate Change Commission official projected 45°C or higher heat in some areas in 2027 as PAGASA warns of a very strong El Niño.",
+  "keywords": [
+    "El Niño",
+    "PAGASA",
+    "Climate Change Commission",
+    "heat index",
+    "drought",
+    "water supply",
+    "2027"
+  ],
+  "category": "Weather",
+  "kicker": "CLIMATE · HEAT AND DROUGHT",
+  "deck": "PAGASA confirms a strong El Niño may intensify and persist into the first half of 2027; the 45°C figure is a CCC official’s projection, not a locality-specific PAGASA forecast.",
+  "publishedAt": "2026-10-03T07:30:00.665+08:00",
+  "updatedAt": "2026-10-03T07:30:00.665+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Climate Change Commission Commissioner Albert Dela Cruz said extreme heat could reach 45°C or higher in some parts of the Philippines in 2027 as the ongoing El Niño strengthens, GMA News reported early Saturday. He identified Regions I, II and III among areas expected to feel impacts first from October through December.",
+        "Separately, PAGASA’s September 23 advisory confirms that a strong El Niño is active and is expected to intensify into a very strong event between September and December 2026, persisting through the first half of 2027."
+      ]
+    },
+    {
+      "heading": "What is confirmed — and unresolved",
+      "paragraphs": [
+        "The existence and expected intensification of El Niño are confirmed by PAGASA. The 45°C-or-higher figure is Dela Cruz’s projection reported by GMA, not a PAGASA forecast assigning that temperature to a particular city or date.",
+        "PAGASA warns of warmer conditions, below-normal rainfall, dry spells and drought, while noting that localized heavy rain can still occur. Exact local heat index, rainfall deficit and water-supply effects remain dependent on later forecasts."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "Very strong El Niño conditions can threaten crops, water supply, energy production, public health and household budgets. The CCC is urging national agencies, local governments and communities to use official climate information before impacts escalate.",
+        "Workers outdoors, children, older people, farmers, fisherfolk and households with limited water access face the highest near-term exposure."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Monitor PAGASA heat-index and seasonal advisories, local water-service notices, agricultural bulletins and school or workplace heat protocols.",
+        "The public should prepare water and heat-safety plans but should not treat a national projection as a guaranteed temperature for every locality."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "DOST-PAGASA",
+      "title": "Climate advisory: DOST-PAGASA warns of intensifying ‘Very Strong’ El Niño persisting into first half of 2027",
+      "publishedAt": "2026-09-23T00:00:00+08:00",
+      "url": "https://www.pagasa.dost.gov.ph/press-release/34",
+      "role": "primary official climate advisory confirming the strong El Niño and expected intensification"
+    },
+    {
+      "publisher": "Climate Change Commission",
+      "title": "CCC pushes predictive governance as Very Strong El Niño looms",
+      "publishedAt": "2026-10-01T00:00:00+08:00",
+      "url": "https://climate.gov.ph/news/1157",
+      "role": "primary official preparedness statement"
+    },
+    {
+      "publisher": "GMA News Online",
+      "title": "Super El Niño sa 2027: Init posibleng pumalo sa 45 degrees Celsius o higit pa",
+      "publishedAt": "2026-10-03T02:54:00+08:00",
+      "url": "https://www.gmanetwork.com/news/balitambayan/balita/1004598/super-el-ni-o-sa-2027-init-posibleng-pumalo-sa-45degc-o-higit-pa/story/",
+      "role": "independent reporting on Commissioner Albert Dela Cruz’s 45°C projection"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying a verified report on the Philippines’ preparation for a very strong El Niño. It is not a photograph and does not depict the reported event, people, vessels, weapons or locations.",
+    "alt": "FMB News editorial graphic for the Philippines’ very strong El Niño outlook",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-03T07:30:04.665+08:00",
+    "verificationNotes": [
+      "PAGASA’s September 23 advisory confirms an active strong El Niño that is expected to intensify into a very strong event and persist into the first half of 2027.",
+      "The CCC’s October 1 primary statement confirms the predictive-governance call and the same official climate outlook.",
+      "GMA attributes the 45°C-or-higher projection to CCC Commissioner Albert Dela Cruz; the article explicitly distinguishes that projection from a locality-specific PAGASA forecast.",
+      "No third-party news photograph was assumed reusable; FMB’s owned fallback is clearly labeled non-documentary."
+    ]
+  }
+}

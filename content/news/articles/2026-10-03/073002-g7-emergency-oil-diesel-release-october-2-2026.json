@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "g7-emergency-oil-diesel-release-october-2-2026",
+  "headline": "G7 Orders 100-Million-Barrel Emergency Fuel Release as Diesel Prices Surge",
+  "seoTitle": "G7 Orders 100M-Barrel Emergency Fuel Release | FMB News",
+  "seoDescription": "G7 countries agreed to release 100 million barrels of diesel and crude over four months, with diesel front-loaded in the first 20 days.",
+  "keywords": [
+    "G7",
+    "diesel",
+    "crude oil",
+    "IEA",
+    "emergency reserves",
+    "fuel prices",
+    "energy security"
+  ],
+  "category": "Business",
+  "kicker": "ENERGY · EMERGENCY RESERVES",
+  "deck": "The coordinated release starts immediately and runs for four months, but the country-by-country and product breakdown remains unspecified.",
+  "publishedAt": "2026-10-03T07:30:02.665+08:00",
+  "updatedAt": "2026-10-03T07:30:02.665+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Group of Seven governments agreed to a coordinated release of 100 million barrels of diesel and crude oil from emergency reserves through the International Energy Agency. The release begins immediately, runs for four months and front-loads a substantial amount of diesel within the first 20 days.",
+        "The G7 also pledged to avoid energy-product export restrictions among member countries. U.S. President Donald Trump said Washington would not impose a diesel export ban."
+      ]
+    },
+    {
+      "heading": "What is confirmed — and unresolved",
+      "paragraphs": [
+        "The 100-million-barrel commitment and four-month timetable are stated in the G7 communiqué and confirmed by Reuters and AP. The IEA says diesel markets remain under severe pressure because refined-product flows are constrained.",
+        "The statement does not specify how much each country will contribute, how the total divides between diesel, crude and other products, or how much overlaps with commitments already made under the March emergency action."
+      ]
+    },
+    {
+      "heading": "Why it matters to Filipinos",
+      "paragraphs": [
+        "The Philippines is a net fuel importer, so a larger global supply buffer can reduce upward pressure on import costs, transport expenses and food distribution. The action does not guarantee an immediate pump-price rollback in the Philippines because local prices also depend on exchange rates, freight, taxes, inventories and domestic pricing cycles.",
+        "A sustained reduction in global diesel prices would matter most to public transport, trucking, agriculture, fishing and power systems using liquid fuel."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch the IEA’s country and product allocation, the pace of diesel deliveries, benchmark oil and diesel prices, and Philippine Department of Energy or oil-company price advisories.",
+        "Emergency stocks will eventually need replenishment, so any price relief may be temporary if supply disruptions persist."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "International Energy Agency",
+      "title": "Executive Director participates in G7 Leaders’ meeting on energy security and markets",
+      "publishedAt": "2026-10-02T00:00:00+02:00",
+      "url": "https://www.iea.org/news/executive-director-participates-in-g7-leaders-meeting-on-energy-security-and-markets",
+      "role": "primary official account of the G7 meeting, diesel pressure and IEA role"
+    },
+    {
+      "publisher": "Reuters",
+      "title": "G7 countries agree on release of diesel and oil stocks after US pressure",
+      "publishedAt": "2026-10-02T16:21:00+08:00",
+      "url": "https://www.reuters.com/business/energy/europe-discussing-plan-diesel-stock-releases-after-us-pressure-source-says-2026-10-02/",
+      "role": "independent reporting with the communiqué’s volume, timetable and unresolved breakdown"
+    },
+    {
+      "publisher": "Associated Press",
+      "title": "G7 nations will release 100 million barrels of oil and diesel fuel after prices soar",
+      "publishedAt": "2026-10-02T22:10:00+08:00",
+      "url": "https://apnews.com/article/trump-europe-diesel-fuel-prices-774a360d1646d9ce8aba764fdd9959d2",
+      "role": "independent corroboration and market context"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying a verified report on the G7 emergency oil and diesel stock release. It is not a photograph and does not depict the reported event, people, vessels, weapons or locations.",
+    "alt": "FMB News editorial graphic for the G7 emergency fuel release",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-03T07:30:04.665+08:00",
+    "verificationNotes": [
+      "The IEA confirms the October 2 G7 leaders’ meeting, acute diesel-market pressure and the agency’s requested implementation role.",
+      "Reuters and AP independently confirm the 100-million-barrel release, immediate start, four-month duration and front-loaded diesel.",
+      "The article explicitly leaves the country and product breakdown unresolved and does not promise a Philippine pump-price rollback.",
+      "Commercial news photographs were not reused; FMB’s owned fallback is clearly labeled non-documentary."
+    ]
+  }
+}
