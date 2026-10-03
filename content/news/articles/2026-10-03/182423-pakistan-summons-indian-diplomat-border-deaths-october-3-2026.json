@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "pakistan-summons-indian-diplomat-border-deaths-october-3-2026",
+  "headline": "Pakistan Summons Indian Diplomat Over Disputed Border Deaths",
+  "seoTitle": "Pakistan Summons Indian Diplomat Over Border Deaths | FMB News",
+  "seoDescription": "Pakistan summoned India's chargé d'affaires after two Pakistani nationals were killed at the Punjab border, while the circumstances remain disputed.",
+  "keywords": [
+    "Pakistan",
+    "India",
+    "Bedian Sector",
+    "Punjab border",
+    "Border Security Force",
+    "diplomatic protest"
+  ],
+  "category": "World",
+  "kicker": "SOUTH ASIA · DIPLOMACY",
+  "deck": "Pakistan summoned India's chargé d'affaires after two Pakistani nationals were killed at the Punjab border, while the circumstances remain disputed.",
+  "publishedAt": "2026-10-03T18:24:23+08:00",
+  "updatedAt": "2026-10-03T18:24:23+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Pakistan summoned India's chargé d'affaires on Saturday, October 3, to protest the killing of two Pakistani nationals by Indian Border Security Force personnel along the international border the previous day.",
+        "Pakistan's Foreign Ministry said the shooting occurred in the Bedian Sector and called the dead unarmed civilians. It demanded an immediate, transparent investigation, appropriate action against anyone found responsible and measures to prevent a repeat."
+      ]
+    },
+    {
+      "heading": "Verified facts",
+      "paragraphs": [
+        "The diplomatic summons and protest are confirmed by Pakistan's Foreign Ministry and independently reported by Reuters. The fact that two Pakistani nationals were killed was also reported by The Associated Press after reviewing Pakistani and Indian accounts.",
+        "The circumstances remain disputed. Pakistan said the men were civilians who had crossed only a few steps beyond a border marker. AP reported that Indian media described them as suspected of trying to enter India. No Indian government response to Pakistan's diplomatic protest was available in the reviewed sources when this article was published."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "India and Pakistan have fought three wars since independence, two over Kashmir, and both possess nuclear weapons. AP reported that the international border in Punjab has generally remained quieter than the disputed Kashmir frontier, making a fatal shooting and formal diplomatic protest notable even without evidence of a wider military escalation."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "A confrontation between India and Pakistan can quickly affect wider Asian security and diplomatic risk. No direct effect on Filipinos has been announced, but renewed tension between two nuclear-armed states is relevant to regional stability and to Filipinos who live, work or travel in South Asia."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for a formal response from India's foreign ministry or Border Security Force, any joint border investigation or flag meeting, confirmation of the victims' identities and whether either government announces additional diplomatic or security measures. The reviewed evidence does not establish that the men were armed, nor does it independently resolve whether they crossed the border deliberately."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Ministry of Foreign Affairs, Pakistan",
+      "title": "Indian Chargé d’Affaires Summoned over Killing of Two Pakistani Civilians",
+      "publishedAt": "2026-10-03T00:00:00+05:00",
+      "url": "https://mofa.gov.pk/press-releases/indian-charge-daffaires-summoned-over-killing-of-two-pakistani-civilians",
+      "role": "official confirmation of the diplomatic summons, Pakistan's account and its requested investigation"
+    },
+    {
+      "publisher": "Reuters",
+      "title": "Pakistan summons Indian diplomat over killing of two civilians at border",
+      "publishedAt": "2026-10-03T09:46:00+00:00",
+      "url": "https://www.reuters.com/world/india/pakistan-summons-indian-diplomat-over-killing-two-civilians-border-2026-10-03/",
+      "role": "independent confirmation of the diplomatic protest"
+    },
+    {
+      "publisher": "Associated Press",
+      "title": "Indian border guards kill 2 on border with Pakistan, raising tensions",
+      "publishedAt": "2026-10-02T17:24:56+00:00",
+      "url": "https://apnews.com/article/pakistan-india-shooting-border-punjab-13523bf33d84ed92533aabf725df9883",
+      "role": "independent reporting documenting the deaths, the conflicting accounts and the regional context"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying a verified report on Pakistan's diplomatic protest to India. It is not a photograph of the shooting, the victims, the border or the diplomatic meeting.",
+    "alt": "FMB News editorial graphic for Pakistan's diplomatic protest to India over disputed border deaths",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-03T18:24:23+08:00",
+    "verificationNotes": [
+      "Pakistan's Foreign Ministry confirms that it summoned India's chargé d'affaires and states Pakistan's allegation about the shooting.",
+      "Reuters independently confirms the October 3 diplomatic summons.",
+      "Associated Press independently reports the two deaths and preserves conflicting Pakistani and Indian accounts of the circumstances.",
+      "The article attributes Pakistan's civilian characterization and does not present the Indian-media description of suspected border entry as an established fact.",
+      "No wider military escalation or direct impact on Filipinos was confirmed at publication time.",
+      "Available publisher imagery had no independently verified reuse permission. FMB's owned fallback is used and clearly labeled non-documentary."
+    ]
+  }
+}
