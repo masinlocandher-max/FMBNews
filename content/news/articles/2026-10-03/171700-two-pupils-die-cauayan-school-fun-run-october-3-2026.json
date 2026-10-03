@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "two-pupils-die-cauayan-school-fun-run-october-3-2026",
+  "headline": "Two Pupils Die During Cauayan School Fun Run; DepEd Opens Inquiry",
+  "seoTitle": "Two Pupils Die at Cauayan School Fun Run | FMB News",
+  "seoDescription": "Two pupils died and two other children were injured during a school fun run in Cauayan City, with DepEd and police investigating the cause and safety measures.",
+  "keywords": [
+    "Cauayan City",
+    "Cauayan South Central School",
+    "Department of Education",
+    "school safety",
+    "fun run",
+    "Isabela"
+  ],
+  "category": "National",
+  "kicker": "ISABELA · SCHOOL SAFETY",
+  "deck": "Two pupils died and two other children were injured during a school fun run in Cauayan City, with DepEd and police investigating the cause and safety measures.",
+  "publishedAt": "2026-10-03T17:17:00+08:00",
+  "updatedAt": "2026-10-03T17:17:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Two pupils died and two other children were injured during a Color and Bubble Fun Run at Cauayan South Central School in Isabela on Saturday morning, October 3, according to the Department of Education and local reports citing the Cauayan City Police Station.",
+        "DepEd said a fact-finding investigation was underway and would review the activity, safety measures, equipment and the roles of those involved. The Cauayan City Schools Division Office confirmed that the incident occurred within the school premises and said it was cooperating with law enforcement and the local government."
+      ]
+    },
+    {
+      "heading": "Verified facts",
+      "paragraphs": [
+        "GMA News reported that DepEd confirmed two learner deaths but had not yet received the police station's response when its story was published. Brigada News separately reported, citing an initial police account, that four children were taken to hospitals, where two were declared dead and two were treated for injuries.",
+        "Local reports described a possible electrical short circuit or grounding in a wet bubble area. That remains a preliminary line of investigation, not a final determination of cause. No finding of negligence, criminal liability or responsibility has been announced."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The school and division office asked the public not to circulate the children's names, photographs or videos and to avoid speculation. FMB News is withholding identifying details because the victims are minors and those details are unnecessary to explain the public-safety issue."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "The deaths raise urgent questions about risk assessment, electrical safety, emergency planning and supervision during school-organized activities. Families and schools need the investigation to establish what happened before any blame or corrective action can be responsibly assigned."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for the police and DepEd fact-finding reports, a confirmed technical cause, the condition of the two injured children, and any suspension, safety order or accountability measure. Until those findings are released, reports of electrocution should be treated as preliminary."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "GMA News",
+      "title": "DepEd laments death of 2 students in Cauayan City school fun run",
+      "publishedAt": "2026-10-03T15:56:00+08:00",
+      "url": "https://www.gmanetwork.com/news/topstories/regions/1004634/deped-laments-death-of-2-students-in-cauayan-city-school-fun-run/story/",
+      "role": "independent national reporting quoting DepEd, the schools division office and the school statement"
+    },
+    {
+      "publisher": "Brigada News",
+      "title": "2 children die after electrical incident at Cauayan school fun run",
+      "publishedAt": "2026-10-03T00:00:00+08:00",
+      "url": "https://www.brigadanews.ph/2-children-die-after-electrical-incident-at-cauayan-school-fun-run/",
+      "role": "local reporting citing the initial Cauayan City Police Station account and hospital outcomes"
+    },
+    {
+      "publisher": "Bombo Radyo Cauayan",
+      "title": "Cauayan South Central School, nagpaabot ng pakikiramay sa pamilya ng mga nasawing estudyante",
+      "publishedAt": "2026-10-03T12:33:00+08:00",
+      "url": "https://cauayan.bomboradyo.com/cauayan-south-central-school-nagpaabot-ng-pakikiramay-sa-pamilya-ng-mga-nasawing-estudyante/",
+      "role": "local report carrying the school statement and describing the continuing official investigation"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying a verified report on the Cauayan school incident. It is not a photograph of the event, the school or the children involved.",
+    "alt": "FMB News editorial graphic for the investigation into two pupil deaths during a Cauayan school fun run",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-03T17:17:00+08:00",
+    "verificationNotes": [
+      "DepEd and the Cauayan City Schools Division Office confirmed two deaths and an ongoing fact-finding investigation through statements quoted by GMA News.",
+      "Brigada News separately cites the initial police account for the four children taken to hospitals and the two deaths.",
+      "The suspected electrical short circuit or grounding is labeled preliminary because no final technical finding has been released.",
+      "The names, images and unnecessary personal details of the minor victims are excluded.",
+      "No reusable event photograph with independently verified rights was located. FMB's owned fallback is used and clearly labeled non-documentary."
+    ]
+  }
+}

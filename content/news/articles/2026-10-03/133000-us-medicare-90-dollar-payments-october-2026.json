@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "us-medicare-90-dollar-payments-october-2026",
+  "headline": "U.S. Announces $90 Medicare Payments for Over 20 Million Enrollees",
+  "seoTitle": "U.S. Announces $90 Medicare Payments | FMB News",
+  "seoDescription": "The White House says most eligible Medicare Part B enrollees will receive a one-time $90 payment in early October, with more than 20 million people covered.",
+  "keywords": [
+    "Medicare",
+    "Medicare Part B",
+    "Medicare Improvement Fund",
+    "United States",
+    "senior citizens",
+    "health insurance"
+  ],
+  "category": "World",
+  "kicker": "UNITED STATES · HEALTHCARE",
+  "deck": "The White House says most eligible Medicare Part B enrollees will receive a one-time $90 payment in early October, with more than 20 million people covered.",
+  "publishedAt": "2026-10-03T13:30:00+08:00",
+  "updatedAt": "2026-10-03T13:30:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The U.S. federal government will make one-time payments of $90 to help more than 20 million Medicare enrollees cover their Part B premiums, according to an October 2 White House fact sheet.",
+        "The administration says the payments will come from the Medicare Improvement Fund, which Congress provided with $2 billion for improvements to Medicare's fee-for-service program. Reuters independently reported the announcement on October 3."
+      ]
+    },
+    {
+      "heading": "Who qualifies",
+      "paragraphs": [
+        "The White House says most Medicare Part B enrollees are eligible. People whose premiums are already paid by Medicaid and those who pay an Income-Related Monthly Adjustment Amount are excluded.",
+        "Most eligible recipients are expected to receive a $90 direct deposit in early October. Those without direct deposit are expected to receive a check at the mailing address registered with Medicare."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The confirmed measure is a single $90 payment, not a recurring monthly benefit. It is separate from the administration's previously announced $500 Affordable Care Act refunds and from a proposed $5,000 payment that President Donald Trump has tied to a future Republican election victory.",
+        "The White House's political claims about prior administrations are not treated here as independently established facts."
+      ]
+    },
+    {
+      "heading": "Why it matters to Filipinos",
+      "paragraphs": [
+        "Older Filipino Americans and dual citizens who are enrolled in Medicare Part B may be among the eligible recipients if they meet the program's rules. Filipino nationality or residence in the Philippines alone does not create eligibility, and the measure does not apply to PhilHealth benefits."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "The next practical test is whether deposits and mailed checks arrive as described. The White House directs beneficiaries to Medicare for eligibility questions and to the Social Security Administration for payment-status questions; individual eligibility and delivery should be confirmed only through official channels."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "The White House",
+      "title": "Fact Sheet: President Donald J. Trump Announces Medicare Improvement Fund Payments for Seniors",
+      "publishedAt": "2026-10-02T00:00:00-04:00",
+      "url": "https://www.whitehouse.gov/fact-sheets/2026/10/fact-sheet-president-donald-j-trump-announces-medicare-improvement-fund-payments-for-seniors/",
+      "role": "primary announcement detailing the payment amount, funding source, eligibility exclusions and delivery method"
+    },
+    {
+      "publisher": "Reuters",
+      "title": "Trump says US to send one-time $90 payment to 20 million seniors enrolled in Medicare",
+      "publishedAt": "2026-10-03T04:51:41+00:00",
+      "url": "https://www.reuters.com/world/trump-says-us-send-one-time-90-payment-20-million-seniors-enrolled-medicare-2026-10-03/",
+      "role": "independent report confirming the announcement and distinguishing it from other administration payment proposals"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying a verified report on a U.S. Medicare payment announcement. It is not a photograph and does not depict a beneficiary, payment or government transaction.",
+    "alt": "FMB News editorial graphic for the U.S. announcement of one-time Medicare Part B payments",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-03T13:30:00+08:00",
+    "verificationNotes": [
+      "The White House fact sheet states the $90 amount, more-than-20-million reach, Medicare Improvement Fund source, early-October timing and eligibility exclusions.",
+      "Reuters independently confirms the announcement and reports the distinction from separate administration payment promises.",
+      "The article identifies the benefit as one-time, limits eligibility language to the White House's published rules and does not repeat partisan claims as fact.",
+      "The Filipino-impact section is limited to eligible Medicare Part B enrollees and expressly distinguishes the U.S. measure from PhilHealth.",
+      "The Reuters photograph requires separate commercial licensing and was not reused. FMB's owned fallback is used and clearly labeled non-documentary."
+    ]
+  }
+}
