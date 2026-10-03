@@ -16,8 +16,8 @@
   "category": "Sports",
   "kicker": "ASIAN GAMES · FINAL MEDAL",
   "deck": "The women's 63kg final was decided by a single advantage after a scoreless regulation result; the medal is final, not merely assured.",
-  "publishedAt": "2026-10-03T22:31:39+08:00",
-  "updatedAt": "2026-10-03T22:31:39+08:00",
+  "publishedAt": "2026-10-03T22:31:40+08:00",
+  "updatedAt": "2026-10-03T22:36:22+08:00",
   "author": "FMB News Desk",
   "articleType": "NewsArticle",
   "sections": [
@@ -40,6 +40,12 @@
       "paragraphs": [
         "Independent Philippine reports placed the delegation at four golds, nine silvers and 16 bronzes after Enriquez's result, or 29 medals in total. The count was current on October 3 and was not described as the final delegation total while events remained.",
         "Enriquez delivered the jiu-jitsu team's second medal after Kaila Napolis won bronze. Earlier FMB News coverage recorded the Philippines at 28 medals after Jeus Yape's virtual taekwondo gold: /news/jeus-yape-asian-games-gold-medal-rush-october-2-2026/."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The Philippines entered the day with 28 medals after Yape's gold and other completed results. Enriquez's silver raised that running total by one; later events could still change the delegation's final count."
       ]
     },
     {
@@ -106,7 +112,8 @@
       "The Philippine Star independently confirms the scoreless points result, Senatham's deciding advantage and Lao's 0-2 bronze-match loss.",
       "The article explicitly labels Enriquez's medal as final and does not count Lao as a medalist.",
       "The medal table is time-bounded to October 3 and not described as the final delegation total.",
-      "Available event photography lacked independently verified reuse permission, so FMB's owned fallback is used and labeled non-documentary."
+      "Available event photography lacked independently verified reuse permission, so FMB's owned fallback is used and labeled non-documentary.",
+      "Repository validation required a dedicated Context section; it now records the 28-medal baseline before Enriquez's final silver."
     ]
   }
 }

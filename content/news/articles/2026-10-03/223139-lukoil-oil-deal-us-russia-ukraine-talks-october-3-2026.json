@@ -18,12 +18,12 @@
   "kicker": "UKRAINE WAR · ENERGY DIPLOMACY",
   "deck": "The reported transaction remains unapproved. Earlier official statements confirm energy initiatives were discussed, but not the specific Lukoil proposal.",
   "publishedAt": "2026-10-03T22:31:39+08:00",
-  "updatedAt": "2026-10-03T22:31:39+08:00",
+  "updatedAt": "2026-10-03T22:36:22+08:00",
   "author": "FMB News Desk",
   "articleType": "NewsArticle",
   "sections": [
     {
-      "heading": "What is being reported",
+      "heading": "What happened",
       "paragraphs": [
         "The New York Times reported on Saturday, October 3, that U.S.-Russia talks on ending the war in Ukraine have expanded to include a proposed multibillion-dollar transaction involving Lukoil's international oil assets. Reuters independently reported the Times account at 6:29 p.m. Philippine time.",
         "According to the Times report, the potential buyer group includes U.S. investor Todd Boehly, two Middle Eastern groups with past business ties to the families of U.S. negotiators Steve Witkoff or Jared Kushner, and an arm of the U.S. government. The reported transaction would require approval from both Washington and Moscow."
@@ -41,6 +41,12 @@
       "paragraphs": [
         "No signed transaction, final price or government approval was confirmed in the reviewed material. Reuters said the White House, U.S. Treasury and Lukoil did not respond to requests for comment outside regular business hours.",
         "The Times account relies on people familiar with sensitive negotiations. FMB News is therefore treating the specific structure, participants and claimed September 5 proposal as reported allegations, not independently established facts."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The reported proposal sits at the intersection of Ukraine peace diplomacy, sanctions policy and the sale of a major Russian oil company's foreign holdings. Broader U.S.-Russia energy discussions are confirmed, but the reviewed official record does not establish that the Lukoil structure described by the Times has been accepted by either government."
       ]
     },
     {
@@ -107,7 +113,8 @@
       "A separate Reuters report carrying a U.S. official statement confirms broader energy-initiative discussions, not the specific Lukoil proposal.",
       "Lukoil's own release confirms an international-assets sale process but does not confirm the reported buyer group or government role.",
       "No immediate effect on Philippine fuel prices is claimed.",
-      "Publisher photography lacked independently verified reuse permission, so FMB's owned fallback is used and labeled non-documentary."
+      "Publisher photography lacked independently verified reuse permission, so FMB's owned fallback is used and labeled non-documentary.",
+      "Repository validation required the lead section to use the standard What happened label and the report now includes a dedicated Context section."
     ]
   }
 }
