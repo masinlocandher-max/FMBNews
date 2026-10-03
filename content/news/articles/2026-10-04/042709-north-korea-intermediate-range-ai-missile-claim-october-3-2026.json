@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "north-korea-intermediate-range-ai-missile-claim-october-3-2026",
+  "headline": "North Korea Says Oct. 3 Missile Was Intermediate-Range and AI-Assisted",
+  "seoTitle": "North Korea Claims Intermediate-Range, AI-Assisted Missile Test | FMB News",
+  "seoDescription": "North Korea says its October 3 launch used an intermediate-range strategic missile with maneuvering and AI-assisted capabilities, claims not independently demonstrated.",
+  "keywords": [
+    "North Korea missile",
+    "Kim Yo Jong",
+    "Kim Jong Un",
+    "intermediate-range ballistic missile",
+    "AI-assisted missile",
+    "Korean Peninsula security"
+  ],
+  "category": "World",
+  "kicker": "KOREAN PENINSULA · MISSILE TEST",
+  "deck": "The missile classification is a new official detail; Pyongyang's claims about maneuverability, artificial intelligence and interception remain unproven.",
+  "publishedAt": "2026-10-04T04:27:09+08:00",
+  "updatedAt": "2026-10-04T04:27:09+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "North Korea said the ballistic missile it launched from the Wonsan area on October 3 was an intermediate-range strategic weapon tested under leader Kim Jong Un's supervision.",
+        "Kim Yo Jong, a senior ruling-party official and the leader's sister, said the missile used a wavelike trajectory, could change its flight path at low altitude and had unspecified artificial-intelligence technology. Those capability claims were not accompanied by independently reviewable evidence."
+      ]
+    },
+    {
+      "heading": "What is confirmed",
+      "paragraphs": [
+        "The Korean Central News Agency carried Kim Yo Jong's statement on October 3. Reuters, Associated Press and Yonhap separately reported the official North Korean announcement.",
+        "South Korea's military said the missile flew more than 700 kilometers toward the sea off North Korea's east coast. Japan assessed a flight of about 680 kilometers and said the weapon landed outside its exclusive economic zone."
+      ]
+    },
+    {
+      "heading": "What remains unresolved",
+      "paragraphs": [
+        "North Korea did not disclose the missile's speed, exact model or technical evidence for the claimed AI-assisted guidance. South Korea's military did not immediately validate Pyongyang's capability claims, and North Korea's assertion that the weapon cannot be intercepted remains an allegation.",
+        "Calling the weapon 'strategic' implies a possible nuclear role in North Korean usage, but no warhead was reported on the October 3 test."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "This is a substantive continuation of FMB News' first report on the launch, which initially recorded the South Korean and Japanese tracking assessments before North Korea identified the missile: https://www.francinemariebautista.com/news/north-korea-projectile-east-sea-october-3-2026/",
+        "The launch followed a dispute over September 21 land-mine blasts near the inter-Korean military demarcation line that injured three South Korean soldiers. Seoul attributed the mines to North Korea; Pyongyang denied responsibility."
+      ]
+    },
+    {
+      "heading": "Why this matters to Filipinos",
+      "paragraphs": [
+        "A more maneuverable intermediate-range missile could complicate regional defense planning involving South Korea, Japan and the United States. That matters to Filipinos living and working in Northeast Asia and to Philippine security planning, although no immediate threat to the Philippines was reported."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for technical assessments from South Korea, Japan and the United States, any imagery or telemetry supporting North Korea's claims, possible additional launches, and diplomatic or sanctions responses."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Korean Central News Agency via KCNA Watch",
+      "title": "Kim Yo Jong, Department Director of C.C., WPK, on Strategic Weapon Launching Drill",
+      "publishedAt": "2026-10-03T00:00:00+09:00",
+      "url": "https://kcnawatch.org/newstream/1791021862-626551825/kim-yo-jong-department-director-of-c-c-wpk-on-strategic-weapon-launching-drill",
+      "role": "primary official North Korean statement, preserved by a specialist mirror of DPRK state media"
+    },
+    {
+      "publisher": "Reuters",
+      "title": "North Korea's Kim Yo Jong says intermediate-range missile test was conducted",
+      "publishedAt": "2026-10-03T11:04:09+00:00",
+      "url": "https://www.reuters.com/world/asia-pacific/north-koreas-kim-yo-jong-says-intermediate-range-missile-test-was-conducted-2026-10-03/",
+      "role": "independent report on the state statement and South Korean flight assessment"
+    },
+    {
+      "publisher": "Associated Press",
+      "title": "North Korea says it test-fired an intermediate-range missile as tensions grow over mine blasts",
+      "publishedAt": "2026-10-02T22:01:25+00:00",
+      "url": "https://apnews.com/article/south-north-korea-projectile-fired-0b5b69e919f9c9a2358f3cd3346649e7",
+      "role": "independent reporting that separates confirmed tracking data from North Korean capability claims"
+    },
+    {
+      "publisher": "Yonhap News Agency",
+      "title": "N.K. leader's sister says intermediate-range strategic missile was launched during firing drill",
+      "publishedAt": "2026-10-03T20:18:00+09:00",
+      "url": "https://en.yna.co.kr/view/AEN20261003004151315",
+      "role": "South Korean independent corroboration of the KCNA statement"
+    },
+    {
+      "publisher": "FMB News",
+      "title": "North Korea Fires Ballistic Missile From Wonsan Toward East Sea",
+      "publishedAt": "2026-10-03T07:30:04+08:00",
+      "url": "https://www.francinemariebautista.com/news/north-korea-projectile-east-sea-october-3-2026/",
+      "role": "earliest relevant FMB News report linked for continuity"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying coverage of North Korea's missile claim. It is not a photograph of the October 3 launch or the weapon.",
+    "alt": "FMB News editorial graphic for North Korea's intermediate-range missile claim",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-04T04:27:09+08:00",
+    "verificationNotes": [
+      "KCNA's official statement confirms what North Korea claims about the missile but does not independently establish the claimed capabilities.",
+      "Reuters, AP and Yonhap independently reported the state statement and preserved the distinction between tracking data and Pyongyang's assertions.",
+      "The more-than-700-kilometer South Korean assessment and Japan's outside-EEZ landing assessment are attributed to the relevant governments.",
+      "AI assistance, low-altitude maneuverability and the claim that the missile cannot be intercepted remain unverified North Korean claims.",
+      "The earlier FMB report is linked because this is a continuation of the same launch, not a separate launch event.",
+      "Publisher and state-media launch images did not carry independently verified reusable rights. The FMB-owned fallback is therefore used and clearly labeled non-documentary."
+    ]
+  }
+}
