@@ -359,8 +359,36 @@
     const hero = makeImage(article.image_url, article.image_metadata?.alt || article.title);
     hero.loading = 'eager';
     figure.appendChild(hero);
-    const captionText = article.image_metadata?.caption || article.image_credit || (article.image_url ? '' : 'FMB News editorial visual');
-    if (captionText) figure.appendChild(el('figcaption', '', captionText));
+    const imageMeta = article.image_metadata && typeof article.image_metadata === 'object' ? article.image_metadata : {};
+    const captionText = imageMeta.caption || article.image_credit || (article.image_url ? '' : 'FMB News editorial visual');
+    const creditParts = [
+      imageMeta.creator || article.image_credit,
+      imageMeta.license,
+      imageMeta.width && imageMeta.height ? `${imageMeta.width} × ${imageMeta.height}` : ''
+    ].filter(Boolean);
+    const uniqueCreditParts = [...new Set(creditParts)];
+    if (captionText || uniqueCreditParts.length || imageMeta.sourceUrl) {
+      const caption = el('figcaption', '');
+      if (captionText) caption.appendChild(el('div', 'cms-image-caption', captionText));
+      if (uniqueCreditParts.length || imageMeta.sourceUrl) {
+        const credit = el('div', 'cms-image-credit');
+        if (uniqueCreditParts.length) credit.appendChild(document.createTextNode(uniqueCreditParts.join(' · ')));
+        if (imageMeta.sourceUrl) {
+          if (uniqueCreditParts.length) credit.appendChild(document.createTextNode(' · '));
+          const sourceLink = document.createElement('a');
+          sourceLink.href = imageMeta.sourceUrl;
+          sourceLink.target = '_blank';
+          sourceLink.rel = 'noopener noreferrer';
+          sourceLink.textContent = imageMeta.source || 'Image source';
+          credit.appendChild(sourceLink);
+        } else if (imageMeta.source && !uniqueCreditParts.includes(imageMeta.source)) {
+          if (uniqueCreditParts.length) credit.appendChild(document.createTextNode(' · '));
+          credit.appendChild(document.createTextNode(imageMeta.source));
+        }
+        caption.appendChild(credit);
+      }
+      figure.appendChild(caption);
+    }
     wrapper.appendChild(figure);
 
     const body = el('div', 'cms-article-body');
