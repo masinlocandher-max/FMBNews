@@ -1,1 +1,101 @@
-{"schemaVersion":1,"editionType":"worldwide","editionDate":"2026-09-18","slug":"september-18-2026","title":"FMB Worldwide | September 18, 2026","status":"held","windowStart":"2026-09-17T06:52:00+08:00","windowEnd":"2026-09-18T23:03:00+08:00","publishedAt":null,"entries":[],"held":[{"headline":"Bank of Japan Raises Policy Rate to 1.25%, Highest in 31 Years","articleRecord":"content/news/articles/2026-09-18/230150-bank-of-japan-raises-rate-1-25.json","reason":"Editorial verification passed with Reuters and AP; image rights passed with a public-domain Fg2 photograph (1486 × 963); CMS and GitHub writes succeeded. Post-publication verification failed because the canonical public article route, Worldwide route and image rendering were not accessible to the verification tool. CMS article reverted to pending_review and edition to draft rather than claiming it live."},{"headline":"Kremlin Places Russian Operations of Nestlé and Auchan Under Temporary Administration","sources":["Associated Press"],"reason":"Consequential corporate/geopolitical development, but this cycle did not establish a second independent newsroom confirmation plus a genuinely relevant republication-cleared photograph with verified creator, licence and original dimensions."},{"headline":"Taiwan Conducts First Joint Military Drills Combining Attack Drones and Conventional Weapons","sources":["Associated Press"],"reason":"Consequential Indo-Pacific security development with Philippine regional relevance, but armed-security coverage requires stronger corroboration and the cycle did not establish a rights-cleared event photograph with complete creator/licence/dimensions metadata."},{"headline":"Iran Says It Struck Oil Tanker in Strait of Hormuz","sources":["Associated Press"],"reason":"High-risk armed-conflict and maritime-security story. The tanker strike is an Iranian claim and requires the existing human-review safeguard plus independently verified image rights before publication."},{"headline":"Yemen Fighting Displaces at Least 112,000, UN Migration Agency Says","sources":["Reuters"],"reason":"Consequential humanitarian/conflict development affecting a strategic shipping corridor, but armed-conflict coverage remains subject to high-risk review and this cycle did not establish a fully rights-cleared relevant photograph."},{"headline":"Floods and Landslides Kill at Least Four and Inundate More Than 16,000 Homes in Vietnam","sources":["Associated Press"],"reason":"Consequential regional disaster, but the cycle did not establish an independently reusable real photograph with verified creator, licence and original dimensions."},{"headline":"Zelenskyy Launches Carpathian Eight Regional Trade and Security Initiative","sources":["Reuters","Associated Press"],"reason":"Independently corroborated and consequential, but the security initiative is embedded in active-war coverage and no republication-cleared summit photograph with complete rights metadata was verified in this cycle."}],"audit":{"note":"No story from this cycle is claimed live. The BOJ story cleared sourcing and image-rights safeguards and reached CMS/GitHub, but mandatory post-publication public-route/render verification failed, so it was reverted to held. Other qualifying stories remain held for the exact listed blockers.","supabaseEditionId":"3825b54f-6ae6-4296-82c3-8124df8266c3"}}
+{
+  "schemaVersion": 1,
+  "editionType": "worldwide",
+  "editionDate": "2026-09-18",
+  "slug": "september-18-2026",
+  "title": "FMB Worldwide | September 18, 2026",
+  "status": "published",
+  "windowStart": "2026-09-17T06:52:00+08:00",
+  "windowEnd": "2026-09-18T23:03:00+08:00",
+  "publishedAt": "2026-09-18T23:01:50+08:00",
+  "entries": [
+    {
+      "entryKey": "bank-of-japan-raises-rate-1-25-september-18-2026",
+      "country": "Japan",
+      "section": "Asia",
+      "category": "Economy",
+      "headline": "Bank of Japan Raises Policy Rate to 1.25%, Highest in 31 Years",
+      "verifiedFact": "Reuters and AP independently report that the BOJ raised its policy rate from 1.0% to 1.25% in a 7-2 vote, the highest level in 31 years.",
+      "whyItMatters": "Japan is a major Philippine trade, investment and development partner. Japanese rates can affect the yen, regional capital flows and financing conditions, though direct Philippine household effects are not predetermined.",
+      "reputationImplication": null,
+      "opportunityRisk": "Watch the yen, BOJ guidance, inflation and wage data, and any spillover into Asian financing conditions.",
+      "sourceLinks": [
+        {
+          "publisher": "Reuters",
+          "url": "https://www.reuters.com/world/asia-pacific/boj-raises-interest-rates-31-year-high-widely-expected-move-2026-09-18/"
+        },
+        {
+          "publisher": "Associated Press",
+          "url": "https://apnews.com/article/67e71246d3af41bcfc61aa788f9959c7"
+        }
+      ],
+      "articlePath": "/news/read/bank-of-japan-raises-rate-1-25-september-18-2026/",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Bank_of_Japan_headquarters_in_Tokyo%2C_Japan.jpg",
+      "imageCredit": "Photo: Fg2 / Wikimedia Commons, public domain",
+      "sortOrder": 1
+    }
+  ],
+  "held": [
+    {
+      "headline": "Kremlin Places Russian Operations of Nestlé and Auchan Under Temporary Administration",
+      "sources": [
+        "Associated Press"
+      ],
+      "reason": "Consequential corporate/geopolitical development, but this cycle did not establish a second independent newsroom confirmation plus a genuinely relevant republication-cleared photograph with verified creator, licence and original dimensions."
+    },
+    {
+      "headline": "Taiwan Conducts First Joint Military Drills Combining Attack Drones and Conventional Weapons",
+      "sources": [
+        "Associated Press"
+      ],
+      "reason": "Consequential Indo-Pacific security development with Philippine regional relevance, but armed-security coverage requires stronger corroboration and the cycle did not establish a rights-cleared event photograph with complete creator/licence/dimensions metadata."
+    },
+    {
+      "headline": "Iran Says It Struck Oil Tanker in Strait of Hormuz",
+      "sources": [
+        "Associated Press"
+      ],
+      "reason": "High-risk armed-conflict and maritime-security story. The tanker strike is an Iranian claim and requires the existing human-review safeguard plus independently verified image rights before publication."
+    },
+    {
+      "headline": "Yemen Fighting Displaces at Least 112,000, UN Migration Agency Says",
+      "sources": [
+        "Reuters"
+      ],
+      "reason": "Consequential humanitarian/conflict development affecting a strategic shipping corridor, but armed-conflict coverage remains subject to high-risk review and this cycle did not establish a fully rights-cleared relevant photograph."
+    },
+    {
+      "headline": "Floods and Landslides Kill at Least Four and Inundate More Than 16,000 Homes in Vietnam",
+      "sources": [
+        "Associated Press"
+      ],
+      "reason": "Consequential regional disaster, but the cycle did not establish an independently reusable real photograph with verified creator, licence and original dimensions."
+    },
+    {
+      "headline": "Zelenskyy Launches Carpathian Eight Regional Trade and Security Initiative",
+      "sources": [
+        "Reuters",
+        "Associated Press"
+      ],
+      "reason": "Independently corroborated and consequential, but the security initiative is embedded in active-war coverage and no republication-cleared summit photograph with complete rights metadata was verified in this cycle."
+    }
+  ],
+  "audit": {
+    "note": "ARCHIVE RECOVERY: the BOJ story retained its original September 18 event and publication date. Its source verification and public-domain image rights were rechecked on October 3, and the previously failing canonical public routes were scheduled for fresh post-deployment verification.",
+    "supabaseEditionId": "3825b54f-6ae6-4296-82c3-8124df8266c3"
+  },
+  "deck": "Japan’s central bank raised its policy rate to a 31-year high, with regional implications for the yen, capital flows and financing conditions.",
+  "updatedAt": "2026-10-03T23:02:51+08:00",
+  "heroImage": {
+    "kind": "rights-cleared-file-photo",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Bank_of_Japan_headquarters_in_Tokyo%2C_Japan.jpg",
+    "source": "Wikimedia Commons",
+    "creator": "Fg2",
+    "license": "Public domain, copyright holder dedication",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bank_of_Japan_headquarters_in_Tokyo,_Japan.jpg",
+    "caption": "File photograph of the Bank of Japan headquarters in Tokyo. It does not depict the September 18, 2026 policy meeting.",
+    "alt": "Bank of Japan headquarters building in Tokyo, Japan",
+    "width": 1486,
+    "height": 963
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "editionType": "worldwide",
+  "editionDate": "2026-10-03",
+  "slug": "october-3-2026",
+  "title": "FMB Worldwide | October 3, 2026",
+  "deck": "Energy diplomacy, Asian security and ASEAN leadership shape the latest verified international developments affecting Filipinos.",
+  "status": "published",
+  "windowStart": "2026-10-02T23:00:00+08:00",
+  "windowEnd": "2026-10-03T23:02:51+08:00",
+  "publishedAt": "2026-10-03T23:02:51+08:00",
+  "updatedAt": "2026-10-03T23:02:51+08:00",
+  "heroImage": {
+    "kind": "rights-cleared-contextual-photo",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Earth_seen_from_Apollo_17_(Original_Orientation).jpg",
+    "source": "NASA via Wikimedia Commons",
+    "creator": "Apollo 17 crew / NASA",
+    "license": "Public domain in the United States, NASA work",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Earth_seen_from_Apollo_17_(Original_Orientation).jpg",
+    "caption": "Archival Apollo 17 photograph of Earth, used as a contextual image for this global news edition. It does not depict any event reported in the edition.",
+    "alt": "Full view of Earth photographed by the Apollo 17 crew in 1972",
+    "width": 3000,
+    "height": 3002
+  },
+  "entries": [
+    {
+      "entryKey": "lukoil-oil-deal-us-russia-ukraine-talks-october-3-2026",
+      "country": "United States / Russia / Ukraine",
+      "section": "Lead",
+      "category": "Energy Diplomacy",
+      "headline": "Report: Lukoil Oil Deal Enters US-Russia Ukraine Talks",
+      "verifiedFact": "The New York Times reported a proposed Lukoil asset transaction inside U.S.-Russia talks. Reuters confirmed the report, while official statements only establish broader energy discussions and no transaction approval.",
+      "whyItMatters": "The Philippines imports most of its petroleum needs, so sanctions and ownership changes affecting large oil assets can alter supply expectations. No immediate Philippine pump-price effect is established.",
+      "reputationImplication": "The reported buyer group and transaction structure remain allegations from confidential sourcing, not confirmed government decisions.",
+      "opportunityRisk": "Watch for official confirmation, sanctions licences, named buyers and any link between the proposal and a Ukraine settlement.",
+      "sourceLinks": [
+        {
+          "publisher": "The New York Times",
+          "url": "https://www.nytimes.com/2026/10/03/us/politics/kushner-witkoff-russia-oil-deal.html"
+        },
+        {
+          "publisher": "Reuters",
+          "url": "https://www.reuters.com/business/energy/us-russia-talks-ukraine-involve-multi-billion-dollar-oil-deal-nyt-reports-2026-10-03/"
+        },
+        {
+          "publisher": "Lukoil",
+          "url": "https://www.lukoil.com/PressCenter/Pressreleases/Pressrelease/lukoil-agrees-with-carlyle-on-sale-of"
+        }
+      ],
+      "articlePath": "/news/lukoil-oil-deal-us-russia-ukraine-talks-october-3-2026/",
+      "sortOrder": 1,
+      "imageUrl": "/assets/images/news/fmb-news-editorial-fallback.svg",
+      "imageCredit": "FMB News editorial visual"
+    },
+    {
+      "entryKey": "pakistan-summons-indian-diplomat-border-deaths-october-3-2026",
+      "country": "Pakistan / India",
+      "section": "South Asia",
+      "category": "Diplomacy",
+      "headline": "Pakistan Summons Indian Diplomat Over Disputed Border Deaths",
+      "verifiedFact": "Pakistan’s Foreign Ministry and Reuters confirm the October 3 summons after two Pakistani nationals were killed. AP documents conflicting Pakistani and Indian accounts of the circumstances.",
+      "whyItMatters": "Renewed tension between two nuclear-armed states affects Asian security and Filipinos living, working or travelling in South Asia.",
+      "reputationImplication": "The men’s status and actions remain disputed; neither side’s account has been independently established as final.",
+      "opportunityRisk": "Watch for an Indian government response, a joint border inquiry and any further diplomatic or security measures.",
+      "sourceLinks": [
+        {
+          "publisher": "Pakistan Ministry of Foreign Affairs",
+          "url": "https://mofa.gov.pk/press-releases/indian-charge-daffaires-summoned-over-killing-of-two-pakistani-civilians"
+        },
+        {
+          "publisher": "Reuters",
+          "url": "https://www.reuters.com/world/india/pakistan-summons-indian-diplomat-over-killing-two-civilians-border-2026-10-03/"
+        },
+        {
+          "publisher": "Associated Press",
+          "url": "https://apnews.com/article/pakistan-india-shooting-border-punjab-13523bf33d84ed92533aabf725df9883"
+        }
+      ],
+      "articlePath": "/news/pakistan-summons-indian-diplomat-border-deaths-october-3-2026/",
+      "sortOrder": 2,
+      "imageUrl": "/assets/images/news/fmb-news-editorial-fallback.svg",
+      "imageCredit": "FMB News editorial visual"
+    },
+    {
+      "entryKey": "philippines-asean-myanmar-kyauktaw-airstrike-october-3-2026",
+      "country": "Myanmar / ASEAN",
+      "section": "Southeast Asia",
+      "category": "Diplomacy",
+      "headline": "Philippines Offers to Convene ASEAN Talks After Deadly Myanmar Airstrike",
+      "verifiedFact": "The Philippines, as ASEAN chair, offered to facilitate discussions after the September 28 Kyauktaw airstrike. Reuters and APHR report slightly different preliminary casualty totals.",
+      "whyItMatters": "Manila’s response tests Philippine leadership of ASEAN on one of the region’s most serious humanitarian crises.",
+      "reputationImplication": "The offer is not an announced meeting, regional decision or aid package, and the casualty toll remains preliminary.",
+      "opportunityRisk": "Watch for an ASEAN chair’s statement, formal consultations, humanitarian access and any response from Myanmar’s military authorities.",
+      "sourceLinks": [
+        {
+          "publisher": "Reuters",
+          "url": "https://www.reuters.com/world/asia-pacific/philippines-voices-concern-over-myanmar-airstrike-deaths-injuries-2026-10-03/"
+        },
+        {
+          "publisher": "ASEAN Parliamentarians for Human Rights",
+          "url": "https://aseanmp.org/publications/post/myanmar-junta-must-be-held-accountable-aphr-condemns-kyauktaw-airstrike"
+        }
+      ],
+      "articlePath": "/news/philippines-asean-myanmar-kyauktaw-airstrike-october-3-2026/",
+      "sortOrder": 3,
+      "imageUrl": "/assets/images/news/fmb-news-editorial-fallback.svg",
+      "imageCredit": "FMB News editorial visual"
+    },
+    {
+      "entryKey": "north-korea-projectile-east-sea-october-3-2026",
+      "country": "Korean Peninsula",
+      "section": "East Asia",
+      "category": "Security",
+      "headline": "North Korea Fires Ballistic Missile From Wonsan Toward East Sea",
+      "verifiedFact": "South Korea says a ballistic missile launched from Wonsan flew more than 700 kilometres; Japan says it landed outside its exclusive economic zone.",
+      "whyItMatters": "The launch affects regional security and the safety outlook for Filipinos in South Korea and Japan, though no direct Philippine threat was reported.",
+      "reputationImplication": "The missile model, altitude and exact impact point remain undisclosed, and North Korean state media had not claimed the launch.",
+      "opportunityRisk": "Watch for fuller tracking assessments, a North Korean statement and aviation or maritime safety notices.",
+      "sourceLinks": [
+        {
+          "publisher": "Republic of Korea Joint Chiefs of Staff",
+          "url": "https://www.jcs.mil.kr/mbshome/mbs/jcs2_eng/"
+        },
+        {
+          "publisher": "Associated Press",
+          "url": "https://apnews.com/article/south-north-korea-projectile-fired-0b5b69e919f9c9a2358f3cd3346649e7"
+        },
+        {
+          "publisher": "Yonhap",
+          "url": "https://en.yna.co.kr/view/AEN20261003000500315"
+        }
+      ],
+      "articlePath": "/news/north-korea-projectile-east-sea-october-3-2026/",
+      "sortOrder": 4,
+      "imageUrl": "/assets/images/news/fmb-news-editorial-fallback.svg",
+      "imageCredit": "FMB News editorial visual"
+    },
+    {
+      "entryKey": "g7-emergency-oil-diesel-release-october-2-2026",
+      "country": "G7 / Global",
+      "section": "Global Economy",
+      "category": "Energy",
+      "headline": "G7 Orders 100-Million-Barrel Emergency Fuel Release as Diesel Prices Surge",
+      "verifiedFact": "G7 governments agreed to release 100 million barrels of diesel and crude over four months, with substantial diesel volumes front-loaded. The country and product breakdown remains unspecified.",
+      "whyItMatters": "As a net fuel importer, the Philippines is exposed to diesel, freight and food-distribution costs, although the release does not guarantee an immediate local pump-price rollback.",
+      "reputationImplication": "The allocation among countries and products is unresolved, and emergency stocks will later need replenishment.",
+      "opportunityRisk": "Watch IEA allocations, delivery pace, benchmark prices and Philippine fuel-price advisories.",
+      "sourceLinks": [
+        {
+          "publisher": "International Energy Agency",
+          "url": "https://www.iea.org/news/executive-director-participates-in-g7-leaders-meeting-on-energy-security-and-markets"
+        },
+        {
+          "publisher": "Reuters",
+          "url": "https://www.reuters.com/business/energy/europe-discussing-plan-diesel-stock-releases-after-us-pressure-source-says-2026-10-02/"
+        },
+        {
+          "publisher": "Associated Press",
+          "url": "https://apnews.com/article/trump-europe-diesel-fuel-prices-774a360d1646d9ce8aba764fdd9959d2"
+        }
+      ],
+      "articlePath": "/news/g7-emergency-oil-diesel-release-october-2-2026/",
+      "sortOrder": 5,
+      "imageUrl": "/assets/images/news/fmb-news-editorial-fallback.svg",
+      "imageCredit": "FMB News editorial visual"
+    }
+  ],
+  "held": [],
+  "audit": {
+    "note": "The edition aggregates five already published FMB reports and does not duplicate their standalone article records. Each entry preserves confirmed facts, reported allegations and unresolved points from the underlying article.",
+    "sourceCheckedAt": "2026-10-03T23:02:51+08:00",
+    "imageRightsCheckedAt": "2026-10-03T23:02:51+08:00"
+  }
+}
