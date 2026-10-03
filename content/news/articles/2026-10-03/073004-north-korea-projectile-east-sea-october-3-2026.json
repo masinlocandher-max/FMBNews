@@ -3,36 +3,37 @@
   "status": "published",
   "slug": "north-korea-projectile-east-sea-october-3-2026",
   "headline": "North Korea Fires Ballistic Missile From Wonsan Toward East Sea",
-  "seoTitle": "North Korea Fires Ballistic Missile From Wonsan | FMB News",
-  "seoDescription": "South Korea’s military says North Korea fired at least one ballistic missile from Wonsan toward the East Sea at about 6:30 a.m.; flight details remain unresolved.",
+  "seoTitle": "North Korea Missile Flies Over 700 km From Wonsan | FMB News",
+  "seoDescription": "South Korea says North Korea’s ballistic missile flew more than 700 kilometers from Wonsan; Japan says it landed outside its exclusive economic zone.",
   "keywords": [
     "North Korea",
     "South Korea",
     "ballistic missile",
     "Wonsan",
     "East Sea",
+    "Japan EEZ",
     "Korean Peninsula"
   ],
   "category": "World",
   "kicker": "SECURITY · KOREAN PENINSULA",
-  "deck": "South Korea’s Joint Chiefs of Staff identified at least one ballistic missile launched from Wonsan at about 6:30 a.m.; range, altitude and impact point remain undisclosed.",
+  "deck": "South Korea says the missile flew more than 700 kilometers from Wonsan; Japan says it landed outside its exclusive economic zone, while the model and altitude remain undisclosed.",
   "publishedAt": "2026-10-03T07:30:04.665+08:00",
-  "updatedAt": "2026-10-03T08:31:00+08:00",
+  "updatedAt": "2026-10-03T11:28:30+08:00",
   "author": "FMB News Desk",
   "articleType": "NewsArticle",
   "sections": [
     {
       "heading": "What is confirmed",
       "paragraphs": [
-        "South Korea’s Joint Chiefs of Staff said it detected at least one ballistic missile launched from the Wonsan area toward the East Sea at about 6:30 a.m. Saturday. The military said it increased surveillance for possible additional launches and was sharing information with the United States and Japan.",
-        "This is a material update to FMB News’ initial developing report, which correctly left the weapon type unclassified while South Korea’s military was still assessing the launch."
+        "South Korea’s Joint Chiefs of Staff said a ballistic missile launched from North Korea’s eastern coastal Wonsan area flew more than 700 kilometers toward the East Sea on Saturday. South Korean and U.S. militaries were analyzing the weapon’s specifics.",
+        "Japan’s Defense Ministry said the missile landed outside Japan’s exclusive economic zone. South Korea said it increased surveillance for possible additional launches and continued sharing information with the United States and Japan."
       ]
     },
     {
-      "heading": "What remains unresolved",
+      "heading": "How the report changed",
       "paragraphs": [
-        "The reviewed official notice and independent reports did not disclose the missile’s flight distance, maximum altitude, trajectory, impact point or specific model.",
-        "North Korean state media had not issued a claim about the launch in the reviewed material. Those details should remain unconfirmed until an official tracking assessment or North Korean announcement is available."
+        "FMB News first published the launch as an unidentified projectile because the initial military notice had not established the weapon type. The article was updated when South Korea classified it as a ballistic missile, and is now updated again with the confirmed flight distance and Japan’s reported landing assessment.",
+        "The missile’s specific model, maximum altitude and exact impact point remain undisclosed in the reviewed material. North Korean state media had not issued a claim about the launch."
       ]
     },
     {
@@ -45,8 +46,8 @@
     {
       "heading": "What to watch next",
       "paragraphs": [
-        "Watch for Japan’s defense-ministry tracking data, a fuller South Korean assessment, a North Korean state-media claim and any aviation or maritime safety notice.",
-        "The launch came amid heightened tensions after September border-mine blasts injured three South Korean soldiers. Seoul and the U.S.-led United Nations Command blame North Korean mines; Pyongyang denies responsibility."
+        "Watch for a fuller South Korean or Japanese tracking assessment, a North Korean state-media claim and any aviation or maritime safety notice.",
+        "Seoul’s presidential national security office called for North Korea to halt repeated ballistic launches, describing them as violations of United Nations Security Council resolutions."
       ]
     }
   ],
@@ -56,28 +57,28 @@
       "title": "Official English-language portal",
       "publishedAt": null,
       "url": "https://www.jcs.mil.kr/mbshome/mbs/jcs2_eng/",
-      "role": "official issuing authority; the event-specific notice was quoted by Yonhap and DW"
+      "role": "official issuing authority for the launch detection and South Korean tracking assessment"
+    },
+    {
+      "publisher": "Associated Press",
+      "title": "North Korea test-fires ballistic missile as tensions grow over border mine blasts",
+      "publishedAt": "2026-10-03T06:01:00+08:00",
+      "url": "https://apnews.com/article/south-north-korea-projectile-fired-0b5b69e919f9c9a2358f3cd3346649e7",
+      "role": "independent updated report confirming the flight distance, Japanese landing assessment and South Korean response"
     },
     {
       "publisher": "Yonhap News Agency",
       "title": "N. Korea fires ballistic missile toward East Sea amid tensions over DMZ blast",
       "publishedAt": "2026-10-03T08:30:00+08:00",
       "url": "https://en.yna.co.kr/view/AEN20261003000500315",
-      "role": "independent report quoting the JCS notice and confirming the classification, launch area and approximate time"
+      "role": "independent report quoting the initial JCS classification, launch area and approximate time"
     },
     {
       "publisher": "DW",
       "title": "North Korea fires ballistic missile into sea, Seoul says",
       "publishedAt": "2026-10-03T00:00:00+02:00",
       "url": "https://www.dw.com/en/north-korea-fires-ballistic-missile-into-sea-seoul-says/a-79526243",
-      "role": "independent corroboration quoting the Joint Chiefs of Staff"
-    },
-    {
-      "publisher": "Associated Press",
-      "title": "South Korea’s military says North Korea fired projectile toward its eastern waters",
-      "publishedAt": "2026-10-03T06:01:00+08:00",
-      "url": "https://apnews.com/article/south-north-korea-projectile-fired-0b5b69e919f9c9a2358f3cd3346649e7",
-      "role": "initial independent breaking report documenting the earlier unclassified stage"
+      "role": "independent corroboration of the ballistic-missile classification and Wonsan launch area"
     },
     {
       "publisher": "Reuters",
@@ -101,12 +102,12 @@
     "sourceUrl": null
   },
   "audit": {
-    "sourceCheckedAt": "2026-10-03T08:31:00+08:00",
+    "sourceCheckedAt": "2026-10-03T11:28:30+08:00",
     "verificationNotes": [
-      "South Korea’s Joint Chiefs of Staff classified the launch as at least one ballistic missile from the Wonsan area at about 6:30 a.m.; Yonhap reproduced the substance of the military notice.",
-      "DW independently corroborates the ballistic-missile classification and Wonsan launch area while attributing the information to the Joint Chiefs of Staff.",
-      "AP’s initial report is retained to document that the weapon type was unresolved when FMB News first published.",
-      "Range, altitude, trajectory, impact point and missile model remain undisclosed in the reviewed material and are explicitly left unresolved.",
+      "The Joint Chiefs of Staff is the official issuing authority; AP’s updated report attributes the more-than-700-kilometer flight assessment directly to the South Korean military.",
+      "AP separately attributes the outside-EEZ landing assessment to Japan’s Defense Ministry.",
+      "The article preserves the chronology of the initial unidentified-projectile report and later ballistic-missile classification rather than rewriting the uncertainty out of the record.",
+      "Missile model, maximum altitude and exact impact point remain unresolved in the reviewed material.",
       "No documentary launch image with verified reusable rights was available; FMB’s owned fallback is clearly labeled non-documentary."
     ]
   }

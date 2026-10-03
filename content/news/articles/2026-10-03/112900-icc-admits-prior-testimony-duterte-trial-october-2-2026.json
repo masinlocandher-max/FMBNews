@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "icc-admits-prior-testimony-duterte-trial-october-2-2026",
+  "headline": "ICC Admits Prior Recorded Testimony in Duterte Trial",
+  "seoTitle": "ICC Admits Prior Testimony in Duterte Trial | FMB News",
+  "seoDescription": "The ICC admitted witness P-1100’s prior recorded testimony and five reports in Rodrigo Duterte’s trial, while limiting supplementary prosecution questioning to one hour.",
+  "keywords": [
+    "International Criminal Court",
+    "Rodrigo Duterte",
+    "ICC trial",
+    "Rule 68",
+    "witness P-1100",
+    "prior recorded testimony"
+  ],
+  "category": "National",
+  "kicker": "JUSTICE · ICC TRIAL",
+  "deck": "The Trial Chamber admitted witness P-1100’s written statement and five reports, but cut the prosecution’s requested supplementary questioning to one hour.",
+  "publishedAt": "2026-10-03T11:29:00+08:00",
+  "updatedAt": "2026-10-03T11:29:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The International Criminal Court’s Trial Chamber granted the prosecution’s request to introduce the prior recorded testimony of witness P-1100 in the case against former Philippine president Rodrigo Duterte. The public redacted decision is dated October 2 and carries document number ICC-01/21-01/25-514-Red.",
+        "The chamber admitted P-1100’s written statement and five reports. It also allowed focused supplementary examination when the witness appears in court, but required the prosecution to complete that questioning within one hour rather than the two hours requested."
+      ]
+    },
+    {
+      "heading": "What the ruling does not establish",
+      "paragraphs": [
+        "The decision is procedural. Admission of testimony and reports into evidence does not establish that the witness’s allegations are true, does not decide the weight judges will give the material and does not determine Duterte’s guilt.",
+        "Duterte’s defense opposed admission, arguing that the proposed evidence was not sufficiently relevant or probative and that the witness lacked sufficient personal knowledge. The chamber nevertheless found that using the prior recorded testimony was consistent with trial fairness and would shorten the prosecution’s direct examination."
+      ]
+    },
+    {
+      "heading": "What the prosecution says",
+      "paragraphs": [
+        "The prosecution says the witness’s evidence concerns an alleged policy to neutralize suspected criminals through violent crimes, the alleged modus operandi of the Davao Death Squad and Duterte’s alleged knowledge and intent.",
+        "Those remain prosecution allegations that must be tested in court. Duterte has denied wrongdoing in the broader case."
+      ]
+    },
+    {
+      "heading": "Why it matters and what comes next",
+      "paragraphs": [
+        "The ruling shapes how evidence will be presented in a case of major public interest to Filipinos and could shorten courtroom questioning without removing the defense’s opportunity to challenge the witness.",
+        "GMA News reports that the trial is scheduled to begin on November 30, 2026. The next key questions are how the witness performs under questioning, what objections the defense raises and what weight the judges eventually assign to the admitted material."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "International Criminal Court",
+      "title": "Public redacted version of First Decision on the Prosecution’s Request to introduce prior recorded testimony pursuant to Rule 68(3)",
+      "publishedAt": "2026-10-02T00:00:00+02:00",
+      "url": "https://www.icc-cpi.int/court-record/icc-01/21-01/25-514-red",
+      "role": "primary court decision, document ICC-01/21-01/25-514-Red"
+    },
+    {
+      "publisher": "International Criminal Court",
+      "title": "Court records: The Prosecutor vs. Rodrigo Roa Duterte",
+      "publishedAt": "2026-10-02T00:00:00+02:00",
+      "url": "https://www.icc-cpi.int/case-records?f%5B0%5D=cr_case_code%3A1527",
+      "role": "official case index confirming the decision title, date, chamber and document number"
+    },
+    {
+      "publisher": "GMA News Online",
+      "title": "ICC grants prosecution's request to include prior testimony of witness in Rodrigo Duterte case",
+      "publishedAt": "2026-10-03T09:53:00+08:00",
+      "url": "https://www.gmanetwork.com/news/topstories/nation/1004607/icc-grants-prosecution-s-request-to-include-prior-testimony-of-witness-in-rodrigo-duterte-case/story/",
+      "role": "independent report detailing the ruling, admitted reports, parties’ positions and one-hour questioning limit"
+    },
+    {
+      "publisher": "ABS-CBN News",
+      "title": "ICC admits Duterte witness testimony, cuts Prosecution questioning",
+      "publishedAt": "2026-10-03T08:36:00+08:00",
+      "url": "https://www.abs-cbn.com/news/nation/2026/10/3/icc-admits-duterte-witness-testimony-cuts-prosecution-questioning-0836",
+      "role": "independent corroborating report"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying a verified report on an International Criminal Court procedural ruling. It is not a photograph and does not depict the court, the accused, the witness or any alleged crime.",
+    "alt": "FMB News editorial graphic for the ICC ruling on prior recorded testimony in Rodrigo Duterte’s trial",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-03T11:29:00+08:00",
+    "verificationNotes": [
+      "The ICC’s official case-records index confirms the October 2 Trial Chamber decision, public redacted document number and case identity.",
+      "GMA News reproduces the operative grant, identifies the written statement and five admitted reports, and reports the one-hour limit on supplementary prosecution questioning.",
+      "ABS-CBN independently corroborates the admission of prior testimony and reduced questioning time.",
+      "The article treats the ruling as procedural, attributes all disputed accusations to the prosecution and states that admission is not a finding of truth or guilt.",
+      "Publisher and court photographs were not treated as automatically reusable; FMB’s owned fallback is used and clearly labeled non-documentary."
+    ]
+  }
+}
