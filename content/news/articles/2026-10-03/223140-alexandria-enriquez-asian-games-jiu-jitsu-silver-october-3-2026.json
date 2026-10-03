@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "alexandria-enriquez-asian-games-jiu-jitsu-silver-october-3-2026",
+  "headline": "Enriquez Takes Asian Games Jiu-Jitsu Silver, PH Total Hits 29",
+  "seoTitle": "Enriquez Wins Asian Games Jiu-Jitsu Silver; PH Reaches 29 | FMB News",
+  "seoDescription": "Alexandria Enriquez won the women's 63kg jiu-jitsu silver as the Philippines reached 29 medals at the Aichi-Nagoya Asian Games.",
+  "keywords": [
+    "Alexandria Enriquez",
+    "Asian Games",
+    "jiu-jitsu",
+    "Team Philippines",
+    "Aichi-Nagoya 2026",
+    "Orapa Senatham"
+  ],
+  "category": "Sports",
+  "kicker": "ASIAN GAMES · FINAL MEDAL",
+  "deck": "The women's 63kg final was decided by a single advantage after a scoreless regulation result; the medal is final, not merely assured.",
+  "publishedAt": "2026-10-03T22:31:39+08:00",
+  "updatedAt": "2026-10-03T22:31:39+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Alexandria Nicole Enriquez won silver in the women's 63kg jiu-jitsu event at the Aichi-Nagoya Asian Games on Saturday, October 3, after a narrow final against Thailand's Orapa Senatham.",
+        "GMA News and The Philippine Star reported that the match ended 0-0 on points and was decided by Senatham's single advantage. Enriquez had submitted all three of her earlier opponents before the final."
+      ]
+    },
+    {
+      "heading": "Final medal, not an assurance",
+      "paragraphs": [
+        "This is a completed silver-medal result. It is distinct from merely reaching a medal round or being assured at least bronze.",
+        "Andrea Lao did not add a medal in the women's 52kg division after losing the bronze-medal match 0-2 to Mongolia's Narankhishig Baasanjargal."
+      ]
+    },
+    {
+      "heading": "Philippine tally",
+      "paragraphs": [
+        "Independent Philippine reports placed the delegation at four golds, nine silvers and 16 bronzes after Enriquez's result, or 29 medals in total. The count was current on October 3 and was not described as the final delegation total while events remained.",
+        "Enriquez delivered the jiu-jitsu team's second medal after Kaila Napolis won bronze. Earlier FMB News coverage recorded the Philippines at 28 medals after Jeus Yape's virtual taekwondo gold: /news/jeus-yape-asian-games-gold-medal-rush-october-2-2026/."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "The result gave the Philippines a ninth silver and extended a multi-sport medal surge at the Games. The clean distinction between an assured medal and a final result matters because medal-table totals should change only after the relevant contest is completed."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch the official Games results and medal table for the closing Philippine total, plus any remaining Filipino events. Later results may change the 4-9-16 count."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Aichi-Nagoya 2026",
+      "title": "Official Asian Games results portal",
+      "publishedAt": "2026-10-03T00:00:00+09:00",
+      "url": "https://results.asiangames2026.org/",
+      "role": "official competition results and medal-table reference"
+    },
+    {
+      "publisher": "GMA News Online",
+      "title": "Alexandria Enriquez claims silver in Asian Games jiu jitsu",
+      "publishedAt": "2026-10-03T12:54:00+08:00",
+      "url": "https://www.gmanetwork.com/news/sports/othersports/1004624/alexandria-enriquez-claims-silver-in-asian-games-jiu-jitsu/story/",
+      "role": "independent report confirming the silver, opponent and updated Philippine tally"
+    },
+    {
+      "publisher": "The Philippine Star",
+      "title": "Enriquez finishes Asiad jiu-jitsu with silver",
+      "publishedAt": "2026-10-03T14:03:00+08:00",
+      "url": "https://www.philstar.com/sports/2026/10/03/2560687/enriquez-finishes-asiad-jiu-jitsu-silver",
+      "role": "independent report confirming the 0-0 score, deciding advantage and Lao's bronze-match result"
+    },
+    {
+      "publisher": "FMB News",
+      "title": "Yape Wins Historic Virtual Taekwondo Gold as PH Haul Reaches 28 Medals",
+      "publishedAt": "2026-10-03T07:30:03.665+08:00",
+      "url": "https://www.francinemariebautista.com/news/jeus-yape-asian-games-gold-medal-rush-october-2-2026/",
+      "role": "earliest relevant FMB News report and prior medal-tally baseline"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying verified Asian Games jiu-jitsu results. It is not a photograph of Alexandria Enriquez, the final or the medal ceremony.",
+    "alt": "FMB News editorial graphic for Alexandria Enriquez's Asian Games jiu-jitsu silver medal",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-03T22:31:39+08:00",
+    "verificationNotes": [
+      "The official Aichi-Nagoya results portal was used as the competition reference.",
+      "GMA News independently confirms Enriquez's final silver and the Philippine 4-9-16 tally.",
+      "The Philippine Star independently confirms the scoreless points result, Senatham's deciding advantage and Lao's 0-2 bronze-match loss.",
+      "The article explicitly labels Enriquez's medal as final and does not count Lao as a medalist.",
+      "The medal table is time-bounded to October 3 and not described as the final delegation total.",
+      "Available event photography lacked independently verified reuse permission, so FMB's owned fallback is used and labeled non-documentary."
+    ]
+  }
+}
