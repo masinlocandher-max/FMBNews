@@ -12,10 +12,10 @@ const approvedHero = '/assets/images/mobile/fmb-mobile-hero.jpg';
 const approvedMug = '/assets/images/mobile/fmb-daily-brief-mug.jpg';
 
 const esc = (value = '') => String(value)
-  .replaceAll('&', '&amp;')
-  .replaceAll('<', '&lt;')
-  .replaceAll('>', '&gt;')
-  .replaceAll('"', '&quot;')
+  .replaceAll('&', '&')
+  .replaceAll('<', '<')
+  .replaceAll('>', '>')
+  .replaceAll('"', '"')
   .replaceAll("'", '&#39;');
 
 const fmtTime = (iso) => {
@@ -112,7 +112,7 @@ function isSportsStory(story) {
 
 function isEntertainmentStory(story) {
   const haystack = `${story?.category || ''} ${story?.kicker || ''} ${story?.headline || ''}`.toLowerCase();
-  return /entertainment|culture|lifestyle|film|music|pageant|celebrity|arts?\b/.test(haystack);
+  return /\b(?:entertainment|culture|lifestyle|films?|music|pageant\w*|celebrit(?:y|ies)|arts?)\b/.test(haystack);
 }
 
 function firstDistinct(stories, predicates = [], excluded = new Set()) {
