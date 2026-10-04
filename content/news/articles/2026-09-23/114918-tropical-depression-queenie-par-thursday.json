@@ -16,10 +16,10 @@
     "Philippine weather"
   ],
   "category": "Weather",
-  "kicker": "WEATHER · DEVELOPING",
+  "kicker": "WEATHER · PAST COVERAGE",
   "deck": "The system previously tracked as a low pressure area is now a tropical depression outside PAR. PAGASA says it may enter the Philippine Area of Responsibility on Thursday and could intensify further, while its trough is already bringing rain to parts of the Visayas and Mindanao.",
   "publishedAt": "2026-09-23T11:49:18+08:00",
-  "updatedAt": "2026-09-23T11:49:18+08:00",
+  "updatedAt": "2026-10-04T15:58:00+08:00",
   "author": "FMB News Desk",
   "articleType": "NewsArticle",
   "relatedArticles": [
@@ -84,6 +84,12 @@
       "heading": "What to watch next",
       "paragraphs": [
         "Watch PAGASA for the first tropical cyclone bulletin if the system enters PAR, any change in track or intensity, rainfall advisories, and whether the cyclone begins to enhance the southwest monsoon."
+      ]
+    },
+    {
+      "heading": "Editor's note",
+      "paragraphs": [
+        "This report was published on September 23, 2026 and has not been updated since. It reflects the PAGASA forecast as of that day, when the system was a tropical depression outside PAR and had not yet been named Queenie. It is not a current weather advisory. For the storm's later track and status, see PAGASA's tropical cyclone bulletins."
       ]
     }
   ],
