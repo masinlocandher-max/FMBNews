@@ -12,9 +12,9 @@ const approvedHero = '/assets/images/mobile/fmb-mobile-hero.jpg';
 const approvedMug = '/assets/images/mobile/fmb-daily-brief-mug.jpg';
 
 const esc = (value = '') => String(value)
-  .replaceAll('&', '&')
-  .replaceAll('<', '<')
-  .replaceAll('>', '>')
+  .replaceAll('&', '&amp;')
+  .replaceAll('<', '&lt;')
+  .replaceAll('>', '&gt;')
   .replaceAll('"', '"')
   .replaceAll("'", '&#39;');
 
