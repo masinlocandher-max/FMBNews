@@ -15,7 +15,7 @@ const esc = (value = '') => String(value)
   .replaceAll('&', '&amp;')
   .replaceAll('<', '&lt;')
   .replaceAll('>', '&gt;')
-  .replaceAll('"', '"')
+  .replaceAll('"', '\\u0026quot;')
   .replaceAll("'", '&#39;');
 
 const fmtTime = (iso) => {
