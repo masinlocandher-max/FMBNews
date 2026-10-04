@@ -52,12 +52,90 @@ function normalizeUtilityIndexing(html,relative){
   return html.replace('</head>',`${robots}</head>`);
 }
 
+const IMAGE_KEYS=new Set(['image','logo','thumbnailUrl','contentUrl','primaryImageOfPage']);
+const abs=v=>typeof v==='string'&&v.startsWith('/')&&!v.startsWith('//')?`${SITE}${v}`:v;
+function absolutizeNode(node,key){
+  if(Array.isArray(node))return node.map(v=>absolutizeNode(v,key));
+  if(node&&typeof node==='object'){
+    const out={};
+    for(const [k,v] of Object.entries(node)){
+      if(k==='url'&&IMAGE_KEYS.has(key))out[k]=abs(v);
+      else out[k]=absolutizeNode(v,k);
+    }
+    return out;
+  }
+  return IMAGE_KEYS.has(key)?abs(node):node;
+}
+// JSON-LD image/logo URLs must be absolute so crawlers and feed readers resolve them.
+function absolutizeJsonLd(html){
+  return html.replace(/(<script\s+type=["']application\/ld\+json["'][^>]*>)([\s\S]*?)(<\/script>)/gi,(all,open,body,close)=>{
+    try{return open+JSON.stringify(absolutizeNode(JSON.parse(body),''))+close}catch{return all}
+  });
+}
+const metaContent=(html,attr,name)=>html.match(new RegExp(`<meta\\s+${attr}=["']${name}["']\\s+content=["']([^"']*)["'][^>]*>`,'i'))?.[1];
+const escAttr=v=>String(v).replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;');
+// Canonical/OG consistency: og:url mirrors the canonical, and every og:image /
+// twitter:image gets alt text taken from the page's own lead image (or its title).
+function normalizeSocialMeta(html){
+  const canonical=extractCanonical(html);
+  if(canonical&&!/<meta\s+property=["']og:url["']/i.test(html))
+    html=html.replace('</head>',`<meta property="og:url" content="${escAttr(canonical)}"></head>`);
+  if(/<meta\s+property=["']og:image["']/i.test(html)){
+    const lead=html.match(/<figure[^>]*class=["'][^"']*article-figure[^"']*["'][^>]*>\s*<img\b[^>]*\balt=["']([^"']+)["']/i)?.[1];
+    const alt=lead||metaContent(html,'property','og:title');
+    if(alt){
+      if(!/<meta\s+property=["']og:image:alt["']/i.test(html))
+        html=html.replace(/(<meta\s+property=["']og:image["'][^>]*>)/i,`$1<meta property="og:image:alt" content="${escAttr(alt)}">`);
+      if(/<meta\s+name=["']twitter:image["']/i.test(html)&&!/<meta\s+name=["']twitter:image:alt["']/i.test(html))
+        html=html.replace(/(<meta\s+name=["']twitter:image["'][^>]*>)/i,`$1<meta name="twitter:image:alt" content="${escAttr(alt)}">`);
+    }
+  }
+  return html;
+}
+
+// Final link normalization. Runs last so it covers every shell variant the earlier
+// renderers emit (article, section, utility and home pages).
+//  - Corrections Policy and editorial-standards links point at their real routes
+//    (/news/corrections/ and /news/editorial-standards/), not dead anchors.
+//  - The footer Facebook link goes to the FMB&CO. Page. The X link is dropped
+//    because no FMB News X account is on record; a bare x.com root is a dead end.
+//  - "Read today's brief" opens the newest built Daily Brief edition instead of the
+//    CMS live shell, which can sit on an old edition.
+const MONTHS=['january','february','march','april','may','june','july','august','september','october','november','december'];
+async function latestBriefHref(){
+  let best=null;
+  for(const entry of await readdir(newsRoot,{withFileTypes:true})){
+    const m=/^fmb-brief-([a-z]+)-(\d{1,2})-(\d{4})$/.exec(entry.name);
+    if(!entry.isDirectory()||!m)continue;
+    const month=MONTHS.indexOf(m[1]);
+    if(month<0)continue;
+    try{await readFile(path.join(newsRoot,entry.name,'index.html'))}catch{continue}
+    const stamp=Date.UTC(Number(m[3]),month,Number(m[2]));
+    if(!best||stamp>best.stamp)best={name:entry.name,stamp};
+  }
+  return best?`/news/${best.name}/`:'/news/fmb-brief/';
+}
+const latestBrief=await latestBriefHref();
+function normalizeLinks(html,relative){
+  html=html
+    .replaceAll('href="/news/about/#standards"','href="/news/corrections/"')
+    .replaceAll('href="/news/#editorial-standard"','href="/news/editorial-standards/"')
+    .replaceAll('href="https://www.facebook.com/"','href="https://www.facebook.com/Binibiningfmb"')
+    .replace(/<a\s+href="https:\/\/x\.com\/"[^>]*>[^<]*<\/a>/gi,'');
+  if(relative==='index.html')
+    html=html.replace(/(<a\s+class="fmb-app-feature-card brief"\s+href=")\/news\/fmb-brief\/live\/(")/,`$1${latestBrief}$2`);
+  return html;
+}
+
 const pages=[];
 for(const file of await walk(newsRoot,f=>path.basename(f)==='index.html')){
   const relative=path.relative(newsRoot,file).replaceAll('\\','/');
   let html=await readFile(file,'utf8');
   html=normalizeUtilityIndexing(html,relative);
   html=addFeedDiscovery(html);
+  html=normalizeLinks(html,relative);
+  html=absolutizeJsonLd(html);
+  html=normalizeSocialMeta(html);
   await writeFile(file,html,'utf8');
   if(/<meta\s+name=["']robots["'][^>]*content=["'][^"']*noindex/i.test(html))continue;
   const canonical=extractCanonical(html);
@@ -83,8 +161,9 @@ const fresh=stories.filter(s=>{const age=now-Date.parse(s.publishedAt);return ag
 const newsSitemap=`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n${fresh.map(s=>`  <url>\n    <loc>${xml(`${NEWS}${s.slug}/`)}</loc>\n    <news:news>\n      <news:publication>\n        <news:name>FMB News</news:name>\n        <news:language>en</news:language>\n      </news:publication>\n      <news:publication_date>${xml(new Date(s.publishedAt).toISOString())}</news:publication_date>\n      <news:title>${xml(s.headline)}</news:title>\n    </news:news>\n  </url>`).join('\n')}\n</urlset>\n`;
 await writeFile(path.join(newsRoot,'news-sitemap.xml'),newsSitemap,'utf8');
 
-const latest=stories.slice(0,50);
-const buildDate=latest[0]?.updatedAt||latest[0]?.publishedAt||new Date().toISOString();
+const FEED_LIMIT=100;
+const latest=stories.slice(0,FEED_LIMIT);
+const buildDate=new Date(Math.max(...latest.map(s=>Math.max(Date.parse(s.updatedAt)||0,Date.parse(s.publishedAt)||0)))||Date.now()).toISOString();
 const rss=`<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n  <channel>\n    <title>FMB News</title>\n    <link>${NEWS}</link>\n    <description>Filipino Media Bulletin. Verified facts, visible sources, meaningful context, clear explanations.</description>\n    <language>en-PH</language>\n    <lastBuildDate>${xml(new Date(buildDate).toUTCString())}</lastBuildDate>\n    <atom:link href="${FEED}" rel="self" type="application/rss+xml"/>\n${latest.map(s=>`    <item>\n      <title>${xml(s.headline)}</title>\n      <link>${xml(`${NEWS}${s.slug}/`)}</link>\n      <guid isPermaLink="true">${xml(`${NEWS}${s.slug}/`)}</guid>\n      <pubDate>${xml(new Date(s.publishedAt).toUTCString())}</pubDate>\n      <description>${xml(s.seoDescription||s.deck||'')}</description>${s.category?`\n      <category>${xml(s.category)}</category>`:''}\n    </item>`).join('\n')}\n  </channel>\n</rss>\n`;
 await writeFile(path.join(newsRoot,'feed.xml'),rss,'utf8');
 
