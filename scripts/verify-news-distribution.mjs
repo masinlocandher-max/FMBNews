@@ -95,7 +95,7 @@ must(buildDate&&Number.isFinite(Date.parse(buildDate)),'RSS lastBuildDate is mis
 must(Date.parse(buildDate)<=Date.now()+5*60*1000,'RSS lastBuildDate is in the future');
 const items=[...rss.matchAll(/<item>[\s\S]*?<title>([\s\S]*?)<\/title>[\s\S]*?<link>([^<]+)<\/link>[\s\S]*?<guid isPermaLink="true">([^<]+)<\/guid>[\s\S]*?<pubDate>([^<]+)<\/pubDate>[\s\S]*?<description>([\s\S]*?)<\/description>[\s\S]*?<\/item>/g)]
   .map(m=>({title:unescapeXml(m[1]),link:unescapeXml(m[2]),guid:unescapeXml(m[3]),pubDate:m[4],description:unescapeXml(m[5])}));
-const expectedLatest=published.slice(0,50);
+const expectedLatest=published.slice(0,100);
 must(items.length===expectedLatest.length,`RSS item count mismatch: expected ${expectedLatest.length}, got ${items.length}`);
 must(new Set(items.map(item=>item.link)).size===items.length,'RSS contains duplicate report links');
 for(let i=0;i<items.length;i++){
