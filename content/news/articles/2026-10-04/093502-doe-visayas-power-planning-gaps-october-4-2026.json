@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "doe-visayas-power-planning-gaps-october-4-2026",
+  "headline": "DOE Admits Planning Gaps as Visayas Outages May Persist Into 2027",
+  "seoTitle": "DOE Admits Planning Gaps Behind Visayas Grid Outages",
+  "seoDescription": "Energy Secretary Sharon Garin acknowledged planning gaps as the Visayas grid faces continued alert risks and long-term fixes may not arrive before 2028.",
+  "keywords": ["Visayas grid", "Department of Energy", "Sharon Garin", "power outages", "NGCP"],
+  "category": "Business",
+  "kicker": "Power Security",
+  "deck": "The Energy Department told lawmakers that near-term measures may reduce but not eliminate grid alerts, while durable capacity additions could take until 2028.",
+  "publishedAt": "2026-10-04T09:35:02+08:00",
+  "updatedAt": "2026-10-04T09:35:02+08:00",
+  "author": "FMB News Desk",
+  "articleType": "news",
+  "sections": [
+    {
+      "heading": "The admission and outlook",
+      "paragraphs": [
+        "Energy Secretary Sharon Garin acknowledged planning failures behind recurring Visayas grid shortages during a joint congressional hearing in Bacolod City.",
+        "GMA Integrated News reported that even with planned interventions, the Department of Energy's best-case 2027 outlook includes at least one red alert and 19 yellow alerts. These are projections, not a guarantee of specific outages.",
+        "The House of Representatives confirmed that the hearing examined recurring red and yellow alerts and their effects on households and businesses."
+      ]
+    },
+    {
+      "heading": "What the government says it can do",
+      "paragraphs": [
+        "Garin said the department is pursuing battery storage paired with solar capacity and considering power barges as immediate measures. She also said long-term solutions are unlikely before 2028.",
+        "The recent alert conditions were linked to forced outages at multiple generating plants. Imports from neighboring grids were not enough to close the shortfall, according to the hearing account.",
+        "The hearing does not by itself deliver new capacity. Timelines, procurement, financing and the performance of proposed stopgap measures remain unresolved."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "Unreliable electricity raises costs for households, hospitals, small businesses and manufacturers across the Visayas. It can also disrupt telecommunications, water systems and local government services.",
+        "Consumers should continue to monitor National Grid Corporation of the Philippines and local distribution utility advisories. FMB News first reported the current cycle of Visayas grid stress on August 12."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "House of Representatives of the Philippines",
+      "title": "House committees tackle recurring Visayas power outages",
+      "publishedAt": "2026-10-03T12:25:46+08:00",
+      "url": "https://congress.gov.ph/media/press-releases/10286",
+      "role": "primary"
+    },
+    {
+      "publisher": "House of Representatives of the Philippines",
+      "title": "Committee meetings for October 3, 2026",
+      "publishedAt": "2026-10-03T00:00:00+08:00",
+      "url": "https://congress.gov.ph/committees/committee-meetings/daily/2026/10/03",
+      "role": "primary"
+    },
+    {
+      "publisher": "GMA Integrated News",
+      "title": "DOE admits planning failure over recurring Visayas grid outages",
+      "publishedAt": "2026-10-04T03:37:00+08:00",
+      "url": "https://www.gmanetwork.com/news/topstories/regions/1004666/doe-admits-planning-failure-over-recurring-visayas-grid-outages/story/",
+      "role": "independent"
+    },
+    {
+      "publisher": "FMB News",
+      "title": "Visayas grid placed on red alert, Mindanao under yellow alert",
+      "publishedAt": "2026-08-12T00:00:00+08:00",
+      "url": "https://www.francinemariebautista.com/news/visayas-red-alert-mindanao-yellow-alert-august-12/",
+      "role": "continuity"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual. This is not a photograph of a specific power plant, outage or congressional hearing.",
+    "alt": "FMB News editorial graphic accompanying a report on Visayas power-grid planning",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-04T09:31:00+08:00",
+    "verificationNotes": "The House confirms the hearing and the department's proposed measures. GMA independently reports Garin's admission and quantified 2027 outlook. Forecast figures are attributed and not presented as certain outcomes. Earliest relevant FMB report linked for continuity."
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "uae-flydubai-copilot-terrorist-attack-finding-october-3-2026",
+  "headline": "UAE Says Flydubai Co-Pilot Attempted Terrorist Attack With Crash Axe",
+  "seoTitle": "UAE Calls Flydubai Incident Attempted Terrorist Attack",
+  "seoDescription": "UAE prosecutors say a Flydubai co-pilot tried to seize a flight using a crash axe. The investigation into motive and possible links remains open.",
+  "keywords": ["Flydubai", "United Arab Emirates", "aviation security", "Saudi Arabia", "terrorism investigation"],
+  "category": "World",
+  "kicker": "Aviation Security",
+  "deck": "Prosecutors said the co-pilot attacked the captain and tried to take control of the aircraft. Motive, possible links and technical evidence remain under investigation.",
+  "publishedAt": "2026-10-04T09:35:00+08:00",
+  "updatedAt": "2026-10-04T09:35:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "news",
+  "sections": [
+    {
+      "heading": "Confirmed findings",
+      "paragraphs": [
+        "The United Arab Emirates Public Prosecution said on October 3 that its investigation found a co-pilot aboard Flydubai flight FZ1073 attempted what it classified as a terrorist act.",
+        "Attorney-General Hamad Saif Al Shamsi said the co-pilot used a crash axe to attack the captain and tried to take control of the aircraft. The flight was diverted and landed safely in Tabuk, Saudi Arabia.",
+        "Reuters and The Associated Press independently reported the incident and the UAE finding. Reuters reported that passengers helped restrain the co-pilot before reserve pilots took over."
+      ]
+    },
+    {
+      "heading": "What remains unresolved",
+      "paragraphs": [
+        "The prosecutor said the investigation is continuing into the suspect's motives, any possible links and the technical evidence. The terrorism classification is an official investigative finding, not a final court judgment.",
+        "FMB News is not publishing unconfirmed claims about the co-pilot's identity or prior activity because those details were not included in the prosecutor's public statement."
+      ]
+    },
+    {
+      "heading": "Why it matters to Filipinos",
+      "paragraphs": [
+        "Gulf air routes are heavily used by overseas Filipino workers and their families. The case raises public-interest questions about crew screening, cockpit security and airline crisis response, although authorities have not reported that a Philippine route or Filipino passenger was involved.",
+        "Travellers should rely on airline and airport advisories for any operational changes. No broad Flydubai suspension was announced in the verified sources reviewed for this report."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Emirates News Agency",
+      "title": "Planning, attempted terrorist act behind Flydubai flight incident: UAE Attorney-General",
+      "publishedAt": "2026-10-03T10:16:11+04:00",
+      "url": "https://www.wam.ae/en/article/17gemrc-planning-attempted-terrorist-act-behind-flydubai",
+      "role": "primary"
+    },
+    {
+      "publisher": "Emirates News Agency",
+      "title": "UAE Attorney-General orders investigation into Flydubai flight incident",
+      "publishedAt": "2026-10-01T00:00:00+04:00",
+      "url": "https://www.wam.ae/en/article/c2ivgfv-uae-attorney-general-orders-investigation-into",
+      "role": "primary"
+    },
+    {
+      "publisher": "Reuters",
+      "title": "What do we know about Flydubai flight 1073?",
+      "publishedAt": "2026-10-02T00:00:00Z",
+      "url": "https://www.reuters.com/world/middle-east/what-do-we-know-about-flydubai-flight-1073-2026-10-02/",
+      "role": "independent"
+    },
+    {
+      "publisher": "Associated Press",
+      "title": "Flydubai flight incident under investigation",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "url": "https://apnews.com/article/cf64a228799e6e788e834cac2a489ab2",
+      "role": "independent"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual. This is not a photograph of Flydubai flight FZ1073 and does not depict the incident.",
+    "alt": "FMB News editorial graphic accompanying a report on the Flydubai flight investigation",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-04T09:31:00+08:00",
+    "verificationNotes": "The official UAE prosecution statement establishes the investigative finding and unresolved issues. Reuters and AP independently corroborate the flight incident. Identity and background claims omitted because they were not in the public prosecution statement."
+  }
+}

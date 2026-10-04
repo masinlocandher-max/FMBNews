@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "choi-wan-trough-visayas-mindanao-rain-october-4-2026",
+  "headline": "Choi-Wan Trough Brings Heavy-Rain Risk to Visayas and Mindanao",
+  "seoTitle": "Choi-Wan Trough Raises Visayas, Mindanao Flood Risk",
+  "seoDescription": "PAGASA warns of possible flash floods and landslides as the trough of Typhoon Choi-Wan affects parts of the Visayas and Mindanao.",
+  "keywords": ["Typhoon Choi-Wan", "PAGASA", "Visayas weather", "Mindanao weather", "flood risk"],
+  "category": "Weather",
+  "kicker": "Weather Advisory",
+  "deck": "The typhoon remains outside the Philippine Area of Responsibility, but its trough is bringing rain that may trigger flash floods and landslides.",
+  "publishedAt": "2026-10-04T09:35:03+08:00",
+  "updatedAt": "2026-10-04T09:35:03+08:00",
+  "author": "FMB News Desk",
+  "articleType": "advisory",
+  "sections": [
+    {
+      "heading": "PAGASA's current assessment",
+      "paragraphs": [
+        "PAGASA said at 4 a.m. on October 4 that the trough of Typhoon Choi-Wan was affecting the Visayas and Mindanao. The typhoon was outside the Philippine Area of Responsibility and no tropical cyclone wind signal was in effect.",
+        "Mindanao, Western Visayas, the Negros Island Region, Central Visayas and Southern Leyte were forecast to have cloudy skies with scattered rain showers and thunderstorms. Moderate to at times heavy rain may cause flash floods or landslides.",
+        "At 6:26 a.m., PAGASA's Visayas regional office issued a thunderstorm advisory covering parts of Leyte, Cebu, Negros Oriental, Negros Occidental, Bohol and Palawan. Advisory areas can change quickly."
+      ]
+    },
+    {
+      "heading": "What is developing",
+      "paragraphs": [
+        "At 4 a.m., Choi-Wan was estimated about 2,595 kilometers east of Extreme Northern Luzon, with maximum sustained winds of 155 kilometers per hour and gusts up to 190 kilometers per hour, moving north-northeast at 15 kilometers per hour.",
+        "The storm's track, intensity and distance from the country may change. Residents should use the newest PAGASA bulletin rather than treating these figures as fixed."
+      ]
+    },
+    {
+      "heading": "Public-safety guidance",
+      "paragraphs": [
+        "People in low-lying, flood-prone and landslide-prone communities should monitor local disaster office notices, avoid flooded roads and be ready to move if authorities issue an evacuation order.",
+        "Travelers should check sea, airport and road advisories before departure. The verified bulletin did not place Choi-Wan inside the Philippine Area of Responsibility."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "PAGASA",
+      "title": "Daily Weather Forecast issued at 4:00 AM, October 4, 2026",
+      "publishedAt": "2026-10-04T04:00:00+08:00",
+      "url": "https://origin.pagasa.dost.gov.ph/weather",
+      "role": "primary"
+    },
+    {
+      "publisher": "PAGASA Visayas PRSD",
+      "title": "Thunderstorm Advisory No. 2 issued at 6:26 AM, October 4, 2026",
+      "publishedAt": "2026-10-04T06:26:00+08:00",
+      "url": "https://bagong.pagasa.dost.gov.ph/regional-forecast/visprsd",
+      "role": "primary"
+    },
+    {
+      "publisher": "GMA Integrated News",
+      "title": "Trough of Typhoon Choi-Wan affecting Visayas, Mindanao",
+      "publishedAt": "2026-10-03T16:38:00+08:00",
+      "url": "https://www.gmanetwork.com/news/weather/content/1004640/trough-of-typhoon-choi-wan-affecting-visayas-mindanao/story/",
+      "role": "independent"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual. This is not a satellite image or a photograph of Typhoon Choi-Wan or current flooding.",
+    "alt": "FMB News editorial graphic accompanying a weather advisory for the Visayas and Mindanao",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-04T09:31:00+08:00",
+    "verificationNotes": "The latest national and regional PAGASA bulletins establish the forecast, storm position and time-limited advisory areas. GMA independently corroborates the developing weather pattern. Copy states that the cyclone remains outside PAR and that conditions may change."
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "portugal-lajes-base-us-iran-war-probe-october-3-2026",
+  "headline": "Portugal Opens Probe Into U.S. Use of Lajes Base During Iran War",
+  "seoTitle": "Portugal Probes U.S. Use of Lajes Base in Iran War",
+  "seoDescription": "Portuguese prosecutors opened an inquiry into the legality of government approval for U.S. use of Lajes Air Base during the Iran conflict.",
+  "keywords": ["Portugal", "Lajes Air Base", "United States", "Iran war", "Azores"],
+  "category": "World",
+  "kicker": "Alliance Accountability",
+  "deck": "The inquiry follows an opposition complaint. Portugal's government says the authorization complied with international law, and no illegality has been established.",
+  "publishedAt": "2026-10-04T09:35:01+08:00",
+  "updatedAt": "2026-10-04T09:35:01+08:00",
+  "author": "FMB News Desk",
+  "articleType": "news",
+  "sections": [
+    {
+      "heading": "What is confirmed",
+      "paragraphs": [
+        "Portugal's Public Prosecutor's Office opened an inquiry into the government's authorization for United States forces to use Lajes Air Base in the Azores during the conflict with Iran.",
+        "Public broadcaster RTP confirmed the inquiry, and Reuters reported that it followed a complaint by the opposition Left Bloc. Opening an inquiry is a procedural step and is not a finding that the government acted unlawfully."
+      ]
+    },
+    {
+      "heading": "The competing positions",
+      "paragraphs": [
+        "The Portuguese government says the use of the base complied with international law and was limited after assurances from the United States. The Left Bloc argues that the authorization may have exceeded Portugal's obligations and legal framework.",
+        "The investigation must determine what activities were authorized, how the bilateral defense agreement applies and whether any domestic or international rules were breached. Those questions remain unresolved."
+      ]
+    },
+    {
+      "heading": "Why it matters to Filipinos",
+      "paragraphs": [
+        "The inquiry tests how allied governments account for support to military operations beyond their territory. The wider Iran conflict can affect fuel prices, shipping routes and overseas Filipino communities even when the legal dispute itself is centered in Europe.",
+        "There is no direct Philippine government action arising from the probe. Its relevance is mainly through alliance policy and the economic spillovers of the conflict."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "RTP",
+      "title": "Ministério Público investiga utilização norte-americana das Lajes",
+      "publishedAt": "2026-10-02T20:34:00+01:00",
+      "url": "https://www.rtp.pt/noticias/pais/ofensiva-contra-irao-ministerio-publico-investiga-utilizacao-norte-americana-das-lajes_n1769246",
+      "role": "official-confirmation"
+    },
+    {
+      "publisher": "Reuters",
+      "title": "Portugal prosecutors probe legality of US use of Lajes base in Iran war",
+      "publishedAt": "2026-10-03T13:10:59Z",
+      "url": "https://www.reuters.com/world/portugal-prosecutors-probe-legality-us-use-lajes-base-iran-war-2026-10-03/",
+      "role": "independent"
+    },
+    {
+      "publisher": "Portuguese Public Prosecutor's Office",
+      "title": "Agreement on Cooperation and Defense between Portugal and the United States",
+      "publishedAt": "1995-06-01T00:00:00+01:00",
+      "url": "https://dcjri.ministeriopublico.pt/sites/default/files/documentos/instrumentos/rar38-1995.pdf",
+      "role": "primary-background"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual. This is not a photograph of Lajes Air Base and does not depict military operations.",
+    "alt": "FMB News editorial graphic accompanying a report on Portugal's Lajes Air Base inquiry",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-04T09:31:00+08:00",
+    "verificationNotes": "RTP confirms the prosecutor's inquiry. Reuters independently reports the complaint and government response. The 1995 agreement is included as legal background. The copy expressly distinguishes an inquiry from a finding of illegality."
+  }
+}
