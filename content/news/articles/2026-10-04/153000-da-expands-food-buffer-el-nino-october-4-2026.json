@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "da-expands-food-buffer-el-nino-october-4-2026",
+  "headline": "DA Expands Food Buffer as El Niño Threatens Lower Farm Output",
+  "seoTitle": "DA Expands Food Buffer for El Niño",
+  "seoDescription": "The Agriculture Department is expanding food storage and farm support as it projects lower production and a possible 700,000-ton palay hit.",
+  "keywords": ["Department of Agriculture", "El Niño", "food buffer", "palay production", "NFA warehouses"],
+  "category": "Business",
+  "kicker": "Food Security",
+  "deck": "The department says advance purchases, added storage and targeted farm support are being deployed ahead of an El Niño expected to last into 2027.",
+  "publishedAt": "2026-10-04T15:30:00+08:00",
+  "updatedAt": "2026-10-04T15:30:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What changed",
+      "paragraphs": [
+        "The Department of Agriculture said on October 4 that it is building a larger food buffer and increasing support for producers ahead of an anticipated intensified El Niño. The measures include advance purchases of rice, fertilizer and other farm inputs, added storage capacity and targeted interventions in areas expected to be hardest hit.",
+        "Agriculture Secretary Francisco Tiu Laurel Jr. said the government had provided an additional ₱6.2 billion for fuel subsidies and other assistance for farmers, fisherfolk and agricultural truckers. The department said the support also responds to higher fuel costs from the Middle East conflict and the initial effects of El Niño later this year."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The DA said weather-related shocks, including El Niño, could reduce projected palay output during the second-half main harvest by about 700,000 metric tons. Tiu Laurel described lower overall farm production as the department's worst-case expectation, not a final production result.",
+        "The department reported that the National Food Authority now has 365 active warehouses, up from around 300, after additional facilities were rented. It is also opening cold-storage facilities for meat and vegetables and conducting cloud seeding in drought-hit areas including Isabela and Negros when cloud moisture is sufficient.",
+        "Earlier FMB News coverage of the widening drought response is available at https://www.francinemariebautista.com/news/dswd-drought-aid-745-million-october-4-2026/."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "Rice supply, food prices and farm incomes are directly exposed when drought reduces harvests or raises production costs. Additional buffer stocks and storage can help manage disruptions, but the DA announcement does not establish that the projected loss has already occurred or guarantee that market prices will remain unchanged.",
+        "The El Niño is expected by the department to last through the first half of 2027. Its eventual strength, rainfall pattern and local crop impact can still vary, so the 700,000-ton figure should be read as a current planning estimate rather than a confirmed final loss."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for PAGASA climate updates, revised crop-production forecasts, NFA inventory and procurement disclosures, fertilizer and fuel-subsidy rollout details, and any new Agriculture Department measures in provinces experiencing worsening drought."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Department of Agriculture",
+      "title": "DA braces for intensified El Niño",
+      "publishedAt": "2026-10-04T12:00:00+08:00",
+      "url": "https://www.da.gov.ph/da-braces-for-intensified-el-nino/",
+      "role": "primary"
+    },
+    {
+      "publisher": "GMA Integrated News",
+      "title": "DA prepares bigger food buffer amid super El Niño threat",
+      "publishedAt": "2026-10-04T13:44:00+08:00",
+      "url": "https://www.gmanetwork.com/news/topstories/nation/1004695/da-prepares-bigger-food-buffer-amid-super-el-ni-o-threat/story/",
+      "role": "independent"
+    },
+    {
+      "publisher": "FMB News",
+      "title": "DSWD Drought Aid Tops ₱745 Million as El Niño Response Expands",
+      "publishedAt": "2026-10-04T10:32:00+08:00",
+      "url": "https://www.francinemariebautista.com/news/dswd-drought-aid-745-million-october-4-2026/",
+      "role": "related"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual. This is not a photograph of current farms, food stocks or Agriculture Department operations.",
+    "alt": "FMB News editorial graphic accompanying a report on El Niño food-security preparations",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-04T15:27:00+08:00",
+    "verificationNotes": "The October 4 DA release is the primary source for the measures, funding and production estimate. GMA independently reported the same announcement and principal figures. The article identifies the 700,000-metric-ton figure as a projection and does not treat a worst-case production scenario as an observed loss."
+  }
+}

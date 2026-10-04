@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "metro-manila-air-quality-sensitive-groups-october-4-2026",
+  "headline": "Nine Metro Manila Stations Report Unhealthy Air for Sensitive Groups",
+  "seoTitle": "Nine Metro Manila Stations Flag Unhealthy Air",
+  "seoDescription": "DENR-EMB reported unhealthy PM2.5 readings for sensitive groups at nine Metro Manila monitoring stations on October 4.",
+  "keywords": ["Metro Manila air quality", "PM2.5", "DENR-EMB", "haze", "Kalimantan fires"],
+  "category": "Environment",
+  "kicker": "Air Quality Alert",
+  "deck": "The 8 a.m. snapshot covered stations from Valenzuela to Las Piñas, while the environment bureau urged vulnerable people to limit outdoor exposure.",
+  "publishedAt": "2026-10-04T15:30:01+08:00",
+  "updatedAt": "2026-10-04T15:30:01+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What changed",
+      "paragraphs": [
+        "The Department of Environment and Natural Resources' Environmental Management Bureau reported that air quality was unhealthy for sensitive groups at nine Metro Manila monitoring stations as of 8 a.m. on October 4. The affected stations were in Valenzuela; Quezon City at Ateneo; Marikina at Parang; San Juan; Mandaluyong; Taguig at TUP; Pasay; Parañaque at PEATC; and Las Piñas.",
+        "The advisory was based on elevated fine-particulate, or PM2.5, readings. Air quality was classified as fair at stations in Navotas, Pateros, Parañaque at Don Bosco, and Muntinlupa at Filinvest City and Bilibid. These classifications were a morning snapshot and can change with wind, rainfall and local emissions."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "DENR-EMB said the observed haze may be associated with smoke from continuing fires in Kalimantan, Indonesia, carried toward the Philippines by prevailing winds. That is the bureau's current possible explanation, not a definitive attribution for every monitoring station or all particulate pollution in Metro Manila.",
+        "The bureau advised people to minimize prolonged outdoor activity in visibly affected areas. Children, older people and those with respiratory or cardiovascular conditions were advised to limit outdoor exposure, while the public was told to consider well-fitting N95 masks in areas affected by haze.",
+        "The new readings mark a recurrence after air quality improved in early September. FMB News' earliest report on the transboundary-haze episode is available at https://www.francinemariebautista.com/news/denr-haze-ncr-calabarzon-mimaropa-september-1-2026/."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "PM2.5 can reach deep into the lungs, making poor-air episodes especially important for children, older adults, pregnant people, outdoor workers and people with heart or lung conditions. Conditions can differ sharply across the metropolis, so residents should use the nearest official monitor rather than assume one reading represents the whole region.",
+        "The advisory concerns elevated exposure risk, not a declaration that everyone outdoors will become ill. Reducing strenuous or prolonged outdoor activity is a precaution while readings remain elevated."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Check DENR-EMB's live PM2.5 and PM10 monitoring page for updated station readings and follow local health or school advisories. Also watch for changes in wind direction and any further official assessment of the haze source."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "DENR Environmental Management Bureau - National Capital Region",
+      "title": "Air Quality Data",
+      "publishedAt": null,
+      "url": "https://ncr.emb.gov.ph/air-quality-data/",
+      "role": "primary"
+    },
+    {
+      "publisher": "GMA Integrated News",
+      "title": "Unhealthy air quality recorded in several Metro Manila areas — DENR-EMB",
+      "publishedAt": "2026-10-04T13:30:00+08:00",
+      "url": "https://www.gmanetwork.com/news/topstories/metro/1004694/unhealthy-air-quality-recorded-in-several-metro-manila-areas-denr-emb/story/",
+      "role": "independent"
+    },
+    {
+      "publisher": "FMB News",
+      "title": "DENR-EMB Says Kalimantan Smoke Is Driving Philippine Haze; Effects May Persist Through Sept. 3",
+      "publishedAt": "2026-09-01T05:21:52+08:00",
+      "url": "https://www.francinemariebautista.com/news/denr-haze-ncr-calabarzon-mimaropa-september-1-2026/",
+      "role": "related"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual. This is not a photograph of the October 4 haze or any particular monitoring station.",
+    "alt": "FMB News editorial graphic accompanying a Metro Manila air-quality advisory",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-04T15:27:00+08:00",
+    "verificationNotes": "The official EMB-NCR page exposes the bureau's real-time PM2.5 and PM10 monitoring network. GMA's October 4 report provides the bureau's 8 a.m. station classifications, health advice and cautious haze attribution. The article preserves the time-limited nature of the readings and describes Kalimantan smoke as a possible association rather than a conclusively proven source at every station."
+  }
+}
