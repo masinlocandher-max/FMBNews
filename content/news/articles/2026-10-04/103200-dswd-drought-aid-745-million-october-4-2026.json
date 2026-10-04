@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "dswd-drought-aid-745-million-october-4-2026",
+  "headline": "DSWD Drought Aid Tops ₱745 Million as El Niño Response Expands",
+  "seoTitle": "DSWD Drought Aid Tops ₱745 Million",
+  "seoDescription": "DSWD says drought assistance has exceeded ₱745 million, up from ₱714 million on October 1, as food, cash and water support continues.",
+  "keywords": ["DSWD", "El Niño", "drought aid", "emergency cash transfer", "Project LAWA at BINHI"],
+  "category": "National",
+  "kicker": "Drought Response",
+  "deck": "The newly reported total is at least ₱31 million above the government figure released on October 1, as dry conditions affect communities across several regions.",
+  "publishedAt": "2026-10-04T10:32:00+08:00",
+  "updatedAt": "2026-10-04T10:32:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What changed",
+      "paragraphs": [
+        "The Department of Social Welfare and Development has provided more than ₱745 million in humanitarian assistance to drought-affected areas, spokesperson Irene Dumlao said in an interview with Super Radyo dzBB reported by GMA News on October 4.",
+        "The total is at least ₱31 million higher than the more than ₱714 million reported by DSWD on October 1. The department said assistance includes family food packs and emergency cash transfers for farmers."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "Dumlao identified Isabela, Cagayan, Dinagat Islands and parts of Northern Samar, Mountain Province, Camarines Norte and Catanduanes among the areas receiving aid. She said DSWD is continuing to produce and preposition food packs and has deployed water filtration trucks and water tankers where water supply is needed.",
+        "In its October 1 release, DSWD said drought had affected 3,463 barangays, 189,994 families and 356,800 people. It reported ₱1.44 billion in standby funds and more than 3.86 million prepositioned food packs. Those figures were the latest official breakdown available when this report was checked.",
+        "Earlier FMB News coverage of the developing El Niño outlook is available at https://www.francinemariebautista.com/news/very-strong-el-nino-45c-heat-projection-october-3-2026/."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "Cash, food and water support can cushion income and supply losses for farmers and households already experiencing prolonged dry conditions. The rising aid total shows that response spending is still increasing as affected areas widen.",
+        "DSWD's Project LAWA at BINHI also funds work and training tied to small reservoirs and climate-resilient crops. These are preparedness measures, not a guarantee that every affected household has already received assistance."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for a new DSWD beneficiary and regional breakdown, updated drought monitoring, additional local disaster declarations and any change to standby funds, food-pack inventories or water-truck deployments."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "GMA Integrated News",
+      "title": "DSWD provides over P745M worth of aid to drought-affected areas",
+      "publishedAt": "2026-10-04T09:57:00+08:00",
+      "url": "https://www.gmanetwork.com/news/topstories/nation/1004678/dswd-provides-over-p745m-worth-of-aid-to-drought-affected-areas/story/",
+      "role": "independent"
+    },
+    {
+      "publisher": "Department of Social Welfare and Development via Philippine Information Agency",
+      "title": "DSWD releases over Php714M in aid for El Niño-affected communities",
+      "publishedAt": "2026-10-01T12:00:00+08:00",
+      "url": "https://pia.gov.ph/press-release/dswd-releases-over-php714m-in-aid-for-el-nino-affected-communities/",
+      "role": "primary"
+    },
+    {
+      "publisher": "Department of Social Welfare and Development via Philippine Information Agency",
+      "title": "DSWD starts risk mitigation, preparedness measures for super El Niño",
+      "publishedAt": "2026-10-01T12:00:00+08:00",
+      "url": "https://pia.gov.ph/press-release/dswd-starts-risk-mitigation-preparedness-measures-for-super-el-nino/",
+      "role": "primary"
+    },
+    {
+      "publisher": "FMB News",
+      "title": "CCC Official Says 2027 Heat Could Reach 45°C as Very Strong El Niño Looms",
+      "publishedAt": "2026-10-03T07:30:00+08:00",
+      "url": "https://www.francinemariebautista.com/news/very-strong-el-nino-45c-heat-projection-october-3-2026/",
+      "role": "related"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual. This is not a photograph of current drought conditions, aid distribution or DSWD operations.",
+    "alt": "FMB News editorial graphic accompanying a report on expanded drought assistance",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-04T10:29:00+08:00",
+    "verificationNotes": "GMA's October 4 report quotes DSWD spokesperson Irene Dumlao directly on the new aid total, covered locations and current deployments. DSWD's October 1 releases independently establish the previous ₱714 million baseline, affected-population count, program details, standby funds and stockpile figures. The article labels the comparison as a minimum increase and does not claim a new beneficiary count."
+  }
+}
