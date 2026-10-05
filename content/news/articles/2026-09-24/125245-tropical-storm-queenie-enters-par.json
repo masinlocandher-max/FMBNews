@@ -17,10 +17,10 @@
     "Philippine weather"
   ],
   "category": "Weather",
-  "kicker": "WEATHER · DEVELOPING",
+  "kicker": "WEATHER · PAST COVERAGE",
   "deck": "The cyclone previously tracked east of the Philippines entered PAR Thursday morning and is now officially Queenie. PAGASA says it may intensify further, but no Philippine landfall is established in the current forecast.",
   "publishedAt": "2026-09-24T12:52:45+08:00",
-  "updatedAt": "2026-09-24T12:52:45+08:00",
+  "updatedAt": "2026-10-04T15:15:00+08:00",
   "author": "FMB News Desk",
   "articleType": "NewsArticle",
   "relatedArticles": [
@@ -74,6 +74,12 @@
       "heading": "What to watch next",
       "paragraphs": [
         "PAGASA's next bulletin is scheduled for 5 p.m. Thursday. FMB News will track any change in intensity, forecast track, wind signals, rainfall hazards, coastal conditions and whether the projected turn away from the Philippine landmass remains intact."
+      ]
+    },
+    {
+      "heading": "Editor's note",
+      "paragraphs": [
+        "This report was published on September 24, 2026 and has not been updated since. It reflects the PAGASA forecast as of that day, including the possible typhoon strength by Sunday, September 27. It is not a current weather advisory. For the storm's later track and status, see PAGASA's tropical cyclone bulletins."
       ]
     }
   ],
