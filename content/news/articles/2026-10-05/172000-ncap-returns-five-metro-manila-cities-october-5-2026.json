@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "ncap-returns-five-metro-manila-cities-october-5-2026",
+  "headline": "Camera-Based Traffic Enforcement Returns in Manila, Quezon City, San Juan, Muntinlupa and Parañaque",
+  "seoTitle": "NCAP Returns in Five Metro Manila Cities",
+  "seoDescription": "The No Contact Apprehension Policy resumes on October 5 in five Metro Manila cities. Valenzuela deferred its restart because of road repairs.",
+  "keywords": [
+    "NCAP",
+    "Metro Manila",
+    "traffic enforcement",
+    "May Huli Ka",
+    "MMDA"
+  ],
+  "category": "National",
+  "kicker": "Traffic Enforcement",
+  "deck": "Valenzuela put its own restart on hold because of road repairs. Fines follow the Metro Manila Traffic Code of 2023, according to reports.",
+  "publishedAt": "2026-10-05T16:56:00+08:00",
+  "updatedAt": "2026-10-05T16:56:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What changed",
+      "paragraphs": [
+        "The No Contact Apprehension Policy resumes on Monday, October 5, in Manila, Muntinlupa, Parañaque, Quezon City and San Juan, according to Rappler, the Inquirer and GMA News. Quezon City's own announcement also sets the reimplementation date at October 5.",
+        "Valenzuela had planned to restart on the same day but deferred because of ongoing road repairs and changing traffic conditions."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "Under NCAP, CCTV and other cameras record suspected violations and notices go to the registered vehicle owner without an enforcer stopping the vehicle. Reports say violations are reviewed before notices are issued. Rappler reports that motorists can receive real-time notices by SMS and email and can check recorded violations on the \"May Huli Ka\" website and in the eGovPH app.",
+        "Fines follow the Metro Manila Traffic Code of 2023, the Inquirer reports. People who believe they were wrongly apprehended can contest through designated online channels. The PNP said it is ready to help local governments enforce the policy. Rappler says the MMDA has used NCAP on some major roads since May 2025.",
+        "Outlets differ on how they summarise the Supreme Court history that cleared the way for local resumption. This article does not restate that procedural history from secondary summaries alone."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "Drivers and registered owners in the five cities can now receive violation notices from cameras. Owners should check official portals for their records and for the process for contesting a notice."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch each city's own guidance on covered roads and contest procedures, Valenzuela's revised start date, and how contested notices are handled in practice."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Inquirer.net",
+      "title": "NCAP reimplementation starts Monday in 5 Metro Manila cities",
+      "publishedAt": "2026-10-05T09:03:00+08:00",
+      "url": "https://newsinfo.inquirer.net/2317074/ncap-reimplentation-starts-monday-in-5-metro-manila-cities",
+      "role": "independent"
+    },
+    {
+      "publisher": "Rappler",
+      "title": "NCAP returns in 5 Metro Manila cities",
+      "publishedAt": "2026-10-05T08:20:00+08:00",
+      "url": "https://www.rappler.com/philippines/ncap-implementation-resumption-cities-october-5-2026/",
+      "role": "independent"
+    },
+    {
+      "publisher": "GMA Integrated News",
+      "title": "NCAP implementation starts in parts of Metro Manila today, October 5, 2026",
+      "publishedAt": "2026-10-05T04:49:00+08:00",
+      "url": "https://www.gmanetwork.com/news/topstories/metro/1004746/ncap-implementation-starts-in-parts-of-metro-manila-today-october-5-2026/story/",
+      "role": "independent"
+    },
+    {
+      "publisher": "Quezon City Government",
+      "title": "No Contact Apprehension Policy (NCAP) Reimplementation – October 5, 2026",
+      "publishedAt": "2026-09-30T12:00:00+08:00",
+      "url": "https://quezoncity.gov.ph/no-contact-apprehension-policy-ncap-reimplementation-october-5-2026/",
+      "role": "primary"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual. This is not a photograph of any NCAP camera, road, or traffic stop.",
+    "alt": "FMB News editorial graphic accompanying an NCAP reimplementation report",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": null
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-05T16:45:00+08:00",
+    "verificationNotes": "Five cities and Valenzuela deferral consistent across Inquirer, Rappler, GMA; Quezon City LGU page confirms Oct 5. Supreme Court procedural history left out because secondary outlets conflict (petition dismissed vs TRO lifted). No fine amounts published."
+  }
+}
