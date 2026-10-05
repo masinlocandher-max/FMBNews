@@ -90,6 +90,7 @@ await import('./hardfix-fact-check-qa.mjs');
 // The canonical homepage renderer is the sole owner of /news/index.html. It
 // runs after the generic audit so News/Worldwide/Sports and Entertainment are
 // source-owned decisions rather than late hardfix output.
+await import('./patch-entertainment-matcher.mjs');
 await import('./render-home-experience.mjs');
 
 
