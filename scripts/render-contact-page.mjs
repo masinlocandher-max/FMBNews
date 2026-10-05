@@ -12,8 +12,11 @@ const newsRoot = path.join(root, 'dist', 'news');
 const ORIGIN = 'https://www.francinemariebautista.com';
 
 const esc = (value = '') => String(value)
-  .replaceAll('&', '&').replaceAll('<', '<').replaceAll('>', '>')
-  .replaceAll('"', '"').replaceAll("'", '&#39;');
+  .replaceAll('&', String.fromCharCode(38) + 'amp;')
+  .replaceAll('<', String.fromCharCode(38) + 'lt;')
+  .replaceAll('>', String.fromCharCode(38) + 'gt;')
+  .replaceAll('"', String.fromCharCode(38) + 'quot;')
+  .replaceAll("'", String.fromCharCode(38) + '#39;');
 
 const iaCss = await readFile(path.join(newsRoot, 'assets', 'css', 'fmb-news-editorial-ia.css'));
 const iaHref = `/assets/css/fmb-news-editorial-ia.css?v=${createHash('sha256').update(iaCss).digest('hex').slice(0, 10)}`;
