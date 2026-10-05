@@ -64,6 +64,9 @@ await import('./render-sports.mjs');
 // mobile system rather than carrying a private copy of the chrome.
 await import('./render-publication-sections.mjs');
 
+// Contact page: /news/contact/ (channels already published on About/footer only).
+await import('./render-contact-page.mjs');
+
 // Generate Fact Check before the universal mobile/PWA passes so all new pages
 // receive the same shared newsroom runtime, accessibility and QA contract.
 await import('./render-fmb-fact-check.mjs');
