@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "yemen-aden-airport-attack-200000-displaced-october-7-2026",
+  "headline": "Aden Airport Attacked as Yemen Displacement Passes 200,000",
+  "seoTitle": "Aden Airport Attacked as Yemen Displacement Passes 200,000",
+  "seoDescription": "A missile landed near Aden airport's runway as renewed fighting pushed displacement above 200,000, according to Reuters and IOM data.",
+  "keywords": ["Yemen", "Aden airport", "Houthis", "IOM", "displacement", "Bab el-Mandeb"],
+  "category": "World",
+  "kicker": "Middle East · Humanitarian crisis",
+  "deck": "A Cairo flight was diverted after a missile landed near Aden airport's runway, while IOM tracking showed a widening displacement emergency.",
+  "publishedAt": "2026-10-07T23:21:00+08:00",
+  "updatedAt": "2026-10-07T23:21:00+08:00",
+  "author": "FMB News Global Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["Yemen's Transport Ministry said a missile landed near the runway at Aden International Airport minutes before a flight from Cairo was due to land. The flight was diverted to Jeddah and aircraft on the ground were moved because of fears of further attacks, Reuters reported.","Reuters said fighting between Houthi forces and Saudi-backed government troops had intensified around the Bab el-Mandeb corridor. IOM reporting cited by Reuters put displacement since early September above 200,000; IOM's public displacement tracker separately recorded 21,798 newly displaced people between September 27 and October 3."]},
+    {"heading":"Claims and unresolved points","paragraphs":["The Houthis did not immediately comment on the Aden airport strike in the Reuters report. The Saudi-led coalition separately said it intercepted a Houthi ballistic missile aimed at Khamis Mushait, while Houthi claims of attacks on other Saudi targets were not all independently confirmed.","The durability of government territorial gains and the final number of people displaced remain unresolved as front lines and population movements change."]},
+    {"heading":"Context","paragraphs":["Aden is the internationally recognized government's temporary seat and a principal air gateway for southern Yemen. Bab el-Mandeb, to the southwest, connects the Red Sea with the Gulf of Aden and is central to commercial shipping between Asia and Europe."]},
+    {"heading":"Why this matters","paragraphs":["Bab el-Mandeb is a major shipping route. Fighting near the corridor can raise freight, insurance and fuel-market risks relevant to Philippine consumers and businesses. Escalation also matters to Filipino workers and travellers across the Gulf region."]},
+    {"heading":"Earlier FMB coverage","paragraphs":["The broader escalation follows FMB News' October 6 report on attacks at Jazan and Najran airports: https://www.francinemariebautista.com/news/saudi-jazan-najran-airport-attacks-october-2026/."]},
+    {"heading":"What to watch next","paragraphs":["Watch verified airport-damage assessments, the status of commercial flights, new IOM displacement totals, access for humanitarian agencies and any effect on Bab el-Mandeb shipping."]}
+  ],
+  "sources": [
+    {"publisher":"Reuters","title":"Houthis attack Aden airport as fighting intensifies in Yemen","publishedAt":"2026-10-07T01:21:16Z","url":"https://www.reuters.com/world/middle-east/houthis-launch-missiles-yemens-aden-airport-fighting-intensifies-2026-10-07/","role":"independent"},
+    {"publisher":"International Organization for Migration","title":"Yemen — Rapid Displacement Tracking Update (27 September – 3 October 2026)","publishedAt":"2026-10-06T00:00:00Z","url":"https://dtm.iom.int/reports/yemen-rapid-displacement-tracking-update-27-september-3-october-2026","role":"primary"},
+    {"publisher":"Associated Press","title":"Tens of thousands flee as Iran-backed rebels draw Yemen into the wider war","publishedAt":"2026-09-23T00:00:00Z","url":"https://apnews.com/article/5bb1f82555c147514fc2e8d2d61baf0c","role":"independent-context"},
+    {"publisher":"FMB News","title":"Attacks Hit Two Saudi Airports as Yemen Fighting Escalates","publishedAt":"2026-10-07T12:28:06+08:00","url":"https://www.francinemariebautista.com/news/saudi-jazan-najran-airport-attacks-october-2026/","role":"related"}
+  ],
+  "image": {"kind":"licensed-contextual-photo","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/The%20Yemeni%20cities%20of%20Little%20Aden%20and%20Aden%20(iss069e004371).jpg","source":"NASA via Wikimedia Commons","sourceUrl":"https://commons.wikimedia.org/wiki/File:The_Yemeni_cities_of_Little_Aden_and_Aden_(iss069e004371).jpg","creator":"Sultan Alneyadi / NASA Johnson Space Center","license":"Public domain in the United States, NASA work","credit":"Photo: Sultan Alneyadi / NASA via Wikimedia Commons, public domain","caption":"April 2023 orbital file photograph of Little Aden and Aden. It is contextual and does not depict the October 7, 2026 airport attack or fighting.","alt":"Orbital view of the Yemeni cities of Aden and Little Aden","width":5568,"height":3712},
+  "audit": {"sourceCheckedAt":"2026-10-07T23:21:00+08:00","verificationNotes":"Reuters independently reported the Transport Ministry account and the IOM displacement total. IOM's public tracker confirms a large continuing movement but its weekly figure is a subset, so the article does not equate the two datasets. Houthi and coalition military claims remain attributed.","duplicateCheck":"The October 6 Saudi-airport story covers Jazan and Najran. This continuation is distinct because Aden airport was attacked and the humanitarian displacement total crossed 200,000; the earlier report is linked."}
+}

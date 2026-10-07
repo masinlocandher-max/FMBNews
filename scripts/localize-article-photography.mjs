@@ -90,6 +90,9 @@ async function download(url) {
   for (let attempt = 1; attempt <= 4; attempt += 1) {
     const response = await fetch(url, {
       redirect: 'follow',
+      // A blocked third-party host must not stall an otherwise publishable
+      // newsroom build indefinitely. The pass is deliberately fail-soft.
+      signal: AbortSignal.timeout(5000),
       headers: {
         'user-agent': 'FMBNewsBuild/1.0 (Filipino Media Bulletin; +https://www.francinemariebautista.com/news/)',
         accept: 'image/avif,image/webp,image/*,*/*;q=0.8',
@@ -148,26 +151,29 @@ if (!urls.size) {
   if (VENDOR_MODE) await mkdir(vendorDir, { recursive: true });
 
   const local = new Map();        // url -> "/assets/images/article-photos/<file>"
-  let vendored = 0; let fetched = 0; let requests = 0;
+  let vendored = 0; let reused = 0; let fetched = 0; let requests = 0;
   const failures = [];
+  const vendorFiles = await exists(vendorDir) ? await readdir(vendorDir) : [];
+  const outputFiles = await readdir(outDir);
 
-  for (const url of urls.keys()) {
+  async function processUrl(url) {
     const key = keyFor(url);
     // A vendored copy wins outright -- no network call at all.
-    let hit = '';
-    if (await exists(vendorDir)) {
-      for (const candidate of await readdir(vendorDir)) {
-        if (candidate.startsWith(`${key}.`)) { hit = candidate; break; }
-      }
-    }
+    let hit = vendorFiles.find((candidate) => candidate.startsWith(`${key}.`)) || '';
     if (hit) {
       await copyFile(path.join(vendorDir, hit), path.join(outDir, hit));
       local.set(url, `/assets/images/article-photos/${hit}`);
       vendored += 1;
-      continue;
+      return;
+    }
+    // A resumed build can reuse files already fetched before an interruption.
+    hit = outputFiles.find((candidate) => candidate.startsWith(`${key}.`)) || '';
+    if (hit) {
+      local.set(url, `/assets/images/article-photos/${hit}`);
+      reused += 1;
+      return;
     }
     try {
-      if (requests) await sleep(350);
       requests += 1;
       // Try the web-sized rendition first; fall back to the URL as given.
       const sized = webSizedUrl(url);
@@ -190,6 +196,18 @@ if (!urls.size) {
     }
   }
 
+  // A small bounded pool prevents one slow host from serially blocking the
+  // entire build while avoiding an unbounded burst against image providers.
+  const queue = [...urls.keys()];
+  async function worker() {
+    while (queue.length) {
+      const url = queue.shift();
+      await processUrl(url);
+    }
+  }
+  const workerCount = Math.min(8, queue.length);
+  await Promise.all(Array.from({ length: workerCount }, () => worker()));
+
   // --- rewrite the pages ------------------------------------------------------
   let rewritten = 0; let references = 0;
   for (const page of pages) {
@@ -209,7 +227,7 @@ if (!urls.size) {
 
   console.log(
     `Article photography localized: ${local.size}/${urls.size} distinct photographs now served from FMB News `
-    + `(${vendored} vendored in-repo, ${fetched} fetched); ${references} reference(s) rewritten across ${rewritten} page(s).`
+    + `(${vendored} vendored in-repo, ${reused} reused from the interrupted build, ${fetched} fetched); ${references} reference(s) rewritten across ${rewritten} page(s).`
   );
   if (failures.length) {
     console.warn(`  ${failures.length} photograph(s) could not be localized and keep their third-party URL:`);

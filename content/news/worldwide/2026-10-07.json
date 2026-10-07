@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "editionType": "worldwide",
+  "editionDate": "2026-10-07",
+  "slug": "october-7-2026",
+  "title": "FMB Worldwide | October 7, 2026",
+  "deck": "War casualties, threats to vital sea lanes, a worsening Ebola outbreak and a global bond selloff lead the latest verified international developments affecting Filipinos.",
+  "status": "published",
+  "windowStart": "2026-10-03T23:02:51+08:00",
+  "windowEnd": "2026-10-07T23:24:00+08:00",
+  "publishedAt": "2026-10-07T23:24:00+08:00",
+  "updatedAt": "2026-10-07T23:24:00+08:00",
+  "heroImage": {
+    "kind": "rights-cleared-contextual-photo",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Earth_seen_from_Apollo_17_(Original_Orientation).jpg",
+    "source": "NASA via Wikimedia Commons",
+    "creator": "Apollo 17 crew / NASA",
+    "license": "Public domain in the United States, NASA work",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Earth_seen_from_Apollo_17_(Original_Orientation).jpg",
+    "caption": "Archival Apollo 17 photograph of Earth, used as a contextual image for this global news edition. It does not depict any event reported in the edition.",
+    "alt": "Full view of Earth photographed by the Apollo 17 crew in 1972",
+    "width": 3000,
+    "height": 3002
+  },
+  "entries": [
+    {
+      "entryKey": "ukraine-toll-past-20-major-russian-barrage-october-7-2026",
+      "country": "Ukraine / Russia",
+      "section": "Lead",
+      "category": "War",
+      "headline": "Ukraine Toll Rises Past 20 After Major Russian Missile Barrage",
+      "verifiedFact": "AP reported at least 24 civilians killed, including four children, while Reuters reported at least 20 killed and around 50 wounded. The figures were compiled at different times and remain subject to rescue updates.",
+      "whyItMatters": "Escalation against energy infrastructure can affect fuel, food, shipping and financial markets and contingency planning for Filipinos in Europe.",
+      "reputationImplication": "Russia's description of its targets was not independently verified in the sources reviewed.",
+      "opportunityRisk": "Watch rescue-service updates, a consolidated toll, verified energy damage and new air-defence commitments.",
+      "sourceLinks": [
+        {"publisher":"Associated Press","url":"https://apnews.com/article/650e298d7bc3881351533683ff4040ed"},
+        {"publisher":"Reuters","url":"https://www.reuters.com/world/europe/russia-strikes-ukraines-kyiv-fresh-wave-attacks-2026-10-07/"},
+        {"publisher":"State Emergency Service of Ukraine, Kyiv","url":"https://mrckyiv.dsns.gov.ua/pres-centr/foto/nadzvicaini-podiyi/kiyiv-vnaslidok-rosiiskoyi-ataki-v-nic-na-7-zovtnia-je-zagibli-ta-postrazdali-foto"}
+      ],
+      "articlePath": "/news/ukraine-toll-past-20-major-russian-barrage-october-7-2026/",
+      "sortOrder": 1,
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Kyiv%20Ukraine.jpg",
+      "imageCredit": "Photo: Creation3987!GO / Wikimedia Commons, CC0 1.0"
+    },
+    {
+      "entryKey": "yemen-aden-airport-attack-200000-displaced-october-7-2026",
+      "country": "Yemen",
+      "section": "Middle East",
+      "category": "Conflict / Humanitarian",
+      "headline": "Aden Airport Attacked as Yemen Displacement Passes 200,000",
+      "verifiedFact": "A missile landed near Aden airport's runway and forced a Cairo flight to divert. IOM tracking cited by Reuters put displacement since early September above 200,000.",
+      "whyItMatters": "Fighting near Bab el-Mandeb can raise shipping, insurance and fuel costs and affects Filipinos working and travelling across the Gulf.",
+      "reputationImplication": "The Houthis had not immediately commented on the airport strike; several wider attack claims remained unconfirmed.",
+      "opportunityRisk": "Watch flight operations, IOM displacement totals, humanitarian access and shipping through Bab el-Mandeb.",
+      "sourceLinks": [
+        {"publisher":"Reuters","url":"https://www.reuters.com/world/middle-east/houthis-launch-missiles-yemens-aden-airport-fighting-intensifies-2026-10-07/"},
+        {"publisher":"International Organization for Migration","url":"https://dtm.iom.int/reports/yemen-rapid-displacement-tracking-update-27-september-3-october-2026"},
+        {"publisher":"Associated Press","url":"https://apnews.com/article/5bb1f82555c147514fc2e8d2d61baf0c"}
+      ],
+      "articlePath": "/news/yemen-aden-airport-attack-200000-displaced-october-7-2026/",
+      "sortOrder": 2,
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/The%20Yemeni%20cities%20of%20Little%20Aden%20and%20Aden%20(iss069e004371).jpg",
+      "imageCredit": "Photo: Sultan Alneyadi / NASA via Wikimedia Commons, public domain"
+    },
+    {
+      "entryKey": "hormuz-tanker-attacks-weekly-high-october-2026",
+      "country": "Strait of Hormuz",
+      "section": "Global Shipping",
+      "category": "Energy Security",
+      "headline": "Tanker Attacks Around Hormuz Hit War-Period Weekly High",
+      "verifiedFact": "Reuters counted at least 12 attacks, attempted attacks or harassment incidents from September 28 to October 5. The IMO's broader confirmed regional list stood at 93 incidents on October 6.",
+      "whyItMatters": "The Philippines imports most of its fuel and employs many seafarers, making war-risk insurance, freight and crew safety directly relevant.",
+      "reputationImplication": "Responsibility for every incident has not been independently established, and the Reuters and IMO totals measure different sets of incidents.",
+      "opportunityRisk": "Watch IMO confirmations, crew casualties, tanker traffic and war-risk insurance rates.",
+      "sourceLinks": [
+        {"publisher":"Reuters","url":"https://www.reuters.com/world/middle-east/attacks-tankers-hormuz-hit-highest-any-week-since-start-iran-war-sources-say-2026-10-07/"},
+        {"publisher":"International Maritime Organization","url":"https://www.imo.org/en/mediacentre/hottopics/pages/middle-east-highlighted-incidents.aspx"}
+      ],
+      "articlePath": "/news/hormuz-tanker-attacks-weekly-high-october-2026/",
+      "sortOrder": 3,
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Strait%20of%20Hormuz%20(MODIS%202020-12-04).jpg",
+      "imageCredit": "Image: NASA Earth Observatory via Wikimedia Commons, public domain"
+    },
+    {
+      "entryKey": "congo-ebola-8500-cases-response-october-2026",
+      "country": "Democratic Republic of Congo",
+      "section": "Africa",
+      "category": "Public Health",
+      "headline": "Congo Ebola Outbreak Passes 8,500 Cases as New Hot Spots Emerge",
+      "verifiedFact": "AP reported more than 8,500 cases and 4,000 deaths. WHO's earlier September 23 snapshot recorded 7,890 confirmed cases and 3,799 deaths, showing the progression across differently dated datasets.",
+      "whyItMatters": "Direct Philippine risk is not established, but travel, medical deployments and preparedness for imported cases make accurate surveillance relevant.",
+      "reputationImplication": "Case totals, deaths and geographic distribution remain subject to revision during an active outbreak.",
+      "opportunityRisk": "Watch WHO updates, cross-border cases, tracing coverage and Philippine health guidance.",
+      "sourceLinks": [
+        {"publisher":"Associated Press","url":"https://apnews.com/article/42e9c7f66b9ee7628b0a852a4e9dd73b"},
+        {"publisher":"World Health Organization","url":"https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON618"},
+        {"publisher":"WHO Regional Office for Africa","url":"https://www.afro.who.int/countries/democratic-republic-of-congo/news/surveillance-strengthens-ebola-response-democratic-republic-congo"}
+      ],
+      "articlePath": "/news/congo-ebola-8500-cases-response-october-2026/",
+      "sortOrder": 4,
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ebola%20Virus.jpg",
+      "imageCredit": "Image: Cynthia Goldsmith / CDC via Wikimedia Commons, public domain"
+    },
+    {
+      "entryKey": "us-30-year-treasury-yield-24-year-high-october-2026",
+      "country": "United States / Global",
+      "section": "Global Markets",
+      "category": "Interest Rates",
+      "headline": "U.S. 30-Year Treasury Yield Reaches Fresh 24-Year High",
+      "verifiedFact": "Reuters reported that the 30-year yield briefly touched 5.7041%, the highest since 2002. The intraday quote can differ from the Treasury's later daily closing curve.",
+      "whyItMatters": "U.S. yields influence global borrowing costs, exchange rates and demand for emerging-market assets, including Philippine securities.",
+      "reputationImplication": "A single intraday move does not determine Philippine interest rates or the peso's direction.",
+      "opportunityRisk": "Watch Treasury auctions, Federal Reserve guidance, oil prices, local bond yields and the peso.",
+      "sourceLinks": [
+        {"publisher":"Reuters","url":"https://www.reuters.com/business/us-30-year-bond-yield-hits-fresh-24-year-high-2026-10-07/"},
+        {"publisher":"U.S. Department of the Treasury","url":"https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value=2026&field_tdr_date_value_month=202610&type=daily_treasury_yield_curve"},
+        {"publisher":"Associated Press","url":"https://apnews.com/article/44b75c188756038371cf3112ede9cee8"}
+      ],
+      "articlePath": "/news/us-30-year-treasury-yield-24-year-high-october-2026/",
+      "sortOrder": 5,
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/US%20Treasury%20Building.jpg",
+      "imageCredit": "Photo: Loren / Wikimedia Commons, public domain worldwide"
+    },
+    {
+      "entryKey": "imf-energy-debt-ai-global-growth-warning-october-2026",
+      "country": "Global",
+      "section": "Global Economy",
+      "category": "Policy",
+      "headline": "IMF Chief Warns Energy, Debt and AI Risks Threaten Global Growth",
+      "verifiedFact": "IMF Managing Director Kristalina Georgieva warned that high energy prices, record public debt and financial risks from concentrated AI investment threaten growth; the IMF and independent reporting confirm the speech.",
+      "whyItMatters": "Energy costs, global yields and AI policy can affect Philippine inflation, borrowing, outsourcing and digital-sector employment.",
+      "reputationImplication": "The remarks were policy assessments, not realized outcomes, and included no new Philippines-specific forecast.",
+      "opportunityRisk": "Watch the IMF's updated outlook during the October 12–18 annual meetings.",
+      "sourceLinks": [
+        {"publisher":"International Monetary Fund","url":"https://www.imf.org/en/news/articles/2026/10/07/sp100726-2026-annual-meetings-curtain-raiser"},
+        {"publisher":"Reuters","url":"https://www.reuters.com/world/asia-pacific/imf-chief-warns-energy-shock-growing-debt-ai-risks-threaten-global-growth-2026-10-07/"},
+        {"publisher":"Associated Press","url":"https://apnews.com/article/war-ai-georgieva-imf-oil-debt-2da9d879e2eb70e1e16d14fd1a307a99"}
+      ],
+      "articlePath": "/news/imf-energy-debt-ai-global-growth-warning-october-2026/",
+      "sortOrder": 6,
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/International%20Monetary%20Fund%20headquarters.jpg",
+      "imageCredit": "Photo: APK / Wikimedia Commons, CC BY 4.0"
+    },
+    {
+      "entryKey": "min-aung-hlaing-malaysia-visit-repatriation-october-2026",
+      "country": "Myanmar / Malaysia",
+      "section": "Southeast Asia",
+      "category": "Diplomacy / Migration",
+      "headline": "Min Aung Hlaing Begins Malaysia Visit Amid Repatriation Criticism",
+      "verifiedFact": "The two-day visit and bilateral agenda are officially confirmed. Malaysia calls the returns voluntary and safe, while the UN and rights groups warn of persecution, conflict and conscription risks.",
+      "whyItMatters": "The visit may affect ASEAN's Myanmar policy, migrant protection and Philippine leadership of the bloc.",
+      "reputationImplication": "Protections for individual returnees and whether Rohingya refugees are included remain unresolved.",
+      "opportunityRisk": "Watch the bilateral talks, written safeguards and responses from ASEAN members.",
+      "sourceLinks": [
+        {"publisher":"Myanmar Ministry of Foreign Affairs","url":"https://www.mofa.gov.mm/en/president-of-the-republic-of-the-union-of-myanmar-h-e-u-min-aung-hlaingto-make-official-visit-to-malaysia/"},
+        {"publisher":"Associated Press","url":"https://apnews.com/article/min-aung-hlaing-malaysia-anwar-rohingya-34a65fe203c37131d33965c680699082"},
+        {"publisher":"Reuters","url":"https://www.reuters.com/world/asia-pacific/once-shunned-myanmars-military-backed-leader-set-malaysian-red-carpet-2026-10-07/"}
+      ],
+      "articlePath": "/news/min-aung-hlaing-malaysia-visit-repatriation-october-2026/",
+      "sortOrder": 7,
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Min%20Aung%20Hlaing%20at%20the%20Pyidaungsu%20Hluttaw%20in%202026%20(1).jpg",
+      "imageCredit": "Photo: Zawzawaungthwin / Wikimedia Commons, CC BY-SA 4.0"
+    }
+  ],
+  "held": [
+    {
+      "topic": "Reported U.S.-Thailand trade terms",
+      "reason": "Held because the reported final-paragraph dispute concerned a prospective agreement that had not been signed or officially published. The available material did not support presenting negotiated text as a completed policy change."
+    },
+    {
+      "topic": "Reported Iranian funding for Hezbollah",
+      "reason": "Held because the central $200 million claim relied on unnamed sources and lacked independent or primary-source confirmation at publication time."
+    }
+  ],
+  "audit": {
+    "note": "This edition adds five independently newsworthy standalone reports and incorporates two already published October 7 FMB reports without duplicating their article records. The Ukraine continuation links to the earliest FMB report on the same barrage. Two insufficiently verified candidates remain held with reasons.",
+    "sourceCheckedAt": "2026-10-07T23:24:00+08:00",
+    "imageRightsCheckedAt": "2026-10-07T23:24:00+08:00"
+  }
+}

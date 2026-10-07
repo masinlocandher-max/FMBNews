@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "us-30-year-treasury-yield-24-year-high-october-2026",
+  "headline": "U.S. 30-Year Treasury Yield Reaches Fresh 24-Year High",
+  "seoTitle": "U.S. 30-Year Treasury Yield Reaches 24-Year High",
+  "seoDescription": "The U.S. 30-year yield briefly reached 5.7041% amid a global bond selloff, inflation concern and rising government-debt anxiety.",
+  "keywords": ["U.S. Treasury", "bond yields", "global markets", "interest rates", "inflation", "Philippine borrowing"],
+  "category": "Business",
+  "kicker": "Global markets · Interest rates",
+  "deck": "The long-bond yield briefly touched 5.7041%, its highest level since 2002, before key Treasury auctions and Federal Reserve minutes.",
+  "publishedAt": "2026-10-07T23:23:00+08:00",
+  "updatedAt": "2026-10-07T23:23:00+08:00",
+  "author": "FMB News Global Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["The yield on the benchmark U.S. 30-year Treasury bond briefly reached 5.7041% on October 7, the highest since 2002, Reuters reported. The move came amid a broader global bond selloff tied to inflation concerns, high government debt and oil above $100 a barrel.","The market move preceded U.S. Treasury auctions for 10-year and 30-year debt and the release of minutes from the Federal Reserve's September meeting. Yields move inversely to bond prices."]},
+    {"heading":"Context","paragraphs":["U.S. Treasury daily par-yield data already showed the 30-year rate at 5.66% on October 5, with the 20-year rate at 5.70%. The October 7 intraday high reported by Reuters is a market quote and can differ from the Treasury's later daily closing curve."]},
+    {"heading":"Why this matters","paragraphs":["U.S. yields influence global financing costs, exchange rates and investor demand for emerging-market assets. Persistently higher long-term rates can add pressure to Philippine government and corporate borrowing costs and to the peso, although a single intraday move does not determine local rates."]},
+    {"heading":"What to watch next","paragraphs":["Watch the 10- and 30-year auction results, Federal Reserve guidance, oil prices, U.S. inflation expectations and movements in Philippine government-bond yields and the peso."]}
+  ],
+  "sources": [
+    {"publisher":"Reuters","title":"US 30-year bond yield hits fresh 24-year high","publishedAt":"2026-10-07T13:00:00Z","url":"https://www.reuters.com/business/us-30-year-bond-yield-hits-fresh-24-year-high-2026-10-07/","role":"independent"},
+    {"publisher":"U.S. Department of the Treasury","title":"Daily Treasury Par Yield Curve Rates — October 2026","publishedAt":"2026-10-06T00:00:00-04:00","url":"https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value=2026&field_tdr_date_value_month=202610&type=daily_treasury_yield_curve","role":"primary"},
+    {"publisher":"Associated Press","title":"Wall Street retreats from its record as stocks fall worldwide","publishedAt":"2026-10-07T14:00:00Z","url":"https://apnews.com/article/44b75c188756038371cf3112ede9cee8","role":"independent"}
+  ],
+  "image": {"kind":"licensed-contextual-photo","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/US%20Treasury%20Building.jpg","source":"Wikimedia Commons","sourceUrl":"https://commons.wikimedia.org/wiki/File:US_Treasury_Building.jpg","creator":"Loren","license":"Public domain worldwide, released by the copyright holder","credit":"Photo: Loren / Wikimedia Commons, public domain worldwide","caption":"File photograph of the U.S. Treasury Building in Washington. It is contextual and does not depict October 7, 2026 market trading.","alt":"United States Treasury Building in Washington","width":2041,"height":1348},
+  "audit": {"sourceCheckedAt":"2026-10-07T23:23:00+08:00","verificationNotes":"Reuters supplied the intraday high and historical comparison. Treasury data independently establish the elevated official yield curve before the move; AP corroborates the wider bond-market and stock-market context. Intraday and official daily curve measures are clearly distinguished.","duplicateCheck":"No published FMB article with this slug or the central October 7 long-bond high was found in the live CMS or canonical repository."}
+}

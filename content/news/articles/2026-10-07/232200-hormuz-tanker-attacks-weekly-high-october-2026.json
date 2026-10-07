@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "hormuz-tanker-attacks-weekly-high-october-2026",
+  "headline": "Tanker Attacks Around Hormuz Hit War-Period Weekly High",
+  "seoTitle": "Hormuz Tanker Attacks Hit War-Period Weekly High",
+  "seoDescription": "Maritime sources counted at least 12 attacks, attempted attacks or harassment incidents in one week; IMO listed 93 confirmed regional incidents by October 6.",
+  "keywords": ["Strait of Hormuz", "tankers", "shipping", "IMO", "oil", "seafarers"],
+  "category": "Business",
+  "kicker": "Global shipping · Energy security",
+  "deck": "At least 12 tanker incidents were reported in the week to October 5, while the IMO's broader confirmed regional count reached 93.",
+  "publishedAt": "2026-10-07T23:22:00+08:00",
+  "updatedAt": "2026-10-07T23:22:00+08:00",
+  "author": "FMB News Global Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["Attacks and harassment involving tankers around the Strait of Hormuz reached the highest weekly level since the current Iran conflict began, Reuters reported, citing maritime-security sources. At least 12 attacks, attempted attacks or harassment incidents were recorded from September 28 through October 5.","The International Maritime Organization's public incident list reported 93 confirmed Middle East maritime incidents as of October 6. The IMO list is broader and confirmation can lag real-time security reporting, so the two counts should not be treated as directly interchangeable."]},
+    {"heading":"Confirmed facts and unresolved points","paragraphs":["Reuters said the affected vessels included oil, liquefied natural gas and liquefied petroleum gas tankers. The incidents ranged from confirmed strikes to drone surveillance and radio hailing. The precise actor responsible for every incident has not been independently established.","IMO records show several vessels damaged in recent Hormuz incidents. Continued transit by Gulf exporters demonstrates that shipping has not stopped, but the sustainability of those flows is uncertain."]},
+    {"heading":"Context","paragraphs":["The Strait of Hormuz is the narrow maritime outlet from the Persian Gulf and a critical route for oil and gas exports. The incident totals come from different reporting systems: Reuters' weekly security tally includes attempted attacks and harassment, while the IMO list records confirmed incidents across the wider Middle East theatre."]},
+    {"heading":"Why this matters","paragraphs":["The Philippines imports most of its fuel and employs many seafarers. More attacks can raise war-risk insurance, freight and crew-safety costs even when cargoes continue moving, with possible effects on local transport and food prices."]},
+    {"heading":"What to watch next","paragraphs":["Watch IMO confirmations, crew casualties, shipping advisories, tanker traffic volumes, insurance rates and any change in Gulf oil and gas exports."]}
+  ],
+  "sources": [
+    {"publisher":"Reuters","title":"Attacks on tankers in Hormuz hit highest of any week since start of Iran war, sources say","publishedAt":"2026-10-07T12:00:00Z","url":"https://www.reuters.com/world/middle-east/attacks-tankers-hormuz-hit-highest-any-week-since-start-iran-war-sources-say-2026-10-07/","role":"independent"},
+    {"publisher":"International Maritime Organization","title":"Middle East — Highlighted confirmed incidents","publishedAt":"2026-10-06T00:00:00Z","url":"https://www.imo.org/en/mediacentre/hottopics/pages/middle-east-highlighted-incidents.aspx","role":"primary"}
+  ],
+  "image": {"kind":"official-contextual-photo","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Strait%20of%20Hormuz%20(MODIS%202020-12-04).jpg","source":"NASA Earth Observatory via Wikimedia Commons","sourceUrl":"https://commons.wikimedia.org/wiki/File:Strait_of_Hormuz_(MODIS_2020-12-04).jpg","creator":"NASA Earth Observatory image by Joshua Stevens, using MODIS data","license":"Public domain in the United States, NASA work","credit":"Image: NASA Earth Observatory via Wikimedia Commons, public domain","caption":"NASA satellite file image of the Strait of Hormuz from December 2020. It is contextual and does not depict any October 2026 incident.","alt":"Satellite view of the Strait of Hormuz between Iran and the Arabian Peninsula","width":2235,"height":1741},
+  "audit": {"sourceCheckedAt":"2026-10-07T23:22:00+08:00","verificationNotes":"Reuters' weekly incident count was checked against the IMO's official confirmed-incident tracker. The story explicitly explains the different scopes and confirmation lag and does not assign responsibility for every incident.","duplicateCheck":"Existing FMB stories cover individual tanker transits and attacks. This is a distinct data-based escalation: the highest weekly incident count of the war period."}
+}

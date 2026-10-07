@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "congo-ebola-8500-cases-response-october-2026",
+  "headline": "Congo Ebola Outbreak Passes 8,500 Cases as New Hot Spots Emerge",
+  "seoTitle": "Congo Ebola Outbreak Passes 8,500 Cases as Hot Spots Shift",
+  "seoDescription": "AP reported more than 8,500 cases and 4,000 deaths as responders warned of weak contact tracing and new hot spots in North Kivu.",
+  "keywords": ["Ebola", "Democratic Republic of Congo", "WHO", "North Kivu", "outbreak", "public health"],
+  "category": "Health",
+  "kicker": "Africa · Public health emergency",
+  "deck": "The country's deadliest Ebola outbreak continued expanding as responders described major gaps in tracing, staffing and community trust.",
+  "publishedAt": "2026-10-07T23:24:00+08:00",
+  "updatedAt": "2026-10-07T23:24:00+08:00",
+  "author": "FMB News Global Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading":"What happened","paragraphs":["The Ebola outbreak in the Democratic Republic of Congo passed 8,500 reported cases and 4,000 deaths, Associated Press reported, as new hot spots emerged and responders described a fragmented response. North Kivu accounted for roughly 40% of new cases in the AP report.","WHO's latest formal disease-outbreak notice available to FMB recorded 7,890 confirmed cases and 3,799 deaths as of September 23. That earlier official snapshot and AP's newer figures are presented with dates so readers can see the outbreak's progression without treating the datasets as simultaneous."]},
+    {"heading":"Response gaps and uncertainty","paragraphs":["AP reported that only about 23% of expected contacts were being traced and that many cases and deaths occurred outside treatment centres. Conflict, population movement, shortages and mistrust were complicating containment.","Case totals, deaths and the geographic distribution remain subject to revision. The available sources support a rapidly expanding outbreak but not a final toll."]},
+    {"heading":"Context","paragraphs":["Ebola spreads through direct contact with infected bodily fluids and requires rapid isolation, contact tracing and protective care. The current outbreak figures are time-stamped because field reporting and formal WHO disease-outbreak notices are published on different schedules."]},
+    {"heading":"Why this matters","paragraphs":["The outbreak is a major international health emergency. Direct risk to the Philippines is not established, but international travel, medical deployments and preparedness for imported cases make accurate surveillance and WHO guidance relevant."]},
+    {"heading":"What to watch next","paragraphs":["Watch WHO situation reports, confirmed cross-border cases, contact-tracing coverage, availability of trained staff and supplies, and any Philippine Department of Health travel or surveillance guidance."]}
+  ],
+  "sources": [
+    {"publisher":"Associated Press","title":"Ebola creates new hot spots in Congo as responders describe chaotic response","publishedAt":"2026-10-07T12:00:00Z","url":"https://apnews.com/article/42e9c7f66b9ee7628b0a852a4e9dd73b","role":"independent"},
+    {"publisher":"World Health Organization","title":"Ebola disease caused by Bundibugyo virus — Democratic Republic of the Congo","publishedAt":"2026-09-29T00:00:00Z","url":"https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON618","role":"primary"},
+    {"publisher":"WHO Regional Office for Africa","title":"Surveillance strengthens the Ebola response in the Democratic Republic of the Congo","publishedAt":"2026-09-30T00:00:00Z","url":"https://www.afro.who.int/countries/democratic-republic-of-congo/news/surveillance-strengthens-ebola-response-democratic-republic-congo","role":"primary-context"}
+  ],
+  "image": {"kind":"official-contextual-photo","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Ebola%20Virus.jpg","source":"Centers for Disease Control and Prevention via Wikimedia Commons","sourceUrl":"https://commons.wikimedia.org/wiki/File:Ebola_Virus.jpg","creator":"Cynthia Goldsmith / CDC","license":"Public domain in the United States, U.S. federal government work","credit":"Image: Cynthia Goldsmith / CDC via Wikimedia Commons, public domain","caption":"CDC scanning electron micrograph of Ebola virus particles. It is a scientific file image and does not depict a patient or scene from the 2026 Congo outbreak.","alt":"Scanning electron micrograph showing Ebola virus particles","width":700,"height":546},
+  "audit": {"sourceCheckedAt":"2026-10-07T23:24:00+08:00","verificationNotes":"AP provides the newer figures and operational reporting; WHO provides the latest formal official snapshot available to FMB. The article dates both datasets and marks all totals developing. The CDC micrograph is public domain and used as scientific context, not documentary outbreak imagery.","duplicateCheck":"The live CMS contains earlier Congo Ebola coverage, but no record of this October 7 threshold and response-gap update. The new case/death levels and emerging hot spots are independently newsworthy."}
+}
