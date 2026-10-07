@@ -16,7 +16,7 @@
   "kicker": "Court Case",
   "deck": "The NBI confirmed receiving the October 5 warrant and said it would coordinate with other agencies; the charge remains unresolved.",
   "publishedAt": "2026-10-07T12:28:03+08:00",
-  "updatedAt": "2026-10-07T17:30:30+08:00",
+  "updatedAt": "2026-10-07T17:36:00+08:00",
   "author": "FMB News Desk",
   "articleType": "NewsArticle",
   "sections": [
@@ -78,19 +78,19 @@
   ],
   "image": {
     "kind": "licensed-contextual-photo",
-    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Rep.%20Leandro%20Antonio%20Legarda%20Leviste%20(20th%20Congress).jpg",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Cong.%20Leandro%20Legarda%20Leviste.jpg",
     "source": "Wikimedia Commons",
-    "creator": "House of Representatives of the Philippines",
+    "creator": "Leandro Leviste / House of Representatives of the Philippines",
     "license": "Public domain Philippine government work",
-    "credit": "Photo: House of Representatives of the Philippines / Wikimedia Commons, public domain Philippine government work",
+    "credit": "Photo: House of Representatives of the Philippines via Wikimedia Commons, public domain Philippine government work",
     "caption": "Official 2025 portrait of Representative Leandro Leviste. This file photograph does not depict a hearing, arrest or service of a warrant.",
     "alt": "Official portrait of Philippine Representative Leandro Leviste",
-    "width": 288,
-    "height": 387,
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rep._Leandro_Antonio_Legarda_Leviste_(20th_Congress).jpg"
+    "width": 7200,
+    "height": 9000,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cong._Leandro_Legarda_Leviste.jpg"
   },
   "audit": {
     "sourceCheckedAt": "2026-10-07T12:27:00+08:00",
-    "verificationNotes": "Two independent reports reproduced key details from the court document and the NBI director confirmed receipt. The Makati court declined comment. The article states the charge as an allegation, includes Leviste's earlier denial and makes clear that a warrant is not a finding of guilt. Image-rights check: House of Representatives of the Philippines image on Wikimedia Commons, Public domain Philippine government work; used as a clearly labeled contextual file photograph."
+    "verificationNotes": "Two independent reports reproduced key details from the court document and the NBI director confirmed receipt. The Makati court declined comment. The article states the charge as an allegation, includes Leviste's earlier denial and makes clear that a warrant is not a finding of guilt. Image-rights check: official 2025 Leandro Leviste portrait on Wikimedia Commons, public domain Philippine government work; used as a clearly labeled file photograph."
   }
 }
