@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "ukraine-toll-11-russia-70-missiles-october-7-2026",
+  "headline": "Ukraine Toll Rises to 11 as Russia Fires 70 Missiles in Major Barrage",
+  "seoTitle": "Ukraine Toll Rises to 11 After 70-Missile Russian Barrage",
+  "seoDescription": "Ukraine's president said at least 11 people were killed nationwide after Russia fired 70 missiles and drones in a major October 7 attack.",
+  "keywords": [
+    "Russia Ukraine war",
+    "Ukraine missile attack",
+    "Volodymyr Zelenskyy",
+    "Ukraine energy infrastructure",
+    "Pryluky",
+    "Kyiv"
+  ],
+  "category": "World",
+  "kicker": "Europe",
+  "deck": "The later official tally expanded the attack beyond the two Kyiv deaths first reported; rescue work and damage assessments remained under way.",
+  "publishedAt": "2026-10-07T17:33:13+08:00",
+  "updatedAt": "2026-10-07T17:33:13+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What changed",
+      "paragraphs": [
+        "Ukraine's nationwide death toll from Russia's October 7 missile and drone barrage rose to at least 11, President Volodymyr Zelenskyy said in an official update. He said Russia fired 70 missiles, including many ballistic weapons, as well as Shahed drones, and that energy infrastructure was a key target.",
+        "Zelenskyy's breakdown listed five people killed in Pryluky, two in Kremenchuk, two in Kyiv and two in Oleksandriia. Rescue work was continuing, so the figures remained provisional. Reuters independently reported the official toll and attack scale."
+      ]
+    },
+    {
+      "heading": "A wider attack than first reported",
+      "paragraphs": [
+        "The earlier FMB News report focused on two deaths in Kyiv while assessments were still under way. The later official update showed casualties across several regions and described one of the largest recent Russian barrages against Ukraine.",
+        "Associated Press earlier confirmed deaths and damage in Kyiv, Pryluky and Kremenchuk from regional authorities. Its published tally was lower at the time of reporting, illustrating how casualty counts changed as rescue teams worked through the sites."
+      ]
+    },
+    {
+      "heading": "Claims and unresolved points",
+      "paragraphs": [
+        "Russia's Defence Ministry said the strike targeted Ukrainian military-industrial, port and ship-repair facilities. Those target descriptions were not independently verified in the sources reviewed by FMB News. Ukrainian officials said residential buildings and energy infrastructure were hit.",
+        "The final number of people killed or injured, the complete damage to energy systems and the number of weapons intercepted remained unresolved."
+      ]
+    },
+    {
+      "heading": "Why it matters to Filipinos",
+      "paragraphs": [
+        "A large strike on energy infrastructure can add to uncertainty in oil, food, shipping and financial markets. Prolonged escalation may also affect Filipinos living or working in Europe and government contingency planning for overseas nationals."
+      ]
+    },
+    {
+      "heading": "Earlier FMB coverage",
+      "paragraphs": [
+        "This continuation follows FMB News' first report on the October 7 barrage: https://www.francinemariebautista.com/news/russian-strikes-kyiv-two-killed-october-7-2026/."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch official rescue-service updates, any revision to the national toll, verified energy-system damage, further strikes and new air-defence assistance to Ukraine."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "President of Ukraine Volodymyr Zelenskyy",
+      "title": "Official update on the October 7 Russian attack",
+      "publishedAt": "2026-10-07T07:18:00+03:00",
+      "url": "https://t.me/V_Zelenskiy_official/21254",
+      "role": "primary"
+    },
+    {
+      "publisher": "Reuters",
+      "title": "Russia kills 11 in one of its biggest strikes on Ukraine, Zelenskiy says",
+      "publishedAt": "2026-10-07T07:37:32Z",
+      "url": "https://www.reuters.com/world/europe/russia-kills-11-one-its-biggest-strikes-ukraine-zelenskiy-says-2026-10-07/",
+      "role": "independent"
+    },
+    {
+      "publisher": "Associated Press",
+      "title": "Russian strikes on Ukrainian cities kill at least eight",
+      "publishedAt": "2026-10-07T06:18:14Z",
+      "url": "https://apnews.com/article/russia-ukraine-war-kyiv-strike-650e298d7bc3881351533683ff4040ed",
+      "role": "independent"
+    },
+    {
+      "publisher": "FMB News",
+      "title": "Russian Strikes Kill Two in Kyiv in New Multi-Region Barrage",
+      "publishedAt": "2026-10-07T14:35:21+08:00",
+      "url": "https://www.francinemariebautista.com/news/russian-strikes-kyiv-two-killed-october-7-2026/",
+      "role": "related"
+    }
+  ],
+  "image": {
+    "kind": "licensed-contextual-photo",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Kyiv%20Ukraine.jpg",
+    "source": "Wikimedia Commons",
+    "creator": "Creation3987!GO",
+    "license": "CC0 1.0",
+    "credit": "Photo: Creation3987!GO / Wikimedia Commons, CC0 1.0",
+    "caption": "File photograph of Kyiv taken on October 28, 2025. It is a contextual city image and does not depict the October 7, 2026 attack, damage or victims.",
+    "alt": "Kyiv cityscape in October 2025",
+    "width": 1365,
+    "height": 2048,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kyiv_Ukraine.jpg"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-07T17:33:13+08:00",
+    "verificationNotes": "The later national toll and 70-missile figure were checked against President Zelenskyy's official Telegram post and corroborated by Reuters. AP independently confirmed deaths and damage in several regions using local authorities, though its earlier tally was lower. Russian target claims remain attributed and unverified; the final toll is developing. Image-rights check: Creation3987!GO image on Wikimedia Commons, CC0 1.0; used as a clearly labeled contextual file photograph.",
+    "duplicateCheck": "A same-event FMB report existed with the earlier two-death Kyiv toll. This continuation is independently newsworthy because the official nationwide toll rose to at least 11 and the attack scale was quantified; the first FMB report is linked."
+  }
+}
