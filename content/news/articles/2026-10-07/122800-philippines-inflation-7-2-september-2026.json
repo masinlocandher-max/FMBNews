@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "philippines-inflation-7-2-september-2026",
+  "headline": "Philippine Inflation Accelerates to 7.2% in September",
+  "seoTitle": "Philippine Inflation Hits 7.2% in September",
+  "seoDescription": "PSA data show Philippine inflation accelerated to 7.2% in September 2026 as food, housing costs and transport rose faster.",
+  "keywords": ["Philippine inflation", "September 2026 CPI", "PSA", "food prices", "rice prices"],
+  "category": "Business",
+  "kicker": "Prices",
+  "deck": "Food inflation reached 6.8%, rice inflation hit 20.3%, and the nine-month headline average rose to 5.4%.",
+  "publishedAt": "2026-10-07T12:28:00+08:00",
+  "updatedAt": "2026-10-07T12:28:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading": "What changed", "paragraphs": ["Philippine headline inflation accelerated to 7.2% in September 2026 from 6.1% in August, the Philippine Statistics Authority reported on October 6. The January-to-September average rose to 5.4%, while core inflation increased to 4.7% from 4.1%.", "Inflation was 5.4% in Metro Manila and 7.6% outside the capital region. The PSA identified faster price increases in food and non-alcoholic beverages, housing and utilities, and transport as the main drivers."]},
+    {"heading": "What households are paying", "paragraphs": ["National food inflation rose to 6.8% from 4.6%. Rice inflation reached 20.3%, while the vegetables, tubers, plantains, cooking bananas and pulses index increased 10.7% after declining 3.4% in August.", "The national figure is an average. Actual household pressure varies with location, income and spending patterns, and the data do not mean every item rose by 7.2%."]},
+    {"heading": "Why it matters", "paragraphs": ["Faster food, transport and utility inflation reduces purchasing power, especially for lower-income households that devote a larger share of spending to essentials. It can also complicate interest-rate and wage decisions."]},
+    {"heading": "What to watch next", "paragraphs": ["Watch the next PSA inflation release, food supply and retail rice prices, fuel costs, and any response from the Bangko Sentral ng Pilipinas or economic managers."]}
+  ],
+  "sources": [
+    {"publisher": "Philippine Statistics Authority", "title": "Summary Inflation Report Consumer Price Index (2018=100): September 2026", "publishedAt": "2026-10-06T00:00:00+08:00", "url": "https://psa.gov.ph/price-indices/cpi-ir", "role": "primary"},
+    {"publisher": "Reuters", "title": "Philippine annual inflation at 7.2% in September", "publishedAt": "2026-10-06T00:00:00Z", "url": "https://www.reuters.com/world/asia-pacific/philippine-annual-inflation-72-september-2026-10-06/", "role": "independent"},
+    {"publisher": "GMA Integrated News", "title": "Inflation snaps four-month easing, accelerates to 7.2% in September 2026", "publishedAt": "2026-10-06T09:15:00+08:00", "url": "https://www.gmanetwork.com/news/money/economy/1004884/inflation-snaps-four-month-easing-accelerates-to-7-2-in-september-2026/story/", "role": "independent"}
+  ],
+  "image": {"kind": "editorial-fallback", "url": "/assets/images/news/fmb-news-editorial-fallback.svg", "source": "FMB News", "creator": "FMB News", "license": "FMB-owned editorial asset", "credit": "FMB News editorial visual", "caption": "FMB News editorial visual. This is not a photograph of a specific September price survey or retail outlet.", "alt": "FMB News editorial graphic accompanying a report on Philippine inflation", "width": 1200, "height": 675, "sourceUrl": null},
+  "audit": {"sourceCheckedAt": "2026-10-07T12:27:00+08:00", "verificationNotes": "The PSA release was checked against Reuters and GMA. National, NCR, outside-NCR, core, food, rice and vegetable figures were kept distinct. The article describes the CPI as an average rather than a uniform price increase."}
+}

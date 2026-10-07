@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "philippines-unemployment-5-3-august-2026",
+  "headline": "Philippine Unemployment Falls to 5.3% in August",
+  "seoTitle": "Philippine Unemployment Falls to 5.3% in August",
+  "seoDescription": "PSA preliminary data put August 2026 unemployment at 5.3%, with 2.77 million jobless Filipinos and 49.79 million employed.",
+  "keywords": ["Philippine unemployment", "August 2026 labor force", "PSA", "employment", "underemployment"],
+  "category": "Business",
+  "kicker": "Labor Market",
+  "deck": "The jobless count declined by about 375,000 from July, but the unemployment rate remained above August 2025.",
+  "publishedAt": "2026-10-07T12:28:01+08:00",
+  "updatedAt": "2026-10-07T12:28:01+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {"heading": "What changed", "paragraphs": ["The Philippine unemployment rate fell to 5.3% in August 2026 from 6.0% in July, according to preliminary Labor Force Survey results released by the Philippine Statistics Authority on October 7. The estimated number of unemployed Filipinos declined to 2.77 million from 3.14 million.", "Employment increased by about 574,000 to 49.79 million, lifting the employment rate to 94.7%. The labor force numbered 52.56 million."]},
+    {"heading": "Where jobs moved", "paragraphs": ["Agriculture and forestry added about 847,000 workers from July, which the PSA linked to the planting season. Construction and wholesale and retail trade also recorded gains. Public administration and defense, manufacturing, administrative and support services, information and communication, and fishing and aquaculture recorded the largest month-to-month declines.", "About 5.9 million employed people were underemployed, meaning they wanted more work hours, an additional job or a job with longer hours."]},
+    {"heading": "Why it matters", "paragraphs": ["The month-to-month improvement signals more work opportunities, but the 5.3% jobless rate was still above the 3.9% recorded in August 2025. Seasonal agriculture gains and underemployment make job quality and durability as important as the headline rate."]},
+    {"heading": "What to watch next", "paragraphs": ["Watch whether employment gains persist beyond planting season, whether manufacturing recovers, and whether underemployment continues to ease in subsequent PSA releases."]}
+  ],
+  "sources": [
+    {"publisher": "Philippine Statistics Authority", "title": "Unemployment Rate Declined to 5.3 Percent in August 2026", "publishedAt": "2026-10-07T00:00:00+08:00", "url": "https://psa.gov.ph/statistics/labor-force-survey/index", "role": "primary"},
+    {"publisher": "GMA Integrated News", "title": "Jobless Pinoys declined by 375,000 to 2.77M in August 2026", "publishedAt": "2026-10-07T09:21:00+08:00", "url": "https://www.gmanetwork.com/news/money/economy/1005019/jobless-pinoys-declined-by-375-000-to-2-77m-in-august-2026/story/", "role": "independent"},
+    {"publisher": "Philstar.com", "title": "Jobless Filipinos drop to 2.77 million in August", "publishedAt": "2026-10-07T00:00:00+08:00", "url": "https://www.philstar.com/business/2026/10/07/2561539/jobless-filipinos-drop-277-million-august", "role": "independent"}
+  ],
+  "image": {"kind": "editorial-fallback", "url": "/assets/images/news/fmb-news-editorial-fallback.svg", "source": "FMB News", "creator": "FMB News", "license": "FMB-owned editorial asset", "credit": "FMB News editorial visual", "caption": "FMB News editorial visual. This is not a photograph of a particular job fair or survey respondent.", "alt": "FMB News editorial graphic accompanying a report on employment and unemployment", "width": 1200, "height": 675, "sourceUrl": null},
+  "audit": {"sourceCheckedAt": "2026-10-07T12:27:00+08:00", "verificationNotes": "The PSA release date and headline rate were checked directly. GMA supplied the jobless, employed, labor-force, sector and underemployment figures. The article labels the results preliminary and separates month-to-month improvement from the higher year-on-year unemployment rate."}
+}
