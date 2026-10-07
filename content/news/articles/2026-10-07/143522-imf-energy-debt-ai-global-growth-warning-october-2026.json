@@ -17,7 +17,7 @@
   "kicker": "Global Economy",
   "deck": "Kristalina Georgieva urged stronger fiscal, monetary and AI safeguards ahead of the IMF and World Bank meetings in Bangkok.",
   "publishedAt": "2026-10-07T14:35:22+08:00",
-  "updatedAt": "2026-10-07T14:35:22+08:00",
+  "updatedAt": "2026-10-07T17:30:30+08:00",
   "author": "FMB News Desk",
   "articleType": "NewsArticle",
   "sections": [
@@ -78,20 +78,20 @@
     }
   ],
   "image": {
-    "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
-    "source": "FMB News",
-    "creator": "FMB News",
-    "license": "FMB-owned editorial asset",
-    "credit": "FMB News editorial visual",
-    "caption": "FMB News editorial visual accompanying a report on the IMF chief's global economic warning. It is not a photograph of Kristalina Georgieva or the Singapore event.",
-    "alt": "FMB News editorial graphic for a report on IMF warnings about energy, debt and artificial-intelligence risks",
-    "width": 1200,
-    "height": 675,
-    "sourceUrl": "https://www.francinemariebautista.com/assets/images/news/fmb-news-editorial-fallback.svg"
+    "kind": "licensed-contextual-photo",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/International%20Monetary%20Fund%20headquarters.jpg",
+    "source": "Wikimedia Commons",
+    "creator": "APK",
+    "license": "CC BY 4.0",
+    "credit": "Photo: APK / Wikimedia Commons, CC BY 4.0",
+    "caption": "File photograph of the International Monetary Fund headquarters in Washington, taken on March 31, 2026. It does not depict Kristalina Georgieva's October 2026 Singapore address.",
+    "alt": "International Monetary Fund headquarters in Washington in March 2026",
+    "width": 3433,
+    "height": 3231,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:International_Monetary_Fund_headquarters.jpg"
   },
   "audit": {
     "sourceCheckedAt": "2026-10-07T14:35:00+08:00",
-    "verificationNotes": "The speech event was checked against the IMF's official page and its substance was corroborated by Reuters and AP. The article treats Georgieva's forecasts and policy warnings as attributed assessments, not realized outcomes, and notes that no new Philippines-specific forecast was issued."
+    "verificationNotes": "The speech event was checked against the IMF's official page and its substance was corroborated by Reuters and AP. The article treats Georgieva's forecasts and policy warnings as attributed assessments, not realized outcomes, and notes that no new Philippines-specific forecast was issued. Image-rights check: APK image on Wikimedia Commons, CC BY 4.0; used as a clearly labeled contextual file photograph."
   }
 }

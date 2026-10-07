@@ -5,26 +5,92 @@
   "headline": "Attacks Hit Two Saudi Airports as Yemen Fighting Escalates",
   "seoTitle": "Attacks Hit Two Saudi Airports, Injuring Three",
   "seoDescription": "Saudi aviation authorities said attacks damaged Jazan and Najran airports and lightly injured three people amid renewed fighting with Yemen's Houthis.",
-  "keywords": ["Saudi Arabia airport attacks", "Jazan airport", "Najran airport", "Houthis", "Yemen war"],
+  "keywords": [
+    "Saudi Arabia airport attacks",
+    "Jazan airport",
+    "Najran airport",
+    "Houthis",
+    "Yemen war"
+  ],
   "category": "World",
   "kicker": "Middle East",
   "deck": "Saudi authorities confirmed damage and three minor injuries; they did not publicly identify the attacker in the aviation statement.",
   "publishedAt": "2026-10-07T12:28:06+08:00",
-  "updatedAt": "2026-10-07T12:28:06+08:00",
+  "updatedAt": "2026-10-07T17:30:30+08:00",
   "author": "FMB News Desk",
   "articleType": "NewsArticle",
   "sections": [
-    {"heading": "What happened", "paragraphs": ["Attacks struck King Abdullah bin Abdulaziz International Airport in Jazan and Najran International Airport on the evening of October 5, damaging both facilities and lightly injuring three people, Saudi Arabia's General Authority of Civil Aviation said on October 6.", "The aviation statement did not identify who carried out the attacks. The incidents followed a Houthi announcement that the group had fired missiles and drones toward Saudi Arabia. The Associated Press said it could not independently confirm a separate Houthi claim involving Abha International Airport."]},
-    {"heading": "Context", "paragraphs": ["The airport attacks came as Saudi-backed Yemeni government forces fought Houthi forces around Dhubab and near the Bab el-Mandeb Strait. That waterway connects the Red Sea with the Gulf of Aden and is important to global trade and energy shipments.", "The developments are a continuation of the renewed Saudi-Houthi conflict. FMB News' earliest report on the current cross-border escalation is available at https://www.francinemariebautista.com/news/houthi-attacks-saudi-cities-energy-september-8-2026/."]},
-    {"heading": "Confirmed and unresolved", "paragraphs": ["Confirmed by Saudi aviation authorities are the two airport strikes, property damage and three minor injuries. Responsibility for those specific impacts was not assigned in the official civil-aviation statement, and the claimed Abha strike remained unconfirmed when checked."]},
-    {"heading": "Why it matters", "paragraphs": ["Further escalation near major airports and the Bab el-Mandeb shipping route can affect regional travel, overseas Filipino workers, commercial shipping and oil prices."]},
-    {"heading": "What to watch next", "paragraphs": ["Watch airport operating notices, any official attribution, further cross-border strikes, fighting near Bab el-Mandeb and effects on shipping, oil markets and Filipino workers or travelers in the region."]}
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Attacks struck King Abdullah bin Abdulaziz International Airport in Jazan and Najran International Airport on the evening of October 5, damaging both facilities and lightly injuring three people, Saudi Arabia's General Authority of Civil Aviation said on October 6.",
+        "The aviation statement did not identify who carried out the attacks. The incidents followed a Houthi announcement that the group had fired missiles and drones toward Saudi Arabia. The Associated Press said it could not independently confirm a separate Houthi claim involving Abha International Airport."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The airport attacks came as Saudi-backed Yemeni government forces fought Houthi forces around Dhubab and near the Bab el-Mandeb Strait. That waterway connects the Red Sea with the Gulf of Aden and is important to global trade and energy shipments.",
+        "The developments are a continuation of the renewed Saudi-Houthi conflict. FMB News' earliest report on the current cross-border escalation is available at https://www.francinemariebautista.com/news/houthi-attacks-saudi-cities-energy-september-8-2026/."
+      ]
+    },
+    {
+      "heading": "Confirmed and unresolved",
+      "paragraphs": [
+        "Confirmed by Saudi aviation authorities are the two airport strikes, property damage and three minor injuries. Responsibility for those specific impacts was not assigned in the official civil-aviation statement, and the claimed Abha strike remained unconfirmed when checked."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "Further escalation near major airports and the Bab el-Mandeb shipping route can affect regional travel, overseas Filipino workers, commercial shipping and oil prices."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch airport operating notices, any official attribution, further cross-border strikes, fighting near Bab el-Mandeb and effects on shipping, oil markets and Filipino workers or travelers in the region."
+      ]
+    }
   ],
   "sources": [
-    {"publisher": "Saudi General Authority of Civil Aviation, via Saudi Gazette", "title": "Three injured in attacks on Jazan, Najran airports", "publishedAt": "2026-10-06T12:31:00+03:00", "url": "https://saudigazette.com.sa/article/665161/saudi-arabia/three-injured-in-attacks-on-jazan-najran-airports", "role": "primary"},
-    {"publisher": "Associated Press", "title": "Saudi airport attacks injure 3 as conflict with Yemen's Houthis reignites", "publishedAt": "2026-10-06T09:04:08Z", "url": "https://apnews.com/article/iran-yemen-israel-saudi-uae-gaza-october-6-2026-efdbaff2e5931655543fd86638682ad5", "role": "independent"},
-    {"publisher": "FMB News", "title": "Houthi Attacks Hit Four Saudi Cities and Energy Facilities, Wounding 73", "publishedAt": "2026-09-08T22:04:24+08:00", "url": "https://www.francinemariebautista.com/news/houthi-attacks-saudi-cities-energy-september-8-2026/", "role": "related"}
+    {
+      "publisher": "Saudi General Authority of Civil Aviation, via Saudi Gazette",
+      "title": "Three injured in attacks on Jazan, Najran airports",
+      "publishedAt": "2026-10-06T12:31:00+03:00",
+      "url": "https://saudigazette.com.sa/article/665161/saudi-arabia/three-injured-in-attacks-on-jazan-najran-airports",
+      "role": "primary"
+    },
+    {
+      "publisher": "Associated Press",
+      "title": "Saudi airport attacks injure 3 as conflict with Yemen's Houthis reignites",
+      "publishedAt": "2026-10-06T09:04:08Z",
+      "url": "https://apnews.com/article/iran-yemen-israel-saudi-uae-gaza-october-6-2026-efdbaff2e5931655543fd86638682ad5",
+      "role": "independent"
+    },
+    {
+      "publisher": "FMB News",
+      "title": "Houthi Attacks Hit Four Saudi Cities and Energy Facilities, Wounding 73",
+      "publishedAt": "2026-09-08T22:04:24+08:00",
+      "url": "https://www.francinemariebautista.com/news/houthi-attacks-saudi-cities-energy-september-8-2026/",
+      "role": "related"
+    }
   ],
-  "image": {"kind": "editorial-fallback", "url": "/assets/images/news/fmb-news-editorial-fallback.svg", "source": "FMB News", "creator": "FMB News", "license": "FMB-owned editorial asset", "credit": "FMB News editorial visual", "caption": "FMB News editorial visual. This is not a photograph of either airport, the attacks or the fighting in Yemen.", "alt": "FMB News editorial graphic accompanying a report on attacks at two Saudi airports", "width": 1200, "height": 675, "sourceUrl": null},
-  "audit": {"sourceCheckedAt": "2026-10-07T12:27:00+08:00", "verificationNotes": "The Saudi aviation authority's reported facts were checked against AP. The article does not assign responsibility for the two confirmed airport impacts because the GACA statement did not, and it labels the separate Abha claim unconfirmed."}
+  "image": {
+    "kind": "licensed-contextual-photo",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Jazan%20port.jpg",
+    "source": "Wikimedia Commons",
+    "creator": "Khalid Samad",
+    "license": "CC BY-SA 3.0",
+    "credit": "Photo: Khalid Samad / Wikimedia Commons, CC BY-SA 3.0",
+    "caption": "File photograph of Jazan port in 2013. It provides geographic context for the Jazan region and does not depict the October 2026 airport attacks.",
+    "alt": "Jazan port in Saudi Arabia in 2013",
+    "width": 640,
+    "height": 480,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jazan_port.jpg"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-07T12:27:00+08:00",
+    "verificationNotes": "The Saudi aviation authority's reported facts were checked against AP. The article does not assign responsibility for the two confirmed airport impacts because the GACA statement did not, and it labels the separate Abha claim unconfirmed. Image-rights check: Khalid Samad image on Wikimedia Commons, CC BY-SA 3.0; used as a clearly labeled contextual file photograph."
+  }
 }

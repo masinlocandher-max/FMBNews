@@ -17,7 +17,7 @@
   "kicker": "Southeast Asia",
   "deck": "The two-day official visit is confirmed; safeguards for Myanmar nationals returned from Malaysia remain disputed.",
   "publishedAt": "2026-10-07T14:35:20+08:00",
-  "updatedAt": "2026-10-07T14:35:20+08:00",
+  "updatedAt": "2026-10-07T17:30:30+08:00",
   "author": "FMB News Desk",
   "articleType": "NewsArticle",
   "sections": [
@@ -78,20 +78,20 @@
     }
   ],
   "image": {
-    "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
-    "source": "FMB News",
-    "creator": "FMB News",
-    "license": "FMB-owned editorial asset",
-    "credit": "FMB News editorial visual",
-    "caption": "FMB News editorial visual accompanying a report on Min Aung Hlaing's Malaysia visit. It is not a photograph of the visit or any repatriation.",
-    "alt": "FMB News editorial graphic for a report on Myanmar leader Min Aung Hlaing's Malaysia visit",
-    "width": 1200,
-    "height": 675,
-    "sourceUrl": "https://www.francinemariebautista.com/assets/images/news/fmb-news-editorial-fallback.svg"
+    "kind": "licensed-contextual-photo",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Min%20Aung%20Hlaing%20at%20the%20Pyidaungsu%20Hluttaw%20in%202026%20(1).jpg",
+    "source": "Wikimedia Commons",
+    "creator": "Zawzawaungthwin",
+    "license": "CC BY-SA 4.0",
+    "credit": "Photo: Zawzawaungthwin / Wikimedia Commons, CC BY-SA 4.0",
+    "caption": "File photograph of Min Aung Hlaing at the Pyidaungsu Hluttaw in April 2026. It does not depict his October 2026 Malaysia visit or any repatriation.",
+    "alt": "Min Aung Hlaing at Myanmar's Pyidaungsu Hluttaw in April 2026",
+    "width": 1178,
+    "height": 1571,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Min_Aung_Hlaing_at_the_Pyidaungsu_Hluttaw_in_2026_(1).jpg"
   },
   "audit": {
     "sourceCheckedAt": "2026-10-07T14:35:00+08:00",
-    "verificationNotes": "The visit and official agenda were checked against Myanmar's Foreign Ministry and corroborated by AP and Reuters. Malaysia's description of repatriations and the UN and rights-group warnings are separately attributed; the protections for individual returnees remain unresolved."
+    "verificationNotes": "The visit and official agenda were checked against Myanmar's Foreign Ministry and corroborated by AP and Reuters. Malaysia's description of repatriations and the UN and rights-group warnings are separately attributed; the protections for individual returnees remain unresolved. Image-rights check: Zawzawaungthwin image on Wikimedia Commons, CC BY-SA 4.0; used as a clearly labeled contextual file photograph."
   }
 }

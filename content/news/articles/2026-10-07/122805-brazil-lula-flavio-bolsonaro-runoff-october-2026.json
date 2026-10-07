@@ -5,25 +5,86 @@
   "headline": "Flávio Bolsonaro Leads Lula Into Brazil's October 25 Runoff",
   "seoTitle": "Flávio Bolsonaro, Lula Advance to Brazil Runoff",
   "seoDescription": "Brazil's electoral authority says Flávio Bolsonaro won 47.03% and Lula 45.16%, sending the presidential race to an October 25 runoff.",
-  "keywords": ["Brazil election 2026", "Flavio Bolsonaro", "Lula", "Brazil runoff", "TSE"],
+  "keywords": [
+    "Brazil election 2026",
+    "Flavio Bolsonaro",
+    "Lula",
+    "Brazil runoff",
+    "TSE"
+  ],
   "category": "World",
   "kicker": "Brazil Election",
   "deck": "The official count put Bolsonaro ahead by about 2.23 million votes, but neither candidate cleared the threshold for a first-round victory.",
   "publishedAt": "2026-10-07T12:28:05+08:00",
-  "updatedAt": "2026-10-07T12:28:05+08:00",
+  "updatedAt": "2026-10-07T17:30:30+08:00",
   "author": "FMB News Desk",
   "articleType": "NewsArticle",
   "sections": [
-    {"heading": "What happened", "paragraphs": ["Brazilian Senator Flávio Bolsonaro and President Luiz Inácio Lula da Silva advanced to an October 25 presidential runoff after neither won a first-round majority. Brazil's Superior Electoral Court reported Bolsonaro at 56,104,268 votes, or 47.03%, and Lula at 53,876,617 votes, or 45.16%, with 99.99% counted.", "The result reversed late pre-election polling that had generally shown Lula ahead. Reuters reported that cost of living, corruption and public security dominated voter concerns."]},
-    {"heading": "Context", "paragraphs": ["Both candidates now compete for voters who backed other first-round choices or cast blank and null ballots. The runoff winner will face high public debt, sluggish growth forecasts and a deeply polarized political environment.", "FMB News' earliest report on the closing stage of the campaign is available at https://www.francinemariebautista.com/news/brazil-lula-flavio-bolsonaro-close-campaigns-october-3-2026/."]},
-    {"heading": "Why it matters", "paragraphs": ["Brazil is one of the world's largest food and commodity exporters and a major emerging-market economy. Changes in its fiscal, trade and foreign policies can affect commodity markets and broader relations among Global South economies, including the Philippines."]},
-    {"heading": "What to watch next", "paragraphs": ["Watch endorsements from eliminated candidates, official runoff campaigning, fiscal-policy proposals, disinformation safeguards and the final October 25 count."]}
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Brazilian Senator Flávio Bolsonaro and President Luiz Inácio Lula da Silva advanced to an October 25 presidential runoff after neither won a first-round majority. Brazil's Superior Electoral Court reported Bolsonaro at 56,104,268 votes, or 47.03%, and Lula at 53,876,617 votes, or 45.16%, with 99.99% counted.",
+        "The result reversed late pre-election polling that had generally shown Lula ahead. Reuters reported that cost of living, corruption and public security dominated voter concerns."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "Both candidates now compete for voters who backed other first-round choices or cast blank and null ballots. The runoff winner will face high public debt, sluggish growth forecasts and a deeply polarized political environment.",
+        "FMB News' earliest report on the closing stage of the campaign is available at https://www.francinemariebautista.com/news/brazil-lula-flavio-bolsonaro-close-campaigns-october-3-2026/."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "Brazil is one of the world's largest food and commodity exporters and a major emerging-market economy. Changes in its fiscal, trade and foreign policies can affect commodity markets and broader relations among Global South economies, including the Philippines."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch endorsements from eliminated candidates, official runoff campaigning, fiscal-policy proposals, disinformation safeguards and the final October 25 count."
+      ]
+    }
   ],
   "sources": [
-    {"publisher": "Tribunal Superior Eleitoral", "title": "Flávio Bolsonaro (PL) e Lula (PT) vão disputar o 2º turno para a Presidência da República", "publishedAt": "2026-10-05T00:36:00-03:00", "url": "https://www.tse.jus.br/comunicacao/noticias/2026/Outubro/flavio-bolsonaro-e-lula-vao-disputar-o-2o-turno-para-a-presidencia-da-republica", "role": "primary"},
-    {"publisher": "Reuters", "title": "Bolsonaro will face Lula in runoff in Brazil's presidential vote", "publishedAt": "2026-10-04T10:04:00Z", "url": "https://www.reuters.com/world/americas/brazilians-head-polls-high-stakes-polarized-election-2026-10-04/", "role": "independent"},
-    {"publisher": "FMB News", "title": "Lula and Flávio Bolsonaro Close Brazil Campaigns Ahead of Tight Presidential Vote", "publishedAt": "2026-10-04T13:28:01+08:00", "url": "https://www.francinemariebautista.com/news/brazil-lula-flavio-bolsonaro-close-campaigns-october-3-2026/", "role": "related"}
+    {
+      "publisher": "Tribunal Superior Eleitoral",
+      "title": "Flávio Bolsonaro (PL) e Lula (PT) vão disputar o 2º turno para a Presidência da República",
+      "publishedAt": "2026-10-05T00:36:00-03:00",
+      "url": "https://www.tse.jus.br/comunicacao/noticias/2026/Outubro/flavio-bolsonaro-e-lula-vao-disputar-o-2o-turno-para-a-presidencia-da-republica",
+      "role": "primary"
+    },
+    {
+      "publisher": "Reuters",
+      "title": "Bolsonaro will face Lula in runoff in Brazil's presidential vote",
+      "publishedAt": "2026-10-04T10:04:00Z",
+      "url": "https://www.reuters.com/world/americas/brazilians-head-polls-high-stakes-polarized-election-2026-10-04/",
+      "role": "independent"
+    },
+    {
+      "publisher": "FMB News",
+      "title": "Lula and Flávio Bolsonaro Close Brazil Campaigns Ahead of Tight Presidential Vote",
+      "publishedAt": "2026-10-04T13:28:01+08:00",
+      "url": "https://www.francinemariebautista.com/news/brazil-lula-flavio-bolsonaro-close-campaigns-october-3-2026/",
+      "role": "related"
+    }
   ],
-  "image": {"kind": "editorial-fallback", "url": "/assets/images/news/fmb-news-editorial-fallback.svg", "source": "FMB News", "creator": "FMB News", "license": "FMB-owned editorial asset", "credit": "FMB News editorial visual", "caption": "FMB News editorial visual. This is not a photograph of voters, candidates or the October 4 count.", "alt": "FMB News editorial graphic accompanying a report on Brazil's presidential runoff", "width": 1200, "height": 675, "sourceUrl": null},
-  "audit": {"sourceCheckedAt": "2026-10-07T12:27:00+08:00", "verificationNotes": "The official TSE result was checked against Reuters. Vote totals, percentages and the October 25 runoff date are attributed to the electoral authority. The prior FMB campaign report is linked as the earliest relevant coverage."}
+  "image": {
+    "kind": "licensed-contextual-photo",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Fl%C3%A1vio%20Bolsonaro%2001.09.26.jpg",
+    "source": "Wikimedia Commons",
+    "creator": "Carlos Moura / Agência Senado",
+    "license": "CC BY-SA 4.0",
+    "credit": "Photo: Carlos Moura / Agência Senado via Wikimedia Commons, CC BY-SA 4.0",
+    "caption": "File photograph of Flávio Bolsonaro at the Brazilian Senate on September 1, 2026. It is contextual and does not depict election-night events.",
+    "alt": "Flávio Bolsonaro at the Brazilian Senate in September 2026",
+    "width": 872,
+    "height": 1303,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flávio_Bolsonaro_01.09.26.jpg"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-07T12:27:00+08:00",
+    "verificationNotes": "The official TSE result was checked against Reuters. Vote totals, percentages and the October 25 runoff date are attributed to the electoral authority. The prior FMB campaign report is linked as the earliest relevant coverage. Image-rights check: Carlos Moura / Agência Senado image on Wikimedia Commons, CC BY-SA 4.0; used as a clearly labeled contextual file photograph."
+  }
 }

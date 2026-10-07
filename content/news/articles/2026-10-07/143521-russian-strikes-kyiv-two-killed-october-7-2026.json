@@ -16,7 +16,7 @@
   "kicker": "Europe",
   "deck": "Ukrainian officials confirmed two deaths and damage across several cities; the full toll and Russia's claimed target list remain unverified.",
   "publishedAt": "2026-10-07T14:35:21+08:00",
-  "updatedAt": "2026-10-07T14:35:21+08:00",
+  "updatedAt": "2026-10-07T17:30:30+08:00",
   "author": "FMB News Desk",
   "articleType": "NewsArticle",
   "sections": [
@@ -96,20 +96,20 @@
     }
   ],
   "image": {
-    "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
-    "source": "FMB News",
-    "creator": "FMB News",
-    "license": "FMB-owned editorial asset",
-    "credit": "FMB News editorial visual",
-    "caption": "FMB News editorial visual accompanying a report on the October 7 strikes in Ukraine. It is not a photograph of Kyiv, the victims or the attack damage.",
-    "alt": "FMB News editorial graphic for a report on Russian strikes that killed two people in Kyiv",
-    "width": 1200,
-    "height": 675,
-    "sourceUrl": "https://www.francinemariebautista.com/assets/images/news/fmb-news-editorial-fallback.svg"
+    "kind": "licensed-contextual-photo",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Kyiv%20Ukraine.jpg",
+    "source": "Wikimedia Commons",
+    "creator": "Creation3987!GO",
+    "license": "CC0 1.0",
+    "credit": "Photo: Creation3987!GO / Wikimedia Commons, CC0 1.0",
+    "caption": "File photograph of Kyiv taken on October 28, 2025. It is a contextual city image and does not depict the October 7, 2026 attack, damage or victims.",
+    "alt": "Kyiv cityscape in October 2025",
+    "width": 1365,
+    "height": 2048,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kyiv_Ukraine.jpg"
   },
   "audit": {
     "sourceCheckedAt": "2026-10-07T14:35:00+08:00",
-    "verificationNotes": "The casualty and damage reports were checked against Ukrainian official updates and independent reporting by Reuters and the Kyiv Independent. Russian target claims are attributed and explicitly unverified; the total toll remains developing."
+    "verificationNotes": "The casualty and damage reports were checked against Ukrainian official updates and independent reporting by Reuters and the Kyiv Independent. Russian target claims are attributed and explicitly unverified; the total toll remains developing. Image-rights check: Creation3987!GO image on Wikimedia Commons, CC0 1.0; used as a clearly labeled contextual file photograph."
   }
 }

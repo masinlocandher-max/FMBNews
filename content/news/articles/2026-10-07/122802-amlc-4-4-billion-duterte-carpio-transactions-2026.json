@@ -5,27 +5,99 @@
   "headline": "AMLC Chief Tells Impeachment Court Records Show ₱4.4 Billion in Duterte-Carpio Transactions",
   "seoTitle": "AMLC Chief Cites ₱4.4B in Duterte-Carpio Transactions",
   "seoDescription": "AMLC chief Ronel Buenaventura testified that covered and suspicious transaction reports involving VP Sara Duterte and Manases Carpio totaled about ₱4.4 billion.",
-  "keywords": ["Sara Duterte impeachment", "AMLC", "Manases Carpio", "covered transactions", "suspicious transactions"],
+  "keywords": [
+    "Sara Duterte impeachment",
+    "AMLC",
+    "Manases Carpio",
+    "covered transactions",
+    "suspicious transactions"
+  ],
   "category": "National",
   "kicker": "Impeachment Trial",
   "deck": "The total covers transaction reports from 2007 to 2025; Duterte's defense says the records do not prove illegal sourcing or wrongdoing.",
   "publishedAt": "2026-10-07T12:28:02+08:00",
-  "updatedAt": "2026-10-07T12:28:02+08:00",
+  "updatedAt": "2026-10-07T17:30:30+08:00",
   "author": "FMB News Desk",
   "articleType": "NewsArticle",
   "sections": [
-    {"heading": "What happened", "paragraphs": ["Anti-Money Laundering Council Secretariat Executive Director Ronel Buenaventura told the Senate impeachment court that AMLC records contained about ₱4.4 billion in aggregate covered and suspicious transaction reports involving Vice President Sara Duterte and her husband, Manases Carpio, from 2007 to 2025.", "Buenaventura said the total included about ₱1.63 billion in inflows, ₱1.31 billion in outflows and roughly ₱1.46 billion that could not reliably be classified as either. He said the amount had been reduced from a previously cited ₱6.7 billion after a bank correction that AMLC validated."]},
-    {"heading": "What the records do not establish", "paragraphs": ["A covered transaction report is triggered by statutory thresholds and is not by itself proof of a crime. A suspicious transaction report is a bank compliance report based on red flags; it is not a judicial finding of money laundering or unlawful income.", "Duterte's defense argued that aggregated transaction totals can be much larger than the actual amount of distinct money involved and said the testimony did not prove that the funds came from illegal sources or the Chinese government. Those disputes remain for the impeachment court to assess."]},
-    {"heading": "Context", "paragraphs": ["The testimony is evidence presented by the House prosecution in an unresolved impeachment trial. It is not a conviction or a final factual finding. FMB News' earliest report on this trial is available at https://www.francinemariebautista.com/news/sara-duterte-impeachment-trial-defense-parallel-charges/."]},
-    {"heading": "Why it matters", "paragraphs": ["The testimony places official financial-intelligence records before the impeachment court and may shape how senator-judges assess allegations about undeclared wealth and public trust. The legal significance of the records remains contested and unresolved."]},
-    {"heading": "What to watch next", "paragraphs": ["The court is expected to examine bank and insurance records, the defense's explanations, and whether the reported flows are relevant to the constitutional charges. Any final conclusion rests with the senator-judges and is subject to applicable law and procedure."]}
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Anti-Money Laundering Council Secretariat Executive Director Ronel Buenaventura told the Senate impeachment court that AMLC records contained about ₱4.4 billion in aggregate covered and suspicious transaction reports involving Vice President Sara Duterte and her husband, Manases Carpio, from 2007 to 2025.",
+        "Buenaventura said the total included about ₱1.63 billion in inflows, ₱1.31 billion in outflows and roughly ₱1.46 billion that could not reliably be classified as either. He said the amount had been reduced from a previously cited ₱6.7 billion after a bank correction that AMLC validated."
+      ]
+    },
+    {
+      "heading": "What the records do not establish",
+      "paragraphs": [
+        "A covered transaction report is triggered by statutory thresholds and is not by itself proof of a crime. A suspicious transaction report is a bank compliance report based on red flags; it is not a judicial finding of money laundering or unlawful income.",
+        "Duterte's defense argued that aggregated transaction totals can be much larger than the actual amount of distinct money involved and said the testimony did not prove that the funds came from illegal sources or the Chinese government. Those disputes remain for the impeachment court to assess."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The testimony is evidence presented by the House prosecution in an unresolved impeachment trial. It is not a conviction or a final factual finding. FMB News' earliest report on this trial is available at https://www.francinemariebautista.com/news/sara-duterte-impeachment-trial-defense-parallel-charges/."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "The testimony places official financial-intelligence records before the impeachment court and may shape how senator-judges assess allegations about undeclared wealth and public trust. The legal significance of the records remains contested and unresolved."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "The court is expected to examine bank and insurance records, the defense's explanations, and whether the reported flows are relevant to the constitutional charges. Any final conclusion rests with the senator-judges and is subject to applicable law and procedure."
+      ]
+    }
   ],
   "sources": [
-    {"publisher": "House of Representatives of the Philippines", "title": "House prosecution to focus on financial evidence in impeachment trial", "publishedAt": "2026-10-06T14:27:11+08:00", "url": "https://www.congress.gov.ph/media/press-releases/10293", "role": "primary"},
-    {"publisher": "GMA Integrated News", "title": "AMLC: Sara Duterte, husband had P4.4B in covered, suspicious bank transactions", "publishedAt": "2026-10-05T16:26:00+08:00", "url": "https://www.gmanetwork.com/news/topstories/nation/1004801/amlc-sara-duterte-husband-had-p4-4b-in-covered-suspicious-bank-transactions/story/", "role": "independent"},
-    {"publisher": "ABS-CBN News", "title": "AMLC exec faces cross; Duterte spox claims 'reasonable explanation' for P4.4-B money flows", "publishedAt": "2026-10-06T09:31:00+08:00", "url": "https://www.abs-cbn.com/news/nation/2026/10/6/amlc-exec-faces-cross-sara-spox-claims-reasonable-explanation-for-p4-4-b-money-flows-0931", "role": "independent"},
-    {"publisher": "FMB News", "title": "Sara Duterte Impeachment Trial Resumes as Defense Challenges Parallel Criminal Charges", "publishedAt": "2026-08-11T19:00:00+08:00", "url": "https://www.francinemariebautista.com/news/sara-duterte-impeachment-trial-defense-parallel-charges/", "role": "related"}
+    {
+      "publisher": "House of Representatives of the Philippines",
+      "title": "House prosecution to focus on financial evidence in impeachment trial",
+      "publishedAt": "2026-10-06T14:27:11+08:00",
+      "url": "https://www.congress.gov.ph/media/press-releases/10293",
+      "role": "primary"
+    },
+    {
+      "publisher": "GMA Integrated News",
+      "title": "AMLC: Sara Duterte, husband had P4.4B in covered, suspicious bank transactions",
+      "publishedAt": "2026-10-05T16:26:00+08:00",
+      "url": "https://www.gmanetwork.com/news/topstories/nation/1004801/amlc-sara-duterte-husband-had-p4-4b-in-covered-suspicious-bank-transactions/story/",
+      "role": "independent"
+    },
+    {
+      "publisher": "ABS-CBN News",
+      "title": "AMLC exec faces cross; Duterte spox claims 'reasonable explanation' for P4.4-B money flows",
+      "publishedAt": "2026-10-06T09:31:00+08:00",
+      "url": "https://www.abs-cbn.com/news/nation/2026/10/6/amlc-exec-faces-cross-sara-spox-claims-reasonable-explanation-for-p4-4-b-money-flows-0931",
+      "role": "independent"
+    },
+    {
+      "publisher": "FMB News",
+      "title": "Sara Duterte Impeachment Trial Resumes as Defense Challenges Parallel Criminal Charges",
+      "publishedAt": "2026-08-11T19:00:00+08:00",
+      "url": "https://www.francinemariebautista.com/news/sara-duterte-impeachment-trial-defense-parallel-charges/",
+      "role": "related"
+    }
   ],
-  "image": {"kind": "editorial-fallback", "url": "/assets/images/news/fmb-news-editorial-fallback.svg", "source": "FMB News", "creator": "FMB News", "license": "FMB-owned editorial asset", "credit": "FMB News editorial visual", "caption": "FMB News editorial visual. This is not documentary imagery of the impeachment court or any bank record.", "alt": "FMB News editorial graphic accompanying a report on financial testimony in an impeachment trial", "width": 1200, "height": 675, "sourceUrl": null},
-  "audit": {"sourceCheckedAt": "2026-10-07T12:27:00+08:00", "verificationNotes": "The official House prosecution release and independent GMA and ABS-CBN reports agree on the witness, period and corrected aggregate. The article explains that transaction reports are not proof of a crime, includes the defense position and avoids treating prosecution allegations as adjudicated fact."}
+  "image": {
+    "kind": "licensed-contextual-photo",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Philippine%20Senate%20Session%20Hall.jpg",
+    "source": "Wikimedia Commons",
+    "creator": "Avito Dalan / Philippine News Agency",
+    "license": "Public domain Philippine government work",
+    "credit": "Photo: Avito Dalan / Philippine News Agency via Wikimedia Commons, public domain Philippine government work",
+    "caption": "File photograph of the Philippine Senate session hall on May 29, 2025. It is contextual and does not depict the October 7, 2026 proceedings or any person named in the report.",
+    "alt": "Philippine Senate session hall in May 2025",
+    "width": 6720,
+    "height": 4480,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Philippine_Senate_Session_Hall.jpg"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-07T12:27:00+08:00",
+    "verificationNotes": "The official House prosecution release and independent GMA and ABS-CBN reports agree on the witness, period and corrected aggregate. The article explains that transaction reports are not proof of a crime, includes the defense position and avoids treating prosecution allegations as adjudicated fact. Image-rights check: Avito Dalan / Philippine News Agency image on Wikimedia Commons, Public domain Philippine government work; used as a clearly labeled contextual file photograph."
+  }
 }

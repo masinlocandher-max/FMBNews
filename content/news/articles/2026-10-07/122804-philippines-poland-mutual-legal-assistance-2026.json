@@ -5,25 +5,86 @@
   "headline": "Philippines and Poland Sign Mutual Legal Assistance Agreement",
   "seoTitle": "Philippines, Poland Sign Legal-Assistance Agreement",
   "seoDescription": "The Philippines and Poland signed an agreement on mutual legal assistance in criminal matters during President Karol Nawrocki's state visit.",
-  "keywords": ["Philippines Poland relations", "mutual legal assistance", "Karol Nawrocki", "criminal cases", "extradition"],
+  "keywords": [
+    "Philippines Poland relations",
+    "mutual legal assistance",
+    "Karol Nawrocki",
+    "criminal cases",
+    "extradition"
+  ],
   "category": "National",
   "kicker": "Foreign Relations",
   "deck": "The accord is intended to support cross-border evidence gathering and other cooperation in criminal matters; an extradition treaty remains under discussion.",
   "publishedAt": "2026-10-07T12:28:04+08:00",
-  "updatedAt": "2026-10-07T12:28:04+08:00",
+  "updatedAt": "2026-10-07T17:30:30+08:00",
   "author": "FMB News Desk",
   "articleType": "NewsArticle",
   "sections": [
-    {"heading": "What happened", "paragraphs": ["The Philippines and Poland signed an Agreement on Mutual Legal Assistance in Criminal Matters at Malacañang on October 6 during Polish President Karol Nawrocki's state visit. Presidents Ferdinand Marcos Jr. and Nawrocki witnessed the signing.", "The two governments had completed a second round of negotiations and initialed an agreed text in Manila in February. The new accord follows a separate agreement on the transfer of sentenced persons signed earlier in 2026."]},
-    {"heading": "Context", "paragraphs": ["Mutual legal assistance agreements provide formal channels for cooperation such as obtaining evidence and statements, serving documents, tracing or identifying assets and assisting investigations or prosecutions, subject to each treaty's text and domestic law.", "Marcos said the two countries were also ready to negotiate an extradition agreement. Signing does not necessarily mean every provision is immediately in force; entry into force can depend on ratification or other domestic steps."]},
-    {"heading": "Why it matters", "paragraphs": ["The agreement can make evidence gathering in cross-border criminal cases more predictable and can support law-enforcement cooperation affecting Filipinos in either country. Its practical reach will depend on the published text, implementing agencies and entry-into-force requirements."]},
-    {"heading": "What to watch next", "paragraphs": ["Watch for publication of the full agreement, completion of domestic approval procedures, its effective date and any formal start to extradition-treaty negotiations."]}
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Philippines and Poland signed an Agreement on Mutual Legal Assistance in Criminal Matters at Malacañang on October 6 during Polish President Karol Nawrocki's state visit. Presidents Ferdinand Marcos Jr. and Nawrocki witnessed the signing.",
+        "The two governments had completed a second round of negotiations and initialed an agreed text in Manila in February. The new accord follows a separate agreement on the transfer of sentenced persons signed earlier in 2026."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "Mutual legal assistance agreements provide formal channels for cooperation such as obtaining evidence and statements, serving documents, tracing or identifying assets and assisting investigations or prosecutions, subject to each treaty's text and domestic law.",
+        "Marcos said the two countries were also ready to negotiate an extradition agreement. Signing does not necessarily mean every provision is immediately in force; entry into force can depend on ratification or other domestic steps."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "The agreement can make evidence gathering in cross-border criminal cases more predictable and can support law-enforcement cooperation affecting Filipinos in either country. Its practical reach will depend on the published text, implementing agencies and entry-into-force requirements."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for publication of the full agreement, completion of domestic approval procedures, its effective date and any formal start to extradition-treaty negotiations."
+      ]
+    }
   ],
   "sources": [
-    {"publisher": "Presidential Communications Office", "title": "Arrival Honors and bilateral events for President Karol Nawrocki of Poland", "publishedAt": "2026-10-06T00:00:00+08:00", "url": "https://www.youtube.com/watch?v=szbW_HDeFsk", "role": "primary"},
-    {"publisher": "Government of Poland", "title": "Negotiations on an agreement on mutual assistance in criminal matters", "publishedAt": "2026-02-25T00:00:00+01:00", "url": "https://www.gov.pl/web/philippines/negotiations-on-an-agreement-on-mutual-assistance-in-criminal-matters", "role": "primary"},
-    {"publisher": "GMA Integrated News", "title": "Philippines, Poland sign pact on mutual legal assistance in criminal cases", "publishedAt": "2026-10-07T03:32:00+08:00", "url": "https://www.gmanetwork.com/news/topstories/nation/1005007/philippines-signs-legal-criminal-assistance-pact-with-poland/story/", "role": "independent"}
+    {
+      "publisher": "Presidential Communications Office",
+      "title": "Arrival Honors and bilateral events for President Karol Nawrocki of Poland",
+      "publishedAt": "2026-10-06T00:00:00+08:00",
+      "url": "https://www.youtube.com/watch?v=szbW_HDeFsk",
+      "role": "primary"
+    },
+    {
+      "publisher": "Government of Poland",
+      "title": "Negotiations on an agreement on mutual assistance in criminal matters",
+      "publishedAt": "2026-02-25T00:00:00+01:00",
+      "url": "https://www.gov.pl/web/philippines/negotiations-on-an-agreement-on-mutual-assistance-in-criminal-matters",
+      "role": "primary"
+    },
+    {
+      "publisher": "GMA Integrated News",
+      "title": "Philippines, Poland sign pact on mutual legal assistance in criminal cases",
+      "publishedAt": "2026-10-07T03:32:00+08:00",
+      "url": "https://www.gmanetwork.com/news/topstories/nation/1005007/philippines-signs-legal-criminal-assistance-pact-with-poland/story/",
+      "role": "independent"
+    }
   ],
-  "image": {"kind": "editorial-fallback", "url": "/assets/images/news/fmb-news-editorial-fallback.svg", "source": "FMB News", "creator": "FMB News", "license": "FMB-owned editorial asset", "credit": "FMB News editorial visual", "caption": "FMB News editorial visual. This is not documentary imagery of the October 6 signing ceremony.", "alt": "FMB News editorial graphic accompanying a report on a Philippines-Poland legal agreement", "width": 1200, "height": 675, "sourceUrl": null},
-  "audit": {"sourceCheckedAt": "2026-10-07T12:27:00+08:00", "verificationNotes": "The official Philippine event record and Poland's February negotiation notice were checked against GMA's report of the October 6 signing. The article does not claim the agreement is already in force because the published implementation and ratification details were not yet available."}
+  "image": {
+    "kind": "licensed-contextual-photo",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Embassy%20of%20Poland%2C%20Manila.jpg",
+    "source": "Wikimedia Commons",
+    "creator": "Embassy of Poland, Manila / Gov.pl",
+    "license": "CC BY 3.0 Poland",
+    "credit": "Photo: Embassy of Poland, Manila / Gov.pl via Wikimedia Commons, CC BY 3.0 Poland",
+    "caption": "File photograph of the Embassy of Poland in Manila. It is contextual and does not depict the October 2026 signing or the officials involved.",
+    "alt": "Embassy of Poland in Manila",
+    "width": 1460,
+    "height": 616,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Embassy_of_Poland,_Manila.jpg"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-07T12:27:00+08:00",
+    "verificationNotes": "The official Philippine event record and Poland's February negotiation notice were checked against GMA's report of the October 6 signing. The article does not claim the agreement is already in force because the published implementation and ratification details were not yet available. Image-rights check: Embassy of Poland, Manila / Gov.pl image on Wikimedia Commons, CC BY 3.0 Poland; used as a clearly labeled contextual file photograph."
+  }
 }
