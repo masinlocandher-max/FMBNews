@@ -17,7 +17,7 @@
   "kicker": "Southeast Asia",
   "deck": "The two-day official visit is confirmed; safeguards for Myanmar nationals returned from Malaysia remain disputed.",
   "publishedAt": "2026-10-07T14:35:20+08:00",
-  "updatedAt": "2026-10-07T17:30:30+08:00",
+  "updatedAt": "2026-10-07T17:42:00+08:00",
   "author": "FMB News Desk",
   "articleType": "NewsArticle",
   "sections": [
@@ -36,7 +36,7 @@
       ]
     },
     {
-      "heading": "Regional context",
+      "heading": "Context",
       "paragraphs": [
         "ASEAN has continued to exclude Myanmar's political representatives from its highest-level meetings because the authorities have not implemented the bloc's peace plan, even as individual member states have renewed direct engagement. The Philippines is ASEAN chair in 2026, making the visit relevant to Manila's management of the bloc's Myanmar policy."
       ]
@@ -92,6 +92,6 @@
   },
   "audit": {
     "sourceCheckedAt": "2026-10-07T14:35:00+08:00",
-    "verificationNotes": "The visit and official agenda were checked against Myanmar's Foreign Ministry and corroborated by AP and Reuters. Malaysia's description of repatriations and the UN and rights-group warnings are separately attributed; the protections for individual returnees remain unresolved. Image-rights check: Zawzawaungthwin image on Wikimedia Commons, CC BY-SA 4.0; used as a clearly labeled contextual file photograph."
+    "verificationNotes": "The visit and official agenda were checked against Myanmar's Foreign Ministry and corroborated by AP and Reuters. Malaysia's description of repatriations and the UN and rights-group warnings are separately attributed; the protections for individual returnees remain unresolved. Image-rights check: Zawzawaungthwin image on Wikimedia Commons, CC BY-SA 4.0; used as a clearly labeled contextual file photograph. Editorial section labels normalized to the canonical production contract without changing the reported facts."
   }
 }

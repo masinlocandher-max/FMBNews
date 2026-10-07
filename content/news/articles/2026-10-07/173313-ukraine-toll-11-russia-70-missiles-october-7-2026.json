@@ -17,7 +17,7 @@
   "kicker": "Europe",
   "deck": "The later official tally expanded the attack beyond the two Kyiv deaths first reported; rescue work and damage assessments remained under way.",
   "publishedAt": "2026-10-07T17:33:13+08:00",
-  "updatedAt": "2026-10-07T17:33:13+08:00",
+  "updatedAt": "2026-10-07T17:42:00+08:00",
   "author": "FMB News Desk",
   "articleType": "NewsArticle",
   "sections": [
@@ -29,7 +29,7 @@
       ]
     },
     {
-      "heading": "A wider attack than first reported",
+      "heading": "Context",
       "paragraphs": [
         "The earlier FMB News report focused on two deaths in Kyiv while assessments were still under way. The later official update showed casualties across several regions and described one of the largest recent Russian barrages against Ukraine.",
         "Associated Press earlier confirmed deaths and damage in Kyiv, Pryluky and Kremenchuk from regional authorities. Its published tally was lower at the time of reporting, illustrating how casualty counts changed as rescue teams worked through the sites."
@@ -106,7 +106,7 @@
   },
   "audit": {
     "sourceCheckedAt": "2026-10-07T17:33:13+08:00",
-    "verificationNotes": "The later national toll and 70-missile figure were checked against President Zelenskyy's official Telegram post and corroborated by Reuters. AP independently confirmed deaths and damage in several regions using local authorities, though its earlier tally was lower. Russian target claims remain attributed and unverified; the final toll is developing. Image-rights check: Creation3987!GO image on Wikimedia Commons, CC0 1.0; used as a clearly labeled contextual file photograph.",
+    "verificationNotes": "The later national toll and 70-missile figure were checked against President Zelenskyy's official Telegram post and corroborated by Reuters. AP independently confirmed deaths and damage in several regions using local authorities, though its earlier tally was lower. Russian target claims remain attributed and unverified; the final toll is developing. Image-rights check: Creation3987!GO image on Wikimedia Commons, CC0 1.0; used as a clearly labeled contextual file photograph. Editorial section labels normalized to the canonical production contract without changing the reported facts.",
     "duplicateCheck": "A same-event FMB report existed with the earlier two-death Kyiv toll. This continuation is independently newsworthy because the official nationwide toll rose to at least 11 and the attack scale was quantified; the first FMB report is linked."
   }
 }

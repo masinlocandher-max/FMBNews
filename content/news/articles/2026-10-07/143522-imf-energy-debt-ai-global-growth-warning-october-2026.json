@@ -17,12 +17,12 @@
   "kicker": "Global Economy",
   "deck": "Kristalina Georgieva urged stronger fiscal, monetary and AI safeguards ahead of the IMF and World Bank meetings in Bangkok.",
   "publishedAt": "2026-10-07T14:35:22+08:00",
-  "updatedAt": "2026-10-07T17:30:30+08:00",
+  "updatedAt": "2026-10-07T17:42:00+08:00",
   "author": "FMB News Desk",
   "articleType": "NewsArticle",
   "sections": [
     {
-      "heading": "What the IMF chief said",
+      "heading": "What happened",
       "paragraphs": [
         "International Monetary Fund Managing Director Kristalina Georgieva warned on October 7 that persistently high energy prices, record public debt and financial risks from the artificial-intelligence investment boom were threatening global growth.",
         "Speaking in Singapore ahead of the IMF and World Bank Annual Meetings in Bangkok, Georgieva said the global economy was being pulled between an energy-supply shock and AI-driven demand. She urged governments to strengthen fiscal policy, monetary safeguards, workforce skills, energy security and AI regulation."
@@ -36,7 +36,7 @@
       ]
     },
     {
-      "heading": "What is confirmed and what comes next",
+      "heading": "Context",
       "paragraphs": [
         "The speech and event were confirmed by the IMF, while Reuters and Associated Press independently reported the substance. Georgieva did not announce a new overall global growth forecast in the remarks. The IMF is expected to release updated forecasts during the annual meetings."
       ]
@@ -92,6 +92,6 @@
   },
   "audit": {
     "sourceCheckedAt": "2026-10-07T14:35:00+08:00",
-    "verificationNotes": "The speech event was checked against the IMF's official page and its substance was corroborated by Reuters and AP. The article treats Georgieva's forecasts and policy warnings as attributed assessments, not realized outcomes, and notes that no new Philippines-specific forecast was issued. Image-rights check: APK image on Wikimedia Commons, CC BY 4.0; used as a clearly labeled contextual file photograph."
+    "verificationNotes": "The speech event was checked against the IMF's official page and its substance was corroborated by Reuters and AP. The article treats Georgieva's forecasts and policy warnings as attributed assessments, not realized outcomes, and notes that no new Philippines-specific forecast was issued. Image-rights check: APK image on Wikimedia Commons, CC BY 4.0; used as a clearly labeled contextual file photograph. Editorial section labels normalized to the canonical production contract without changing the reported facts."
   }
 }

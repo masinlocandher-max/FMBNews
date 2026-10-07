@@ -16,7 +16,7 @@
   "kicker": "Europe",
   "deck": "Ukrainian officials confirmed two deaths and damage across several cities; the full toll and Russia's claimed target list remain unverified.",
   "publishedAt": "2026-10-07T14:35:21+08:00",
-  "updatedAt": "2026-10-07T17:30:30+08:00",
+  "updatedAt": "2026-10-07T17:42:00+08:00",
   "author": "FMB News Desk",
   "articleType": "NewsArticle",
   "sections": [
@@ -34,7 +34,7 @@
       ]
     },
     {
-      "heading": "Confirmed and developing",
+      "heading": "Context",
       "paragraphs": [
         "The two reported deaths in Kyiv and the cited damage were attributed to Ukrainian national and local authorities and independently reported by Reuters and the Kyiv Independent. The overall toll remained developing, and the sides' broader battlefield and target claims could not be independently confirmed."
       ]
@@ -110,6 +110,6 @@
   },
   "audit": {
     "sourceCheckedAt": "2026-10-07T14:35:00+08:00",
-    "verificationNotes": "The casualty and damage reports were checked against Ukrainian official updates and independent reporting by Reuters and the Kyiv Independent. Russian target claims are attributed and explicitly unverified; the total toll remains developing. Image-rights check: Creation3987!GO image on Wikimedia Commons, CC0 1.0; used as a clearly labeled contextual file photograph."
+    "verificationNotes": "The casualty and damage reports were checked against Ukrainian official updates and independent reporting by Reuters and the Kyiv Independent. Russian target claims are attributed and explicitly unverified; the total toll remains developing. Image-rights check: Creation3987!GO image on Wikimedia Commons, CC0 1.0; used as a clearly labeled contextual file photograph. Editorial section labels normalized to the canonical production contract without changing the reported facts."
   }
 }
