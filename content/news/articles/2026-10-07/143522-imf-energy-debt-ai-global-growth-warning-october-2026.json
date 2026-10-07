@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "imf-energy-debt-ai-global-growth-warning-october-2026",
+  "headline": "IMF Chief Warns Energy, Debt and AI Risks Threaten Global Growth",
+  "seoTitle": "IMF Chief Warns Energy, Debt and AI Risks Threaten Growth",
+  "seoDescription": "IMF Managing Director Kristalina Georgieva warned that high energy prices, record public debt and AI-related financial risks threaten global growth.",
+  "keywords": [
+    "IMF",
+    "Kristalina Georgieva",
+    "global growth",
+    "public debt",
+    "artificial intelligence",
+    "energy prices"
+  ],
+  "category": "Business",
+  "kicker": "Global Economy",
+  "deck": "Kristalina Georgieva urged stronger fiscal, monetary and AI safeguards ahead of the IMF and World Bank meetings in Bangkok.",
+  "publishedAt": "2026-10-07T14:35:22+08:00",
+  "updatedAt": "2026-10-07T14:35:22+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What the IMF chief said",
+      "paragraphs": [
+        "International Monetary Fund Managing Director Kristalina Georgieva warned on October 7 that persistently high energy prices, record public debt and financial risks from the artificial-intelligence investment boom were threatening global growth.",
+        "Speaking in Singapore ahead of the IMF and World Bank Annual Meetings in Bangkok, Georgieva said the global economy was being pulled between an energy-supply shock and AI-driven demand. She urged governments to strengthen fiscal policy, monetary safeguards, workforce skills, energy security and AI regulation."
+      ]
+    },
+    {
+      "heading": "Debt and AI risks",
+      "paragraphs": [
+        "Georgieva said public debt was at its highest level since World War II and was projected to exceed 100% of global gross domestic product before 2030. She also warned that concentrated, highly leveraged AI investment could transmit a market disappointment into a broader shock.",
+        "At the same time, she cited IMF research suggesting that well-managed AI adoption could add about half a percentage point to annual global growth. The warning was therefore about unmanaged concentration, leverage, labor disruption, cyber risks and weak guardrails rather than a claim that AI investment is uniformly harmful."
+      ]
+    },
+    {
+      "heading": "What is confirmed and what comes next",
+      "paragraphs": [
+        "The speech and event were confirmed by the IMF, while Reuters and Associated Press independently reported the substance. Georgieva did not announce a new overall global growth forecast in the remarks. The IMF is expected to release updated forecasts during the annual meetings."
+      ]
+    },
+    {
+      "heading": "Why it matters to Filipinos",
+      "paragraphs": [
+        "For the Philippines, prolonged high oil and gas prices can raise transport, electricity and food costs. Higher global yields can make borrowing more expensive, while AI investment and regulation can affect jobs, outsourcing and digital-sector growth. The speech did not include a new Philippines-specific forecast."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch the IMF's updated World Economic Outlook, country forecasts and policy statements during the October 12–18 meetings, as well as oil prices, interest-rate signals and concrete AI-governance proposals."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "International Monetary Fund",
+      "title": "2026 Annual Meetings Curtain Raiser",
+      "publishedAt": "2026-10-07T14:00:00+08:00",
+      "url": "https://www.imf.org/en/news/articles/2026/10/07/sp100726-2026-annual-meetings-curtain-raiser",
+      "role": "primary"
+    },
+    {
+      "publisher": "Reuters",
+      "title": "IMF chief warns energy shock, growing debt and AI risks threaten global growth",
+      "publishedAt": "2026-10-07T06:06:20Z",
+      "url": "https://www.reuters.com/world/asia-pacific/imf-chief-warns-energy-shock-growing-debt-ai-risks-threaten-global-growth-2026-10-07/",
+      "role": "independent"
+    },
+    {
+      "publisher": "Associated Press",
+      "title": "IMF chief urges countries to curb debt, regulate AI",
+      "publishedAt": "2026-10-07T00:00:00Z",
+      "url": "https://apnews.com/article/war-ai-georgieva-imf-oil-debt-2da9d879e2eb70e1e16d14fd1a307a99",
+      "role": "independent"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying a report on the IMF chief's global economic warning. It is not a photograph of Kristalina Georgieva or the Singapore event.",
+    "alt": "FMB News editorial graphic for a report on IMF warnings about energy, debt and artificial-intelligence risks",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": "https://www.francinemariebautista.com/assets/images/news/fmb-news-editorial-fallback.svg"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-07T14:35:00+08:00",
+    "verificationNotes": "The speech event was checked against the IMF's official page and its substance was corroborated by Reuters and AP. The article treats Georgieva's forecasts and policy warnings as attributed assessments, not realized outcomes, and notes that no new Philippines-specific forecast was issued."
+  }
+}

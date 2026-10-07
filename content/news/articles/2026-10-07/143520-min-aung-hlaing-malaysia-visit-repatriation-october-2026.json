@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "min-aung-hlaing-malaysia-visit-repatriation-october-2026",
+  "headline": "Min Aung Hlaing Begins Malaysia Visit Amid Repatriation Criticism",
+  "seoTitle": "Min Aung Hlaing Begins Malaysia Visit Amid Repatriation Criticism",
+  "seoDescription": "Myanmar's military-backed president began an official Malaysia visit as Kuala Lumpur's repatriation policy drew warnings from the UN and rights groups.",
+  "keywords": [
+    "Min Aung Hlaing",
+    "Malaysia",
+    "Myanmar",
+    "Anwar Ibrahim",
+    "repatriation",
+    "ASEAN"
+  ],
+  "category": "World",
+  "kicker": "Southeast Asia",
+  "deck": "The two-day official visit is confirmed; safeguards for Myanmar nationals returned from Malaysia remain disputed.",
+  "publishedAt": "2026-10-07T14:35:20+08:00",
+  "updatedAt": "2026-10-07T14:35:20+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Myanmar's military-backed president Min Aung Hlaing began a two-day official visit to Malaysia on October 7 for talks with Prime Minister Anwar Ibrahim and a Myanmar-Malaysia business dialogue. Myanmar's Foreign Ministry confirmed the invitation and agenda, while Malaysian authorities said the visit would cover bilateral issues.",
+        "Associated Press reported that Min Aung Hlaing departed Myanmar for Malaysia on Wednesday. Reuters reported that the visit coincided with Malaysia's push to return thousands of Myanmar nationals."
+      ]
+    },
+    {
+      "heading": "What is confirmed and what is contested",
+      "paragraphs": [
+        "The visit, the planned bilateral talks and the business dialogue are confirmed by official statements. Malaysia describes the returns as voluntary, dignified and safe.",
+        "The United Nations and rights groups have warned that people returned to Myanmar could face persecution, conflict-related harm or forced conscription. Those risks and the protections available to individual returnees remain unresolved. It was also unclear in current reporting whether Rohingya refugees were included in the latest return group."
+      ]
+    },
+    {
+      "heading": "Regional context",
+      "paragraphs": [
+        "ASEAN has continued to exclude Myanmar's political representatives from its highest-level meetings because the authorities have not implemented the bloc's peace plan, even as individual member states have renewed direct engagement. The Philippines is ASEAN chair in 2026, making the visit relevant to Manila's management of the bloc's Myanmar policy."
+      ]
+    },
+    {
+      "heading": "Why it matters to Filipinos",
+      "paragraphs": [
+        "The visit may influence ASEAN's approach to Myanmar, regional human-rights policy, migrant protection and cross-border security. Those issues affect the Philippines as ASEAN chair and as a major migrant-sending country."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch the Anwar-Min Aung Hlaing talks, any written safeguards for returnees, whether Malaysia publishes details of who is being returned, and how the Philippines and other ASEAN members respond to the renewed bilateral engagement."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Myanmar Ministry of Foreign Affairs",
+      "title": "President of the Republic of the Union of Myanmar, H.E. U Min Aung Hlaing to make Official Visit to Malaysia",
+      "publishedAt": "2026-10-06T00:00:00+06:30",
+      "url": "https://www.mofa.gov.mm/en/president-of-the-republic-of-the-union-of-myanmar-h-e-u-min-aung-hlaingto-make-official-visit-to-malaysia/",
+      "role": "primary"
+    },
+    {
+      "publisher": "Associated Press",
+      "title": "Myanmar’s Min Aung Hlaing visits Malaysia as repatriation plan draws criticism",
+      "publishedAt": "2026-10-07T00:00:00Z",
+      "url": "https://apnews.com/article/min-aung-hlaing-malaysia-anwar-rohingya-34a65fe203c37131d33965c680699082",
+      "role": "independent"
+    },
+    {
+      "publisher": "Reuters",
+      "title": "Once shunned, Myanmar's military-backed leader set for Malaysian red carpet",
+      "publishedAt": "2026-10-07T05:24:48Z",
+      "url": "https://www.reuters.com/world/asia-pacific/once-shunned-myanmars-military-backed-leader-set-malaysian-red-carpet-2026-10-07/",
+      "role": "independent"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying a report on Min Aung Hlaing's Malaysia visit. It is not a photograph of the visit or any repatriation.",
+    "alt": "FMB News editorial graphic for a report on Myanmar leader Min Aung Hlaing's Malaysia visit",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": "https://www.francinemariebautista.com/assets/images/news/fmb-news-editorial-fallback.svg"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-07T14:35:00+08:00",
+    "verificationNotes": "The visit and official agenda were checked against Myanmar's Foreign Ministry and corroborated by AP and Reuters. Malaysia's description of repatriations and the UN and rights-group warnings are separately attributed; the protections for individual returnees remain unresolved."
+  }
+}

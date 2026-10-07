@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "russian-strikes-kyiv-two-killed-october-7-2026",
+  "headline": "Russian Strikes Kill Two in Kyiv in New Multi-Region Barrage",
+  "seoTitle": "Russian Strikes Kill Two in Kyiv in Multi-Region Barrage",
+  "seoDescription": "Ukrainian officials said two people were killed in Kyiv as Russian missiles and drones struck the capital and several other regions on October 7.",
+  "keywords": [
+    "Russia Ukraine war",
+    "Kyiv strikes",
+    "Ukraine missiles",
+    "Ukraine drones",
+    "Vitali Klitschko"
+  ],
+  "category": "World",
+  "kicker": "Europe",
+  "deck": "Ukrainian officials confirmed two deaths and damage across several cities; the full toll and Russia's claimed target list remain unverified.",
+  "publishedAt": "2026-10-07T14:35:21+08:00",
+  "updatedAt": "2026-10-07T14:35:21+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "A new wave of Russian missile and drone attacks killed at least two people in Kyiv on October 7, according to Ukrainian officials. Mayor Vitali Klitschko said the bodies were found after a fire at a garage cooperative in the capital's Darnytskyi district.",
+        "Officials also reported damage to buildings and warehouses in Kyiv, an industrial facility in Dnipro, transport infrastructure in Zaporizhzhia and apartment buildings in Kremenchuk. The full extent of casualties and damage was still being assessed."
+      ]
+    },
+    {
+      "heading": "Russia's account",
+      "paragraphs": [
+        "Russia's Defence Ministry said it carried out a massive strike using land-, sea- and air-launched weapons and drones against what it described as Ukrainian military-industrial, port and ship-repair targets. Those target descriptions and damage claims were not independently verified in the reporting reviewed by FMB News."
+      ]
+    },
+    {
+      "heading": "Confirmed and developing",
+      "paragraphs": [
+        "The two reported deaths in Kyiv and the cited damage were attributed to Ukrainian national and local authorities and independently reported by Reuters and the Kyiv Independent. The overall toll remained developing, and the sides' broader battlefield and target claims could not be independently confirmed."
+      ]
+    },
+    {
+      "heading": "Why it matters to Filipinos",
+      "paragraphs": [
+        "Escalation in Ukraine can affect fuel and food prices, shipping costs, financial markets and Filipinos living or working in Europe. It also adds pressure on governments responding to a widening set of international security crises."
+      ]
+    },
+    {
+      "heading": "Earlier FMB coverage",
+      "paragraphs": [
+        "This is a distinct new attack. Earlier FMB News coverage of the current escalation is available at https://www.francinemariebautista.com/news/zelenskyy-intensify-russian-refinery-strikes-october-3-2026/."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch updated casualty figures, emergency-service reports, verified damage assessments, any additional strikes and the effect on energy infrastructure and diplomatic efforts."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Kyiv City Military Administration",
+      "title": "Official update on casualties in Kyiv",
+      "publishedAt": "2026-10-07T00:00:00+03:00",
+      "url": "https://t.me/VA_Kyiv/21518",
+      "role": "primary"
+    },
+    {
+      "publisher": "Reuters",
+      "title": "Fresh wave of Russian attacks on Ukraine kills two in Kyiv",
+      "publishedAt": "2026-10-07T01:45:28Z",
+      "url": "https://www.reuters.com/world/europe/russia-strikes-ukraines-kyiv-fresh-wave-attacks-2026-10-07/",
+      "role": "independent"
+    },
+    {
+      "publisher": "Reuters",
+      "title": "Russia says it launched 'massive' strikes on Kyiv, other areas of Ukraine",
+      "publishedAt": "2026-10-07T05:17:39Z",
+      "url": "https://www.reuters.com/world/europe/russia-says-it-launched-massive-strikes-kyiv-other-areas-ukraine-2026-10-07/",
+      "role": "independent"
+    },
+    {
+      "publisher": "The Kyiv Independent",
+      "title": "At least 2 killed in Kyiv as Russia slams capital with missiles, drones",
+      "publishedAt": "2026-10-07T03:25:00+03:00",
+      "url": "https://kyivindependent.com/russia-slams-kyiv-in-mass-missile-drone-attack-on-putins-74th-birthday/",
+      "role": "independent"
+    },
+    {
+      "publisher": "FMB News",
+      "title": "Zelenskyy Tells Ukraine to Intensify Strikes on Russian Refineries After Fresh Barrage",
+      "publishedAt": "2026-10-04T04:26:32+08:00",
+      "url": "https://www.francinemariebautista.com/news/zelenskyy-intensify-russian-refinery-strikes-october-3-2026/",
+      "role": "related"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial asset",
+    "credit": "FMB News editorial visual",
+    "caption": "FMB News editorial visual accompanying a report on the October 7 strikes in Ukraine. It is not a photograph of Kyiv, the victims or the attack damage.",
+    "alt": "FMB News editorial graphic for a report on Russian strikes that killed two people in Kyiv",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": "https://www.francinemariebautista.com/assets/images/news/fmb-news-editorial-fallback.svg"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-07T14:35:00+08:00",
+    "verificationNotes": "The casualty and damage reports were checked against Ukrainian official updates and independent reporting by Reuters and the Kyiv Independent. Russian target claims are attributed and explicitly unverified; the total toll remains developing."
+  }
+}
