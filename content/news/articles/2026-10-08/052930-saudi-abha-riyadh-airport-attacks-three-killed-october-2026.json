@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "saudi-abha-riyadh-airport-attacks-three-killed-october-2026",
+  "headline": "Saudi Airport Attacks Kill Three, Wound 36 in Abha and Riyadh",
+  "seoTitle": "Saudi Airport Attacks Kill Three, Wound 36",
+  "seoDescription": "Saudi aviation authorities confirmed three deaths and 36 injuries in attacks at Abha and King Khalid airports; responsibility remains officially unassigned.",
+  "keywords": [
+    "Saudi Arabia airport attacks",
+    "Abha airport",
+    "King Khalid International Airport",
+    "Riyadh airport",
+    "Houthis",
+    "Yemen war"
+  ],
+  "category": "World",
+  "kicker": "Middle East",
+  "deck": "Saudi aviation authorities confirmed three deaths and 36 injuries at two airports; the Houthis claimed the attacks, but the authority did not assign responsibility.",
+  "publishedAt": "2026-10-08T05:29:30+08:00",
+  "updatedAt": "2026-10-08T05:29:30+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Attacks at Abha International Airport and King Khalid International Airport in Riyadh killed three people and wounded 36, Saudi Arabia's General Authority of Civil Aviation said in a statement reported by Reuters and The Associated Press on October 7.",
+        "The Abha attack killed two residents, one Moroccan and one Algerian, and wounded 28 people. The Riyadh attack killed a Sudanese national and wounded eight people, including five Saudi citizens. Reuters reported that one attack occurred Tuesday and the other Wednesday, but the aviation authority did not specify which happened on which day."
+      ]
+    },
+    {
+      "heading": "Confirmed and alleged",
+      "paragraphs": [
+        "The deaths, injuries and affected airports are confirmed through the Saudi aviation authority's statement as independently reported by Reuters and AP. The authority did not assign responsibility for the attacks.",
+        "Yemen's Houthi movement claimed attacks on Saudi aviation infrastructure, including King Khalid International Airport. That claim remains attributed to the group and was not independently established by the civil-aviation statement."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The fatal attacks are a separate, later development from the October 5 strikes on airports in Jazan and Najran that caused limited damage and three minor injuries. FMB News reported those earlier incidents at https://www.francinemariebautista.com/news/saudi-jazan-najran-airport-attacks-october-2026/.",
+        "FMB News' earliest report on the current cross-border escalation is available at https://www.francinemariebautista.com/news/houthi-attacks-saudi-cities-energy-september-8-2026/. The latest attacks occurred as fighting intensified between Saudi-backed Yemeni government forces and the Houthis around the Bab el-Mandeb Strait."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "Fatal attacks at major civilian airports raise immediate travel and security concerns for overseas Filipino workers and passengers in Saudi Arabia. A wider escalation could also disrupt regional aviation, shipping and energy markets, with possible effects on fares and fuel costs in the Philippines."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for Saudi aviation and airport operating notices, any official attribution, Philippine consular or travel advisories, casualty revisions and further cross-border attacks connected to the Yemen conflict."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Reuters",
+      "title": "Attacks on Saudi airports kill three people, as fighting escalates in Yemen",
+      "publishedAt": "2026-10-07T01:21:16Z",
+      "url": "https://www.reuters.com/world/middle-east/houthis-launch-missiles-yemens-aden-airport-fighting-intensifies-2026-10-07/",
+      "role": "independent"
+    },
+    {
+      "publisher": "Associated Press",
+      "title": "Attacks on Saudi airports claimed by Houthi rebels kill 3 people, officials say",
+      "publishedAt": "2026-10-07T07:57:43Z",
+      "url": "https://apnews.com/article/f22f20dd78b03b741dfa1279881cedbb",
+      "role": "independent"
+    },
+    {
+      "publisher": "FMB News",
+      "title": "Houthi Attacks Hit Four Saudi Cities and Energy Facilities, Wounding 73",
+      "publishedAt": "2026-09-08T22:04:24+08:00",
+      "url": "https://www.francinemariebautista.com/news/houthi-attacks-saudi-cities-energy-september-8-2026/",
+      "role": "related"
+    },
+    {
+      "publisher": "FMB News",
+      "title": "Attacks Hit Two Saudi Airports as Yemen Fighting Escalates",
+      "publishedAt": "2026-10-07T12:28:06+08:00",
+      "url": "https://www.francinemariebautista.com/news/saudi-jazan-najran-airport-attacks-october-2026/",
+      "role": "related"
+    }
+  ],
+  "image": {
+    "kind": "licensed-contextual-photo",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Abha%20International%20Airport.jpg",
+    "source": "Wikimedia Commons",
+    "creator": "Clemens Schmillen",
+    "license": "CC BY-SA 4.0",
+    "credit": "Photo: Clemens Schmillen / Wikimedia Commons, CC BY-SA 4.0",
+    "caption": "File photograph of Abha International Airport on February 1, 2026. It provides location context and does not depict the October attacks or their aftermath.",
+    "alt": "Exterior of Abha International Airport in Saudi Arabia in February 2026",
+    "width": 1024,
+    "height": 683,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abha_International_Airport.jpg"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-08T05:27:00+08:00",
+    "verificationNotes": "Reuters and AP independently reported the same casualty figures from a Saudi General Authority of Civil Aviation statement. The authority's site was unavailable during verification, so the article transparently identifies the official statement as carried by both outlets. Responsibility remains unassigned by the aviation authority; the Houthi claim is attributed. This is a distinct continuation involving Abha and Riyadh, not a duplicate of the earlier Jazan and Najran attacks. Image-rights check: Clemens Schmillen's own-work photograph is licensed CC BY-SA 4.0 on Wikimedia Commons and is used as a clearly labeled contextual file image."
+  }
+}
