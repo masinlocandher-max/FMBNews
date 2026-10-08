@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "doe-jica-philippine-oil-security-assessment-october-2026",
+  "headline": "DOE, JICA Launch Philippine Oil-Security and Stockpiling Assessment",
+  "seoTitle": "DOE, JICA Launch Philippine Oil-Stockpiling Assessment",
+  "seoDescription": "The Philippines and JICA will assess oil supply chains, stockpiling and emergency-response systems before recommending a national framework.",
+  "keywords": [
+    "Department of Energy",
+    "JICA",
+    "Philippine oil security",
+    "strategic petroleum reserve",
+    "POWERR Asia",
+    "energy security"
+  ],
+  "category": "Business",
+  "kicker": "Energy Security",
+  "deck": "The new data-collection survey will map supply, demand, storage and emergency-response gaps. It is a planning step, not an announcement that a national oil reserve has already been built.",
+  "publishedAt": "2026-10-08T20:32:52+08:00",
+  "updatedAt": "2026-10-08T20:32:52+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Department of Energy and the Japan International Cooperation Agency signed a joint statement on October 8 launching a data-collection survey for stronger Philippine oil security. DOE Secretary Sharon Garin and JICA Senior Vice President Yoshikawa Yoshifumi signed during the Asia Zero Emission Community ministerial meeting in Metro Manila, according to GMA News and Logistics News Philippines.",
+        "The assessment will examine the country's oil supply and demand, stockpiling mechanisms, supply chains and emergency-response arrangements. Data collection is due to begin in October, followed by recommendations on legal and institutional frameworks suited to Philippine conditions."
+      ]
+    },
+    {
+      "heading": "What the cooperation covers",
+      "paragraphs": [
+        "The joint work includes policy and project development, technical seminars in the Philippines, expert support and a study visit to Japan. Japan is expected to share experience in managing national petroleum reserves and maintaining supply-chain resilience.",
+        "The project sits under POWERR Asia, a Japanese regional framework launched in April. Japan's Ministry of Economy, Trade and Industry says the program supports emergency financing for crude oil and petroleum-product procurement as well as longer-term work on stockpiling, storage tanks and diversified energy supplies."
+      ]
+    },
+    {
+      "heading": "What is confirmed — and what is not",
+      "paragraphs": [
+        "The signing and the start of the assessment are confirmed. The Philippine and Japanese governments had already said in May that Japan would support development of a Philippine national oil-reserve system and an ASEAN joint-stockpiling arrangement.",
+        "No reserve volume, storage location, construction budget, financing package or completion date was announced with the October 8 survey. The project therefore does not yet create an operational strategic petroleum reserve or guarantee additional barrels during the current supply emergency."
+      ]
+    },
+    {
+      "heading": "Why it matters to Filipinos",
+      "paragraphs": [
+        "The Philippines imports most of its crude oil and is exposed when wars, shipping attacks or other disruptions restrict supply and lift world prices. A workable reserve and release system could give the government a temporary buffer, but its value will depend on the amount stored, replenishment rules, financing and transparent release triggers.",
+        "For households and transport operators, the immediate effect is limited because the new agreement starts a study rather than a fuel release. Its longer-term importance is whether the survey produces funded storage capacity and clearer emergency rules before the next disruption."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for the survey's baseline estimate of existing commercial stocks, the recommended number of reserve days, proposed legal authority and release rules, and whether the government identifies sites, funding and a construction timetable."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Japan Ministry of Economy, Trade and Industry",
+      "title": "Financial Cooperation with Partner-Country Companies under the Partnership on Wide Energy and Resources Resilience Asia",
+      "publishedAt": "2026-04-21T00:00:00+09:00",
+      "url": "https://www.meti.go.jp/english/press/2026/0421_002.html",
+      "role": "primary"
+    },
+    {
+      "publisher": "Japan Ministry of Economy, Trade and Industry",
+      "title": "Joint Statement on the Stockpiling Cooperation between METI and the Department of Energy of the Republic of the Philippines",
+      "publishedAt": "2026-05-28T00:00:00+09:00",
+      "url": "https://www.meti.go.jp/english/press/2026/0528_003.html",
+      "role": "primary"
+    },
+    {
+      "publisher": "Presidential Communications Office",
+      "title": "The Philippines-Japan Joint Statement on the Elevation to a Comprehensive Strategic Partnership",
+      "publishedAt": "2026-05-27T00:00:00+08:00",
+      "url": "https://pco.gov.ph/news_releases/the-philippines-japan-joint-statement-on-the-elevation-to-a-comprehensive-strategic-partnership-weaving-the-future-together-peace-prosperity-possibilities/",
+      "role": "primary"
+    },
+    {
+      "publisher": "GMA News",
+      "title": "DOE, JICA to assess PH oil supply, stockpiling systems",
+      "publishedAt": "2026-10-08T19:30:00+08:00",
+      "url": "https://www.gmanetwork.com/news/money/economy/1005263/doe-jica-to-assess-ph-oil-supply-stockpiling-systems/story/",
+      "role": "independent"
+    },
+    {
+      "publisher": "Logistics News Philippines",
+      "title": "JICA and DOE partner to strengthen national oil security",
+      "publishedAt": "2026-10-08T00:00:00+08:00",
+      "url": "https://logisticsnews.ph/2026/10/08/jica-and-doe-partner-to-strengthen-national-oil-security/",
+      "role": "independent"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial artwork",
+    "credit": "Editorial graphic: FMB News",
+    "caption": "FMB News editorial graphic. This is a non-documentary visual and does not depict the October 8 signing, an oil-storage site or petroleum stocks.",
+    "alt": "FMB News editorial graphic accompanying a report on a Philippine oil-security assessment",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-08T20:32:52+08:00",
+    "verificationNotes": "GMA News and Logistics News Philippines independently reported the October 8 DOE-JICA signing and matching survey scope. METI's official April and May releases corroborate the POWERR Asia framework and prior bilateral commitment, while the Philippine Presidential Communications Office confirms Japan's promised support for a national reserve system and ASEAN joint stockpiling. The article distinguishes the confirmed assessment from an operational reserve and does not invent volumes, sites, financing or completion dates. The FMB-owned image is explicitly non-documentary.",
+    "duplicateCheck": "The live CMS contained no article with JICA, POWERR Asia or oil stockpiling in its title or body. This is the first FMB News report on the October 8 DOE-JICA assessment.",
+    "imageRightsCheck": {
+      "usage": "editorial-fallback",
+      "creator": "FMB News",
+      "license": "FMB-owned editorial artwork",
+      "sourceUrl": "https://www.francinemariebautista.com/news/",
+      "checkedAt": "2026-10-08T20:32:52+08:00"
+    }
+  }
+}
