@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "isaias-gulf-oil-production-shutdowns-october-2026",
+  "headline": "Shell, Chevron Shut Gulf Output as Isaias Nears Hurricane Strength",
+  "seoTitle": "Shell, Chevron Cut Gulf Output Ahead of Isaias",
+  "seoDescription": "Shell and Chevron shut production at Gulf facilities as Tropical Storm Isaias strengthened and threatened the northern U.S. Gulf Coast.",
+  "keywords": ["Tropical Storm Isaias", "Gulf of Mexico oil", "Shell", "Chevron", "hurricane forecast", "oil production"],
+  "category": "Business",
+  "kicker": "Energy and Weather",
+  "deck": "The companies confirmed offshore shutdowns while the U.S. hurricane center warned of rapid strengthening, storm surge and heavy rain.",
+  "publishedAt": "2026-10-08T09:29:31+08:00",
+  "updatedAt": "2026-10-08T09:29:31+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Shell shut production and evacuated personnel from five Gulf of Mexico assets as Tropical Storm Isaias approached the northern U.S. Gulf Coast. Chevron also began shutting production at four facilities and moved some personnel ashore, the companies told Reuters.",
+        "The U.S. offshore regulator said 511,619 barrels a day, or about 25% of current Gulf oil production, had been shut in by midday October 7."
+      ]
+    },
+    {
+      "heading": "Confirmed and forecast",
+      "paragraphs": [
+        "The company shutdowns and regulator's production figure are confirmed actions. The National Hurricane Center reported 65 mph maximum sustained winds at 4 p.m. Central time on October 7 and forecast Isaias to become a hurricane Thursday morning before landfall late Friday or early Saturday.",
+        "The projected intensity, track, storm surge, rainfall and tornado risk remain forecasts and can change. The hurricane center placed parts of the northern Gulf Coast under hurricane, tropical-storm and storm-surge watches."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "The Gulf supplies a significant share of U.S. oil. Prolonged offshore shutdowns or storm damage can tighten supply and influence global crude and fuel prices, which matter to the import-dependent Philippines through pump prices, transport costs and inflation."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch the next hurricane-center advisories, additional evacuation or shutdown figures, actual landfall intensity and timing, and whether offshore production can restart quickly after inspections."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "National Hurricane Center",
+      "title": "Tropical Storm Isaias Advisory Number 5",
+      "publishedAt": "2026-10-07T21:00:00Z",
+      "url": "https://www.nhc.noaa.gov/archive/2026/al09/al092026.public.005.shtml",
+      "role": "primary"
+    },
+    {
+      "publisher": "Bureau of Safety and Environmental Enforcement",
+      "title": "MMA Monitors Gulf Oil and Gas Activities in Response to Tropical Storm Isaias",
+      "publishedAt": "2026-10-07T00:00:00-05:00",
+      "url": "https://www.bsee.gov/newsroom/latest-news/statements-and-releases/press-releases/mma-monitors-gulf-response-isaias",
+      "role": "primary"
+    },
+    {
+      "publisher": "Reuters",
+      "title": "Shell, Chevron cut Gulf of Mexico output as Tropical Storm Isaias approaches",
+      "publishedAt": "2026-10-08T00:25:00Z",
+      "url": "https://www.reuters.com/business/energy/shell-chevron-cut-gulf-mexico-output-tropical-storm-isaias-approaches-2026-10-08/",
+      "role": "independent"
+    },
+    {
+      "publisher": "Associated Press",
+      "title": "Tropical Storm Isaias is forecast to strike the US Gulf Coast as a hurricane",
+      "publishedAt": "2026-10-08T00:00:00Z",
+      "url": "https://apnews.com/article/440bdecf97a5340547ca3ad291b361df",
+      "role": "independent"
+    }
+  ],
+  "image": {
+    "kind": "public-domain-contextual-photo",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/20251601846%20GOES19-ABI-ga-GEOCOLOR-4000x4000.jpg",
+    "source": "Wikimedia Commons / NOAA",
+    "creator": "NOAA / NESDIS Center for Satellite Applications and Research",
+    "license": "Public domain (U.S. federal government work)",
+    "credit": "Satellite image: NOAA / NESDIS Center for Satellite Applications and Research, public domain",
+    "caption": "File satellite image of the Gulf of Mexico from 2025. It provides geographic context and does not show Tropical Storm Isaias in October 2026.",
+    "alt": "Satellite view of the Gulf of Mexico from 2025",
+    "width": 4000,
+    "height": 4000,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20251601846_GOES19-ABI-ga-GEOCOLOR-4000x4000.jpg"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-08T09:27:00+08:00",
+    "verificationNotes": "NHC advisory 5 confirms Isaias' measured intensity, watches and forecast. BSEE confirms offshore evacuations and the production share shut in. Reuters and AP independently report company actions and storm impacts. Forecast conditions are labeled as forecasts. The contextual Gulf satellite image is a NOAA work in the public domain; its file date and non-event status are explicit."
+  }
+}

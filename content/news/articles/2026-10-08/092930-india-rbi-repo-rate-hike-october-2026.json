@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "india-rbi-repo-rate-hike-october-2026",
+  "headline": "India Raises Key Rate to 5.5% in First Hike Since 2023",
+  "seoTitle": "India Raises Key Rate to 5.5%",
+  "seoDescription": "India's central bank raised its repo rate by 25 basis points to 5.5% and shifted to calibrated tightening as inflation risks broadened.",
+  "keywords": ["Reserve Bank of India", "India interest rates", "repo rate", "inflation", "Asian economy"],
+  "category": "Business",
+  "kicker": "Monetary Policy",
+  "deck": "The Reserve Bank of India lifted its repo rate by 25 basis points and ruled out near-term cuts as energy and food-price pressures widened.",
+  "publishedAt": "2026-10-08T09:29:30+08:00",
+  "updatedAt": "2026-10-08T09:29:30+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Reserve Bank of India raised its policy repo rate by 25 basis points to 5.5% on October 7, its first increase since February 2023. The six-member Monetary Policy Committee voted unanimously for the increase.",
+        "The standing deposit facility rate moved to 5.25%, while the marginal standing facility rate and bank rate rose to 5.75%. The committee also shifted its policy stance from neutral to calibrated tightening."
+      ]
+    },
+    {
+      "heading": "Confirmed and projected",
+      "paragraphs": [
+        "The rate decision and policy stance are confirmed in the RBI's official resolution and were independently reported by Reuters and The Indian Express.",
+        "The RBI projected 7.1% real GDP growth and 5.2% consumer inflation for fiscal 2026-27. Those figures are forecasts, not realized outcomes. Two committee members preferred retaining a neutral stance even though the rate vote itself was unanimous."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "India is a major Asian economy and trading partner. A tighter policy cycle can influence regional capital flows, currencies, borrowing costs and commodity demand. For the Philippines, the signal matters as domestic inflation and high energy prices also constrain household budgets and central-bank policy choices."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch India's inflation data, oil prices and the October 21 publication of the committee minutes. The RBI said future action could be another increase or a pause, depending on actual inflation and growth."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Reserve Bank of India",
+      "title": "Monetary Policy Statement, 2026-27: Resolution of the Monetary Policy Committee, October 5 to 7, 2026",
+      "publishedAt": "2026-10-07T00:00:00+05:30",
+      "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=63742",
+      "role": "primary"
+    },
+    {
+      "publisher": "Reuters",
+      "title": "India joins global rate-tightening wave with first hike in nearly 4 years",
+      "publishedAt": "2026-10-07T04:33:49Z",
+      "url": "https://www.reuters.com/world/india/india-raises-policy-rate-by-25-bps-first-hike-nearly-four-years-2026-10-07/",
+      "role": "independent"
+    },
+    {
+      "publisher": "The Indian Express",
+      "title": "Repo rate hiked by 25 bps to 5.50 pc: Why RBI has hiked interest rates; EMIs set to rise",
+      "publishedAt": "2026-10-07T00:00:00+05:30",
+      "url": "https://indianexpress.com/article/business/rbi-hikes-repo-rate-25-bps-to-5-50-pc-emi-10910143/",
+      "role": "independent"
+    }
+  ],
+  "image": {
+    "kind": "licensed-contextual-photo",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Reserve%20Bank%20Of%20India%20-%20RBI%20Mumbai.jpg",
+    "source": "Wikimedia Commons",
+    "creator": "Anurag Vijay 03",
+    "license": "CC BY-SA 4.0",
+    "credit": "Photo: Anurag Vijay 03 / Wikimedia Commons, CC BY-SA 4.0",
+    "caption": "File photograph of the Reserve Bank of India headquarters in Mumbai on February 26, 2020. It is contextual and does not depict the October 2026 policy meeting.",
+    "alt": "Reserve Bank of India headquarters in Mumbai",
+    "width": 4608,
+    "height": 3456,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Reserve_Bank_Of_India_-_RBI_Mumbai.jpg"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-08T09:27:00+08:00",
+    "verificationNotes": "The RBI resolution directly confirms the rate increase, unanimous rate vote, policy stance and forecasts. Reuters and The Indian Express independently corroborate the decision. Forecasts are identified as projections. Image rights were verified on the Wikimedia Commons file page: own work by Anurag Vijay 03, CC BY-SA 4.0."
+  }
+}
