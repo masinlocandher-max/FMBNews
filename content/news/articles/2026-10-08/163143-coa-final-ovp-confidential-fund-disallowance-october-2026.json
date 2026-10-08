@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "coa-final-ovp-confidential-fund-disallowance-october-2026",
+  "headline": "COA Makes ₱73.287 Million OVP Confidential-Fund Disallowance Final",
+  "seoTitle": "COA Finalizes ₱73.287M OVP Confidential-Fund Disallowance",
+  "seoDescription": "COA denied the OVP's reconsideration bid with finality; the OVP says it plans a Rule 65 Supreme Court petition, but none had been filed.",
+  "keywords": [
+    "Commission on Audit",
+    "OVP confidential funds",
+    "Sara Duterte",
+    "notice of disallowance",
+    "Supreme Court petition",
+    "public funds"
+  ],
+  "category": "National",
+  "kicker": "Public Funds",
+  "deck": "The audit commission's October 5 resolution ended the reconsideration stage inside COA. The OVP says it will seek Supreme Court review, but counsel said the petition had not yet been filed.",
+  "publishedAt": "2026-10-08T16:31:43+08:00",
+  "updatedAt": "2026-10-08T16:31:43+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "continuation": {
+    "title": "COA Auditor Says VP Sara Liable for ₱73.287 Million in Disallowed OVP Funds",
+    "url": "https://www.francinemariebautista.com/news/coa-auditor-says-vp-sara-liable-p73-million-disallowed-funds/",
+    "originalPublishedAt": "2026-08-12T07:00:00+08:00",
+    "whatChanged": "COA denied the motion for reconsideration with finality, and the OVP announced that it plans to seek Supreme Court review."
+  },
+  "sections": [
+    {
+      "heading": "What changed",
+      "paragraphs": [
+        "The Commission on Audit denied with finality the motion for reconsideration filed by Vice President Sara Duterte and two Office of the Vice President officials over ₱73.287 million in confidential-fund spending from December 21 to 31, 2022. The 15-page resolution was dated October 5 and made public on October 7, according to GMA News, Philstar and the Philippine Daily Inquirer.",
+        "The resolution affirmed COA Decision No. 2026-171 of April 10, which had sustained Notice of Disallowance No. 2024-002-100 issued on August 8, 2024. The decision is final within COA's administrative process; it is an audit ruling, not a criminal conviction."
+      ]
+    },
+    {
+      "heading": "What COA found",
+      "paragraphs": [
+        "The disallowed amount comprised ₱69.787 million reported as rewards and ₱3.5 million for tables, chairs, desktop computers and printers. The outlets' accounts of the resolution said the OVP did not provide documents showing successful information-gathering or surveillance activity to support the rewards, and did not establish that the equipment was intended for confidential operations.",
+        "COA's official Joint Circular No. 2015-01 sets the rules for the entitlement, release, use, reporting and audit of confidential and intelligence funds and calls for strong internal controls and strict accounting and auditing rules. Multiple independent reports said the commission found the OVP's acknowledgment receipts and other submissions insufficient under those requirements."
+      ]
+    },
+    {
+      "heading": "OVP response and unresolved points",
+      "paragraphs": [
+        "OVP counsel Michael Poa said on October 8 that the office intends to file a petition for certiorari under Rule 65 before the Supreme Court, alleging grave abuse of discretion. Poa also said he had not yet spoken with Duterte about the COA resolution and that they would consult before filing.",
+        "No Supreme Court petition had been filed as of FMB News' verification. The grounds the OVP will formally raise, the timing of any filing, and whether the court will issue relief therefore remain unresolved. The COA disallowance is also separate from the ongoing impeachment case, even though the confidential-fund transactions are among the matters raised there."
+      ]
+    },
+    {
+      "heading": "Why it matters to Filipinos",
+      "paragraphs": [
+        "The ruling concerns accountability for taxpayer money whose operational details are confidential but whose use remains subject to audit controls. The next legal step will test whether the OVP can overturn the commission's final administrative action and clarify who must return disallowed funds if the ruling stands."
+      ]
+    },
+    {
+      "heading": "Earlier FMB coverage",
+      "paragraphs": [
+        "FMB News first reported the ₱73.287 million disallowance during the Senate impeachment trial, when a COA auditor testified about liability while the OVP's reconsideration motion was still pending: https://www.francinemariebautista.com/news/coa-auditor-says-vp-sara-liable-p73-million-disallowed-funds/."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for the actual Rule 65 petition and its stated grounds, any Supreme Court temporary relief, COA collection or settlement steps, and whether the final audit action changes the evidence or arguments presented in the impeachment trial."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Commission on Audit, Department of Budget and Management, Department of the Interior and Local Government, Governance Commission for GOCCs and Department of National Defense",
+      "title": "Joint Circular No. 2015-01: Guidelines on Confidential and Intelligence Funds",
+      "publishedAt": "2015-01-08T00:00:00+08:00",
+      "url": "https://www.coa.gov.ph/download/2314/joint-circulars/29344/coa-dbm-dilg-gcg-for-goccs-dnd-joint-circular-no-2015-01-january-8-2015.pdf",
+      "role": "primary"
+    },
+    {
+      "publisher": "Office of the Vice President via GMA News",
+      "title": "OVP to seek SC remedy over COA's disallowance of P73-M confidential funds",
+      "publishedAt": "2026-10-08T15:01:00+08:00",
+      "url": "https://www.gmanetwork.com/news/topstories/nation/1005218/ovp-to-seek-sc-remedy-over-coa-s-disallowance-of-p73-m-confi-funds/story/",
+      "role": "primary-response"
+    },
+    {
+      "publisher": "GMA News",
+      "title": "COA disallows with finality OVP's P73M confidential funds release in December 2022",
+      "publishedAt": "2026-10-07T15:33:00+08:00",
+      "url": "https://www.gmanetwork.com/news/topstories/nation/1005077/coa-disallows-with-finality-ovp-s-p73m-confidential-funds-release-in-december-2022/story/",
+      "role": "independent"
+    },
+    {
+      "publisher": "Philstar.com",
+      "title": "COA upholds disallowance of P73 million in OVP confidential funds",
+      "publishedAt": "2026-10-07T18:30:00+08:00",
+      "url": "https://www.philstar.com/headlines/2026/10/07/2561576/coa-upholds-disallowance-p73-million-ovp-confidential-funds",
+      "role": "independent"
+    },
+    {
+      "publisher": "Philippine Daily Inquirer",
+      "title": "COA affirms with finality disallowance notice vs OVP's P73M secret funds",
+      "publishedAt": "2026-10-07T00:00:00+08:00",
+      "url": "https://newsinfo.inquirer.net/2319145/coa-affirms-with-finality-disallowance-notice-vs-ovps-p73m-secret-funds",
+      "role": "independent"
+    },
+    {
+      "publisher": "FMB News",
+      "title": "COA Auditor Says VP Sara Liable for ₱73.287 Million in Disallowed OVP Funds",
+      "publishedAt": "2026-08-12T07:00:00+08:00",
+      "url": "https://www.francinemariebautista.com/news/coa-auditor-says-vp-sara-liable-p73-million-disallowed-funds/",
+      "role": "related"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial artwork",
+    "credit": "Editorial graphic: FMB News",
+    "caption": "FMB News editorial graphic. This is a non-documentary visual and does not depict the COA resolution, the confidential-fund transactions or any court filing.",
+    "alt": "FMB News editorial graphic accompanying a report on a Commission on Audit ruling",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-08T16:31:43+08:00",
+    "verificationNotes": "GMA News, Philstar and the Philippine Daily Inquirer independently reported the October 5 COA resolution and quoted or summarized the same dispositive details. The official Joint Circular corroborates the governing confidential-fund rules. GMA directly reported counsel Michael Poa's October 8 press-conference statement announcing the planned Rule 65 petition; he also said consultation with the Vice President would precede filing. No filed petition was located. The article distinguishes a final COA administrative disallowance from criminal guilt and labels the Supreme Court challenge as planned, not filed. The FMB-owned image is explicitly non-documentary.",
+    "duplicateCheck": "The August 12 FMB article covered COA testimony while the reconsideration motion was pending. This continuation is independently newsworthy because COA has now denied reconsideration with finality and the OVP has announced its intended next legal step; the earliest FMB report is linked."
+  }
+}
