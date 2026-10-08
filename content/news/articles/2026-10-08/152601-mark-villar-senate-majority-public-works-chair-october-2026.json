@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "mark-villar-senate-majority-public-works-chair-october-2026",
+  "headline": "Mark Villar Joins Senate Majority, Takes Public Works Chair",
+  "seoTitle": "Mark Villar Joins Senate Majority, Takes Public Works Chair",
+  "seoDescription": "The Senate elected Mark Villar as public works chair and a Commission on Appointments member as he joined the 14-member majority bloc.",
+  "keywords": ["Mark Villar", "Senate majority", "Senate public works committee", "Commission on Appointments", "Philippine Senate"],
+  "category": "National",
+  "kicker": "Senate Realignment",
+  "deck": "The chamber elected Villar without objection to lead the public works panel and sit in the Commission on Appointments, expanding the majority to 14 senators.",
+  "publishedAt": "2026-10-08T15:26:01+08:00",
+  "updatedAt": "2026-10-08T15:26:01+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Senator Mark Villar joined the Senate majority on October 8 and was elected chairman of the Committee on Public Works and a member of the Commission on Appointments. Majority Leader Juan Miguel Zubiri moved for the elections during the plenary session, and no senator objected, GMA News and Philstar reported.",
+        "The move raised the majority bloc to 14 members and left 10 senators in the minority. Villar replaced Senate President Vicente Sotto III as public works chairman and Zubiri in the Commission on Appointments, according to Philstar."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "The Senate's official committee directory lists Villar as chair of the 13-member public works panel. Under Senate rules, the committee has jurisdiction over public buildings, highways, bridges, ports, airports, drainage, flood control, irrigation and water utilities.",
+        "Villar served as public works secretary from 2016 to 2021. Philstar also reported that he is among the respondents in an Ombudsman investigation involving PrimeWater joint ventures. That investigation is not a finding of wrongdoing, and FMB News is not linking it to the Senate's decision without evidence."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "The public works chair can shape hearings and legislation involving infrastructure, flood control and water utilities. The majority's larger bloc also affects committee control, chamber scheduling and votes during the ongoing impeachment trial of Vice President Sara Duterte."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for the Senate's updated committee and Commission on Appointments rosters, Villar's first hearings as chair, and whether the new 14-10 alignment changes voting coalitions in the impeachment court or on infrastructure oversight."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Senate of the Philippines",
+      "title": "Committee on Public Works, 20th Congress",
+      "publishedAt": "2026-10-08T00:00:00+08:00",
+      "url": "https://senate.gov.ph/hq/uploads/temp/06e13b23-2867-4092-98ac-9bd5cd457901.pdf",
+      "role": "primary"
+    },
+    {
+      "publisher": "Senate of the Philippines",
+      "title": "Composition of the Senate and committee jurisdictions",
+      "publishedAt": "2026-10-08T00:00:00+08:00",
+      "url": "https://web.senate.gov.ph/senators/composition.asp",
+      "role": "primary"
+    },
+    {
+      "publisher": "GMA News",
+      "title": "Mark Villar moves to Senate majority; elected public works chairman, CA member",
+      "publishedAt": "2026-10-08T13:38:00+08:00",
+      "url": "https://www.gmanetwork.com/news/topstories/nation/1005209/mark-villar-moves-to-senate-majority-elected-public-works-chairman-ca-member/story/",
+      "role": "independent"
+    },
+    {
+      "publisher": "Philstar.com",
+      "title": "Mark Villar reclaims public works chairship in switch to majority bloc",
+      "publishedAt": "2026-10-08T14:05:00+08:00",
+      "url": "https://www.philstar.com/headlines/2026/10/08/2561794/mark-villar-reclaims-public-works-chairship-switch-majority-bloc",
+      "role": "independent"
+    },
+    {
+      "publisher": "News5",
+      "title": "Mark Villar joins Senate majority bloc",
+      "publishedAt": "2026-10-08T13:42:00+08:00",
+      "url": "https://news.tv5.com.ph/breaking/read/mark-villar-joins-senate-majority-bloc",
+      "role": "independent"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial artwork",
+    "credit": "Editorial graphic: FMB News",
+    "caption": "FMB News editorial graphic. This is a non-documentary visual and does not depict the October 8 Senate session.",
+    "alt": "FMB News editorial graphic accompanying a report on a Philippine Senate leadership change",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-08T15:24:00+08:00",
+    "verificationNotes": "GMA News, Philstar and News5 independently observed and reported the October 8 plenary action, including the absence of objections, the committee chairship, Commission on Appointments seat and 14-10 bloc count. The Senate's current official directory corroborates Villar's public works chairmanship, while the official composition page confirms the committee's jurisdiction. The Ombudsman matter is labeled as an investigation, not a finding. The image is FMB-owned editorial artwork and explicitly non-documentary."
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "philippines-foreign-reserves-below-100-billion-september-2026",
+  "headline": "Philippine Foreign Reserves Fall Below $100 Billion",
+  "seoTitle": "Philippine Reserves Fall Below $100 Billion",
+  "seoDescription": "The Philippines' gross international reserves fell to a preliminary $99.997 billion in September 2026, down 4.6% from August.",
+  "keywords": ["Philippine foreign reserves", "gross international reserves", "Bangko Sentral ng Pilipinas", "BSP", "peso", "September 2026"],
+  "category": "Business",
+  "kicker": "External Accounts",
+  "deck": "BSP data show a $4.85-billion monthly drop, leaving reserves sufficient to cover an estimated 6.3 months of imports and related payments.",
+  "publishedAt": "2026-10-08T15:26:00+08:00",
+  "updatedAt": "2026-10-08T15:26:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Philippines' gross international reserves fell to a preliminary $99.9966 billion at the end of September, the Bangko Sentral ng Pilipinas reported. That was $4.8493 billion, or about 4.6%, below the revised $104.8459 billion recorded in August.",
+        "The September total was the lowest in roughly three years. BSP's detailed table shows the reserve position could cover an estimated 6.3 months of imports of goods and payments of services and primary income, down from 6.6 months in August."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "Gross international reserves are the central bank's foreign-currency assets, gold, special drawing rights and other reserve assets. They help the country meet external payments and provide a buffer during pressure on the peso and global markets.",
+        "The September figure is preliminary. The official statistical table confirms the size and composition of the decline but does not by itself establish a single cause, so FMB News is not attributing the drop to intervention, valuation changes or any other factor without a fuller BSP explanation."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "The decline comes while a strong U.S. dollar, high oil prices and elevated import costs are putting pressure on the Philippine economy. Reserves remain substantial, but a sustained drawdown can narrow the country's cushion against external shocks and increase scrutiny of the peso, inflation and financing conditions."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for the BSP's final September reserve figure and balance-of-payments explanation, any revision to the preliminary data, and the October reserve reading. The peso, oil prices and the central bank's policy signals will help show whether the monthly drop was temporary or part of a longer trend."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Bangko Sentral ng Pilipinas",
+      "title": "Table 12: Gross International Reserves",
+      "publishedAt": "2026-10-08T00:00:00+08:00",
+      "url": "https://www.bsp.gov.ph/Statistics/sdds/table12_data.aspx",
+      "role": "primary"
+    },
+    {
+      "publisher": "Bangko Sentral ng Pilipinas",
+      "title": "Special Data Dissemination Standard: International Reserves",
+      "publishedAt": "2026-10-08T00:00:00+08:00",
+      "url": "https://www.bsp.gov.ph/Statistics/sdds/sdds.aspx",
+      "role": "primary"
+    },
+    {
+      "publisher": "Philippine Statistics Authority",
+      "title": "National Summary Data Page",
+      "publishedAt": "2026-10-07T00:00:00+08:00",
+      "url": "https://psa.gov.ph/national-summary-data-page",
+      "role": "primary"
+    },
+    {
+      "publisher": "GMA News",
+      "title": "PH foreign reserves plunge to 3-year low at $99B in September 2026",
+      "publishedAt": "2026-10-08T10:55:00+08:00",
+      "url": "https://www.gmanetwork.com/news/money/economy/1005189/ph-foreign-reserves-plunge-to-3-year-low-at-99b-in-september-2026/story/",
+      "role": "independent"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial artwork",
+    "credit": "Editorial graphic: FMB News",
+    "caption": "FMB News editorial graphic. This is a non-documentary visual and does not depict the Bangko Sentral's reserve assets or September transactions.",
+    "alt": "FMB News editorial graphic accompanying a report on Philippine foreign reserves",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-08T15:24:00+08:00",
+    "verificationNotes": "BSP's live SDDS table and detailed Table 12 directly confirm the preliminary September reserve total, August comparison, import cover and short-term debt cover. PSA's official National Summary Data Page reproduces the headline series. GMA News independently reported the roughly three-year low. The percentage and dollar changes were calculated from BSP's published values. No cause is asserted because the statistical table does not supply one. The image is FMB-owned editorial artwork and is explicitly labeled non-documentary."
+  }
+}
