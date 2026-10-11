@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "hurricane-isaias-four-dead-landfall-october-2026",
+  "headline": "Isaias Kills Four After U.S. Gulf Landfall; Oil Exchange Authorized",
+  "seoTitle": "Isaias Kills Four; U.S. Authorizes Emergency Oil Exchange",
+  "seoDescription": "Hurricane Isaias made landfall near Destin, Florida, killed at least four and prompted a U.S. emergency exchange of up to four million barrels of oil.",
+  "keywords": ["Hurricane Isaias", "Florida", "power outages", "Strategic Petroleum Reserve", "Gulf oil production"],
+  "category": "World",
+  "kicker": "Storm Aftermath",
+  "deck": "The storm came ashore as a Category 2 hurricane, left about 670,000 customers without power and kept most U.S. Gulf oil output shut.",
+  "publishedAt": "2026-10-11T12:34:05+08:00",
+  "updatedAt": "2026-10-11T12:34:05+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Hurricane Isaias made landfall near Destin, Florida, at 8:30 p.m. Central time on October 9 with maximum sustained winds near 105 mph before rapidly weakening over Alabama, the U.S. National Hurricane Center said.",
+        "At least four deaths were linked to the storm. About 670,000 customers in Florida, Alabama, Georgia and Mississippi remained without power at midday October 10, Reuters reported."
+      ]
+    },
+    {
+      "heading": "Energy disruption",
+      "paragraphs": [
+        "About 69% of U.S. Gulf oil production and 57% of natural-gas production remained shut on October 10. Shell and Chevron began returning crews, but full restoration depended on inspections and safe operating conditions.",
+        "The U.S. Department of Energy authorized emergency exchanges of up to four million barrels of crude from the Strategic Petroleum Reserve, split between ExxonMobil and BP America, to support refinery supply. The companies must return the borrowed oil with additional premium barrels in 2027."
+      ]
+    },
+    {
+      "heading": "Why it matters to Filipinos",
+      "paragraphs": [
+        "Disruptions to Gulf production and U.S. refinery supply can add volatility to world fuel markets. For the import-dependent Philippines, sustained price pressure can feed into pump prices, transport costs and inflation even when the storm itself is far away."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch the pace of power restoration, remaining flood and tornado risks, the restart of Gulf production and refineries, and whether the emergency oil exchanges are sufficient to prevent wider supply disruption."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "National Hurricane Center",
+      "title": "Hurricane Isaias Discussion Number 14",
+      "publishedAt": "2026-10-09T22:00:00-05:00",
+      "url": "https://www.nhc.noaa.gov/archive/2026/al09/al092026.discus.014.shtml",
+      "role": "primary"
+    },
+    {
+      "publisher": "U.S. Department of Energy",
+      "title": "Energy Department Authorizes Strategic Petroleum Reserve Exchange to Address Supply Disruptions Due to Hurricane",
+      "publishedAt": "2026-10-10T00:00:00-04:00",
+      "url": "https://www.energy.gov/articles/energy-department-authorizes-strategic-petroleum-reserve-exchange-address-supply",
+      "role": "primary"
+    },
+    {
+      "publisher": "Reuters",
+      "title": "Isaias kills four, about 670,000 without power after landfall",
+      "publishedAt": "2026-10-10T09:49:00+08:00",
+      "url": "https://www.reuters.com/business/environment/category-3-hurricane-isaias-makes-landfall-near-destin-florida-nhc-says-2026-10-10/",
+      "role": "independent"
+    },
+    {
+      "publisher": "Associated Press",
+      "title": "4 killed after Isaias crashes into US Gulf Coast",
+      "publishedAt": "2026-10-10T00:00:00-04:00",
+      "url": "https://apnews.com/article/hurricane-isaias-flooding-power-outages-65ac97bf16477d89ec6f847b09ccb6fc",
+      "role": "independent"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial artwork",
+    "credit": "Editorial graphic: FMB News",
+    "caption": "FMB News editorial graphic. This non-documentary visual does not depict Hurricane Isaias, its damage or affected residents.",
+    "alt": "FMB News editorial graphic accompanying a report on Hurricane Isaias and oil-market disruption",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-11T12:30:00+08:00",
+    "verificationNotes": "NHC confirms the landfall, intensity and rapid weakening. The U.S. Energy Department confirms the four-million-barrel emergency exchange. Reuters and AP independently corroborate the deaths, outages and damage. Death and outage counts are presented as reported totals at the stated cutoff.",
+    "duplicateCheck": "Landfall deaths, widespread outages and the emergency oil exchange are independently newsworthy developments after FMB’s October 8 pre-landfall shutdown report.",
+    "continuation": {
+      "url": "/news/isaias-gulf-oil-production-shutdowns-october-2026/",
+      "title": "Shell, Chevron Shut Gulf Output as Isaias Nears Hurricane Strength",
+      "originalPublishedAt": "2026-10-08T09:29:31+08:00",
+      "whatChanged": "The storm made landfall, caused confirmed deaths and major outages, and triggered an emergency U.S. oil exchange."
+    },
+    "imageRightsCheck": {
+      "usage": "editorial-fallback",
+      "creator": "FMB News",
+      "license": "FMB-owned editorial artwork",
+      "sourceUrl": "https://www.francinemariebautista.com/news/",
+      "checkedAt": "2026-10-11T12:30:00+08:00"
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "kanlaon-eruption-ash-emissions-october-2026",
+  "headline": "Kanlaon Erupts, Then Emits Ash Twice as Alert Level 2 Holds",
+  "seoTitle": "Kanlaon Erupts, Emits Ash as Alert Level 2 Holds",
+  "seoDescription": "Kanlaon produced a brief explosive eruption on October 10 and two more ash emissions on October 11 while PHIVOLCS kept Alert Level 2.",
+  "keywords": ["Kanlaon Volcano", "PHIVOLCS", "Negros Island", "ash emission", "Alert Level 2"],
+  "category": "Environment",
+  "kicker": "Volcano Watch",
+  "deck": "A brief explosive eruption sent ash five to six kilometers above the summit on Saturday; two lower ash plumes followed early Sunday.",
+  "publishedAt": "2026-10-11T12:34:00+08:00",
+  "updatedAt": "2026-10-11T12:34:00+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Kanlaon Volcano produced a brief explosive eruption from 12:46 p.m. to 12:48 p.m. on October 10, sending an ash plume roughly five to six kilometers above the summit, according to PHIVOLCS and independent reports.",
+        "PHIVOLCS then recorded ash emissions at 1:28 a.m. and 5:15 a.m. on October 11. The plumes rose about 400 meters and 600 meters and drifted northwest and west, respectively."
+      ]
+    },
+    {
+      "heading": "Confirmed conditions",
+      "paragraphs": [
+        "PHIVOLCS kept Kanlaon at Alert Level 2, indicating moderate volcanic unrest. The agency said continuing gas release can carry fine ash after the eruption opened a pathway through the vent.",
+        "Ashfall was reported in parts of Negros Occidental. Residents inside the four-kilometer permanent danger zone had already evacuated, and entry into that zone remains prohibited."
+      ]
+    },
+    {
+      "heading": "Why it matters to Filipinos",
+      "paragraphs": [
+        "Ash can reduce visibility, irritate the eyes and lungs, contaminate water and affect crops and livestock. Communities downwind should follow PHIVOLCS and local-government instructions rather than rely on unverified social-media posts."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for additional PHIVOLCS bulletins, changes to the alert level, renewed explosive activity, wind-driven ashfall advisories and any expansion of evacuation or exclusion zones."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "PHIVOLCS",
+      "title": "Moderately explosive eruption from Kanlaon Volcano, October 10, 2026",
+      "publishedAt": "2026-10-10T13:00:00+08:00",
+      "url": "https://www.facebook.com/PHIVOLCS/videos/look-sped-up-footage-of-moderately-explosive-eruption-from-kanlaon-volcano-at-12/1117499014154736/",
+      "role": "primary"
+    },
+    {
+      "publisher": "GMA News",
+      "title": "Kanlaon Volcano ash emission observed after explosive eruption",
+      "publishedAt": "2026-10-11T07:45:00+08:00",
+      "url": "https://www.gmanetwork.com/news/topstories/regions/1005490/kanlaon-volcano-ash-emission-observed-after-explosive-eruption/story/",
+      "role": "independent"
+    },
+    {
+      "publisher": "The Philippine Star",
+      "title": "Moderately explosive eruption occurs at Kanlaon Volcano",
+      "publishedAt": "2026-10-11T00:00:00+08:00",
+      "url": "https://qa.philstar.com/nation/2026/10/11/2562296/moderately-explosive-eruption-occurs-kanlaon-volcano",
+      "role": "independent"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial artwork",
+    "credit": "Editorial graphic: FMB News",
+    "caption": "FMB News editorial graphic. This is a non-documentary visual and does not depict Kanlaon’s October 10 eruption or ash plumes.",
+    "alt": "FMB News editorial graphic accompanying a report on Kanlaon Volcano activity",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-11T12:30:00+08:00",
+    "verificationNotes": "PHIVOLCS footage and statements support the eruption timing and plume height. GMA News and The Philippine Star independently corroborate the activity, Alert Level 2 and public-safety restrictions. The article does not claim that a larger eruption is imminent.",
+    "duplicateCheck": "The October 10 explosive eruption and October 11 ash emissions are independently newsworthy developments after earlier FMB reports on lower-level Kanlaon ash activity.",
+    "continuation": {
+      "url": "/news/kanlaon-emits-200-meter-ash-plume-alert-level-2/",
+      "title": "Kanlaon Emits 200-Meter Ash Plume; Alert Level 2 Remains",
+      "originalPublishedAt": "2026-08-13T13:00:00+08:00",
+      "whatChanged": "Kanlaon produced a new explosive eruption with a much higher ash column, followed by continuing ash emissions."
+    },
+    "imageRightsCheck": {
+      "usage": "editorial-fallback",
+      "creator": "FMB News",
+      "license": "FMB-owned editorial artwork",
+      "sourceUrl": "https://www.francinemariebautista.com/news/",
+      "checkedAt": "2026-10-11T12:30:00+08:00"
+    }
+  }
+}

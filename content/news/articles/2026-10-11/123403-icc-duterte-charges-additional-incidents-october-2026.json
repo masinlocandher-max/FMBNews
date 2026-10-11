@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "icc-duterte-charges-additional-incidents-october-2026",
+  "headline": "ICC Keeps Duterte Charges, Allows Seven Additional Incidents as Illustrations",
+  "seoTitle": "ICC Keeps Duterte Charges, Allows Seven Added Incidents",
+  "seoDescription": "ICC judges rejected Rodrigo Duterte’s request to have prosecutors refile the charges and allowed seven of eight proposed incidents as illustrative material.",
+  "keywords": ["Rodrigo Duterte", "International Criminal Court", "war on drugs", "crimes against humanity", "Trial Chamber III"],
+  "category": "National",
+  "kicker": "Duterte ICC Trial",
+  "deck": "Judges ruled that the confirmed charges give the defense sufficient notice; the decision does not determine Duterte’s guilt.",
+  "publishedAt": "2026-10-11T12:34:03+08:00",
+  "updatedAt": "2026-10-11T12:34:03+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "International Criminal Court Trial Chamber III rejected former president Rodrigo Duterte’s request to make prosecutors refile the charges ahead of his November 30 trial.",
+        "The chamber also allowed seven of eight additional incidents proposed by prosecutors to be used as illustrations of the already confirmed crimes. Judges ordered prosecutors to remove Incident 57 from the trial brief and update the witness list."
+      ]
+    },
+    {
+      "heading": "What the ruling means",
+      "paragraphs": [
+        "The judges said the charges provide sufficient notice for Duterte to prepare his defense. The ruling preserves the existing three-count structure covering alleged killings during Duterte’s terms as Davao City mayor and Philippine president.",
+        "The additional incidents do not create new charges and do not establish that the alleged crimes occurred. They may be presented at trial as illustrative material subject to evidence and challenge. Duterte denies wrongdoing."
+      ]
+    },
+    {
+      "heading": "Why it matters to Filipinos",
+      "paragraphs": [
+        "The decision defines the scope of evidence the court may hear in a case involving killings during the anti-drug campaign. It also rejects the defense claim that the confirmed charging framework was too open-ended to allow adequate preparation."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for the revised prosecution filing, the final witness list, further pretrial motions and the scheduled opening of trial on November 30."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "International Criminal Court",
+      "title": "Public redacted version of Decision on the Defence’s motions on the charges",
+      "publishedAt": "2026-10-09T00:00:00+02:00",
+      "url": "https://www.icc-cpi.int/documents?created_1%5Bmax%5D=2026-10-09&created_1%5Bmin%5D=2026-10-01&f%5B0%5D=court_record_case_name%3A1526&f%5B1%5D=court_record_language%3A202",
+      "role": "primary"
+    },
+    {
+      "publisher": "VERA Files",
+      "title": "Original charges against Duterte stay; ICC rejects defense’s motion to refile charges",
+      "publishedAt": "2026-10-10T00:00:00+08:00",
+      "url": "https://verafiles.org/articles/original-charges-against-duterte-stay-icc-rejects-defenses-motion-to-refile-charges",
+      "role": "independent"
+    },
+    {
+      "publisher": "GMA News",
+      "title": "ICC rejects Rodrigo Duterte defense bid to reframe charges",
+      "publishedAt": "2026-10-10T01:50:00+08:00",
+      "url": "https://www.gmanetwork.com/news/topstories/nation/1005416/icc-trial-chamber-iii-orders-prosecution-to-remove-incident-57-from-duterte-trial-brief/story/",
+      "role": "independent"
+    },
+    {
+      "publisher": "ABS-CBN News",
+      "title": "ICC rejects defense’s motion to refile charges vs Duterte",
+      "publishedAt": "2026-10-10T06:24:00+08:00",
+      "url": "https://www.abs-cbn.com/news/nation/2026/10/10/icc-rejects-defense-s-motion-to-refile-charges-vs-duterte-0624",
+      "role": "independent"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial artwork",
+    "credit": "Editorial graphic: FMB News",
+    "caption": "FMB News editorial graphic. This non-documentary visual does not depict an ICC hearing, Duterte or alleged victims.",
+    "alt": "FMB News editorial graphic accompanying a report on an ICC ruling in the Duterte case",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-11T12:30:00+08:00",
+    "verificationNotes": "The ICC case-record index confirms the October 9 public decision. VERA Files, GMA News and ABS-CBN independently report matching outcomes. The article distinguishes the confirmed procedural ruling from guilt and treats the underlying crimes as allegations to be tested at trial.",
+    "duplicateCheck": "This ruling changes the scope and presentation of trial evidence after FMB’s October 3 report on prior recorded testimony.",
+    "continuation": {
+      "url": "/news/icc-admits-prior-testimony-duterte-trial-october-2-2026/",
+      "title": "ICC Admits Prior Recorded Testimony in Duterte Trial",
+      "originalPublishedAt": "2026-10-03T11:29:00+08:00",
+      "whatChanged": "Judges rejected the request to refile the charges and ruled on eight additional incidents proposed for trial."
+    },
+    "imageRightsCheck": {
+      "usage": "editorial-fallback",
+      "creator": "FMB News",
+      "license": "FMB-owned editorial artwork",
+      "sourceUrl": "https://www.francinemariebautista.com/news/",
+      "checkedAt": "2026-10-11T12:30:00+08:00"
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "riyadh-airport-attack-12-killed-october-2026",
+  "headline": "Riyadh Airport Attack Kills 12 and Wounds More Than 300",
+  "seoTitle": "Riyadh Airport Attack Kills 12, Wounds Over 300",
+  "seoDescription": "A missile struck a passenger terminal at Riyadh’s King Khalid International Airport, killing 12 and wounding more than 300.",
+  "keywords": ["Riyadh airport attack", "Saudi Arabia", "King Khalid International Airport", "Houthis", "Yemen war"],
+  "category": "World",
+  "kicker": "Middle East Conflict",
+  "deck": "The October 10 strike was the third attack on the airport that week and the deadliest attack in Saudi Arabia in more than a decade.",
+  "publishedAt": "2026-10-11T12:34:04+08:00",
+  "updatedAt": "2026-10-11T12:34:04+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "A missile struck a passenger terminal at King Khalid International Airport in Riyadh on October 10, killing 12 people and wounding 309, Saudi civil-aviation authorities said.",
+        "Flights were diverted and airport operations were suspended. The dead included citizens of Saudi Arabia, Bangladesh, the United States, Jordan, Palestine, Syria, Sudan and Egypt."
+      ]
+    },
+    {
+      "heading": "Responsibility and uncertainty",
+      "paragraphs": [
+        "The strike was the third attack on the airport that week. Earlier attacks were claimed by Yemen’s Houthi movement, but the group had not publicly claimed the October 10 strike when Reuters filed its report. FMB News therefore does not present responsibility for the latest attack as confirmed.",
+        "The Saudi-led coalition vowed to respond. U.S. President Donald Trump said Washington was considering whether to join Saudi strikes on the Houthis, but no U.S. military decision had been announced."
+      ]
+    },
+    {
+      "heading": "Why it matters to Filipinos",
+      "paragraphs": [
+        "Saudi Arabia hosts a large Filipino community and is a major destination for Philippine workers. Repeated attacks can disrupt flights, increase security risks and complicate travel through Riyadh. Filipinos in the area should follow Philippine Embassy and Saudi-authority advisories."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for restoration of airport operations, identification of the weapon and attacker, Philippine government guidance for citizens, and any expansion of Saudi or U.S. military operations in Yemen."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Saudi Press Agency",
+      "title": "General Authority of Civil Aviation statement on attacks at King Khalid International Airport",
+      "publishedAt": "2026-10-09T00:00:00+03:00",
+      "url": "https://spa.gov.sa/ar/N2697146",
+      "role": "primary"
+    },
+    {
+      "publisher": "Reuters",
+      "title": "Houthi strike on Saudi airport kills 12, worst attack on kingdom in a decade",
+      "publishedAt": "2026-10-10T22:13:00+08:00",
+      "url": "https://www.reuters.com/world/middle-east/loud-blast-heard-riyadh-airport-airlines-cancel-more-flights-2026-10-10/",
+      "role": "independent"
+    },
+    {
+      "publisher": "Associated Press",
+      "title": "Saudi airport is struck again, and other Mideast developments",
+      "publishedAt": "2026-10-10T00:00:00Z",
+      "url": "https://apnews.com/article/lebanon-flights-saudi-sudan-october-10-2026-a5f40b5e0ab08ae8128db5ed749114d8",
+      "role": "independent"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial artwork",
+    "credit": "Editorial graphic: FMB News",
+    "caption": "FMB News editorial graphic. This non-documentary visual does not depict King Khalid International Airport, the October 10 strike or its victims.",
+    "alt": "FMB News editorial graphic accompanying a report on the Riyadh airport attack",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-11T12:30:00+08:00",
+    "verificationNotes": "Saudi civil-aviation reporting, Reuters and AP agree on the location and death toll. Reuters reports 309 wounded. Responsibility for the October 10 strike remains unresolved because the Houthis had not claimed it at the reporting cutoff.",
+    "duplicateCheck": "The 12 deaths and more than 300 injuries are a major independently newsworthy escalation after FMB’s earlier airport-attack report.",
+    "continuation": {
+      "url": "/news/saudi-jazan-najran-airport-attacks-october-2026/",
+      "title": "Attacks Hit Two Saudi Airports as Yemen Fighting Escalates",
+      "originalPublishedAt": "2026-10-07T12:28:06+08:00",
+      "whatChanged": "A new strike hit Riyadh’s passenger terminal, causing a far higher confirmed casualty toll and suspending airport operations."
+    },
+    "imageRightsCheck": {
+      "usage": "editorial-fallback",
+      "creator": "FMB News",
+      "license": "FMB-owned editorial artwork",
+      "sourceUrl": "https://www.francinemariebautista.com/news/",
+      "checkedAt": "2026-10-11T12:30:00+08:00"
+    }
+  }
+}

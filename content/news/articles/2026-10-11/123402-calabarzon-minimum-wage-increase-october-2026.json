@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "calabarzon-minimum-wage-increase-october-2026",
+  "headline": "CALABARZON Minimum Pay Rises October 26, Including ₱750 Kasambahay Increase",
+  "seoTitle": "CALABARZON Wage Increases Take Effect October 26",
+  "seoDescription": "Private-sector minimum wages rise by up to ₱45 daily and the kasambahay floor rises by ₱750 monthly across CALABARZON on October 26.",
+  "keywords": ["CALABARZON wages", "minimum wage", "kasambahay", "DOLE", "Wage Order IVA-23"],
+  "category": "Business",
+  "kicker": "Workers and Wages",
+  "deck": "New regional wage orders set private-sector daily floors at ₱550 to ₱645 and the domestic-worker monthly floor at ₱7,500.",
+  "publishedAt": "2026-10-11T12:34:02+08:00",
+  "updatedAt": "2026-10-11T12:34:02+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The CALABARZON regional wage board approved increases of up to ₱45 a day for minimum-wage workers in the private sector, effective October 26. The increase is equivalent to as much as ₱1,170 a month for a worker paid on 26 workdays.",
+        "A separate order raises the regional monthly minimum for kasambahays by ₱750 to ₱7,500. DOLE estimates that about 201,000 domestic workers will benefit."
+      ]
+    },
+    {
+      "heading": "What workers will receive",
+      "paragraphs": [
+        "The National Wages and Productivity Commission lists new private-sector minimum rates ranging from ₱550 to ₱645 a day under Wage Order IVA-23. The precise increase depends on the industry and the classification of the city or municipality where the worker is employed.",
+        "The domestic-worker increase is governed by Wage Order RB-IVA-DW-06 and applies across Batangas, Cavite, Laguna, Quezon and Rizal."
+      ]
+    },
+    {
+      "heading": "Why it matters to Filipinos",
+      "paragraphs": [
+        "The increase raises the legal pay floor in one of the country’s largest industrial regions. Workers should check the official wage matrix because not every employee receives the full ₱45 adjustment, and existing lawful pay above the minimum is not automatically increased by the same amount."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch for the final published wage matrices, employer compliance after October 26 and DOLE guidance on exemptions, complaints and correction of wage distortion."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "National Wages and Productivity Commission",
+      "title": "Region IV-A wage orders and minimum wage rates",
+      "publishedAt": "2026-10-10T00:00:00+08:00",
+      "url": "https://nwpc.dole.gov.ph/",
+      "role": "primary"
+    },
+    {
+      "publisher": "Department of Labor and Employment",
+      "title": "45 pesos wage hike for CALABARZON workers granted",
+      "publishedAt": "2026-10-10T00:00:00+08:00",
+      "url": "https://dole.gov.ph/news/45-pesos-wage-hike-for-calabarzon-workers-granted/",
+      "role": "primary"
+    },
+    {
+      "publisher": "Department of Labor and Employment",
+      "title": "Wage board approves P750 monthly wage hike for CALABARZON kasambahays",
+      "publishedAt": "2026-10-10T00:00:00+08:00",
+      "url": "https://dole.gov.ph/news/wage-board-approves-p750-monthly-wage-hike-for-calabarzon-kasambahays/",
+      "role": "primary"
+    },
+    {
+      "publisher": "Philstar.com",
+      "title": "CALABARZON minimum wage earners get up to P45 daily raise",
+      "publishedAt": "2026-10-10T15:30:00+08:00",
+      "url": "https://qa.philstar.com/headlines/2026/10/10/2562261/calabarzon-minimum-wage-earners-get-p45-daily-raise",
+      "role": "independent"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial artwork",
+    "credit": "Editorial graphic: FMB News",
+    "caption": "FMB News editorial graphic. This is a non-documentary visual and does not depict a specific worker, workplace or wage-board meeting.",
+    "alt": "FMB News editorial graphic accompanying a report on CALABARZON wage increases",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-11T12:30:00+08:00",
+    "verificationNotes": "NWPC confirms the order numbers, effectivity date and new wage floors. DOLE releases confirm the maximum private-sector increase and the kasambahay adjustment. Philstar independently reports the private-sector order and its variable application.",
+    "duplicateCheck": "No existing FMB News article covers these October 26 CALABARZON wage orders.",
+    "imageRightsCheck": {
+      "usage": "editorial-fallback",
+      "creator": "FMB News",
+      "license": "FMB-owned editorial artwork",
+      "sourceUrl": "https://www.francinemariebautista.com/news/",
+      "checkedAt": "2026-10-11T12:30:00+08:00"
+    }
+  }
+}

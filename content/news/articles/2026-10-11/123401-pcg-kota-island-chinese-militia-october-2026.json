@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "pcg-kota-island-chinese-militia-october-2026",
+  "headline": "PCG Drives Chinese Militia Vessel and 22 Boats From Kota Island Waters",
+  "seoTitle": "PCG Drives 23 Chinese Vessels From Kota Island Waters",
+  "seoDescription": "Philippine forces said they removed a Chinese maritime militia vessel and 22 small boats from Kota Island’s territorial sea on October 9.",
+  "keywords": ["Kota Island", "West Philippine Sea", "Philippine Coast Guard", "Chinese maritime militia", "Kalayaan Island Group"],
+  "category": "National",
+  "kicker": "West Philippine Sea",
+  "deck": "Philippine personnel said the vessels were fishing without authorization, dumping waste and asserting Chinese control inside Kota Island’s territorial sea.",
+  "publishedAt": "2026-10-11T12:34:01+08:00",
+  "updatedAt": "2026-10-11T12:34:01+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Philippine Coast Guard said a joint Philippine team drove Chinese Maritime Militia Vessel 9622 and 22 small fishing boats from Kota Island’s territorial sea on October 9.",
+        "PCG spokesperson Rear Admiral Jay Tarriela said the nearest small boat was about 250 meters from shore. Philippine personnel also reported unauthorized fishing and waste dumping."
+      ]
+    },
+    {
+      "heading": "What is confirmed and disputed",
+      "paragraphs": [
+        "The sighting, Philippine response and departure of the vessels are confirmed by official Philippine accounts and independently reported by GMA News and The Philippine Star. The National Task Force for the West Philippine Sea said the same mothership had deployed 24 boats near Kota Island on September 28.",
+        "The Philippine side says Kota Island and its 12-nautical-mile territorial sea are under Philippine sovereignty. The vessel’s master asserted the area was Chinese territory. Manila rejected that claim; the materials reviewed for this report do not independently establish it."
+      ]
+    },
+    {
+      "heading": "Why it matters to Filipinos",
+      "paragraphs": [
+        "Repeated close approaches test the Philippines’ ability to protect coastal resources and maintain a continuous lawful presence in the Kalayaan Island Group. Waste dumping and unauthorized fishing also raise environmental and food-security concerns."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch whether CMMV 9622 returns, whether Philippine agencies release imagery or enforcement records, and whether China issues a formal account of the encounter."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "West Philippine Sea Transparency Group",
+      "title": "PCG drives away Chinese maritime militia vessel and 22 small boats",
+      "publishedAt": "2026-10-10T00:00:00+08:00",
+      "url": "https://www.facebook.com/wpstransparencygroup/videos/watch-%F0%9D%90%8F%F0%9D%90%82%F0%9D%90%86-%F0%9D%90%83%F0%9D%90%91%F0%9D%90%8E%F0%9D%90%95%F0%9D%90%84-%F0%9D%90%80%F0%9D%90%96%F0%9D%90%80%F0%9D%90%98-%F0%9D%90%82%F0%9D%90%87%F0%9D%90%88%F0%9D%90%8D%F0%9D%90%84%F0%9D%90%92%F0%9D%90%84-%F0%9D%90%8C%F0%9D%90%80%F0%9D%90%91%F0%9D%90%88%F0%9D%90%93%F0%9D%90%88%F0%9D%90%8C%F0%9D%90%84-%F0%9D%90%8C%F0%9D%90%88%F0%9D%90%8B%F0%9D%90%88%F0%9D%90%93%F0%9D%90%88%F0%9D%90%80-%F0%9D%90%95%F0%9D%90%84%F0%9D%90%92%F0%9D%90%92%F0%9D%90%84%F0%9D%90%8B-%F0%9D%90%80%F0%9D%90%8D%F0%9D%90%83-%F0%9D%9F%90%F0%9D%9F%92-%F0%9D%90%92%F0%9D%90%8C%F0%9D%90%80%F0%9D%90%8B%F0%9D%90%8B-%F0%9D%90%81%F0%9D%90%8E%F0%9D%90%80%F0%9D%90%93%F0%9D%90%92-%F0%9D%90%88%F0%9D%90%8B%F0%9D%90%8B%F0%9D%90%84%F0%9D%90%86%F0%9D%90%80%F0%9D%90%8B%F0%9D%90%8B/1666770351691134/",
+      "role": "primary"
+    },
+    {
+      "publisher": "GMA News",
+      "title": "PCG repels Chinese militia vessel, 22 fishing boats from Kota Island waters",
+      "publishedAt": "2026-10-09T23:52:00+08:00",
+      "url": "https://www.gmanetwork.com/news/topstories/nation/1005407/pcg-repels-chinese-militia-vessel-22-fishing-boats-from-kota-island-waters/story/",
+      "role": "independent"
+    },
+    {
+      "publisher": "Philstar.com",
+      "title": "Chinese militia vessel, 22 sampans intrude into Palawan waters",
+      "publishedAt": "2026-10-11T11:16:00+08:00",
+      "url": "https://www.philstar.com/headlines/2026/10/11/2562464/chinese-militia-vessel-22-sampans-intrude-palawan-waters",
+      "role": "independent"
+    }
+  ],
+  "image": {
+    "kind": "editorial-fallback",
+    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "source": "FMB News",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial artwork",
+    "credit": "Editorial graphic: FMB News",
+    "caption": "FMB News editorial graphic. This non-documentary visual does not depict the October 9 encounter or any specific vessel.",
+    "alt": "FMB News editorial graphic accompanying a report on a Kota Island maritime encounter",
+    "width": 1200,
+    "height": 675,
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-10-11T12:30:00+08:00",
+    "verificationNotes": "Official Philippine statements identify the vessels, location and sequence. GMA News and Philstar independently report the incident. Chinese sovereignty assertions are reported as claims and not adopted as fact.",
+    "duplicateCheck": "No existing FMB News article covers the October 9 Kota Island encounter.",
+    "imageRightsCheck": {
+      "usage": "editorial-fallback",
+      "creator": "FMB News",
+      "license": "FMB-owned editorial artwork",
+      "sourceUrl": "https://www.francinemariebautista.com/news/",
+      "checkedAt": "2026-10-11T12:30:00+08:00"
+    }
+  }
+}
