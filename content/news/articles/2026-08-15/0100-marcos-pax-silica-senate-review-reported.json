@@ -7,7 +7,12 @@
   "headline": "Brief Reports Marcos Backs Pax Silica as Senate Review Examines Energy and Environmental Issues",
   "seoTitle": "Marcos Backs Pax Silica as Senate Review Examines Safeguards",
   "seoDescription": "An FMB News brief cites new reports that President Marcos defended Pax Silica while a Senate review examined the project’s energy and environmental implications.",
-  "keywords": ["Pax Silica Philippines", "Marcos Pax Silica", "Senate energy Pax Silica", "semiconductor Philippines"],
+  "keywords": [
+    "Pax Silica Philippines",
+    "Marcos Pax Silica",
+    "Senate energy Pax Silica",
+    "semiconductor Philippines"
+  ],
   "category": "Technology",
   "kicker": "Pax Silica · Technology policy",
   "deck": "An FMB News overnight brief cites new reports that President Ferdinand R. Marcos Jr. defended Pax Silica as an economic opportunity while senators reviewed its power, water and environmental requirements.",
@@ -65,19 +70,20 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
-    "sourceUrl": null,
+    "url": "/assets/images/news/fmb-news-fallback-archipelago.jpg",
+    "sourceUrl": "https://www.francinemariebautista.com/news/",
     "creator": "FMB News",
     "license": "FMB-owned editorial visual",
     "licenseUrl": "https://www.francinemariebautista.com/news/",
     "usageStatus": "FMB-owned editorial visual used because the email’s recommended imagery did not provide a stable, independently rights-verified asset URL.",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying the Pax Silica policy and Senate-review report. It does not depict a specific hearing or project site.",
-    "alt": "FMB News editorial visual for the Pax Silica policy report",
+    "alt": "FMB News, Filipino Media Bulletin: the Philippine flag above an island coastline at sunrise.",
     "width": 1200,
     "height": 675,
     "focusX": 50,
-    "focusY": 50
+    "focusY": 50,
+    "source": "FMB News"
   },
   "audit": {
     "sourceCheckedAt": "2026-08-15T07:46:00+08:00",

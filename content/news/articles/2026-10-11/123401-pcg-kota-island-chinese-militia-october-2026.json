@@ -5,7 +5,13 @@
   "headline": "PCG Drives Chinese Militia Vessel and 22 Boats From Kota Island Waters",
   "seoTitle": "PCG Drives 23 Chinese Vessels From Kota Island Waters",
   "seoDescription": "Philippine forces said they removed a Chinese maritime militia vessel and 22 small boats from Kota Island’s territorial sea on October 9.",
-  "keywords": ["Kota Island", "West Philippine Sea", "Philippine Coast Guard", "Chinese maritime militia", "Kalayaan Island Group"],
+  "keywords": [
+    "Kota Island",
+    "West Philippine Sea",
+    "Philippine Coast Guard",
+    "Chinese maritime militia",
+    "Kalayaan Island Group"
+  ],
   "category": "National",
   "kicker": "West Philippine Sea",
   "deck": "Philippine personnel said the vessels were fishing without authorization, dumping waste and asserting Chinese control inside Kota Island’s territorial sea.",
@@ -22,14 +28,14 @@
       ]
     },
     {
-      "heading": "What is confirmed and disputed",
+      "heading": "Context",
       "paragraphs": [
         "The sighting, Philippine response and departure of the vessels are confirmed by official Philippine accounts and independently reported by GMA News and The Philippine Star. The National Task Force for the West Philippine Sea said the same mothership had deployed 24 boats near Kota Island on September 28.",
         "The Philippine side says Kota Island and its 12-nautical-mile territorial sea are under Philippine sovereignty. The vessel’s master asserted the area was Chinese territory. Manila rejected that claim; the materials reviewed for this report do not independently establish it."
       ]
     },
     {
-      "heading": "Why it matters to Filipinos",
+      "heading": "Why this matters",
       "paragraphs": [
         "Repeated close approaches test the Philippines’ ability to protect coastal resources and maintain a continuous lawful presence in the Kalayaan Island Group. Waste dumping and unauthorized fishing also raise environmental and food-security concerns."
       ]
@@ -66,13 +72,13 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-skyline.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial artwork",
     "credit": "Editorial graphic: FMB News",
-    "caption": "FMB News editorial graphic. This non-documentary visual does not depict the October 9 encounter or any specific vessel.",
-    "alt": "FMB News editorial graphic accompanying a report on a Kota Island maritime encounter",
+    "caption": "FMB News branded editorial plate. This is publication artwork, not a photograph of the reported event.",
+    "alt": "FMB News, Filipino Media Bulletin: a city skyline at night reflected across open water.",
     "width": 1200,
     "height": 675,
     "sourceUrl": "https://www.francinemariebautista.com/news/"

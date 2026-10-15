@@ -7,7 +7,12 @@
   "headline": "Visayas Grid Under Red Alert; Mindanao on Yellow Alert",
   "seoTitle": "Visayas Grid Under Red Alert; Mindanao on Yellow Alert",
   "seoDescription": "NGCP extended the Visayas red alert through 9 p.m. and placed Mindanao under a yellow alert through 8 p.m. on August 12 as outages and deratings tightened supply.",
-  "keywords": ["Visayas red alert August 12 2026", "Mindanao yellow alert", "NGCP grid advisory", "power reserves Philippines"],
+  "keywords": [
+    "Visayas red alert August 12 2026",
+    "Mindanao yellow alert",
+    "NGCP grid advisory",
+    "power reserves Philippines"
+  ],
   "category": "Business",
   "kicker": "Energy · Grid reliability · Service advisory",
   "deck": "NGCP extended the Visayas red alert through 9 p.m. and placed Mindanao under a yellow alert through 8 p.m. as plant outages and deratings tightened electricity supply.",
@@ -31,7 +36,7 @@
       ]
     },
     {
-      "heading": "Why this matters to Filipinos",
+      "heading": "Why this matters",
       "paragraphs": [
         "Consumers in the Visayas faced a heightened risk of rotational interruptions during the red-alert period, while Mindanao's reduced reserve margin left the grid more vulnerable to another plant failure or demand increase. An alert signals system conditions; actual interruption schedules remain the responsibility of distribution utilities."
       ]
@@ -54,19 +59,20 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
-    "sourceUrl": null,
+    "url": "/assets/images/news/fmb-news-fallback-global.jpg",
+    "sourceUrl": "https://www.francinemariebautista.com/news/",
     "creator": "FMB News",
     "license": "FMB-owned editorial visual",
     "licenseUrl": "https://www.francinemariebautista.com/news/",
     "usageStatus": "FMB-owned editorial visual used because the rights-cleared archive photograph could not be delivered as a fully local raster asset.",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying the grid-alert report. It does not depict the August 12 Visayas or Mindanao grid conditions.",
-    "alt": "FMB News editorial visual for the Visayas and Mindanao grid alerts",
+    "alt": "FMB News, Filipino Media Bulletin: a world map and globe centred on the Philippines.",
     "width": 1200,
     "height": 675,
     "focusX": 50,
-    "focusY": 50
+    "focusY": 50,
+    "source": "FMB News"
   },
   "audit": {
     "sourceCheckedAt": "2026-08-12T19:18:00+08:00",

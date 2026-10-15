@@ -7,7 +7,12 @@
   "headline": "Newsroom Brief Reports ₱2.99 Billion in Storm and Monsoon Damage, 3.7 Million Affected",
   "seoTitle": "NDRRMC-Cited Brief Reports ₱2.99B Storm, Monsoon Damage",
   "seoDescription": "An FMB News editorial brief attributes to NDRRMC ₱2.99 billion in combined storm and monsoon damage and more than 3.7 million people affected.",
-  "keywords": ["NDRRMC storm damage", "Habagat Philippines", "disaster damage August 2026", "3.7 million affected"],
+  "keywords": [
+    "NDRRMC storm damage",
+    "Habagat Philippines",
+    "disaster damage August 2026",
+    "3.7 million affected"
+  ],
   "category": "Environment",
   "kicker": "Disaster response · Habagat",
   "deck": "An FMB News newsroom brief attributes to the NDRRMC ₱2.994 billion in infrastructure and agricultural damage and more than 3.7 million people affected across eight regions.",
@@ -59,19 +64,20 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
-    "sourceUrl": null,
+    "url": "/assets/images/news/fmb-news-fallback-global.jpg",
+    "sourceUrl": "https://www.francinemariebautista.com/news/",
     "creator": "FMB News",
     "license": "FMB-owned editorial visual",
     "licenseUrl": "https://www.francinemariebautista.com/news/",
     "usageStatus": "FMB-owned editorial visual used because no stable, rights-verified event photograph was supplied.",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying the NDRRMC-cited storm and monsoon damage report. It does not depict a specific affected community.",
-    "alt": "FMB News editorial visual for the storm and monsoon damage report",
+    "alt": "FMB News, Filipino Media Bulletin: a world map and globe centred on the Philippines.",
     "width": 1200,
     "height": 675,
     "focusX": 50,
-    "focusY": 50
+    "focusY": 50,
+    "source": "FMB News"
   },
   "audit": {
     "sourceCheckedAt": "2026-08-15T07:46:00+08:00",

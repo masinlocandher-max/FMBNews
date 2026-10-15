@@ -120,7 +120,17 @@ jobs:
           fetch_with_retry 'https://www.francinemariebautista.com/news/sitemap.xml' /tmp/news-sitemap.xml /tmp/news-sitemap.headers 'FMB News sitemap'
           grep -q 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"' /tmp/news-sitemap.xml
           grep -q 'https://www.francinemariebautista.com/news/' /tmp/news-sitemap.xml
-          grep -q 'https://www.francinemariebautista.com/news/philippines-womens-soft-tennis-first-asian-games-medal-september-19-2026/' /tmp/news-sitemap.xml
+
+          # Prefer any live article URL from the deployed sitemap over a hardcoded
+          # slug canary. Hardcoding one story made healthy releases fail whenever
+          # that single article aged out of distribution expectations.
+          ARTICLE_URL="$(grep -oE 'https://www\.francinemariebautista\.com/news/[a-z0-9][a-z0-9-]{7,}/' /tmp/news-sitemap.xml \
+            | grep -Ev '/news/(world|explainer|fact-check|fmb-brief|archive|about|sports|horoscope|crossword|founder|entertainment|privacy|terms)/$' \
+            | head -1 || true)"
+          test -n "${ARTICLE_URL}" || { echo '::error::Sitemap did not expose a canonical article URL to smoke-test'; exit 1; }
+          ARTICLE_SLUG="${ARTICLE_URL%/}"
+          ARTICLE_SLUG="${ARTICLE_SLUG##*/}"
+          echo "Smoke-testing article: ${ARTICLE_URL}"
 
           fetch_with_retry 'https://www.francinemariebautista.com/news/news-sitemap.xml' /tmp/google-news-sitemap.xml /tmp/google-news-sitemap.headers 'Google News sitemap'
           grep -q 'xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"' /tmp/google-news-sitemap.xml
@@ -140,17 +150,18 @@ jobs:
           fetch_with_retry 'https://www.francinemariebautista.com/news/explainer/' /tmp/news-explainer.html /tmp/news-explainer.headers 'FMB Explainer'
           grep -qi 'FMB Explainer' /tmp/news-explainer.html
 
-          fetch_with_retry 'https://www.francinemariebautista.com/news/philippines-womens-soft-tennis-first-asian-games-medal-september-19-2026/' /tmp/news-cms-article.html /tmp/news-cms-article.headers 'FMB News live CMS canonical article'
-          grep -Fqi 'PH Women’s Soft Tennis Secures Historic First Asian Games Medal' /tmp/news-cms-article.html
+          fetch_with_retry "${ARTICLE_URL}" /tmp/news-article.html /tmp/news-article.headers 'FMB News canonical article'
+          grep -Eqi '<meta[^>]+property=["'\'']og:type["'\''][^>]+content=["'\'']article["'\'']' /tmp/news-article.html
+          grep -Eqi '<h1[^>]*>.+</h1>' /tmp/news-article.html
 
           legacy_headers="$(curl --silent --show-error --head --connect-timeout 10 --max-time 30 \
             -H 'Cache-Control: no-cache' -H 'Pragma: no-cache' \
-            'https://www.francinemariebautista.com/news/read/philippines-womens-soft-tennis-first-asian-games-medal-september-19-2026/' | tr -d '\r' || true)"
+            "https://www.francinemariebautista.com/news/read/${ARTICLE_SLUG}/" | tr -d '\r' || true)"
           if echo "$legacy_headers" | grep -Eq '^HTTP/[^ ]+ 308' && \
-             echo "$legacy_headers" | grep -Eqi '^location: https://www\.francinemariebautista\.com/news/philippines-womens-soft-tennis-first-asian-games-medal-september-19-2026/?$'; then
+             echo "$legacy_headers" | grep -Eqi "^location: https://www\\.francinemariebautista\\.com/news/${ARTICLE_SLUG}/?$"; then
             echo 'Legacy /news/read article redirect verified.'
           else
-            echo '::error::Legacy /news/read article did not redirect to the canonical CMS article route.'
+            echo '::error::Legacy /news/read article did not redirect to the canonical article route.'
             echo "$legacy_headers"
             exit 1
           fi

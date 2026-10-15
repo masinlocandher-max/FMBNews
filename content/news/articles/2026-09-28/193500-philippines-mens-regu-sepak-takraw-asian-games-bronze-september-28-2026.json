@@ -35,7 +35,7 @@
       ]
     },
     {
-      "heading": "Why it matters",
+      "heading": "Why this matters",
       "paragraphs": [
         "The medal adds to the Philippines' Asian Games total and continues the country's long competitive presence in sepak takraw."
       ]
@@ -72,16 +72,16 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-skyline.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial asset",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying a verified report on the Philippine men's regu sepak-takraw bronze. It is not a photograph and does not depict the semifinal.",
-    "alt": "FMB News editorial graphic for the Philippine men's regu sepak-takraw bronze",
+    "alt": "FMB News, Filipino Media Bulletin: a city skyline at night reflected across open water.",
     "width": 1200,
     "height": 675,
-    "sourceUrl": null
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
   },
   "audit": {
     "sourceCheckedAt": "2026-09-28T19:32:00+08:00",

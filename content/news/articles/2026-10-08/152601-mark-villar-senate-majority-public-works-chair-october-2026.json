@@ -5,7 +5,13 @@
   "headline": "Mark Villar Joins Senate Majority, Takes Public Works Chair",
   "seoTitle": "Mark Villar Joins Senate Majority, Takes Public Works Chair",
   "seoDescription": "The Senate elected Mark Villar as public works chair and a Commission on Appointments member as he joined the 14-member majority bloc.",
-  "keywords": ["Mark Villar", "Senate majority", "Senate public works committee", "Commission on Appointments", "Philippine Senate"],
+  "keywords": [
+    "Mark Villar",
+    "Senate majority",
+    "Senate public works committee",
+    "Commission on Appointments",
+    "Philippine Senate"
+  ],
   "category": "National",
   "kicker": "Senate Realignment",
   "deck": "The chamber elected Villar without objection to lead the public works panel and sit in the Commission on Appointments, expanding the majority to 14 senators.",
@@ -29,7 +35,7 @@
       ]
     },
     {
-      "heading": "Why it matters",
+      "heading": "Why this matters",
       "paragraphs": [
         "The public works chair can shape hearings and legislation involving infrastructure, flood control and water utilities. The majority's larger bloc also affects committee control, chamber scheduling and votes during the ongoing impeachment trial of Vice President Sara Duterte."
       ]
@@ -80,13 +86,13 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-skyline.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial artwork",
     "credit": "Editorial graphic: FMB News",
-    "caption": "FMB News editorial graphic. This is a non-documentary visual and does not depict the October 8 Senate session.",
-    "alt": "FMB News editorial graphic accompanying a report on a Philippine Senate leadership change",
+    "caption": "FMB News branded editorial plate. This is publication artwork, not a photograph of the reported event.",
+    "alt": "FMB News, Filipino Media Bulletin: a city skyline at night reflected across open water.",
     "width": 1200,
     "height": 675,
     "sourceUrl": "https://www.francinemariebautista.com/news/"

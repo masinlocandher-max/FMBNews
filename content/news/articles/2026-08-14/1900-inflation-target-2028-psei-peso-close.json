@@ -7,7 +7,12 @@
   "headline": "Government’s 2%–4% Inflation Target Returns in 2028; Brief Cites PSEi at 6,297.30",
   "seoTitle": "PH 2%–4% Inflation Target From 2028; PSEi Brief at 6,297.30",
   "seoDescription": "Government projections show inflation returning to the 2%–4% target band from 2028, while an FMB News brief cites a 6,297.30 PSEi close and ₱61.45 peso.",
-  "keywords": ["Philippines inflation target 2028", "PSEi 6297.30", "peso 61.45", "DBCC inflation"],
+  "keywords": [
+    "Philippines inflation target 2028",
+    "PSEi 6297.30",
+    "peso 61.45",
+    "DBCC inflation"
+  ],
   "category": "Business",
   "kicker": "Economy · Financial markets",
   "deck": "Current DBCC projections show inflation returning to the government’s 2%–4% target band from 2028; the FMB News evening brief also cites a Friday PSEi close of 6,297.30 and a peso level of ₱61.45 per dollar.",
@@ -59,19 +64,20 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
-    "sourceUrl": null,
+    "url": "/assets/images/news/fmb-news-fallback-archipelago.jpg",
+    "sourceUrl": "https://www.francinemariebautista.com/news/",
     "creator": "FMB News",
     "license": "FMB-owned editorial visual",
     "licenseUrl": "https://www.francinemariebautista.com/news/",
     "usageStatus": "FMB-owned editorial visual used because no stable, rights-verified market photograph was supplied.",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying the inflation-target and financial-markets report.",
-    "alt": "FMB News editorial visual for the Philippine inflation and financial-markets report",
+    "alt": "FMB News, Filipino Media Bulletin: the Philippine flag above an island coastline at sunrise.",
     "width": 1200,
     "height": 675,
     "focusX": 50,
-    "focusY": 50
+    "focusY": 50,
+    "source": "FMB News"
   },
   "audit": {
     "sourceCheckedAt": "2026-08-15T07:46:00+08:00",

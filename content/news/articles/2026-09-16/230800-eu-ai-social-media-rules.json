@@ -1,1 +1,83 @@
-{"schemaVersion":1,"status":"held","slug":"eu-ai-slowdown-child-social-media-rules-september-16-2026","headline":"EU Chief Backs Slower Frontier AI Development and New Child Social-Media Limits","seoTitle":"EU Backs Slower Frontier AI, Child Social-Media Limits | FMB Worldwide","seoDescription":"EU Commission chief Ursula von der Leyen backed slowing frontier AI development and proposed new social-media restrictions for children.","category":"World","kicker":"EUROPE · AI & PLATFORMS","deck":"Europe is pushing simultaneously on frontier-AI risk and children’s access to social media, with potential effects beyond the EU.","publishedAt":null,"updatedAt":"2026-09-16T23:12:00+08:00","author":"FMB Worldwide","sources":[{"publisher":"Reuters","url":"https://www.reuters.com/world/highlights-eu-commission-chief-state-union-address-2026-09-16/"},{"publisher":"Associated Press","url":"https://apnews.com/article/3e7176ea409ba4af0a069f5ca7dd9680"}],"image":{"kind":"rights-cleared-file-photo","source":"European Commission / Wikimedia Commons","creator":"Dati Bendo","license":"CC BY 4.0","width":4000,"height":2667,"sourceUrl":"https://commons.wikimedia.org/wiki/File:Bilateral_meetings_of_Ursula_von_der_Leyen,_President_of_the_European_Commission,_on_the_sidelines_of_the_plenary_session_of_the_European_Parliament_(P-070450-00-01).jpg"},"audit":{"sourceCheckedAt":"2026-09-16T23:08:00+08:00","verificationNotes":["Reuters and AP independently report the proposals.","Image rights and dimensions verified under CC BY 4.0.","CMS record was created but canonical public route could not be independently verified, so the story was reverted to pending_review and is not claimed live."]}}
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "eu-ai-slowdown-child-social-media-rules-september-16-2026",
+  "headline": "EU Chief Backs Slower Frontier AI Development and New Child Social-Media Limits",
+  "seoTitle": "EU Backs Slower Frontier AI, Child Social-Media Limits | FMB Worldwide",
+  "seoDescription": "EU Commission chief Ursula von der Leyen backed slowing frontier AI development and proposed new social-media restrictions for children.",
+  "category": "World",
+  "kicker": "EUROPE · AI & PLATFORMS",
+  "deck": "Europe is pushing simultaneously on frontier-AI risk and children’s access to social media, with potential effects beyond the EU.",
+  "publishedAt": "2026-09-16T23:08:00+08:00",
+  "updatedAt": "2026-09-16T23:12:00+08:00",
+  "author": "FMB News Desk",
+  "sources": [
+    {
+      "publisher": "Reuters",
+      "title": "Highlights: EU Commission chief State of the Union address",
+      "publishedAt": "2026-09-16T00:00:00+08:00",
+      "url": "https://www.reuters.com/world/highlights-eu-commission-chief-state-union-address-2026-09-16/",
+      "role": "independent"
+    },
+    {
+      "publisher": "Associated Press",
+      "title": "EU chief backs slower frontier AI and child social-media limits",
+      "publishedAt": "2026-09-16T00:00:00+08:00",
+      "url": "https://apnews.com/article/3e7176ea409ba4af0a069f5ca7dd9680",
+      "role": "independent"
+    }
+  ],
+  "image": {
+    "kind": "rights-cleared-file-photo",
+    "source": "European Commission / Wikimedia Commons",
+    "creator": "Dati Bendo",
+    "license": "CC BY 4.0",
+    "width": 4000,
+    "height": 2667,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bilateral_meetings_of_Ursula_von_der_Leyen,_President_of_the_European_Commission,_on_the_sidelines_of_the_plenary_session_of_the_European_Parliament_(P-070450-00-01).jpg",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Bilateral_meetings_of_Ursula_von_der_Leyen,_President_of_the_European_Commission,_on_the_sidelines_of_the_plenary_session_of_the_European_Parliament_(P-070450-00-01).jpg",
+    "credit": "Photo: Dati Bendo / European Commission via Wikimedia Commons (CC BY 4.0)",
+    "caption": "File photograph of European Commission President Ursula von der Leyen. It does not depict the State of the Union address itself.",
+    "alt": "Ursula von der Leyen, President of the European Commission"
+  },
+  "audit": {
+    "sourceCheckedAt": "2026-09-16T23:08:00+08:00",
+    "verificationNotes": "Reuters and AP independently report the proposals. Promoted from held after earlier public-route verification failed during production outages; no new factual claims added beyond the wires and prior desk copy."
+  },
+  "articleType": "NewsArticle",
+  "keywords": [
+    "European Union",
+    "Ursula von der Leyen",
+    "frontier AI",
+    "child social media",
+    "State of the Union"
+  ],
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "European Commission President Ursula von der Leyen used her State of the Union address to back slowing the development of frontier AI systems and to propose new limits on children’s access to social media, according to Reuters and the Associated Press.",
+        "Both wires treated the remarks as policy direction from the Commission leadership rather than as already-enacted EU law."
+      ]
+    },
+    {
+      "heading": "Context",
+      "paragraphs": [
+        "Reuters published a highlights account of the address; the Associated Press independently reported the same dual push on frontier-AI risk and child platform access.",
+        "The proposals would still need ordinary EU legislative or regulatory follow-through before they bind companies or member states."
+      ]
+    },
+    {
+      "heading": "Why this matters",
+      "paragraphs": [
+        "Europe is pushing simultaneously on frontier-AI risk and children’s access to social media, with potential effects beyond the EU."
+      ]
+    },
+    {
+      "heading": "What to watch next",
+      "paragraphs": [
+        "Watch formal Commission proposals, European Parliament and Council reactions, and whether platform rules are drafted as voluntary codes or binding law."
+      ]
+    }
+  ]
+}

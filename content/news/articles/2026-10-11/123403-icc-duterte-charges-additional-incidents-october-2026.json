@@ -5,7 +5,13 @@
   "headline": "ICC Keeps Duterte Charges, Allows Seven Additional Incidents as Illustrations",
   "seoTitle": "ICC Keeps Duterte Charges, Allows Seven Added Incidents",
   "seoDescription": "ICC judges rejected Rodrigo Duterte’s request to have prosecutors refile the charges and allowed seven of eight proposed incidents as illustrative material.",
-  "keywords": ["Rodrigo Duterte", "International Criminal Court", "war on drugs", "crimes against humanity", "Trial Chamber III"],
+  "keywords": [
+    "Rodrigo Duterte",
+    "International Criminal Court",
+    "war on drugs",
+    "crimes against humanity",
+    "Trial Chamber III"
+  ],
   "category": "National",
   "kicker": "Duterte ICC Trial",
   "deck": "Judges ruled that the confirmed charges give the defense sufficient notice; the decision does not determine Duterte’s guilt.",
@@ -22,14 +28,14 @@
       ]
     },
     {
-      "heading": "What the ruling means",
+      "heading": "Context",
       "paragraphs": [
         "The judges said the charges provide sufficient notice for Duterte to prepare his defense. The ruling preserves the existing three-count structure covering alleged killings during Duterte’s terms as Davao City mayor and Philippine president.",
         "The additional incidents do not create new charges and do not establish that the alleged crimes occurred. They may be presented at trial as illustrative material subject to evidence and challenge. Duterte denies wrongdoing."
       ]
     },
     {
-      "heading": "Why it matters to Filipinos",
+      "heading": "Why this matters",
       "paragraphs": [
         "The decision defines the scope of evidence the court may hear in a case involving killings during the anti-drug campaign. It also rejects the defense claim that the confirmed charging framework was too open-ended to allow adequate preparation."
       ]
@@ -73,13 +79,13 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-archipelago.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial artwork",
     "credit": "Editorial graphic: FMB News",
-    "caption": "FMB News editorial graphic. This non-documentary visual does not depict an ICC hearing, Duterte or alleged victims.",
-    "alt": "FMB News editorial graphic accompanying a report on an ICC ruling in the Duterte case",
+    "caption": "FMB News branded editorial plate. This is publication artwork, not a photograph of the reported event.",
+    "alt": "FMB News, Filipino Media Bulletin: the Philippine flag above an island coastline at sunrise.",
     "width": 1200,
     "height": 675,
     "sourceUrl": "https://www.francinemariebautista.com/news/"

@@ -7,7 +7,12 @@
   "headline": "PAGASA Keeps Zambales and Bataan Under Yellow Rain Warning as Habagat Persists",
   "seoTitle": "PAGASA Yellow Rain Warning Covers Zambales and Bataan",
   "seoDescription": "PAGASA kept Zambales and Bataan under a yellow heavy-rain warning as the southwest monsoon brought rain across parts of Luzon.",
-  "keywords": ["PAGASA yellow rainfall warning", "Zambales rain", "Bataan rain", "Tropical Storm Nangka"],
+  "keywords": [
+    "PAGASA yellow rainfall warning",
+    "Zambales rain",
+    "Bataan rain",
+    "Tropical Storm Nangka"
+  ],
   "category": "Environment",
   "kicker": "Weather · Public safety",
   "deck": "PAGASA kept Zambales and Bataan under a yellow heavy-rain warning as the southwest monsoon continued affecting Luzon.",
@@ -65,19 +70,20 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
-    "sourceUrl": null,
+    "url": "/assets/images/news/fmb-news-fallback-archipelago.jpg",
+    "sourceUrl": "https://www.francinemariebautista.com/news/",
     "creator": "FMB News",
     "license": "FMB-owned editorial visual",
     "licenseUrl": "https://www.francinemariebautista.com/news/",
     "usageStatus": "FMB-owned editorial visual used because a stable, publication-ready local asset for the recommended weather image was not supplied or independently resolved.",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying the rainfall-warning report. It does not depict current radar or satellite conditions.",
-    "alt": "FMB News editorial visual for the yellow rainfall warning in Zambales and Bataan",
+    "alt": "FMB News, Filipino Media Bulletin: the Philippine flag above an island coastline at sunrise.",
     "width": 1200,
     "height": 675,
     "focusX": 50,
-    "focusY": 50
+    "focusY": 50,
+    "source": "FMB News"
   },
   "audit": {
     "sourceCheckedAt": "2026-08-13T13:05:00+08:00",

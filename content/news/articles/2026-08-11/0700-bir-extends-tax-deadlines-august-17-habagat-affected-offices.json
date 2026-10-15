@@ -60,19 +60,20 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
-    "sourceUrl": null,
+    "url": "/assets/images/news/fmb-news-fallback-skyline.jpg",
+    "sourceUrl": "https://www.francinemariebautista.com/news/",
     "creator": "FMB News",
     "license": "FMB-owned editorial visual",
     "licenseUrl": "https://www.francinemariebautista.com/news/",
     "usageStatus": "FMB-owned editorial visual used because no independently verified, locally hosted documentary photograph was available.",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying the report. It does not depict a specific BIR office or taxpayer.",
-    "alt": "FMB News editorial visual for the August 2026 BIR deadline extension",
+    "alt": "FMB News, Filipino Media Bulletin: a city skyline at night reflected across open water.",
     "width": 1200,
     "height": 675,
     "focusX": 50,
-    "focusY": 50
+    "focusY": 50,
+    "source": "FMB News"
   },
   "audit": {
     "sourceCheckedAt": "2026-08-14T09:00:00+08:00",

@@ -5,7 +5,13 @@
   "headline": "India Raises Key Rate to 5.5% in First Hike Since 2023",
   "seoTitle": "India Raises Key Rate to 5.5%",
   "seoDescription": "India's central bank raised its repo rate by 25 basis points to 5.5% and shifted to calibrated tightening as inflation risks broadened.",
-  "keywords": ["Reserve Bank of India", "India interest rates", "repo rate", "inflation", "Asian economy"],
+  "keywords": [
+    "Reserve Bank of India",
+    "India interest rates",
+    "repo rate",
+    "inflation",
+    "Asian economy"
+  ],
   "category": "Business",
   "kicker": "Monetary Policy",
   "deck": "The Reserve Bank of India lifted its repo rate by 25 basis points and ruled out near-term cuts as energy and food-price pressures widened.",
@@ -29,7 +35,7 @@
       ]
     },
     {
-      "heading": "Why it matters",
+      "heading": "Why this matters",
       "paragraphs": [
         "India is a major Asian economy and trading partner. A tighter policy cycle can influence regional capital flows, currencies, borrowing costs and commodity demand. For the Philippines, the signal matters as domestic inflation and high energy prices also constrain household budgets and central-bank policy choices."
       ]

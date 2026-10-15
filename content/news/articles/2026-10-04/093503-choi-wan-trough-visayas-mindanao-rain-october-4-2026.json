@@ -5,7 +5,13 @@
   "headline": "Choi-Wan Trough Brings Heavy-Rain Risk to Visayas and Mindanao",
   "seoTitle": "Choi-Wan Trough Raises Visayas, Mindanao Flood Risk",
   "seoDescription": "PAGASA warns of possible flash floods and landslides as the trough of Typhoon Choi-Wan affects parts of the Visayas and Mindanao.",
-  "keywords": ["Typhoon Choi-Wan", "PAGASA", "Visayas weather", "Mindanao weather", "flood risk"],
+  "keywords": [
+    "Typhoon Choi-Wan",
+    "PAGASA",
+    "Visayas weather",
+    "Mindanao weather",
+    "flood risk"
+  ],
   "category": "Weather",
   "kicker": "Weather Advisory",
   "deck": "The typhoon remains outside the Philippine Area of Responsibility, but its trough is bringing rain that may trigger flash floods and landslides.",
@@ -30,7 +36,7 @@
       ]
     },
     {
-      "heading": "Why it matters",
+      "heading": "Why this matters",
       "paragraphs": [
         "People in low-lying, flood-prone and landslide-prone communities should monitor local disaster office notices, avoid flooded roads and be ready to move if authorities issue an evacuation order.",
         "Travelers should check sea, airport and road advisories before departure. The verified bulletin did not place Choi-Wan inside the Philippine Area of Responsibility."
@@ -68,16 +74,16 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-archipelago.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial asset",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual. This is not a satellite image or a photograph of Typhoon Choi-Wan or current flooding.",
-    "alt": "FMB News editorial graphic accompanying a weather advisory for the Visayas and Mindanao",
+    "alt": "FMB News, Filipino Media Bulletin: the Philippine flag above an island coastline at sunrise.",
     "width": 1200,
     "height": 675,
-    "sourceUrl": null
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
   },
   "audit": {
     "sourceCheckedAt": "2026-10-04T09:31:00+08:00",

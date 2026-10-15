@@ -7,7 +7,12 @@
   "headline": "Marcos Administration Satisfaction Rating Rebounds to Neutral +1 in SWS Survey",
   "seoTitle": "Marcos Administration Rating Rebounds to Neutral +1 in SWS Survey",
   "seoDescription": "The Marcos administration's net satisfaction rating rose 14 points from -13 in March to a neutral +1 in June, according to SWS.",
-  "keywords": ["Marcos administration satisfaction rating", "SWS June 2026 survey", "net satisfaction plus one", "Philippines public opinion"],
+  "keywords": [
+    "Marcos administration satisfaction rating",
+    "SWS June 2026 survey",
+    "net satisfaction plus one",
+    "Philippines public opinion"
+  ],
   "category": "National",
   "kicker": "Governance · Public opinion",
   "deck": "The Marcos administration's net satisfaction rating rose 14 points from -13 in March to a neutral +1 in June, according to Social Weather Stations.",
@@ -31,7 +36,7 @@
       ]
     },
     {
-      "heading": "Why this matters to Filipinos",
+      "heading": "Why this matters",
       "paragraphs": [
         "Public-opinion surveys provide a snapshot of how adults assess government performance at a given time. They can influence political debate, but they do not replace elections, official performance data or policy outcomes."
       ]
@@ -53,19 +58,20 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
-    "sourceUrl": null,
+    "url": "/assets/images/news/fmb-news-fallback-archipelago.jpg",
+    "sourceUrl": "https://www.francinemariebautista.com/news/",
     "creator": "FMB News",
     "license": "FMB-owned editorial visual",
     "licenseUrl": "https://www.francinemariebautista.com/news/",
     "usageStatus": "FMB-owned editorial visual used because reuse rights and a deliverable local asset for the recommended photograph could not be independently verified.",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying the survey report. It does not depict a specific June survey interview or August 12 event.",
-    "alt": "FMB News editorial visual for the SWS satisfaction survey report",
+    "alt": "FMB News, Filipino Media Bulletin: the Philippine flag above an island coastline at sunrise.",
     "width": 1200,
     "height": 675,
     "focusX": 50,
-    "focusY": 50
+    "focusY": 50,
+    "source": "FMB News"
   },
   "audit": {
     "sourceCheckedAt": "2026-08-13T01:05:00+08:00",

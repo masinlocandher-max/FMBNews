@@ -82,16 +82,16 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-archipelago.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial asset",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying a verified report on PNP firearms records presented in the Sara Duterte impeachment trial. It is not a photograph and does not depict the hearing, firearms or any person named in the report.",
-    "alt": "FMB News editorial graphic for a report on firearms records presented in the Sara Duterte impeachment trial",
+    "alt": "FMB News, Filipino Media Bulletin: the Philippine flag above an island coastline at sunrise.",
     "width": 1200,
     "height": 675,
-    "sourceUrl": null
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
   },
   "audit": {
     "sourceCheckedAt": "2026-09-28T16:27:00+08:00",

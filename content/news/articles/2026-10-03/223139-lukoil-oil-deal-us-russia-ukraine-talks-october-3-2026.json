@@ -50,7 +50,7 @@
       ]
     },
     {
-      "heading": "Why this matters to Filipinos",
+      "heading": "Why this matters",
       "paragraphs": [
         "The Philippines imports most of its petroleum needs, so changes in sanctions, ownership of major oil assets or U.S.-Russia energy policy can influence global supply expectations and eventually affect local fuel costs. No immediate Philippine pump-price effect from the reported proposal has been demonstrated."
       ]
@@ -94,16 +94,16 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-global.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial asset",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying a report about an alleged oil-asset proposal in U.S.-Russia talks. It is not a photograph of the negotiators, a meeting, an oil facility or the war in Ukraine.",
-    "alt": "FMB News editorial graphic for a reported Lukoil oil deal in U.S.-Russia Ukraine talks",
+    "alt": "FMB News, Filipino Media Bulletin: a world map and globe centred on the Philippines.",
     "width": 1200,
     "height": 675,
-    "sourceUrl": null
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
   },
   "audit": {
     "sourceCheckedAt": "2026-10-03T22:31:39+08:00",

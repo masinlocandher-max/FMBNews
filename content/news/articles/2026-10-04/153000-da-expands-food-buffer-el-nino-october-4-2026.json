@@ -5,7 +5,13 @@
   "headline": "DA Expands Food Buffer as El Niño Threatens Lower Farm Output",
   "seoTitle": "DA Expands Food Buffer for El Niño",
   "seoDescription": "The Agriculture Department is expanding food storage and farm support as it projects lower production and a possible 700,000-ton palay hit.",
-  "keywords": ["Department of Agriculture", "El Niño", "food buffer", "palay production", "NFA warehouses"],
+  "keywords": [
+    "Department of Agriculture",
+    "El Niño",
+    "food buffer",
+    "palay production",
+    "NFA warehouses"
+  ],
   "category": "Business",
   "kicker": "Food Security",
   "deck": "The department says advance purchases, added storage and targeted farm support are being deployed ahead of an El Niño expected to last into 2027.",
@@ -30,7 +36,7 @@
       ]
     },
     {
-      "heading": "Why it matters",
+      "heading": "Why this matters",
       "paragraphs": [
         "Rice supply, food prices and farm incomes are directly exposed when drought reduces harvests or raises production costs. Additional buffer stocks and storage can help manage disruptions, but the DA announcement does not establish that the projected loss has already occurred or guarantee that market prices will remain unchanged.",
         "The El Niño is expected by the department to last through the first half of 2027. Its eventual strength, rainfall pattern and local crop impact can still vary, so the 700,000-ton figure should be read as a current planning estimate rather than a confirmed final loss."
@@ -68,16 +74,16 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-skyline.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial asset",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual. This is not a photograph of current farms, food stocks or Agriculture Department operations.",
-    "alt": "FMB News editorial graphic accompanying a report on El Niño food-security preparations",
+    "alt": "FMB News, Filipino Media Bulletin: a city skyline at night reflected across open water.",
     "width": 1200,
     "height": 675,
-    "sourceUrl": null
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
   },
   "audit": {
     "sourceCheckedAt": "2026-10-04T15:27:00+08:00",

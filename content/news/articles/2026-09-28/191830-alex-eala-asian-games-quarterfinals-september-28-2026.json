@@ -38,7 +38,7 @@
       ]
     },
     {
-      "heading": "Why it matters",
+      "heading": "Why this matters",
       "paragraphs": [
         "The victory keeps the Philippines' leading women's tennis player in contention for a second straight Asian Games singles medal and a place in the semifinals."
       ]
@@ -69,16 +69,16 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-global.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial asset",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying a verified report on Alex Eala's Asian Games quarterfinal qualification. It is not a photograph and does not depict the match.",
-    "alt": "FMB News editorial graphic for Alex Eala's Asian Games quarterfinal qualification",
+    "alt": "FMB News, Filipino Media Bulletin: a world map and globe centred on the Philippines.",
     "width": 1200,
     "height": 675,
-    "sourceUrl": null
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
   },
   "audit": {
     "sourceCheckedAt": "2026-09-28T19:18:30+08:00",

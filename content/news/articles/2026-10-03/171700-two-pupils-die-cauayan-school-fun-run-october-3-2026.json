@@ -79,16 +79,16 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-global.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial asset",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying a verified report on the Cauayan school incident. It is not a photograph of the event, the school or the children involved.",
-    "alt": "FMB News editorial graphic for the investigation into two pupil deaths during a Cauayan school fun run",
+    "alt": "FMB News, Filipino Media Bulletin: a world map and globe centred on the Philippines.",
     "width": 1200,
     "height": 675,
-    "sourceUrl": null
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
   },
   "audit": {
     "sourceCheckedAt": "2026-10-03T17:17:00+08:00",

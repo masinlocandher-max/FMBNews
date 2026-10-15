@@ -1,6 +1,13 @@
 import { access, readFile, readdir, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+  isContextHeading,
+  isOpeningHeading,
+  isWatchHeading,
+  isWhyHeading,
+  NON_PRODUCTION_HOST_RE,
+} from './lib/editorial-section-canon.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const contentRoot=path.join(root,'content','news','articles');
@@ -102,7 +109,7 @@ for(const file of await walk(contentRoot)){
   // forgive pointing readers at a staging server.
   for(const src of (Array.isArray(story.sources)?story.sources:[])){
     const host=(String(src?.url||'').match(/^https:\/\/([^/]+)/i)||[])[1]||'';
-    must(!/^(qa|staging|stage|dev|test|uat|preview|beta)\./i.test(host),
+    must(!NON_PRODUCTION_HOST_RE.test(host),
       `${label}: source cites the non-production host "${host}". Cite the publisher's live site.`);
   }
 
@@ -138,11 +145,11 @@ for(const file of await walk(contentRoot)){
   must(story.headline.length<=120,`${label}: headline is too long for production use`);
   must(typeof story.deck==='string'&&story.deck.trim().length>=55&&story.deck.length<=280,`${label}: deck must be 55-280 characters`);
   must(words(sectionText(story))>=100,`${label}: modern report is too thin; minimum 100 body words`);
-  const headings=(story.sections||[]).map(s=>String(s.heading||'').trim().toLowerCase());
-  must(headings.some(h=>/^(what happened|what changed|verified facts|latest national toll|sunday forecast)/.test(h)),`${label}: modern report needs a clear opening facts/change section`);
-  must(headings.some(h=>h==='context'),`${label}: modern report needs Context`);
-  must(headings.some(h=>/^(why this matters|why it matters)/.test(h)),`${label}: modern report needs Why this matters or Why it matters`);
-  must(headings.some(h=>h==='what to watch next'),`${label}: modern report needs What to watch next`);
+  const headings=(story.sections||[]).map(s=>String(s.heading||'').trim());
+  must(headings.some(isOpeningHeading),`${label}: modern report needs a clear opening facts/change section`);
+  must(headings.some(isContextHeading),`${label}: modern report needs Context`);
+  must(headings.some(isWhyHeading),`${label}: modern report needs Why this matters (or Why it matters)`);
+  must(headings.some(isWatchHeading),`${label}: modern report needs What to watch next`);
   await validateSourcesAndImage(story,label,2,2);
 }
 

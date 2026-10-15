@@ -5,7 +5,13 @@
   "headline": "Riyadh Airport Attack Kills 12 and Wounds More Than 300",
   "seoTitle": "Riyadh Airport Attack Kills 12, Wounds Over 300",
   "seoDescription": "A missile struck a passenger terminal at Riyadh’s King Khalid International Airport, killing 12 and wounding more than 300.",
-  "keywords": ["Riyadh airport attack", "Saudi Arabia", "King Khalid International Airport", "Houthis", "Yemen war"],
+  "keywords": [
+    "Riyadh airport attack",
+    "Saudi Arabia",
+    "King Khalid International Airport",
+    "Houthis",
+    "Yemen war"
+  ],
   "category": "World",
   "kicker": "Middle East Conflict",
   "deck": "The October 10 strike was the third attack on the airport that week and the deadliest attack in Saudi Arabia in more than a decade.",
@@ -22,14 +28,14 @@
       ]
     },
     {
-      "heading": "Responsibility and uncertainty",
+      "heading": "Context",
       "paragraphs": [
         "The strike was the third attack on the airport that week. Earlier attacks were claimed by Yemen’s Houthi movement, but the group had not publicly claimed the October 10 strike when Reuters filed its report. FMB News therefore does not present responsibility for the latest attack as confirmed.",
         "The Saudi-led coalition vowed to respond. U.S. President Donald Trump said Washington was considering whether to join Saudi strikes on the Houthis, but no U.S. military decision had been announced."
       ]
     },
     {
-      "heading": "Why it matters to Filipinos",
+      "heading": "Why this matters",
       "paragraphs": [
         "Saudi Arabia hosts a large Filipino community and is a major destination for Philippine workers. Repeated attacks can disrupt flights, increase security risks and complicate travel through Riyadh. Filipinos in the area should follow Philippine Embassy and Saudi-authority advisories."
       ]
@@ -66,13 +72,13 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-global.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial artwork",
     "credit": "Editorial graphic: FMB News",
-    "caption": "FMB News editorial graphic. This non-documentary visual does not depict King Khalid International Airport, the October 10 strike or its victims.",
-    "alt": "FMB News editorial graphic accompanying a report on the Riyadh airport attack",
+    "caption": "FMB News branded editorial plate. This is publication artwork, not a photograph of the reported event.",
+    "alt": "FMB News, Filipino Media Bulletin: a world map and globe centred on the Philippines.",
     "width": 1200,
     "height": 675,
     "sourceUrl": "https://www.francinemariebautista.com/news/"

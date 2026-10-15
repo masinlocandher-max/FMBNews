@@ -7,7 +7,12 @@
   "headline": "Brief Reports Water Levels Rise in Six Dams; Angat at 181.57 Meters",
   "seoTitle": "Brief: Six Dams Rise; Angat Reported at 181.57m",
   "seoDescription": "An FMB News midday brief reports water levels rising in six major dams, with Angat at 181.57 meters and La Mesa beginning a gradual decline.",
-  "keywords": ["Angat Dam August 15 2026", "PAGASA dam levels", "Angat 181.57 meters", "La Mesa Dam level"],
+  "keywords": [
+    "Angat Dam August 15 2026",
+    "PAGASA dam levels",
+    "Angat 181.57 meters",
+    "La Mesa Dam level"
+  ],
   "category": "Environment",
   "kicker": "Water resources · Dam monitoring",
   "deck": "The newsroom brief cites a Saturday dam-status update showing gains in six reservoirs, while FMB News keeps the exact August 15 elevations source-attributed pending a directly retrievable PAGASA table.",
@@ -59,19 +64,20 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
-    "sourceUrl": null,
+    "url": "/assets/images/news/fmb-news-fallback-skyline.jpg",
+    "sourceUrl": "https://www.francinemariebautista.com/news/",
     "creator": "FMB News",
     "license": "FMB-owned editorial visual",
     "licenseUrl": "https://www.francinemariebautista.com/news/",
     "usageStatus": "FMB-owned editorial visual used because the recommended Inquirer photograph is publisher-owned and the email does not provide a separately licensed original asset.",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying the source-attributed Luzon dam-level update. It does not depict the August 15 Angat reading.",
-    "alt": "FMB News editorial visual for the Luzon dam-level report",
+    "alt": "FMB News, Filipino Media Bulletin: a city skyline at night reflected across open water.",
     "width": 1200,
     "height": 675,
     "focusX": 50,
-    "focusY": 50
+    "focusY": 50,
+    "source": "FMB News"
   },
   "audit": {
     "sourceCheckedAt": "2026-08-15T19:38:00+08:00",

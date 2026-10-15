@@ -7,7 +7,12 @@
   "headline": "Brief Reports 74 Volcanic Earthquakes at Taal; Alert Level 1 Remains",
   "seoTitle": "Brief Reports 74 Taal Quakes; Alert Level 1 Remains",
   "seoDescription": "An FMB News midday brief reports 74 volcanic earthquakes at Taal in 24 hours while Alert Level 1 remains in effect; the exact August 15 bulletin is still source-attributed.",
-  "keywords": ["Taal Volcano August 15 2026", "Taal 74 earthquakes", "PHIVOLCS Alert Level 1", "Taal volcanic unrest"],
+  "keywords": [
+    "Taal Volcano August 15 2026",
+    "Taal 74 earthquakes",
+    "PHIVOLCS Alert Level 1",
+    "Taal volcanic unrest"
+  ],
   "category": "Environment",
   "kicker": "Volcanology · Public safety",
   "deck": "An FMB News midday brief reports a sharp increase in Taal seismic activity, while independently retrievable PHIVOLCS records continue to support Alert Level 1 restrictions and the permanent danger-zone warning.",
@@ -59,19 +64,20 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
-    "sourceUrl": null,
+    "url": "/assets/images/news/fmb-news-fallback-skyline.jpg",
+    "sourceUrl": "https://www.francinemariebautista.com/news/",
     "creator": "FMB News",
     "license": "FMB-owned editorial visual",
     "licenseUrl": "https://www.francinemariebautista.com/news/",
     "usageStatus": "FMB-owned editorial visual used because the email references a PHIVOLCS/Inquirer image but does not provide a stable independently retrievable original image asset for the August 15 event.",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying the source-attributed Taal Volcano update. It does not depict the August 15 monitoring period.",
-    "alt": "FMB News editorial visual for the Taal Volcano seismic update",
+    "alt": "FMB News, Filipino Media Bulletin: a city skyline at night reflected across open water.",
     "width": 1200,
     "height": 675,
     "focusX": 50,
-    "focusY": 50
+    "focusY": 50,
+    "source": "FMB News"
   },
   "audit": {
     "sourceCheckedAt": "2026-08-15T19:38:00+08:00",

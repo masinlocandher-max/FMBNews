@@ -7,7 +7,12 @@
   "headline": "Metro Manila Cities Suspend Afternoon Classes as Habagat Rains Persist",
   "seoTitle": "Metro Manila Afternoon Classes Suspended on August 13",
   "seoDescription": "Several Metro Manila local governments suspended afternoon face-to-face classes on August 13 as southwest monsoon rains persisted.",
-  "keywords": ["Walang Pasok August 13 2026", "Metro Manila class suspension", "Habagat rains", "afternoon classes"],
+  "keywords": [
+    "Walang Pasok August 13 2026",
+    "Metro Manila class suspension",
+    "Habagat rains",
+    "afternoon classes"
+  ],
   "category": "Community",
   "kicker": "Education · Weather advisory",
   "deck": "Several Metro Manila local governments suspended afternoon face-to-face classes on August 13 as southwest monsoon rains continued.",
@@ -66,19 +71,20 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
-    "sourceUrl": null,
+    "url": "/assets/images/news/fmb-news-fallback-skyline.jpg",
+    "sourceUrl": "https://www.francinemariebautista.com/news/",
     "creator": "FMB News",
     "license": "FMB-owned editorial visual",
     "licenseUrl": "https://www.francinemariebautista.com/news/",
     "usageStatus": "FMB-owned editorial visual used because the recommended student photograph lacked a stable asset URL and independently verified reuse permission.",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying the August 13 class-suspension update. It does not depict a specific school, student or city advisory.",
-    "alt": "FMB News editorial visual for the Metro Manila class-suspension update",
+    "alt": "FMB News, Filipino Media Bulletin: a city skyline at night reflected across open water.",
     "width": 1200,
     "height": 675,
     "focusX": 50,
-    "focusY": 50
+    "focusY": 50,
+    "source": "FMB News"
   },
   "audit": {
     "sourceCheckedAt": "2026-08-13T19:15:00+08:00",

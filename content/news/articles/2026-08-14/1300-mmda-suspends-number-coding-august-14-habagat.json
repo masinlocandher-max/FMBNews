@@ -7,7 +7,12 @@
   "headline": "MMDA Suspends Number Coding From 10:30 AM as Habagat Rains Persist",
   "seoTitle": "MMDA Suspends Number Coding on August 14 Amid Habagat Rains",
   "seoDescription": "The MMDA suspended Metro Manila's expanded number coding scheme from 10:30 a.m. on August 14 as continuous Habagat rain affected the capital region.",
-  "keywords": ["MMDA number coding suspension", "August 14 2026", "Habagat", "Metro Manila traffic"],
+  "keywords": [
+    "MMDA number coding suspension",
+    "August 14 2026",
+    "Habagat",
+    "Metro Manila traffic"
+  ],
   "category": "National",
   "kicker": "Metro Manila · Transport · Public service",
   "deck": "The expanded number coding scheme was suspended from 10:30 a.m. Friday as continuous monsoon rain affected Metro Manila.",
@@ -61,19 +66,20 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
-    "sourceUrl": null,
+    "url": "/assets/images/news/fmb-news-fallback-skyline.jpg",
+    "sourceUrl": "https://www.francinemariebautista.com/news/",
     "creator": "FMB News",
     "license": "FMB-owned editorial visual",
     "licenseUrl": "https://www.francinemariebautista.com/news/",
     "usageStatus": "FMB-owned editorial visual used because publication rights for the recommended news photograph could not be independently verified.",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying the August 14 number-coding suspension report. It does not depict a particular road or weather event.",
-    "alt": "FMB News editorial visual for the August 14 MMDA number-coding suspension",
+    "alt": "FMB News, Filipino Media Bulletin: a city skyline at night reflected across open water.",
     "width": 1200,
     "height": 675,
     "focusX": 50,
-    "focusY": 50
+    "focusY": 50,
+    "source": "FMB News"
   },
   "audit": {
     "sourceCheckedAt": "2026-08-14T18:30:00+08:00",

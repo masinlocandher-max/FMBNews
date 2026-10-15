@@ -43,15 +43,13 @@ if (heroSans.length) {
 // The Light active section label was #fff on warm paper before this convergence
 // -- invisible. It must resolve through a shell token, never to white.
 //
-// This used to be checked on .fmb-mobile-product-rail. That rail is no longer
-// built, so a guard on it can only ever pass. The same bug is now possible on
-// the dock, which is the element that carries the current section, so the guard
-// moved there rather than being deleted -- and it is asserted to match
-// something, because a regex that silently matches nothing is not a guard.
+// The section rail (.fmb-mobile-product-rail) is restored and required. The
+// dock still carries current-section state for Home/World/Sports/Briefing/Menu,
+// so the white-on-paper guard stays on the dock. A silent no-match regex is not
+// a guard, so the dock rule must actually exist.
 const lock = await readFile(path.join(cssDir, 'fmb-news-mobile-navigation-lock.css'), 'utf8');
-if (/\.fmb-mobile-product-rail/.test(lock) && !/no longer built/i.test(lock)) {
-  // Not fatal on its own -- the rules are inert -- but worth saying once.
-  console.warn('  Note: fmb-news-mobile-navigation-lock.css still carries .fmb-mobile-product-rail rules for an element that is no longer built.');
+if (!/\.fmb-mobile-product-rail/.test(lock)) {
+  throw new Error('fmb-news-mobile-navigation-lock.css must style the restored .fmb-mobile-product-rail.');
 }
 const dockRules = lock.match(/\.fmb-editorial-mobile-dock a\[aria-current="page"\][^{]*\{[^}]*\}/g) || [];
 if (!dockRules.length) {

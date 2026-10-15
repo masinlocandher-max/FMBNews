@@ -7,7 +7,12 @@
   "headline": "Government Cuts 2027 Infrastructure Program to ₱1.34 Trillion",
   "seoTitle": "Government Cuts 2027 Infrastructure Program to ₱1.34 Trillion",
   "seoDescription": "The government's 2027 infrastructure program was reduced to ₱1.34 trillion, equivalent to 4% of GDP and 20.7% below the previous plan.",
-  "keywords": ["2027 infrastructure spending", "Philippines national budget", "DBM infrastructure program", "National Expenditure Program"],
+  "keywords": [
+    "2027 infrastructure spending",
+    "Philippines national budget",
+    "DBM infrastructure program",
+    "National Expenditure Program"
+  ],
   "category": "Business",
   "kicker": "Public finance · Infrastructure",
   "deck": "The government's 2027 infrastructure program was reduced to ₱1.34 trillion, equivalent to 4 percent of gross domestic product.",
@@ -53,19 +58,20 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
-    "sourceUrl": null,
+    "url": "/assets/images/news/fmb-news-fallback-global.jpg",
+    "sourceUrl": "https://www.francinemariebautista.com/news/",
     "creator": "FMB News",
     "license": "FMB-owned editorial visual",
     "licenseUrl": "https://www.francinemariebautista.com/news/",
     "usageStatus": "FMB-owned editorial visual used because reuse rights for the recommended publisher-owned photograph were not independently verified.",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying the report on the 2027 infrastructure spending program. It does not depict a specific project.",
-    "alt": "FMB News editorial visual for the report on the 2027 infrastructure program",
+    "alt": "FMB News, Filipino Media Bulletin: a world map and globe centred on the Philippines.",
     "width": 1200,
     "height": 675,
     "focusX": 50,
-    "focusY": 50
+    "focusY": 50,
+    "source": "FMB News"
   },
   "audit": {
     "sourceCheckedAt": "2026-08-13T13:05:00+08:00",

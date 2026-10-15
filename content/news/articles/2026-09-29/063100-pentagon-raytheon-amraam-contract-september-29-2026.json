@@ -37,7 +37,7 @@
       ]
     },
     {
-      "heading": "Why it matters",
+      "heading": "Why this matters",
       "paragraphs": [
         "The agreement is designed to rebuild and expand United States and allied missile inventories amid demand linked to wars in Ukraine and the Middle East. RTX says AMRAAM is integrated on 14 platforms and fielded by 44 countries.",
         "The immediate effect on Filipino households is limited. Any Philippine impact would be indirect, through regional security, allied air-defense availability and wider competition for defense-production capacity; no Philippine procurement under this contract was established."
@@ -76,16 +76,16 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-skyline.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial asset",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying a verified report on a United States AMRAAM missile-production contract. It is not a photograph and does not depict the Pentagon, Raytheon facilities, missiles or military operations.",
-    "alt": "FMB News editorial graphic for the Pentagon’s AMRAAM production contract",
+    "alt": "FMB News, Filipino Media Bulletin: a city skyline at night reflected across open water.",
     "width": 1200,
     "height": 675,
-    "sourceUrl": null
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
   },
   "audit": {
     "sourceCheckedAt": "2026-09-29T06:30:00+08:00",

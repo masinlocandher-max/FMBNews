@@ -5,7 +5,13 @@
   "headline": "Kanlaon Erupts, Then Emits Ash Twice as Alert Level 2 Holds",
   "seoTitle": "Kanlaon Erupts, Emits Ash as Alert Level 2 Holds",
   "seoDescription": "Kanlaon produced a brief explosive eruption on October 10 and two more ash emissions on October 11 while PHIVOLCS kept Alert Level 2.",
-  "keywords": ["Kanlaon Volcano", "PHIVOLCS", "Negros Island", "ash emission", "Alert Level 2"],
+  "keywords": [
+    "Kanlaon Volcano",
+    "PHIVOLCS",
+    "Negros Island",
+    "ash emission",
+    "Alert Level 2"
+  ],
   "category": "Environment",
   "kicker": "Volcano Watch",
   "deck": "A brief explosive eruption sent ash five to six kilometers above the summit on Saturday; two lower ash plumes followed early Sunday.",
@@ -22,14 +28,14 @@
       ]
     },
     {
-      "heading": "Confirmed conditions",
+      "heading": "Context",
       "paragraphs": [
         "PHIVOLCS kept Kanlaon at Alert Level 2, indicating moderate volcanic unrest. The agency said continuing gas release can carry fine ash after the eruption opened a pathway through the vent.",
         "Ashfall was reported in parts of Negros Occidental. Residents inside the four-kilometer permanent danger zone had already evacuated, and entry into that zone remains prohibited."
       ]
     },
     {
-      "heading": "Why it matters to Filipinos",
+      "heading": "Why this matters",
       "paragraphs": [
         "Ash can reduce visibility, irritate the eyes and lungs, contaminate water and affect crops and livestock. Communities downwind should follow PHIVOLCS and local-government instructions rather than rely on unverified social-media posts."
       ]
@@ -60,19 +66,19 @@
       "publisher": "The Philippine Star",
       "title": "Moderately explosive eruption occurs at Kanlaon Volcano",
       "publishedAt": "2026-10-11T00:00:00+08:00",
-      "url": "https://qa.philstar.com/nation/2026/10/11/2562296/moderately-explosive-eruption-occurs-kanlaon-volcano",
+      "url": "https://www.philstar.com/nation/2026/10/11/2562296/moderately-explosive-eruption-occurs-kanlaon-volcano",
       "role": "independent"
     }
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-skyline.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial artwork",
     "credit": "Editorial graphic: FMB News",
-    "caption": "FMB News editorial graphic. This is a non-documentary visual and does not depict Kanlaon’s October 10 eruption or ash plumes.",
-    "alt": "FMB News editorial graphic accompanying a report on Kanlaon Volcano activity",
+    "caption": "FMB News branded editorial plate. This is publication artwork, not a photograph of the reported event.",
+    "alt": "FMB News, Filipino Media Bulletin: a city skyline at night reflected across open water.",
     "width": 1200,
     "height": 675,
     "sourceUrl": "https://www.francinemariebautista.com/news/"

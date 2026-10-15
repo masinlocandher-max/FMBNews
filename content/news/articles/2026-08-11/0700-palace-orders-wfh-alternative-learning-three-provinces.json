@@ -7,7 +7,12 @@
   "headline": "Palace Orders WFH and Alternative Learning in Three Provinces for August 11",
   "seoTitle": "Palace Orders WFH, Alternative Learning in 3 Provinces for August 11",
   "seoDescription": "Malacañang ordered work-from-home arrangements for government offices and alternative learning modes in Zambales, Bataan and Occidental Mindoro on August 11.",
-  "keywords": ["August 11 work from home", "Zambales class suspension", "Bataan alternative learning", "Occidental Mindoro habagat"],
+  "keywords": [
+    "August 11 work from home",
+    "Zambales class suspension",
+    "Bataan alternative learning",
+    "Occidental Mindoro habagat"
+  ],
   "category": "National",
   "kicker": "Public safety · Government · Education",
   "deck": "Malacañang ordered work-from-home arrangements for government offices and alternative learning modes in Zambales, Bataan and Occidental Mindoro on August 11 because of continued monsoon rain.",
@@ -31,7 +36,7 @@
       ]
     },
     {
-      "heading": "Why this matters to Filipinos",
+      "heading": "Why this matters",
       "paragraphs": [
         "The arrangement was intended to reduce travel during hazardous weather while allowing government services and school activities to continue through remote or alternative modes."
       ]
@@ -61,19 +66,20 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
-    "sourceUrl": null,
+    "url": "/assets/images/news/fmb-news-fallback-archipelago.jpg",
+    "sourceUrl": "https://www.francinemariebautista.com/news/",
     "creator": "FMB News",
     "license": "FMB-owned editorial visual",
     "licenseUrl": "https://www.francinemariebautista.com/news/",
     "usageStatus": "FMB-owned editorial visual used because the bulletin's recommended image did not provide a directly resolvable local asset with independently verified reuse rights.",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying the report. It does not depict a specific government office, school or weather event.",
-    "alt": "FMB News editorial visual for the August 11 work and school arrangements",
+    "alt": "FMB News, Filipino Media Bulletin: the Philippine flag above an island coastline at sunrise.",
     "width": 1200,
     "height": 675,
     "focusX": 50,
-    "focusY": 50
+    "focusY": 50,
+    "source": "FMB News"
   },
   "audit": {
     "sourceCheckedAt": "2026-08-13T07:18:00+08:00",

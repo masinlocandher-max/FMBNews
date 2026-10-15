@@ -36,7 +36,7 @@
       ]
     },
     {
-      "heading": "Why it matters",
+      "heading": "Why this matters",
       "paragraphs": [
         "The result ends the two-time Olympic medalist's bid for an Asian Games podium finish in Aichi-Nagoya."
       ]
@@ -73,16 +73,16 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-archipelago.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial asset",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying a verified report on Nesthy Petecio's Asian Games quarterfinal exit. It is not a photograph and does not depict the bout.",
-    "alt": "FMB News editorial graphic for Nesthy Petecio's Asian Games quarterfinal exit",
+    "alt": "FMB News, Filipino Media Bulletin: the Philippine flag above an island coastline at sunrise.",
     "width": 1200,
     "height": 675,
-    "sourceUrl": null
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
   },
   "audit": {
     "sourceCheckedAt": "2026-09-28T19:32:00+08:00",

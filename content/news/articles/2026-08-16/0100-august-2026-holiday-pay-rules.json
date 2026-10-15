@@ -7,7 +7,12 @@
   "headline": "What Workers Should Know About August 21 and August 31 Holiday Pay in 2026",
   "seoTitle": "August 2026 Holiday Pay: Ninoy Aquino Day, National Heroes Day",
   "seoDescription": "DOLE's standing 2026 wage rules apply on August 21, a special non-working day, and August 31, National Heroes Day, a regular holiday.",
-  "keywords": ["August 2026 holiday pay Philippines", "Ninoy Aquino Day pay 2026", "National Heroes Day pay 2026", "DOLE Labor Advisory 12-25"],
+  "keywords": [
+    "August 2026 holiday pay Philippines",
+    "Ninoy Aquino Day pay 2026",
+    "National Heroes Day pay 2026",
+    "DOLE Labor Advisory 12-25"
+  ],
   "category": "National",
   "kicker": "Labor · Holiday pay",
   "deck": "August 21 is a special non-working day and August 31 is a regular holiday. DOLE's Labor Advisory No. 12, Series of 2025 already sets the wage rules that apply throughout 2026.",
@@ -65,19 +70,20 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
-    "sourceUrl": null,
+    "url": "/assets/images/news/fmb-news-fallback-global.jpg",
+    "sourceUrl": "https://www.francinemariebautista.com/news/",
     "creator": "FMB News",
     "license": "FMB-owned editorial visual",
     "licenseUrl": "https://www.francinemariebautista.com/news/",
     "usageStatus": "The email referenced a publisher page rather than a stable original image asset; FMB News uses its own editorial visual instead of inventing a photo credit.",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying the August 2026 holiday-pay guide.",
-    "alt": "FMB News editorial visual for August 2026 holiday pay rules",
+    "alt": "FMB News, Filipino Media Bulletin: a world map and globe centred on the Philippines.",
     "width": 1200,
     "height": 675,
     "focusX": 50,
-    "focusY": 50
+    "focusY": 50,
+    "source": "FMB News"
   },
   "audit": {
     "sourceCheckedAt": "2026-08-16T07:06:00+08:00",

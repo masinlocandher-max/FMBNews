@@ -7,7 +7,12 @@
   "headline": "Marcos Calls for Waste Facilities Before Higher Littering Fines",
   "seoTitle": "Marcos Calls for Waste Facilities Before Higher Littering Fines",
   "seoDescription": "President Marcos said communities need accessible garbage facilities before authorities impose stiffer penalties, after 72 truckloads of waste were removed from a Parañaque channel.",
-  "keywords": ["Parañaque garbage cleanup", "Redemptorist Water Channel", "Marcos waste facilities", "Metro Manila flooding"],
+  "keywords": [
+    "Parañaque garbage cleanup",
+    "Redemptorist Water Channel",
+    "Marcos waste facilities",
+    "Metro Manila flooding"
+  ],
   "category": "Environment",
   "kicker": "Waste management · Flood prevention · Metro Manila",
   "deck": "President Ferdinand Marcos Jr. said communities need accessible waste-disposal facilities before authorities impose stiffer penalties, after crews removed 72 truckloads of garbage from a Parañaque waterway.",
@@ -31,7 +36,7 @@
       ]
     },
     {
-      "heading": "Why this matters to Filipinos",
+      "heading": "Why this matters",
       "paragraphs": [
         "Trash-clogged waterways can worsen urban flooding, damage pumping systems and expose nearby communities to health and safety risks. The President's infrastructure-first position places responsibility on both residents and local governments."
       ]
@@ -59,19 +64,20 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
-    "sourceUrl": null,
+    "url": "/assets/images/news/fmb-news-fallback-skyline.jpg",
+    "sourceUrl": "https://www.francinemariebautista.com/news/",
     "creator": "FMB News",
     "license": "FMB-owned editorial visual",
     "licenseUrl": "https://www.francinemariebautista.com/news/",
     "usageStatus": "FMB-owned editorial visual used because the supplied publisher photograph lacked verified reuse permission and the archive alternative could not be delivered as a fully local raster asset.",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying the report. It does not depict the August 12 Parañaque cleanup.",
-    "alt": "FMB News editorial visual for the Parañaque waste-management report",
+    "alt": "FMB News, Filipino Media Bulletin: a city skyline at night reflected across open water.",
     "width": 1074,
     "height": 768,
     "focusX": 50,
-    "focusY": 50
+    "focusY": 50,
+    "source": "FMB News"
   },
   "audit": {
     "sourceCheckedAt": "2026-08-12T19:18:00+08:00",
