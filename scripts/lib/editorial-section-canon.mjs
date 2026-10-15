@@ -8,6 +8,7 @@
 export const CANON_WHY = 'Why this matters';
 export const CANON_CONTEXT = 'Context';
 export const CANON_WATCH = 'What to watch next';
+export const CANON_OPENING = 'What happened';
 
 /** Opening facts / change section (Verified-facts lens). */
 export const OPENING_HEADING_RE =
@@ -24,12 +25,15 @@ export const WATCH_HEADING_RE = /^what to watch next$/i;
 export const LENS_HEADING_RE =
   /^(what happened|what changed|verified facts|latest national toll|sunday forecast|context|why this matters|why it matters(?:\s+to filipinos)?|what to watch next)$/i;
 
-/** Known authoring aliases that hardfix rewrites to the display canon. */
+/** Known authoring aliases rewritten to display canon when the target lens is missing. */
 export const WHY_HEADING_ALIASES = new Set([
   'why it matters',
   'why this matters to filipinos',
   'why it matters to filipinos',
 ]);
+
+export const CONTEXT_HEADING_ALIASES = new Set(['background']);
+export const WATCH_HEADING_ALIASES = new Set(['what happens next', 'what to watch']);
 
 /**
  * Staging / QA hosts that must never be cited. The map rewrites the hostname
@@ -112,6 +116,17 @@ export function normalizeSourceUrl(url = '') {
   return { url: raw, rewritten: false, blocked: false };
 }
 
+function renameAliasIfNeeded(story, aliases, canon, hasCanon, summaryKey, summary) {
+  if (hasCanon) return;
+  for (const section of story.sections || []) {
+    const key = headingKey(section.heading);
+    if (!aliases.has(key)) continue;
+    section.heading = canon;
+    summary[summaryKey] += 1;
+    return;
+  }
+}
+
 /**
  * Apply in-place content normalizations for a published story.
  * Returns a summary of changes; mutates `story` when changes are made.
@@ -119,6 +134,8 @@ export function normalizeSourceUrl(url = '') {
 export function normalizeStoryRecord(story, { editorialFallbackUrl, pickEditorialFallback } = {}) {
   const summary = {
     whyHeadings: 0,
+    contextHeadings: 0,
+    watchHeadings: 0,
     sourceHosts: 0,
     fallbackPlates: 0,
     blockedSources: [],
@@ -133,6 +150,11 @@ export function normalizeStoryRecord(story, { editorialFallbackUrl, pickEditoria
       summary.whyHeadings += 1;
     }
   }
+
+  const hasContext = (story.sections || []).some((section) => isContextHeading(section.heading));
+  const hasWatch = (story.sections || []).some((section) => isWatchHeading(section.heading));
+  renameAliasIfNeeded(story, CONTEXT_HEADING_ALIASES, CANON_CONTEXT, hasContext, 'contextHeadings', summary);
+  renameAliasIfNeeded(story, WATCH_HEADING_ALIASES, CANON_WATCH, hasWatch, 'watchHeadings', summary);
 
   for (const src of story.sources || []) {
     const result = normalizeSourceUrl(src.url);

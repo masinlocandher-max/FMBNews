@@ -13,8 +13,20 @@ Do not invent alternate lens headings.
 5. Optional `Earlier FMB coverage`
 6. **What to watch next**
 
-Accepted Why aliases are rewritten at build time to `Why this matters`:
-`Why it matters`, `Why it matters to Filipinos`, `Why this matters to Filipinos`.
+Accepted aliases rewritten at build / `npm run validate:content` when the target
+lens is missing:
+
+- Why → `Why this matters`: `Why it matters`, `Why it matters to Filipinos`, `Why this matters to Filipinos`
+- Context → `Context`: `Background`
+- Watch → `What to watch next`: `What happens next`, `What to watch`
+
+Before a full build, run:
+
+```bash
+npm run validate:content
+```
+
+That normalizes known aliases and fails fast on missing lenses, thin decks, or QA hosts — no photography fetch and no HTML render.
 
 ## Sources
 

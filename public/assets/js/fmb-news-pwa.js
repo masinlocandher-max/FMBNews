@@ -12,8 +12,8 @@
     style.textContent=`
       .fmb-pwa-sheet{position:fixed;inset:0;z-index:2147483000;display:grid;place-items:end center;background:rgba(8,4,14,.36);padding:12px;padding-bottom:max(12px,env(safe-area-inset-bottom));backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
       .fmb-pwa-panel{width:min(100%,540px);border:1px solid rgba(0,0,0,.08);border-radius:28px;background:rgba(250,250,252,.97);color:#1d1d1f;padding:22px;box-shadow:0 24px 80px rgba(0,0,0,.24);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif}
-      .fmb-pwa-panel h2{font-size:1.3rem;line-height:1.15;margin:0 0 9px;letter-spacing:-.025em}.fmb-pwa-panel p{margin:0;color:#6e6e73;line-height:1.5;font-size:.94rem}.fmb-pwa-panel ol{margin:17px 0 0;padding-left:1.25rem;color:#343438;line-height:1.6}.fmb-pwa-panel button{margin-top:18px;width:100%;min-height:48px;border:0;border-radius:14px;background:#24102f;color:#fff;padding:12px 18px;font:inherit;font-weight:750;cursor:pointer}
-      @media (display-mode: standalone){html{background:#170b24}body{overscroll-behavior-y:contain}.masthead{padding-top:env(safe-area-inset-top)}body::after{content:"";position:fixed;left:0;right:0;bottom:0;height:env(safe-area-inset-bottom);background:#170b24;pointer-events:none;z-index:2147482000}}
+      .fmb-pwa-panel h2{font-size:1.3rem;line-height:1.15;margin:0 0 9px;letter-spacing:-.025em}.fmb-pwa-panel p{margin:0;color:#6e6e73;line-height:1.5;font-size:.94rem}.fmb-pwa-panel ol{margin:17px 0 0;padding-left:1.25rem;color:#343438;line-height:1.6}.fmb-pwa-panel button{margin-top:18px;width:100%;min-height:48px;border:0;border-radius:14px;background:#0A0A0A;color:#fff;padding:12px 18px;font:inherit;font-weight:750;cursor:pointer}
+      @media (display-mode: standalone){html{background:#0A0A0A}body{overscroll-behavior-y:contain}.masthead{padding-top:env(safe-area-inset-top)}body::after{content:"";position:fixed;left:0;right:0;bottom:0;height:env(safe-area-inset-bottom);background:#0A0A0A;pointer-events:none;z-index:2147482000}}
     `;
     document.head.appendChild(style);
   }

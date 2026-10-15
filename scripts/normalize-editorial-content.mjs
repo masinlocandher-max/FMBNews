@@ -22,7 +22,7 @@ async function walk(dir){
 }
 
 const blocked=[];
-let touched=0,whyFixed=0,hostsFixed=0,platesFixed=0;
+let touched=0,whyFixed=0,contextFixed=0,watchFixed=0,hostsFixed=0,platesFixed=0;
 
 for(const file of await walk(contentRoot)){
   let story;let raw;
@@ -32,12 +32,14 @@ for(const file of await walk(contentRoot)){
   if(summary.blockedSources.length){
     for(const url of summary.blockedSources)blocked.push(`${story.slug||path.basename(file)}: ${url}`);
   }
-  if(!(summary.whyHeadings||summary.sourceHosts||summary.fallbackPlates))continue;
+  if(!(summary.whyHeadings||summary.contextHeadings||summary.watchHeadings||summary.sourceHosts||summary.fallbackPlates))continue;
   const next=JSON.stringify(story,null,2)+'\n';
   if(next===raw)continue;
   await writeFile(file,next,'utf8');
   touched+=1;
   whyFixed+=summary.whyHeadings;
+  contextFixed+=summary.contextHeadings;
+  watchFixed+=summary.watchHeadings;
   hostsFixed+=summary.sourceHosts;
   platesFixed+=summary.fallbackPlates;
 }
@@ -50,5 +52,6 @@ if(blocked.length){
 
 console.log(
   `Editorial content normalized: ${touched} published records updated ` +
-  `(${whyFixed} Why headings, ${hostsFixed} live-host citations, ${platesFixed} rotating fallback plates).`
+  `(${whyFixed} Why, ${contextFixed} Context, ${watchFixed} Watch headings; ` +
+  `${hostsFixed} live-host citations; ${platesFixed} rotating fallback plates).`
 );

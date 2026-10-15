@@ -57,12 +57,12 @@ body.fmb-ref{background:linear-gradient(180deg,#fff 0%,#fff 72%,#fbf8fc 100%)}
 
 /* Article network treatment. */
 .fmb-ref .article-shell{padding-top:42px}
-.fmb-ref .article-kicker,.fmb-ref .back,.fmb-ref .lens h2{color:var(--fmb-plum)}
+.fmb-ref .article-kicker,.fmb-ref .back,.fmb-ref .lens h2{color:#D71920}
 .fmb-ref .article-figure{padding:10px;background:var(--fmb-theme-surface-soft,#EFEDE8);border:1px solid var(--fmb-theme-line,rgba(20,20,20,.14));box-shadow:0 16px 36px rgba(10,10,10,.09)}
-.fmb-ref .lens{margin:10px 0;padding:18px 18px;background:linear-gradient(100deg,#FAF9F6,#f2e8f5 70%,#fff);border-top:0;border-left:3px solid #D71920}
+.fmb-ref .lens{margin:10px 0;padding:18px 18px;background:linear-gradient(100deg,#FAF9F6,#EFEDE8 70%,#fff);border-top:0;border-left:3px solid #D71920}
 .fmb-ref .lens-icon{border-color:#D71920;color:#D71920;background:#fff}
-.fmb-ref .sources{margin-top:12px;padding:20px;background:#FAF9F6;border:1px solid #eadfec}
-.fmb-ref .related{padding:20px;background:linear-gradient(180deg,#FAF9F6,#fff);border:1px solid #e7dbe9;box-shadow:0 12px 30px rgba(20,20,20,.055)}
+.fmb-ref .sources{margin-top:12px;padding:20px;background:#FAF9F6;border:1px solid rgba(20,20,20,.12)}
+.fmb-ref .related{padding:20px;background:linear-gradient(180deg,#FAF9F6,#fff);border:1px solid rgba(20,20,20,.12);box-shadow:0 12px 30px rgba(20,20,20,.055)}
 .fmb-ref .related h2{border-bottom:2px solid transparent;border-image:var(--fmb-section-rule,linear-gradient(90deg,#D71920 0 64px,rgba(20,20,20,.22) 64px)) 1}
 
 /* Footer: same wordmark, richer network finish. */
@@ -70,14 +70,14 @@ body.fmb-ref{background:linear-gradient(180deg,#fff 0%,#fff 72%,#fbf8fc 100%)}
 .fmb-ref .footer::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,#141414,#BFC1C2,#141414,#BFC1C2,#141414)}
 .fmb-ref .brand-wordmark-footer{color:#fff!important;line-height:.9}
 .fmb-ref .brand-wordmark-footer .brand-fmb,.fmb-ref .brand-wordmark-footer .brand-news{font-size:46px}
-.fmb-ref .brand-subtitle-footer{margin-top:8px;color:#e9dbea;font-size:8px;letter-spacing:.28em}
+.fmb-ref .brand-subtitle-footer{margin-top:8px;color:#BFC1C2;font-size:8px;letter-spacing:.28em}
 .fmb-ref .footer-logo{display:none!important}
 .fmb-ref .footer-socials{display:flex;gap:9px;margin-top:18px}
 .fmb-ref .footer-socials a{display:grid!important;place-items:center;width:34px;height:34px;margin:0!important;border:1px solid rgba(255,255,255,.34);border-radius:50%;background:rgba(255,255,255,.055);transition:transform .18s ease,background .18s ease,border-color .18s ease}
 .fmb-ref .footer-socials a:hover{transform:translateY(-2px);background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.7)}
 .fmb-ref .footer-socials svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .fmb-ref .footer-socials .fill-icon{fill:currentColor;stroke:none}
-.fmb-ref .newsletter button{background:linear-gradient(105deg,#D71920,#8d4a96,#5d1d68)}
+.fmb-ref .newsletter button{background:#D71920}
 
 @media(max-width:920px){
   .fmb-ref .brand-fmb,.fmb-ref .brand-news{font-size:clamp(64px,11vw,92px)}

@@ -76,7 +76,7 @@ function visibleUpdate(html,story){
 }
 
 const blocked=[];
-let contentTouched=0,whyFixed=0,hostsFixed=0,platesFixed=0;
+let contentTouched=0,whyFixed=0,contextFixed=0,watchFixed=0,hostsFixed=0,platesFixed=0;
 let processed=0,updatedLabels=0;
 
 for(const file of await walk(contentRoot)){
@@ -89,12 +89,14 @@ for(const file of await walk(contentRoot)){
   if(summary.blockedSources.length){
     for(const url of summary.blockedSources)blocked.push(`${story.slug}: ${url}`);
   }
-  if(summary.whyHeadings||summary.sourceHosts||summary.fallbackPlates){
+  if(summary.whyHeadings||summary.contextHeadings||summary.watchHeadings||summary.sourceHosts||summary.fallbackPlates){
     const next=JSON.stringify(story,null,2)+'\n';
     if(next!==raw){
       await writeFile(file,next,'utf8');
       contentTouched+=1;
       whyFixed+=summary.whyHeadings;
+      contextFixed+=summary.contextHeadings;
+      watchFixed+=summary.watchHeadings;
       hostsFixed+=summary.sourceHosts;
       platesFixed+=summary.fallbackPlates;
     }
@@ -131,5 +133,6 @@ console.log(
   `Editorial production hardening applied to ${processed} published FMB News articles; ` +
   `${updatedLabels} materially updated stories now expose an explicit Updated timestamp; ` +
   `${contentTouched} content records normalized ` +
-  `(${whyFixed} Why headings, ${hostsFixed} live-host citations, ${platesFixed} rotating fallback plates).`
+  `(${whyFixed} Why, ${contextFixed} Context, ${watchFixed} Watch headings; ` +
+  `${hostsFixed} live-host citations; ${platesFixed} rotating fallback plates).`
 );
