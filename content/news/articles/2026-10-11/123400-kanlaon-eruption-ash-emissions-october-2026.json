@@ -5,7 +5,13 @@
   "headline": "Kanlaon Erupts, Then Emits Ash Twice as Alert Level 2 Holds",
   "seoTitle": "Kanlaon Erupts, Emits Ash as Alert Level 2 Holds",
   "seoDescription": "Kanlaon produced a brief explosive eruption on October 10 and two more ash emissions on October 11 while PHIVOLCS kept Alert Level 2.",
-  "keywords": ["Kanlaon Volcano", "PHIVOLCS", "Negros Island", "ash emission", "Alert Level 2"],
+  "keywords": [
+    "Kanlaon Volcano",
+    "PHIVOLCS",
+    "Negros Island",
+    "ash emission",
+    "Alert Level 2"
+  ],
   "category": "Environment",
   "kicker": "Volcano Watch",
   "deck": "A brief explosive eruption sent ash five to six kilometers above the summit on Saturday; two lower ash plumes followed early Sunday.",
@@ -22,7 +28,7 @@
       ]
     },
     {
-      "heading": "Confirmed conditions",
+      "heading": "Context",
       "paragraphs": [
         "PHIVOLCS kept Kanlaon at Alert Level 2, indicating moderate volcanic unrest. The agency said continuing gas release can carry fine ash after the eruption opened a pathway through the vent.",
         "Ashfall was reported in parts of Negros Occidental. Residents inside the four-kilometer permanent danger zone had already evacuated, and entry into that zone remains prohibited."

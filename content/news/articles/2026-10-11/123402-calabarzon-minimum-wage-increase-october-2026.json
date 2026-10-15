@@ -5,7 +5,13 @@
   "headline": "CALABARZON Minimum Pay Rises October 26, Including ₱750 Kasambahay Increase",
   "seoTitle": "CALABARZON Wage Increases Take Effect October 26",
   "seoDescription": "Private-sector minimum wages rise by up to ₱45 daily and the kasambahay floor rises by ₱750 monthly across CALABARZON on October 26.",
-  "keywords": ["CALABARZON wages", "minimum wage", "kasambahay", "DOLE", "Wage Order IVA-23"],
+  "keywords": [
+    "CALABARZON wages",
+    "minimum wage",
+    "kasambahay",
+    "DOLE",
+    "Wage Order IVA-23"
+  ],
   "category": "Business",
   "kicker": "Workers and Wages",
   "deck": "New regional wage orders set private-sector daily floors at ₱550 to ₱645 and the domestic-worker monthly floor at ₱7,500.",
@@ -22,7 +28,7 @@
       ]
     },
     {
-      "heading": "What workers will receive",
+      "heading": "Context",
       "paragraphs": [
         "The National Wages and Productivity Commission lists new private-sector minimum rates ranging from ₱550 to ₱645 a day under Wage Order IVA-23. The precise increase depends on the industry and the classification of the city or municipality where the worker is employed.",
         "The domestic-worker increase is governed by Wage Order RB-IVA-DW-06 and applies across Batangas, Cavite, Laguna, Quezon and Rizal."

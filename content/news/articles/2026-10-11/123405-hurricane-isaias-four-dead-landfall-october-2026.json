@@ -5,7 +5,13 @@
   "headline": "Isaias Kills Four After U.S. Gulf Landfall; Oil Exchange Authorized",
   "seoTitle": "Isaias Kills Four; U.S. Authorizes Emergency Oil Exchange",
   "seoDescription": "Hurricane Isaias made landfall near Destin, Florida, killed at least four and prompted a U.S. emergency exchange of up to four million barrels of oil.",
-  "keywords": ["Hurricane Isaias", "Florida", "power outages", "Strategic Petroleum Reserve", "Gulf oil production"],
+  "keywords": [
+    "Hurricane Isaias",
+    "Florida",
+    "power outages",
+    "Strategic Petroleum Reserve",
+    "Gulf oil production"
+  ],
   "category": "World",
   "kicker": "Storm Aftermath",
   "deck": "The storm came ashore as a Category 2 hurricane, left about 670,000 customers without power and kept most U.S. Gulf oil output shut.",
@@ -22,7 +28,7 @@
       ]
     },
     {
-      "heading": "Energy disruption",
+      "heading": "Context",
       "paragraphs": [
         "About 69% of U.S. Gulf oil production and 57% of natural-gas production remained shut on October 10. Shell and Chevron began returning crews, but full restoration depended on inspections and safe operating conditions.",
         "The U.S. Department of Energy authorized emergency exchanges of up to four million barrels of crude from the Strategic Petroleum Reserve, split between ExxonMobil and BP America, to support refinery supply. The companies must return the borrowed oil with additional premium barrels in 2027."

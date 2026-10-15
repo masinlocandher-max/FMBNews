@@ -5,7 +5,13 @@
   "headline": "Riyadh Airport Attack Kills 12 and Wounds More Than 300",
   "seoTitle": "Riyadh Airport Attack Kills 12, Wounds Over 300",
   "seoDescription": "A missile struck a passenger terminal at Riyadh’s King Khalid International Airport, killing 12 and wounding more than 300.",
-  "keywords": ["Riyadh airport attack", "Saudi Arabia", "King Khalid International Airport", "Houthis", "Yemen war"],
+  "keywords": [
+    "Riyadh airport attack",
+    "Saudi Arabia",
+    "King Khalid International Airport",
+    "Houthis",
+    "Yemen war"
+  ],
   "category": "World",
   "kicker": "Middle East Conflict",
   "deck": "The October 10 strike was the third attack on the airport that week and the deadliest attack in Saudi Arabia in more than a decade.",
@@ -22,7 +28,7 @@
       ]
     },
     {
-      "heading": "Responsibility and uncertainty",
+      "heading": "Context",
       "paragraphs": [
         "The strike was the third attack on the airport that week. Earlier attacks were claimed by Yemen’s Houthi movement, but the group had not publicly claimed the October 10 strike when Reuters filed its report. FMB News therefore does not present responsibility for the latest attack as confirmed.",
         "The Saudi-led coalition vowed to respond. U.S. President Donald Trump said Washington was considering whether to join Saudi strikes on the Houthis, but no U.S. military decision had been announced."
