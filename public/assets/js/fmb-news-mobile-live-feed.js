@@ -68,7 +68,7 @@
   async function hydrate(){
     try{
       const fields=['slug','canonical_path','title','summary','deck','category','region','kicker','image_url','image_metadata','published_at','updated_at','content_json'].join(',');
-      const query=`select=${fields}&status=eq.published&order=updated_at.desc.nullslast,published_at.desc&limit=6`;
+      const query=`select=${fields}&status=eq.published&order=published_at.desc&limit=6`;
       const response=await fetch(`${API}?${query}`,{headers:{apikey:SUPABASE_PUBLISHABLE_KEY,Accept:'application/json'},cache:'no-store'});
       if(!response.ok)throw new Error(`FMB live feed request failed (${response.status})`);
       renderStories(await response.json());

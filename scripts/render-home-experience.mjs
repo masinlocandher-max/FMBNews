@@ -112,7 +112,7 @@ function isSportsStory(story) {
 
 function isEntertainmentStory(story) {
   const haystack = `${story?.category || ''} ${story?.kicker || ''} ${story?.headline || ''}`.toLowerCase();
-  return /entertainment|culture|lifestyle|film|music|pageant|celebrity|arts?\b/.test(haystack);
+  return /\b(?:entertainment|culture|lifestyle|film|music|pageant|celebrity|arts?)\b/.test(haystack);
 }
 
 function firstDistinct(stories, predicates = [], excluded = new Set()) {
@@ -120,7 +120,7 @@ function firstDistinct(stories, predicates = [], excluded = new Set()) {
     const hit = stories.find((story) => predicate(story) && !excluded.has(story.slug));
     if (hit) return hit;
   }
-  return stories.find((story) => !excluded.has(story.slug)) || stories[0];
+  return predicates.length ? null : stories.find((story) => !excluded.has(story.slug)) || stories[0];
 }
 
 function deskCard({ cls, href, title, label, story, emptyCopy, image = true }) {
