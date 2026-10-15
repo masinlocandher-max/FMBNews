@@ -1002,8 +1002,8 @@ html[data-fmb-theme="dark"] .fmb-ref.fmb-network-landing .daily-brief-signup{
    off: inside the site it links to, "www.francinemariebautista.com/news" is
    telling the reader where they already are.
 
-   Polarity follows the appearance system rather than being baked in, so Dark
-   gets the white artwork instead of ink that would vanish on black.
+   The material system keeps this masthead black in every appearance.
+   Use the white artwork in Light, System and Dark to preserve contrast.
 
    The wordmark text stays in the DOM, visually hidden. It is the accessible
    name a screen reader announces, and removing it would also quietly delete
@@ -1015,7 +1015,7 @@ html[data-fmb-theme="dark"] .fmb-ref.fmb-network-landing .daily-brief-signup{
   width:min(660px,52vw)!important;
   aspect-ratio:1400/347!important;
   margin:0 auto!important;
-  background:url(../images/fmb-news-masthead-light.webp) center/contain no-repeat!important;
+  background:url(../images/fmb-news-masthead-dark.webp) center/contain no-repeat!important;
   text-decoration:none!important;
 }
 .fmb-ref.fmb-network-landing .publication-lockup .fmb-editorial-wordmark{

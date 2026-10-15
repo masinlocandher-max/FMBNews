@@ -117,10 +117,10 @@
 
     const isWorld = (article) => /(^|\b)(world|international|global)(\b|$)/i.test(`${article.category || ''} ${article.region || ''}`);
     const isSports = (article) => /(^|\b)sports?(\b|$)/i.test(`${article.category || ''} ${article.region || ''}`);
-    const isEntertainment = (article) => /entertainment|culture|lifestyle|film|music|pageant|celebrity|arts?\b/i.test(`${article.category || ''} ${article.region || ''} ${article.title || ''}`);
-    const world = articles.find(isWorld);
-    const sports = articles.find(isSports);
-    const entertainment = articles.find(isEntertainment);
+    const isEntertainment = (article) => /\b(?:entertainment|culture|lifestyle|film|music|pageant|celebrity|arts?)\b/i.test(`${article.category || ''} ${article.region || ''} ${article.title || ''}`);
+    const world = articles.find((article) => article.slug !== lead.slug && isWorld(article));
+    const sports = articles.find((article) => article.slug !== lead.slug && isSports(article));
+    const entertainment = articles.find((article) => article.slug !== lead.slug && isEntertainment(article));
     const secondary = articles.find((article) => article.slug !== lead.slug) || articles[1];
 
     updateCard(desktop?.querySelector('.editorial-desk.worldwide'), world, 'FMB Worldwide');
@@ -470,12 +470,34 @@
     mount.replaceChildren(wrapper);
   }
 
+
+  async function hydrateHeadlineTicker() {
+    const runs = document.querySelectorAll('.headline-ticker .ticker-run');
+    if (!runs.length) return;
+    const articles = await get('news_articles', 'select=slug,canonical_path,title&status=eq.published&order=published_at.desc&limit=8');
+    if (!Array.isArray(articles) || !articles.length) return;
+    for (const run of runs) {
+      const fragment = document.createDocumentFragment();
+      for (const article of articles) {
+        const link = el('a', '', article.title);
+        link.href = storyHref(article);
+        if (run.getAttribute('aria-hidden') === 'true') link.tabIndex = -1;
+        fragment.appendChild(link);
+        const separator = el('span', 'ticker-separator', '•');
+        separator.setAttribute('aria-hidden', 'true');
+        fragment.appendChild(separator);
+      }
+      run.replaceChildren(fragment);
+    }
+  }
+
   async function boot() {
     await Promise.allSettled([
-      hydratePublicationHomepage(), hydrateHomepageStories(), hydrateArchive(), hydrateWorldwideLanding(), hydrateBriefFeature(),
+      hydrateHeadlineTicker(), hydratePublicationHomepage(), hydrateHomepageStories(), hydrateArchive(), hydrateWorldwideLanding(), hydrateBriefFeature(),
       renderArticleReader(), renderEdition('worldwide'), renderEdition('brief')
     ]);
 
+    window.setInterval(() => { hydrateHeadlineTicker().catch(() => {}); }, 5 * 60 * 1000);
     const isHome = Boolean(document.querySelector('.network-home') || document.querySelector('[data-fmb-mobile-home]'));
     if (isHome) {
       window.setInterval(() => {
