@@ -1,7 +1,8 @@
 import { access, readFile, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { editorialFallbackUrl } from './lib/editorial-fallback-pool.mjs';
+import { editorialFallbackUrl, pickEditorialFallback } from './lib/editorial-fallback-pool.mjs';
+import { normalizeStoryRecord } from './lib/editorial-section-canon.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const contentRoot=path.join(root,'content','news','articles');
@@ -74,11 +75,31 @@ function visibleUpdate(html,story){
   return html.replace(/(<div\s+class=["']article-date["'][^>]*>)([\s\S]*?)(<\/div>)/i,`$1$2 <span data-fmb-article-updated> · ${text}</span>$3`);
 }
 
+const blocked=[];
+let contentTouched=0,whyFixed=0,hostsFixed=0,platesFixed=0;
 let processed=0,updatedLabels=0;
+
 for(const file of await walk(contentRoot)){
   let story;
-  try{story=JSON.parse(await readFile(file,'utf8'))}catch{continue}
+  let raw;
+  try{raw=await readFile(file,'utf8');story=JSON.parse(raw)}catch{continue}
   if(story.status!=='published'||!story.slug||!story.headline||!story.publishedAt)continue;
+
+  const summary=normalizeStoryRecord(story,{editorialFallbackUrl,pickEditorialFallback});
+  if(summary.blockedSources.length){
+    for(const url of summary.blockedSources)blocked.push(`${story.slug}: ${url}`);
+  }
+  if(summary.whyHeadings||summary.sourceHosts||summary.fallbackPlates){
+    const next=JSON.stringify(story,null,2)+'\n';
+    if(next!==raw){
+      await writeFile(file,next,'utf8');
+      contentTouched+=1;
+      whyFixed+=summary.whyHeadings;
+      hostsFixed+=summary.sourceHosts;
+      platesFixed+=summary.fallbackPlates;
+    }
+  }
+
   const built=path.join(newsRoot,story.slug,'index.html');
   try{await access(built)}catch{continue}
   let html=await readFile(built,'utf8');
@@ -99,4 +120,16 @@ for(const file of await walk(contentRoot)){
   processed++;
 }
 
-console.log(`Editorial production hardening applied to ${processed} published FMB News articles; ${updatedLabels} materially updated stories now expose an explicit Updated timestamp.`);
+if(blocked.length){
+  throw new Error(
+    `Editorial production hardfix refused ${blocked.length} non-production source citation(s). ` +
+    `Map the host in scripts/lib/editorial-section-canon.mjs LIVE_HOST_REWRITES or cite the live publisher:\n  ${blocked.join('\n  ')}`
+  );
+}
+
+console.log(
+  `Editorial production hardening applied to ${processed} published FMB News articles; ` +
+  `${updatedLabels} materially updated stories now expose an explicit Updated timestamp; ` +
+  `${contentTouched} content records normalized ` +
+  `(${whyFixed} Why headings, ${hostsFixed} live-host citations, ${platesFixed} rotating fallback plates).`
+);

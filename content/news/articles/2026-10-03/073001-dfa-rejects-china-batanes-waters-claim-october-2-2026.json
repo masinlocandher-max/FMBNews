@@ -37,7 +37,7 @@
       ]
     },
     {
-      "heading": "Why it matters",
+      "heading": "Why this matters",
       "paragraphs": [
         "Waters around Batanes and the Luzon Strait contain undersea cable corridors linking the Philippines with Northeast Asia. Unauthorized surveying in the area raises questions about communications resilience, maritime law enforcement and regional security near Taiwan.",
         "The encounter also tests how the Philippines manages foreign research activity without allowing a close ship-to-ship confrontation to escalate."
@@ -76,16 +76,16 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-skyline.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial asset",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying a verified report on the maritime confrontation off Batanes. It is not a photograph and does not depict the reported event, people, vessels, weapons or locations.",
-    "alt": "FMB News editorial graphic for the Batanes maritime confrontation",
+    "alt": "FMB News, Filipino Media Bulletin: a city skyline at night reflected across open water.",
     "width": 1200,
     "height": 675,
-    "sourceUrl": null
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
   },
   "audit": {
     "sourceCheckedAt": "2026-10-03T07:30:04.665+08:00",

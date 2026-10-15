@@ -43,7 +43,7 @@
       ]
     },
     {
-      "heading": "Why it matters to Filipinos",
+      "heading": "Why this matters",
       "paragraphs": [
         "The Philippines imports most of its crude oil and is exposed when wars, shipping attacks or other disruptions restrict supply and lift world prices. A workable reserve and release system could give the government a temporary buffer, but its value will depend on the amount stored, replenishment rules, financing and transparent release triggers.",
         "For households and transport operators, the immediate effect is limited because the new agreement starts a study rather than a fuel release. Its longer-term importance is whether the survey produces funded storage capacity and clearer emergency rules before the next disruption."
@@ -95,13 +95,13 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-archipelago.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial artwork",
     "credit": "Editorial graphic: FMB News",
-    "caption": "FMB News editorial graphic. This is a non-documentary visual and does not depict the October 8 signing, an oil-storage site or petroleum stocks.",
-    "alt": "FMB News editorial graphic accompanying a report on a Philippine oil-security assessment",
+    "caption": "FMB News branded editorial plate. This is publication artwork, not a photograph of the reported event.",
+    "alt": "FMB News, Filipino Media Bulletin: the Philippine flag above an island coastline at sunrise.",
     "width": 1200,
     "height": 675,
     "sourceUrl": "https://www.francinemariebautista.com/news/"

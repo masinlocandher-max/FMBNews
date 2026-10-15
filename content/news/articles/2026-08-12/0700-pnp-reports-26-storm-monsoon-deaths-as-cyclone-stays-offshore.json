@@ -7,7 +7,12 @@
   "headline": "PNP Reports 26 Storm and Monsoon Deaths as Cyclone Stays Offshore",
   "seoTitle": "PNP Reports 26 Storm and Monsoon Deaths as Cyclone Stays Offshore",
   "seoDescription": "The PNP reported 26 deaths linked to recent storms and monsoon rains, subject to NDRRMC validation, while PAGASA tracked a tropical depression far east of Northern Luzon and outside the PAR.",
-  "keywords": ["PNP storm deaths", "Habagat casualties", "PAGASA tropical depression", "August 12 2026 weather"],
+  "keywords": [
+    "PNP storm deaths",
+    "Habagat casualties",
+    "PAGASA tropical depression",
+    "August 12 2026 weather"
+  ],
   "category": "Environment",
   "kicker": "Disasters · Weather · Public safety",
   "deck": "Police reported 26 deaths linked to recent storms and monsoon rains, with the tally still subject to validation, while PAGASA tracked a tropical depression far east of Northern Luzon and outside the Philippine Area of Responsibility.",
@@ -31,7 +36,7 @@
       ]
     },
     {
-      "heading": "Why this matters to Filipinos",
+      "heading": "Why this matters",
       "paragraphs": [
         "Preliminary casualty figures can change as local and national agencies reconcile reports, but the toll underscores the continuing risks from saturated slopes, flooding and dangerous travel conditions. Clear attribution prevents an early police count from being mistaken for a finalized government total."
       ]

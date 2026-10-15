@@ -7,7 +7,12 @@
   "headline": "Government Moves to Accelerate Spending After Q2 GDP Growth Slows to 2.3%",
   "seoTitle": "PH Government Speeds Up Spending After Q2 GDP Slows to 2.3%",
   "seoDescription": "The Philippine economy grew 2.3% in Q2 2026. Government officials say infrastructure spending is expected to pick up as reviewed projects resume.",
-  "keywords": ["Philippines Q2 GDP 2026", "government spending Philippines", "infrastructure spending 2026", "2.3 percent GDP"],
+  "keywords": [
+    "Philippines Q2 GDP 2026",
+    "government spending Philippines",
+    "infrastructure spending 2026",
+    "2.3 percent GDP"
+  ],
   "category": "Business",
   "kicker": "Economy · Public spending",
   "deck": "The Philippine economy expanded 2.3% year on year in the second quarter, while government officials pointed to faster infrastructure implementation as part of the second-half recovery effort.",
@@ -65,19 +70,20 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
-    "sourceUrl": null,
+    "url": "/assets/images/news/fmb-news-fallback-global.jpg",
+    "sourceUrl": "https://www.francinemariebautista.com/news/",
     "creator": "FMB News",
     "license": "FMB-owned editorial visual",
     "licenseUrl": "https://www.francinemariebautista.com/news/",
     "usageStatus": "The email referenced a PCO photograph through a publisher page but did not provide a stable original image asset URL that could be independently verified for this publication pass.",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying the report on second-quarter growth and public-spending acceleration.",
-    "alt": "FMB News editorial visual for the Philippine economy and government spending report",
+    "alt": "FMB News, Filipino Media Bulletin: a world map and globe centred on the Philippines.",
     "width": 1200,
     "height": 675,
     "focusX": 50,
-    "focusY": 50
+    "focusY": 50,
+    "source": "FMB News"
   },
   "audit": {
     "sourceCheckedAt": "2026-08-16T07:01:00+08:00",

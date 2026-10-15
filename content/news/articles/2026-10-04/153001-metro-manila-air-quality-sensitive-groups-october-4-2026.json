@@ -5,7 +5,13 @@
   "headline": "Nine Metro Manila Stations Report Unhealthy Air for Sensitive Groups",
   "seoTitle": "Nine Metro Manila Stations Flag Unhealthy Air",
   "seoDescription": "DENR-EMB reported unhealthy PM2.5 readings for sensitive groups at nine Metro Manila monitoring stations on October 4.",
-  "keywords": ["Metro Manila air quality", "PM2.5", "DENR-EMB", "haze", "Kalimantan fires"],
+  "keywords": [
+    "Metro Manila air quality",
+    "PM2.5",
+    "DENR-EMB",
+    "haze",
+    "Kalimantan fires"
+  ],
   "category": "Environment",
   "kicker": "Air Quality Alert",
   "deck": "The 8 a.m. snapshot covered stations from Valenzuela to Las Piñas, while the environment bureau urged vulnerable people to limit outdoor exposure.",
@@ -30,7 +36,7 @@
       ]
     },
     {
-      "heading": "Why it matters",
+      "heading": "Why this matters",
       "paragraphs": [
         "PM2.5 can reach deep into the lungs, making poor-air episodes especially important for children, older adults, pregnant people, outdoor workers and people with heart or lung conditions. Conditions can differ sharply across the metropolis, so residents should use the nearest official monitor rather than assume one reading represents the whole region.",
         "The advisory concerns elevated exposure risk, not a declaration that everyone outdoors will become ill. Reducing strenuous or prolonged outdoor activity is a precaution while readings remain elevated."
@@ -68,16 +74,16 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-skyline.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial asset",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual. This is not a photograph of the October 4 haze or any particular monitoring station.",
-    "alt": "FMB News editorial graphic accompanying a Metro Manila air-quality advisory",
+    "alt": "FMB News, Filipino Media Bulletin: a city skyline at night reflected across open water.",
     "width": 1200,
     "height": 675,
-    "sourceUrl": null
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
   },
   "audit": {
     "sourceCheckedAt": "2026-10-04T15:27:00+08:00",

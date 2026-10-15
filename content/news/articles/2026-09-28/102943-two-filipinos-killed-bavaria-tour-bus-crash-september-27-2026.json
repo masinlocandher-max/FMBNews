@@ -46,7 +46,7 @@
       ]
     },
     {
-      "heading": "Why it matters",
+      "heading": "Why this matters",
       "paragraphs": [
         "The crash caused multiple Filipino casualties abroad and requires cross-border hospital, family-notification and consular coordination. Early discrepancies in passenger totals also make continued official confirmation important."
       ]
@@ -83,16 +83,16 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-skyline.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial asset",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying a verified report about the September 27 bus crash in Bavaria. It is not a photograph and does not depict the accident.",
-    "alt": "FMB News editorial graphic for a report on the Bavaria tour-bus crash involving Filipino travelers",
+    "alt": "FMB News, Filipino Media Bulletin: a city skyline at night reflected across open water.",
     "width": 1200,
     "height": 675,
-    "sourceUrl": null
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
   },
   "audit": {
     "sourceCheckedAt": "2026-09-28T10:29:43+08:00",

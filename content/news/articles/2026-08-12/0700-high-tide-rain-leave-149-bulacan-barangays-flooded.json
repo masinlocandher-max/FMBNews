@@ -7,7 +7,12 @@
   "headline": "High Tide and Rain Leave 149 Bulacan Barangays Flooded",
   "seoTitle": "High Tide and Rain Leave 149 Bulacan Barangays Flooded",
   "seoDescription": "Bulacan authorities said 149 barangays across 11 localities remained flooded as of noon August 11 after high tide and intermittent heavy rain, with some floodwater reaching six feet.",
-  "keywords": ["Bulacan flooding", "149 barangays flooded", "high tide Manila Bay", "Bulacan evacuation centers"],
+  "keywords": [
+    "Bulacan flooding",
+    "149 barangays flooded",
+    "high tide Manila Bay",
+    "Bulacan evacuation centers"
+  ],
   "category": "Community",
   "kicker": "Bulacan · Flooding · Community safety",
   "deck": "Bulacan authorities said 149 barangays across 11 localities remained flooded as of noon August 11 after high tide and intermittent heavy rain, with some areas reporting water up to six feet deep.",
@@ -31,7 +36,7 @@
       ]
     },
     {
-      "heading": "Why this matters to Filipinos",
+      "heading": "Why this matters",
       "paragraphs": [
         "Persistent flooding disrupts transport, work, schooling and access to food, medicine and other services. Communities near waterways and low-lying coastal areas can remain at risk even between rain periods when high tide slows drainage."
       ]

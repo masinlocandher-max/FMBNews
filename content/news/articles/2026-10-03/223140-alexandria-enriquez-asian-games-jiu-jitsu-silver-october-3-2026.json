@@ -49,7 +49,7 @@
       ]
     },
     {
-      "heading": "Why it matters",
+      "heading": "Why this matters",
       "paragraphs": [
         "The result gave the Philippines a ninth silver and extended a multi-sport medal surge at the Games. The clean distinction between an assured medal and a final result matters because medal-table totals should change only after the relevant contest is completed."
       ]
@@ -93,16 +93,16 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-archipelago.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial asset",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying verified Asian Games jiu-jitsu results. It is not a photograph of Alexandria Enriquez, the final or the medal ceremony.",
-    "alt": "FMB News editorial graphic for Alexandria Enriquez's Asian Games jiu-jitsu silver medal",
+    "alt": "FMB News, Filipino Media Bulletin: the Philippine flag above an island coastline at sunrise.",
     "width": 1200,
     "height": 675,
-    "sourceUrl": null
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
   },
   "audit": {
     "sourceCheckedAt": "2026-10-03T22:31:39+08:00",

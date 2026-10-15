@@ -7,7 +7,12 @@
   "headline": "Brief Reports ₱37.3M Ilocos Relief and 750 Tons of Floodway Waste Cleared",
   "seoTitle": "Brief: ₱37.3M Ilocos Relief, 750T Floodway Waste Cleared",
   "seoDescription": "An FMB News midday brief reports ₱37.3 million in DSWD relief for Ilocos LGUs and 750 tons of waste cleared from flood-control channels; exact current releases remain source-attributed.",
-  "keywords": ["DSWD Ilocos relief August 2026", "37.3 million relief Ilocos", "DPWH 750 tons waste", "floodway cleanup Philippines"],
+  "keywords": [
+    "DSWD Ilocos relief August 2026",
+    "37.3 million relief Ilocos",
+    "DPWH 750 tons waste",
+    "floodway cleanup Philippines"
+  ],
   "category": "National",
   "kicker": "Disaster relief · Recovery operations",
   "deck": "The newsroom brief reports new relief support for flood-affected Ilocos communities and a large-scale drainage cleanup, while FMB News keeps the exact peso and tonnage figures explicitly source-attributed.",
@@ -65,19 +70,20 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
-    "sourceUrl": null,
+    "url": "/assets/images/news/fmb-news-fallback-global.jpg",
+    "sourceUrl": "https://www.francinemariebautista.com/news/",
     "creator": "FMB News",
     "license": "FMB-owned editorial visual",
     "licenseUrl": "https://www.francinemariebautista.com/news/",
     "usageStatus": "FMB-owned editorial visual used because the email's recommended DSWD/PNA image is not supplied as a stable independently retrievable original asset with confirmed event-specific provenance.",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying the source-attributed Ilocos relief and floodway-cleanup report.",
-    "alt": "FMB News editorial visual for disaster relief and floodway cleanup",
+    "alt": "FMB News, Filipino Media Bulletin: a world map and globe centred on the Philippines.",
     "width": 1200,
     "height": 675,
     "focusX": 50,
-    "focusY": 50
+    "focusY": 50,
+    "source": "FMB News"
   },
   "audit": {
     "sourceCheckedAt": "2026-08-15T19:38:00+08:00",

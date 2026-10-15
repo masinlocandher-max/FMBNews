@@ -49,7 +49,7 @@
       ]
     },
     {
-      "heading": "Why it matters to Filipinos",
+      "heading": "Why this matters",
       "paragraphs": [
         "The ruling concerns accountability for taxpayer money whose operational details are confidential but whose use remains subject to audit controls. The next legal step will test whether the OVP can overturn the commission's final administrative action and clarify who must return disallowed funds if the ruling stands."
       ]
@@ -113,13 +113,13 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-global.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial artwork",
     "credit": "Editorial graphic: FMB News",
-    "caption": "FMB News editorial graphic. This is a non-documentary visual and does not depict the COA resolution, the confidential-fund transactions or any court filing.",
-    "alt": "FMB News editorial graphic accompanying a report on a Commission on Audit ruling",
+    "caption": "FMB News branded editorial plate. This is publication artwork, not a photograph of the reported event.",
+    "alt": "FMB News, Filipino Media Bulletin: a world map and globe centred on the Philippines.",
     "width": 1200,
     "height": 675,
     "sourceUrl": "https://www.francinemariebautista.com/news/"

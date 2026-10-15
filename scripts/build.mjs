@@ -20,6 +20,11 @@ await import('./fetch-approved-mobile-assets.mjs');
 // third-party host.
 await import('./fetch-rights-cleared-photography.mjs');
 
+// Normalize section canon, live source hosts, and rotating fallback plates in
+// content records BEFORE article HTML is generated. Verify, render, and hardfix
+// share the same classifiers so CI cannot go green while the article lenses are empty.
+await import('./normalize-editorial-content.mjs');
+
 // Archive and structured news articles are rendered independently from the
 // publication homepage. The canonical home is authored later by exactly one
 // renderer, so no legacy homepage is generated and then overwritten.

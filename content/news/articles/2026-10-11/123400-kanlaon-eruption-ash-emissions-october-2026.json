@@ -35,7 +35,7 @@
       ]
     },
     {
-      "heading": "Why it matters to Filipinos",
+      "heading": "Why this matters",
       "paragraphs": [
         "Ash can reduce visibility, irritate the eyes and lungs, contaminate water and affect crops and livestock. Communities downwind should follow PHIVOLCS and local-government instructions rather than rely on unverified social-media posts."
       ]
@@ -72,13 +72,13 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-skyline.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial artwork",
     "credit": "Editorial graphic: FMB News",
-    "caption": "FMB News editorial graphic. This is a non-documentary visual and does not depict Kanlaon’s October 10 eruption or ash plumes.",
-    "alt": "FMB News editorial graphic accompanying a report on Kanlaon Volcano activity",
+    "caption": "FMB News branded editorial plate. This is publication artwork, not a photograph of the reported event.",
+    "alt": "FMB News, Filipino Media Bulletin: a city skyline at night reflected across open water.",
     "width": 1200,
     "height": 675,
     "sourceUrl": "https://www.francinemariebautista.com/news/"

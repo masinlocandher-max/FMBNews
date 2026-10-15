@@ -7,7 +7,12 @@
   "headline": "AFP Says Philippines Needs No Foreign Approval for Ayungin Resupply Missions",
   "seoTitle": "AFP: Philippines Needs No Foreign Approval for Ayungin Resupply",
   "seoDescription": "The AFP said the Philippines does not need approval from any foreign power to conduct resupply missions to BRP Sierra Madre at Ayungin Shoal.",
-  "keywords": ["Ayungin Shoal resupply", "BRP Sierra Madre", "West Philippine Sea", "Armed Forces of the Philippines"],
+  "keywords": [
+    "Ayungin Shoal resupply",
+    "BRP Sierra Madre",
+    "West Philippine Sea",
+    "Armed Forces of the Philippines"
+  ],
   "category": "National",
   "kicker": "West Philippine Sea · National defense",
   "deck": "The Armed Forces of the Philippines said the country does not need approval from any foreign power to conduct resupply missions to BRP Sierra Madre at Ayungin Shoal.",
@@ -31,7 +36,7 @@
       ]
     },
     {
-      "heading": "Why this matters to Filipinos",
+      "heading": "Why this matters",
       "paragraphs": [
         "The statement concerns the Philippines' ability to support its personnel and exercise its maritime rights without accepting another state's claimed veto over routine operations. The issue directly affects national security and the protection of Philippine interests in the West Philippine Sea."
       ]
@@ -53,19 +58,20 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
-    "sourceUrl": null,
+    "url": "/assets/images/news/fmb-news-fallback-archipelago.jpg",
+    "sourceUrl": "https://www.francinemariebautista.com/news/",
     "creator": "FMB News",
     "license": "FMB-owned editorial visual",
     "licenseUrl": "https://www.francinemariebautista.com/news/",
     "usageStatus": "FMB-owned editorial visual used because reuse rights and a deliverable local asset for the recommended photograph could not be independently verified.",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying the report. It does not depict the August 12 statement or a specific resupply mission.",
-    "alt": "FMB News editorial visual for the report on Ayungin Shoal resupply missions",
+    "alt": "FMB News, Filipino Media Bulletin: the Philippine flag above an island coastline at sunrise.",
     "width": 1200,
     "height": 675,
     "focusX": 50,
-    "focusY": 50
+    "focusY": 50,
+    "source": "FMB News"
   },
   "audit": {
     "sourceCheckedAt": "2026-08-13T01:05:00+08:00",

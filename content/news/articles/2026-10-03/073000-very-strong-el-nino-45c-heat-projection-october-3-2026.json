@@ -37,7 +37,7 @@
       ]
     },
     {
-      "heading": "Why it matters",
+      "heading": "Why this matters",
       "paragraphs": [
         "Very strong El Niño conditions can threaten crops, water supply, energy production, public health and household budgets. The CCC is urging national agencies, local governments and communities to use official climate information before impacts escalate.",
         "Workers outdoors, children, older people, farmers, fisherfolk and households with limited water access face the highest near-term exposure."
@@ -76,16 +76,16 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-skyline.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial asset",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying a verified report on the Philippines’ preparation for a very strong El Niño. It is not a photograph and does not depict the reported event, people, vessels, weapons or locations.",
-    "alt": "FMB News editorial graphic for the Philippines’ very strong El Niño outlook",
+    "alt": "FMB News, Filipino Media Bulletin: a city skyline at night reflected across open water.",
     "width": 1200,
     "height": 675,
-    "sourceUrl": null
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
   },
   "audit": {
     "sourceCheckedAt": "2026-10-03T07:30:04.665+08:00",

@@ -36,7 +36,7 @@
       ]
     },
     {
-      "heading": "Why it matters",
+      "heading": "Why this matters",
       "paragraphs": [
         "Yape’s title is the first gold awarded in the Asian Games’ mixed individual virtual taekwondo event and pushed the Philippines beyond its Hangzhou overall medal count.",
         "The broader medal surge shows gains across taekwondo, boxing, jiu-jitsu and beach volleyball, while keeping the distinction clear between qualification, an assured medal and a completed final result."
@@ -82,16 +82,16 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-global.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial asset",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying a verified report on the Philippines’ October 2 Asian Games medal results. It is not a photograph and does not depict the reported event, people, vessels, weapons or locations.",
-    "alt": "FMB News editorial graphic for the Philippine Asian Games medal rush",
+    "alt": "FMB News, Filipino Media Bulletin: a world map and globe centred on the Philippines.",
     "width": 1200,
     "height": 675,
-    "sourceUrl": null
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
   },
   "audit": {
     "sourceCheckedAt": "2026-10-03T07:30:04.665+08:00",

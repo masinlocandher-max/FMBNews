@@ -5,7 +5,13 @@
   "headline": "DOE Admits Planning Gaps as Visayas Outages May Persist Into 2027",
   "seoTitle": "DOE Admits Planning Gaps Behind Visayas Grid Outages",
   "seoDescription": "Energy Secretary Sharon Garin acknowledged planning gaps as the Visayas grid faces continued alert risks and long-term fixes may not arrive before 2028.",
-  "keywords": ["Visayas grid", "Department of Energy", "Sharon Garin", "power outages", "NGCP"],
+  "keywords": [
+    "Visayas grid",
+    "Department of Energy",
+    "Sharon Garin",
+    "power outages",
+    "NGCP"
+  ],
   "category": "Business",
   "kicker": "Power Security",
   "deck": "The Energy Department told lawmakers that near-term measures may reduce but not eliminate grid alerts, while durable capacity additions could take until 2028.",
@@ -31,7 +37,7 @@
       ]
     },
     {
-      "heading": "Why it matters",
+      "heading": "Why this matters",
       "paragraphs": [
         "Unreliable electricity raises costs for households, hospitals, small businesses and manufacturers across the Visayas. It can also disrupt telecommunications, water systems and local government services.",
         "Consumers should continue to monitor National Grid Corporation of the Philippines and local distribution utility advisories. FMB News first reported the current cycle of Visayas grid stress on August 12."
@@ -76,16 +82,16 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-skyline.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial asset",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual. This is not a photograph of a specific power plant, outage or congressional hearing.",
-    "alt": "FMB News editorial graphic accompanying a report on Visayas power-grid planning",
+    "alt": "FMB News, Filipino Media Bulletin: a city skyline at night reflected across open water.",
     "width": 1200,
     "height": 675,
-    "sourceUrl": null
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
   },
   "audit": {
     "sourceCheckedAt": "2026-10-04T09:31:00+08:00",

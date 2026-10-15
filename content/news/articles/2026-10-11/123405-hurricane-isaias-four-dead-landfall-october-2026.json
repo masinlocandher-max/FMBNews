@@ -35,7 +35,7 @@
       ]
     },
     {
-      "heading": "Why it matters to Filipinos",
+      "heading": "Why this matters",
       "paragraphs": [
         "Disruptions to Gulf production and U.S. refinery supply can add volatility to world fuel markets. For the import-dependent Philippines, sustained price pressure can feed into pump prices, transport costs and inflation even when the storm itself is far away."
       ]
@@ -79,13 +79,13 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-archipelago.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial artwork",
     "credit": "Editorial graphic: FMB News",
-    "caption": "FMB News editorial graphic. This non-documentary visual does not depict Hurricane Isaias, its damage or affected residents.",
-    "alt": "FMB News editorial graphic accompanying a report on Hurricane Isaias and oil-market disruption",
+    "caption": "FMB News branded editorial plate. This is publication artwork, not a photograph of the reported event.",
+    "alt": "FMB News, Filipino Media Bulletin: the Philippine flag above an island coastline at sunrise.",
     "width": 1200,
     "height": 675,
     "sourceUrl": "https://www.francinemariebautista.com/news/"

@@ -7,7 +7,12 @@
   "headline": "DA Pegs Weather-Related Agricultural Damage at About ₱197 Million",
   "seoTitle": "DA Pegs Weather-Related Agricultural Damage at About ₱197 Million",
   "seoDescription": "The Department of Agriculture estimated agricultural damage from recent bad weather at about ₱197 million as assessments continued.",
-  "keywords": ["Department of Agriculture damage", "Habagat agriculture losses", "Luis Maymay crop damage", "Philippines agriculture"],
+  "keywords": [
+    "Department of Agriculture damage",
+    "Habagat agriculture losses",
+    "Luis Maymay crop damage",
+    "Philippines agriculture"
+  ],
   "category": "Business",
   "kicker": "Agriculture · Severe weather",
   "deck": "The Department of Agriculture estimated agricultural damage from recent bad weather at about ₱197 million as field assessments continued.",
@@ -31,7 +36,7 @@
       ]
     },
     {
-      "heading": "Why this matters to Filipinos",
+      "heading": "Why this matters",
       "paragraphs": [
         "Damage to rice, corn, livestock, fisheries and other farm production can affect household livelihoods and local food supply. The assessment also helps determine where government rehabilitation support may be needed."
       ]
@@ -53,19 +58,20 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
-    "sourceUrl": null,
+    "url": "/assets/images/news/fmb-news-fallback-skyline.jpg",
+    "sourceUrl": "https://www.francinemariebautista.com/news/",
     "creator": "FMB News",
     "license": "FMB-owned editorial visual",
     "licenseUrl": "https://www.francinemariebautista.com/news/",
     "usageStatus": "FMB-owned editorial visual used because reuse rights and a deliverable local asset for the recommended photograph could not be independently verified.",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying the agricultural damage report. It does not depict a specific affected field or community.",
-    "alt": "FMB News editorial visual for the report on weather-related agricultural damage",
+    "alt": "FMB News, Filipino Media Bulletin: a city skyline at night reflected across open water.",
     "width": 1200,
     "height": 675,
     "focusX": 50,
-    "focusY": 50
+    "focusY": 50,
+    "source": "FMB News"
   },
   "audit": {
     "sourceCheckedAt": "2026-08-13T01:05:00+08:00",

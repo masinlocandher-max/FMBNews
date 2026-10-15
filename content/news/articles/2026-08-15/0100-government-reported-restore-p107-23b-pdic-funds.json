@@ -7,7 +7,12 @@
   "headline": "Newsroom Brief Reports Government Plan to Restore ₱107.23 Billion in PDIC Funds",
   "seoTitle": "Brief: Government Plans ₱107.23B PDIC Fund Restoration",
   "seoDescription": "An FMB News editorial brief citing a new Philstar report says the government plans to restore ₱107.23 billion to PDIC over the 2027 and 2028 budgets.",
-  "keywords": ["PDIC funds 107 billion", "Ralph Recto PDIC", "2027 budget PDIC", "Deposit Insurance Fund"],
+  "keywords": [
+    "PDIC funds 107 billion",
+    "Ralph Recto PDIC",
+    "2027 budget PDIC",
+    "Deposit Insurance Fund"
+  ],
   "category": "Business",
   "kicker": "Public finance · Deposit insurance",
   "deck": "An FMB News overnight brief cites a new report that the government plans to return ₱107.23 billion previously transferred from PDIC, beginning with ₱57 billion in the proposed 2027 budget.",
@@ -59,19 +64,20 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
-    "sourceUrl": null,
+    "url": "/assets/images/news/fmb-news-fallback-skyline.jpg",
+    "sourceUrl": "https://www.francinemariebautista.com/news/",
     "creator": "FMB News",
     "license": "FMB-owned editorial visual",
     "licenseUrl": "https://www.francinemariebautista.com/news/",
     "usageStatus": "FMB-owned editorial visual used because the email identifies the proposed Philstar hero as publisher-owned and requiring permission.",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying the source-attributed report on the proposed restoration of PDIC funds.",
-    "alt": "FMB News editorial visual for the PDIC fund-restoration report",
+    "alt": "FMB News, Filipino Media Bulletin: a city skyline at night reflected across open water.",
     "width": 1200,
     "height": 675,
     "focusX": 50,
-    "focusY": 50
+    "focusY": 50,
+    "source": "FMB News"
   },
   "audit": {
     "sourceCheckedAt": "2026-08-15T07:46:00+08:00",

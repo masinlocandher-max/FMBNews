@@ -37,7 +37,7 @@
       ]
     },
     {
-      "heading": "Why it matters to Filipinos",
+      "heading": "Why this matters",
       "paragraphs": [
         "A ballistic-missile launch on the Korean Peninsula can affect regional security, aviation or maritime warnings and the safety outlook for Filipinos living and working in South Korea and Japan.",
         "No immediate threat to the Philippines or disruption to Filipino communities was reported."
@@ -90,16 +90,16 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-archipelago.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial asset",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying a verified report on North Korea’s October 3 ballistic-missile launch. It is not a photograph and does not depict the reported event, people, weapons or locations.",
-    "alt": "FMB News editorial graphic for North Korea’s October 3 ballistic-missile launch",
+    "alt": "FMB News, Filipino Media Bulletin: the Philippine flag above an island coastline at sunrise.",
     "width": 1200,
     "height": 675,
-    "sourceUrl": null
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
   },
   "audit": {
     "sourceCheckedAt": "2026-10-03T11:28:30+08:00",

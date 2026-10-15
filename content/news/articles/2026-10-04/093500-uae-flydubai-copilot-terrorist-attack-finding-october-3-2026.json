@@ -5,7 +5,13 @@
   "headline": "UAE Says Flydubai Co-Pilot Attempted Terrorist Attack With Crash Axe",
   "seoTitle": "UAE Calls Flydubai Incident Attempted Terrorist Attack",
   "seoDescription": "UAE prosecutors say a Flydubai co-pilot tried to seize a flight using a crash axe. The investigation into motive and possible links remains open.",
-  "keywords": ["Flydubai", "United Arab Emirates", "aviation security", "Saudi Arabia", "terrorism investigation"],
+  "keywords": [
+    "Flydubai",
+    "United Arab Emirates",
+    "aviation security",
+    "Saudi Arabia",
+    "terrorism investigation"
+  ],
   "category": "World",
   "kicker": "Aviation Security",
   "deck": "Prosecutors said the co-pilot attacked the captain and tried to take control of the aircraft. Motive, possible links and technical evidence remain under investigation.",
@@ -36,7 +42,7 @@
       ]
     },
     {
-      "heading": "Why it matters to Filipinos",
+      "heading": "Why this matters",
       "paragraphs": [
         "Gulf air routes are heavily used by overseas Filipino workers and their families. The case raises public-interest questions about crew screening, cockpit security and airline crisis response, although authorities have not reported that a Philippine route or Filipino passenger was involved.",
         "Travellers should rely on airline and airport advisories for any operational changes. No broad Flydubai suspension was announced in the verified sources reviewed for this report."
@@ -81,16 +87,16 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-global.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial asset",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual. This is not a photograph of Flydubai flight FZ1073 and does not depict the incident.",
-    "alt": "FMB News editorial graphic accompanying a report on the Flydubai flight investigation",
+    "alt": "FMB News, Filipino Media Bulletin: a world map and globe centred on the Philippines.",
     "width": 1200,
     "height": 675,
-    "sourceUrl": null
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
   },
   "audit": {
     "sourceCheckedAt": "2026-10-04T09:31:00+08:00",

@@ -37,7 +37,7 @@
       ]
     },
     {
-      "heading": "Why it matters",
+      "heading": "Why this matters",
       "paragraphs": [
         "The result adds another medal to the Philippines' Asian Games campaign and another podium finish for the national esports program.",
         "It follows the Philippines' bronze in Pokémon UNITE, extending the country's medal presence across more than one esports title at the Games."
@@ -76,16 +76,16 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-global.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial asset",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying a verified report on the Philippines' Honor of Kings bronze at the 2026 Asian Games. It is not a photograph and does not depict the semifinal.",
-    "alt": "FMB News editorial graphic for a report on the Philippine Honor of Kings team's Asian Games bronze",
+    "alt": "FMB News, Filipino Media Bulletin: a world map and globe centred on the Philippines.",
     "width": 1200,
     "height": 675,
-    "sourceUrl": null
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
   },
   "audit": {
     "sourceCheckedAt": "2026-09-28T12:27:44+08:00",

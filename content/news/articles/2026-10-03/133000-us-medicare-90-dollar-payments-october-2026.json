@@ -43,7 +43,7 @@
       ]
     },
     {
-      "heading": "Why it matters to Filipinos",
+      "heading": "Why this matters",
       "paragraphs": [
         "Older Filipino Americans and dual citizens who are enrolled in Medicare Part B may be among the eligible recipients if they meet the program's rules. Filipino nationality or residence in the Philippines alone does not create eligibility, and the measure does not apply to PhilHealth benefits."
       ]
@@ -73,16 +73,16 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-archipelago.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial asset",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying a verified report on a U.S. Medicare payment announcement. It is not a photograph and does not depict a beneficiary, payment or government transaction.",
-    "alt": "FMB News editorial graphic for the U.S. announcement of one-time Medicare Part B payments",
+    "alt": "FMB News, Filipino Media Bulletin: the Philippine flag above an island coastline at sunrise.",
     "width": 1200,
     "height": 675,
-    "sourceUrl": null
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
   },
   "audit": {
     "sourceCheckedAt": "2026-10-03T13:30:00+08:00",

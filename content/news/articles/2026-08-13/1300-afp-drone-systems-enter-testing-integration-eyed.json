@@ -7,7 +7,12 @@
   "headline": "AFP Drone Systems Enter Testing as Military Eyes Integration",
   "seoTitle": "AFP Drone Systems Enter Testing, Integration Eyed",
   "seoDescription": "AFP chief Gen. Antonio Nafarrete said drone systems are being tested as the military works toward integrating unmanned capabilities across its services.",
-  "keywords": ["AFP drone systems", "Antonio Nafarrete", "Philippine military drones", "unmanned systems"],
+  "keywords": [
+    "AFP drone systems",
+    "Antonio Nafarrete",
+    "Philippine military drones",
+    "unmanned systems"
+  ],
   "category": "National",
   "kicker": "Defense · Military modernization",
   "deck": "AFP chief Gen. Antonio Nafarrete said drone systems are under testing as the military works toward integrating unmanned capabilities across its services.",
@@ -59,19 +64,20 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
-    "sourceUrl": null,
+    "url": "/assets/images/news/fmb-news-fallback-skyline.jpg",
+    "sourceUrl": "https://www.francinemariebautista.com/news/",
     "creator": "FMB News",
     "license": "FMB-owned editorial visual",
     "licenseUrl": "https://www.francinemariebautista.com/news/",
     "usageStatus": "FMB-owned editorial visual used because the bulletin did not provide a stable, independently rights-verifiable image asset URL.",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying the report on AFP drone-system testing. It does not depict a specific drone, test or military operation.",
-    "alt": "FMB News editorial visual for the AFP drone-system testing report",
+    "alt": "FMB News, Filipino Media Bulletin: a city skyline at night reflected across open water.",
     "width": 1200,
     "height": 675,
     "focusX": 50,
-    "focusY": 50
+    "focusY": 50,
+    "source": "FMB News"
   },
   "audit": {
     "sourceCheckedAt": "2026-08-13T19:15:00+08:00",

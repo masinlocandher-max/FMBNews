@@ -50,7 +50,7 @@
       ]
     },
     {
-      "heading": "Why this matters to Filipinos",
+      "heading": "Why this matters",
       "paragraphs": [
         "A more maneuverable intermediate-range missile could complicate regional defense planning involving South Korea, Japan and the United States. That matters to Filipinos living and working in Northeast Asia and to Philippine security planning, although no immediate threat to the Philippines was reported."
       ]
@@ -101,16 +101,16 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-archipelago.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial asset",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying coverage of North Korea's missile claim. It is not a photograph of the October 3 launch or the weapon.",
-    "alt": "FMB News editorial graphic for North Korea's intermediate-range missile claim",
+    "alt": "FMB News, Filipino Media Bulletin: the Philippine flag above an island coastline at sunrise.",
     "width": 1200,
     "height": 675,
-    "sourceUrl": null
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
   },
   "audit": {
     "sourceCheckedAt": "2026-10-04T04:27:09+08:00",

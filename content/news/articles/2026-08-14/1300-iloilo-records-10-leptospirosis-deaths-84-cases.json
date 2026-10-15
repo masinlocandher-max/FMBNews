@@ -7,7 +7,12 @@
   "headline": "Iloilo Records 10 Leptospirosis Deaths and 84 Cases Through August 8",
   "seoTitle": "Iloilo Records 10 Leptospirosis Deaths, 84 Cases in 2026",
   "seoDescription": "Iloilo province recorded 84 leptospirosis cases and 10 deaths from January through August 8, according to the provincial health office.",
-  "keywords": ["Iloilo leptospirosis", "leptospirosis deaths 2026", "flood health warning", "Iloilo Provincial Health Office"],
+  "keywords": [
+    "Iloilo leptospirosis",
+    "leptospirosis deaths 2026",
+    "flood health warning",
+    "Iloilo Provincial Health Office"
+  ],
   "category": "Health",
   "kicker": "Iloilo · Public health · Flood safety",
   "deck": "The provincial health office said Iloilo logged 84 cases from January through August 8, including 10 deaths, and warned residents to avoid contaminated floodwater.",
@@ -62,19 +67,20 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
-    "sourceUrl": null,
+    "url": "/assets/images/news/fmb-news-fallback-global.jpg",
+    "sourceUrl": "https://www.francinemariebautista.com/news/",
     "creator": "FMB News",
     "license": "FMB-owned editorial visual",
     "licenseUrl": "https://www.francinemariebautista.com/news/",
     "usageStatus": "FMB-owned editorial visual used because publication rights for the recommended news photograph could not be independently verified.",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying the Iloilo leptospirosis report. It does not depict a particular patient or location.",
-    "alt": "FMB News editorial visual for the Iloilo leptospirosis report",
+    "alt": "FMB News, Filipino Media Bulletin: a world map and globe centred on the Philippines.",
     "width": 1200,
     "height": 675,
     "focusX": 50,
-    "focusY": 50
+    "focusY": 50,
+    "source": "FMB News"
   },
   "audit": {
     "sourceCheckedAt": "2026-08-14T18:30:00+08:00",

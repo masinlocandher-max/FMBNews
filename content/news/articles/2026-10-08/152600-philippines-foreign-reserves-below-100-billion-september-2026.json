@@ -5,7 +5,14 @@
   "headline": "Philippine Foreign Reserves Fall Below $100 Billion",
   "seoTitle": "Philippine Reserves Fall Below $100 Billion",
   "seoDescription": "The Philippines' gross international reserves fell to a preliminary $99.997 billion in September 2026, down 4.6% from August.",
-  "keywords": ["Philippine foreign reserves", "gross international reserves", "Bangko Sentral ng Pilipinas", "BSP", "peso", "September 2026"],
+  "keywords": [
+    "Philippine foreign reserves",
+    "gross international reserves",
+    "Bangko Sentral ng Pilipinas",
+    "BSP",
+    "peso",
+    "September 2026"
+  ],
   "category": "Business",
   "kicker": "External Accounts",
   "deck": "BSP data show a $4.85-billion monthly drop, leaving reserves sufficient to cover an estimated 6.3 months of imports and related payments.",
@@ -29,7 +36,7 @@
       ]
     },
     {
-      "heading": "Why it matters",
+      "heading": "Why this matters",
       "paragraphs": [
         "The decline comes while a strong U.S. dollar, high oil prices and elevated import costs are putting pressure on the Philippine economy. Reserves remain substantial, but a sustained drawdown can narrow the country's cushion against external shocks and increase scrutiny of the peso, inflation and financing conditions."
       ]
@@ -73,13 +80,13 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-global.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial artwork",
     "credit": "Editorial graphic: FMB News",
-    "caption": "FMB News editorial graphic. This is a non-documentary visual and does not depict the Bangko Sentral's reserve assets or September transactions.",
-    "alt": "FMB News editorial graphic accompanying a report on Philippine foreign reserves",
+    "caption": "FMB News branded editorial plate. This is publication artwork, not a photograph of the reported event.",
+    "alt": "FMB News, Filipino Media Bulletin: a world map and globe centred on the Philippines.",
     "width": 1200,
     "height": 675,
     "sourceUrl": "https://www.francinemariebautista.com/news/"

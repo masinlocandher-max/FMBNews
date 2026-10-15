@@ -7,7 +7,12 @@
   "headline": "Habagat Rains Expected Over Western Luzon; Brief Reports Saturday College Suspensions in Bulacan",
   "seoTitle": "Habagat Over Western Luzon; Bulacan Saturday Class Suspensions Reported",
   "seoDescription": "An FMB News brief cites a PAGASA forecast for continued Habagat rains over Western Luzon and reports Saturday college suspensions in Calumpit and Plaridel, Bulacan.",
-  "keywords": ["Habagat August 15 2026", "Bulacan class suspension", "Calumpit Plaridel classes", "Western Luzon rain"],
+  "keywords": [
+    "Habagat August 15 2026",
+    "Bulacan class suspension",
+    "Calumpit Plaridel classes",
+    "Western Luzon rain"
+  ],
   "category": "Community",
   "kicker": "Weather · Class suspensions",
   "deck": "A current GMA weather report cited by the newsroom brief forecasts continued Southwest Monsoon rains over parts of Luzon; the email also reports localized Saturday college suspensions in Calumpit and Plaridel, Bulacan.",
@@ -59,19 +64,20 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
-    "sourceUrl": null,
+    "url": "/assets/images/news/fmb-news-fallback-skyline.jpg",
+    "sourceUrl": "https://www.francinemariebautista.com/news/",
     "creator": "FMB News",
     "license": "FMB-owned editorial visual",
     "licenseUrl": "https://www.francinemariebautista.com/news/",
     "usageStatus": "FMB-owned editorial visual used because no stable, rights-verified weather or school photograph was supplied.",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying the Western Luzon Habagat and Bulacan class-suspension report.",
-    "alt": "FMB News editorial visual for the Habagat and Bulacan class-suspension report",
+    "alt": "FMB News, Filipino Media Bulletin: a city skyline at night reflected across open water.",
     "width": 1200,
     "height": 675,
     "focusX": 50,
-    "focusY": 50
+    "focusY": 50,
+    "source": "FMB News"
   },
   "audit": {
     "sourceCheckedAt": "2026-08-15T07:46:00+08:00",

@@ -7,7 +7,12 @@
   "headline": "Marcos Says Philippines Is ‘Not Seeking to Be Belligerent’ in Indo-Pacific",
   "seoTitle": "Marcos: PH ‘Not Seeking to Be Belligerent’ in Indo-Pacific",
   "seoDescription": "An FMB News editorial brief citing PCO and PNA reports that President Marcos said the Philippines is not seeking to be belligerent in the Indo-Pacific.",
-  "keywords": ["Marcos Indo-Pacific", "Philippines foreign policy", "West Philippine Sea", "defense partnerships"],
+  "keywords": [
+    "Marcos Indo-Pacific",
+    "Philippines foreign policy",
+    "West Philippine Sea",
+    "defense partnerships"
+  ],
   "category": "National",
   "kicker": "Foreign policy · National security",
   "deck": "An FMB News newsroom brief, citing the Presidential Communications Office and Philippine News Agency, reports that President Ferdinand R. Marcos Jr. described the Philippines’ security posture as defensive rather than belligerent.",
@@ -59,19 +64,20 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
-    "sourceUrl": null,
+    "url": "/assets/images/news/fmb-news-fallback-archipelago.jpg",
+    "sourceUrl": "https://www.francinemariebautista.com/news/",
     "creator": "FMB News",
     "license": "FMB-owned editorial visual",
     "licenseUrl": "https://www.francinemariebautista.com/news/",
     "usageStatus": "FMB-owned editorial visual used because the referenced PCO/PNA photograph had no stable publication-ready asset URL with independently verified reuse terms.",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying the report on President Marcos’ reported Indo-Pacific remarks. It does not depict the August 14 briefing.",
-    "alt": "FMB News editorial visual for the Marcos Indo-Pacific foreign-policy report",
+    "alt": "FMB News, Filipino Media Bulletin: the Philippine flag above an island coastline at sunrise.",
     "width": 1200,
     "height": 675,
     "focusX": 50,
-    "focusY": 50
+    "focusY": 50,
+    "source": "FMB News"
   },
   "audit": {
     "sourceCheckedAt": "2026-08-15T07:46:00+08:00",

@@ -5,7 +5,13 @@
   "headline": "DSWD Drought Aid Tops ₱745 Million as El Niño Response Expands",
   "seoTitle": "DSWD Drought Aid Tops ₱745 Million",
   "seoDescription": "DSWD says drought assistance has exceeded ₱745 million, up from ₱714 million on October 1, as food, cash and water support continues.",
-  "keywords": ["DSWD", "El Niño", "drought aid", "emergency cash transfer", "Project LAWA at BINHI"],
+  "keywords": [
+    "DSWD",
+    "El Niño",
+    "drought aid",
+    "emergency cash transfer",
+    "Project LAWA at BINHI"
+  ],
   "category": "National",
   "kicker": "Drought Response",
   "deck": "The newly reported total is at least ₱31 million above the government figure released on October 1, as dry conditions affect communities across several regions.",
@@ -30,7 +36,7 @@
       ]
     },
     {
-      "heading": "Why it matters",
+      "heading": "Why this matters",
       "paragraphs": [
         "Cash, food and water support can cushion income and supply losses for farmers and households already experiencing prolonged dry conditions. The rising aid total shows that response spending is still increasing as affected areas widen.",
         "DSWD's Project LAWA at BINHI also funds work and training tied to small reservoirs and climate-resilient crops. These are preparedness measures, not a guarantee that every affected household has already received assistance."
@@ -75,16 +81,16 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-skyline.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial asset",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual. This is not a photograph of current drought conditions, aid distribution or DSWD operations.",
-    "alt": "FMB News editorial graphic accompanying a report on expanded drought assistance",
+    "alt": "FMB News, Filipino Media Bulletin: a city skyline at night reflected across open water.",
     "width": 1200,
     "height": 675,
-    "sourceUrl": null
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
   },
   "audit": {
     "sourceCheckedAt": "2026-10-04T10:29:00+08:00",

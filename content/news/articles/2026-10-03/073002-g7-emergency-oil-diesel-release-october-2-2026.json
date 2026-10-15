@@ -37,7 +37,7 @@
       ]
     },
     {
-      "heading": "Why it matters to Filipinos",
+      "heading": "Why this matters",
       "paragraphs": [
         "The Philippines is a net fuel importer, so a larger global supply buffer can reduce upward pressure on import costs, transport expenses and food distribution. The action does not guarantee an immediate pump-price rollback in the Philippines because local prices also depend on exchange rates, freight, taxes, inventories and domestic pricing cycles.",
         "A sustained reduction in global diesel prices would matter most to public transport, trucking, agriculture, fishing and power systems using liquid fuel."
@@ -76,16 +76,16 @@
   ],
   "image": {
     "kind": "editorial-fallback",
-    "url": "/assets/images/news/fmb-news-editorial-fallback.svg",
+    "url": "/assets/images/news/fmb-news-fallback-archipelago.jpg",
     "source": "FMB News",
     "creator": "FMB News",
     "license": "FMB-owned editorial asset",
     "credit": "FMB News editorial visual",
     "caption": "FMB News editorial visual accompanying a verified report on the G7 emergency oil and diesel stock release. It is not a photograph and does not depict the reported event, people, vessels, weapons or locations.",
-    "alt": "FMB News editorial graphic for the G7 emergency fuel release",
+    "alt": "FMB News, Filipino Media Bulletin: the Philippine flag above an island coastline at sunrise.",
     "width": 1200,
     "height": 675,
-    "sourceUrl": null
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
   },
   "audit": {
     "sourceCheckedAt": "2026-10-03T07:30:04.665+08:00",
