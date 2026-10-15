@@ -479,11 +479,12 @@
     for (const run of runs) {
       const fragment = document.createDocumentFragment();
       for (const article of articles) {
-        const link = el('a', '', article.title);
+        const link = el('a');
+        link.appendChild(el('span', 'ticker-headline', article.title));
         link.href = storyHref(article);
         if (run.getAttribute('aria-hidden') === 'true') link.tabIndex = -1;
         fragment.appendChild(link);
-        const separator = el('span', 'ticker-separator', '•');
+        const separator = el('span', 'ticker-dot', '◆');
         separator.setAttribute('aria-hidden', 'true');
         fragment.appendChild(separator);
       }
