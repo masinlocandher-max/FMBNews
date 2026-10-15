@@ -1,0 +1,186 @@
+{
+  "date": "2026-08-20",
+  "publishedAt": "2026-08-20T07:00:00+08:00",
+  "editionLabel": "FMB Daily Brief · Archive Recovery",
+  "title": "The Stories That Defined the Day",
+  "deck": "Recovered FMB Daily Brief for 2026-08-20, reconstructed from FMB News' verified article archive. Key coverage includes CICC Seeks Broader Authority Over Messaging and Livestreaming Platforms After Zamboanga Shooting; Palace Issues MC 131: In-Person Classes Suspended, Alternative Government Work Set in NCR and 17 Provinces; Philippine Peso Closes at ₱61.815 Against US Dollar, Near Historic Low.",
+  "timezone": "Asia/Manila",
+  "recovery": {
+    "reconstructed": true,
+    "reconstructedAt": "2026-09-15T03:30:00+08:00",
+    "note": "Historical recovery edition. It was reconstructed after the original publication date and must not be represented as having been published contemporaneously."
+  },
+  "hero": {
+    "src": "/assets/images/mobile/fmb-daily-brief-coffee.webp",
+    "alt": "FMB Daily Brief coffee visual with the FMB shell emblem",
+    "caption": "Approved FMB Daily Brief photographic visual used when a recovered edition has no suitable rights-cleared documentary photograph.",
+    "credit": "FMB News",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260820-001",
+      "kicker": "Cybersecurity · Child Protection",
+      "headline": "CICC Seeks Broader Authority Over Messaging and Livestreaming Platforms After Zamboanga Shooting",
+      "deck": "The cybercrime agency is pushing for stronger tools to address violent livestreams and harmful digital circulation involving minors.",
+      "body": [
+        "The Cybercrime Investigation and Coordinating Center is seeking expanded regulatory jurisdiction over messaging and livestreaming platforms, according to the approved FMB News midday package.",
+        "The CICC coordinates cybercrime policy and inter-agency response, but platform governance also involves other regulators, law-enforcement bodies and existing laws on cybercrime, data privacy and child protection.",
+        "Any expansion of government authority over digital platforms raises two issues at once: faster protection against violent or exploitative content, and the need for clear legal safeguards for privacy, due process and lawful expression.",
+        "Watch Congress for the exact scope of any proposed amendments, including takedown powers, platform obligations, reporting standards, safeguards and judicial or regulatory oversight."
+      ],
+      "sources": [
+        {
+          "label": "Cybercrime Investigation and Coordinating Center — CICC platform-regulation proposal referenced in approved FMB News brief",
+          "url": "https://cicc.gov.ph/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for cybersecurity and digital platform regulation",
+        "caption": "FMB News editorial visual accompanying the CICC platform-regulation report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://cicc.gov.ph/"
+      },
+      "sourceArticle": "content/news/articles/2026-08-20/1300-cicc-streaming-messaging-regulation-zamboanga.json"
+    },
+    {
+      "id": "FMB-DB-20260820-002",
+      "kicker": "Governance · Public safety",
+      "headline": "Palace Issues MC 131: In-Person Classes Suspended, Alternative Government Work Set in NCR and 17 Provinces",
+      "deck": "The approved FMB News overnight brief reports that Malacañang formalized Thursday's distance-learning and alternative-work arrangements across Metro Manila and 17 Luzon provinces.",
+      "body": [
+        "Malacañang issued Memorandum Circular No. 131 for Thursday, August 20, directing the suspension of in-person classes and the use of alternative work arrangements in executive government offices across the National Capital Region and 17 Luzon provinces, according to the approved FMB News overnight package.",
+        "The directive affects students, families, commuters and government workers across a large part of Luzon after successive days of monsoon-related disruption.",
+        "Further work and class advisories will depend on weather conditions and subsequent national or local government announcements.",
+        "The covered provinces are Abra, Bataan, Batangas, Benguet, Bulacan, Cavite, Ilocos Norte, Ilocos Sur, Laguna, La Union, Nueva Ecija, Occidental Mindoro, Oriental Mindoro, Pampanga, Pangasinan, Rizal, Tarlac and Zambales."
+      ],
+      "sources": [
+        {
+          "label": "Office of the President / Presidential Communications Office — Memorandum Circular No. 131 and Palace advisory cited by the approved FMB News package",
+          "url": "https://pco.gov.ph/"
+        },
+        {
+          "label": "INQUIRER.net — Palace order on alternative government work in NCR and 17 provinces",
+          "url": "https://newsinfo.inquirer.net/2288217/palace-order-implement-alternative-govt-work-in-ncr-17-provinces-on-aug-20"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for the August 20 class and government work advisory",
+        "caption": "FMB News editorial visual accompanying the Memorandum Circular No. 131 update.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://pco.gov.ph/"
+      },
+      "sourceArticle": "content/news/articles/2026-08-20/0100-mc131-classes-government-work-ncr-17-provinces.json"
+    },
+    {
+      "id": "FMB-DB-20260820-003",
+      "kicker": "Economy · Markets",
+      "headline": "Philippine Peso Closes at ₱61.815 Against US Dollar, Near Historic Low",
+      "deck": "The local currency lost three centavos from the previous session as higher global oil prices and domestic weather disruptions added pressure.",
+      "body": [
+        "The Philippine peso closed at ₱61.815 against the US dollar on Wednesday, August 19, according to the approved FMB News overnight package citing Bankers Association of the Philippines spot-market data.",
+        "A weaker peso can raise the local-currency cost of imported fuel, food and other goods, although it also increases the peso value of dollar-denominated remittances when converted locally.",
+        "Markets will be watching oil prices, domestic weather conditions, dollar demand and any Bangko Sentral ng Pilipinas signals on excessive foreign-exchange volatility.",
+        "That was three centavos weaker than Tuesday's ₱61.785 close. The package reports total spot trading volume of $1.14 billion and describes the finish as the currency's second-weakest on record."
+      ],
+      "sources": [
+        {
+          "label": "Bankers Association of the Philippines / Inquirer Business — Peso market close cited by the approved FMB News package",
+          "url": "https://business.inquirer.net/"
+        },
+        {
+          "label": "BusinessWorld Online — Market commentary for August 19, 2026",
+          "url": "https://www.bworldonline.com/corporate/2026/08/20/771146/how-psei-member-stocks-performed-august-19-2026/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for the Philippine peso and US dollar exchange rate",
+        "caption": "FMB News editorial visual accompanying the Philippine peso market update.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.bsp.gov.ph/"
+      },
+      "sourceArticle": "content/news/articles/2026-08-20/0100-peso-61-815-near-record-low.json"
+    },
+    {
+      "id": "FMB-DB-20260820-004",
+      "kicker": "Politics · Legal Affairs",
+      "headline": "Romualdez Files Supplemental Ombudsman Counter-Affidavit with 25 Sworn Statements",
+      "deck": "The former Speaker's legal team submitted additional sworn statements disputing allegations in the ongoing Ombudsman inquiry.",
+      "body": [
+        "Former House Speaker Martin Romualdez filed a supplemental counter-affidavit before the Office of the Ombudsman on Thursday, according to the approved FMB News package.",
+        "Romualdez's counsel, Ade Fajardo, said the submission forms part of the defense in an ongoing preliminary investigation. The package also reports that the filing referenced a retraction attributed to Orly Guteza.",
+        "The filing adds competing sworn accounts to a politically sensitive investigation. Those statements are evidence submitted by the defense and should not be treated as an Ombudsman finding on the merits.",
+        "The next significant development will be how the Ombudsman evaluates the competing affidavits and whether it seeks further submissions, clarificatory hearings or other investigative steps."
+      ],
+      "sources": [
+        {
+          "label": "Office of the Ombudsman / Philippine STAR / News5 — Romualdez files supplemental counter-affidavit with 25 sworn statements",
+          "url": "https://www.ombudsman.gov.ph/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for a legal filing before the Ombudsman",
+        "caption": "FMB News editorial visual accompanying the Romualdez Ombudsman filing report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.ombudsman.gov.ph/"
+      },
+      "sourceArticle": "content/news/articles/2026-08-20/1300-romualdez-counter-affidavit-25-statements.json"
+    },
+    {
+      "id": "FMB-DB-20260820-005",
+      "kicker": "Infrastructure · Disaster Response",
+      "headline": "Marcos Announces 13 New Metro Manila Pumping Stations as 53 LGUs Declare State of Calamity",
+      "deck": "The government is expanding flood-control pumping capacity as dozens of local governments continue recovery from monsoon flooding.",
+      "body": [
+        "President Ferdinand R. Marcos Jr. announced plans for 13 additional high-capacity pumping stations across flood-prone parts of Metro Manila, according to the approved FMB News midday package.",
+        "The proposed pumping expansion is aimed at chronic waterlogging and drainage bottlenecks in low-lying urban areas. The President also linked flood mitigation to solid-waste management and a broader waste-to-energy rollout.",
+        "Pumping capacity can reduce the duration of urban flooding when drainage systems are overwhelmed, while calamity declarations allow affected local governments to mobilize emergency resources more quickly.",
+        "Watch for DPWH and MMDA project locations, funding, procurement and construction schedules, as well as updated NDRRMC counts for areas remaining under calamity declarations."
+      ],
+      "sources": [
+        {
+          "label": "Office of the President / Philippine News Agency — PBBM: 13 more pumping stations to be installed in Metro Manila",
+          "url": "https://www.pna.gov.ph/articles/1282301"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Metro Manila flood-control pumping stations",
+        "caption": "FMB News editorial visual accompanying the Metro Manila pumping-station report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.pna.gov.ph/articles/1282301"
+      },
+      "sourceArticle": "content/news/articles/2026-08-20/1300-marcos-13-pumping-stations-state-of-calamity.json"
+    },
+    {
+      "id": "FMB-DB-20260820-006",
+      "kicker": "Defense · Diplomacy",
+      "headline": "Teodoro Accuses Chinese Embassy of 'Covering Up' Illegal Acts by Chinese Nationals",
+      "deck": "The defense chief said Philippine criminal, immigration and labor laws will be enforced against foreign nationals implicated in unlawful operations.",
+      "body": [
+        "Defense Secretary Gilberto 'Gibo' Teodoro Jr. accused the Chinese Embassy in Manila of attempting to cover up or deflect from alleged illegal acts by Chinese nationals operating in the Philippines, according to the approved FMB News evening package.",
+        "Teodoro framed the issue as one of Philippine sovereignty and domestic law enforcement, saying foreign nationals accused of crimes are subject to Philippine criminal, immigration and labor laws.",
+        "The exchange adds another point of tension to Philippine-China relations while linking diplomatic rhetoric to domestic enforcement against transnational crime.",
+        "Watch for a formal response from the Chinese Embassy or China's foreign ministry, as well as further Philippine enforcement actions and diplomatic exchanges."
+      ],
+      "sources": [
+        {
+          "label": "Department of National Defense / Inquirer Global Nation — Teodoro: China embassy covering up for Chinese nationals in illegal acts",
+          "url": "https://globalnation.inquirer.net/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for a Philippine defense and diplomacy report",
+        "caption": "FMB News editorial visual accompanying the Teodoro statement report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.dnd.gov.ph/"
+      },
+      "sourceArticle": "content/news/articles/2026-08-20/1900-teodoro-chinese-embassy-illegal-acts.json"
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "date": "2026-09-02",
+  "publishedAt": "2026-09-02T07:00:00+08:00",
+  "editionLabel": "FMB Daily Brief · Archive Recovery",
+  "title": "The Stories That Defined the Day",
+  "deck": "Recovered FMB Daily Brief for 2026-09-02, reconstructed from FMB News' verified article archive. Key coverage includes Ramon Ang Cites Tulaoc Bridge Debris as Factor in NLEX Flooding; DENR Says Indonesia Wildfire Haze Reached the Philippines as NCR Air Quality Improves; Senate Passes Bill Barring Officials’ Relatives From Government Contracts.",
+  "timezone": "Asia/Manila",
+  "recovery": {
+    "reconstructed": true,
+    "reconstructedAt": "2026-09-15T03:30:00+08:00",
+    "note": "Historical recovery edition. It was reconstructed after the original publication date and must not be represented as having been published contemporaneously."
+  },
+  "hero": {
+    "src": "https://pia.gov.ph/wp-content/uploads/2026/09/20260831-PBBM_CabinetMeeting-ph1.jpg",
+    "alt": "President Ferdinand Marcos Jr. and government officials seated around a conference table during a flood response meeting",
+    "caption": "President Ferdinand R. Marcos Jr. presides over a government response meeting on flooding and health conditions on August 31, 2026. Photo: PCO via PIA.",
+    "credit": "Photo: Presidential Communications Office via Philippine Information Agency",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260902-001",
+      "kicker": "Transport · Flooding",
+      "headline": "Ramon Ang Cites Tulaoc Bridge Debris as Factor in NLEX Flooding",
+      "deck": "MPTC also pointed to a broader drainage problem and extreme water volume, making the flooding a multi-factor infrastructure issue.",
+      "body": [
+        "San Miguel Corp. president Ramon Ang said soil and debris left after the 2024 repair of the NLEX Tulaoc Bridge obstructed water flow and contributed to severe flooding along the expressway in San Simon, Pampanga.",
+        "The flooding caused hours-long traffic congestion during the prolonged monsoon rains.",
+        "NLEX operator MPTC said the flooding also reflected a broader drainage problem in Pampanga. It cited saturated downstream communities and the large volume of monsoon water that could not readily drain toward Manila Bay.",
+        "Ang offered heavy equipment to help clear obstructions, while MPTC coordinated with transport and public-works agencies on flood-mitigation measures and planned elevation work around the Tulaoc section."
+      ],
+      "sources": [
+        {
+          "label": "Philippine Daily Inquirer — Ang: NLEx flooding due to blocked dam water",
+          "url": "https://newsinfo.inquirer.net/2297193/ang-nlex-flooding-due-to-blocked-dam-water"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for NLEX flooding at San Simon",
+        "caption": "FMB News editorial visual accompanying the NLEX flooding report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://newsinfo.inquirer.net/2297193/ang-nlex-flooding-due-to-blocked-dam-water"
+      },
+      "sourceArticle": "content/news/articles/2026-09-02/0701-ramon-ang-nlex-flooding-debris.json"
+    },
+    {
+      "id": "FMB-DB-20260902-002",
+      "kicker": "Air Quality · Regional Haze",
+      "headline": "DENR Says Indonesia Wildfire Haze Reached the Philippines as NCR Air Quality Improves",
+      "deck": "The haze shifted with changing winds, underscoring how transboundary smoke can quickly change local air-quality conditions.",
+      "body": [
+        "The DENR Environmental Management Bureau said haze associated with forest and peatland fires in Indonesia had affected parts of the Philippines, including Metro Manila.",
+        "Residents should use official air-quality monitoring and public-health advisories for current conditions rather than rely on visibility alone.",
+        "By Wednesday, air quality in Metro Manila had improved as wind direction shifted the haze away from Luzon toward parts of the Visayas and Mindanao.",
+        "Air-quality conditions varied by monitoring station and time. Sensitive groups were advised to reduce prolonged outdoor exposure when local readings reached unhealthy levels."
+      ],
+      "sources": [
+        {
+          "label": "GMA News Online — Improved Metro Manila air quality due to change in wind direction - DENR-EMB",
+          "url": "https://www.gmanetwork.com/news/topstories/metro/1000870/improved-metro-manila-air-quality-due-to-change-in-wind-direction-denr-emb/story/"
+        },
+        {
+          "label": "Philippine News Agency — DENR-EMB: Air improves in NCR as haze shifts to Visayas, Mindanao",
+          "url": "https://www.pna.gov.ph/articles/1283178"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Metro Manila air quality and haze",
+        "caption": "FMB News editorial visual accompanying the regional haze report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.pna.gov.ph/articles/1283178"
+      },
+      "sourceArticle": "content/news/articles/2026-09-02/1902-indonesia-haze-metro-manila-air-quality.json"
+    },
+    {
+      "id": "FMB-DB-20260902-003",
+      "kicker": "Governance · Public procurement",
+      "headline": "Senate Passes Bill Barring Officials’ Relatives From Government Contracts",
+      "deck": "Senate Bill No. 1962 cleared third and final reading, 15–0, as lawmakers moved to tighten conflict-of-interest rules in government contracting.",
+      "body": [
+        "The Philippine Senate approved Senate Bill No. 1962, the proposed Government Contracting and Procurement Integrity Act, on third and final reading on September 2, 2026.",
+        "The bill is designed to strengthen safeguards against conflicts of interest in public procurement and would amend relevant provisions of Republic Act No. 12009, the New Government Procurement Act.",
+        "Government procurement involves public money used for infrastructure, supplies, services and public-private projects. Rules that reduce opportunities for undisclosed family conflicts can directly affect competition, project quality and public trust.",
+        "The key next step is the House of Representatives and any bicameral conference needed to reconcile the Senate measure with counterpart legislation."
+      ],
+      "sources": [
+        {
+          "label": "Senate of the Philippines — Committee Report No. 44 — Government Contracting and Procurement Integrity Act",
+          "url": "https://legacy.senate.gov.ph/lis/committee_rpt.aspx?congress=20&q=44"
+        },
+        {
+          "label": "Philippine News Agency — Senate OKs bill barring officials’ kin from gov’t contracts",
+          "url": "https://www.pna.gov.ph/articles/1283204"
+        },
+        {
+          "label": "News5 — Senate OKs bill barring relatives of officials from gov’t contracts",
+          "url": "https://news.tv5.com.ph/breaking/read/senate-oks-bill-barring-relatives-of-officials-from-govt-contracts"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-02/senate-contracts-kin-ban-16x9.svg",
+        "alt": "FMB News purple-violet editorial graphic stating Senate passes kin-contract ban bill",
+        "caption": "FMB News editorial graphic on the Senate’s September 2, 2026 third-reading approval of Senate Bill No. 1962.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-02/232000-senate-kin-government-contracts-bill.json"
+    },
+    {
+      "id": "FMB-DB-20260902-004",
+      "kicker": "Impeachment · Day 21",
+      "headline": "Michael Poa Confirms No DepEd Confidential Funds Went to AFP Youth Summits",
+      "deck": "Poa's testimony reinforced earlier statements from Army officers about the funding of military youth leadership activities.",
+      "body": [
+        "Former Department of Education Undersecretary Michael Wesley Poa confirmed during Day 21 of Vice President Sara Duterte's impeachment trial that no DepEd confidential funds were given to the Armed Forces of the Philippines for the Youth Leadership Summits cited in military certifications.",
+        "Poa's answer reinforced earlier testimony from Army officers who said their units did not receive DepEd confidential funds for the activities.",
+        "The impeachment case involves broader questions about how confidential funds were used, documented and defended before state auditors. Poa also testified that he did not have firsthand knowledge of the operational use of the funds.",
+        "The testimony is evidence in an ongoing impeachment trial and is not a final finding of guilt or liability."
+      ],
+      "sources": [
+        {
+          "label": "Philippine News Agency — Poa confirms no DepEd secret funds given to AFP for youth summits",
+          "url": "https://www.pna.gov.ph/articles/1283148"
+        },
+        {
+          "label": "INQUIRER.net — ‘Not a single peso’ in DepEd secret budget went to youth summits — Poa",
+          "url": "https://newsinfo.inquirer.net/2297608/not-a-single-peso-in-deped-secret-budget-went-to-youth-summits-poa"
+        },
+        {
+          "label": "Philippine News Agency — Poa: Only VP Sara, fund handlers knew how DepEd secret funds were used",
+          "url": "https://www.pna.gov.ph/articles/1283176"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Michael Poa testimony",
+        "caption": "FMB News editorial visual accompanying the Michael Poa testimony report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.pna.gov.ph/articles/1283148"
+      },
+      "sourceArticle": "content/news/articles/2026-09-02/1901-michael-poa-no-deped-secret-funds-youth-summits.json"
+    },
+    {
+      "id": "FMB-DB-20260902-005",
+      "kicker": "Disaster response · Central Luzon",
+      "headline": "Marcos Orders Faster Aid to Isolated Flood-Hit Communities",
+      "deck": "A Malacañang response meeting reviewed food delivery, rescue operations, health risks and damaged infrastructure as severe flooding continued to affect communities in Central Luzon.",
+      "body": [
+        "President Ferdinand R. Marcos Jr. directed government agencies to ensure assistance reaches flood-affected communities without delay, particularly isolated areas, during a multi-agency response meeting held at Malacañang on August 31.",
+        "Marcos specifically asked whether food was reaching communities isolated by floodwaters. Social Welfare Secretary Rex Gatchalian said supplies remained sufficient and that an isolated barangay was being reached through airlift operations.",
+        "For families in flooded and isolated communities, the immediate test is whether food, safe water, medical care and transport support reach them consistently while access routes remain disrupted.",
+        "Watch for updated government assistance totals, restoration of damaged roads and bridges, changes in flood conditions along major transport corridors, and further DOH reporting on leptospirosis after the prolonged flooding."
+      ],
+      "sources": [
+        {
+          "label": "Philippine Information Agency / Presidential Communications Office — PBBM directs agencies to ensure no Filipino is left behind amid floods",
+          "url": "https://pia.gov.ph/news/pbbm-directs-agencies-to-ensure-no-filipino-is-left-behind-amid-floods/"
+        },
+        {
+          "label": "GMA News — Marcos orders DPWH to restore connectivity in flood-hit Central Luzon — Dizon",
+          "url": "https://www.gmanetwork.com/news/topstories/nation/1000634/marcos-orders-dpwh-to-restore-connectivity-in-flood-hit-central-luzon-dizon/story/"
+        },
+        {
+          "label": "INQUIRER.net — Marcos orders national response as NCR, Central Luzon floods persist",
+          "url": "https://newsinfo.inquirer.net/2295834/marcos-orders-national-response-as-ncr-central-luzon-floods-persist"
+        }
+      ],
+      "image": {
+        "src": "https://pia.gov.ph/wp-content/uploads/2026/09/20260831-PBBM_CabinetMeeting-ph1.jpg",
+        "alt": "President Ferdinand Marcos Jr. and government officials seated around a conference table during a flood response meeting",
+        "caption": "President Ferdinand R. Marcos Jr. presides over a government response meeting on flooding and health conditions on August 31, 2026. Photo: PCO via PIA.",
+        "credit": "Photo: Presidential Communications Office via Philippine Information Agency",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-02/033900-marcos-flood-response-assistance.json"
+    },
+    {
+      "id": "FMB-DB-20260902-006",
+      "kicker": "Laguna de Bay · Fisheries",
+      "headline": "More Than 20,000 Kilograms of Fish Die in Laguna de Bay Fish Kill",
+      "deck": "The incident affected more than 30 fish cages across over seven hectares; fishers suspected contamination, but the cause had not been established.",
+      "body": [
+        "More than 20,000 kilograms of tilapia and bighead carp died in a fish kill affecting more than 30 cages in Laguna de Bay in Jala-jala, Rizal, according to fisherfolk group Pamalakaya.",
+        "The key next step is an LLDA investigation identifying the cause and determining whether pollution, water chemistry, algal conditions or multiple factors were involved.",
+        "The affected cages covered more than seven hectares, with initial losses estimated at about ₱700,000.",
+        "Fishers reported unusual water discoloration and suspected that pollution may have contributed, but the Laguna Lake Development Authority had not established the cause of the latest incident."
+      ],
+      "sources": [
+        {
+          "label": "INQUIRER.net — Over 20,000 kg of fish die in latest Laguna de Bay fish kill",
+          "url": "https://newsinfo.inquirer.net/2296477/over-20000-kg-of-fish-die-in-latest-laguna-de-bay-fish-kill"
+        },
+        {
+          "label": "INQUIRER.net — Laguna Lake water level stays above critical-high mark",
+          "url": "https://newsinfo.inquirer.net/2298372/laguna-lake-water-level-stays-above-critical-high-mark"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for the Laguna de Bay fish kill",
+        "caption": "FMB News editorial visual accompanying the Laguna de Bay fish-kill report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://newsinfo.inquirer.net/2296477/over-20000-kg-of-fish-die-in-latest-laguna-de-bay-fish-kill"
+      },
+      "sourceArticle": "content/news/articles/2026-09-02/0101-laguna-de-bay-fish-kill-20000kg.json"
+    }
+  ]
+}

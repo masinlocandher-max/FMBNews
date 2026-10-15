@@ -1,0 +1,210 @@
+{
+  "date": "2026-08-29",
+  "publishedAt": "2026-08-29T07:00:00+08:00",
+  "editionLabel": "FMB Daily Brief · Archive Recovery",
+  "title": "The Stories That Defined the Day",
+  "deck": "Recovered FMB Daily Brief for 2026-08-29, reconstructed from FMB News' verified article archive. Key coverage includes Red Rainfall Warning Raised Over Zambales, Bataan, Pampanga and Parts of Luzon; Leptospirosis Admissions Rise as Hospitals Expand Surge Capacity After Flooding; 1,395 Olongapo Residents Evacuated as Habagat Flooding Worsens.",
+  "timezone": "Asia/Manila",
+  "recovery": {
+    "reconstructed": true,
+    "reconstructedAt": "2026-09-15T03:30:00+08:00",
+    "note": "Historical recovery edition. It was reconstructed after the original publication date and must not be represented as having been published contemporaneously."
+  },
+  "hero": {
+    "src": "/assets/images/mobile/fmb-daily-brief-coffee.webp",
+    "alt": "FMB Daily Brief coffee visual with the FMB shell emblem",
+    "caption": "Approved FMB Daily Brief photographic visual used when a recovered edition has no suitable rights-cleared documentary photograph.",
+    "credit": "FMB News",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260829-001",
+      "kicker": "Weather · Flood Risk",
+      "headline": "Red Rainfall Warning Raised Over Zambales, Bataan, Pampanga and Parts of Luzon",
+      "deck": "Serious flooding was possible in areas under the highest rainfall warning as the southwest monsoon continued to affect Luzon.",
+      "body": [
+        "PAGASA raised the red rainfall warning over Zambales, Bataan and Pampanga on Saturday, August 29, with portions of Bulacan and Batangas also included in morning red-warning bulletins.",
+        "The warnings came after days of monsoon rain had already saturated river basins and low-lying communities across Central Luzon.",
+        "Warning coverage changed through the day, so residents were advised to rely on the latest PAGASA and local disaster-office bulletins rather than an earlier map.",
+        "Metro Manila and several nearby areas were placed under orange warning during parts of the morning, indicating that flooding remained threatening."
+      ],
+      "sources": [
+        {
+          "label": "GMA News Online — RAINFALL ALERT: Red in Zambales, Bataan, Pampanga, Bulacan, Batangas, orange in NCR",
+          "url": "https://www.gmanetwork.com/news/weather/content/1000309/rainfall-alert-red-in-zambales-bataan-pampanga-bulacan-batangas-orange-in-ncr-saturday-8-a-m/story/"
+        },
+        {
+          "label": "Philstar.com — Red rainfall warning up over Zambales, Bataan, Pampanga; NCR under orange alert",
+          "url": "https://www.philstar.com/headlines/weather/2026/08/29/2552619/red-rainfall-warning-over-zambales-bataan-pampanga-ncr-under-orange-alert"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Red Rainfall Warning Raised Over Zambales, Bataan, Pampanga and Parts of Luzon",
+        "caption": "FMB News editorial visual accompanying this recovered report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.gmanetwork.com/news/weather/content/1000309/rainfall-alert-red-in-zambales-bataan-pampanga-bulacan-batangas-orange-in-ncr-saturday-8-a-m/story/"
+      },
+      "sourceArticle": "content/news/articles/2026-08-29/1301-red-rainfall-warning-central-luzon.json"
+    },
+    {
+      "id": "FMB-DB-20260829-002",
+      "kicker": "Health · Flood Response",
+      "headline": "Leptospirosis Admissions Rise as Hospitals Expand Surge Capacity After Flooding",
+      "deck": "DOH hospitals are using fast lanes, referrals and added bed capacity as post-flood leptospirosis admissions increase in Metro Manila and Central Luzon.",
+      "body": [
+        "The Department of Health reported 5,486 leptospirosis cases nationwide from January 4 through August 26, 2026, a 23% decline from 7,163 cases during the same period in 2025.",
+        "The national case total is lower than the same period in 2025, but officials expect cases to rise after recent floods because leptospirosis symptoms can develop days or weeks after exposure. As of August 23, 521 leptospirosis patients were being treated in DOH hospitals in Metro Manila, including 158 at San Lazaro Hospital.",
+        "Leptospirosis is a delayed public-health consequence of flooding: hospital pressure can intensify after floodwaters recede, making early consultation, referral capacity and clear risk communication essential to preventing severe illness and avoidable deaths.",
+        "DOH expects the post-flood surge to continue in the coming days. Residents who develop fever, muscle pain, headache, jaundice or reduced urination after flood exposure should seek prompt medical assessment."
+      ],
+      "sources": [
+        {
+          "label": "Philippine News Agency — PH records 5.5K leptospirosis cases in first 8 months of 2026",
+          "url": "https://www.pna.gov.ph/articles/1282917"
+        },
+        {
+          "label": "Philippine News Agency — DOH says leptospirosis cases down 35%, 3.1M doxycycline capsules ready",
+          "url": "https://www.pna.gov.ph/articles/1282216"
+        },
+        {
+          "label": "Presidential Communications Office — Palace: 33 DOH hospitals activate fast lanes for leptospirosis patients",
+          "url": "https://pco.gov.ph/news_releases/palace-33-doh-hospitals-activate-fast-lanes-for-leptospirosis-patients/"
+        },
+        {
+          "label": "Inquirer Northern Luzon — Olongapo hospital hits full capacity amid rise in leptospirosis cases",
+          "url": "https://newsinfo.inquirer.net/2294617/olongapo-hospital-reaches-full-capacity-amid-rise-in-leptospirosis-cases"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for leptospirosis health response after flooding",
+        "caption": "FMB News editorial visual accompanying the leptospirosis hospital-capacity report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.pna.gov.ph/articles/1282917"
+      },
+      "sourceArticle": "content/news/articles/2026-08-29/1900-leptospirosis-hospital-surge-august-29-2026.json"
+    },
+    {
+      "id": "FMB-DB-20260829-003",
+      "kicker": "Disaster · Olongapo",
+      "headline": "1,395 Olongapo Residents Evacuated as Habagat Flooding Worsens",
+      "deck": "Persistent monsoon rains forced hundreds of families into evacuation centers as rivers and drainage systems overflowed across Olongapo City.",
+      "body": [
+        "Olongapo City reported 1,395 people from 452 families staying in evacuation centers as of 9:30 a.m. Saturday after persistent Southwest Monsoon rains caused widespread flooding.",
+        "The city began a preemptive evacuation in Santa Rita on Friday afternoon before a river overflowed later that evening. PAGASA said the southwest monsoon was affecting Luzon, including Olongapo.",
+        "Large-scale evacuation is not only a rainfall story. It tests shelter capacity, relief distribution, transport access and the ability of local government to communicate changing risks quickly as water levels and slope conditions evolve.",
+        "Watch for updated Olongapo evacuation counts, river and drainage conditions, landslide advisories and additional rainfall warnings from local authorities and PAGASA."
+      ],
+      "sources": [
+        {
+          "label": "Inquirer Northern Luzon — Over 1,000 Olongapo City folk forced to evacuate due flooding",
+          "url": "https://newsinfo.inquirer.net/2294707/over-1000-olongapo-city-folk-forced-to-evacuate-due-flooding"
+        },
+        {
+          "label": "Inquirer Northern Luzon — Olongapo continues to battle flooding, erosion amid heavy rains",
+          "url": "https://newsinfo.inquirer.net/2294637/olongapo-continues-to-battle-flooding-erosion-amid-heavy-rains"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Olongapo flooding and evacuation",
+        "caption": "FMB News editorial visual accompanying the Olongapo evacuation report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://newsinfo.inquirer.net/2294707/over-1000-olongapo-city-folk-forced-to-evacuate-due-flooding"
+      },
+      "sourceArticle": "content/news/articles/2026-08-29/1900-olongapo-1395-evacuated-habagat-floods.json"
+    },
+    {
+      "id": "FMB-DB-20260829-004",
+      "kicker": "Economy · Monetary Policy",
+      "headline": "BSP Raises Key Policy Rate by 25 Basis Points to 5 Percent",
+      "deck": "The central bank tightened policy by another quarter point as it responded to inflation and exchange-rate pressures.",
+      "body": [
+        "The Bangko Sentral ng Pilipinas raised the target reverse repurchase rate by 25 basis points to 5 percent in its latest monetary-policy decision.",
+        "Markets will watch the next inflation prints, peso movement and BSP guidance for signs of whether further tightening will be needed.",
+        "Rates on the overnight deposit and lending facilities were adjusted alongside the policy move.",
+        "The Monetary Board pointed to persistent inflation risks, elevated global energy costs and peso weakness as reasons for maintaining a tighter policy stance."
+      ],
+      "sources": [
+        {
+          "label": "Bangko Sentral ng Pilipinas — Monetary policy decisions and statistics",
+          "url": "https://www.bsp.gov.ph/"
+        },
+        {
+          "label": "BusinessWorld — Philippine central bank hikes key rate for third straight meeting",
+          "url": "https://bworldonline.com/top-stories/2026/08/27/772835/philippine-central-bank-hikes-key-rate-for-third-straight-meeting/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for BSP policy rate decision",
+        "caption": "FMB News editorial visual accompanying the BSP policy-rate report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.bsp.gov.ph/"
+      },
+      "sourceArticle": "content/news/articles/2026-08-29/0702-bsp-raises-policy-rate-5-percent.json"
+    },
+    {
+      "id": "FMB-DB-20260829-005",
+      "kicker": "Economy · Poverty",
+      "headline": "PSA: 12.8% of Filipinos Were Multidimensionally Poor in 2024",
+      "deck": "PSA's national MPI shows overlapping deprivations remain significant even as income-poverty measures have improved.",
+      "body": [
+        "About 12.8% of Filipinos belonged to households classified as multidimensionally poor in 2024, according to the Philippine Statistics Authority's national Multidimensional Poverty Index based on the 2024 Community-Based Monitoring System.",
+        "Multidimensional poverty is different from income poverty. PSA's 2025 official poverty statistics reported that 9.7% of Filipinos were income-poor, while poverty incidence among families was 6.4%. The measures answer different questions and should not be treated as interchangeable.",
+        "The MPI highlights gaps that income alone can miss, including schooling, sanitation, housing quality, access to basic assets and employment conditions. That makes it useful for targeting social and infrastructure programs beyond cash assistance.",
+        "Policy makers and local governments are expected to use the CBMS-based results to identify where deprivation is concentrated and to target education, health, housing, water, sanitation and employment interventions more precisely."
+      ],
+      "sources": [
+        {
+          "label": "Philippine Statistics Authority — 12.8% of Filipinos are Multidimensionally Poor in 2024",
+          "url": "https://psa.gov.ph/content/128-filipinos-are-multidimensionally-poor-2024"
+        },
+        {
+          "label": "Philippine Statistics Authority — Proportion of Poor Families Reduced to 6.4 Percent in 2025",
+          "url": "https://psa.gov.ph/statistics/poverty"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for the Philippine Statistics Authority multidimensional poverty report",
+        "caption": "FMB News editorial visual accompanying the PSA multidimensional-poverty report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-29/0100-psa-12-8-percent-multidimensional-poverty.json"
+    },
+    {
+      "id": "FMB-DB-20260829-006",
+      "kicker": "Geologic Hazards · Public Safety",
+      "headline": "PHIVOLCS Warns of Possible Lahars from Pinatubo and Taal Amid Heavy Habagat Rains",
+      "deck": "Saturated volcanic deposits may be remobilized into river channels and downstream communities as heavy monsoon rain continues.",
+      "body": [
+        "PHIVOLCS warned Saturday that prolonged and intense southwest-monsoon rainfall could generate lahars, muddy streamflows and volcanic debris flows around Mount Pinatubo and Taal Volcano.",
+        "Lahars can occur without an eruption when intense rain mobilizes loose ash, pyroclastic material and other volcanic sediment. Pinatubo watersheds still contain deposits from the 1991 eruption.",
+        "Rain-driven volcanic sediment flows can move through river and drainage systems into downstream communities, so the advisory is a separate hazard from ordinary surface flooding even though both are triggered by heavy rain.",
+        "PHIVOLCS urged local governments and communities in identified areas to monitor weather conditions and take preemptive safety measures as heavy rainfall continues."
+      ],
+      "sources": [
+        {
+          "label": "Philippine News Agency — Phivolcs warns of lahar flows from Pinatubo, Taal volcanoes",
+          "url": "https://www.pna.gov.ph/articles/1282935"
+        },
+        {
+          "label": "PHIVOLCS — Lahar Advisory for Pinatubo and Taal",
+          "url": "https://wovodat.phivolcs.dost.gov.ph/bulletin/activity-pvo?bid=16694&lang=en"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Pinatubo and Taal lahar hazards",
+        "caption": "FMB News editorial visual accompanying the PHIVOLCS lahar advisory.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.pna.gov.ph/index.php/articles/1282935"
+      },
+      "sourceArticle": "content/news/articles/2026-08-29/1300-phivolcs-pinatubo-taal-lahar-warning.json"
+    }
+  ]
+}
