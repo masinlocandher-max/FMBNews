@@ -231,7 +231,8 @@ body.fmb-matte-system .mast .product-wordmark{
   position:relative!important;
   width:min(430px,34vw)!important;
   aspect-ratio:1400/347!important;
-  background:url(../images/fmb-news-masthead-light.webp) center/contain no-repeat!important;
+  /* Shared chrome remains black in every appearance; keep the artwork readable. */
+  background:url(../images/fmb-news-masthead-dark.webp) center/contain no-repeat!important;
 }
 body.fmb-matte-system .mast .product-wordmark .fmb-lux-wordmark{
   position:absolute!important;
