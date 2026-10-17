@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "erc-orders-meralco-refund-p2-64b-consumers-six-months-rate-relief",
+  "headline": "Meralco Refund Set Over Six Months; October Power Rates Still Rise",
+  "seoTitle": "Meralco Refund Set Over Six Months; October Power Rates Still Rise",
+  "seoDescription": "The ₱2.64-billion refund is expected from November. It is separate from the increase in October electricity rates.",
+  "keywords": [],
+  "category": "Business",
+  "kicker": null,
+  "deck": "The ₱2.64-billion refund is expected from November. It is separate from the increase in October electricity rates.",
+  "publishedAt": "2026-10-16T07:46:28.735+08:00",
+  "updatedAt": "2026-10-16T07:46:28.735+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What has been approved",
+      "paragraphs": [
+        "The Energy Regulatory Commission has approved a provisional ₱2.64-billion Meralco refund over six months. Residential customers are due ₱0.1733 per kilowatt-hour, while the average across customer classes is ₱0.1020 per kWh, according to BusinessMirror and Power Philippines.",
+        "The adjustment concerns distribution charges collected from January through June 2026. Its amount remains subject to the regulator’s final evaluation. The six-month schedule is shorter than the 12 months sought by Meralco."
+      ]
+    },
+    {
+      "heading": "October bills still increase",
+      "paragraphs": [
+        "The refund should not be read as a promise that total electricity bills will remain unchanged. Daily Tribune reported that Meralco’s October overall residential rate rose by ₱0.3191 per kWh to ₱15.0615 per kWh, driven by higher generation costs.",
+        "The additional refund is expected to begin in November. Implementation depends on the regulatory order and billing cycle; customers should check their own statement. A distribution-charge adjustment and a change in the total electricity rate are different measures."
+      ]
+    },
+    {
+      "heading": "What households can check",
+      "paragraphs": [
+        "At 200 kWh, a ₱0.1733-per-kWh refund equals ₱34.66 for that billing period. This calculation concerns the refund alone: consumption, other charges and adjustments still affect the final bill.",
+        "Look for the refund entry on the statement and use Meralco’s official billing channels to query a missing or unclear adjustment."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "BusinessMirror",
+      "title": null,
+      "publishedAt": null,
+      "url": "https://businessmirror.com.ph/2026/10/12/return-p2-64b-to-customers-in-6-months-erc-tells-meralco/",
+      "role": "independent"
+    },
+    {
+      "publisher": "Power Philippines",
+      "title": null,
+      "publishedAt": null,
+      "url": "https://powerphilippines.com/erc-orders-php-2-64-b-meralco-refund-over-six-months/",
+      "role": "independent"
+    },
+    {
+      "publisher": "Daily Tribune",
+      "title": null,
+      "publishedAt": null,
+      "url": "https://tribune.net.ph/2026/10/13/meralco-rate-hike-eats-into-october-bill-relief-2",
+      "role": "independent"
+    }
+  ],
+  "image": {
+    "alt": "FMB News editorial visual; not a photograph of the reported event",
+    "url": "/news/assets/images/news/fmb-news-editorial-fallback.svg",
+    "kind": "editorial-fallback",
+    "width": 1200,
+    "credit": "FMB News editorial visual",
+    "height": 675,
+    "source": "FMB News",
+    "caption": "FMB-owned editorial visual. Not a documentary photograph.",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial artwork",
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
+  },
+  "audit": {
+    "archiveSync": "CMS-only; not required for publication",
+    "disposition": "published",
+    "gmailMessageId": "1a13272150764824",
+    "internalStoryId": "FMB-20261013-ECO-080",
+    "routeVerifiedAt": "2026-10-15T23:51:17.211618+00:00",
+    "sourceCheckedAt": "2026-10-15T23:46:03.120Z",
+    "imageRightsCheck": "FMB-owned editorial fallback; supplied photograph not used",
+    "routeVerification": "Browser verified full article, source links, byline and visible editorial-image attribution",
+    "verificationNotes": "Original supplied links inaccessible. Verified central figures against BusinessMirror and Power Philippines; updated timing and October increase against Daily Tribune. Removed misleading assertion that overall bills remain unchanged and unsupported climate speculation.",
+    "desktopLandingVerification": "Newest Pulse Asia headline visible on homepage",
+    "repositoryReconciledAt": "2026-10-17T08:43:00+08:00"
+  }
+}

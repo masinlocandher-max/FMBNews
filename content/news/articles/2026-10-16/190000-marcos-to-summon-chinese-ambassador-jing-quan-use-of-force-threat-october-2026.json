@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "marcos-to-summon-chinese-ambassador-jing-quan-use-of-force-threat-october-2026",
+  "headline": "Marcos Seeks Direct Talks With Chinese Envoy Over Force Remark",
+  "seoTitle": "Marcos seeks talks with Chinese envoy over force remark",
+  "seoDescription": "President Marcos said Chinese Ambassador Jing Quan's force remark sounded like a threat and warranted a direct discussion.",
+  "keywords": [
+    "Ferdinand Marcos Jr.",
+    "Jing Quan",
+    "China",
+    "DFA",
+    "West Philippine Sea"
+  ],
+  "category": "Philippines",
+  "kicker": "Diplomacy",
+  "deck": "The President said the ambassador's wording sounded like a threat and warranted a direct discussion, while no expulsion decision had been made.",
+  "publishedAt": "2026-10-16T19:00:00.000+08:00",
+  "updatedAt": "2026-10-17T08:39:50.596+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What changed",
+      "paragraphs": [
+        "President Ferdinand Marcos Jr. said Chinese Ambassador Jing Quan's remark sounded like a threat and that he wanted to understand directly what the envoy meant.",
+        "The Presidential Communications Office described the next step as dialogue. A presidential request for discussion is distinct from a declaration of persona non grata."
+      ]
+    },
+    {
+      "heading": "The earlier exchange",
+      "paragraphs": [
+        "The DFA had criticized Jing's statement that China could easily win if it used force. Jing also said China would not choose force and wanted peace.",
+        "The Chinese Embassy said the statement had been selectively quoted and overinterpreted, while China's Foreign Ministry urged Manila to understand Beijing's position accurately and comprehensively."
+      ]
+    },
+    {
+      "heading": "Why this is a continuation",
+      "paragraphs": [
+        "The President's intervention is an independently newsworthy escalation from the initial DFA rebuke.",
+        "Earlier FMB News report: /news/dfa-rebukes-chinese-envoy-thinly-veiled-threat-force-west-ph-sea/"
+      ]
+    },
+    {
+      "heading": "What to watch",
+      "paragraphs": [
+        "The next verifiable development is whether a meeting occurs and whether either government records a formal diplomatic outcome.",
+        "No expulsion or persona-non-grata decision was confirmed in the verified material used for this report."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Presidential Communications Office",
+      "title": null,
+      "publishedAt": null,
+      "url": "https://pco.gov.ph/news_releases/president-marcos-seeks-dialogue-with-chinese-envoy-over-remarks-on-use-of-force/",
+      "role": "primary"
+    },
+    {
+      "publisher": "Associated Press",
+      "title": null,
+      "publishedAt": null,
+      "url": "https://apnews.com/article/china-philippines-chinese-ambassador-jing-quan-south-china-sea-disputes-9e532b4bd2413b3702d4c55f89cffd22",
+      "role": "independent"
+    },
+    {
+      "publisher": "Reuters",
+      "title": null,
+      "publishedAt": null,
+      "url": "https://www.reuters.com/world/china/philippines-hits-back-chinese-envoy-over-thinly-veiled-threat-force-2026-10-16/",
+      "role": "independent"
+    },
+    {
+      "publisher": "Philstar",
+      "title": null,
+      "publishedAt": null,
+      "url": "https://www.philstar.com/headlines/2026/10/16/2563637/marcos-chinese-ambassadors-force-remark-sounds-very-much-threat",
+      "role": "independent"
+    }
+  ],
+  "image": {
+    "alt": "FMB News editorial visual; not a photograph of the reported event",
+    "url": "/news/assets/images/news/fmb-news-editorial-fallback.svg",
+    "kind": "editorial-fallback",
+    "width": 1200,
+    "credit": "FMB News editorial visual",
+    "height": 675,
+    "source": "FMB News",
+    "caption": "FMB-owned editorial visual. Not a documentary photograph of the reported event.",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial artwork",
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
+  },
+  "audit": {
+    "archiveSync": "pending",
+    "disposition": "published_backfill",
+    "continuation": {
+      "whatChanged": "The President personally called for a direct discussion with the ambassador.",
+      "earliestRelevantFmbSlug": "dfa-rebukes-chinese-envoy-thinly-veiled-threat-force-west-ph-sea"
+    },
+    "gmailMessageId": "1a1446b42ac7d54e",
+    "internalStoryId": "FMB-20261016-DIP-094",
+    "sourceCheckedAt": "2026-10-17T08:37:00+08:00",
+    "imageRightsCheck": "Supplied official press photograph was not assumed reusable. FMB-owned editorial fallback used and clearly labeled.",
+    "originalEventDate": "2026-10-16",
+    "routeVerification": "pending",
+    "verificationNotes": "Confirmed the President's remarks through the PCO release and independent AP, Reuters and Philstar reporting. Distinguished direct dialogue from persona-non-grata proposals and included China's response.",
+    "repositoryReconciledAt": "2026-10-17T08:43:00+08:00"
+  }
+}

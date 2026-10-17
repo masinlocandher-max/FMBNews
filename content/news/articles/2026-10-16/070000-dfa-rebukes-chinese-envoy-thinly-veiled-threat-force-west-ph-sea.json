@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "dfa-rebukes-chinese-envoy-thinly-veiled-threat-force-west-ph-sea",
+  "headline": "DFA Rebukes Chinese Envoy Over Remark on Winning by Force",
+  "seoTitle": "DFA rebukes Chinese envoy over force remark",
+  "seoDescription": "The DFA urged restraint after Chinese Ambassador Jing Quan said Beijing could easily win if it used force, while saying China would not do so.",
+  "keywords": [
+    "DFA",
+    "Jing Quan",
+    "China",
+    "West Philippine Sea",
+    "Philippines-China relations"
+  ],
+  "category": "Philippines",
+  "kicker": "West Philippine Sea",
+  "deck": "Manila called the envoy's words unhelpful to already complicated ties; his complete statement also rejected using force and said China wanted peace.",
+  "publishedAt": "2026-10-16T07:00:00.000+08:00",
+  "updatedAt": "2026-10-17T08:39:50.596+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What was said",
+      "paragraphs": [
+        "The Department of Foreign Affairs urged Chinese Ambassador Jing Quan to exercise greater restraint after remarks that the agency said appeared to convey a thinly veiled threat of force.",
+        "Jing said China could easily win if it chose to use force, but added in the same statement that China would not do so and wanted peace."
+      ]
+    },
+    {
+      "heading": "The Philippine response",
+      "paragraphs": [
+        "The DFA said diplomacy requires tact and restraint so that dialogue can continue despite differences. It called the wording regrettable and unhelpful amid complicated bilateral ties.",
+        "The agency asked diplomats accredited to the Philippines to avoid language that could erode trust or derail constructive engagement."
+      ]
+    },
+    {
+      "heading": "China's response and unresolved points",
+      "paragraphs": [
+        "The Chinese Embassy said the remarks had been selectively quoted and overinterpreted. Beijing said the relationship was at an extremely sensitive stage.",
+        "The reports do not establish an imminent plan to use force. The next concrete signals are any formal diplomatic action and the state of bilateral maritime communication channels."
+      ]
+    },
+    {
+      "heading": "Why it matters to Filipinos",
+      "paragraphs": [
+        "Statements by senior diplomats can affect crisis management around Philippine vessels and communities in the West Philippine Sea.",
+        "Clear attribution matters: the DFA's criticism is confirmed, while broader claims about either government's intentions require separate evidence."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "GMA News",
+      "title": null,
+      "publishedAt": null,
+      "url": "https://www.gmanetwork.com/news/topstories/nation/1006094/philippines-calls-out-chinese-envoy-over-thinly-veiled-threat-of-force/story/",
+      "role": "independent"
+    },
+    {
+      "publisher": "Associated Press",
+      "title": null,
+      "publishedAt": null,
+      "url": "https://apnews.com/article/china-philippines-chinese-ambassador-jing-quan-south-china-sea-disputes-9e532b4bd2413b3702d4c55f89cffd22",
+      "role": "independent"
+    },
+    {
+      "publisher": "Reuters",
+      "title": null,
+      "publishedAt": null,
+      "url": "https://www.reuters.com/world/china/philippines-hits-back-chinese-envoy-over-thinly-veiled-threat-force-2026-10-16/",
+      "role": "independent"
+    }
+  ],
+  "image": {
+    "alt": "FMB News editorial visual; not a photograph of the reported event",
+    "url": "/news/assets/images/news/fmb-news-editorial-fallback.svg",
+    "kind": "editorial-fallback",
+    "width": 1200,
+    "credit": "FMB News editorial visual",
+    "height": 675,
+    "source": "FMB News",
+    "caption": "FMB-owned editorial visual. Not a documentary photograph of the reported event.",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial artwork",
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
+  },
+  "audit": {
+    "archiveSync": "pending",
+    "disposition": "published_backfill",
+    "gmailMessageId": "1a141e801841c59f",
+    "internalStoryId": "FMB-20261016-DIP-092",
+    "sourceCheckedAt": "2026-10-17T08:37:00+08:00",
+    "imageRightsCheck": "Supplied press photograph was not used because independent reuse permission was not established. FMB-owned editorial fallback used and clearly labeled.",
+    "originalEventDate": "2026-10-16",
+    "routeVerification": "pending",
+    "verificationNotes": "Confirmed the DFA wording and the ambassador's complete quoted statement in GMA News, AP and Reuters. Included the Chinese Embassy response and did not infer an imminent attack.",
+    "repositoryReconciledAt": "2026-10-17T08:43:00+08:00"
+  }
+}

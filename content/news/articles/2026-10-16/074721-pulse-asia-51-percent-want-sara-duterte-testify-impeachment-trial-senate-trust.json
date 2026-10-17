@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "pulse-asia-51-percent-want-sara-duterte-testify-impeachment-trial-senate-trust",
+  "headline": "Pulse Asia: 51% Say Sara Duterte Should Testify in Impeachment Trial",
+  "seoTitle": "Pulse Asia: 51% Say Sara Duterte Should Testify in Impeachment Trial",
+  "seoDescription": "The September survey measured public opinion before later October developments; 34% opposed a personal appearance.",
+  "keywords": [],
+  "category": "Philippines",
+  "kicker": null,
+  "deck": "The September survey measured public opinion before later October developments; 34% opposed a personal appearance.",
+  "publishedAt": "2026-10-16T07:47:21.241+08:00",
+  "updatedAt": "2026-10-16T07:46:28.735+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What the survey found",
+      "paragraphs": [
+        "Fifty-one percent of Filipino adults said Vice President Sara Duterte should personally testify in the Senate impeachment trial, according to Pulse Asia’s September survey, released on October 14.",
+        "The pollster’s published tables show 34% taking the opposite position, 14% undecided and 1% declining to answer. These figures describe respondents’ preferences, not a ruling on the case or an assessment of guilt."
+      ]
+    },
+    {
+      "heading": "How it was measured",
+      "paragraphs": [
+        "Pulse Asia interviewed 2,400 adults aged 18 and older face to face from September 17 to 24. The national margin of error is plus or minus two percentage points at a 95% confidence level.",
+        "The fieldwork predates October developments in the proceedings. The results therefore cannot establish how respondents reacted to events after September 24."
+      ]
+    },
+    {
+      "heading": "How to read the result",
+      "paragraphs": [
+        "Readers should distinguish support for personal testimony from support for a particular verdict. The question asks whether the vice president should appear and testify; it does not decide the allegations.",
+        "Consult the original questionnaire and tables when comparing survey headlines. Survey dates, question wording and the population being measured are essential context."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Pulse Asia Research",
+      "title": null,
+      "publishedAt": null,
+      "url": "https://pulseasia.ph/wp-content/uploads/2026/10/MR2-UB2026-3-MR-on-the-Vice-Presidents-Impeachment-Trial-Final.pdf",
+      "role": "independent"
+    },
+    {
+      "publisher": "Philstar",
+      "title": null,
+      "publishedAt": null,
+      "url": "https://www.philstar.com/headlines/2026/10/14/2563218/51-pinoys-want-sara-duterte-testify-impeachment-trial-poll",
+      "role": "independent"
+    }
+  ],
+  "image": {
+    "alt": "FMB News editorial visual; not a photograph of the reported event",
+    "url": "/news/assets/images/news/fmb-news-editorial-fallback.svg",
+    "kind": "editorial-fallback",
+    "width": 1200,
+    "credit": "FMB News editorial visual",
+    "height": 675,
+    "source": "FMB News",
+    "caption": "FMB-owned editorial visual. Not a documentary photograph.",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial artwork",
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
+  },
+  "audit": {
+    "archiveSync": "CMS-only; not required for publication",
+    "disposition": "published",
+    "gmailMessageId": "1a13e0ce2e644814",
+    "internalStoryId": "FMB-20261015-SUR-089",
+    "routeVerifiedAt": "2026-10-15T23:51:17.211618+00:00",
+    "sourceCheckedAt": "2026-10-15T23:46:03.120Z",
+    "imageRightsCheck": "FMB-owned editorial fallback; supplied photograph not used",
+    "routeVerification": "Browser verified full article, source links, byline and visible editorial-image attribution",
+    "verificationNotes": "Checked Pulse Asia original PDF pages 1, 7 and 8. Replaced sensational demand wording with should testify; omitted unverified 60% fairness claim and allegations. Neutral reporting of poll methodology and opinion, not criminal findings.",
+    "desktopLandingVerification": "Newest Pulse Asia headline visible on homepage",
+    "repositoryReconciledAt": "2026-10-17T08:43:00+08:00"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "slug": "philippine-peso-falls-record-low-63-us-dollar-october-2026",
+  "headline": "Peso Falls Past ₱63 Intraday, Then Recovers Some Ground",
+  "seoTitle": "Peso breaches ₱63 intraday and hits record low",
+  "seoDescription": "The Philippine peso traded past ₱63 to the dollar and hit a record intraday low before recovering some ground.",
+  "keywords": [
+    "Philippine peso",
+    "US dollar",
+    "exchange rate",
+    "BAP",
+    "imports",
+    "remittances"
+  ],
+  "category": "Economy",
+  "kicker": "Markets",
+  "deck": "The currency touched ₱63.23 per dollar before recovering; the verified update supersedes lower figures in the midday bulletin.",
+  "publishedAt": "2026-10-16T13:00:00.000+08:00",
+  "updatedAt": "2026-10-17T08:40:36.085+08:00",
+  "author": "FMB News Desk",
+  "articleType": "NewsArticle",
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "The Philippine peso traded past ₱63 to the U.S. dollar on October 16 and reached a new record intraday low of ₱63.23, according to ABS-CBN News's updated market report.",
+        "The currency later recovered some ground, so the intraday low should not be confused with a final closing rate."
+      ]
+    },
+    {
+      "heading": "Correction to the supplied package",
+      "paragraphs": [
+        "The midday FMB News bulletin cited an earlier ₱63.18 low and a ₱63.12 midday level. A later verified report placed the intraday low at ₱63.23.",
+        "FMB News did not use the bulletin's purported emergency BSP statement because the linked release could not be independently authenticated."
+      ]
+    },
+    {
+      "heading": "Why it matters to households",
+      "paragraphs": [
+        "Peso depreciation can raise the local cost of imported fuel, food, fertilizer and dollar-priced inputs.",
+        "Dollar-remittance recipients may receive more pesos, but higher import costs can erode some of that gain."
+      ]
+    },
+    {
+      "heading": "What to watch",
+      "paragraphs": [
+        "Watch the official closing rate and subsequent sessions rather than treating a single intraday print as permanent.",
+        "Any claim about capital controls, emergency rate moves or intervention should be checked against an authenticated BSP release."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "ABS-CBN News",
+      "title": null,
+      "publishedAt": null,
+      "url": "https://www.abs-cbn.com/news/business/2026/10/16/peso-trades-around-p63-vs-dollar-in-intraday-after-hitting-new-historic-low-1020",
+      "role": "independent"
+    },
+    {
+      "publisher": "Inquirer Business",
+      "title": null,
+      "publishedAt": null,
+      "url": "https://business.inquirer.net/616210/peso-tumbles-beyond-631",
+      "role": "independent"
+    }
+  ],
+  "image": {
+    "alt": "FMB News editorial visual; not a photograph of the reported event",
+    "url": "/news/assets/images/news/fmb-news-editorial-fallback.svg",
+    "kind": "editorial-fallback",
+    "width": 1200,
+    "credit": "FMB News editorial visual",
+    "height": 675,
+    "source": "FMB News",
+    "caption": "FMB-owned editorial visual. Not a documentary photograph of the reported event.",
+    "creator": "FMB News",
+    "license": "FMB-owned editorial artwork",
+    "sourceUrl": "https://www.francinemariebautista.com/news/"
+  },
+  "audit": {
+    "archiveSync": "pending",
+    "disposition": "published_with_corrections",
+    "gmailMessageId": "1a14321190772c28",
+    "internalStoryId": "FMB-20261016-ECO-093",
+    "sourceCheckedAt": "2026-10-17T08:37:00+08:00",
+    "imageRightsCheck": "Supplied PNA image and asserted public-domain status were not independently verified. FMB-owned editorial fallback used and clearly labeled.",
+    "originalEventDate": "2026-10-16",
+    "routeVerification": "pending",
+    "verificationNotes": "The central event—first intraday trade beyond ₱63—was verified. The supplied ₱63.18 low was superseded by ABS-CBN's later ₱63.23 figure. The purported BSP emergency statement and supplied causal claims were not independently authenticated and were excluded.",
+    "repositoryReconciledAt": "2026-10-17T08:43:00+08:00"
+  }
+}
