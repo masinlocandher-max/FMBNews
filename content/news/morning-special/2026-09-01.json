@@ -1,0 +1,202 @@
+{
+  "date": "2026-09-01",
+  "publishedAt": "2026-09-01T07:00:00+08:00",
+  "editionLabel": "FMB Daily Brief · Archive Recovery",
+  "title": "The Stories That Defined the Day",
+  "deck": "Recovered FMB Daily Brief for 2026-09-01, reconstructed from FMB News' verified article archive. Key coverage includes Senate Budget Panel Chair Says No Funding for New Flood-Control Projects in 2027; DOH Records 5,835 Leptospirosis Cases Nationwide as Flood Exposure Drives Recent Rise; Project NOAH Head Says Decades of Ignoring 1941 Flood Plan Worsened Flood Risk.",
+  "timezone": "Asia/Manila",
+  "recovery": {
+    "reconstructed": true,
+    "reconstructedAt": "2026-09-15T03:30:00+08:00",
+    "note": "Historical recovery edition. It was reconstructed after the original publication date and must not be represented as having been published contemporaneously."
+  },
+  "hero": {
+    "src": "/assets/images/mobile/fmb-daily-brief-coffee.webp",
+    "alt": "FMB Daily Brief coffee visual with the FMB shell emblem",
+    "caption": "Approved FMB Daily Brief photographic visual used when a recovered edition has no suitable rights-cleared documentary photograph.",
+    "credit": "FMB News",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260901-001",
+      "kicker": "Budget · Flood Control",
+      "headline": "Senate Budget Panel Chair Says No Funding for New Flood-Control Projects in 2027",
+      "deck": "The Senate budget panel signaled tighter scrutiny of flood-control spending after severe flooding and questions over project performance.",
+      "body": [
+        "The chair of the Senate finance committee said no funding for new flood-control projects should be included in the 2027 national budget while the government reviews existing projects, implementation backlogs and the performance of flood-mitigation spending.",
+        "The position followed widespread flooding in Luzon and renewed scrutiny of Department of Public Works and Highways flood-control projects.",
+        "The proposed 2027 budget remains subject to committee hearings and plenary deliberations, where project-level allocations can still change.",
+        "A pause on new projects would shift attention toward completing, auditing and evaluating existing infrastructure before additional public funds are committed."
+      ],
+      "sources": [
+        {
+          "label": "ABS-CBN News — No funding for new flood control projects in 2027—Senate budget panel chair",
+          "url": "https://www.abs-cbn.com/news/nation/2026/9/1/no-funding-for-new-flood-control-projects-in-2027-senate-budget-panel-chair-1328"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Senate flood-control budget scrutiny",
+        "caption": "FMB News editorial visual accompanying the 2027 flood-control budget report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.abs-cbn.com/news/nation/2026/9/1/no-funding-for-new-flood-control-projects-in-2027-senate-budget-panel-chair-1328"
+      },
+      "sourceArticle": "content/news/articles/2026-09-01/1302-senate-no-new-flood-control-projects-2027.json"
+    },
+    {
+      "id": "FMB-DB-20260901-002",
+      "kicker": "Health · Flood aftermath",
+      "headline": "DOH Records 5,835 Leptospirosis Cases Nationwide as Flood Exposure Drives Recent Rise",
+      "deck": "DOH data cited by multiple reports show 5,835 cases and 358 deaths this year, while the recent case trend has risen after widespread flooding.",
+      "body": [
+        "Department of Health data cited by multiple Philippine reports show 5,835 leptospirosis cases nationwide this year and 358 deaths.",
+        "Leptospirosis is a bacterial disease associated with exposure to water or soil contaminated by infected animal urine. Concern typically rises after severe flooding because residents, responders and commuters may have unavoidable contact with floodwater.",
+        "The current rise comes as many communities are still recovering from prolonged flooding, creating a second public-health burden on households and hospitals.",
+        "Watch for updated DOH surveillance data, local case clusters and hospital-capacity advisories. FMB News is using 358 deaths after the earlier conflicting figure was cross-checked against multiple current reports citing DOH data."
+      ],
+      "sources": [
+        {
+          "label": "Philippine STAR — DOH: 5,835 leptospirosis cases recorded",
+          "url": "https://www.philstar.com/headlines/2026/09/01/2553197/doh-5835-leptospirosis-cases-recorded/amp/"
+        },
+        {
+          "label": "Bombo Radyo La Union — DOH records 5,835 leptospirosis cases nationwide",
+          "url": "https://launion.bomboradyo.com/doh-nakapagtala-ng-5835-leptospirosis-cases-sa-bansa/"
+        }
+      ],
+      "image": {
+        "src": "/news/assets/images/news/2026-09-01/doh-5835-leptospirosis-cases.svg",
+        "alt": "FMB News icon-led metallic purple-violet graphic for 5,835 leptospirosis cases nationwide",
+        "caption": "Original FMB News metallic purple-violet editorial graphic for the national leptospirosis report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-01/232803-doh-5835-leptospirosis.json"
+    },
+    {
+      "id": "FMB-DB-20260901-003",
+      "kicker": "Flood Control · Science",
+      "headline": "Project NOAH Head Says Decades of Ignoring 1941 Flood Plan Worsened Flood Risk",
+      "deck": "Mahar Lagmay called for science-based, system-wide flood planning rather than disconnected projects as severe flooding continued.",
+      "body": [
+        "UP Resilience Institute executive director and Project NOAH head Mahar Lagmay said recurring flooding reflects decades of failure to follow a comprehensive flood-control master plan drafted in 1941.",
+        "The comments came as Metro Manila and parts of Luzon experienced prolonged flooding after repeated monsoon rain.",
+        "The policy question is whether national and local agencies will align future flood-control spending with updated science-based basin plans and transparent project evaluation.",
+        "He argued that flood mitigation should be treated as a connected watershed and drainage problem rather than as a collection of isolated projects."
+      ],
+      "sources": [
+        {
+          "label": "Philstar.com — NOAH head: Philippines ignored 1941 flood control master plan",
+          "url": "https://www.philstar.com/headlines/2026/09/01/2553178/noah-head-philippines-ignored-1941-flood-control-master-plan"
+        },
+        {
+          "label": "UP Resilience Institute / Project NOAH — Project NOAH",
+          "url": "https://noah.up.edu.ph/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Project NOAH Head Says Decades of Ignoring 1941 Flood Plan Worsened Flood Risk",
+        "caption": "FMB News editorial visual accompanying this recovered report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.philstar.com/headlines/2026/09/01/2553178/noah-head-philippines-ignored-1941-flood-control-master-plan"
+      },
+      "sourceArticle": "content/news/articles/2026-09-01/0701-noah-1941-flood-control-master-plan.json"
+    },
+    {
+      "id": "FMB-DB-20260901-004",
+      "kicker": "Energy · Consumer Prices",
+      "headline": "Diesel and Kerosene Prices Drop by Nearly ₱4 per Liter as September Begins",
+      "deck": "The September 1 rollback provided motorists relief after two consecutive weeks of fuel-price increases.",
+      "body": [
+        "Fuel retailers implemented price cuts effective 6 a.m. on September 1, with the largest reductions applied to diesel and kerosene.",
+        "The rollback followed two straight weeks of increases and reflected easing international oil-market pressure even as geopolitical risks remained.",
+        "Consumers should watch the next round of oil-company price advisories for whether the rollback is sustained or reversed as international oil-market conditions change.",
+        "Seaoil announced cuts of ₱0.32 per liter for gasoline, ₱3.83 for diesel and ₱3.84 for kerosene, while Petron and Shell cut gasoline by ₱0.30 and diesel and kerosene by ₱3.80. Unioil announced gasoline and diesel reductions of ₱0.40 and ₱3.90, respectively."
+      ],
+      "sources": [
+        {
+          "label": "Philippine News Agency — Oil price cut set this week",
+          "url": "https://www.pna.gov.ph/articles/1283007"
+        },
+        {
+          "label": "GMA News Online — Pump price rollback set Tuesday, September 1, 2026",
+          "url": "https://www.gmanetwork.com/news/money/economy/1000521/pump-price-rollback-set-tuesday-september-1-2026/story/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Diesel and Kerosene Prices Drop by Nearly ₱4 per Liter as September Begins",
+        "caption": "FMB News editorial visual accompanying this recovered report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.pna.gov.ph/articles/1283007"
+      },
+      "sourceArticle": "content/news/articles/2026-09-01/0102-fuel-price-rollback-september-1.json"
+    },
+    {
+      "id": "FMB-DB-20260901-005",
+      "kicker": "Impeachment · Testimony",
+      "headline": "Army Officer Says His Unit Received No DepEd Confidential Funds for Youth Summits",
+      "deck": "Boransing said the Army funded its own participation and that his certification was not meant to validate DepEd's use of confidential funds.",
+      "body": [
+        "Army Col. Manaros Boransing II testified during Day 20 of Vice President Sara Duterte's impeachment trial that his unit did not receive confidential funds from the Department of Education for Youth Leadership Summit activities in 2023.",
+        "The prosecution questioned military certifications that appeared in DepEd's response to audit findings involving confidential-fund expenditures.",
+        "Boransing said the Army certification documented participation in the activities and was not intended to certify how DepEd spent its confidential funds. He said he had no personal knowledge of DepEd's funding source for the department's own participation.",
+        "The testimony bears on whether military activities cited in supporting documents actually received or used the confidential funds under scrutiny. It does not by itself determine liability in the impeachment case."
+      ],
+      "sources": [
+        {
+          "label": "GMA News Online — Boransing: No confi funds from Sara Duterte's DepEd in Army youth seminars",
+          "url": "https://www.gmanetwork.com/news/topstories/nation/1000660/boransing-no-confi-funds-from-sara-duterte-s-deped-in-army-youth-seminars/story/"
+        },
+        {
+          "label": "INQUIRER.net — Boransing insists: No Duterte offices’ funds in Army youth summits",
+          "url": "https://newsinfo.inquirer.net/2296490/boransing-insists-no-duterte-offices-funds-in-army-youth-summits"
+        },
+        {
+          "label": "Philippine News Agency — P15.5-M DepEd rewards questioned against youth leadership summit costs",
+          "url": "https://www.pna.gov.ph/articles/1283064"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Army testimony in the impeachment trial",
+        "caption": "FMB News editorial visual accompanying the Boransing testimony report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.pna.gov.ph/articles/1283064"
+      },
+      "sourceArticle": "content/news/articles/2026-09-01/1901-boransing-no-deped-funds-army-youth-summits.json"
+    },
+    {
+      "id": "FMB-DB-20260901-006",
+      "kicker": "Public Service · Weather",
+      "headline": "Palace Orders Alternative Government Work Arrangements in 15 Luzon Provinces",
+      "deck": "Essential and disaster-response services were required to continue operating while covered offices shifted to alternative arrangements.",
+      "body": [
+        "Malacañang directed government agencies in 15 provinces in Northern and Central Luzon to adopt appropriate alternative work arrangements on September 1 because of expected heavy rainfall from the enhanced southwest monsoon.",
+        "The order was a weather-related continuity measure for national government offices rather than a blanket shutdown. It allowed agencies in the covered provinces to reduce travel exposure while keeping public functions available during a period of persistent Habagat rainfall and saturated conditions across parts of Luzon.",
+        "Residents and government personnel should rely on subsequent Palace, Civil Service Commission, NDRRMC and local government advisories for any extension, lifting or change in work arrangements as weather conditions evolve.",
+        "The directive was issued through Memorandum Circular No. 133 upon the recommendation of the National Disaster Risk Reduction and Management Council."
+      ],
+      "sources": [
+        {
+          "label": "Philippine Information Agency / Presidential Communications Office — Palace orders gov’t agencies in 15 Luzon provinces to observe alternative work arrangements on Sept. 1 due to Habagat",
+          "url": "https://pia.gov.ph/news/palace-orders-govt-agencies-in-15-luzon-provinces-to-observe-alternative-work-arrangements-on-sept-1-due-to-habagat/"
+        },
+        {
+          "label": "GMA News Online — Malacañang shifts gov't work, classes in 15 provinces to alternative mode on Sept. 1, 2026",
+          "url": "https://www.gmanetwork.com/news/topstories/regions/1000572/malaca-ang-shifts-gov-t-work-classes-in-15-provinces-to-alternative-mode-on-sept-1-2026/story/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Palace Orders Alternative Government Work Arrangements in 15 Luzon Provinces",
+        "caption": "FMB News editorial visual accompanying this recovered report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://pia.gov.ph/news/palace-orders-govt-agencies-in-15-luzon-provinces-to-observe-alternative-work-arrangements-on-sept-1-due-to-habagat/"
+      },
+      "sourceArticle": "content/news/articles/2026-09-01/0101-mc133-alternative-work-15-provinces.json"
+    }
+  ]
+}

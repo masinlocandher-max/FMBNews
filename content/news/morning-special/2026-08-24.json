@@ -1,0 +1,214 @@
+{
+  "date": "2026-08-24",
+  "publishedAt": "2026-08-24T07:00:00+08:00",
+  "editionLabel": "FMB Daily Brief · Archive Recovery",
+  "title": "The Stories That Defined the Day",
+  "deck": "Recovered FMB Daily Brief for 2026-08-24, reconstructed from FMB News' verified article archive. Key coverage includes Remulla Estimates First-Year Public School Security Upgrades at ₱5 Billion; House Prosecutors Eye Michael Poa as Hostile Witness in Duterte Impeachment Trial; DMW Confirms 39 Filipino Seafarers Safe After Black Sea Drone Attacks.",
+  "timezone": "Asia/Manila",
+  "recovery": {
+    "reconstructed": true,
+    "reconstructedAt": "2026-09-15T03:30:00+08:00",
+    "note": "Historical recovery edition. It was reconstructed after the original publication date and must not be represented as having been published contemporaneously."
+  },
+  "hero": {
+    "src": "/assets/images/mobile/fmb-daily-brief-coffee.webp",
+    "alt": "FMB Daily Brief coffee visual with the FMB shell emblem",
+    "caption": "Approved FMB Daily Brief photographic visual used when a recovered edition has no suitable rights-cleared documentary photograph.",
+    "credit": "FMB News",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260824-001",
+      "kicker": "Education · Public Safety",
+      "headline": "Remulla Estimates First-Year Public School Security Upgrades at ₱5 Billion",
+      "deck": "The DILG chief gave the first-year estimate as education and interior officials pursued tighter access controls, surveillance and local security coordination for schools.",
+      "body": [
+        "Interior Secretary Jonvic Remulla estimated that improving security systems across public schools could cost about ₱5 billion in the first year.",
+        "DILG and DepEd have been preparing an inter-agency agreement to strengthen security inside and around school premises following recent campus violence. Current government reporting supports the policy direction toward closer local coordination, stronger surveillance and controlled access.",
+        "The estimate signals the potential scale of a nationwide school-security program, but its final cost and scope will depend on formal agency plans and budget approval. Physical safeguards also need trained personnel, clear reporting procedures and student-support measures to avoid creating a climate of fear.",
+        "Watch DILG, DepEd and budget authorities for the signed inter-agency agreement, an itemized funding proposal, procurement standards and implementation rules for cameras, metal detectors and local security coordination."
+      ],
+      "sources": [
+        {
+          "label": "ANC — Remulla: Enhancing security system of public schools will cost P5-B on first year",
+          "url": "https://www.youtube.com/watch?v=7saLa6Y3TwE"
+        },
+        {
+          "label": "ABS-CBN News — DepEd postpones nationwide 'live-shooter' drills: 'Nakikinig kami sa mga eksperto'",
+          "url": "https://news.abs-cbn.com/news/nation/2026/8/24/deped-postpones-nationwide-live-shooter-drills-0917"
+        },
+        {
+          "label": "Department of the Interior and Local Government CALABARZON — DILG, DepEd to ink agreement boosting security inside schools",
+          "url": "https://calabarzon.dilg.gov.ph/dilg-deped-to-ink-agreement-boosting-security-inside-schools/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for proposed public-school security improvements",
+        "caption": "FMB News editorial visual accompanying the report on proposed public-school security upgrades; it does not depict the actual briefing.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-24/1300-dilg-deped-school-security-modernization-plan.json"
+    },
+    {
+      "id": "FMB-DB-20260824-002",
+      "kicker": "Impeachment · Court Procedure",
+      "headline": "House Prosecutors Eye Michael Poa as Hostile Witness in Duterte Impeachment Trial",
+      "deck": "The prosecution is considering a hostile-witness request because of Poa's current defense role and his earlier work responding to audit memoranda on DepEd confidential funds.",
+      "body": [
+        "The House prosecution panel is considering asking the Senate Impeachment Court to treat Michael Poa, a member of Vice President Sara Duterte's defense team and a former Department of Education undersecretary, as a hostile witness.",
+        "The impeachment trial is examining House allegations concerning confidential funds used by the Office of the Vice President and DepEd. Duterte and her defense team have contested allegations of misuse.",
+        "Poa's prior government role and current defense position could make his testimony important to the prosecution's effort to examine DepEd audit responses. The court's ruling would define how that examination proceeds without deciding the merits of the underlying allegations.",
+        "The next question is whether prosecutors formally file the request and how the defense and the Senate Impeachment Court respond. Until the court rules, Poa has not been declared a hostile witness."
+      ],
+      "sources": [
+        {
+          "label": "The Manila Times — Prosecution may call Poa as hostile witness",
+          "url": "https://www.manilatimes.net/2026/08/28/news/national/prosecution-may-call-poa-as-hostile-witness/2413606"
+        },
+        {
+          "label": "Philippine News Agency — Banks given 7 days to submit VP records to impeachment court",
+          "url": "https://www.pna.gov.ph/articles/1282721"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for the Michael Poa impeachment-trial update",
+        "caption": "FMB News editorial visual accompanying the Michael Poa hostile-witness report; it does not depict the actual proceedings.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-24/1900-senate-agrees-move-sara-duterte-impeachment-trial-afternoons.json"
+    },
+    {
+      "id": "FMB-DB-20260824-003",
+      "kicker": "Migrant Workers · Maritime Security",
+      "headline": "DMW Confirms 39 Filipino Seafarers Safe After Black Sea Drone Attacks",
+      "deck": "Seventeen Filipino crew members of M/V Anna S and 22 aboard M/V Elina B were reported safe as the DMW continued monitoring assistance and repatriation arrangements.",
+      "body": [
+        "The Department of Migrant Workers confirmed that 39 Filipino seafarers aboard two commercial vessels affected by drone attacks near Novorossiysk, Russia, are safe and accounted for.",
+        "One Filipino crew member from M/V Anna S is receiving hospital care in Turkey for a kidney condition unrelated to the drone attack and was reported in stable condition.",
+        "The northern Black Sea remains a high-risk operating environment for commercial shipping. The DMW has maintained restrictions and protective measures for Filipino seafarers assigned to routes exposed to armed conflict.",
+        "Watch for DMW updates on repatriation arrangements, medical assistance and any further safety directives for licensed manning agencies and Filipino crews operating near conflict-affected waters."
+      ],
+      "sources": [
+        {
+          "label": "INQUIRER.net — 39 Filipino seafarers safe after Black Sea drone attacks",
+          "url": "https://globalnation.inquirer.net/335756/39-filipino-seafarers-safe-after-black-sea-drone-attacks"
+        },
+        {
+          "label": "Journal News Online — DMW mino-monitor kalagayan ng OFWs sa barko sa Black Sea",
+          "url": "https://journalnews.com.ph/dmw-mino-monitor-kalagayan-ng-ofws-sa-barko-sa-black-sea/"
+        },
+        {
+          "label": "Philippine News Agency — Black Sea ban for Filipino seafarers stays amid continuing risks",
+          "url": "https://www.pna.gov.ph/articles/1281946"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for the report on 39 Filipino seafarers in the Black Sea",
+        "caption": "FMB News editorial visual accompanying the Black Sea seafarer safety report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-24/1900-39-filipino-seafarers-safe-black-sea-drone-attacks.json"
+    },
+    {
+      "id": "FMB-DB-20260824-004",
+      "kicker": "Weather · Public Safety",
+      "headline": "Typhoon Obet Exits PAR as Habagat Keeps Seas Rough",
+      "deck": "PAGASA's final bulletin placed Saudel outside the Philippine monitoring boundary while monsoon winds and hazardous coastal waters remained a concern.",
+      "body": [
+        "Typhoon Obet, internationally known as Saudel, exited the Philippine Area of Responsibility at 9:30 p.m. on Monday, August 24, PAGASA said in its final bulletin for the cyclone.",
+        "Obet stayed far from the Philippine landmass and no tropical cyclone wind signal was raised. PAGASA forecast the typhoon to pass close to or make landfall over Japan's southern islands before moving toward southeastern China.",
+        "A powerful offshore cyclone can strengthen monsoon flow even without a direct landfall. Communities and small-vessel operators should rely on the latest PAGASA bulletins because the storm's position, intensity and marine effects can change quickly.",
+        "Continue monitoring PAGASA's monsoon rainfall and coastal-water advisories. Small vessels should follow local maritime instructions and avoid rough seas where advised."
+      ],
+      "sources": [
+        {
+          "label": "DOST-PAGASA — Tropical Cyclone Bulletin No. 2F: Typhoon Obet",
+          "url": "https://pubfiles.pagasa.dost.gov.ph/tamss/weather/bulletin_obet.pdf"
+        },
+        {
+          "label": "INQUIRER.net — Typhoon Obet exits PAR, says Pagasa",
+          "url": "https://newsinfo.inquirer.net/2291366/typhoon-obet-exits-par-says-pagasa"
+        },
+        {
+          "label": "GMA News — Typhoon Obet exited PAR on Monday evening; 2 tropical cyclones under monitoring",
+          "url": "https://www.gmanetwork.com/news/weather/content/999680/typhoon-obet-exited-par-on-monday-evening-2-tropical-cyclones-under-monitoring/story/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Typhoon Obet entering the Philippine Area of Responsibility",
+        "caption": "FMB News editorial visual accompanying the Typhoon Obet update; it is not a satellite image of the actual cyclone.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-24/1300-typhoon-saudel-175-kmh-nears-par-as-obet.json"
+    },
+    {
+      "id": "FMB-DB-20260824-005",
+      "kicker": "Weather · Public Safety",
+      "headline": "PAGASA Advisory No. 3: Typhoon Saudel Maintains 165 km/h Winds as It Nears PAR",
+      "deck": "The late-Sunday advisory kept Saudel offshore but moving quickly toward the Philippine boundary, with its broad circulation expected to reinforce monsoon rains over western Luzon.",
+      "body": [
+        "PAGASA's Tropical Cyclone Advisory No. 3, issued at 11:00 PM on August 23, placed Typhoon Saudel about 1,775 kilometers east of extreme Northern Luzon, still outside the Philippine Area of Responsibility.",
+        "Saudel remains over open water. PAGASA's approved newsroom brief says the system is expected to enter PAR on Monday, where it would receive the local name Obet, while its outer circulation may strengthen the Southwest Monsoon over western Luzon.",
+        "Even without a direct landfall forecast, a large offshore typhoon can intensify monsoon moisture and worsen flooding or landslide risks in areas where soils are already saturated.",
+        "Watch PAGASA's next official advisory for the confirmed PAR entry time, local naming, any change in intensity and updated rainfall guidance for western and northern Luzon."
+      ],
+      "sources": [
+        {
+          "label": "Iloilo City Disaster Risk Reduction and Management Office — Tropical Cyclone Advisory No. 3: Typhoon Saudel",
+          "url": "https://cdrrmo.iloilocity.gov.ph/fb-updates/weather-updates/?query-5-page=2"
+        },
+        {
+          "label": "National Weather Service Guam — Typhoon Saudel (17W) Advisory Number 20",
+          "url": "https://forecast.weather.gov/product.php?format=CI&glossary=1&issuedby=PQ1&product=TCP&site=HUN&version=2"
+        },
+        {
+          "label": "FMB News approved newsroom brief — PAGASA Advisory No. 3 on Typhoon Saudel",
+          "url": "https://mail.google.com/mail/#all/1a02fc00ebc85587"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Typhoon Saudel approaching the Philippine Area of Responsibility",
+        "caption": "FMB News editorial visual accompanying the August 24 Typhoon Saudel update.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://cdrrmo.iloilocity.gov.ph/fb-updates/weather-updates/?query-5-page=2"
+      },
+      "sourceArticle": "content/news/articles/2026-08-24/0100-pagasa-advisory-3-typhoon-saudel-par-entry.json"
+    },
+    {
+      "id": "FMB-DB-20260824-006",
+      "kicker": "Occidental Mindoro · Maritime safety",
+      "headline": "Five Missing Fishermen Found Safe in Occidental Mindoro",
+      "deck": "The crew of FBCA Balong 3 sheltered near shore during rough weather and was later located safely in Sablayan.",
+      "body": [
+        "Five fishermen reported missing after going to sea from Santa Cruz, Occidental Mindoro, were found safe in Sablayan, the Philippine Coast Guard said on August 22.",
+        "The fishermen encountered strong winds and rough seas, prompting the boat captain to move closer to shore and anchor near Barangay Poblacion I in Santa Cruz. When conditions improved, they proceeded to Sitio Tabok in Barangay Buenavista, Sablayan, to seek safer shelter.",
+        "The safe outcome underscores the value of coastal coordination during rough weather and the importance of crews seeking shelter instead of continuing through unsafe sea conditions.",
+        "Fishing communities should continue monitoring official marine forecasts and local Coast Guard instructions before departure as rough-weather conditions change."
+      ],
+      "sources": [
+        {
+          "label": "INQUIRER.net — 5 missing fishermen found safe in Oriental Mindoro town",
+          "url": "https://newsinfo.inquirer.net/2290167/5-missing-fishermen-found-safe-in-oriental-mindoro-town"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for a maritime safety report from Occidental Mindoro",
+        "caption": "FMB News editorial visual accompanying the report that five missing fishermen were found safe in Occidental Mindoro.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-24/0700-five-fishermen-rescued-oriental-mindoro.json"
+    }
+  ]
+}

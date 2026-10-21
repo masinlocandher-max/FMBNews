@@ -1,0 +1,210 @@
+{
+  "date": "2026-08-22",
+  "publishedAt": "2026-08-22T07:00:00+08:00",
+  "editionLabel": "FMB Daily Brief · Archive Recovery",
+  "title": "The Stories That Defined the Day",
+  "deck": "Recovered FMB Daily Brief for 2026-08-22, reconstructed from FMB News' verified article archive. Key coverage includes Government Aid Nears ₱1 Billion as Over 52,000 Remain Displaced; Agencies Monitor Saudel; Senate Proposal Would Add Random Drug Tests and More Frequent Psych Reviews for Gun Owners; DSWD Disaster Assistance Surpasses ₱1.09 Billion for Monsoon- and Cyclone-Affected Communities.",
+  "timezone": "Asia/Manila",
+  "recovery": {
+    "reconstructed": true,
+    "reconstructedAt": "2026-09-15T03:30:00+08:00",
+    "note": "Historical recovery edition. It was reconstructed after the original publication date and must not be represented as having been published contemporaneously."
+  },
+  "hero": {
+    "src": "/assets/images/mobile/fmb-daily-brief-coffee.webp",
+    "alt": "FMB Daily Brief coffee visual with the FMB shell emblem",
+    "caption": "Approved FMB Daily Brief photographic visual used when a recovered edition has no suitable rights-cleared documentary photograph.",
+    "credit": "FMB News",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260822-001",
+      "kicker": "Disaster Response · Weather",
+      "headline": "Government Aid Nears ₱1 Billion as Over 52,000 Remain Displaced; Agencies Monitor Saudel",
+      "deck": "Relief operations continue for communities hit by Luis, Maymay, Neneng and Habagat while authorities track Saudel well east of the Philippines.",
+      "body": [
+        "The Office of Civil Defense reported on August 21 that around ₱1 billion in government assistance had been provided to communities affected by Tropical Cyclones Luis, Maymay and Neneng and the southwest monsoon.",
+        "PAGASA was also monitoring Tropical Storm Saudel outside the Philippine Area of Responsibility. Its August 21 weather bulletin placed Saudel far east of Southeastern Luzon and moving north-northwestward, with no direct Philippine landfall indicated in the cited advisory.",
+        "Tens of thousands of people remain displaced even as floodwaters recede in some areas. Keeping relief stocks and response teams ready matters because another tropical cyclone in the western Pacific can quickly alter rainfall, maritime and logistics conditions even before entering PAR.",
+        "Watch PAGASA for any change in Saudel's track or intensity and OCD and DSWD for updated evacuation-center counts, validated casualties, relief totals and pre-positioned resource levels."
+      ],
+      "sources": [
+        {
+          "label": "Philippine Canadian Inquirer — Over 52,000 displaced as Luis, Maymay, Neneng and Habagat batter communities",
+          "url": "https://canadianinquirer.net/2026/08/21/over-52000-displaced-as-luis-maymay-neneng-and-habagat-batter-communities/"
+        },
+        {
+          "label": "PAGASA — Daily Weather Forecast, August 21, 2026",
+          "url": "https://staging.pagasa.dost.gov.ph/weather"
+        },
+        {
+          "label": "Philippine News Agency — DSWD hits 5-M food pack stockpile milestone",
+          "url": "https://www.pna.gov.ph/articles/1281154"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Philippine disaster relief and tropical cyclone monitoring",
+        "caption": "FMB News editorial visual accompanying the disaster-response and Saudel monitoring update.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://canadianinquirer.net/2026/08/21/over-52000-displaced-as-luis-maymay-neneng-and-habagat-batter-communities/"
+      },
+      "sourceArticle": "content/news/articles/2026-08-22/0100-disaster-aid-52k-displaced-saudel-readiness.json"
+    },
+    {
+      "id": "FMB-DB-20260822-002",
+      "kicker": "Legislation · Public Safety",
+      "headline": "Senate Proposal Would Add Random Drug Tests and More Frequent Psych Reviews for Gun Owners",
+      "deck": "The proposal would go beyond existing applicant screening by adding random testing and more frequent review, according to the approved FMB News morning brief.",
+      "body": [
+        "An approved FMB News morning brief reports that senators are pushing additional firearms safeguards that would include random drug testing, more frequent neuro-psychiatric review and quicker licensing action when a gun owner presents serious public-safety risks.",
+        "Current Philippine law already requires firearm-license applicants to pass a psychiatric test and a drug test. Republic Act No. 10591 sets those requirements for a License to Own and Possess Firearms, while Republic Act No. 9165 separately requires drug testing for applicants for firearm licenses and permits to carry firearms outside residence.",
+        "The policy debate centers on whether one-time or renewal-stage screening is enough to identify later changes in behavior, mental health, drug use or violence risk, and how far police authority should extend before a court finding or criminal conviction.",
+        "Watch for an actual bill text, committee hearing notice or Senate legislative record specifying the proposed testing frequency, renewal period, appeal process and legal threshold for suspension or confiscation. Those details will determine how different the measure is from existing law."
+      ],
+      "sources": [
+        {
+          "label": "Senate of the Philippines Legislative Reference Bureau — Republic Act No. 10591",
+          "url": "https://issuances-library.senate.gov.ph/legislative%2Bissuances/Republic%20Act%20No.%2010591"
+        },
+        {
+          "label": "Senate of the Philippines Legislative Reference Bureau — Republic Act No. 9165",
+          "url": "https://issuances-library.senate.gov.ph/legislative%2Bissuances/Republic%20Act%20No.%209165"
+        },
+        {
+          "label": "FMB News approved editorial brief — Senate Expands Firearms Reform Push to Include Mandatory Random Drug Tests and Stricter Neuro-Psychiatric Audits",
+          "url": "https://www.francinemariebautista.com/news/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for proposed Philippine firearms law changes",
+        "caption": "FMB News editorial visual accompanying the firearms-reform report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://legacy.senate.gov.ph/"
+      },
+      "sourceArticle": "content/news/articles/2026-08-22/0700-senate-firearms-random-drug-testing-psych-reviews.json"
+    },
+    {
+      "id": "FMB-DB-20260822-003",
+      "kicker": "Disaster Response · Social Welfare",
+      "headline": "DSWD Disaster Assistance Surpasses ₱1.09 Billion for Monsoon- and Cyclone-Affected Communities",
+      "deck": "The social welfare department says cumulative assistance has crossed ₱1.09 billion as food, non-food and financial support continues for communities affected by the monsoon and recent cyclones.",
+      "body": [
+        "The Department of Social Welfare and Development says the value of assistance provided to communities affected by the enhanced southwest monsoon and recent tropical cyclones has surpassed ₱1.09 billion.",
+        "The relief operation covers communities affected by the southwest monsoon and tropical cyclones Luis, Maymay and Neneng. DSWD also reported maintaining nationwide standby stocks, including 3.79 million family food packs, to support continuing operations.",
+        "Large disaster-response totals are useful only when the underlying supplies reach affected households. Food-pack availability, logistics capacity and replenishment levels determine how quickly the government can respond if another weather system renews flooding.",
+        "Watch DSWD's succeeding DROMIC reports for updated assistance totals, remaining displaced families, warehouse inventories and any new pre-positioning ahead of additional monsoon rainfall."
+      ],
+      "sources": [
+        {
+          "label": "Philippine Canadian Inquirer — DSWD continues relief assistance for communities affected by monsoon, cyclones",
+          "url": "https://canadianinquirer.net/2026/08/22/dswd-continues-relief-assistance-for-communities-affected-by-monsoon-cyclones/"
+        },
+        {
+          "label": "Balita / Philippine News Agency report — DSWD delivers P1.09-B worth of aid to cyclone-affected families",
+          "url": "https://balita.com/dswd-delivers-p1-09-b-worth-of-aid-to-cyclone-affected-families/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for DSWD disaster relief operations",
+        "caption": "FMB News editorial visual accompanying the August 22 DSWD disaster-assistance update.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://canadianinquirer.net/2026/08/22/dswd-continues-relief-assistance-for-communities-affected-by-monsoon-cyclones/"
+      },
+      "sourceArticle": "content/news/articles/2026-08-22/1900-dswd-relief-surpasses-1-09-billion.json"
+    },
+    {
+      "id": "FMB-DB-20260822-004",
+      "kicker": "Weather · Public Safety",
+      "headline": "PAGASA Tracks Typhoon Saudel and Tropical Depression Gaerani Outside PAR",
+      "deck": "Two tropical cyclones are being monitored outside the Philippine Area of Responsibility, with forecasters watching their potential influence on the southwest monsoon.",
+      "body": [
+        "PAGASA is monitoring Typhoon Saudel and Tropical Depression Gaerani outside the Philippine Area of Responsibility as of Saturday evening, August 22.",
+        "The approved FMB News briefing says forecasters are assessing whether the systems could influence the southwest monsoon over parts of Luzon. The precise future track and any PAR interaction remain forecast-dependent and should be checked against the latest PAGASA bulletin.",
+        "Cyclones do not need to cross the Philippine landmass to affect local weather. Their broader circulation can alter monsoon flow, sea conditions and rainfall distribution, particularly along exposed northern and western coasts.",
+        "Watch PAGASA's succeeding tropical cyclone and marine bulletins for changes in Saudel's track, Gaerani's intensity, any PAR entry, and updated rainfall or sea-condition advisories."
+      ],
+      "sources": [
+        {
+          "label": "DOST-PAGASA — Regional Forecast - Visayas",
+          "url": "https://staging.pagasa.dost.gov.ph/regional-forecast/visprsd"
+        },
+        {
+          "label": "National Weather Service Guam — Typhoon Saudel Local Statement",
+          "url": "https://forecast.weather.gov/product.php?issuedby=PQ1&product=HLS&site=CRH"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Typhoon Saudel and Tropical Depression Gaerani monitoring",
+        "caption": "FMB News editorial visual accompanying the August 22 tropical cyclone monitoring update.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://staging.pagasa.dost.gov.ph/weather"
+      },
+      "sourceArticle": "content/news/articles/2026-08-22/1900-pagasa-tracks-typhoon-saudel-gaerani.json"
+    },
+    {
+      "id": "FMB-DB-20260822-005",
+      "kicker": "Infrastructure · Western Visayas",
+      "headline": "DPWH Brief Proposes ₱6.4-Billion Western Visayas Flood-Control Package for 2027",
+      "deck": "The approved newsroom brief says the regional proposal would fund river works, drainage upgrades and other flood-mitigation projects across Western Visayas under the 2027 spending plan.",
+      "body": [
+        "An approved FMB News morning brief reports that the Department of Public Works and Highways is proposing about ₱6.4 billion for flood-control, riverbank stabilization, dredging and drainage projects across Western Visayas under the proposed 2027 national budget.",
+        "The proposed 2027 national budget includes ₱107.4 billion for DPWH flood-control spending nationwide, according to current reporting on the National Expenditure Program. That national allocation is separate from the regional ₱6.4-billion figure reported in the approved FMB News brief.",
+        "Western Visayas has repeatedly faced river overflow, urban drainage problems and agricultural flooding. Regional flood-control spending can reduce disruption only if projects are properly designed, transparently procured, maintained and matched to basin-level hydrology rather than treated as isolated structures.",
+        "Watch the House budget hearings, DPWH regional budget documents and final General Appropriations Act for the confirmed Western Visayas allocation and project-level breakdown. Also watch for engineering and procurement records that identify exact locations, costs and implementation schedules."
+      ],
+      "sources": [
+        {
+          "label": "The Philippine Star — P107 billion flood control budget for 2027 lowest since 2019",
+          "url": "https://www.philstar.com/headlines/2026/08/12/2548719/p107-billion-flood-control-budget-2027-lowest-since-2019"
+        },
+        {
+          "label": "FMB News approved editorial brief — DPWH Allocates ₱6.4 Billion for Western Visayas Flood Control and River Dredging Projects in 2027 Budget",
+          "url": "https://www.francinemariebautista.com/news/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Western Visayas flood-control spending",
+        "caption": "FMB News editorial visual accompanying the Western Visayas flood-control budget report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.dpwh.gov.ph/"
+      },
+      "sourceArticle": "content/news/articles/2026-08-22/0700-dpwh-western-visayas-flood-control-2027-budget.json"
+    },
+    {
+      "id": "FMB-DB-20260822-006",
+      "kicker": "Public Safety · Police Accountability",
+      "headline": "PNP Tightens Service-Firearm Accountability After School Shooting Incidents",
+      "deck": "Police commanders were told to reinforce secure firearm handling and prevent children or other unauthorized people from gaining access to service weapons.",
+      "body": [
+        "Philippine National Police chief Gen. Jose Melencio Nartatez Jr. ordered police commanders nationwide to reinforce accountability measures for police-issued firearms, particularly when officers are off duty and weapons are kept at home.",
+        "The approved FMB News brief also described specific lockbox requirements, vehicle-storage prohibitions and administrative penalties. Those details were not independently reproduced in the current primary or reliably indexed reporting available during this publication run, so FMB News is not presenting them as confirmed policy terms.",
+        "Recent incidents have focused attention on how firearms assigned to public personnel are secured outside duty hours. Stronger custody practices can reduce the risk of accidental access, theft and misuse by minors or other unauthorized people.",
+        "Watch for a formal PNP memorandum or Firearms and Explosives Office guidance spelling out any new inspection procedures, storage standards or sanctions beyond the accountability reminders already confirmed publicly."
+      ],
+      "sources": [
+        {
+          "label": "Philippine Canadian Inquirer — PNP tightens firearm accountability after school shooting incidents",
+          "url": "https://canadianinquirer.net/2026/08/21/pnp-tightens-firearm-accountability-after-school-shooting-incidents/"
+        },
+        {
+          "label": "Balita — Baril, narekober sa bag ng 14-anyos na estudyante sa Cebu",
+          "url": "https://balita.mb.com.ph/2026/08/21/baril-narekober-sa-bag-ng-14-anyos-na-estudyante-sa-cebu/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Philippine National Police firearm accountability",
+        "caption": "FMB News editorial visual accompanying the PNP firearm-accountability report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://canadianinquirer.net/2026/08/21/pnp-tightens-firearm-accountability-after-school-shooting-incidents/"
+      },
+      "sourceArticle": "content/news/articles/2026-08-22/0100-pnp-tightens-service-firearm-accountability.json"
+    }
+  ]
+}

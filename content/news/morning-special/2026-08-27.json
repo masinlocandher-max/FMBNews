@@ -1,0 +1,190 @@
+{
+  "date": "2026-08-27",
+  "publishedAt": "2026-08-27T07:00:00+08:00",
+  "editionLabel": "FMB Daily Brief · Archive Recovery",
+  "title": "The Stories That Defined the Day",
+  "deck": "Recovered FMB Daily Brief for 2026-08-27, reconstructed from FMB News' verified article archive. Key coverage includes Senate Panel Backs Bill Setting 16 as Minimum Age for Social Media; OCD Reports 7.7 Million People Affected by Recent Storms and Habagat; LGUs Set to Receive ₱1.32 Trillion in National Tax Allotments in 2027.",
+  "timezone": "Asia/Manila",
+  "recovery": {
+    "reconstructed": true,
+    "reconstructedAt": "2026-09-15T03:30:00+08:00",
+    "note": "Historical recovery edition. It was reconstructed after the original publication date and must not be represented as having been published contemporaneously."
+  },
+  "hero": {
+    "src": "/assets/images/mobile/fmb-daily-brief-coffee.webp",
+    "alt": "FMB Daily Brief coffee visual with the FMB shell emblem",
+    "caption": "Approved FMB Daily Brief photographic visual used when a recovered edition has no suitable rights-cleared documentary photograph.",
+    "credit": "FMB News",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260827-001",
+      "kicker": "Digital Policy · Child Safety",
+      "headline": "Senate Panel Backs Bill Setting 16 as Minimum Age for Social Media",
+      "deck": "The proposed Child Online Safety and Protection Act would require platforms to prevent children below 16 from creating or maintaining accounts through privacy-compliant age-assurance systems.",
+      "body": [
+        "The Senate committee on public information and mass media endorsed Senate Bill No. 2424, or the proposed Child Online Safety and Protection Act, to the Senate floor on August 26.",
+        "The proposal distinguishes age assurance, which may assess user behavior and other technical signals, from age-verification systems that typically require identification documents. Any age-assurance system would have to comply with the Data Privacy Act.",
+        "If enacted, the measure would place new child-safety and privacy obligations on social media platforms. It would not create an immediate nationwide social media ban, and the proposed restrictions are not yet law.",
+        "The bill remains subject to Senate deliberation and possible amendment. It would still need approval by both chambers of Congress and the President before taking effect."
+      ],
+      "sources": [
+        {
+          "label": "INQUIRER.net — Senate panel endorses bill setting 16 as minimum age for social media",
+          "url": "https://newsinfo.inquirer.net/2293186/senate-panel-endorses-bill-setting-16-as-minimum-age-for-social-media"
+        },
+        {
+          "label": "Philippine News Agency — Senate bill seeks social media ban for users under 16",
+          "url": "https://www.pna.gov.ph/articles/1273651"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for the proposed social media minimum age of 16",
+        "caption": "FMB News editorial visual accompanying the report on the proposed social media minimum age.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-27/0700-senate-panel-backs-social-media-age-16-bill.json"
+    },
+    {
+      "id": "FMB-DB-20260827-002",
+      "kicker": "Disaster Response · National",
+      "headline": "OCD Reports 7.7 Million People Affected by Recent Storms and Habagat",
+      "deck": "Around 2.2 million families have been affected, while 28,910 people remain in evacuation centers and authorities continue validating 31 reported deaths.",
+      "body": [
+        "The Office of Civil Defense reported on August 26 that about 7.7 million people, representing roughly 2.2 million families, have been affected by recent tropical cyclones and the southwest monsoon.",
+        "The affected population spans multiple regions, including Ilocos, Cagayan Valley, Central Luzon, Calabarzon, Mimaropa, Bicol, Western Visayas, Zamboanga Peninsula, the Cordillera Administrative Region and Metro Manila.",
+        "The figures show that the emergency remains a large-scale recovery operation even as weather conditions improve in some areas. Evacuation, damaged housing, disrupted livelihoods and infrastructure losses continue to require sustained national and local support.",
+        "OCD and disaster agencies are continuing to validate casualty figures and damage assessments. Residents in affected areas should follow local government and PAGASA advisories as saturated ground and damaged infrastructure can remain hazardous after heavy rain subsides."
+      ],
+      "sources": [
+        {
+          "label": "Philippine News Agency — OCD reports 7.7-M storm-affected persons, verifying 31 deaths",
+          "url": "https://www.pna.gov.ph/articles/1282676"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for Philippine disaster response update",
+        "caption": "FMB News editorial visual accompanying the national storm-impact and relief update.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.pna.gov.ph/articles/1282676"
+      },
+      "sourceArticle": "content/news/articles/2026-08-27/0100-ocd-7-7-million-storm-affected-relief-1-42-billion.json"
+    },
+    {
+      "id": "FMB-DB-20260827-003",
+      "kicker": "Public Finance · Local Government",
+      "headline": "LGUs Set to Receive ₱1.32 Trillion in National Tax Allotments in 2027",
+      "deck": "The 2027 National Tax Allotment rises by about 11% from this year's level, expanding formula-based fiscal transfers to provinces, cities, municipalities and barangays.",
+      "body": [
+        "Local government units are set to receive ₱1.32 trillion in National Tax Allotments in 2027, according to the Department of Budget and Management's indicative allocation.",
+        "DBM Local Budget Memorandum No. 94 provides the indicative FY 2027 NTA shares and budget-preparation guidelines for LGUs. The expanded tax base follows the Mandanas-Garcia ruling, which broadened the taxes included in computing local governments' just share.",
+        "The larger formula-based transfer gives local governments more fiscal capacity but also increases the importance of transparent budgeting, timely implementation and measurable service outcomes.",
+        "LGUs will incorporate their indicative shares into 2027 annual budgets. Final implementation will depend on statutory allocation rules and the national budget process, while DBM and oversight agencies continue monitoring devolved programs and local fiscal performance."
+      ],
+      "sources": [
+        {
+          "label": "Department of Budget and Management — Local Budget Memorandum No. 94",
+          "url": "https://www.dbm.gov.ph/index.php/local-budget-memorandum?catid=453&id=4049%3Alocal-budget-memorandum-no-94&view=article"
+        },
+        {
+          "label": "Philippine News Agency — PBBM to highlight higher LGU allocations in SONA",
+          "url": "https://www.pna.gov.ph/articles/1277926"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for local government tax allotments",
+        "caption": "FMB News editorial visual accompanying the 2027 National Tax Allotment report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-08-27/0100-lgus-1-32-trillion-national-tax-allotment-2027.json"
+    },
+    {
+      "id": "FMB-DB-20260827-004",
+      "kicker": "Economy · Currency Markets",
+      "headline": "Philippine Peso Closes at Record Low of ₱61.888 as BSP Raises Policy Rate to 5%",
+      "deck": "The peso weakened to a new record closing low while the Bangko Sentral ng Pilipinas delivered its third consecutive 25-basis-point policy-rate increase.",
+      "body": [
+        "The Philippine peso closed at a new record low of ₱61.888 against the US dollar on Thursday, August 27, according to Bankers Association of the Philippines market data reported by financial news outlets.",
+        "The August increase was the BSP's third consecutive policy-rate hike in the current tightening cycle. The central bank said the measured increases are intended to anchor inflation expectations and reduce the risk of broader second-round price effects.",
+        "Exchange-rate weakness and higher interest rates affect households and businesses through different channels. Importers face higher peso costs for dollar-denominated goods, while higher policy rates can increase borrowing costs for consumers and companies.",
+        "Markets will watch whether the peso stabilizes after the rate increase and how inflation, oil prices, El Niño risks and domestic demand evolve ahead of the BSP's next policy review."
+      ],
+      "sources": [
+        {
+          "label": "Philippine News Agency — BSP hikes policy rates by another 25 basis points",
+          "url": "https://www.pna.gov.ph/articles/1282815"
+        },
+        {
+          "label": "BusinessMirror — Peso hits new record low on drought fears, Iran war",
+          "url": "https://businessmirror.com.ph/2026/08/27/peso-hits-new-record-low-on-drought-fears-iran-war/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for the Philippine peso record-low report",
+        "caption": "FMB News editorial visual accompanying the August 27 peso and monetary-policy report.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.pna.gov.ph/articles/1282815"
+      },
+      "sourceArticle": "content/news/articles/2026-08-27/1900-philippine-peso-record-low-61-888-bsp-rate-hike.json"
+    },
+    {
+      "id": "FMB-DB-20260827-005",
+      "kicker": "Public Service · Calamity Assistance",
+      "headline": "GSIS Earmarks Nearly ₱4.4 Billion in Emergency Loans for 166,789 Members and Pensioners",
+      "deck": "Eligible borrowers in nine Luzon calamity areas may apply through GSIS Touch, with loan amounts of up to ₱20,000 or ₱40,000 depending on existing emergency-loan balances.",
+      "body": [
+        "The Government Service Insurance System has earmarked nearly ₱4.4 billion in emergency loans for 166,789 active members and old-age and disability pensioners in nine Luzon areas affected by recent tropical cyclones and the southwest monsoon.",
+        "GSIS emergency loans are limited to members and pensioners who meet the pension fund's eligibility rules and are linked to covered calamity areas. The facility is a repayable loan rather than a grant, and the applicable deadline depends on the borrower's locality.",
+        "Emergency credit can give public employees and pensioners short-term liquidity after floods and other disasters, but borrowers should still account for the three-year repayment obligation when deciding whether to take the loan.",
+        "Eligibility depends on the member's or pensioner's location and GSIS rules. Residents and workers in newly declared calamity areas should check official GSIS advisories for any expansion of the loan window."
+      ],
+      "sources": [
+        {
+          "label": "Philippine News Agency — GSIS opens P4.4-B emergency loan facility for cyclone-hit members",
+          "url": "https://www.pna.gov.ph/articles/1282741"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for GSIS calamity emergency loans",
+        "caption": "FMB News editorial visual accompanying the report on GSIS emergency loans.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.pna.gov.ph/articles/1282741"
+      },
+      "sourceArticle": "content/news/articles/2026-08-27/1300-gsis-4-4-billion-emergency-loans-166789-members.json"
+    },
+    {
+      "id": "FMB-DB-20260827-006",
+      "kicker": "Agrarian Reform · Agriculture",
+      "headline": "DAR Says ₱57.76 Billion in Agrarian Reform Debt Condoned Under RA 11953",
+      "deck": "The New Agrarian Emancipation Act erases covered principal, amortizations, interest and penalties, while DAR accelerates individual e-title issuance and farmer support programs.",
+      "body": [
+        "The Department of Agrarian Reform said ₱57.76 billion in agrarian reform beneficiaries' land debt has been condoned under Republic Act No. 11953, the New Agrarian Emancipation Act.",
+        "RA 11953 was designed to remove qualifying agrarian debt and strengthen beneficiaries' ownership of awarded land. DAR officials said beneficiaries outside the condonation coverage may be covered by a payment moratorium under applicable rules.",
+        "Removing legacy land debt can free household and farm capital for production, while individual titles can improve tenure security. The longer-term effect will depend on access to credit, markets, infrastructure and farm productivity support in addition to debt relief.",
+        "DAR says it is pursuing partnerships with financial and agricultural agencies, expanding farmer organizations' market access and digitizing land and case-management processes. Progress on e-title issuance and the reach of support programs will determine how much of the debt relief translates into durable income gains."
+      ],
+      "sources": [
+        {
+          "label": "Philippine News Agency — DAR: P57.76-B farmers’ debt wiped out under agrarian reform law",
+          "url": "https://www.pna.gov.ph/articles/1282744"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/fmb-news-editorial-fallback.svg",
+        "alt": "FMB News editorial visual for agrarian reform debt relief",
+        "caption": "FMB News editorial visual accompanying the report on agrarian debt condonation.",
+        "credit": "FMB News editorial visual",
+        "sourceUrl": "https://www.pna.gov.ph/articles/1282744"
+      },
+      "sourceArticle": "content/news/articles/2026-08-27/1300-dar-57-76-billion-agrarian-debt-condonation.json"
+    }
+  ]
+}

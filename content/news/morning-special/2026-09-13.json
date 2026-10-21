@@ -1,0 +1,204 @@
+{
+  "date": "2026-09-13",
+  "publishedAt": "2026-09-13T07:00:00+08:00",
+  "editionLabel": "FMB Daily Brief · Archive Recovery",
+  "title": "The Stories That Defined the Day",
+  "deck": "Recovered FMB Daily Brief for 2026-09-13, reconstructed from FMB News' verified article archive. Key coverage includes Indonesia Ferry Capsizes in Java Sea; 6 Dead, 129 Missing; Romualdez Transferred to PGH for Court-Ordered Independent Medical Assessment; Metro Manila Minimum Wage to Rise by ₱60 on September 26 Under New NCR Order.",
+  "timezone": "Asia/Manila",
+  "recovery": {
+    "reconstructed": true,
+    "reconstructedAt": "2026-09-15T03:30:00+08:00",
+    "note": "Historical recovery edition. It was reconstructed after the original publication date and must not be represented as having been published contemporaneously."
+  },
+  "hero": {
+    "src": "/assets/images/mobile/fmb-daily-brief-coffee.webp",
+    "alt": "FMB Daily Brief coffee visual with the FMB shell emblem",
+    "caption": "Approved FMB Daily Brief photographic visual used when a recovered edition has no suitable rights-cleared documentary photograph.",
+    "credit": "FMB News",
+    "sourceUrl": ""
+  },
+  "stories": [
+    {
+      "id": "FMB-DB-20260913-001",
+      "kicker": "DEVELOPING · WORLD · SOUTHEAST ASIA",
+      "headline": "Indonesia Ferry Capsizes in Java Sea; 6 Dead, 129 Missing",
+      "deck": "Rescuers have saved 108 people from the Virgo Transport 8 after it capsized in rough Java Sea conditions; six deaths are confirmed and 129 people remain missing.",
+      "body": [
+        "At least six people have died and 129 remain missing after the Indonesian passenger ferry Virgo Transport 8 capsized in the Java Sea on Sunday, September 13, according to Indonesia's national search and rescue authorities.",
+        "Virgo Transport 8 was traveling across the Java Sea between two of Indonesia's major islands when it lost contact. Indonesian rescue officials reported waves of roughly 2.5 to 3 meters in the area during the operation.",
+        "The accident is a major maritime emergency within Southeast Asia, a region where island communities depend heavily on passenger ferries. It is relevant to Filipinos because the Philippines has similarly extensive inter-island travel and faces many of the same operational risks involving weather, vessel safety, passenger accounting and emergency response.",
+        "Watch for updated rescue numbers from Basarnas, confirmation of the vessel's condition, identification of victims, weather and sea-state assessments, and findings from Indonesia's transport-safety investigation."
+      ],
+      "sources": [
+        {
+          "label": "Reuters — At least 129 missing after Indonesian passenger ship capsizes",
+          "url": "https://www.reuters.com/world/asia-pacific/indonesia-passenger-ship-with-243-people-reported-missing-sea-agency-says-2026-09-13/"
+        },
+        {
+          "label": "Associated Press — Indonesia continues search for at least 129 missing after ferry capsizes, 6 bodies recovered",
+          "url": "https://apnews.com/article/258a5162af6ee7e641926c32f79d9854"
+        },
+        {
+          "label": "ANTARA — Java Sea ferry accident leaves six dead, 140 missing: Basarnas",
+          "url": "https://en.antaranews.com/news/431184/java-sea-ferry-accident-leaves-six-dead-140-missing-basarnas"
+        },
+        {
+          "label": "Channel NewsAsia — Indonesia says six killed, more than 120 missing after ferry capsizes off Java",
+          "url": "https://www.channelnewsasia.com/asia/indonesia-ferry-passengers-rescue-dead-java-6381016"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-13/virgo-transport-8-java-sea-16x9.svg",
+        "alt": "FMB News graphic reporting the Virgo Transport 8 ferry capsizing in Indonesia with six dead, 108 rescued and 129 missing",
+        "caption": "FMB News editorial graphic on the September 13, 2026 capsizing of Indonesia's Virgo Transport 8 in the Java Sea. This is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-13/232200-indonesia-virgo-transport-8-ferry-capsize-java-sea.json"
+    },
+    {
+      "id": "FMB-DB-20260913-002",
+      "kicker": "DEVELOPING · NATION · ACCOUNTABILITY",
+      "headline": "Romualdez Transferred to PGH for Court-Ordered Independent Medical Assessment",
+      "deck": "The former House speaker was received at Philippine General Hospital under a Sandiganbayan order, with an independent medical assessment now set to guide the court's next decision on his detention.",
+      "body": [
+        "Former House Speaker and Leyte 1st District Representative Martin Romualdez was transferred from Cardinal Santos Medical Center to the Philippine General Hospital in Manila on September 12 for an independent medical assessment ordered by the Sandiganbayan Third Division.",
+        "Romualdez is facing a plunder charge arising from allegations tied to flood-control and other government infrastructure projects. Prosecutors allege that he and co-accused received at least ₱7.44 billion in commissions, kickbacks and other benefits. Those allegations remain unproven, and the court has not found Romualdez guilty of the criminal charge.",
+        "The case concerns allegations involving billions of pesos in public infrastructure spending, including flood-control projects, and has become a major test of accountability for high-ranking officials accused of corruption.",
+        "The next material development will be PGH's independent assessment and the Sandiganbayan's resulting custody order. The court had directed PGH to submit its assessment by September 13, with a representative expected to present it to the court the following day, according to GMA News."
+      ],
+      "sources": [
+        {
+          "label": "GMA News — Martin Romualdez brought to PGH for independent medical assessment",
+          "url": "https://www.gmanetwork.com/news/topstories/nation/1002111/martin-romualdez-brought-to-pgh-for-independent-medical-assessment/story/"
+        },
+        {
+          "label": "ABS-CBN News — Martin Romualdez confined at PGH",
+          "url": "https://www.abs-cbn.com/news/nation/2026/9/12/romualdez-set-for-independent-medical-examination-at-pgh-0910"
+        },
+        {
+          "label": "Inquirer.net — Martin Romualdez transferred to PGH for medical examination",
+          "url": "https://newsinfo.inquirer.net/2304054/martin-romualdez-transferred-to-pgh-for-medical-examination"
+        },
+        {
+          "label": "Philstar.com — Martin Romualdez transferred to PGH for independent medical check",
+          "url": "https://www.philstar.com/headlines/2026/09/12/2555783/martin-romualdez-transferred-pgh-independent-medical-check"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-13/romualdez-pgh-assessment-16x9.svg",
+        "alt": "FMB News graphic reporting Martin Romualdez's transfer to Philippine General Hospital for a court-ordered independent medical assessment",
+        "caption": "FMB News editorial graphic reporting Martin Romualdez's court-ordered transfer to Philippine General Hospital for an independent medical assessment. This is not a documentary photograph. The criminal allegations remain unproven.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-13/051900-romualdez-pgh-assessment-continuation.json"
+    },
+    {
+      "id": "FMB-DB-20260913-003",
+      "kicker": "BUSINESS · LABOR",
+      "headline": "Metro Manila Minimum Wage to Rise by ₱60 on September 26 Under New NCR Order",
+      "deck": "DOLE says Wage Order NCR-28 will take effect on September 26, raising the daily minimum wage in Metro Manila by ₱60 while the earlier ₱85 order remains under court dispute.",
+      "body": [
+        "Minimum-wage workers in Metro Manila are set to receive a ₱60 daily increase starting September 26, 2026, under Wage Order NCR-28, according to the Department of Labor and Employment.",
+        "The Regional Tripartite Wages and Productivity Board-National Capital Region approved the fresh ₱60 increase after implementation of Wage Order NCR-27 became entangled in litigation.",
+        "The change directly affects covered minimum-wage workers and employers across Metro Manila. A ₱60 increase changes base daily pay and can also affect calculations tied to wage rates, including certain overtime and premium-pay amounts under applicable labor rules.",
+        "Watch for formal implementation guidance from DOLE and the NCR wage board, employer compliance, any new legal challenge involving NCR-28, and developments in the separate case involving Wage Order NCR-27."
+      ],
+      "sources": [
+        {
+          "label": "Department of Labor and Employment — DOLE issues new NCR wage order",
+          "url": "https://dole.gov.ph/news/dole-issues-new-ncr-wage-order/"
+        },
+        {
+          "label": "Philippine News Agency — DOLE: NCR wage board OKs new pay hike order",
+          "url": "https://www.pna.gov.ph/articles/1283706"
+        },
+        {
+          "label": "ABS-CBN News — NCR wage board approves P60 pay hike",
+          "url": "https://www.abs-cbn.com/news/business/2026/9/11/ncr-wage-board-approves-p60-pay-hike-2253"
+        },
+        {
+          "label": "BusinessWorld — NCR board approves fresh P60 wage increase amid Wage Order 27 dispute",
+          "url": "https://bworldonline.com/editors-picks/2026/09/08/775521/ncr-board-approves-fresh-p60-wage-increase-amid-wage-order-27-dispute/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-13/ncr-wage-order-28-16x9.svg",
+        "alt": "FMB News graphic stating that the Metro Manila minimum wage will rise by 60 pesos under Wage Order NCR-28",
+        "caption": "FMB News editorial graphic on Wage Order NCR-28, which DOLE says will raise Metro Manila minimum wages by ₱60 effective September 26, 2026. This is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-13/171432-ncr-wage-order-28-p60-effective-september-26.json"
+    },
+    {
+      "id": "FMB-DB-20260913-004",
+      "kicker": "FMB Worldwide · DEVELOPING",
+      "headline": "Vessel Struck by Projectile in Strait of Hormuz as Shipping Risks Deepen",
+      "deck": "UKMTO reported a new projectile strike on a vessel transiting the Strait of Hormuz. The extent of damage, crew status and responsibility were still unknown in the first verified report.",
+      "body": [
+        "A vessel was struck by a projectile while transiting the Strait of Hormuz on September 13, according to the United Kingdom Maritime Trade Operations agency in a report carried by Reuters.",
+        "The Strait of Hormuz has been severely disrupted during the wider Middle East conflict. Reuters reported that the waterway has been largely shut by war while attacks on tankers and other vessels have increased maritime risk.",
+        "The Philippines imports most of its petroleum requirements and is exposed to international crude and refined-fuel prices, shipping costs, insurance premiums and foreign-exchange movements.",
+        "Watch for a UKMTO incident update identifying the ship or clarifying casualties and damage, any verified attribution by maritime or government authorities, changes in vessel traffic through Hormuz, and any measurable effect on crude prices, tanker rates or Philippine fuel-price expectations."
+      ],
+      "sources": [
+        {
+          "label": "Reuters — New report of attack on Strait of Hormuz shipping fans fears of threats to oil supplies",
+          "url": "https://www.reuters.com/business/energy/new-report-attack-strait-hormuz-shipping-fans-fears-threats-oil-supplies-2026-09-13/"
+        },
+        {
+          "label": "Reuters — Saudis shut down oil pipeline as Houthis tighten grip on Red Sea shipping",
+          "url": "https://www.reuters.com/business/energy/saudis-shut-down-oil-pipeline-houthis-tighten-grip-red-sea-shipping-2026-09-12/"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-13/hormuz-vessel-projectile-strike-16x9.svg",
+        "alt": "FMB News developing-story graphic reporting a projectile strike on a vessel in the Strait of Hormuz",
+        "caption": "FMB News editorial graphic reporting a UKMTO report that a vessel was struck by a projectile in the Strait of Hormuz on September 13, 2026. This is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-13/111740-hormuz-vessel-projectile-strike-continuation.json"
+    },
+    {
+      "id": "FMB-DB-20260913-005",
+      "kicker": "FMB WORLDWIDE · DIPLOMACY",
+      "headline": "BRICS Adopts New Delhi Declaration as Marcos Joins Summit as ASEAN Chair",
+      "deck": "The consensus declaration urges restraint in the Middle East, criticizes unilateral trade measures and calls for reforms in global governance. The Philippines is not a BRICS member; President Ferdinand Marcos Jr. is attending the New Delhi summit as ASEAN chair.",
+      "body": [
+        "BRICS leaders adopted the New Delhi Declaration on September 12 during the first day of their summit in India, reaching consensus on a document covering geopolitical conflicts, trade, global governance, energy and development priorities.",
+        "President Ferdinand Marcos Jr. is in New Delhi for the September 12-13 summit after accepting an invitation from Indian Prime Minister Narendra Modi. Philippine reporting says Marcos is participating in his capacity as chair of ASEAN.",
+        "The summit's focus on Middle East instability has direct economic relevance to the Philippines because the country depends heavily on imported petroleum and is exposed to changes in global shipping, insurance and energy costs. FMB News has separately reported on disruptions affecting major Middle East energy and maritime routes.",
+        "The summit continues on September 13. The most important Philippine developments to watch are any formal bilateral agreements, investment commitments, energy or trade arrangements, or ASEAN-related initiatives announced during Marcos's meetings in New Delhi."
+      ],
+      "sources": [
+        {
+          "label": "Reuters — BRICS adopts joint declaration, urges 'maximum restraint' in Mideast",
+          "url": "https://www.reuters.com/world/china/brics-adopts-joint-declaration-urges-maximum-restraint-mideast-2026-09-12/"
+        },
+        {
+          "label": "Prime Minister's Office of India — BRICS New Delhi Declaration: Building for Resilience, Innovation, Cooperation and Sustainability",
+          "url": "https://ebs.publicnow.com/view/322C608779C3EE82D80D8869B7D797096FDC352E"
+        },
+        {
+          "label": "Philstar.com — Marcos arrives in India for BRICS Summit, seeks stronger ties",
+          "url": "https://www.philstar.com/headlines/2026/09/12/2555798/marcos-arrives-india-brics-summit-seeks-stronger-ties"
+        },
+        {
+          "label": "Inquirer.net — Marcos heads to New Delhi to attend BRICS summit",
+          "url": "https://newsinfo.inquirer.net/2303792/marcos-heads-to-delhi-to-attend-brics-summit"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/news/2026-09-13/brics-new-delhi-declaration-16x9.svg",
+        "alt": "FMB News graphic on the BRICS New Delhi Declaration and President Ferdinand Marcos Jr.'s participation as ASEAN chair",
+        "caption": "FMB News editorial graphic reporting adoption of the 2026 BRICS New Delhi Declaration while President Ferdinand Marcos Jr. attends the summit as ASEAN chair. This is not a documentary photograph.",
+        "credit": "Graphic: FMB News",
+        "sourceUrl": ""
+      },
+      "sourceArticle": "content/news/articles/2026-09-13/052400-brics-new-delhi-declaration-marcos-asean-chair.json"
+    }
+  ]
+}
