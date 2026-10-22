@@ -39,6 +39,18 @@ Critical locked rules:
   completely out of date. NEVER raise `maxAgeDays` to clear a red build, for the
   same reason the photography baseline may not be raised: it converts a newsroom
   that has gone quiet into a build that reports it has not. The fix is to publish.
+- Newsroom automation is prepared, not switched on. `config/newsroom-policy.json`
+  keeps `autonomousPublishing.enabled` FALSE, and
+  `scripts/verify-newsroom-automation.mjs` fails the build if it is flipped
+  without that gate being updated in the same change. The gate also holds the
+  evidence minimum at two independent sources counted BY PUBLISHER (model
+  output is never a source), keeps `requirePrimaryRecord` and
+  `requireClearedLedgerEntry` true, and refuses any value in `.env.example` or
+  any secret-shaped literal under `config/` and `scripts/lib/newsroom/`.
+  Automation may PROPOSE a photograph; it may never CLEAR one -- clearance
+  stays in the rights-cleared ledger. High-risk subjects (allegations, crime,
+  courts, elections, politics, health, financial, safety, minors) are human-
+  reviewed regardless of evidence quality. See `docs/ai-newsroom-*.md`.
 - Run `npm run build`, `npm run verify`, and `npm run test:mobile:browser`, then perform rendered phone and desktop regression QA before declaring completion.
 
 Primary visual/architecture files:

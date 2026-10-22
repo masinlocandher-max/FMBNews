@@ -1,0 +1,48 @@
+{
+  "_": "Editorial policy for newsroom automation. scripts/lib/newsroom/policy.mjs is the only reader; scripts/verify-newsroom-automation.mjs gates its invariants. Phase 1: this file DECIDES, nothing ACTS on it yet.",
+  "version": 1,
+  "autonomousPublishing": {
+    "enabled": false,
+    "_": "Phase 1 leaves live publication under human editorial control. Flipping this to true is a separate, deliberate decision and does not by itself bypass any rule below."
+  },
+  "highRiskCategories": {
+    "_": "Always human-reviewed, regardless of evidence quality or confidence. Matched against the article's category, kicker and keywords.",
+    "allegations": ["allegation", "accused", "accusation", "misconduct", "corruption", "plunder", "graft"],
+    "crime": ["crime", "arrest", "homicide", "murder", "shooting", "trafficking", "raid"],
+    "courts": ["court", "sandiganbayan", "supreme court", "ruling", "indictment", "arraignment", "lawsuit", "verdict"],
+    "elections": ["election", "ballot", "comelec", "candidate", "poll", "campaign", "plebiscite"],
+    "politics": ["senate", "congress", "malacanang", "impeachment", "president", "governor", "mayor"],
+    "health": ["health advisory", "outbreak", "dosage", "treatment", "vaccine", "symptoms", "doh"],
+    "financial": ["investment advice", "stock tip", "returns", "forex", "crypto", "loan terms"],
+    "safety": ["evacuation", "typhoon", "earthquake", "tsunami", "lahar", "flood warning", "shelter"],
+    "minors": ["minor", "child", "student", "pupil", "juvenile"]
+  },
+  "evidence": {
+    "minIndependentSources": 2,
+    "_minIndependentSources": "Matches the existing editorial gate in verify-editorial-production.mjs. Two AI outputs agreeing is ONE source, not two: independence is counted by publisher, not by document.",
+    "requirePrimaryRecord": true,
+    "_requirePrimaryRecord": "At least one source must be a primary record -- statute, decision, agency release, dataset, filing, or the original post as it circulated -- not another outlet's write-up.",
+    "conflictAction": "hold",
+    "_conflictAction": "When sources materially disagree, hold. Never average them, never pick the more quotable one."
+  },
+  "imageRights": {
+    "requireClearedLedgerEntry": true,
+    "_": "Automation may propose a photograph but may never clear one. Clearance stays in content/news/rights-cleared-image-overrides.json with creator, licence, source page, caption and alt. A Creative Commons search filter is a lead, not a clearance. A fallback plate is not a photograph and never counts as coverage.",
+    "forbidden": [
+      "hotlinking a publisher's article image",
+      "an image-search result as proof of licence",
+      "scraping images from a source article",
+      "treating fallback artwork as evidence of coverage",
+      "dropping a caption or credit to fit a layout"
+    ]
+  },
+  "attribution": {
+    "requireSourceLinks": true,
+    "aiDisclosure": "FMB News uses automated assistance in monitoring, drafting and production. Every published report is attributable to evidence and is reviewed before publication.",
+    "syntheticAudioDisclosure": "This narration is synthetic speech generated from the published FMB News report."
+  },
+  "sponsorship": {
+    "mustBeLabelled": true,
+    "_": "A sponsor may buy placement. A sponsor may not influence a newsroom conclusion, a rating, a correction, or the decision to publish. Commercial state is stored separately from editorial judgement and is never an input to it."
+  }
+}

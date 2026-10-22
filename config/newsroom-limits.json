@@ -1,0 +1,35 @@
+{
+  "_": "Every ceiling the automation obeys, in one place. scripts/lib/newsroom/limits.mjs is the only reader. Scattering these as constants through the code is how a runaway retry loop becomes a bill, so they live here and the verifier fails the build if a module hard-codes one instead.",
+  "version": 1,
+  "currency": "USD",
+  "perStory": {
+    "maxAiCalls": 12,
+    "maxDraftRevisions": 3,
+    "maxAudioRegenerations": 2,
+    "_maxAudioRegenerations": "A material correction may force a re-narration. Two is enough for a correction and its own correction; a third means something is wrong upstream."
+  },
+  "perJob": {
+    "maxAttempts": 4,
+    "backoffSeconds": [30, 120, 600],
+    "timeoutSeconds": 120,
+    "_backoffSeconds": "One entry per attempt after the first. The verifier checks the array length matches maxAttempts - 1."
+  },
+  "budget": {
+    "dailyUsd": 15,
+    "monthlyUsd": 300,
+    "alertAtPercent": 70,
+    "pauseAtPercent": 100,
+    "_pauseAtPercent": "At the pause threshold, expensive generation (model calls, narration) stops. Publishing an already-approved story, serving the site, and sending an already-queued correction are NEVER paused by budget -- a cost ceiling must not become an editorial outage."
+  },
+  "intake": {
+    "maxSourceItemsPerPoll": 50,
+    "minPollIntervalSeconds": 900,
+    "_minPollIntervalSeconds": "Floor applied to every source regardless of its declared pollIntervalSeconds, so a mis-typed registry entry cannot hammer a publisher."
+  },
+  "neverPausedByBudget": [
+    "publish-approved-story",
+    "serve-site",
+    "correction-notice",
+    "delivery-reconciliation"
+  ]
+}

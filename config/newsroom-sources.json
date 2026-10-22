@@ -1,0 +1,53 @@
+{
+  "_": "The newsroom source register. A source is not eligible for automated intake because it is technically reachable -- it is eligible because it is listed here as APPROVED, with its reuse terms recorded. scripts/lib/newsroom/sources.mjs is the only reader.",
+  "version": 1,
+  "states": {
+    "APPROVED": "Cleared for automated intake under the recorded terms.",
+    "CANDIDATE": "Under evaluation. Readable by a human operator; never polled automatically.",
+    "DISABLED": "Must not be contacted by automation at all, for any reason, including a manual retry."
+  },
+  "reliabilityClasses": {
+    "primary-record": "Issues the record itself: statutes, decisions, agency releases, official datasets.",
+    "wire": "Established wire service with a published corrections policy.",
+    "outlet": "Reported journalism from a named masthead.",
+    "aggregator": "Republishes others. A lead only -- never citable as the source."
+  },
+  "sources": [
+    {
+      "id": "ph-pna",
+      "publisher": "Philippine News Agency",
+      "state": "CANDIDATE",
+      "sourceType": "government-wire",
+      "officialUrl": "https://www.pna.gov.ph/",
+      "topics": ["philippines", "government", "disaster"],
+      "geography": "PH",
+      "reliabilityClass": "primary-record",
+      "retrievalMethod": "rss",
+      "retrievalUrl": "https://www.pna.gov.ph/rss",
+      "pollIntervalSeconds": 1800,
+      "attribution": {"required": true, "form": "Philippine News Agency"},
+      "contentReuse": "headline-and-link-only",
+      "imageReuse": "none",
+      "lastSuccessfulCheck": null,
+      "notes": "CANDIDATE until reuse terms are confirmed against the publisher's own terms page by a human. Listed to exercise the registry, not to authorise intake."
+    },
+    {
+      "id": "ph-pagasa",
+      "publisher": "PAGASA",
+      "state": "CANDIDATE",
+      "sourceType": "agency-bulletin",
+      "officialUrl": "https://www.pagasa.dost.gov.ph/",
+      "topics": ["weather", "typhoon", "safety"],
+      "geography": "PH",
+      "reliabilityClass": "primary-record",
+      "retrievalMethod": "html-listing",
+      "retrievalUrl": "https://www.pagasa.dost.gov.ph/weather",
+      "pollIntervalSeconds": 1800,
+      "attribution": {"required": true, "form": "PAGASA"},
+      "contentReuse": "facts-with-attribution",
+      "imageReuse": "none",
+      "lastSuccessfulCheck": null,
+      "notes": "Safety guidance is a high-risk category in newsroom-policy.json: intake may inform a draft, publication stays human-reviewed."
+    }
+  ]
+}
