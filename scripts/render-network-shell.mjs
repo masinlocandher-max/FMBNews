@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const newsRoot = path.join(root, 'dist', 'news');
 const contentRoot = path.join(root, 'content', 'news', 'articles');
+const CURRENT_STREAM_START = Date.parse('2026-11-02T11:20:00Z');
 
 const esc = (value = '') => String(value)
   .replaceAll('&', '&amp;')
@@ -31,7 +32,7 @@ async function latestStories() {
   for (const file of files) {
     try {
       const story = JSON.parse(await readFile(file, 'utf8'));
-      if (story.status === 'published' && story.slug && story.headline && story.publishedAt) stories.push(story);
+      if (story.status === 'published' && story.slug && story.headline && story.publishedAt && Date.parse(story.publishedAt) >= CURRENT_STREAM_START) stories.push(story);
     } catch {
       // Editorial validation owns malformed records. The shell consumes valid published stories only.
     }
@@ -47,11 +48,15 @@ function routeIdentity(relativePath) {
   if (rel.startsWith('fact-check/')) return { title: 'FMB Fact Check', cls: 'fmb-fact-check-route', descriptor: '', active: 'FMB Fact Check' };
   if (rel.startsWith('fmb-brief/') || /^fmb-brief-[^/]+\//.test(rel)) return { title: 'FMB Daily Brief', cls: 'fmb-daily-brief-route', descriptor: 'Daily Newsletter', active: 'FMB Daily Brief' };
   if (rel.startsWith('about/')) return { title: 'FMB News', cls: 'fmb-news-route', descriptor: '', active: 'About' };
-  if (rel.startsWith('archive/')) return { title: 'FMB News', cls: 'fmb-news-route', descriptor: '', active: 'FMB News' };
+  if (rel.startsWith('archive/')) return { title: 'FMB News Archive', cls: 'fmb-news-route', descriptor: 'Public Archive', active: 'Archive' };
   return { title: 'FMB News', cls: 'fmb-news-route', descriptor: '', active: 'FMB News' };
 }
 
 function ticker(stories) {
+  if (!stories.length) {
+    const archived = '<a href="/news/archive/"><span class="ticker-headline">Previous FMB News coverage is preserved in the public archive.</span></a>';
+    return `<div class="headline-ticker" role="region" aria-label="FMB News archive status"><div class="ticker-clock" aria-label="Philippine Standard Time"><span data-pht-clock>--:--</span><small>PHT</small></div><div class="ticker-label"><span class="ticker-pulse" aria-hidden="true"></span>ARCHIVE</div><div class="ticker-window"><div class="ticker-track"><div class="ticker-run">${archived}</div><div class="ticker-run" aria-hidden="true">${archived}</div></div></div></div>`;
+  }
   const run = stories.map((story, index) => {
     const separator = index < stories.length - 1 ? '<span class="ticker-dot" aria-hidden="true">◆</span>' : '';
     return `<a href="/news/${esc(story.slug)}/"><span class="ticker-headline">${esc(story.headline)}</span></a>${separator}`;
@@ -75,7 +80,8 @@ function mast(identity) {
 
 function navigation(active) {
   const items = [
-    ['FMB News', '/news/archive/'],
+    ['FMB News', '/news/'],
+    ['Archive', '/news/archive/'],
     ['FMB Worldwide', '/news/world/'],
     ['FMB Explainer', '/news/explainer/'],
     ['FMB Fact Check', '/news/fact-check/'],
@@ -83,11 +89,11 @@ function navigation(active) {
     ['About', '/news/about/'],
   ];
   const links = items.map(([label, href]) => `<a href="${href}"${active === label ? ' aria-current="page"' : ''}>${label}</a>`).join('');
-  return `<nav class="nav" aria-label="Filipino Media Bulletin"><div class="shell">${links}<a class="submit" href="mailto:withlovefmb@gmail.com?subject=Story%20Submission%20for%20FMB%20News">Submit a Story</a><a class="search" href="/news/archive/" aria-label="Search FMB News"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg><span>Search</span></a></div></nav>`;
+  return `<nav class="nav" aria-label="Filipino Media Bulletin"><div class="shell">${links}<a class="submit" href="mailto:withlovefmb@gmail.com?subject=Story%20Submission%20for%20FMB%20News">Submit a Story</a><a class="search" href="/news/search/" aria-label="Search FMB News"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg><span>Search</span></a></div></nav>`;
 }
 
 function footer() {
-  return '<footer class="footer"><div class="shell footer-grid"><div><div class="footer-publication-title">Filipino Media Bulletin</div><div class="footer-publication-kicker">Information with Purpose</div><p>Verified reporting, useful context, and clear explanations for Filipino readers.</p><a href="/news/about/"><strong>About Filipino Media Bulletin →</strong></a><div class="footer-socials" aria-label="Filipino Media Bulletin social links"><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a><a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X">×</a><a href="mailto:withlovefmb@gmail.com" aria-label="Email Filipino Media Bulletin">✉</a></div></div><div><h3>Publications</h3><a href="/news/archive/">FMB News</a><a href="/news/world/">FMB Worldwide</a><a href="/news/explainer/">FMB Explainer</a><a href="/news/fact-check/">FMB Fact Check</a><a href="/news/fmb-brief/">FMB Daily Brief</a></div><div><h3>Resources</h3><a href="/news/about/">About</a><a href="mailto:withlovefmb@gmail.com?subject=Story%20Submission%20for%20FMB%20News">Submit a Story</a><a href="/news/about/#standards">Corrections Policy</a><a href="/news/privacy/">Privacy</a><a href="/news/terms/">Terms of Use</a></div></div><div class="shell footer-bottom">© 2026 Filipino Media Bulletin. All rights reserved.</div></footer>';
+  return '<footer class="footer"><div class="shell footer-grid"><div><div class="footer-publication-title">Filipino Media Bulletin</div><div class="footer-publication-kicker">Information with Purpose</div><p>Verified reporting, useful context, and clear explanations for Filipino readers.</p><a href="/news/about/"><strong>About Filipino Media Bulletin →</strong></a><div class="footer-socials" aria-label="Filipino Media Bulletin social links"><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a><a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X">×</a><a href="mailto:withlovefmb@gmail.com" aria-label="Email Filipino Media Bulletin">✉</a></div></div><div><h3>Publications</h3><a href="/news/">FMB News</a><a href="/news/archive/">Public Archive</a><a href="/news/world/">FMB Worldwide</a><a href="/news/explainer/">FMB Explainer</a><a href="/news/fact-check/">FMB Fact Check</a><a href="/news/fmb-brief/">FMB Daily Brief</a></div><div><h3>Resources</h3><a href="/news/about/">About</a><a href="mailto:withlovefmb@gmail.com?subject=Story%20Submission%20for%20FMB%20News">Submit a Story</a><a href="/news/about/#standards">Corrections Policy</a><a href="/news/privacy/">Privacy</a><a href="/news/terms/">Terms of Use</a></div></div><div class="shell footer-bottom">© 2026 Filipino Media Bulletin. All rights reserved.</div></footer>';
 }
 
 function clockRuntime() {
