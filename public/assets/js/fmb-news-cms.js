@@ -276,8 +276,7 @@
     const fields = ['slug','canonical_path','title','summary','deck','category','region','image_url','image_credit','published_at'].join(',');
     const articles = await get('news_articles', `select=${fields}&status=eq.published&is_archived=eq.true&order=published_at.desc&limit=1000`);
     if (!Array.isArray(articles) || !articles.length) {
-      grid.replaceChildren();
-      section.dataset.cmsHydrated = 'empty-current-stream';
+      grid.dataset.cmsArchive = 'empty';
       return;
     }
 
@@ -314,7 +313,11 @@
     if (!grid) return;
     const fields = ['slug','canonical_path','title','summary','deck','category','region','image_url','image_credit','published_at'].join(',');
     const articles = await get('news_articles', `select=${fields}&status=eq.published&is_archived=eq.false&order=published_at.desc&limit=8`);
-    if (!Array.isArray(articles) || !articles.length) return;
+    if (!Array.isArray(articles) || !articles.length) {
+      grid.replaceChildren();
+      section.dataset.cmsHydrated = 'empty-current-stream';
+      return;
+    }
 
     const fragment = document.createDocumentFragment();
     for (const article of articles) {
