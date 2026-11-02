@@ -67,7 +67,8 @@ jobs:
             ! grep -E -q '<link[^>]+fmb-news-mobile-(personalization|home|global|products|app-polish|home-live-hero|contrast-lock|product-heroes|menu-holder)\.css' "$file"
           done
 
-          grep -q 'Read the Latest' dist/news/index.html
+          grep -E -q 'Read the Latest|A new FMB News starts here\.' dist/news/index.html
+          if grep -q 'A new FMB News starts here\.' dist/news/index.html; then grep -q 'href="/news/archive/"' dist/news/index.html; fi
           grep -q '>Customize<' dist/news/index.html
           grep -q 'fmb-approved-hero-copy' dist/news/index.html
           grep -q 'fmb-approved-hero-ticker' dist/news/index.html
