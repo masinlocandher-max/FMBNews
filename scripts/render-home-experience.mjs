@@ -158,6 +158,7 @@ function renderMobileHome(stories) {
   </a>
   <section class="fmb-app-brand-hero" aria-label="FMB News new beginning">
     <img class="fmb-editorial-mobile-lead-image" src="${approvedHero}" alt="FMB News" fetchpriority="high" data-fmb-editorial-lead>
+    <img src="${approvedHero}" alt="" aria-hidden="true" data-fmb-approved-hero class="fmb-legacy-hero-recovery">
     <span class="fmb-hero-readable-shade" aria-hidden="true"></span>
     <div class="fmb-approved-hero-copy">
       <span class="fmb-editorial-mobile-kicker">FMB News · New beginning</span>
