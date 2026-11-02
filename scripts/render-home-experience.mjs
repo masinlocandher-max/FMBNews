@@ -10,6 +10,7 @@ import { editorialFallbackUrl } from './lib/editorial-fallback-pool.mjs';
 // keyed on its slug: arbitrary across the front page, identical on every build.
 const approvedHero = '/assets/images/mobile/fmb-mobile-hero.jpg';
 const approvedMug = '/assets/images/mobile/fmb-daily-brief-mug.jpg';
+const CURRENT_STREAM_START = Date.parse('2026-11-02T11:20:00Z');
 
 const esc = (value = '') => String(value)
   .replaceAll('&', '&amp;')
@@ -60,7 +61,7 @@ async function publishedStories() {
   for (const file of await walk(contentRoot)) {
     try {
       const story = JSON.parse(await readFile(file, 'utf8'));
-      if (story.status === 'published' && story.slug && story.headline && story.publishedAt) out.push(story);
+      if (story.status === 'published' && story.slug && story.headline && story.publishedAt && Date.parse(story.publishedAt) >= CURRENT_STREAM_START) out.push(story);
     } catch {
       // Editorial validation owns malformed records.
     }
@@ -139,7 +140,45 @@ function productStoryCard({ cls, href, title, story, copy, linkText, extra = '' 
 }
 
 function renderMobileHome(stories) {
-  if (!stories.length) throw new Error('Cannot build FMB mobile app home without published stories.');
+  if (!stories.length) {
+    const rail = [
+      ['World', '/news/world/', 'Worldwide coverage will begin again with the new publication era.'],
+      ['Sports', '/news/sports/', 'New sports reporting will appear here when published.'],
+      ['Entertainment', '/news/horoscope/', 'Culture, people and creative life will return with new coverage.'],
+    ].map(([label, href, copy]) => `<a class="fmb-editorial-mobile-rail-item ${label.toLowerCase()}" href="${href}"><img src="${approvedHero}" alt="" loading="lazy"><div><span>${label}</span><h2>${copy}</h2></div><b aria-hidden="true">›</b></a>`).join('');
+
+    return `<div class="fmb-mobile-app-home fmb-editorial-mobile-home" role="main" data-fmb-mobile-home data-fmb-new-era="true">
+  <div class="fmb-mobile-live-strip">
+    <span class="fmb-mobile-live-clock" aria-label="Philippine Standard Time"><strong data-fmb-local-date>Today</strong><span data-fmb-local-time>--:--</span></span>
+  </div>
+  <a class="fmb-approved-hero-ticker fmb-app-top-ticker" href="/news/archive/" aria-label="Public Archive">
+    <strong>ARCHIVE</strong>
+    <span class="fmb-approved-hero-ticker-window"><span class="fmb-approved-hero-ticker-track"><span class="fmb-approved-hero-ticker-group"><i>Previous FMB News coverage is preserved in the public archive.</i></span><span class="fmb-approved-hero-ticker-group" aria-hidden="true"><i>Previous FMB News coverage is preserved in the public archive.</i></span></span></span>
+    <b aria-hidden="true">›</b>
+  </a>
+  <section class="fmb-app-brand-hero" aria-label="FMB News new beginning">
+    <img class="fmb-editorial-mobile-lead-image" src="${approvedHero}" alt="FMB News" fetchpriority="high" data-fmb-editorial-lead>
+    <span class="fmb-hero-readable-shade" aria-hidden="true"></span>
+    <div class="fmb-approved-hero-copy">
+      <span class="fmb-editorial-mobile-kicker">FMB News · New beginning</span>
+      <span data-fmb-greeting class="sr-only">FMB News update</span>
+      <h1 data-fmb-greeting-line>A new FMB News starts here.</h1>
+      <p class="fmb-approved-hero-deck">The previous publication is preserved as a public archive. New reporting will appear here from this point forward.</p>
+      <div class="fmb-approved-hero-cta"><a href="/news/archive/">Open the public archive</a><button type="button" data-fmb-customize>Customize</button></div>
+    </div>
+  </section>
+  <section class="fmb-editorial-mobile-rail" aria-label="FMB News desks">${rail}</section>
+  <a class="fmb-editorial-newsroom-row" href="/news/about/"><span class="status-dot" aria-hidden="true"></span><span>From the newsroom</span><b aria-hidden="true">›</b></a>
+  <section class="fmb-app-section" aria-labelledby="fmb-app-latest-title">
+    <div class="fmb-app-section-head"><h2 id="fmb-app-latest-title">Archive</h2><a href="/news/archive/">Open archive</a></div>
+    <div class="fmb-app-story-list"><a class="fmb-app-story-row" href="/news/archive/"><img src="${approvedHero}" alt="FMB News Public Archive" loading="lazy"><div class="fmb-app-story-copy"><div class="fmb-app-story-meta"><span>Public Archive</span><span>·</span><span>Legacy publication</span></div><h3>Browse the complete previous FMB News publication.</h3></div></a></div>
+  </section>
+  <section class="fmb-app-feature-grid" aria-label="FMB News features">
+    <a class="fmb-app-feature-card brief" href="/news/fmb-brief/"><img src="${approvedMug}" alt="FMB Daily Brief mug" loading="lazy" data-fmb-approved-mug><span class="fmb-feature-shade" aria-hidden="true"></span><div><span>Daily Briefing</span><h2>A new Daily Brief will begin with the new newsroom.</h2><b>Open Daily Brief ›</b></div></a>
+    <a class="fmb-app-feature-card worldwide" href="/news/explainer/"><div><span>Explainers</span><h2>Clear answers to complex topics.</h2><b>Browse explainers ›</b></div></a>
+  </section>
+</div>`;
+  }
 
   const lead = stories[0];
   const used = new Set([lead.slug]);
@@ -230,7 +269,26 @@ function applyDesktopPublicationLanding(html, stories) {
   if (/<header class="mast publication-mast"/i.test(html)) html = html.replace(/<header class="mast publication-mast"[\s\S]*?<\/header>/i, mast);
   else html = html.replace(/<header class="mast[^"]*"[\s\S]*?<\/header>\s*<nav class="nav"[\s\S]*?<\/nav>/i, mast);
 
-  if (!stories.length) throw new Error('Cannot build FMB News desktop home without published stories.');
+  if (!stories.length) {
+    const newsDesk = deskCard({ cls:'news editorial-status-desk', href:'/news/archive/', title:'News', label:'Open the public FMB News archive', story:null, emptyCopy:'The previous FMB News publication is preserved in the public archive.', image:false });
+    const worldDesk = deskCard({ cls:'worldwide', href:'/news/world/', title:'Worldwide', label:'Open FMB Worldwide', story:null, emptyCopy:'Worldwide coverage will begin again with new reporting.' });
+    const sportsDesk = deskCard({ cls:'sports', href:'/news/sports/', title:'Sports', label:'Open Sports desk', story:null, emptyCopy:'Sports coverage will appear when the new newsroom publishes it.' });
+    const entertainmentDesk = `<a class="editorial-feature entertainment" href="/news/horoscope/"><img src="${approvedHero}" alt="" loading="lazy"><div class="editorial-side-copy"><span class="editorial-kicker">Entertainment</span><h3>People, culture and creative life will return with new coverage.</h3></div></a>`;
+
+    const newsProduct = productStoryCard({ cls:'news', href:'/news/archive/', title:'FMB News', story:null, copy:'The complete previous publication remains public for reference and accountability.', linkText:'Explore FMB News' });
+    const worldProduct = productStoryCard({ cls:'world', href:'/news/world/', title:'FMB Worldwide', story:null, copy:'A wider view on what is shaping our world will resume with new reporting.', linkText:'Explore Worldwide' });
+    const briefExtra = '<div class="briefing-numbers"><div class="briefing-number"><b>01</b><span>The big picture today</span></div><div class="briefing-number"><b>02</b><span>What to watch next</span></div></div>';
+    const briefProduct = productStoryCard({ cls:'brief', href:'/news/fmb-brief/', title:'FMB Daily Brief', story:null, copy:'A new concise roundup will begin with the new newsroom.', linkText:'Get the Daily Brief', extra:briefExtra });
+    const factProduct = productStoryCard({ cls:'fact-check', href:'/news/fact-check/', title:'FMB Fact Check', story:null, copy:'Evidence over assumptions. Claims checked against credible sources.', linkText:'Open Fact Check' });
+    const explainerProduct = productStoryCard({ cls:'explainer', href:'/news/explainer/', title:'FMB Explainer', story:null, copy:'Clear answers to complex topics, with useful context.', linkText:'Open FMB Explainer' });
+
+    const main = `<main class="network-home" data-fmb-new-era="true"><section class="network-hero" aria-labelledby="network-hero-title"><div class="network-hero-art" aria-hidden="true"></div><div class="network-hero-inner"><div class="network-hero-copy"><p id="network-hero-title"><span>FMB News.</span><span>Filipino Media Bulletin.</span></p><div class="network-hero-rule"><span></span></div><p>News. Worldwide. Sports.</p></div><div class="editorial-status-strip">${newsDesk}<span><span class="status-dot" aria-hidden="true"></span>New publication era</span><a href="/news/archive/">Public Archive →</a></div><div class="editorial-top-grid"><a class="editorial-lead-story" href="/news/archive/"><img class="editorial-lead-image" src="${approvedHero}" alt="FMB News" fetchpriority="high"><span class="editorial-kicker">FMB News · New beginning</span><h1>A new FMB News starts here.</h1><p>The previous publication has been preserved as a public archive. New reporting will appear here from this point forward, without mixing legacy stories into the current feed.</p><span class="product-link">Open the public archive <b>›</b></span></a><aside class="editorial-side-rail" aria-label="Editorial desks">${worldDesk}${sportsDesk}${entertainmentDesk}</aside></div><section class="editorial-desks sr-only" aria-labelledby="editorial-desks-title"><h2 id="editorial-desks-title">News. Worldwide. Sports.</h2><div class="editorial-desk-grid"></div></section><div class="network-products" aria-label="Filipino Media Bulletin editorial products">${newsProduct}${worldProduct}${briefProduct}${factProduct}${explainerProduct}</div><div class="editorial-bottom-grid"><section class="editorial-entertainment" aria-labelledby="entertainment-title"><h2 class="editorial-section-title" id="entertainment-title">Entertainment</h2><div class="entertainment-grid"><a class="entertainment-card" href="/news/horoscope/"><div class="entertainment-art" aria-hidden="true">☾</div><h3>Weekly Horoscope</h3><p>Guidance and reflections for all 12 signs.</p></a><a class="entertainment-card" href="/news/crossword/"><div class="entertainment-art" aria-hidden="true">#</div><h3>Read Between the Headlines</h3><p>Thirty questions on the week’s verified reporting.</p></a></div></section><section class="editorial-about" aria-labelledby="about-fmb-title"><h2 class="editorial-section-title" id="about-fmb-title">About FMB</h2><div class="founder-card"><div class="founder-portrait-placeholder" role="img" aria-label="Founder portrait placeholder"><span>FMB.</span></div><div class="founder-copy"><strong>Francine Marie Bautista</strong><span>Founder</span><span>FMB News · Filipino Media Bulletin.</span><a href="/news/about/">Our story →</a></div></div></section></div><section class="daily-brief-signup" id="fmb-daily-brief-signup" aria-labelledby="daily-brief-title"><div class="daily-brief-mark"><img src="/assets/images/brand/fmb-bulletin-emblem.svg" alt="" aria-hidden="true"></div><div class="brief-copy"><div class="brief-label">Be part of a more informed tomorrow.</div><h2 id="daily-brief-title">Get our new stories, straight to your inbox.</h2><span class="brief-rule"><i></i></span></div><p class="brief-promise">FMB Daily Brief</p><form data-fmb-newsletter-form novalidate><div class="brief-form-row"><label class="sr-only" for="fmb-landing-email">Email address</label><input id="fmb-landing-email" type="email" name="email" placeholder="Your email address" autocomplete="email" required><button type="submit">Continue with email</button></div><input data-fmb-newsletter-honeypot name="company" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px"><label class="consent"><input type="checkbox" data-fmb-newsletter-consent required><span>Personalize FMB News and receive the Daily Brief. <a href="/news/privacy/">Privacy Policy</a>.</span></label><p class="status" data-fmb-newsletter-status role="status" aria-live="polite"></p></form></section></div></section></main>`;
+    html = html.replace(/<main[\s\S]*?<\/main>/i, main);
+    const footer = '<footer class="footer publication-footer"><div class="publication-footer-inner"><div><div class="footer-publication-title">FMB NEWS.</div><div class="footer-publication-kicker">Filipino Media Bulletin · www.francinemariebautista.com/news</div></div><div class="footer-publication-kicker">© 2026 FMB News. All rights reserved.</div><img class="publication-footer-emblem" src="/assets/images/brand/fmb-bulletin-emblem.svg" alt=""></div></footer>';
+    html = html.replace(/<footer class="footer"[\s\S]*?<\/footer>/i, footer);
+    html = html.replace(/<div class="ticker-label">[\s\S]*?<\/div>/i, '<div class="ticker-label"><span class="ticker-pulse" aria-hidden="true"></span>ARCHIVE</div>');
+    return html;
+  }
   const lead = stories[0];
   const used = new Set([lead.slug]);
   const worldLead = firstDistinct(stories, [isWorldStory], used); if (worldLead?.slug) used.add(worldLead.slug);
@@ -266,4 +324,4 @@ html = html.replace(/<div class="fmb-mobile-app-home"[\s\S]*?<\/div>\s*(?=<main 
 html = html.replace('<main class="network-home">', `${renderMobileHome(stories)}<main class="network-home">`);
 await writeFile(page, html, 'utf8');
 
-console.log(`Rendered FMB News editorial reference home: story-led desktop newspaper layout, World/Sports/Entertainment rail, five publication products, founder section, newsletter, and mobile editorial home with ${stories.slice(0, 6).length} current stories.`);
+console.log(`Rendered FMB News editorial reference home: ${stories.length ? 'current-story' : 'new-era'} desktop/mobile state, World/Sports/Entertainment rail, five publication products, founder section, newsletter, and ${stories.slice(0, 6).length} current stories.`);
