@@ -48,7 +48,7 @@ function routeIdentity(relativePath) {
   if (rel.startsWith('fact-check/')) return { title: 'FMB Fact Check', cls: 'fmb-fact-check-route', descriptor: '', active: 'FMB Fact Check' };
   if (rel.startsWith('fmb-brief/') || /^fmb-brief-[^/]+\//.test(rel)) return { title: 'FMB Daily Brief', cls: 'fmb-daily-brief-route', descriptor: 'Daily Newsletter', active: 'FMB Daily Brief' };
   if (rel.startsWith('about/')) return { title: 'FMB News', cls: 'fmb-news-route', descriptor: '', active: 'About' };
-  if (rel.startsWith('archive/')) return { title: 'FMB News Archive', cls: 'fmb-news-route', descriptor: 'Public Archive', active: 'Archive' };
+  if (rel.startsWith('archive/')) return { title: 'FMB News', cls: 'fmb-news-route', descriptor: 'Public Archive', active: 'Archive' };
   return { title: 'FMB News', cls: 'fmb-news-route', descriptor: '', active: 'FMB News' };
 }
 
