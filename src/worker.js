@@ -171,10 +171,12 @@ function articlePublicUrl(article) {
   return canonicalArticleUrl(article?.canonical_path, `/news/${encodeURIComponent(article?.slug || '')}/`);
 }
 
-async function listPublishedArticles({ limit = 1000, since = '' } = {}) {
+async function listPublishedArticles({ limit = 1000, since = '', archiveState = 'current' } = {}) {
   const endpoint = new URL(`${CMS_URL}/rest/v1/news_articles`);
-  endpoint.searchParams.set('select', 'slug,title,seo_description,deck,summary,published_at,updated_at,canonical_path,category');
+  endpoint.searchParams.set('select', 'slug,title,seo_description,deck,summary,published_at,updated_at,canonical_path,category,is_archived');
   endpoint.searchParams.set('status', 'eq.published');
+  if (archiveState === 'current') endpoint.searchParams.set('is_archived', 'eq.false');
+  if (archiveState === 'archived') endpoint.searchParams.set('is_archived', 'eq.true');
   endpoint.searchParams.set('order', 'published_at.desc');
   endpoint.searchParams.set('limit', String(limit));
   if (since) endpoint.searchParams.set('published_at', `gte.${since}`);
@@ -266,7 +268,7 @@ async function serveMergedCmsSitemap(request, env, searchParams) {
   try {
     const [body, rows] = await Promise.all([
       staticResponse.clone().text(),
-      listPublishedArticles({ limit: 1000 }),
+      listPublishedArticles({ limit: 1000, archiveState: 'all' }),
     ]);
     const additions = rows
       .filter((article) => !body.includes(`<loc>${articlePublicUrl(article)}</loc>`))
@@ -289,7 +291,7 @@ async function serveMergedCmsSitemap(request, env, searchParams) {
 
 async function lookupPublishedArticle(slug) {
   const endpoint = new URL(`${CMS_URL}/rest/v1/news_articles`);
-  endpoint.searchParams.set('select', 'slug,title,seo_title,seo_description,deck,summary,image_url,published_at,updated_at,canonical_path,author_line,category,region');
+  endpoint.searchParams.set('select', 'slug,title,seo_title,seo_description,deck,summary,image_url,published_at,updated_at,canonical_path,author_line,category,region,is_archived');
   endpoint.searchParams.set('slug', `eq.${slug}`);
   endpoint.searchParams.set('status', 'eq.published');
   endpoint.searchParams.set('limit', '1');

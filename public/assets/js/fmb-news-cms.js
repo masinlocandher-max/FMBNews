@@ -66,14 +66,90 @@
     }).filter(Boolean);
   }
 
+  function renderNewEraHome(desktop, mobile) {
+    const archiveHref = '/news/archive/';
+
+    if (desktop) {
+      desktop.dataset.fmbNewEra = 'true';
+      const status = desktop.querySelector('.editorial-status-desk');
+      if (status) {
+        status.href = archiveHref;
+        const headline = status.querySelector('b');
+        if (headline) headline.textContent = 'Public Archive';
+        const detail = status.querySelector('p');
+        if (detail) detail.textContent = 'The previous FMB News publication is preserved and remains publicly accessible.';
+      }
+
+      const grid = desktop.querySelector('.editorial-top-grid');
+      if (grid) {
+        const panel = el('section', 'fmb-new-era-panel');
+        panel.dataset.fmbNewEra = 'true';
+        panel.appendChild(el('div', 'editorial-kicker', 'FMB News · New beginning'));
+        panel.appendChild(el('h1', '', 'A new FMB News starts here.'));
+        panel.appendChild(el('p', '', 'The previous publication has been preserved as a public archive. New reporting will appear here from this point forward, without mixing legacy stories into the current feed.'));
+        const archiveLink = el('a', 'product-link', 'Open the public archive ›');
+        archiveLink.href = archiveHref;
+        panel.appendChild(archiveLink);
+        grid.replaceChildren(panel);
+      }
+
+      const products = desktop.querySelector('.network-products');
+      if (products) products.hidden = true;
+      const bottom = desktop.querySelector('.editorial-bottom-grid');
+      if (bottom) bottom.hidden = true;
+    }
+
+    if (mobile) {
+      mobile.dataset.fmbNewEra = 'true';
+      const hero = mobile.querySelector('.fmb-app-brand-hero');
+      if (hero) {
+        const image = hero.querySelector('.fmb-editorial-mobile-lead-image');
+        if (image) {
+          image.src = '/news/assets/images/mobile/fmb-mobile-hero.jpg';
+          image.alt = 'FMB News';
+        }
+        const kicker = hero.querySelector('.fmb-editorial-mobile-kicker');
+        if (kicker) kicker.textContent = 'FMB News · New beginning';
+        const title = hero.querySelector('[data-fmb-greeting-line]');
+        if (title) title.textContent = 'A new FMB News starts here.';
+        const deck = hero.querySelector('.fmb-approved-hero-deck');
+        if (deck) deck.textContent = 'The previous publication is preserved in the public archive. New reporting will appear here from this point forward.';
+      }
+
+      const list = mobile.querySelector('.fmb-app-story-list');
+      if (list) {
+        const link = el('a', 'fmb-app-story-row');
+        link.href = archiveHref;
+        const copy = el('div', 'fmb-app-story-copy');
+        const meta = el('div', 'fmb-app-story-meta');
+        meta.appendChild(el('span', '', 'Public Archive'));
+        copy.appendChild(meta);
+        copy.appendChild(el('h3', '', 'Browse the complete legacy FMB News archive'));
+        link.appendChild(copy);
+        list.replaceChildren(link);
+      }
+
+      const latestHead = mobile.querySelector('#fmb-app-latest-title');
+      if (latestHead) latestHead.textContent = 'Archive';
+      const latestLink = mobile.querySelector('.fmb-app-section-head a');
+      if (latestLink) {
+        latestLink.href = archiveHref;
+        latestLink.textContent = 'Open archive';
+      }
+    }
+
+    document.documentElement.dataset.fmbCmsHome = 'new-era';
+    document.documentElement.dataset.fmbCmsHomeUpdatedAt = new Date().toISOString();
+  }
+
   async function hydratePublicationHomepage() {
     const desktop = document.querySelector('.network-home');
     const mobile = document.querySelector('[data-fmb-mobile-home]');
     if (!desktop && !mobile) return;
 
     const fields = ['slug','canonical_path','title','summary','deck','category','region','image_url','image_credit','published_at'].join(',');
-    const articles = await get('news_articles', `select=${fields}&status=eq.published&order=published_at.desc&limit=30`);
-    if (!Array.isArray(articles) || !articles.length) return;
+    const articles = await get('news_articles', `select=${fields}&status=eq.published&is_archived=eq.false&order=published_at.desc&limit=30`);
+    if (!Array.isArray(articles) || !articles.length) { renderNewEraHome(desktop, mobile); return; }
 
     const lead = articles[0];
     const leadHref = storyHref(lead);
@@ -198,8 +274,11 @@
     if (!grid) return;
 
     const fields = ['slug','canonical_path','title','summary','deck','category','region','image_url','image_credit','published_at'].join(',');
-    const articles = await get('news_articles', `select=${fields}&status=eq.published&order=published_at.desc&limit=1000`);
-    if (!Array.isArray(articles) || !articles.length) return;
+    const articles = await get('news_articles', `select=${fields}&status=eq.published&is_archived=eq.true&order=published_at.desc&limit=1000`);
+    if (!Array.isArray(articles) || !articles.length) {
+      grid.dataset.cmsArchive = 'empty';
+      return;
+    }
 
     const fragment = document.createDocumentFragment();
     for (const article of articles) {
@@ -233,8 +312,12 @@
     const grid = section?.querySelector('.story-grid');
     if (!grid) return;
     const fields = ['slug','canonical_path','title','summary','deck','category','region','image_url','image_credit','published_at'].join(',');
-    const articles = await get('news_articles', `select=${fields}&status=eq.published&order=published_at.desc&limit=8`);
-    if (!Array.isArray(articles) || !articles.length) return;
+    const articles = await get('news_articles', `select=${fields}&status=eq.published&is_archived=eq.false&order=published_at.desc&limit=8`);
+    if (!Array.isArray(articles) || !articles.length) {
+      grid.replaceChildren();
+      section.dataset.cmsHydrated = 'empty-current-stream';
+      return;
+    }
 
     const fragment = document.createDocumentFragment();
     for (const article of articles) {
@@ -253,7 +336,7 @@
   }
 
   async function latestEdition(type) {
-    const editions = await get('news_editions', `select=id,edition_type,edition_date,slug,title,deck,hero_image_url,hero_image_credit,published_at,window_start,window_end&edition_type=eq.${encodeURIComponent(type)}&status=eq.published&order=edition_date.desc&limit=1`);
+    const editions = await get('news_editions', `select=id,edition_type,edition_date,slug,title,deck,hero_image_url,hero_image_credit,published_at,window_start,window_end&edition_type=eq.${encodeURIComponent(type)}&status=eq.published&is_archived=eq.false&order=edition_date.desc&limit=1`);
     return Array.isArray(editions) && editions.length ? editions[0] : null;
   }
 
@@ -338,7 +421,7 @@
     const slug = slugValue ? decodeURIComponent(slugValue) : '';
     if (!slug) { mount.replaceChildren(el('p', 'cms-error', 'No article was specified.')); return; }
 
-    const fields = ['slug','title','kicker','deck','summary','body','category','region','author_line','image_url','image_credit','published_at','updated_at','seo_title','seo_description','content_json','sources_json','image_metadata','canonical_path'].join(',');
+    const fields = ['slug','title','kicker','deck','summary','body','category','region','author_line','image_url','image_credit','published_at','updated_at','seo_title','seo_description','content_json','sources_json','image_metadata','canonical_path','is_archived'].join(',');
     const rows = await get('news_articles', `select=${fields}&slug=eq.${encodeURIComponent(slug)}&status=eq.published&limit=1`);
     const article = rows?.[0];
     if (!article) { mount.replaceChildren(el('p', 'cms-error', 'This article is not available.')); return; }
@@ -354,6 +437,17 @@
     if (article.deck || article.summary) header.appendChild(el('p', 'cms-deck', article.deck || article.summary));
     header.appendChild(el('div', 'cms-byline', `${article.author_line || 'FMB News Desk'} · ${formatDate(article.published_at)}`));
     wrapper.appendChild(header);
+
+    if (article.is_archived) {
+      const notice = el('aside', 'cms-archive-notice');
+      notice.dataset.fmbArchiveNotice = 'true';
+      notice.appendChild(el('strong', '', 'FMB News Public Archive'));
+      notice.appendChild(el('p', '', 'This report belongs to the previous FMB News publication era and is preserved for the public record. It is not part of the current news feed.'));
+      const archiveLink = el('a', '', 'Browse the archive');
+      archiveLink.href = '/news/archive/';
+      notice.appendChild(archiveLink);
+      wrapper.appendChild(notice);
+    }
 
     const figure = document.createElement('figure');
     const hero = makeImage(article.image_url, article.image_metadata?.alt || article.title);
@@ -474,8 +568,16 @@
   async function hydrateHeadlineTicker() {
     const runs = document.querySelectorAll('.headline-ticker .ticker-run');
     if (!runs.length) return;
-    const articles = await get('news_articles', 'select=slug,canonical_path,title&status=eq.published&order=published_at.desc&limit=8');
-    if (!Array.isArray(articles) || !articles.length) return;
+    const articles = await get('news_articles', 'select=slug,canonical_path,title&status=eq.published&is_archived=eq.false&order=published_at.desc&limit=8');
+    if (!Array.isArray(articles) || !articles.length) {
+      for (const run of runs) {
+        const link = el('a');
+        link.href = '/news/archive/';
+        link.appendChild(el('span', 'ticker-headline', 'Previous FMB News coverage is available in the public archive.'));
+        run.replaceChildren(link);
+      }
+      return;
+    }
     for (const run of runs) {
       const fragment = document.createDocumentFragment();
       for (const article of articles) {

@@ -9,6 +9,7 @@ const SITE='https://www.francinemariebautista.com';
 const NEWS=`${SITE}/news/`;
 const FEED=`${SITE}/news/feed.xml`;
 const TWO_DAYS=48*60*60*1000;
+const CURRENT_STREAM_START=Date.parse('2026-11-02T11:20:00Z');
 
 const xml=v=>String(v??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&apos;');
 
@@ -77,13 +78,14 @@ for(const file of await walk(contentRoot,f=>f.endsWith('.json'))){
   }catch{}
 }
 stories.sort((a,b)=>Date.parse(b.publishedAt)-Date.parse(a.publishedAt));
+const currentStories=stories.filter(s=>Date.parse(s.publishedAt)>=CURRENT_STREAM_START);
 
 const now=Date.now();
-const fresh=stories.filter(s=>{const age=now-Date.parse(s.publishedAt);return age>=-5*60*1000&&age<=TWO_DAYS});
+const fresh=currentStories.filter(s=>{const age=now-Date.parse(s.publishedAt);return age>=-5*60*1000&&age<=TWO_DAYS});
 const newsSitemap=`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n${fresh.map(s=>`  <url>\n    <loc>${xml(`${NEWS}${s.slug}/`)}</loc>\n    <news:news>\n      <news:publication>\n        <news:name>FMB News</news:name>\n        <news:language>en</news:language>\n      </news:publication>\n      <news:publication_date>${xml(new Date(s.publishedAt).toISOString())}</news:publication_date>\n      <news:title>${xml(s.headline)}</news:title>\n    </news:news>\n  </url>`).join('\n')}\n</urlset>\n`;
 await writeFile(path.join(newsRoot,'news-sitemap.xml'),newsSitemap,'utf8');
 
-const latest=stories.slice(0,50);
+const latest=currentStories.slice(0,50);
 const buildDate=latest[0]?.updatedAt||latest[0]?.publishedAt||new Date().toISOString();
 const rss=`<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n  <channel>\n    <title>FMB News</title>\n    <link>${NEWS}</link>\n    <description>Filipino Media Bulletin. Verified facts, visible sources, meaningful context, clear explanations.</description>\n    <language>en-PH</language>\n    <lastBuildDate>${xml(new Date(buildDate).toUTCString())}</lastBuildDate>\n    <atom:link href="${FEED}" rel="self" type="application/rss+xml"/>\n${latest.map(s=>`    <item>\n      <title>${xml(s.headline)}</title>\n      <link>${xml(`${NEWS}${s.slug}/`)}</link>\n      <guid isPermaLink="true">${xml(`${NEWS}${s.slug}/`)}</guid>\n      <pubDate>${xml(new Date(s.publishedAt).toUTCString())}</pubDate>\n      <description>${xml(s.seoDescription||s.deck||'')}</description>${s.category?`\n      <category>${xml(s.category)}</category>`:''}\n    </item>`).join('\n')}\n  </channel>\n</rss>\n`;
 await writeFile(path.join(newsRoot,'feed.xml'),rss,'utf8');

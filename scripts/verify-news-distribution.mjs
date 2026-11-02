@@ -7,6 +7,7 @@ const newsRoot=path.join(root,'dist','news');
 const contentRoot=path.join(root,'content','news','articles');
 const NEWS='https://www.francinemariebautista.com/news/';
 const TWO_DAYS=48*60*60*1000;
+const CURRENT_STREAM_START=Date.parse('2026-11-02T11:20:00Z');
 const must=(v,m)=>{if(!v)throw new Error(m)};
 
 async function walk(dir,predicate=()=>true){
@@ -35,6 +36,7 @@ for(const file of await walk(contentRoot,f=>f.endsWith('.json'))){
 }
 published.sort((a,b)=>Date.parse(b.publishedAt)-Date.parse(a.publishedAt));
 must(published.length>0,'No published FMB News reports were found for distribution');
+const currentPublished=published.filter(s=>Date.parse(s.publishedAt)>=CURRENT_STREAM_START);
 
 const indexableCanonicals=[];
 let indexablePages=0;
@@ -72,7 +74,7 @@ const newsUrls=[...newsSitemap.matchAll(/<url>[\s\S]*?<loc>([\s\S]*?)<\/loc>[\s\
   .map(m=>({url:unescapeXml(m[1]),date:m[2],title:unescapeXml(m[3])}));
 must(new Set(newsUrls.map(item=>item.url)).size===newsUrls.length,'Google News sitemap contains duplicate article URLs');
 const now=Date.now();
-const expectedFresh=published.filter(s=>{const age=now-Date.parse(s.publishedAt);return age>=-5*60*1000&&age<=TWO_DAYS});
+const expectedFresh=currentPublished.filter(s=>{const age=now-Date.parse(s.publishedAt);return age>=-5*60*1000&&age<=TWO_DAYS});
 must(newsUrls.length===expectedFresh.length,`Google News sitemap freshness mismatch: expected ${expectedFresh.length}, got ${newsUrls.length}`);
 const expectedFreshByUrl=new Map(expectedFresh.map(s=>[`${NEWS}${s.slug}/`,s]));
 for(const item of newsUrls){
@@ -95,7 +97,7 @@ must(buildDate&&Number.isFinite(Date.parse(buildDate)),'RSS lastBuildDate is mis
 must(Date.parse(buildDate)<=Date.now()+5*60*1000,'RSS lastBuildDate is in the future');
 const items=[...rss.matchAll(/<item>[\s\S]*?<title>([\s\S]*?)<\/title>[\s\S]*?<link>([^<]+)<\/link>[\s\S]*?<guid isPermaLink="true">([^<]+)<\/guid>[\s\S]*?<pubDate>([^<]+)<\/pubDate>[\s\S]*?<description>([\s\S]*?)<\/description>[\s\S]*?<\/item>/g)]
   .map(m=>({title:unescapeXml(m[1]),link:unescapeXml(m[2]),guid:unescapeXml(m[3]),pubDate:m[4],description:unescapeXml(m[5])}));
-const expectedLatest=published.slice(0,50);
+const expectedLatest=currentPublished.slice(0,50);
 must(items.length===expectedLatest.length,`RSS item count mismatch: expected ${expectedLatest.length}, got ${items.length}`);
 must(new Set(items.map(item=>item.link)).size===items.length,'RSS contains duplicate report links');
 for(let i=0;i<items.length;i++){
