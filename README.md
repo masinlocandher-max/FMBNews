@@ -62,6 +62,20 @@ Requests outside the actual `/news` path boundary are passed through to the site
 
 Publishing or updating a CMS story is a database operation. A Cloudflare deployment is required only for application changes such as design, routing, components, or publishing logic.
 
+## Publication eras
+
+FMB News now separates the preserved legacy publication from the current newsroom stream.
+
+- **Public archive:** `/news/archive/`
+- **Archive collection:** `fmb-news-legacy-through-2026-11-02`
+- **Cutover:** November 2, 2026
+- Existing archived article URLs remain public, canonical, indexable, and searchable.
+- Archived stories remain in the general sitemap but are excluded from the current homepage, headline ticker, mobile live feed, RSS feed, and Google News sitemap.
+- New CMS articles and editions default to `is_archived = false`, so future publishing enters the new/current FMB News stream automatically.
+- `is_archived = true` is a preservation state, not an unpublished state. Archived reports remain `published` and publicly readable.
+
+This boundary lets FMB News begin a new editorial era without deleting, rewriting, or obscuring the previous public record.
+
 ## Build and deploy
 
 - `npm run build` — creates the self-contained newsroom in `dist/news/`
