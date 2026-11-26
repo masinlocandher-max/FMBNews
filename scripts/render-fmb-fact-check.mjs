@@ -6,7 +6,7 @@ import { brotliDecompressSync } from 'node:zlib';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const newsRoot=path.join(root,'dist','news');
 const masterRoot=path.join(root,'content','fact-check','master');
-const origin='https://www.francinemariebautista.com';
+const origin='https://francinemariebautista.com';
 
 const esc=(s='')=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
 const stripRating=t=>String(t).replace(/^(FALSE|MISLEADING|VERIFIED FACT|TRUE)\s*:\s*/i,'').replace(/^FACT CHECK\s*\|\s*/i,'').trim();

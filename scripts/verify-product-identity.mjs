@@ -116,7 +116,7 @@ for(const file of pages){
 // -- a privacy page is not a news story and must not be filed as one.
 for(const slug of ['privacy','terms']){
   const legal=await readFile(resolve(`dist/news/${slug}/index.html`),'utf8');
-  for(const signal of [`<link rel="canonical" href="https://www.francinemariebautista.com/news/${slug}/">`,'application/ld+json','fmb-sec-shell','fmb-legal','lang="en-PH"'])
+  for(const signal of [`<link rel="canonical" href="https://francinemariebautista.com/news/${slug}/">`,'application/ld+json','fmb-sec-shell','fmb-legal','lang="en-PH"'])
     if(!legal.includes(signal))throw new Error(`/news/${slug}/ is missing ${signal}`);
   if((legal.match(/<h1/g)||[]).length!==1)throw new Error(`/news/${slug}/ must expose exactly one h1`);
   if(!/aria-labelledby="/.test(legal))throw new Error(`/news/${slug}/ sections must be labelled for assistive technology`);

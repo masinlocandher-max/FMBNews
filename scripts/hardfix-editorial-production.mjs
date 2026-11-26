@@ -7,7 +7,7 @@ import { normalizeStoryRecord } from './lib/editorial-section-canon.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const contentRoot=path.join(root,'content','news','articles');
 const newsRoot=path.join(root,'dist','news');
-const SITE='https://www.francinemariebautista.com';
+const SITE='https://francinemariebautista.com';
 
 async function walk(dir){
   const out=[];let entries=[];

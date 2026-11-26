@@ -21,7 +21,10 @@
     if(Number.isNaN(d.getTime()))return'';
     return new Intl.DateTimeFormat('en-PH',{timeZone:'Asia/Manila',hour:'numeric',minute:'2-digit',hour12:true}).format(d)+' PHT';
   };
-  const storyHref=story=>story.canonical_path||`/news/read/${encodeURIComponent(story.slug)}/`;
+  const storyHref=story=>{
+    const supplied=String(story.canonical_path||'').replace(/^https?:\/\/(?:www\.)?francinemariebautista\.com(?=\/news\/)/i,'');
+    return supplied.startsWith('/news/')?supplied:`/news/${encodeURIComponent(story.slug)}/`;
+  };
   const imageFor=story=>String(story.image_url||'').trim()||plateFor(story.slug||story.id||story.title||'');
   const isMaterialUpdate=story=>{
     const p=Date.parse(story.published_at||''),u=Date.parse(story.updated_at||'');

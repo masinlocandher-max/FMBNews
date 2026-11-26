@@ -79,11 +79,11 @@ assert(aboutFounder?.name === 'Francine Marie Bautista' && aboutFounder?.url ===
 assert(aboutPage?.mentions?.['@id'] === FOUNDER_ID, 'AboutPage does not mention the canonical founder entity');
 
 const standards = await read('editorial-standards/index.html');
-assert(standards.includes('https://www.francinemariebautista.com/news/editorial-standards/'), 'editorial standards canonical URL is missing');
+assert(standards.includes('https://francinemariebautista.com/news/editorial-standards/'), 'editorial standards canonical URL is missing');
 assert(/Evidence before conclusion/i.test(standards), 'editorial standards content is incomplete');
 
 const corrections = await read('corrections/index.html');
-assert(corrections.includes('https://www.francinemariebautista.com/news/corrections/'), 'corrections canonical URL is missing');
+assert(corrections.includes('https://francinemariebautista.com/news/corrections/'), 'corrections canonical URL is missing');
 assert(/Material errors are corrected clearly/i.test(corrections), 'corrections policy content is incomplete');
 
 const sitemap = await read('sitemap.xml');
@@ -97,7 +97,7 @@ for (const file of await walkJson(contentRoot)) {
   if (story.status !== 'published' || !story.slug) continue;
   try {
     const article = await read(`${story.slug}/index.html`);
-    assert(article.includes('https://www.francinemariebautista.com/news/#organization'), `article ${story.slug} does not reference the canonical publisher entity`);
+    assert(article.includes('https://francinemariebautista.com/news/#organization'), `article ${story.slug} does not reference the canonical publisher entity`);
     assert(/"isAccessibleForFree":true/.test(article), `article ${story.slug} does not expose free-access status`);
     articleChecked = true;
     break;

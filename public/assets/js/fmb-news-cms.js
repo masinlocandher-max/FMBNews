@@ -37,7 +37,8 @@
   }
 
   function storyHref(article) {
-    return article.canonical_path || `/news/${encodeURIComponent(article.slug)}/`;
+    const supplied = String(article.canonical_path || '').replace(/^https?:\/\/(?:www\.)?francinemariebautista\.com(?=\/news\/)/i, '');
+    return supplied.startsWith('/news/') ? supplied : `/news/${encodeURIComponent(article.slug)}/`;
   }
 
   function makeImage(src, alt, className = '') {

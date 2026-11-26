@@ -148,7 +148,10 @@ async function rewriteAssetPaths(target) {
   }
   if (!textExtensions.has(path.extname(target).toLowerCase())) return;
   const source = await readFile(target, 'utf8');
-  const scoped = source.replace(/(?<!\/news)\/assets\//g, '/news/assets/');
+  const scoped = source
+    .replace(/(?<!\/news)\/assets\//g, '/news/assets/')
+    .replace(/(?:https?:)?\/\/www\.francinemariebautista\.com(?=\/news(?:[/?#]|["'\s<]|$))/gi,
+      'https://francinemariebautista.com');
   if (scoped !== source) await writeFile(target, scoped, 'utf8');
 }
 

@@ -17,7 +17,7 @@ const read = rel => readFile(path.join(root, rel), 'utf8');
 const must = (value, message) => { if (!value) throw new Error(message); };
 
 const RATINGS = new Set(['TRUE', 'VERIFIED FACT', 'MISLEADING', 'FALSE']);
-const CANONICAL = 'https://www.francinemariebautista.com/news/fact-check/';
+const CANONICAL = 'https://francinemariebautista.com/news/fact-check/';
 const factRoot = path.join(root, 'dist', 'news', 'fact-check');
 
 const held = JSON.parse(await read('content/fact-check/HELD.json'));

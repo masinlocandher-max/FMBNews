@@ -94,7 +94,7 @@ async function download(url) {
       // newsroom build indefinitely. The pass is deliberately fail-soft.
       signal: AbortSignal.timeout(5000),
       headers: {
-        'user-agent': 'FMBNewsBuild/1.0 (Filipino Media Bulletin; +https://www.francinemariebautista.com/news/)',
+        'user-agent': 'FMBNewsBuild/1.0 (Filipino Media Bulletin; +https://francinemariebautista.com/news/)',
         accept: 'image/avif,image/webp,image/*,*/*;q=0.8',
       },
     });
@@ -122,7 +122,7 @@ async function walk(dir) {
 }
 await walk(newsRoot);
 
-const SITE = 'https://www.francinemariebautista.com';
+const SITE = 'https://francinemariebautista.com';
 // Only <img src> and <source srcset> are collected. og:image and twitter:image
 // are handled separately below, because a social card needs an ABSOLUTE URL --
 // rewriting one to a site-relative path would silently break every share
