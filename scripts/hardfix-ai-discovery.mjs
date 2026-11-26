@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const newsRoot = path.join(root, 'dist', 'news');
-const SITE = 'https://www.francinemariebautista.com';
+const SITE = 'https://francinemariebautista.com';
 const NEWS = `${SITE}/news/`;
 const ORG_ID = `${NEWS}#organization`;
 const WEBSITE_ID = `${NEWS}#website`;

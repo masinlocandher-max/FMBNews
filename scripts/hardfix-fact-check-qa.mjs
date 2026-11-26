@@ -60,7 +60,7 @@ for(const file of await walk(factRoot)){
     const kind=hit?.[1]||'false';
     const meta=ratingVisuals[kind];
     const imagePath=`/assets/images/fact-check/${kind}.svg`;
-    const imageUrl=`https://www.francinemariebautista.com/news${imagePath}`;
+    const imageUrl=`https://francinemariebautista.com/news${imagePath}`;
     if(!/<meta\b[^>]*property=["']og:image["']/i.test(html)){
       html=html.replace(/(<meta property="og:url" content="[^"]*">)/i,`$1<meta property="og:image" content="${imageUrl}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="${imageUrl}">`);
     }

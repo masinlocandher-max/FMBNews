@@ -63,7 +63,7 @@ function injectFigure(html,title,fallback){
 // The scoping is done explicitly rather than by leaning on the later
 // /assets/ -> /news/assets/ rewrite, so the value does not depend on the order
 // two passes happen to run in.
-const SITE='https://www.francinemariebautista.com';
+const SITE='https://francinemariebautista.com';
 function absoluteSocialUrl(image){
   const value=String(image||'').trim();
   if(!value)return '';

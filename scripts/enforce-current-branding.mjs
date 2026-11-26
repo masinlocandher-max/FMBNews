@@ -16,9 +16,9 @@ async function walk(dir) {
 }
 
 const replacements = [
-  [/News and Information<br>with Purpose\.?/gi, 'www.francinemariebautista.com/news'],
-  [/News and Information with Purpose\.?/gi, 'www.francinemariebautista.com/news'],
-  [/Information with Purpose\.?/gi, 'www.francinemariebautista.com/news'],
+  [/News and Information<br>with Purpose\.?/gi, 'francinemariebautista.com/news'],
+  [/News and Information with Purpose\.?/gi, 'francinemariebautista.com/news'],
+  [/Information with Purpose\.?/gi, 'francinemariebautista.com/news'],
 ];
 
 let changed = 0;

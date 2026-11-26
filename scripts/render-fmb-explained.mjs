@@ -8,7 +8,7 @@ const structuredRoot=path.join(root,'content','explained','articles');
 const masterRoot=path.join(root,'content','explained','master');
 const libraryRoot=path.join(root,'public','assets','data','fmb-explained');
 const newsRoot=path.join(root,'dist','news');
-const origin='https://www.francinemariebautista.com';
+const origin='https://francinemariebautista.com';
 const fallback='/assets/images/news/fmb-news-editorial-fallback.svg';
 const publicationTimestamp='2026-09-02T00:09:00+08:00';
 

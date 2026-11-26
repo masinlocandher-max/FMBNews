@@ -22,7 +22,7 @@ for(const rel of required)await access(resolve(rel));
 const worker=await read('src/worker.js'),wrangler=await read('wrangler.jsonc');
 must(worker.includes("url.pathname === '/news'")&&worker.includes("url.pathname.startsWith('/news/')"),'Cloudflare Worker /news boundary missing');
 must(wrangler.includes('www.francinemariebautista.com/news*')&&wrangler.includes('francinemariebautista.com/news*'),'Cloudflare /news routes missing');
-must(worker.includes('www.francinemariebautista.com'),'Worker does not canonicalise onto the www host');
+must(worker.includes("const CANONICAL_ORIGIN = 'https://francinemariebautista.com'") && worker.includes('Response.redirect(url.toString(), 308)'), 'Worker apex canonical redirect is missing');
 must(/fact-check[\s\S]{0,500}308/.test(worker),'Worker does not redirect held Fact Check URLs to the desk');
 
 const renderer=await read('scripts/render-home-experience.mjs');
@@ -129,7 +129,7 @@ for(const file of await walkJson(resolve('content/news/articles'))){
   const articlePath=resolve('dist/news',story.slug,'index.html');
   await access(articlePath);
   const articleHtml=await readFile(articlePath,'utf8');
-  must(articleHtml.includes(`https://www.francinemariebautista.com/news/${story.slug}/`),`${story.slug}: built route lost canonical article URL`);
+  must(articleHtml.includes(`https://francinemariebautista.com/news/${story.slug}/`),`${story.slug}: built route lost canonical article URL`);
 }
 must(publishedSlugs.size>0,'No published article routes were verified');
 

@@ -185,7 +185,7 @@ export function normalizeStoryRecord(story, { editorialFallbackUrl, pickEditoria
       image.caption =
         'FMB News branded editorial plate. This is publication artwork, not a photograph of the reported event.';
     }
-    image.sourceUrl = image.sourceUrl || 'https://www.francinemariebautista.com/news/';
+    image.sourceUrl = image.sourceUrl || 'https://francinemariebautista.com/news/';
     story.image = image;
     summary.fallbackPlates += 1;
   }

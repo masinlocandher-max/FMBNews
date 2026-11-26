@@ -31,7 +31,7 @@ async function download(slug, url) {
     const response = await fetch(url, {
       redirect: 'follow',
       headers: {
-        'user-agent': 'FMBNewsBuild/1.0 (Filipino Media Bulletin; +https://www.francinemariebautista.com/news/)',
+        'user-agent': 'FMBNewsBuild/1.0 (Filipino Media Bulletin; +https://francinemariebautista.com/news/)',
         accept: 'image/avif,image/webp,image/*,*/*;q=0.8'
       }
     });

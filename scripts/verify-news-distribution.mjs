@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const newsRoot=path.join(root,'dist','news');
 const contentRoot=path.join(root,'content','news','articles');
-const NEWS='https://www.francinemariebautista.com/news/';
+const NEWS='https://francinemariebautista.com/news/';
 const TWO_DAYS=48*60*60*1000;
 const CURRENT_STREAM_START=Date.parse('2026-11-02T11:20:00Z');
 const must=(v,m)=>{if(!v)throw new Error(m)};
@@ -91,7 +91,7 @@ must((newsSitemap.match(/<news:language>en<\/news:language>/g)||[]).length===new
 
 const rss=await readFile(path.join(newsRoot,'feed.xml'),'utf8');
 must(rss.includes('<rss version="2.0"'),'RSS 2.0 declaration missing');
-must(rss.includes('<atom:link href="https://www.francinemariebautista.com/news/feed.xml" rel="self" type="application/rss+xml"/>'),'RSS self-discovery atom link missing');
+must(rss.includes('<atom:link href="https://francinemariebautista.com/news/feed.xml" rel="self" type="application/rss+xml"/>'),'RSS self-discovery atom link missing');
 const buildDate=rss.match(/<lastBuildDate>([^<]+)<\/lastBuildDate>/)?.[1];
 must(buildDate&&Number.isFinite(Date.parse(buildDate)),'RSS lastBuildDate is missing or invalid');
 must(Date.parse(buildDate)<=Date.now()+5*60*1000,'RSS lastBuildDate is in the future');

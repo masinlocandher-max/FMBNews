@@ -6,7 +6,7 @@ Production ownership:
 
 - Repository: `masinlocandher-max/FMBNews`
 - Runtime: Cloudflare Worker `fmb-news`
-- Canonical public route: `https://www.francinemariebautista.com/news/`
+- Canonical public route: `https://francinemariebautista.com/news/`
 
 ## Hard rules for agents
 

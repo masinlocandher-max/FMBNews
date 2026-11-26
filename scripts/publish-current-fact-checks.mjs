@@ -9,7 +9,7 @@ const dataPath = path.join(newsRoot, 'assets', 'data', 'fmb-fact-check', 'index.
 const currentPath = path.join(root, 'content', 'fact-check', 'current.json');
 const evidenceRoot = path.join(root, 'content', 'fact-check', 'evidence');
 const ledgerPath = path.join(root, 'content', 'fact-check', 'HELD.json');
-const origin = 'https://www.francinemariebautista.com';
+const origin = 'https://francinemariebautista.com';
 
 const esc = (value = '') => String(value)
   .replaceAll('&', '&amp;')

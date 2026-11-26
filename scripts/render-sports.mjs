@@ -68,21 +68,21 @@ const html = `<!doctype html>
   <title>Sports | FMB News · Filipino Media Bulletin</title>
   <meta name="description" content="FMB News Sports coverage: verified reports on competitions, athletes, leagues, and major sporting developments relevant to Filipino readers.">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
-  <link rel="canonical" href="https://www.francinemariebautista.com/news/sports/">
+  <link rel="canonical" href="https://francinemariebautista.com/news/sports/">
   <meta property="og:title" content="Sports | FMB News">
   <meta property="og:description" content="Verified Sports coverage from FMB News, Filipino Media Bulletin.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.francinemariebautista.com/news/sports/">
+  <meta property="og:url" content="https://francinemariebautista.com/news/sports/">
   <meta property="og:site_name" content="FMB News">
   <link rel="stylesheet" href="/assets/css/fmb-news-editorial-ia.css?v=20260912-desk-v1">
   <script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: 'Sports | FMB News',
-    url: 'https://www.francinemariebautista.com/news/sports/',
+    url: 'https://francinemariebautista.com/news/sports/',
     description: 'Verified Sports coverage from FMB News, Filipino Media Bulletin.',
     inLanguage: 'en-PH',
-    isPartOf: { '@type': 'WebSite', name: 'FMB News', url: 'https://www.francinemariebautista.com/news/' },
+    isPartOf: { '@type': 'WebSite', name: 'FMB News', url: 'https://francinemariebautista.com/news/' },
   }).replaceAll('<', '\\u003c')}</script>
 </head>
 <body class="fmb-news-route fmb-sports-page">

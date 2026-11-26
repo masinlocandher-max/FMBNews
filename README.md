@@ -15,7 +15,7 @@ The production architecture is fixed:
 - Main public website repository: `masinlocandher-max/PCO`
 - Main public domain: `https://francinemariebautista.com`
 - News repository: `masinlocandher-max/FMBNews`
-- News public route: `https://www.francinemariebautista.com/news/`
+- News public route: `https://francinemariebautista.com/news/`
 - News edge host: Cloudflare Workers + Static Assets
 - Forbidden production dependency: `masinlocandher-max/FMB-Ecosystem`
 
@@ -35,11 +35,11 @@ Desktop remains the publication website. Below 700px, the same `/news/` product 
 
 ## Public route
 
-**Canonical public route:** `https://www.francinemariebautista.com/news/`
+**Canonical public route:** `https://francinemariebautista.com/news/`
 
 Cloudflare Workers owns the `/news*` edge route and serves this repository's built application. The newsroom build is fully scoped below `/news/`, including CSS, JavaScript, imagery, brand assets, FMB News, FMB Worldwide, FMB Explainer, FMB Daily Brief, and CMS article rendering.
 
-Requests outside the actual `/news` path boundary are passed through to the site's existing origin. The apex newsroom URL redirects to the canonical `www` hostname.
+Requests outside the actual `/news` path boundary are passed through to the site's existing origin. The legacy `www` newsroom hostname permanently redirects to HTTPS apex, preserving paths and query strings.
 
 ## Repository structure
 

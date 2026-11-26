@@ -31,7 +31,7 @@ for (const [label, opts] of [['phone', { ...devices['iPhone 13'] }], ['desktop',
     assert(await page.locator('a[href^="/news/"]').count() > 0, `${label} ${route} has no internal links`);
 
     const canonical = await page.locator('link[rel="canonical"]').getAttribute('href').catch(() => null);
-    assert(canonical && canonical.startsWith('https://www.francinemariebautista.com/news/'),
+    assert(canonical && canonical.startsWith('https://francinemariebautista.com/news/'),
       `${label} ${route} canonical is wrong: ${canonical}`);
 
     // Crossword and Horoscope stay features, not products.

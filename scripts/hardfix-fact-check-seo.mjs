@@ -7,7 +7,7 @@ const newsRoot = path.join(root, 'dist', 'news');
 const factRoot = path.join(newsRoot, 'fact-check');
 const currentPath = path.join(root, 'content', 'fact-check', 'current.json');
 const evidenceRoot = path.join(root, 'content', 'fact-check', 'evidence');
-const origin = 'https://www.francinemariebautista.com';
+const origin = 'https://francinemariebautista.com';
 const newsOrigin = `${origin}/news/`;
 
 const current = JSON.parse(await readFile(currentPath, 'utf8'));

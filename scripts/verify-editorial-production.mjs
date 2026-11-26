@@ -79,7 +79,7 @@ for(const file of await walk(contentRoot)){
   const page=path.join(newsRoot,story.slug,'index.html');
   await access(page);
   const html=await readFile(page,'utf8');
-  const canonical=`https://www.francinemariebautista.com/news/${story.slug}/`;
+  const canonical=`https://francinemariebautista.com/news/${story.slug}/`;
   must(html.includes(`rel="canonical" href="${canonical}"`),`${label}: canonical URL mismatch`);
   must(/<meta\s+property=["']og:type["']\s+content=["']article["']>/i.test(html),`${label}: og:type must be article`);
   must(html.includes(`property="article:published_time" content="${story.publishedAt}"`),`${label}: article:published_time mismatch`);
